@@ -1,0 +1,48 @@
+{
+  "name": "googleads/google-ads-php",
+  "version": "0.1.0",
+  "author": "Google LLC",
+  "url": "https://github.com/googleads/google-ads-php",
+  "description": "Google Ads API client for PHP",
+  "require": {
+    "google/gax": "^0.32.0",
+    "google/protobuf": "^3.4.0",
+    "php" : ">=5.5.9 || ^7.0",
+    "ext-grpc": "*",
+    "ulrichsg/getopt-php": "^3.0",
+    "react/http": "^0.8.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8.35 || ^5.7",
+    "squizlabs/php_codesniffer": "^2.9 || ^3.2",
+    "ext-bcmath": "*"
+  },
+  "suggest": {
+    "php-64bit": ">=5.5.9"
+  },
+  "license": "Apache-2.0",
+  "autoload": {
+    "psr-4": {
+      "Google\\Ads\\GoogleAds\\": "src/Google/Ads/GoogleAds",
+      "GPBMetadata\\Google\\Ads\\GoogleAds\\": "metadata/Google/Ads/GoogleAds",
+      "Google\\Ads\\GoogleAds\\Examples\\": "examples"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Google\\": "src/Google/Ads/GoogleAds/Util/Testing/Google",
+      "GPBMetadata\\": "src/Google/Ads/GoogleAds/Util/Testing/metadata"
+    }
+  },
+  "authors": [
+    {
+      "name": "Google",
+      "homepage": "https://github.com/googleads/google-ads-php/contributors"
+    }
+  ],
+  "scripts": {
+    "test": [
+      "phpunit tests"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "test_cases": [{
+    "description": "Modify scalar in a wrapper proto",
+    "original_resource": {
+      "wrapper": "a"
+    },
+    "modified_resource": {
+      "wrapper": "b"
+    },
+    "expected_mask": "wrapper"
+  }, {
+    "description": "Create wrapper proto",
+    "original_resource": {
+    },
+    "modified_resource": {
+      "wrapper": "a"
+    },
+    "expected_mask": "wrapper"
+  }, {
+    "description": "Modify element in a repeated field",
+    "original_resource": {
+      "foos": [{
+        "num": 1
+      }, {
+        "num": 2
+      }]
+    },
+    "modified_resource": {
+      "foos": [{
+        "num": 1
+      }, {
+        "num": 3
+      }]
+    },
+    "expected_mask": "foos"
+  }, {
+    "description": "Modify element in a nested repeated field",
+    "original_resource": {
+      "foos": [{
+        "bars": [{
+          "num": 1
+        }]
+      }]
+    },
+    "modified_resource": {
+      "foos": [{
+        "bars": [{
+          "num": 2
+        }]
+      }]
+    },
+    "expected_mask": "foos"
+  }, {
+    "description": "Create submessage",
+    "original_resource": {
+    },
+    "modified_resource": {
+      "foo": {
+        "num": 1
+      }
+    },
+    "expected_mask": "foo.num,foo.bar,foo.bars"
+  }, {
+    "description": "Modify submessage",
+    "original_resource": {
+      "foo": {
+      }
+    },
+    "modified_resource": {
+      "foo": {
+        "num": 1
+      }
+    },
+    "expected_mask": "foo.num"
+  }, {
+    "description": "Clear submessage",
+    "original_resource": {
+      "foo": {
+      }
+    },
+    "modified_resource": {
+    },
+    "expected_mask": "foo"
+  }, {
+    "description": "No change",
+    "original_resource": {
+      "wrapper": "a",
+      "foos": [{
+        "num": 1
+      }]
+    },
+    "modified_resource": {
+      "wrapper": "a",
+      "foos": [{
+        "num": 1
+      }]
+    },
+    "expected_mask": {}
+  }
+]}
