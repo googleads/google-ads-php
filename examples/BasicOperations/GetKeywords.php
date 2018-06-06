@@ -1,0 +1,142 @@
+<?php
+/**
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+namespace Google\Ads\GoogleAds\Examples\BasicOperations;
+
+require __DIR__ . '/../../vendor/autoload.php';
+
+use GetOpt\GetOpt;
+use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
+use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Lib\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V0\Services\GoogleAdsRow;
+use Google\ApiCore\ApiException;
+
+/** This example gets keywords from ad group criteria. */
+class GetKeywords
+{
+    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    // Optional: Specify an ad group ID below to restrict search to only a given ad group.
+    const AD_GROUP_ID = null;
+
+    const PAGE_SIZE = 1000;
+
+    public static function main()
+    {
+        // Either pass the required parameters for this example on the command line, or insert them
+        // into the constants above.
+        $options = ArgumentParser::parseCommandArguments([
+            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::AD_GROUP_ID => GetOpt::OPTIONAL_ARGUMENT
+        ]);
+
+        // Generate a refreshable OAuth2 credential for authentication.
+        $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
+
+        // Construct a Google Ads client configured from a properties file and the
+        // OAuth2 credentials above.
+        $googleAdsClient = (new GoogleAdsClientBuilder())->fromFile()
+            ->withOAuth2Credential($oAuth2Credential)
+            ->build();
+
+        try {
+            self::runExample(
+                $googleAdsClient,
+                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
+                $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID
+            );
+        } catch (GoogleAdsException $googleAdsException) {
+            printf(
+                "Request with ID '%s' has failed.%sGoogle Ads failure details:%s",
+                $googleAdsException->getRequestId(),
+                PHP_EOL,
+                PHP_EOL
+            );
+            foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
+                /** @var GoogleAdsError $error */
+                printf(
+                    "\t%s: %s%s",
+                    $error->getErrorCode()->getErrorCode(),
+                    $error->getMessage(),
+                    PHP_EOL
+                );
+            }
+        } catch (ApiException $apiException) {
+            printf(
+                "ApiException was thrown with message '%s'.%s",
+                $apiException->getMessage(),
+                PHP_EOL
+            );
+        }
+    }
+
+    /**
+     * Runs the example.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the client customer ID without hyphens
+     * @param int $adGroupId the ad group ID for which keywords will be retrieved. If `null`,
+     *     returns from all ad groups
+     */
+    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $adGroupId)
+    {
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+        // Creates a query that retrieves keywords.
+        $query =
+          'SELECT ad_group.id, '
+              . 'ad_group_criterion.type, '
+              . 'ad_group_criterion.criterion_id, '
+              . 'ad_group_criterion.keyword.text, '
+              . 'ad_group_criterion.keyword.match_type '
+          . 'FROM ad_group_criterion '
+          . 'WHERE ad_group_criterion.type = KEYWORD';
+        if ($adGroupId !== null) {
+            $query .= " AND ad_group.id = $adGroupId";
+        }
+
+        // Issues a search request by specifying page size.
+        $response =
+            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+
+        // Iterates over all rows in all pages and prints the requested field values for
+        // the keyword in each row.
+        foreach ($response->iterateAllElements() as $googleAdsRow) {
+            /** @var GoogleAdsRow $googleAdsRow */
+            // Note that the match type and criteria type printed below are enum values.
+            // For example, a value of 2 will be returned when the keyword match type is 'EXACT'.
+            // A mapping of enum names to values can be found in:
+            // Match type enum class: KeywordMatchTypeEnum_KeywordMatchType.php
+            // Criterion type enum class: CriterionTypeEnum_CriterionType.php
+            printf(
+                "Keyword with text '%s', match type %d, criterion type %d, and ID %d "
+                . "was found in ad group with ID %d.%s",
+                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getText()->getValue(),
+                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getMatchType(),
+                $googleAdsRow->getAdGroupCriterion()->getType(),
+                $googleAdsRow->getAdGroupCriterion()->getCriterionId()->getValue(),
+                $googleAdsRow->getAdGroup()->getId()->getValue(),
+                PHP_EOL
+            );
+        }
+    }
+}
+
+GetKeywords::main();
