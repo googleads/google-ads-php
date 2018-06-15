@@ -105,6 +105,14 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas_override = 19;</code>
      */
     private $target_roas_override = null;
+    /**
+     * The percent cpc bid amount, expressed as a fraction of the advertised price
+     * for some good or service. The valid range for the fraction is [0,1) and the
+     * value stored here is 1,000,000 * [fraction].
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 20;</code>
+     */
+    private $percent_cpc_bid_micros = null;
 
     public function __construct() {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\AdGroup::initOnce();
@@ -469,6 +477,36 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->target_roas_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * The percent cpc bid amount, expressed as a fraction of the advertised price
+     * for some good or service. The valid range for the fraction is [0,1) and the
+     * value stored here is 1,000,000 * [fraction].
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 20;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getPercentCpcBidMicros()
+    {
+        return $this->percent_cpc_bid_micros;
+    }
+
+    /**
+     * The percent cpc bid amount, expressed as a fraction of the advertised price
+     * for some good or service. The valid range for the fraction is [0,1) and the
+     * value stored here is 1,000,000 * [fraction].
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 20;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setPercentCpcBidMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->percent_cpc_bid_micros = $var;
 
         return $this;
     }

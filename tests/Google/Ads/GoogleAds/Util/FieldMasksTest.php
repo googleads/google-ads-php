@@ -28,7 +28,7 @@ use PHPUnit\Framework\TestCase;
  * @see FieldMasks
  * @small
  */
-class FieldMasksTests extends TestCase
+class FieldMasksTest extends TestCase
 {
 
     private static $testCases = null;

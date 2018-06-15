@@ -66,6 +66,13 @@ class BiddingStrategyTypeEnum_BiddingStrategyType
      */
     const PAGE_ONE_PROMOTED = 5;
     /**
+     * Percent Cpc is bidding strategy where bids are a fraction of the
+     * advertised price for some good or service.
+     *
+     * Generated from protobuf enum <code>PERCENT_CPC = 12;</code>
+     */
+    const PERCENT_CPC = 12;
+    /**
      * Target CPA is an automated bid strategy that sets bids
      * to help get as many conversions as possible
      * at the target cost-per-acquisition (CPA) you set.

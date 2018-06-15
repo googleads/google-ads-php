@@ -18,15 +18,15 @@
 namespace Google\Ads\GoogleAds\Examples\Utils;
 
 use GetOpt\ArgumentException;
-use GetOpt\ArgumentException\Missing;
 use GetOpt\GetOpt;
+use InvalidArgumentException;
 
 /**
  * Wraps `GetOpt` and normalizes arguments parsed by it.
  *
  * @see GetOpt
  */
-final class ArgumentParser
+class ArgumentParser
 {
     /**
      * Parses any arguments specified via the command line. For those in the provided argument
@@ -35,7 +35,7 @@ final class ArgumentParser
      * @param array $argumentNames the associative array of argument names to their types
      * @return array the argument names to their values
      */
-    public static function parseCommandArguments(array $argumentNames)
+    public function parseCommandArguments(array $argumentNames)
     {
         $getOpt = new GetOpt();
         $normalizedOptions = [];
@@ -44,12 +44,14 @@ final class ArgumentParser
         foreach ($argumentNames as $argumentName => $argumentType) {
             $normalizedOptions[$argumentName] = null;
             // Adds an option for an argument using a long option name only.
-            $getOpt->addOption([
-                null,
-                $argumentName,
-                $argumentType,
-                ArgumentNames::$ARGUMENTS_TO_DESCRIPTIONS[$argumentName]
-            ]);
+            $getOpt->addOption(
+                [
+                    null,
+                    $argumentName,
+                    $argumentType,
+                    ArgumentNames::$ARGUMENTS_TO_DESCRIPTIONS[$argumentName]
+                ]
+            );
 
             if ($argumentType === GetOpt::REQUIRED_ARGUMENT) {
                 $numRequiredArguments++;
@@ -63,14 +65,15 @@ final class ArgumentParser
             // When there are any errors regarding arguments, such as invalid argument names, or
             // specifying required arguments but not providing values, 'ArgumentException' will
             // be thrown. Show the help text in these cases.
-            fwrite(STDERR, $exception->getMessage() . PHP_EOL);
             echo PHP_EOL . $getOpt->getHelpText();
-            exit;
+            throw $exception;
         }
         // Show help text when requested.
         if (!is_null($getOpt->getOption('help'))) {
-            echo PHP_EOL . $getOpt->getHelpText();
-            exit;
+            $this->printHelpMessageAndExit($getOpt);
+            // Help text is printed, so no arguments are passed. The below line is reached only
+            // in tests.
+            return [];
         }
 
         $numPassedRequiredArguments = 0;
@@ -83,13 +86,22 @@ final class ArgumentParser
         // Don't allow the case when optional arguments are passed, but required arguments are not.
         if (count($getOpt->getOptions()) > 0
             && $numPassedRequiredArguments !== $numRequiredArguments) {
-            fwrite(
-                STDERR,
+            echo PHP_EOL . $getOpt->getHelpText();
+            throw new InvalidArgumentException(
                 'All required arguments must be specified.' . PHP_EOL
             );
-            echo PHP_EOL . $getOpt->getHelpText();
-            exit;
         }
         return $normalizedOptions;
+    }
+
+    /**
+     * Print the help message and exit the program.
+     *
+     * @param GetOpt $getOpt the GetOpt object to print its help text
+     */
+    public function printHelpMessageAndExit(GetOpt $getOpt)
+    {
+        echo PHP_EOL . $getOpt->getHelpText();
+        exit;
     }
 }

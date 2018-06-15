@@ -29,6 +29,7 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V0\Common\Ad;
 use Google\Ads\GoogleAds\V0\Common\HotelAdInfo;
 use Google\Ads\GoogleAds\V0\Common\ManualCpc;
+use Google\Ads\GoogleAds\V0\Common\PercentCpc;
 use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum_AdGroupAdStatus;
 use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum_AdGroupStatus;
 use Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum_AdGroupType;
@@ -66,14 +67,18 @@ class AddHotelAds
     // This ID is the same account ID that you use in API requests to the Travel Partner APIs
     // (https://developers.google.com/hotels/hotel-ads/api-reference/).
     const HOTEL_CENTER_ACCOUNT_ID = 'INSERT_HOTEL_CENTER_ACCOUNT_ID_HERE';
+    // Specify maximum bid limit that can be set when creating a campaign using the Percent CPC
+    // bidding strategy.
+    const CPC_BID_CEILING_MICRO_AMOUNT = 20000000;
 
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = ArgumentParser::parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::HOTEL_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::HOTEL_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::CPC_BID_CEILING_MICRO_AMOUNT => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -89,7 +94,9 @@ class AddHotelAds
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::HOTEL_CENTER_ACCOUNT_ID] ?: self::HOTEL_CENTER_ACCOUNT_ID
+                $options[ArgumentNames::HOTEL_CENTER_ACCOUNT_ID] ?: self::HOTEL_CENTER_ACCOUNT_ID,
+                $options[ArgumentNames::CPC_BID_CEILING_MICRO_AMOUNT]
+                    ?: self::CPC_BID_CEILING_MICRO_AMOUNT
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -122,11 +129,13 @@ class AddHotelAds
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID without hyphens
      * @param int $hotelCenterAccountId the Hotel Center account ID
+     * @param int $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         $customerId,
-        $hotelCenterAccountId
+        $hotelCenterAccountId,
+        $cpcBidCeilingMicroAmount
     ) {
         // Creates a budget to be used by the campaign that will be created below.
         $budgetResourceName = self::addCampaignBudget($googleAdsClient, $customerId);
@@ -135,7 +144,8 @@ class AddHotelAds
             $googleAdsClient,
             $customerId,
             $budgetResourceName,
-            $hotelCenterAccountId
+            $hotelCenterAccountId,
+            $cpcBidCeilingMicroAmount
         );
         // Creates a hotel ad group.
         $adGroupResourceName =
@@ -196,6 +206,7 @@ class AddHotelAds
      * @param int $customerId the client customer ID
      * @param string $budgetResourceName the resource name of budget for a new campaign
      * @param int $hotelCenterAccountId the Hotel Center account ID
+     * @param int $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
      * @return string the resource name of the newly created campaign
      */
     // [START addHotelCampaign]
@@ -203,7 +214,8 @@ class AddHotelAds
         GoogleAdsClient $googleAdsClient,
         $customerId,
         $budgetResourceName,
-        $hotelCenterAccountId
+        $hotelCenterAccountId,
+        $cpcBidCeilingMicroAmount
     ) {
         // Creates a campaign.
         $campaign = new Campaign();
@@ -227,8 +239,13 @@ class AddHotelAds
         // the ads from immediately serving. Set to ENABLED once you've added
         // targeting and the ads are ready to serve.
         $campaign->setStatus(CampaignStatusEnum_CampaignStatus::PAUSED);
-        // Sets the bidding strategy. Only Manual CPC can be used for hotel campaigns.
-        $campaign->setManualCpc(new ManualCpc());
+        // Sets the bidding strategy to PercentCpc. Only Manual CPC and Percent CPC can be used for
+        // hotel campaigns.
+        $percentCpc = new PercentCpc();
+        $wrappedCpcBidCeilingMicros = new Int64Value();
+        $wrappedCpcBidCeilingMicros->setValue($cpcBidCeilingMicroAmount);
+        $percentCpc->setCpcBidCeilingMicros($wrappedCpcBidCeilingMicros);
+        $campaign->setPercentCpc($percentCpc);
 
         // Sets the budget.
         $wrappedBudgetResourceName = new StringValue();

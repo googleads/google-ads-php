@@ -17,6 +17,10 @@ class Bar extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 num = 1;</code>
      */
     private $num = 0;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.BoolValue nested_wrapper = 2;</code>
+     */
+    private $nested_wrapper = null;
 
     public function __construct() {
         \GPBMetadata\Google\Ads\GoogleAds\Util\Testing\Tester::initOnce();
@@ -41,6 +45,28 @@ class Bar extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->num = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.BoolValue nested_wrapper = 2;</code>
+     * @return \Google\Protobuf\BoolValue
+     */
+    public function getNestedWrapper()
+    {
+        return $this->nested_wrapper;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.BoolValue nested_wrapper = 2;</code>
+     * @param \Google\Protobuf\BoolValue $var
+     * @return $this
+     */
+    public function setNestedWrapper($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
+        $this->nested_wrapper = $var;
 
         return $this;
     }

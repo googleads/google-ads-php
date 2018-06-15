@@ -223,7 +223,8 @@ class FieldMasks
     /**
      * Recursively add field names for a new message. Repeated fields, primitive fields and
      * unpopulated single message fields are included just by name; populated single message fields
-     * are processed recursively, only including leaf nodes.
+     * are processed recursively, only including leaf nodes.  For wrapper types, the 'value' leaf
+     * node is excluded.
      *
      * @param array $paths
      * @param $currentField
@@ -232,22 +233,27 @@ class FieldMasks
     private static function addNewFields(array &$paths, $currentField, $message)
     {
         $descriptor = self::getDescriptorForMessage($message);
-        for ($i = 0; $i < $descriptor->getFieldCount(); $i++) {
-            $fieldDescriptor = $descriptor->getField($i);
-            $fieldName = self::getFieldName($currentField, $fieldDescriptor);
-            // For single message fields, recurse if there's a value;
-            // otherwise just add the field name.
-            if (!self::isFieldRepeated($fieldDescriptor)
-                && $fieldDescriptor->getType() === GPBType::MESSAGE) {
-                $getter = Serializer::getGetter($fieldDescriptor->getName());
-                $messageValue = $message->$getter();
-                if (!is_null($messageValue)) {
-                    self::addNewFields($paths, $fieldName, $messageValue);
+        if (self::isWrapperType($descriptor)) {
+            // For wrapper types, don't recurse over the fields of the message.
+            $paths[] = $currentField;
+        } else {
+            for ($i = 0; $i < $descriptor->getFieldCount(); $i++) {
+                $fieldDescriptor = $descriptor->getField($i);
+                $fieldName = self::getFieldName($currentField, $fieldDescriptor);
+                // For single message fields, recurse if there's a value;
+                // otherwise just add the field name.
+                if (!self::isFieldRepeated($fieldDescriptor)
+                    && $fieldDescriptor->getType() === GPBType::MESSAGE) {
+                    $getter = Serializer::getGetter($fieldDescriptor->getName());
+                    $messageValue = $message->$getter();
+                    if (!is_null($messageValue)) {
+                        self::addNewFields($paths, $fieldName, $messageValue);
+                    } else {
+                        $paths[] = $fieldName;
+                    }
                 } else {
                     $paths[] = $fieldName;
                 }
-            } else {
-                $paths[] = $fieldName;
             }
         }
     }

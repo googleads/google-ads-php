@@ -82,6 +82,14 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      */
     private $cpv_bid_micros = null;
     /**
+     * The CPC bid amount, expressed as a fraction of the advertised price
+     * for some good or service. The valid range for the fraction is [0,1) and the
+     * value stored here is 1,000,000 * [fraction].
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 33;</code>
+     */
+    private $percent_cpc_bid_micros = null;
+    /**
      * The effective CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
@@ -100,6 +108,12 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      */
     private $effective_cpv_bid_micros = null;
     /**
+     * The effective Percent CPC bid amount.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     */
+    private $effective_percent_cpc_bid_micros = null;
+    /**
      * Source of the effective CPC bid.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_cpc_bid_source = 21;</code>
@@ -117,6 +131,12 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_cpv_bid_source = 23;</code>
      */
     private $effective_cpv_bid_source = 0;
+    /**
+     * Source of the effective Percent CPC bid.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35;</code>
+     */
+    private $effective_percent_cpc_bid_source = 0;
     /**
      * Estimates for criterion bids at various positions.
      *
@@ -423,6 +443,36 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The CPC bid amount, expressed as a fraction of the advertised price
+     * for some good or service. The valid range for the fraction is [0,1) and the
+     * value stored here is 1,000,000 * [fraction].
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 33;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getPercentCpcBidMicros()
+    {
+        return $this->percent_cpc_bid_micros;
+    }
+
+    /**
+     * The CPC bid amount, expressed as a fraction of the advertised price
+     * for some good or service. The valid range for the fraction is [0,1) and the
+     * value stored here is 1,000,000 * [fraction].
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 33;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setPercentCpcBidMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->percent_cpc_bid_micros = $var;
+
+        return $this;
+    }
+
+    /**
      * The effective CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
@@ -501,6 +551,32 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The effective Percent CPC bid amount.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getEffectivePercentCpcBidMicros()
+    {
+        return $this->effective_percent_cpc_bid_micros;
+    }
+
+    /**
+     * The effective Percent CPC bid amount.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setEffectivePercentCpcBidMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->effective_percent_cpc_bid_micros = $var;
+
+        return $this;
+    }
+
+    /**
      * Source of the effective CPC bid.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_cpc_bid_source = 21;</code>
@@ -574,6 +650,32 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\BiddingSourceEnum_BiddingSource::class);
         $this->effective_cpv_bid_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Source of the effective Percent CPC bid.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35;</code>
+     * @return int
+     */
+    public function getEffectivePercentCpcBidSource()
+    {
+        return $this->effective_percent_cpc_bid_source;
+    }
+
+    /**
+     * Source of the effective Percent CPC bid.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEffectivePercentCpcBidSource($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\BiddingSourceEnum_BiddingSource::class);
+        $this->effective_percent_cpc_bid_source = $var;
 
         return $this;
     }

@@ -858,6 +858,34 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Standard Percent Cpc bidding strategy where bids are a fraction of the
+     * advertised price for some good or service.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PercentCpc percent_cpc = 34;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\PercentCpc
+     */
+    public function getPercentCpc()
+    {
+        return $this->readOneof(34);
+    }
+
+    /**
+     * Standard Percent Cpc bidding strategy where bids are a fraction of the
+     * advertised price for some good or service.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PercentCpc percent_cpc = 34;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\PercentCpc $var
+     * @return $this
+     */
+    public function setPercentCpc($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PercentCpc::class);
+        $this->writeOneof(34, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getCampaignBiddingStrategy()

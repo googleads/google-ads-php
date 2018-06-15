@@ -47,7 +47,7 @@ class PauseAd
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = ArgumentParser::parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_ID => GetOpt::REQUIRED_ARGUMENT
