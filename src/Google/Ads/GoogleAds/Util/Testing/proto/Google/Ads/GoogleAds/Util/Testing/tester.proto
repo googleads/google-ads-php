@@ -35,4 +35,5 @@ message Foo {
 
 message Bar {
   int64 num = 1;
+  google.protobuf.BoolValue nested_wrapper = 2;
 }

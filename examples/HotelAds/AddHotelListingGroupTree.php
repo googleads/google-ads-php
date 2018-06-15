@@ -61,7 +61,7 @@ class AddHotelListingGroupTree
     // Specify the CPC bid micro amount to be set on a created ad group criterion.
     // For simplicity, each ad group criterion will use the below amount equally. In practice, you
     // probably want to use different values for each ad group criterion.
-    const CPC_BID_MICRO_AMOUNT = 1000000;
+    const PERCENT_CPC_BID_MICRO_AMOUNT = 1000000;
 
     /**
      * @var int $nextTempId
@@ -82,10 +82,10 @@ class AddHotelListingGroupTree
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = ArgumentParser::parseCommandArguments([
+        $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CPC_BID_MICRO_AMOUNT => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::PERCENT_CPC_BID_MICRO_AMOUNT => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -102,7 +102,8 @@ class AddHotelListingGroupTree
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID,
-                $options[ArgumentNames::CPC_BID_MICRO_AMOUNT] ?: self::CPC_BID_MICRO_AMOUNT
+                $options[ArgumentNames::PERCENT_CPC_BID_MICRO_AMOUNT]
+                    ?: self::PERCENT_CPC_BID_MICRO_AMOUNT
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -135,22 +136,29 @@ class AddHotelListingGroupTree
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID without hyphens
      * @param int $adGroupId the ad group ID
-     * @param int $cpcBidMicroAmount the CPC bid micro amount to set on created ad group criteria
+     * @param int $percentCpcBidMicroAmount the percent CPC bid micro amount to set on created ad
+     *     group criteria
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         $customerId,
         $adGroupId,
-        $cpcBidMicroAmount
+        $percentCpcBidMicroAmount
     ) {
         $operations = [];
 
         // Creates the root of the tree as a SUBDIVISION node.
-        $rootId = self::addRootNode($customerId, $adGroupId, $operations, $cpcBidMicroAmount);
+        $rootId =
+            self::addRootNode($customerId, $adGroupId, $operations, $percentCpcBidMicroAmount);
 
         // Creates child nodes of level 1, partitioned by the hotel class info.
-        $otherHotelClassesId =
-            self::addLevel1Nodes($customerId, $adGroupId, $rootId, $operations, $cpcBidMicroAmount);
+        $otherHotelClassesId = self::addLevel1Nodes(
+            $customerId,
+            $adGroupId,
+            $rootId,
+            $operations,
+            $percentCpcBidMicroAmount
+        );
 
         // Creates child nodes of level 2, partitioned by the hotel country region info.
         self::addLevel2Nodes(
@@ -158,7 +166,7 @@ class AddHotelListingGroupTree
             $adGroupId,
             $otherHotelClassesId,
             $operations,
-            $cpcBidMicroAmount
+            $percentCpcBidMicroAmount
         );
 
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
@@ -177,19 +185,20 @@ class AddHotelListingGroupTree
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      * @param AdGroupCriterionOperation[] $operations the operations
-     * @param int $cpcBidMicroAmount the CPC bid micro amount to set on created ad group criteria
+     * @param int $percentCpcBidMicroAmount the CPC bid micro amount to set on created ad group
+     *     criteria
      * @return int the root node's temporary ID
      */
     private static function addRootNode(
         $customerId,
         $adGroupId,
         array &$operations,
-        $cpcBidMicroAmount
+        $percentCpcBidMicroAmount
     ) {
         // Creates the root of the tree as a SUBDIVISION node.
         $root = self::createListingGroupInfo(ListingGroupTypeEnum_ListingGroupType::SUBDIVISION);
         $rootAdGroupCriterion =
-            self::createAdGroupCriterion($customerId, $adGroupId, $root, $cpcBidMicroAmount);
+            self::createAdGroupCriterion($customerId, $adGroupId, $root, $percentCpcBidMicroAmount);
         $operation = self::generateCreateOperation($rootAdGroupCriterion);
         $operations[] = $operation;
 
@@ -203,7 +212,8 @@ class AddHotelListingGroupTree
      * @param int $adGroupId the ad group ID
      * @param int $rootId the root ID for all nodes at this level
      * @param AdGroupCriterionOperation[] $operations the operations list
-     * @param int $cpcBidMicroAmount the CPC bid micro amount to set on created ad group criteria
+     * @param int $percentCpcBidMicroAmount the CPC bid micro amount to set on created ad group
+     *     criteria
      * @return int the "other hotel classes" node's temporary ID, which serves as a parent node for
      *     the next level
      */
@@ -213,7 +223,7 @@ class AddHotelListingGroupTree
         $adGroupId,
         $rootId,
         array &$operations,
-        $cpcBidMicroAmount
+        $percentCpcBidMicroAmount
     ) {
         // Creates hotel class info and dimension info for 5-star hotels.
         $fiveStarredHotelClassInfo = new HotelClassInfo();
@@ -233,7 +243,7 @@ class AddHotelListingGroupTree
             $customerId,
             $adGroupId,
             $fiveStarredUnit,
-            $cpcBidMicroAmount
+            $percentCpcBidMicroAmount
         );
         // Decrements the temp ID for the next ad group criterion.
         self::$nextTempId--;
@@ -261,7 +271,7 @@ class AddHotelListingGroupTree
             $customerId,
             $adGroupId,
             $otherHotelsSubDivision,
-            $cpcBidMicroAmount
+            $percentCpcBidMicroAmount
         );
         $operation = self::generateCreateOperation($otherHotelsAdGroupCriterion);
         $operations[] = $operation;
@@ -277,14 +287,15 @@ class AddHotelListingGroupTree
      * @param int $adGroupId the ad group ID
      * @param int $parentId the parent ID for all nodes at this level
      * @param AdGroupCriterionOperation[] $operations the operations list
-     * @param int $cpcBidMicroAmount the CPC bid micro amount to set on created ad group criteria
+     * @param int $percentCpcBidMicroAmount the CPC bid micro amount to set on created ad group
+     *     criteria
      */
     private static function addLevel2Nodes(
         $customerId,
         $adGroupId,
         $parentId,
         array &$operations,
-        $cpcBidMicroAmount
+        $percentCpcBidMicroAmount
     ) {
         // Creates hotel country region info and dimension info for hotels in Japan.
         $japanCountryRegionInfo = new HotelCountryRegionInfo();
@@ -310,7 +321,7 @@ class AddHotelListingGroupTree
             $customerId,
             $adGroupId,
             $japanHotelsUnit,
-            $cpcBidMicroAmount
+            $percentCpcBidMicroAmount
         );
         // Decrements the temp ID for the next ad group criterion.
         self::$nextTempId--;
@@ -332,7 +343,7 @@ class AddHotelListingGroupTree
             $customerId,
             $adGroupId,
             $otherHotelRegionsUnit,
-            $cpcBidMicroAmount
+            $percentCpcBidMicroAmount
         );
         $operation = self::generateCreateOperation($otherHotelRegionsAdGroupCriterion);
         $operations[] = $operation;
@@ -373,14 +384,15 @@ class AddHotelListingGroupTree
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      * @param ListingGroupInfo $listingGroupInfo the listing group info
-     * @param int $cpcBidMicroAmount the CPC bid micro amount to set for the ad group criterion
+     * @param int $percentCpcBidMicroAmount the CPC bid micro amount to set for the ad group
+     *     criterion
      * @return AdGroupCriterion the created ad group criterion
      */
     private static function createAdGroupCriterion(
         $customerId,
         $adGroupId,
         ListingGroupInfo $listingGroupInfo,
-        $cpcBidMicroAmount
+        $percentCpcBidMicroAmount
     ) {
         $adGroupCriterion = new AdGroupCriterion();
         $adGroupCriterion->setStatus(AdGroupStatusEnum_AdGroupStatus::ENABLED);
@@ -393,8 +405,8 @@ class AddHotelListingGroupTree
         // Bids are valid only for UNIT nodes.
         if ($listingGroupInfo->getType() == ListingGroupTypeEnum_ListingGroupType::UNIT) {
             $wrappedValue = new Int64Value();
-            $wrappedValue->setValue($cpcBidMicroAmount);
-            $adGroupCriterion->setCpcBidMicros($wrappedValue);
+            $wrappedValue->setValue($percentCpcBidMicroAmount);
+            $adGroupCriterion->setPercentCpcBidMicros($wrappedValue);
         }
 
         return $adGroupCriterion;

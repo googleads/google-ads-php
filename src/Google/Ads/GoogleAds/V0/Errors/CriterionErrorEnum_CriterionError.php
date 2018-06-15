@@ -546,5 +546,12 @@ class CriterionErrorEnum_CriterionError
      * Generated from protobuf enum <code>HOTEL_ADVANCE_BOOKING_WINDOW_OVERLAPS_WITH_EXISTING_CRITERION = 83;</code>
      */
     const HOTEL_ADVANCE_BOOKING_WINDOW_OVERLAPS_WITH_EXISTING_CRITERION = 83;
+    /**
+     * The field is not allowed to be set when the negative field is set to
+     * true, e.g. we don't allow bids in negative ad group or campaign criteria.
+     *
+     * Generated from protobuf enum <code>FIELD_INCOMPATIBLE_WITH_NEGATIVE_TARGETING = 84;</code>
+     */
+    const FIELD_INCOMPATIBLE_WITH_NEGATIVE_TARGETING = 84;
 }
 

@@ -28,11 +28,13 @@ final class ArgumentNames
     const CAMPAIGN_BUDGET_ID = 'campaignBudgetId';
     const CAMPAIGN_ID = 'campaignId';
     const CHECK_IN_DAY_CRITERION_ID = 'checkInDayCriterionId';
+    const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
     const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
     const CRITERION_ID = 'criterionId';
     const CUSTOMER_ID = 'customerId';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     const KEYWORD_TEXT = 'keywordText';
+    const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     const RECOMMENDATION_ID = 'recommendationId';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
@@ -41,12 +43,15 @@ final class ArgumentNames
         self::ARTIFACT_NAME => 'The artifact name',
         self::CAMPAIGN_BUDGET_ID => 'The campaign budget ID',
         self::CAMPAIGN_ID => 'The campaign ID',
+        self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
         self::KEYWORD_TEXT => 'The keyword text',
+        self::PERCENT_CPC_BID_MICRO_AMOUNT =>
+            'The CPC bid micro amount for the Percent CPC bidding strategy',
         self::RECOMMENDATION_ID => 'The recommendation ID'
     ];
 }

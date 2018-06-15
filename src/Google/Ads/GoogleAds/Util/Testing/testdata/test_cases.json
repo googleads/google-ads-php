@@ -96,5 +96,17 @@
       }]
     },
     "expected_mask": {}
+  }, {
+    "description": "Create message with nested wrapper",
+    "original_resource": {
+    },
+    "modified_resource": {
+      "foo": {
+        "bar": {
+          "nested_wrapper": true
+        }
+      }
+    },
+    "expected_mask": "foo.num,foo.bar.num,foo.bar.nested_wrapper,foo.bars"
   }
 ]}
