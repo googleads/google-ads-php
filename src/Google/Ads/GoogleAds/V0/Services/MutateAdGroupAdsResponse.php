@@ -22,9 +22,19 @@ class MutateAdGroupAdsResponse extends \Google\Protobuf\Internal\Message
      */
     private $results;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Ads\GoogleAds\V0\Services\MutateAdGroupAdResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *           All results for the mutate.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\AdGroupAdService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

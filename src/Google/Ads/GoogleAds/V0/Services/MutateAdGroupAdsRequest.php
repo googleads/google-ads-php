@@ -28,9 +28,21 @@ class MutateAdGroupAdsRequest extends \Google\Protobuf\Internal\Message
      */
     private $operations;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $customer_id
+     *           The ID of the customer whose ads are being modified.
+     *     @type \Google\Ads\GoogleAds\V0\Services\AdGroupAdOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *           The list of operations to perform on individual ads.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\AdGroupAdService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

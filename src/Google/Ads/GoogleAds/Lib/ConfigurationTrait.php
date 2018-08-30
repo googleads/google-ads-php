@@ -17,9 +17,8 @@
 
 namespace Google\Ads\GoogleAds\Lib;
 
-use Google\ApiCore\GapicClientTrait;
-use Google\ApiCore\Middleware\FixedHeaderMiddleware;
 use Google\Auth\FetchAuthTokenInterface;
+use Psr\Log\LoggerInterface;
 
 /**
  * Holds variables and getter methods related to Google Ads configuration.
@@ -29,6 +28,8 @@ trait ConfigurationTrait
     private $developerToken;
     private $endpoint;
     private $oAuth2Credential;
+    private $logger;
+    private $logLevel;
 
     /**
      * Gets the developer token.
@@ -58,5 +59,25 @@ trait ConfigurationTrait
     public function getOAuth2Credential()
     {
         return $this->oAuth2Credential;
+    }
+
+    /**
+     * Gets the logger used to log requests and responses.
+     *
+     * @return LoggerInterface
+     */
+    public function getLogger()
+    {
+        return $this->logger;
+    }
+
+    /**
+     * Gets the PSR-3 log level for Google Ads API requests and responses.
+     *
+     * @return string the log level
+     */
+    public function getLogLevel()
+    {
+        return $this->logLevel;
     }
 }

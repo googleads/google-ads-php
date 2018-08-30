@@ -23,9 +23,28 @@ class CampaignBudgetOperation extends \Google\Protobuf\Internal\Message
     private $update_mask = null;
     protected $operation;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\FieldMask $update_mask
+     *           FieldMask that determines which resource fields are modified in an update.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignBudget $create
+     *           Create operation: No resource name is expected for the new budget.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignBudget $update
+     *           Update operation: The campaign budget is expected to have a valid
+     *           resource name.
+     *     @type string $remove
+     *           Remove operation: A resource name for the removed budget is expected, in
+     *           this format:
+     *           `customers/{customer_id}/campaignBudgets/{budget_id}`
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\CampaignBudgetService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

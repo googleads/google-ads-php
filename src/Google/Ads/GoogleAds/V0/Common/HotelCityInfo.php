@@ -22,9 +22,19 @@ class HotelCityInfo extends \Google\Protobuf\Internal\Message
      */
     private $city_criterion = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\StringValue $city_criterion
+     *           The Geo Target Constant resource name.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Criteria::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -4,43 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible new resource creation errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\NewResourceCreationErrorEnum\NewResourceCreationError</code>
- */
-class NewResourceCreationErrorEnum_NewResourceCreationError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\NewResourceCreationErrorEnum\NewResourceCreationError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Do not set the id field while creating new entities.
-     *
-     * Generated from protobuf enum <code>CANNOT_SET_ID_FOR_ADD = 2;</code>
-     */
-    const CANNOT_SET_ID_FOR_ADD = 2;
-    /**
-     * Creating more than one resource with the same temp ID is not allowed.
-     *
-     * Generated from protobuf enum <code>DUPLICATE_TEMP_IDS = 3;</code>
-     */
-    const DUPLICATE_TEMP_IDS = 3;
-    /**
-     * Parent object with specified temp id failed validation, so no deep
-     * validation will be done for this child resource.
-     *
-     * Generated from protobuf enum <code>TEMP_ID_RESOURCE_HAD_ERRORS = 4;</code>
-     */
-    const TEMP_ID_RESOURCE_HAD_ERRORS = 4;
+    class NewResourceCreationErrorEnum_NewResourceCreationError {}
 }
+class_exists(NewResourceCreationErrorEnum\NewResourceCreationError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\NewResourceCreationErrorEnum_NewResourceCreationError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\NewResourceCreationErrorEnum\NewResourceCreationError instead', E_USER_DEPRECATED);
 

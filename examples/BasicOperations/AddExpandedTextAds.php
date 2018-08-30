@@ -27,10 +27,10 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\ResourceNames;
-use Google\Ads\GoogleAds\V0\Common\Ad;
 use Google\Ads\GoogleAds\V0\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum_AdGroupAdStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V0\Resources\Ad;
 use Google\Ads\GoogleAds\V0\Resources\AdGroupAd;
 use Google\Ads\GoogleAds\V0\Services\AdGroupAdOperation;
 use Google\ApiCore\ApiException;
@@ -105,38 +105,30 @@ class AddExpandedTextAds
         $customerId,
         $adGroupId
     ) {
-        $wrappedAdGroupResourceName = new StringValue();
-        $wrappedAdGroupResourceName->setValue(ResourceNames::forAdGroup($customerId, $adGroupId));
+        $adGroupResourceName =
+            new StringValue(['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]);
 
         $operations = [];
         for ($i = 0; $i < self::NUMBER_OF_ADS_TO_ADD; $i++) {
             // Creates the expanded text ad info.
-            $expandedTextAdInfo = new ExpandedTextAdInfo();
-
-            $wrappedHeadlinePart1 = new StringValue();
-            $wrappedHeadlinePart1->setValue('Cruise to Mars #' . uniqid());
-            $expandedTextAdInfo->setHeadlinePart1($wrappedHeadlinePart1);
-
-            $wrappedHeadlinePart2 = new StringValue();
-            $wrappedHeadlinePart2->setValue('Best Space Cruise Line');
-            $expandedTextAdInfo->setHeadlinePart2($wrappedHeadlinePart2);
-
-            $wrappedDescription = new StringValue();
-            $wrappedDescription->setValue('Buy your tickets now!');
-            $expandedTextAdInfo->setDescription($wrappedDescription);
+            $expandedTextAdInfo = new ExpandedTextAdInfo([
+                'headline_part1' => new StringValue(['value' => 'Cruise to Mars #' . uniqid()]),
+                'headline_part2' => new StringValue(['value' => 'Best Space Cruise Line']),
+                'description' => new StringValue(['value' => 'Buy your tickets now!'])
+            ]);
 
             // Sets the expanded text ad info on an Ad.
-            $ad = new Ad();
-            $ad->setExpandedTextAd($expandedTextAdInfo);
-            $wrappedFinalUrl = new StringValue();
-            $wrappedFinalUrl->setValue('http://www.example.com');
-            $ad->setFinalUrls([$wrappedFinalUrl]);
+            $ad = new Ad([
+                'expanded_text_ad' => $expandedTextAdInfo,
+                'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+            ]);
 
             // Creates an ad group ad to hold the above ad.
-            $adGroupAd = new AdGroupAd();
-            $adGroupAd->setAdGroup($wrappedAdGroupResourceName);
-            $adGroupAd->setStatus(AdGroupAdStatusEnum_AdGroupAdStatus::PAUSED);
-            $adGroupAd->setAd($ad);
+            $adGroupAd = new AdGroupAd([
+                'ad_group' => $adGroupResourceName,
+                'status' => AdGroupAdStatus::PAUSED,
+                'ad' => $ad
+            ]);
 
             // Creates an ad group ad operation and add it to the operations array.
             $adGroupAdOperation = new AdGroupAdOperation();

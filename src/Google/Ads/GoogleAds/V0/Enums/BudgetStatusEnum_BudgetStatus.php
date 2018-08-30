@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Possible statuses of a Budget.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\BudgetStatusEnum\BudgetStatus</code>
- */
-class BudgetStatusEnum_BudgetStatus
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\BudgetStatusEnum\BudgetStatus instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Budget is enabled.
-     *
-     * Generated from protobuf enum <code>ENABLED = 2;</code>
-     */
-    const ENABLED = 2;
-    /**
-     * Budget is removed.
-     *
-     * Generated from protobuf enum <code>REMOVED = 3;</code>
-     */
-    const REMOVED = 3;
+    class BudgetStatusEnum_BudgetStatus {}
 }
+class_exists(BudgetStatusEnum\BudgetStatus::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\BudgetStatusEnum_BudgetStatus is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\BudgetStatusEnum\BudgetStatus instead', E_USER_DEPRECATED);
 

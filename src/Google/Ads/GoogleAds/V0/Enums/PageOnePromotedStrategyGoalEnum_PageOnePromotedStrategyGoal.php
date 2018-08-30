@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enum describing possible strategy goals.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\PageOnePromotedStrategyGoalEnum\PageOnePromotedStrategyGoal</code>
- */
-class PageOnePromotedStrategyGoalEnum_PageOnePromotedStrategyGoal
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\PageOnePromotedStrategyGoalEnum\PageOnePromotedStrategyGoal instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * First page on google.com.
-     *
-     * Generated from protobuf enum <code>FIRST_PAGE = 2;</code>
-     */
-    const FIRST_PAGE = 2;
-    /**
-     * Top slots of the first page on google.com.
-     *
-     * Generated from protobuf enum <code>FIRST_PAGE_PROMOTED = 3;</code>
-     */
-    const FIRST_PAGE_PROMOTED = 3;
+    class PageOnePromotedStrategyGoalEnum_PageOnePromotedStrategyGoal {}
 }
+class_exists(PageOnePromotedStrategyGoalEnum\PageOnePromotedStrategyGoal::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\PageOnePromotedStrategyGoalEnum_PageOnePromotedStrategyGoal is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\PageOnePromotedStrategyGoalEnum\PageOnePromotedStrategyGoal instead', E_USER_DEPRECATED);
 

@@ -22,9 +22,19 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
      */
     private $enhanced_cpc_enabled = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\BoolValue $enhanced_cpc_enabled
+     *           Whether bids are to be enhanced based on conversion optimizer data.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Bidding::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

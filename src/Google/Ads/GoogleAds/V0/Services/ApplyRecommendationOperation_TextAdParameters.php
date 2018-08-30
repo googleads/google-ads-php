@@ -4,57 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Services;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * Parameters to use when applying a text ad recommendation.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.services.ApplyRecommendationOperation.TextAdParameters</code>
- */
-class ApplyRecommendationOperation_TextAdParameters extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * New ad to add to recommended ad group. All necessary fields need to be
-     * set in this message. This is a required field.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TextAdParameters instead.
+     * @deprecated
      */
-    private $ad = null;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Services\RecommendationService::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * New ad to add to recommended ad group. All necessary fields need to be
-     * set in this message. This is a required field.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 1;</code>
-     * @return \Google\Ads\GoogleAds\V0\Common\Ad
-     */
-    public function getAd()
-    {
-        return $this->ad;
-    }
-
-    /**
-     * New ad to add to recommended ad group. All necessary fields need to be
-     * set in this message. This is a required field.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 1;</code>
-     * @param \Google\Ads\GoogleAds\V0\Common\Ad $var
-     * @return $this
-     */
-    public function setAd($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\Ad::class);
-        $this->ad = $var;
-
-        return $this;
-    }
-
+    class ApplyRecommendationOperation_TextAdParameters {}
 }
+class_exists(ApplyRecommendationOperation\TextAdParameters::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_TextAdParameters is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TextAdParameters instead', E_USER_DEPRECATED);
 

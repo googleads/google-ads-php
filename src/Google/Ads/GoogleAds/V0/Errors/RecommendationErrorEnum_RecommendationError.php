@@ -4,63 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible errors from applying a recommendation.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\RecommendationErrorEnum\RecommendationError</code>
- */
-class RecommendationErrorEnum_RecommendationError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\RecommendationErrorEnum\RecommendationError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * The specified budget amount is too low e.g. lower than minimum currency
-     * unit or lower than ad group minimum cost-per-click.
-     *
-     * Generated from protobuf enum <code>BUDGET_AMOUNT_TOO_SMALL = 2;</code>
-     */
-    const BUDGET_AMOUNT_TOO_SMALL = 2;
-    /**
-     * The specified budget amount is too large.
-     *
-     * Generated from protobuf enum <code>BUDGET_AMOUNT_TOO_LARGE = 3;</code>
-     */
-    const BUDGET_AMOUNT_TOO_LARGE = 3;
-    /**
-     * The specified budget amount is not a valid amount. e.g. not a multiple
-     * of minimum currency unit.
-     *
-     * Generated from protobuf enum <code>INVALID_BUDGET_AMOUNT = 4;</code>
-     */
-    const INVALID_BUDGET_AMOUNT = 4;
-    /**
-     * The specified keyword or ad violates ad policy.
-     *
-     * Generated from protobuf enum <code>POLICY_ERROR = 5;</code>
-     */
-    const POLICY_ERROR = 5;
-    /**
-     * The specified bid amount is not valid. e.g. too many fractional digits,
-     * or negative amount.
-     *
-     * Generated from protobuf enum <code>INVALID_BID_AMOUNT = 6;</code>
-     */
-    const INVALID_BID_AMOUNT = 6;
-    /**
-     * The number of keywords in ad group have reached the maximum allowed.
-     *
-     * Generated from protobuf enum <code>ADGROUP_KEYWORD_LIMIT = 7;</code>
-     */
-    const ADGROUP_KEYWORD_LIMIT = 7;
+    class RecommendationErrorEnum_RecommendationError {}
 }
+class_exists(RecommendationErrorEnum\RecommendationError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\RecommendationErrorEnum_RecommendationError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\RecommendationErrorEnum\RecommendationError instead', E_USER_DEPRECATED);
 

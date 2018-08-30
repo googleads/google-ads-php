@@ -48,9 +48,29 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     private $target_type = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the geo target constant.
+     *           Geo target constant resource names have the form:
+     *           `geoTargetConstants/{geo_target_constant_id}`
+     *     @type \Google\Protobuf\Int64Value $id
+     *           The ID of the geo target constant.
+     *     @type \Google\Protobuf\StringValue $name
+     *           Geo target constant English name.
+     *     @type \Google\Protobuf\StringValue $country_code
+     *           The ISO-3166-1 alpha-2 country code that is associated with the target.
+     *     @type \Google\Protobuf\StringValue $target_type
+     *           Geo target constant target type.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

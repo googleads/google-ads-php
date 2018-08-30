@@ -38,9 +38,26 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      */
     private $cpc_bid_floor_micros = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\DoubleValue $target_roas
+     *           Required. The desired revenue (based on conversion data) per unit of spend.
+     *           Value must be between 0.01 and 1000.0, inclusive.
+     *     @type \Google\Protobuf\Int64Value $cpc_bid_ceiling_micros
+     *           Maximum bid limit that can be set by the bid strategy.
+     *           The limit applies to all keywords managed by the strategy.
+     *     @type \Google\Protobuf\Int64Value $cpc_bid_floor_micros
+     *           Minimum bid limit that can be set by the bid strategy.
+     *           The limit applies to all keywords managed by the strategy.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Bidding::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

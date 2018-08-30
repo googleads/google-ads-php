@@ -17,9 +17,35 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
 {
     protected $dimension;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Ads\GoogleAds\V0\Common\ListingBrandInfo $listing_brand
+     *           Brand of the listing.
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelIdInfo $hotel_id
+     *           Advertiser-specific hotel ID.
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelClassInfo $hotel_class
+     *           Class of the hotel as a number of stars 1 to 5.
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelCountryRegionInfo $hotel_country_region
+     *           Country or Region the hotel is located in.
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelStateInfo $hotel_state
+     *           State the hotel is located in.
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelCityInfo $hotel_city
+     *           City the hotel is located in.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ListingCustomAttributeInfo $listing_custom_attribute
+     *           Listing custom attribute.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ProductConditionInfo $product_condition
+     *           Condition of a product offer.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ProductTypeInfo $product_type
+     *           Type of a product offer.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Criteria::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -200,6 +226,58 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ListingCustomAttributeInfo::class);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Condition of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductConditionInfo product_condition = 10;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ProductConditionInfo
+     */
+    public function getProductCondition()
+    {
+        return $this->readOneof(10);
+    }
+
+    /**
+     * Condition of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductConditionInfo product_condition = 10;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ProductConditionInfo $var
+     * @return $this
+     */
+    public function setProductCondition($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ProductConditionInfo::class);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Type of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductTypeInfo product_type = 12;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ProductTypeInfo
+     */
+    public function getProductType()
+    {
+        return $this->readOneof(12);
+    }
+
+    /**
+     * Type of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductTypeInfo product_type = 12;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ProductTypeInfo $var
+     * @return $this
+     */
+    public function setProductType($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ProductTypeInfo::class);
+        $this->writeOneof(12, $var);
 
         return $this;
     }

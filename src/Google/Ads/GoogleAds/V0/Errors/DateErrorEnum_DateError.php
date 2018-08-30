@@ -4,72 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible date errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\DateErrorEnum\DateError</code>
- */
-class DateErrorEnum_DateError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\DateErrorEnum\DateError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Given field values do not correspond to a valid date.
-     *
-     * Generated from protobuf enum <code>INVALID_FIELD_VALUES_IN_DATE = 2;</code>
-     */
-    const INVALID_FIELD_VALUES_IN_DATE = 2;
-    /**
-     * Given field values do not correspond to a valid date time.
-     *
-     * Generated from protobuf enum <code>INVALID_FIELD_VALUES_IN_DATE_TIME = 3;</code>
-     */
-    const INVALID_FIELD_VALUES_IN_DATE_TIME = 3;
-    /**
-     * The string date's format should be yyyymmdd.
-     *
-     * Generated from protobuf enum <code>INVALID_STRING_DATE = 4;</code>
-     */
-    const INVALID_STRING_DATE = 4;
-    /**
-     * The string date time's format should be yyyymmdd hhmmss [tz].
-     *
-     * Generated from protobuf enum <code>INVALID_STRING_DATE_TIME = 6;</code>
-     */
-    const INVALID_STRING_DATE_TIME = 6;
-    /**
-     * Date is before allowed minimum.
-     *
-     * Generated from protobuf enum <code>EARLIER_THAN_MINIMUM_DATE = 7;</code>
-     */
-    const EARLIER_THAN_MINIMUM_DATE = 7;
-    /**
-     * Date is after allowed maximum.
-     *
-     * Generated from protobuf enum <code>LATER_THAN_MAXIMUM_DATE = 8;</code>
-     */
-    const LATER_THAN_MAXIMUM_DATE = 8;
-    /**
-     * Date range bounds are not in order.
-     *
-     * Generated from protobuf enum <code>DATE_RANGE_MINIMUM_DATE_LATER_THAN_MAXIMUM_DATE = 9;</code>
-     */
-    const DATE_RANGE_MINIMUM_DATE_LATER_THAN_MAXIMUM_DATE = 9;
-    /**
-     * Both dates in range are null.
-     *
-     * Generated from protobuf enum <code>DATE_RANGE_MINIMUM_AND_MAXIMUM_DATES_BOTH_NULL = 10;</code>
-     */
-    const DATE_RANGE_MINIMUM_AND_MAXIMUM_DATES_BOTH_NULL = 10;
+    class DateErrorEnum_DateError {}
 }
+class_exists(DateErrorEnum\DateError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\DateErrorEnum_DateError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\DateErrorEnum\DateError instead', E_USER_DEPRECATED);
 

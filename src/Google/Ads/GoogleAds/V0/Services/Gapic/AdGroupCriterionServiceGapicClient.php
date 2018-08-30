@@ -21,10 +21,6 @@
  * https://github.com/google/googleapis/blob/master/google/ads/googleads/v0/services/ad_group_criterion_service.proto
  * and updates to that file get reflected here through a refresh process.
  *
- * EXPERIMENTAL: This client library class has not yet been declared GA (1.0). This means that
- * even though we intend the surface to be stable, we may make backwards incompatible changes
- * if necessary.
- *
  * @experimental
  */
 
@@ -46,10 +42,6 @@ use Google\ApiCore\ValidationException;
 
 /**
  * Service Description: Service to manage ad group criteria.
- *
- * EXPERIMENTAL: This client library class has not yet been declared GA (1.0). This means that
- * even though we intend the surface to be stable, we may make backwards incompatible changes
- * if necessary.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -252,7 +244,7 @@ class AdGroupCriterionServiceGapicClient
      * @throws ValidationException
      * @experimental
      */
-    public function __construct($options = [])
+    public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
@@ -288,7 +280,7 @@ class AdGroupCriterionServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function getAdGroupCriterion($resourceName, $optionalArgs = [])
+    public function getAdGroupCriterion($resourceName, array $optionalArgs = [])
     {
         $request = new GetAdGroupCriterionRequest();
         $request->setResourceName($resourceName);
@@ -333,7 +325,7 @@ class AdGroupCriterionServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function mutateAdGroupCriteria($customerId, $operations, $optionalArgs = [])
+    public function mutateAdGroupCriteria($customerId, $operations, array $optionalArgs = [])
     {
         $request = new MutateAdGroupCriteriaRequest();
         $request->setCustomerId($customerId);

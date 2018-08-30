@@ -28,9 +28,21 @@ class ListingCustomAttributeInfo extends \Google\Protobuf\Internal\Message
      */
     private $index = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\StringValue $value
+     *           String value of the listing custom attribute.
+     *     @type int $index
+     *           Indicates the index of the custom attribute.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Criteria::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

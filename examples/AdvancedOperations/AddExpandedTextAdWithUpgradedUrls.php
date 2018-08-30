@@ -26,11 +26,11 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V0\Common\Ad;
 use Google\Ads\GoogleAds\V0\Common\CustomParameter;
 use Google\Ads\GoogleAds\V0\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum_AdGroupAdStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V0\Resources\Ad;
 use Google\Ads\GoogleAds\V0\Resources\AdGroupAd;
 use Google\Ads\GoogleAds\V0\Services\AdGroupAdOperation;
 use Google\Ads\GoogleAds\V0\Services\AdGroupServiceClient;
@@ -108,80 +108,58 @@ class AddExpandedTextAdWithUpgradedUrls
         $adGroupId
     ) {
         // Creates the expanded text ad info.
-        $expandedTextAdInfo = new ExpandedTextAdInfo();
+        $expandedTextAdInfo = new ExpandedTextAdInfo([
+            'headline_part1' => new StringValue(['value' => 'Luxury Cruise to Mars']),
+            'headline_part2' => new StringValue(['value' => 'Visit the Red Planet in style.']),
+            'description' => new StringValue(['value' => 'Low-gravity fun for everyone!'])
+        ]);
 
-        $wrappedHeadlinePart1 = new StringValue();
-        $wrappedHeadlinePart1->setValue('Luxury Cruise to Mars');
-        $expandedTextAdInfo->setHeadlinePart1($wrappedHeadlinePart1);
-
-        $wrappedHeadlinePart2 = new StringValue();
-        $wrappedHeadlinePart2->setValue('Visit the Red Planet in style.');
-        $expandedTextAdInfo->setHeadlinePart2($wrappedHeadlinePart2);
-
-        $wrappedDescription = new StringValue();
-        $wrappedDescription->setValue('Low-gravity fun for everyone!');
-        $expandedTextAdInfo->setDescription($wrappedDescription);
-
-        // Sets the expanded text ad info on an Ad.
-        $ad = new Ad();
-        $ad->setExpandedTextAd($expandedTextAdInfo);
-
-        // Specifies a list of final URLs. This field cannot be set if URL field is set. This may
-        // be specified at ad and criterion levels.
-        $wrappedFinalUrl1 = new StringValue();
-        $wrappedFinalUrl1->setValue('http://www.example.com/cruise/space/');
-        $wrappedFinalUrl2 = new StringValue();
-        $wrappedFinalUrl2->setValue('http://www.example.com/locations/mars/');
-        $ad->setFinalUrls([$wrappedFinalUrl1, $wrappedFinalUrl2]);
+        $ad = new Ad([
+            // Sets the expanded text ad info on an Ad.
+            'expanded_text_ad' => $expandedTextAdInfo,
+            // Specifies a list of final URLs. This field cannot be set if URL field is set. This
+            // may be specified at ad and criterion levels.
+            'final_urls' => [
+                new StringValue(['value' => 'http://www.example.com/cruise/space/']),
+                new StringValue(['value' => 'http://www.example.com/locations/mars/'])
+            ],
+            // Specifies a tracking URL for 3rd party tracking provider. You may specify one at
+            // customer, campaign, ad group, ad or criterion levels.
+            'tracking_url_template' => new StringValue(
+                ['value' =>
+                    'http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}']
+            ),
+            // Since your tracking URL has two custom parameters, provide their values too. This can
+            // be provided at campaign, ad group, ad or criterion levels.
+            'url_custom_parameters' => [
+                new CustomParameter([
+                    'key' => new StringValue(['value' => 'season']),
+                    'value' => new StringValue(['value' => 'christmas'])
+                ]),
+                new CustomParameter([
+                    'key' => new StringValue(['value' => 'promocode']),
+                    'value' => new StringValue(['value' => 'NY123'])
+                ])
+            ]
+        ]);
 
         // Specifies a list of final mobile URLs. This field cannot be set if URL field is set, or
         // finalUrls is unset. This may be specified at ad and criterion levels.
         /*
-        $wrappedFinalMobileUrl1 = new StringValue();
-        $wrappedFinalMobileUrl1->setValue('http://mobile.example.com/cruise/space/');
-        $wrappedFinalMobileUrl2 = new StringValue();
-        $wrappedFinalMobileUrl2->setValue('http://mobile.example.com/locations/mars/');
-        $ad->setFinalMobileUrls([$wrappedFinalMobileUrl1, $wrappedFinalMobileUrl2]);
+        $ad->setFinalMobileUrls([
+            new StringValue(['value' => 'http://mobile.example.com/cruise/space/']),
+            new StringValue(['value' => 'http://mobile.example.com/locations/mars/'])
+        ]);
         */
 
-        // Specifies a tracking URL for 3rd party tracking provider. You may specify one at
-        // customer, campaign, ad group, ad or criterion levels.
-        $wrappedTrackingUrlTemplate = new StringValue();
-        $wrappedTrackingUrlTemplate->setValue(
-            'http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}'
-        );
-        $ad->setTrackingUrlTemplate($wrappedTrackingUrlTemplate);
-
-        // Since your tracking URL has two custom parameters, provide their values too. This can
-        // be provided at campaign, ad group, ad or criterion levels.
-        $wrappedCustomParamKey1 = new StringValue();
-        $wrappedCustomParamKey1->setValue('season');
-        $wrappedCustomParamValue1 = new StringValue();
-        $wrappedCustomParamValue1->setValue('christmas');
-        $customParam1 = new CustomParameter();
-        $customParam1->setKey($wrappedCustomParamKey1);
-        $customParam1->setValue($wrappedCustomParamValue1);
-
-        $wrappedCustomParamKey2 = new StringValue();
-        $wrappedCustomParamKey2->setValue('promocode');
-        $wrappedCustomParamValue2 = new StringValue();
-        $wrappedCustomParamValue2->setValue('NY123');
-        $customParam2 = new CustomParameter();
-        $customParam2->setKey($wrappedCustomParamKey2);
-        $customParam2->setValue($wrappedCustomParamValue2);
-
-        $ad->setUrlCustomParameters([$customParam1, $customParam2]);
-
         // Creates an ad group ad to hold the above ad.
-        $adGroupAd = new AdGroupAd();
-
-        $adGroupResourceName = AdGroupServiceClient::adGroupName($customerId, $adGroupId);
-        $wrappedAdGroupResourceName = new StringValue();
-        $wrappedAdGroupResourceName->setValue($adGroupResourceName);
-        $adGroupAd->setAdGroup($wrappedAdGroupResourceName);
-
-        $adGroupAd->setStatus(AdGroupAdStatusEnum_AdGroupAdStatus::PAUSED);
-        $adGroupAd->setAd($ad);
+        $adGroupAd = new AdGroupAd([
+            'ad_group' => new StringValue(
+                ['value' => AdGroupServiceClient::adGroupName($customerId, $adGroupId)]
+            ),
+            'status' => AdGroupAdStatus::PAUSED,
+            'ad' => $ad
+        ]);
 
         // Creates an ad group ad operation and add it to the operations array.
         $adGroupAdOperation = new AdGroupAdOperation();

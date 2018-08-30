@@ -23,9 +23,19 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
      */
     private $errors;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Ads\GoogleAds\V0\Errors\GoogleAdsError[]|\Google\Protobuf\Internal\RepeatedField $errors
+     *           The list of errors that occurred.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Errors\Errors::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

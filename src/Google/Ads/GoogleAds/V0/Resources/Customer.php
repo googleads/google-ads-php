@@ -70,9 +70,39 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     private $has_partners_badge = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the customer.
+     *           Customer resource names have the form:
+     *           `customers/{customer_id}`
+     *     @type \Google\Protobuf\Int64Value $id
+     *           The ID of the customer.
+     *     @type \Google\Protobuf\StringValue $descriptive_name
+     *           Optional, non-unique descriptive name of the customer.
+     *     @type \Google\Protobuf\StringValue $currency_code
+     *           The currency in which the account operates.
+     *           A subset of the currency codes from the ISO 4217 standard is
+     *           supported.
+     *     @type \Google\Protobuf\StringValue $time_zone
+     *           The local timezone ID of the customer.
+     *     @type \Google\Protobuf\StringValue $tracking_url_template
+     *           The URL template for constructing a tracking URL out of parameters.
+     *     @type \Google\Protobuf\BoolValue $auto_tagging_enabled
+     *           Whether auto-tagging is enabled for the customer.
+     *     @type \Google\Protobuf\BoolValue $has_partners_badge
+     *           Whether the Customer has a Partners program badge. If the Customer is not
+     *           associated with the Partners program, this will be false. For more
+     *           information, see https://support.google.com/partners/answer/3125774
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\Customer::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

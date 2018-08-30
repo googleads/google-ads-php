@@ -18,7 +18,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the campaign criterion.
      * Campaign criterion resource names have the form:
-     * `customers/{customer_id}/campaignCriteria/{campaign_id}_{criterion_id}
+     * `customers/{customer_id}/campaignCriteria/{campaign_id}_{criterion_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
@@ -41,7 +41,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * The modifier for the bids when the criterion matches.
      * Allowable modifier values depend on the criterion:
      *  - 0.1 - 10.0: Location
-     *  - 0.1 - 4.0: Platform (mobile). Use 0 to opt out of mobile.
+     *  - 0.1 - 4.0: Device (mobile). Use 0 to opt out of mobile.
      *
      * Generated from protobuf field <code>.google.protobuf.FloatValue bid_modifier = 14;</code>
      */
@@ -60,15 +60,50 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     private $type = 0;
     protected $criterion;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the campaign criterion.
+     *           Campaign criterion resource names have the form:
+     *           `customers/{customer_id}/campaignCriteria/{campaign_id}_{criterion_id}`
+     *     @type \Google\Protobuf\StringValue $campaign
+     *           The campaign to which the criterion belongs.
+     *           This field must not be used in WHERE clauses.
+     *     @type \Google\Protobuf\Int64Value $criterion_id
+     *           The ID of the criterion.
+     *           This field is ignored during mutate.
+     *     @type \Google\Protobuf\FloatValue $bid_modifier
+     *           The modifier for the bids when the criterion matches.
+     *           Allowable modifier values depend on the criterion:
+     *            - 0.1 - 10.0: Location
+     *            - 0.1 - 4.0: Device (mobile). Use 0 to opt out of mobile.
+     *     @type \Google\Protobuf\BoolValue $negative
+     *           Whether to target (`false`) or exclude (`true`) the criterion.
+     *     @type int $type
+     *           The type of the criterion.
+     *     @type \Google\Ads\GoogleAds\V0\Common\KeywordInfo $keyword
+     *           Keyword.
+     *     @type \Google\Ads\GoogleAds\V0\Common\LocationInfo $location
+     *           Location.
+     *     @type \Google\Ads\GoogleAds\V0\Common\DeviceInfo $device
+     *           Device.
+     *     @type \Google\Ads\GoogleAds\V0\Common\AdScheduleInfo $ad_schedule
+     *           Ad Schedule.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\CampaignCriterion::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
      * The resource name of the campaign criterion.
      * Campaign criterion resource names have the form:
-     * `customers/{customer_id}/campaignCriteria/{campaign_id}_{criterion_id}
+     * `customers/{customer_id}/campaignCriteria/{campaign_id}_{criterion_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @return string
@@ -81,7 +116,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the campaign criterion.
      * Campaign criterion resource names have the form:
-     * `customers/{customer_id}/campaignCriteria/{campaign_id}_{criterion_id}
+     * `customers/{customer_id}/campaignCriteria/{campaign_id}_{criterion_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @param string $var
@@ -155,7 +190,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * The modifier for the bids when the criterion matches.
      * Allowable modifier values depend on the criterion:
      *  - 0.1 - 10.0: Location
-     *  - 0.1 - 4.0: Platform (mobile). Use 0 to opt out of mobile.
+     *  - 0.1 - 4.0: Device (mobile). Use 0 to opt out of mobile.
      *
      * Generated from protobuf field <code>.google.protobuf.FloatValue bid_modifier = 14;</code>
      * @return \Google\Protobuf\FloatValue
@@ -169,7 +204,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * The modifier for the bids when the criterion matches.
      * Allowable modifier values depend on the criterion:
      *  - 0.1 - 10.0: Location
-     *  - 0.1 - 4.0: Platform (mobile). Use 0 to opt out of mobile.
+     *  - 0.1 - 4.0: Device (mobile). Use 0 to opt out of mobile.
      *
      * Generated from protobuf field <code>.google.protobuf.FloatValue bid_modifier = 14;</code>
      * @param \Google\Protobuf\FloatValue $var
@@ -288,27 +323,53 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Platform.
+     * Device.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PlatformInfo platform = 13;</code>
-     * @return \Google\Ads\GoogleAds\V0\Common\PlatformInfo
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.DeviceInfo device = 13;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\DeviceInfo
      */
-    public function getPlatform()
+    public function getDevice()
     {
         return $this->readOneof(13);
     }
 
     /**
-     * Platform.
+     * Device.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PlatformInfo platform = 13;</code>
-     * @param \Google\Ads\GoogleAds\V0\Common\PlatformInfo $var
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.DeviceInfo device = 13;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\DeviceInfo $var
      * @return $this
      */
-    public function setPlatform($var)
+    public function setDevice($var)
     {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PlatformInfo::class);
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\DeviceInfo::class);
         $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * Ad Schedule.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.AdScheduleInfo ad_schedule = 15;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\AdScheduleInfo
+     */
+    public function getAdSchedule()
+    {
+        return $this->readOneof(15);
+    }
+
+    /**
+     * Ad Schedule.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.AdScheduleInfo ad_schedule = 15;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\AdScheduleInfo $var
+     * @return $this
+     */
+    public function setAdSchedule($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\AdScheduleInfo::class);
+        $this->writeOneof(15, $var);
 
         return $this;
     }

@@ -4,54 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Resources;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * Campaign-level settings for hotel ads.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.resources.Campaign.HotelSettingInfo</code>
- */
-class Campaign_HotelSettingInfo extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * The linked Hotel Center account.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Resources\Campaign\HotelSettingInfo instead.
+     * @deprecated
      */
-    private $hotel_center_id = null;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\Campaign::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * The linked Hotel Center account.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getHotelCenterId()
-    {
-        return $this->hotel_center_id;
-    }
-
-    /**
-     * The linked Hotel Center account.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setHotelCenterId($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->hotel_center_id = $var;
-
-        return $this;
-    }
-
+    class Campaign_HotelSettingInfo {}
 }
+class_exists(Campaign\HotelSettingInfo::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Resources\Campaign_HotelSettingInfo is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Resources\Campaign\HotelSettingInfo instead', E_USER_DEPRECATED);
 

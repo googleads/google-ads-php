@@ -62,9 +62,38 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     private $raise_cpc_bid_when_quality_score_is_low = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $strategy_goal
+     *           The strategy goal of where impressions are desired to be shown on
+     *           search result pages.
+     *     @type \Google\Protobuf\Int64Value $cpc_bid_ceiling_micros
+     *           Maximum bid limit that can be set by the bid strategy.
+     *           The limit applies to all keywords managed by the strategy.
+     *     @type \Google\Protobuf\DoubleValue $bid_modifier
+     *           Bid multiplier to be applied to the relevant bid estimate (depending on
+     *           the `strategy_goal`) in determining a keyword's new CPC bid.
+     *     @type \Google\Protobuf\BoolValue $only_raise_cpc_bids
+     *           Whether the strategy should always follow bid estimate changes, or only
+     *           increase.
+     *           If false, always sets a keyword's new bid to the current bid estimate.
+     *           If true, only updates a keyword's bid if the current bid estimate is
+     *           greater than the current bid.
+     *     @type \Google\Protobuf\BoolValue $raise_cpc_bid_when_budget_constrained
+     *           Whether the strategy is allowed to raise bids when the throttling
+     *           rate of the budget it is serving out of rises above a threshold.
+     *     @type \Google\Protobuf\BoolValue $raise_cpc_bid_when_quality_score_is_low
+     *           Whether the strategy is allowed to raise bids on keywords with
+     *           lower-range quality scores.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Bidding::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

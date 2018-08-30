@@ -29,9 +29,22 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
      */
     private $field_path_elements;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\Int64Value $operation_index
+     *           The mutate operation that failed
+     *     @type \Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement[]|\Google\Protobuf\Internal\RepeatedField $field_path_elements
+     *           A field path that indicates which field was invalid in the resource being
+     *           mutated.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Errors\Errors::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -77,12 +90,12 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
      * mutated.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.errors.ErrorLocation.FieldPathElement field_path_elements = 2;</code>
-     * @param \Google\Ads\GoogleAds\V0\Errors\ErrorLocation_FieldPathElement[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFieldPathElements($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Errors\ErrorLocation_FieldPathElement::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement::class);
         $this->field_path_elements = $arr;
 
         return $this;

@@ -21,10 +21,6 @@
  * https://github.com/google/googleapis/blob/master/google/ads/googleads/v0/services/google_ads_service.proto
  * and updates to that file get reflected here through a refresh process.
  *
- * EXPERIMENTAL: This client library class has not yet been declared GA (1.0). This means that
- * even though we intend the surface to be stable, we may make backwards incompatible changes
- * if necessary.
- *
  * @experimental
  */
 
@@ -43,10 +39,6 @@ use Google\ApiCore\ValidationException;
 /**
  * Service Description: Service to fetch data and metrics across resources.
  *
- * EXPERIMENTAL: This client library class has not yet been declared GA (1.0). This means that
- * even though we intend the surface to be stable, we may make backwards incompatible changes
- * if necessary.
- *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -55,18 +47,21 @@ use Google\ApiCore\ValidationException;
  * try {
  *     $customerId = '';
  *     $query = '';
- *     // Iterate through all elements
- *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
- *     }
- *
- *     // OR iterate over pages of elements
+ *     // Iterate over pages of elements
  *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
  *     foreach ($pagedResponse->iteratePages() as $page) {
  *         foreach ($page as $element) {
  *             // doSomethingWith($element);
  *         }
+ *     }
+ *
+ *
+ *     // Alternatively:
+ *
+ *     // Iterate through all elements
+ *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
+ *     foreach ($pagedResponse->iterateAllElements() as $element) {
+ *         // doSomethingWith($element);
  *     }
  * } finally {
  *     $googleAdsServiceClient->close();
@@ -175,7 +170,7 @@ class GoogleAdsServiceGapicClient
      * @throws ValidationException
      * @experimental
      */
-    public function __construct($options = [])
+    public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
@@ -190,18 +185,21 @@ class GoogleAdsServiceGapicClient
      * try {
      *     $customerId = '';
      *     $query = '';
-     *     // Iterate through all elements
-     *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     *
-     *     // OR iterate over pages of elements
+     *     // Iterate over pages of elements
      *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
      *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
      *     }
      * } finally {
      *     $googleAdsServiceClient->close();
@@ -234,7 +232,7 @@ class GoogleAdsServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function search($customerId, $query, $optionalArgs = [])
+    public function search($customerId, $query, array $optionalArgs = [])
     {
         $request = new SearchGoogleAdsRequest();
         $request->setCustomerId($customerId);

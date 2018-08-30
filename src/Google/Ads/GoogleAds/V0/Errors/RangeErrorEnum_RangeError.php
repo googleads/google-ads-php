@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible range errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\RangeErrorEnum\RangeError</code>
- */
-class RangeErrorEnum_RangeError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\RangeErrorEnum\RangeError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Too low.
-     *
-     * Generated from protobuf enum <code>TOO_LOW = 2;</code>
-     */
-    const TOO_LOW = 2;
-    /**
-     * Too high.
-     *
-     * Generated from protobuf enum <code>TOO_HIGH = 3;</code>
-     */
-    const TOO_HIGH = 3;
+    class RangeErrorEnum_RangeError {}
 }
+class_exists(RangeErrorEnum\RangeError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\RangeErrorEnum_RangeError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\RangeErrorEnum\RangeError instead', E_USER_DEPRECATED);
 

@@ -28,9 +28,21 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
      */
     private $max_days = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\Int64Value $min_days
+     *           Low end of the number of days prior to the stay.
+     *     @type \Google\Protobuf\Int64Value $max_days
+     *           High end of the number of days prior to the stay.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Criteria::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

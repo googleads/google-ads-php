@@ -4,54 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible field errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\FieldErrorEnum\FieldError</code>
- */
-class FieldErrorEnum_FieldError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\FieldErrorEnum\FieldError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * The required field was not present in the resource.
-     *
-     * Generated from protobuf enum <code>REQUIRED = 2;</code>
-     */
-    const REQUIRED = 2;
-    /**
-     * The field attempted to be mutated is immutable.
-     *
-     * Generated from protobuf enum <code>IMMUTABLE_FIELD = 3;</code>
-     */
-    const IMMUTABLE_FIELD = 3;
-    /**
-     * The field's value is invalid.
-     *
-     * Generated from protobuf enum <code>INVALID_VALUE = 4;</code>
-     */
-    const INVALID_VALUE = 4;
-    /**
-     * The field cannot be set.
-     *
-     * Generated from protobuf enum <code>VALUE_MUST_BE_UNSET = 5;</code>
-     */
-    const VALUE_MUST_BE_UNSET = 5;
-    /**
-     * The required repeated field was empty.
-     *
-     * Generated from protobuf enum <code>REQUIRED_NONEMPTY_LIST = 6;</code>
-     */
-    const REQUIRED_NONEMPTY_LIST = 6;
+    class FieldErrorEnum_FieldError {}
 }
+class_exists(FieldErrorEnum\FieldError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\FieldErrorEnum_FieldError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\FieldErrorEnum\FieldError instead', E_USER_DEPRECATED);
 

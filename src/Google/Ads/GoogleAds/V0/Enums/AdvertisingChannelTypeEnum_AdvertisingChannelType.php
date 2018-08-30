@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enum describing the various advertising channel types.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType</code>
- */
-class AdvertisingChannelTypeEnum_AdvertisingChannelType
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Search Network. Includes display bundled, and Search+ campaigns.
-     *
-     * Generated from protobuf enum <code>SEARCH = 2;</code>
-     */
-    const SEARCH = 2;
-    /**
-     * Hotel Ads campaigns.
-     *
-     * Generated from protobuf enum <code>HOTEL = 5;</code>
-     */
-    const HOTEL = 5;
+    class AdvertisingChannelTypeEnum_AdvertisingChannelType {}
 }
+class_exists(AdvertisingChannelTypeEnum\AdvertisingChannelType::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum_AdvertisingChannelType is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType instead', E_USER_DEPRECATED);
 

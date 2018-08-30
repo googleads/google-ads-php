@@ -4,44 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible internal errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\InternalErrorEnum\InternalError</code>
- */
-class InternalErrorEnum_InternalError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\InternalErrorEnum\InternalError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Google Ads API encountered unexpected internal error.
-     *
-     * Generated from protobuf enum <code>INTERNAL_ERROR = 2;</code>
-     */
-    const INTERNAL_ERROR = 2;
-    /**
-     * The intended error code doesn't exist in any API version. This will be
-     * fixed by adding a new error code as soon as possible.
-     *
-     * Generated from protobuf enum <code>ERROR_CODE_NOT_PUBLISHED = 3;</code>
-     */
-    const ERROR_CODE_NOT_PUBLISHED = 3;
-    /**
-     * Google Ads API encountered an unexpected transient error. The user
-     * should retry their request in these cases.
-     *
-     * Generated from protobuf enum <code>TRANSIENT_ERROR = 4;</code>
-     */
-    const TRANSIENT_ERROR = 4;
+    class InternalErrorEnum_InternalError {}
 }
+class_exists(InternalErrorEnum\InternalError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\InternalErrorEnum_InternalError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\InternalErrorEnum\InternalError instead', E_USER_DEPRECATED);
 

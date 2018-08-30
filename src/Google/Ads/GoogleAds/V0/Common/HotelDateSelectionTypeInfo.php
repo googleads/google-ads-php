@@ -15,10 +15,52 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class HotelDateSelectionTypeInfo extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Type of the hotel date selection
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType type = 1;</code>
+     */
+    private $type = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $type
+     *           Type of the hotel date selection
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Criteria::initOnce();
-        parent::__construct();
+        parent::__construct($data);
+    }
+
+    /**
+     * Type of the hotel date selection
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType type = 1;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Type of the hotel date selection
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType type = 1;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\HotelDateSelectionTypeEnum_HotelDateSelectionType::class);
+        $this->type = $var;
+
+        return $this;
     }
 
 }

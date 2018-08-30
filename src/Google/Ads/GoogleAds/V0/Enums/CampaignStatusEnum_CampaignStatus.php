@@ -4,42 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Possible statuses of a campaign.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\CampaignStatusEnum\CampaignStatus</code>
- */
-class CampaignStatusEnum_CampaignStatus
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum\CampaignStatus instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Campaign is currently serving ads depending on budget information.
-     *
-     * Generated from protobuf enum <code>ENABLED = 2;</code>
-     */
-    const ENABLED = 2;
-    /**
-     * Campaign has been paused by the user.
-     *
-     * Generated from protobuf enum <code>PAUSED = 3;</code>
-     */
-    const PAUSED = 3;
-    /**
-     * Campaign has been removed.
-     *
-     * Generated from protobuf enum <code>REMOVED = 4;</code>
-     */
-    const REMOVED = 4;
+    class CampaignStatusEnum_CampaignStatus {}
 }
+class_exists(CampaignStatusEnum\CampaignStatus::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum_CampaignStatus is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum\CampaignStatus instead', E_USER_DEPRECATED);
 

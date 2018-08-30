@@ -28,7 +28,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\ResourceNames;
-use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum_CampaignStatus;
+use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum\CampaignStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\Campaign;
 use Google\Ads\GoogleAds\V0\Services\CampaignOperation;
@@ -104,13 +104,11 @@ class UpdateCampaign
         $customerId,
         $campaignId
     ) {
-        // Creates campaign resource name.
-        $campaignResourceName = ResourceNames::forCampaign($customerId, $campaignId);
-
         // Creates a campaign object with the specified resource name and other changes.
-        $campaign = new Campaign();
-        $campaign->setResourceName($campaignResourceName);
-        $campaign->setStatus(CampaignStatusEnum_CampaignStatus::PAUSED);
+        $campaign = new Campaign([
+            'resource_name' => ResourceNames::forCampaign($customerId, $campaignId),
+            'status' => CampaignStatus::PAUSED
+        ]);
 
         // Constructs an operation that will update the campaign with the specified resource name,
         // using the FieldMasks utility to derive the update mask. This mask tells the Google Ads

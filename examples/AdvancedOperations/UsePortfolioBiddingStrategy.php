@@ -28,13 +28,13 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\ResourceNames;
 use Google\Ads\GoogleAds\V0\Common\TargetSpend;
-use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum_AdvertisingChannelType;
-use Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum_BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum_CampaignStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum\CampaignStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\BiddingStrategy;
 use Google\Ads\GoogleAds\V0\Resources\Campaign;
-use Google\Ads\GoogleAds\V0\Resources\Campaign_NetworkSettings;
+use Google\Ads\GoogleAds\V0\Resources\Campaign\NetworkSettings;
 use Google\Ads\GoogleAds\V0\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V0\Services\BiddingStrategyOperation;
 use Google\Ads\GoogleAds\V0\Services\CampaignBudgetOperation;
@@ -143,19 +143,13 @@ class UsePortfolioBiddingStrategy
     private static function createBiddingStrategy(GoogleAdsClient $googleAdsClient, $customerId)
     {
         // Creates a portfolio bidding strategy.
-        $targetSpend = new TargetSpend();
-        $wrappedCpcBidCeilingMicros = new Int64Value();
-        $wrappedCpcBidCeilingMicros->setValue(2000000);
-        $targetSpend->setCpcBidCeilingMicros($wrappedCpcBidCeilingMicros);
-        $wrappedTargetSpendMicros = new Int64Value();
-        $wrappedTargetSpendMicros->setValue(20000000);
-        $targetSpend->setTargetSpendMicros($wrappedTargetSpendMicros);
-
-        $portfolioBiddingStrategy = new BiddingStrategy();
-        $wrappedName = new StringValue();
-        $wrappedName->setValue('Maximize Clicks #' . uniqid());
-        $portfolioBiddingStrategy->setName($wrappedName);
-        $portfolioBiddingStrategy->setTargetSpend($targetSpend);
+        $portfolioBiddingStrategy = new BiddingStrategy([
+            'name' => new StringValue(['value' => 'Maximize Clicks #' . uniqid()]),
+            'target_spend' => new TargetSpend([
+                'cpc_bid_ceiling_micros' => new Int64Value(['value' => 2000000]),
+                'target_spend_micros' => new Int64Value(['value' => 20000000])
+            ])
+        ]);
 
         // Constructs an operation that will create a portfolio bidding strategy.
         $biddingStrategyOperation = new BiddingStrategyOperation();
@@ -192,21 +186,14 @@ class UsePortfolioBiddingStrategy
         $customerId
     ) {
         // Creates a shared budget.
-        $budget = new CampaignBudget();
-        $wrappedName = new StringValue();
-        $wrappedName->setValue('Shared Interplanetary Budget #' . uniqid());
-        $budget->setName($wrappedName);
-        $budget->setDeliveryMethod(BudgetDeliveryMethodEnum_BudgetDeliveryMethod::STANDARD);
-
-        // Sets the amount of budget.
-        $wrappedAmountMicros = new Int64Value();
-        $wrappedAmountMicros->setValue(50000000);
-        $budget->setAmountMicros($wrappedAmountMicros);
-
-        // Makes the budget explicitly shared.
-        $wrappedExplicitlyShared = new BoolValue();
-        $wrappedExplicitlyShared->setValue(true);
-        $budget->setExplicitlyShared($wrappedExplicitlyShared);
+        $budget = new CampaignBudget([
+            'name' => new StringValue(['value' => 'Shared Interplanetary Budget #' . uniqid()]),
+            'delivery_method' => BudgetDeliveryMethod::STANDARD,
+            // Sets the amount of budget.
+            'amount_micros' => new Int64Value(['value' => 50000000]),
+            // Makes the budget explicitly shared.
+            'explicitly_shared' => new BoolValue(['value' => true])
+        ]);
 
         // Constructs a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
@@ -245,34 +232,23 @@ class UsePortfolioBiddingStrategy
         $campaignBudgetResourceName
     ) {
         // Creates a Search campaign.
-        $campaign = new Campaign();
-        $wrappedName = new StringValue();
-        $wrappedName->setValue('Interplanetary Cruise #' . uniqid());
-        $campaign->setName($wrappedName);
-        $campaign->setAdvertisingChannelType(
-            AdvertisingChannelTypeEnum_AdvertisingChannelType::SEARCH
-        );
-        // Recommendation: Set the campaign to PAUSED when creating it to prevent
-        // the ads from immediately serving. Set to ENABLED once you've added
-        // targeting and the ads are ready to serve.
-        $campaign->setStatus(CampaignStatusEnum_CampaignStatus::PAUSED);
-
-        // Configures the campaign network options.
-        $wrappedTrueValue = new BoolValue();
-        $wrappedTrueValue->setValue(true);
-        $networkSettings = new Campaign_NetworkSettings();
-        $networkSettings->setTargetGoogleSearch($wrappedTrueValue);
-        $networkSettings->setTargetSearchNetwork($wrappedTrueValue);
-        $networkSettings->setTargetContentNetwork($wrappedTrueValue);
-        $campaign->setNetworkSettings($networkSettings);
-
-        // Sets the bidding strategy and budget.
-        $wrappedBiddingStrategyResourceName = new StringValue();
-        $wrappedBiddingStrategyResourceName->setValue($biddingStrategyResourceName);
-        $campaign->setBiddingStrategy($wrappedBiddingStrategyResourceName);
-        $wrappedCampaignBudgetResourceName = new StringValue();
-        $wrappedCampaignBudgetResourceName->setValue($campaignBudgetResourceName);
-        $campaign->setCampaignBudget($wrappedCampaignBudgetResourceName);
+        $campaign = new Campaign([
+            'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
+            'advertising_channel_type' => AdvertisingChannelType::SEARCH,
+            // Recommendation: Set the campaign to PAUSED when creating it to prevent
+            // the ads from immediately serving. Set to ENABLED once you've added
+            // targeting and the ads are ready to serve.
+            'status' => CampaignStatus::PAUSED,
+            // Configures the campaign network options.
+            'network_settings' => new NetworkSettings([
+                'target_google_search' => new BoolValue(['value' => true]),
+                'target_search_network' => new BoolValue(['value' => true]),
+                'target_content_network' => new BoolValue(['value' => true]),
+            ]),
+            // Sets the bidding strategy and budget.
+            'bidding_strategy' => new StringValue(['value' => $biddingStrategyResourceName]),
+            'campaign_budget' => new StringValue(['value' => $campaignBudgetResourceName])
+        ]);
 
         // Constructs a campaign operation.
         $campaignOperation = new CampaignOperation();

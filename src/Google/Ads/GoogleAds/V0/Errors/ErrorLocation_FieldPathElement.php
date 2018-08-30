@@ -4,86 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * A part of a field path.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.errors.ErrorLocation.FieldPathElement</code>
- */
-class ErrorLocation_FieldPathElement extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * The name of a field
-     *
-     * Generated from protobuf field <code>string field_name = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement instead.
+     * @deprecated
      */
-    private $field_name = '';
-    /**
-     * If field_name is a list, this is the element that failed
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
-     */
-    private $index = null;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Errors\Errors::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * The name of a field
-     *
-     * Generated from protobuf field <code>string field_name = 1;</code>
-     * @return string
-     */
-    public function getFieldName()
-    {
-        return $this->field_name;
-    }
-
-    /**
-     * The name of a field
-     *
-     * Generated from protobuf field <code>string field_name = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFieldName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->field_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * If field_name is a list, this is the element that failed
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getIndex()
-    {
-        return $this->index;
-    }
-
-    /**
-     * If field_name is a list, this is the element that failed
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setIndex($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->index = $var;
-
-        return $this;
-    }
-
+    class ErrorLocation_FieldPathElement {}
 }
+class_exists(ErrorLocation\FieldPathElement::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\ErrorLocation_FieldPathElement is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement instead', E_USER_DEPRECATED);
 

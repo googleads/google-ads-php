@@ -4,127 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Resources;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * The text ad recommendation.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.resources.Recommendation.TextAdRecommendation</code>
- */
-class Recommendation_TextAdRecommendation extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * Recommended ad.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Resources\Recommendation\TextAdRecommendation instead.
+     * @deprecated
      */
-    private $ad = null;
-    /**
-     * Creation date of the recommended ad.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
-     */
-    private $creation_date = null;
-    /**
-     * Date, if present, is the earliest when the recommendation will be auto
-     * applied.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
-     */
-    private $auto_apply_date = null;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\Recommendation::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * Recommended ad.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 1;</code>
-     * @return \Google\Ads\GoogleAds\V0\Common\Ad
-     */
-    public function getAd()
-    {
-        return $this->ad;
-    }
-
-    /**
-     * Recommended ad.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 1;</code>
-     * @param \Google\Ads\GoogleAds\V0\Common\Ad $var
-     * @return $this
-     */
-    public function setAd($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\Ad::class);
-        $this->ad = $var;
-
-        return $this;
-    }
-
-    /**
-     * Creation date of the recommended ad.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getCreationDate()
-    {
-        return $this->creation_date;
-    }
-
-    /**
-     * Creation date of the recommended ad.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setCreationDate($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->creation_date = $var;
-
-        return $this;
-    }
-
-    /**
-     * Date, if present, is the earliest when the recommendation will be auto
-     * applied.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getAutoApplyDate()
-    {
-        return $this->auto_apply_date;
-    }
-
-    /**
-     * Date, if present, is the earliest when the recommendation will be auto
-     * applied.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setAutoApplyDate($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->auto_apply_date = $var;
-
-        return $this;
-    }
-
+    class Recommendation_TextAdRecommendation {}
 }
+class_exists(Recommendation\TextAdRecommendation::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Resources\Recommendation_TextAdRecommendation is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Resources\Recommendation\TextAdRecommendation instead', E_USER_DEPRECATED);
 

@@ -28,7 +28,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\ResourceNames;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum_AdGroupStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum\AdGroupStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\AdGroup;
 use Google\Ads\GoogleAds\V0\Services\AdGroupOperation;
@@ -110,16 +110,12 @@ class UpdateAdGroup
         $adGroupId,
         $cpcBidMicroAmount
     ) {
-        // Creates ad group resource name.
-        $adGroupResourceName = ResourceNames::forAdGroup($customerId, $adGroupId);
-
         // Creates an ad group object with the specified resource name and other changes.
-        $adGroup = new AdGroup();
-        $adGroup->setResourceName($adGroupResourceName);
-        $wrappedCpcBidMicroAmount = new Int64Value();
-        $wrappedCpcBidMicroAmount->setValue($cpcBidMicroAmount);
-        $adGroup->setCpcBidMicros($wrappedCpcBidMicroAmount);
-        $adGroup->setStatus(AdGroupStatusEnum_AdGroupStatus::PAUSED);
+        $adGroup = new AdGroup([
+            'resource_name' => ResourceNames::forAdGroup($customerId, $adGroupId),
+            'cpc_bid_micros' => new Int64Value(['value' => $cpcBidMicroAmount]),
+            'status' => AdGroupStatus::PAUSED
+        ]);
 
         // Constructs an operation that will update the ad group with the specified resource name,
         // using the FieldMasks utility to derive the update mask. This mask tells the Google Ads

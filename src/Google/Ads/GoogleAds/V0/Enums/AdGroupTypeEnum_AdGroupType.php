@@ -4,37 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enum listing the possible types of an ad group.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\AdGroupTypeEnum\AdGroupType</code>
- */
-class AdGroupTypeEnum_AdGroupType
-{
+if (false) {
     /**
-     * The type has not been specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum\AdGroupType instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received value is not known in this version.
-     * This is a response-only value.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * The default ad group type for Search campaigns.
-     *
-     * Generated from protobuf enum <code>SEARCH_STANDARD = 2;</code>
-     */
-    const SEARCH_STANDARD = 2;
-    /**
-     * The default ad group type for Hotel campaigns.
-     *
-     * Generated from protobuf enum <code>HOTEL_ADS = 6;</code>
-     */
-    const HOTEL_ADS = 6;
+    class AdGroupTypeEnum_AdGroupType {}
 }
+class_exists(AdGroupTypeEnum\AdGroupType::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum_AdGroupType is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum\AdGroupType instead', E_USER_DEPRECATED);
 

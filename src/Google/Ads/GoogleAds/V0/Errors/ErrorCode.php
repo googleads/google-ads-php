@@ -17,9 +17,135 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
 {
     protected $error_code;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $request_error
+     *           An error caused by the request
+     *     @type int $bidding_strategy_error
+     *           An error with a Bidding Strategy mutate.
+     *     @type int $url_field_error
+     *           An error with a URL field mutate.
+     *     @type int $list_operation_error
+     *           An error with a list operation.
+     *     @type int $query_error
+     *           An error with an AWQL query
+     *     @type int $mutate_error
+     *           An error with a mutate
+     *     @type int $field_mask_error
+     *           An error with a field mask
+     *     @type int $authorization_error
+     *           An error encountered when trying to authorize a user.
+     *     @type int $internal_error
+     *           An unexpected server-side error.
+     *     @type int $quota_error
+     *           An error with the amonut of quota remaining.
+     *     @type int $ad_error
+     *           An error with an Ad Group Ad mutate.
+     *     @type int $ad_group_error
+     *           An error with an Ad Group mutate.
+     *     @type int $campaign_budget_error
+     *           An error with a Campaign Budget mutate.
+     *     @type int $campaign_error
+     *           An error with a Campaign mutate.
+     *     @type int $authentication_error
+     *           Indicates failure to properly authenticate user.
+     *     @type int $ad_group_criterion_error
+     *           Indicates failure to properly authenticate user.
+     *     @type int $ad_customizer_error
+     *           The reasons for the ad customizer error
+     *     @type int $ad_group_ad_error
+     *           The reasons for the ad group ad error
+     *     @type int $ad_sharing_error
+     *           The reasons for the ad sharing error
+     *     @type int $adx_error
+     *           The reasons for the adx error
+     *     @type int $bidding_error
+     *           The reasons for the bidding errors
+     *     @type int $campaign_criterion_error
+     *           The reasons for the campaign criterion error
+     *     @type int $collection_size_error
+     *           The reasons for the collection size error
+     *     @type int $criterion_error
+     *           The reasons for the criterion error
+     *     @type int $date_error
+     *           The reasons for the date error
+     *     @type int $date_range_error
+     *           The reasons for the date range error
+     *     @type int $distinct_error
+     *           The reasons for the distinct error
+     *     @type int $feed_attribute_reference_error
+     *           The reasons for the feed attribute reference error
+     *     @type int $function_error
+     *           The reasons for the function error
+     *     @type int $function_parsing_error
+     *           The reasons for the function parsing error
+     *     @type int $id_error
+     *           The reasons for the id error
+     *     @type int $image_error
+     *           The reasons for the image error
+     *     @type int $media_bundle_error
+     *           The reasons for the media bundle error
+     *     @type int $media_error
+     *           The reasons for the media error
+     *     @type int $multiplier_error
+     *           The reasons for the multiplier error
+     *     @type int $new_resource_creation_error
+     *           The reasons for the new resource creation error
+     *     @type int $not_empty_error
+     *           The reasons for the not empty error
+     *     @type int $null_error
+     *           The reasons for the null error
+     *     @type int $operator_error
+     *           The reasons for the operator error
+     *     @type int $range_error
+     *           The reasons for the range error
+     *     @type int $recommendation_error
+     *           The reasons for error in applying a recommendation
+     *     @type int $region_code_error
+     *           The reasons for the region code error
+     *     @type int $setting_error
+     *           The reasons for the setting error
+     *     @type int $string_format_error
+     *           The reasons for the string format error
+     *     @type int $string_length_error
+     *           The reasons for the string length error
+     *     @type int $operation_access_denied_error
+     *           The reasons for the operation access denied error
+     *     @type int $resource_access_denied_error
+     *           The reasons for the resource access denied error
+     *     @type int $resource_count_limit_exceeded_error
+     *           The reasons for the resource count limit exceeded error
+     *     @type int $ad_group_bid_modifier_error
+     *           The reasons for the ad group bid modifier error
+     *     @type int $context_error
+     *           The reasons for the context error
+     *     @type int $field_error
+     *           The reasons for the field error
+     *     @type int $shared_set_error
+     *           The reasons for the shared set error
+     *     @type int $shared_criterion_error
+     *           The reasons for the shared criterion error
+     *     @type int $campaign_shared_set_error
+     *           The reasons for the campaign shared set error
+     *     @type int $header_error
+     *           The reasons for the header error.
+     *     @type int $database_error
+     *           The reasons for the database error.
+     *     @type int $policy_finding_error
+     *           The reasons for the policy finding error.
+     *     @type int $campaign_group_error
+     *           The reasons for campaign group error.
+     *     @type int $enum_error
+     *           The reason for enum error.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Errors\Errors::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -1344,6 +1470,214 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\FieldErrorEnum_FieldError::class);
         $this->writeOneof(61, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the shared set error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.SharedSetErrorEnum.SharedSetError shared_set_error = 62;</code>
+     * @return int
+     */
+    public function getSharedSetError()
+    {
+        return $this->readOneof(62);
+    }
+
+    /**
+     * The reasons for the shared set error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.SharedSetErrorEnum.SharedSetError shared_set_error = 62;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSharedSetError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\SharedSetErrorEnum_SharedSetError::class);
+        $this->writeOneof(62, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the shared criterion error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.SharedCriterionErrorEnum.SharedCriterionError shared_criterion_error = 63;</code>
+     * @return int
+     */
+    public function getSharedCriterionError()
+    {
+        return $this->readOneof(63);
+    }
+
+    /**
+     * The reasons for the shared criterion error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.SharedCriterionErrorEnum.SharedCriterionError shared_criterion_error = 63;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSharedCriterionError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\SharedCriterionErrorEnum_SharedCriterionError::class);
+        $this->writeOneof(63, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the campaign shared set error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CampaignSharedSetErrorEnum.CampaignSharedSetError campaign_shared_set_error = 64;</code>
+     * @return int
+     */
+    public function getCampaignSharedSetError()
+    {
+        return $this->readOneof(64);
+    }
+
+    /**
+     * The reasons for the campaign shared set error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CampaignSharedSetErrorEnum.CampaignSharedSetError campaign_shared_set_error = 64;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCampaignSharedSetError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CampaignSharedSetErrorEnum_CampaignSharedSetError::class);
+        $this->writeOneof(64, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the header error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.HeaderErrorEnum.HeaderError header_error = 66;</code>
+     * @return int
+     */
+    public function getHeaderError()
+    {
+        return $this->readOneof(66);
+    }
+
+    /**
+     * The reasons for the header error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.HeaderErrorEnum.HeaderError header_error = 66;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHeaderError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\HeaderErrorEnum_HeaderError::class);
+        $this->writeOneof(66, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the database error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.DatabaseErrorEnum.DatabaseError database_error = 67;</code>
+     * @return int
+     */
+    public function getDatabaseError()
+    {
+        return $this->readOneof(67);
+    }
+
+    /**
+     * The reasons for the database error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.DatabaseErrorEnum.DatabaseError database_error = 67;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDatabaseError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\DatabaseErrorEnum_DatabaseError::class);
+        $this->writeOneof(67, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the policy finding error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.PolicyFindingErrorEnum.PolicyFindingError policy_finding_error = 68;</code>
+     * @return int
+     */
+    public function getPolicyFindingError()
+    {
+        return $this->readOneof(68);
+    }
+
+    /**
+     * The reasons for the policy finding error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.PolicyFindingErrorEnum.PolicyFindingError policy_finding_error = 68;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPolicyFindingError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\PolicyFindingErrorEnum_PolicyFindingError::class);
+        $this->writeOneof(68, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for campaign group error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CampaignGroupErrorEnum.CampaignGroupError campaign_group_error = 69;</code>
+     * @return int
+     */
+    public function getCampaignGroupError()
+    {
+        return $this->readOneof(69);
+    }
+
+    /**
+     * The reasons for campaign group error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CampaignGroupErrorEnum.CampaignGroupError campaign_group_error = 69;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCampaignGroupError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CampaignGroupErrorEnum_CampaignGroupError::class);
+        $this->writeOneof(69, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reason for enum error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
+     * @return int
+     */
+    public function getEnumError()
+    {
+        return $this->readOneof(70);
+    }
+
+    /**
+     * The reason for enum error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEnumError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\EnumErrorEnum_EnumError::class);
+        $this->writeOneof(70, $var);
 
         return $this;
     }

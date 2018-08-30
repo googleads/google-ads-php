@@ -4,55 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Possible serving statuses of a campaign.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\CampaignServingStatusEnum\CampaignServingStatus</code>
- */
-class CampaignServingStatusEnum_CampaignServingStatus
-{
+if (false) {
     /**
-     * No value has been specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\CampaignServingStatusEnum\CampaignServingStatus instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received value is not known in this version.
-     * This is a response-only value.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Serving.
-     *
-     * Generated from protobuf enum <code>SERVING = 2;</code>
-     */
-    const SERVING = 2;
-    /**
-     * None.
-     *
-     * Generated from protobuf enum <code>NONE = 3;</code>
-     */
-    const NONE = 3;
-    /**
-     * Ended.
-     *
-     * Generated from protobuf enum <code>ENDED = 4;</code>
-     */
-    const ENDED = 4;
-    /**
-     * Pending.
-     *
-     * Generated from protobuf enum <code>PENDING = 5;</code>
-     */
-    const PENDING = 5;
-    /**
-     * Suspended.
-     *
-     * Generated from protobuf enum <code>SUSPENDED = 6;</code>
-     */
-    const SUSPENDED = 6;
+    class CampaignServingStatusEnum_CampaignServingStatus {}
 }
+class_exists(CampaignServingStatusEnum\CampaignServingStatus::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\CampaignServingStatusEnum_CampaignServingStatus is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\CampaignServingStatusEnum\CampaignServingStatus instead', E_USER_DEPRECATED);
 

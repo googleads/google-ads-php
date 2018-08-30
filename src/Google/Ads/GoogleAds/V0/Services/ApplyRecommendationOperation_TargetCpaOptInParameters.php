@@ -4,89 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Services;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * Parameters to use when applying Target CPA recommendation.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.services.ApplyRecommendationOperation.TargetCpaOptInParameters</code>
- */
-class ApplyRecommendationOperation_TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * Average CPA to use for Target CPA bidding strategy. This is a required
-     * field.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TargetCpaOptInParameters instead.
+     * @deprecated
      */
-    private $target_cpa_micros = null;
-    /**
-     * Optional, budget amount to set for the campaign.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value new_campaign_budget_amount_micros = 2;</code>
-     */
-    private $new_campaign_budget_amount_micros = null;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Services\RecommendationService::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * Average CPA to use for Target CPA bidding strategy. This is a required
-     * field.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getTargetCpaMicros()
-    {
-        return $this->target_cpa_micros;
-    }
-
-    /**
-     * Average CPA to use for Target CPA bidding strategy. This is a required
-     * field.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setTargetCpaMicros($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->target_cpa_micros = $var;
-
-        return $this;
-    }
-
-    /**
-     * Optional, budget amount to set for the campaign.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value new_campaign_budget_amount_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getNewCampaignBudgetAmountMicros()
-    {
-        return $this->new_campaign_budget_amount_micros;
-    }
-
-    /**
-     * Optional, budget amount to set for the campaign.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value new_campaign_budget_amount_micros = 2;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setNewCampaignBudgetAmountMicros($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->new_campaign_budget_amount_micros = $var;
-
-        return $this;
-    }
-
+    class ApplyRecommendationOperation_TargetCpaOptInParameters {}
 }
+class_exists(ApplyRecommendationOperation\TargetCpaOptInParameters::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_TargetCpaOptInParameters is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TargetCpaOptInParameters instead', E_USER_DEPRECATED);
 

@@ -28,7 +28,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\ResourceNames;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupCriterionStatusEnum_AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionOperation;
@@ -111,17 +111,16 @@ class UpdateKeyword
         $adGroupId,
         $criterionId
     ) {
-        // Creates ad group criterion resource name.
-        $adGroupCriterionResourceName =
-            ResourceNames::forAdGroupCriterion($customerId, $adGroupId, $criterionId);
-
         // Creates an ad group criterion with the proper resource name and any other changes.
-        $adGroupCriterion = new AdGroupCriterion();
-        $adGroupCriterion->setResourceName($adGroupCriterionResourceName);
-        $adGroupCriterion->setStatus(AdGroupCriterionStatusEnum_AdGroupCriterionStatus::ENABLED);
-        $wrappedFinalUrl = new StringValue();
-        $wrappedFinalUrl->setValue('https://www.example.com');
-        $adGroupCriterion->setFinalUrls([$wrappedFinalUrl]);
+        $adGroupCriterion = new AdGroupCriterion([
+            'resource_name' => ResourceNames::forAdGroupCriterion(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            ),
+            'status' => AdGroupCriterionStatus::ENABLED,
+            'final_urls' => [new StringValue(['value' => 'https://www.example.com'])]
+        ]);
 
         // Constructs an operation that will update the ad group criterion, using the FieldMasks
         // utility to derive the update mask. This mask tells the Google Ads API which attributes of

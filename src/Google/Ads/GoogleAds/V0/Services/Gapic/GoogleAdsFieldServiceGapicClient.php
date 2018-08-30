@@ -21,10 +21,6 @@
  * https://github.com/google/googleapis/blob/master/google/ads/googleads/v0/services/google_ads_field_service.proto
  * and updates to that file get reflected here through a refresh process.
  *
- * EXPERIMENTAL: This client library class has not yet been declared GA (1.0). This means that
- * even though we intend the surface to be stable, we may make backwards incompatible changes
- * if necessary.
- *
  * @experimental
  */
 
@@ -45,10 +41,6 @@ use Google\ApiCore\ValidationException;
 
 /**
  * Service Description: Service to fetch Google Ads API fields.
- *
- * EXPERIMENTAL: This client library class has not yet been declared GA (1.0). This means that
- * even though we intend the surface to be stable, we may make backwards incompatible changes
- * if necessary.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -249,7 +241,7 @@ class GoogleAdsFieldServiceGapicClient
      * @throws ValidationException
      * @experimental
      */
-    public function __construct($options = [])
+    public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
@@ -285,7 +277,7 @@ class GoogleAdsFieldServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function getGoogleAdsField($resourceName, $optionalArgs = [])
+    public function getGoogleAdsField($resourceName, array $optionalArgs = [])
     {
         $request = new GetGoogleAdsFieldRequest();
         $request->setResourceName($resourceName);
@@ -306,18 +298,21 @@ class GoogleAdsFieldServiceGapicClient
      * $googleAdsFieldServiceClient = new GoogleAdsFieldServiceClient();
      * try {
      *     $query = '';
-     *     // Iterate through all elements
-     *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     *
-     *     // OR iterate over pages of elements
+     *     // Iterate over pages of elements
      *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
      *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
      *     }
      * } finally {
      *     $googleAdsFieldServiceClient->close();
@@ -349,7 +344,7 @@ class GoogleAdsFieldServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function searchGoogleAdsFields($query, $optionalArgs = [])
+    public function searchGoogleAdsFields($query, array $optionalArgs = [])
     {
         $request = new SearchGoogleAdsFieldsRequest();
         $request->setQuery($query);

@@ -39,13 +39,32 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     /**
      * The ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Ad ad = 5;</code>
      */
     private $ad = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the ad.
+     *           Ad group ad resource names have the form:
+     *           `customers/{customer_id}/adGroupAds/{ad_group_id}_{ad_id}`
+     *     @type int $status
+     *           The status of the ad.
+     *     @type \Google\Protobuf\StringValue $ad_group
+     *           The ad group to which the ad belongs.
+     *           This field must not be used in WHERE clauses.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Ad $ad
+     *           The ad.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\AdGroupAd::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -135,8 +154,8 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     /**
      * The ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 5;</code>
-     * @return \Google\Ads\GoogleAds\V0\Common\Ad
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Ad ad = 5;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\Ad
      */
     public function getAd()
     {
@@ -146,13 +165,13 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     /**
      * The ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Ad ad = 5;</code>
-     * @param \Google\Ads\GoogleAds\V0\Common\Ad $var
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Ad ad = 5;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\Ad $var
      * @return $this
      */
     public function setAd($var)
     {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\Ad::class);
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Ad::class);
         $this->ad = $var;
 
         return $this;

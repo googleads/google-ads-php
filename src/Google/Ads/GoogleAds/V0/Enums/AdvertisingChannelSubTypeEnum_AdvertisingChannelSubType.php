@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enum describing the different channel subtypes.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType</code>
- */
-class AdvertisingChannelSubTypeEnum_AdvertisingChannelSubType
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used as a return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Mobile app campaigns for Search.
-     *
-     * Generated from protobuf enum <code>SEARCH_MOBILE_APP = 2;</code>
-     */
-    const SEARCH_MOBILE_APP = 2;
-    /**
-     * AdWords express campaigns for search.
-     *
-     * Generated from protobuf enum <code>SEARCH_EXPRESS = 4;</code>
-     */
-    const SEARCH_EXPRESS = 4;
+    class AdvertisingChannelSubTypeEnum_AdvertisingChannelSubType {}
 }
+class_exists(AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelSubTypeEnum_AdvertisingChannelSubType is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType instead', E_USER_DEPRECATED);
 

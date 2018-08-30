@@ -26,22 +26,21 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V0\Common\Ad;
 use Google\Ads\GoogleAds\V0\Common\HotelAdInfo;
-use Google\Ads\GoogleAds\V0\Common\ManualCpc;
 use Google\Ads\GoogleAds\V0\Common\PercentCpc;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum_AdGroupAdStatus;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum_AdGroupStatus;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum_AdGroupType;
-use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum_AdvertisingChannelType;
-use Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum_BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum_CampaignStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum\CampaignStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V0\Resources\Ad;
 use Google\Ads\GoogleAds\V0\Resources\AdGroup;
 use Google\Ads\GoogleAds\V0\Resources\AdGroupAd;
 use Google\Ads\GoogleAds\V0\Resources\Campaign;
-use Google\Ads\GoogleAds\V0\Resources\Campaign_HotelSettingInfo;
-use Google\Ads\GoogleAds\V0\Resources\Campaign_NetworkSettings;
+use Google\Ads\GoogleAds\V0\Resources\Campaign\HotelSettingInfo;
+use Google\Ads\GoogleAds\V0\Resources\Campaign\NetworkSettings;
 use Google\Ads\GoogleAds\V0\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V0\Services\AdGroupAdOperation;
 use Google\Ads\GoogleAds\V0\Services\AdGroupOperation;
@@ -164,18 +163,14 @@ class AddHotelAds
     private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, $customerId)
     {
         // Creates a campaign budget.
-        $budget = new CampaignBudget();
-
-        $wrappedName = new StringValue();
-        $wrappedName->setValue('Interplanetary Cruise Budget #' . uniqid());
-        $budget->setName($wrappedName);
-
-        $budget->setDeliveryMethod(BudgetDeliveryMethodEnum_BudgetDeliveryMethod::STANDARD);
-
-        // Sets the amount of budget.
-        $wrappedAmountMicros = new Int64Value();
-        $wrappedAmountMicros->setValue(50000000);
-        $budget->setAmountMicros($wrappedAmountMicros);
+        $budget = new CampaignBudget([
+            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'delivery_method' => BudgetDeliveryMethod::STANDARD,
+            // Sets the amount of budget.
+            'amount_micros' => new Int64Value(['value' => 50000000]),
+            // Makes the budget explicitly shared.
+            'explicitly_shared' => new BoolValue(['value' => true])
+        ]);
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
@@ -218,47 +213,31 @@ class AddHotelAds
         $cpcBidCeilingMicroAmount
     ) {
         // Creates a campaign.
-        $campaign = new Campaign();
-
-        $wrappedName = new StringValue();
-        $wrappedName->setValue('Interplanetary Cruise Campaign #' . uniqid());
-        $campaign->setName($wrappedName);
-
-        // Configures settings related to hotel campaigns including advertising channel type
-        // and hotel setting info.
-        $campaign->setAdvertisingChannelType(
-            AdvertisingChannelTypeEnum_AdvertisingChannelType::HOTEL
-        );
-        $wrappedHotelCenterId = new Int64Value();
-        $wrappedHotelCenterId->setValue($hotelCenterAccountId);
-        $hotelSettingInfo = new Campaign_HotelSettingInfo();
-        $hotelSettingInfo->setHotelCenterId($wrappedHotelCenterId);
-        $campaign->setHotelSetting($hotelSettingInfo);
-
-        // Recommendation: Set the campaign to PAUSED when creating it to prevent
-        // the ads from immediately serving. Set to ENABLED once you've added
-        // targeting and the ads are ready to serve.
-        $campaign->setStatus(CampaignStatusEnum_CampaignStatus::PAUSED);
-        // Sets the bidding strategy to PercentCpc. Only Manual CPC and Percent CPC can be used for
-        // hotel campaigns.
-        $percentCpc = new PercentCpc();
-        $wrappedCpcBidCeilingMicros = new Int64Value();
-        $wrappedCpcBidCeilingMicros->setValue($cpcBidCeilingMicroAmount);
-        $percentCpc->setCpcBidCeilingMicros($wrappedCpcBidCeilingMicros);
-        $campaign->setPercentCpc($percentCpc);
-
-        // Sets the budget.
-        $wrappedBudgetResourceName = new StringValue();
-        $wrappedBudgetResourceName->setValue($budgetResourceName);
-        $campaign->setCampaignBudget($wrappedBudgetResourceName);
-
-        // Configures the campaign network options. Only Google Search is allowed for
-        // hotel campaigns.
-        $wrappedTrueValue = new BoolValue();
-        $wrappedTrueValue->setValue(true);
-        $networkSettings = new Campaign_NetworkSettings();
-        $networkSettings->setTargetGoogleSearch($wrappedTrueValue);
-        $campaign->setNetworkSettings($networkSettings);
+        $campaign = new Campaign([
+            'name' => new StringValue(['value' => 'Interplanetary Cruise Campaign #' . uniqid()]),
+            // Configures settings related to hotel campaigns including advertising channel type
+            // and hotel setting info.
+            'advertising_channel_type' => AdvertisingChannelType::HOTEL,
+            'hotel_setting' => new HotelSettingInfo([
+                'hotel_center_id' => new Int64Value(['value' => $hotelCenterAccountId])
+            ]),
+            // Recommendation: Set the campaign to PAUSED when creating it to prevent
+            // the ads from immediately serving. Set to ENABLED once you've added
+            // targeting and the ads are ready to serve.
+            'status' => CampaignStatus::PAUSED,
+            // Sets the bidding strategy to PercentCpc. Only Manual CPC and Percent CPC can be used
+            // for hotel campaigns.
+            'percent_cpc' => new PercentCpc([
+                'cpc_bid_ceiling_micros' => new Int64Value(['value' => $cpcBidCeilingMicroAmount])
+            ]),
+            // Sets the budget.
+            'campaign_budget' => new StringValue(['value' => $budgetResourceName]),
+            // Configures the campaign network options. Only Google Search is allowed for
+            // hotel campaigns.
+            'network_settings' => new NetworkSettings([
+                'target_google_search' => new BoolValue(['value' => true]),
+            ]),
+        ]);
 
         // Creates a campaign operation.
         $campaignOperation = new CampaignOperation();
@@ -296,26 +275,16 @@ class AddHotelAds
         $campaignResourceName
     ) {
         // Creates an ad group.
-        $adGroup = new AdGroup();
-
-        $wrappedName = new StringValue();
-        $wrappedName->setValue('Earth to Mars Cruise #' . uniqid());
-        $adGroup->setName($wrappedName);
-
-        // Sets the campaign.
-        $wrappedCampaignResourceName = new StringValue();
-        $wrappedCampaignResourceName->setValue($campaignResourceName);
-        $adGroup->setCampaign($wrappedCampaignResourceName);
-
-        // Sets the ad group type to HOTEL_ADS.
-        // This cannot be set to other types.
-        $adGroup->setType(AdGroupTypeEnum_AdGroupType::HOTEL_ADS);
-
-        $wrappedCpcBidMicros = new Int64Value();
-        $wrappedCpcBidMicros->setValue(10000000);
-        $adGroup->setCpcBidMicros($wrappedCpcBidMicros);
-
-        $adGroup->setStatus(AdGroupStatusEnum_AdGroupStatus::ENABLED);
+        $adGroup = new AdGroup([
+            'name' => new StringValue(['value' => 'Earth to Mars Cruise #' . uniqid()]),
+            // Sets the campaign.
+            'campaign' => new StringValue(['value' => $campaignResourceName]),
+            // Sets the ad group type to HOTEL_ADS.
+            // This cannot be set to other types.
+            'type' => AdGroupType::HOTEL_ADS,
+            'cpc_bid_micros' => new Int64Value(['value' => 10000000]),
+            'status' => AdGroupStatus::ENABLED,
+        ]);
 
         // Creates an ad group operation.
         $adGroupOperation = new AdGroupOperation();
@@ -352,18 +321,17 @@ class AddHotelAds
         $adGroupResourceName
     ) {
         // Creates a new hotel ad.
-        $ad = new Ad();
-        $ad->setHotelAd(new HotelAdInfo());
+        $ad = new Ad([
+            'hotel_ad' => new HotelAdInfo(),
+        ]);
 
         // Creates a new ad group ad and sets the hotel ad to it.
-        $adGroupAd = new AdGroupAd();
-        $adGroupAd->setAd($ad);
-        $adGroupAd->setStatus(AdGroupAdStatusEnum_AdGroupAdStatus::PAUSED);
-
-        // Sets the ad group.
-        $wrappedAdGroupResourceName = new StringValue();
-        $wrappedAdGroupResourceName->setValue($adGroupResourceName);
-        $adGroupAd->setAdGroup($wrappedAdGroupResourceName);
+        $adGroupAd = new AdGroupAd([
+            'ad' => $ad,
+            'status' => AdGroupAdStatus::PAUSED,
+            // Sets the ad group.
+            'ad_group' => new StringValue(['value' => $adGroupResourceName])
+        ]);
 
         // Creates an ad group ad operation.
         $adGroupAdOperation = new AdGroupAdOperation();

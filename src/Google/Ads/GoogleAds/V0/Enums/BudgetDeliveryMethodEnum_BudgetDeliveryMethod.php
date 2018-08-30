@@ -4,38 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Possible delivery methods of a Budget.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod</code>
- */
-class BudgetDeliveryMethodEnum_BudgetDeliveryMethod
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * The budget server will throttle serving evenly across
-     * the entire time period.
-     *
-     * Generated from protobuf enum <code>STANDARD = 2;</code>
-     */
-    const STANDARD = 2;
-    /**
-     * The budget server will not throttle serving,
-     * and ads will serve as fast as possible.
-     *
-     * Generated from protobuf enum <code>ACCELERATED = 3;</code>
-     */
-    const ACCELERATED = 3;
+    class BudgetDeliveryMethodEnum_BudgetDeliveryMethod {}
 }
+class_exists(BudgetDeliveryMethodEnum\BudgetDeliveryMethod::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum_BudgetDeliveryMethod is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod instead', E_USER_DEPRECATED);
 

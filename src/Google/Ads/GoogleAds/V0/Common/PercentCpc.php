@@ -35,9 +35,27 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      */
     private $enhanced_cpc_enabled = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\Int64Value $cpc_bid_ceiling_micros
+     *           Maximum bid limit that can be set by the bid strategy. This is
+     *           an optional field entered by the advertiser and specified in local micros.
+     *           Note: A zero value is interpreted in the same way as having bid_ceiling
+     *           undefined.
+     *     @type \Google\Protobuf\BoolValue $enhanced_cpc_enabled
+     *           Adjusts the bid for each auction upward or downward, depending on the
+     *           likelihood of a conversion. Individual bids may exceed
+     *           cpc_bid_ceiling_micros, but the average bid amount for a campaign should
+     *           not.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Bidding::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

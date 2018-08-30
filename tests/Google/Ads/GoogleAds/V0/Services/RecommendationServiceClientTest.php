@@ -35,7 +35,7 @@ use stdClass;
 
 /**
  * @group googleads
- * @group grpc
+ * @group gapic
  */
 class RecommendationServiceClientTest extends GeneratedTest
 {

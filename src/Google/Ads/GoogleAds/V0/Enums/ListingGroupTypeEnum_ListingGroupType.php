@@ -4,38 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * The type of the listing group.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\ListingGroupTypeEnum\ListingGroupType</code>
- */
-class ListingGroupTypeEnum_ListingGroupType
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\ListingGroupTypeEnum\ListingGroupType instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Subdivision of products along some listing dimension. These nodes
-     * are not used by serving to target listing entries, but is purely
-     * to define the structure of the tree.
-     *
-     * Generated from protobuf enum <code>SUBDIVISION = 2;</code>
-     */
-    const SUBDIVISION = 2;
-    /**
-     * Listing group unit that defines a bid.
-     *
-     * Generated from protobuf enum <code>UNIT = 3;</code>
-     */
-    const UNIT = 3;
+    class ListingGroupTypeEnum_ListingGroupType {}
 }
+class_exists(ListingGroupTypeEnum\ListingGroupType::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\ListingGroupTypeEnum_ListingGroupType is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\ListingGroupTypeEnum\ListingGroupType instead', E_USER_DEPRECATED);
 

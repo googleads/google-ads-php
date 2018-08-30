@@ -4,30 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible adx errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\AdxErrorEnum\AdxError</code>
- */
-class AdxErrorEnum_AdxError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\AdxErrorEnum\AdxError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Attempt to use non-AdX feature by AdX customer.
-     *
-     * Generated from protobuf enum <code>UNSUPPORTED_FEATURE = 2;</code>
-     */
-    const UNSUPPORTED_FEATURE = 2;
+    class AdxErrorEnum_AdxError {}
 }
+class_exists(AdxErrorEnum\AdxError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\AdxErrorEnum_AdxError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\AdxErrorEnum\AdxError instead', E_USER_DEPRECATED);
 

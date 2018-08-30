@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible mutate errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\MutateErrorEnum\MutateError</code>
- */
-class MutateErrorEnum_MutateError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\MutateErrorEnum\MutateError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Requested resource was not found.
-     *
-     * Generated from protobuf enum <code>RESOURCE_NOT_FOUND = 3;</code>
-     */
-    const RESOURCE_NOT_FOUND = 3;
-    /**
-     * Cannot mutate the same resource twice in one request.
-     *
-     * Generated from protobuf enum <code>ID_EXISTS_IN_MULTIPLE_MUTATES = 7;</code>
-     */
-    const ID_EXISTS_IN_MULTIPLE_MUTATES = 7;
+    class MutateErrorEnum_MutateError {}
 }
+class_exists(MutateErrorEnum\MutateError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\MutateErrorEnum_MutateError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\MutateErrorEnum\MutateError instead', E_USER_DEPRECATED);
 

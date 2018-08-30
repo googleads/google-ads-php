@@ -4,42 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Possible Keyword match types.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\KeywordMatchTypeEnum\KeywordMatchType</code>
- */
-class KeywordMatchTypeEnum_KeywordMatchType
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum\KeywordMatchType instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Exact match.
-     *
-     * Generated from protobuf enum <code>EXACT = 2;</code>
-     */
-    const EXACT = 2;
-    /**
-     * Phrase match.
-     *
-     * Generated from protobuf enum <code>PHRASE = 3;</code>
-     */
-    const PHRASE = 3;
-    /**
-     * Broad match.
-     *
-     * Generated from protobuf enum <code>BROAD = 4;</code>
-     */
-    const BROAD = 4;
+    class KeywordMatchTypeEnum_KeywordMatchType {}
 }
+class_exists(KeywordMatchTypeEnum\KeywordMatchType::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum_KeywordMatchType is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum\KeywordMatchType instead', E_USER_DEPRECATED);
 

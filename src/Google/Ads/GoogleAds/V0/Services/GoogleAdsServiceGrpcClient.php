@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2018 Google Inc.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@
 namespace Google\Ads\GoogleAds\V0\Services;
 
 /**
- * Proto file describing the GoogleAdsService.
- *
  * Service to fetch data and metrics across resources.
  */
 class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {

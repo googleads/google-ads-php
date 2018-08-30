@@ -4,43 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible ad sharing errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\AdSharingErrorEnum\AdSharingError</code>
- */
-class AdSharingErrorEnum_AdSharingError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\AdSharingErrorEnum\AdSharingError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Error resulting in attempting to add an Ad to an AdGroup that already
-     * contains the Ad.
-     *
-     * Generated from protobuf enum <code>AD_GROUP_ALREADY_CONTAINS_AD = 2;</code>
-     */
-    const AD_GROUP_ALREADY_CONTAINS_AD = 2;
-    /**
-     * Ad is not compatible with the AdGroup it is being shared with.
-     *
-     * Generated from protobuf enum <code>INCOMPATIBLE_AD_UNDER_AD_GROUP = 3;</code>
-     */
-    const INCOMPATIBLE_AD_UNDER_AD_GROUP = 3;
-    /**
-     * Cannot add AdGroupAd on inactive Ad.
-     *
-     * Generated from protobuf enum <code>CANNOT_SHARE_INACTIVE_AD = 4;</code>
-     */
-    const CANNOT_SHARE_INACTIVE_AD = 4;
+    class AdSharingErrorEnum_AdSharingError {}
 }
+class_exists(AdSharingErrorEnum\AdSharingError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\AdSharingErrorEnum_AdSharingError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\AdSharingErrorEnum\AdSharingError instead', E_USER_DEPRECATED);
 

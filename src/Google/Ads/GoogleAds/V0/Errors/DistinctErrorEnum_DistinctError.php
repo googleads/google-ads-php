@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible distinct errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\DistinctErrorEnum\DistinctError</code>
- */
-class DistinctErrorEnum_DistinctError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\DistinctErrorEnum\DistinctError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Duplicate element.
-     *
-     * Generated from protobuf enum <code>DUPLICATE_ELEMENT = 2;</code>
-     */
-    const DUPLICATE_ELEMENT = 2;
-    /**
-     * Duplicate type.
-     *
-     * Generated from protobuf enum <code>DUPLICATE_TYPE = 3;</code>
-     */
-    const DUPLICATE_TYPE = 3;
+    class DistinctErrorEnum_DistinctError {}
 }
+class_exists(DistinctErrorEnum\DistinctError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\DistinctErrorEnum_DistinctError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\DistinctErrorEnum\DistinctError instead', E_USER_DEPRECATED);
 

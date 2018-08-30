@@ -4,49 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible bidding strategy errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\BiddingStrategyErrorEnum\BiddingStrategyError</code>
- */
-class BiddingStrategyErrorEnum_BiddingStrategyError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\BiddingStrategyErrorEnum\BiddingStrategyError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Each bidding strategy must have a unique name.
-     *
-     * Generated from protobuf enum <code>DUPLICATE_NAME = 2;</code>
-     */
-    const DUPLICATE_NAME = 2;
-    /**
-     * Bidding strategy type is immutable.
-     *
-     * Generated from protobuf enum <code>CANNOT_CHANGE_BIDDING_STRATEGY_TYPE = 3;</code>
-     */
-    const CANNOT_CHANGE_BIDDING_STRATEGY_TYPE = 3;
-    /**
-     * Only bidding strategies not linked to campaigns, adgroups or adgroup
-     * criteria can be removed.
-     *
-     * Generated from protobuf enum <code>CANNOT_REMOVE_ASSOCIATED_STRATEGY = 4;</code>
-     */
-    const CANNOT_REMOVE_ASSOCIATED_STRATEGY = 4;
-    /**
-     * The specified bidding strategy is not supported.
-     *
-     * Generated from protobuf enum <code>BIDDING_STRATEGY_NOT_SUPPORTED = 5;</code>
-     */
-    const BIDDING_STRATEGY_NOT_SUPPORTED = 5;
+    class BiddingStrategyErrorEnum_BiddingStrategyError {}
 }
+class_exists(BiddingStrategyErrorEnum\BiddingStrategyError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\BiddingStrategyErrorEnum_BiddingStrategyError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\BiddingStrategyErrorEnum\BiddingStrategyError instead', E_USER_DEPRECATED);
 

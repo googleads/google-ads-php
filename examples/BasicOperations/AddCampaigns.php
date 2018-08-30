@@ -27,12 +27,12 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V0\Common\ManualCpc;
-use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum_AdvertisingChannelType;
-use Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum_BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum_CampaignStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V0\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V0\Enums\CampaignStatusEnum\CampaignStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\Campaign;
-use Google\Ads\GoogleAds\V0\Resources\Campaign_NetworkSettings;
+use Google\Ads\GoogleAds\V0\Resources\Campaign\NetworkSettings;
 use Google\Ads\GoogleAds\V0\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V0\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V0\Services\CampaignOperation;
@@ -104,52 +104,42 @@ class AddCampaigns
     public static function runExample(GoogleAdsClient $googleAdsClient, $customerId)
     {
         // Creates a single shared budget to be used by the campaigns added below.
-        $budgetResourceName = self::addCampaignBudget($googleAdsClient, $customerId);
-        $wrappedBudgetResourceName = new StringValue();
-        $wrappedBudgetResourceName->setValue($budgetResourceName);
+        $budgetResourceName =
+            new StringValue(['value' => self::addCampaignBudget($googleAdsClient, $customerId)]);
 
-        $wrappedTrueValue = new BoolValue();
-        $wrappedTrueValue->setValue(true);
-        $wrappedFalseValue = new BoolValue();
-        $wrappedFalseValue->setValue(false);
+        $trueValue = new BoolValue(['value' => true]);
+        $falseValue = new BoolValue(['value' => false]);
 
-        $wrappedStartDate = new StringValue();
-        $wrappedStartDate->setValue(date('Ymd', strtotime('+1 day')));
-        $wrappedEndDate = new StringValue();
-        $wrappedEndDate->setValue(date('Ymd', strtotime('+1 month')));
+        $startDate = new StringValue(['value' => date('Ymd', strtotime('+1 day'))]);
+        $endDate = new StringValue(['value' => date('Ymd', strtotime('+1 month'))]);
+
+        // Configures the campaign network options.
+        $networkSettings = new NetworkSettings([
+            'target_google_search' => $trueValue,
+            'target_search_network' => $trueValue,
+            'target_content_network' => $falseValue,
+            'target_partner_search_network' => $falseValue
+        ]);
 
         $campaignOperations = [];
         for ($i = 0; $i < self::NUMBER_OF_CAMPAIGNS_TO_ADD; $i++) {
-            // Configures the campaign network options.
-            $networkSettings = new Campaign_NetworkSettings();
-            $networkSettings->setTargetGoogleSearch($wrappedTrueValue);
-            $networkSettings->setTargetSearchNetwork($wrappedTrueValue);
-            $networkSettings->setTargetContentNetwork($wrappedFalseValue);
-            $networkSettings->setTargetPartnerSearchNetwork($wrappedFalseValue);
-
             // Creates a campaign.
-            $campaign = new Campaign();
-
-            $wrappedName = new StringValue();
-            $wrappedName->setValue('Interplanetary Cruise #' . uniqid());
-            $campaign->setName($wrappedName);
-
-            $campaign->setAdvertisingChannelType(
-                AdvertisingChannelTypeEnum_AdvertisingChannelType::SEARCH
-            );
-            // Recommendation: Set the campaign to PAUSED when creating it to prevent
-            // the ads from immediately serving. Set to ENABLED once you've added
-            // targeting and the ads are ready to serve.
-            $campaign->setStatus(CampaignStatusEnum_CampaignStatus::PAUSED);
-            // Sets the bidding strategy and budget.
-            $campaign->setManualCpc(new ManualCpc());
-            $campaign->setCampaignBudget($wrappedBudgetResourceName);
-            // Adds the network settings configured above.
-            $campaign->setNetworkSettings($networkSettings);
-
-            // Optional: Sets the start and end dates.
-            $campaign->setStartDate($wrappedStartDate);
-            $campaign->setEndDate($wrappedEndDate);
+            $campaign = new Campaign([
+                'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
+                'advertising_channel_type' => AdvertisingChannelType::SEARCH,
+                // Recommendation: Set the campaign to PAUSED when creating it to prevent
+                // the ads from immediately serving. Set to ENABLED once you've added
+                // targeting and the ads are ready to serve.
+                'status' => CampaignStatus::PAUSED,
+                // Sets the bidding strategy and budget.
+                'manual_cpc' => new ManualCpc(),
+                'campaign_budget' => $budgetResourceName,
+                // Adds the network settings configured above.
+                'network_settings' => $networkSettings,
+                // Optional: Sets the start and end dates.
+                'start_date' => $startDate,
+                'end_date' => $endDate
+            ]);
 
             // Creates a campaign operation.
             $campaignOperation = new CampaignOperation();
@@ -179,17 +169,11 @@ class AddCampaigns
     private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, $customerId)
     {
         // Creates a campaign budget.
-        $budget = new CampaignBudget();
-
-        $wrappedName = new StringValue();
-        $wrappedName->setValue('Interplanetary Cruise Budget #' . uniqid());
-        $budget->setName($wrappedName);
-
-        $budget->setDeliveryMethod(BudgetDeliveryMethodEnum_BudgetDeliveryMethod::STANDARD);
-
-        $wrappedAmountMicros = new Int64Value();
-        $wrappedAmountMicros->setValue(500000);
-        $budget->setAmountMicros($wrappedAmountMicros);
+        $budget = new CampaignBudget([
+            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'delivery_method' => BudgetDeliveryMethod::STANDARD,
+            'amount_micros' => new Int64Value(['value' => 500000])
+        ]);
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();

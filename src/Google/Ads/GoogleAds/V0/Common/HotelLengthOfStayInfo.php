@@ -28,9 +28,21 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
      */
     private $max_nights = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\Int64Value $min_nights
+     *           Low end of the number of nights in the stay.
+     *     @type \Google\Protobuf\Int64Value $max_nights
+     *           High end of the number of nights in the stay.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Criteria::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

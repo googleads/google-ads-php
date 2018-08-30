@@ -4,12 +4,13 @@
   "url": "https://github.com/googleads/google-ads-php",
   "description": "Google Ads API client for PHP",
   "require": {
-    "google/gax": "^0.32.0",
+    "google/gax": "^0.35.0",
     "google/protobuf": "^3.4.0",
     "php" : ">=5.5.9 || ^7.0",
     "ext-grpc": "*",
     "ulrichsg/getopt-php": "^3.0",
-    "react/http": "^0.8.3"
+    "react/http": "^0.8.3",
+    "monolog/monolog": "^1.23.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8.35 || ^5.7",
@@ -25,6 +26,12 @@
       "Google\\Ads\\GoogleAds\\": "src/Google/Ads/GoogleAds",
       "GPBMetadata\\Google\\Ads\\GoogleAds\\": "metadata/Google/Ads/GoogleAds",
       "Google\\Ads\\GoogleAds\\Examples\\": "examples"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Google\\": "src/Google/Ads/GoogleAds/Util/Testing/Google",
+      "GPBMetadata\\": "src/Google/Ads/GoogleAds/Util/Testing/metadata"
     }
   },
   "autoload-dev": {

@@ -29,15 +29,32 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      */
     private $case_value = null;
     /**
-     * ID of the parent listing group subdivision. Undefined for the root group.
+     * Resource name of ad group criterion which is the parent listing group
+     * subdivision. Null for the root group.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue parent_ad_group_criterion = 3;</code>
      */
-    private $parent_criterion_id = null;
+    private $parent_ad_group_criterion = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $type
+     *           Type of the listing group.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ListingDimensionInfo $case_value
+     *           Dimension value with which this listing group is refining its parent.
+     *           Undefined for the root group.
+     *     @type \Google\Protobuf\StringValue $parent_ad_group_criterion
+     *           Resource name of ad group criterion which is the parent listing group
+     *           subdivision. Null for the root group.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Criteria::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -95,27 +112,29 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the parent listing group subdivision. Undefined for the root group.
+     * Resource name of ad group criterion which is the parent listing group
+     * subdivision. Null for the root group.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_criterion_id = 3;</code>
-     * @return \Google\Protobuf\Int64Value
+     * Generated from protobuf field <code>.google.protobuf.StringValue parent_ad_group_criterion = 3;</code>
+     * @return \Google\Protobuf\StringValue
      */
-    public function getParentCriterionId()
+    public function getParentAdGroupCriterion()
     {
-        return $this->parent_criterion_id;
+        return $this->parent_ad_group_criterion;
     }
 
     /**
-     * ID of the parent listing group subdivision. Undefined for the root group.
+     * Resource name of ad group criterion which is the parent listing group
+     * subdivision. Null for the root group.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_criterion_id = 3;</code>
-     * @param \Google\Protobuf\Int64Value $var
+     * Generated from protobuf field <code>.google.protobuf.StringValue parent_ad_group_criterion = 3;</code>
+     * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
-    public function setParentCriterionId($var)
+    public function setParentAdGroupCriterion($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->parent_criterion_id = $var;
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->parent_ad_group_criterion = $var;
 
         return $this;
     }

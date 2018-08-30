@@ -28,9 +28,21 @@ class MutateAdGroupCriteriaRequest extends \Google\Protobuf\Internal\Message
      */
     private $operations;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $customer_id
+     *           ID of the customer whose criteria are being modified.
+     *     @type \Google\Ads\GoogleAds\V0\Services\AdGroupCriterionOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *           The list of operations to perform on individual criteria.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\AdGroupCriterionService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -92,9 +92,61 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      */
     private $reference_count = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the campaign budget.
+     *           Campaign budget resource names have the form:
+     *           `customers/{customer_id}/campaignBudgets/{budget_id}`
+     *     @type \Google\Protobuf\Int64Value $id
+     *           The ID of the campaign budget.
+     *           A campaign budget is created using the CampaignBudgetService create
+     *           operation and is assigned a budget ID. A budget ID can be shared across
+     *           different campaigns; the system will then allocate the campaign budget
+     *           among different campaigns to get optimum results.
+     *     @type \Google\Protobuf\StringValue $name
+     *           The name of the campaign budget.
+     *           When creating a campaign budget through CampaignBudgetService, every
+     *           explicitly shared campaign budget must have a non-null, non-empty name.
+     *           Campaign budgets that are not explicitly shared derive their name from the
+     *           attached campaign's name.
+     *           The length of this string must be between 1 and 255, inclusive,
+     *           in UTF-8 bytes, (trimmed).
+     *     @type \Google\Protobuf\Int64Value $amount_micros
+     *           The amount of the budget, in the local currency for the account.
+     *           Amount is specified in micros, where one million is equivalent to one
+     *           currency unit.
+     *     @type int $status
+     *           The status of this campaign budget. This field is read-only.
+     *     @type int $delivery_method
+     *           The delivery method that determines the rate at which the campaign budget
+     *           is spent.
+     *           Defaults to STANDARD if unspecified in a create operation.
+     *     @type \Google\Protobuf\BoolValue $explicitly_shared
+     *           Whether the budget is explicitly shared. This field is set to false by
+     *           default.
+     *           If true, the budget was created with the purpose of sharing
+     *           across one or more campaigns.
+     *           If false, the budget was created with the intention of only being used
+     *           with a single campaign. The budget's name and status will stay in sync
+     *           with the campaign's name and status. Attempting to share the budget with a
+     *           second campaign will result in an error.
+     *           A non-shared budget can become an explicitly shared. The same operation
+     *           must
+     *           also assign the budget a name.
+     *           A shared campaign budget can never become non-shared.
+     *     @type \Google\Protobuf\Int64Value $reference_count
+     *           The number of campaigns actively using the budget.
+     *           This field is read-only.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\CampaignBudget::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

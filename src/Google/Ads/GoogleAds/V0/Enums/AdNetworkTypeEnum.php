@@ -9,16 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Container for enumeration of AdWords network types.
+ * Container for enumeration of Google Ads network types.
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.enums.AdNetworkTypeEnum</code>
  */
 class AdNetworkTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Enums\AdNetworkType::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
 }

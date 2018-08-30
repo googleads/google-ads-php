@@ -4,121 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Resources;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * The budget recommendation for budget constrained campaigns.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.resources.Recommendation.CampaignBudgetRecommendation</code>
- */
-class Recommendation_CampaignBudgetRecommendation extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * The current budget amount in micros.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value current_budget_amount_micros = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Resources\Recommendation\CampaignBudgetRecommendation instead.
+     * @deprecated
      */
-    private $current_budget_amount_micros = null;
-    /**
-     * The recommended budget amount in micros.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 2;</code>
-     */
-    private $recommended_budget_amount_micros = null;
-    /**
-     * The budget amounts and associated impact estimates for some values of
-     * possible budget amounts.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption budget_options = 3;</code>
-     */
-    private $budget_options;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\Recommendation::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * The current budget amount in micros.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value current_budget_amount_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getCurrentBudgetAmountMicros()
-    {
-        return $this->current_budget_amount_micros;
-    }
-
-    /**
-     * The current budget amount in micros.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value current_budget_amount_micros = 1;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setCurrentBudgetAmountMicros($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->current_budget_amount_micros = $var;
-
-        return $this;
-    }
-
-    /**
-     * The recommended budget amount in micros.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getRecommendedBudgetAmountMicros()
-    {
-        return $this->recommended_budget_amount_micros;
-    }
-
-    /**
-     * The recommended budget amount in micros.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 2;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setRecommendedBudgetAmountMicros($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->recommended_budget_amount_micros = $var;
-
-        return $this;
-    }
-
-    /**
-     * The budget amounts and associated impact estimates for some values of
-     * possible budget amounts.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption budget_options = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getBudgetOptions()
-    {
-        return $this->budget_options;
-    }
-
-    /**
-     * The budget amounts and associated impact estimates for some values of
-     * possible budget amounts.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption budget_options = 3;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\Recommendation_CampaignBudgetRecommendation_CampaignBudgetRecommendationOption[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setBudgetOptions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Resources\Recommendation_CampaignBudgetRecommendation_CampaignBudgetRecommendationOption::class);
-        $this->budget_options = $arr;
-
-        return $this;
-    }
-
+    class Recommendation_CampaignBudgetRecommendation {}
 }
+class_exists(Recommendation\CampaignBudgetRecommendation::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Resources\Recommendation_CampaignBudgetRecommendation is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Resources\Recommendation\CampaignBudgetRecommendation instead', E_USER_DEPRECATED);
 

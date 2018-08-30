@@ -4,86 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Resources;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * The keyword recommendation.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.resources.Recommendation.KeywordRecommendation</code>
- */
-class Recommendation_KeywordRecommendation extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * The recommended keyword.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.KeywordInfo keyword = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Resources\Recommendation\KeywordRecommendation instead.
+     * @deprecated
      */
-    private $keyword = null;
-    /**
-     * The recommended CPC (cost-per-click) bid.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
-     */
-    private $recommended_cpc_bid_micros = null;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\Recommendation::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * The recommended keyword.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.KeywordInfo keyword = 1;</code>
-     * @return \Google\Ads\GoogleAds\V0\Common\KeywordInfo
-     */
-    public function getKeyword()
-    {
-        return $this->keyword;
-    }
-
-    /**
-     * The recommended keyword.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.KeywordInfo keyword = 1;</code>
-     * @param \Google\Ads\GoogleAds\V0\Common\KeywordInfo $var
-     * @return $this
-     */
-    public function setKeyword($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\KeywordInfo::class);
-        $this->keyword = $var;
-
-        return $this;
-    }
-
-    /**
-     * The recommended CPC (cost-per-click) bid.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getRecommendedCpcBidMicros()
-    {
-        return $this->recommended_cpc_bid_micros;
-    }
-
-    /**
-     * The recommended CPC (cost-per-click) bid.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setRecommendedCpcBidMicros($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->recommended_cpc_bid_micros = $var;
-
-        return $this;
-    }
-
+    class Recommendation_KeywordRecommendation {}
 }
+class_exists(Recommendation\KeywordRecommendation::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Resources\Recommendation_KeywordRecommendation is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Resources\Recommendation\KeywordRecommendation instead', E_USER_DEPRECATED);
 

@@ -22,9 +22,19 @@ class ApplyRecommendationResponse extends \Google\Protobuf\Internal\Message
      */
     private $results;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationResult[]|\Google\Protobuf\Internal\RepeatedField $results
+     *           Results of operations to apply recommendations.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\RecommendationService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

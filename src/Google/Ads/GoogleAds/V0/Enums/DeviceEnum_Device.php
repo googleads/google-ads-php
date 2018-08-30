@@ -4,42 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enumerates AdWords platforms available for targeting.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\DeviceEnum\Device</code>
- */
-class DeviceEnum_Device
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\DeviceEnum\Device instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The value is unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Mobile devices with full browsers.
-     *
-     * Generated from protobuf enum <code>MOBILE = 2;</code>
-     */
-    const MOBILE = 2;
-    /**
-     * Tablets with full browsers.
-     *
-     * Generated from protobuf enum <code>TABLET = 3;</code>
-     */
-    const TABLET = 3;
-    /**
-     * Computers.
-     *
-     * Generated from protobuf enum <code>DESKTOP = 4;</code>
-     */
-    const DESKTOP = 4;
+    class DeviceEnum_Device {}
 }
+class_exists(DeviceEnum\Device::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\DeviceEnum_Device is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\DeviceEnum\Device instead', E_USER_DEPRECATED);
 

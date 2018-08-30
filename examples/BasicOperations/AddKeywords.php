@@ -28,8 +28,8 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\ResourceNames;
 use Google\Ads\GoogleAds\V0\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupCriterionStatusEnum_AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum_KeywordMatchType;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionOperation;
@@ -109,22 +109,20 @@ class AddKeywords
         $adGroupId,
         $keywordText
     ) {
-        $wrappedKeywordText = new StringValue();
-        $wrappedKeywordText->setValue($keywordText);
-
         // Configures the keyword text and match type settings.
-        $keywordInfo = new KeywordInfo();
-        $keywordInfo->setText($wrappedKeywordText);
-        $keywordInfo->setMatchType(KeywordMatchTypeEnum_KeywordMatchType::EXACT);
-
-        $wrappedAdGroupResourceName = new StringValue();
-        $wrappedAdGroupResourceName->setValue(ResourceNames::forAdGroup($customerId, $adGroupId));
+        $keywordInfo = new KeywordInfo([
+            'text' => new StringValue(['value' => $keywordText]),
+            'match_type' => KeywordMatchType::EXACT
+        ]);
 
         // Constructs an ad group criterion using the keyword text info above.
-        $adGroupCriterion = new AdGroupCriterion();
-        $adGroupCriterion->setAdGroup($wrappedAdGroupResourceName);
-        $adGroupCriterion->setStatus(AdGroupCriterionStatusEnum_AdGroupCriterionStatus::ENABLED);
-        $adGroupCriterion->setKeyword($keywordInfo);
+        $adGroupCriterion = new AdGroupCriterion([
+            'ad_group' => new StringValue(
+                ['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]
+            ),
+            'status' => AdGroupCriterionStatus::ENABLED,
+            'keyword' => $keywordInfo
+        ]);
 
         $adGroupCriterionOperation = new AdGroupCriterionOperation();
         $adGroupCriterionOperation->setCreate($adGroupCriterion);

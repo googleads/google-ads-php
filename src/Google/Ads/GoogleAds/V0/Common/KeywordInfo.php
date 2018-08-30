@@ -28,9 +28,21 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
      */
     private $match_type = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\StringValue $text
+     *           The text of the keyword (at most 80 characters and 10 words).
+     *     @type int $match_type
+     *           The match type of the keyword.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Criteria::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
