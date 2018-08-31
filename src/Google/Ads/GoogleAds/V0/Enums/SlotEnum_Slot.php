@@ -4,60 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enumerates possible positions of the Ad.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\SlotEnum\Slot</code>
- */
-class SlotEnum_Slot
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\SlotEnum\Slot instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The value is unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Google search: Side.
-     *
-     * Generated from protobuf enum <code>SEARCH_SIDE = 2;</code>
-     */
-    const SEARCH_SIDE = 2;
-    /**
-     * Google search: Top.
-     *
-     * Generated from protobuf enum <code>SEARCH_TOP = 3;</code>
-     */
-    const SEARCH_TOP = 3;
-    /**
-     * Google search: Other.
-     *
-     * Generated from protobuf enum <code>SEARCH_OTHER = 4;</code>
-     */
-    const SEARCH_OTHER = 4;
-    /**
-     * Google Display Network.
-     *
-     * Generated from protobuf enum <code>CONTENT = 5;</code>
-     */
-    const CONTENT = 5;
-    /**
-     * Search partners: Top.
-     *
-     * Generated from protobuf enum <code>SEARCH_PARTNER_TOP = 6;</code>
-     */
-    const SEARCH_PARTNER_TOP = 6;
-    /**
-     * Search partners: Other.
-     *
-     * Generated from protobuf enum <code>SEARCH_PARTNER_OTHER = 7;</code>
-     */
-    const SEARCH_PARTNER_OTHER = 7;
+    class SlotEnum_Slot {}
 }
+class_exists(SlotEnum\Slot::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\SlotEnum_Slot is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\SlotEnum\Slot instead', E_USER_DEPRECATED);
 

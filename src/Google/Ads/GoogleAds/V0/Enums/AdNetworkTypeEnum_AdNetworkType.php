@@ -4,54 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enumerates AdWords network types.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\AdNetworkTypeEnum\AdNetworkType</code>
- */
-class AdNetworkTypeEnum_AdNetworkType
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\AdNetworkTypeEnum\AdNetworkType instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The value is unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Google search.
-     *
-     * Generated from protobuf enum <code>SEARCH = 2;</code>
-     */
-    const SEARCH = 2;
-    /**
-     * Search partners.
-     *
-     * Generated from protobuf enum <code>SEARCH_PARTNERS = 3;</code>
-     */
-    const SEARCH_PARTNERS = 3;
-    /**
-     * Display Network.
-     *
-     * Generated from protobuf enum <code>CONTENT = 4;</code>
-     */
-    const CONTENT = 4;
-    /**
-     * YouTube Search.
-     *
-     * Generated from protobuf enum <code>YOUTUBE_SEARCH = 5;</code>
-     */
-    const YOUTUBE_SEARCH = 5;
-    /**
-     * YouTube Videos
-     *
-     * Generated from protobuf enum <code>YOUTUBE_WATCH = 6;</code>
-     */
-    const YOUTUBE_WATCH = 6;
+    class AdNetworkTypeEnum_AdNetworkType {}
 }
+class_exists(AdNetworkTypeEnum\AdNetworkType::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\AdNetworkTypeEnum_AdNetworkType is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\AdNetworkTypeEnum\AdNetworkType instead', E_USER_DEPRECATED);
 

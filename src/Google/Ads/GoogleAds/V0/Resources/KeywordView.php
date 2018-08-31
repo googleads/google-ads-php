@@ -24,9 +24,21 @@ class KeywordView extends \Google\Protobuf\Internal\Message
      */
     private $resource_name = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the keyword view.
+     *           Keyword view resource names have the form:
+     *           `customers/{customer_id}/keywordViews/{ad_group_id}_{criterion_id}`
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\KeywordView::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

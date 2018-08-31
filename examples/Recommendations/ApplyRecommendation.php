@@ -117,13 +117,10 @@ class ApplyRecommendation
         // For details, please read
         // https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v0.services#google.ads.googleads.v0.services.ApplyRecommendationOperation.
         /*
-        $overridingAd = new Ad();
-        $wrappedId = new Int64Value();
-        $wrappedId->setValue('INSERT_AD_ID_AS_INTEGER_HERE');
-        $overridingAd->setId($wrappedId);
-        $textAdParameters = new ApplyRecommendationOperation_TextAdParameters();
-        $textAdParameters->setAd($overridingAd);
-        $applyRecommendationOperation->setTextAd($textAdParameters);
+        $overridingAd = new Ad([
+            'id' => new Int64Value(['value' => 'INSERT_AD_ID_AS_INTEGER_HERE'])
+        ]);
+        $applyRecommendationOperation->setTextAd(new TextAdParameters(['ad' => $overridingAd]));
         */
         // Issues a mutate request to apply the recommendation.
         $recommendationServiceClient = $googleAdsClient->getRecommendationServiceClient();

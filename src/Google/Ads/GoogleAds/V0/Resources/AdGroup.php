@@ -114,9 +114,59 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     private $percent_cpc_bid_micros = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the ad group.
+     *           Ad group resource names have the form:
+     *           `customers/{customer_id}/adGroups/{ad_group_id}`
+     *     @type \Google\Protobuf\Int64Value $id
+     *           The ID of the ad group.
+     *     @type \Google\Protobuf\StringValue $name
+     *           The name of the ad group.
+     *           This field is required and should not be empty when creating new ad
+     *           groups.
+     *           It must contain fewer than 255 UTF-8 full-width characters.
+     *           It must not contain any null (code point 0x0), NL line feed
+     *           (code point 0xA) or carriage return (code point 0xD) characters.
+     *     @type int $status
+     *           The status of the ad group.
+     *     @type int $type
+     *           The type of the ad group.
+     *     @type \Google\Protobuf\StringValue $tracking_url_template
+     *           The URL template for constructing a tracking URL.
+     *     @type \Google\Ads\GoogleAds\V0\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *           The list of mappings used to substitute custom parameter tags in a
+     *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     *     @type \Google\Protobuf\StringValue $campaign
+     *           The campaign to which the ad group belongs.
+     *           This field must not be used in WHERE clauses.
+     *     @type \Google\Protobuf\Int64Value $cpc_bid_micros
+     *           The maximum CPC (cost-per-click) bid.
+     *     @type \Google\Protobuf\Int64Value $cpm_bid_micros
+     *           The maximum CPM (cost-per-thousand viewable impressions) bid.
+     *     @type \Google\Protobuf\Int64Value $cpa_bid_micros
+     *           The target cost-per-acquisition (conversion) bid.
+     *     @type \Google\Protobuf\Int64Value $cpv_bid_micros
+     *           The CPV (cost-per-view) bid.
+     *     @type \Google\Protobuf\DoubleValue $target_roas_override
+     *           The target return on ad spend (ROAS) override. If the ad group's campaign
+     *           bidding strategy is a standard Target ROAS strategy, then this field
+     *           overrides the target ROAS specified in the campaign's bidding strategy.
+     *           Otherwise, this value is ignored.
+     *     @type \Google\Protobuf\Int64Value $percent_cpc_bid_micros
+     *           The percent cpc bid amount, expressed as a fraction of the advertised price
+     *           for some good or service. The valid range for the fraction is [0,1) and the
+     *           value stored here is 1,000,000 * [fraction].
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\AdGroup::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

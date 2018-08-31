@@ -4,66 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enumerates days of the week, e.g., "Monday".
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\DayOfWeekEnum\DayOfWeek</code>
- */
-class DayOfWeekEnum_DayOfWeek
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\DayOfWeekEnum\DayOfWeek instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The value is unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Monday.
-     *
-     * Generated from protobuf enum <code>MONDAY = 2;</code>
-     */
-    const MONDAY = 2;
-    /**
-     * Tuesday.
-     *
-     * Generated from protobuf enum <code>TUESDAY = 3;</code>
-     */
-    const TUESDAY = 3;
-    /**
-     * Wednesday.
-     *
-     * Generated from protobuf enum <code>WEDNESDAY = 4;</code>
-     */
-    const WEDNESDAY = 4;
-    /**
-     * Thursday.
-     *
-     * Generated from protobuf enum <code>THURSDAY = 5;</code>
-     */
-    const THURSDAY = 5;
-    /**
-     * Friday.
-     *
-     * Generated from protobuf enum <code>FRIDAY = 6;</code>
-     */
-    const FRIDAY = 6;
-    /**
-     * Saturday.
-     *
-     * Generated from protobuf enum <code>SATURDAY = 7;</code>
-     */
-    const SATURDAY = 7;
-    /**
-     * Sunday.
-     *
-     * Generated from protobuf enum <code>SUNDAY = 8;</code>
-     */
-    const SUNDAY = 8;
+    class DayOfWeekEnum_DayOfWeek {}
 }
+class_exists(DayOfWeekEnum\DayOfWeek::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\DayOfWeekEnum_DayOfWeek is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\DayOfWeekEnum\DayOfWeek instead', E_USER_DEPRECATED);
 

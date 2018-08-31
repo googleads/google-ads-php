@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible string length errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\StringLengthErrorEnum\StringLengthError</code>
- */
-class StringLengthErrorEnum_StringLengthError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\StringLengthErrorEnum\StringLengthError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Too short.
-     *
-     * Generated from protobuf enum <code>TOO_SHORT = 2;</code>
-     */
-    const TOO_SHORT = 2;
-    /**
-     * Too long.
-     *
-     * Generated from protobuf enum <code>TOO_LONG = 3;</code>
-     */
-    const TOO_LONG = 3;
+    class StringLengthErrorEnum_StringLengthError {}
 }
+class_exists(StringLengthErrorEnum\StringLengthError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\StringLengthErrorEnum_StringLengthError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\StringLengthErrorEnum\StringLengthError instead', E_USER_DEPRECATED);
 

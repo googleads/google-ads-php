@@ -100,8 +100,8 @@ class GetArtifactMetadata
     {
         $googleAdsFieldServiceClient = $googleAdsClient->getGoogleAdsFieldServiceClient();
         // Searches for an artifact whose name is the same as the specified artifactName.
-        $query = 'SELECT name, category, selectable, filterable, sortable, selectable_with, '
-            . 'data_type, is_repeated WHERE name = ' . $artifactName;
+        $query = "SELECT name, category, selectable, filterable, sortable, selectable_with, "
+            . "data_type, is_repeated WHERE name = '$artifactName'";
         $response = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
 
         // Iterates over all rows and prints our the metadata of the returned artifacts

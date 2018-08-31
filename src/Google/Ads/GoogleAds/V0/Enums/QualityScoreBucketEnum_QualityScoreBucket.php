@@ -4,42 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enum listing the possible quality score buckets.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\QualityScoreBucketEnum\QualityScoreBucket</code>
- */
-class QualityScoreBucketEnum_QualityScoreBucket
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\QualityScoreBucketEnum\QualityScoreBucket instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Quality of the creative is below average.
-     *
-     * Generated from protobuf enum <code>BELOW_AVERAGE = 2;</code>
-     */
-    const BELOW_AVERAGE = 2;
-    /**
-     * Quality of the creative is average.
-     *
-     * Generated from protobuf enum <code>AVERAGE = 3;</code>
-     */
-    const AVERAGE = 3;
-    /**
-     * Quality of the creative is above average.
-     *
-     * Generated from protobuf enum <code>ABOVE_AVERAGE = 4;</code>
-     */
-    const ABOVE_AVERAGE = 4;
+    class QualityScoreBucketEnum_QualityScoreBucket {}
 }
+class_exists(QualityScoreBucketEnum\QualityScoreBucket::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\QualityScoreBucketEnum_QualityScoreBucket is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\QualityScoreBucketEnum\QualityScoreBucket instead', E_USER_DEPRECATED);
 

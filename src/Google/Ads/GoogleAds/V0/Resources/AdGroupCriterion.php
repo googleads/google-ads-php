@@ -165,9 +165,77 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     private $url_custom_parameters;
     protected $criterion;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the ad group criterion.
+     *           Ad group criterion resource names have the form:
+     *           `customers/{customer_id}/adGroupCriteria/{ad_group_id}_{criterion_id}`
+     *     @type \Google\Protobuf\Int64Value $criterion_id
+     *           The ID of the criterion.
+     *           This field is ignored for mutates.
+     *     @type int $status
+     *           The status of the criterion.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion\QualityInfo $quality_info
+     *           Information regarding the quality of the criterion.
+     *     @type \Google\Protobuf\StringValue $ad_group
+     *           The ad group to which the criterion belongs.
+     *           This field must not be used in WHERE clauses.
+     *     @type int $type
+     *           The type of the criterion.
+     *     @type \Google\Protobuf\BoolValue $negative
+     *           Whether to target (`false`) or exclude (`true`) the criterion.
+     *           This field is immutable. To switch a criterion from positive to negative,
+     *           remove then re-add it.
+     *     @type \Google\Protobuf\Int64Value $cpc_bid_micros
+     *           The CPC (cost-per-click) bid.
+     *     @type \Google\Protobuf\Int64Value $cpm_bid_micros
+     *           The CPM (cost-per-thousand viewable impressions) bid.
+     *     @type \Google\Protobuf\Int64Value $cpv_bid_micros
+     *           The CPV (cost-per-view) bid.
+     *     @type \Google\Protobuf\Int64Value $percent_cpc_bid_micros
+     *           The CPC bid amount, expressed as a fraction of the advertised price
+     *           for some good or service. The valid range for the fraction is [0,1) and the
+     *           value stored here is 1,000,000 * [fraction].
+     *     @type \Google\Protobuf\Int64Value $effective_cpc_bid_micros
+     *           The effective CPC (cost-per-click) bid.
+     *     @type \Google\Protobuf\Int64Value $effective_cpm_bid_micros
+     *           The effective CPM (cost-per-thousand viewable impressions) bid.
+     *     @type \Google\Protobuf\Int64Value $effective_cpv_bid_micros
+     *           The effective CPV (cost-per-view) bid.
+     *     @type \Google\Protobuf\Int64Value $effective_percent_cpc_bid_micros
+     *           The effective Percent CPC bid amount.
+     *     @type int $effective_cpc_bid_source
+     *           Source of the effective CPC bid.
+     *     @type int $effective_cpm_bid_source
+     *           Source of the effective CPM bid.
+     *     @type int $effective_cpv_bid_source
+     *           Source of the effective CPV bid.
+     *     @type int $effective_percent_cpc_bid_source
+     *           Source of the effective Percent CPC bid.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion\PositionEstimates $position_estimates
+     *           Estimates for criterion bids at various positions.
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $final_urls
+     *           The list of possible final URLs after all cross-domain redirects for the
+     *           ad.
+     *     @type \Google\Protobuf\StringValue $tracking_url_template
+     *           The URL template for constructing a tracking URL.
+     *     @type \Google\Ads\GoogleAds\V0\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *           The list of mappings used to substitute custom parameter tags in a
+     *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     *     @type \Google\Ads\GoogleAds\V0\Common\KeywordInfo $keyword
+     *           Keyword.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ListingGroupInfo $listing_group
+     *           Listing group.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -258,7 +326,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Information regarding the quality of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupCriterion.QualityInfo quality_info = 4;</code>
-     * @return \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion_QualityInfo
+     * @return \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion\QualityInfo
      */
     public function getQualityInfo()
     {
@@ -269,7 +337,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Information regarding the quality of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupCriterion.QualityInfo quality_info = 4;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion_QualityInfo $var
+     * @param \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion\QualityInfo $var
      * @return $this
      */
     public function setQualityInfo($var)
@@ -684,7 +752,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Estimates for criterion bids at various positions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupCriterion.PositionEstimates position_estimates = 10;</code>
-     * @return \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion_PositionEstimates
+     * @return \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion\PositionEstimates
      */
     public function getPositionEstimates()
     {
@@ -695,7 +763,7 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      * Estimates for criterion bids at various positions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupCriterion.PositionEstimates position_estimates = 10;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion_PositionEstimates $var
+     * @param \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion\PositionEstimates $var
      * @return $this
      */
     public function setPositionEstimates($var)

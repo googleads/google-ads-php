@@ -19,6 +19,7 @@ namespace Google\Ads\GoogleAds\Lib;
 
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 
 /**
  * Builds Google Ads API clients.
@@ -27,15 +28,22 @@ use InvalidArgumentException;
  */
 final class GoogleAdsClientBuilder implements GoogleAdsBuilder
 {
+    private static $DEFAULT_LOGGER_CHANNEL = 'google-ads';
+
+    private $loggerFactory;
+
     private $developerToken;
     private $endpoint;
     private $oAuth2Credential;
+    private $logger;
+    private $logLevel;
 
     private $configurationLoader;
 
     public function __construct()
     {
         $this->configurationLoader = new ConfigurationLoader();
+        $this->loggerFactory = new LoggerFactory();
     }
 
     /**
@@ -68,6 +76,12 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
             $configuration->getConfiguration('developerToken', 'GOOGLE_ADS');
         $this->endpoint =
             $configuration->getConfiguration('endpoint', 'GOOGLE_ADS');
+        $this->logLevel = $configuration->getConfiguration('logLevel', 'LOGGING');
+        $this->logger = $this->loggerFactory->createLogger(
+            self::$DEFAULT_LOGGER_CHANNEL,
+            $configuration->getConfiguration('logFilePath', 'LOGGING'),
+            $this->logLevel
+        );
 
         return $this;
     }
@@ -106,6 +120,30 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     public function withOAuth2Credential(FetchAuthTokenInterface $oAuth2Credential)
     {
         $this->oAuth2Credential = $oAuth2Credential;
+        return $this;
+    }
+
+    /**
+     * Includes a logger to log requests and responses.
+     *
+     * @param LoggerInterface $logger
+     * @return self this builder
+     */
+    public function withLogger(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+        return $this;
+    }
+
+    /**
+     * Sets the log level for Google Ads API requests and responses.
+     *
+     * @param string $logLevel the PSR-3 log level name, e.g., INFO
+     * @return self this builder
+     */
+    public function withLogLevel($logLevel)
+    {
+        $this->logLevel = $logLevel;
         return $this;
     }
 
@@ -181,5 +219,25 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     public function getOAuth2Credential()
     {
         return $this->oAuth2Credential;
+    }
+
+    /**
+     * Gets the logger used to log requests and responses.
+     *
+     * @return LoggerInterface
+     */
+    public function getLogger()
+    {
+        return $this->logger;
+    }
+
+    /**
+     * Gets the PSR-3 log level for Google Ads API requests and responses.
+     *
+     * @return string the log level
+     */
+    public function getLogLevel()
+    {
+        return $this->logLevel;
     }
 }

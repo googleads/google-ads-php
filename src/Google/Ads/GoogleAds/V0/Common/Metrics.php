@@ -16,17 +16,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class Metrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * All conversions divided by the number of ad interactions.
+     * All conversions from interactions (as oppose to view through conversions)
+     * divided by the number of ad interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversion_rate = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_rate = 65;</code>
      */
-    private $all_conversion_rate = null;
+    private $all_conversions_from_interactions_rate = null;
     /**
      * The total value of all conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversion_value = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
      */
-    private $all_conversion_value = null;
+    private $all_conversions_value = null;
     /**
      * The total number of conversions. This includes "Conversions" plus
      * conversions that have their "Include in Conversions" setting unchecked.
@@ -42,11 +43,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $all_conversions_value_per_cost = null;
     /**
-     * The value of all conversions divided by the total number of interactions.
+     * The value of all conversions from interactions divided by the total number
+     * of interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value_per_interaction = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_value_per_interaction = 67;</code>
      */
-    private $all_conversions_value_per_interaction = null;
+    private $all_conversions_from_interactions_value_per_interaction = null;
     /**
      * The average amount you pay per interaction. This amount is the total cost
      * of your ads divided by the total number of interactions.
@@ -114,30 +116,31 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $content_rank_lost_impression_share = null;
     /**
-     * Conversions divided by the number of ad interactions (such as clicks for
-     * text ads or views for video ads).
+     * Conversions from interactions divided by the number of ad interactions
+     * (such as clicks for text ads or views for video ads).
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_rate = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_rate = 69;</code>
      */
-    private $conversion_rate = null;
+    private $conversions_from_interactions_rate = null;
     /**
      * The total value of conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
      */
-    private $conversion_value = null;
+    private $conversions_value = null;
     /**
      * The value of conversions divided by the cost of ad interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value_per_cost = 64;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value_per_cost = 71;</code>
      */
-    private $conversion_value_per_cost = null;
+    private $conversions_value_per_cost = null;
     /**
-     * The value of conversions divided by the number of ad interactions.
+     * The value of conversions from interactions divided by the number of ad
+     * interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value_per_interaction = 63;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_value_per_interaction = 72;</code>
      */
-    private $conversion_value_per_interaction = null;
+    private $conversions_from_interactions_value_per_interaction = null;
     /**
      * The number of conversions. This only includes conversion actions which have
      * "Include in Conversions" checked.
@@ -155,9 +158,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The cost of ad interactions divided by all conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_all_conversion = 27;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_all_conversions = 68;</code>
      */
-    private $cost_per_all_conversion = null;
+    private $cost_per_all_conversions = null;
     /**
      * The cost of ad interactions divided by conversions.
      *
@@ -165,7 +168,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $cost_per_conversion = null;
     /**
-     * Conversions from when a customer clicks on an AdWords ad on one device,
+     * Conversions from when a customer clicks on a Google Ads ad on one device,
      * then converts on a different device or browser.
      * Cross-device conversions are already included in all_conversions.
      *
@@ -324,33 +327,182 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $view_through_conversions = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\DoubleValue $all_conversions_from_interactions_rate
+     *           All conversions from interactions (as oppose to view through conversions)
+     *           divided by the number of ad interactions.
+     *     @type \Google\Protobuf\DoubleValue $all_conversions_value
+     *           The total value of all conversions.
+     *     @type \Google\Protobuf\DoubleValue $all_conversions
+     *           The total number of conversions. This includes "Conversions" plus
+     *           conversions that have their "Include in Conversions" setting unchecked.
+     *     @type \Google\Protobuf\DoubleValue $all_conversions_value_per_cost
+     *           The value of all conversions divided by the total cost of ad interactions
+     *           (such as clicks for text ads or views for video ads).
+     *     @type \Google\Protobuf\DoubleValue $all_conversions_from_interactions_value_per_interaction
+     *           The value of all conversions from interactions divided by the total number
+     *           of interactions.
+     *     @type \Google\Protobuf\DoubleValue $average_cost
+     *           The average amount you pay per interaction. This amount is the total cost
+     *           of your ads divided by the total number of interactions.
+     *     @type \Google\Protobuf\DoubleValue $average_cpc
+     *           The total cost of all clicks divided by the total number of clicks
+     *           received.
+     *     @type \Google\Protobuf\DoubleValue $average_cpm
+     *           Average cost-per-thousand impressions (CPM).
+     *     @type \Google\Protobuf\DoubleValue $average_position
+     *           Your ad's position relative to those of other advertisers.
+     *     @type \Google\Protobuf\DoubleValue $bounce_rate
+     *           Percentage of clicks where the user only visited a single page on your
+     *           site. Imported from Google Analytics.
+     *     @type \Google\Protobuf\Int64Value $clicks
+     *           The number of clicks.
+     *     @type \Google\Protobuf\DoubleValue $content_budget_lost_impression_share
+     *           The estimated percent of times that your ad was eligible to show
+     *           on the Display Network but didn't because your budget was too low.
+     *           Note: Content budget lost impression share is reported in the range of 0
+     *           to 0.9. Any value above 0.9 is reported as 0.9001.
+     *     @type \Google\Protobuf\DoubleValue $content_impression_share
+     *           The impressions you've received on the Display Network divided
+     *           by the estimated number of impressions you were eligible to receive.
+     *           Note: Content impression share is reported in the range of 0.1 to 1. Any
+     *           value below 0.1 is reported as 0.0999.
+     *     @type \Google\Protobuf\DoubleValue $content_rank_lost_impression_share
+     *           The estimated percentage of impressions on the Display Network
+     *           that your ads didn't receive due to poor Ad Rank.
+     *           Note: Content rank lost impression share is reported in the range of 0
+     *           to 0.9. Any value above 0.9 is reported as 0.9001.
+     *     @type \Google\Protobuf\DoubleValue $conversions_from_interactions_rate
+     *           Conversions from interactions divided by the number of ad interactions
+     *           (such as clicks for text ads or views for video ads).
+     *     @type \Google\Protobuf\DoubleValue $conversions_value
+     *           The total value of conversions.
+     *     @type \Google\Protobuf\DoubleValue $conversions_value_per_cost
+     *           The value of conversions divided by the cost of ad interactions.
+     *     @type \Google\Protobuf\DoubleValue $conversions_from_interactions_value_per_interaction
+     *           The value of conversions from interactions divided by the number of ad
+     *           interactions.
+     *     @type \Google\Protobuf\DoubleValue $conversions
+     *           The number of conversions. This only includes conversion actions which have
+     *           "Include in Conversions" checked.
+     *     @type \Google\Protobuf\Int64Value $cost_micros
+     *           The sum of your cost-per-click (CPC) and cost-per-thousand impressions
+     *           (CPM) costs during this period.
+     *     @type \Google\Protobuf\DoubleValue $cost_per_all_conversions
+     *           The cost of ad interactions divided by all conversions.
+     *     @type \Google\Protobuf\DoubleValue $cost_per_conversion
+     *           The cost of ad interactions divided by conversions.
+     *     @type \Google\Protobuf\DoubleValue $cross_device_conversions
+     *           Conversions from when a customer clicks on a Google Ads ad on one device,
+     *           then converts on a different device or browser.
+     *           Cross-device conversions are already included in all_conversions.
+     *     @type \Google\Protobuf\DoubleValue $ctr
+     *           The number of clicks your ad receives (Clicks) divided by the number
+     *           of times your ad is shown (Impressions).
+     *     @type \Google\Protobuf\DoubleValue $engagement_rate
+     *           How often people engage with your ad after it's shown to them. This is the
+     *           number of ad expansions divided by the number of times your ad is shown.
+     *     @type \Google\Protobuf\Int64Value $engagements
+     *           The number of engagements.
+     *           An engagement occurs when a viewer expands your Lightbox ad. Also, in the
+     *           future, other ad types may support engagement metrics.
+     *     @type \Google\Protobuf\Int64Value $impressions
+     *           Count of how often your ad has appeared on a search results page or
+     *           website on the Google Network.
+     *     @type \Google\Protobuf\DoubleValue $interaction_rate
+     *           How often people interact with your ad after it is shown to them.
+     *           This is the number of interactions divided by the number of times your ad
+     *           is shown.
+     *     @type \Google\Protobuf\Int64Value $interactions
+     *           The number of interactions.
+     *           An interaction is the main user action associated with an ad format-clicks
+     *           for text and shopping ads, views for video ads, and so on.
+     *     @type \Google\Protobuf\DoubleValue $invalid_click_rate
+     *           The percentage of clicks filtered out of your total number of clicks
+     *           (filtered + non-filtered clicks) during the reporting period.
+     *     @type \Google\Protobuf\Int64Value $invalid_clicks
+     *           Number of clicks Google considers illegitimate and doesn't charge you for.
+     *     @type \Google\Protobuf\DoubleValue $percent_new_visitors
+     *           Percentage of first-time sessions (from people who had never visited your
+     *           site before). Imported from Google Analytics.
+     *     @type \Google\Protobuf\Int64Value $phone_calls
+     *           Number of offline phone calls.
+     *     @type \Google\Protobuf\Int64Value $phone_impressions
+     *           Number of offline phone impressions.
+     *     @type \Google\Protobuf\DoubleValue $phone_through_rate
+     *           Number of phone calls received (phone_calls) divided by the number of
+     *           times your phone number is shown (phone_impressions).
+     *     @type \Google\Protobuf\DoubleValue $relative_ctr
+     *           Your clickthrough rate (Ctr) divided by the average clickthrough rate of
+     *           all advertisers on the websites that show your ads. Measures how your ads
+     *           perform on Display Network sites compared to other ads on the same sites.
+     *     @type \Google\Protobuf\DoubleValue $search_budget_lost_impression_share
+     *           The estimated percent of times that your ad was eligible to show on the
+     *           Search Network but didn't because your budget was too low. Note: Search
+     *           budget lost impression share is reported in the range of 0 to 0.9. Any
+     *           value above 0.9 is reported as 0.9001.
+     *     @type \Google\Protobuf\DoubleValue $search_exact_match_impression_share
+     *           The impressions you've received divided by the estimated number of
+     *           impressions you were eligible to receive on the Search Network for search
+     *           terms that matched your keywords exactly (or were close variants of your
+     *           keyword), regardless of your keyword match types. Note: Search exact match
+     *           impression share is reported in the range of 0.1 to 1. Any value below 0.1
+     *           is reported as 0.0999.
+     *     @type \Google\Protobuf\DoubleValue $search_impression_share
+     *           The impressions you've received on the Search Network divided
+     *           by the estimated number of impressions you were eligible to receive.
+     *           Note: Search impression share is reported in the range of 0.1 to 1. Any
+     *           value below 0.1 is reported as 0.0999.
+     *     @type \Google\Protobuf\DoubleValue $search_rank_lost_impression_share
+     *           The estimated percentage of impressions on the Search Network
+     *           that your ads didn't receive due to poor Ad Rank.
+     *           Note: Search rank lost impression share is reported in the range of 0 to
+     *           0.9. Any value above 0.9 is reported as 0.9001.
+     *     @type \Google\Protobuf\DoubleValue $value_per_all_conversions
+     *           The value of all conversions divided by the number of all conversions.
+     *     @type \Google\Protobuf\DoubleValue $value_per_conversion
+     *           The value of conversions divided by the number of conversions.
+     *     @type \Google\Protobuf\Int64Value $view_through_conversions
+     *           The total number of view-through conversions.
+     *           These happen when a customer sees an image or rich media ad, then later
+     *           completes a conversion on your site without interacting with (e.g.,
+     *           clicking on) another ad.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Metrics::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
-     * All conversions divided by the number of ad interactions.
+     * All conversions from interactions (as oppose to view through conversions)
+     * divided by the number of ad interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversion_rate = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_rate = 65;</code>
      * @return \Google\Protobuf\DoubleValue
      */
-    public function getAllConversionRate()
+    public function getAllConversionsFromInteractionsRate()
     {
-        return $this->all_conversion_rate;
+        return $this->all_conversions_from_interactions_rate;
     }
 
     /**
-     * All conversions divided by the number of ad interactions.
+     * All conversions from interactions (as oppose to view through conversions)
+     * divided by the number of ad interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversion_rate = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_rate = 65;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setAllConversionRate($var)
+    public function setAllConversionsFromInteractionsRate($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->all_conversion_rate = $var;
+        $this->all_conversions_from_interactions_rate = $var;
 
         return $this;
     }
@@ -358,25 +510,25 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The total value of all conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversion_value = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
      * @return \Google\Protobuf\DoubleValue
      */
-    public function getAllConversionValue()
+    public function getAllConversionsValue()
     {
-        return $this->all_conversion_value;
+        return $this->all_conversions_value;
     }
 
     /**
      * The total value of all conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversion_value = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setAllConversionValue($var)
+    public function setAllConversionsValue($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->all_conversion_value = $var;
+        $this->all_conversions_value = $var;
 
         return $this;
     }
@@ -438,27 +590,29 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The value of all conversions divided by the total number of interactions.
+     * The value of all conversions from interactions divided by the total number
+     * of interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value_per_interaction = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_value_per_interaction = 67;</code>
      * @return \Google\Protobuf\DoubleValue
      */
-    public function getAllConversionsValuePerInteraction()
+    public function getAllConversionsFromInteractionsValuePerInteraction()
     {
-        return $this->all_conversions_value_per_interaction;
+        return $this->all_conversions_from_interactions_value_per_interaction;
     }
 
     /**
-     * The value of all conversions divided by the total number of interactions.
+     * The value of all conversions from interactions divided by the total number
+     * of interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value_per_interaction = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_value_per_interaction = 67;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setAllConversionsValuePerInteraction($var)
+    public function setAllConversionsFromInteractionsValuePerInteraction($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->all_conversions_value_per_interaction = $var;
+        $this->all_conversions_from_interactions_value_per_interaction = $var;
 
         return $this;
     }
@@ -722,29 +876,29 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Conversions divided by the number of ad interactions (such as clicks for
-     * text ads or views for video ads).
+     * Conversions from interactions divided by the number of ad interactions
+     * (such as clicks for text ads or views for video ads).
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_rate = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_rate = 69;</code>
      * @return \Google\Protobuf\DoubleValue
      */
-    public function getConversionRate()
+    public function getConversionsFromInteractionsRate()
     {
-        return $this->conversion_rate;
+        return $this->conversions_from_interactions_rate;
     }
 
     /**
-     * Conversions divided by the number of ad interactions (such as clicks for
-     * text ads or views for video ads).
+     * Conversions from interactions divided by the number of ad interactions
+     * (such as clicks for text ads or views for video ads).
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_rate = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_rate = 69;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setConversionRate($var)
+    public function setConversionsFromInteractionsRate($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->conversion_rate = $var;
+        $this->conversions_from_interactions_rate = $var;
 
         return $this;
     }
@@ -752,25 +906,25 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The total value of conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
      * @return \Google\Protobuf\DoubleValue
      */
-    public function getConversionValue()
+    public function getConversionsValue()
     {
-        return $this->conversion_value;
+        return $this->conversions_value;
     }
 
     /**
      * The total value of conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setConversionValue($var)
+    public function setConversionsValue($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->conversion_value = $var;
+        $this->conversions_value = $var;
 
         return $this;
     }
@@ -778,51 +932,53 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The value of conversions divided by the cost of ad interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value_per_cost = 64;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value_per_cost = 71;</code>
      * @return \Google\Protobuf\DoubleValue
      */
-    public function getConversionValuePerCost()
+    public function getConversionsValuePerCost()
     {
-        return $this->conversion_value_per_cost;
+        return $this->conversions_value_per_cost;
     }
 
     /**
      * The value of conversions divided by the cost of ad interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value_per_cost = 64;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value_per_cost = 71;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setConversionValuePerCost($var)
+    public function setConversionsValuePerCost($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->conversion_value_per_cost = $var;
+        $this->conversions_value_per_cost = $var;
 
         return $this;
     }
 
     /**
-     * The value of conversions divided by the number of ad interactions.
+     * The value of conversions from interactions divided by the number of ad
+     * interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value_per_interaction = 63;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_value_per_interaction = 72;</code>
      * @return \Google\Protobuf\DoubleValue
      */
-    public function getConversionValuePerInteraction()
+    public function getConversionsFromInteractionsValuePerInteraction()
     {
-        return $this->conversion_value_per_interaction;
+        return $this->conversions_from_interactions_value_per_interaction;
     }
 
     /**
-     * The value of conversions divided by the number of ad interactions.
+     * The value of conversions from interactions divided by the number of ad
+     * interactions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value_per_interaction = 63;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_value_per_interaction = 72;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setConversionValuePerInteraction($var)
+    public function setConversionsFromInteractionsValuePerInteraction($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->conversion_value_per_interaction = $var;
+        $this->conversions_from_interactions_value_per_interaction = $var;
 
         return $this;
     }
@@ -886,25 +1042,25 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The cost of ad interactions divided by all conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_all_conversion = 27;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_all_conversions = 68;</code>
      * @return \Google\Protobuf\DoubleValue
      */
-    public function getCostPerAllConversion()
+    public function getCostPerAllConversions()
     {
-        return $this->cost_per_all_conversion;
+        return $this->cost_per_all_conversions;
     }
 
     /**
      * The cost of ad interactions divided by all conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_all_conversion = 27;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_all_conversions = 68;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setCostPerAllConversion($var)
+    public function setCostPerAllConversions($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->cost_per_all_conversion = $var;
+        $this->cost_per_all_conversions = $var;
 
         return $this;
     }
@@ -936,7 +1092,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Conversions from when a customer clicks on an AdWords ad on one device,
+     * Conversions from when a customer clicks on a Google Ads ad on one device,
      * then converts on a different device or browser.
      * Cross-device conversions are already included in all_conversions.
      *
@@ -949,7 +1105,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Conversions from when a customer clicks on an AdWords ad on one device,
+     * Conversions from when a customer clicks on a Google Ads ad on one device,
      * then converts on a different device or browser.
      * Cross-device conversions are already included in all_conversions.
      *

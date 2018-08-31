@@ -27,8 +27,8 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\ResourceNames;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum_AdGroupStatus;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum_AdGroupType;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum\AdGroupType;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\AdGroup;
 use Google\Ads\GoogleAds\V0\Services\AdGroupOperation;
@@ -103,40 +103,32 @@ class AddAdGroups
         $customerId,
         $campaignId
     ) {
-        $wrappedCampaignResourceName = new StringValue();
-        $wrappedCampaignResourceName->setValue(
-            ResourceNames::forCampaign($customerId, $campaignId)
-        );
+        $campaignResourceName =
+            new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]);
 
         $operations = [];
 
         // Constructs an ad group and sets an optional CPC value.
-        $adGroup1 = new AdGroup();
-        $wrappedName1 = new StringValue();
-        $wrappedName1->setValue('Earth to Mars Cruises #' . uniqid());
-        $adGroup1->setName($wrappedName1);
-        $adGroup1->setCampaign($wrappedCampaignResourceName);
-        $adGroup1->setStatus(AdGroupStatusEnum_AdGroupStatus::ENABLED);
-        $adGroup1->setType(AdGroupTypeEnum_AdGroupType::SEARCH_STANDARD);
-        $wrappedCpcBidMicros1 = new Int64Value();
-        $wrappedCpcBidMicros1->setValue(10000000);
-        $adGroup1->setCpcBidMicros($wrappedCpcBidMicros1);
+        $adGroup1 = new AdGroup([
+            'name' => new StringValue(['value' => 'Earth to Mars Cruises #' . uniqid()]),
+            'campaign' => $campaignResourceName,
+            'status' => AdGroupStatus::ENABLED,
+            'type' => AdGroupType::SEARCH_STANDARD,
+            'cpc_bid_micros' => new Int64Value(['value' => 10000000])
+        ]);
 
         $adGroupOperation1 = new AdGroupOperation();
         $adGroupOperation1->setCreate($adGroup1);
         $operations[] = $adGroupOperation1;
 
         // Constructs another ad group.
-        $adGroup2 = new AdGroup();
-        $wrappedName2 = new StringValue();
-        $wrappedName2->setValue('Earth to Venus Cruises #' . uniqid());
-        $adGroup2->setName($wrappedName2);
-        $adGroup2->setCampaign($wrappedCampaignResourceName);
-        $adGroup2->setStatus(AdGroupStatusEnum_AdGroupStatus::ENABLED);
-        $adGroup2->setType(AdGroupTypeEnum_AdGroupType::SEARCH_STANDARD);
-        $wrappedCpcBidMicros2 = new Int64Value();
-        $wrappedCpcBidMicros2->setValue(20000000);
-        $adGroup2->setCpcBidMicros($wrappedCpcBidMicros2);
+        $adGroup2 = new AdGroup([
+            'name' => new StringValue(['value' => 'Earth to Venus Cruises #' . uniqid()]),
+            'campaign' => $campaignResourceName,
+            'status' => AdGroupStatus::ENABLED,
+            'type' => AdGroupType::SEARCH_STANDARD,
+            'cpc_bid_micros' => new Int64Value(['value' => 20000000])
+        ]);
 
         $adGroupOperation2 = new AdGroupOperation();
         $adGroupOperation2->setCreate($adGroup2);

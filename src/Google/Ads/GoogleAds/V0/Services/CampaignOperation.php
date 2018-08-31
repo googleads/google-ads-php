@@ -23,9 +23,28 @@ class CampaignOperation extends \Google\Protobuf\Internal\Message
     private $update_mask = null;
     protected $operation;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\FieldMask $update_mask
+     *           FieldMask that determines which resource fields are modified in an update.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign $create
+     *           Create operation: No resource name is expected for the new campaign.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign $update
+     *           Update operation: The campaign is expected to have a valid
+     *           resource name.
+     *     @type string $remove
+     *           Remove operation: A resource name for the removed campaign is
+     *           expected, in this format:
+     *           `customers/{customer_id}/campaigns/{campaign_id}`
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\CampaignService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

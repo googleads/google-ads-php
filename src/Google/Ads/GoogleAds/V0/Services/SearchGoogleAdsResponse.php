@@ -44,9 +44,29 @@ class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      */
     private $field_mask = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Ads\GoogleAds\V0\Services\GoogleAdsRow[]|\Google\Protobuf\Internal\RepeatedField $results
+     *           The list of rows that matched the query.
+     *     @type string $next_page_token
+     *           Pagination token used to retrieve the next page of results.
+     *           Pass the content of this string as the `page_token` attribute of
+     *           the next request. `next_page_token` is not returned for the last
+     *           page.
+     *     @type int|string $total_results_count
+     *           Total number of results that match the query ignoring the LIMIT
+     *           clause.
+     *     @type \Google\Protobuf\FieldMask $field_mask
+     *           FieldMask that represents what fields were requested by the user.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\GoogleAdsService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

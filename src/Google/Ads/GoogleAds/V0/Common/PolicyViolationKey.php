@@ -33,9 +33,25 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      */
     private $violating_text = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\StringValue $policy_name
+     *           Unique ID of the violated policy.
+     *     @type \Google\Protobuf\StringValue $violating_text
+     *           The text that violates the policy if specified.
+     *           Otherwise, refers to the policy in general
+     *           (e.g., when requesting to be exempt from the whole policy).
+     *           If not specified for criterion exemptions, the whole policy is implied.
+     *           Must be specified for ad exemptions.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Policy::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

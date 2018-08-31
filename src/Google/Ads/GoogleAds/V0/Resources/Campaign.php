@@ -61,6 +61,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The primary serving target for ads within the campaign.
      * The targeting options can be refined in `network_settings`.
+     * This field is required and should not be empty when creating new
+     * campaigns.
      * Can be set only when creating campaigns.
      * After the campaign is created, the field can not be changed.
      *
@@ -108,6 +110,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $dynamic_search_ads_setting = null;
     /**
+     * The setting for controlling Shopping campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.ShoppingSetting shopping_setting = 36;</code>
+     */
+    private $shopping_setting = null;
+    /**
      * The budget of the campaign.
      * This field must not be used in WHERE clauses.
      *
@@ -132,6 +140,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $start_date = null;
     /**
+     * The campaign group this campaign belongs to.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_group = 35;</code>
+     */
+    private $campaign_group = null;
+    /**
      * The date when campaign ended.
      * This field must not be used in WHERE clauses.
      *
@@ -140,9 +154,107 @@ class Campaign extends \Google\Protobuf\Internal\Message
     private $end_date = null;
     protected $campaign_bidding_strategy;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the campaign.
+     *           Campaign resource names have the form:
+     *           `customers/{customer_id}/campaigns/{campaign_id}`
+     *     @type \Google\Protobuf\Int64Value $id
+     *           The ID of the campaign.
+     *     @type \Google\Protobuf\StringValue $name
+     *           The name of the campaign.
+     *           This field is required and should not be empty when creating new
+     *           campaigns.
+     *           It must not contain any null (code point 0x0), NL line feed
+     *           (code point 0xA) or carriage return (code point 0xD) characters.
+     *     @type int $status
+     *           The status of the campaign.
+     *           When a new campaign is added, the status defaults to ENABLED.
+     *     @type int $serving_status
+     *           The ad serving status of the campaign.
+     *     @type int $ad_serving_optimization_status
+     *           The ad serving optimization status of the campaign.
+     *     @type int $advertising_channel_type
+     *           The primary serving target for ads within the campaign.
+     *           The targeting options can be refined in `network_settings`.
+     *           This field is required and should not be empty when creating new
+     *           campaigns.
+     *           Can be set only when creating campaigns.
+     *           After the campaign is created, the field can not be changed.
+     *     @type int $advertising_channel_sub_type
+     *           Optional refinement to `advertising_channel_type`.
+     *           Must be a valid sub-type of the parent channel type.
+     *           Can be set only when creating campaigns.
+     *           After campaign is created, the field can not be changed.
+     *     @type \Google\Protobuf\StringValue $tracking_url_template
+     *           The URL template for constructing a tracking URL.
+     *     @type \Google\Ads\GoogleAds\V0\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
+     *           The list of mappings used to substitute custom parameter tags in a
+     *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\NetworkSettings $network_settings
+     *           The network settings for the campaign.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\HotelSettingInfo $hotel_setting
+     *           The hotel setting for the campaign.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\DynamicSearchAdsSetting $dynamic_search_ads_setting
+     *           The setting for controlling Dynamic Search Ads (DSA).
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\ShoppingSetting $shopping_setting
+     *           The setting for controlling Shopping campaigns.
+     *     @type \Google\Protobuf\StringValue $campaign_budget
+     *           The budget of the campaign.
+     *           This field must not be used in WHERE clauses.
+     *     @type int $bidding_strategy_type
+     *           The type of bidding strategy.
+     *           A bidding strategy can be created by setting either the bidding scheme to
+     *           create a standard bidding strategy or the `bidding_strategy` field to
+     *           create a portfolio bidding strategy.
+     *           This field is read-only.
+     *     @type \Google\Protobuf\StringValue $start_date
+     *           The date when campaign started.
+     *           This field must not be used in WHERE clauses.
+     *     @type \Google\Protobuf\StringValue $campaign_group
+     *           The campaign group this campaign belongs to.
+     *     @type \Google\Protobuf\StringValue $end_date
+     *           The date when campaign ended.
+     *           This field must not be used in WHERE clauses.
+     *     @type \Google\Protobuf\StringValue $bidding_strategy
+     *           Portfolio bidding strategy used by campaign.
+     *           This field must not be used in WHERE clauses.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ManualCpc $manual_cpc
+     *           Standard Manual CPC bidding strategy.
+     *           Manual click-based bidding where user pays per click.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ManualCpm $manual_cpm
+     *           Standard Manual CPM bidding strategy.
+     *           Manual impression-based bidding where user pays per thousand
+     *           impressions.
+     *     @type \Google\Ads\GoogleAds\V0\Common\MaximizeConversions $maximize_conversions
+     *           Standard Maximize Conversions bidding strategy that automatically
+     *           maximizes number of conversions given a daily budget.
+     *     @type \Google\Ads\GoogleAds\V0\Common\MaximizeConversionValue $maximize_conversion_value
+     *           Standard Maximize Conversion Value bidding strategy that automatically
+     *           sets bids to maximize revenue while spending your budget.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetCpa $target_cpa
+     *           Standard Target CPA bidding strategy that automatically sets bids to
+     *           help get as many conversions as possible at the target
+     *           cost-per-acquisition (CPA) you set.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetRoas $target_roas
+     *           Standard Target ROAS bidding strategy that automatically maximizes
+     *           revenue while averaging a specific target return on ad spend (ROAS).
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetSpend $target_spend
+     *           Standard Target Spend bidding strategy that automatically sets your bids
+     *           to help get as many clicks as possible within your budget.
+     *     @type \Google\Ads\GoogleAds\V0\Common\PercentCpc $percent_cpc
+     *           Standard Percent Cpc bidding strategy where bids are a fraction of the
+     *           advertised price for some good or service.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\Campaign::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -318,6 +430,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The primary serving target for ads within the campaign.
      * The targeting options can be refined in `network_settings`.
+     * This field is required and should not be empty when creating new
+     * campaigns.
      * Can be set only when creating campaigns.
      * After the campaign is created, the field can not be changed.
      *
@@ -332,6 +446,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The primary serving target for ads within the campaign.
      * The targeting options can be refined in `network_settings`.
+     * This field is required and should not be empty when creating new
+     * campaigns.
      * Can be set only when creating campaigns.
      * After the campaign is created, the field can not be changed.
      *
@@ -437,7 +553,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The network settings for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.NetworkSettings network_settings = 14;</code>
-     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign_NetworkSettings
+     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign\NetworkSettings
      */
     public function getNetworkSettings()
     {
@@ -448,7 +564,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The network settings for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.NetworkSettings network_settings = 14;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign_NetworkSettings $var
+     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign\NetworkSettings $var
      * @return $this
      */
     public function setNetworkSettings($var)
@@ -463,7 +579,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The hotel setting for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.HotelSettingInfo hotel_setting = 32;</code>
-     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign_HotelSettingInfo
+     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign\HotelSettingInfo
      */
     public function getHotelSetting()
     {
@@ -474,7 +590,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The hotel setting for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.HotelSettingInfo hotel_setting = 32;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign_HotelSettingInfo $var
+     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign\HotelSettingInfo $var
      * @return $this
      */
     public function setHotelSetting($var)
@@ -489,7 +605,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The setting for controlling Dynamic Search Ads (DSA).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.DynamicSearchAdsSetting dynamic_search_ads_setting = 33;</code>
-     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign_DynamicSearchAdsSetting
+     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign\DynamicSearchAdsSetting
      */
     public function getDynamicSearchAdsSetting()
     {
@@ -500,13 +616,39 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * The setting for controlling Dynamic Search Ads (DSA).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.DynamicSearchAdsSetting dynamic_search_ads_setting = 33;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign_DynamicSearchAdsSetting $var
+     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign\DynamicSearchAdsSetting $var
      * @return $this
      */
     public function setDynamicSearchAdsSetting($var)
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Campaign_DynamicSearchAdsSetting::class);
         $this->dynamic_search_ads_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * The setting for controlling Shopping campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.ShoppingSetting shopping_setting = 36;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign\ShoppingSetting
+     */
+    public function getShoppingSetting()
+    {
+        return $this->shopping_setting;
+    }
+
+    /**
+     * The setting for controlling Shopping campaigns.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.ShoppingSetting shopping_setting = 36;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign\ShoppingSetting $var
+     * @return $this
+     */
+    public function setShoppingSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Campaign_ShoppingSetting::class);
+        $this->shopping_setting = $var;
 
         return $this;
     }
@@ -597,6 +739,32 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->start_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * The campaign group this campaign belongs to.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_group = 35;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getCampaignGroup()
+    {
+        return $this->campaign_group;
+    }
+
+    /**
+     * The campaign group this campaign belongs to.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_group = 35;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setCampaignGroup($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->campaign_group = $var;
 
         return $this;
     }

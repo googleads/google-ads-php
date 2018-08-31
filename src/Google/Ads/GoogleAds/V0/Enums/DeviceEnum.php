@@ -9,16 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Container for enumeration of AdWords platforms available for targeting.
+ * Container for enumeration of Google Ads devices available for targeting.
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.enums.DeviceEnum</code>
  */
 class DeviceEnum extends \Google\Protobuf\Internal\Message
 {
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Enums\Device::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
 }

@@ -4,37 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible ad group bid modifier errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\AdGroupBidModifierErrorEnum\AdGroupBidModifierError</code>
- */
-class AdGroupBidModifierErrorEnum_AdGroupBidModifierError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\AdGroupBidModifierErrorEnum\AdGroupBidModifierError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * The criterion ID does not support bid modification.
-     *
-     * Generated from protobuf enum <code>CRITERION_ID_NOT_SUPPORTED = 2;</code>
-     */
-    const CRITERION_ID_NOT_SUPPORTED = 2;
-    /**
-     * Cannot override the bid modifier for the given criterion ID if the parent
-     * campaign is opted out of the same criterion.
-     *
-     * Generated from protobuf enum <code>CANNOT_OVERRIDE_OPTED_OUT_CAMPAIGN_CRITERION_BID_MODIFIER = 3;</code>
-     */
-    const CANNOT_OVERRIDE_OPTED_OUT_CAMPAIGN_CRITERION_BID_MODIFIER = 3;
+    class AdGroupBidModifierErrorEnum_AdGroupBidModifierError {}
 }
+class_exists(AdGroupBidModifierErrorEnum\AdGroupBidModifierError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\AdGroupBidModifierErrorEnum_AdGroupBidModifierError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\AdGroupBidModifierErrorEnum\AdGroupBidModifierError instead', E_USER_DEPRECATED);
 

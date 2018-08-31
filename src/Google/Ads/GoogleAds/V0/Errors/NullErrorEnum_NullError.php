@@ -4,30 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible null errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\NullErrorEnum\NullError</code>
- */
-class NullErrorEnum_NullError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\NullErrorEnum\NullError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Specified list/container must not contain any null elements
-     *
-     * Generated from protobuf enum <code>NULL_CONTENT = 2;</code>
-     */
-    const NULL_CONTENT = 2;
+    class NullErrorEnum_NullError {}
 }
+class_exists(NullErrorEnum\NullError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\NullErrorEnum_NullError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\NullErrorEnum\NullError instead', E_USER_DEPRECATED);
 

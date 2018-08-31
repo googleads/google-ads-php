@@ -47,9 +47,28 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      */
     private $details = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Ads\GoogleAds\V0\Errors\ErrorCode $error_code
+     *           An enum value that indicates which error occurred.
+     *     @type string $message
+     *           A human-readable description of the error.
+     *     @type \Google\Ads\GoogleAds\V0\Common\Value $trigger
+     *           The value that triggered the error.
+     *     @type \Google\Ads\GoogleAds\V0\Errors\ErrorLocation $location
+     *           Describes the part of the request proto that caused the error.
+     *     @type \Google\Ads\GoogleAds\V0\Errors\ErrorDetails $details
+     *           Additional error details, which are returned by certain error codes. Most
+     *           error codes do not include details.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Errors\Errors::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

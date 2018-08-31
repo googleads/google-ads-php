@@ -4,54 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible ad customizer errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\AdCustomizerErrorEnum\AdCustomizerError</code>
- */
-class AdCustomizerErrorEnum_AdCustomizerError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\AdCustomizerErrorEnum\AdCustomizerError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Invalid date argument in countdown function.
-     *
-     * Generated from protobuf enum <code>COUNTDOWN_INVALID_DATE_FORMAT = 2;</code>
-     */
-    const COUNTDOWN_INVALID_DATE_FORMAT = 2;
-    /**
-     * Countdown end date is in the past.
-     *
-     * Generated from protobuf enum <code>COUNTDOWN_DATE_IN_PAST = 3;</code>
-     */
-    const COUNTDOWN_DATE_IN_PAST = 3;
-    /**
-     * Invalid locale string in countdown function.
-     *
-     * Generated from protobuf enum <code>COUNTDOWN_INVALID_LOCALE = 4;</code>
-     */
-    const COUNTDOWN_INVALID_LOCALE = 4;
-    /**
-     * Days-before argument to countdown function is not positive.
-     *
-     * Generated from protobuf enum <code>COUNTDOWN_INVALID_START_DAYS_BEFORE = 5;</code>
-     */
-    const COUNTDOWN_INVALID_START_DAYS_BEFORE = 5;
-    /**
-     * A user list referenced in an IF function does not exist.
-     *
-     * Generated from protobuf enum <code>UNKNOWN_USER_LIST = 6;</code>
-     */
-    const UNKNOWN_USER_LIST = 6;
+    class AdCustomizerErrorEnum_AdCustomizerError {}
 }
+class_exists(AdCustomizerErrorEnum\AdCustomizerError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\AdCustomizerErrorEnum_AdCustomizerError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\AdCustomizerErrorEnum\AdCustomizerError instead', E_USER_DEPRECATED);
 

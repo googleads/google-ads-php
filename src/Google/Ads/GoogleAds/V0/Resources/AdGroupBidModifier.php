@@ -43,11 +43,65 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
      */
     private $bid_modifier = null;
+    /**
+     * The base ad group from which this draft/trial adgroup bid modifier was
+     * created. If ad_group is a base ad group then this field will be equal to
+     * ad_group. If the ad group was created in the draft or trial and has no
+     * corresponding base ad group, then this field will be null.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 9;</code>
+     */
+    private $base_ad_group = null;
+    /**
+     * Bid modifier source.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BidModifierSourceEnum.BidModifierSource bid_modifier_source = 10;</code>
+     */
+    private $bid_modifier_source = 0;
     protected $criterion;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the ad group bid modifier.
+     *           Ad group bid modifier resource names have the form:
+     *           `customers/{customer_id}/adGroupBidModifiers/{ad_group_id}_{criterion_id}`
+     *     @type \Google\Protobuf\StringValue $ad_group
+     *           The ad group to which this criterion belongs.
+     *           This field must not be used in WHERE clauses.
+     *     @type \Google\Protobuf\Int64Value $criterion_id
+     *           The ID of the criterion to bid modify.
+     *           This field is ignored for mutates.
+     *     @type \Google\Protobuf\DoubleValue $bid_modifier
+     *           The modifier for the bid when the criterion matches.
+     *     @type \Google\Protobuf\StringValue $base_ad_group
+     *           The base ad group from which this draft/trial adgroup bid modifier was
+     *           created. If ad_group is a base ad group then this field will be equal to
+     *           ad_group. If the ad group was created in the draft or trial and has no
+     *           corresponding base ad group, then this field will be null.
+     *           This field is readonly.
+     *     @type int $bid_modifier_source
+     *           Bid modifier source.
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelDateSelectionTypeInfo $hotel_date_selection_type
+     *           Criterion for hotel date selection (default dates vs. user selected).
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelAdvanceBookingWindowInfo $hotel_advance_booking_window
+     *           Criterion for number of days prior to the stay the booking is being made.
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelLengthOfStayInfo $hotel_length_of_stay
+     *           Criterion for length of hotel stay in nights.
+     *     @type \Google\Ads\GoogleAds\V0\Common\HotelCheckInDayInfo $hotel_check_in_day
+     *           Criterion for day of the week the booking is for.
+     *     @type \Google\Ads\GoogleAds\V0\Common\DeviceInfo $device
+     *           A device criterion.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\AdGroupBidModifier::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -163,6 +217,66 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The base ad group from which this draft/trial adgroup bid modifier was
+     * created. If ad_group is a base ad group then this field will be equal to
+     * ad_group. If the ad group was created in the draft or trial and has no
+     * corresponding base ad group, then this field will be null.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 9;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getBaseAdGroup()
+    {
+        return $this->base_ad_group;
+    }
+
+    /**
+     * The base ad group from which this draft/trial adgroup bid modifier was
+     * created. If ad_group is a base ad group then this field will be equal to
+     * ad_group. If the ad group was created in the draft or trial and has no
+     * corresponding base ad group, then this field will be null.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 9;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setBaseAdGroup($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->base_ad_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Bid modifier source.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BidModifierSourceEnum.BidModifierSource bid_modifier_source = 10;</code>
+     * @return int
+     */
+    public function getBidModifierSource()
+    {
+        return $this->bid_modifier_source;
+    }
+
+    /**
+     * Bid modifier source.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BidModifierSourceEnum.BidModifierSource bid_modifier_source = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBidModifierSource($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\BidModifierSourceEnum_BidModifierSource::class);
+        $this->bid_modifier_source = $var;
+
+        return $this;
+    }
+
+    /**
      * Criterion for hotel date selection (default dates vs. user selected).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.common.HotelDateSelectionTypeInfo hotel_date_selection_type = 5;</code>
@@ -262,6 +376,32 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\HotelCheckInDayInfo::class);
         $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * A device criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.DeviceInfo device = 11;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\DeviceInfo
+     */
+    public function getDevice()
+    {
+        return $this->readOneof(11);
+    }
+
+    /**
+     * A device criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.DeviceInfo device = 11;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\DeviceInfo $var
+     * @return $this
+     */
+    public function setDevice($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\DeviceInfo::class);
+        $this->writeOneof(11, $var);
 
         return $this;
     }

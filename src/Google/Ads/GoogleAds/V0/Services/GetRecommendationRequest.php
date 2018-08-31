@@ -22,9 +22,19 @@ class GetRecommendationRequest extends \Google\Protobuf\Internal\Message
      */
     private $resource_name = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the recommendation to fetch.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\RecommendationService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

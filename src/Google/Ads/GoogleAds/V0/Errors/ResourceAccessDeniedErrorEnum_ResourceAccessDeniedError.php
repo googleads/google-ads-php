@@ -4,30 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible resource access denied errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\ResourceAccessDeniedErrorEnum\ResourceAccessDeniedError</code>
- */
-class ResourceAccessDeniedErrorEnum_ResourceAccessDeniedError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\ResourceAccessDeniedErrorEnum\ResourceAccessDeniedError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * User did not have write access.
-     *
-     * Generated from protobuf enum <code>WRITE_ACCESS_DENIED = 3;</code>
-     */
-    const WRITE_ACCESS_DENIED = 3;
+    class ResourceAccessDeniedErrorEnum_ResourceAccessDeniedError {}
 }
+class_exists(ResourceAccessDeniedErrorEnum\ResourceAccessDeniedError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\ResourceAccessDeniedErrorEnum_ResourceAccessDeniedError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\ResourceAccessDeniedErrorEnum\ResourceAccessDeniedError instead', E_USER_DEPRECATED);
 

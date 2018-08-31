@@ -116,9 +116,61 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     private $is_repeated = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the artifact.
+     *           Artifact resource names have the form:
+     *           `googleAdsFields/{name}`
+     *     @type \Google\Protobuf\StringValue $name
+     *           The name of the artifact.
+     *     @type int $category
+     *           The category of the artifact.
+     *     @type \Google\Protobuf\BoolValue $selectable
+     *           Whether the artifact can be used in a SELECT clause in search
+     *           queries.
+     *     @type \Google\Protobuf\BoolValue $filterable
+     *           Whether the artifact can be used in a WHERE clause in search
+     *           queries.
+     *     @type \Google\Protobuf\BoolValue $sortable
+     *           Whether the artifact can be used in a ORDER BY clause in search
+     *           queries.
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $selectable_with
+     *           The names of all resources, segments, and metrics that are selectable with
+     *           the described artifact.
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $attribute_resources
+     *           The names of all resources that are selectable with the described
+     *           artifact. Fields from these resources do not segment metrics when included
+     *           in search queries.
+     *           This field is only set for artifacts whose category is RESOURCE.
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $metrics
+     *           The names of all metrics that are selectable with the described artifact.
+     *           This field is only set for artifacts whose category is either RESOURCE or
+     *           SEGMENT.
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $segments
+     *           The names of all artifacts, whether a segment or another resource, that
+     *           segment metrics when included in search queries.
+     *           This field is only set for artifacts of category RESOURCE, SEGMENT or
+     *           METRIC.
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $enum_values
+     *           Values the artifact can assume if it is a field of type ENUM.
+     *           This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
+     *     @type int $data_type
+     *           This field determines the operators that can be used with the artifact
+     *           in WHERE clauses.
+     *     @type \Google\Protobuf\StringValue $type_url
+     *           The URL of proto describing the artifact's data type.
+     *     @type \Google\Protobuf\BoolValue $is_repeated
+     *           Whether the field artifact is repeated.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\GoogleAdsField::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

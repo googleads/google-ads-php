@@ -29,9 +29,21 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
      */
     private $value = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\StringValue $key
+     *           The key matching the parameter tag name.
+     *     @type \Google\Protobuf\StringValue $value
+     *           The value to be substituted.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\CustomParameter::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

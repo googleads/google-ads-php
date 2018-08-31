@@ -4,48 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Types of recommendations.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\RecommendationTypeEnum\RecommendationType</code>
- */
-class RecommendationTypeEnum_RecommendationType
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\RecommendationTypeEnum\RecommendationType instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Budget recommendation for budget constrained campaigns.
-     *
-     * Generated from protobuf enum <code>CAMPAIGN_BUDGET = 2;</code>
-     */
-    const CAMPAIGN_BUDGET = 2;
-    /**
-     * Keyword recommendation.
-     *
-     * Generated from protobuf enum <code>KEYWORD = 3;</code>
-     */
-    const KEYWORD = 3;
-    /**
-     * Recommendation to add a new text ad.
-     *
-     * Generated from protobuf enum <code>TEXT_AD = 4;</code>
-     */
-    const TEXT_AD = 4;
-    /**
-     * Recommendation to update a campaign to use a Target CPA bidding strategy.
-     *
-     * Generated from protobuf enum <code>TARGET_CPA_OPT_IN = 5;</code>
-     */
-    const TARGET_CPA_OPT_IN = 5;
+    class RecommendationTypeEnum_RecommendationType {}
 }
+class_exists(RecommendationTypeEnum\RecommendationType::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\RecommendationTypeEnum_RecommendationType is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\RecommendationTypeEnum\RecommendationType instead', E_USER_DEPRECATED);
 

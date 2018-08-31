@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request message for [AdGroupCriterionService.MutateAdGroupCriteria][google.ads.googleads.v0.services.AdGroupCriterionService.MutateAdGroupCriteria].
+ * Request message for [AdGroupBidModifierService.MutateAdGroupBidModifiers][google.ads.googleads.v0.services.AdGroupBidModifierService.MutateAdGroupBidModifiers].
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.services.MutateAdGroupBidModifiersRequest</code>
  */
@@ -28,9 +28,21 @@ class MutateAdGroupBidModifiersRequest extends \Google\Protobuf\Internal\Message
      */
     private $operations;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $customer_id
+     *           ID of the customer whose ad group bid modifiers are being modified.
+     *     @type \Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *           The list of operations to perform on individual ad group bid modifiers.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

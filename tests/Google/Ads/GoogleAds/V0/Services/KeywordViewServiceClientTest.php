@@ -34,7 +34,7 @@ use stdClass;
 
 /**
  * @group googleads
- * @group grpc
+ * @group gapic
  */
 class KeywordViewServiceClientTest extends GeneratedTest
 {

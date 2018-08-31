@@ -17,9 +17,21 @@ class ApplyRecommendationResult extends \Google\Protobuf\Internal\Message
 {
     protected $result;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           Returned for successful applies.
+     *     @type \Google\Rpc\Status $status
+     *           Returned for failed operations.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\RecommendationService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -4,89 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Resources;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * The Target CPA opt-in recommendation.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.resources.Recommendation.TargetCpaOptInRecommendation</code>
- */
-class Recommendation_TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * The available goals and corresponding options for Target CPA strategy.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Resources\Recommendation\TargetCpaOptInRecommendation instead.
+     * @deprecated
      */
-    private $options;
-    /**
-     * The recommended average CPA target. See required budget amount and impact
-     * of using this recommendation in options list.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
-     */
-    private $recommended_target_cpa_micros = null;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\Recommendation::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * The available goals and corresponding options for Target CPA strategy.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
-    /**
-     * The available goals and corresponding options for Target CPA strategy.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\Recommendation_TargetCpaOptInRecommendation_TargetCpaOptInRecommendationOption[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setOptions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Resources\Recommendation_TargetCpaOptInRecommendation_TargetCpaOptInRecommendationOption::class);
-        $this->options = $arr;
-
-        return $this;
-    }
-
-    /**
-     * The recommended average CPA target. See required budget amount and impact
-     * of using this recommendation in options list.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getRecommendedTargetCpaMicros()
-    {
-        return $this->recommended_target_cpa_micros;
-    }
-
-    /**
-     * The recommended average CPA target. See required budget amount and impact
-     * of using this recommendation in options list.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setRecommendedTargetCpaMicros($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->recommended_target_cpa_micros = $var;
-
-        return $this;
-    }
-
+    class Recommendation_TargetCpaOptInRecommendation {}
 }
+class_exists(Recommendation\TargetCpaOptInRecommendation::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Resources\Recommendation_TargetCpaOptInRecommendation is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Resources\Recommendation\TargetCpaOptInRecommendation instead', E_USER_DEPRECATED);
 

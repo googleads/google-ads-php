@@ -4,42 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enum describing possible bidding sources.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\BiddingSourceEnum\BiddingSource</code>
- */
-class BiddingSourceEnum_BiddingSource
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\BiddingSourceEnum\BiddingSource instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Bidding entity is defined on the ad group.
-     *
-     * Generated from protobuf enum <code>ADGROUP = 2;</code>
-     */
-    const ADGROUP = 2;
-    /**
-     * Bidding entity is defined on the ad group criterion.
-     *
-     * Generated from protobuf enum <code>CRITERION = 3;</code>
-     */
-    const CRITERION = 3;
-    /**
-     * Effective bidding entity is inherited from campaign bidding strategy.
-     *
-     * Generated from protobuf enum <code>CAMPAIGN_BIDDING_STRATEGY = 5;</code>
-     */
-    const CAMPAIGN_BIDDING_STRATEGY = 5;
+    class BiddingSourceEnum_BiddingSource {}
 }
+class_exists(BiddingSourceEnum\BiddingSource::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\BiddingSourceEnum_BiddingSource is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\BiddingSourceEnum\BiddingSource instead', E_USER_DEPRECATED);
 

@@ -58,11 +58,29 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $campaign = null;
     /**
+     * The campaign bid modifier referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignBidModifier campaign_bid_modifier = 26;</code>
+     */
+    private $campaign_bid_modifier = null;
+    /**
      * The campaign criterion referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignCriterion campaign_criterion = 20;</code>
      */
     private $campaign_criterion = null;
+    /**
+     * Campaign Group referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignGroup campaign_group = 25;</code>
+     */
+    private $campaign_group = null;
+    /**
+     * Campaign Shared Set referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignSharedSet campaign_shared_set = 30;</code>
+     */
+    private $campaign_shared_set = null;
     /**
      * The customer referenced in the query.
      *
@@ -87,6 +105,18 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Recommendation recommendation = 22;</code>
      */
     private $recommendation = null;
+    /**
+     * The shared set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.SharedCriterion shared_criterion = 29;</code>
+     */
+    private $shared_criterion = null;
+    /**
+     * The shared set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.SharedSet shared_set = 27;</code>
+     */
+    private $shared_set = null;
     /**
      * The metrics.
      *
@@ -113,7 +143,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $day_of_week = 0;
     /**
-     * Platform to which metrics apply.
+     * Device to which metrics apply.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device = 8;</code>
      */
@@ -130,6 +160,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue month = 10;</code>
      */
     private $month = null;
+    /**
+     * Month of the year, e.g., January.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.MonthOfYearEnum.MonthOfYear month_of_year = 28;</code>
+     */
+    private $month_of_year = 0;
     /**
      * Quarter as represented by the date of the first day of a quarter.
      * Uses the calendar year for quarters,
@@ -158,9 +194,79 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $year = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroup $ad_group
+     *           The ad group referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupAd $ad_group_ad
+     *           The ad referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupBidModifier $ad_group_bid_modifier
+     *           The bid modifier referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion $ad_group_criterion
+     *           The criterion referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\BiddingStrategy $bidding_strategy
+     *           The bidding strategy referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignBudget $campaign_budget
+     *           The campaign budget referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign $campaign
+     *           The campaign referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignBidModifier $campaign_bid_modifier
+     *           The campaign bid modifier referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignCriterion $campaign_criterion
+     *           The campaign criterion referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignGroup $campaign_group
+     *           Campaign Group referenced in AWQL query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignSharedSet $campaign_shared_set
+     *           Campaign Shared Set referenced in AWQL query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Customer $customer
+     *           The customer referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant $geo_target_constant
+     *           The geo target constant referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\KeywordView $keyword_view
+     *           The keyword view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Recommendation $recommendation
+     *           The recommendation referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\SharedCriterion $shared_criterion
+     *           The shared set referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\SharedSet $shared_set
+     *           The shared set referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Common\Metrics $metrics
+     *           The metrics.
+     *     @type int $ad_network_type
+     *           Ad network type.
+     *     @type \Google\Protobuf\StringValue $date
+     *           Date to which metrics apply.
+     *           YYYY-MM-DD format, e.g., 2018-04-17.
+     *     @type int $day_of_week
+     *           Day of the week, e.g., MONDAY.
+     *     @type int $device
+     *           Device to which metrics apply.
+     *     @type \Google\Protobuf\Int32Value $hour
+     *           Hour of day as a number between 0 and 23, inclusive.
+     *     @type \Google\Protobuf\StringValue $month
+     *           Month as represented by the date of the first day of a month.
+     *     @type int $month_of_year
+     *           Month of the year, e.g., January.
+     *     @type \Google\Protobuf\StringValue $quarter
+     *           Quarter as represented by the date of the first day of a quarter.
+     *           Uses the calendar year for quarters,
+     *           e.g., the second quarter of 2018 starts on 2018-04-01.
+     *     @type int $slot
+     *           Position of the ad.
+     *     @type \Google\Protobuf\StringValue $week
+     *           Week as defined as Monday through Sunday, and represented by the date of
+     *           Monday.
+     *     @type \Google\Protobuf\Int32Value $year
+     *           Year, formatted as yyyy.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\GoogleAdsService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -346,6 +452,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The campaign bid modifier referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignBidModifier campaign_bid_modifier = 26;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\CampaignBidModifier
+     */
+    public function getCampaignBidModifier()
+    {
+        return $this->campaign_bid_modifier;
+    }
+
+    /**
+     * The campaign bid modifier referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignBidModifier campaign_bid_modifier = 26;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\CampaignBidModifier $var
+     * @return $this
+     */
+    public function setCampaignBidModifier($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CampaignBidModifier::class);
+        $this->campaign_bid_modifier = $var;
+
+        return $this;
+    }
+
+    /**
      * The campaign criterion referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignCriterion campaign_criterion = 20;</code>
@@ -367,6 +499,58 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CampaignCriterion::class);
         $this->campaign_criterion = $var;
+
+        return $this;
+    }
+
+    /**
+     * Campaign Group referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignGroup campaign_group = 25;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\CampaignGroup
+     */
+    public function getCampaignGroup()
+    {
+        return $this->campaign_group;
+    }
+
+    /**
+     * Campaign Group referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignGroup campaign_group = 25;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\CampaignGroup $var
+     * @return $this
+     */
+    public function setCampaignGroup($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CampaignGroup::class);
+        $this->campaign_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Campaign Shared Set referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignSharedSet campaign_shared_set = 30;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\CampaignSharedSet
+     */
+    public function getCampaignSharedSet()
+    {
+        return $this->campaign_shared_set;
+    }
+
+    /**
+     * Campaign Shared Set referenced in AWQL query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignSharedSet campaign_shared_set = 30;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\CampaignSharedSet $var
+     * @return $this
+     */
+    public function setCampaignSharedSet($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CampaignSharedSet::class);
+        $this->campaign_shared_set = $var;
 
         return $this;
     }
@@ -471,6 +655,58 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Recommendation::class);
         $this->recommendation = $var;
+
+        return $this;
+    }
+
+    /**
+     * The shared set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.SharedCriterion shared_criterion = 29;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\SharedCriterion
+     */
+    public function getSharedCriterion()
+    {
+        return $this->shared_criterion;
+    }
+
+    /**
+     * The shared set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.SharedCriterion shared_criterion = 29;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\SharedCriterion $var
+     * @return $this
+     */
+    public function setSharedCriterion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\SharedCriterion::class);
+        $this->shared_criterion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The shared set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.SharedSet shared_set = 27;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\SharedSet
+     */
+    public function getSharedSet()
+    {
+        return $this->shared_set;
+    }
+
+    /**
+     * The shared set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.SharedSet shared_set = 27;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\SharedSet $var
+     * @return $this
+     */
+    public function setSharedSet($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\SharedSet::class);
+        $this->shared_set = $var;
 
         return $this;
     }
@@ -582,7 +818,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Platform to which metrics apply.
+     * Device to which metrics apply.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device = 8;</code>
      * @return int
@@ -593,7 +829,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Platform to which metrics apply.
+     * Device to which metrics apply.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device = 8;</code>
      * @param int $var
@@ -655,6 +891,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->month = $var;
+
+        return $this;
+    }
+
+    /**
+     * Month of the year, e.g., January.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.MonthOfYearEnum.MonthOfYear month_of_year = 28;</code>
+     * @return int
+     */
+    public function getMonthOfYear()
+    {
+        return $this->month_of_year;
+    }
+
+    /**
+     * Month of the year, e.g., January.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.MonthOfYearEnum.MonthOfYear month_of_year = 28;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMonthOfYear($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\MonthOfYearEnum_MonthOfYear::class);
+        $this->month_of_year = $var;
 
         return $this;
     }

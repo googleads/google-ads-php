@@ -4,57 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Services;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * Parameters to use when applying a campaign budget recommendation.
- *
- * Generated from protobuf message <code>google.ads.googleads.v0.services.ApplyRecommendationOperation.CampaignBudgetParameters</code>
- */
-class ApplyRecommendationOperation_CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * New budget amount to set for target budget resource. This is a required
-     * field.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\CampaignBudgetParameters instead.
+     * @deprecated
      */
-    private $new_budget_amount_micros = null;
-
-    public function __construct() {
-        \GPBMetadata\Google\Ads\GoogleAds\V0\Services\RecommendationService::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * New budget amount to set for target budget resource. This is a required
-     * field.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getNewBudgetAmountMicros()
-    {
-        return $this->new_budget_amount_micros;
-    }
-
-    /**
-     * New budget amount to set for target budget resource. This is a required
-     * field.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setNewBudgetAmountMicros($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->new_budget_amount_micros = $var;
-
-        return $this;
-    }
-
+    class ApplyRecommendationOperation_CampaignBudgetParameters {}
 }
+class_exists(ApplyRecommendationOperation\CampaignBudgetParameters::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_CampaignBudgetParameters is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\CampaignBudgetParameters instead', E_USER_DEPRECATED);
 

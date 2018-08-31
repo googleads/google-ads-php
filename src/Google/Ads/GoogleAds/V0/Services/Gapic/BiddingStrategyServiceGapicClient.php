@@ -21,10 +21,6 @@
  * https://github.com/google/googleapis/blob/master/google/ads/googleads/v0/services/bidding_strategy_service.proto
  * and updates to that file get reflected here through a refresh process.
  *
- * EXPERIMENTAL: This client library class has not yet been declared GA (1.0). This means that
- * even though we intend the surface to be stable, we may make backwards incompatible changes
- * if necessary.
- *
  * @experimental
  */
 
@@ -46,10 +42,6 @@ use Google\ApiCore\ValidationException;
 
 /**
  * Service Description: Service to manage bidding strategies.
- *
- * EXPERIMENTAL: This client library class has not yet been declared GA (1.0). This means that
- * even though we intend the surface to be stable, we may make backwards incompatible changes
- * if necessary.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -252,7 +244,7 @@ class BiddingStrategyServiceGapicClient
      * @throws ValidationException
      * @experimental
      */
-    public function __construct($options = [])
+    public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
@@ -288,7 +280,7 @@ class BiddingStrategyServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function getBiddingStrategy($resourceName, $optionalArgs = [])
+    public function getBiddingStrategy($resourceName, array $optionalArgs = [])
     {
         $request = new GetBiddingStrategyRequest();
         $request->setResourceName($resourceName);
@@ -334,7 +326,7 @@ class BiddingStrategyServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function mutateBiddingStrategies($customerId, $operations, $optionalArgs = [])
+    public function mutateBiddingStrategies($customerId, $operations, array $optionalArgs = [])
     {
         $request = new MutateBiddingStrategiesRequest();
         $request->setCustomerId($customerId);

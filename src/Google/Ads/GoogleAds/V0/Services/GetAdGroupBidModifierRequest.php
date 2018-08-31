@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request message for [AdGroupCriterionService.GetAdGroupCriterion][google.ads.googleads.v0.services.AdGroupCriterionService.GetAdGroupCriterion].
+ * Request message for [AdGroupBidModifierService.GetAdGroupBidModifier][google.ads.googleads.v0.services.AdGroupBidModifierService.GetAdGroupBidModifier].
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.services.GetAdGroupBidModifierRequest</code>
  */
@@ -22,9 +22,19 @@ class GetAdGroupBidModifierRequest extends \Google\Protobuf\Internal\Message
      */
     private $resource_name = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the ad group bid modifier to fetch.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

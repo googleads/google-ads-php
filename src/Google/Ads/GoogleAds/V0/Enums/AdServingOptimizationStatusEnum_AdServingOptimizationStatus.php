@@ -4,58 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enum describing possible serving statuses.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\AdServingOptimizationStatusEnum\AdServingOptimizationStatus</code>
- */
-class AdServingOptimizationStatusEnum_AdServingOptimizationStatus
-{
+if (false) {
     /**
-     * No value has been specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\AdServingOptimizationStatusEnum\AdServingOptimizationStatus instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received value is not known in this version.
-     * This is a response-only value.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Ad serving is optimized based on CTR for the campaign.
-     *
-     * Generated from protobuf enum <code>OPTIMIZE = 2;</code>
-     */
-    const OPTIMIZE = 2;
-    /**
-     * Ad serving is optimized based on CTR * Conversion for the campaign. If
-     * the campaign is not in the conversion optimizer bidding strategy, it will
-     * default to OPTIMIZED.
-     *
-     * Generated from protobuf enum <code>CONVERSION_OPTIMIZE = 3;</code>
-     */
-    const CONVERSION_OPTIMIZE = 3;
-    /**
-     * Ads are rotated evenly for 90 days, then optimized for clicks.
-     *
-     * Generated from protobuf enum <code>ROTATE = 4;</code>
-     */
-    const ROTATE = 4;
-    /**
-     * Show lower performing ads more evenly with higher performing ads, and do
-     * not optimize.
-     *
-     * Generated from protobuf enum <code>ROTATE_INDEFINITELY = 5;</code>
-     */
-    const ROTATE_INDEFINITELY = 5;
-    /**
-     * Ad serving optimization status is not available.
-     *
-     * Generated from protobuf enum <code>UNAVAILABLE = 6;</code>
-     */
-    const UNAVAILABLE = 6;
+    class AdServingOptimizationStatusEnum_AdServingOptimizationStatus {}
 }
+class_exists(AdServingOptimizationStatusEnum\AdServingOptimizationStatus::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\AdServingOptimizationStatusEnum_AdServingOptimizationStatus is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\AdServingOptimizationStatusEnum\AdServingOptimizationStatus instead', E_USER_DEPRECATED);
 

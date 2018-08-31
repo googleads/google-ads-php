@@ -28,9 +28,21 @@ class MutateCampaignBudgetsRequest extends \Google\Protobuf\Internal\Message
      */
     private $operations;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $customer_id
+     *           The ID of the customer whose campaign budgets are being modified.
+     *     @type \Google\Ads\GoogleAds\V0\Services\CampaignBudgetOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *           The list of operations to perform on individual campaign budgets.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\CampaignBudgetService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

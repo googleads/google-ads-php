@@ -25,9 +25,29 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
     private $resource_name = '';
     protected $apply_parameters;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the recommendation to apply.
+     *     @type \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\CampaignBudgetParameters $campaign_budget
+     *           Optional parameters to use when applying a campaign budget
+     *           recommendation.
+     *     @type \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TextAdParameters $text_ad
+     *           Optional parameters to use when applying a text ad recommendation.
+     *     @type \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\KeywordParameters $keyword
+     *           Optional parameters to use when applying keyword recommendation.
+     *     @type \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TargetCpaOptInParameters $target_cpa_opt_in
+     *           Optional parameters to use when applying target CPA opt-in
+     *           recommendation.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\RecommendationService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -61,7 +81,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.ApplyRecommendationOperation.CampaignBudgetParameters campaign_budget = 2;</code>
-     * @return \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_CampaignBudgetParameters
+     * @return \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\CampaignBudgetParameters
      */
     public function getCampaignBudget()
     {
@@ -73,7 +93,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.ApplyRecommendationOperation.CampaignBudgetParameters campaign_budget = 2;</code>
-     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_CampaignBudgetParameters $var
+     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\CampaignBudgetParameters $var
      * @return $this
      */
     public function setCampaignBudget($var)
@@ -88,7 +108,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Optional parameters to use when applying a text ad recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.ApplyRecommendationOperation.TextAdParameters text_ad = 3;</code>
-     * @return \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_TextAdParameters
+     * @return \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TextAdParameters
      */
     public function getTextAd()
     {
@@ -99,7 +119,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Optional parameters to use when applying a text ad recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.ApplyRecommendationOperation.TextAdParameters text_ad = 3;</code>
-     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_TextAdParameters $var
+     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TextAdParameters $var
      * @return $this
      */
     public function setTextAd($var)
@@ -114,7 +134,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Optional parameters to use when applying keyword recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.ApplyRecommendationOperation.KeywordParameters keyword = 4;</code>
-     * @return \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_KeywordParameters
+     * @return \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\KeywordParameters
      */
     public function getKeyword()
     {
@@ -125,7 +145,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Optional parameters to use when applying keyword recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.ApplyRecommendationOperation.KeywordParameters keyword = 4;</code>
-     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_KeywordParameters $var
+     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\KeywordParameters $var
      * @return $this
      */
     public function setKeyword($var)
@@ -141,7 +161,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.ApplyRecommendationOperation.TargetCpaOptInParameters target_cpa_opt_in = 5;</code>
-     * @return \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_TargetCpaOptInParameters
+     * @return \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TargetCpaOptInParameters
      */
     public function getTargetCpaOptIn()
     {
@@ -153,7 +173,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.ApplyRecommendationOperation.TargetCpaOptInParameters target_cpa_opt_in = 5;</code>
-     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation_TargetCpaOptInParameters $var
+     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation\TargetCpaOptInParameters $var
      * @return $this
      */
     public function setTargetCpaOptIn($var)

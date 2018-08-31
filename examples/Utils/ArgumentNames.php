@@ -25,8 +25,10 @@ final class ArgumentNames
     const AD_ID = 'adId';
     const AD_GROUP_ID = 'adGroupId';
     const ARTIFACT_NAME = 'artifactName';
+    const BID_MODIFIER_VALUE = 'bidModifierValue';
     const CAMPAIGN_BUDGET_ID = 'campaignBudgetId';
     const CAMPAIGN_ID = 'campaignId';
+    const CAMPAIGN_IDS = 'campaignIds';
     const CHECK_IN_DAY_CRITERION_ID = 'checkInDayCriterionId';
     const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
     const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
@@ -41,8 +43,10 @@ final class ArgumentNames
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::ARTIFACT_NAME => 'The artifact name',
+        self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::CAMPAIGN_BUDGET_ID => 'The campaign budget ID',
         self::CAMPAIGN_ID => 'The campaign ID',
+        self::CAMPAIGN_IDS => 'The campaign IDs',
         self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',

@@ -4,43 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * The possible statuses of an ad group.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\AdGroupStatusEnum\AdGroupStatus</code>
- */
-class AdGroupStatusEnum_AdGroupStatus
-{
+if (false) {
     /**
-     * The status has not been specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum\AdGroupStatus instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received value is not known in this version.
-     * This is a response-only value.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * The ad group is enabled.
-     *
-     * Generated from protobuf enum <code>ENABLED = 2;</code>
-     */
-    const ENABLED = 2;
-    /**
-     * The ad group is paused.
-     *
-     * Generated from protobuf enum <code>PAUSED = 3;</code>
-     */
-    const PAUSED = 3;
-    /**
-     * The ad group is removed.
-     *
-     * Generated from protobuf enum <code>REMOVED = 4;</code>
-     */
-    const REMOVED = 4;
+    class AdGroupStatusEnum_AdGroupStatus {}
 }
+class_exists(AdGroupStatusEnum\AdGroupStatus::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum_AdGroupStatus is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum\AdGroupStatus instead', E_USER_DEPRECATED);
 

@@ -28,10 +28,31 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.errors.PolicyViolationDetails policy_violation_details = 2;</code>
      */
     private $policy_violation_details = null;
+    /**
+     * Describes policy violation findings.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.PolicyFindingDetails policy_finding_details = 3;</code>
+     */
+    private $policy_finding_details = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $unpublished_error_code
+     *           The error code that should have been returned, but wasn't. This is used
+     *           when the error code is InternalError.ERROR_CODE_NOT_PUBLISHED.
+     *     @type \Google\Ads\GoogleAds\V0\Errors\PolicyViolationDetails $policy_violation_details
+     *           Describes an ad policy violation.
+     *     @type \Google\Ads\GoogleAds\V0\Errors\PolicyFindingDetails $policy_finding_details
+     *           Describes policy violation findings.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Errors\Errors::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -84,6 +105,32 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Errors\PolicyViolationDetails::class);
         $this->policy_violation_details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Describes policy violation findings.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.PolicyFindingDetails policy_finding_details = 3;</code>
+     * @return \Google\Ads\GoogleAds\V0\Errors\PolicyFindingDetails
+     */
+    public function getPolicyFindingDetails()
+    {
+        return $this->policy_finding_details;
+    }
+
+    /**
+     * Describes policy violation findings.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.PolicyFindingDetails policy_finding_details = 3;</code>
+     * @param \Google\Ads\GoogleAds\V0\Errors\PolicyFindingDetails $var
+     * @return $this
+     */
+    public function setPolicyFindingDetails($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Errors\PolicyFindingDetails::class);
+        $this->policy_finding_details = $var;
 
         return $this;
     }

@@ -22,15 +22,20 @@ use Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BiddingStrategyServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CampaignBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CampaignGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CampaignSharedSetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsFieldServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V0\Services\KeywordViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
+use Google\Ads\GoogleAds\V0\Services\SharedCriterionServiceClient;
+use Google\Ads\GoogleAds\V0\Services\SharedSetServiceClient;
 
 /**
  * Contains service client factory methods.
@@ -42,6 +47,7 @@ trait ServiceClientFactoryTrait
     private static $CREDENTIALS_LOADER_KEY = 'credentials';
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
     private static $SERVICE_ADDRESS_KEY = 'serviceAddress';
+    private static $DEFAULT_SERVICE_ADDRESS = 'googleads.googleapis.com';
 
     private function getGoogleAdsClientOptions()
     {
@@ -51,6 +57,20 @@ trait ServiceClientFactoryTrait
         ];
         if (!empty($this->getEndpoint())) {
             $clientOptions += [self::$SERVICE_ADDRESS_KEY => $this->getEndpoint()];
+        }
+        if (!empty($this->getLogger())) {
+            $googleAdsLoggingInterceptor = new GoogleAdsLoggingInterceptor(
+                new GoogleAdsUnaryCallLogger(
+                    $this->getLogger(),
+                    $this->getLogLevel(),
+                    $this->getEndpoint() ?: self::$DEFAULT_SERVICE_ADDRESS
+                )
+            );
+            $clientOptions['transportConfig'] = [
+                'grpc' => [
+                    'interceptors' => [$googleAdsLoggingInterceptor]
+                ]
+            ];
         }
 
         return $clientOptions;
@@ -97,6 +117,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return CampaignBidModifierServiceClient
+     */
+    public function getCampaignBidModifierServiceClient()
+    {
+        return new CampaignBidModifierServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return CampaignBudgetServiceClient
      */
     public function getCampaignBudgetServiceClient()
@@ -113,11 +141,27 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return CampaignGroupServiceClient
+     */
+    public function getCampaignGroupService()
+    {
+        return new CampaignGroupServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return CampaignServiceClient
      */
     public function getCampaignServiceClient()
     {
         return new CampaignServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CampaignSharedSetServiceClient
+     */
+    public function getCampaignSharedSetServiceClient()
+    {
+        return new CampaignSharedSetServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -166,5 +210,21 @@ trait ServiceClientFactoryTrait
     public function getRecommendationServiceClient()
     {
         return new RecommendationServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return SharedCriterionServiceClient
+     */
+    public function getSharedCriterionServiceClient()
+    {
+        return new SharedCriterionServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return SharedSetServiceClient
+     */
+    public function getSharedSetServiceClient()
+    {
+        return new SharedSetServiceClient($this->getGoogleAdsClientOptions());
     }
 }

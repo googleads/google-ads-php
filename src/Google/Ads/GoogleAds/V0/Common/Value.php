@@ -17,9 +17,27 @@ class Value extends \Google\Protobuf\Internal\Message
 {
     protected $value;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type bool $boolean_value
+     *           A boolean.
+     *     @type int|string $int64_value
+     *           An int64.
+     *     @type float $float_value
+     *           A float.
+     *     @type float $double_value
+     *           A double.
+     *     @type string $string_value
+     *           A string.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Value::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

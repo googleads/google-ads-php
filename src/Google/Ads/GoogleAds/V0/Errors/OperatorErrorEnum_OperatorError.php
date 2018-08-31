@@ -4,30 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible operator errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\OperatorErrorEnum\OperatorError</code>
- */
-class OperatorErrorEnum_OperatorError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\OperatorErrorEnum\OperatorError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Operator not supported.
-     *
-     * Generated from protobuf enum <code>OPERATOR_NOT_SUPPORTED = 2;</code>
-     */
-    const OPERATOR_NOT_SUPPORTED = 2;
+    class OperatorErrorEnum_OperatorError {}
 }
+class_exists(OperatorErrorEnum\OperatorError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\OperatorErrorEnum_OperatorError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\OperatorErrorEnum\OperatorError instead', E_USER_DEPRECATED);
 

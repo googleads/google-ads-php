@@ -4,48 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * Enum describing possible criterion types.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\CriterionTypeEnum\CriterionType</code>
- */
-class CriterionTypeEnum_CriterionType
-{
+if (false) {
     /**
-     * Not specified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\CriterionTypeEnum\CriterionType instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Used for return value only. Represents value unknown in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Keyword. e.g. 'mars cruise'.
-     *
-     * Generated from protobuf enum <code>KEYWORD = 2;</code>
-     */
-    const KEYWORD = 2;
-    /**
-     * Platforms to target.
-     *
-     * Generated from protobuf enum <code>PLATFORM = 6;</code>
-     */
-    const PLATFORM = 6;
-    /**
-     * Locations to target.
-     *
-     * Generated from protobuf enum <code>LOCATION = 7;</code>
-     */
-    const LOCATION = 7;
-    /**
-     * Listing groups to target.
-     *
-     * Generated from protobuf enum <code>LISTING_GROUP = 8;</code>
-     */
-    const LISTING_GROUP = 8;
+    class CriterionTypeEnum_CriterionType {}
 }
+class_exists(CriterionTypeEnum\CriterionType::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\CriterionTypeEnum_CriterionType is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\CriterionTypeEnum\CriterionType instead', E_USER_DEPRECATED);
 

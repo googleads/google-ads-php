@@ -4,52 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Enums;
 
-/**
- * The category of the artifact.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory</code>
- */
-class GoogleAdsFieldCategoryEnum_GoogleAdsFieldCategory
-{
+if (false) {
     /**
-     * Unspecified
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * Unknown
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * The described artifact is a resource.
-     *
-     * Generated from protobuf enum <code>RESOURCE = 2;</code>
-     */
-    const RESOURCE = 2;
-    /**
-     * The described artifact is a field and is an attribute of a resource.
-     * Including a resource attribute field in a query may segment the query if
-     * the resource to which it is attributed segments the resource found in
-     * the FROM clause.
-     *
-     * Generated from protobuf enum <code>ATTRIBUTE = 3;</code>
-     */
-    const ATTRIBUTE = 3;
-    /**
-     * The described artifact is a field and always segments search queries.
-     *
-     * Generated from protobuf enum <code>SEGMENT = 5;</code>
-     */
-    const SEGMENT = 5;
-    /**
-     * The described artifact is a field and is a metric. It never segments
-     * search queries.
-     *
-     * Generated from protobuf enum <code>METRIC = 6;</code>
-     */
-    const METRIC = 6;
+    class GoogleAdsFieldCategoryEnum_GoogleAdsFieldCategory {}
 }
+class_exists(GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Enums\GoogleAdsFieldCategoryEnum_GoogleAdsFieldCategory is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory instead', E_USER_DEPRECATED);
 

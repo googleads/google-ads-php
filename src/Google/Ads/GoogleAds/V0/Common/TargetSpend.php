@@ -33,9 +33,25 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      */
     private $cpc_bid_ceiling_micros = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\Int64Value $target_spend_micros
+     *           The spend target under which to maximize clicks.
+     *           A TargetSpend bidder will attempt to spend the smaller of this value
+     *           or the natural throttling spend amount.
+     *           If not specified, the budget is used as the spend target.
+     *     @type \Google\Protobuf\Int64Value $cpc_bid_ceiling_micros
+     *           Maximum bid limit that can be set by the bid strategy.
+     *           The limit applies to all keywords managed by the strategy.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Bidding::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

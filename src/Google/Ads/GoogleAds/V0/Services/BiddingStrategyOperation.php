@@ -23,9 +23,29 @@ class BiddingStrategyOperation extends \Google\Protobuf\Internal\Message
     private $update_mask = null;
     protected $operation;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\FieldMask $update_mask
+     *           FieldMask that determines which resource fields are modified in an update.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\BiddingStrategy $create
+     *           Create operation: No resource name is expected for the new bidding
+     *           strategy.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\BiddingStrategy $update
+     *           Update operation: The bidding strategy is expected to have a valid
+     *           resource name.
+     *     @type string $remove
+     *           Remove operation: A resource name for the removed bidding strategy is
+     *           expected, in this format:
+     *           `customers/{customer_id}/biddingStrategies/{bidding_strategy_id}`
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\BiddingStrategyService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -4,36 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible list operation errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\ListOperationErrorEnum\ListOperationError</code>
- */
-class ListOperationErrorEnum_ListOperationError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\ListOperationErrorEnum\ListOperationError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Field required in value is missing.
-     *
-     * Generated from protobuf enum <code>REQUIRED_FIELD_MISSING = 7;</code>
-     */
-    const REQUIRED_FIELD_MISSING = 7;
-    /**
-     * Duplicate or identical value is sent in multiple list operations.
-     *
-     * Generated from protobuf enum <code>DUPLICATE_VALUES = 8;</code>
-     */
-    const DUPLICATE_VALUES = 8;
+    class ListOperationErrorEnum_ListOperationError {}
 }
+class_exists(ListOperationErrorEnum\ListOperationError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\ListOperationErrorEnum_ListOperationError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\ListOperationErrorEnum\ListOperationError instead', E_USER_DEPRECATED);
 

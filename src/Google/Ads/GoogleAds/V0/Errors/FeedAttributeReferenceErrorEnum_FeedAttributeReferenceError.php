@@ -4,42 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible feed attribute reference errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\FeedAttributeReferenceErrorEnum\FeedAttributeReferenceError</code>
- */
-class FeedAttributeReferenceErrorEnum_FeedAttributeReferenceError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\FeedAttributeReferenceErrorEnum\FeedAttributeReferenceError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * A feed referenced by ID has been deleted.
-     *
-     * Generated from protobuf enum <code>CANNOT_REFERENCE_DELETED_FEED = 2;</code>
-     */
-    const CANNOT_REFERENCE_DELETED_FEED = 2;
-    /**
-     * There is no active feed with the given name.
-     *
-     * Generated from protobuf enum <code>INVALID_FEED_NAME = 3;</code>
-     */
-    const INVALID_FEED_NAME = 3;
-    /**
-     * There is no feed attribute in an active feed with the given name.
-     *
-     * Generated from protobuf enum <code>INVALID_FEED_ATTRIBUTE_NAME = 4;</code>
-     */
-    const INVALID_FEED_ATTRIBUTE_NAME = 4;
+    class FeedAttributeReferenceErrorEnum_FeedAttributeReferenceError {}
 }
+class_exists(FeedAttributeReferenceErrorEnum\FeedAttributeReferenceError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\FeedAttributeReferenceErrorEnum_FeedAttributeReferenceError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\FeedAttributeReferenceErrorEnum\FeedAttributeReferenceError instead', E_USER_DEPRECATED);
 

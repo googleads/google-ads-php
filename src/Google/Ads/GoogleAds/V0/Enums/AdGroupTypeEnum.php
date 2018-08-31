@@ -18,9 +18,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroupTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Enums\AdGroupType::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
 }

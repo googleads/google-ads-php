@@ -28,7 +28,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\ResourceNames;
 use Google\Ads\GoogleAds\V0\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum_KeywordMatchType;
+use Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\CampaignCriterion;
 use Google\Ads\GoogleAds\V0\Services\CampaignCriterionOperation;
@@ -106,42 +106,36 @@ class AddCampaignTargetingCriteria
         $customerId,
         $campaignId
     ) {
-        // Creates a keyword with BROAD match type.
-        $wrappedKeywordText1 = new StringValue();
-        $wrappedKeywordText1->setValue('jupiter cruise');
-        $keywordInfo1 = new KeywordInfo();
-        $keywordInfo1->setText($wrappedKeywordText1);
-        $keywordInfo1->setMatchType(KeywordMatchTypeEnum_KeywordMatchType::BROAD);
-        // Constructs a campaign criterion for the specified campaign ID using the keyword text
-        // info above.
-        $campaignCriterion1 = new CampaignCriterion();
-        $wrappedCampaignResourceName = new StringValue();
-        $wrappedCampaignResourceName->setValue(
-            ResourceNames::forCampaign($customerId, $campaignId)
-        );
-        $campaignCriterion1->setCampaign($wrappedCampaignResourceName);
-        $campaignCriterion1->setKeyword($keywordInfo1);
-        // Sets the campaign criterion as a negative criterion.
-        $wrappedNegativeValue = new BoolValue();
-        $wrappedNegativeValue->setValue(true);
-        $campaignCriterion1->setNegative($wrappedNegativeValue);
+        $campaignResourceName = ResourceNames::forCampaign($customerId, $campaignId);
+
+        // Constructs a campaign criterion for the specified campaign ID using the specified keyword
+        // text info.
+        $campaignCriterion1 = new CampaignCriterion([
+            // Creates a keyword with BROAD match type.
+            'keyword' => new KeywordInfo([
+                'text' => new StringValue(['value' => 'jupiter cruise']),
+                'match_type' => KeywordMatchType::BROAD
+            ]),
+            'campaign' => new StringValue(['value' => $campaignResourceName]),
+            // Sets the campaign criterion as a negative criterion.
+            'negative' => new BoolValue(['value' => true])
+        ]);
         // Creates a campaign criterion operation for the created campaign criterion.
         $campaignCriterionOperation1 = new CampaignCriterionOperation();
         $campaignCriterionOperation1->setCreate($campaignCriterion1);
 
-        // Creates another keyword with PHRASE type.
-        $wrappedKeywordText2 = new StringValue();
-        $wrappedKeywordText2->setValue('mars cruise');
-        $keywordInfo2 = new KeywordInfo();
-        $keywordInfo2->setText($wrappedKeywordText2);
-        $keywordInfo2->setMatchType(KeywordMatchTypeEnum_KeywordMatchType::PHRASE);
-        // Constructs a campaign criterion for the specified campaign ID using the keyword text
-        // info above.
-        $campaignCriterion2 = new CampaignCriterion();
-        $campaignCriterion2->setCampaign($wrappedCampaignResourceName);
-        $campaignCriterion2->setKeyword($keywordInfo2);
-        // Sets the campaign criterion as a negative criterion.
-        $campaignCriterion2->setNegative($wrappedNegativeValue);
+        // Constructs another campaign criterion for the specified campaign ID using the specified
+        // keyword text info.
+        $campaignCriterion2 = new CampaignCriterion([
+            // Creates another keyword with PHRASE type.
+            'keyword' => new KeywordInfo([
+                'text' => new StringValue(['value' => 'mars cruise']),
+                'match_type' => KeywordMatchType::PHRASE
+            ]),
+            'campaign' => new StringValue(['value' => $campaignResourceName]),
+            // Sets the campaign criterion as a negative criterion.
+            'negative' => new BoolValue(['value' => true])
+        ]);
         // Creates a campaign criterion operation for the created campaign criterion.
         $campaignCriterionOperation2 = new CampaignCriterionOperation();
         $campaignCriterionOperation2->setCreate($campaignCriterion2);

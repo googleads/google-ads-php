@@ -48,9 +48,51 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     private $type = 0;
     protected $scheme;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $resource_name
+     *           The resource name of the bidding strategy.
+     *           Bidding strategy resource names have the form:
+     *           `customers/{customer_id}/biddingStrategies/{bidding_strategy_id}`
+     *     @type \Google\Protobuf\Int64Value $id
+     *           The ID of the bidding strategy.
+     *     @type \Google\Protobuf\StringValue $name
+     *           The name of the bidding strategy.
+     *           All bidding strategies within an account must be named distinctly.
+     *           The length of this string should be between 1 and 255, inclusive,
+     *           in UTF-8 bytes, (trimmed).
+     *     @type int $type
+     *           The type of the bidding strategy.
+     *           Create a bidding strategy by setting the bidding scheme.
+     *           This field is read-only.
+     *     @type \Google\Ads\GoogleAds\V0\Common\EnhancedCpc $enhanced_cpc
+     *           A bidding strategy that raises bids for clicks that seem more likely to
+     *           lead to a conversion and lowers them for clicks where they seem less
+     *           likely.
+     *     @type \Google\Ads\GoogleAds\V0\Common\PageOnePromoted $page_one_promoted
+     *           A bidding strategy that sets max CPC bids to target impressions on
+     *           page one or page one promoted slots on google.com.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetCpa $target_cpa
+     *           A bidding strategy that sets bids to help get as many conversions as
+     *           possible at the target cost-per-acquisition (CPA) you set.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetOutrankShare $target_outrank_share
+     *           A bidding strategy that sets bids based on the target fraction of
+     *           auctions where the advertiser should outrank a specific competitor.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetRoas $target_roas
+     *           A bidding strategy that helps you maximize revenue while averaging a
+     *           specific target Return On Ad Spend (ROAS).
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetSpend $target_spend
+     *           A bid strategy that sets your bids to help get as many clicks as
+     *           possible within your budget.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Resources\BiddingStrategy::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

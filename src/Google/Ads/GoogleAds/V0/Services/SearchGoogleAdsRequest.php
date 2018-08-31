@@ -45,9 +45,30 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      */
     private $page_size = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $customer_id
+     *           The ID of the customer being queried.
+     *     @type string $query
+     *           The query string.
+     *     @type string $page_token
+     *           Token of the page to retrieve. If not specified, the first
+     *           page of results will be returned. Use the value obtained from
+     *           `next_page_token` in the previous response in order to request
+     *           the next page of results.
+     *     @type int $page_size
+     *           Number of elements to retrieve in a single page.
+     *           When too large a page is requested, the server may decide to
+     *           further limit the number of returned resources.
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\GoogleAdsService::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

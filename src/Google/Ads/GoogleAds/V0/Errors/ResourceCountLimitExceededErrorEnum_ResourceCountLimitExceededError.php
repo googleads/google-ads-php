@@ -4,85 +4,13 @@
 
 namespace Google\Ads\GoogleAds\V0\Errors;
 
-/**
- * Enum describing possible resource count limit exceeded errors.
- *
- * Protobuf enum <code>Google\Ads\Googleads\V0\Errors\ResourceCountLimitExceededErrorEnum\ResourceCountLimitExceededError</code>
- */
-class ResourceCountLimitExceededErrorEnum_ResourceCountLimitExceededError
-{
+if (false) {
     /**
-     * Enum unspecified.
-     *
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * This class is deprecated. Use Google\Ads\GoogleAds\V0\Errors\ResourceCountLimitExceededErrorEnum\ResourceCountLimitExceededError instead.
+     * @deprecated
      */
-    const UNSPECIFIED = 0;
-    /**
-     * The received error code is not known in this version.
-     *
-     * Generated from protobuf enum <code>UNKNOWN = 1;</code>
-     */
-    const UNKNOWN = 1;
-    /**
-     * Indicates that this request would exceed the number of allowed resources
-     * for the AdWords account. The exact resource type and limit being checked
-     * can be inferred from accountLimitType.
-     *
-     * Generated from protobuf enum <code>ACCOUNT_LIMIT = 2;</code>
-     */
-    const ACCOUNT_LIMIT = 2;
-    /**
-     * Indicates that this request would exceed the number of allowed resources
-     * in a Campaign. The exact resource type and limit being checked can be
-     * inferred from accountLimitType, and the numeric id of the
-     * Campaign involved is given by enclosingId.
-     *
-     * Generated from protobuf enum <code>CAMPAIGN_LIMIT = 3;</code>
-     */
-    const CAMPAIGN_LIMIT = 3;
-    /**
-     * Indicates that this request would exceed the number of allowed resources
-     * in an ad group. The exact resource type and limit being checked can be
-     * inferred from accountLimitType, and the numeric id of the
-     * ad group involved is given by enclosingId.
-     *
-     * Generated from protobuf enum <code>ADGROUP_LIMIT = 4;</code>
-     */
-    const ADGROUP_LIMIT = 4;
-    /**
-     * Indicates that this request would exceed the number of allowed resources
-     * in an ad group ad. The exact resource type and limit being checked can
-     * be inferred from accountLimitType, and the enclosingId
-     * contains the ad group id followed by the ad id, separated by a single
-     * comma (,).
-     *
-     * Generated from protobuf enum <code>AD_GROUP_AD_LIMIT = 5;</code>
-     */
-    const AD_GROUP_AD_LIMIT = 5;
-    /**
-     * Indicates that this request would exceed the number of allowed resources
-     * in an ad group criterion. The exact resource type and limit being checked
-     * can be inferred from accountLimitType, and the
-     * enclosingId contains the ad group id followed by the
-     * criterion id, separated by a single comma (,).
-     *
-     * Generated from protobuf enum <code>AD_GROUP_CRITERION_LIMIT = 6;</code>
-     */
-    const AD_GROUP_CRITERION_LIMIT = 6;
-    /**
-     * Indicates that this request would exceed the number of allowed resources
-     * in this shared set. The exact resource type and limit being checked can
-     * be inferred from accountLimitType, and the numeric id of the
-     * shared set involved is given by enclosingId.
-     *
-     * Generated from protobuf enum <code>SHARED_SET_LIMIT = 7;</code>
-     */
-    const SHARED_SET_LIMIT = 7;
-    /**
-     * Exceeds a limit related to a matching function.
-     *
-     * Generated from protobuf enum <code>MATCHING_FUNCTION_LIMIT = 8;</code>
-     */
-    const MATCHING_FUNCTION_LIMIT = 8;
+    class ResourceCountLimitExceededErrorEnum_ResourceCountLimitExceededError {}
 }
+class_exists(ResourceCountLimitExceededErrorEnum\ResourceCountLimitExceededError::class);
+@trigger_error('Google\Ads\GoogleAds\V0\Errors\ResourceCountLimitExceededErrorEnum_ResourceCountLimitExceededError is deprecated and will be removed in the next major release. Use Google\Ads\GoogleAds\V0\Errors\ResourceCountLimitExceededErrorEnum\ResourceCountLimitExceededError instead', E_USER_DEPRECATED);
 
