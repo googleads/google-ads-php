@@ -244,6 +244,13 @@ class CampaignError
      * Generated from protobuf enum <code>MISSING_HOTEL_SETTING = 39;</code>
      */
     const MISSING_HOTEL_SETTING = 39;
+    /**
+     * A Campaign cannot use shared campaign budgets and be part of a campaign
+     * group.
+     *
+     * Generated from protobuf enum <code>CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP = 40;</code>
+     */
+    const CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP = 40;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

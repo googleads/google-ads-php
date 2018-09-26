@@ -47,6 +47,12 @@ class CriterionType
      * Generated from protobuf enum <code>LISTING_GROUP = 8;</code>
      */
     const LISTING_GROUP = 8;
+    /**
+     * Ad Schedule.
+     *
+     * Generated from protobuf enum <code>AD_SCHEDULE = 9;</code>
+     */
+    const AD_SCHEDULE = 9;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

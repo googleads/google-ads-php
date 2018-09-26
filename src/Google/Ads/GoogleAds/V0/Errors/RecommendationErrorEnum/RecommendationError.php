@@ -62,6 +62,18 @@ class RecommendationError
      * Generated from protobuf enum <code>ADGROUP_KEYWORD_LIMIT = 7;</code>
      */
     const ADGROUP_KEYWORD_LIMIT = 7;
+    /**
+     * The recommendation requested to apply has already been applied.
+     *
+     * Generated from protobuf enum <code>RECOMMENDATION_ALREADY_APPLIED = 8;</code>
+     */
+    const RECOMMENDATION_ALREADY_APPLIED = 8;
+    /**
+     * The recommendation requested to apply has been invalidated.
+     *
+     * Generated from protobuf enum <code>RECOMMENDATION_INVALIDATED = 9;</code>
+     */
+    const RECOMMENDATION_INVALIDATED = 9;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

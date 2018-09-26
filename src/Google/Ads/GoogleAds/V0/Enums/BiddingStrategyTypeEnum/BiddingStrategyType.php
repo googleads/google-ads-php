@@ -45,6 +45,12 @@ class BiddingStrategyType
      */
     const MANUAL_CPM = 4;
     /**
+     * A bidding strategy that pays a configurable amount per video view.
+     *
+     * Generated from protobuf enum <code>MANUAL_CPV = 13;</code>
+     */
+    const MANUAL_CPV = 13;
+    /**
      * A bidding strategy that automatically maximizes number of conversions
      * given a daily budget.
      *

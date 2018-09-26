@@ -30,6 +30,13 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      */
     private $shared_set = null;
     /**
+     * The ID of the criterion.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     */
+    private $criterion_id = null;
+    /**
      * The type of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.CriterionTypeEnum.CriterionType type = 4;</code>
@@ -49,6 +56,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/sharedCriteria/{shared_set_id}_{criterion_id}`
      *     @type \Google\Protobuf\StringValue $shared_set
      *           The shared set to which the shared criterion belongs.
+     *     @type \Google\Protobuf\Int64Value $criterion_id
+     *           The ID of the criterion.
+     *           This field is ignored for mutates.
      *     @type int $type
      *           The type of the criterion.
      *     @type \Google\Ads\GoogleAds\V0\Common\KeywordInfo $keyword
@@ -112,6 +122,34 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->shared_set = $var;
+
+        return $this;
+    }
+
+    /**
+     * The ID of the criterion.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getCriterionId()
+    {
+        return $this->criterion_id;
+    }
+
+    /**
+     * The ID of the criterion.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setCriterionId($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->criterion_id = $var;
 
         return $this;
     }

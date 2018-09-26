@@ -48,6 +48,12 @@ class AdvertisingChannelType
      * Generated from protobuf enum <code>HOTEL = 5;</code>
      */
     const HOTEL = 5;
+    /**
+     * Video campaigns.
+     *
+     * Generated from protobuf enum <code>VIDEO = 6;</code>
+     */
+    const VIDEO = 6;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

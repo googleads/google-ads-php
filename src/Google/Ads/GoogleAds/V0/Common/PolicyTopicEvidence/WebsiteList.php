@@ -22,7 +22,7 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
     /**
      * Websites that caused the policy finding.
      *
-     * Generated from protobuf field <code>repeated string websites = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue websites = 1;</code>
      */
     private $websites;
 
@@ -32,7 +32,7 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $websites
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $websites
      *           Websites that caused the policy finding.
      * }
      */
@@ -44,7 +44,7 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
     /**
      * Websites that caused the policy finding.
      *
-     * Generated from protobuf field <code>repeated string websites = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue websites = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getWebsites()
@@ -55,13 +55,13 @@ class WebsiteList extends \Google\Protobuf\Internal\Message
     /**
      * Websites that caused the policy finding.
      *
-     * Generated from protobuf field <code>repeated string websites = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue websites = 1;</code>
+     * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWebsites($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\StringValue::class);
         $this->websites = $arr;
 
         return $this;

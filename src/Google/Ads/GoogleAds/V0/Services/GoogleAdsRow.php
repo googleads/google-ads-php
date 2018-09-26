@@ -16,6 +16,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class GoogleAdsRow extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The account budget in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AccountBudget account_budget = 42;</code>
+     */
+    private $account_budget = null;
+    /**
+     * The account budget proposal referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AccountBudgetProposal account_budget_proposal = 43;</code>
+     */
+    private $account_budget_proposal = null;
+    /**
      * The ad group referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroup ad_group = 3;</code>
@@ -45,6 +57,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BiddingStrategy bidding_strategy = 18;</code>
      */
     private $bidding_strategy = null;
+    /**
+     * The billing setup referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BillingSetup billing_setup = 41;</code>
+     */
+    private $billing_setup = null;
     /**
      * The campaign budget referenced in the query.
      *
@@ -82,6 +100,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $campaign_shared_set = null;
     /**
+     * The ChangeStatus referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ChangeStatus change_status = 37;</code>
+     */
+    private $change_status = null;
+    /**
      * The customer referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Customer customer = 1;</code>
@@ -117,6 +141,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.SharedSet shared_set = 27;</code>
      */
     private $shared_set = null;
+    /**
+     * The video referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Video video = 39;</code>
+     */
+    private $video = null;
     /**
      * The metrics.
      *
@@ -200,6 +230,10 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AccountBudget $account_budget
+     *           The account budget in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AccountBudgetProposal $account_budget_proposal
+     *           The account budget proposal referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroup $ad_group
      *           The ad group referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupAd $ad_group_ad
@@ -210,6 +244,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The criterion referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\BiddingStrategy $bidding_strategy
      *           The bidding strategy referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\BillingSetup $billing_setup
+     *           The billing setup referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignBudget $campaign_budget
      *           The campaign budget referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign $campaign
@@ -222,6 +258,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           Campaign Group referenced in AWQL query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignSharedSet $campaign_shared_set
      *           Campaign Shared Set referenced in AWQL query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\ChangeStatus $change_status
+     *           The ChangeStatus referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Customer $customer
      *           The customer referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant $geo_target_constant
@@ -234,6 +272,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The shared set referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\SharedSet $shared_set
      *           The shared set referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Video $video
+     *           The video referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Common\Metrics $metrics
      *           The metrics.
      *     @type int $ad_network_type
@@ -267,6 +307,58 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Services\GoogleAdsService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * The account budget in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AccountBudget account_budget = 42;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\AccountBudget
+     */
+    public function getAccountBudget()
+    {
+        return $this->account_budget;
+    }
+
+    /**
+     * The account budget in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AccountBudget account_budget = 42;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\AccountBudget $var
+     * @return $this
+     */
+    public function setAccountBudget($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\AccountBudget::class);
+        $this->account_budget = $var;
+
+        return $this;
+    }
+
+    /**
+     * The account budget proposal referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AccountBudgetProposal account_budget_proposal = 43;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\AccountBudgetProposal
+     */
+    public function getAccountBudgetProposal()
+    {
+        return $this->account_budget_proposal;
+    }
+
+    /**
+     * The account budget proposal referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AccountBudgetProposal account_budget_proposal = 43;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\AccountBudgetProposal $var
+     * @return $this
+     */
+    public function setAccountBudgetProposal($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\AccountBudgetProposal::class);
+        $this->account_budget_proposal = $var;
+
+        return $this;
     }
 
     /**
@@ -395,6 +487,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\BiddingStrategy::class);
         $this->bidding_strategy = $var;
+
+        return $this;
+    }
+
+    /**
+     * The billing setup referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BillingSetup billing_setup = 41;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\BillingSetup
+     */
+    public function getBillingSetup()
+    {
+        return $this->billing_setup;
+    }
+
+    /**
+     * The billing setup referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BillingSetup billing_setup = 41;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\BillingSetup $var
+     * @return $this
+     */
+    public function setBillingSetup($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\BillingSetup::class);
+        $this->billing_setup = $var;
 
         return $this;
     }
@@ -556,6 +674,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ChangeStatus referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ChangeStatus change_status = 37;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\ChangeStatus
+     */
+    public function getChangeStatus()
+    {
+        return $this->change_status;
+    }
+
+    /**
+     * The ChangeStatus referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ChangeStatus change_status = 37;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\ChangeStatus $var
+     * @return $this
+     */
+    public function setChangeStatus($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\ChangeStatus::class);
+        $this->change_status = $var;
+
+        return $this;
+    }
+
+    /**
      * The customer referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Customer customer = 1;</code>
@@ -707,6 +851,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\SharedSet::class);
         $this->shared_set = $var;
+
+        return $this;
+    }
+
+    /**
+     * The video referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Video video = 39;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\Video
+     */
+    public function getVideo()
+    {
+        return $this->video;
+    }
+
+    /**
+     * The video referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Video video = 39;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\Video $var
+     * @return $this
+     */
+    public function setVideo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Video::class);
+        $this->video = $var;
 
         return $this;
     }

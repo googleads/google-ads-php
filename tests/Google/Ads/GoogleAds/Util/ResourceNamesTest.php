@@ -22,6 +22,7 @@ use Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BiddingStrategyServiceClient;
+use Google\Ads\GoogleAds\V0\Services\BillingSetupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
@@ -139,6 +140,24 @@ class ResourceNamesTest extends TestCase
         $names = BiddingStrategyServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
         $this->assertEquals($biddingStrategyId, $names['bidding_strategy']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forBillingSetup()
+     */
+    public function testGetNameForBillingSetup()
+    {
+        $billingSetupId = 4444444;
+        $expectedResourceName =
+            sprintf('customers/%s/billingSetups/%s', self::CUSTOMER_ID, $billingSetupId);
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forBillingSetup(self::CUSTOMER_ID, $billingSetupId)
+        );
+
+        $names = BillingSetupServiceClient::parseName($expectedResourceName);
+        $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
+        $this->assertEquals($billingSetupId, $names['billing_setup']);
     }
 
     /**

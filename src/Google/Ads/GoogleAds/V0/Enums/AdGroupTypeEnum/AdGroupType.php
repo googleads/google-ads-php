@@ -31,6 +31,18 @@ class AdGroupType
      */
     const SEARCH_STANDARD = 2;
     /**
+     * The default ad group type for Display campaigns.
+     *
+     * Generated from protobuf enum <code>DISPLAY_STANDARD = 3;</code>
+     */
+    const DISPLAY_STANDARD = 3;
+    /**
+     * The ad group type for Shopping campaigns serving standard product ads.
+     *
+     * Generated from protobuf enum <code>SHOPPING_PRODUCT_ADS = 4;</code>
+     */
+    const SHOPPING_PRODUCT_ADS = 4;
+    /**
      * The default ad group type for Hotel campaigns.
      *
      * Generated from protobuf enum <code>HOTEL_ADS = 6;</code>
@@ -42,6 +54,12 @@ class AdGroupType
      * Generated from protobuf enum <code>SHOPPING_SMART_ADS = 7;</code>
      */
     const SHOPPING_SMART_ADS = 7;
+    /**
+     * Short unskippable in-stream video ads.
+     *
+     * Generated from protobuf enum <code>VIDEO_BUMPER = 8;</code>
+     */
+    const VIDEO_BUMPER = 8;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

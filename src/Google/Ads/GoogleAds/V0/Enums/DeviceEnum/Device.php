@@ -41,12 +41,6 @@ class Device
      * Generated from protobuf enum <code>DESKTOP = 4;</code>
      */
     const DESKTOP = 4;
-    /**
-     * Connected TV.
-     *
-     * Generated from protobuf enum <code>CONNECTED_TV = 5;</code>
-     */
-    const CONNECTED_TV = 5;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

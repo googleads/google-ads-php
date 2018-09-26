@@ -28,9 +28,9 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      * policy topics is not fixed for a particular API version and may change
      * at any time.
      *
-     * Generated from protobuf field <code>string topic = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic = 1;</code>
      */
-    private $topic = '';
+    private $topic = null;
     /**
      * Describes the negative or positive effect this policy will have on serving.
      *
@@ -58,7 +58,7 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $topic
+     *     @type \Google\Protobuf\StringValue $topic
      *           Policy topic this finding refers to. For example, "ALCOHOL",
      *           "TRADEMARKS_IN_AD_TEXT", or "DESTINATION_NOT_WORKING". The set of possible
      *           policy topics is not fixed for a particular API version and may change
@@ -84,8 +84,8 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      * policy topics is not fixed for a particular API version and may change
      * at any time.
      *
-     * Generated from protobuf field <code>string topic = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic = 1;</code>
+     * @return \Google\Protobuf\StringValue
      */
     public function getTopic()
     {
@@ -98,13 +98,13 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      * policy topics is not fixed for a particular API version and may change
      * at any time.
      *
-     * Generated from protobuf field <code>string topic = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic = 1;</code>
+     * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
     public function setTopic($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->topic = $var;
 
         return $this;

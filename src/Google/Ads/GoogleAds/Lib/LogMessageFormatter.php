@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,6 +28,16 @@ final class LogMessageFormatter
     use ArrayTrait;
     use GoogleAdsMetadataTrait;
 
+    /** @var array the map of header keys to redacted values. */
+    private static $HEADER_KEYS_TO_REDACTED_VALUES;
+
+    private $statusMetadataExtractor;
+
+    public function __construct($statusMetadataExtractor = null)
+    {
+        $this->statusMetadataExtractor = $statusMetadataExtractor ?: new StatusMetadataExtractor();
+    }
+
     /**
      * Formats the request and response data for summary logging.
      *
@@ -47,18 +57,8 @@ final class LogMessageFormatter
         $status = $this->pluck('status', $responseData);
 
         if ($status->code !== 0) {
-            // gRPC calls will have a binary key.
-            $binaryHeader = $this->getFirstHeaderValue(
-                self::$GOOGLE_ADS_FAILURE_BINARY_KEY,
-                $status->metadata
-            );
-            $googleAdsFailure = new GoogleAdsFailure();
-            $googleAdsFailure->mergeFromString($binaryHeader);
-
-            $errorMessageList = [];
-            foreach ($googleAdsFailure->getErrors() as $error) {
-                $errorMessageList[] = $error->getMessage();
-            }
+            $errorMessageList =
+                $this->statusMetadataExtractor->extractErrorMessageList($status->metadata);
         }
 
         return sprintf(
@@ -100,13 +100,14 @@ final class LogMessageFormatter
         $logMessageTokens[] = '-------';
         $logMessageTokens[] = "Method Name: $method";
         $logMessageTokens[] = "Host: $endpoint";
-        $logMessageTokens[] =
-            "Headers: " . json_encode(self::joinPluckedArrays($metadata), JSON_PRETTY_PRINT);
+        $logMessageTokens[] = "Headers: " . json_encode(
+            self::redactHeaders(self::joinPluckedArrays($metadata)),
+            JSON_PRETTY_PRINT
+        );
         $logMessageTokens[] = "Request: " . $argument->serializeToJsonString();
 
         $logMessageTokens[] = "\nResponse";
         $logMessageTokens[] = '-------';
-        // TODO: REDACT developer token.
         $logMessageTokens[] = "Headers: " . json_encode(
             self::joinPluckedArrays($unaryCall->getMetadata()),
             JSON_PRETTY_PRINT
@@ -115,18 +116,8 @@ final class LogMessageFormatter
         if ($status->code === 0) {
             $logMessageTokens[] = "Response: {$response->serializeToJsonString()}";
         } else {
-            // gRPC calls will have a binary key.
-            $binaryHeader = $this->getFirstHeaderValue(
-                self::$GOOGLE_ADS_FAILURE_BINARY_KEY,
-                $status->metadata
-            );
-            $googleAdsFailure = new GoogleAdsFailure();
-            $googleAdsFailure->mergeFromString($binaryHeader);
-
-            $errorMessageList = [];
-            foreach ($googleAdsFailure->getErrors() as $error) {
-                $errorMessageList[] = $error->getMessage();
-            }
+            $googleAdsFailure =
+                $this->statusMetadataExtractor->extractGoogleAdsFailure($status->metadata);
 
             $logMessageTokens[] = "\nFault";
             $logMessageTokens[] = '-------';
@@ -138,6 +129,10 @@ final class LogMessageFormatter
         return implode("\n", $logMessageTokens);
     }
 
+    /**
+     * @param array $array
+     * @return array the joined array after plucking
+     */
     private function joinPluckedArrays(array $array)
     {
         $joinedArray = [];
@@ -146,5 +141,39 @@ final class LogMessageFormatter
         }
 
         return $joinedArray;
+    }
+
+    /**
+     * @param array $headers the headers to be redacted
+     * @param array|null $headerKeysToRedactedValues the mapping from keys to values needing
+     *     redaction
+     * @return array the headers with values redacted
+     */
+    private function redactHeaders(
+        array $headers,
+        array $headerKeysToRedactedValues = null
+    ) {
+        $headerKeysToRedactedValues =
+            $headerKeysToRedactedValues ?: self::getDefaultHeaderKeysToRedactedValues();
+        foreach ($headers as $header => $value) {
+            if (array_key_exists($header, $headerKeysToRedactedValues)) {
+                $headers[$header] = $headerKeysToRedactedValues[$header];
+            }
+        }
+        return $headers;
+    }
+
+    /**
+     * @return array the mapping of header keys to redacted values
+     */
+    private static function getDefaultHeaderKeysToRedactedValues()
+    {
+        if (!isset(self::$HEADER_KEYS_TO_REDACTED_VALUES)) {
+            self::$HEADER_KEYS_TO_REDACTED_VALUES = [
+                self::$DEVELOPER_TOKEN_HEADER_KEY => 'REDACTED'
+            ];
+        }
+
+        return self::$HEADER_KEYS_TO_REDACTED_VALUES;
     }
 }

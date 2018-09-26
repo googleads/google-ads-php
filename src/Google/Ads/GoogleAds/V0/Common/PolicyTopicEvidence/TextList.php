@@ -19,7 +19,7 @@ class TextList extends \Google\Protobuf\Internal\Message
     /**
      * The fragments of text from the resource that caused the policy finding.
      *
-     * Generated from protobuf field <code>repeated string texts = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue texts = 1;</code>
      */
     private $texts;
 
@@ -29,7 +29,7 @@ class TextList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $texts
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $texts
      *           The fragments of text from the resource that caused the policy finding.
      * }
      */
@@ -41,7 +41,7 @@ class TextList extends \Google\Protobuf\Internal\Message
     /**
      * The fragments of text from the resource that caused the policy finding.
      *
-     * Generated from protobuf field <code>repeated string texts = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue texts = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTexts()
@@ -52,13 +52,13 @@ class TextList extends \Google\Protobuf\Internal\Message
     /**
      * The fragments of text from the resource that caused the policy finding.
      *
-     * Generated from protobuf field <code>repeated string texts = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue texts = 1;</code>
+     * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTexts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\StringValue::class);
         $this->texts = $arr;
 
         return $this;

@@ -37,8 +37,14 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      *           City the hotel is located in.
      *     @type \Google\Ads\GoogleAds\V0\Common\ListingCustomAttributeInfo $listing_custom_attribute
      *           Listing custom attribute.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ProductChannelInfo $product_channel
+     *           Locality of a product offer.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ProductChannelExclusivityInfo $product_channel_exclusivity
+     *           Availability of a product offer.
      *     @type \Google\Ads\GoogleAds\V0\Common\ProductConditionInfo $product_condition
      *           Condition of a product offer.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ProductOfferIdInfo $product_offer_id
+     *           Id of a product offer.
      *     @type \Google\Ads\GoogleAds\V0\Common\ProductTypeInfo $product_type
      *           Type of a product offer.
      * }
@@ -231,6 +237,58 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Locality of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductChannelInfo product_channel = 8;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ProductChannelInfo
+     */
+    public function getProductChannel()
+    {
+        return $this->readOneof(8);
+    }
+
+    /**
+     * Locality of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductChannelInfo product_channel = 8;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ProductChannelInfo $var
+     * @return $this
+     */
+    public function setProductChannel($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ProductChannelInfo::class);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Availability of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductChannelExclusivityInfo product_channel_exclusivity = 9;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ProductChannelExclusivityInfo
+     */
+    public function getProductChannelExclusivity()
+    {
+        return $this->readOneof(9);
+    }
+
+    /**
+     * Availability of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductChannelExclusivityInfo product_channel_exclusivity = 9;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ProductChannelExclusivityInfo $var
+     * @return $this
+     */
+    public function setProductChannelExclusivity($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ProductChannelExclusivityInfo::class);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
      * Condition of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductConditionInfo product_condition = 10;</code>
@@ -252,6 +310,32 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ProductConditionInfo::class);
         $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Id of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductOfferIdInfo product_offer_id = 11;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ProductOfferIdInfo
+     */
+    public function getProductOfferId()
+    {
+        return $this->readOneof(11);
+    }
+
+    /**
+     * Id of a product offer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ProductOfferIdInfo product_offer_id = 11;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ProductOfferIdInfo $var
+     * @return $this
+     */
+    public function setProductOfferId($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ProductOfferIdInfo::class);
+        $this->writeOneof(11, $var);
 
         return $this;
     }

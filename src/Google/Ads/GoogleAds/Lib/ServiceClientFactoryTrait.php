@@ -17,17 +17,21 @@
 
 namespace Google\Ads\GoogleAds\Lib;
 
+use Google\Ads\GoogleAds\V0\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupAdServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BiddingStrategyServiceClient;
+use Google\Ads\GoogleAds\V0\Services\BillingSetupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignSharedSetServiceClient;
+use Google\Ads\GoogleAds\V0\Services\ChangeStatusServiceClient;
+use Google\Ads\GoogleAds\V0\Services\ConversionActionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsFieldServiceClient;
@@ -36,6 +40,7 @@ use Google\Ads\GoogleAds\V0\Services\KeywordViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SharedSetServiceClient;
+use Google\Ads\GoogleAds\V0\Services\VideoServiceClient;
 
 /**
  * Contains service client factory methods.
@@ -93,6 +98,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return AccountBudgetProposalServiceClient
+     */
+    public function getAccountBudgetProposalServiceClient()
+    {
+        return new AccountBudgetProposalServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return AdGroupCriterionServiceClient
      */
     public function getAdGroupCriterionServiceClient()
@@ -114,6 +127,14 @@ trait ServiceClientFactoryTrait
     public function getBiddingStrategyServiceClient()
     {
         return new BiddingStrategyServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return BillingSetupServiceClient
+     */
+    public function getBillingSetupServiceClient()
+    {
+        return new BillingSetupServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -162,6 +183,22 @@ trait ServiceClientFactoryTrait
     public function getCampaignSharedSetServiceClient()
     {
         return new CampaignSharedSetServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ChangeStatusServiceClient
+     */
+    public function getChangeStatusServiceClient()
+    {
+        return new ChangeStatusServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ConversionActionServiceClient
+     */
+    public function getConversionActionServiceClient()
+    {
+        return new ConversionActionServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -226,5 +263,13 @@ trait ServiceClientFactoryTrait
     public function getSharedSetServiceClient()
     {
         return new SharedSetServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return VideoServiceClient
+     */
+    public function getVideoServiceClient()
+    {
+        return new VideoServiceClient($this->getGoogleAdsClientOptions());
     }
 }

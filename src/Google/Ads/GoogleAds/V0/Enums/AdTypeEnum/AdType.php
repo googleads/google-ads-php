@@ -72,6 +72,12 @@ class AdType
      * Generated from protobuf enum <code>SHOPPING_SMART_AD = 9;</code>
      */
     const SHOPPING_SMART_AD = 9;
+    /**
+     * The ad is a standard Shopping ad.
+     *
+     * Generated from protobuf enum <code>SHOPPING_PRODUCT_AD = 10;</code>
+     */
+    const SHOPPING_PRODUCT_AD = 10;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

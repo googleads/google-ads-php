@@ -298,21 +298,18 @@ class GoogleAdsFieldServiceGapicClient
      * $googleAdsFieldServiceClient = new GoogleAdsFieldServiceClient();
      * try {
      *     $query = '';
-     *     // Iterate over pages of elements
+     *     // Iterate through all elements
+     *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     *
+     *     // OR iterate over pages of elements
      *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
      *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
      *     }
      * } finally {
      *     $googleAdsFieldServiceClient->close();
