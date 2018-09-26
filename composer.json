@@ -34,12 +34,6 @@
       "GPBMetadata\\": "src/Google/Ads/GoogleAds/Util/Testing/metadata"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "Google\\": "src/Google/Ads/GoogleAds/Util/Testing/Google",
-      "GPBMetadata\\": "src/Google/Ads/GoogleAds/Util/Testing/metadata"
-    }
-  },
   "authors": [
     {
       "name": "Google",
