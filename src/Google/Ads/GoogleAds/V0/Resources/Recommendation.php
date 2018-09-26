@@ -50,7 +50,9 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * the recommendation affects a single campaign.
      * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
-     * KEYWORD, TEXT_AD, TARGET_CPA_OPT_IN
+     * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
+     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     * TARGET_CPA_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
      */
@@ -60,7 +62,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * the recommendation affects a single ad group.
      * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
-     * KEYWORD, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 7;</code>
      */
@@ -98,13 +100,15 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           the recommendation affects a single campaign.
      *           This field must not be used in WHERE clauses.
      *           This field will be set for the following recommendation types:
-     *           KEYWORD, TEXT_AD, TARGET_CPA_OPT_IN
+     *           ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
+     *           MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     *           TARGET_CPA_OPT_IN, TEXT_AD
      *     @type \Google\Protobuf\StringValue $ad_group
      *           The ad group targeted by this recommendation. This will be set only when
      *           the recommendation affects a single ad group.
      *           This field must not be used in WHERE clauses.
      *           This field will be set for the following recommendation types:
-     *           KEYWORD, TEXT_AD
+     *           KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *     @type \Google\Protobuf\BoolValue $dismissed
      *           Whether the recommendation is dismissed or not.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Recommendation\CampaignBudgetRecommendation $campaign_budget_recommendation
@@ -253,7 +257,9 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * the recommendation affects a single campaign.
      * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
-     * KEYWORD, TEXT_AD, TARGET_CPA_OPT_IN
+     * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
+     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     * TARGET_CPA_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
      * @return \Google\Protobuf\StringValue
@@ -268,7 +274,9 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * the recommendation affects a single campaign.
      * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
-     * KEYWORD, TEXT_AD, TARGET_CPA_OPT_IN
+     * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
+     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     * TARGET_CPA_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -287,7 +295,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * the recommendation affects a single ad group.
      * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
-     * KEYWORD, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 7;</code>
      * @return \Google\Protobuf\StringValue
@@ -302,7 +310,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * the recommendation affects a single ad group.
      * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
-     * KEYWORD, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 7;</code>
      * @param \Google\Protobuf\StringValue $var

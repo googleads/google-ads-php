@@ -24,13 +24,13 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $http_code
+     *     @type \Google\Protobuf\Int32Value $http_code
      *           HTTP code returned when the final URL was crawled.
      *     @type \Google\Ads\GoogleAds\V0\Common\PolicyTopicEvidence\WebsiteList $website_list
      *           List of websites linked with this resource.
      *     @type \Google\Ads\GoogleAds\V0\Common\PolicyTopicEvidence\TextList $text_list
      *           List of evidence found in the text of a resource.
-     *     @type string $language_code
+     *     @type \Google\Protobuf\StringValue $language_code
      *           The language the resource was detected to be written in.
      *           This is an IETF language tag such as "en-US".
      *     @type \Google\Ads\GoogleAds\V0\Common\PolicyTopicEvidence\DestinationTextList $destination_text_list
@@ -48,8 +48,8 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
     /**
      * HTTP code returned when the final URL was crawled.
      *
-     * Generated from protobuf field <code>int32 http_code = 2;</code>
-     * @return int
+     * Generated from protobuf field <code>.google.protobuf.Int32Value http_code = 2;</code>
+     * @return \Google\Protobuf\Int32Value
      */
     public function getHttpCode()
     {
@@ -59,13 +59,13 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
     /**
      * HTTP code returned when the final URL was crawled.
      *
-     * Generated from protobuf field <code>int32 http_code = 2;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.google.protobuf.Int32Value http_code = 2;</code>
+     * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
     public function setHttpCode($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int32Value::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -127,8 +127,8 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * The language the resource was detected to be written in.
      * This is an IETF language tag such as "en-US".
      *
-     * Generated from protobuf field <code>string language_code = 5;</code>
-     * @return string
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 5;</code>
+     * @return \Google\Protobuf\StringValue
      */
     public function getLanguageCode()
     {
@@ -139,13 +139,13 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * The language the resource was detected to be written in.
      * This is an IETF language tag such as "en-US".
      *
-     * Generated from protobuf field <code>string language_code = 5;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 5;</code>
+     * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
     public function setLanguageCode($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->writeOneof(5, $var);
 
         return $this;

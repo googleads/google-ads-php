@@ -20,7 +20,7 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
     /**
      * List of text found in the resource's destination page.
      *
-     * Generated from protobuf field <code>repeated string destination_texts = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue destination_texts = 1;</code>
      */
     private $destination_texts;
 
@@ -30,7 +30,7 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $destination_texts
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $destination_texts
      *           List of text found in the resource's destination page.
      * }
      */
@@ -42,7 +42,7 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
     /**
      * List of text found in the resource's destination page.
      *
-     * Generated from protobuf field <code>repeated string destination_texts = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue destination_texts = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDestinationTexts()
@@ -53,13 +53,13 @@ class DestinationTextList extends \Google\Protobuf\Internal\Message
     /**
      * List of text found in the resource's destination page.
      *
-     * Generated from protobuf field <code>repeated string destination_texts = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue destination_texts = 1;</code>
+     * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDestinationTexts($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\StringValue::class);
         $this->destination_texts = $arr;
 
         return $this;

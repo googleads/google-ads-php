@@ -42,6 +42,12 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Ad ad = 5;</code>
      */
     private $ad = null;
+    /**
+     * Policy information for the ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupAdPolicySummary policy_summary = 6;</code>
+     */
+    private $policy_summary = null;
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *           This field must not be used in WHERE clauses.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Ad $ad
      *           The ad.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupAdPolicySummary $policy_summary
+     *           Policy information for the ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -173,6 +181,32 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Ad::class);
         $this->ad = $var;
+
+        return $this;
+    }
+
+    /**
+     * Policy information for the ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupAdPolicySummary policy_summary = 6;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\AdGroupAdPolicySummary
+     */
+    public function getPolicySummary()
+    {
+        return $this->policy_summary;
+    }
+
+    /**
+     * Policy information for the ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupAdPolicySummary policy_summary = 6;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\AdGroupAdPolicySummary $var
+     * @return $this
+     */
+    public function setPolicySummary($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\AdGroupAdPolicySummary::class);
+        $this->policy_summary = $var;
 
         return $this;
     }

@@ -19,9 +19,9 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
     /**
      * Total number of countries targeted by the resource.
      *
-     * Generated from protobuf field <code>int32 total_targeted_countries = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
      */
-    private $total_targeted_countries = 0;
+    private $total_targeted_countries = null;
     /**
      * Countries in which serving is restricted.
      *
@@ -35,7 +35,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $total_targeted_countries
+     *     @type \Google\Protobuf\Int32Value $total_targeted_countries
      *           Total number of countries targeted by the resource.
      *     @type \Google\Ads\GoogleAds\V0\Common\PolicyTopicConstraint\CountryConstraint[]|\Google\Protobuf\Internal\RepeatedField $countries
      *           Countries in which serving is restricted.
@@ -49,8 +49,8 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
     /**
      * Total number of countries targeted by the resource.
      *
-     * Generated from protobuf field <code>int32 total_targeted_countries = 1;</code>
-     * @return int
+     * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
+     * @return \Google\Protobuf\Int32Value
      */
     public function getTotalTargetedCountries()
     {
@@ -60,13 +60,13 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
     /**
      * Total number of countries targeted by the resource.
      *
-     * Generated from protobuf field <code>int32 total_targeted_countries = 1;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
+     * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
     public function setTotalTargetedCountries($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int32Value::class);
         $this->total_targeted_countries = $var;
 
         return $this;

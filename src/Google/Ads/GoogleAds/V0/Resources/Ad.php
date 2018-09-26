@@ -61,6 +61,26 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.AdTypeEnum.AdType type = 5;</code>
      */
     private $type = 0;
+    /**
+     * Indicates if this ad was automatically added by Google Ads and not by a
+     * user. For example, this could happen when ads are automatically created as
+     * suggestions for new ads based on knowledge of how existing ads are
+     * performing.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     */
+    private $added_by_google_ads = null;
+    /**
+     * The device preference for the ad. You can only specify a preference for
+     * mobile devices. When this preference is set the ad will be preferred over
+     * other ads when being displayed on a mobile device. The ad can still be
+     * displayed on other device types, e.g. if no other ads are available.
+     * If unspecified (no device preference), all devices are targeted.
+     * This is only supported by some ad types.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device_preference = 20;</code>
+     */
+    private $device_preference = 0;
     protected $ad_data;
 
     /**
@@ -87,6 +107,18 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           The URL that appears in the ad description for some ad formats.
      *     @type int $type
      *           The type of ad.
+     *     @type \Google\Protobuf\BoolValue $added_by_google_ads
+     *           Indicates if this ad was automatically added by Google Ads and not by a
+     *           user. For example, this could happen when ads are automatically created as
+     *           suggestions for new ads based on knowledge of how existing ads are
+     *           performing.
+     *     @type int $device_preference
+     *           The device preference for the ad. You can only specify a preference for
+     *           mobile devices. When this preference is set the ad will be preferred over
+     *           other ads when being displayed on a mobile device. The ad can still be
+     *           displayed on other device types, e.g. if no other ads are available.
+     *           If unspecified (no device preference), all devices are targeted.
+     *           This is only supported by some ad types.
      *     @type \Google\Ads\GoogleAds\V0\Common\TextAdInfo $text_ad
      *           Details pertaining to a text ad.
      *     @type \Google\Ads\GoogleAds\V0\Common\ExpandedTextAdInfo $expanded_text_ad
@@ -107,6 +139,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Details pertaining to a hotel ad.
      *     @type \Google\Ads\GoogleAds\V0\Common\ShoppingSmartAdInfo $shopping_smart_ad
      *           Details pertaining to a Smart Shopping ad.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ShoppingProductAdInfo $shopping_product_ad
+     *           Details pertaining to a Shopping product ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -300,6 +334,74 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\AdTypeEnum_AdType::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates if this ad was automatically added by Google Ads and not by a
+     * user. For example, this could happen when ads are automatically created as
+     * suggestions for new ads based on knowledge of how existing ads are
+     * performing.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * @return \Google\Protobuf\BoolValue
+     */
+    public function getAddedByGoogleAds()
+    {
+        return $this->added_by_google_ads;
+    }
+
+    /**
+     * Indicates if this ad was automatically added by Google Ads and not by a
+     * user. For example, this could happen when ads are automatically created as
+     * suggestions for new ads based on knowledge of how existing ads are
+     * performing.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * @param \Google\Protobuf\BoolValue $var
+     * @return $this
+     */
+    public function setAddedByGoogleAds($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
+        $this->added_by_google_ads = $var;
+
+        return $this;
+    }
+
+    /**
+     * The device preference for the ad. You can only specify a preference for
+     * mobile devices. When this preference is set the ad will be preferred over
+     * other ads when being displayed on a mobile device. The ad can still be
+     * displayed on other device types, e.g. if no other ads are available.
+     * If unspecified (no device preference), all devices are targeted.
+     * This is only supported by some ad types.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device_preference = 20;</code>
+     * @return int
+     */
+    public function getDevicePreference()
+    {
+        return $this->device_preference;
+    }
+
+    /**
+     * The device preference for the ad. You can only specify a preference for
+     * mobile devices. When this preference is set the ad will be preferred over
+     * other ads when being displayed on a mobile device. The ad can still be
+     * displayed on other device types, e.g. if no other ads are available.
+     * If unspecified (no device preference), all devices are targeted.
+     * This is only supported by some ad types.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device_preference = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDevicePreference($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\DeviceEnum_Device::class);
+        $this->device_preference = $var;
 
         return $this;
     }
@@ -516,6 +618,32 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ShoppingSmartAdInfo::class);
         $this->writeOneof(17, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a Shopping product ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ShoppingProductAdInfo shopping_product_ad = 18;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ShoppingProductAdInfo
+     */
+    public function getShoppingProductAd()
+    {
+        return $this->readOneof(18);
+    }
+
+    /**
+     * Details pertaining to a Shopping product ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ShoppingProductAdInfo shopping_product_ad = 18;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ShoppingProductAdInfo $var
+     * @return $this
+     */
+    public function setShoppingProductAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ShoppingProductAdInfo::class);
+        $this->writeOneof(18, $var);
 
         return $this;
     }

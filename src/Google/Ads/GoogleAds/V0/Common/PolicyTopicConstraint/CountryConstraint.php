@@ -21,9 +21,9 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * Geo target constant resource name of the country in which serving is
      * constrained.
      *
-     * Generated from protobuf field <code>string country_criterion = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
      */
-    private $country_criterion = '';
+    private $country_criterion = null;
 
     /**
      * Constructor.
@@ -31,7 +31,7 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $country_criterion
+     *     @type \Google\Protobuf\StringValue $country_criterion
      *           Geo target constant resource name of the country in which serving is
      *           constrained.
      * }
@@ -45,8 +45,8 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * Geo target constant resource name of the country in which serving is
      * constrained.
      *
-     * Generated from protobuf field <code>string country_criterion = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
+     * @return \Google\Protobuf\StringValue
      */
     public function getCountryCriterion()
     {
@@ -57,13 +57,13 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * Geo target constant resource name of the country in which serving is
      * constrained.
      *
-     * Generated from protobuf field <code>string country_criterion = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
+     * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
     public function setCountryCriterion($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->country_criterion = $var;
 
         return $this;

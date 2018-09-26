@@ -47,21 +47,18 @@ use Google\ApiCore\ValidationException;
  * try {
  *     $customerId = '';
  *     $query = '';
- *     // Iterate over pages of elements
+ *     // Iterate through all elements
+ *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
+ *     foreach ($pagedResponse->iterateAllElements() as $element) {
+ *         // doSomethingWith($element);
+ *     }
+ *
+ *     // OR iterate over pages of elements
  *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
  *     foreach ($pagedResponse->iteratePages() as $page) {
  *         foreach ($page as $element) {
  *             // doSomethingWith($element);
  *         }
- *     }
- *
- *
- *     // Alternatively:
- *
- *     // Iterate through all elements
- *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
  *     }
  * } finally {
  *     $googleAdsServiceClient->close();
@@ -185,21 +182,18 @@ class GoogleAdsServiceGapicClient
      * try {
      *     $customerId = '';
      *     $query = '';
-     *     // Iterate over pages of elements
+     *     // Iterate through all elements
+     *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     *
+     *     // OR iterate over pages of elements
      *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
      *         }
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // Iterate through all elements
-     *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
      *     }
      * } finally {
      *     $googleAdsServiceClient->close();

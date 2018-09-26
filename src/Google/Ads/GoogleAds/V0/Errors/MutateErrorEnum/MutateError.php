@@ -42,6 +42,12 @@ class MutateError
      * Generated from protobuf enum <code>INCONSISTENT_FIELD_VALUES = 8;</code>
      */
     const INCONSISTENT_FIELD_VALUES = 8;
+    /**
+     * Mutates are not allowed for the requested resource.
+     *
+     * Generated from protobuf enum <code>MUTATE_NOT_ALLOWED = 9;</code>
+     */
+    const MUTATE_NOT_ALLOWED = 9;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

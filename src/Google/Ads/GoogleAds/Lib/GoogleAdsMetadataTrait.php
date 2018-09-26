@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,6 +23,7 @@ namespace Google\Ads\GoogleAds\Lib;
 trait GoogleAdsMetadataTrait
 {
     private static $REQUEST_ID_HEADER_KEY = "request-id";
+    private static $DEVELOPER_TOKEN_HEADER_KEY = "developer-token";
     private static $GOOGLE_ADS_FAILURE_BINARY_KEY =
         "google.ads.googleads.v0.errors.googleadsfailure-bin";
     private static $GOOGLE_ADS_FAILURE_JSON_KEY =

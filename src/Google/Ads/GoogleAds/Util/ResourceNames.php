@@ -22,6 +22,7 @@ use Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BiddingStrategyServiceClient;
+use Google\Ads\GoogleAds\V0\Services\BillingSetupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
@@ -102,6 +103,18 @@ final class ResourceNames
     public static function forBiddingStrategy($customerId, $biddingStrategyId)
     {
         return BiddingStrategyServiceClient::biddingStrategyName($customerId, $biddingStrategyId);
+    }
+
+    /**
+     * Generates resource name for a billing setup.
+     *
+     * @param int $customerId the customer ID
+     * @param int $billingSetupId the billing setup ID
+     * @return string the billing setup resource name
+     */
+    public static function forBillingSetup($customerId, $billingSetupId)
+    {
+        return BillingSetupServiceClient::billingSetupName($customerId, $billingSetupId);
     }
 
     /**

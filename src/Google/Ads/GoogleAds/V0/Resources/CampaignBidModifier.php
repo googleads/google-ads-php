@@ -61,7 +61,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      *           This field is ignored for mutates.
      *     @type \Google\Protobuf\DoubleValue $bid_modifier
      *           The modifier for the bid when the criterion matches.
-     *     @type \Google\Ads\GoogleAds\V0\Common\InteractionType $interaction_type
+     *     @type \Google\Ads\GoogleAds\V0\Common\InteractionTypeInfo $interaction_type
      *           Criterion for interaction type. Only supported for search campaigns.
      * }
      */
@@ -183,8 +183,8 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Criterion for interaction type. Only supported for search campaigns.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.InteractionType interaction_type = 5;</code>
-     * @return \Google\Ads\GoogleAds\V0\Common\InteractionType
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.InteractionTypeInfo interaction_type = 5;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\InteractionTypeInfo
      */
     public function getInteractionType()
     {
@@ -194,13 +194,13 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Criterion for interaction type. Only supported for search campaigns.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.common.InteractionType interaction_type = 5;</code>
-     * @param \Google\Ads\GoogleAds\V0\Common\InteractionType $var
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.InteractionTypeInfo interaction_type = 5;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\InteractionTypeInfo $var
      * @return $this
      */
     public function setInteractionType($var)
     {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\InteractionType::class);
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\InteractionTypeInfo::class);
         $this->writeOneof(5, $var);
 
         return $this;

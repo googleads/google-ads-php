@@ -30,6 +30,12 @@ class PolicyFindingError
      * Generated from protobuf enum <code>POLICY_FINDING = 2;</code>
      */
     const POLICY_FINDING = 2;
+    /**
+     * The given policy topic does not exist.
+     *
+     * Generated from protobuf enum <code>POLICY_TOPIC_NOT_FOUND = 3;</code>
+     */
+    const POLICY_TOPIC_NOT_FOUND = 3;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

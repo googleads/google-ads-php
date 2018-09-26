@@ -21,6 +21,12 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     private $update_mask = null;
+    /**
+     * Configuration for how policies are validated.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PolicyValidationParameter policy_validation_parameter = 5;</code>
+     */
+    private $policy_validation_parameter = null;
     protected $operation;
 
     /**
@@ -31,6 +37,8 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           FieldMask that determines which resource fields are modified in an update.
+     *     @type \Google\Ads\GoogleAds\V0\Common\PolicyValidationParameter $policy_validation_parameter
+     *           Configuration for how policies are validated.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupAd $create
      *           Create operation: No resource name is expected for the new ad.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupAd $update
@@ -68,6 +76,32 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
+
+        return $this;
+    }
+
+    /**
+     * Configuration for how policies are validated.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PolicyValidationParameter policy_validation_parameter = 5;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\PolicyValidationParameter
+     */
+    public function getPolicyValidationParameter()
+    {
+        return $this->policy_validation_parameter;
+    }
+
+    /**
+     * Configuration for how policies are validated.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PolicyValidationParameter policy_validation_parameter = 5;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\PolicyValidationParameter $var
+     * @return $this
+     */
+    public function setPolicyValidationParameter($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PolicyValidationParameter::class);
+        $this->policy_validation_parameter = $var;
 
         return $this;
     }

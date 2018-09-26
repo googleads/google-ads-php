@@ -107,6 +107,23 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $content_impression_share = null;
     /**
+     * The last date/time a conversion tag for this conversion action successfully
+     * fired and was seen by Google Ads. This firing event may not have been the
+     * result of an attributable conversion (e.g. because the tag was fired from a
+     * browser that did not previously click an ad from an appropriate
+     * advertiser). The date/time is in the customer's time zone.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_received_request_date_time = 73;</code>
+     */
+    private $conversion_last_received_request_date_time = null;
+    /**
+     * The date of the most recent conversion for this conversion action. The date
+     * is in the customer's time zone.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_conversion_date = 74;</code>
+     */
+    private $conversion_last_conversion_date = null;
+    /**
      * The estimated percentage of impressions on the Display Network
      * that your ads didn't receive due to poor Ad Rank.
      * Note: Content rank lost impression share is reported in the range of 0
@@ -318,6 +335,44 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $value_per_conversion = null;
     /**
+     * Percentage of impressions where the viewer watched all of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_100_rate = 54;</code>
+     */
+    private $video_quartile_100_rate = null;
+    /**
+     * Percentage of impressions where the viewer watched 25% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_25_rate = 55;</code>
+     */
+    private $video_quartile_25_rate = null;
+    /**
+     * Percentage of impressions where the viewer watched 50% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_50_rate = 56;</code>
+     */
+    private $video_quartile_50_rate = null;
+    /**
+     * Percentage of impressions where the viewer watched 75% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_75_rate = 57;</code>
+     */
+    private $video_quartile_75_rate = null;
+    /**
+     * The number of views your TrueView video ad receives divided by its number
+     * of impressions, including thumbnail impressions for TrueView in-display
+     * ads.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_view_rate = 58;</code>
+     */
+    private $video_view_rate = null;
+    /**
+     * The number of times your video ads were viewed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value video_views = 59;</code>
+     */
+    private $video_views = null;
+    /**
      * The total number of view-through conversions.
      * These happen when a customer sees an image or rich media ad, then later
      * completes a conversion on your site without interacting with (e.g.,
@@ -372,6 +427,15 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           by the estimated number of impressions you were eligible to receive.
      *           Note: Content impression share is reported in the range of 0.1 to 1. Any
      *           value below 0.1 is reported as 0.0999.
+     *     @type \Google\Protobuf\StringValue $conversion_last_received_request_date_time
+     *           The last date/time a conversion tag for this conversion action successfully
+     *           fired and was seen by Google Ads. This firing event may not have been the
+     *           result of an attributable conversion (e.g. because the tag was fired from a
+     *           browser that did not previously click an ad from an appropriate
+     *           advertiser). The date/time is in the customer's time zone.
+     *     @type \Google\Protobuf\StringValue $conversion_last_conversion_date
+     *           The date of the most recent conversion for this conversion action. The date
+     *           is in the customer's time zone.
      *     @type \Google\Protobuf\DoubleValue $content_rank_lost_impression_share
      *           The estimated percentage of impressions on the Display Network
      *           that your ads didn't receive due to poor Ad Rank.
@@ -467,6 +531,20 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The value of all conversions divided by the number of all conversions.
      *     @type \Google\Protobuf\DoubleValue $value_per_conversion
      *           The value of conversions divided by the number of conversions.
+     *     @type \Google\Protobuf\DoubleValue $video_quartile_100_rate
+     *           Percentage of impressions where the viewer watched all of your video.
+     *     @type \Google\Protobuf\DoubleValue $video_quartile_25_rate
+     *           Percentage of impressions where the viewer watched 25% of your video.
+     *     @type \Google\Protobuf\DoubleValue $video_quartile_50_rate
+     *           Percentage of impressions where the viewer watched 50% of your video.
+     *     @type \Google\Protobuf\DoubleValue $video_quartile_75_rate
+     *           Percentage of impressions where the viewer watched 75% of your video.
+     *     @type \Google\Protobuf\DoubleValue $video_view_rate
+     *           The number of views your TrueView video ad receives divided by its number
+     *           of impressions, including thumbnail impressions for TrueView in-display
+     *           ads.
+     *     @type \Google\Protobuf\Int64Value $video_views
+     *           The number of times your video ads were viewed.
      *     @type \Google\Protobuf\Int64Value $view_through_conversions
      *           The total number of view-through conversions.
      *           These happen when a customer sees an image or rich media ad, then later
@@ -839,6 +917,68 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->content_impression_share = $var;
+
+        return $this;
+    }
+
+    /**
+     * The last date/time a conversion tag for this conversion action successfully
+     * fired and was seen by Google Ads. This firing event may not have been the
+     * result of an attributable conversion (e.g. because the tag was fired from a
+     * browser that did not previously click an ad from an appropriate
+     * advertiser). The date/time is in the customer's time zone.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_received_request_date_time = 73;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getConversionLastReceivedRequestDateTime()
+    {
+        return $this->conversion_last_received_request_date_time;
+    }
+
+    /**
+     * The last date/time a conversion tag for this conversion action successfully
+     * fired and was seen by Google Ads. This firing event may not have been the
+     * result of an attributable conversion (e.g. because the tag was fired from a
+     * browser that did not previously click an ad from an appropriate
+     * advertiser). The date/time is in the customer's time zone.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_received_request_date_time = 73;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setConversionLastReceivedRequestDateTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->conversion_last_received_request_date_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The date of the most recent conversion for this conversion action. The date
+     * is in the customer's time zone.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_conversion_date = 74;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getConversionLastConversionDate()
+    {
+        return $this->conversion_last_conversion_date;
+    }
+
+    /**
+     * The date of the most recent conversion for this conversion action. The date
+     * is in the customer's time zone.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_conversion_date = 74;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setConversionLastConversionDate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->conversion_last_conversion_date = $var;
 
         return $this;
     }
@@ -1667,6 +1807,166 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->value_per_conversion = $var;
+
+        return $this;
+    }
+
+    /**
+     * Percentage of impressions where the viewer watched all of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_100_rate = 54;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getVideoQuartile100Rate()
+    {
+        return $this->video_quartile_100_rate;
+    }
+
+    /**
+     * Percentage of impressions where the viewer watched all of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_100_rate = 54;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setVideoQuartile100Rate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->video_quartile_100_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * Percentage of impressions where the viewer watched 25% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_25_rate = 55;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getVideoQuartile25Rate()
+    {
+        return $this->video_quartile_25_rate;
+    }
+
+    /**
+     * Percentage of impressions where the viewer watched 25% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_25_rate = 55;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setVideoQuartile25Rate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->video_quartile_25_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * Percentage of impressions where the viewer watched 50% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_50_rate = 56;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getVideoQuartile50Rate()
+    {
+        return $this->video_quartile_50_rate;
+    }
+
+    /**
+     * Percentage of impressions where the viewer watched 50% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_50_rate = 56;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setVideoQuartile50Rate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->video_quartile_50_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * Percentage of impressions where the viewer watched 75% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_75_rate = 57;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getVideoQuartile75Rate()
+    {
+        return $this->video_quartile_75_rate;
+    }
+
+    /**
+     * Percentage of impressions where the viewer watched 75% of your video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_75_rate = 57;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setVideoQuartile75Rate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->video_quartile_75_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of views your TrueView video ad receives divided by its number
+     * of impressions, including thumbnail impressions for TrueView in-display
+     * ads.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_view_rate = 58;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getVideoViewRate()
+    {
+        return $this->video_view_rate;
+    }
+
+    /**
+     * The number of views your TrueView video ad receives divided by its number
+     * of impressions, including thumbnail impressions for TrueView in-display
+     * ads.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_view_rate = 58;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setVideoViewRate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->video_view_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of times your video ads were viewed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value video_views = 59;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getVideoViews()
+    {
+        return $this->video_views;
+    }
+
+    /**
+     * The number of times your video ads were viewed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value video_views = 59;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setVideoViews($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->video_views = $var;
 
         return $this;
     }

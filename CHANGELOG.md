@@ -1,3 +1,10 @@
+## 0.4.0
+
+*   Added support and examples for v0_4 of Google Ads API.
+*   Added account budget proposal and billing setup examples.
+*   Added conversion action examples.
+*   Added an example showing how to retrieve disapproved ads.
+
 ## 0.3.0
 
 *   Added support and examples for V0_3 of Google Ads API.

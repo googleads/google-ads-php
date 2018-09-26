@@ -24,6 +24,12 @@ class CampaignBudgetError
      */
     const UNKNOWN = 1;
     /**
+     * The campaign budget cannot be shared.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_BUDGET_CANNOT_BE_SHARED = 17;</code>
+     */
+    const CAMPAIGN_BUDGET_CANNOT_BE_SHARED = 17;
+    /**
      * The requested campaign budget no longer exists.
      *
      * Generated from protobuf enum <code>CAMPAIGN_BUDGET_REMOVED = 2;</code>

@@ -131,6 +131,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the shared criterion error
      *     @type int $campaign_shared_set_error
      *           The reasons for the campaign shared set error
+     *     @type int $conversion_action_error
+     *           The reasons for the conversion action error
      *     @type int $header_error
      *           The reasons for the header error.
      *     @type int $database_error
@@ -141,6 +143,10 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for campaign group error.
      *     @type int $enum_error
      *           The reason for enum error.
+     *     @type int $account_budget_proposal_error
+     *           The reasons for account budget proposal errors.
+     *     @type int $change_status_error
+     *           The reasons for the change status error
      * }
      */
     public function __construct($data = NULL) {
@@ -1553,6 +1559,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for the conversion action error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.ConversionActionErrorEnum.ConversionActionError conversion_action_error = 65;</code>
+     * @return int
+     */
+    public function getConversionActionError()
+    {
+        return $this->readOneof(65);
+    }
+
+    /**
+     * The reasons for the conversion action error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.ConversionActionErrorEnum.ConversionActionError conversion_action_error = 65;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionActionError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\ConversionActionErrorEnum_ConversionActionError::class);
+        $this->writeOneof(65, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the header error.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.errors.HeaderErrorEnum.HeaderError header_error = 66;</code>
@@ -1678,6 +1710,58 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\EnumErrorEnum_EnumError::class);
         $this->writeOneof(70, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for account budget proposal errors.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.AccountBudgetProposalErrorEnum.AccountBudgetProposalError account_budget_proposal_error = 77;</code>
+     * @return int
+     */
+    public function getAccountBudgetProposalError()
+    {
+        return $this->readOneof(77);
+    }
+
+    /**
+     * The reasons for account budget proposal errors.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.AccountBudgetProposalErrorEnum.AccountBudgetProposalError account_budget_proposal_error = 77;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAccountBudgetProposalError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\AccountBudgetProposalErrorEnum_AccountBudgetProposalError::class);
+        $this->writeOneof(77, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the change status error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.ChangeStatusErrorEnum.ChangeStatusError change_status_error = 79;</code>
+     * @return int
+     */
+    public function getChangeStatusError()
+    {
+        return $this->readOneof(79);
+    }
+
+    /**
+     * The reasons for the change status error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.ChangeStatusErrorEnum.ChangeStatusError change_status_error = 79;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setChangeStatusError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\ChangeStatusErrorEnum_ChangeStatusError::class);
+        $this->writeOneof(79, $var);
 
         return $this;
     }

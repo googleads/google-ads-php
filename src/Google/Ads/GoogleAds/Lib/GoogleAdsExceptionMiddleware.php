@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,15 +31,18 @@ class GoogleAdsExceptionMiddleware
 
     /** @var callable $nextHandler */
     private $nextHandler;
+    private $statusMetadataExtractor;
 
     /**
      * Creates the `GoogleAdsException` middleware.
      *
      * @param callable $nextHandler
+     * @param StatusMetadataExtractor $statusMetadataExtractor
      */
-    public function __construct(callable $nextHandler)
+    public function __construct(callable $nextHandler, $statusMetadataExtractor = null)
     {
         $this->nextHandler = $nextHandler;
+        $this->statusMetadataExtractor = $statusMetadataExtractor ?: new StatusMetadataExtractor();
     }
 
     /**
@@ -66,29 +69,23 @@ class GoogleAdsExceptionMiddleware
                 if ($exception instanceof ApiException) {
                     $metadata = $exception->getMetadata();
 
-                    $binaryHeader = $this->getFirstHeaderValue(
-                        self::$GOOGLE_ADS_FAILURE_BINARY_KEY,
-                        $metadata
-                    );
-                    if (!is_null($binaryHeader)) {
-                        $googleAdsFailure = new GoogleAdsFailure();
-                        $googleAdsFailure->mergeFromString($binaryHeader);
+                    if (isset($metadata[self::$GOOGLE_ADS_FAILURE_BINARY_KEY])) {
                         throw $this->createGoogleAdsException(
                             $exception,
-                            $googleAdsFailure
+                            $this->statusMetadataExtractor->extractGoogleAdsFailure(
+                                $metadata,
+                                self::$GOOGLE_ADS_FAILURE_BINARY_KEY
+                            )
                         );
                     }
 
-                    $jsonHeader = $this->getFirstHeaderValue(
-                        self::$GOOGLE_ADS_FAILURE_JSON_KEY,
-                        $metadata
-                    );
-                    if (!is_null($jsonHeader)) {
-                        $googleAdsFailure = new GoogleAdsFailure();
-                        $googleAdsFailure->mergeFromJsonString($jsonHeader);
+                    if (isset($metadata[self::$GOOGLE_ADS_FAILURE_JSON_KEY])) {
                         throw $this->createGoogleAdsException(
                             $exception,
-                            $googleAdsFailure
+                            $this->statusMetadataExtractor->extractGoogleAdsFailure(
+                                $metadata,
+                                self::$GOOGLE_ADS_FAILURE_JSON_KEY
+                            )
                         );
                     }
                 }

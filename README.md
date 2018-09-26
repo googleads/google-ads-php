@@ -92,7 +92,7 @@ API](https://developers.google.com/google-ads/api/docs/start).
         in your developer token too.
 
 1.  Run the [GetCampaigns example](examples/BasicOperations/GetCampaigns.php) to
-    test if your credentials are valid. You also need to pass your AdWords
+    test if your credentials are valid. You also need to pass your Google Ads
     account's customer ID without dashes as a command-line parameter:
 
         php examples/BasicOperations/GetCampaigns.php --customerId <YOUR_CUSTOMER_ID>
@@ -170,6 +170,49 @@ $googleAdsClient = (new GoogleAdsClientBuilder())
 
 Once you have an instance of `GoogleAdsClient`, you can obtain a service client
 for a particular service using one of the `get...ServiceClient()` methods.
+
+## Logging
+
+This library conforms to [PSR-3](http://www.php-fig.org/psr/psr-3) for logging
+and provides a logger for gRPC calls.
+
+The
+[level](http://www.php-fig.org/psr/psr-3/#5-psr-log-loglevel) at which messages
+are logged depends on whether the event succeeded.
+
+Log message \ Event status         | Success | Failure
+---------------------------------- | ------- | -------
+One-line summary                   | INFO    | WARNING
+Debug message (e.g., call queries) | DEBUG   | NOTICE
+
+#### Configuring logging
+
+By default, each of the library loggers logs to
+[`STDERR`](http://php.net/manual/en/features.commandline.io-streams.php) on a channel with default name specified
+[here](https://github.com/googleads/google-ads-php/blob/147bc76202cf5a0beb8fa2360fdb559e22a775dc/src/Google/Ads/GoogleAds/Lib/GoogleAdsClientBuilder.php#L31) using a [Monolog
+StreamHandler](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php).
+
+You can configure some options for the default logger in the `google_ads_php.ini`
+file:
+
+```ini
+[LOGGING]
+; Optional logging settings.
+logFilePath = "path/to/your/file.log"
+logLevel = "INFO"
+```
+
+If you need to further customize logging, you can specify your own logger
+entirely by providing a logger that implements
+[LoggerInterface](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php)
+in [`GoogleAdsClientBuilder`](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/GoogleAdsClientBuilder.php):
+
+```php
+$googleAdsClient = (new GoogleAdsClientBuilder())
+    ...
+    ->withLogger(new MyCustomLogger())
+    ->build();
+```
 
 ## Miscellaneous
 

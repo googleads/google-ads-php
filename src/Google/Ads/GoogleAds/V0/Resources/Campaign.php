@@ -231,6 +231,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           Standard Manual CPM bidding strategy.
      *           Manual impression-based bidding where user pays per thousand
      *           impressions.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ManualCpv $manual_cpv
+     *           A bidding strategy that pays a configurable amount per video view.
      *     @type \Google\Ads\GoogleAds\V0\Common\MaximizeConversions $maximize_conversions
      *           Standard Maximize Conversions bidding strategy that automatically
      *           maximizes number of conversions given a daily budget.
@@ -879,6 +881,32 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ManualCpm::class);
         $this->writeOneof(25, $var);
+
+        return $this;
+    }
+
+    /**
+     * A bidding strategy that pays a configurable amount per video view.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ManualCpv manual_cpv = 37;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ManualCpv
+     */
+    public function getManualCpv()
+    {
+        return $this->readOneof(37);
+    }
+
+    /**
+     * A bidding strategy that pays a configurable amount per video view.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ManualCpv manual_cpv = 37;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ManualCpv $var
+     * @return $this
+     */
+    public function setManualCpv($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ManualCpv::class);
+        $this->writeOneof(37, $var);
 
         return $this;
     }
