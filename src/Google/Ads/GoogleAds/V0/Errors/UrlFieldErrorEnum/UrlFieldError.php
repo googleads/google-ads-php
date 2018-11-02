@@ -300,6 +300,19 @@ class UrlFieldError
      * Generated from protobuf enum <code>INVALID_URL_ID = 49;</code>
      */
     const INVALID_URL_ID = 49;
+    /**
+     * The final url suffix cannot begin with '?' or '&' characters and must be
+     * a valid query string.
+     *
+     * Generated from protobuf enum <code>FINAL_URL_SUFFIX_MALFORMED = 50;</code>
+     */
+    const FINAL_URL_SUFFIX_MALFORMED = 50;
+    /**
+     * The final url suffix cannot contain {lpurl} related or {ignore} tags.
+     *
+     * Generated from protobuf enum <code>INVALID_TAG_IN_FINAL_URL_SUFFIX = 51;</code>
+     */
+    const INVALID_TAG_IN_FINAL_URL_SUFFIX = 51;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

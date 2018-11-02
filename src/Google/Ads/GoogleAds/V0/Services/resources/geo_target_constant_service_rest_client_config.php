@@ -14,6 +14,11 @@ return [
                     ],
                 ],
             ],
+            'SuggestGeoTargetConstants' => [
+                'method' => 'post',
+                'uriTemplate' => '/v0/geoTargetConstants:suggest',
+                'body' => '*',
+            ],
         ],
     ],
 ];

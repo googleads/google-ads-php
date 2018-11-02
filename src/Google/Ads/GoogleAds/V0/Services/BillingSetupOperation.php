@@ -24,11 +24,14 @@ class BillingSetupOperation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Ads\GoogleAds\V0\Resources\BillingSetup $create
+     *           Creates a billing setup. No resource name is expected for the new billing
+     *           setup.
      *     @type string $remove
-     *           Resource name of the billing setup to remove.  A setup cannot be
+     *           Resource name of the billing setup to remove. A setup cannot be
      *           removed unless it is in a pending state or its scheduled start time is in
      *           the future. The resource name looks like
-     *           “customers/{customer_id}/billingSetups/{billing_id}”.
+     *           `customers/{customer_id}/billingSetups/{billing_id}`.
      * }
      */
     public function __construct($data = NULL) {
@@ -37,10 +40,38 @@ class BillingSetupOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the billing setup to remove.  A setup cannot be
+     * Creates a billing setup. No resource name is expected for the new billing
+     * setup.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BillingSetup create = 2;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\BillingSetup
+     */
+    public function getCreate()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * Creates a billing setup. No resource name is expected for the new billing
+     * setup.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BillingSetup create = 2;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\BillingSetup $var
+     * @return $this
+     */
+    public function setCreate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\BillingSetup::class);
+        $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the billing setup to remove. A setup cannot be
      * removed unless it is in a pending state or its scheduled start time is in
      * the future. The resource name looks like
-     * “customers/{customer_id}/billingSetups/{billing_id}”.
+     * `customers/{customer_id}/billingSetups/{billing_id}`.
      *
      * Generated from protobuf field <code>string remove = 1;</code>
      * @return string
@@ -51,10 +82,10 @@ class BillingSetupOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the billing setup to remove.  A setup cannot be
+     * Resource name of the billing setup to remove. A setup cannot be
      * removed unless it is in a pending state or its scheduled start time is in
      * the future. The resource name looks like
-     * “customers/{customer_id}/billingSetups/{billing_id}”.
+     * `customers/{customer_id}/billingSetups/{billing_id}`.
      *
      * Generated from protobuf field <code>string remove = 1;</code>
      * @param string $var

@@ -1,0 +1,19 @@
+<?php
+
+return [
+    'interfaces' => [
+        'google.ads.googleads.v0.services.TopicConstantService' => [
+            'GetTopicConstant' => [
+                'method' => 'get',
+                'uriTemplate' => '/v0/{resource_name=topicConstants/*}',
+                'placeholders' => [
+                    'resource_name' => [
+                        'getters' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+];

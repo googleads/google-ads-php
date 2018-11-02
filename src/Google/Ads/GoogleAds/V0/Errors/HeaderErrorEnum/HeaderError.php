@@ -24,11 +24,11 @@ class HeaderError
      */
     const UNKNOWN = 1;
     /**
-     * The user selected customer id could not be parsed.
+     * The login customer id could not be validated.
      *
-     * Generated from protobuf enum <code>INVALID_USER_SELECTED_CUSTOMER_ID = 2;</code>
+     * Generated from protobuf enum <code>INVALID_LOGIN_CUSTOMER_ID = 3;</code>
      */
-    const INVALID_USER_SELECTED_CUSTOMER_ID = 2;
+    const INVALID_LOGIN_CUSTOMER_ID = 3;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

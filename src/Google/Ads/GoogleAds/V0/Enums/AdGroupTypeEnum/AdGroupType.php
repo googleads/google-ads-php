@@ -60,6 +60,30 @@ class AdGroupType
      * Generated from protobuf enum <code>VIDEO_BUMPER = 8;</code>
      */
     const VIDEO_BUMPER = 8;
+    /**
+     * TrueView (skippable) in-stream video ads.
+     *
+     * Generated from protobuf enum <code>VIDEO_TRUE_VIEW_IN_STREAM = 9;</code>
+     */
+    const VIDEO_TRUE_VIEW_IN_STREAM = 9;
+    /**
+     * TrueView in-display video ads.
+     *
+     * Generated from protobuf enum <code>VIDEO_TRUE_VIEW_IN_DISPLAY = 10;</code>
+     */
+    const VIDEO_TRUE_VIEW_IN_DISPLAY = 10;
+    /**
+     * Unskippable in-stream video ads.
+     *
+     * Generated from protobuf enum <code>VIDEO_NON_SKIPPABLE_IN_STREAM = 11;</code>
+     */
+    const VIDEO_NON_SKIPPABLE_IN_STREAM = 11;
+    /**
+     * Outstream video ads.
+     *
+     * Generated from protobuf enum <code>VIDEO_OUTSTREAM = 12;</code>
+     */
+    const VIDEO_OUTSTREAM = 12;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

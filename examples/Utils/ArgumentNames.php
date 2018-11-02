@@ -37,8 +37,14 @@ final class ArgumentNames
     const CUSTOMER_ID = 'customerId';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     const KEYWORD_TEXT = 'keywordText';
+    const LOCALE = 'locale';
+    const LOCATION_ID = 'locationId';
+    const LOCATION_NAMES = 'locationNames';
+    const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
     const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     const RECOMMENDATION_ID = 'recommendationId';
+    const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
+    const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::AD_ID => 'The ad ID',
@@ -56,8 +62,16 @@ final class ArgumentNames
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
         self::KEYWORD_TEXT => 'The keyword text',
+        self::LOCALE => 'The locale',
+        self::LOCATION_ID => 'The location ID',
+        self::LOCATION_NAMES => 'The list of location names',
+        self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
             'The CPC bid micro amount for the Percent CPC bidding strategy',
-        self::RECOMMENDATION_ID => 'The recommendation ID'
+        self::RECOMMENDATION_ID => 'The recommendation ID',
+        self::SHOULD_CREATE_DEFAULT_LISTING_GROUP =>
+            'Whether it should create a default listing group',
+        self::SHOULD_REPLACE_EXISTING_TREE =>
+            'Whether it should replace the existing listing group tree on an ad group'
     ];
 }

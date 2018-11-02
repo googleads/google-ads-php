@@ -30,6 +30,12 @@ class CriterionType
      */
     const KEYWORD = 2;
     /**
+     * Placement, aka Website. e.g. 'www.flowers4sale.com'
+     *
+     * Generated from protobuf enum <code>PLACEMENT = 3;</code>
+     */
+    const PLACEMENT = 3;
+    /**
      * Devices to target.
      *
      * Generated from protobuf enum <code>DEVICE = 6;</code>
@@ -53,6 +59,54 @@ class CriterionType
      * Generated from protobuf enum <code>AD_SCHEDULE = 9;</code>
      */
     const AD_SCHEDULE = 9;
+    /**
+     * Age range.
+     *
+     * Generated from protobuf enum <code>AGE_RANGE = 10;</code>
+     */
+    const AGE_RANGE = 10;
+    /**
+     * Gender.
+     *
+     * Generated from protobuf enum <code>GENDER = 11;</code>
+     */
+    const GENDER = 11;
+    /**
+     * Income Range.
+     *
+     * Generated from protobuf enum <code>INCOME_RANGE = 12;</code>
+     */
+    const INCOME_RANGE = 12;
+    /**
+     * Parental status.
+     *
+     * Generated from protobuf enum <code>PARENTAL_STATUS = 13;</code>
+     */
+    const PARENTAL_STATUS = 13;
+    /**
+     * YouTube Video.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_VIDEO = 14;</code>
+     */
+    const YOUTUBE_VIDEO = 14;
+    /**
+     * YouTube Channel.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_CHANNEL = 15;</code>
+     */
+    const YOUTUBE_CHANNEL = 15;
+    /**
+     * Proximity.
+     *
+     * Generated from protobuf enum <code>PROXIMITY = 17;</code>
+     */
+    const PROXIMITY = 17;
+    /**
+     * A topic target on the content network (e.g. "Pets & Animals").
+     *
+     * Generated from protobuf enum <code>TOPIC = 18;</code>
+     */
+    const TOPIC = 18;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

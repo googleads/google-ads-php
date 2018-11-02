@@ -64,11 +64,17 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
-     * information, see https://support.google.com/partners/answer/3125774
+     * information, see https://support.google.com/partners/answer/3125774.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
      */
     private $has_partners_badge = null;
+    /**
+     * Call reporting setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CallReportingSetting call_reporting_setting = 10;</code>
+     */
+    private $call_reporting_setting = null;
 
     /**
      * Constructor.
@@ -97,7 +103,9 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\BoolValue $has_partners_badge
      *           Whether the Customer has a Partners program badge. If the Customer is not
      *           associated with the Partners program, this will be false. For more
-     *           information, see https://support.google.com/partners/answer/3125774
+     *           information, see https://support.google.com/partners/answer/3125774.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CallReportingSetting $call_reporting_setting
+     *           Call reporting setting for a customer.
      * }
      */
     public function __construct($data = NULL) {
@@ -298,7 +306,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
-     * information, see https://support.google.com/partners/answer/3125774
+     * information, see https://support.google.com/partners/answer/3125774.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
      * @return \Google\Protobuf\BoolValue
@@ -311,7 +319,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
-     * information, see https://support.google.com/partners/answer/3125774
+     * information, see https://support.google.com/partners/answer/3125774.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
      * @param \Google\Protobuf\BoolValue $var
@@ -321,6 +329,32 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
         $this->has_partners_badge = $var;
+
+        return $this;
+    }
+
+    /**
+     * Call reporting setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CallReportingSetting call_reporting_setting = 10;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\CallReportingSetting
+     */
+    public function getCallReportingSetting()
+    {
+        return $this->call_reporting_setting;
+    }
+
+    /**
+     * Call reporting setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CallReportingSetting call_reporting_setting = 10;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\CallReportingSetting $var
+     * @return $this
+     */
+    public function setCallReportingSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CallReportingSetting::class);
+        $this->call_reporting_setting = $var;
 
         return $this;
     }

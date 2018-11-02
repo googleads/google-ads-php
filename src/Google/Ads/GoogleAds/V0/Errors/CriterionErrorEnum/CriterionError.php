@@ -108,11 +108,11 @@ class CriterionError
      */
     const PLACEMENT_IS_NOT_AVAILABLE_FOR_TARGETING_OR_EXCLUSION = 15;
     /**
-     * Invalid vertical path.
+     * Invalid topic path.
      *
-     * Generated from protobuf enum <code>INVALID_VERTICAL_PATH = 16;</code>
+     * Generated from protobuf enum <code>INVALID_TOPIC_PATH = 16;</code>
      */
-    const INVALID_VERTICAL_PATH = 16;
+    const INVALID_TOPIC_PATH = 16;
     /**
      * The YouTube Channel Id is invalid.
      *
@@ -286,19 +286,19 @@ class CriterionError
      */
     const INVALID_PROXIMITY_RADIUS_UNITS = 43;
     /**
-     * Street address is too short.
+     * Street address in the address is not valid.
      *
      * Generated from protobuf enum <code>INVALID_STREETADDRESS_LENGTH = 44;</code>
      */
     const INVALID_STREETADDRESS_LENGTH = 44;
     /**
-     * City name in the address is too short.
+     * City name in the address is not valid.
      *
      * Generated from protobuf enum <code>INVALID_CITYNAME_LENGTH = 45;</code>
      */
     const INVALID_CITYNAME_LENGTH = 45;
     /**
-     * Region code in the address is too short.
+     * Region code in the address is not valid.
      *
      * Generated from protobuf enum <code>INVALID_REGIONCODE_LENGTH = 46;</code>
      */

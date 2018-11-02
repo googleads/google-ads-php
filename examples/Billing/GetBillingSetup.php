@@ -96,11 +96,11 @@ class GetBillingSetup
         // Creates a query that retrieves the billing setups.
         $query = 'SELECT billing_setup.id, '
         . '  billing_setup.status, '
-        . '  billing_setup.payments_account_id, '
-        . '  billing_setup.payments_account_name, '
-        . '  billing_setup.payments_profile_id, '
-        . '  billing_setup.payments_profile_name, '
-        . '  billing_setup.secondary_payments_profile_id '
+        . '  billing_setup.payments_account_info.payments_account_id, '
+        . '  billing_setup.payments_account_info.payments_account_name, '
+        . '  billing_setup.payments_account_info.payments_profile_id, '
+        . '  billing_setup.payments_account_info.payments_profile_name, '
+        . '  billing_setup.payments_account_info.secondary_payments_profile_id '
         . 'FROM billing_setup';
 
         // Issues a search request by specifying page size.
@@ -115,6 +115,17 @@ class GetBillingSetup
             // For example, a value of 4 will be returned when the status is 'APPROVED'.
             // A mapping of enum names to values can be found in:
             // BillingSetupStatus.php
+            $paymentAccountInfo = $googleAdsRow->getBillingSetup()->getPaymentsAccountInfo();
+            if (is_null($paymentAccountInfo)) {
+                printf(
+                    'Found the billing setup with ID %1$d, %3$s'
+                    . '  status \'%2$d\' with no payment account info. %3$s',
+                    $googleAdsRow->getBillingSetup()->getId()->getValue(),
+                    $googleAdsRow->getBillingSetup()->getStatus(),
+                    PHP_EOL
+                );
+                continue;
+            }
             printf(
                 'Found the billing setup with ID %1$d, %8$s'
                 . '  status \'%2$d\', %8$s'
@@ -125,12 +136,12 @@ class GetBillingSetup
                 . '  secondary payments profile ID \'%7$s\'.%8$s',
                 $googleAdsRow->getBillingSetup()->getId()->getValue(),
                 $googleAdsRow->getBillingSetup()->getStatus(),
-                $googleAdsRow->getBillingSetup()->getPaymentsAccountId()->getValue(),
-                $googleAdsRow->getBillingSetup()->getPaymentsAccountName()->getValue(),
-                $googleAdsRow->getBillingSetup()->getPaymentsProfileId()->getValue(),
-                $googleAdsRow->getBillingSetup()->getPaymentsProfileName()->getValue(),
-                $googleAdsRow->getBillingSetup()->getSecondaryPaymentsProfileId()
-                    ? $googleAdsRow->getBillingSetup()->getSecondaryPaymentsProfileId()->getValue()
+                $paymentAccountInfo->getPaymentsAccountId()->getValue(),
+                $paymentAccountInfo->getPaymentsAccountName()->getValue(),
+                $paymentAccountInfo->getPaymentsProfileId()->getValue(),
+                $paymentAccountInfo->getPaymentsProfileName()->getValue(),
+                $paymentAccountInfo->getSecondaryPaymentsProfileId()
+                    ? $paymentAccountInfo->getSecondaryPaymentsProfileId()->getValue()
                     : 'None',
                 PHP_EOL
             );

@@ -66,7 +66,8 @@ final class LogMessageFormatter
             . 'IsFault: %b, FaultMessage: "%s"',
             $endpoint,
             $method,
-            $argument->getCustomerId() ?: '"No client customer ID used"',
+            method_exists($argument, 'getCustomerId')
+                ? $argument->getCustomerId() : '"No client customer ID used"',
             $this->getFirstHeaderValue(self::$REQUEST_ID_HEADER_KEY, $status->metadata),
             $status->code !== 0,
             !empty($errorMessageList) ? json_encode($errorMessageList) : 'None'
