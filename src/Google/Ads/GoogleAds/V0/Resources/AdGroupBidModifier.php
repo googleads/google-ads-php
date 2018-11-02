@@ -38,7 +38,9 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      */
     private $criterion_id = null;
     /**
-     * The modifier for the bid when the criterion matches.
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
+     * Use 0 to opt out of a Device type.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
      */
@@ -78,7 +80,9 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      *           The ID of the criterion to bid modify.
      *           This field is ignored for mutates.
      *     @type \Google\Protobuf\DoubleValue $bid_modifier
-     *           The modifier for the bid when the criterion matches.
+     *           The modifier for the bid when the criterion matches. The modifier must be
+     *           in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
+     *           Use 0 to opt out of a Device type.
      *     @type \Google\Protobuf\StringValue $base_ad_group
      *           The base ad group from which this draft/trial adgroup bid modifier was
      *           created. If ad_group is a base ad group then this field will be equal to
@@ -191,7 +195,9 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The modifier for the bid when the criterion matches.
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
+     * Use 0 to opt out of a Device type.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -202,7 +208,9 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The modifier for the bid when the criterion matches.
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
+     * Use 0 to opt out of a Device type.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
      * @param \Google\Protobuf\DoubleValue $var

@@ -28,6 +28,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\ResourceNames;
 use Google\Ads\GoogleAds\V0\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V0\Common\LocationInfo;
 use Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\CampaignCriterion;
@@ -44,6 +45,12 @@ class AddCampaignTargetingCriteria
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
+    // Specify the keyword text to be created as a negative campaign criterion.
+    const KEYWORD_TEXT = 'INSERT_KEYWORD_TEXT_HERE';
+    // Specify the location ID below.
+    // For more information on determining LOCATION_ID value, see:
+    // https://developers.google.com/adwords/api/docs/appendix/geotargeting.
+    const LOCATION_ID = 21167; // New York
 
     public static function main()
     {
@@ -51,7 +58,9 @@ class AddCampaignTargetingCriteria
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::KEYWORD_TEXT => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::LOCATION_ID => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -67,7 +76,9 @@ class AddCampaignTargetingCriteria
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID
+                $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID,
+                $options[ArgumentNames::KEYWORD_TEXT] ?: self::KEYWORD_TEXT,
+                $options[ArgumentNames::LOCATION_ID] ?: self::LOCATION_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -100,52 +111,32 @@ class AddCampaignTargetingCriteria
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID without hyphens
      * @param int $campaignId the campaign ID to add a criterion to
+     * @param string $keywordText the keyword text to be added as a negative campaign criterion
+     * @param int $locationId the location ID to be targeted
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         $customerId,
-        $campaignId
+        $campaignId,
+        $keywordText,
+        $locationId
     ) {
         $campaignResourceName = ResourceNames::forCampaign($customerId, $campaignId);
 
-        // Constructs a campaign criterion for the specified campaign ID using the specified keyword
-        // text info.
-        $campaignCriterion1 = new CampaignCriterion([
-            // Creates a keyword with BROAD match type.
-            'keyword' => new KeywordInfo([
-                'text' => new StringValue(['value' => 'jupiter cruise']),
-                'match_type' => KeywordMatchType::BROAD
-            ]),
-            'campaign' => new StringValue(['value' => $campaignResourceName]),
-            // Sets the campaign criterion as a negative criterion.
-            'negative' => new BoolValue(['value' => true])
-        ]);
-        // Creates a campaign criterion operation for the created campaign criterion.
-        $campaignCriterionOperation1 = new CampaignCriterionOperation();
-        $campaignCriterionOperation1->setCreate($campaignCriterion1);
-
-        // Constructs another campaign criterion for the specified campaign ID using the specified
-        // keyword text info.
-        $campaignCriterion2 = new CampaignCriterion([
-            // Creates another keyword with PHRASE type.
-            'keyword' => new KeywordInfo([
-                'text' => new StringValue(['value' => 'mars cruise']),
-                'match_type' => KeywordMatchType::PHRASE
-            ]),
-            'campaign' => new StringValue(['value' => $campaignResourceName]),
-            // Sets the campaign criterion as a negative criterion.
-            'negative' => new BoolValue(['value' => true])
-        ]);
-        // Creates a campaign criterion operation for the created campaign criterion.
-        $campaignCriterionOperation2 = new CampaignCriterionOperation();
-        $campaignCriterionOperation2->setCreate($campaignCriterion2);
+        $operations = [
+            // Creates a campaign criterion operation for the specified keyword text.
+            self::createNegativeKeywordCampaignCriterionOperation(
+                $keywordText,
+                $campaignResourceName
+            ),
+            // Creates a campaign criterion operation for the specified location ID.
+            self::createLocationCampaignCriterionOperation($locationId, $campaignResourceName)
+        ];
 
         // Issues a mutate request to add the campaign criterion.
         $campaignCriterionServiceClient = $googleAdsClient->getCampaignCriterionServiceClient();
-        $response = $campaignCriterionServiceClient->mutateCampaignCriteria(
-            $customerId,
-            [$campaignCriterionOperation1, $campaignCriterionOperation2]
-        );
+        $response =
+            $campaignCriterionServiceClient->mutateCampaignCriteria($customerId, $operations);
 
         printf("Added %d campaign criteria:%s", $response->getResults()->count(), PHP_EOL);
 
@@ -153,6 +144,66 @@ class AddCampaignTargetingCriteria
             /** @var CampaignCriterion $addedCampaignCriterion */
             print $addedCampaignCriterion->getResourceName() . PHP_EOL;
         }
+    }
+
+    /**
+     * Creates a campaign criterion operation using the specified keyword text. The keyword text
+     * will be used to create a negative campaign criterion.
+     *
+     * @param string $keywordText the keyword text to be added
+     * @param string $campaignResourceName the campaign resource name that the created criterion
+     *      belongs to
+     * @return CampaignCriterionOperation the created campaign criterion operation
+     */
+    private static function createNegativeKeywordCampaignCriterionOperation(
+        $keywordText,
+        $campaignResourceName
+    ) {
+        // Constructs a negative campaign criterion for the specified campaign ID using the
+        // specified keyword text info.
+        $campaignCriterion = new CampaignCriterion([
+            // Creates a keyword with BROAD match type.
+            'keyword' => new KeywordInfo([
+                'text' => new StringValue(['value' => $keywordText]),
+                'match_type' => KeywordMatchType::BROAD
+            ]),
+            // Sets the campaign criterion as a negative criterion.
+            'negative' => new BoolValue(['value' => true]),
+            'campaign' => new StringValue(['value' => $campaignResourceName])
+        ]);
+
+        return new CampaignCriterionOperation(['create' => $campaignCriterion]);
+    }
+
+    /**
+     * Creates a campaign criterion operation using the specified location ID.
+     *
+     * @param int $locationId the specified location ID
+     * @param string $campaignResourceName the campaign resource name that the created criterion
+     *      belongs to
+     * @return CampaignCriterionOperation the created campaign criterion operation
+     */
+    private static function createLocationCampaignCriterionOperation(
+        $locationId,
+        $campaignResourceName
+    ) {
+        // Constructs a campaign criterion for the specified campaign ID using the specified
+        // location ID.
+        $campaignCriterion = new CampaignCriterion([
+            // Creates another keyword with PHRASE type.
+            'location' => new LocationInfo([
+                'geo_target_constant' => new StringValue(
+                    // Besides using location ID, you can also search by location names using
+                    // GeoTargetConstantServiceClient::suggestGeoTargetConstants() and directly
+                    // apply GeoTargetConstant::$resourceName here. An example can be found
+                    // in GetGeoTargetConstantByNames.php.
+                    ['value' => ResourceNames::forGeoTargetConstant($locationId)]
+                )
+            ]),
+            'campaign' => new StringValue(['value' => $campaignResourceName])
+        ]);
+
+        return new CampaignCriterionOperation(['create' => $campaignCriterion]);
     }
 }
 

@@ -105,7 +105,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * The snippets used for tracking conversions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.ConversionAction.TagSnippet tag_snippets = 14;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.common.TagSnippet tag_snippets = 14;</code>
      */
     private $tag_snippets;
     /**
@@ -164,7 +164,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      *           How to count conversion events for the conversion action.
      *     @type \Google\Ads\GoogleAds\V0\Resources\ConversionAction\AttributionModelSettings $attribution_model_settings
      *           Settings related to this conversion action's attribution model.
-     *     @type \Google\Ads\GoogleAds\V0\Resources\ConversionAction\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $tag_snippets
+     *     @type \Google\Ads\GoogleAds\V0\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $tag_snippets
      *           The snippets used for tracking conversions.
      *     @type \Google\Protobuf\Int64Value $phone_call_duration_seconds
      *           The phone call duration in seconds after which a conversion should be
@@ -538,7 +538,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * The snippets used for tracking conversions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.ConversionAction.TagSnippet tag_snippets = 14;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.common.TagSnippet tag_snippets = 14;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTagSnippets()
@@ -549,13 +549,13 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * The snippets used for tracking conversions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.ConversionAction.TagSnippet tag_snippets = 14;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\ConversionAction\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.common.TagSnippet tag_snippets = 14;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTagSnippets($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Resources\ConversionAction\TagSnippet::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Common\TagSnippet::class);
         $this->tag_snippets = $arr;
 
         return $this;

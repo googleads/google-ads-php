@@ -28,11 +28,23 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     private $headline_part2 = null;
     /**
+     * The third part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part3 = 6;</code>
+     */
+    private $headline_part3 = null;
+    /**
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
      */
     private $description = null;
+    /**
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 7;</code>
+     */
+    private $description2 = null;
     /**
      * The text that can appear alongside the ad's displayed URL.
      *
@@ -56,8 +68,12 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      *           The first part of the ad's headline.
      *     @type \Google\Protobuf\StringValue $headline_part2
      *           The second part of the ad's headline.
+     *     @type \Google\Protobuf\StringValue $headline_part3
+     *           The third part of the ad's headline.
      *     @type \Google\Protobuf\StringValue $description
      *           The description of the ad.
+     *     @type \Google\Protobuf\StringValue $description2
+     *           The second description of the ad.
      *     @type \Google\Protobuf\StringValue $path1
      *           The text that can appear alongside the ad's displayed URL.
      *     @type \Google\Protobuf\StringValue $path2
@@ -122,6 +138,32 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The third part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part3 = 6;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getHeadlinePart3()
+    {
+        return $this->headline_part3;
+    }
+
+    /**
+     * The third part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part3 = 6;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setHeadlinePart3($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->headline_part3 = $var;
+
+        return $this;
+    }
+
+    /**
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
@@ -143,6 +185,32 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 7;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getDescription2()
+    {
+        return $this->description2;
+    }
+
+    /**
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 7;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setDescription2($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->description2 = $var;
 
         return $this;
     }

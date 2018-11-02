@@ -53,6 +53,12 @@ class FieldError
      * Generated from protobuf enum <code>REQUIRED_NONEMPTY_LIST = 6;</code>
      */
     const REQUIRED_NONEMPTY_LIST = 6;
+    /**
+     * The field cannot be cleared.
+     *
+     * Generated from protobuf enum <code>FIELD_CANNOT_BE_CLEARED = 7;</code>
+     */
+    const FIELD_CANNOT_BE_CLEARED = 7;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

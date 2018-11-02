@@ -71,6 +71,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the collection size error
      *     @type int $criterion_error
      *           The reasons for the criterion error
+     *     @type int $customer_error
+     *           The reasons for the customer error
      *     @type int $date_error
      *           The reasons for the date error
      *     @type int $date_range_error
@@ -89,8 +91,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the image error
      *     @type int $media_bundle_error
      *           The reasons for the media bundle error
-     *     @type int $media_error
-     *           The reasons for the media error
+     *     @type int $media_file_error
+     *           The reasons for the media file error
      *     @type int $multiplier_error
      *           The reasons for the multiplier error
      *     @type int $new_resource_creation_error
@@ -147,6 +149,14 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for account budget proposal errors.
      *     @type int $change_status_error
      *           The reasons for the change status error
+     *     @type int $geo_target_constant_suggestion_error
+     *           The reasons for the geo target constant suggestion error.
+     *     @type int $billing_setup_error
+     *           The reasons for the billing setup error
+     *     @type int $customer_client_link_error
+     *           The reasons for the customer client link error
+     *     @type int $customer_manager_link_error
+     *           The reasons for the customer manager link error
      * }
      */
     public function __construct($data = NULL) {
@@ -779,6 +789,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for the customer error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CustomerErrorEnum.CustomerError customer_error = 90;</code>
+     * @return int
+     */
+    public function getCustomerError()
+    {
+        return $this->readOneof(90);
+    }
+
+    /**
+     * The reasons for the customer error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CustomerErrorEnum.CustomerError customer_error = 90;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCustomerError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CustomerErrorEnum_CustomerError::class);
+        $this->writeOneof(90, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the date error
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.errors.DateErrorEnum.DateError date_error = 33;</code>
@@ -1013,27 +1049,27 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The reasons for the media error
+     * The reasons for the media file error
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.MediaErrorEnum.MediaError media_error = 43;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
      * @return int
      */
-    public function getMediaError()
+    public function getMediaFileError()
     {
-        return $this->readOneof(43);
+        return $this->readOneof(86);
     }
 
     /**
-     * The reasons for the media error
+     * The reasons for the media file error
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.MediaErrorEnum.MediaError media_error = 43;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
      * @param int $var
      * @return $this
      */
-    public function setMediaError($var)
+    public function setMediaFileError($var)
     {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\MediaErrorEnum_MediaError::class);
-        $this->writeOneof(43, $var);
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\MediaFileErrorEnum_MediaFileError::class);
+        $this->writeOneof(86, $var);
 
         return $this;
     }
@@ -1762,6 +1798,110 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\ChangeStatusErrorEnum_ChangeStatusError::class);
         $this->writeOneof(79, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the geo target constant suggestion error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError geo_target_constant_suggestion_error = 81;</code>
+     * @return int
+     */
+    public function getGeoTargetConstantSuggestionError()
+    {
+        return $this->readOneof(81);
+    }
+
+    /**
+     * The reasons for the geo target constant suggestion error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError geo_target_constant_suggestion_error = 81;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGeoTargetConstantSuggestionError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\GeoTargetConstantSuggestionErrorEnum_GeoTargetConstantSuggestionError::class);
+        $this->writeOneof(81, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the billing setup error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.BillingSetupErrorEnum.BillingSetupError billing_setup_error = 87;</code>
+     * @return int
+     */
+    public function getBillingSetupError()
+    {
+        return $this->readOneof(87);
+    }
+
+    /**
+     * The reasons for the billing setup error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.BillingSetupErrorEnum.BillingSetupError billing_setup_error = 87;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBillingSetupError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\BillingSetupErrorEnum_BillingSetupError::class);
+        $this->writeOneof(87, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the customer client link error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError customer_client_link_error = 88;</code>
+     * @return int
+     */
+    public function getCustomerClientLinkError()
+    {
+        return $this->readOneof(88);
+    }
+
+    /**
+     * The reasons for the customer client link error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CustomerClientLinkErrorEnum.CustomerClientLinkError customer_client_link_error = 88;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCustomerClientLinkError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CustomerClientLinkErrorEnum_CustomerClientLinkError::class);
+        $this->writeOneof(88, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the customer manager link error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CustomerManagerLinkErrorEnum.CustomerManagerLinkError customer_manager_link_error = 91;</code>
+     * @return int
+     */
+    public function getCustomerManagerLinkError()
+    {
+        return $this->readOneof(91);
+    }
+
+    /**
+     * The reasons for the customer manager link error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CustomerManagerLinkErrorEnum.CustomerManagerLinkError customer_manager_link_error = 91;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCustomerManagerLinkError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CustomerManagerLinkErrorEnum_CustomerManagerLinkError::class);
+        $this->writeOneof(91, $var);
 
         return $this;
     }

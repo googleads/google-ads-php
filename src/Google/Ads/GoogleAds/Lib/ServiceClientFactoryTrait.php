@@ -18,10 +18,13 @@
 namespace Google\Ads\GoogleAds\Lib;
 
 use Google\Ads\GoogleAds\V0\Services\AccountBudgetProposalServiceClient;
+use Google\Ads\GoogleAds\V0\Services\AccountBudgetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupAdServiceClient;
+use Google\Ads\GoogleAds\V0\Services\AdGroupAudienceViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupServiceClient;
+use Google\Ads\GoogleAds\V0\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BillingSetupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBidModifierServiceClient;
@@ -32,14 +35,25 @@ use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignSharedSetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ChangeStatusServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ConversionActionServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CustomerClientLinkServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V0\Services\DisplayKeywordViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\GenderViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsFieldServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\V0\Services\HotelGroupViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\KeywordViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\ManagedPlacementViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\MediaFileServiceClient;
+use Google\Ads\GoogleAds\V0\Services\ParentalStatusViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\ProductGroupViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SharedSetServiceClient;
+use Google\Ads\GoogleAds\V0\Services\TopicViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\VerticalConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\VideoServiceClient;
 
 /**
@@ -82,11 +96,27 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return AccountBudgetServiceClient
+     */
+    public function getAccountBudgetServiceClient()
+    {
+        return new AccountBudgetServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return AdGroupAdServiceClient
      */
     public function getAdGroupAdServiceClient()
     {
         return new AdGroupAdServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return AdGroupAudienceViewServiceClient
+     */
+    public function getAdGroupAudienceViewServiceClient()
+    {
+        return new AdGroupAudienceViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -119,6 +149,14 @@ trait ServiceClientFactoryTrait
     public function getAdGroupServiceClient()
     {
         return new AdGroupServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return AgeRangeViewServiceClient
+     */
+    public function getAgeRangeViewServiceClient()
+    {
+        return new AgeRangeViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -202,11 +240,43 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return CustomerClientLinkServiceClient
+     */
+    public function getCustomerClientLinkServiceClient()
+    {
+        return new CustomerClientLinkServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CustomerManagerLinkServiceClient
+     */
+    public function getCustomerManagerLinkServiceClient()
+    {
+        return new CustomerManagerLinkServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return CustomerServiceClient
      */
     public function getCustomerServiceClient()
     {
         return new CustomerServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return DisplayKeywordViewServiceClient
+     */
+    public function getDisplayKeywordViewServiceClient()
+    {
+        return new DisplayKeywordViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return GenderViewServiceClient
+     */
+    public function getGenderViewServiceClient()
+    {
+        return new GenderViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -218,14 +288,6 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return GoogleAdsServiceClient
-     */
-    public function getGoogleAdsServiceClient()
-    {
-        return new GoogleAdsServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
      * @return GoogleAdsFieldServiceClient
      */
     public function getGoogleAdsFieldServiceClient()
@@ -234,11 +296,59 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return GoogleAdsServiceClient
+     */
+    public function getGoogleAdsServiceClient()
+    {
+        return new GoogleAdsServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return HotelGroupViewServiceClient
+     */
+    public function getHotelGroupViewServiceClient()
+    {
+        return new HotelGroupViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return KeywordViewServiceClient
      */
     public function getKeywordViewServiceClient()
     {
         return new KeywordViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ManagedPlacementViewServiceClient
+     */
+    public function getManagedPlacementViewServiceClient()
+    {
+        return new ManagedPlacementViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return MediaFileServiceClient
+     */
+    public function getMediaFileServiceClient()
+    {
+        return new MediaFileServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ParentalStatusViewServiceClient
+     */
+    public function getParentalStatusViewServiceClient()
+    {
+        return new ParentalStatusViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ProductGroupViewServiceClient
+     */
+    public function getProductGroupViewServiceClient()
+    {
+        return new ProductGroupViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -263,6 +373,22 @@ trait ServiceClientFactoryTrait
     public function getSharedSetServiceClient()
     {
         return new SharedSetServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return TopicViewServiceClient
+     */
+    public function getTopicViewServiceClient()
+    {
+        return new TopicViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return VerticalConstantServiceClient
+     */
+    public function getVerticalConstantServiceClient()
+    {
+        return new VerticalConstantServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

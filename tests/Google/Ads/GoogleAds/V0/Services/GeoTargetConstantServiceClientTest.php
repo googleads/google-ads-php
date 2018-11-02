@@ -20,15 +20,17 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\GoogleAds\V0\Services;
+namespace Google\Ads\GoogleAds\Tests\Unit\V0\Services;
 
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant;
+use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Protobuf\Any;
+use Google\Protobuf\StringValue;
 use Google\Rpc\Code;
 use stdClass;
 
@@ -121,6 +123,77 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
 
         try {
             $client->getGeoTargetConstant($formattedResourceName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function suggestGeoTargetConstantsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new SuggestGeoTargetConstantsResponse();
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $locale = new StringValue();
+
+        $response = $client->suggestGeoTargetConstants($locale);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v0.services.GeoTargetConstantService/SuggestGeoTargetConstants', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getLocale();
+
+        $this->assertProtobufEquals($locale, $actualValue);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function suggestGeoTargetConstantsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $locale = new StringValue();
+
+        try {
+            $client->suggestGeoTargetConstants($locale);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

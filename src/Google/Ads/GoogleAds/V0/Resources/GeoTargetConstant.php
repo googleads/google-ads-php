@@ -47,6 +47,12 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
      */
     private $target_type = null;
+    /**
+     * Geo target constant status.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7;</code>
+     */
+    private $status = 0;
 
     /**
      * Constructor.
@@ -66,6 +72,8 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      *           The ISO-3166-1 alpha-2 country code that is associated with the target.
      *     @type \Google\Protobuf\StringValue $target_type
      *           Geo target constant target type.
+     *     @type int $status
+     *           Geo target constant status.
      * }
      */
     public function __construct($data = NULL) {
@@ -203,6 +211,32 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->target_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Geo target constant status.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Geo target constant status.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\GeoTargetConstantStatusEnum_GeoTargetConstantStatus::class);
+        $this->status = $var;
 
         return $this;
     }

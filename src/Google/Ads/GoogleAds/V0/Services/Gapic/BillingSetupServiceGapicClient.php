@@ -49,8 +49,7 @@ use Google\ApiCore\ValidationException;
  *
  * Mutates:
  * The REMOVE operation cancels a pending billing setup.
- * Functionality for creating new billing setups will be supported in a future
- * version.
+ * The CREATE operation creates a new billing setup.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -303,7 +302,7 @@ class BillingSetupServiceGapicClient
     }
 
     /**
-     * Cancels a pending billing setup.
+     * Creates a billing setup, or cancels an existing billing setup.
      *
      * Sample code:
      * ```

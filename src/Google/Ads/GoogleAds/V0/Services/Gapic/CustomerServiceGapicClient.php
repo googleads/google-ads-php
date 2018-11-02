@@ -28,6 +28,8 @@ namespace Google\Ads\GoogleAds\V0\Services\Gapic;
 
 use Google\Ads\GoogleAds\V0\Resources\Customer;
 use Google\Ads\GoogleAds\V0\Services\GetCustomerRequest;
+use Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersRequest;
+use Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\FetchAuthTokenInterface;
@@ -283,6 +285,48 @@ class CustomerServiceGapicClient
         return $this->startCall(
             'GetCustomer',
             Customer::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Returns resource names of customers directly accessible by the
+     * user authenticating the call.
+     *
+     * Sample code:
+     * ```
+     * $customerServiceClient = new CustomerServiceClient();
+     * try {
+     *
+     *     $response = $customerServiceClient->listAccessibleCustomers();
+     * } finally {
+     *     $customerServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *                            Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function listAccessibleCustomers(array $optionalArgs = [])
+    {
+        $request = new ListAccessibleCustomersRequest();
+
+        return $this->startCall(
+            'ListAccessibleCustomers',
+            ListAccessibleCustomersResponse::class,
             $optionalArgs,
             $request
         )->wait();

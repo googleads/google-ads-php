@@ -42,7 +42,7 @@ class AccountBudgetProposalType
      */
     const END = 4;
     /**
-     * Identifies a request to remove a budget that hasn’t started yet.
+     * Identifies a request to remove a budget that hasn't started yet.
      *
      * Generated from protobuf enum <code>REMOVE = 5;</code>
      */

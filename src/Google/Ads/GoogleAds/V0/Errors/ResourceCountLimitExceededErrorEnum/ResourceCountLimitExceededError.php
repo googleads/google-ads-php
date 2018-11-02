@@ -85,6 +85,13 @@ class ResourceCountLimitExceededError
      * Generated from protobuf enum <code>MATCHING_FUNCTION_LIMIT = 8;</code>
      */
     const MATCHING_FUNCTION_LIMIT = 8;
+    /**
+     * The response for this request would exceed the maximum number of rows
+     * that can be returned.
+     *
+     * Generated from protobuf enum <code>RESPONSE_ROW_LIMIT_EXCEEDED = 9;</code>
+     */
+    const RESPONSE_ROW_LIMIT_EXCEEDED = 9;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

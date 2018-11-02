@@ -34,7 +34,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * will be set. For example, for AD_GROUP, campaign and ad_group fields will
      * be set.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.ResourceTypeEnum.ResourceType resource_type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4;</code>
      */
     private $resource_type = 0;
     /**
@@ -170,7 +170,7 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * will be set. For example, for AD_GROUP, campaign and ad_group fields will
      * be set.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.ResourceTypeEnum.ResourceType resource_type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4;</code>
      * @return int
      */
     public function getResourceType()
@@ -183,13 +183,13 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * will be set. For example, for AD_GROUP, campaign and ad_group fields will
      * be set.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.ResourceTypeEnum.ResourceType resource_type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4;</code>
      * @param int $var
      * @return $this
      */
     public function setResourceType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\ResourceTypeEnum_ResourceType::class);
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\ChangeStatusResourceTypeEnum_ChangeStatusResourceType::class);
         $this->resource_type = $var;
 
         return $this;

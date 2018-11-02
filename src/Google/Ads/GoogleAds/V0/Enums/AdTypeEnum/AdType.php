@@ -78,6 +78,12 @@ class AdType
      * Generated from protobuf enum <code>SHOPPING_PRODUCT_AD = 10;</code>
      */
     const SHOPPING_PRODUCT_AD = 10;
+    /**
+     * Video outstream ad.
+     *
+     * Generated from protobuf enum <code>VIDEO_OUTSTREAM = 11;</code>
+     */
+    const VIDEO_OUTSTREAM = 11;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

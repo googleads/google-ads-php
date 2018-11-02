@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * All fields prefixed with 'proposed' may not necessarily be applied directly.
  * For example, proposed spending limits may be adjusted before their
  * application.  This is true if the 'proposed' field has an 'approved'
- * counterpart, to be introduced in a future version.
+ * counterpart, e.g. spending limits.
  * Please note that the proposal type (proposal_type) changes which fields are
  * required and which must remain empty.
  *
@@ -69,6 +69,12 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     private $proposed_name = null;
     /**
+     * The approved start date time in yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
+     */
+    private $approved_start_date_time = null;
+    /**
      * A purchase order number is a value that enables the user to help them
      * reference this budget in their monthly invoices.
      *
@@ -96,7 +102,9 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     private $approval_date_time = null;
     protected $proposed_start_time;
     protected $proposed_end_time;
+    protected $approved_end_time;
     protected $proposed_spending_limit;
+    protected $approved_spending_limit;
 
     /**
      * Constructor.
@@ -123,6 +131,8 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *           When a new proposal is created, the status defaults to PENDING.
      *     @type \Google\Protobuf\StringValue $proposed_name
      *           The name to assign to the account-level budget.
+     *     @type \Google\Protobuf\StringValue $approved_start_date_time
+     *           The approved start date time in yyyy-MM-dd HH:mm:ss format.
      *     @type \Google\Protobuf\StringValue $proposed_purchase_order_number
      *           A purchase order number is a value that enables the user to help them
      *           reference this budget in their monthly invoices.
@@ -140,12 +150,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $proposed_end_date_time
      *           The proposed end date time in yyyy-MM-dd HH:mm:ss format.
      *     @type int $proposed_end_time_type
-     *           The proposed end date time as a well-defined type, e.g. INDEFINITE.
+     *           The proposed end date time as a well-defined type, e.g. FOREVER.
+     *     @type \Google\Protobuf\StringValue $approved_end_date_time
+     *           The approved end date time in yyyy-MM-dd HH:mm:ss format.
+     *     @type int $approved_end_time_type
+     *           The approved end date time as a well-defined type, e.g. FOREVER.
      *     @type \Google\Protobuf\Int64Value $proposed_spending_limit_micros
      *           The proposed spending limit in micros.  One million is equivalent to
      *           one unit.
      *     @type int $proposed_spending_limit_type
      *           The proposed spending limit as a well-defined type, e.g. INFINITE.
+     *     @type \Google\Protobuf\Int64Value $approved_spending_limit_micros
+     *           The approved spending limit in micros.  One million is equivalent to
+     *           one unit.
+     *     @type int $approved_spending_limit_type
+     *           The approved spending limit as a well-defined type, e.g. INFINITE.
      * }
      */
     public function __construct($data = NULL) {
@@ -346,6 +365,32 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The approved start date time in yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getApprovedStartDateTime()
+    {
+        return $this->approved_start_date_time;
+    }
+
+    /**
+     * The approved start date time in yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setApprovedStartDateTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->approved_start_date_time = $var;
+
+        return $this;
+    }
+
+    /**
      * A purchase order number is a value that enables the user to help them
      * reference this budget in their monthly invoices.
      *
@@ -532,7 +577,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed end date time as a well-defined type, e.g. INDEFINITE.
+     * The proposed end date time as a well-defined type, e.g. FOREVER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9;</code>
      * @return int
@@ -543,7 +588,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed end date time as a well-defined type, e.g. INDEFINITE.
+     * The proposed end date time as a well-defined type, e.g. FOREVER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9;</code>
      * @param int $var
@@ -553,6 +598,58 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\TimeTypeEnum_TimeType::class);
         $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * The approved end date time in yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 21;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getApprovedEndDateTime()
+    {
+        return $this->readOneof(21);
+    }
+
+    /**
+     * The approved end date time in yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 21;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setApprovedEndDateTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
+     * The approved end date time as a well-defined type, e.g. FOREVER.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TimeTypeEnum.TimeType approved_end_time_type = 22;</code>
+     * @return int
+     */
+    public function getApprovedEndTimeType()
+    {
+        return $this->readOneof(22);
+    }
+
+    /**
+     * The approved end date time as a well-defined type, e.g. FOREVER.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TimeTypeEnum.TimeType approved_end_time_type = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setApprovedEndTimeType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\TimeTypeEnum_TimeType::class);
+        $this->writeOneof(22, $var);
 
         return $this;
     }
@@ -612,6 +709,60 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The approved spending limit in micros.  One million is equivalent to
+     * one unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 23;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getApprovedSpendingLimitMicros()
+    {
+        return $this->readOneof(23);
+    }
+
+    /**
+     * The approved spending limit in micros.  One million is equivalent to
+     * one unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 23;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setApprovedSpendingLimitMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->writeOneof(23, $var);
+
+        return $this;
+    }
+
+    /**
+     * The approved spending limit as a well-defined type, e.g. INFINITE.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 24;</code>
+     * @return int
+     */
+    public function getApprovedSpendingLimitType()
+    {
+        return $this->readOneof(24);
+    }
+
+    /**
+     * The approved spending limit as a well-defined type, e.g. INFINITE.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 24;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setApprovedSpendingLimitType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\SpendingLimitTypeEnum_SpendingLimitType::class);
+        $this->writeOneof(24, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getProposedStartTime()
@@ -630,9 +781,25 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     /**
      * @return string
      */
+    public function getApprovedEndTime()
+    {
+        return $this->whichOneof("approved_end_time");
+    }
+
+    /**
+     * @return string
+     */
     public function getProposedSpendingLimit()
     {
         return $this->whichOneof("proposed_spending_limit");
+    }
+
+    /**
+     * @return string
+     */
+    public function getApprovedSpendingLimit()
+    {
+        return $this->whichOneof("approved_spending_limit");
     }
 
 }

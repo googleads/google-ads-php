@@ -116,6 +116,12 @@ class RequestError
      * Generated from protobuf enum <code>DEVELOPER_TOKEN_PARAMETER_MISSING = 19;</code>
      */
     const DEVELOPER_TOKEN_PARAMETER_MISSING = 19;
+    /**
+     * The login-customer-id parameter is required for this request.
+     *
+     * Generated from protobuf enum <code>LOGIN_CUSTOMER_ID_PARAMETER_MISSING = 20;</code>
+     */
+    const LOGIN_CUSTOMER_ID_PARAMETER_MISSING = 20;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

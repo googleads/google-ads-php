@@ -63,6 +63,12 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      *           The type of the criterion.
      *     @type \Google\Ads\GoogleAds\V0\Common\KeywordInfo $keyword
      *           Keyword.
+     *     @type \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo $youtube_video
+     *           YouTube Video.
+     *     @type \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo $youtube_channel
+     *           YouTube Channel.
+     *     @type \Google\Ads\GoogleAds\V0\Common\PlacementInfo $placement
+     *           Placement.
      * }
      */
     public function __construct($data = NULL) {
@@ -202,6 +208,84 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\KeywordInfo::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * YouTube Video.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeVideoInfo youtube_video = 5;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo
+     */
+    public function getYoutubeVideo()
+    {
+        return $this->readOneof(5);
+    }
+
+    /**
+     * YouTube Video.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeVideoInfo youtube_video = 5;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo $var
+     * @return $this
+     */
+    public function setYoutubeVideo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo::class);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * YouTube Channel.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeChannelInfo youtube_channel = 6;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo
+     */
+    public function getYoutubeChannel()
+    {
+        return $this->readOneof(6);
+    }
+
+    /**
+     * YouTube Channel.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeChannelInfo youtube_channel = 6;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo $var
+     * @return $this
+     */
+    public function setYoutubeChannel($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo::class);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Placement.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PlacementInfo placement = 7;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\PlacementInfo
+     */
+    public function getPlacement()
+    {
+        return $this->readOneof(7);
+    }
+
+    /**
+     * Placement.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PlacementInfo placement = 7;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\PlacementInfo $var
+     * @return $this
+     */
+    public function setPlacement($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PlacementInfo::class);
+        $this->writeOneof(7, $var);
 
         return $this;
     }
