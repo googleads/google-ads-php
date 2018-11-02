@@ -64,6 +64,13 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      */
     private $negative = null;
     /**
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 44;</code>
+     */
+    private $bid_modifier = null;
+    /**
      * The CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 16;</code>
@@ -191,6 +198,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Whether to target (`false`) or exclude (`true`) the criterion.
      *           This field is immutable. To switch a criterion from positive to negative,
      *           remove then re-add it.
+     *     @type \Google\Protobuf\DoubleValue $bid_modifier
+     *           The modifier for the bid when the criterion matches. The modifier must be
+     *           in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      *     @type \Google\Protobuf\Int64Value $cpc_bid_micros
      *           The CPC (cost-per-click) bid.
      *     @type \Google\Protobuf\Int64Value $cpm_bid_micros
@@ -229,8 +239,24 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type \Google\Ads\GoogleAds\V0\Common\KeywordInfo $keyword
      *           Keyword.
+     *     @type \Google\Ads\GoogleAds\V0\Common\PlacementInfo $placement
+     *           Placement.
      *     @type \Google\Ads\GoogleAds\V0\Common\ListingGroupInfo $listing_group
      *           Listing group.
+     *     @type \Google\Ads\GoogleAds\V0\Common\AgeRangeInfo $age_range
+     *           Age range.
+     *     @type \Google\Ads\GoogleAds\V0\Common\GenderInfo $gender
+     *           Gender.
+     *     @type \Google\Ads\GoogleAds\V0\Common\IncomeRangeInfo $income_range
+     *           Income range.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ParentalStatusInfo $parental_status
+     *           Parental status.
+     *     @type \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo $youtube_video
+     *           YouTube Video.
+     *     @type \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo $youtube_channel
+     *           YouTube Channel.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TopicInfo $topic
+     *           Topic.
      * }
      */
     public function __construct($data = NULL) {
@@ -428,6 +454,34 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
         $this->negative = $var;
+
+        return $this;
+    }
+
+    /**
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 44;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getBidModifier()
+    {
+        return $this->bid_modifier;
+    }
+
+    /**
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 44;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setBidModifier($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->bid_modifier = $var;
 
         return $this;
     }
@@ -883,6 +937,32 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Placement.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PlacementInfo placement = 28;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\PlacementInfo
+     */
+    public function getPlacement()
+    {
+        return $this->readOneof(28);
+    }
+
+    /**
+     * Placement.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PlacementInfo placement = 28;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\PlacementInfo $var
+     * @return $this
+     */
+    public function setPlacement($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PlacementInfo::class);
+        $this->writeOneof(28, $var);
+
+        return $this;
+    }
+
+    /**
      * Listing group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.common.ListingGroupInfo listing_group = 32;</code>
@@ -904,6 +984,188 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ListingGroupInfo::class);
         $this->writeOneof(32, $var);
+
+        return $this;
+    }
+
+    /**
+     * Age range.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.AgeRangeInfo age_range = 36;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\AgeRangeInfo
+     */
+    public function getAgeRange()
+    {
+        return $this->readOneof(36);
+    }
+
+    /**
+     * Age range.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.AgeRangeInfo age_range = 36;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\AgeRangeInfo $var
+     * @return $this
+     */
+    public function setAgeRange($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\AgeRangeInfo::class);
+        $this->writeOneof(36, $var);
+
+        return $this;
+    }
+
+    /**
+     * Gender.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.GenderInfo gender = 37;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\GenderInfo
+     */
+    public function getGender()
+    {
+        return $this->readOneof(37);
+    }
+
+    /**
+     * Gender.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.GenderInfo gender = 37;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\GenderInfo $var
+     * @return $this
+     */
+    public function setGender($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\GenderInfo::class);
+        $this->writeOneof(37, $var);
+
+        return $this;
+    }
+
+    /**
+     * Income range.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.IncomeRangeInfo income_range = 38;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\IncomeRangeInfo
+     */
+    public function getIncomeRange()
+    {
+        return $this->readOneof(38);
+    }
+
+    /**
+     * Income range.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.IncomeRangeInfo income_range = 38;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\IncomeRangeInfo $var
+     * @return $this
+     */
+    public function setIncomeRange($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\IncomeRangeInfo::class);
+        $this->writeOneof(38, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parental status.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ParentalStatusInfo parental_status = 39;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ParentalStatusInfo
+     */
+    public function getParentalStatus()
+    {
+        return $this->readOneof(39);
+    }
+
+    /**
+     * Parental status.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ParentalStatusInfo parental_status = 39;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ParentalStatusInfo $var
+     * @return $this
+     */
+    public function setParentalStatus($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ParentalStatusInfo::class);
+        $this->writeOneof(39, $var);
+
+        return $this;
+    }
+
+    /**
+     * YouTube Video.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeVideoInfo youtube_video = 40;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo
+     */
+    public function getYoutubeVideo()
+    {
+        return $this->readOneof(40);
+    }
+
+    /**
+     * YouTube Video.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeVideoInfo youtube_video = 40;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo $var
+     * @return $this
+     */
+    public function setYoutubeVideo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo::class);
+        $this->writeOneof(40, $var);
+
+        return $this;
+    }
+
+    /**
+     * YouTube Channel.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeChannelInfo youtube_channel = 41;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo
+     */
+    public function getYoutubeChannel()
+    {
+        return $this->readOneof(41);
+    }
+
+    /**
+     * YouTube Channel.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeChannelInfo youtube_channel = 41;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo $var
+     * @return $this
+     */
+    public function setYoutubeChannel($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo::class);
+        $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * Topic.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TopicInfo topic = 43;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\TopicInfo
+     */
+    public function getTopic()
+    {
+        return $this->readOneof(43);
+    }
+
+    /**
+     * Topic.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TopicInfo topic = 43;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\TopicInfo $var
+     * @return $this
+     */
+    public function setTopic($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\TopicInfo::class);
+        $this->writeOneof(43, $var);
 
         return $this;
     }

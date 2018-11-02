@@ -53,6 +53,12 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     private $type = 0;
     /**
+     * The ad rotation mode of the ad group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.AdGroupAdRotationModeEnum.AdGroupAdRotationMode ad_rotation_mode = 22;</code>
+     */
+    private $ad_rotation_mode = 0;
+    /**
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 13;</code>
@@ -137,6 +143,8 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           The status of the ad group.
      *     @type int $type
      *           The type of the ad group.
+     *     @type int $ad_rotation_mode
+     *           The ad rotation mode of the ad group.
      *     @type \Google\Protobuf\StringValue $tracking_url_template
      *           The URL template for constructing a tracking URL.
      *     @type \Google\Ads\GoogleAds\V0\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
@@ -309,6 +317,32 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\AdGroupTypeEnum_AdGroupType::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * The ad rotation mode of the ad group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.AdGroupAdRotationModeEnum.AdGroupAdRotationMode ad_rotation_mode = 22;</code>
+     * @return int
+     */
+    public function getAdRotationMode()
+    {
+        return $this->ad_rotation_mode;
+    }
+
+    /**
+     * The ad rotation mode of the ad group.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.AdGroupAdRotationModeEnum.AdGroupAdRotationMode ad_rotation_mode = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdRotationMode($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\AdGroupAdRotationModeEnum_AdGroupAdRotationMode::class);
+        $this->ad_rotation_mode = $var;
 
         return $this;
     }

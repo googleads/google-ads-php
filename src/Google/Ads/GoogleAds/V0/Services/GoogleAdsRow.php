@@ -40,6 +40,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $ad_group_ad = null;
     /**
+     * The ad group audience view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupAudienceView ad_group_audience_view = 57;</code>
+     */
+    private $ad_group_audience_view = null;
+    /**
      * The bid modifier referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupBidModifier ad_group_bid_modifier = 24;</code>
@@ -51,6 +57,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupCriterion ad_group_criterion = 17;</code>
      */
     private $ad_group_criterion = null;
+    /**
+     * The age range view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AgeRangeView age_range_view = 48;</code>
+     */
+    private $age_range_view = null;
     /**
      * The bidding strategy referenced in the query.
      *
@@ -112,17 +124,65 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $customer = null;
     /**
+     * The CustomerManagerLink referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CustomerManagerLink customer_manager_link = 61;</code>
+     */
+    private $customer_manager_link = null;
+    /**
+     * The CustomerClientLink referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CustomerClientLink customer_client_link = 62;</code>
+     */
+    private $customer_client_link = null;
+    /**
+     * The display keyword view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.DisplayKeywordView display_keyword_view = 47;</code>
+     */
+    private $display_keyword_view = null;
+    /**
+     * The gender view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.GenderView gender_view = 40;</code>
+     */
+    private $gender_view = null;
+    /**
      * The geo target constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.GeoTargetConstant geo_target_constant = 23;</code>
      */
     private $geo_target_constant = null;
     /**
+     * The hotel group view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.HotelGroupView hotel_group_view = 51;</code>
+     */
+    private $hotel_group_view = null;
+    /**
      * The keyword view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.KeywordView keyword_view = 21;</code>
      */
     private $keyword_view = null;
+    /**
+     * The managed placement view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ManagedPlacementView managed_placement_view = 53;</code>
+     */
+    private $managed_placement_view = null;
+    /**
+     * The parental status view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ParentalStatusView parental_status_view = 45;</code>
+     */
+    private $parental_status_view = null;
+    /**
+     * The product group view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ProductGroupView product_group_view = 54;</code>
+     */
+    private $product_group_view = null;
     /**
      * The recommendation referenced in the query.
      *
@@ -141,6 +201,18 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.SharedSet shared_set = 27;</code>
      */
     private $shared_set = null;
+    /**
+     * The topic view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.TopicView topic_view = 44;</code>
+     */
+    private $topic_view = null;
+    /**
+     * The topic constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.TopicConstant topic_constant = 31;</code>
+     */
+    private $topic_constant = null;
     /**
      * The video referenced in the query.
      *
@@ -161,7 +233,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     private $ad_network_type = 0;
     /**
      * Date to which metrics apply.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * yyyy-MM-dd format, e.g., 2018-04-17.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue date = 6;</code>
      */
@@ -185,7 +257,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $hour = null;
     /**
-     * Month as represented by the date of the first day of a month.
+     * Month as represented by the date of the first day of a month. Formatted as
+     * yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue month = 10;</code>
      */
@@ -198,8 +271,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     private $month_of_year = 0;
     /**
      * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters,
-     * e.g., the second quarter of 2018 starts on 2018-04-01.
+     * Uses the calendar year for quarters, e.g., the second quarter of 2018
+     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 12;</code>
      */
@@ -212,7 +285,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     private $slot = 0;
     /**
      * Week as defined as Monday through Sunday, and represented by the date of
-     * Monday.
+     * Monday. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue week = 14;</code>
      */
@@ -238,10 +311,14 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The ad group referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupAd $ad_group_ad
      *           The ad referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupAudienceView $ad_group_audience_view
+     *           The ad group audience view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupBidModifier $ad_group_bid_modifier
      *           The bid modifier referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion $ad_group_criterion
      *           The criterion referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AgeRangeView $age_range_view
+     *           The age range view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\BiddingStrategy $bidding_strategy
      *           The bidding strategy referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\BillingSetup $billing_setup
@@ -262,16 +339,36 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The ChangeStatus referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Customer $customer
      *           The customer referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CustomerManagerLink $customer_manager_link
+     *           The CustomerManagerLink referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\CustomerClientLink $customer_client_link
+     *           The CustomerClientLink referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\DisplayKeywordView $display_keyword_view
+     *           The display keyword view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\GenderView $gender_view
+     *           The gender view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant $geo_target_constant
      *           The geo target constant referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\HotelGroupView $hotel_group_view
+     *           The hotel group view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\KeywordView $keyword_view
      *           The keyword view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\ManagedPlacementView $managed_placement_view
+     *           The managed placement view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\ParentalStatusView $parental_status_view
+     *           The parental status view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\ProductGroupView $product_group_view
+     *           The product group view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Recommendation $recommendation
      *           The recommendation referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\SharedCriterion $shared_criterion
      *           The shared set referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\SharedSet $shared_set
      *           The shared set referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\TopicView $topic_view
+     *           The topic view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\TopicConstant $topic_constant
+     *           The topic constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Video $video
      *           The video referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Common\Metrics $metrics
@@ -280,7 +377,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           Ad network type.
      *     @type \Google\Protobuf\StringValue $date
      *           Date to which metrics apply.
-     *           YYYY-MM-DD format, e.g., 2018-04-17.
+     *           yyyy-MM-dd format, e.g., 2018-04-17.
      *     @type int $day_of_week
      *           Day of the week, e.g., MONDAY.
      *     @type int $device
@@ -288,18 +385,19 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int32Value $hour
      *           Hour of day as a number between 0 and 23, inclusive.
      *     @type \Google\Protobuf\StringValue $month
-     *           Month as represented by the date of the first day of a month.
+     *           Month as represented by the date of the first day of a month. Formatted as
+     *           yyyy-MM-dd.
      *     @type int $month_of_year
      *           Month of the year, e.g., January.
      *     @type \Google\Protobuf\StringValue $quarter
      *           Quarter as represented by the date of the first day of a quarter.
-     *           Uses the calendar year for quarters,
-     *           e.g., the second quarter of 2018 starts on 2018-04-01.
+     *           Uses the calendar year for quarters, e.g., the second quarter of 2018
+     *           starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *     @type int $slot
      *           Position of the ad.
      *     @type \Google\Protobuf\StringValue $week
      *           Week as defined as Monday through Sunday, and represented by the date of
-     *           Monday.
+     *           Monday. Formatted as yyyy-MM-dd.
      *     @type \Google\Protobuf\Int32Value $year
      *           Year, formatted as yyyy.
      * }
@@ -414,6 +512,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ad group audience view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupAudienceView ad_group_audience_view = 57;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\AdGroupAudienceView
+     */
+    public function getAdGroupAudienceView()
+    {
+        return $this->ad_group_audience_view;
+    }
+
+    /**
+     * The ad group audience view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupAudienceView ad_group_audience_view = 57;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\AdGroupAudienceView $var
+     * @return $this
+     */
+    public function setAdGroupAudienceView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\AdGroupAudienceView::class);
+        $this->ad_group_audience_view = $var;
+
+        return $this;
+    }
+
+    /**
      * The bid modifier referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdGroupBidModifier ad_group_bid_modifier = 24;</code>
@@ -461,6 +585,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion::class);
         $this->ad_group_criterion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The age range view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AgeRangeView age_range_view = 48;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\AgeRangeView
+     */
+    public function getAgeRangeView()
+    {
+        return $this->age_range_view;
+    }
+
+    /**
+     * The age range view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AgeRangeView age_range_view = 48;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\AgeRangeView $var
+     * @return $this
+     */
+    public function setAgeRangeView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\AgeRangeView::class);
+        $this->age_range_view = $var;
 
         return $this;
     }
@@ -726,6 +876,110 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The CustomerManagerLink referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CustomerManagerLink customer_manager_link = 61;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\CustomerManagerLink
+     */
+    public function getCustomerManagerLink()
+    {
+        return $this->customer_manager_link;
+    }
+
+    /**
+     * The CustomerManagerLink referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CustomerManagerLink customer_manager_link = 61;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\CustomerManagerLink $var
+     * @return $this
+     */
+    public function setCustomerManagerLink($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CustomerManagerLink::class);
+        $this->customer_manager_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * The CustomerClientLink referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CustomerClientLink customer_client_link = 62;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\CustomerClientLink
+     */
+    public function getCustomerClientLink()
+    {
+        return $this->customer_client_link;
+    }
+
+    /**
+     * The CustomerClientLink referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CustomerClientLink customer_client_link = 62;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\CustomerClientLink $var
+     * @return $this
+     */
+    public function setCustomerClientLink($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CustomerClientLink::class);
+        $this->customer_client_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * The display keyword view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.DisplayKeywordView display_keyword_view = 47;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\DisplayKeywordView
+     */
+    public function getDisplayKeywordView()
+    {
+        return $this->display_keyword_view;
+    }
+
+    /**
+     * The display keyword view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.DisplayKeywordView display_keyword_view = 47;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\DisplayKeywordView $var
+     * @return $this
+     */
+    public function setDisplayKeywordView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\DisplayKeywordView::class);
+        $this->display_keyword_view = $var;
+
+        return $this;
+    }
+
+    /**
+     * The gender view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.GenderView gender_view = 40;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\GenderView
+     */
+    public function getGenderView()
+    {
+        return $this->gender_view;
+    }
+
+    /**
+     * The gender view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.GenderView gender_view = 40;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\GenderView $var
+     * @return $this
+     */
+    public function setGenderView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\GenderView::class);
+        $this->gender_view = $var;
+
+        return $this;
+    }
+
+    /**
      * The geo target constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.GeoTargetConstant geo_target_constant = 23;</code>
@@ -752,6 +1006,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The hotel group view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.HotelGroupView hotel_group_view = 51;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\HotelGroupView
+     */
+    public function getHotelGroupView()
+    {
+        return $this->hotel_group_view;
+    }
+
+    /**
+     * The hotel group view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.HotelGroupView hotel_group_view = 51;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\HotelGroupView $var
+     * @return $this
+     */
+    public function setHotelGroupView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\HotelGroupView::class);
+        $this->hotel_group_view = $var;
+
+        return $this;
+    }
+
+    /**
      * The keyword view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.KeywordView keyword_view = 21;</code>
@@ -773,6 +1053,84 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\KeywordView::class);
         $this->keyword_view = $var;
+
+        return $this;
+    }
+
+    /**
+     * The managed placement view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ManagedPlacementView managed_placement_view = 53;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\ManagedPlacementView
+     */
+    public function getManagedPlacementView()
+    {
+        return $this->managed_placement_view;
+    }
+
+    /**
+     * The managed placement view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ManagedPlacementView managed_placement_view = 53;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\ManagedPlacementView $var
+     * @return $this
+     */
+    public function setManagedPlacementView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\ManagedPlacementView::class);
+        $this->managed_placement_view = $var;
+
+        return $this;
+    }
+
+    /**
+     * The parental status view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ParentalStatusView parental_status_view = 45;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\ParentalStatusView
+     */
+    public function getParentalStatusView()
+    {
+        return $this->parental_status_view;
+    }
+
+    /**
+     * The parental status view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ParentalStatusView parental_status_view = 45;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\ParentalStatusView $var
+     * @return $this
+     */
+    public function setParentalStatusView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\ParentalStatusView::class);
+        $this->parental_status_view = $var;
+
+        return $this;
+    }
+
+    /**
+     * The product group view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ProductGroupView product_group_view = 54;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\ProductGroupView
+     */
+    public function getProductGroupView()
+    {
+        return $this->product_group_view;
+    }
+
+    /**
+     * The product group view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ProductGroupView product_group_view = 54;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\ProductGroupView $var
+     * @return $this
+     */
+    public function setProductGroupView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\ProductGroupView::class);
+        $this->product_group_view = $var;
 
         return $this;
     }
@@ -851,6 +1209,58 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\SharedSet::class);
         $this->shared_set = $var;
+
+        return $this;
+    }
+
+    /**
+     * The topic view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.TopicView topic_view = 44;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\TopicView
+     */
+    public function getTopicView()
+    {
+        return $this->topic_view;
+    }
+
+    /**
+     * The topic view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.TopicView topic_view = 44;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\TopicView $var
+     * @return $this
+     */
+    public function setTopicView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\TopicView::class);
+        $this->topic_view = $var;
+
+        return $this;
+    }
+
+    /**
+     * The topic constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.TopicConstant topic_constant = 31;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\TopicConstant
+     */
+    public function getTopicConstant()
+    {
+        return $this->topic_constant;
+    }
+
+    /**
+     * The topic constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.TopicConstant topic_constant = 31;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\TopicConstant $var
+     * @return $this
+     */
+    public function setTopicConstant($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\TopicConstant::class);
+        $this->topic_constant = $var;
 
         return $this;
     }
@@ -935,7 +1345,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
 
     /**
      * Date to which metrics apply.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * yyyy-MM-dd format, e.g., 2018-04-17.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue date = 6;</code>
      * @return \Google\Protobuf\StringValue
@@ -947,7 +1357,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
 
     /**
      * Date to which metrics apply.
-     * YYYY-MM-DD format, e.g., 2018-04-17.
+     * yyyy-MM-dd format, e.g., 2018-04-17.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue date = 6;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -1040,7 +1450,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Month as represented by the date of the first day of a month.
+     * Month as represented by the date of the first day of a month. Formatted as
+     * yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue month = 10;</code>
      * @return \Google\Protobuf\StringValue
@@ -1051,7 +1462,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Month as represented by the date of the first day of a month.
+     * Month as represented by the date of the first day of a month. Formatted as
+     * yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue month = 10;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -1093,8 +1505,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
 
     /**
      * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters,
-     * e.g., the second quarter of 2018 starts on 2018-04-01.
+     * Uses the calendar year for quarters, e.g., the second quarter of 2018
+     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 12;</code>
      * @return \Google\Protobuf\StringValue
@@ -1106,8 +1518,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
 
     /**
      * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters,
-     * e.g., the second quarter of 2018 starts on 2018-04-01.
+     * Uses the calendar year for quarters, e.g., the second quarter of 2018
+     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 12;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -1149,7 +1561,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
 
     /**
      * Week as defined as Monday through Sunday, and represented by the date of
-     * Monday.
+     * Monday. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue week = 14;</code>
      * @return \Google\Protobuf\StringValue
@@ -1161,7 +1573,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
 
     /**
      * Week as defined as Monday through Sunday, and represented by the date of
-     * Monday.
+     * Monday. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue week = 14;</code>
      * @param \Google\Protobuf\StringValue $var

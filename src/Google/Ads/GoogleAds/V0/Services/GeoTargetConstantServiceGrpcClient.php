@@ -47,4 +47,18 @@ class GeoTargetConstantServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Returns GeoTargetConstant suggestions by location name or by resource name.
+     * @param \Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function SuggestGeoTargetConstants(\Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v0.services.GeoTargetConstantService/SuggestGeoTargetConstants',
+        $argument,
+        ['\Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

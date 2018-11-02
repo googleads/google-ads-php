@@ -24,12 +24,6 @@ class ChangeStatusError
      */
     const UNKNOWN = 1;
     /**
-     * The requested start date is invalid.
-     *
-     * Generated from protobuf enum <code>INVALID_START_DATE = 2;</code>
-     */
-    const INVALID_START_DATE = 2;
-    /**
      * The requested start date is too old.
      *
      * Generated from protobuf enum <code>START_DATE_TOO_OLD = 3;</code>

@@ -117,7 +117,6 @@ class Campaign extends \Google\Protobuf\Internal\Message
     private $shopping_setting = null;
     /**
      * The budget of the campaign.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
      */
@@ -152,6 +151,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 20;</code>
      */
     private $end_date = null;
+    /**
+     * Suffix used to append query parameters to landing pages that are served
+     * with parallel tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     */
+    private $final_url_suffix = null;
     protected $campaign_bidding_strategy;
 
     /**
@@ -206,7 +212,6 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The setting for controlling Shopping campaigns.
      *     @type \Google\Protobuf\StringValue $campaign_budget
      *           The budget of the campaign.
-     *           This field must not be used in WHERE clauses.
      *     @type int $bidding_strategy_type
      *           The type of bidding strategy.
      *           A bidding strategy can be created by setting either the bidding scheme to
@@ -221,6 +226,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $end_date
      *           The date when campaign ended.
      *           This field must not be used in WHERE clauses.
+     *     @type \Google\Protobuf\StringValue $final_url_suffix
+     *           Suffix used to append query parameters to landing pages that are served
+     *           with parallel tracking.
      *     @type \Google\Protobuf\StringValue $bidding_strategy
      *           Portfolio bidding strategy used by campaign.
      *           This field must not be used in WHERE clauses.
@@ -657,7 +665,6 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
     /**
      * The budget of the campaign.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
      * @return \Google\Protobuf\StringValue
@@ -669,7 +676,6 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
     /**
      * The budget of the campaign.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -795,6 +801,34 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->end_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Suffix used to append query parameters to landing pages that are served
+     * with parallel tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getFinalUrlSuffix()
+    {
+        return $this->final_url_suffix;
+    }
+
+    /**
+     * Suffix used to append query parameters to landing pages that are served
+     * with parallel tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setFinalUrlSuffix($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->final_url_suffix = $var;
 
         return $this;
     }

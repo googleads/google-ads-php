@@ -21,10 +21,16 @@ use Google\Ads\GoogleAds\V0\Errors\ErrorCode;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsFailure;
 use Google\Ads\GoogleAds\V0\Resources\Campaign;
+use Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant;
+use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantSuggestion;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsRequest;
 use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsResponse;
+use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest;
+use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest\LocationNames;
+use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsResponse;
 use Google\Protobuf\Int64Value;
+use Google\Protobuf\StringValue;
 use Grpc\UnaryCall;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -42,6 +48,8 @@ class LogMessageFormatterTest extends TestCase
     private $successResponse;
     private $failureRequest;
     private $failureResponse;
+    private $noCustomerIdRequest;
+    private $noCustomerIdResponse;
 
     /**
      * @see \PHPUnit\Framework\TestCase::setUp
@@ -98,6 +106,29 @@ class LogMessageFormatterTest extends TestCase
         $this->assertContains('ClientCustomerId: 1234567890', $actualOutput);
         $this->assertContains('Host: "googleads.api.com"', $actualOutput);
         $this->assertContains('IsFault: 1', $actualOutput);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\LogMessageFormatter::formatSummary()
+     */
+    public function testFormatSummaryWithNoCustomerIdInRequest()
+    {
+        $this->createRequestWithNoCustomerId();
+        $logMessageFormatter = new LogMessageFormatter();
+
+        $actualOutput = $logMessageFormatter->formatSummary(
+            $this->noCustomerIdRequest,
+            $this->noCustomerIdResponse,
+            'googleads.api.com'
+        );
+
+        $this->assertContains('RequestId: "AbCdEfGh"', $actualOutput);
+        $this->assertContains(
+            'Method: "GeoTargetConstantService/SuggestGeoTargetConstants"',
+            $actualOutput
+        );
+        $this->assertContains('Host: "googleads.api.com"', $actualOutput);
+        $this->assertContains('IsFault: 0', $actualOutput);
     }
 
     /**
@@ -212,6 +243,49 @@ class LogMessageFormatterTest extends TestCase
 
         $this->successRequest = compact('method', 'argument', 'metadata');
         $this->successResponse = compact('status', 'response', 'unaryCall');
+    }
+
+    private function createRequestWithNoCustomerId()
+    {
+        $method = 'GeoTargetConstantService/SuggestGeoTargetConstants';
+        $argument = new SuggestGeoTargetConstantsRequest([
+            'location_names' => new LocationNames(
+                ['names' => [new StringValue(['value' => 'Paris'])]]
+            )
+        ]);
+        $metadata = ['developer-token' => ['a1b2c3']];
+
+        $status = new stdClass();
+        $status->code = 0;
+        $status->metadata = [
+            'request-id' => ['AbCdEfGh']
+        ];
+
+        $geoTargetConstantSuggestions = [
+            new GeoTargetConstantSuggestion([
+                'locale' => new StringValue(['value' => 'US']),
+                'reach' => new Int64Value(['value' => 30000]),
+                'search_term' =>  new StringValue(['value' => 'Paris']),
+                'geo_target_constant' => new GeoTargetConstant([
+                    'id' => new Int64Value(['value' => 1006094])
+                ])
+            ]),
+        ];
+        $response = new SuggestGeoTargetConstantsResponse(
+            ['geo_target_constant_suggestions' => $geoTargetConstantSuggestions]
+        );
+
+        $unaryCall = $this->getMockBuilder(UnaryCall::class)
+            ->disableOriginalConstructor()
+            ->disableOriginalClone()
+            ->disableArgumentCloning()
+            ->getMock();
+        $unaryCall->method('getMetadata')->willReturn(
+            ['request-id' => ['AbCdEfGh'], 'x-google-session-info' => ['1234abcd']]
+        );
+
+        $this->noCustomerIdRequest = compact('method', 'argument', 'metadata');
+        $this->noCustomerIdResponse = compact('status', 'response', 'unaryCall');
     }
 
     private function createFailureRequestResponse()

@@ -47,4 +47,19 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Returns resource names of customers directly accessible by the
+     * user authenticating the call.
+     * @param \Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function ListAccessibleCustomers(\Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v0.services.CustomerService/ListAccessibleCustomers',
+        $argument,
+        ['\Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

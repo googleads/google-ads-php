@@ -1,3 +1,11 @@
+## 0.5.0
+
+*   Added support and examples for v0_5 of Google Ads API.
+*   Added campaign targeting criteria examples.
+*   Added an account budget example.
+*   Added Shopping campaign examples.
+*   Added an account change example.
+
 ## 0.4.0
 
 *   Added support and examples for v0_4 of Google Ads API.

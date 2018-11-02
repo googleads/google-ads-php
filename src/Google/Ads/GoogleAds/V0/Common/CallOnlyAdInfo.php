@@ -67,6 +67,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number_verification_url = 8;</code>
      */
     private $phone_number_verification_url = null;
+    /**
+     * The conversion action to attribute a call conversion to. If not set a
+     * default conversion action is used. This field only has effect if
+     * call_tracked is set to true. Otherwise this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 9;</code>
+     */
+    private $conversion_action = null;
+    /**
+     * The call conversion behavior of this call only ad. It can use its own call
+     * conversion setting, inherit the account level setting, or be disabled.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.CallConversionReportingStateEnum.CallConversionReportingState conversion_reporting_state = 10;</code>
+     */
+    private $conversion_reporting_state = 0;
 
     /**
      * Constructor.
@@ -94,6 +109,13 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      *           If `call_tracked` is `false`, this field is ignored.
      *     @type \Google\Protobuf\StringValue $phone_number_verification_url
      *           The URL to be used for phone number verification.
+     *     @type \Google\Protobuf\StringValue $conversion_action
+     *           The conversion action to attribute a call conversion to. If not set a
+     *           default conversion action is used. This field only has effect if
+     *           call_tracked is set to true. Otherwise this field is ignored.
+     *     @type int $conversion_reporting_state
+     *           The call conversion behavior of this call only ad. It can use its own call
+     *           conversion setting, inherit the account level setting, or be disabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -313,6 +335,64 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->phone_number_verification_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * The conversion action to attribute a call conversion to. If not set a
+     * default conversion action is used. This field only has effect if
+     * call_tracked is set to true. Otherwise this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 9;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getConversionAction()
+    {
+        return $this->conversion_action;
+    }
+
+    /**
+     * The conversion action to attribute a call conversion to. If not set a
+     * default conversion action is used. This field only has effect if
+     * call_tracked is set to true. Otherwise this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 9;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setConversionAction($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->conversion_action = $var;
+
+        return $this;
+    }
+
+    /**
+     * The call conversion behavior of this call only ad. It can use its own call
+     * conversion setting, inherit the account level setting, or be disabled.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.CallConversionReportingStateEnum.CallConversionReportingState conversion_reporting_state = 10;</code>
+     * @return int
+     */
+    public function getConversionReportingState()
+    {
+        return $this->conversion_reporting_state;
+    }
+
+    /**
+     * The call conversion behavior of this call only ad. It can use its own call
+     * conversion setting, inherit the account level setting, or be disabled.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.CallConversionReportingStateEnum.CallConversionReportingState conversion_reporting_state = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionReportingState($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\CallConversionReportingStateEnum_CallConversionReportingState::class);
+        $this->conversion_reporting_state = $var;
 
         return $this;
     }

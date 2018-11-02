@@ -14,6 +14,10 @@ return [
                     ],
                 ],
             ],
+            'ListAccessibleCustomers' => [
+                'method' => 'get',
+                'uriTemplate' => '/v0/customers:listAccessibleCustomers',
+            ],
         ],
     ],
 ];

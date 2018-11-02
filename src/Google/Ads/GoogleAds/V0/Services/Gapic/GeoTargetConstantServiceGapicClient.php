@@ -28,6 +28,10 @@ namespace Google\Ads\GoogleAds\V0\Services\Gapic;
 
 use Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant;
 use Google\Ads\GoogleAds\V0\Services\GetGeoTargetConstantRequest;
+use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest;
+use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest_GeoTargets;
+use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest_LocationNames;
+use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\FetchAuthTokenInterface;
@@ -36,6 +40,7 @@ use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Protobuf\StringValue;
 
 /**
  * Service Description: Service to fetch geo target constants.
@@ -283,6 +288,61 @@ class GeoTargetConstantServiceGapicClient
         return $this->startCall(
             'GetGeoTargetConstant',
             GeoTargetConstant::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Returns GeoTargetConstant suggestions by location name or by resource name.
+     *
+     * Sample code:
+     * ```
+     * $geoTargetConstantServiceClient = new GeoTargetConstantServiceClient();
+     * try {
+     *     $locale = new StringValue();
+     *     $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants($locale);
+     * } finally {
+     *     $geoTargetConstantServiceClient->close();
+     * }
+     * ```
+     *
+     * @param StringValue $locale       If possible, returned geo targets are translated using this locale. If not,
+     *                                  en is used by default. This is also used as a hint for returned geo
+     *                                  targets.
+     * @param array       $optionalArgs {
+     *                                  Optional.
+     *
+     *     @type SuggestGeoTargetConstantsRequest_LocationNames $locationNames
+     *          The location names to search by. At most 25 names can be set.
+     *     @type SuggestGeoTargetConstantsRequest_GeoTargets $geoTargets
+     *          The geo target constant resource names to filter by.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function suggestGeoTargetConstants($locale, array $optionalArgs = [])
+    {
+        $request = new SuggestGeoTargetConstantsRequest();
+        $request->setLocale($locale);
+        if (isset($optionalArgs['locationNames'])) {
+            $request->setLocationNames($optionalArgs['locationNames']);
+        }
+        if (isset($optionalArgs['geoTargets'])) {
+            $request->setGeoTargets($optionalArgs['geoTargets']);
+        }
+
+        return $this->startCall(
+            'SuggestGeoTargetConstants',
+            SuggestGeoTargetConstantsResponse::class,
             $optionalArgs,
             $request
         )->wait();

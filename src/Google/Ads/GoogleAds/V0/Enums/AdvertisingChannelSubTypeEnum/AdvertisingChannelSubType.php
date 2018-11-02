@@ -53,6 +53,24 @@ class AdvertisingChannelSubType
      * Generated from protobuf enum <code>SHOPPING_SMART_ADS = 6;</code>
      */
     const SHOPPING_SMART_ADS = 6;
+    /**
+     * Gmail Ad campaigns.
+     *
+     * Generated from protobuf enum <code>DISPLAY_GMAIL_AD = 7;</code>
+     */
+    const DISPLAY_GMAIL_AD = 7;
+    /**
+     * Smart display campaigns.
+     *
+     * Generated from protobuf enum <code>DISPLAY_SMART_CAMPAIGN = 8;</code>
+     */
+    const DISPLAY_SMART_CAMPAIGN = 8;
+    /**
+     * Video Outstream campaigns.
+     *
+     * Generated from protobuf enum <code>VIDEO_OUTSTREAM = 9;</code>
+     */
+    const VIDEO_OUTSTREAM = 9;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

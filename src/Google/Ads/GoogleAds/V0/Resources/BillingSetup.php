@@ -38,43 +38,29 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     private $status = 0;
     /**
-     * A 16 digit id used to identify the Payments account associated with the
-     * billing setup.
-     * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * The resource name of the Payments account associated with this billing
+     * setup. Payments resource names have the form:
+     * `customers/{customer_id}/paymentsAccounts/
+     *                       {payments_profile_id}_{payments_account_id}`
+     * When setting up billing, this is used to signup with an existing Payments
+     * account (and then payments_account_info should not be set).
+     * When getting a billing setup, this and payments_account_info will be
+     * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
      */
-    private $payments_account_id = null;
+    private $payments_account = null;
     /**
-     * The name of the Payments account associated with the billing setup.
-     * This enables the user to specify a meaningful name for a Payments account
-     * to aid in reconciling monthly invoices.
-     * This name will be printed in the monthly invoices.
+     * The Payments account information associated with this billing setup.
+     * When setting up billing, this is used to signup with a new Payments account
+     * (and then payments_account should not be set).
+     * When getting a billing setup, this and payments_account will be
+     * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_name = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12;</code>
      */
-    private $payments_account_name = null;
-    /**
-     * A 12 digit id used to identify the Payments profile associated with the
-     * billing setup.
-     * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 6;</code>
-     */
-    private $payments_profile_id = null;
-    /**
-     * The name of the Payments profile associated with the billing setup.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 7;</code>
-     */
-    private $payments_profile_name = null;
-    /**
-     * A secondary payments profile id present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 8;</code>
-     */
-    private $secondary_payments_profile_id = null;
+    private $payments_account_info = null;
+    protected $start_time;
 
     /**
      * Constructor.
@@ -90,24 +76,26 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      *           The ID of the billing setup.
      *     @type int $status
      *           The status of the billing setup.
-     *     @type \Google\Protobuf\StringValue $payments_account_id
-     *           A 16 digit id used to identify the Payments account associated with the
-     *           billing setup.
-     *           This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
-     *     @type \Google\Protobuf\StringValue $payments_account_name
-     *           The name of the Payments account associated with the billing setup.
-     *           This enables the user to specify a meaningful name for a Payments account
-     *           to aid in reconciling monthly invoices.
-     *           This name will be printed in the monthly invoices.
-     *     @type \Google\Protobuf\StringValue $payments_profile_id
-     *           A 12 digit id used to identify the Payments profile associated with the
-     *           billing setup.
-     *           This must be passed in as a string with dashes, e.g. "1234-5678-9012".
-     *     @type \Google\Protobuf\StringValue $payments_profile_name
-     *           The name of the Payments profile associated with the billing setup.
-     *     @type \Google\Protobuf\StringValue $secondary_payments_profile_id
-     *           A secondary payments profile id present in uncommon situations, e.g.
-     *           when a sequential liability agreement has been arranged.
+     *     @type \Google\Protobuf\StringValue $payments_account
+     *           The resource name of the Payments account associated with this billing
+     *           setup. Payments resource names have the form:
+     *           `customers/{customer_id}/paymentsAccounts/
+     *                                 {payments_profile_id}_{payments_account_id}`
+     *           When setting up billing, this is used to signup with an existing Payments
+     *           account (and then payments_account_info should not be set).
+     *           When getting a billing setup, this and payments_account_info will be
+     *           populated.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\BillingSetup\PaymentsAccountInfo $payments_account_info
+     *           The Payments account information associated with this billing setup.
+     *           When setting up billing, this is used to signup with a new Payments account
+     *           (and then payments_account should not be set).
+     *           When getting a billing setup, this and payments_account will be
+     *           populated.
+     *     @type \Google\Protobuf\StringValue $start_date_time
+     *           The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     *           future time is allowed.
+     *     @type int $start_time_type
+     *           The start time as a type. Only NOW is allowed.
      * }
      */
     public function __construct($data = NULL) {
@@ -198,149 +186,139 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 16 digit id used to identify the Payments account associated with the
-     * billing setup.
-     * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * The resource name of the Payments account associated with this billing
+     * setup. Payments resource names have the form:
+     * `customers/{customer_id}/paymentsAccounts/
+     *                       {payments_profile_id}_{payments_account_id}`
+     * When setting up billing, this is used to signup with an existing Payments
+     * account (and then payments_account_info should not be set).
+     * When getting a billing setup, this and payments_account_info will be
+     * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
      * @return \Google\Protobuf\StringValue
      */
-    public function getPaymentsAccountId()
+    public function getPaymentsAccount()
     {
-        return $this->payments_account_id;
+        return $this->payments_account;
     }
 
     /**
-     * A 16 digit id used to identify the Payments account associated with the
-     * billing setup.
-     * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
+     * The resource name of the Payments account associated with this billing
+     * setup. Payments resource names have the form:
+     * `customers/{customer_id}/paymentsAccounts/
+     *                       {payments_profile_id}_{payments_account_id}`
+     * When setting up billing, this is used to signup with an existing Payments
+     * account (and then payments_account_info should not be set).
+     * When getting a billing setup, this and payments_account_info will be
+     * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
-    public function setPaymentsAccountId($var)
+    public function setPaymentsAccount($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->payments_account_id = $var;
+        $this->payments_account = $var;
 
         return $this;
     }
 
     /**
-     * The name of the Payments account associated with the billing setup.
-     * This enables the user to specify a meaningful name for a Payments account
-     * to aid in reconciling monthly invoices.
-     * This name will be printed in the monthly invoices.
+     * The Payments account information associated with this billing setup.
+     * When setting up billing, this is used to signup with a new Payments account
+     * (and then payments_account should not be set).
+     * When getting a billing setup, this and payments_account will be
+     * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_name = 5;</code>
-     * @return \Google\Protobuf\StringValue
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\BillingSetup\PaymentsAccountInfo
      */
-    public function getPaymentsAccountName()
+    public function getPaymentsAccountInfo()
     {
-        return $this->payments_account_name;
+        return $this->payments_account_info;
     }
 
     /**
-     * The name of the Payments account associated with the billing setup.
-     * This enables the user to specify a meaningful name for a Payments account
-     * to aid in reconciling monthly invoices.
-     * This name will be printed in the monthly invoices.
+     * The Payments account information associated with this billing setup.
+     * When setting up billing, this is used to signup with a new Payments account
+     * (and then payments_account should not be set).
+     * When getting a billing setup, this and payments_account will be
+     * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_name = 5;</code>
-     * @param \Google\Protobuf\StringValue $var
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\BillingSetup\PaymentsAccountInfo $var
      * @return $this
      */
-    public function setPaymentsAccountName($var)
+    public function setPaymentsAccountInfo($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->payments_account_name = $var;
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\BillingSetup_PaymentsAccountInfo::class);
+        $this->payments_account_info = $var;
 
         return $this;
     }
 
     /**
-     * A 12 digit id used to identify the Payments profile associated with the
-     * billing setup.
-     * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
+     * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     * future time is allowed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9;</code>
      * @return \Google\Protobuf\StringValue
      */
-    public function getPaymentsProfileId()
+    public function getStartDateTime()
     {
-        return $this->payments_profile_id;
+        return $this->readOneof(9);
     }
 
     /**
-     * A 12 digit id used to identify the Payments profile associated with the
-     * billing setup.
-     * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
+     * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     * future time is allowed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9;</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
-    public function setPaymentsProfileId($var)
+    public function setStartDateTime($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->payments_profile_id = $var;
+        $this->writeOneof(9, $var);
 
         return $this;
     }
 
     /**
-     * The name of the Payments profile associated with the billing setup.
+     * The start time as a type. Only NOW is allowed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 7;</code>
-     * @return \Google\Protobuf\StringValue
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TimeTypeEnum.TimeType start_time_type = 10;</code>
+     * @return int
      */
-    public function getPaymentsProfileName()
+    public function getStartTimeType()
     {
-        return $this->payments_profile_name;
+        return $this->readOneof(10);
     }
 
     /**
-     * The name of the Payments profile associated with the billing setup.
+     * The start time as a type. Only NOW is allowed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 7;</code>
-     * @param \Google\Protobuf\StringValue $var
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TimeTypeEnum.TimeType start_time_type = 10;</code>
+     * @param int $var
      * @return $this
      */
-    public function setPaymentsProfileName($var)
+    public function setStartTimeType($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->payments_profile_name = $var;
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\TimeTypeEnum_TimeType::class);
+        $this->writeOneof(10, $var);
 
         return $this;
     }
 
     /**
-     * A secondary payments profile id present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 8;</code>
-     * @return \Google\Protobuf\StringValue
+     * @return string
      */
-    public function getSecondaryPaymentsProfileId()
+    public function getStartTime()
     {
-        return $this->secondary_payments_profile_id;
-    }
-
-    /**
-     * A secondary payments profile id present in uncommon situations, e.g.
-     * when a sequential liability agreement has been arranged.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 8;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setSecondaryPaymentsProfileId($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->secondary_payments_profile_id = $var;
-
-        return $this;
+        return $this->whichOneof("start_time");
     }
 
 }

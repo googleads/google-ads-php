@@ -215,6 +215,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $engagements = null;
     /**
+     * Average lead value of hotel.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
+     */
+    private $hotel_average_lead_value_micros = null;
+    /**
      * Count of how often your ad has appeared on a search results page or
      * website on the Google Network.
      *
@@ -475,6 +481,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The number of engagements.
      *           An engagement occurs when a viewer expands your Lightbox ad. Also, in the
      *           future, other ad types may support engagement metrics.
+     *     @type \Google\Protobuf\DoubleValue $hotel_average_lead_value_micros
+     *           Average lead value of hotel.
      *     @type \Google\Protobuf\Int64Value $impressions
      *           Count of how often your ad has appeared on a search results page or
      *           website on the Google Network.
@@ -1343,6 +1351,32 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
         $this->engagements = $var;
+
+        return $this;
+    }
+
+    /**
+     * Average lead value of hotel.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getHotelAverageLeadValueMicros()
+    {
+        return $this->hotel_average_lead_value_micros;
+    }
+
+    /**
+     * Average lead value of hotel.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setHotelAverageLeadValueMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->hotel_average_lead_value_micros = $var;
 
         return $this;
     }

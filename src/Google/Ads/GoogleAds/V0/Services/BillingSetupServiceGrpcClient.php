@@ -28,8 +28,7 @@ namespace Google\Ads\GoogleAds\V0\Services;
  *
  * Mutates:
  * The REMOVE operation cancels a pending billing setup.
- * Functionality for creating new billing setups will be supported in a future
- * version.
+ * The CREATE operation creates a new billing setup.
  */
 class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -57,7 +56,7 @@ class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Cancels a pending billing setup.
+     * Creates a billing setup, or cancels an existing billing setup.
      * @param \Google\Ads\GoogleAds\V0\Services\MutateBillingSetupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
