@@ -29,6 +29,12 @@ class HeaderError
      * Generated from protobuf enum <code>INVALID_LOGIN_CUSTOMER_ID = 3;</code>
      */
     const INVALID_LOGIN_CUSTOMER_ID = 3;
+    /**
+     * One or more task headers could not be parsed.
+     *
+     * Generated from protobuf enum <code>MALFORMED_TASK_INFO = 4;</code>
+     */
+    const MALFORMED_TASK_INFO = 4;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

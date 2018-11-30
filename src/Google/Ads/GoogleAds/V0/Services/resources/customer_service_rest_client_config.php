@@ -14,9 +14,33 @@ return [
                     ],
                 ],
             ],
+            'MutateCustomer' => [
+                'method' => 'post',
+                'uriTemplate' => '/v0/customers/{customer_id=*}:mutate',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
             'ListAccessibleCustomers' => [
                 'method' => 'get',
                 'uriTemplate' => '/v0/customers:listAccessibleCustomers',
+            ],
+            'CreateCustomerClient' => [
+                'method' => 'post',
+                'uriTemplate' => '/v0/customers/{customer_id=*}:createCustomerClient',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
             ],
         ],
     ],

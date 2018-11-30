@@ -77,6 +77,12 @@ class OperationAccessDeniedError
      * Generated from protobuf enum <code>OPERATION_NOT_PERMITTED_FOR_AD_GROUP_TYPE = 10;</code>
      */
     const OPERATION_NOT_PERMITTED_FOR_AD_GROUP_TYPE = 10;
+    /**
+     * The mutate is not allowed for this customer.
+     *
+     * Generated from protobuf enum <code>MUTATE_NOT_PERMITTED_FOR_CUSTOMER = 11;</code>
+     */
+    const MUTATE_NOT_PERMITTED_FOR_CUSTOMER = 11;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

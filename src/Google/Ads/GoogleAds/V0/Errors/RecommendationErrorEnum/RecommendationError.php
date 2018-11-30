@@ -74,6 +74,37 @@ class RecommendationError
      * Generated from protobuf enum <code>RECOMMENDATION_INVALIDATED = 9;</code>
      */
     const RECOMMENDATION_INVALIDATED = 9;
+    /**
+     * The number of operations in a single request exceeds the maximum allowed.
+     *
+     * Generated from protobuf enum <code>TOO_MANY_OPERATIONS = 10;</code>
+     */
+    const TOO_MANY_OPERATIONS = 10;
+    /**
+     * There are no operations in the request.
+     *
+     * Generated from protobuf enum <code>NO_OPERATIONS = 11;</code>
+     */
+    const NO_OPERATIONS = 11;
+    /**
+     * Operations with multiple recommendation types are not supported when
+     * partial failure mode is not enabled.
+     *
+     * Generated from protobuf enum <code>DIFFERENT_TYPES_NOT_SUPPORTED = 12;</code>
+     */
+    const DIFFERENT_TYPES_NOT_SUPPORTED = 12;
+    /**
+     * Request contains multiple operations with the same resource_name.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_RESOURCE_NAME = 13;</code>
+     */
+    const DUPLICATE_RESOURCE_NAME = 13;
+    /**
+     * The recommendation requested to dismiss has already been dismissed.
+     *
+     * Generated from protobuf enum <code>RECOMMENDATION_ALREADY_DISMISSED = 14;</code>
+     */
+    const RECOMMENDATION_ALREADY_DISMISSED = 14;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

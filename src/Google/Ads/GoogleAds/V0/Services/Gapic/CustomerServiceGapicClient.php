@@ -27,9 +27,14 @@
 namespace Google\Ads\GoogleAds\V0\Services\Gapic;
 
 use Google\Ads\GoogleAds\V0\Resources\Customer;
+use Google\Ads\GoogleAds\V0\Services\CreateCustomerClientRequest;
+use Google\Ads\GoogleAds\V0\Services\CreateCustomerClientResponse;
+use Google\Ads\GoogleAds\V0\Services\CustomerOperation;
 use Google\Ads\GoogleAds\V0\Services\GetCustomerRequest;
 use Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersRequest;
 use Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersResponse;
+use Google\Ads\GoogleAds\V0\Services\MutateCustomerRequest;
+use Google\Ads\GoogleAds\V0\Services\MutateCustomerResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\FetchAuthTokenInterface;
@@ -291,6 +296,52 @@ class CustomerServiceGapicClient
     }
 
     /**
+     * Updates a customer. Operation statuses are returned.
+     *
+     * Sample code:
+     * ```
+     * $customerServiceClient = new CustomerServiceClient();
+     * try {
+     *     $customerId = '';
+     *     $operation = new CustomerOperation();
+     *     $response = $customerServiceClient->mutateCustomer($customerId, $operation);
+     * } finally {
+     *     $customerServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string            $customerId   The ID of the customer being modified.
+     * @param CustomerOperation $operation    The operation to perform on the customer
+     * @param array             $optionalArgs {
+     *                                        Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V0\Services\MutateCustomerResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function mutateCustomer($customerId, $operation, array $optionalArgs = [])
+    {
+        $request = new MutateCustomerRequest();
+        $request->setCustomerId($customerId);
+        $request->setOperation($operation);
+
+        return $this->startCall(
+            'MutateCustomer',
+            MutateCustomerResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
      * Returns resource names of customers directly accessible by the
      * user authenticating the call.
      *
@@ -327,6 +378,53 @@ class CustomerServiceGapicClient
         return $this->startCall(
             'ListAccessibleCustomers',
             ListAccessibleCustomersResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Creates a new client under manager. The new client customer is returned.
+     *
+     * Sample code:
+     * ```
+     * $customerServiceClient = new CustomerServiceClient();
+     * try {
+     *     $customerId = '';
+     *     $customerClient = new Customer();
+     *     $response = $customerServiceClient->createCustomerClient($customerId, $customerClient);
+     * } finally {
+     *     $customerServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string   $customerId     The ID of the Manager under whom client customer is being created.
+     * @param Customer $customerClient The new client customer to create. The resource name on this customer
+     *                                 will be ignored.
+     * @param array    $optionalArgs   {
+     *                                 Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V0\Services\CreateCustomerClientResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function createCustomerClient($customerId, $customerClient, array $optionalArgs = [])
+    {
+        $request = new CreateCustomerClientRequest();
+        $request->setCustomerId($customerId);
+        $request->setCustomerClient($customerClient);
+
+        return $this->startCall(
+            'CreateCustomerClient',
+            CreateCustomerClientResponse::class,
             $optionalArgs,
             $request
         )->wait();

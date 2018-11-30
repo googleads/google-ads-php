@@ -31,7 +31,6 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     private $status = 0;
     /**
      * The ad group to which the ad belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
      */
@@ -63,7 +62,6 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *           The status of the ad.
      *     @type \Google\Protobuf\StringValue $ad_group
      *           The ad group to which the ad belongs.
-     *           This field must not be used in WHERE clauses.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Ad $ad
      *           The ad.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AdGroupAdPolicySummary $policy_summary
@@ -133,7 +131,6 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
 
     /**
      * The ad group to which the ad belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
      * @return \Google\Protobuf\StringValue
@@ -145,7 +142,6 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
 
     /**
      * The ad group to which the ad belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
      * @param \Google\Protobuf\StringValue $var

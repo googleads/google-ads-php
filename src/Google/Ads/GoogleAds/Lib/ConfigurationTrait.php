@@ -26,6 +26,7 @@ use Psr\Log\LoggerInterface;
 trait ConfigurationTrait
 {
     private $developerToken;
+    private $loginCustomerId;
     private $endpoint;
     private $oAuth2Credential;
     private $logger;
@@ -39,6 +40,16 @@ trait ConfigurationTrait
     public function getDeveloperToken()
     {
         return $this->developerToken;
+    }
+
+    /**
+     * Gets the login customer ID for this client.
+     *
+     * @return int
+     */
+    public function getLoginCustomerId()
+    {
+        return $this->loginCustomerId;
     }
 
     /**

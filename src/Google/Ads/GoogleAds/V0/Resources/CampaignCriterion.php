@@ -25,7 +25,6 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     private $resource_name = '';
     /**
      * The campaign to which the criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
      */
@@ -71,7 +70,6 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/campaignCriteria/{campaign_id}_{criterion_id}`
      *     @type \Google\Protobuf\StringValue $campaign
      *           The campaign to which the criterion belongs.
-     *           This field must not be used in WHERE clauses.
      *     @type \Google\Protobuf\Int64Value $criterion_id
      *           The ID of the criterion.
      *           This field is ignored during mutate.
@@ -101,6 +99,8 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Income range.
      *     @type \Google\Ads\GoogleAds\V0\Common\ParentalStatusInfo $parental_status
      *           Parental status.
+     *     @type \Google\Ads\GoogleAds\V0\Common\UserListInfo $user_list
+     *           User List.
      *     @type \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo $youtube_video
      *           YouTube Video.
      *     @type \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo $youtube_channel
@@ -109,6 +109,18 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Proximity.
      *     @type \Google\Ads\GoogleAds\V0\Common\TopicInfo $topic
      *           Topic.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ListingScopeInfo $listing_scope
+     *           Listing scope.
+     *     @type \Google\Ads\GoogleAds\V0\Common\LanguageInfo $language
+     *           Language.
+     *     @type \Google\Ads\GoogleAds\V0\Common\IpBlockInfo $ip_block
+     *           IpBlock.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ContentLabelInfo $content_label
+     *           ContentLabel.
+     *     @type \Google\Ads\GoogleAds\V0\Common\CarrierInfo $carrier
+     *           Carrier.
+     *     @type \Google\Ads\GoogleAds\V0\Common\UserInterestInfo $user_interest
+     *           User Interest.
      * }
      */
     public function __construct($data = NULL) {
@@ -148,7 +160,6 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
 
     /**
      * The campaign to which the criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
      * @return \Google\Protobuf\StringValue
@@ -160,7 +171,6 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
 
     /**
      * The campaign to which the criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -519,6 +529,32 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * User List.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.UserListInfo user_list = 22;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\UserListInfo
+     */
+    public function getUserList()
+    {
+        return $this->readOneof(22);
+    }
+
+    /**
+     * User List.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.UserListInfo user_list = 22;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\UserListInfo $var
+     * @return $this
+     */
+    public function setUserList($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\UserListInfo::class);
+        $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
      * YouTube Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeVideoInfo youtube_video = 20;</code>
@@ -618,6 +654,162 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\TopicInfo::class);
         $this->writeOneof(24, $var);
+
+        return $this;
+    }
+
+    /**
+     * Listing scope.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ListingScopeInfo listing_scope = 25;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ListingScopeInfo
+     */
+    public function getListingScope()
+    {
+        return $this->readOneof(25);
+    }
+
+    /**
+     * Listing scope.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ListingScopeInfo listing_scope = 25;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ListingScopeInfo $var
+     * @return $this
+     */
+    public function setListingScope($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ListingScopeInfo::class);
+        $this->writeOneof(25, $var);
+
+        return $this;
+    }
+
+    /**
+     * Language.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.LanguageInfo language = 26;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\LanguageInfo
+     */
+    public function getLanguage()
+    {
+        return $this->readOneof(26);
+    }
+
+    /**
+     * Language.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.LanguageInfo language = 26;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\LanguageInfo $var
+     * @return $this
+     */
+    public function setLanguage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\LanguageInfo::class);
+        $this->writeOneof(26, $var);
+
+        return $this;
+    }
+
+    /**
+     * IpBlock.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.IpBlockInfo ip_block = 27;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\IpBlockInfo
+     */
+    public function getIpBlock()
+    {
+        return $this->readOneof(27);
+    }
+
+    /**
+     * IpBlock.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.IpBlockInfo ip_block = 27;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\IpBlockInfo $var
+     * @return $this
+     */
+    public function setIpBlock($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\IpBlockInfo::class);
+        $this->writeOneof(27, $var);
+
+        return $this;
+    }
+
+    /**
+     * ContentLabel.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ContentLabelInfo content_label = 28;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ContentLabelInfo
+     */
+    public function getContentLabel()
+    {
+        return $this->readOneof(28);
+    }
+
+    /**
+     * ContentLabel.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ContentLabelInfo content_label = 28;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ContentLabelInfo $var
+     * @return $this
+     */
+    public function setContentLabel($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ContentLabelInfo::class);
+        $this->writeOneof(28, $var);
+
+        return $this;
+    }
+
+    /**
+     * Carrier.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.CarrierInfo carrier = 29;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\CarrierInfo
+     */
+    public function getCarrier()
+    {
+        return $this->readOneof(29);
+    }
+
+    /**
+     * Carrier.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.CarrierInfo carrier = 29;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\CarrierInfo $var
+     * @return $this
+     */
+    public function setCarrier($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\CarrierInfo::class);
+        $this->writeOneof(29, $var);
+
+        return $this;
+    }
+
+    /**
+     * User Interest.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.UserInterestInfo user_interest = 30;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\UserInterestInfo
+     */
+    public function getUserInterest()
+    {
+        return $this->readOneof(30);
+    }
+
+    /**
+     * User Interest.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.UserInterestInfo user_interest = 30;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\UserInterestInfo $var
+     * @return $this
+     */
+    public function setUserInterest($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\UserInterestInfo::class);
+        $this->writeOneof(30, $var);
 
         return $this;
     }

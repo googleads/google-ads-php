@@ -25,7 +25,6 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     private $resource_name = '';
     /**
      * The ad group to which this criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
      */
@@ -75,7 +74,6 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      *           `customers/{customer_id}/adGroupBidModifiers/{ad_group_id}_{criterion_id}`
      *     @type \Google\Protobuf\StringValue $ad_group
      *           The ad group to which this criterion belongs.
-     *           This field must not be used in WHERE clauses.
      *     @type \Google\Protobuf\Int64Value $criterion_id
      *           The ID of the criterion to bid modify.
      *           This field is ignored for mutates.
@@ -101,6 +99,8 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      *           Criterion for day of the week the booking is for.
      *     @type \Google\Ads\GoogleAds\V0\Common\DeviceInfo $device
      *           A device criterion.
+     *     @type \Google\Ads\GoogleAds\V0\Common\PreferredContentInfo $preferred_content
+     *           A preferred content criterion.
      * }
      */
     public function __construct($data = NULL) {
@@ -140,7 +140,6 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
 
     /**
      * The ad group to which this criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
      * @return \Google\Protobuf\StringValue
@@ -152,7 +151,6 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
 
     /**
      * The ad group to which this criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -410,6 +408,32 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\DeviceInfo::class);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * A preferred content criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PreferredContentInfo preferred_content = 12;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\PreferredContentInfo
+     */
+    public function getPreferredContent()
+    {
+        return $this->readOneof(12);
+    }
+
+    /**
+     * A preferred content criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.PreferredContentInfo preferred_content = 12;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\PreferredContentInfo $var
+     * @return $this
+     */
+    public function setPreferredContent($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PreferredContentInfo::class);
+        $this->writeOneof(12, $var);
 
         return $this;
     }

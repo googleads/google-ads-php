@@ -20,11 +20,12 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\GoogleAds\Tests\Unit\V0\Services;
+namespace Google\Ads\GoogleAds\V0\Services;
 
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V0\Resources\Recommendation;
 use Google\Ads\GoogleAds\V0\Services\ApplyRecommendationResponse;
+use Google\Ads\GoogleAds\V0\Services\DismissRecommendationResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
@@ -150,9 +151,10 @@ class RecommendationServiceClientTest extends GeneratedTest
 
         // Mock request
         $customerId = 'customerId-1772061412';
+        $partialFailure = true;
         $operations = [];
 
-        $response = $client->applyRecommendation($customerId, $operations);
+        $response = $client->applyRecommendation($customerId, $partialFailure, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -163,6 +165,9 @@ class RecommendationServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getCustomerId();
 
         $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getPartialFailure();
+
+        $this->assertProtobufEquals($partialFailure, $actualValue);
         $actualValue = $actualRequestObject->getOperations();
 
         $this->assertProtobufEquals($operations, $actualValue);
@@ -194,10 +199,92 @@ class RecommendationServiceClientTest extends GeneratedTest
 
         // Mock request
         $customerId = 'customerId-1772061412';
+        $partialFailure = true;
         $operations = [];
 
         try {
-            $client->applyRecommendation($customerId, $operations);
+            $client->applyRecommendation($customerId, $partialFailure, $operations);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function dismissRecommendationTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new DismissRecommendationResponse();
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $partialFailure = true;
+        $operations = [];
+
+        $response = $client->dismissRecommendation($customerId, $partialFailure, $operations);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v0.services.RecommendationService/DismissRecommendation', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getCustomerId();
+
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getPartialFailure();
+
+        $this->assertProtobufEquals($partialFailure, $actualValue);
+        $actualValue = $actualRequestObject->getOperations();
+
+        $this->assertProtobufEquals($operations, $actualValue);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function dismissRecommendationExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $partialFailure = true;
+        $operations = [];
+
+        try {
+            $client->dismissRecommendation($customerId, $partialFailure, $operations);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

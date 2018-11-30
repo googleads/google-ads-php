@@ -26,6 +26,9 @@
 
 namespace Google\Ads\GoogleAds\V0\Services\Gapic;
 
+use Google\Ads\GoogleAds\V0\Services\MutateGoogleAdsRequest;
+use Google\Ads\GoogleAds\V0\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V0\Services\MutateOperation;
 use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsRequest;
 use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsResponse;
 use Google\ApiCore\ApiException;
@@ -244,5 +247,51 @@ class GoogleAdsServiceGapicClient
             SearchGoogleAdsResponse::class,
             $request
         );
+    }
+
+    /**
+     * Creates, updates, or removes resources. Operation statuses are returned.
+     *
+     * Sample code:
+     * ```
+     * $googleAdsServiceClient = new GoogleAdsServiceClient();
+     * try {
+     *     $customerId = '';
+     *     $mutateOperations = [];
+     *     $response = $googleAdsServiceClient->mutate($customerId, $mutateOperations);
+     * } finally {
+     *     $googleAdsServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string            $customerId       The ID of the customer whose resources are being modified.
+     * @param MutateOperation[] $mutateOperations The list of operations to perform on individual resources.
+     * @param array             $optionalArgs     {
+     *                                            Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V0\Services\MutateGoogleAdsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function mutate($customerId, $mutateOperations, array $optionalArgs = [])
+    {
+        $request = new MutateGoogleAdsRequest();
+        $request->setCustomerId($customerId);
+        $request->setMutateOperations($mutateOperations);
+
+        return $this->startCall(
+            'Mutate',
+            MutateGoogleAdsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
     }
 }

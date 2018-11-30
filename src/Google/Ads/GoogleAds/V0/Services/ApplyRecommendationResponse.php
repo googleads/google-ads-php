@@ -21,6 +21,15 @@ class ApplyRecommendationResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.services.ApplyRecommendationResult results = 1;</code>
      */
     private $results;
+    /**
+     * Errors that pertain to operation failures in the partial failure mode.
+     * Returned only when partial_failure = true and all errors occur inside the
+     * operations. If any errors occur outside the operations (e.g. auth errors)
+     * we return the RPC level error.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 2;</code>
+     */
+    private $partial_failure_error = null;
 
     /**
      * Constructor.
@@ -30,6 +39,11 @@ class ApplyRecommendationResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationResult[]|\Google\Protobuf\Internal\RepeatedField $results
      *           Results of operations to apply recommendations.
+     *     @type \Google\Rpc\Status $partial_failure_error
+     *           Errors that pertain to operation failures in the partial failure mode.
+     *           Returned only when partial_failure = true and all errors occur inside the
+     *           operations. If any errors occur outside the operations (e.g. auth errors)
+     *           we return the RPC level error.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +73,38 @@ class ApplyRecommendationResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationResult::class);
         $this->results = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Errors that pertain to operation failures in the partial failure mode.
+     * Returned only when partial_failure = true and all errors occur inside the
+     * operations. If any errors occur outside the operations (e.g. auth errors)
+     * we return the RPC level error.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 2;</code>
+     * @return \Google\Rpc\Status
+     */
+    public function getPartialFailureError()
+    {
+        return $this->partial_failure_error;
+    }
+
+    /**
+     * Errors that pertain to operation failures in the partial failure mode.
+     * Returned only when partial_failure = true and all errors occur inside the
+     * operations. If any errors occur outside the operations (e.g. auth errors)
+     * we return the RPC level error.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 2;</code>
+     * @param \Google\Rpc\Status $var
+     * @return $this
+     */
+    public function setPartialFailureError($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Rpc\Status::class);
+        $this->partial_failure_error = $var;
 
         return $this;
     }

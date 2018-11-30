@@ -36,17 +36,23 @@ class DateError
      */
     const INVALID_FIELD_VALUES_IN_DATE_TIME = 3;
     /**
-     * The string date's format should be yyyymmdd.
+     * The string date's format should be yyyy-mm-dd.
      *
      * Generated from protobuf enum <code>INVALID_STRING_DATE = 4;</code>
      */
     const INVALID_STRING_DATE = 4;
     /**
-     * The string date time's format should be yyyymmdd hhmmss [tz].
+     * The string date time's format should be yyyy-mm-dd hh:mm:ss.ssssss.
      *
-     * Generated from protobuf enum <code>INVALID_STRING_DATE_TIME = 6;</code>
+     * Generated from protobuf enum <code>INVALID_STRING_DATE_TIME_MICROS = 6;</code>
      */
-    const INVALID_STRING_DATE_TIME = 6;
+    const INVALID_STRING_DATE_TIME_MICROS = 6;
+    /**
+     * The string date time's format should be yyyy-mm-dd hh:mm:ss.
+     *
+     * Generated from protobuf enum <code>INVALID_STRING_DATE_TIME_SECONDS = 11;</code>
+     */
+    const INVALID_STRING_DATE_TIME_SECONDS = 11;
     /**
      * Date is before allowed minimum.
      *

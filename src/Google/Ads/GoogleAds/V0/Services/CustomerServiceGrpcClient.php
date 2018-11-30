@@ -48,6 +48,20 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Updates a customer. Operation statuses are returned.
+     * @param \Google\Ads\GoogleAds\V0\Services\MutateCustomerRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function MutateCustomer(\Google\Ads\GoogleAds\V0\Services\MutateCustomerRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v0.services.CustomerService/MutateCustomer',
+        $argument,
+        ['\Google\Ads\GoogleAds\V0\Services\MutateCustomerResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Returns resource names of customers directly accessible by the
      * user authenticating the call.
      * @param \Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersRequest $argument input argument
@@ -59,6 +73,20 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.ads.googleads.v0.services.CustomerService/ListAccessibleCustomers',
         $argument,
         ['\Google\Ads\GoogleAds\V0\Services\ListAccessibleCustomersResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Creates a new client under manager. The new client customer is returned.
+     * @param \Google\Ads\GoogleAds\V0\Services\CreateCustomerClientRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function CreateCustomerClient(\Google\Ads\GoogleAds\V0\Services\CreateCustomerClientRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v0.services.CustomerService/CreateCustomerClient',
+        $argument,
+        ['\Google\Ads\GoogleAds\V0\Services\CreateCustomerClientResponse', 'decode'],
         $metadata, $options);
     }
 

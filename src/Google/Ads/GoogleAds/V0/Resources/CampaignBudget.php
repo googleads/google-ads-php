@@ -54,6 +54,14 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      */
     private $amount_micros = null;
     /**
+     * The lifetime amount of the budget, in the local currency for the account.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 10;</code>
+     */
+    private $total_amount_micros = null;
+    /**
      * The status of this campaign budget. This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BudgetStatusEnum.BudgetStatus status = 6;</code>
@@ -118,6 +126,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *           in UTF-8 bytes, (trimmed).
      *     @type \Google\Protobuf\Int64Value $amount_micros
      *           The amount of the budget, in the local currency for the account.
+     *           Amount is specified in micros, where one million is equivalent to one
+     *           currency unit.
+     *     @type \Google\Protobuf\Int64Value $total_amount_micros
+     *           The lifetime amount of the budget, in the local currency for the account.
      *           Amount is specified in micros, where one million is equivalent to one
      *           currency unit.
      *     @type int $status
@@ -277,6 +289,36 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
         $this->amount_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * The lifetime amount of the budget, in the local currency for the account.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 10;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getTotalAmountMicros()
+    {
+        return $this->total_amount_micros;
+    }
+
+    /**
+     * The lifetime amount of the budget, in the local currency for the account.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 10;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setTotalAmountMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->total_amount_micros = $var;
 
         return $this;
     }

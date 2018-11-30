@@ -61,4 +61,18 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Dismisses given recommendations.
+     * @param \Google\Ads\GoogleAds\V0\Services\DismissRecommendationRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function DismissRecommendation(\Google\Ads\GoogleAds\V0\Services\DismissRecommendationRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v0.services.RecommendationService/DismissRecommendation',
+        $argument,
+        ['\Google\Ads\GoogleAds\V0\Services\DismissRecommendationResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

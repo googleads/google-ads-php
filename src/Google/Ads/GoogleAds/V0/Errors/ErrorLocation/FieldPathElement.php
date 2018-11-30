@@ -16,13 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class FieldPathElement extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The name of a field
+     * The name of a field or a oneof
      *
      * Generated from protobuf field <code>string field_name = 1;</code>
      */
     private $field_name = '';
     /**
-     * If field_name is a list, this is the element that failed
+     * If field_name is a repeated field, this is the element that failed
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
      */
@@ -35,9 +35,9 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $field_name
-     *           The name of a field
+     *           The name of a field or a oneof
      *     @type \Google\Protobuf\Int64Value $index
-     *           If field_name is a list, this is the element that failed
+     *           If field_name is a repeated field, this is the element that failed
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +46,7 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of a field
+     * The name of a field or a oneof
      *
      * Generated from protobuf field <code>string field_name = 1;</code>
      * @return string
@@ -57,7 +57,7 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of a field
+     * The name of a field or a oneof
      *
      * Generated from protobuf field <code>string field_name = 1;</code>
      * @param string $var
@@ -72,7 +72,7 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If field_name is a list, this is the element that failed
+     * If field_name is a repeated field, this is the element that failed
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
      * @return \Google\Protobuf\Int64Value
@@ -83,7 +83,7 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If field_name is a list, this is the element that failed
+     * If field_name is a repeated field, this is the element that failed
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
      * @param \Google\Protobuf\Int64Value $var

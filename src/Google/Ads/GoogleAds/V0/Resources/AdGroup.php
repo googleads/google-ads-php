@@ -73,7 +73,6 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     private $url_custom_parameters;
     /**
      * The campaign to which the ad group belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
      */
@@ -119,6 +118,26 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 20;</code>
      */
     private $percent_cpc_bid_micros = null;
+    /**
+     * Settings for the Display Campaign Optimizer, initially termed "Explorer".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ExplorerAutoOptimizerSetting explorer_auto_optimizer_setting = 21;</code>
+     */
+    private $explorer_auto_optimizer_setting = null;
+    /**
+     * Allows advertisers to specify a targeting dimension on which to place
+     * absolute bids. This is only applicable for campaigns that target only the
+     * display network and not search.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TargetingDimensionEnum.TargetingDimension display_custom_bid_dimension = 23;</code>
+     */
+    private $display_custom_bid_dimension = 0;
+    /**
+     * URL template for appending params to Final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 24;</code>
+     */
+    private $final_url_suffix = null;
 
     /**
      * Constructor.
@@ -152,7 +171,6 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type \Google\Protobuf\StringValue $campaign
      *           The campaign to which the ad group belongs.
-     *           This field must not be used in WHERE clauses.
      *     @type \Google\Protobuf\Int64Value $cpc_bid_micros
      *           The maximum CPC (cost-per-click) bid.
      *     @type \Google\Protobuf\Int64Value $cpm_bid_micros
@@ -170,6 +188,14 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           The percent cpc bid amount, expressed as a fraction of the advertised price
      *           for some good or service. The valid range for the fraction is [0,1) and the
      *           value stored here is 1,000,000 * [fraction].
+     *     @type \Google\Ads\GoogleAds\V0\Common\ExplorerAutoOptimizerSetting $explorer_auto_optimizer_setting
+     *           Settings for the Display Campaign Optimizer, initially termed "Explorer".
+     *     @type int $display_custom_bid_dimension
+     *           Allows advertisers to specify a targeting dimension on which to place
+     *           absolute bids. This is only applicable for campaigns that target only the
+     *           display network and not search.
+     *     @type \Google\Protobuf\StringValue $final_url_suffix
+     *           URL template for appending params to Final URL.
      * }
      */
     public function __construct($data = NULL) {
@@ -403,7 +429,6 @@ class AdGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * The campaign to which the ad group belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
      * @return \Google\Protobuf\StringValue
@@ -415,7 +440,6 @@ class AdGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * The campaign to which the ad group belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -591,6 +615,88 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
         $this->percent_cpc_bid_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Settings for the Display Campaign Optimizer, initially termed "Explorer".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ExplorerAutoOptimizerSetting explorer_auto_optimizer_setting = 21;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ExplorerAutoOptimizerSetting
+     */
+    public function getExplorerAutoOptimizerSetting()
+    {
+        return $this->explorer_auto_optimizer_setting;
+    }
+
+    /**
+     * Settings for the Display Campaign Optimizer, initially termed "Explorer".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ExplorerAutoOptimizerSetting explorer_auto_optimizer_setting = 21;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ExplorerAutoOptimizerSetting $var
+     * @return $this
+     */
+    public function setExplorerAutoOptimizerSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ExplorerAutoOptimizerSetting::class);
+        $this->explorer_auto_optimizer_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * Allows advertisers to specify a targeting dimension on which to place
+     * absolute bids. This is only applicable for campaigns that target only the
+     * display network and not search.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TargetingDimensionEnum.TargetingDimension display_custom_bid_dimension = 23;</code>
+     * @return int
+     */
+    public function getDisplayCustomBidDimension()
+    {
+        return $this->display_custom_bid_dimension;
+    }
+
+    /**
+     * Allows advertisers to specify a targeting dimension on which to place
+     * absolute bids. This is only applicable for campaigns that target only the
+     * display network and not search.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TargetingDimensionEnum.TargetingDimension display_custom_bid_dimension = 23;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDisplayCustomBidDimension($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\TargetingDimensionEnum_TargetingDimension::class);
+        $this->display_custom_bid_dimension = $var;
+
+        return $this;
+    }
+
+    /**
+     * URL template for appending params to Final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 24;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getFinalUrlSuffix()
+    {
+        return $this->final_url_suffix;
+    }
+
+    /**
+     * URL template for appending params to Final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 24;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setFinalUrlSuffix($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->final_url_suffix = $var;
 
         return $this;
     }

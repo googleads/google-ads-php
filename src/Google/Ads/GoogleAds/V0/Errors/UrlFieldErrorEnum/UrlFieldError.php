@@ -264,6 +264,12 @@ class UrlFieldError
      */
     const MISSING_PROTOCOL = 43;
     /**
+     * Unsupported protocol in URL. Only http and https are supported.
+     *
+     * Generated from protobuf enum <code>INVALID_PROTOCOL = 52;</code>
+     */
+    const INVALID_PROTOCOL = 52;
+    /**
      * The url is invalid.
      *
      * Generated from protobuf enum <code>INVALID_URL = 44;</code>
@@ -313,6 +319,31 @@ class UrlFieldError
      * Generated from protobuf enum <code>INVALID_TAG_IN_FINAL_URL_SUFFIX = 51;</code>
      */
     const INVALID_TAG_IN_FINAL_URL_SUFFIX = 51;
+    /**
+     * The top level domain is invalid, e.g, not a public top level domain
+     * listed in publicsuffix.org.
+     *
+     * Generated from protobuf enum <code>INVALID_TOP_LEVEL_DOMAIN = 53;</code>
+     */
+    const INVALID_TOP_LEVEL_DOMAIN = 53;
+    /**
+     * Malformed top level domain in URL.
+     *
+     * Generated from protobuf enum <code>MALFORMED_TOP_LEVEL_DOMAIN = 54;</code>
+     */
+    const MALFORMED_TOP_LEVEL_DOMAIN = 54;
+    /**
+     * Malformed URL.
+     *
+     * Generated from protobuf enum <code>MALFORMED_URL = 55;</code>
+     */
+    const MALFORMED_URL = 55;
+    /**
+     * No host found in URL.
+     *
+     * Generated from protobuf enum <code>MISSING_HOST = 56;</code>
+     */
+    const MISSING_HOST = 56;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

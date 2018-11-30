@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\GoogleAds\Tests\Unit\V0\Services;
+namespace Google\Ads\GoogleAds\V0\Services;
 
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant;
@@ -151,8 +151,9 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
 
         // Mock request
         $locale = new StringValue();
+        $countryCode = new StringValue();
 
-        $response = $client->suggestGeoTargetConstants($locale);
+        $response = $client->suggestGeoTargetConstants($locale, $countryCode);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -163,6 +164,9 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getLocale();
 
         $this->assertProtobufEquals($locale, $actualValue);
+        $actualValue = $actualRequestObject->getCountryCode();
+
+        $this->assertProtobufEquals($countryCode, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -191,9 +195,10 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
 
         // Mock request
         $locale = new StringValue();
+        $countryCode = new StringValue();
 
         try {
-            $client->suggestGeoTargetConstants($locale);
+            $client->suggestGeoTargetConstants($locale, $countryCode);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

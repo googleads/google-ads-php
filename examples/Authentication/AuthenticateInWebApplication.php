@@ -122,7 +122,13 @@ class AuthenticateInWebApplication
 
                 $propertiesToCopy = '[GOOGLE_ADS]' . PHP_EOL;
                 $propertiesToCopy .= 'developerToken = "INSERT_DEVELOPER_TOKEN_HERE"' . PHP_EOL;
-                $propertiesToCopy .= '[OAUTH2]' . PHP_EOL;
+                $propertiesToCopy .=  <<<EOD
+; Required for manager accounts only: Specify the login customer ID used to authenticate API calls.
+; This will be the customer ID of the authenticated manager account. You can also specify this later
+; in code if your application uses multiple manager account + OAuth pairs.
+; loginCustomerId = "INSERT_LOGIN_CUSTOMER_ID_HERE"
+EOD;
+                $propertiesToCopy .= PHP_EOL . '[OAUTH2]' . PHP_EOL;
                 $propertiesToCopy .= "clientId = \"{$oauth2->getClientId()}\"" . PHP_EOL;
                 $propertiesToCopy .= "clientSecret = \"{$oauth2->getClientSecret()}\"" . PHP_EOL;
                 $propertiesToCopy .= "refreshToken = \"$refreshToken\"" . PHP_EOL;

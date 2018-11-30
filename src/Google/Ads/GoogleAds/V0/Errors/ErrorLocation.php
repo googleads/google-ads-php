@@ -22,8 +22,7 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
      */
     private $operation_index = null;
     /**
-     * A field path that indicates which field was invalid in the resource being
-     * mutated.
+     * A field path that indicates which field was invalid in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.errors.ErrorLocation.FieldPathElement field_path_elements = 2;</code>
      */
@@ -38,8 +37,7 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int64Value $operation_index
      *           The mutate operation that failed
      *     @type \Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement[]|\Google\Protobuf\Internal\RepeatedField $field_path_elements
-     *           A field path that indicates which field was invalid in the resource being
-     *           mutated.
+     *           A field path that indicates which field was invalid in the request.
      * }
      */
     public function __construct($data = NULL) {
@@ -74,8 +72,7 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A field path that indicates which field was invalid in the resource being
-     * mutated.
+     * A field path that indicates which field was invalid in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.errors.ErrorLocation.FieldPathElement field_path_elements = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -86,8 +83,7 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A field path that indicates which field was invalid in the resource being
-     * mutated.
+     * A field path that indicates which field was invalid in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.errors.ErrorLocation.FieldPathElement field_path_elements = 2;</code>
      * @param \Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement[]|\Google\Protobuf\Internal\RepeatedField $var

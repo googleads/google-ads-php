@@ -29,6 +29,9 @@ use PHPUnit\Framework\TestCase;
 class GoogleAdsClientBuilderTest extends TestCase
 {
 
+    private static $DEVELOPER_TOKEN = 'ABcdeFGH93KL-NOPQ_STUv';
+    private static $LOGIN_CUSTOMER_ID = '1234567890';
+
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder*/
     private $googleAdsClientBuilder;
     private $fetchAuthTokenInterfaceMock;
@@ -53,7 +56,8 @@ class GoogleAdsClientBuilderTest extends TestCase
     {
         $valueMap = [
             /* Config name, section, value */
-            ['developerToken', 'GOOGLE_ADS', 'ABcdeFGH93KL-NOPQ_STUv'],
+            ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN],
+            ['loginCustomerId', 'GOOGLE_ADS', self::$LOGIN_CUSTOMER_ID],
             ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443']
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
@@ -68,10 +72,8 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
-        $this->assertSame(
-            'ABcdeFGH93KL-NOPQ_STUv',
-            $googleAdsClient->getDeveloperToken()
-        );
+        $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
+        $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
     }
 
@@ -81,7 +83,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     public function testBuildFromDefaults()
     {
         $valueMap = [
-            ['developerToken', 'GOOGLE_ADS', 'ABcdeFGH93KL-NOPQ_STUv']
+            ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN]
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
@@ -96,7 +98,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
 
         $this->assertSame(
-            'ABcdeFGH93KL-NOPQ_STUv',
+            self::$DEVELOPER_TOKEN,
             $googleAdsClient->getDeveloperToken()
         );
     }
@@ -119,7 +121,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     public function testBuildFailsWithInvalidEndpointUrl()
     {
         $this->googleAdsClientBuilder
-            ->withDeveloperToken('ABcdeFGH93KL-NOPQ_STUv')
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withEndpoint('http://:999')
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
@@ -132,7 +134,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     public function testBuildFailsWithoutOAuth2Credential()
     {
         $this->googleAdsClientBuilder
-            ->withDeveloperToken('ABcdeFGH93KL-NOPQ_STUv')
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->build();
     }
 
@@ -142,15 +144,14 @@ class GoogleAdsClientBuilderTest extends TestCase
     public function testBuild()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
-            ->withDeveloperToken('ABcdeFGH93KL-NOPQ_STUv')
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
             ->withEndpoint('abc.xyz.com')
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
-        $this->assertSame(
-            'ABcdeFGH93KL-NOPQ_STUv',
-            $googleAdsClient->getDeveloperToken()
-        );
+        $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
+        $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
         $this->assertSame('abc.xyz.com', $googleAdsClient->getEndpoint());
         $this->assertInstanceOf(
             FetchAuthTokenInterface::class,
@@ -164,17 +165,54 @@ class GoogleAdsClientBuilderTest extends TestCase
     public function testBuildDefaults()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
-            ->withDeveloperToken('ABcdeFGH93KL-NOPQ_STUv')
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
-        $this->assertSame(
-            'ABcdeFGH93KL-NOPQ_STUv',
-            $googleAdsClient->getDeveloperToken()
-        );
+        $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
         $this->assertInstanceOf(
             FetchAuthTokenInterface::class,
             $googleAdsClient->getOAuth2Credential()
         );
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     */
+    public function testBuildWithLoginCustomerId()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     */
+    public function testBuildWithNullLoginCustomerId()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withLoginCustomerId(null)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+        $this->assertNull($googleAdsClient->getLoginCustomerId());
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @expectedException \InvalidArgumentException
+     */
+    public function testBuildWithNegativeLoginCustomerId()
+    {
+        $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withLoginCustomerId(-1)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
     }
 }

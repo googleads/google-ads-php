@@ -1,3 +1,12 @@
+## 0.6.0
+
+*   Added support and examples for v0_6 of Google Ads API.
+*   Added support for passing log-in customer ID with API requests.
+*   Updated some examples to match the new API specifications, e.g.,
+    ApplyRecommendations.php, GetGeoTargetConstantByNames.php.
+*   Updated AddCampaignTargetingCriteria example to show how to include
+    proximity targeting.
+
 ## 0.5.0
 
 *   Added support and examples for v0_5 of Google Ads API.

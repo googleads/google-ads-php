@@ -24,12 +24,6 @@ class ProductCondition
      */
     const UNKNOWN = 1;
     /**
-     * The product condition is old.
-     *
-     * Generated from protobuf enum <code>OLD = 2;</code>
-     */
-    const OLD = 2;
-    /**
      * The product condition is new.
      *
      * Generated from protobuf enum <code>NEW = 3;</code>

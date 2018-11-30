@@ -24,11 +24,11 @@ class NewResourceCreationError
      */
     const UNKNOWN = 1;
     /**
-     * Do not set the id field while creating new entities.
+     * Do not set the id field while creating new resources.
      *
-     * Generated from protobuf enum <code>CANNOT_SET_ID_FOR_ADD = 2;</code>
+     * Generated from protobuf enum <code>CANNOT_SET_ID_FOR_CREATE = 2;</code>
      */
-    const CANNOT_SET_ID_FOR_ADD = 2;
+    const CANNOT_SET_ID_FOR_CREATE = 2;
     /**
      * Creating more than one resource with the same temp ID is not allowed.
      *
@@ -36,7 +36,7 @@ class NewResourceCreationError
      */
     const DUPLICATE_TEMP_IDS = 3;
     /**
-     * Parent object with specified temp id failed validation, so no deep
+     * Parent resource with specified temp ID failed validation, so no
      * validation will be done for this child resource.
      *
      * Generated from protobuf enum <code>TEMP_ID_RESOURCE_HAD_ERRORS = 4;</code>

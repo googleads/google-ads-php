@@ -96,17 +96,59 @@ class CriterionType
      */
     const YOUTUBE_CHANNEL = 15;
     /**
+     * User list.
+     *
+     * Generated from protobuf enum <code>USER_LIST = 16;</code>
+     */
+    const USER_LIST = 16;
+    /**
      * Proximity.
      *
      * Generated from protobuf enum <code>PROXIMITY = 17;</code>
      */
     const PROXIMITY = 17;
     /**
-     * A topic target on the content network (e.g. "Pets & Animals").
+     * A topic target on the display network (e.g. "Pets & Animals").
      *
      * Generated from protobuf enum <code>TOPIC = 18;</code>
      */
     const TOPIC = 18;
+    /**
+     * Listing scope to target.
+     *
+     * Generated from protobuf enum <code>LISTING_SCOPE = 19;</code>
+     */
+    const LISTING_SCOPE = 19;
+    /**
+     * Language.
+     *
+     * Generated from protobuf enum <code>LANGUAGE = 20;</code>
+     */
+    const LANGUAGE = 20;
+    /**
+     * IpBlock.
+     *
+     * Generated from protobuf enum <code>IP_BLOCK = 21;</code>
+     */
+    const IP_BLOCK = 21;
+    /**
+     * Content Label for category exclusion.
+     *
+     * Generated from protobuf enum <code>CONTENT_LABEL = 22;</code>
+     */
+    const CONTENT_LABEL = 22;
+    /**
+     * Carrier.
+     *
+     * Generated from protobuf enum <code>CARRIER = 23;</code>
+     */
+    const CARRIER = 23;
+    /**
+     * A category the user is interested in.
+     *
+     * Generated from protobuf enum <code>USER_INTEREST = 24;</code>
+     */
+    const USER_INTEREST = 24;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

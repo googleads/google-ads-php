@@ -36,6 +36,7 @@ final class GoogleAdsClient implements ServiceClientFactory
     public function __construct(GoogleAdsClientBuilder $builder)
     {
         $this->developerToken = $builder->getDeveloperToken();
+        $this->loginCustomerId = $builder->getLoginCustomerId();
         $this->endpoint = $builder->getEndpoint();
         $this->oAuth2Credential = $builder->getOAuth2Credential();
         $this->logger = $builder->getLogger();

@@ -91,12 +91,25 @@ class AuthenticateInStandaloneApplication
 
         $oauth2->setCode($code);
         $authToken = $oauth2->fetchAuthToken();
-
         print "Your refresh token is: {$authToken['refresh_token']}" . PHP_EOL . PHP_EOL;
-        print "Copy the following lines to your 'google_ads_php.ini' file:" . PHP_EOL;
-        print "clientId = '$clientId'" . PHP_EOL;
-        print "clientSecret = '$clientSecret'" . PHP_EOL;
-        print "refreshToken = '{$authToken['refresh_token']}'" . PHP_EOL;
+
+        $propertiesToCopy = '[GOOGLE_ADS]' . PHP_EOL;
+        $propertiesToCopy .= 'developerToken = "INSERT_DEVELOPER_TOKEN_HERE"' . PHP_EOL;
+        $propertiesToCopy .=  <<<EOD
+; Required for manager accounts only: Specify the login customer ID used to authenticate API calls.
+; This will be the customer ID of the authenticated manager account. You can also specify this later
+; in code if your application uses multiple manager account + OAuth pairs.
+; loginCustomerId = "INSERT_LOGIN_CUSTOMER_ID_HERE"
+EOD;
+        $propertiesToCopy .= PHP_EOL . '[OAUTH2]' . PHP_EOL;
+        $propertiesToCopy .= "clientId = \"$clientId\"" . PHP_EOL;
+        $propertiesToCopy .= "clientSecret = \"$clientSecret\"" . PHP_EOL;
+        $propertiesToCopy .= "refreshToken = \"{$authToken['refresh_token']}\"" . PHP_EOL;
+
+        print 'Copy the text below into a file named "google_ads_php.ini" in your home '
+            . 'directory, and replace "INSERT_DEVELOPER_TOKEN_HERE" with your developer '
+            . 'token:' . PHP_EOL;
+        print PHP_EOL . $propertiesToCopy;
     }
 }
 

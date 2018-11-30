@@ -26,6 +26,18 @@ return [
                     ],
                 ],
             ],
+            'DismissRecommendation' => [
+                'method' => 'post',
+                'uriTemplate' => '/v0/customers/{customer_id=*}/recommendations:dismiss',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 ];

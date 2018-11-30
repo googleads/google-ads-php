@@ -31,6 +31,7 @@ final class ArgumentNames
     const CAMPAIGN_ID = 'campaignId';
     const CAMPAIGN_IDS = 'campaignIds';
     const CHECK_IN_DAY_CRITERION_ID = 'checkInDayCriterionId';
+    const COUNTRY_CODE = 'countryCode';
     const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
     const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
     const CRITERION_ID = 'criterionId';
@@ -55,12 +56,13 @@ final class ArgumentNames
         self::CAMPAIGN_BUDGET_ID => 'The campaign budget ID',
         self::CAMPAIGN_ID => 'The campaign ID',
         self::CAMPAIGN_IDS => 'The campaign IDs',
+        self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
+        self::COUNTRY_CODE => 'The country code',
         self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
-        self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
         self::KEYWORD_TEXT => 'The keyword text',
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',
