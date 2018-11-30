@@ -20,10 +20,11 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\GoogleAds\Tests\Unit\V0\Services;
+namespace Google\Ads\GoogleAds\V0\Services;
 
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V0\Services\MutateGoogleAdsResponse;
 use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -135,6 +136,82 @@ class GoogleAdsServiceClientTest extends GeneratedTest
 
         try {
             $client->search($customerId, $query);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function mutateTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new MutateGoogleAdsResponse();
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $mutateOperations = [];
+
+        $response = $client->mutate($customerId, $mutateOperations);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v0.services.GoogleAdsService/Mutate', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getCustomerId();
+
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getMutateOperations();
+
+        $this->assertProtobufEquals($mutateOperations, $actualValue);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function mutateExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $mutateOperations = [];
+
+        try {
+            $client->mutate($customerId, $mutateOperations);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

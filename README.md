@@ -113,10 +113,19 @@ To issue requests via the Google Ads API, you first need to create a
 For convenience, you can store the required settings in a properties file
 (`google_ads_php.ini`) with the following format:
 
+    [GOOGLE_ADS]
     developerToken = "INSERT_DEVELOPER_TOKEN_HERE"
+
+    [OAUTH2]
     clientId = "INSERT_OAUTH2_CLIENT_ID_HERE"
     clientSecret = "INSERT_OAUTH2_CLIENT_SECRET_HERE"
     refreshToken = "INSERT_OAUTH2_REFRESH_TOKEN_HERE"
+
+If you're authenticating as a manager account, additionally you must specify the manager account ID
+(with hyphens removed) as the login customer ID:
+
+    [GOOGLE_ADS]
+    loginCustomerId = "INSERT_LOGIN_CUSTOMER_ID_HERE"
 
 This configuration file format is similar to the format used in the AdWords
 API's [client library for PHP](https://github.com/googleads/googleads-php-lib).
@@ -163,6 +172,7 @@ $oAuth2Credential = (new OAuth2TokenBuilder())
 $googleAdsClient = (new GoogleAdsClientBuilder())
     ->withOAuth2Credential($oAuth2Credential)
     ->withDeveloperToken('INSERT_DEVELOPER_TOKEN_HERE')
+    ->withLoginCustomerId('INSERT_LOGIN_CUSTOMER_ID_HERE')
     ->build();
 ```
 

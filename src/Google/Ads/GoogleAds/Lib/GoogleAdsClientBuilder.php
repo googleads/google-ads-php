@@ -33,6 +33,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     private $loggerFactory;
 
     private $developerToken;
+    private $loginCustomerId;
     private $endpoint;
     private $oAuth2Credential;
     private $logger;
@@ -74,6 +75,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     {
         $this->developerToken =
             $configuration->getConfiguration('developerToken', 'GOOGLE_ADS');
+        $this->loginCustomerId = $configuration->getConfiguration('loginCustomerId', 'GOOGLE_ADS');
         $this->endpoint =
             $configuration->getConfiguration('endpoint', 'GOOGLE_ADS');
         $this->logLevel = $configuration->getConfiguration('logLevel', 'LOGGING');
@@ -95,6 +97,24 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     public function withDeveloperToken($developerToken)
     {
         $this->developerToken = $developerToken;
+        return $this;
+    }
+
+    /**
+     * Sets the login customer ID for this client.
+     * Required for manager accounts only. When authenticating as a Google Ads manager account,
+     * specifies the customer ID of the authenticating manager account.
+     *
+     * <p>If your OAuth credentials are for a user with access to multiple manager accounts you must
+     * create a separate GoogleAdsClient instance for each manager account. Use this method to
+     * set each login customer ID and call build() to create a separate instance.
+     *
+     * @param int $loginCustomerId the login customer ID
+     * @return self this builder
+     */
+    public function withLoginCustomerId($loginCustomerId)
+    {
+        $this->loginCustomerId = $loginCustomerId;
         return $this;
     }
 
@@ -176,6 +196,9 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
         if (is_null($this->developerToken) || empty(trim($this->developerToken))) {
             throw new InvalidArgumentException('A developer token must be set.');
         }
+        if (!empty($this->loginCustomerId) && $this->loginCustomerId < 0) {
+            throw new InvalidArgumentException('The login customer ID must be a positive number.');
+        }
 
         // Use parse_url instead of filter_var to do less restrict validation.
         // This is because we need to allow endpoint in the form of "googleads.googleapis.com",
@@ -199,6 +222,16 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     public function getDeveloperToken()
     {
         return $this->developerToken;
+    }
+
+    /**
+     * Gets the login customer ID for this client.
+     *
+     * @return int
+     */
+    public function getLoginCustomerId()
+    {
+        return $this->loginCustomerId;
     }
 
     /**

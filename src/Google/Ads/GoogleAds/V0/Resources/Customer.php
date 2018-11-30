@@ -56,6 +56,12 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     private $tracking_url_template = null;
     /**
+     * The URL template for appending params to the final URL
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 11;</code>
+     */
+    private $final_url_suffix = null;
+    /**
      * Whether auto-tagging is enabled for the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue auto_tagging_enabled = 8;</code>
@@ -98,6 +104,8 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           The local timezone ID of the customer.
      *     @type \Google\Protobuf\StringValue $tracking_url_template
      *           The URL template for constructing a tracking URL out of parameters.
+     *     @type \Google\Protobuf\StringValue $final_url_suffix
+     *           The URL template for appending params to the final URL
      *     @type \Google\Protobuf\BoolValue $auto_tagging_enabled
      *           Whether auto-tagging is enabled for the customer.
      *     @type \Google\Protobuf\BoolValue $has_partners_badge
@@ -273,6 +281,32 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->tracking_url_template = $var;
+
+        return $this;
+    }
+
+    /**
+     * The URL template for appending params to the final URL
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 11;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getFinalUrlSuffix()
+    {
+        return $this->final_url_suffix;
+    }
+
+    /**
+     * The URL template for appending params to the final URL
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 11;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setFinalUrlSuffix($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->final_url_suffix = $var;
 
         return $this;
     }

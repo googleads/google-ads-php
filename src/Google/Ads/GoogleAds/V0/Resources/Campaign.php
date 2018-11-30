@@ -92,6 +92,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $url_custom_parameters;
     /**
+     * Settings for Real-Time Bidding, a feature only available for campaigns
+     * targeting the Ad Exchange network.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.RealTimeBiddingSetting real_time_bidding_setting = 39;</code>
+     */
+    private $real_time_bidding_setting = null;
+    /**
      * The network settings for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.NetworkSettings network_settings = 14;</code>
@@ -158,6 +165,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
      */
     private $final_url_suffix = null;
+    /**
+     * A list that limits how often each user will see this campaign's ads.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.common.FrequencyCapEntry frequency_caps = 40;</code>
+     */
+    private $frequency_caps;
     protected $campaign_bidding_strategy;
 
     /**
@@ -202,6 +215,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V0\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     *     @type \Google\Ads\GoogleAds\V0\Common\RealTimeBiddingSetting $real_time_bidding_setting
+     *           Settings for Real-Time Bidding, a feature only available for campaigns
+     *           targeting the Ad Exchange network.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\NetworkSettings $network_settings
      *           The network settings for the campaign.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\HotelSettingInfo $hotel_setting
@@ -229,9 +245,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $final_url_suffix
      *           Suffix used to append query parameters to landing pages that are served
      *           with parallel tracking.
+     *     @type \Google\Ads\GoogleAds\V0\Common\FrequencyCapEntry[]|\Google\Protobuf\Internal\RepeatedField $frequency_caps
+     *           A list that limits how often each user will see this campaign's ads.
      *     @type \Google\Protobuf\StringValue $bidding_strategy
      *           Portfolio bidding strategy used by campaign.
-     *           This field must not be used in WHERE clauses.
      *     @type \Google\Ads\GoogleAds\V0\Common\ManualCpc $manual_cpc
      *           Standard Manual CPC bidding strategy.
      *           Manual click-based bidding where user pays per click.
@@ -560,6 +577,34 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Settings for Real-Time Bidding, a feature only available for campaigns
+     * targeting the Ad Exchange network.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.RealTimeBiddingSetting real_time_bidding_setting = 39;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\RealTimeBiddingSetting
+     */
+    public function getRealTimeBiddingSetting()
+    {
+        return $this->real_time_bidding_setting;
+    }
+
+    /**
+     * Settings for Real-Time Bidding, a feature only available for campaigns
+     * targeting the Ad Exchange network.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.RealTimeBiddingSetting real_time_bidding_setting = 39;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\RealTimeBiddingSetting $var
+     * @return $this
+     */
+    public function setRealTimeBiddingSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\RealTimeBiddingSetting::class);
+        $this->real_time_bidding_setting = $var;
+
+        return $this;
+    }
+
+    /**
      * The network settings for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.NetworkSettings network_settings = 14;</code>
@@ -834,8 +879,33 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A list that limits how often each user will see this campaign's ads.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.common.FrequencyCapEntry frequency_caps = 40;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFrequencyCaps()
+    {
+        return $this->frequency_caps;
+    }
+
+    /**
+     * A list that limits how often each user will see this campaign's ads.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.common.FrequencyCapEntry frequency_caps = 40;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\FrequencyCapEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFrequencyCaps($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Common\FrequencyCapEntry::class);
+        $this->frequency_caps = $arr;
+
+        return $this;
+    }
+
+    /**
      * Portfolio bidding strategy used by campaign.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
      * @return \Google\Protobuf\StringValue
@@ -847,7 +917,6 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
     /**
      * Portfolio bidding strategy used by campaign.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
      * @param \Google\Protobuf\StringValue $var

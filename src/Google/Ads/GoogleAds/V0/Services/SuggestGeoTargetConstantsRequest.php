@@ -24,6 +24,12 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue locale = 3;</code>
      */
     private $locale = null;
+    /**
+     * Returned geo targets are restricted to this country code.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     */
+    private $country_code = null;
     protected $query;
 
     /**
@@ -36,6 +42,8 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      *           If possible, returned geo targets are translated using this locale. If not,
      *           en is used by default. This is also used as a hint for returned geo
      *           targets.
+     *     @type \Google\Protobuf\StringValue $country_code
+     *           Returned geo targets are restricted to this country code.
      *     @type \Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest\LocationNames $location_names
      *           The location names to search by. At most 25 names can be set.
      *     @type \Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest\GeoTargets $geo_targets
@@ -73,6 +81,32 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Returned geo targets are restricted to this country code.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getCountryCode()
+    {
+        return $this->country_code;
+    }
+
+    /**
+     * Returned geo targets are restricted to this country code.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setCountryCode($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->country_code = $var;
 
         return $this;
     }

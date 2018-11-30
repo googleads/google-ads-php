@@ -122,9 +122,8 @@ class GetKeywords
             /** @var GoogleAdsRow $googleAdsRow */
             // Note that the match type and criteria type printed below are enum values.
             // For example, a value of 2 will be returned when the keyword match type is 'EXACT'.
-            // A mapping of enum names to values can be found in:
-            // Match type enum class: KeywordMatchTypeEnum_KeywordMatchType.php
-            // Criterion type enum class: CriterionTypeEnum_CriterionType.php
+            // A mapping of enum names to values can be found at KeywordMatchType.php for keyword
+            // match type and CriterionType.php for criterion type.
             printf(
                 "Keyword with text '%s', match type %d, criterion type %d, and ID %d "
                 . "was found in ad group with ID %d.%s",

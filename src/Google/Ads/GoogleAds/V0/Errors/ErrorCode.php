@@ -145,18 +145,44 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for campaign group error.
      *     @type int $enum_error
      *           The reason for enum error.
+     *     @type int $keyword_plan_error
+     *           The reason for keyword plan error.
+     *     @type int $keyword_plan_campaign_error
+     *           The reason for keyword plan campaign error.
+     *     @type int $keyword_plan_negative_keyword_error
+     *           The reason for keyword plan negative keyword error.
+     *     @type int $keyword_plan_ad_group_error
+     *           The reason for keyword plan ad group error.
+     *     @type int $keyword_plan_keyword_error
+     *           The reason for keyword plan keyword error.
+     *     @type int $keyword_plan_idea_error
+     *           The reason for keyword idea error.
      *     @type int $account_budget_proposal_error
      *           The reasons for account budget proposal errors.
+     *     @type int $user_list_error
+     *           The reasons for the user list error
      *     @type int $change_status_error
      *           The reasons for the change status error
+     *     @type int $feed_error
+     *           The reasons for the feed error
      *     @type int $geo_target_constant_suggestion_error
      *           The reasons for the geo target constant suggestion error.
+     *     @type int $feed_item_error
+     *           The reasons for the feed item error
      *     @type int $billing_setup_error
      *           The reasons for the billing setup error
      *     @type int $customer_client_link_error
      *           The reasons for the customer client link error
      *     @type int $customer_manager_link_error
      *           The reasons for the customer manager link error
+     *     @type int $feed_mapping_error
+     *           The reasons for the feed mapping error
+     *     @type int $customer_feed_error
+     *           The reasons for the customer feed error
+     *     @type int $ad_group_feed_error
+     *           The reasons for the ad group feed error
+     *     @type int $campaign_feed_error
+     *           The reasons for the campaign feed error
      * }
      */
     public function __construct($data = NULL) {
@@ -1751,6 +1777,162 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reason for keyword plan error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanErrorEnum.KeywordPlanError keyword_plan_error = 71;</code>
+     * @return int
+     */
+    public function getKeywordPlanError()
+    {
+        return $this->readOneof(71);
+    }
+
+    /**
+     * The reason for keyword plan error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanErrorEnum.KeywordPlanError keyword_plan_error = 71;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setKeywordPlanError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\KeywordPlanErrorEnum_KeywordPlanError::class);
+        $this->writeOneof(71, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reason for keyword plan campaign error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError keyword_plan_campaign_error = 72;</code>
+     * @return int
+     */
+    public function getKeywordPlanCampaignError()
+    {
+        return $this->readOneof(72);
+    }
+
+    /**
+     * The reason for keyword plan campaign error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanCampaignErrorEnum.KeywordPlanCampaignError keyword_plan_campaign_error = 72;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setKeywordPlanCampaignError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\KeywordPlanCampaignErrorEnum_KeywordPlanCampaignError::class);
+        $this->writeOneof(72, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reason for keyword plan negative keyword error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanNegativeKeywordErrorEnum.KeywordPlanNegativeKeywordError keyword_plan_negative_keyword_error = 73;</code>
+     * @return int
+     */
+    public function getKeywordPlanNegativeKeywordError()
+    {
+        return $this->readOneof(73);
+    }
+
+    /**
+     * The reason for keyword plan negative keyword error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanNegativeKeywordErrorEnum.KeywordPlanNegativeKeywordError keyword_plan_negative_keyword_error = 73;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setKeywordPlanNegativeKeywordError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\KeywordPlanNegativeKeywordErrorEnum_KeywordPlanNegativeKeywordError::class);
+        $this->writeOneof(73, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reason for keyword plan ad group error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError keyword_plan_ad_group_error = 74;</code>
+     * @return int
+     */
+    public function getKeywordPlanAdGroupError()
+    {
+        return $this->readOneof(74);
+    }
+
+    /**
+     * The reason for keyword plan ad group error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanAdGroupErrorEnum.KeywordPlanAdGroupError keyword_plan_ad_group_error = 74;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setKeywordPlanAdGroupError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\KeywordPlanAdGroupErrorEnum_KeywordPlanAdGroupError::class);
+        $this->writeOneof(74, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reason for keyword plan keyword error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanKeywordErrorEnum.KeywordPlanKeywordError keyword_plan_keyword_error = 75;</code>
+     * @return int
+     */
+    public function getKeywordPlanKeywordError()
+    {
+        return $this->readOneof(75);
+    }
+
+    /**
+     * The reason for keyword plan keyword error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanKeywordErrorEnum.KeywordPlanKeywordError keyword_plan_keyword_error = 75;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setKeywordPlanKeywordError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\KeywordPlanKeywordErrorEnum_KeywordPlanKeywordError::class);
+        $this->writeOneof(75, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reason for keyword idea error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError keyword_plan_idea_error = 76;</code>
+     * @return int
+     */
+    public function getKeywordPlanIdeaError()
+    {
+        return $this->readOneof(76);
+    }
+
+    /**
+     * The reason for keyword idea error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.KeywordPlanIdeaErrorEnum.KeywordPlanIdeaError keyword_plan_idea_error = 76;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setKeywordPlanIdeaError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\KeywordPlanIdeaErrorEnum_KeywordPlanIdeaError::class);
+        $this->writeOneof(76, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for account budget proposal errors.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.errors.AccountBudgetProposalErrorEnum.AccountBudgetProposalError account_budget_proposal_error = 77;</code>
@@ -1772,6 +1954,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\AccountBudgetProposalErrorEnum_AccountBudgetProposalError::class);
         $this->writeOneof(77, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the user list error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.UserListErrorEnum.UserListError user_list_error = 78;</code>
+     * @return int
+     */
+    public function getUserListError()
+    {
+        return $this->readOneof(78);
+    }
+
+    /**
+     * The reasons for the user list error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.UserListErrorEnum.UserListError user_list_error = 78;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserListError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\UserListErrorEnum_UserListError::class);
+        $this->writeOneof(78, $var);
 
         return $this;
     }
@@ -1803,6 +2011,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for the feed error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.FeedErrorEnum.FeedError feed_error = 80;</code>
+     * @return int
+     */
+    public function getFeedError()
+    {
+        return $this->readOneof(80);
+    }
+
+    /**
+     * The reasons for the feed error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.FeedErrorEnum.FeedError feed_error = 80;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFeedError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\FeedErrorEnum_FeedError::class);
+        $this->writeOneof(80, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the geo target constant suggestion error.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.errors.GeoTargetConstantSuggestionErrorEnum.GeoTargetConstantSuggestionError geo_target_constant_suggestion_error = 81;</code>
@@ -1824,6 +2058,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\GeoTargetConstantSuggestionErrorEnum_GeoTargetConstantSuggestionError::class);
         $this->writeOneof(81, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the feed item error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.FeedItemErrorEnum.FeedItemError feed_item_error = 83;</code>
+     * @return int
+     */
+    public function getFeedItemError()
+    {
+        return $this->readOneof(83);
+    }
+
+    /**
+     * The reasons for the feed item error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.FeedItemErrorEnum.FeedItemError feed_item_error = 83;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFeedItemError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\FeedItemErrorEnum_FeedItemError::class);
+        $this->writeOneof(83, $var);
 
         return $this;
     }
@@ -1902,6 +2162,110 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CustomerManagerLinkErrorEnum_CustomerManagerLinkError::class);
         $this->writeOneof(91, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the feed mapping error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.FeedMappingErrorEnum.FeedMappingError feed_mapping_error = 92;</code>
+     * @return int
+     */
+    public function getFeedMappingError()
+    {
+        return $this->readOneof(92);
+    }
+
+    /**
+     * The reasons for the feed mapping error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.FeedMappingErrorEnum.FeedMappingError feed_mapping_error = 92;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFeedMappingError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\FeedMappingErrorEnum_FeedMappingError::class);
+        $this->writeOneof(92, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the customer feed error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CustomerFeedErrorEnum.CustomerFeedError customer_feed_error = 93;</code>
+     * @return int
+     */
+    public function getCustomerFeedError()
+    {
+        return $this->readOneof(93);
+    }
+
+    /**
+     * The reasons for the customer feed error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CustomerFeedErrorEnum.CustomerFeedError customer_feed_error = 93;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCustomerFeedError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CustomerFeedErrorEnum_CustomerFeedError::class);
+        $this->writeOneof(93, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the ad group feed error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.AdGroupFeedErrorEnum.AdGroupFeedError ad_group_feed_error = 94;</code>
+     * @return int
+     */
+    public function getAdGroupFeedError()
+    {
+        return $this->readOneof(94);
+    }
+
+    /**
+     * The reasons for the ad group feed error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.AdGroupFeedErrorEnum.AdGroupFeedError ad_group_feed_error = 94;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdGroupFeedError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\AdGroupFeedErrorEnum_AdGroupFeedError::class);
+        $this->writeOneof(94, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the campaign feed error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CampaignFeedErrorEnum.CampaignFeedError campaign_feed_error = 96;</code>
+     * @return int
+     */
+    public function getCampaignFeedError()
+    {
+        return $this->readOneof(96);
+    }
+
+    /**
+     * The reasons for the campaign feed error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CampaignFeedErrorEnum.CampaignFeedError campaign_feed_error = 96;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCampaignFeedError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CampaignFeedErrorEnum_CampaignFeedError::class);
+        $this->writeOneof(96, $var);
 
         return $this;
     }

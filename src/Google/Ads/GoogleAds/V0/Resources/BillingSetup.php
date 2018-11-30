@@ -61,6 +61,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     private $payments_account_info = null;
     protected $start_time;
+    protected $end_time;
 
     /**
      * Constructor.
@@ -96,6 +97,10 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      *           future time is allowed.
      *     @type int $start_time_type
      *           The start time as a type. Only NOW is allowed.
+     *     @type \Google\Protobuf\StringValue $end_date_time
+     *           The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     *     @type int $end_time_type
+     *           The end time as a type.  The only possible value is FOREVER.
      * }
      */
     public function __construct($data = NULL) {
@@ -314,11 +319,71 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getEndDateTime()
+    {
+        return $this->readOneof(13);
+    }
+
+    /**
+     * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setEndDateTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * The end time as a type.  The only possible value is FOREVER.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TimeTypeEnum.TimeType end_time_type = 14;</code>
+     * @return int
+     */
+    public function getEndTimeType()
+    {
+        return $this->readOneof(14);
+    }
+
+    /**
+     * The end time as a type.  The only possible value is FOREVER.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.TimeTypeEnum.TimeType end_time_type = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEndTimeType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\TimeTypeEnum_TimeType::class);
+        $this->writeOneof(14, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getStartTime()
     {
         return $this->whichOneof("start_time");
+    }
+
+    /**
+     * @return string
+     */
+    public function getEndTime()
+    {
+        return $this->whichOneof("end_time");
     }
 
 }

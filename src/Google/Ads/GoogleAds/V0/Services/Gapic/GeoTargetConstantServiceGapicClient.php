@@ -301,7 +301,8 @@ class GeoTargetConstantServiceGapicClient
      * $geoTargetConstantServiceClient = new GeoTargetConstantServiceClient();
      * try {
      *     $locale = new StringValue();
-     *     $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants($locale);
+     *     $countryCode = new StringValue();
+     *     $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants($locale, $countryCode);
      * } finally {
      *     $geoTargetConstantServiceClient->close();
      * }
@@ -310,6 +311,7 @@ class GeoTargetConstantServiceGapicClient
      * @param StringValue $locale       If possible, returned geo targets are translated using this locale. If not,
      *                                  en is used by default. This is also used as a hint for returned geo
      *                                  targets.
+     * @param StringValue $countryCode  Returned geo targets are restricted to this country code.
      * @param array       $optionalArgs {
      *                                  Optional.
      *
@@ -329,10 +331,11 @@ class GeoTargetConstantServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function suggestGeoTargetConstants($locale, array $optionalArgs = [])
+    public function suggestGeoTargetConstants($locale, $countryCode, array $optionalArgs = [])
     {
         $request = new SuggestGeoTargetConstantsRequest();
         $request->setLocale($locale);
+        $request->setCountryCode($countryCode);
         if (isset($optionalArgs['locationNames'])) {
             $request->setLocationNames($optionalArgs['locationNames']);
         }

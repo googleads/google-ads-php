@@ -70,11 +70,26 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $average_cpm = null;
     /**
+     * The average amount you pay each time someone views your ad.
+     * The average CPV is defined by the total cost of all ad views divided by
+     * the number of views.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpv = 11;</code>
+     */
+    private $average_cpv = null;
+    /**
      * Your ad's position relative to those of other advertisers.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_position = 13;</code>
      */
     private $average_position = null;
+    /**
+     * An indication on how other advertisers' Shopping ads for similar products
+     * are performing based on how often people who see their ad click on it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_ctr = 77;</code>
+     */
+    private $benchmark_ctr = null;
     /**
      * Percentage of clicks where the user only visited a single page on your
      * site. Imported from Google Analytics.
@@ -291,6 +306,15 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $relative_ctr = null;
     /**
+     * The percentage of the customer's Shopping ad impressions that are shown in
+     * the most prominent Shopping position. See
+     * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
+     * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
+     */
+    private $search_absolute_top_impression_share = null;
+    /**
      * The estimated percent of times that your ad was eligible to show on the
      * Search Network but didn't because your budget was too low. Note: Search
      * budget lost impression share is reported in the range of 0 to 0.9. Any
@@ -416,8 +440,15 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           received.
      *     @type \Google\Protobuf\DoubleValue $average_cpm
      *           Average cost-per-thousand impressions (CPM).
+     *     @type \Google\Protobuf\DoubleValue $average_cpv
+     *           The average amount you pay each time someone views your ad.
+     *           The average CPV is defined by the total cost of all ad views divided by
+     *           the number of views.
      *     @type \Google\Protobuf\DoubleValue $average_position
      *           Your ad's position relative to those of other advertisers.
+     *     @type \Google\Protobuf\DoubleValue $benchmark_ctr
+     *           An indication on how other advertisers' Shopping ads for similar products
+     *           are performing based on how often people who see their ad click on it.
      *     @type \Google\Protobuf\DoubleValue $bounce_rate
      *           Percentage of clicks where the user only visited a single page on your
      *           site. Imported from Google Analytics.
@@ -513,6 +544,11 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           Your clickthrough rate (Ctr) divided by the average clickthrough rate of
      *           all advertisers on the websites that show your ads. Measures how your ads
      *           perform on Display Network sites compared to other ads on the same sites.
+     *     @type \Google\Protobuf\DoubleValue $search_absolute_top_impression_share
+     *           The percentage of the customer's Shopping ad impressions that are shown in
+     *           the most prominent Shopping position. See
+     *           <a href="https://support.google.com/adwords/answer/7501826">this Merchant
+     *           Center article</a> for details. Any value below 0.1 is reported as 0.0999.
      *     @type \Google\Protobuf\DoubleValue $search_budget_lost_impression_share
      *           The estimated percent of times that your ad was eligible to show on the
      *           Search Network but didn't because your budget was too low. Note: Search
@@ -786,6 +822,36 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The average amount you pay each time someone views your ad.
+     * The average CPV is defined by the total cost of all ad views divided by
+     * the number of views.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpv = 11;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getAverageCpv()
+    {
+        return $this->average_cpv;
+    }
+
+    /**
+     * The average amount you pay each time someone views your ad.
+     * The average CPV is defined by the total cost of all ad views divided by
+     * the number of views.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpv = 11;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setAverageCpv($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->average_cpv = $var;
+
+        return $this;
+    }
+
+    /**
      * Your ad's position relative to those of other advertisers.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_position = 13;</code>
@@ -807,6 +873,34 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->average_position = $var;
+
+        return $this;
+    }
+
+    /**
+     * An indication on how other advertisers' Shopping ads for similar products
+     * are performing based on how often people who see their ad click on it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_ctr = 77;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getBenchmarkCtr()
+    {
+        return $this->benchmark_ctr;
+    }
+
+    /**
+     * An indication on how other advertisers' Shopping ads for similar products
+     * are performing based on how often people who see their ad click on it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_ctr = 77;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setBenchmarkCtr($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->benchmark_ctr = $var;
 
         return $this;
     }
@@ -1657,6 +1751,38 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->relative_ctr = $var;
+
+        return $this;
+    }
+
+    /**
+     * The percentage of the customer's Shopping ad impressions that are shown in
+     * the most prominent Shopping position. See
+     * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
+     * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getSearchAbsoluteTopImpressionShare()
+    {
+        return $this->search_absolute_top_impression_share;
+    }
+
+    /**
+     * The percentage of the customer's Shopping ad impressions that are shown in
+     * the most prominent Shopping position. See
+     * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
+     * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setSearchAbsoluteTopImpressionShare($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->search_absolute_top_impression_share = $var;
 
         return $this;
     }

@@ -23,37 +23,58 @@ use Google\Ads\GoogleAds\V0\Services\AdGroupAdServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupAudienceViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionServiceClient;
+use Google\Ads\GoogleAds\V0\Services\AdGroupFeedServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BillingSetupServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CampaignAudienceViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CampaignFeedServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignSharedSetServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CarrierConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ChangeStatusServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ConversionActionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerClientLinkServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CustomerClientServiceClient;
+use Google\Ads\GoogleAds\V0\Services\CustomerFeedServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V0\Services\DisplayKeywordViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\FeedItemServiceClient;
+use Google\Ads\GoogleAds\V0\Services\FeedMappingServiceClient;
+use Google\Ads\GoogleAds\V0\Services\FeedServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GenderViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsFieldServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V0\Services\HotelGroupViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\HotelPerformanceViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\KeywordPlanAdGroupServiceClient;
+use Google\Ads\GoogleAds\V0\Services\KeywordPlanCampaignServiceClient;
+use Google\Ads\GoogleAds\V0\Services\KeywordPlanIdeaServiceClient;
+use Google\Ads\GoogleAds\V0\Services\KeywordPlanKeywordServiceClient;
+use Google\Ads\GoogleAds\V0\Services\KeywordPlanNegativeKeywordServiceClient;
+use Google\Ads\GoogleAds\V0\Services\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V0\Services\KeywordViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ManagedPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\MediaFileServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ParentalStatusViewServiceClient;
+use Google\Ads\GoogleAds\V0\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ProductGroupViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
+use Google\Ads\GoogleAds\V0\Services\SearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SharedSetServiceClient;
+use Google\Ads\GoogleAds\V0\Services\TopicConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\TopicViewServiceClient;
-use Google\Ads\GoogleAds\V0\Services\VerticalConstantServiceClient;
+use Google\Ads\GoogleAds\V0\Services\UserInterestServiceClient;
+use Google\Ads\GoogleAds\V0\Services\UserListServiceClient;
 use Google\Ads\GoogleAds\V0\Services\VideoServiceClient;
 
 /**
@@ -65,15 +86,24 @@ trait ServiceClientFactoryTrait
 
     private static $CREDENTIALS_LOADER_KEY = 'credentials';
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
+    private static $LOGIN_CUSTOMER_ID_KEY = 'login-customer-id';
     private static $SERVICE_ADDRESS_KEY = 'serviceAddress';
     private static $DEFAULT_SERVICE_ADDRESS = 'googleads.googleapis.com';
 
-    private function getGoogleAdsClientOptions()
+    /**
+     * Gets the Google Ads client options for making API calls.
+     *
+     * @return array the client options
+     */
+    public function getGoogleAdsClientOptions()
     {
         $clientOptions = [
             self::$CREDENTIALS_LOADER_KEY => $this->getOAuth2Credential(),
             self::$DEVELOPER_TOKEN_KEY => $this->getDeveloperToken()
         ];
+        if (!empty($this->getLoginCustomerId())) {
+            $clientOptions += [self::$LOGIN_CUSTOMER_ID_KEY => $this->getLoginCustomerId()];
+        }
         if (!empty($this->getEndpoint())) {
             $clientOptions += [self::$SERVICE_ADDRESS_KEY => $this->getEndpoint()];
         }
@@ -93,6 +123,14 @@ trait ServiceClientFactoryTrait
         }
 
         return $clientOptions;
+    }
+
+    /**
+     * @return AccountBudgetProposalServiceClient
+     */
+    public function getAccountBudgetProposalServiceClient()
+    {
+        return new AccountBudgetProposalServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -128,11 +166,11 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return AccountBudgetProposalServiceClient
+     * @return AdGroupFeedServiceClient
      */
-    public function getAccountBudgetProposalServiceClient()
+    public function getAdGroupFeedServiceClient()
     {
-        return new AccountBudgetProposalServiceClient($this->getGoogleAdsClientOptions());
+        return new AdGroupFeedServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -176,6 +214,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return CampaignAudienceViewServiceClient
+     */
+    public function getCampaignAudienceViewServiceClient()
+    {
+        return new CampaignAudienceViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return CampaignBidModifierServiceClient
      */
     public function getCampaignBidModifierServiceClient()
@@ -197,6 +243,14 @@ trait ServiceClientFactoryTrait
     public function getCampaignCriterionServiceClient()
     {
         return new CampaignCriterionServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CampaignFeedServiceClient
+     */
+    public function getCampaignFeedServiceClient()
+    {
+        return new CampaignFeedServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -224,6 +278,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return CarrierConstantServiceClient
+     */
+    public function getCarrierConstantServiceClient()
+    {
+        return new CarrierConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return ChangeStatusServiceClient
      */
     public function getChangeStatusServiceClient()
@@ -248,6 +310,22 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return CustomerClientServiceClient
+     */
+    public function getCustomerClientServiceClient()
+    {
+        return new CustomerClientServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CustomerFeedServiceClient
+     */
+    public function getCustomerFeedServiceClient()
+    {
+        return new CustomerFeedServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return CustomerManagerLinkServiceClient
      */
     public function getCustomerManagerLinkServiceClient()
@@ -269,6 +347,30 @@ trait ServiceClientFactoryTrait
     public function getDisplayKeywordViewServiceClient()
     {
         return new DisplayKeywordViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return FeedItemServiceClient
+     */
+    public function getFeedItemServiceClient()
+    {
+        return new FeedItemServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return FeedMappingServiceClient
+     */
+    public function getFeedMappingServiceClient()
+    {
+        return new FeedMappingServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return FeedServiceClient
+     */
+    public function getFeedServiceClient()
+    {
+        return new FeedServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -304,6 +406,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return HotelPerformanceViewServiceClient
+     */
+    public function getHotelPerformanceViewServiceClient()
+    {
+        return new HotelPerformanceViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return HotelGroupViewServiceClient
      */
     public function getHotelGroupViewServiceClient()
@@ -312,11 +422,67 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return KeywordPlanAdGroupServiceClient
+     */
+    public function getKeywordPlanAdGroupServiceClient()
+    {
+        return new KeywordPlanAdGroupServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return KeywordPlanCampaignServiceClient
+     */
+    public function getKeywordPlanCampaignServiceClient()
+    {
+        return new KeywordPlanCampaignServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return KeywordPlanIdeaServiceClient
+     */
+    public function getKeywordPlanIdeaServiceClient()
+    {
+        return new KeywordPlanIdeaServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return KeywordPlanKeywordServiceClient
+     */
+    public function getKeywordPlanKeywordServiceClient()
+    {
+        return new KeywordPlanKeywordServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return KeywordPlanNegativeKeywordServiceClient
+     */
+    public function getKeywordPlanNegativeKeywordServiceClient()
+    {
+        return new KeywordPlanNegativeKeywordServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return KeywordPlanServiceClient
+     */
+    public function getKeywordPlanServiceClient()
+    {
+        return new KeywordPlanServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return KeywordViewServiceClient
      */
     public function getKeywordViewServiceClient()
     {
         return new KeywordViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return LanguageConstantServiceClient
+     */
+    public function getLanguageConstantServiceClient()
+    {
+        return new LanguageConstantServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -344,6 +510,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return PaymentsAccountServiceClient
+     */
+    public function getPaymentsAccountServiceClient()
+    {
+        return new PaymentsAccountServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return ProductGroupViewServiceClient
      */
     public function getProductGroupViewServiceClient()
@@ -357,6 +531,14 @@ trait ServiceClientFactoryTrait
     public function getRecommendationServiceClient()
     {
         return new RecommendationServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return SearchTermViewServiceClient
+     */
+    public function getSearchTermViewServiceClient()
+    {
+        return new SearchTermViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -384,11 +566,27 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return VerticalConstantServiceClient
+     * @return TopicConstantServiceClient
      */
-    public function getVerticalConstantServiceClient()
+    public function getTopicConstantServiceClient()
     {
-        return new VerticalConstantServiceClient($this->getGoogleAdsClientOptions());
+        return new TopicConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return UserInterestServiceClient
+     */
+    public function getUserInterestServiceClient()
+    {
+        return new UserInterestServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return UserListServiceClient
+     */
+    public function getUserListServiceClient()
+    {
+        return new UserListServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Ads\GoogleAds\Tests\Unit\V0\Services;
+namespace Google\Ads\GoogleAds\V0\Services;
 
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion;

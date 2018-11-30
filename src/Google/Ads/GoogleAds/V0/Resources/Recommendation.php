@@ -38,7 +38,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * CAMPAIGN_BUDGET
      *
@@ -48,7 +47,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
      * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
@@ -60,7 +58,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *
@@ -92,13 +89,11 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $campaign_budget
      *           The budget targeted by this recommendation. This will be set only when
      *           the recommendation affects a single campaign budget.
-     *           This field must not be used in WHERE clauses.
      *           This field will be set for the following recommendation types:
      *           CAMPAIGN_BUDGET
      *     @type \Google\Protobuf\StringValue $campaign
      *           The campaign targeted by this recommendation. This will be set only when
      *           the recommendation affects a single campaign.
-     *           This field must not be used in WHERE clauses.
      *           This field will be set for the following recommendation types:
      *           ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
      *           MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
@@ -106,7 +101,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $ad_group
      *           The ad group targeted by this recommendation. This will be set only when
      *           the recommendation affects a single ad group.
-     *           This field must not be used in WHERE clauses.
      *           This field will be set for the following recommendation types:
      *           KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *     @type \Google\Protobuf\BoolValue $dismissed
@@ -221,7 +215,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * CAMPAIGN_BUDGET
      *
@@ -236,7 +229,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * CAMPAIGN_BUDGET
      *
@@ -255,7 +247,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
      * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
@@ -272,7 +263,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
      * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
@@ -293,7 +283,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *
@@ -308,7 +297,6 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     /**
      * The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
-     * This field must not be used in WHERE clauses.
      * This field will be set for the following recommendation types:
      * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
      *

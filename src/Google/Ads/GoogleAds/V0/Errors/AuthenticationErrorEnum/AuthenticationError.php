@@ -30,7 +30,7 @@ class AuthenticationError
      */
     const AUTHENTICATION_ERROR = 2;
     /**
-     * Client customer Id is not a number.
+     * Client Customer Id is not a number.
      *
      * Generated from protobuf enum <code>CLIENT_CUSTOMER_ID_INVALID = 5;</code>
      */
@@ -56,9 +56,9 @@ class AuthenticationError
     /**
      * A problem occurred during Google account authentication.
      *
-     * Generated from protobuf enum <code>FAILED_TO_AUTHENTICATE_GOOGLE_ACCOUNT = 11;</code>
+     * Generated from protobuf enum <code>GOOGLE_ACCOUNT_AUTHENTICATION_FAILED = 25;</code>
      */
-    const FAILED_TO_AUTHENTICATE_GOOGLE_ACCOUNT = 11;
+    const GOOGLE_ACCOUNT_AUTHENTICATION_FAILED = 25;
     /**
      * The user in the google account login token does not match the UserId in
      * the cookie.
@@ -114,12 +114,6 @@ class AuthenticationError
      * Generated from protobuf enum <code>LOGIN_COOKIE_INVALID = 20;</code>
      */
     const LOGIN_COOKIE_INVALID = 20;
-    /**
-     * Failed to decrypt the login cookie.
-     *
-     * Generated from protobuf enum <code>FAILED_TO_RETRIEVE_LOGIN_COOKIE = 21;</code>
-     */
-    const FAILED_TO_RETRIEVE_LOGIN_COOKIE = 21;
     /**
      * User Id in the header is not a valid id.
      *

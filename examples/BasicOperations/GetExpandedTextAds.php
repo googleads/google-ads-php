@@ -123,8 +123,7 @@ class GetExpandedTextAds
             $ad = $googleAdsRow->getAdGroupAd()->getAd();
             // Note that the status printed below are enum values.
             // For example, a value of 2 will be returned when the status is 'ENABLED'.
-            // A mapping of enum names to values can be found in:
-            // AdGroupAdStatusEnum_AdGroupAdStatus.php
+            // A mapping of enum names to values can be found at AdGroupAdStatus.php
             printf(
                 "Expanded text ad with ID %d, status %d, and headline '%s - %s' was found in ad "
                 . "group with ID %d.%s",

@@ -40,6 +40,9 @@ class GetGeoTargetConstantByNames
     // Locale is using ISO 639-1 format. If an invalid locale is given, 'en' will be used by
     // default.
     const LOCALE = 'en';
+    // A list of country codes can be referenced here:
+    // https://developers.google.com/adwords/api/docs/appendix/geotargeting.
+    const COUNTRY_CODE = 'FR';
     // The location names to get suggested geo target constants.
     private static $LOCATION_NAMES = ['Paris', 'Quebec', 'Spain', 'Deutschland'];
 
@@ -51,7 +54,8 @@ class GetGeoTargetConstantByNames
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::LOCATION_NAMES => GetOpt::MULTIPLE_ARGUMENT,
-            ArgumentNames::LOCALE => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::LOCALE => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::COUNTRY_CODE => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -68,7 +72,8 @@ class GetGeoTargetConstantByNames
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::LOCATION_NAMES] ?: self::$LOCATION_NAMES,
-                $options[ArgumentNames::LOCALE] ?: self::LOCALE
+                $options[ArgumentNames::LOCALE] ?: self::LOCALE,
+                $options[ArgumentNames::COUNTRY_CODE] ?: self::COUNTRY_CODE
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -101,11 +106,13 @@ class GetGeoTargetConstantByNames
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param array $locationNames the list of location names to get suggested geo target constants
      * @param string $locale the locale of the geo target constant to be retrieved
+     * @param string $countryCode the country code of the geo target constant to be retrieved
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         array $locationNames,
-        $locale
+        $locale,
+        $countryCode
     ) {
         $geoTargetConstantServiceClient = $googleAdsClient->getGeoTargetConstantServiceClient();
 
@@ -115,6 +122,7 @@ class GetGeoTargetConstantByNames
         }
         $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants(
             new StringValue(['value' => $locale]),
+            new StringValue(['value' => $countryCode]),
             ['locationNames' => new LocationNames(['names' => $names])]
         );
 

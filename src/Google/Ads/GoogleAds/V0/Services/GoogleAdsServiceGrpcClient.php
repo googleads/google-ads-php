@@ -47,4 +47,18 @@ class GoogleAdsServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Creates, updates, or removes resources. Operation statuses are returned.
+     * @param \Google\Ads\GoogleAds\V0\Services\MutateGoogleAdsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function Mutate(\Google\Ads\GoogleAds\V0\Services\MutateGoogleAdsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v0.services.GoogleAdsService/Mutate',
+        $argument,
+        ['\Google\Ads\GoogleAds\V0\Services\MutateGoogleAdsResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

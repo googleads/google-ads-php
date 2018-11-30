@@ -44,7 +44,6 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     private $quality_info = null;
     /**
      * The ad group to which the criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
      */
@@ -191,7 +190,6 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Information regarding the quality of the criterion.
      *     @type \Google\Protobuf\StringValue $ad_group
      *           The ad group to which the criterion belongs.
-     *           This field must not be used in WHERE clauses.
      *     @type int $type
      *           The type of the criterion.
      *     @type \Google\Protobuf\BoolValue $negative
@@ -251,12 +249,16 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Income range.
      *     @type \Google\Ads\GoogleAds\V0\Common\ParentalStatusInfo $parental_status
      *           Parental status.
+     *     @type \Google\Ads\GoogleAds\V0\Common\UserListInfo $user_list
+     *           User List.
      *     @type \Google\Ads\GoogleAds\V0\Common\YouTubeVideoInfo $youtube_video
      *           YouTube Video.
      *     @type \Google\Ads\GoogleAds\V0\Common\YouTubeChannelInfo $youtube_channel
      *           YouTube Channel.
      *     @type \Google\Ads\GoogleAds\V0\Common\TopicInfo $topic
      *           Topic.
+     *     @type \Google\Ads\GoogleAds\V0\Common\UserInterestInfo $user_interest
+     *           User Interest.
      * }
      */
     public function __construct($data = NULL) {
@@ -376,7 +378,6 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
 
     /**
      * The ad group to which the criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
      * @return \Google\Protobuf\StringValue
@@ -388,7 +389,6 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
 
     /**
      * The ad group to which the criterion belongs.
-     * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -1093,6 +1093,32 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * User List.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.UserListInfo user_list = 42;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\UserListInfo
+     */
+    public function getUserList()
+    {
+        return $this->readOneof(42);
+    }
+
+    /**
+     * User List.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.UserListInfo user_list = 42;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\UserListInfo $var
+     * @return $this
+     */
+    public function setUserList($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\UserListInfo::class);
+        $this->writeOneof(42, $var);
+
+        return $this;
+    }
+
+    /**
      * YouTube Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.common.YouTubeVideoInfo youtube_video = 40;</code>
@@ -1166,6 +1192,32 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\TopicInfo::class);
         $this->writeOneof(43, $var);
+
+        return $this;
+    }
+
+    /**
+     * User Interest.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.UserInterestInfo user_interest = 45;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\UserInterestInfo
+     */
+    public function getUserInterest()
+    {
+        return $this->readOneof(45);
+    }
+
+    /**
+     * User Interest.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.UserInterestInfo user_interest = 45;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\UserInterestInfo $var
+     * @return $this
+     */
+    public function setUserInterest($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\UserInterestInfo::class);
+        $this->writeOneof(45, $var);
 
         return $this;
     }

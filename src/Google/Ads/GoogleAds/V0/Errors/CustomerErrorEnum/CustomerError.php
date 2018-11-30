@@ -32,6 +32,12 @@ class CustomerError
      * Generated from protobuf enum <code>STATUS_CHANGE_DISALLOWED = 2;</code>
      */
     const STATUS_CHANGE_DISALLOWED = 2;
+    /**
+     * CustomerService cannot get a customer that has not been fully set up.
+     *
+     * Generated from protobuf enum <code>ACCOUNT_NOT_SET_UP = 3;</code>
+     */
+    const ACCOUNT_NOT_SET_UP = 3;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

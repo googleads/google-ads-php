@@ -30,6 +30,12 @@ class TrackingCodePageFormat
      * Generated from protobuf enum <code>HTML = 2;</code>
      */
     const HTML = 2;
+    /**
+     * Google AMP page format.
+     *
+     * Generated from protobuf enum <code>AMP = 3;</code>
+     */
+    const AMP = 3;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

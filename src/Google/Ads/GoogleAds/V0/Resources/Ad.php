@@ -81,6 +81,13 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device_preference = 20;</code>
      */
     private $device_preference = 0;
+    /**
+     * The name of the ad. This is only used to be able to identify the ad. It
+     * does not need to be unique and does not affect the served ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     */
+    private $name = null;
     protected $ad_data;
 
     /**
@@ -119,6 +126,9 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           displayed on other device types, e.g. if no other ads are available.
      *           If unspecified (no device preference), all devices are targeted.
      *           This is only supported by some ad types.
+     *     @type \Google\Protobuf\StringValue $name
+     *           The name of the ad. This is only used to be able to identify the ad. It
+     *           does not need to be unique and does not affect the served ad.
      *     @type \Google\Ads\GoogleAds\V0\Common\TextAdInfo $text_ad
      *           Details pertaining to a text ad.
      *     @type \Google\Ads\GoogleAds\V0\Common\ExpandedTextAdInfo $expanded_text_ad
@@ -141,6 +151,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Details pertaining to a Smart Shopping ad.
      *     @type \Google\Ads\GoogleAds\V0\Common\ShoppingProductAdInfo $shopping_product_ad
      *           Details pertaining to a Shopping product ad.
+     *     @type \Google\Ads\GoogleAds\V0\Common\GmailAdInfo $gmail_ad
+     *           Details pertaining to a Gmail ad.
+     *     @type \Google\Ads\GoogleAds\V0\Common\ImageAdInfo $image_ad
+     *           Details pertaining to an Image ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -407,6 +421,34 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The name of the ad. This is only used to be able to identify the ad. It
+     * does not need to be unique and does not affect the served ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * The name of the ad. This is only used to be able to identify the ad. It
+     * does not need to be unique and does not affect the served ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
      * Details pertaining to a text ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.common.TextAdInfo text_ad = 6;</code>
@@ -644,6 +686,58 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ShoppingProductAdInfo::class);
         $this->writeOneof(18, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a Gmail ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.GmailAdInfo gmail_ad = 21;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\GmailAdInfo
+     */
+    public function getGmailAd()
+    {
+        return $this->readOneof(21);
+    }
+
+    /**
+     * Details pertaining to a Gmail ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.GmailAdInfo gmail_ad = 21;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\GmailAdInfo $var
+     * @return $this
+     */
+    public function setGmailAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\GmailAdInfo::class);
+        $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to an Image ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ImageAdInfo image_ad = 22;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\ImageAdInfo
+     */
+    public function getImageAd()
+    {
+        return $this->readOneof(22);
+    }
+
+    /**
+     * Details pertaining to an Image ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.ImageAdInfo image_ad = 22;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\ImageAdInfo $var
+     * @return $this
+     */
+    public function setImageAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ImageAdInfo::class);
+        $this->writeOneof(22, $var);
 
         return $this;
     }

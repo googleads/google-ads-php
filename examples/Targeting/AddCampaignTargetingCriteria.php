@@ -27,14 +27,18 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\ResourceNames;
+use Google\Ads\GoogleAds\V0\Common\AddressInfo;
 use Google\Ads\GoogleAds\V0\Common\KeywordInfo;
 use Google\Ads\GoogleAds\V0\Common\LocationInfo;
+use Google\Ads\GoogleAds\V0\Common\ProximityInfo;
 use Google\Ads\GoogleAds\V0\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V0\Enums\ProximityRadiusUnitsEnum\ProximityRadiusUnits;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\CampaignCriterion;
 use Google\Ads\GoogleAds\V0\Services\CampaignCriterionOperation;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\BoolValue;
+use Google\Protobuf\DoubleValue;
 use Google\Protobuf\StringValue;
 
 /**
@@ -130,7 +134,10 @@ class AddCampaignTargetingCriteria
                 $campaignResourceName
             ),
             // Creates a campaign criterion operation for the specified location ID.
-            self::createLocationCampaignCriterionOperation($locationId, $campaignResourceName)
+            self::createLocationCampaignCriterionOperation($locationId, $campaignResourceName),
+            // Creates a campaign criterion operation for the area around a specific address
+            // (proximity).
+            self::createProximityCampaignCriterionOperation($campaignResourceName)
         ];
 
         // Issues a mutate request to add the campaign criterion.
@@ -190,7 +197,7 @@ class AddCampaignTargetingCriteria
         // Constructs a campaign criterion for the specified campaign ID using the specified
         // location ID.
         $campaignCriterion = new CampaignCriterion([
-            // Creates another keyword with PHRASE type.
+            // Creates a location using the specified location ID.
             'location' => new LocationInfo([
                 'geo_target_constant' => new StringValue(
                     // Besides using location ID, you can also search by location names using
@@ -199,6 +206,34 @@ class AddCampaignTargetingCriteria
                     // in GetGeoTargetConstantByNames.php.
                     ['value' => ResourceNames::forGeoTargetConstant($locationId)]
                 )
+            ]),
+            'campaign' => new StringValue(['value' => $campaignResourceName])
+        ]);
+
+        return new CampaignCriterionOperation(['create' => $campaignCriterion]);
+    }
+
+    /**
+     * Creates a campaign criterion operation for the area around a specific address (proximity).
+     *
+     * @param string $campaignResourceName the campaign resource name that the created criterion
+     *      belongs to
+     * @return CampaignCriterionOperation the created campaign criterion operation
+     */
+    private static function createProximityCampaignCriterionOperation($campaignResourceName)
+    {
+        // Constructs a campaign criterion as a proximity.
+        $campaignCriterion = new CampaignCriterion([
+            'proximity' => new ProximityInfo([
+                'address' => new AddressInfo([
+                    'street_address' => new StringValue(['value' => '38 avenue de l\'Opéra']),
+                    'city_name' => new StringValue(['value' => 'Paris']),
+                    'postal_code' => new StringValue(['value' => '75002']),
+                    'country_code' => new StringValue(['value' => 'FR']),
+                ]),
+                'radius' => new DoubleValue(['value' => 10.0]),
+                // Default is kilometers.
+                'radius_units' => ProximityRadiusUnits::MILES
             ]),
             'campaign' => new StringValue(['value' => $campaignResourceName])
         ]);

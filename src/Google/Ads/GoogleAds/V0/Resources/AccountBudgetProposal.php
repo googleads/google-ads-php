@@ -69,7 +69,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     private $proposed_name = null;
     /**
-     * The approved start date time in yyyy-MM-dd HH:mm:ss format.
+     * The approved start date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
      */
@@ -132,7 +132,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $proposed_name
      *           The name to assign to the account-level budget.
      *     @type \Google\Protobuf\StringValue $approved_start_date_time
-     *           The approved start date time in yyyy-MM-dd HH:mm:ss format.
+     *           The approved start date time in yyyy-mm-dd hh:mm:ss format.
      *     @type \Google\Protobuf\StringValue $proposed_purchase_order_number
      *           A purchase order number is a value that enables the user to help them
      *           reference this budget in their monthly invoices.
@@ -144,15 +144,15 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $approval_date_time
      *           The date time when this account-level budget was approved, if applicable.
      *     @type \Google\Protobuf\StringValue $proposed_start_date_time
-     *           The proposed start date time in yyyy-MM-dd HH:mm:ss format.
+     *           The proposed start date time in yyyy-mm-dd hh:mm:ss format.
      *     @type int $proposed_start_time_type
      *           The proposed start date time as a well-defined type, e.g. NOW.
      *     @type \Google\Protobuf\StringValue $proposed_end_date_time
-     *           The proposed end date time in yyyy-MM-dd HH:mm:ss format.
+     *           The proposed end date time in yyyy-mm-dd hh:mm:ss format.
      *     @type int $proposed_end_time_type
      *           The proposed end date time as a well-defined type, e.g. FOREVER.
      *     @type \Google\Protobuf\StringValue $approved_end_date_time
-     *           The approved end date time in yyyy-MM-dd HH:mm:ss format.
+     *           The approved end date time in yyyy-mm-dd hh:mm:ss format.
      *     @type int $approved_end_time_type
      *           The approved end date time as a well-defined type, e.g. FOREVER.
      *     @type \Google\Protobuf\Int64Value $proposed_spending_limit_micros
@@ -365,7 +365,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved start date time in yyyy-MM-dd HH:mm:ss format.
+     * The approved start date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
      * @return \Google\Protobuf\StringValue
@@ -376,7 +376,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved start date time in yyyy-MM-dd HH:mm:ss format.
+     * The approved start date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -499,7 +499,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed start date time in yyyy-MM-dd HH:mm:ss format.
+     * The proposed start date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 18;</code>
      * @return \Google\Protobuf\StringValue
@@ -510,7 +510,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed start date time in yyyy-MM-dd HH:mm:ss format.
+     * The proposed start date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 18;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -551,7 +551,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed end date time in yyyy-MM-dd HH:mm:ss format.
+     * The proposed end date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 19;</code>
      * @return \Google\Protobuf\StringValue
@@ -562,7 +562,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed end date time in yyyy-MM-dd HH:mm:ss format.
+     * The proposed end date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 19;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -603,7 +603,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved end date time in yyyy-MM-dd HH:mm:ss format.
+     * The approved end date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 21;</code>
      * @return \Google\Protobuf\StringValue
@@ -614,7 +614,7 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved end date time in yyyy-MM-dd HH:mm:ss format.
+     * The approved end date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 21;</code>
      * @param \Google\Protobuf\StringValue $var

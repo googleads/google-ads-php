@@ -15,7 +15,12 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class ApplyRecommendationResult extends \Google\Protobuf\Internal\Message
 {
-    protected $result;
+    /**
+     * Returned for successful applies.
+     *
+     * Generated from protobuf field <code>string resource_name = 1;</code>
+     */
+    private $resource_name = '';
 
     /**
      * Constructor.
@@ -25,8 +30,6 @@ class ApplyRecommendationResult extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource_name
      *           Returned for successful applies.
-     *     @type \Google\Rpc\Status $status
-     *           Returned for failed operations.
      * }
      */
     public function __construct($data = NULL) {
@@ -42,7 +45,7 @@ class ApplyRecommendationResult extends \Google\Protobuf\Internal\Message
      */
     public function getResourceName()
     {
-        return $this->readOneof(1);
+        return $this->resource_name;
     }
 
     /**
@@ -55,43 +58,9 @@ class ApplyRecommendationResult extends \Google\Protobuf\Internal\Message
     public function setResourceName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(1, $var);
+        $this->resource_name = $var;
 
         return $this;
-    }
-
-    /**
-     * Returned for failed operations.
-     *
-     * Generated from protobuf field <code>.google.rpc.Status status = 2;</code>
-     * @return \Google\Rpc\Status
-     */
-    public function getStatus()
-    {
-        return $this->readOneof(2);
-    }
-
-    /**
-     * Returned for failed operations.
-     *
-     * Generated from protobuf field <code>.google.rpc.Status status = 2;</code>
-     * @param \Google\Rpc\Status $var
-     * @return $this
-     */
-    public function setStatus($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Rpc\Status::class);
-        $this->writeOneof(2, $var);
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getResult()
-    {
-        return $this->whichOneof("result");
     }
 
 }
