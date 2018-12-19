@@ -39,7 +39,7 @@ use Google\ApiCore\ApiException;
 class DismissRecommendation
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    // Recommendation ID is the last alphanumeric portion of resource name obtained from
+    // Recommendation ID is the last alphanumeric portion of the resource name obtained from
     // ResourceNames::forRecommendation(), which has the format of
     // `customers/<customer_id>/recommendations/<recommendation_id>`.
     // An example can be retrieved from GetTextAdRecommendations.php
