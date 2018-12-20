@@ -24,6 +24,7 @@ API](https://developers.google.com/google-ads/api/docs/start).
     installed Composer is available on the command line as `composer`.
 *   System requirements and dependencies can be found in
     [composer.json](composer.json) of this library.
+    *   To install the gRPC PHP extension, see [this page](https://grpc.io/docs/quickstart/php.html)
 *   You need a [developer
     token](https://developers.google.com/google-ads/api/docs/first-call/dev-token)
     to connect to the Google Ads API.
