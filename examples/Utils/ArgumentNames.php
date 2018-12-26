@@ -38,10 +38,12 @@ final class ArgumentNames
     const CUSTOMER_ID = 'customerId';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     const KEYWORD_TEXT = 'keywordText';
+    const LANGUAGE_ID = 'languageId';
     const LOCALE = 'locale';
     const LOCATION_ID = 'locationId';
     const LOCATION_NAMES = 'locationNames';
     const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
+    const PAGE_URL = 'pageUrl';
     const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     const RECOMMENDATION_ID = 'recommendationId';
     const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
@@ -64,10 +66,12 @@ final class ArgumentNames
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::KEYWORD_TEXT => 'The keyword text',
+        self::LANGUAGE_ID => 'The language ID',
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',
         self::LOCATION_NAMES => 'The list of location names',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
+        self::PAGE_URL => 'The page URL',
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
             'The CPC bid micro amount for the Percent CPC bidding strategy',
         self::RECOMMENDATION_ID => 'The recommendation ID',

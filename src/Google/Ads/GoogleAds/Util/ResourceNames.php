@@ -28,6 +28,7 @@ use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
+use Google\Ads\GoogleAds\V0\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
 
 /**
@@ -189,5 +190,16 @@ final class ResourceNames
     public static function forGeoTargetConstant($geoTargetConstantId)
     {
         return GeoTargetConstantServiceClient::geoTargetConstantName($geoTargetConstantId);
+    }
+
+    /**
+     * Generates resource name for a language constant.
+     *
+     * @param int $languageConstantId the language constant ID
+     * @return string the language constant resource name
+     */
+    public static function forLanguageConstant($languageConstantId)
+    {
+        return LanguageConstantServiceClient::languageConstantName($languageConstantId);
     }
 }
