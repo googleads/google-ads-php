@@ -41,6 +41,7 @@ final class ArgumentNames
     const LOCALE = 'locale';
     const LOCATION_ID = 'locationId';
     const LOCATION_NAMES = 'locationNames';
+    const MANAGER_CUSTOMER_ID = 'managerCustomerId';
     const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
     const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     const RECOMMENDATION_ID = 'recommendationId';
@@ -67,6 +68,7 @@ final class ArgumentNames
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',
         self::LOCATION_NAMES => 'The list of location names',
+        self::MANAGER_CUSTOMER_ID => 'The manager customer ID',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
             'The CPC bid micro amount for the Percent CPC bidding strategy',

@@ -26,7 +26,6 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\ResourceNames;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\Customer;
 use Google\ApiCore\ApiException;
@@ -41,14 +40,14 @@ use Google\Protobuf\StringValue;
  */
 class CreateCustomer
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    const MANAGER_CUSTOMER_ID = 'INSERT_MANAGER_CUSTOMER_ID_HERE';
 
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::MANAGER_CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -64,7 +63,7 @@ class CreateCustomer
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID
+                $options[ArgumentNames::MANAGER_CUSTOMER_ID] ?: self::MANAGER_CUSTOMER_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -95,12 +94,11 @@ class CreateCustomer
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $managerCustomerId the manager customer ID without hyphens
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId)
+    public static function runExample(GoogleAdsClient $googleAdsClient, $managerCustomerId)
     {
         $customer = new Customer([
-            'resource_name' => ResourceNames::forCustomer($customerId),
             'descriptive_name' => new StringValue(
                 ['value' => 'Account created with CustomerService on ' . date('Ymd h:i:s')]
             ),
@@ -119,13 +117,13 @@ class CreateCustomer
 
         // Issues a mutate request to create an account
         $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
-        $response = $customerServiceClient->createCustomerClient($customerId, $customer);
+        $response = $customerServiceClient->createCustomerClient($managerCustomerId, $customer);
 
         printf(
             'Created a customer with resource name "%s" under the manager account with '
             . 'customer ID %d.%s',
             $response->getResourceName(),
-            $customerId,
+            $managerCustomerId,
             PHP_EOL
         );
     }
