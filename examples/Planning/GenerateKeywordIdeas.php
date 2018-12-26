@@ -184,12 +184,12 @@ class GenerateKeywordIdeas
             // Add the resource name of each location ID to the request.
             $geoTargetConstants,
             // Set the network. To restrict to only Google Search, change the parameter below to
-            // KeywordPlanNetwork.GOOGLE_SEARCH.
+            // KeywordPlanNetwork::GOOGLE_SEARCH.
             KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS,
             $requestOptionalArgs
         );
 
-        // Iterates over the results and print its detail.
+        // Iterate over the results and print its detail.
         foreach ($response->getResults() as $result) {
             /** @var GenerateKeywordIdeaResult $result */
             // Note that the competition printed below is enum value.
