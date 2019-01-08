@@ -36,7 +36,7 @@ use Google\Ads\GoogleAds\V0\Services\UrlSeed;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
-/** This example generates keyword ideas from a list of seed keywords. */
+/** This example generates keyword ideas from a list of seed keywords or a seed page URL. */
 class GenerateKeywordIdeas
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
