@@ -28,6 +28,7 @@ use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
+use Google\Ads\GoogleAds\V0\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
 use PHPUnit\Framework\TestCase;
 
@@ -266,5 +267,21 @@ class ResourceNamesTest extends TestCase
 
         $names = GeoTargetConstantServiceClient::parseName($expectedResourceName);
         $this->assertEquals($japanTargetConstantId, $names['geo_target_constant']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forGeoTargetConstant()
+     */
+    public function testGetNameForLanguageConstant()
+    {
+        $englishLanguageId = 1000;
+        $expectedResourceName = sprintf('languageConstants/%s', $englishLanguageId);
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forLanguageConstant($englishLanguageId)
+        );
+
+        $names = LanguageConstantServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($englishLanguageId, $names['language_constant']);
     }
 }
