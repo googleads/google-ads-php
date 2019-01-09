@@ -144,8 +144,8 @@ class GenerateKeywordIdeas
             );
         }
 
-        // Specify the optional arguments of the request as a keywordSeed, UrlSeed,
-        // or KeywordAndUrlSeed.
+        // Specify the optional arguments of the request as a keywordSeed, urlSeed,
+        // or keywordAndUrlSeed.
         $requestOptionalArgs = [];
         if (empty($keywords)) {
             // Only page URL was specified, so use a UrlSeed.
