@@ -103,7 +103,6 @@ class GetHotelAdsPerformance
                 . "ad_group.id, "
                 . "ad_group.status, "
                 . "metrics.impressions, "
-                . "metrics.clicks, "
                 . "metrics.hotel_average_lead_value_micros, "
                 . "hotel_check_in_day_of_week, "
                 . "hotel_length_of_stay "
@@ -125,7 +124,7 @@ class GetHotelAdsPerformance
             // DayOfWeek.php.
             printf(
                 "Ad group with ID %d in campaign with ID %d "
-                . "with hotel check-in day of week as %d and %d day(s) of stay "
+                . "with hotel check-in on %d and %d day(s) of stay "
                 . "had %d impression(s) and %d average lead value (in micros) "
                 . "during the last 7 days.%s",
                 $googleAdsRow->getAdGroup()->getId()->getValue(),
