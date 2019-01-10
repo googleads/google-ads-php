@@ -19,17 +19,11 @@ namespace Google\Ads\GoogleAds\Examples\AccountManagement;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use GetOpt\GetOpt;
-use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
-use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V0\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V0\Resources\ChangeStatus;
-use Google\Ads\GoogleAds\V0\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -96,7 +90,7 @@ class ListAccessibleCustomers
         $accessibleCustomers = $customerServiceClient->listAccessibleCustomers();
         print 'Total results: ' . count($accessibleCustomers) . PHP_EOL;
 
-        // Iterates over all accessible customers' resource names and print them.
+        // Iterates over all accessible customers' resource names and prints them.
         foreach ($accessibleCustomers->getResourceNames() as $resourceName) {
             /** @var string $resourceName */
             printf("Customer resource name: '%s'%s", $resourceName, PHP_EOL);
