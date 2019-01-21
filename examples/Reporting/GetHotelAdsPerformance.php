@@ -123,7 +123,7 @@ class GetHotelAdsPerformance
             // Note: A mapping of enum names to values for days of week can be found at
             // DayOfWeek.php.
             printf(
-                "Ad group with ID %d in campaign with ID %d "
+                "Ad group ID %d in campaign ID %d "
                 . "with hotel check-in on %d and %d day(s) of stay "
                 . "had %d impression(s) and %d average lead value (in micros) "
                 . "during the last 7 days.%s",
