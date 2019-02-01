@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ namespace Google\Ads\GoogleAds\V0\Services;
 
 use Google\Ads\GoogleAds\V0\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V0\Resources\CustomerManagerLink;
+use Google\Ads\GoogleAds\V0\Services\MutateCustomerManagerLinkResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
@@ -121,6 +122,82 @@ class CustomerManagerLinkServiceClientTest extends GeneratedTest
 
         try {
             $client->getCustomerManagerLink($formattedResourceName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function mutateCustomerManagerLinkTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new MutateCustomerManagerLinkResponse();
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $operations = [];
+
+        $response = $client->mutateCustomerManagerLink($customerId, $operations);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v0.services.CustomerManagerLinkService/MutateCustomerManagerLink', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getCustomerId();
+
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getOperations();
+
+        $this->assertProtobufEquals($operations, $actualValue);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function mutateCustomerManagerLinkExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $operations = [];
+
+        try {
+            $client->mutateCustomerManagerLink($customerId, $operations);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

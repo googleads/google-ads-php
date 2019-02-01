@@ -27,6 +27,22 @@ class MutateCampaignSharedSetsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.services.CampaignSharedSetOperation operations = 2;</code>
      */
     private $operations;
+    /**
+     * If true, successful operations will be carried out and invalid
+     * operations will return errors. If false, all operations will be carried
+     * out in one transaction if and only if they are all valid.
+     * Default is false.
+     *
+     * Generated from protobuf field <code>bool partial_failure = 3;</code>
+     */
+    private $partial_failure = false;
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 4;</code>
+     */
+    private $validate_only = false;
 
     /**
      * Constructor.
@@ -38,6 +54,14 @@ class MutateCampaignSharedSetsRequest extends \Google\Protobuf\Internal\Message
      *           The ID of the customer whose campaign shared sets are being modified.
      *     @type \Google\Ads\GoogleAds\V0\Services\CampaignSharedSetOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
      *           The list of operations to perform on individual campaign shared sets.
+     *     @type bool $partial_failure
+     *           If true, successful operations will be carried out and invalid
+     *           operations will return errors. If false, all operations will be carried
+     *           out in one transaction if and only if they are all valid.
+     *           Default is false.
+     *     @type bool $validate_only
+     *           If true, the request is validated but not executed. Only errors are
+     *           returned, not results.
      * }
      */
     public function __construct($data = NULL) {
@@ -93,6 +117,66 @@ class MutateCampaignSharedSetsRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Services\CampaignSharedSetOperation::class);
         $this->operations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * If true, successful operations will be carried out and invalid
+     * operations will return errors. If false, all operations will be carried
+     * out in one transaction if and only if they are all valid.
+     * Default is false.
+     *
+     * Generated from protobuf field <code>bool partial_failure = 3;</code>
+     * @return bool
+     */
+    public function getPartialFailure()
+    {
+        return $this->partial_failure;
+    }
+
+    /**
+     * If true, successful operations will be carried out and invalid
+     * operations will return errors. If false, all operations will be carried
+     * out in one transaction if and only if they are all valid.
+     * Default is false.
+     *
+     * Generated from protobuf field <code>bool partial_failure = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPartialFailure($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->partial_failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 4;</code>
+     * @return bool
+     */
+    public function getValidateOnly()
+    {
+        return $this->validate_only;
+    }
+
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setValidateOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->validate_only = $var;
 
         return $this;
     }

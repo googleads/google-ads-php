@@ -28,7 +28,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\ResourceNames;
-use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum_AdGroupAdStatus;
+use Google\Ads\GoogleAds\V0\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\AdGroupAd;
 use Google\Ads\GoogleAds\V0\Services\AdGroupAdOperation;
@@ -114,7 +114,7 @@ class PauseAd
         // Creates an ad and sets its status to PAUSED.
         $adGroupAd = new AdGroupAd();
         $adGroupAd->setResourceName($adGroupAdResourceName);
-        $adGroupAd->setStatus(AdGroupAdStatusEnum_AdGroupAdStatus::PAUSED);
+        $adGroupAd->setStatus(AdGroupAdStatus::PAUSED);
 
         // Constructs an operation that will pause the ad with the specified resource name,
         // using the FieldMasks utility to derive the update mask. This mask tells the Google Ads
@@ -131,11 +131,11 @@ class PauseAd
         );
 
         // Prints the resource name of the paused ad group ad.
-        /** @var AdGroupAd $pausedAdgroupAd */
-        $pausedAdgroupAd = $response->getResults()[0];
+        /** @var AdGroupAd $pausedAdGroupAd */
+        $pausedAdGroupAd = $response->getResults()[0];
         printf(
             "Ad group ad with resource name: '%s' is paused.%s",
-            $pausedAdgroupAd->getResourceName(),
+            $pausedAdGroupAd->getResourceName(),
             PHP_EOL
         );
     }

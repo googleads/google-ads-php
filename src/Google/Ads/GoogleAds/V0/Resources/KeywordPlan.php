@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A Keyword Planner plan.
+ * Max number of saved keyword plans: 10000.
+ * It's possible to remove plans if limit is reached.
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.resources.KeywordPlan</code>
  */

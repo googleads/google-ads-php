@@ -126,8 +126,6 @@ class ApplyRecommendation
         $recommendationServiceClient = $googleAdsClient->getRecommendationServiceClient();
         $response = $recommendationServiceClient->applyRecommendation(
             $customerId,
-            // Sets the partial failure mode to false.
-            false,
             [$applyRecommendationOperation]
         );
         /** @var Recommendation $appliedRecommendation */

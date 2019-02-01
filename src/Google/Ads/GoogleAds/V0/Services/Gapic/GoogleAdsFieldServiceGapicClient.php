@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,12 +32,12 @@ use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsFieldsRequest;
 use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsFieldsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\FetchAuthTokenInterface;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to fetch Google Ads API fields.
@@ -101,6 +101,7 @@ class GoogleAdsFieldServiceGapicClient
             'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/google_ads_field_service_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/google_ads_field_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/google_ads_field_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
@@ -298,18 +299,21 @@ class GoogleAdsFieldServiceGapicClient
      * $googleAdsFieldServiceClient = new GoogleAdsFieldServiceClient();
      * try {
      *     $query = '';
-     *     // Iterate through all elements
-     *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     *
-     *     // OR iterate over pages of elements
+     *     // Iterate over pages of elements
      *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
      *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $googleAdsFieldServiceClient->searchGoogleAdsFields($query);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
      *     }
      * } finally {
      *     $googleAdsFieldServiceClient->close();

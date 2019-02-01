@@ -116,8 +116,6 @@ class DismissRecommendation
         $recommendationServiceClient = $googleAdsClient->getRecommendationServiceClient();
         $response = $recommendationServiceClient->dismissRecommendation(
             $customerId,
-            // Sets the partial failure mode to false.
-            false,
             [$dismissRecommendationOperation]
         );
         /** @var Recommendation $dismissedRecommendation */

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,15 +30,15 @@ use Google\Ads\GoogleAds\V0\Resources\CustomerClient;
 use Google\Ads\GoogleAds\V0\Services\GetCustomerClientRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\FetchAuthTokenInterface;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
 
 /**
- * Service Description: Service to manage customer clients in a manager hierarchy.
+ * Service Description: Service to get clients in a customer's hierarchy.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -99,6 +99,7 @@ class CustomerClientServiceGapicClient
             'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/customer_client_service_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/customer_client_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/customer_client_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
@@ -248,7 +249,7 @@ class CustomerClientServiceGapicClient
     }
 
     /**
-     * Returns the requested customer client in full detail.
+     * Returns the requested client in full detail.
      *
      * Sample code:
      * ```
@@ -261,7 +262,7 @@ class CustomerClientServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the customer client to fetch.
+     * @param string $resourceName The resource name of the client to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *

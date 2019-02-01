@@ -18,6 +18,8 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required authentication token (from OAuth API) for the email.
+     * This field can only be specified in a create request. All its subfields
+     * are not selectable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1;</code>
      */
@@ -33,10 +35,11 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * Plus page ID of the managed business whose locations should be used. If
      * this field is not set, then all businesses accessible by the user
      * (specified by email_address) are used.
+     * This field is mutate-only and is not selectable.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue business_account_identifier = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_account_id = 10;</code>
      */
-    private $business_account_identifier = null;
+    private $business_account_id = null;
     /**
      * Used to filter Google My Business listings by business name. If
      * business_name_filter is set, only listings with a matching business name
@@ -72,13 +75,16 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Ads\GoogleAds\V0\Resources\Feed\PlacesLocationFeedData\OAuthInfo $oauth_info
      *           Required authentication token (from OAuth API) for the email.
+     *           This field can only be specified in a create request. All its subfields
+     *           are not selectable.
      *     @type \Google\Protobuf\StringValue $email_address
      *           Email address of a Google My Business account or email address of a
      *           manager of the Google My Business account. Required.
-     *     @type \Google\Protobuf\StringValue $business_account_identifier
+     *     @type \Google\Protobuf\StringValue $business_account_id
      *           Plus page ID of the managed business whose locations should be used. If
      *           this field is not set, then all businesses accessible by the user
      *           (specified by email_address) are used.
+     *           This field is mutate-only and is not selectable.
      *     @type \Google\Protobuf\StringValue $business_name_filter
      *           Used to filter Google My Business listings by business name. If
      *           business_name_filter is set, only listings with a matching business name
@@ -102,6 +108,8 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
 
     /**
      * Required authentication token (from OAuth API) for the email.
+     * This field can only be specified in a create request. All its subfields
+     * are not selectable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1;</code>
      * @return \Google\Ads\GoogleAds\V0\Resources\Feed\PlacesLocationFeedData\OAuthInfo
@@ -113,6 +121,8 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
 
     /**
      * Required authentication token (from OAuth API) for the email.
+     * This field can only be specified in a create request. All its subfields
+     * are not selectable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1;</code>
      * @param \Google\Ads\GoogleAds\V0\Resources\Feed\PlacesLocationFeedData\OAuthInfo $var
@@ -158,28 +168,30 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * Plus page ID of the managed business whose locations should be used. If
      * this field is not set, then all businesses accessible by the user
      * (specified by email_address) are used.
+     * This field is mutate-only and is not selectable.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue business_account_identifier = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_account_id = 10;</code>
      * @return \Google\Protobuf\StringValue
      */
-    public function getBusinessAccountIdentifier()
+    public function getBusinessAccountId()
     {
-        return $this->business_account_identifier;
+        return $this->business_account_id;
     }
 
     /**
      * Plus page ID of the managed business whose locations should be used. If
      * this field is not set, then all businesses accessible by the user
      * (specified by email_address) are used.
+     * This field is mutate-only and is not selectable.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue business_account_identifier = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_account_id = 10;</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
-    public function setBusinessAccountIdentifier($var)
+    public function setBusinessAccountId($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->business_account_identifier = $var;
+        $this->business_account_id = $var;
 
         return $this;
     }

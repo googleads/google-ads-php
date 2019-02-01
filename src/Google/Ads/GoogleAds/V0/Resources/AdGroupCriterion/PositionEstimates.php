@@ -36,6 +36,20 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_of_page_cpc_micros = 3;</code>
      */
     private $top_of_page_cpc_micros = null;
+    /**
+     * Estimate of how many clicks per week you might get by changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_clicks_at_first_position_cpc = 4;</code>
+     */
+    private $estimated_add_clicks_at_first_position_cpc = null;
+    /**
+     * Estimate of how your cost per week might change when changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_cost_at_first_position_cpc = 5;</code>
+     */
+    private $estimated_add_cost_at_first_position_cpc = null;
 
     /**
      * Constructor.
@@ -52,6 +66,12 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int64Value $top_of_page_cpc_micros
      *           The estimate of the CPC bid required for ad to be displayed at the top
      *           of the first page of search results.
+     *     @type \Google\Protobuf\Int64Value $estimated_add_clicks_at_first_position_cpc
+     *           Estimate of how many clicks per week you might get by changing your
+     *           keyword bid to the value in first_position_cpc_micros.
+     *     @type \Google\Protobuf\Int64Value $estimated_add_cost_at_first_position_cpc
+     *           Estimate of how your cost per week might change when changing your
+     *           keyword bid to the value in first_position_cpc_micros.
      * }
      */
     public function __construct($data = NULL) {
@@ -139,6 +159,62 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
         $this->top_of_page_cpc_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Estimate of how many clicks per week you might get by changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_clicks_at_first_position_cpc = 4;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getEstimatedAddClicksAtFirstPositionCpc()
+    {
+        return $this->estimated_add_clicks_at_first_position_cpc;
+    }
+
+    /**
+     * Estimate of how many clicks per week you might get by changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_clicks_at_first_position_cpc = 4;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setEstimatedAddClicksAtFirstPositionCpc($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->estimated_add_clicks_at_first_position_cpc = $var;
+
+        return $this;
+    }
+
+    /**
+     * Estimate of how your cost per week might change when changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_cost_at_first_position_cpc = 5;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getEstimatedAddCostAtFirstPositionCpc()
+    {
+        return $this->estimated_add_cost_at_first_position_cpc;
+    }
+
+    /**
+     * Estimate of how your cost per week might change when changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_cost_at_first_position_cpc = 5;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setEstimatedAddCostAtFirstPositionCpc($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->estimated_add_cost_at_first_position_cpc = $var;
 
         return $this;
     }

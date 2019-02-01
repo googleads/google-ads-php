@@ -33,7 +33,6 @@ use Google\Ads\GoogleAds\V0\Common\ListingDimensionInfo;
 use Google\Ads\GoogleAds\V0\Common\ListingGroupInfo;
 use Google\Ads\GoogleAds\V0\Enums\AdGroupStatusEnum\AdGroupStatus;
 use Google\Ads\GoogleAds\V0\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V0\Enums\ListingGroupTypeEnum_ListingGroupType;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\AdGroupCriterion;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionOperation;

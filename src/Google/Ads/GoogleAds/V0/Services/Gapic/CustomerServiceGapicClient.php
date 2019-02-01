@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,12 +37,12 @@ use Google\Ads\GoogleAds\V0\Services\MutateCustomerRequest;
 use Google\Ads\GoogleAds\V0\Services\MutateCustomerResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\FetchAuthTokenInterface;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to manage customers.
@@ -106,6 +106,7 @@ class CustomerServiceGapicClient
             'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/customer_service_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/customer_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/customer_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
@@ -315,6 +316,9 @@ class CustomerServiceGapicClient
      * @param array             $optionalArgs {
      *                                        Optional.
      *
+     *     @type bool $validateOnly
+     *          If true, the request is validated but not executed. Only errors are
+     *          returned, not results.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -332,6 +336,9 @@ class CustomerServiceGapicClient
         $request = new MutateCustomerRequest();
         $request->setCustomerId($customerId);
         $request->setOperation($operation);
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
+        }
 
         return $this->startCall(
             'MutateCustomer',
@@ -349,7 +356,6 @@ class CustomerServiceGapicClient
      * ```
      * $customerServiceClient = new CustomerServiceClient();
      * try {
-     *
      *     $response = $customerServiceClient->listAccessibleCustomers();
      * } finally {
      *     $customerServiceClient->close();

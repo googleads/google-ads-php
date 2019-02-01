@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,12 +36,12 @@ use Google\Ads\GoogleAds\V0\Services\DismissRecommendationResponse;
 use Google\Ads\GoogleAds\V0\Services\GetRecommendationRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\FetchAuthTokenInterface;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to manage recommendations.
@@ -105,6 +105,7 @@ class RecommendationServiceGapicClient
             'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/recommendation_service_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/recommendation_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/recommendation_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
@@ -304,25 +305,25 @@ class RecommendationServiceGapicClient
      * $recommendationServiceClient = new RecommendationServiceClient();
      * try {
      *     $customerId = '';
-     *     $partialFailure = false;
      *     $operations = [];
-     *     $response = $recommendationServiceClient->applyRecommendation($customerId, $partialFailure, $operations);
+     *     $response = $recommendationServiceClient->applyRecommendation($customerId, $operations);
      * } finally {
      *     $recommendationServiceClient->close();
      * }
      * ```
      *
-     * @param string                         $customerId     The ID of the customer with the recommendation.
-     * @param bool                           $partialFailure If true, successful operations will be carried out and invalid
-     *                                                       operations will return errors. If false, operations will be carried
-     *                                                       out as a transaction if and only if they are all valid.
-     *                                                       Default is false.
-     * @param ApplyRecommendationOperation[] $operations     The list of operations to apply recommendations.
-     *                                                       If partial_failure=false all recommendations should be of the same type
-     *                                                       There is a limit of 100 operations per request.
-     * @param array                          $optionalArgs   {
-     *                                                       Optional.
+     * @param string                         $customerId   The ID of the customer with the recommendation.
+     * @param ApplyRecommendationOperation[] $operations   The list of operations to apply recommendations.
+     *                                                     If partial_failure=false all recommendations should be of the same type
+     *                                                     There is a limit of 100 operations per request.
+     * @param array                          $optionalArgs {
+     *                                                     Optional.
      *
+     *     @type bool $partialFailure
+     *          If true, successful operations will be carried out and invalid
+     *          operations will return errors. If false, operations will be carried
+     *          out as a transaction if and only if they are all valid.
+     *          Default is false.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -335,12 +336,14 @@ class RecommendationServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function applyRecommendation($customerId, $partialFailure, $operations, array $optionalArgs = [])
+    public function applyRecommendation($customerId, $operations, array $optionalArgs = [])
     {
         $request = new ApplyRecommendationRequest();
         $request->setCustomerId($customerId);
-        $request->setPartialFailure($partialFailure);
         $request->setOperations($operations);
+        if (isset($optionalArgs['partialFailure'])) {
+            $request->setPartialFailure($optionalArgs['partialFailure']);
+        }
 
         return $this->startCall(
             'ApplyRecommendation',
@@ -358,25 +361,25 @@ class RecommendationServiceGapicClient
      * $recommendationServiceClient = new RecommendationServiceClient();
      * try {
      *     $customerId = '';
-     *     $partialFailure = false;
      *     $operations = [];
-     *     $response = $recommendationServiceClient->dismissRecommendation($customerId, $partialFailure, $operations);
+     *     $response = $recommendationServiceClient->dismissRecommendation($customerId, $operations);
      * } finally {
      *     $recommendationServiceClient->close();
      * }
      * ```
      *
-     * @param string                                                        $customerId     The ID of the customer with the recommendation.
-     * @param bool                                                          $partialFailure If true, successful operations will be carried out and invalid
-     *                                                                                      operations will return errors. If false, operations will be carried in a
-     *                                                                                      single transaction if and only if they are all valid.
-     *                                                                                      Default is false.
-     * @param DismissRecommendationRequest_DismissRecommendationOperation[] $operations     The list of operations to dismiss recommendations.
-     *                                                                                      If partial_failure=false all recommendations should be of the same type
-     *                                                                                      There is a limit of 100 operations per request.
-     * @param array                                                         $optionalArgs   {
-     *                                                                                      Optional.
+     * @param string                                                        $customerId   The ID of the customer with the recommendation.
+     * @param DismissRecommendationRequest_DismissRecommendationOperation[] $operations   The list of operations to dismiss recommendations.
+     *                                                                                    If partial_failure=false all recommendations should be of the same type
+     *                                                                                    There is a limit of 100 operations per request.
+     * @param array                                                         $optionalArgs {
+     *                                                                                    Optional.
      *
+     *     @type bool $partialFailure
+     *          If true, successful operations will be carried out and invalid
+     *          operations will return errors. If false, operations will be carried in a
+     *          single transaction if and only if they are all valid.
+     *          Default is false.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -389,12 +392,14 @@ class RecommendationServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function dismissRecommendation($customerId, $partialFailure, $operations, array $optionalArgs = [])
+    public function dismissRecommendation($customerId, $operations, array $optionalArgs = [])
     {
         $request = new DismissRecommendationRequest();
         $request->setCustomerId($customerId);
-        $request->setPartialFailure($partialFailure);
         $request->setOperations($operations);
+        if (isset($optionalArgs['partialFailure'])) {
+            $request->setPartialFailure($optionalArgs['partialFailure']);
+        }
 
         return $this->startCall(
             'DismissRecommendation',

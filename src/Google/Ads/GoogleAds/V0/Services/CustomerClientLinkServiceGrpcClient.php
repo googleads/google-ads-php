@@ -47,4 +47,18 @@ class CustomerClientLinkServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Creates or updates a customer client link. Operation statuses are returned.
+     * @param \Google\Ads\GoogleAds\V0\Services\MutateCustomerClientLinkRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function MutateCustomerClientLink(\Google\Ads\GoogleAds\V0\Services\MutateCustomerClientLinkRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v0.services.CustomerClientLinkService/MutateCustomerClientLink',
+        $argument,
+        ['\Google\Ads\GoogleAds\V0\Services\MutateCustomerClientLinkResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

@@ -36,6 +36,12 @@ class CriterionType
      */
     const PLACEMENT = 3;
     /**
+     * Mobile application categories to target.
+     *
+     * Generated from protobuf enum <code>MOBILE_APP_CATEGORY = 4;</code>
+     */
+    const MOBILE_APP_CATEGORY = 4;
+    /**
      * Devices to target.
      *
      * Generated from protobuf enum <code>DEVICE = 6;</code>
@@ -149,6 +155,24 @@ class CriterionType
      * Generated from protobuf enum <code>USER_INTEREST = 24;</code>
      */
     const USER_INTEREST = 24;
+    /**
+     * Webpage criterion for dynamic search ads.
+     *
+     * Generated from protobuf enum <code>WEBPAGE = 25;</code>
+     */
+    const WEBPAGE = 25;
+    /**
+     * Operating system version.
+     *
+     * Generated from protobuf enum <code>OPERATING_SYSTEM_VERSION = 26;</code>
+     */
+    const OPERATING_SYSTEM_VERSION = 26;
+    /**
+     * App payment model.
+     *
+     * Generated from protobuf enum <code>APP_PAYMENT_MODEL = 27;</code>
+     */
+    const APP_PAYMENT_MODEL = 27;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

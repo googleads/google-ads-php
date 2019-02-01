@@ -20,7 +20,7 @@
 namespace Google\Ads\GoogleAds\V0\Services;
 
 /**
- * Service to manage customer clients in a manager hierarchy.
+ * Service to get clients in a customer's hierarchy.
  */
 class CustomerClientServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -34,7 +34,7 @@ class CustomerClientServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns the requested customer client in full detail.
+     * Returns the requested client in full detail.
      * @param \Google\Ads\GoogleAds\V0\Services\GetCustomerClientRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

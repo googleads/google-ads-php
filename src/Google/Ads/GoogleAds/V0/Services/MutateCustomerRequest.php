@@ -27,6 +27,13 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.services.CustomerOperation operation = 4;</code>
      */
     private $operation = null;
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 5;</code>
+     */
+    private $validate_only = false;
 
     /**
      * Constructor.
@@ -38,6 +45,9 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
      *           The ID of the customer being modified.
      *     @type \Google\Ads\GoogleAds\V0\Services\CustomerOperation $operation
      *           The operation to perform on the customer
+     *     @type bool $validate_only
+     *           If true, the request is validated but not executed. Only errors are
+     *           returned, not results.
      * }
      */
     public function __construct($data = NULL) {
@@ -93,6 +103,34 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Services\CustomerOperation::class);
         $this->operation = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 5;</code>
+     * @return bool
+     */
+    public function getValidateOnly()
+    {
+        return $this->validate_only;
+    }
+
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setValidateOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->validate_only = $var;
 
         return $this;
     }

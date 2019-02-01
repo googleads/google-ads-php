@@ -76,11 +76,29 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     private $has_partners_badge = null;
     /**
+     * Whether the customer is a manager.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     */
+    private $manager = null;
+    /**
+     * Whether the customer is a test account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     */
+    private $test_account = null;
+    /**
      * Call reporting setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CallReportingSetting call_reporting_setting = 10;</code>
      */
     private $call_reporting_setting = null;
+    /**
+     * Conversion tracking setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ConversionTrackingSetting conversion_tracking_setting = 14;</code>
+     */
+    private $conversion_tracking_setting = null;
 
     /**
      * Constructor.
@@ -112,8 +130,14 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           Whether the Customer has a Partners program badge. If the Customer is not
      *           associated with the Partners program, this will be false. For more
      *           information, see https://support.google.com/partners/answer/3125774.
+     *     @type \Google\Protobuf\BoolValue $manager
+     *           Whether the customer is a manager.
+     *     @type \Google\Protobuf\BoolValue $test_account
+     *           Whether the customer is a test account.
      *     @type \Google\Ads\GoogleAds\V0\Resources\CallReportingSetting $call_reporting_setting
      *           Call reporting setting for a customer.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\ConversionTrackingSetting $conversion_tracking_setting
+     *           Conversion tracking setting for a customer.
      * }
      */
     public function __construct($data = NULL) {
@@ -368,6 +392,58 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Whether the customer is a manager.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * @return \Google\Protobuf\BoolValue
+     */
+    public function getManager()
+    {
+        return $this->manager;
+    }
+
+    /**
+     * Whether the customer is a manager.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * @param \Google\Protobuf\BoolValue $var
+     * @return $this
+     */
+    public function setManager($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
+        $this->manager = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether the customer is a test account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * @return \Google\Protobuf\BoolValue
+     */
+    public function getTestAccount()
+    {
+        return $this->test_account;
+    }
+
+    /**
+     * Whether the customer is a test account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * @param \Google\Protobuf\BoolValue $var
+     * @return $this
+     */
+    public function setTestAccount($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
+        $this->test_account = $var;
+
+        return $this;
+    }
+
+    /**
      * Call reporting setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CallReportingSetting call_reporting_setting = 10;</code>
@@ -389,6 +465,32 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CallReportingSetting::class);
         $this->call_reporting_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * Conversion tracking setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ConversionTrackingSetting conversion_tracking_setting = 14;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\ConversionTrackingSetting
+     */
+    public function getConversionTrackingSetting()
+    {
+        return $this->conversion_tracking_setting;
+    }
+
+    /**
+     * Conversion tracking setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ConversionTrackingSetting conversion_tracking_setting = 14;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\ConversionTrackingSetting $var
+     * @return $this
+     */
+    public function setConversionTrackingSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\ConversionTrackingSetting::class);
+        $this->conversion_tracking_setting = $var;
 
         return $this;
     }

@@ -47,4 +47,18 @@ class CustomerManagerLinkServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Creates or updates customer manager links. Operation statuses are returned.
+     * @param \Google\Ads\GoogleAds\V0\Services\MutateCustomerManagerLinkRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function MutateCustomerManagerLink(\Google\Ads\GoogleAds\V0\Services\MutateCustomerManagerLinkRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v0.services.CustomerManagerLinkService/MutateCustomerManagerLink',
+        $argument,
+        ['\Google\Ads\GoogleAds\V0\Services\MutateCustomerManagerLinkResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

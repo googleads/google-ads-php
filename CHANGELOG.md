@@ -1,3 +1,11 @@
+## 0.7.0
+
+*   Added support and examples for v0_7 of Google Ads API.
+*   Updated some examples to match the new API specifications, e.g., ApplyRecommendation,
+    DismissRecommendation, GetKeywordStats, AddCampaignBidModifier.
+*   Added GetHotelAdsPerformance example.
+*   Removed AddCampaignGroup example.
+
 ## 0.6.0
 
 *   Added support and examples for v0_6 of Google Ads API.

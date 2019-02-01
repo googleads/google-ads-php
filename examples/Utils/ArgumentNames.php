@@ -37,6 +37,7 @@ final class ArgumentNames
     const CRITERION_ID = 'criterionId';
     const CUSTOMER_ID = 'customerId';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
+    const KEYWORD_PLAN_ID = 'keywordPlanId';
     const KEYWORD_TEXT = 'keywordText';
     const LANGUAGE_ID = 'languageId';
     const LOCALE = 'locale';
@@ -66,6 +67,7 @@ final class ArgumentNames
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
+        self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
         self::LANGUAGE_ID => 'The language ID',
         self::LOCALE => 'The locale',

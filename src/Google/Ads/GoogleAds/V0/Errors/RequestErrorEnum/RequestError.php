@@ -122,6 +122,12 @@ class RequestError
      * Generated from protobuf enum <code>LOGIN_CUSTOMER_ID_PARAMETER_MISSING = 20;</code>
      */
     const LOGIN_CUSTOMER_ID_PARAMETER_MISSING = 20;
+    /**
+     * page_token is set in the validate only request
+     *
+     * Generated from protobuf enum <code>VALIDATE_ONLY_REQUEST_HAS_PAGE_TOKEN = 21;</code>
+     */
+    const VALIDATE_ONLY_REQUEST_HAS_PAGE_TOKEN = 21;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

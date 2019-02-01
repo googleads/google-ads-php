@@ -54,6 +54,18 @@ class ChangeStatusResourceType
      * Generated from protobuf enum <code>CAMPAIGN_CRITERION = 7;</code>
      */
     const CAMPAIGN_CRITERION = 7;
+    /**
+     * A Feed resource change.
+     *
+     * Generated from protobuf enum <code>FEED = 9;</code>
+     */
+    const FEED = 9;
+    /**
+     * A FeedItem resource change.
+     *
+     * Generated from protobuf enum <code>FEED_ITEM = 10;</code>
+     */
+    const FEED_ITEM = 10;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

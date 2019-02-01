@@ -48,6 +48,12 @@ class MutateError
      * Generated from protobuf enum <code>MUTATE_NOT_ALLOWED = 9;</code>
      */
     const MUTATE_NOT_ALLOWED = 9;
+    /**
+     * The resource isn't in Google Ads. It belongs to another ads system.
+     *
+     * Generated from protobuf enum <code>RESOURCE_NOT_IN_GOOGLE_ADS = 10;</code>
+     */
+    const RESOURCE_NOT_IN_GOOGLE_ADS = 10;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

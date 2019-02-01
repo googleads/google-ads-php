@@ -91,6 +91,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      *           Encapsulates an Image.
      *     @type \Google\Ads\GoogleAds\V0\Resources\MediaBundle $media_bundle
      *           A ZIP archive media the content of which contains HTML5 assets.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\MediaAudio $audio
+     *           Encapsulates an Audio.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\MediaVideo $video
+     *           Encapsulates a Video.
      * }
      */
     public function __construct($data = NULL) {
@@ -336,6 +340,58 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\MediaBundle::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Encapsulates an Audio.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MediaAudio audio = 10;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\MediaAudio
+     */
+    public function getAudio()
+    {
+        return $this->readOneof(10);
+    }
+
+    /**
+     * Encapsulates an Audio.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MediaAudio audio = 10;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\MediaAudio $var
+     * @return $this
+     */
+    public function setAudio($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\MediaAudio::class);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Encapsulates a Video.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MediaVideo video = 11;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\MediaVideo
+     */
+    public function getVideo()
+    {
+        return $this->readOneof(11);
+    }
+
+    /**
+     * Encapsulates a Video.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MediaVideo video = 11;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\MediaVideo $var
+     * @return $this
+     */
+    public function setVideo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\MediaVideo::class);
+        $this->writeOneof(11, $var);
 
         return $this;
     }

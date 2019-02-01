@@ -109,7 +109,8 @@ class UserListError
      */
     const OWNERSHIP_REQUIRED_FOR_SET = 15;
     /**
-     * The user list of the type is not mutable.
+     * Creating user list without setting type in oneof user_list field, or
+     * creating/updating read-only user list types is not allowed.
      *
      * Generated from protobuf enum <code>USER_LIST_MUTATE_NOT_SUPPORTED = 16;</code>
      */
@@ -166,6 +167,25 @@ class UserListError
      * Generated from protobuf enum <code>ADVERTISER_NOT_WHITELISTED_FOR_USING_UPLOADED_DATA = 33;</code>
      */
     const ADVERTISER_NOT_WHITELISTED_FOR_USING_UPLOADED_DATA = 33;
+    /**
+     * The provided rule_type is not supported for the user list.
+     *
+     * Generated from protobuf enum <code>RULE_TYPE_IS_NOT_SUPPORTED = 34;</code>
+     */
+    const RULE_TYPE_IS_NOT_SUPPORTED = 34;
+    /**
+     * Similar user list cannot be used as a logical user list operand.
+     *
+     * Generated from protobuf enum <code>CAN_NOT_ADD_A_SIMILAR_USERLIST_AS_LOGICAL_LIST_OPERAND = 35;</code>
+     */
+    const CAN_NOT_ADD_A_SIMILAR_USERLIST_AS_LOGICAL_LIST_OPERAND = 35;
+    /**
+     * Logical user list should not have a mix of CRM based user list and other
+     * types of lists in its rules.
+     *
+     * Generated from protobuf enum <code>CAN_NOT_MIX_CRM_BASED_IN_LOGICAL_LIST_WITH_OTHER_LISTS = 36;</code>
+     */
+    const CAN_NOT_MIX_CRM_BASED_IN_LOGICAL_LIST_WITH_OTHER_LISTS = 36;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

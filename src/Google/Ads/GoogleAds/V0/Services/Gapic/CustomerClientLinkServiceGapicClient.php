@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,15 +27,18 @@
 namespace Google\Ads\GoogleAds\V0\Services\Gapic;
 
 use Google\Ads\GoogleAds\V0\Resources\CustomerClientLink;
+use Google\Ads\GoogleAds\V0\Services\CustomerClientLinkOperation;
 use Google\Ads\GoogleAds\V0\Services\GetCustomerClientLinkRequest;
+use Google\Ads\GoogleAds\V0\Services\MutateCustomerClientLinkRequest;
+use Google\Ads\GoogleAds\V0\Services\MutateCustomerClientLinkResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\FetchAuthTokenInterface;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to manage customer client links.
@@ -99,6 +102,7 @@ class CustomerClientLinkServiceGapicClient
             'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/customer_client_link_service_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/customer_client_link_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/customer_client_link_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
@@ -285,6 +289,52 @@ class CustomerClientLinkServiceGapicClient
         return $this->startCall(
             'GetCustomerClientLink',
             CustomerClientLink::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Creates or updates a customer client link. Operation statuses are returned.
+     *
+     * Sample code:
+     * ```
+     * $customerClientLinkServiceClient = new CustomerClientLinkServiceClient();
+     * try {
+     *     $customerId = '';
+     *     $operation = new CustomerClientLinkOperation();
+     *     $response = $customerClientLinkServiceClient->mutateCustomerClientLink($customerId, $operation);
+     * } finally {
+     *     $customerClientLinkServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                      $customerId   The ID of the customer whose customer link are being modified.
+     * @param CustomerClientLinkOperation $operation    The operation to perform on the individual CustomerClientLink.
+     * @param array                       $optionalArgs {
+     *                                                  Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V0\Services\MutateCustomerClientLinkResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function mutateCustomerClientLink($customerId, $operation, array $optionalArgs = [])
+    {
+        $request = new MutateCustomerClientLinkRequest();
+        $request->setCustomerId($customerId);
+        $request->setOperation($operation);
+
+        return $this->startCall(
+            'MutateCustomerClientLink',
+            MutateCustomerClientLinkResponse::class,
             $optionalArgs,
             $request
         )->wait();

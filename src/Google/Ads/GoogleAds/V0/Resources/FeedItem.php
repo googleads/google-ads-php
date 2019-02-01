@@ -45,6 +45,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     private $start_date_time = null;
     /**
      * End time in which this feed item is no longer effective and will stop
+     * serving.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -78,6 +79,17 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.FeedItemStatusEnum.FeedItemStatus status = 9;</code>
      */
     private $status = 0;
+    /**
+     * List of info about a feed item's validation and approval state for active
+     * feed mappings. There will be an entry in the list for each type of feed
+     * mapping associated with the feed, e.g. a feed with a sitelink and a call
+     * feed mapping would cause every feed item associated with that feed to have
+     * an entry in this list for both sitelink and call.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10;</code>
+     */
+    private $policy_infos;
 
     /**
      * Constructor.
@@ -99,6 +111,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *     @type \Google\Protobuf\StringValue $end_date_time
      *           End time in which this feed item is no longer effective and will stop
+     *           serving.
      *           The format is "YYYY-MM-DD HH:MM:SS".
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *     @type \Google\Ads\GoogleAds\V0\Resources\FeedItemAttributeValue[]|\Google\Protobuf\Internal\RepeatedField $attribute_values
@@ -111,6 +124,13 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type int $status
      *           Status of the feed item.
+     *           This field is read-only.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\FeedItemPlaceholderPolicyInfo[]|\Google\Protobuf\Internal\RepeatedField $policy_infos
+     *           List of info about a feed item's validation and approval state for active
+     *           feed mappings. There will be an entry in the list for each type of feed
+     *           mapping associated with the feed, e.g. a feed with a sitelink and a call
+     *           feed mapping would cause every feed item associated with that feed to have
+     *           an entry in this list for both sitelink and call.
      *           This field is read-only.
      * }
      */
@@ -233,6 +253,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * End time in which this feed item is no longer effective and will stop
+     * serving.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -246,6 +267,7 @@ class FeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * End time in which this feed item is no longer effective and will stop
+     * serving.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -367,6 +389,42 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\FeedItemStatusEnum_FeedItemStatus::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of info about a feed item's validation and approval state for active
+     * feed mappings. There will be an entry in the list for each type of feed
+     * mapping associated with the feed, e.g. a feed with a sitelink and a call
+     * feed mapping would cause every feed item associated with that feed to have
+     * an entry in this list for both sitelink and call.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPolicyInfos()
+    {
+        return $this->policy_infos;
+    }
+
+    /**
+     * List of info about a feed item's validation and approval state for active
+     * feed mappings. There will be an entry in the list for each type of feed
+     * mapping associated with the feed, e.g. a feed with a sitelink and a call
+     * feed mapping would cause every feed item associated with that feed to have
+     * an entry in this list for both sitelink and call.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\FeedItemPlaceholderPolicyInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPolicyInfos($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Resources\FeedItemPlaceholderPolicyInfo::class);
+        $this->policy_infos = $arr;
 
         return $this;
     }

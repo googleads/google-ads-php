@@ -329,6 +329,14 @@ class QueryError
      * Generated from protobuf enum <code>UNEXPECTED_INPUT = 11;</code>
      */
     const UNEXPECTED_INPUT = 11;
+    /**
+     * Metrics cannot be requested for a manager account. To retrieve metrics,
+     * issue separate requests against each client account under the manager
+     * account.
+     *
+     * Generated from protobuf enum <code>REQUESTED_METRICS_FOR_MANAGER = 59;</code>
+     */
+    const REQUESTED_METRICS_FOR_MANAGER = 59;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

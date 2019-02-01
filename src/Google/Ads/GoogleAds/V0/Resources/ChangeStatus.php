@@ -73,6 +73,18 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
      */
     private $campaign_criterion = null;
+    /**
+     * The Feed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     */
+    private $feed = null;
+    /**
+     * The FeedItem affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     */
+    private $feed_item = null;
 
     /**
      * Constructor.
@@ -102,6 +114,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      *           The AdGroupCriterion affected by this change.
      *     @type \Google\Protobuf\StringValue $campaign_criterion
      *           The CampaignCriterion affected by this change.
+     *     @type \Google\Protobuf\StringValue $feed
+     *           The Feed affected by this change.
+     *     @type \Google\Protobuf\StringValue $feed_item
+     *           The FeedItem affected by this change.
      * }
      */
     public function __construct($data = NULL) {
@@ -347,6 +363,58 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->campaign_criterion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The Feed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getFeed()
+    {
+        return $this->feed;
+    }
+
+    /**
+     * The Feed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setFeed($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->feed = $var;
+
+        return $this;
+    }
+
+    /**
+     * The FeedItem affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getFeedItem()
+    {
+        return $this->feed_item;
+    }
+
+    /**
+     * The FeedItem affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setFeedItem($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->feed_item = $var;
 
         return $this;
     }

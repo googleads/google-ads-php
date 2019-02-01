@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ class HotelPerformanceViewServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedResourceName = $client->hotelPerformanceViewName('[CUSTOMER]');
+        $formattedResourceName = $client->customerName('[CUSTOMER]');
 
         $response = $client->getHotelPerformanceView($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
@@ -117,7 +117,7 @@ class HotelPerformanceViewServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedResourceName = $client->hotelPerformanceViewName('[CUSTOMER]');
+        $formattedResourceName = $client->customerName('[CUSTOMER]');
 
         try {
             $client->getHotelPerformanceView($formattedResourceName);

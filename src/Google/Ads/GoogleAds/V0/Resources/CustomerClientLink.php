@@ -24,7 +24,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      */
     private $resource_name = '';
     /**
-     * The client customer linked to this customer. Read only.
+     * The client customer linked to this customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      */
@@ -61,7 +61,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      *           CustomerClientLink resource names have the form:
      *           `customers/{customer_id}/customerClientLinks/{client_customer_id}_{manager_link_id}`
      *     @type \Google\Protobuf\StringValue $client_customer
-     *           The client customer linked to this customer. Read only.
+     *           The client customer linked to this customer.
      *     @type \Google\Protobuf\Int64Value $manager_link_id
      *           This is uniquely identifies a customer client link. Read only.
      *     @type int $status
@@ -108,7 +108,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The client customer linked to this customer. Read only.
+     * The client customer linked to this customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      * @return \Google\Protobuf\StringValue
@@ -119,7 +119,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The client customer linked to this customer. Read only.
+     * The client customer linked to this customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      * @param \Google\Protobuf\StringValue $var

@@ -14,6 +14,18 @@ return [
                     ],
                 ],
             ],
+            'MutateCustomerClientLink' => [
+                'method' => 'post',
+                'uriTemplate' => '/v0/customers/{customer_id=*}/customerClientLinks:mutate',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 ];

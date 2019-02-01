@@ -10,6 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A Keyword Plan campaign.
+ * Max number of keyword plan campaigns per plan allowed: 1.
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.resources.KeywordPlanCampaign</code>
  */
@@ -45,6 +46,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     private $name = null;
     /**
      * The languages targeted for the Keyword Plan campaign.
+     * Max allowed: 1.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue language_constants = 5;</code>
      */
@@ -68,6 +70,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     private $cpc_bid_micros = null;
     /**
      * The geo targets.
+     * Max number allowed: 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.KeywordPlanGeoTarget geo_targets = 8;</code>
      */
@@ -93,6 +96,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      *           campaigns.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $language_constants
      *           The languages targeted for the Keyword Plan campaign.
+     *           Max allowed: 1.
      *     @type int $keyword_plan_network
      *           Targeting network.
      *           This field is required and should not be empty when creating Keyword Plan
@@ -104,6 +108,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
      *           campaigns.
      *     @type \Google\Ads\GoogleAds\V0\Resources\KeywordPlanGeoTarget[]|\Google\Protobuf\Internal\RepeatedField $geo_targets
      *           The geo targets.
+     *           Max number allowed: 20.
      * }
      */
     public function __construct($data = NULL) {
@@ -225,6 +230,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
 
     /**
      * The languages targeted for the Keyword Plan campaign.
+     * Max allowed: 1.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue language_constants = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -236,6 +242,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
 
     /**
      * The languages targeted for the Keyword Plan campaign.
+     * Max allowed: 1.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue language_constants = 5;</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -313,6 +320,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
 
     /**
      * The geo targets.
+     * Max number allowed: 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.KeywordPlanGeoTarget geo_targets = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -324,6 +332,7 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
 
     /**
      * The geo targets.
+     * Max number allowed: 20.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.resources.KeywordPlanGeoTarget geo_targets = 8;</code>
      * @param \Google\Ads\GoogleAds\V0\Resources\KeywordPlanGeoTarget[]|\Google\Protobuf\Internal\RepeatedField $var

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,11 +33,11 @@ use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsRequest;
 use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\FetchAuthTokenInterface;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to fetch data and metrics across resources.
@@ -50,18 +50,21 @@ use Google\ApiCore\ValidationException;
  * try {
  *     $customerId = '';
  *     $query = '';
- *     // Iterate through all elements
- *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
- *     foreach ($pagedResponse->iterateAllElements() as $element) {
- *         // doSomethingWith($element);
- *     }
- *
- *     // OR iterate over pages of elements
+ *     // Iterate over pages of elements
  *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
  *     foreach ($pagedResponse->iteratePages() as $page) {
  *         foreach ($page as $element) {
  *             // doSomethingWith($element);
  *         }
+ *     }
+ *
+ *
+ *     // Alternatively:
+ *
+ *     // Iterate through all elements
+ *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
+ *     foreach ($pagedResponse->iterateAllElements() as $element) {
+ *         // doSomethingWith($element);
  *     }
  * } finally {
  *     $googleAdsServiceClient->close();
@@ -107,6 +110,7 @@ class GoogleAdsServiceGapicClient
             'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/google_ads_service_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/google_ads_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/google_ads_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
@@ -185,18 +189,21 @@ class GoogleAdsServiceGapicClient
      * try {
      *     $customerId = '';
      *     $query = '';
-     *     // Iterate through all elements
-     *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
-     *     foreach ($pagedResponse->iterateAllElements() as $element) {
-     *         // doSomethingWith($element);
-     *     }
-     *
-     *     // OR iterate over pages of elements
+     *     // Iterate over pages of elements
      *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
      *         }
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // Iterate through all elements
+     *     $pagedResponse = $googleAdsServiceClient->search($customerId, $query);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
      *     }
      * } finally {
      *     $googleAdsServiceClient->close();
@@ -217,6 +224,8 @@ class GoogleAdsServiceGapicClient
      *          The maximum number of resources contained in the underlying API
      *          response. The API may return fewer values in a page, even if
      *          there are additional values to be retrieved.
+     *     @type bool $validateOnly
+     *          If true, the request is validated but not executed.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -239,6 +248,9 @@ class GoogleAdsServiceGapicClient
         }
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
+        }
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
         }
 
         return $this->getPagedListResponse(
@@ -269,6 +281,14 @@ class GoogleAdsServiceGapicClient
      * @param array             $optionalArgs     {
      *                                            Optional.
      *
+     *     @type bool $partialFailure
+     *          If true, successful operations will be carried out and invalid
+     *          operations will return errors. If false, all operations will be carried
+     *          out in one transaction if and only if they are all valid.
+     *          Default is false.
+     *     @type bool $validateOnly
+     *          If true, the request is validated but not executed. Only errors are
+     *          returned, not results.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -286,6 +306,12 @@ class GoogleAdsServiceGapicClient
         $request = new MutateGoogleAdsRequest();
         $request->setCustomerId($customerId);
         $request->setMutateOperations($mutateOperations);
+        if (isset($optionalArgs['partialFailure'])) {
+            $request->setPartialFailure($optionalArgs['partialFailure']);
+        }
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
+        }
 
         return $this->startCall(
             'Mutate',

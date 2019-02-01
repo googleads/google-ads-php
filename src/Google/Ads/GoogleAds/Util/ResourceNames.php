@@ -28,6 +28,7 @@ use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
+use Google\Ads\GoogleAds\V0\Services\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V0\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
 
@@ -201,5 +202,16 @@ final class ResourceNames
     public static function forLanguageConstant($languageConstantId)
     {
         return LanguageConstantServiceClient::languageConstantName($languageConstantId);
+    }
+
+    /**
+     * Generates resource name for a keyword plan.
+     *
+     * @param int $customerId the customer ID
+     * @param int $keywordPlanId the keyword plan ID
+     */
+    public static function forKeywordPlan($customerId, $keywordPlanId)
+    {
+        return KeywordPlanServiceClient::keywordPlanName($customerId, $keywordPlanId);
     }
 }

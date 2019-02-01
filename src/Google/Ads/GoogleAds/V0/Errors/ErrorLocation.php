@@ -16,12 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ErrorLocation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The mutate operation that failed
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value operation_index = 1;</code>
-     */
-    private $operation_index = null;
-    /**
      * A field path that indicates which field was invalid in the request.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.errors.ErrorLocation.FieldPathElement field_path_elements = 2;</code>
@@ -34,8 +28,6 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Protobuf\Int64Value $operation_index
-     *           The mutate operation that failed
      *     @type \Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement[]|\Google\Protobuf\Internal\RepeatedField $field_path_elements
      *           A field path that indicates which field was invalid in the request.
      * }
@@ -43,32 +35,6 @@ class ErrorLocation extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Errors\Errors::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * The mutate operation that failed
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value operation_index = 1;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getOperationIndex()
-    {
-        return $this->operation_index;
-    }
-
-    /**
-     * The mutate operation that failed
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value operation_index = 1;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setOperationIndex($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->operation_index = $var;
-
-        return $this;
     }
 
     /**
