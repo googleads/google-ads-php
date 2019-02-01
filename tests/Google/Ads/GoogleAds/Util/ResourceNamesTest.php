@@ -28,6 +28,7 @@ use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantServiceClient;
+use Google\Ads\GoogleAds\V0\Services\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V0\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
 use PHPUnit\Framework\TestCase;
@@ -270,7 +271,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forGeoTargetConstant()
+     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forLanguageConstant()
      */
     public function testGetNameForLanguageConstant()
     {
@@ -283,5 +284,27 @@ class ResourceNamesTest extends TestCase
 
         $names = LanguageConstantServiceClient::parseName($expectedResourceName);
         $this->assertEquals($englishLanguageId, $names['language_constant']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forKeywordPlan()
+     */
+    public function testGetNameForKeywordPlan()
+    {
+        $keywordPlanId = 222222;
+        $expectedResourceName = sprintf(
+            'customers/%s/keywordPlans/%s',
+            self::CUSTOMER_ID,
+            $keywordPlanId
+        );
+
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forKeywordPlan(self::CUSTOMER_ID, $keywordPlanId)
+        );
+
+        $names = KeywordPlanServiceClient::parseName($expectedResourceName);
+        $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
+        $this->assertEquals($keywordPlanId, $names['keyword_plan']);
     }
 }

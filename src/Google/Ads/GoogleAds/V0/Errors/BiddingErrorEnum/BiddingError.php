@@ -148,6 +148,12 @@ class BiddingError
      * Generated from protobuf enum <code>INVALID_DOMAIN_NAME = 33;</code>
      */
     const INVALID_DOMAIN_NAME = 33;
+    /**
+     * The field is not compatible with payment mode.
+     *
+     * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_PAYMENT_MODE = 34;</code>
+     */
+    const NOT_COMPATIBLE_WITH_PAYMENT_MODE = 34;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

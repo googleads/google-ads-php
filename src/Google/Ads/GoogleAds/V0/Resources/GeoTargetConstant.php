@@ -53,6 +53,13 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7;</code>
      */
     private $status = 0;
+    /**
+     * The fully qualified English name, consisting of the target's name and that
+     * of its parent and country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     */
+    private $canonical_name = null;
 
     /**
      * Constructor.
@@ -74,6 +81,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      *           Geo target constant target type.
      *     @type int $status
      *           Geo target constant status.
+     *     @type \Google\Protobuf\StringValue $canonical_name
+     *           The fully qualified English name, consisting of the target's name and that
+     *           of its parent and country.
      * }
      */
     public function __construct($data = NULL) {
@@ -237,6 +247,34 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\GeoTargetConstantStatusEnum_GeoTargetConstantStatus::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * The fully qualified English name, consisting of the target's name and that
+     * of its parent and country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getCanonicalName()
+    {
+        return $this->canonical_name;
+    }
+
+    /**
+     * The fully qualified English name, consisting of the target's name and that
+     * of its parent and country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setCanonicalName($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->canonical_name = $var;
 
         return $this;
     }

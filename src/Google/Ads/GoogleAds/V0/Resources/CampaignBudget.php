@@ -76,8 +76,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      */
     private $delivery_method = 0;
     /**
-     * Whether the budget is explicitly shared. This field is set to false by
-     * default.
+     * Specifies whether the budget is explicitly shared. Defaults to true if
+     * unspecified in a create operation.
      * If true, the budget was created with the purpose of sharing
      * across one or more campaigns.
      * If false, the budget was created with the intention of only being used
@@ -99,6 +99,59 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9;</code>
      */
     private $reference_count = null;
+    /**
+     * Indicates whether there is a recommended budget for this campaign budget.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     */
+    private $has_recommended_budget = null;
+    /**
+     * The recommended budget amount. If no recommendation is available, this will
+     * be set to the budget amount.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     */
+    private $recommended_budget_amount_micros = null;
+    /**
+     * Period over which to spend the budget. Defaults to DAILY if not specified.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BudgetPeriodEnum.BudgetPeriod period = 13;</code>
+     */
+    private $period = 0;
+    /**
+     * The estimated change in weekly clicks if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     */
+    private $recommended_budget_estimated_change_weekly_clicks = null;
+    /**
+     * The estimated change in weekly cost in micros if the recommended budget is
+     * applied. One million is equivalent to one currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     */
+    private $recommended_budget_estimated_change_weekly_cost_micros = null;
+    /**
+     * The estimated change in weekly interactions if the recommended budget is
+     * applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     */
+    private $recommended_budget_estimated_change_weekly_interactions = null;
+    /**
+     * The estimated change in weekly views if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     */
+    private $recommended_budget_estimated_change_weekly_views = null;
 
     /**
      * Constructor.
@@ -139,8 +192,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *           is spent.
      *           Defaults to STANDARD if unspecified in a create operation.
      *     @type \Google\Protobuf\BoolValue $explicitly_shared
-     *           Whether the budget is explicitly shared. This field is set to false by
-     *           default.
+     *           Specifies whether the budget is explicitly shared. Defaults to true if
+     *           unspecified in a create operation.
      *           If true, the budget was created with the purpose of sharing
      *           across one or more campaigns.
      *           If false, the budget was created with the intention of only being used
@@ -153,6 +206,31 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *           A shared campaign budget can never become non-shared.
      *     @type \Google\Protobuf\Int64Value $reference_count
      *           The number of campaigns actively using the budget.
+     *           This field is read-only.
+     *     @type \Google\Protobuf\BoolValue $has_recommended_budget
+     *           Indicates whether there is a recommended budget for this campaign budget.
+     *           This field is read-only.
+     *     @type \Google\Protobuf\Int64Value $recommended_budget_amount_micros
+     *           The recommended budget amount. If no recommendation is available, this will
+     *           be set to the budget amount.
+     *           Amount is specified in micros, where one million is equivalent to one
+     *           currency unit.
+     *           This field is read-only.
+     *     @type int $period
+     *           Period over which to spend the budget. Defaults to DAILY if not specified.
+     *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_clicks
+     *           The estimated change in weekly clicks if the recommended budget is applied.
+     *           This field is read-only.
+     *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_cost_micros
+     *           The estimated change in weekly cost in micros if the recommended budget is
+     *           applied. One million is equivalent to one currency unit.
+     *           This field is read-only.
+     *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_interactions
+     *           The estimated change in weekly interactions if the recommended budget is
+     *           applied.
+     *           This field is read-only.
+     *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_views
+     *           The estimated change in weekly views if the recommended budget is applied.
      *           This field is read-only.
      * }
      */
@@ -380,8 +458,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the budget is explicitly shared. This field is set to false by
-     * default.
+     * Specifies whether the budget is explicitly shared. Defaults to true if
+     * unspecified in a create operation.
      * If true, the budget was created with the purpose of sharing
      * across one or more campaigns.
      * If false, the budget was created with the intention of only being used
@@ -402,8 +480,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the budget is explicitly shared. This field is set to false by
-     * default.
+     * Specifies whether the budget is explicitly shared. Defaults to true if
+     * unspecified in a create operation.
      * If true, the budget was created with the purpose of sharing
      * across one or more campaigns.
      * If false, the budget was created with the intention of only being used
@@ -451,6 +529,210 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
         $this->reference_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates whether there is a recommended budget for this campaign budget.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * @return \Google\Protobuf\BoolValue
+     */
+    public function getHasRecommendedBudget()
+    {
+        return $this->has_recommended_budget;
+    }
+
+    /**
+     * Indicates whether there is a recommended budget for this campaign budget.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * @param \Google\Protobuf\BoolValue $var
+     * @return $this
+     */
+    public function setHasRecommendedBudget($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
+        $this->has_recommended_budget = $var;
+
+        return $this;
+    }
+
+    /**
+     * The recommended budget amount. If no recommendation is available, this will
+     * be set to the budget amount.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getRecommendedBudgetAmountMicros()
+    {
+        return $this->recommended_budget_amount_micros;
+    }
+
+    /**
+     * The recommended budget amount. If no recommendation is available, this will
+     * be set to the budget amount.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setRecommendedBudgetAmountMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->recommended_budget_amount_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Period over which to spend the budget. Defaults to DAILY if not specified.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BudgetPeriodEnum.BudgetPeriod period = 13;</code>
+     * @return int
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * Period over which to spend the budget. Defaults to DAILY if not specified.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BudgetPeriodEnum.BudgetPeriod period = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPeriod($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\BudgetPeriodEnum_BudgetPeriod::class);
+        $this->period = $var;
+
+        return $this;
+    }
+
+    /**
+     * The estimated change in weekly clicks if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getRecommendedBudgetEstimatedChangeWeeklyClicks()
+    {
+        return $this->recommended_budget_estimated_change_weekly_clicks;
+    }
+
+    /**
+     * The estimated change in weekly clicks if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setRecommendedBudgetEstimatedChangeWeeklyClicks($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->recommended_budget_estimated_change_weekly_clicks = $var;
+
+        return $this;
+    }
+
+    /**
+     * The estimated change in weekly cost in micros if the recommended budget is
+     * applied. One million is equivalent to one currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getRecommendedBudgetEstimatedChangeWeeklyCostMicros()
+    {
+        return $this->recommended_budget_estimated_change_weekly_cost_micros;
+    }
+
+    /**
+     * The estimated change in weekly cost in micros if the recommended budget is
+     * applied. One million is equivalent to one currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setRecommendedBudgetEstimatedChangeWeeklyCostMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->recommended_budget_estimated_change_weekly_cost_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * The estimated change in weekly interactions if the recommended budget is
+     * applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getRecommendedBudgetEstimatedChangeWeeklyInteractions()
+    {
+        return $this->recommended_budget_estimated_change_weekly_interactions;
+    }
+
+    /**
+     * The estimated change in weekly interactions if the recommended budget is
+     * applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setRecommendedBudgetEstimatedChangeWeeklyInteractions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->recommended_budget_estimated_change_weekly_interactions = $var;
+
+        return $this;
+    }
+
+    /**
+     * The estimated change in weekly views if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getRecommendedBudgetEstimatedChangeWeeklyViews()
+    {
+        return $this->recommended_budget_estimated_change_weekly_views;
+    }
+
+    /**
+     * The estimated change in weekly views if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setRecommendedBudgetEstimatedChangeWeeklyViews($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->recommended_budget_estimated_change_weekly_views = $var;
 
         return $this;
     }

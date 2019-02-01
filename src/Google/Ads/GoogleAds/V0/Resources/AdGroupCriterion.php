@@ -239,6 +239,8 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Keyword.
      *     @type \Google\Ads\GoogleAds\V0\Common\PlacementInfo $placement
      *           Placement.
+     *     @type \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo $mobile_app_category
+     *           Mobile app category.
      *     @type \Google\Ads\GoogleAds\V0\Common\ListingGroupInfo $listing_group
      *           Listing group.
      *     @type \Google\Ads\GoogleAds\V0\Common\AgeRangeInfo $age_range
@@ -259,6 +261,10 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Topic.
      *     @type \Google\Ads\GoogleAds\V0\Common\UserInterestInfo $user_interest
      *           User Interest.
+     *     @type \Google\Ads\GoogleAds\V0\Common\WebpageInfo $webpage
+     *           Webpage
+     *     @type \Google\Ads\GoogleAds\V0\Common\AppPaymentModelInfo $app_payment_model
+     *           App Payment Model.
      * }
      */
     public function __construct($data = NULL) {
@@ -963,6 +969,32 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Mobile app category.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.MobileAppCategoryInfo mobile_app_category = 29;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo
+     */
+    public function getMobileAppCategory()
+    {
+        return $this->readOneof(29);
+    }
+
+    /**
+     * Mobile app category.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.MobileAppCategoryInfo mobile_app_category = 29;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo $var
+     * @return $this
+     */
+    public function setMobileAppCategory($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo::class);
+        $this->writeOneof(29, $var);
+
+        return $this;
+    }
+
+    /**
      * Listing group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.common.ListingGroupInfo listing_group = 32;</code>
@@ -1218,6 +1250,58 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\UserInterestInfo::class);
         $this->writeOneof(45, $var);
+
+        return $this;
+    }
+
+    /**
+     * Webpage
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.WebpageInfo webpage = 46;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\WebpageInfo
+     */
+    public function getWebpage()
+    {
+        return $this->readOneof(46);
+    }
+
+    /**
+     * Webpage
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.WebpageInfo webpage = 46;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\WebpageInfo $var
+     * @return $this
+     */
+    public function setWebpage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\WebpageInfo::class);
+        $this->writeOneof(46, $var);
+
+        return $this;
+    }
+
+    /**
+     * App Payment Model.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.AppPaymentModelInfo app_payment_model = 47;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\AppPaymentModelInfo
+     */
+    public function getAppPaymentModel()
+    {
+        return $this->readOneof(47);
+    }
+
+    /**
+     * App Payment Model.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.AppPaymentModelInfo app_payment_model = 47;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\AppPaymentModelInfo $var
+     * @return $this
+     */
+    public function setAppPaymentModel($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\AppPaymentModelInfo::class);
+        $this->writeOneof(47, $var);
 
         return $this;
     }

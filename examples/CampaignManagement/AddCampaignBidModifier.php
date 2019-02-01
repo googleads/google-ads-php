@@ -27,7 +27,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\ResourceNames;
-use Google\Ads\GoogleAds\V0\Common\InteractionType;
+use Google\Ads\GoogleAds\V0\Common\InteractionTypeInfo;
 use Google\Ads\GoogleAds\V0\Enums\InteractionTypeEnum;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Resources\CampaignBidModifier;
@@ -118,7 +118,7 @@ class AddCampaignBidModifier
             // Use the specified bid modifier value.
             'bid_modifier' => new DoubleValue(['value' => $bidModifierValue]),
             // Make the bid modifier apply to call interactions.
-            'interaction_type' => new InteractionType(
+            'interaction_type' => new InteractionTypeInfo(
                 ['type' => InteractionTypeEnum\InteractionType::CALLS]
             )
         ]);

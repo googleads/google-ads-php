@@ -10,6 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A Keyword Plan negative keyword.
+ * Max number of keyword plan negative keywords per plan: 1000.
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.resources.KeywordPlanNegativeKeyword</code>
  */

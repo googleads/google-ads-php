@@ -90,11 +90,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     private $cpm_bid_micros = null;
     /**
-     * The target cost-per-acquisition (conversion) bid.
+     * The target CPA (cost-per-acquisition).
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cpa_bid_micros = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 27;</code>
      */
-    private $cpa_bid_micros = null;
+    private $target_cpa_micros = null;
     /**
      * The CPV (cost-per-view) bid.
      *
@@ -102,14 +102,21 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     private $cpv_bid_micros = null;
     /**
-     * The target return on ad spend (ROAS) override. If the ad group's campaign
+     * Average amount in micros that the advertiser is willing to pay for every
+     * thousand times the ad is shown.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpm_micros = 26;</code>
+     */
+    private $target_cpm_micros = null;
+    /**
+     * The target ROAS (return-on-ad-spend) override. If the ad group's campaign
      * bidding strategy is a standard Target ROAS strategy, then this field
      * overrides the target ROAS specified in the campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas_override = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 30;</code>
      */
-    private $target_roas_override = null;
+    private $target_roas = null;
     /**
      * The percent cpc bid amount, expressed as a fraction of the advertised price
      * for some good or service. The valid range for the fraction is [0,1) and the
@@ -138,6 +145,40 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 24;</code>
      */
     private $final_url_suffix = null;
+    /**
+     * Setting for targeting related features.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TargetingSetting targeting_setting = 25;</code>
+     */
+    private $targeting_setting = null;
+    /**
+     * The effective target CPA (cost-per-acquisition).
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
+     */
+    private $effective_target_cpa_micros = null;
+    /**
+     * Source of the effective target CPA.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29;</code>
+     */
+    private $effective_target_cpa_source = 0;
+    /**
+     * The effective target ROAS (return-on-ad-spend).
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
+     */
+    private $effective_target_roas = null;
+    /**
+     * Source of the effective target ROAS.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32;</code>
+     */
+    private $effective_target_roas_source = 0;
 
     /**
      * Constructor.
@@ -175,12 +216,15 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           The maximum CPC (cost-per-click) bid.
      *     @type \Google\Protobuf\Int64Value $cpm_bid_micros
      *           The maximum CPM (cost-per-thousand viewable impressions) bid.
-     *     @type \Google\Protobuf\Int64Value $cpa_bid_micros
-     *           The target cost-per-acquisition (conversion) bid.
+     *     @type \Google\Protobuf\Int64Value $target_cpa_micros
+     *           The target CPA (cost-per-acquisition).
      *     @type \Google\Protobuf\Int64Value $cpv_bid_micros
      *           The CPV (cost-per-view) bid.
-     *     @type \Google\Protobuf\DoubleValue $target_roas_override
-     *           The target return on ad spend (ROAS) override. If the ad group's campaign
+     *     @type \Google\Protobuf\Int64Value $target_cpm_micros
+     *           Average amount in micros that the advertiser is willing to pay for every
+     *           thousand times the ad is shown.
+     *     @type \Google\Protobuf\DoubleValue $target_roas
+     *           The target ROAS (return-on-ad-spend) override. If the ad group's campaign
      *           bidding strategy is a standard Target ROAS strategy, then this field
      *           overrides the target ROAS specified in the campaign's bidding strategy.
      *           Otherwise, this value is ignored.
@@ -196,6 +240,20 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           display network and not search.
      *     @type \Google\Protobuf\StringValue $final_url_suffix
      *           URL template for appending params to Final URL.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetingSetting $targeting_setting
+     *           Setting for targeting related features.
+     *     @type \Google\Protobuf\Int64Value $effective_target_cpa_micros
+     *           The effective target CPA (cost-per-acquisition).
+     *           This field is read-only.
+     *     @type int $effective_target_cpa_source
+     *           Source of the effective target CPA.
+     *           This field is read-only.
+     *     @type \Google\Protobuf\DoubleValue $effective_target_roas
+     *           The effective target ROAS (return-on-ad-spend).
+     *           This field is read-only.
+     *     @type int $effective_target_roas_source
+     *           Source of the effective target ROAS.
+     *           This field is read-only.
      * }
      */
     public function __construct($data = NULL) {
@@ -506,27 +564,27 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The target cost-per-acquisition (conversion) bid.
+     * The target CPA (cost-per-acquisition).
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cpa_bid_micros = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 27;</code>
      * @return \Google\Protobuf\Int64Value
      */
-    public function getCpaBidMicros()
+    public function getTargetCpaMicros()
     {
-        return $this->cpa_bid_micros;
+        return $this->target_cpa_micros;
     }
 
     /**
-     * The target cost-per-acquisition (conversion) bid.
+     * The target CPA (cost-per-acquisition).
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cpa_bid_micros = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 27;</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
-    public function setCpaBidMicros($var)
+    public function setTargetCpaMicros($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->cpa_bid_micros = $var;
+        $this->target_cpa_micros = $var;
 
         return $this;
     }
@@ -558,33 +616,61 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The target return on ad spend (ROAS) override. If the ad group's campaign
-     * bidding strategy is a standard Target ROAS strategy, then this field
-     * overrides the target ROAS specified in the campaign's bidding strategy.
-     * Otherwise, this value is ignored.
+     * Average amount in micros that the advertiser is willing to pay for every
+     * thousand times the ad is shown.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas_override = 19;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpm_micros = 26;</code>
+     * @return \Google\Protobuf\Int64Value
      */
-    public function getTargetRoasOverride()
+    public function getTargetCpmMicros()
     {
-        return $this->target_roas_override;
+        return $this->target_cpm_micros;
     }
 
     /**
-     * The target return on ad spend (ROAS) override. If the ad group's campaign
+     * Average amount in micros that the advertiser is willing to pay for every
+     * thousand times the ad is shown.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpm_micros = 26;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setTargetCpmMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->target_cpm_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * The target ROAS (return-on-ad-spend) override. If the ad group's campaign
      * bidding strategy is a standard Target ROAS strategy, then this field
      * overrides the target ROAS specified in the campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas_override = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 30;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getTargetRoas()
+    {
+        return $this->target_roas;
+    }
+
+    /**
+     * The target ROAS (return-on-ad-spend) override. If the ad group's campaign
+     * bidding strategy is a standard Target ROAS strategy, then this field
+     * overrides the target ROAS specified in the campaign's bidding strategy.
+     * Otherwise, this value is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 30;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setTargetRoasOverride($var)
+    public function setTargetRoas($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->target_roas_override = $var;
+        $this->target_roas = $var;
 
         return $this;
     }
@@ -697,6 +783,144 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->final_url_suffix = $var;
+
+        return $this;
+    }
+
+    /**
+     * Setting for targeting related features.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TargetingSetting targeting_setting = 25;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\TargetingSetting
+     */
+    public function getTargetingSetting()
+    {
+        return $this->targeting_setting;
+    }
+
+    /**
+     * Setting for targeting related features.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TargetingSetting targeting_setting = 25;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\TargetingSetting $var
+     * @return $this
+     */
+    public function setTargetingSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\TargetingSetting::class);
+        $this->targeting_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * The effective target CPA (cost-per-acquisition).
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getEffectiveTargetCpaMicros()
+    {
+        return $this->effective_target_cpa_micros;
+    }
+
+    /**
+     * The effective target CPA (cost-per-acquisition).
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setEffectiveTargetCpaMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->effective_target_cpa_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Source of the effective target CPA.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29;</code>
+     * @return int
+     */
+    public function getEffectiveTargetCpaSource()
+    {
+        return $this->effective_target_cpa_source;
+    }
+
+    /**
+     * Source of the effective target CPA.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEffectiveTargetCpaSource($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\BiddingSourceEnum_BiddingSource::class);
+        $this->effective_target_cpa_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * The effective target ROAS (return-on-ad-spend).
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getEffectiveTargetRoas()
+    {
+        return $this->effective_target_roas;
+    }
+
+    /**
+     * The effective target ROAS (return-on-ad-spend).
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setEffectiveTargetRoas($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->effective_target_roas = $var;
+
+        return $this;
+    }
+
+    /**
+     * Source of the effective target ROAS.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32;</code>
+     * @return int
+     */
+    public function getEffectiveTargetRoasSource()
+    {
+        return $this->effective_target_roas_source;
+    }
+
+    /**
+     * Source of the effective target ROAS.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEffectiveTargetRoasSource($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\BiddingSourceEnum_BiddingSource::class);
+        $this->effective_target_roas_source = $var;
 
         return $this;
     }

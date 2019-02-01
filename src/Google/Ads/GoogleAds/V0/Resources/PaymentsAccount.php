@@ -18,8 +18,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the Payments account.
      * PaymentsAccount resource names have the form:
-     * `customers/{customer_id}/paymentsAccounts/
-     *                               {payments_profile_id}_{payments_account_id}`
+     * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
@@ -68,8 +67,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           The resource name of the Payments account.
      *           PaymentsAccount resource names have the form:
-     *           `customers/{customer_id}/paymentsAccounts/
-     *                                         {payments_profile_id}_{payments_account_id}`
+     *           `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *     @type \Google\Protobuf\StringValue $payments_account_id
      *           A 16 digit ID used to identify a Payments account.
      *     @type \Google\Protobuf\StringValue $name
@@ -94,8 +92,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the Payments account.
      * PaymentsAccount resource names have the form:
-     * `customers/{customer_id}/paymentsAccounts/
-     *                               {payments_profile_id}_{payments_account_id}`
+     * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @return string
@@ -108,8 +105,7 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the Payments account.
      * PaymentsAccount resource names have the form:
-     * `customers/{customer_id}/paymentsAccounts/
-     *                               {payments_profile_id}_{payments_account_id}`
+     * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @param string $var

@@ -70,6 +70,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $age_range_view = null;
     /**
+     * The ad schedule view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdScheduleView ad_schedule_view = 89;</code>
+     */
+    private $ad_schedule_view = null;
+    /**
      * The bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BiddingStrategy bidding_strategy = 18;</code>
@@ -118,12 +124,6 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $campaign_feed = null;
     /**
-     * Campaign Group referenced in AWQL query.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignGroup campaign_group = 25;</code>
-     */
-    private $campaign_group = null;
-    /**
      * Campaign Shared Set referenced in AWQL query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignSharedSet campaign_shared_set = 30;</code>
@@ -141,6 +141,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ChangeStatus change_status = 37;</code>
      */
     private $change_status = null;
+    /**
+     * The conversion action referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ConversionAction conversion_action = 103;</code>
+     */
+    private $conversion_action = null;
     /**
      * The customer referenced in the query.
      *
@@ -268,6 +274,30 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $managed_placement_view = null;
     /**
+     * The media file referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MediaFile media_file = 90;</code>
+     */
+    private $media_file = null;
+    /**
+     * The mobile app category constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MobileAppCategoryConstant mobile_app_category_constant = 87;</code>
+     */
+    private $mobile_app_category_constant = null;
+    /**
+     * The mobile device constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MobileDeviceConstant mobile_device_constant = 98;</code>
+     */
+    private $mobile_device_constant = null;
+    /**
+     * The operating system version constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;</code>
+     */
+    private $operating_system_version_constant = null;
+    /**
      * The parental status view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ParentalStatusView parental_status_view = 45;</code>
@@ -322,6 +352,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $user_list = null;
     /**
+     * The remarketing action referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.RemarketingAction remarketing_action = 60;</code>
+     */
+    private $remarketing_action = null;
+    /**
      * The topic constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.TopicConstant topic_constant = 31;</code>
@@ -340,154 +376,11 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $metrics = null;
     /**
-     * Ad network type.
+     * The segments.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.AdNetworkTypeEnum.AdNetworkType ad_network_type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Segments segments = 102;</code>
      */
-    private $ad_network_type = 0;
-    /**
-     * Date to which metrics apply.
-     * yyyy-MM-dd format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue date = 6;</code>
-     */
-    private $date = null;
-    /**
-     * Day of the week, e.g., MONDAY.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DayOfWeekEnum.DayOfWeek day_of_week = 7;</code>
-     */
-    private $day_of_week = 0;
-    /**
-     * Device to which metrics apply.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device = 8;</code>
-     */
-    private $device = 0;
-    /**
-     * Hotel booking window in days.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_booking_window_days = 83;</code>
-     */
-    private $hotel_booking_window_days = null;
-    /**
-     * Hotel center ID.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 72;</code>
-     */
-    private $hotel_center_id = null;
-    /**
-     * Hotel check-in date. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_check_in_date = 73;</code>
-     */
-    private $hotel_check_in_date = null;
-    /**
-     * Hotel check-in day of week.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DayOfWeekEnum.DayOfWeek hotel_check_in_day_of_week = 74;</code>
-     */
-    private $hotel_check_in_day_of_week = 0;
-    /**
-     * Hotel city.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_city = 75;</code>
-     */
-    private $hotel_city = null;
-    /**
-     * Hotel class.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_class = 76;</code>
-     */
-    private $hotel_class = null;
-    /**
-     * Hotel country.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_country = 77;</code>
-     */
-    private $hotel_country = null;
-    /**
-     * Hotel date selection type.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType hotel_date_selection_type = 78;</code>
-     */
-    private $hotel_date_selection_type = 0;
-    /**
-     * Hotel length of stay.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_length_of_stay = 79;</code>
-     */
-    private $hotel_length_of_stay = null;
-    /**
-     * Hotel state.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_state = 81;</code>
-     */
-    private $hotel_state = null;
-    /**
-     * Hour of day as a number between 0 and 23, inclusive.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hour = 9;</code>
-     */
-    private $hour = null;
-    /**
-     * Month as represented by the date of the first day of a month. Formatted as
-     * yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue month = 10;</code>
-     */
-    private $month = null;
-    /**
-     * Month of the year, e.g., January.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.MonthOfYearEnum.MonthOfYear month_of_year = 28;</code>
-     */
-    private $month_of_year = 0;
-    /**
-     * Partner hotel ID.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue partner_hotel_id = 82;</code>
-     */
-    private $partner_hotel_id = null;
-    /**
-     * Placeholder type. This is only used with feed item metrics.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 65;</code>
-     */
-    private $placeholder_type = 0;
-    /**
-     * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters, e.g., the second quarter of 2018
-     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 12;</code>
-     */
-    private $quarter = null;
-    /**
-     * Match type of the keyword that triggered the ad, including variants.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.SearchTermMatchTypeEnum.SearchTermMatchType search_term_match_type = 56;</code>
-     */
-    private $search_term_match_type = 0;
-    /**
-     * Position of the ad.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.SlotEnum.Slot slot = 13;</code>
-     */
-    private $slot = 0;
-    /**
-     * Week as defined as Monday through Sunday, and represented by the date of
-     * Monday. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue week = 14;</code>
-     */
-    private $week = null;
-    /**
-     * Year, formatted as yyyy.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value year = 15;</code>
-     */
-    private $year = null;
+    private $segments = null;
 
     /**
      * Constructor.
@@ -513,6 +406,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The ad group feed referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\AgeRangeView $age_range_view
      *           The age range view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\AdScheduleView $ad_schedule_view
+     *           The ad schedule view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\BiddingStrategy $bidding_strategy
      *           The bidding strategy referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\BillingSetup $billing_setup
@@ -529,14 +424,14 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The campaign criterion referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignFeed $campaign_feed
      *           The campaign feed referenced in the query.
-     *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignGroup $campaign_group
-     *           Campaign Group referenced in AWQL query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\CampaignSharedSet $campaign_shared_set
      *           Campaign Shared Set referenced in AWQL query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\CarrierConstant $carrier_constant
      *           The carrier constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\ChangeStatus $change_status
      *           The ChangeStatus referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\ConversionAction $conversion_action
+     *           The conversion action referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Customer $customer
      *           The customer referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\CustomerManagerLink $customer_manager_link
@@ -579,6 +474,14 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The language constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\ManagedPlacementView $managed_placement_view
      *           The managed placement view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\MediaFile $media_file
+     *           The media file referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\MobileAppCategoryConstant $mobile_app_category_constant
+     *           The mobile app category constant referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\MobileDeviceConstant $mobile_device_constant
+     *           The mobile device constant referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\OperatingSystemVersionConstant $operating_system_version_constant
+     *           The operating system version constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\ParentalStatusView $parental_status_view
      *           The parental status view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\ProductGroupView $product_group_view
@@ -597,65 +500,16 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The user interest referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\UserList $user_list
      *           The user list referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\RemarketingAction $remarketing_action
+     *           The remarketing action referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\TopicConstant $topic_constant
      *           The topic constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Resources\Video $video
      *           The video referenced in the query.
      *     @type \Google\Ads\GoogleAds\V0\Common\Metrics $metrics
      *           The metrics.
-     *     @type int $ad_network_type
-     *           Ad network type.
-     *     @type \Google\Protobuf\StringValue $date
-     *           Date to which metrics apply.
-     *           yyyy-MM-dd format, e.g., 2018-04-17.
-     *     @type int $day_of_week
-     *           Day of the week, e.g., MONDAY.
-     *     @type int $device
-     *           Device to which metrics apply.
-     *     @type \Google\Protobuf\Int64Value $hotel_booking_window_days
-     *           Hotel booking window in days.
-     *     @type \Google\Protobuf\Int64Value $hotel_center_id
-     *           Hotel center ID.
-     *     @type \Google\Protobuf\StringValue $hotel_check_in_date
-     *           Hotel check-in date. Formatted as yyyy-MM-dd.
-     *     @type int $hotel_check_in_day_of_week
-     *           Hotel check-in day of week.
-     *     @type \Google\Protobuf\StringValue $hotel_city
-     *           Hotel city.
-     *     @type \Google\Protobuf\Int32Value $hotel_class
-     *           Hotel class.
-     *     @type \Google\Protobuf\StringValue $hotel_country
-     *           Hotel country.
-     *     @type int $hotel_date_selection_type
-     *           Hotel date selection type.
-     *     @type \Google\Protobuf\Int32Value $hotel_length_of_stay
-     *           Hotel length of stay.
-     *     @type \Google\Protobuf\StringValue $hotel_state
-     *           Hotel state.
-     *     @type \Google\Protobuf\Int32Value $hour
-     *           Hour of day as a number between 0 and 23, inclusive.
-     *     @type \Google\Protobuf\StringValue $month
-     *           Month as represented by the date of the first day of a month. Formatted as
-     *           yyyy-MM-dd.
-     *     @type int $month_of_year
-     *           Month of the year, e.g., January.
-     *     @type \Google\Protobuf\StringValue $partner_hotel_id
-     *           Partner hotel ID.
-     *     @type int $placeholder_type
-     *           Placeholder type. This is only used with feed item metrics.
-     *     @type \Google\Protobuf\StringValue $quarter
-     *           Quarter as represented by the date of the first day of a quarter.
-     *           Uses the calendar year for quarters, e.g., the second quarter of 2018
-     *           starts on 2018-04-01. Formatted as yyyy-MM-dd.
-     *     @type int $search_term_match_type
-     *           Match type of the keyword that triggered the ad, including variants.
-     *     @type int $slot
-     *           Position of the ad.
-     *     @type \Google\Protobuf\StringValue $week
-     *           Week as defined as Monday through Sunday, and represented by the date of
-     *           Monday. Formatted as yyyy-MM-dd.
-     *     @type \Google\Protobuf\Int32Value $year
-     *           Year, formatted as yyyy.
+     *     @type \Google\Ads\GoogleAds\V0\Common\Segments $segments
+     *           The segments.
      * }
      */
     public function __construct($data = NULL) {
@@ -898,6 +752,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ad schedule view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdScheduleView ad_schedule_view = 89;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\AdScheduleView
+     */
+    public function getAdScheduleView()
+    {
+        return $this->ad_schedule_view;
+    }
+
+    /**
+     * The ad schedule view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.AdScheduleView ad_schedule_view = 89;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\AdScheduleView $var
+     * @return $this
+     */
+    public function setAdScheduleView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\AdScheduleView::class);
+        $this->ad_schedule_view = $var;
+
+        return $this;
+    }
+
+    /**
      * The bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.BiddingStrategy bidding_strategy = 18;</code>
@@ -1106,32 +986,6 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Campaign Group referenced in AWQL query.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignGroup campaign_group = 25;</code>
-     * @return \Google\Ads\GoogleAds\V0\Resources\CampaignGroup
-     */
-    public function getCampaignGroup()
-    {
-        return $this->campaign_group;
-    }
-
-    /**
-     * Campaign Group referenced in AWQL query.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignGroup campaign_group = 25;</code>
-     * @param \Google\Ads\GoogleAds\V0\Resources\CampaignGroup $var
-     * @return $this
-     */
-    public function setCampaignGroup($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\CampaignGroup::class);
-        $this->campaign_group = $var;
-
-        return $this;
-    }
-
-    /**
      * Campaign Shared Set referenced in AWQL query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.CampaignSharedSet campaign_shared_set = 30;</code>
@@ -1205,6 +1059,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\ChangeStatus::class);
         $this->change_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * The conversion action referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ConversionAction conversion_action = 103;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\ConversionAction
+     */
+    public function getConversionAction()
+    {
+        return $this->conversion_action;
+    }
+
+    /**
+     * The conversion action referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ConversionAction conversion_action = 103;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\ConversionAction $var
+     * @return $this
+     */
+    public function setConversionAction($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\ConversionAction::class);
+        $this->conversion_action = $var;
 
         return $this;
     }
@@ -1756,6 +1636,110 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The media file referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MediaFile media_file = 90;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\MediaFile
+     */
+    public function getMediaFile()
+    {
+        return $this->media_file;
+    }
+
+    /**
+     * The media file referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MediaFile media_file = 90;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\MediaFile $var
+     * @return $this
+     */
+    public function setMediaFile($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\MediaFile::class);
+        $this->media_file = $var;
+
+        return $this;
+    }
+
+    /**
+     * The mobile app category constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MobileAppCategoryConstant mobile_app_category_constant = 87;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\MobileAppCategoryConstant
+     */
+    public function getMobileAppCategoryConstant()
+    {
+        return $this->mobile_app_category_constant;
+    }
+
+    /**
+     * The mobile app category constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MobileAppCategoryConstant mobile_app_category_constant = 87;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\MobileAppCategoryConstant $var
+     * @return $this
+     */
+    public function setMobileAppCategoryConstant($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\MobileAppCategoryConstant::class);
+        $this->mobile_app_category_constant = $var;
+
+        return $this;
+    }
+
+    /**
+     * The mobile device constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MobileDeviceConstant mobile_device_constant = 98;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\MobileDeviceConstant
+     */
+    public function getMobileDeviceConstant()
+    {
+        return $this->mobile_device_constant;
+    }
+
+    /**
+     * The mobile device constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.MobileDeviceConstant mobile_device_constant = 98;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\MobileDeviceConstant $var
+     * @return $this
+     */
+    public function setMobileDeviceConstant($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\MobileDeviceConstant::class);
+        $this->mobile_device_constant = $var;
+
+        return $this;
+    }
+
+    /**
+     * The operating system version constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\OperatingSystemVersionConstant
+     */
+    public function getOperatingSystemVersionConstant()
+    {
+        return $this->operating_system_version_constant;
+    }
+
+    /**
+     * The operating system version constant referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\OperatingSystemVersionConstant $var
+     * @return $this
+     */
+    public function setOperatingSystemVersionConstant($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\OperatingSystemVersionConstant::class);
+        $this->operating_system_version_constant = $var;
+
+        return $this;
+    }
+
+    /**
      * The parental status view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.ParentalStatusView parental_status_view = 45;</code>
@@ -1990,6 +1974,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The remarketing action referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.RemarketingAction remarketing_action = 60;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\RemarketingAction
+     */
+    public function getRemarketingAction()
+    {
+        return $this->remarketing_action;
+    }
+
+    /**
+     * The remarketing action referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.RemarketingAction remarketing_action = 60;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\RemarketingAction $var
+     * @return $this
+     */
+    public function setRemarketingAction($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\RemarketingAction::class);
+        $this->remarketing_action = $var;
+
+        return $this;
+    }
+
+    /**
      * The topic constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.resources.TopicConstant topic_constant = 31;</code>
@@ -2068,635 +2078,27 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Ad network type.
+     * The segments.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.AdNetworkTypeEnum.AdNetworkType ad_network_type = 5;</code>
-     * @return int
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Segments segments = 102;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\Segments
      */
-    public function getAdNetworkType()
+    public function getSegments()
     {
-        return $this->ad_network_type;
+        return $this->segments;
     }
 
     /**
-     * Ad network type.
+     * The segments.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.AdNetworkTypeEnum.AdNetworkType ad_network_type = 5;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.Segments segments = 102;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\Segments $var
      * @return $this
      */
-    public function setAdNetworkType($var)
+    public function setSegments($var)
     {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\AdNetworkTypeEnum_AdNetworkType::class);
-        $this->ad_network_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Date to which metrics apply.
-     * yyyy-MM-dd format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue date = 6;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * Date to which metrics apply.
-     * yyyy-MM-dd format, e.g., 2018-04-17.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue date = 6;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setDate($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->date = $var;
-
-        return $this;
-    }
-
-    /**
-     * Day of the week, e.g., MONDAY.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DayOfWeekEnum.DayOfWeek day_of_week = 7;</code>
-     * @return int
-     */
-    public function getDayOfWeek()
-    {
-        return $this->day_of_week;
-    }
-
-    /**
-     * Day of the week, e.g., MONDAY.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DayOfWeekEnum.DayOfWeek day_of_week = 7;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDayOfWeek($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\DayOfWeekEnum_DayOfWeek::class);
-        $this->day_of_week = $var;
-
-        return $this;
-    }
-
-    /**
-     * Device to which metrics apply.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device = 8;</code>
-     * @return int
-     */
-    public function getDevice()
-    {
-        return $this->device;
-    }
-
-    /**
-     * Device to which metrics apply.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DeviceEnum.Device device = 8;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDevice($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\DeviceEnum_Device::class);
-        $this->device = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel booking window in days.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_booking_window_days = 83;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getHotelBookingWindowDays()
-    {
-        return $this->hotel_booking_window_days;
-    }
-
-    /**
-     * Hotel booking window in days.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_booking_window_days = 83;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setHotelBookingWindowDays($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->hotel_booking_window_days = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel center ID.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 72;</code>
-     * @return \Google\Protobuf\Int64Value
-     */
-    public function getHotelCenterId()
-    {
-        return $this->hotel_center_id;
-    }
-
-    /**
-     * Hotel center ID.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 72;</code>
-     * @param \Google\Protobuf\Int64Value $var
-     * @return $this
-     */
-    public function setHotelCenterId($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->hotel_center_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel check-in date. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_check_in_date = 73;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getHotelCheckInDate()
-    {
-        return $this->hotel_check_in_date;
-    }
-
-    /**
-     * Hotel check-in date. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_check_in_date = 73;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setHotelCheckInDate($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->hotel_check_in_date = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel check-in day of week.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DayOfWeekEnum.DayOfWeek hotel_check_in_day_of_week = 74;</code>
-     * @return int
-     */
-    public function getHotelCheckInDayOfWeek()
-    {
-        return $this->hotel_check_in_day_of_week;
-    }
-
-    /**
-     * Hotel check-in day of week.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.DayOfWeekEnum.DayOfWeek hotel_check_in_day_of_week = 74;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setHotelCheckInDayOfWeek($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\DayOfWeekEnum_DayOfWeek::class);
-        $this->hotel_check_in_day_of_week = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel city.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_city = 75;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getHotelCity()
-    {
-        return $this->hotel_city;
-    }
-
-    /**
-     * Hotel city.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_city = 75;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setHotelCity($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->hotel_city = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel class.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_class = 76;</code>
-     * @return \Google\Protobuf\Int32Value
-     */
-    public function getHotelClass()
-    {
-        return $this->hotel_class;
-    }
-
-    /**
-     * Hotel class.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_class = 76;</code>
-     * @param \Google\Protobuf\Int32Value $var
-     * @return $this
-     */
-    public function setHotelClass($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int32Value::class);
-        $this->hotel_class = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel country.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_country = 77;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getHotelCountry()
-    {
-        return $this->hotel_country;
-    }
-
-    /**
-     * Hotel country.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_country = 77;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setHotelCountry($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->hotel_country = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel date selection type.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType hotel_date_selection_type = 78;</code>
-     * @return int
-     */
-    public function getHotelDateSelectionType()
-    {
-        return $this->hotel_date_selection_type;
-    }
-
-    /**
-     * Hotel date selection type.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType hotel_date_selection_type = 78;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setHotelDateSelectionType($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\HotelDateSelectionTypeEnum_HotelDateSelectionType::class);
-        $this->hotel_date_selection_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel length of stay.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_length_of_stay = 79;</code>
-     * @return \Google\Protobuf\Int32Value
-     */
-    public function getHotelLengthOfStay()
-    {
-        return $this->hotel_length_of_stay;
-    }
-
-    /**
-     * Hotel length of stay.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_length_of_stay = 79;</code>
-     * @param \Google\Protobuf\Int32Value $var
-     * @return $this
-     */
-    public function setHotelLengthOfStay($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int32Value::class);
-        $this->hotel_length_of_stay = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hotel state.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_state = 81;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getHotelState()
-    {
-        return $this->hotel_state;
-    }
-
-    /**
-     * Hotel state.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_state = 81;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setHotelState($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->hotel_state = $var;
-
-        return $this;
-    }
-
-    /**
-     * Hour of day as a number between 0 and 23, inclusive.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hour = 9;</code>
-     * @return \Google\Protobuf\Int32Value
-     */
-    public function getHour()
-    {
-        return $this->hour;
-    }
-
-    /**
-     * Hour of day as a number between 0 and 23, inclusive.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value hour = 9;</code>
-     * @param \Google\Protobuf\Int32Value $var
-     * @return $this
-     */
-    public function setHour($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int32Value::class);
-        $this->hour = $var;
-
-        return $this;
-    }
-
-    /**
-     * Month as represented by the date of the first day of a month. Formatted as
-     * yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue month = 10;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getMonth()
-    {
-        return $this->month;
-    }
-
-    /**
-     * Month as represented by the date of the first day of a month. Formatted as
-     * yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue month = 10;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setMonth($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->month = $var;
-
-        return $this;
-    }
-
-    /**
-     * Month of the year, e.g., January.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.MonthOfYearEnum.MonthOfYear month_of_year = 28;</code>
-     * @return int
-     */
-    public function getMonthOfYear()
-    {
-        return $this->month_of_year;
-    }
-
-    /**
-     * Month of the year, e.g., January.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.MonthOfYearEnum.MonthOfYear month_of_year = 28;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMonthOfYear($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\MonthOfYearEnum_MonthOfYear::class);
-        $this->month_of_year = $var;
-
-        return $this;
-    }
-
-    /**
-     * Partner hotel ID.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue partner_hotel_id = 82;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getPartnerHotelId()
-    {
-        return $this->partner_hotel_id;
-    }
-
-    /**
-     * Partner hotel ID.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue partner_hotel_id = 82;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setPartnerHotelId($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->partner_hotel_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Placeholder type. This is only used with feed item metrics.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 65;</code>
-     * @return int
-     */
-    public function getPlaceholderType()
-    {
-        return $this->placeholder_type;
-    }
-
-    /**
-     * Placeholder type. This is only used with feed item metrics.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 65;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPlaceholderType($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\PlaceholderTypeEnum_PlaceholderType::class);
-        $this->placeholder_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters, e.g., the second quarter of 2018
-     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 12;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getQuarter()
-    {
-        return $this->quarter;
-    }
-
-    /**
-     * Quarter as represented by the date of the first day of a quarter.
-     * Uses the calendar year for quarters, e.g., the second quarter of 2018
-     * starts on 2018-04-01. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 12;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setQuarter($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->quarter = $var;
-
-        return $this;
-    }
-
-    /**
-     * Match type of the keyword that triggered the ad, including variants.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.SearchTermMatchTypeEnum.SearchTermMatchType search_term_match_type = 56;</code>
-     * @return int
-     */
-    public function getSearchTermMatchType()
-    {
-        return $this->search_term_match_type;
-    }
-
-    /**
-     * Match type of the keyword that triggered the ad, including variants.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.SearchTermMatchTypeEnum.SearchTermMatchType search_term_match_type = 56;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSearchTermMatchType($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\SearchTermMatchTypeEnum_SearchTermMatchType::class);
-        $this->search_term_match_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Position of the ad.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.SlotEnum.Slot slot = 13;</code>
-     * @return int
-     */
-    public function getSlot()
-    {
-        return $this->slot;
-    }
-
-    /**
-     * Position of the ad.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.SlotEnum.Slot slot = 13;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSlot($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\SlotEnum_Slot::class);
-        $this->slot = $var;
-
-        return $this;
-    }
-
-    /**
-     * Week as defined as Monday through Sunday, and represented by the date of
-     * Monday. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue week = 14;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getWeek()
-    {
-        return $this->week;
-    }
-
-    /**
-     * Week as defined as Monday through Sunday, and represented by the date of
-     * Monday. Formatted as yyyy-MM-dd.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue week = 14;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setWeek($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->week = $var;
-
-        return $this;
-    }
-
-    /**
-     * Year, formatted as yyyy.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value year = 15;</code>
-     * @return \Google\Protobuf\Int32Value
-     */
-    public function getYear()
-    {
-        return $this->year;
-    }
-
-    /**
-     * Year, formatted as yyyy.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value year = 15;</code>
-     * @param \Google\Protobuf\Int32Value $var
-     * @return $this
-     */
-    public function setYear($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Int32Value::class);
-        $this->year = $var;
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\Segments::class);
+        $this->segments = $var;
 
         return $this;
     }

@@ -9,7 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * For a manager, it returns all the customers in its hierarchy and self.
+ * A link between the given customer and a client customer. CustomerClients only
+ * exist for manager customers. All direct and indirect client customers are
+ * included, as well as the manager itself.
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.resources.CustomerClient</code>
  */
@@ -24,20 +26,24 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     private $resource_name = '';
     /**
-     * The client customer linked to this customer. Read only.
+     * The resource name of the client-customer which is linked to
+     * the given customer. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      */
     private $client_customer = null;
     /**
-     * Whether the client is hidden or not. Default value is false. Read only.
+     * Specifies whether this is a hidden account. Learn more about hidden
+     * accounts
+     * <a href="https://support.google.com/google-ads/answer/7519830">here</a>.
+     * Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
      */
     private $hidden = null;
     /**
-     * Distance between customer and client. For self link, the level value will
-     * be 0. Read only.
+     * Distance between given customer and client. For self link, the level value
+     * will be 0. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
      */
@@ -54,12 +60,16 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      *           CustomerClient resource names have the form:
      *           `customers/{customer_id}/customerClients/{client_customer_id}`
      *     @type \Google\Protobuf\StringValue $client_customer
-     *           The client customer linked to this customer. Read only.
+     *           The resource name of the client-customer which is linked to
+     *           the given customer. Read only.
      *     @type \Google\Protobuf\BoolValue $hidden
-     *           Whether the client is hidden or not. Default value is false. Read only.
+     *           Specifies whether this is a hidden account. Learn more about hidden
+     *           accounts
+     *           <a href="https://support.google.com/google-ads/answer/7519830">here</a>.
+     *           Read only.
      *     @type \Google\Protobuf\Int64Value $level
-     *           Distance between customer and client. For self link, the level value will
-     *           be 0. Read only.
+     *           Distance between given customer and client. For self link, the level value
+     *           will be 0. Read only.
      * }
      */
     public function __construct($data = NULL) {
@@ -98,7 +108,8 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The client customer linked to this customer. Read only.
+     * The resource name of the client-customer which is linked to
+     * the given customer. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      * @return \Google\Protobuf\StringValue
@@ -109,7 +120,8 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The client customer linked to this customer. Read only.
+     * The resource name of the client-customer which is linked to
+     * the given customer. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -124,7 +136,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the client is hidden or not. Default value is false. Read only.
+     * Specifies whether this is a hidden account. Learn more about hidden
+     * accounts
+     * <a href="https://support.google.com/google-ads/answer/7519830">here</a>.
+     * Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
      * @return \Google\Protobuf\BoolValue
@@ -135,7 +150,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the client is hidden or not. Default value is false. Read only.
+     * Specifies whether this is a hidden account. Learn more about hidden
+     * accounts
+     * <a href="https://support.google.com/google-ads/answer/7519830">here</a>.
+     * Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
      * @param \Google\Protobuf\BoolValue $var
@@ -150,8 +168,8 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Distance between customer and client. For self link, the level value will
-     * be 0. Read only.
+     * Distance between given customer and client. For self link, the level value
+     * will be 0. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
      * @return \Google\Protobuf\Int64Value
@@ -162,8 +180,8 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Distance between customer and client. For self link, the level value will
-     * be 0. Read only.
+     * Distance between given customer and client. For self link, the level value
+     * will be 0. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
      * @param \Google\Protobuf\Int64Value $var

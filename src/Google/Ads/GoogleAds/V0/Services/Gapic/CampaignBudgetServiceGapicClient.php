@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,12 +33,12 @@ use Google\Ads\GoogleAds\V0\Services\MutateCampaignBudgetsRequest;
 use Google\Ads\GoogleAds\V0\Services\MutateCampaignBudgetsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\FetchAuthTokenInterface;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to manage campaign budgets.
@@ -102,6 +102,7 @@ class CampaignBudgetServiceGapicClient
             'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/campaign_budget_service_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/campaign_budget_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/campaign_budget_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
@@ -314,6 +315,14 @@ class CampaignBudgetServiceGapicClient
      * @param array                     $optionalArgs {
      *                                                Optional.
      *
+     *     @type bool $partialFailure
+     *          If true, successful operations will be carried out and invalid
+     *          operations will return errors. If false, all operations will be carried
+     *          out in one transaction if and only if they are all valid.
+     *          Default is false.
+     *     @type bool $validateOnly
+     *          If true, the request is validated but not executed. Only errors are
+     *          returned, not results.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -331,6 +340,12 @@ class CampaignBudgetServiceGapicClient
         $request = new MutateCampaignBudgetsRequest();
         $request->setCustomerId($customerId);
         $request->setOperations($operations);
+        if (isset($optionalArgs['partialFailure'])) {
+            $request->setPartialFailure($optionalArgs['partialFailure']);
+        }
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
+        }
 
         return $this->startCall(
             'MutateCampaignBudgets',

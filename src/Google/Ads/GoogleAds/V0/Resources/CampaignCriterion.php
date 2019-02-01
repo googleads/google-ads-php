@@ -85,6 +85,8 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Keyword.
      *     @type \Google\Ads\GoogleAds\V0\Common\PlacementInfo $placement
      *           Placement.
+     *     @type \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo $mobile_app_category
+     *           Mobile app category.
      *     @type \Google\Ads\GoogleAds\V0\Common\LocationInfo $location
      *           Location.
      *     @type \Google\Ads\GoogleAds\V0\Common\DeviceInfo $device
@@ -121,6 +123,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Carrier.
      *     @type \Google\Ads\GoogleAds\V0\Common\UserInterestInfo $user_interest
      *           User Interest.
+     *     @type \Google\Ads\GoogleAds\V0\Common\WebpageInfo $webpage
+     *           Webpage.
+     *     @type \Google\Ads\GoogleAds\V0\Common\OperatingSystemVersionInfo $operating_system_version
+     *           Operating system version.
      * }
      */
     public function __construct($data = NULL) {
@@ -342,6 +348,32 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PlacementInfo::class);
         $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Mobile app category.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.MobileAppCategoryInfo mobile_app_category = 10;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo
+     */
+    public function getMobileAppCategory()
+    {
+        return $this->readOneof(10);
+    }
+
+    /**
+     * Mobile app category.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.MobileAppCategoryInfo mobile_app_category = 10;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo $var
+     * @return $this
+     */
+    public function setMobileAppCategory($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo::class);
+        $this->writeOneof(10, $var);
 
         return $this;
     }
@@ -810,6 +842,58 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\UserInterestInfo::class);
         $this->writeOneof(30, $var);
+
+        return $this;
+    }
+
+    /**
+     * Webpage.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.WebpageInfo webpage = 31;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\WebpageInfo
+     */
+    public function getWebpage()
+    {
+        return $this->readOneof(31);
+    }
+
+    /**
+     * Webpage.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.WebpageInfo webpage = 31;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\WebpageInfo $var
+     * @return $this
+     */
+    public function setWebpage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\WebpageInfo::class);
+        $this->writeOneof(31, $var);
+
+        return $this;
+    }
+
+    /**
+     * Operating system version.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.OperatingSystemVersionInfo operating_system_version = 32;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\OperatingSystemVersionInfo
+     */
+    public function getOperatingSystemVersion()
+    {
+        return $this->readOneof(32);
+    }
+
+    /**
+     * Operating system version.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.OperatingSystemVersionInfo operating_system_version = 32;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\OperatingSystemVersionInfo $var
+     * @return $this
+     */
+    public function setOperatingSystemVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\OperatingSystemVersionInfo::class);
+        $this->writeOneof(32, $var);
 
         return $this;
     }

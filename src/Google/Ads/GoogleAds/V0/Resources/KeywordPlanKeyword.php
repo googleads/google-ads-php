@@ -10,6 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A Keyword Plan ad group keyword.
+ * Max number of keyword plan keywords per plan: 2500.
  *
  * Generated from protobuf message <code>google.ads.googleads.v0.resources.KeywordPlanKeyword</code>
  */

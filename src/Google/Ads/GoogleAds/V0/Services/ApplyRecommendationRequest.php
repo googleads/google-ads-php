@@ -22,6 +22,14 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
      */
     private $customer_id = '';
     /**
+     * The list of operations to apply recommendations.
+     * If partial_failure=false all recommendations should be of the same type
+     * There is a limit of 100 operations per request.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.services.ApplyRecommendationOperation operations = 2;</code>
+     */
+    private $operations;
+    /**
      * If true, successful operations will be carried out and invalid
      * operations will return errors. If false, operations will be carried
      * out as a transaction if and only if they are all valid.
@@ -30,14 +38,6 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool partial_failure = 3;</code>
      */
     private $partial_failure = false;
-    /**
-     * The list of operations to apply recommendations.
-     * If partial_failure=false all recommendations should be of the same type
-     * There is a limit of 100 operations per request.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.services.ApplyRecommendationOperation operations = 2;</code>
-     */
-    private $operations;
 
     /**
      * Constructor.
@@ -47,15 +47,15 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $customer_id
      *           The ID of the customer with the recommendation.
+     *     @type \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
+     *           The list of operations to apply recommendations.
+     *           If partial_failure=false all recommendations should be of the same type
+     *           There is a limit of 100 operations per request.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
      *           operations will return errors. If false, operations will be carried
      *           out as a transaction if and only if they are all valid.
      *           Default is false.
-     *     @type \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
-     *           The list of operations to apply recommendations.
-     *           If partial_failure=false all recommendations should be of the same type
-     *           There is a limit of 100 operations per request.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,6 +90,36 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The list of operations to apply recommendations.
+     * If partial_failure=false all recommendations should be of the same type
+     * There is a limit of 100 operations per request.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.services.ApplyRecommendationOperation operations = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOperations()
+    {
+        return $this->operations;
+    }
+
+    /**
+     * The list of operations to apply recommendations.
+     * If partial_failure=false all recommendations should be of the same type
+     * There is a limit of 100 operations per request.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.services.ApplyRecommendationOperation operations = 2;</code>
+     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOperations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation::class);
+        $this->operations = $arr;
+
+        return $this;
+    }
+
+    /**
      * If true, successful operations will be carried out and invalid
      * operations will return errors. If false, operations will be carried
      * out as a transaction if and only if they are all valid.
@@ -117,36 +147,6 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->partial_failure = $var;
-
-        return $this;
-    }
-
-    /**
-     * The list of operations to apply recommendations.
-     * If partial_failure=false all recommendations should be of the same type
-     * There is a limit of 100 operations per request.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.services.ApplyRecommendationOperation operations = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getOperations()
-    {
-        return $this->operations;
-    }
-
-    /**
-     * The list of operations to apply recommendations.
-     * If partial_failure=false all recommendations should be of the same type
-     * There is a limit of 100 operations per request.
-     *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.services.ApplyRecommendationOperation operations = 2;</code>
-     * @param \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setOperations($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Services\ApplyRecommendationOperation::class);
-        $this->operations = $arr;
 
         return $this;
     }

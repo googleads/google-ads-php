@@ -71,6 +71,12 @@ class AdvertisingChannelSubType
      * Generated from protobuf enum <code>VIDEO_OUTSTREAM = 9;</code>
      */
     const VIDEO_OUTSTREAM = 9;
+    /**
+     * Video TrueView for Action campaigns.
+     *
+     * Generated from protobuf enum <code>VIDEO_ACTION = 10;</code>
+     */
+    const VIDEO_ACTION = 10;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

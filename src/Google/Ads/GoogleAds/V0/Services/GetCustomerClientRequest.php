@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetCustomerClientRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the customer client to fetch.
+     * The resource name of the client to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
@@ -29,7 +29,7 @@ class GetCustomerClientRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the customer client to fetch.
+     *           The resource name of the client to fetch.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class GetCustomerClientRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer client to fetch.
+     * The resource name of the client to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @return string
@@ -49,7 +49,7 @@ class GetCustomerClientRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer client to fetch.
+     * The resource name of the client to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @param string $var

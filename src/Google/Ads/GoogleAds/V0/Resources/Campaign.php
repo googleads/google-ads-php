@@ -123,6 +123,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $shopping_setting = null;
     /**
+     * Setting for targeting related features.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TargetingSetting targeting_setting = 43;</code>
+     */
+    private $targeting_setting = null;
+    /**
      * The budget of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
@@ -146,12 +152,6 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $start_date = null;
     /**
-     * The campaign group this campaign belongs to.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_group = 35;</code>
-     */
-    private $campaign_group = null;
-    /**
      * The date when campaign ended.
      * This field must not be used in WHERE clauses.
      *
@@ -171,6 +171,31 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v0.common.FrequencyCapEntry frequency_caps = 40;</code>
      */
     private $frequency_caps;
+    /**
+     * 3-Tier Brand Safety setting for the campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42;</code>
+     */
+    private $video_brand_safety_suitability = 0;
+    /**
+     * Describes how unbranded pharma ads will be displayed.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.VanityPharma vanity_pharma = 44;</code>
+     */
+    private $vanity_pharma = null;
+    /**
+     * Selective optimization setting for this campaign, which includes a set of
+     * conversion actions to optimize this campaign towards.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.SelectiveOptimization selective_optimization = 45;</code>
+     */
+    private $selective_optimization = null;
+    /**
+     * Campaign level settings for tracking information.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.TrackingSetting tracking_setting = 46;</code>
+     */
+    private $tracking_setting = null;
     protected $campaign_bidding_strategy;
 
     /**
@@ -226,6 +251,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The setting for controlling Dynamic Search Ads (DSA).
      *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\ShoppingSetting $shopping_setting
      *           The setting for controlling Shopping campaigns.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetingSetting $targeting_setting
+     *           Setting for targeting related features.
      *     @type \Google\Protobuf\StringValue $campaign_budget
      *           The budget of the campaign.
      *     @type int $bidding_strategy_type
@@ -237,8 +264,6 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $start_date
      *           The date when campaign started.
      *           This field must not be used in WHERE clauses.
-     *     @type \Google\Protobuf\StringValue $campaign_group
-     *           The campaign group this campaign belongs to.
      *     @type \Google\Protobuf\StringValue $end_date
      *           The date when campaign ended.
      *           This field must not be used in WHERE clauses.
@@ -247,6 +272,15 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           with parallel tracking.
      *     @type \Google\Ads\GoogleAds\V0\Common\FrequencyCapEntry[]|\Google\Protobuf\Internal\RepeatedField $frequency_caps
      *           A list that limits how often each user will see this campaign's ads.
+     *     @type int $video_brand_safety_suitability
+     *           3-Tier Brand Safety setting for the campaign.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\VanityPharma $vanity_pharma
+     *           Describes how unbranded pharma ads will be displayed.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\SelectiveOptimization $selective_optimization
+     *           Selective optimization setting for this campaign, which includes a set of
+     *           conversion actions to optimize this campaign towards.
+     *     @type \Google\Ads\GoogleAds\V0\Resources\Campaign\TrackingSetting $tracking_setting
+     *           Campaign level settings for tracking information.
      *     @type \Google\Protobuf\StringValue $bidding_strategy
      *           Portfolio bidding strategy used by campaign.
      *     @type \Google\Ads\GoogleAds\V0\Common\ManualCpc $manual_cpc
@@ -277,6 +311,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V0\Common\PercentCpc $percent_cpc
      *           Standard Percent Cpc bidding strategy where bids are a fraction of the
      *           advertised price for some good or service.
+     *     @type \Google\Ads\GoogleAds\V0\Common\TargetCpm $target_cpm
+     *           A bidding strategy that automatically optimizes cost per thousand
+     *           impressions.
      * }
      */
     public function __construct($data = NULL) {
@@ -709,6 +746,32 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Setting for targeting related features.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TargetingSetting targeting_setting = 43;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\TargetingSetting
+     */
+    public function getTargetingSetting()
+    {
+        return $this->targeting_setting;
+    }
+
+    /**
+     * Setting for targeting related features.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TargetingSetting targeting_setting = 43;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\TargetingSetting $var
+     * @return $this
+     */
+    public function setTargetingSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\TargetingSetting::class);
+        $this->targeting_setting = $var;
+
+        return $this;
+    }
+
+    /**
      * The budget of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
@@ -797,32 +860,6 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign group this campaign belongs to.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_group = 35;</code>
-     * @return \Google\Protobuf\StringValue
-     */
-    public function getCampaignGroup()
-    {
-        return $this->campaign_group;
-    }
-
-    /**
-     * The campaign group this campaign belongs to.
-     *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_group = 35;</code>
-     * @param \Google\Protobuf\StringValue $var
-     * @return $this
-     */
-    public function setCampaignGroup($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->campaign_group = $var;
-
-        return $this;
-    }
-
-    /**
      * The date when campaign ended.
      * This field must not be used in WHERE clauses.
      *
@@ -900,6 +937,112 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V0\Common\FrequencyCapEntry::class);
         $this->frequency_caps = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 3-Tier Brand Safety setting for the campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42;</code>
+     * @return int
+     */
+    public function getVideoBrandSafetySuitability()
+    {
+        return $this->video_brand_safety_suitability;
+    }
+
+    /**
+     * 3-Tier Brand Safety setting for the campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVideoBrandSafetySuitability($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\BrandSafetySuitabilityEnum_BrandSafetySuitability::class);
+        $this->video_brand_safety_suitability = $var;
+
+        return $this;
+    }
+
+    /**
+     * Describes how unbranded pharma ads will be displayed.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.VanityPharma vanity_pharma = 44;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign\VanityPharma
+     */
+    public function getVanityPharma()
+    {
+        return $this->vanity_pharma;
+    }
+
+    /**
+     * Describes how unbranded pharma ads will be displayed.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.VanityPharma vanity_pharma = 44;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign\VanityPharma $var
+     * @return $this
+     */
+    public function setVanityPharma($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Campaign_VanityPharma::class);
+        $this->vanity_pharma = $var;
+
+        return $this;
+    }
+
+    /**
+     * Selective optimization setting for this campaign, which includes a set of
+     * conversion actions to optimize this campaign towards.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.SelectiveOptimization selective_optimization = 45;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign\SelectiveOptimization
+     */
+    public function getSelectiveOptimization()
+    {
+        return $this->selective_optimization;
+    }
+
+    /**
+     * Selective optimization setting for this campaign, which includes a set of
+     * conversion actions to optimize this campaign towards.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.SelectiveOptimization selective_optimization = 45;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign\SelectiveOptimization $var
+     * @return $this
+     */
+    public function setSelectiveOptimization($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Campaign_SelectiveOptimization::class);
+        $this->selective_optimization = $var;
+
+        return $this;
+    }
+
+    /**
+     * Campaign level settings for tracking information.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.TrackingSetting tracking_setting = 46;</code>
+     * @return \Google\Ads\GoogleAds\V0\Resources\Campaign\TrackingSetting
+     */
+    public function getTrackingSetting()
+    {
+        return $this->tracking_setting;
+    }
+
+    /**
+     * Campaign level settings for tracking information.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.resources.Campaign.TrackingSetting tracking_setting = 46;</code>
+     * @param \Google\Ads\GoogleAds\V0\Resources\Campaign\TrackingSetting $var
+     * @return $this
+     */
+    public function setTrackingSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Resources\Campaign_TrackingSetting::class);
+        $this->tracking_setting = $var;
 
         return $this;
     }
@@ -1180,6 +1323,34 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PercentCpc::class);
         $this->writeOneof(34, $var);
+
+        return $this;
+    }
+
+    /**
+     * A bidding strategy that automatically optimizes cost per thousand
+     * impressions.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TargetCpm target_cpm = 41;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\TargetCpm
+     */
+    public function getTargetCpm()
+    {
+        return $this->readOneof(41);
+    }
+
+    /**
+     * A bidding strategy that automatically optimizes cost per thousand
+     * impressions.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.TargetCpm target_cpm = 41;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\TargetCpm $var
+     * @return $this
+     */
+    public function setTargetCpm($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\TargetCpm::class);
+        $this->writeOneof(41, $var);
 
         return $this;
     }

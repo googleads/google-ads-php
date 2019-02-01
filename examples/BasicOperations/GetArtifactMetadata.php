@@ -140,7 +140,11 @@ class GetArtifactMetadata
         }
     }
 
-    /** Returns 'is' when the provided boolean value is true or 'is not' when it's false. */
+    /**
+     * Returns 'is' when the provided boolean value is true or 'is not' when it's false.
+     *
+     * @param BoolValue $boolValue the boolean value
+     */
     private static function getIsOrIsNot(BoolValue $boolValue)
     {
         return $boolValue->getValue() ? 'is' : 'is not';

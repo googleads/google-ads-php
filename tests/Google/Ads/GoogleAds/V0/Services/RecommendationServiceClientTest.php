@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,10 +151,9 @@ class RecommendationServiceClientTest extends GeneratedTest
 
         // Mock request
         $customerId = 'customerId-1772061412';
-        $partialFailure = true;
         $operations = [];
 
-        $response = $client->applyRecommendation($customerId, $partialFailure, $operations);
+        $response = $client->applyRecommendation($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -165,9 +164,6 @@ class RecommendationServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getCustomerId();
 
         $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getPartialFailure();
-
-        $this->assertProtobufEquals($partialFailure, $actualValue);
         $actualValue = $actualRequestObject->getOperations();
 
         $this->assertProtobufEquals($operations, $actualValue);
@@ -199,11 +195,10 @@ class RecommendationServiceClientTest extends GeneratedTest
 
         // Mock request
         $customerId = 'customerId-1772061412';
-        $partialFailure = true;
         $operations = [];
 
         try {
-            $client->applyRecommendation($customerId, $partialFailure, $operations);
+            $client->applyRecommendation($customerId, $operations);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -232,10 +227,9 @@ class RecommendationServiceClientTest extends GeneratedTest
 
         // Mock request
         $customerId = 'customerId-1772061412';
-        $partialFailure = true;
         $operations = [];
 
-        $response = $client->dismissRecommendation($customerId, $partialFailure, $operations);
+        $response = $client->dismissRecommendation($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -246,9 +240,6 @@ class RecommendationServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getCustomerId();
 
         $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getPartialFailure();
-
-        $this->assertProtobufEquals($partialFailure, $actualValue);
         $actualValue = $actualRequestObject->getOperations();
 
         $this->assertProtobufEquals($operations, $actualValue);
@@ -280,11 +271,10 @@ class RecommendationServiceClientTest extends GeneratedTest
 
         // Mock request
         $customerId = 'customerId-1772061412';
-        $partialFailure = true;
         $operations = [];
 
         try {
-            $client->dismissRecommendation($customerId, $partialFailure, $operations);
+            $client->dismissRecommendation($customerId, $operations);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

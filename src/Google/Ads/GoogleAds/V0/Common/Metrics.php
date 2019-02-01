@@ -16,6 +16,61 @@ use Google\Protobuf\Internal\GPBUtil;
 class Metrics extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The percent of your ad impressions that are shown as the very first ad
+     * above the organic search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue absolute_top_impression_percentage = 95;</code>
+     */
+    private $absolute_top_impression_percentage = null;
+    /**
+     * Average cost of viewable impressions (`active_view_impressions`).
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_cpm = 1;</code>
+     */
+    private $active_view_cpm = null;
+    /**
+     * Active view measurable clicks divided by active view viewable impressions.
+     * This metric is reported only for display network.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_ctr = 79;</code>
+     */
+    private $active_view_ctr = null;
+    /**
+     * A measurement of how often your ad has become viewable on a Display
+     * Network site.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_impressions = 2;</code>
+     */
+    private $active_view_impressions = null;
+    /**
+     * The ratio of impressions that could be measured by Active View over the
+     * number of served impressions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_measurability = 96;</code>
+     */
+    private $active_view_measurability = null;
+    /**
+     * The cost of the impressions you received that were measurable by Active
+     * View.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_cost_micros = 3;</code>
+     */
+    private $active_view_measurable_cost_micros = null;
+    /**
+     * The number of times your ads are appearing on placements in positions
+     * where they can be seen.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_impressions = 4;</code>
+     */
+    private $active_view_measurable_impressions = null;
+    /**
+     * The percentage of time when your ad appeared on an Active View enabled site
+     * (measurable impressions) and was viewable (viewable impressions).
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_viewability = 97;</code>
+     */
+    private $active_view_viewability = null;
+    /**
      * All conversions from interactions (as oppose to view through conversions)
      * divided by the number of ad interactions.
      *
@@ -29,8 +84,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $all_conversions_value = null;
     /**
-     * The total number of conversions. This includes "Conversions" plus
-     * conversions that have their "Include in Conversions" setting unchecked.
+     * The total number of conversions. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
      */
@@ -64,6 +119,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $average_cpc = null;
     /**
+     * The average amount that you've been charged for an ad engagement. This
+     * amount is the total cost of all ad engagements divided by the total number
+     * of ad engagements.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpe = 98;</code>
+     */
+    private $average_cpe = null;
+    /**
      * Average cost-per-thousand impressions (CPM).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpm = 10;</code>
@@ -78,11 +141,37 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $average_cpv = null;
     /**
+     * Average number of times a unique cookie was exposed to your ad
+     * over a given time period. Imported from Google Analytics.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_frequency = 12;</code>
+     */
+    private $average_frequency = null;
+    /**
+     * Average number of pages viewed per session.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_page_views = 99;</code>
+     */
+    private $average_page_views = null;
+    /**
      * Your ad's position relative to those of other advertisers.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_position = 13;</code>
      */
     private $average_position = null;
+    /**
+     * Total duration of all sessions (in seconds) / number of sessions. Imported
+     * from Google Analytics.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_time_on_site = 84;</code>
+     */
+    private $average_time_on_site = null;
+    /**
+     * An indication of how other advertisers are bidding on similar products.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_average_max_cpc = 14;</code>
+     */
+    private $benchmark_average_max_cpc = null;
     /**
      * An indication on how other advertisers' Shopping ads for similar products
      * are performing based on how often people who see their ad click on it.
@@ -149,33 +238,39 @@ class Metrics extends \Google\Protobuf\Internal\Message
     private $content_rank_lost_impression_share = null;
     /**
      * Conversions from interactions divided by the number of ad interactions
-     * (such as clicks for text ads or views for video ads).
+     * (such as clicks for text ads or views for video ads). This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_rate = 69;</code>
      */
     private $conversions_from_interactions_rate = null;
     /**
-     * The total value of conversions.
+     * The total value of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
      */
     private $conversions_value = null;
     /**
-     * The value of conversions divided by the cost of ad interactions.
+     * The value of conversions divided by the cost of ad interactions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value_per_cost = 71;</code>
      */
     private $conversions_value_per_cost = null;
     /**
      * The value of conversions from interactions divided by the number of ad
-     * interactions.
+     * interactions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_value_per_interaction = 72;</code>
      */
     private $conversions_from_interactions_value_per_interaction = null;
     /**
-     * The number of conversions. This only includes conversion actions which have
-     * "Include in Conversions" checked.
+     * The number of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
      */
@@ -194,11 +289,21 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $cost_per_all_conversions = null;
     /**
-     * The cost of ad interactions divided by conversions.
+     * The cost of ad interactions divided by conversions. This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_conversion = 28;</code>
      */
     private $cost_per_conversion = null;
+    /**
+     * The cost of ad interactions divided by current model attributed
+     * conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_current_model_attributed_conversion = 106;</code>
+     */
+    private $cost_per_current_model_attributed_conversion = null;
     /**
      * Conversions from when a customer clicks on a Google Ads ad on one device,
      * then converts on a different device or browser.
@@ -214,6 +319,47 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 30;</code>
      */
     private $ctr = null;
+    /**
+     * Shows how your historic conversions data would look under the attribution
+     * model you've currently selected. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
+     */
+    private $current_model_attributed_conversions = null;
+    /**
+     * Current model attributed conversions from interactions divided by the
+     * number of ad interactions (such as clicks for text ads or views for video
+     * ads). This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_rate = 102;</code>
+     */
+    private $current_model_attributed_conversions_from_interactions_rate = null;
+    /**
+     * The value of current model attributed conversions from interactions divided
+     * by the number of ad interactions. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_value_per_interaction = 103;</code>
+     */
+    private $current_model_attributed_conversions_from_interactions_value_per_interaction = null;
+    /**
+     * The total value of current model attributed conversions. This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
+     */
+    private $current_model_attributed_conversions_value = null;
+    /**
+     * The value of current model attributed conversions divided by the cost of ad
+     * interactions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value_per_cost = 105;</code>
+     */
+    private $current_model_attributed_conversions_value_per_cost = null;
     /**
      * How often people engage with your ad after it's shown to them. This is the
      * number of ad expansions divided by the number of times your ad is shown.
@@ -235,6 +381,57 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      */
     private $hotel_average_lead_value_micros = null;
+    /**
+     * The creative historical quality score.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_creative_quality_score = 80;</code>
+     */
+    private $historical_creative_quality_score = 0;
+    /**
+     * The quality of historical landing page experience.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_landing_page_quality_score = 81;</code>
+     */
+    private $historical_landing_page_quality_score = 0;
+    /**
+     * The historical quality score.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value historical_quality_score = 82;</code>
+     */
+    private $historical_quality_score = null;
+    /**
+     * The historical search predicted click through rate (CTR).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_search_predicted_ctr = 83;</code>
+     */
+    private $historical_search_predicted_ctr = 0;
+    /**
+     * The number of times the ad was forwarded to someone else as a message.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_forwards = 85;</code>
+     */
+    private $gmail_forwards = null;
+    /**
+     * The number of times someone has saved your Gmail ad to their inbox as a
+     * message.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_saves = 86;</code>
+     */
+    private $gmail_saves = null;
+    /**
+     * The number of clicks to the landing page on the expanded state of Gmail
+     * ads.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_secondary_clicks = 87;</code>
+     */
+    private $gmail_secondary_clicks = null;
+    /**
+     * Number of unique cookies that were exposed to your ad over a given time
+     * period.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value impression_reach = 36;</code>
+     */
+    private $impression_reach = null;
     /**
      * Count of how often your ad has appeared on a search results page or
      * website on the Google Network.
@@ -258,6 +455,12 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value interactions = 39;</code>
      */
     private $interactions = null;
+    /**
+     * The types of payable and free interactions.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.enums.InteractionEventTypeEnum.InteractionEventType interaction_types = 100;</code>
+     */
+    private $interaction_types;
     /**
      * The percentage of clicks filtered out of your total number of clicks
      * (filtered + non-filtered clicks) during the reporting period.
@@ -306,14 +509,23 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $relative_ctr = null;
     /**
-     * The percentage of the customer's Shopping ad impressions that are shown in
-     * the most prominent Shopping position. See
+     * The percentage of the customer's Shopping or Search ad impressions that are
+     * shown in the most prominent Shopping position. See
      * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
      * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
      */
     private $search_absolute_top_impression_share = null;
+    /**
+     * The number estimating how often your ad wasn't the very first ad above the
+     * organic search results due to a low budget. Note: Search
+     * budget lost absolute top impression share is reported in the range of 0 to
+     * 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_absolute_top_impression_share = 88;</code>
+     */
+    private $search_budget_lost_absolute_top_impression_share = null;
     /**
      * The estimated percent of times that your ad was eligible to show on the
      * Search Network but didn't because your budget was too low. Note: Search
@@ -323,6 +535,24 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_impression_share = 47;</code>
      */
     private $search_budget_lost_impression_share = null;
+    /**
+     * The number estimating how often your ad didn't show anywhere above the
+     * organic search results due to a low budget. Note: Search
+     * budget lost top impression share is reported in the range of 0 to 0.9. Any
+     * value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_top_impression_share = 89;</code>
+     */
+    private $search_budget_lost_top_impression_share = null;
+    /**
+     * The number of clicks you've received on the Search Network
+     * divided by the estimated number of clicks you were eligible to receive.
+     * Note: Search click share is reported in the range of 0.1 to 1. Any value
+     * below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_click_share = 48;</code>
+     */
+    private $search_click_share = null;
     /**
      * The impressions you've received divided by the estimated number of
      * impressions you were eligible to receive on the Search Network for search
@@ -344,6 +574,15 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $search_impression_share = null;
     /**
+     * The number estimating how often your ad wasn't the very first ad above the
+     * organic search results due to poor Ad Rank.
+     * Note: Search rank lost absolute top impression share is reported in the
+     * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_absolute_top_impression_share = 90;</code>
+     */
+    private $search_rank_lost_absolute_top_impression_share = null;
+    /**
      * The estimated percentage of impressions on the Search Network
      * that your ads didn't receive due to poor Ad Rank.
      * Note: Search rank lost impression share is reported in the range of 0 to
@@ -353,17 +592,53 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $search_rank_lost_impression_share = null;
     /**
+     * The number estimating how often your ad didn't show anywhere above the
+     * organic search results due to poor Ad Rank.
+     * Note: Search rank lost top impression share is reported in the range of 0
+     * to 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_top_impression_share = 91;</code>
+     */
+    private $search_rank_lost_top_impression_share = null;
+    /**
+     * The impressions you've received in the top location (anywhere above the
+     * organic search results) compared to the estimated number of impressions you
+     * were eligible to receive in the top location.
+     * Note: Search top impression share is reported in the range of 0.1 to 1. Any
+     * value below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_top_impression_share = 92;</code>
+     */
+    private $search_top_impression_share = null;
+    /**
+     * The percent of your ad impressions that are shown anywhere above the
+     * organic search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue top_impression_percentage = 93;</code>
+     */
+    private $top_impression_percentage = null;
+    /**
      * The value of all conversions divided by the number of all conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_all_conversions = 52;</code>
      */
     private $value_per_all_conversions = null;
     /**
-     * The value of conversions divided by the number of conversions.
+     * The value of conversions divided by the number of conversions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_conversion = 53;</code>
      */
     private $value_per_conversion = null;
+    /**
+     * The value of current model attributed conversions divided by the number of
+     * the conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_current_model_attributed_conversion = 94;</code>
+     */
+    private $value_per_current_model_attributed_conversion = null;
     /**
      * Percentage of impressions where the viewer watched all of your video.
      *
@@ -418,14 +693,37 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Protobuf\DoubleValue $absolute_top_impression_percentage
+     *           The percent of your ad impressions that are shown as the very first ad
+     *           above the organic search results.
+     *     @type \Google\Protobuf\DoubleValue $active_view_cpm
+     *           Average cost of viewable impressions (`active_view_impressions`).
+     *     @type \Google\Protobuf\DoubleValue $active_view_ctr
+     *           Active view measurable clicks divided by active view viewable impressions.
+     *           This metric is reported only for display network.
+     *     @type \Google\Protobuf\Int64Value $active_view_impressions
+     *           A measurement of how often your ad has become viewable on a Display
+     *           Network site.
+     *     @type \Google\Protobuf\DoubleValue $active_view_measurability
+     *           The ratio of impressions that could be measured by Active View over the
+     *           number of served impressions.
+     *     @type \Google\Protobuf\Int64Value $active_view_measurable_cost_micros
+     *           The cost of the impressions you received that were measurable by Active
+     *           View.
+     *     @type \Google\Protobuf\Int64Value $active_view_measurable_impressions
+     *           The number of times your ads are appearing on placements in positions
+     *           where they can be seen.
+     *     @type \Google\Protobuf\DoubleValue $active_view_viewability
+     *           The percentage of time when your ad appeared on an Active View enabled site
+     *           (measurable impressions) and was viewable (viewable impressions).
      *     @type \Google\Protobuf\DoubleValue $all_conversions_from_interactions_rate
      *           All conversions from interactions (as oppose to view through conversions)
      *           divided by the number of ad interactions.
      *     @type \Google\Protobuf\DoubleValue $all_conversions_value
      *           The total value of all conversions.
      *     @type \Google\Protobuf\DoubleValue $all_conversions
-     *           The total number of conversions. This includes "Conversions" plus
-     *           conversions that have their "Include in Conversions" setting unchecked.
+     *           The total number of conversions. This only includes conversion actions
+     *           which include_in_conversions_metric attribute is set to true.
      *     @type \Google\Protobuf\DoubleValue $all_conversions_value_per_cost
      *           The value of all conversions divided by the total cost of ad interactions
      *           (such as clicks for text ads or views for video ads).
@@ -438,14 +736,28 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\DoubleValue $average_cpc
      *           The total cost of all clicks divided by the total number of clicks
      *           received.
+     *     @type \Google\Protobuf\DoubleValue $average_cpe
+     *           The average amount that you've been charged for an ad engagement. This
+     *           amount is the total cost of all ad engagements divided by the total number
+     *           of ad engagements.
      *     @type \Google\Protobuf\DoubleValue $average_cpm
      *           Average cost-per-thousand impressions (CPM).
      *     @type \Google\Protobuf\DoubleValue $average_cpv
      *           The average amount you pay each time someone views your ad.
      *           The average CPV is defined by the total cost of all ad views divided by
      *           the number of views.
+     *     @type \Google\Protobuf\DoubleValue $average_frequency
+     *           Average number of times a unique cookie was exposed to your ad
+     *           over a given time period. Imported from Google Analytics.
+     *     @type \Google\Protobuf\DoubleValue $average_page_views
+     *           Average number of pages viewed per session.
      *     @type \Google\Protobuf\DoubleValue $average_position
      *           Your ad's position relative to those of other advertisers.
+     *     @type \Google\Protobuf\DoubleValue $average_time_on_site
+     *           Total duration of all sessions (in seconds) / number of sessions. Imported
+     *           from Google Analytics.
+     *     @type \Google\Protobuf\DoubleValue $benchmark_average_max_cpc
+     *           An indication of how other advertisers are bidding on similar products.
      *     @type \Google\Protobuf\DoubleValue $benchmark_ctr
      *           An indication on how other advertisers' Shopping ads for similar products
      *           are performing based on how often people who see their ad click on it.
@@ -480,24 +792,36 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           to 0.9. Any value above 0.9 is reported as 0.9001.
      *     @type \Google\Protobuf\DoubleValue $conversions_from_interactions_rate
      *           Conversions from interactions divided by the number of ad interactions
-     *           (such as clicks for text ads or views for video ads).
+     *           (such as clicks for text ads or views for video ads). This only includes
+     *           conversion actions which include_in_conversions_metric attribute is set to
+     *           true.
      *     @type \Google\Protobuf\DoubleValue $conversions_value
-     *           The total value of conversions.
+     *           The total value of conversions. This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true.
      *     @type \Google\Protobuf\DoubleValue $conversions_value_per_cost
-     *           The value of conversions divided by the cost of ad interactions.
+     *           The value of conversions divided by the cost of ad interactions. This only
+     *           includes conversion actions which include_in_conversions_metric attribute
+     *           is set to true.
      *     @type \Google\Protobuf\DoubleValue $conversions_from_interactions_value_per_interaction
      *           The value of conversions from interactions divided by the number of ad
-     *           interactions.
+     *           interactions. This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true.
      *     @type \Google\Protobuf\DoubleValue $conversions
-     *           The number of conversions. This only includes conversion actions which have
-     *           "Include in Conversions" checked.
+     *           The number of conversions. This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true.
      *     @type \Google\Protobuf\Int64Value $cost_micros
      *           The sum of your cost-per-click (CPC) and cost-per-thousand impressions
      *           (CPM) costs during this period.
      *     @type \Google\Protobuf\DoubleValue $cost_per_all_conversions
      *           The cost of ad interactions divided by all conversions.
      *     @type \Google\Protobuf\DoubleValue $cost_per_conversion
-     *           The cost of ad interactions divided by conversions.
+     *           The cost of ad interactions divided by conversions. This only includes
+     *           conversion actions which include_in_conversions_metric attribute is set to
+     *           true.
+     *     @type \Google\Protobuf\DoubleValue $cost_per_current_model_attributed_conversion
+     *           The cost of ad interactions divided by current model attributed
+     *           conversions. This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true.
      *     @type \Google\Protobuf\DoubleValue $cross_device_conversions
      *           Conversions from when a customer clicks on a Google Ads ad on one device,
      *           then converts on a different device or browser.
@@ -505,6 +829,27 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\DoubleValue $ctr
      *           The number of clicks your ad receives (Clicks) divided by the number
      *           of times your ad is shown (Impressions).
+     *     @type \Google\Protobuf\DoubleValue $current_model_attributed_conversions
+     *           Shows how your historic conversions data would look under the attribution
+     *           model you've currently selected. This only includes conversion actions
+     *           which include_in_conversions_metric attribute is set to true.
+     *     @type \Google\Protobuf\DoubleValue $current_model_attributed_conversions_from_interactions_rate
+     *           Current model attributed conversions from interactions divided by the
+     *           number of ad interactions (such as clicks for text ads or views for video
+     *           ads). This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true.
+     *     @type \Google\Protobuf\DoubleValue $current_model_attributed_conversions_from_interactions_value_per_interaction
+     *           The value of current model attributed conversions from interactions divided
+     *           by the number of ad interactions. This only includes conversion actions
+     *           which include_in_conversions_metric attribute is set to true.
+     *     @type \Google\Protobuf\DoubleValue $current_model_attributed_conversions_value
+     *           The total value of current model attributed conversions. This only includes
+     *           conversion actions which include_in_conversions_metric attribute is set to
+     *           true.
+     *     @type \Google\Protobuf\DoubleValue $current_model_attributed_conversions_value_per_cost
+     *           The value of current model attributed conversions divided by the cost of ad
+     *           interactions. This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true.
      *     @type \Google\Protobuf\DoubleValue $engagement_rate
      *           How often people engage with your ad after it's shown to them. This is the
      *           number of ad expansions divided by the number of times your ad is shown.
@@ -514,6 +859,25 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           future, other ad types may support engagement metrics.
      *     @type \Google\Protobuf\DoubleValue $hotel_average_lead_value_micros
      *           Average lead value of hotel.
+     *     @type int $historical_creative_quality_score
+     *           The creative historical quality score.
+     *     @type int $historical_landing_page_quality_score
+     *           The quality of historical landing page experience.
+     *     @type \Google\Protobuf\Int64Value $historical_quality_score
+     *           The historical quality score.
+     *     @type int $historical_search_predicted_ctr
+     *           The historical search predicted click through rate (CTR).
+     *     @type \Google\Protobuf\Int64Value $gmail_forwards
+     *           The number of times the ad was forwarded to someone else as a message.
+     *     @type \Google\Protobuf\Int64Value $gmail_saves
+     *           The number of times someone has saved your Gmail ad to their inbox as a
+     *           message.
+     *     @type \Google\Protobuf\Int64Value $gmail_secondary_clicks
+     *           The number of clicks to the landing page on the expanded state of Gmail
+     *           ads.
+     *     @type \Google\Protobuf\Int64Value $impression_reach
+     *           Number of unique cookies that were exposed to your ad over a given time
+     *           period.
      *     @type \Google\Protobuf\Int64Value $impressions
      *           Count of how often your ad has appeared on a search results page or
      *           website on the Google Network.
@@ -525,6 +889,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The number of interactions.
      *           An interaction is the main user action associated with an ad format-clicks
      *           for text and shopping ads, views for video ads, and so on.
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $interaction_types
+     *           The types of payable and free interactions.
      *     @type \Google\Protobuf\DoubleValue $invalid_click_rate
      *           The percentage of clicks filtered out of your total number of clicks
      *           (filtered + non-filtered clicks) during the reporting period.
@@ -545,15 +911,30 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           all advertisers on the websites that show your ads. Measures how your ads
      *           perform on Display Network sites compared to other ads on the same sites.
      *     @type \Google\Protobuf\DoubleValue $search_absolute_top_impression_share
-     *           The percentage of the customer's Shopping ad impressions that are shown in
-     *           the most prominent Shopping position. See
+     *           The percentage of the customer's Shopping or Search ad impressions that are
+     *           shown in the most prominent Shopping position. See
      *           <a href="https://support.google.com/adwords/answer/7501826">this Merchant
      *           Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     *     @type \Google\Protobuf\DoubleValue $search_budget_lost_absolute_top_impression_share
+     *           The number estimating how often your ad wasn't the very first ad above the
+     *           organic search results due to a low budget. Note: Search
+     *           budget lost absolute top impression share is reported in the range of 0 to
+     *           0.9. Any value above 0.9 is reported as 0.9001.
      *     @type \Google\Protobuf\DoubleValue $search_budget_lost_impression_share
      *           The estimated percent of times that your ad was eligible to show on the
      *           Search Network but didn't because your budget was too low. Note: Search
      *           budget lost impression share is reported in the range of 0 to 0.9. Any
      *           value above 0.9 is reported as 0.9001.
+     *     @type \Google\Protobuf\DoubleValue $search_budget_lost_top_impression_share
+     *           The number estimating how often your ad didn't show anywhere above the
+     *           organic search results due to a low budget. Note: Search
+     *           budget lost top impression share is reported in the range of 0 to 0.9. Any
+     *           value above 0.9 is reported as 0.9001.
+     *     @type \Google\Protobuf\DoubleValue $search_click_share
+     *           The number of clicks you've received on the Search Network
+     *           divided by the estimated number of clicks you were eligible to receive.
+     *           Note: Search click share is reported in the range of 0.1 to 1. Any value
+     *           below 0.1 is reported as 0.0999.
      *     @type \Google\Protobuf\DoubleValue $search_exact_match_impression_share
      *           The impressions you've received divided by the estimated number of
      *           impressions you were eligible to receive on the Search Network for search
@@ -566,15 +947,40 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           by the estimated number of impressions you were eligible to receive.
      *           Note: Search impression share is reported in the range of 0.1 to 1. Any
      *           value below 0.1 is reported as 0.0999.
+     *     @type \Google\Protobuf\DoubleValue $search_rank_lost_absolute_top_impression_share
+     *           The number estimating how often your ad wasn't the very first ad above the
+     *           organic search results due to poor Ad Rank.
+     *           Note: Search rank lost absolute top impression share is reported in the
+     *           range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
      *     @type \Google\Protobuf\DoubleValue $search_rank_lost_impression_share
      *           The estimated percentage of impressions on the Search Network
      *           that your ads didn't receive due to poor Ad Rank.
      *           Note: Search rank lost impression share is reported in the range of 0 to
      *           0.9. Any value above 0.9 is reported as 0.9001.
+     *     @type \Google\Protobuf\DoubleValue $search_rank_lost_top_impression_share
+     *           The number estimating how often your ad didn't show anywhere above the
+     *           organic search results due to poor Ad Rank.
+     *           Note: Search rank lost top impression share is reported in the range of 0
+     *           to 0.9. Any value above 0.9 is reported as 0.9001.
+     *     @type \Google\Protobuf\DoubleValue $search_top_impression_share
+     *           The impressions you've received in the top location (anywhere above the
+     *           organic search results) compared to the estimated number of impressions you
+     *           were eligible to receive in the top location.
+     *           Note: Search top impression share is reported in the range of 0.1 to 1. Any
+     *           value below 0.1 is reported as 0.0999.
+     *     @type \Google\Protobuf\DoubleValue $top_impression_percentage
+     *           The percent of your ad impressions that are shown anywhere above the
+     *           organic search results.
      *     @type \Google\Protobuf\DoubleValue $value_per_all_conversions
      *           The value of all conversions divided by the number of all conversions.
      *     @type \Google\Protobuf\DoubleValue $value_per_conversion
-     *           The value of conversions divided by the number of conversions.
+     *           The value of conversions divided by the number of conversions. This only
+     *           includes conversion actions which include_in_conversions_metric attribute
+     *           is set to true.
+     *     @type \Google\Protobuf\DoubleValue $value_per_current_model_attributed_conversion
+     *           The value of current model attributed conversions divided by the number of
+     *           the conversions. This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true.
      *     @type \Google\Protobuf\DoubleValue $video_quartile_100_rate
      *           Percentage of impressions where the viewer watched all of your video.
      *     @type \Google\Protobuf\DoubleValue $video_quartile_25_rate
@@ -599,6 +1005,228 @@ class Metrics extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V0\Common\Metrics::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * The percent of your ad impressions that are shown as the very first ad
+     * above the organic search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue absolute_top_impression_percentage = 95;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getAbsoluteTopImpressionPercentage()
+    {
+        return $this->absolute_top_impression_percentage;
+    }
+
+    /**
+     * The percent of your ad impressions that are shown as the very first ad
+     * above the organic search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue absolute_top_impression_percentage = 95;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setAbsoluteTopImpressionPercentage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->absolute_top_impression_percentage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Average cost of viewable impressions (`active_view_impressions`).
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_cpm = 1;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getActiveViewCpm()
+    {
+        return $this->active_view_cpm;
+    }
+
+    /**
+     * Average cost of viewable impressions (`active_view_impressions`).
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_cpm = 1;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setActiveViewCpm($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->active_view_cpm = $var;
+
+        return $this;
+    }
+
+    /**
+     * Active view measurable clicks divided by active view viewable impressions.
+     * This metric is reported only for display network.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_ctr = 79;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getActiveViewCtr()
+    {
+        return $this->active_view_ctr;
+    }
+
+    /**
+     * Active view measurable clicks divided by active view viewable impressions.
+     * This metric is reported only for display network.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_ctr = 79;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setActiveViewCtr($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->active_view_ctr = $var;
+
+        return $this;
+    }
+
+    /**
+     * A measurement of how often your ad has become viewable on a Display
+     * Network site.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_impressions = 2;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getActiveViewImpressions()
+    {
+        return $this->active_view_impressions;
+    }
+
+    /**
+     * A measurement of how often your ad has become viewable on a Display
+     * Network site.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_impressions = 2;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setActiveViewImpressions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->active_view_impressions = $var;
+
+        return $this;
+    }
+
+    /**
+     * The ratio of impressions that could be measured by Active View over the
+     * number of served impressions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_measurability = 96;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getActiveViewMeasurability()
+    {
+        return $this->active_view_measurability;
+    }
+
+    /**
+     * The ratio of impressions that could be measured by Active View over the
+     * number of served impressions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_measurability = 96;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setActiveViewMeasurability($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->active_view_measurability = $var;
+
+        return $this;
+    }
+
+    /**
+     * The cost of the impressions you received that were measurable by Active
+     * View.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_cost_micros = 3;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getActiveViewMeasurableCostMicros()
+    {
+        return $this->active_view_measurable_cost_micros;
+    }
+
+    /**
+     * The cost of the impressions you received that were measurable by Active
+     * View.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_cost_micros = 3;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setActiveViewMeasurableCostMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->active_view_measurable_cost_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of times your ads are appearing on placements in positions
+     * where they can be seen.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_impressions = 4;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getActiveViewMeasurableImpressions()
+    {
+        return $this->active_view_measurable_impressions;
+    }
+
+    /**
+     * The number of times your ads are appearing on placements in positions
+     * where they can be seen.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_impressions = 4;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setActiveViewMeasurableImpressions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->active_view_measurable_impressions = $var;
+
+        return $this;
+    }
+
+    /**
+     * The percentage of time when your ad appeared on an Active View enabled site
+     * (measurable impressions) and was viewable (viewable impressions).
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_viewability = 97;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getActiveViewViewability()
+    {
+        return $this->active_view_viewability;
+    }
+
+    /**
+     * The percentage of time when your ad appeared on an Active View enabled site
+     * (measurable impressions) and was viewable (viewable impressions).
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_viewability = 97;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setActiveViewViewability($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->active_view_viewability = $var;
+
+        return $this;
     }
 
     /**
@@ -656,8 +1284,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total number of conversions. This includes "Conversions" plus
-     * conversions that have their "Include in Conversions" setting unchecked.
+     * The total number of conversions. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -668,8 +1296,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total number of conversions. This includes "Conversions" plus
-     * conversions that have their "Include in Conversions" setting unchecked.
+     * The total number of conversions. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -796,6 +1424,36 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The average amount that you've been charged for an ad engagement. This
+     * amount is the total cost of all ad engagements divided by the total number
+     * of ad engagements.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpe = 98;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getAverageCpe()
+    {
+        return $this->average_cpe;
+    }
+
+    /**
+     * The average amount that you've been charged for an ad engagement. This
+     * amount is the total cost of all ad engagements divided by the total number
+     * of ad engagements.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpe = 98;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setAverageCpe($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->average_cpe = $var;
+
+        return $this;
+    }
+
+    /**
      * Average cost-per-thousand impressions (CPM).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpm = 10;</code>
@@ -852,6 +1510,60 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Average number of times a unique cookie was exposed to your ad
+     * over a given time period. Imported from Google Analytics.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_frequency = 12;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getAverageFrequency()
+    {
+        return $this->average_frequency;
+    }
+
+    /**
+     * Average number of times a unique cookie was exposed to your ad
+     * over a given time period. Imported from Google Analytics.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_frequency = 12;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setAverageFrequency($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->average_frequency = $var;
+
+        return $this;
+    }
+
+    /**
+     * Average number of pages viewed per session.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_page_views = 99;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getAveragePageViews()
+    {
+        return $this->average_page_views;
+    }
+
+    /**
+     * Average number of pages viewed per session.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_page_views = 99;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setAveragePageViews($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->average_page_views = $var;
+
+        return $this;
+    }
+
+    /**
      * Your ad's position relative to those of other advertisers.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_position = 13;</code>
@@ -873,6 +1585,60 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->average_position = $var;
+
+        return $this;
+    }
+
+    /**
+     * Total duration of all sessions (in seconds) / number of sessions. Imported
+     * from Google Analytics.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_time_on_site = 84;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getAverageTimeOnSite()
+    {
+        return $this->average_time_on_site;
+    }
+
+    /**
+     * Total duration of all sessions (in seconds) / number of sessions. Imported
+     * from Google Analytics.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue average_time_on_site = 84;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setAverageTimeOnSite($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->average_time_on_site = $var;
+
+        return $this;
+    }
+
+    /**
+     * An indication of how other advertisers are bidding on similar products.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_average_max_cpc = 14;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getBenchmarkAverageMaxCpc()
+    {
+        return $this->benchmark_average_max_cpc;
+    }
+
+    /**
+     * An indication of how other advertisers are bidding on similar products.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_average_max_cpc = 14;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setBenchmarkAverageMaxCpc($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->benchmark_average_max_cpc = $var;
 
         return $this;
     }
@@ -1119,7 +1885,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Conversions from interactions divided by the number of ad interactions
-     * (such as clicks for text ads or views for video ads).
+     * (such as clicks for text ads or views for video ads). This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_rate = 69;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -1131,7 +1899,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * Conversions from interactions divided by the number of ad interactions
-     * (such as clicks for text ads or views for video ads).
+     * (such as clicks for text ads or views for video ads). This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_rate = 69;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1146,7 +1916,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total value of conversions.
+     * The total value of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -1157,7 +1928,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total value of conversions.
+     * The total value of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1172,7 +1944,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The value of conversions divided by the cost of ad interactions.
+     * The value of conversions divided by the cost of ad interactions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value_per_cost = 71;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -1183,7 +1957,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The value of conversions divided by the cost of ad interactions.
+     * The value of conversions divided by the cost of ad interactions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value_per_cost = 71;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1199,7 +1975,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions from interactions divided by the number of ad
-     * interactions.
+     * interactions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_value_per_interaction = 72;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -1211,7 +1988,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
     /**
      * The value of conversions from interactions divided by the number of ad
-     * interactions.
+     * interactions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_value_per_interaction = 72;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1226,8 +2004,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of conversions. This only includes conversion actions which have
-     * "Include in Conversions" checked.
+     * The number of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -1238,8 +2016,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of conversions. This only includes conversion actions which have
-     * "Include in Conversions" checked.
+     * The number of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1308,7 +2086,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The cost of ad interactions divided by conversions.
+     * The cost of ad interactions divided by conversions. This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_conversion = 28;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -1319,7 +2099,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The cost of ad interactions divided by conversions.
+     * The cost of ad interactions divided by conversions. This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_conversion = 28;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1329,6 +2111,36 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->cost_per_conversion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The cost of ad interactions divided by current model attributed
+     * conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_current_model_attributed_conversion = 106;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getCostPerCurrentModelAttributedConversion()
+    {
+        return $this->cost_per_current_model_attributed_conversion;
+    }
+
+    /**
+     * The cost of ad interactions divided by current model attributed
+     * conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_current_model_attributed_conversion = 106;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setCostPerCurrentModelAttributedConversion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->cost_per_current_model_attributed_conversion = $var;
 
         return $this;
     }
@@ -1387,6 +2199,158 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->ctr = $var;
+
+        return $this;
+    }
+
+    /**
+     * Shows how your historic conversions data would look under the attribution
+     * model you've currently selected. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getCurrentModelAttributedConversions()
+    {
+        return $this->current_model_attributed_conversions;
+    }
+
+    /**
+     * Shows how your historic conversions data would look under the attribution
+     * model you've currently selected. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setCurrentModelAttributedConversions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->current_model_attributed_conversions = $var;
+
+        return $this;
+    }
+
+    /**
+     * Current model attributed conversions from interactions divided by the
+     * number of ad interactions (such as clicks for text ads or views for video
+     * ads). This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_rate = 102;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getCurrentModelAttributedConversionsFromInteractionsRate()
+    {
+        return $this->current_model_attributed_conversions_from_interactions_rate;
+    }
+
+    /**
+     * Current model attributed conversions from interactions divided by the
+     * number of ad interactions (such as clicks for text ads or views for video
+     * ads). This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_rate = 102;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setCurrentModelAttributedConversionsFromInteractionsRate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->current_model_attributed_conversions_from_interactions_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * The value of current model attributed conversions from interactions divided
+     * by the number of ad interactions. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_value_per_interaction = 103;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getCurrentModelAttributedConversionsFromInteractionsValuePerInteraction()
+    {
+        return $this->current_model_attributed_conversions_from_interactions_value_per_interaction;
+    }
+
+    /**
+     * The value of current model attributed conversions from interactions divided
+     * by the number of ad interactions. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_value_per_interaction = 103;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setCurrentModelAttributedConversionsFromInteractionsValuePerInteraction($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->current_model_attributed_conversions_from_interactions_value_per_interaction = $var;
+
+        return $this;
+    }
+
+    /**
+     * The total value of current model attributed conversions. This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getCurrentModelAttributedConversionsValue()
+    {
+        return $this->current_model_attributed_conversions_value;
+    }
+
+    /**
+     * The total value of current model attributed conversions. This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setCurrentModelAttributedConversionsValue($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->current_model_attributed_conversions_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * The value of current model attributed conversions divided by the cost of ad
+     * interactions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value_per_cost = 105;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getCurrentModelAttributedConversionsValuePerCost()
+    {
+        return $this->current_model_attributed_conversions_value_per_cost;
+    }
+
+    /**
+     * The value of current model attributed conversions divided by the cost of ad
+     * interactions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value_per_cost = 105;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setCurrentModelAttributedConversionsValuePerCost($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->current_model_attributed_conversions_value_per_cost = $var;
 
         return $this;
     }
@@ -1476,6 +2440,220 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The creative historical quality score.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_creative_quality_score = 80;</code>
+     * @return int
+     */
+    public function getHistoricalCreativeQualityScore()
+    {
+        return $this->historical_creative_quality_score;
+    }
+
+    /**
+     * The creative historical quality score.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_creative_quality_score = 80;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHistoricalCreativeQualityScore($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\QualityScoreBucketEnum_QualityScoreBucket::class);
+        $this->historical_creative_quality_score = $var;
+
+        return $this;
+    }
+
+    /**
+     * The quality of historical landing page experience.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_landing_page_quality_score = 81;</code>
+     * @return int
+     */
+    public function getHistoricalLandingPageQualityScore()
+    {
+        return $this->historical_landing_page_quality_score;
+    }
+
+    /**
+     * The quality of historical landing page experience.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_landing_page_quality_score = 81;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHistoricalLandingPageQualityScore($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\QualityScoreBucketEnum_QualityScoreBucket::class);
+        $this->historical_landing_page_quality_score = $var;
+
+        return $this;
+    }
+
+    /**
+     * The historical quality score.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value historical_quality_score = 82;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getHistoricalQualityScore()
+    {
+        return $this->historical_quality_score;
+    }
+
+    /**
+     * The historical quality score.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value historical_quality_score = 82;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setHistoricalQualityScore($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->historical_quality_score = $var;
+
+        return $this;
+    }
+
+    /**
+     * The historical search predicted click through rate (CTR).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_search_predicted_ctr = 83;</code>
+     * @return int
+     */
+    public function getHistoricalSearchPredictedCtr()
+    {
+        return $this->historical_search_predicted_ctr;
+    }
+
+    /**
+     * The historical search predicted click through rate (CTR).
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.enums.QualityScoreBucketEnum.QualityScoreBucket historical_search_predicted_ctr = 83;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHistoricalSearchPredictedCtr($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Enums\QualityScoreBucketEnum_QualityScoreBucket::class);
+        $this->historical_search_predicted_ctr = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of times the ad was forwarded to someone else as a message.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_forwards = 85;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getGmailForwards()
+    {
+        return $this->gmail_forwards;
+    }
+
+    /**
+     * The number of times the ad was forwarded to someone else as a message.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_forwards = 85;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setGmailForwards($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->gmail_forwards = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of times someone has saved your Gmail ad to their inbox as a
+     * message.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_saves = 86;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getGmailSaves()
+    {
+        return $this->gmail_saves;
+    }
+
+    /**
+     * The number of times someone has saved your Gmail ad to their inbox as a
+     * message.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_saves = 86;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setGmailSaves($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->gmail_saves = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of clicks to the landing page on the expanded state of Gmail
+     * ads.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_secondary_clicks = 87;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getGmailSecondaryClicks()
+    {
+        return $this->gmail_secondary_clicks;
+    }
+
+    /**
+     * The number of clicks to the landing page on the expanded state of Gmail
+     * ads.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_secondary_clicks = 87;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setGmailSecondaryClicks($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->gmail_secondary_clicks = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of unique cookies that were exposed to your ad over a given time
+     * period.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value impression_reach = 36;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getImpressionReach()
+    {
+        return $this->impression_reach;
+    }
+
+    /**
+     * Number of unique cookies that were exposed to your ad over a given time
+     * period.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value impression_reach = 36;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setImpressionReach($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->impression_reach = $var;
+
+        return $this;
+    }
+
+    /**
      * Count of how often your ad has appeared on a search results page or
      * website on the Google Network.
      *
@@ -1559,6 +2737,32 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
         $this->interactions = $var;
+
+        return $this;
+    }
+
+    /**
+     * The types of payable and free interactions.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.enums.InteractionEventTypeEnum.InteractionEventType interaction_types = 100;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getInteractionTypes()
+    {
+        return $this->interaction_types;
+    }
+
+    /**
+     * The types of payable and free interactions.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v0.enums.InteractionEventTypeEnum.InteractionEventType interaction_types = 100;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setInteractionTypes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V0\Enums\InteractionEventTypeEnum\InteractionEventType::class);
+        $this->interaction_types = $arr;
 
         return $this;
     }
@@ -1756,8 +2960,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The percentage of the customer's Shopping ad impressions that are shown in
-     * the most prominent Shopping position. See
+     * The percentage of the customer's Shopping or Search ad impressions that are
+     * shown in the most prominent Shopping position. See
      * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
      * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
      *
@@ -1770,8 +2974,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The percentage of the customer's Shopping ad impressions that are shown in
-     * the most prominent Shopping position. See
+     * The percentage of the customer's Shopping or Search ad impressions that are
+     * shown in the most prominent Shopping position. See
      * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
      * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
      *
@@ -1783,6 +2987,38 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->search_absolute_top_impression_share = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number estimating how often your ad wasn't the very first ad above the
+     * organic search results due to a low budget. Note: Search
+     * budget lost absolute top impression share is reported in the range of 0 to
+     * 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_absolute_top_impression_share = 88;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getSearchBudgetLostAbsoluteTopImpressionShare()
+    {
+        return $this->search_budget_lost_absolute_top_impression_share;
+    }
+
+    /**
+     * The number estimating how often your ad wasn't the very first ad above the
+     * organic search results due to a low budget. Note: Search
+     * budget lost absolute top impression share is reported in the range of 0 to
+     * 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_absolute_top_impression_share = 88;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setSearchBudgetLostAbsoluteTopImpressionShare($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->search_budget_lost_absolute_top_impression_share = $var;
 
         return $this;
     }
@@ -1815,6 +3051,70 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->search_budget_lost_impression_share = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number estimating how often your ad didn't show anywhere above the
+     * organic search results due to a low budget. Note: Search
+     * budget lost top impression share is reported in the range of 0 to 0.9. Any
+     * value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_top_impression_share = 89;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getSearchBudgetLostTopImpressionShare()
+    {
+        return $this->search_budget_lost_top_impression_share;
+    }
+
+    /**
+     * The number estimating how often your ad didn't show anywhere above the
+     * organic search results due to a low budget. Note: Search
+     * budget lost top impression share is reported in the range of 0 to 0.9. Any
+     * value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_top_impression_share = 89;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setSearchBudgetLostTopImpressionShare($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->search_budget_lost_top_impression_share = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of clicks you've received on the Search Network
+     * divided by the estimated number of clicks you were eligible to receive.
+     * Note: Search click share is reported in the range of 0.1 to 1. Any value
+     * below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_click_share = 48;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getSearchClickShare()
+    {
+        return $this->search_click_share;
+    }
+
+    /**
+     * The number of clicks you've received on the Search Network
+     * divided by the estimated number of clicks you were eligible to receive.
+     * Note: Search click share is reported in the range of 0.1 to 1. Any value
+     * below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_click_share = 48;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setSearchClickShare($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->search_click_share = $var;
 
         return $this;
     }
@@ -1888,6 +3188,38 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The number estimating how often your ad wasn't the very first ad above the
+     * organic search results due to poor Ad Rank.
+     * Note: Search rank lost absolute top impression share is reported in the
+     * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_absolute_top_impression_share = 90;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getSearchRankLostAbsoluteTopImpressionShare()
+    {
+        return $this->search_rank_lost_absolute_top_impression_share;
+    }
+
+    /**
+     * The number estimating how often your ad wasn't the very first ad above the
+     * organic search results due to poor Ad Rank.
+     * Note: Search rank lost absolute top impression share is reported in the
+     * range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_absolute_top_impression_share = 90;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setSearchRankLostAbsoluteTopImpressionShare($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->search_rank_lost_absolute_top_impression_share = $var;
+
+        return $this;
+    }
+
+    /**
      * The estimated percentage of impressions on the Search Network
      * that your ads didn't receive due to poor Ad Rank.
      * Note: Search rank lost impression share is reported in the range of 0 to
@@ -1920,6 +3252,100 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The number estimating how often your ad didn't show anywhere above the
+     * organic search results due to poor Ad Rank.
+     * Note: Search rank lost top impression share is reported in the range of 0
+     * to 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_top_impression_share = 91;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getSearchRankLostTopImpressionShare()
+    {
+        return $this->search_rank_lost_top_impression_share;
+    }
+
+    /**
+     * The number estimating how often your ad didn't show anywhere above the
+     * organic search results due to poor Ad Rank.
+     * Note: Search rank lost top impression share is reported in the range of 0
+     * to 0.9. Any value above 0.9 is reported as 0.9001.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_top_impression_share = 91;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setSearchRankLostTopImpressionShare($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->search_rank_lost_top_impression_share = $var;
+
+        return $this;
+    }
+
+    /**
+     * The impressions you've received in the top location (anywhere above the
+     * organic search results) compared to the estimated number of impressions you
+     * were eligible to receive in the top location.
+     * Note: Search top impression share is reported in the range of 0.1 to 1. Any
+     * value below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_top_impression_share = 92;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getSearchTopImpressionShare()
+    {
+        return $this->search_top_impression_share;
+    }
+
+    /**
+     * The impressions you've received in the top location (anywhere above the
+     * organic search results) compared to the estimated number of impressions you
+     * were eligible to receive in the top location.
+     * Note: Search top impression share is reported in the range of 0.1 to 1. Any
+     * value below 0.1 is reported as 0.0999.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue search_top_impression_share = 92;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setSearchTopImpressionShare($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->search_top_impression_share = $var;
+
+        return $this;
+    }
+
+    /**
+     * The percent of your ad impressions that are shown anywhere above the
+     * organic search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue top_impression_percentage = 93;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getTopImpressionPercentage()
+    {
+        return $this->top_impression_percentage;
+    }
+
+    /**
+     * The percent of your ad impressions that are shown anywhere above the
+     * organic search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue top_impression_percentage = 93;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setTopImpressionPercentage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->top_impression_percentage = $var;
+
+        return $this;
+    }
+
+    /**
      * The value of all conversions divided by the number of all conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_all_conversions = 52;</code>
@@ -1946,7 +3372,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The value of conversions divided by the number of conversions.
+     * The value of conversions divided by the number of conversions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_conversion = 53;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -1957,7 +3385,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The value of conversions divided by the number of conversions.
+     * The value of conversions divided by the number of conversions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_conversion = 53;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1967,6 +3397,36 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->value_per_conversion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The value of current model attributed conversions divided by the number of
+     * the conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_current_model_attributed_conversion = 94;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getValuePerCurrentModelAttributedConversion()
+    {
+        return $this->value_per_current_model_attributed_conversion;
+    }
+
+    /**
+     * The value of current model attributed conversions divided by the number of
+     * the conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_current_model_attributed_conversion = 94;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setValuePerCurrentModelAttributedConversion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->value_per_current_model_attributed_conversion = $var;
 
         return $this;
     }

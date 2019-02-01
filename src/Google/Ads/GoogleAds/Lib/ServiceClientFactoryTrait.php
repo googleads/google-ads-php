@@ -25,6 +25,8 @@ use Google\Ads\GoogleAds\V0\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupFeedServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AdGroupServiceClient;
+use Google\Ads\GoogleAds\V0\Services\AdParameterServiceClient;
+use Google\Ads\GoogleAds\V0\Services\AdScheduleViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V0\Services\BillingSetupServiceClient;
@@ -33,7 +35,6 @@ use Google\Ads\GoogleAds\V0\Services\CampaignBidModifierServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignFeedServiceClient;
-use Google\Ads\GoogleAds\V0\Services\CampaignGroupServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CampaignSharedSetServiceClient;
 use Google\Ads\GoogleAds\V0\Services\CarrierConstantServiceClient;
@@ -64,10 +65,14 @@ use Google\Ads\GoogleAds\V0\Services\KeywordViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ManagedPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\MediaFileServiceClient;
+use Google\Ads\GoogleAds\V0\Services\MobileAppCategoryConstantServiceClient;
+use Google\Ads\GoogleAds\V0\Services\MobileDeviceConstantServiceClient;
+use Google\Ads\GoogleAds\V0\Services\OperatingSystemVersionConstantServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ParentalStatusViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V0\Services\ProductGroupViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\RecommendationServiceClient;
+use Google\Ads\GoogleAds\V0\Services\RemarketingActionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V0\Services\SharedSetServiceClient;
@@ -190,6 +195,22 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return AdParameterServiceClient
+     */
+    public function getAdParameterServiceClient()
+    {
+        return new AdParameterServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return AdScheduleViewServiceClient
+     */
+    public function getAdScheduleViewServiceClient()
+    {
+        return new AdScheduleViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return AgeRangeViewServiceClient
      */
     public function getAgeRangeViewServiceClient()
@@ -252,15 +273,7 @@ trait ServiceClientFactoryTrait
     {
         return new CampaignFeedServiceClient($this->getGoogleAdsClientOptions());
     }
-
-    /**
-     * @return CampaignGroupServiceClient
-     */
-    public function getCampaignGroupService()
-    {
-        return new CampaignGroupServiceClient($this->getGoogleAdsClientOptions());
-    }
-
+    
     /**
      * @return CampaignServiceClient
      */
@@ -502,6 +515,30 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return MobileAppCategoryConstantServiceClient
+     */
+    public function getMobileAppCategoryConstantServiceClient()
+    {
+        return new MobileAppCategoryConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return MobileDeviceConstantServiceClient
+     */
+    public function getMobileDeviceConstantServiceClient()
+    {
+        return new MobileDeviceConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return OperatingSystemVersionConstantServiceClient
+     */
+    public function getOperatingSystemVersionConstantServiceClient()
+    {
+        return new OperatingSystemVersionConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return ParentalStatusViewServiceClient
      */
     public function getParentalStatusViewServiceClient()
@@ -531,6 +568,14 @@ trait ServiceClientFactoryTrait
     public function getRecommendationServiceClient()
     {
         return new RecommendationServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return RemarketingActionServiceClient
+     */
+    public function getRemarketingActionServiceClient()
+    {
+        return new RemarketingActionServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

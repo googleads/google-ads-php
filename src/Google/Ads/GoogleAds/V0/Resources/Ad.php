@@ -155,6 +155,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Details pertaining to a Gmail ad.
      *     @type \Google\Ads\GoogleAds\V0\Common\ImageAdInfo $image_ad
      *           Details pertaining to an Image ad.
+     *     @type \Google\Ads\GoogleAds\V0\Common\VideoAdInfo $video_ad
+     *           Details pertaining to a Video ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -738,6 +740,32 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\ImageAdInfo::class);
         $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a Video ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.VideoAdInfo video_ad = 24;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\VideoAdInfo
+     */
+    public function getVideoAd()
+    {
+        return $this->readOneof(24);
+    }
+
+    /**
+     * Details pertaining to a Video ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.VideoAdInfo video_ad = 24;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\VideoAdInfo $var
+     * @return $this
+     */
+    public function setVideoAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\VideoAdInfo::class);
+        $this->writeOneof(24, $var);
 
         return $this;
     }

@@ -87,6 +87,14 @@ class BiddingStrategyType
      */
     const TARGET_CPA = 6;
     /**
+     * Target CPM is an automated bid strategy that sets bids to help get
+     * as many impressions as possible at the target cost per one thousand
+     * impressions (CPM) you set.
+     *
+     * Generated from protobuf enum <code>TARGET_CPM = 14;</code>
+     */
+    const TARGET_CPM = 14;
+    /**
      * Target Outrank Share is an automated bidding strategy that sets bids
      * based on the target fraction of auctions where the advertiser
      * should outrank a specific competitor.

@@ -141,8 +141,6 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the database error.
      *     @type int $policy_finding_error
      *           The reasons for the policy finding error.
-     *     @type int $campaign_group_error
-     *           The reasons for campaign group error.
      *     @type int $enum_error
      *           The reason for enum error.
      *     @type int $keyword_plan_error
@@ -183,6 +181,14 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the ad group feed error
      *     @type int $campaign_feed_error
      *           The reasons for the campaign feed error
+     *     @type int $ad_parameter_error
+     *           The reasons for the ad parameter error
+     *     @type int $feed_item_validation_error
+     *           The reasons for the feed item validation error
+     *     @type int $extension_setting_error
+     *           The reasons for the extension setting error
+     *     @type int $policy_violation_error
+     *           The reasons for the policy violation error
      * }
      */
     public function __construct($data = NULL) {
@@ -1725,32 +1731,6 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The reasons for campaign group error.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CampaignGroupErrorEnum.CampaignGroupError campaign_group_error = 69;</code>
-     * @return int
-     */
-    public function getCampaignGroupError()
-    {
-        return $this->readOneof(69);
-    }
-
-    /**
-     * The reasons for campaign group error.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.CampaignGroupErrorEnum.CampaignGroupError campaign_group_error = 69;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCampaignGroupError($var)
-    {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CampaignGroupErrorEnum_CampaignGroupError::class);
-        $this->writeOneof(69, $var);
-
-        return $this;
-    }
-
-    /**
      * The reason for enum error.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v0.errors.EnumErrorEnum.EnumError enum_error = 70;</code>
@@ -2266,6 +2246,110 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\CampaignFeedErrorEnum_CampaignFeedError::class);
         $this->writeOneof(96, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the ad parameter error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.AdParameterErrorEnum.AdParameterError ad_parameter_error = 101;</code>
+     * @return int
+     */
+    public function getAdParameterError()
+    {
+        return $this->readOneof(101);
+    }
+
+    /**
+     * The reasons for the ad parameter error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.AdParameterErrorEnum.AdParameterError ad_parameter_error = 101;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAdParameterError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\AdParameterErrorEnum_AdParameterError::class);
+        $this->writeOneof(101, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the feed item validation error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.FeedItemValidationErrorEnum.FeedItemValidationError feed_item_validation_error = 102;</code>
+     * @return int
+     */
+    public function getFeedItemValidationError()
+    {
+        return $this->readOneof(102);
+    }
+
+    /**
+     * The reasons for the feed item validation error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.FeedItemValidationErrorEnum.FeedItemValidationError feed_item_validation_error = 102;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFeedItemValidationError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\FeedItemValidationErrorEnum_FeedItemValidationError::class);
+        $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the extension setting error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.ExtensionSettingErrorEnum.ExtensionSettingError extension_setting_error = 103;</code>
+     * @return int
+     */
+    public function getExtensionSettingError()
+    {
+        return $this->readOneof(103);
+    }
+
+    /**
+     * The reasons for the extension setting error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.ExtensionSettingErrorEnum.ExtensionSettingError extension_setting_error = 103;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setExtensionSettingError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\ExtensionSettingErrorEnum_ExtensionSettingError::class);
+        $this->writeOneof(103, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the policy violation error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.PolicyViolationErrorEnum.PolicyViolationError policy_violation_error = 105;</code>
+     * @return int
+     */
+    public function getPolicyViolationError()
+    {
+        return $this->readOneof(105);
+    }
+
+    /**
+     * The reasons for the policy violation error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.errors.PolicyViolationErrorEnum.PolicyViolationError policy_violation_error = 105;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPolicyViolationError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V0\Errors\PolicyViolationErrorEnum_PolicyViolationError::class);
+        $this->writeOneof(105, $var);
 
         return $this;
     }

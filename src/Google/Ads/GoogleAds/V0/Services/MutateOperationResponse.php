@@ -37,8 +37,6 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      *           The result for the campaign bid modifier mutate.
      *     @type \Google\Ads\GoogleAds\V0\Services\MutateCampaignBudgetResult $campaign_budget_result
      *           The result for the campaign budget mutate.
-     *     @type \Google\Ads\GoogleAds\V0\Services\MutateCampaignGroupResult $campaign_group_result
-     *           The result for the campaign group mutate.
      *     @type \Google\Ads\GoogleAds\V0\Services\MutateCampaignResult $campaign_result
      *           The result for the campaign mutate.
      *     @type \Google\Ads\GoogleAds\V0\Services\MutateCampaignSharedSetResult $campaign_shared_set_result
@@ -238,32 +236,6 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Services\MutateCampaignBudgetResult::class);
         $this->writeOneof(8, $var);
-
-        return $this;
-    }
-
-    /**
-     * The result for the campaign group mutate.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.services.MutateCampaignGroupResult campaign_group_result = 9;</code>
-     * @return \Google\Ads\GoogleAds\V0\Services\MutateCampaignGroupResult
-     */
-    public function getCampaignGroupResult()
-    {
-        return $this->readOneof(9);
-    }
-
-    /**
-     * The result for the campaign group mutate.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v0.services.MutateCampaignGroupResult campaign_group_result = 9;</code>
-     * @param \Google\Ads\GoogleAds\V0\Services\MutateCampaignGroupResult $var
-     * @return $this
-     */
-    public function setCampaignGroupResult($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Services\MutateCampaignGroupResult::class);
-        $this->writeOneof(9, $var);
 
         return $this;
     }

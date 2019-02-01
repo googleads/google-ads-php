@@ -44,6 +44,12 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 page_size = 4;</code>
      */
     private $page_size = 0;
+    /**
+     * If true, the request is validated but not executed.
+     *
+     * Generated from protobuf field <code>bool validate_only = 5;</code>
+     */
+    private $validate_only = false;
 
     /**
      * Constructor.
@@ -64,6 +70,8 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *           Number of elements to retrieve in a single page.
      *           When too large a page is requested, the server may decide to
      *           further limit the number of returned resources.
+     *     @type bool $validate_only
+     *           If true, the request is validated but not executed.
      * }
      */
     public function __construct($data = NULL) {
@@ -181,6 +189,32 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->page_size = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, the request is validated but not executed.
+     *
+     * Generated from protobuf field <code>bool validate_only = 5;</code>
+     * @return bool
+     */
+    public function getValidateOnly()
+    {
+        return $this->validate_only;
+    }
+
+    /**
+     * If true, the request is validated but not executed.
+     *
+     * Generated from protobuf field <code>bool validate_only = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setValidateOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->validate_only = $var;
 
         return $this;
     }

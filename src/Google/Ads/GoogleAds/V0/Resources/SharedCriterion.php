@@ -69,6 +69,8 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      *           YouTube Channel.
      *     @type \Google\Ads\GoogleAds\V0\Common\PlacementInfo $placement
      *           Placement.
+     *     @type \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo $mobile_app_category
+     *           Mobile App Category.
      * }
      */
     public function __construct($data = NULL) {
@@ -286,6 +288,32 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\PlacementInfo::class);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Mobile App Category.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.MobileAppCategoryInfo mobile_app_category = 8;</code>
+     * @return \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo
+     */
+    public function getMobileAppCategory()
+    {
+        return $this->readOneof(8);
+    }
+
+    /**
+     * Mobile App Category.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v0.common.MobileAppCategoryInfo mobile_app_category = 8;</code>
+     * @param \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo $var
+     * @return $this
+     */
+    public function setMobileAppCategory($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V0\Common\MobileAppCategoryInfo::class);
+        $this->writeOneof(8, $var);
 
         return $this;
     }

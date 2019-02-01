@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,12 +30,12 @@ use Google\Ads\GoogleAds\V0\Resources\HotelPerformanceView;
 use Google\Ads\GoogleAds\V0\Services\GetHotelPerformanceViewRequest;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\FetchAuthTokenInterface;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
+use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to manage Hotel Performance Views.
@@ -46,7 +46,7 @@ use Google\ApiCore\ValidationException;
  * ```
  * $hotelPerformanceViewServiceClient = new HotelPerformanceViewServiceClient();
  * try {
- *     $formattedResourceName = $hotelPerformanceViewServiceClient->hotelPerformanceViewName('[CUSTOMER]');
+ *     $formattedResourceName = $hotelPerformanceViewServiceClient->customerName('[CUSTOMER]');
  *     $response = $hotelPerformanceViewServiceClient->getHotelPerformanceView($formattedResourceName);
  * } finally {
  *     $hotelPerformanceViewServiceClient->close();
@@ -90,6 +90,7 @@ class HotelPerformanceViewServiceGapicClient
     public static $serviceScopes = [
     ];
     private static $hotelPerformanceViewNameTemplate;
+    private static $customerNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -99,6 +100,7 @@ class HotelPerformanceViewServiceGapicClient
             'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
             'clientConfig' => __DIR__.'/../resources/hotel_performance_view_service_client_config.json',
             'descriptorsConfigPath' => __DIR__.'/../resources/hotel_performance_view_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__.'/../resources/hotel_performance_view_service_grpc_config.json',
             'credentialsConfig' => [
                 'scopes' => self::$serviceScopes,
             ],
@@ -119,11 +121,21 @@ class HotelPerformanceViewServiceGapicClient
         return self::$hotelPerformanceViewNameTemplate;
     }
 
+    private static function getCustomerNameTemplate()
+    {
+        if (self::$customerNameTemplate == null) {
+            self::$customerNameTemplate = new PathTemplate('customers/{customer}');
+        }
+
+        return self::$customerNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'hotelPerformanceView' => self::getHotelPerformanceViewNameTemplate(),
+                'customer' => self::getCustomerNameTemplate(),
             ];
         }
 
@@ -147,10 +159,27 @@ class HotelPerformanceViewServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent
+     * a customer resource.
+     *
+     * @param string $customer
+     *
+     * @return string The formatted customer resource.
+     * @experimental
+     */
+    public static function customerName($customer)
+    {
+        return self::getCustomerNameTemplate()->render([
+            'customer' => $customer,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - hotelPerformanceView: customers/{customer}/hotelPerformanceView.
+     * - hotelPerformanceView: customers/{customer}/hotelPerformanceView
+     * - customer: customers/{customer}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -252,7 +281,7 @@ class HotelPerformanceViewServiceGapicClient
      * ```
      * $hotelPerformanceViewServiceClient = new HotelPerformanceViewServiceClient();
      * try {
-     *     $formattedResourceName = $hotelPerformanceViewServiceClient->hotelPerformanceViewName('[CUSTOMER]');
+     *     $formattedResourceName = $hotelPerformanceViewServiceClient->customerName('[CUSTOMER]');
      *     $response = $hotelPerformanceViewServiceClient->getHotelPerformanceView($formattedResourceName);
      * } finally {
      *     $hotelPerformanceViewServiceClient->close();

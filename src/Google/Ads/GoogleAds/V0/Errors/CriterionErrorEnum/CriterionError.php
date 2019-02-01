@@ -553,6 +553,74 @@ class CriterionError
      * Generated from protobuf enum <code>FIELD_INCOMPATIBLE_WITH_NEGATIVE_TARGETING = 84;</code>
      */
     const FIELD_INCOMPATIBLE_WITH_NEGATIVE_TARGETING = 84;
+    /**
+     * The combination of operand and operator in webpage condition is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_WEBPAGE_CONDITION = 85;</code>
+     */
+    const INVALID_WEBPAGE_CONDITION = 85;
+    /**
+     * The URL of webpage condition is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_WEBPAGE_CONDITION_URL = 86;</code>
+     */
+    const INVALID_WEBPAGE_CONDITION_URL = 86;
+    /**
+     * The URL of webpage condition cannot be empty or contain white space.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CONDITION_URL_CANNOT_BE_EMPTY = 87;</code>
+     */
+    const WEBPAGE_CONDITION_URL_CANNOT_BE_EMPTY = 87;
+    /**
+     * The URL of webpage condition contains an unsupported protocol.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CONDITION_URL_UNSUPPORTED_PROTOCOL = 88;</code>
+     */
+    const WEBPAGE_CONDITION_URL_UNSUPPORTED_PROTOCOL = 88;
+    /**
+     * The URL of webpage condition cannot be an IP address.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CONDITION_URL_CANNOT_BE_IP_ADDRESS = 89;</code>
+     */
+    const WEBPAGE_CONDITION_URL_CANNOT_BE_IP_ADDRESS = 89;
+    /**
+     * The domain of the URL is not consistent with the domain in campaign
+     * setting.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CONDITION_URL_DOMAIN_NOT_CONSISTENT_WITH_CAMPAIGN_SETTING = 90;</code>
+     */
+    const WEBPAGE_CONDITION_URL_DOMAIN_NOT_CONSISTENT_WITH_CAMPAIGN_SETTING = 90;
+    /**
+     * The URL of webpage condition cannot be a public suffix itself.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CONDITION_URL_CANNOT_BE_PUBLIC_SUFFIX = 91;</code>
+     */
+    const WEBPAGE_CONDITION_URL_CANNOT_BE_PUBLIC_SUFFIX = 91;
+    /**
+     * The URL of webpage condition has an invalid public suffix.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CONDITION_URL_INVALID_PUBLIC_SUFFIX = 92;</code>
+     */
+    const WEBPAGE_CONDITION_URL_INVALID_PUBLIC_SUFFIX = 92;
+    /**
+     * Value track parameter is not supported in webpage condition URL.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CONDITION_URL_VALUE_TRACK_VALUE_NOT_SUPPORTED = 93;</code>
+     */
+    const WEBPAGE_CONDITION_URL_VALUE_TRACK_VALUE_NOT_SUPPORTED = 93;
+    /**
+     * Only one URL-EQUALS webpage condition is allowed in a webpage
+     * criterion and it cannot be combined with other conditions.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CRITERION_URL_EQUALS_CAN_HAVE_ONLY_ONE_CONDITION = 94;</code>
+     */
+    const WEBPAGE_CRITERION_URL_EQUALS_CAN_HAVE_ONLY_ONE_CONDITION = 94;
+    /**
+     * A webpage criterion cannot be added to a non-DSA ad group.
+     *
+     * Generated from protobuf enum <code>WEBPAGE_CRITERION_NOT_SUPPORTED_ON_NON_DSA_AD_GROUP = 95;</code>
+     */
+    const WEBPAGE_CRITERION_NOT_SUPPORTED_ON_NON_DSA_AD_GROUP = 95;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
