@@ -97,7 +97,7 @@ class ArgumentParserTest extends TestCase
     public function testPassingRequiredArgumentButMissingValue()
     {
         $this->expectOutputRegex('/Usage/');
-        $_SERVER['argv'] = [null, '--customerId', '--campaignId', 11111];
+        $_SERVER['argv'] = [null, '--campaignId', 11111, '--customerId'];
         $this->argumentParser->parseCommandArguments(
             ['customerId' => GetOpt::REQUIRED_ARGUMENT, 'campaignId' => GetOpt::OPTIONAL_ARGUMENT]
         );
