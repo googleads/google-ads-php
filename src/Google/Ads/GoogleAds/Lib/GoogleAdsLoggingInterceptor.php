@@ -43,6 +43,7 @@ class GoogleAdsLoggingInterceptor implements UnaryInterceptorInterface
      *
      * @param mixed $method
      * @param mixed $argument
+     * @param $deserialize
      * @param array $metadata
      * @param array $options
      * @param callable $continuation
@@ -51,13 +52,14 @@ class GoogleAdsLoggingInterceptor implements UnaryInterceptorInterface
     public function interceptUnaryUnary(
         $method,
         $argument,
+        $deserialize,
         array $metadata,
         array $options,
         callable $continuation
     ) {
         return new GoogleAdsLoggingUnaryCall(
-            $continuation($method, $argument, $metadata, $options),
-            compact('method', 'argument', 'metadata', 'options'),
+            $continuation($method, $argument, $deserialize, $metadata, $options),
+            compact('method', 'argument', 'deserialize', 'metadata', 'options'),
             $this->unaryCallLogger
         );
     }
