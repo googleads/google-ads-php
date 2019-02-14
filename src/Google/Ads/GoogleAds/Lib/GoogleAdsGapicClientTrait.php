@@ -53,8 +53,9 @@ trait GoogleAdsGapicClientTrait
         if (!is_null($this->developerToken)) {
             $headers = [self::$DEVELOPER_TOKEN_KEY => [$this->developerToken]];
 
-            if (!is_null($this->loginCustomerId))
+            if (!is_null($this->loginCustomerId)) {
                 $headers[self::$LOGIN_CUSTOMER_ID] = [$this->loginCustomerId];
+            }
 
             $callable = new FixedHeaderMiddleware($callable, $headers);
         }
