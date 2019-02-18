@@ -27,8 +27,10 @@ use Google\ApiCore\Middleware\FixedHeaderMiddleware;
 trait GoogleAdsGapicClientTrait
 {
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
+    private static $LOGIN_CUSTOMER_ID = 'login-customer-id';
 
     private $developerToken = null;
+    private $loginCustomerId = null;
 
     /**
      * @see GapicClientTrait::modifyClientOptions()
@@ -38,6 +40,9 @@ trait GoogleAdsGapicClientTrait
         if (isset($options[self::$DEVELOPER_TOKEN_KEY])) {
             $this->developerToken = $options[self::$DEVELOPER_TOKEN_KEY];
         }
+        if (isset($options[self::$LOGIN_CUSTOMER_ID])) {
+            $this->loginCustomerId = $options[self::$LOGIN_CUSTOMER_ID];
+        }
     }
 
     /**
@@ -46,9 +51,13 @@ trait GoogleAdsGapicClientTrait
     protected function modifyUnaryCallable(callable &$callable)
     {
         if (!is_null($this->developerToken)) {
-            $callable = new FixedHeaderMiddleware($callable, [
-                self::$DEVELOPER_TOKEN_KEY => [$this->developerToken]
-            ]);
+            $headers = [self::$DEVELOPER_TOKEN_KEY => [$this->developerToken]];
+
+            if (!is_null($this->loginCustomerId)) {
+                $headers[self::$LOGIN_CUSTOMER_ID] = [$this->loginCustomerId];
+            }
+
+            $callable = new FixedHeaderMiddleware($callable, $headers);
         }
         $callable = new GoogleAdsExceptionMiddleware($callable);
         $callable = new GoogleAdsResponseMetadataCallable($callable);
