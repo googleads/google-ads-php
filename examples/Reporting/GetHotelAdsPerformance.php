@@ -129,8 +129,8 @@ class GetHotelAdsPerformance
                 . "during the last 7 days.%s",
                 $googleAdsRow->getAdGroup()->getId()->getValue(),
                 $googleAdsRow->getCampaign()->getId()->getValue(),
-                $googleAdsRow->getHotelCheckInDayOfWeek(),
-                $googleAdsRow->getHotelLengthOfStay()->getValue(),
+                $googleAdsRow->getSegments()->getHotelCheckInDayOfWeek(),
+                $googleAdsRow->getSegments()->getHotelLengthOfStay()->getValue(),
                 $googleAdsRow->getMetrics()->getImpressions()->getValue(),
                 $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicros()->getValue(),
                 PHP_EOL
