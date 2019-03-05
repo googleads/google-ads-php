@@ -1,3 +1,10 @@
+## 1.0.0
+
+*   Added support and examples for v1.0.0 of Google Ads API.
+*   Updated some dependencies, e.g., google/gax 0.38.0 and ulrichsg/getopt-php 3.2.2.
+*   Updated some examples to match the new API specifications, e.g., GetHotelAdsPerformance.
+*   Fixed a bug that prevented the login-customer-id header from being sent.
+
 ## 0.7.0
 
 *   Added support and examples for v0_7 of Google Ads API.
