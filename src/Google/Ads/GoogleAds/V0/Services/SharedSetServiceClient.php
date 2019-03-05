@@ -26,7 +26,7 @@
 
 namespace Google\Ads\GoogleAds\V0\Services;
 
-use Google\Ads\GoogleAds\Lib\GoogleAdsGapicClientTrait;
+use Google\Ads\GoogleAds\Lib\V0\GoogleAdsGapicClientTrait;
 use Google\Ads\GoogleAds\V0\Services\Gapic\SharedSetServiceGapicClient;
 
 /**

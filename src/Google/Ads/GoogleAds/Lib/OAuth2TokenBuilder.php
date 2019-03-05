@@ -19,6 +19,7 @@ namespace Google\Ads\GoogleAds\Lib;
 
 use Google\Auth\Credentials\UserRefreshCredentials;
 use Google\Auth\FetchAuthTokenInterface;
+use InvalidArgumentException;
 use UnexpectedValueException;
 
 /**
