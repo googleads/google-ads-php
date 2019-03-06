@@ -110,7 +110,7 @@ API](https://developers.google.com/google-ads/api/docs/start).
 ## Basic usage
 
 To issue requests via the Google Ads API, you first need to create a
-[GoogleAdsClient](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/GoogleAdsClient.php).
+[GoogleAdsClient](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/V1/GoogleAdsClient.php).
 For convenience, you can store the required settings in a properties file
 (`google_ads_php.ini`) with the following format:
 
@@ -200,7 +200,7 @@ Debug message (e.g., call queries) | DEBUG   | NOTICE
 
 By default, each of the library loggers logs to
 [`STDERR`](http://php.net/manual/en/features.commandline.io-streams.php) on a channel with default name specified
-[here](https://github.com/googleads/google-ads-php/blob/147bc76202cf5a0beb8fa2360fdb559e22a775dc/src/Google/Ads/GoogleAds/Lib/GoogleAdsClientBuilder.php#L31) using a [Monolog
+[here](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/V1/GoogleAdsClientBuilder.php#L34) using a [Monolog
 StreamHandler](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php).
 
 You can configure some options for the default logger in the `google_ads_php.ini`
@@ -216,7 +216,7 @@ logLevel = "INFO"
 If you need to further customize logging, you can specify your own logger
 entirely by providing a logger that implements
 [LoggerInterface](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php)
-in [`GoogleAdsClientBuilder`](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/GoogleAdsClientBuilder.php):
+in [`GoogleAdsClientBuilder`](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/V1/GoogleAdsClientBuilder.php):
 
 ```php
 $googleAdsClient = (new GoogleAdsClientBuilder())
@@ -246,3 +246,4 @@ $googleAdsClient = (new GoogleAdsClientBuilder())
 ### Authors
 
 *   [Thanet Knack Praneenararat](https://github.com/fiboknacky)
+*   [Mattia Tommasone](https://github.com/Raibaz)
