@@ -10,7 +10,6 @@
     "google/protobuf": "^3.4.0",
     "google/common-protos": "^0.1.0",
     "ulrichsg/getopt-php": "^3.2.2",
-    "react/http": "^0.8.3",
     "monolog/monolog": "^1.23.0"
   },
   "require-dev": {
@@ -19,7 +18,8 @@
     "ext-bcmath": "*"
   },
   "suggest": {
-    "php-64bit": ">=5.5.9"
+    "php-64bit": ">=5.5.9",
+    "react/http": "To run AuthenticateInWebApplication.php example"
   },
   "license": "Apache-2.0",
   "autoload": {
