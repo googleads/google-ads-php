@@ -19,8 +19,8 @@
     "react/http": "^0.8.3"
   },
   "suggest": {
-    "php-64bit": ">=5.5.9",
-    "react/http": "To run AuthenticateInWebApplication.php example"
+    "php-64bit": ">=7.1",
+    "react/http": "To run the AuthenticateInWebApplication.php example"
   },
   "license": "Apache-2.0",
   "autoload": {
