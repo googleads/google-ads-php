@@ -41,7 +41,7 @@ class AuthenticateInWebApplication
 {
 
     /**
-     * @var string the OAuth2 scope for the AdWords API
+     * @var string the OAuth2 scope for the Google Ads API
      * @see https://developers.google.com/google-ads/api/docs/oauth/internals#scope
      */
     const SCOPE = 'https://www.googleapis.com/auth/adwords';
@@ -154,7 +154,7 @@ EOD;
 
         $server->listen($socket);
         printf(
-            'Log into the Google account you use for AdWords and visit the following URL '
+            'Log into the Google account you use for Google Ads and visit the following URL '
             . 'in your web browser: %1$s%2$s%1$s%1$s',
             PHP_EOL,
             $oauth2->buildFullAuthorizationUri(['access_type' => 'offline'])
