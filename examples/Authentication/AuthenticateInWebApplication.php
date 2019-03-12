@@ -59,6 +59,11 @@ class AuthenticateInWebApplication
 
     public static function main()
     {
+        if (!class_exists(Server::class)) {
+            echo 'Please install "react/http" package to be able to run this example';
+            exit(1);
+        }
+
         $loop = Factory::create();
         // Creates a socket for localhost with random port.
         $socket = new \React\Socket\Server(0, $loop);
