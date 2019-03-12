@@ -35,7 +35,7 @@ class AuthenticateInStandaloneApplication
 {
 
     /**
-     * @var string the OAuth2 scope for the AdWords API
+     * @var string the OAuth2 scope for the Google Ads API
      * @see https://developers.google.com/google-ads/api/docs/oauth/internals#scope
      */
     const SCOPE = 'https://www.googleapis.com/auth/adwords';
@@ -63,7 +63,7 @@ class AuthenticateInStandaloneApplication
         $clientSecret = trim(fgets($stdin));
 
         print '[OPTIONAL] enter any additional OAuth2 scopes as a space '
-            . 'delimited string here (the AdWords scope is already included): ';
+            . 'delimited string here (the Google Ads API scope is already included): ';
 
         $scopes = self::SCOPE . ' ' . trim(fgets($stdin));
 
@@ -79,7 +79,7 @@ class AuthenticateInStandaloneApplication
         );
 
         printf(
-            'Log into the Google account you use for AdWords and visit the following URL:'
+            'Log into the Google account you use for Google Ads and visit the following URL:'
             . '%1$s%2$s%1$s%1$s',
             PHP_EOL,
             $oauth2->buildFullAuthorizationUri()
