@@ -107,6 +107,19 @@ API](https://developers.google.com/google-ads/api/docs/start).
     the examples require parameters. You can see what are required by running
     code examples with `--help` as a command-line parameter.
 
+## Running in a Docker container
+
+You can also execute the examples and develop your Google Ads API application inside a Docker 
+container, built using the provided [Dockerfile](Dockerfile).
+
+To do so, provided that you have a Docker environment [installed](https://docs.docker.com/install/),
+you can run the following command in the directory where you cloned this repository:
+
+    docker-compose up --build -d
+
+This will provide a Docker container instance with all the required dependencies already installed
+and the 
+
 ## Basic usage
 
 To issue requests via the Google Ads API, you first need to create a
