@@ -28,10 +28,9 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\V1\ResourceNames;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-//use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V1\Resources\AdGroup;
 use Google\Ads\GoogleAds\V1\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V1\Util\ErrorUtils;
+use Google\Ads\GoogleAds\Util\V1\ErrorUtils;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -110,26 +109,23 @@ class HandlePartialFailure
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $campaignId)
     {
-    
-        $temp_unused_var = new \Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure();
-
         $campaignResourceName =
             new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]);
 
-        // This AdGroup should be created successfully - assuming the campaign in the params 
+        // This ad group should be created successfully - assuming the campaign in the params
         // exists.
         $adGroup1 = new AdGroup([
             'name' => new StringValue(['value' => 'Valid AdGroup #' . uniqid()]),
-            'campaign' => $campaignResourceName            
+            'campaign' => $campaignResourceName
         ]);
 
-        // This AdGroup will always fail - campaign ID 0 in resource names is never valid.
+        // This ad group will always fail - campaign ID 0 in the resource name is never valid.
         $adGroup2 = new AdGroup([
             'name' => new StringValue(['value' => 'Broken AdGroup #' . uniqid()]),
             'campaign' => ResourceNames::forCampaign($customerId, 0)
         ]);
 
-        // This AdGroup will always fail - duplicate ad group names are not allowed.
+        // This ad group will always fail - duplicate ad group names are not allowed.
         $adGroup3 = new AdGroup([
             'name' => $adGroup1->getName(),
             'campaign' => $campaignResourceName
@@ -148,6 +144,9 @@ class HandlePartialFailure
         $adGroupOperation3 = new AdGroupOperation();
         $adGroupOperation3->setCreate($adGroup3);
         $operations[] = $adGroupOperation3;
+        
+        // Initializes the error message handling class.
+        ErrorUtils::initialize();
 
         // Issues the mutate request, setting partialFailure=true.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
@@ -157,12 +156,9 @@ class HandlePartialFailure
             ['partialFailure' => true]
         );
 
-        if(!is_null($response->getPartialFailureError()))
-        {
+        if (!is_null($response->getPartialFailureError())) {
             printf("Partial failures occurred. Details will be shown below.%s", PHP_EOL);
-        } 
-        else 
-        {
+        } else {
             printf(
                 "All operations completed successfully. No partial failures to show.%s",
                 PHP_EOL
@@ -171,16 +167,13 @@ class HandlePartialFailure
 
         // Finds the failed operations by looping through the results.
         $operationIndex = 0;
-        foreach($response->getResults() as $result)
-        {
-            if(ErrorUtils::isPartialFailure($result))
-            {         
+        foreach ($response->getResults() as $result) {
+            if (ErrorUtils::isPartialFailure($result)) {
                 $errors = ErrorUtils::getGoogleAdsErrorsFromStatus(
                     $operationIndex,
                     $response->getPartialFailureError()
                 );
-                foreach($errors as $error)
-                {
+                foreach ($errors as $error) {
                     printf(
                         "Operation %d failed with error: %s%s",
                         $operationIndex,
@@ -188,9 +181,7 @@ class HandlePartialFailure
                         PHP_EOL
                     );
                 }
-            }
-            else
-            {
+            } else {
                 printf("Operation %d succeeded.%s", operationIndex, PHP_EOL);
             }
             $operationIndex++;
