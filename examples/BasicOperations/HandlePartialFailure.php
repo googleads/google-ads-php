@@ -30,7 +30,9 @@ use Google\Ads\GoogleAds\Util\V1\ResourceNames;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Resources\AdGroup;
 use Google\Ads\GoogleAds\V1\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\Util\V1\ErrorUtils;
+use Google\Ads\GoogleAds\V1\Util\GoogleAdsErrors;
+use Google\Ads\GoogleAds\V1\Util\GoogleAdsFailures;
+use Google\Ads\GoogleAds\V1\Util\PartialFailures;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -146,7 +148,7 @@ class HandlePartialFailure
         $operations[] = $adGroupOperation3;
         
         // Initializes the error message handling class.
-        ErrorUtils::initialize();
+        PartialFailures::initialize();
 
         // Issues the mutate request, setting partialFailure=true.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
@@ -168,8 +170,8 @@ class HandlePartialFailure
         // Finds the failed operations by looping through the results.
         $operationIndex = 0;
         foreach ($response->getResults() as $result) {
-            if (ErrorUtils::isPartialFailure($result)) {
-                $errors = ErrorUtils::getGoogleAdsErrorsFromStatus(
+            if (PartialFailures::isPartialFailure($result)) {
+                $errors = GoogleAdsErrors::fromStatus(
                     $operationIndex,
                     $response->getPartialFailureError()
                 );
