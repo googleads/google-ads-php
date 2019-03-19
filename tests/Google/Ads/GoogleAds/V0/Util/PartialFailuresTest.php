@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\V0\Util;
+namespace Google\Ads\GoogleAds\Util\V0;
 
-use \Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\Message;
 use PHPUnit\Framework\TestCase;
 
 /**

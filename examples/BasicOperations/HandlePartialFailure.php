@@ -26,13 +26,13 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\Util\V1\GoogleAdsErrors;
+use Google\Ads\GoogleAds\Util\V1\GoogleAdsFailures;
+use Google\Ads\GoogleAds\Util\V1\PartialFailures;
 use Google\Ads\GoogleAds\Util\V1\ResourceNames;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Resources\AdGroup;
 use Google\Ads\GoogleAds\V1\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V1\Util\GoogleAdsErrors;
-use Google\Ads\GoogleAds\V1\Util\GoogleAdsFailures;
-use Google\Ads\GoogleAds\V1\Util\PartialFailures;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -184,7 +184,7 @@ class HandlePartialFailure
                     );
                 }
             } else {
-                printf("Operation %d succeeded.%s", operationIndex, PHP_EOL);
+                printf("Operation %d succeeded.%s", $operationIndex, PHP_EOL);
             }
             $operationIndex++;
         }

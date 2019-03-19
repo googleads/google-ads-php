@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\V1\Util;
+namespace Google\Ads\GoogleAds\Util\V0;
 
-use \Google\Rpc\Status;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure;
-use Google\Ads\GoogleAds\V1\Errors\ErrorLocation\FieldPathElement;
+use Google\Rpc\Status;
+use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V0\Errors\GoogleAdsFailure;
+use Google\Ads\GoogleAds\V0\Errors\ErrorLocation\FieldPathElement;
 
 final class GoogleAdsErrors
 {
@@ -74,9 +74,9 @@ final class GoogleAdsErrors
      *
      * @param int operationIndex the index of the operation, starting from 0.
      * @param Status partialFailureStatus a partialFailure status, with the detail list
-     *    containing GoogleAdsFailure instances.
+     *     containing GoogleAdsFailure instances
      * @return GoogleAdsError[] an array containing the
-     *    GoogleAdsError instances for a given operation index.
+     *     GoogleAdsError instances for a given operation index
      */
     public static function fromStatus(
         int $operationIndex,

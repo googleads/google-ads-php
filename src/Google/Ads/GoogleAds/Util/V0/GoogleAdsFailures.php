@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\V0\Util;
+namespace Google\Ads\GoogleAds\Util\V0;
 
-use \Google\Protobuf\Any;
-use \Google\Rpc\Status;
+use Google\Protobuf\Any;
+use Google\Rpc\Status;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsFailure;
 
 final class GoogleAdsFailures
@@ -26,7 +26,7 @@ final class GoogleAdsFailures
     /**
      * Unpacks a single GoogleAdsFailure from an Any instance.
      *
-     * @param Any An Any instance to unpack
+     * @param Any an Any instance to unpack
      * @return GoogleAdsFailure
      */
     public static function fromAny(Any $any)

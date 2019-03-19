@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\V1\Util;
+namespace Google\Ads\GoogleAds\Util\V1;
 
-use \Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\Message;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -35,8 +35,8 @@ class PartialFailuresTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
         $messageMock
-            ->method('byteSize')
-            ->willReturn(0);
+            ->method('serializeToString')
+            ->willReturn("");
 
         $this->assertTrue(PartialFailures::isPartialFailure($messageMock));
     }
@@ -48,8 +48,8 @@ class PartialFailuresTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
         $messageMock
-            ->method('byteSize')
-            ->willReturn(1);
+            ->method('serializeToString')
+            ->willReturn("a");
 
         $this->assertFalse(PartialFailures::isPartialFailure($messageMock));
     }

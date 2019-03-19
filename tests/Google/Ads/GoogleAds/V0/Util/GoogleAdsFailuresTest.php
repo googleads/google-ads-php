@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\V0\Util;
+namespace Google\Ads\GoogleAds\Util\V0;
 
-use \Google\Protobuf\Any;
-use \Google\Rpc\Status;
+use Google\Protobuf\Any;
+use Google\Rpc\Status;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsFailure;
 use PHPUnit\Framework\TestCase;
 

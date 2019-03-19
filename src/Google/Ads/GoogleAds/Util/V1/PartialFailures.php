@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\V1\Util;
+namespace Google\Ads\GoogleAds\Util\V1;
 
-use \Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\Message;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure;
 
 final class PartialFailures
@@ -38,6 +38,6 @@ final class PartialFailures
      */
     public static function isPartialFailure(Message $message)
     {
-        return $message->byteSize() == 0;
+        return strlen($message->serializeToString()) === 0;
     }
 }
