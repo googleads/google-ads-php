@@ -34,92 +34,50 @@ use PHPUnit\Framework\TestCase;
  */
 class GoogleAdsErrorsTest extends TestCase
 {
-    private $googleAdsFailureMock;
+    private $failure;
     private $statusMock;
 
     public function setUp()
     {
-        $indexMock = $this
-            ->getMockBuilder(Int64Value::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $indexMock
-            ->method("getValue")
-            ->willReturn(0);
-
-        $fieldPathElementMock = $this
-            ->getMockBuilder(FieldPathElement::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $fieldPathElementMock
-            ->method("getFieldName")
-            ->willReturn("operations");
-        $fieldPathElementMock
-            ->method("getIndex")
-            ->willReturn($indexMock);
-
-        $locationMock = $this
-            ->getMockBuilder(ErrorLocation::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $locationMock
-            ->method("getFieldPathElements")
-            ->willReturn([$fieldPathElementMock]);
-
-        $errorMock = $this
-            ->getMockBuilder(GoogleAdsError::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $errorMock
-            ->method("getLocation")
-            ->willReturn($locationMock);
-        $errorMock
-            ->method("getMessage")
-            ->willReturn("A test message.");
-
-        $this->googleAdsFailureMock = $this
-            ->getMockBuilder(GoogleAdsFailure::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $this->googleAdsFailureMock
-            ->method("getErrors")
-            ->willReturn([$errorMock]);
-
+        $this->failure = new GoogleAdsFailure([
+            "errors" => [
+                new GoogleAdsError([
+                    "message" => "A test message.",
+                    "location" => new ErrorLocation([
+                        "field_path_elements" => [
+                            new FieldPathElement([
+                                "index" => 0,
+                                "field_name" => "operations"
+                            ])
+                        ]
+                    ])
+                ])
+            ]
+        ]);
+                
         $anyMock = $this
             ->getMockBuilder(Any::class)
             ->disableOriginalConstructor()
             ->getMock();
         $anyMock
             ->method("unpack")
-            ->willReturn($this->googleAdsFailureMock);
+            ->willReturn($this->failure);
 
-        $this->statusMock = $this
-            ->getMockBuilder(Status::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $this->statusMock
-            ->method("getDetails")
-            ->willReturn([$anyMock]);
+        $this->status = new Status([
+            'details' => [$anyMock]
+        ]);
     }
 
     public function testFromStatusWithNoErrors()
     {
-        $emptyStatusMock = $this
-            ->getMockBuilder(Status::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $emptyStatusMock
-            ->method("getDetails")
-            ->willReturn([]);
-
-        $errors = GoogleAdsErrors::fromStatus(0, $emptyStatusMock);
+        $emptyStatus = new Status(['details' => []]);
+        $errors = GoogleAdsErrors::fromStatus(0, $emptyStatus);
         $this->assertCount(0, $errors);
     }
 
     public function testFromStatusWithSingleError()
     {
-        $errors = GoogleAdsErrors::fromStatus(0, $this->statusMock);
+        $errors = GoogleAdsErrors::fromStatus(0, $this->status);
         $this->assertCount(1, $errors);
 
         $expectedMessage = "A test message.";
@@ -128,28 +86,20 @@ class GoogleAdsErrorsTest extends TestCase
 
     public function testFromStatusWithInvalidOperationIndex()
     {
-        $errors = GoogleAdsErrors::fromStatus(1, $this->statusMock);
+        $errors = GoogleAdsErrors::fromStatus(1, $this->status);
         $this->assertCount(0, $errors);
     }
 
     public function testFromFailureWithNoErrors()
     {
-        $emptyFailureMock = $this
-            ->getMockBuilder(GoogleAdsFailure::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $emptyFailureMock
-            ->method("getErrors")
-            ->willReturn([]);
-
-        $errors = GoogleAdsErrors::fromFailure(0, $emptyFailureMock);
+        $emptyFailure = new GoogleAdsFailure(['errors' => []]);
+        $errors = GoogleAdsErrors::fromFailure(0, $emptyFailure);
         $this->assertCount(0, $errors);
     }
 
     public function testFromFailureWithSingleError()
     {
-        $errors = GoogleAdsErrors::fromFailure(0, $this->googleAdsFailureMock);
+        $errors = GoogleAdsErrors::fromFailure(0, $this->failure);
         $this->assertCount(1, $errors);
         
         $expectedMessage = "A test message.";
@@ -158,7 +108,7 @@ class GoogleAdsErrorsTest extends TestCase
 
     public function testFromFailureWithInvalidOperationIndex()
     {
-        $errors = GoogleAdsErrors::fromFailure(1, $this->googleAdsFailureMock);
+        $errors = GoogleAdsErrors::fromFailure(1, $this->failure);
         $this->assertCount(0, $errors);
     }
 }

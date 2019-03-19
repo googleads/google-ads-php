@@ -26,59 +26,35 @@ class GoogleAdsFailureTest extends TestCase
 {
     public function testFromAny()
     {
-        $failureMock = $this
-            ->getMockBuilder(GoogleAdsFailure::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
         $anyMock = $this
             ->getMockBuilder(Any::class)
             ->disableOriginalConstructor()
             ->getMock();
         $anyMock
             ->method("unpack")
-            ->willReturn($failureMock);
+            ->willReturn(new GoogleAdsFailure());
         
         $this->assertInstanceOf(GoogleAdsFailure::class, GoogleAdsFailures::fromAny($anyMock));
     }
 
     public function testFromEmptyStatus()
     {
-        $emptyStatusMock = $this
-            ->getMockBuilder(Status::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $emptyStatusMock
-            ->method("getDetails")
-            ->willReturn([]);
-
-        $this->assertCount(0, GoogleAdsFailures::fromStatus($emptyStatusMock));
+        $emptyStatus = new Status();
+        $this->assertCount(0, GoogleAdsFailures::fromStatus($emptyStatus));
     }
 
     public function testFromStatusWithSingleFailure()
     {
-        $failureMock = $this
-        ->getMockBuilder(GoogleAdsFailure::class)
-        ->disableOriginalConstructor()
-        ->getMock();
-
         $anyMock = $this
             ->getMockBuilder(Any::class)
             ->disableOriginalConstructor()
             ->getMock();
         $anyMock
             ->method("unpack")
-            ->willReturn($failureMock);
+            ->willReturn(new GoogleAdsFailure());
 
-        $statusMock = $this
-            ->getMockBuilder(Status::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $statusMock
-            ->method("getDetails")
-            ->willReturn([$anyMock]);
-
-        $failures = GoogleAdsFailures::fromStatus($statusMock);
+        $status = new Status(['details' => [$anyMock]]);
+        $failures = GoogleAdsFailures::fromStatus($status);
         $this->assertCount(1, $failures);
         $this->assertInstanceOf(GoogleAdsFailure::class, $failures[0]);
     }

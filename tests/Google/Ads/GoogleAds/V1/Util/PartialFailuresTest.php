@@ -35,7 +35,7 @@ class PartialFailuresTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
         $messageMock
-            ->method('serializeToString')
+            ->method("serializeToString")
             ->willReturn("");
 
         $this->assertTrue(PartialFailures::isPartialFailure($messageMock));
@@ -48,7 +48,7 @@ class PartialFailuresTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
         $messageMock
-            ->method('serializeToString')
+            ->method("serializeToString")
             ->willReturn("a");
 
         $this->assertFalse(PartialFailures::isPartialFailure($messageMock));
