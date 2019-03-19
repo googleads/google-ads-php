@@ -17,6 +17,7 @@
 
 namespace Google\Ads\GoogleAds\Lib\V0;
 
+use Google\Ads\GoogleAds\V0\Errors\GoogleAdsFailure;
 use Google\ApiCore\ArrayTrait;
 
 /**
@@ -29,6 +30,7 @@ final class LogMessageFormatter
 
     /** @var array the map of header keys to redacted values. */
     private static $HEADER_KEYS_TO_REDACTED_VALUES;
+    private static $unusedGoogleAdsFailure;
 
     private $statusMetadataExtractor;
 
@@ -114,6 +116,13 @@ final class LogMessageFormatter
         );
 
         if ($status->code === 0) {
+            // Initialize unused GoogleAdsFailure object when there are partial failures returned.
+            // This is necessary, as the pool needs to be aware of this class, in order to serialize
+            // the response correctly.
+            if (!is_null($response->getPartialFailureError())
+                && !isset(self::$unusedGoogleAdsFailure)) {
+                self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
+            }
             $logMessageTokens[] = "Response: {$response->serializeToJsonString()}";
         } else {
             $googleAdsFailure =
