@@ -39,8 +39,7 @@ class GoogleAdsFailureTest extends TestCase
 
     public function testFromEmptyStatus()
     {
-        $emptyStatus = new Status();
-        $this->assertCount(0, GoogleAdsFailures::fromStatus($emptyStatus));
+        $this->assertCount(0, GoogleAdsFailures::fromStatus(new Status()));
     }
 
     public function testFromStatusWithSingleFailure()
