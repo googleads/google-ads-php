@@ -31,7 +31,12 @@ final class GoogleAdsFailures
      */
     public static function fromAny(Any $any)
     {
-        return $any->unpack();
+        $ret = $any->unpack();
+        if (!$ret instanceof GoogleAdsFailure) {
+            throw new \InvalidArgumentException("Message did not contain a GoogleAdsFailure");
+        }
+
+        return $ret;
     }
 
     /**

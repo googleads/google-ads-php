@@ -19,6 +19,7 @@ namespace Google\Ads\GoogleAds\Util\V0;
 
 use Google\Protobuf\Any;
 use Google\Rpc\Status;
+use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V0\Errors\GoogleAdsFailure;
 use PHPUnit\Framework\TestCase;
 
@@ -35,6 +36,20 @@ class GoogleAdsFailureTest extends TestCase
             ->willReturn(new GoogleAdsFailure());
         
         $this->assertInstanceOf(GoogleAdsFailure::class, GoogleAdsFailures::fromAny($anyMock));
+    }
+
+    public function testFromAnyContainingInvalidTypeWillThrowException()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $anyMock = $this
+            ->getMockBuilder(Any::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $anyMock
+            ->method("unpack")
+            ->willReturn(new GoogleAdsError());
+        
+        GoogleAdsFailures::fromAny($anyMock);
     }
 
     public function testFromEmptyStatus()
