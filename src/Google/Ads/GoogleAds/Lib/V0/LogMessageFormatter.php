@@ -119,9 +119,9 @@ final class LogMessageFormatter
             // Initialize unused GoogleAdsFailure object when there are partial failures returned.
             // This is necessary, as the pool needs to be aware of this class, in order to serialize
             // the response correctly.
-            if (method_exists($response, 'getPartialFailureError')
-                && !is_null($response->getPartialFailureError())
-                && !isset(self::$unusedGoogleAdsFailure)) {
+            if (!isset(self::$unusedGoogleAdsFailure)
+                && method_exists($response, 'getPartialFailureError')
+                && !is_null($response->getPartialFailureError())) {
                 self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
             }
             $logMessageTokens[] = "Response: {$response->serializeToJsonString()}";
