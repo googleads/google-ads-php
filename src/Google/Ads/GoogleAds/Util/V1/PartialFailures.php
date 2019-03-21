@@ -23,14 +23,6 @@ use Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure;
 final class PartialFailures
 {
     /**
-     * Initializes a GoogleAdsFailure to make sure that the metadata pool knows about it.
-     */
-    public static function initialize()
-    {
-        $tempUnusedVar = new GoogleAdsFailure();
-    }
-
-    /**
      * Checks if a result in a mutate response is a partial failure.
      *
      * @param Message $message

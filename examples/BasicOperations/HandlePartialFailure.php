@@ -147,9 +147,6 @@ class HandlePartialFailure
         $adGroupOperation3->setCreate($adGroup3);
         $operations[] = $adGroupOperation3;
         
-        // Initializes the error message handling class.
-        PartialFailures::initialize();
-
         // Issues the mutate request, setting partialFailure=true.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
         $response = $adGroupServiceClient->mutateAdGroups(
