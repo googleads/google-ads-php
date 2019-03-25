@@ -17,15 +17,19 @@
 
 namespace Google\Ads\GoogleAds\Lib\V1;
 
+use Google\ApiCore\ArrayTrait;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Middleware\FixedHeaderMiddleware;
 
 /**
- * Overrides methods in `GapicClientTrait` to support providing developer
- * tokens for each service client.
+ * Overrides methods in `GapicClientTrait` to support providing Google Ads API-related parameters
+ * for each service client.
  */
 trait GoogleAdsGapicClientTrait
 {
+    use ArrayTrait;
+
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
     private static $LOGIN_CUSTOMER_ID = 'login-customer-id';
 
@@ -42,6 +46,22 @@ trait GoogleAdsGapicClientTrait
         }
         if (isset($options[self::$LOGIN_CUSTOMER_ID])) {
             $this->loginCustomerId = $options[self::$LOGIN_CUSTOMER_ID];
+        }
+
+        // Ensure that this isn't already an OperationsClient nor GoogleAdsOperationClient to avoid
+        // recursion.
+        if (!isset($options['operationsClient'])
+            && get_class($this) != OperationsClient::class
+            && get_class($this) != GoogleAdsOperationClient::class) {
+            $operationOptions = $options;
+            // Use all the options except for those related to this service instance.
+            $this->pluckArray([
+                'serviceName',
+                'clientConfig',
+                'descriptorsConfigPath',
+            ], $operationOptions);
+            // Sets the options for handling long running operations.
+            $options['operationsClient'] = new GoogleAdsOperationClient($operationOptions);
         }
     }
 
