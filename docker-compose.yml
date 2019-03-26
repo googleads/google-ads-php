@@ -5,3 +5,4 @@ services:
     volumes: 
       - ./:/google-ads-php
       - ~/:/root
+      
