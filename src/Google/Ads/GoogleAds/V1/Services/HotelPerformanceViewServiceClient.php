@@ -26,7 +26,7 @@
 
 namespace Google\Ads\GoogleAds\V1\Services;
 
-use Google\Ads\GoogleAds\Lib\GoogleAdsGapicClientTrait;
+use Google\Ads\GoogleAds\Lib\V1\GoogleAdsGapicClientTrait;
 use Google\Ads\GoogleAds\V1\Services\Gapic\HotelPerformanceViewServiceGapicClient;
 
 /**
