@@ -43,8 +43,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     private $tracking_url_template = null;
     /**
      * The list of mappings that can be used to substitute custom parameter tags
-     * in a
-     * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     * in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.CustomParameter url_custom_parameters = 10;</code>
      */
@@ -99,9 +98,9 @@ class Ad extends \Google\Protobuf\Internal\Message
      * If this ad is system managed, then this field will indicate the source.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SystemManagedEntitySourceEnum.SystemManagedEntitySource system_managed_entity_source = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27;</code>
      */
-    private $system_managed_entity_source = 0;
+    private $system_managed_resource_source = 0;
     protected $ad_data;
 
     /**
@@ -122,8 +121,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           The URL template for constructing a tracking URL.
      *     @type \Google\Ads\GoogleAds\V1\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           The list of mappings that can be used to substitute custom parameter tags
-     *           in a
-     *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     *           in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type \Google\Protobuf\StringValue $display_url
      *           The URL that appears in the ad description for some ad formats.
      *     @type int $type
@@ -146,7 +144,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the ad. This is only used to be able to identify the ad. It
      *           does not need to be unique and does not affect the served ad.
-     *     @type int $system_managed_entity_source
+     *     @type int $system_managed_resource_source
      *           If this ad is system managed, then this field will indicate the source.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V1\Common\TextAdInfo $text_ad
@@ -177,6 +175,12 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Details pertaining to a responsive search ad.
      *     @type \Google\Ads\GoogleAds\V1\Common\LegacyResponsiveDisplayAdInfo $legacy_responsive_display_ad
      *           Details pertaining to a legacy responsive display ad.
+     *     @type \Google\Ads\GoogleAds\V1\Common\AppAdInfo $app_ad
+     *           Details pertaining to an app ad.
+     *     @type \Google\Ads\GoogleAds\V1\Common\LegacyAppInstallAdInfo $legacy_app_install_ad
+     *           Details pertaining to a legacy app install ad.
+     *     @type \Google\Ads\GoogleAds\V1\Common\ResponsiveDisplayAdInfo $responsive_display_ad
+     *           Details pertaining to a responsive display ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -294,8 +298,7 @@ class Ad extends \Google\Protobuf\Internal\Message
 
     /**
      * The list of mappings that can be used to substitute custom parameter tags
-     * in a
-     * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     * in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.CustomParameter url_custom_parameters = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -307,8 +310,7 @@ class Ad extends \Google\Protobuf\Internal\Message
 
     /**
      * The list of mappings that can be used to substitute custom parameter tags
-     * in a
-     * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     * in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.CustomParameter url_custom_parameters = 10;</code>
      * @param \Google\Ads\GoogleAds\V1\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -502,26 +504,26 @@ class Ad extends \Google\Protobuf\Internal\Message
      * If this ad is system managed, then this field will indicate the source.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SystemManagedEntitySourceEnum.SystemManagedEntitySource system_managed_entity_source = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27;</code>
      * @return int
      */
-    public function getSystemManagedEntitySource()
+    public function getSystemManagedResourceSource()
     {
-        return $this->system_managed_entity_source;
+        return $this->system_managed_resource_source;
     }
 
     /**
      * If this ad is system managed, then this field will indicate the source.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SystemManagedEntitySourceEnum.SystemManagedEntitySource system_managed_entity_source = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27;</code>
      * @param int $var
      * @return $this
      */
-    public function setSystemManagedEntitySource($var)
+    public function setSystemManagedResourceSource($var)
     {
-        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\SystemManagedEntitySourceEnum_SystemManagedEntitySource::class);
-        $this->system_managed_entity_source = $var;
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\SystemManagedResourceSourceEnum_SystemManagedResourceSource::class);
+        $this->system_managed_resource_source = $var;
 
         return $this;
     }
@@ -842,6 +844,84 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\LegacyResponsiveDisplayAdInfo::class);
         $this->writeOneof(28, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to an app ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.AppAdInfo app_ad = 29;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\AppAdInfo
+     */
+    public function getAppAd()
+    {
+        return $this->readOneof(29);
+    }
+
+    /**
+     * Details pertaining to an app ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.AppAdInfo app_ad = 29;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\AppAdInfo $var
+     * @return $this
+     */
+    public function setAppAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\AppAdInfo::class);
+        $this->writeOneof(29, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a legacy app install ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.LegacyAppInstallAdInfo legacy_app_install_ad = 30;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\LegacyAppInstallAdInfo
+     */
+    public function getLegacyAppInstallAd()
+    {
+        return $this->readOneof(30);
+    }
+
+    /**
+     * Details pertaining to a legacy app install ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.LegacyAppInstallAdInfo legacy_app_install_ad = 30;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\LegacyAppInstallAdInfo $var
+     * @return $this
+     */
+    public function setLegacyAppInstallAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\LegacyAppInstallAdInfo::class);
+        $this->writeOneof(30, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a responsive display ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo responsive_display_ad = 31;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\ResponsiveDisplayAdInfo
+     */
+    public function getResponsiveDisplayAd()
+    {
+        return $this->readOneof(31);
+    }
+
+    /**
+     * Details pertaining to a responsive display ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.ResponsiveDisplayAdInfo responsive_display_ad = 31;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\ResponsiveDisplayAdInfo $var
+     * @return $this
+     */
+    public function setResponsiveDisplayAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\ResponsiveDisplayAdInfo::class);
+        $this->writeOneof(31, $var);
 
         return $this;
     }

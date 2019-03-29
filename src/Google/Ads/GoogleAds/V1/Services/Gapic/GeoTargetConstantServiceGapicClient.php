@@ -118,7 +118,7 @@ class GeoTargetConstantServiceGapicClient
 
     private static function getGeoTargetConstantNameTemplate()
     {
-        if (self::$geoTargetConstantNameTemplate == null) {
+        if (null == self::$geoTargetConstantNameTemplate) {
             self::$geoTargetConstantNameTemplate = new PathTemplate('geoTargetConstants/{geo_target_constant}');
         }
 
@@ -127,7 +127,7 @@ class GeoTargetConstantServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'geoTargetConstant' => self::getGeoTargetConstantNameTemplate(),
             ];

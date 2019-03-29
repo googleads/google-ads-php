@@ -24,19 +24,19 @@ class UserListCrmDataSourceType
      */
     const UNKNOWN = 1;
     /**
-     * The uploaded data is first party data.
+     * The uploaded data is first-party data.
      *
      * Generated from protobuf enum <code>FIRST_PARTY = 2;</code>
      */
     const FIRST_PARTY = 2;
     /**
-     * The uploaded data is from a third party credit bureau.
+     * The uploaded data is from a third-party credit bureau.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_CREDIT_BUREAU = 3;</code>
      */
     const THIRD_PARTY_CREDIT_BUREAU = 3;
     /**
-     * The uploaded data is from a third party voter file.
+     * The uploaded data is from a third-party voter file.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_VOTER_FILE = 4;</code>
      */

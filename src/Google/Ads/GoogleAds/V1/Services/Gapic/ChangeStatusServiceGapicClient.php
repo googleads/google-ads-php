@@ -113,7 +113,7 @@ class ChangeStatusServiceGapicClient
 
     private static function getChangeStatusNameTemplate()
     {
-        if (self::$changeStatusNameTemplate == null) {
+        if (null == self::$changeStatusNameTemplate) {
             self::$changeStatusNameTemplate = new PathTemplate('customers/{customer}/changeStatus/{change_status}');
         }
 
@@ -122,7 +122,7 @@ class ChangeStatusServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'changeStatus' => self::getChangeStatusNameTemplate(),
             ];

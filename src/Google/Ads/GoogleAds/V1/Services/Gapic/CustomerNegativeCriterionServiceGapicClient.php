@@ -116,7 +116,7 @@ class CustomerNegativeCriterionServiceGapicClient
 
     private static function getCustomerNegativeCriteriaNameTemplate()
     {
-        if (self::$customerNegativeCriteriaNameTemplate == null) {
+        if (null == self::$customerNegativeCriteriaNameTemplate) {
             self::$customerNegativeCriteriaNameTemplate = new PathTemplate('customers/{customer}/customerNegativeCriteria/{customer_negative_criteria}');
         }
 
@@ -125,7 +125,7 @@ class CustomerNegativeCriterionServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'customerNegativeCriteria' => self::getCustomerNegativeCriteriaNameTemplate(),
             ];

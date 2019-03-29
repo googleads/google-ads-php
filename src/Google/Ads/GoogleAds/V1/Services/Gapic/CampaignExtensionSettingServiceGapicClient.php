@@ -116,7 +116,7 @@ class CampaignExtensionSettingServiceGapicClient
 
     private static function getCampaignExtensionSettingNameTemplate()
     {
-        if (self::$campaignExtensionSettingNameTemplate == null) {
+        if (null == self::$campaignExtensionSettingNameTemplate) {
             self::$campaignExtensionSettingNameTemplate = new PathTemplate('customers/{customer}/campaignExtensionSettings/{campaign_extension_setting}');
         }
 
@@ -125,7 +125,7 @@ class CampaignExtensionSettingServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'campaignExtensionSetting' => self::getCampaignExtensionSettingNameTemplate(),
             ];

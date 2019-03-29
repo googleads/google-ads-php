@@ -39,6 +39,13 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     private $name = null;
     /**
+     * The status of the bidding strategy.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15;</code>
+     */
+    private $status = 0;
+    /**
      * The type of the bidding strategy.
      * Create a bidding strategy by setting the bidding scheme.
      * This field is read-only.
@@ -54,12 +61,12 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     private $campaign_count = null;
     /**
-     * The number of non-deleted campaigns attached to this bidding strategy.
+     * The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value non_deleted_campaign_count = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
      */
-    private $non_deleted_campaign_count = null;
+    private $non_removed_campaign_count = null;
     protected $scheme;
 
     /**
@@ -79,6 +86,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *           All bidding strategies within an account must be named distinctly.
      *           The length of this string should be between 1 and 255, inclusive,
      *           in UTF-8 bytes, (trimmed).
+     *     @type int $status
+     *           The status of the bidding strategy.
+     *           This field is read-only.
      *     @type int $type
      *           The type of the bidding strategy.
      *           Create a bidding strategy by setting the bidding scheme.
@@ -86,8 +96,8 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int64Value $campaign_count
      *           The number of campaigns attached to this bidding strategy.
      *           This field is read-only.
-     *     @type \Google\Protobuf\Int64Value $non_deleted_campaign_count
-     *           The number of non-deleted campaigns attached to this bidding strategy.
+     *     @type \Google\Protobuf\Int64Value $non_removed_campaign_count
+     *           The number of non-removed campaigns attached to this bidding strategy.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V1\Common\EnhancedCpc $enhanced_cpc
      *           A bidding strategy that raises bids for clicks that seem more likely to
@@ -207,6 +217,34 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The status of the bidding strategy.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The status of the bidding strategy.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\BiddingStrategyStatusEnum_BiddingStrategyStatus::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
      * The type of the bidding strategy.
      * Create a bidding strategy by setting the bidding scheme.
      * This field is read-only.
@@ -265,29 +303,29 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of non-deleted campaigns attached to this bidding strategy.
+     * The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value non_deleted_campaign_count = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
      * @return \Google\Protobuf\Int64Value
      */
-    public function getNonDeletedCampaignCount()
+    public function getNonRemovedCampaignCount()
     {
-        return $this->non_deleted_campaign_count;
+        return $this->non_removed_campaign_count;
     }
 
     /**
-     * The number of non-deleted campaigns attached to this bidding strategy.
+     * The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value non_deleted_campaign_count = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
-    public function setNonDeletedCampaignCount($var)
+    public function setNonRemovedCampaignCount($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
-        $this->non_deleted_campaign_count = $var;
+        $this->non_removed_campaign_count = $var;
 
         return $this;
     }

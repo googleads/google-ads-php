@@ -123,6 +123,10 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           The MaximizeClicks Opt-In recommendation.
      *     @type \Google\Ads\GoogleAds\V1\Resources\Recommendation\OptimizeAdRotationRecommendation $optimize_ad_rotation_recommendation
      *           The Optimize Ad Rotation recommendation.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\Recommendation\KeywordMatchTypeRecommendation $keyword_match_type_recommendation
+     *           The keyword match type recommendation.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\Recommendation\MoveUnusedBudgetRecommendation $move_unused_budget_recommendation
+     *           The move unused budget recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -568,6 +572,58 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\Recommendation_OptimizeAdRotationRecommendation::class);
         $this->writeOneof(16, $var);
+
+        return $this;
+    }
+
+    /**
+     * The keyword match type recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation keyword_match_type_recommendation = 20;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\Recommendation\KeywordMatchTypeRecommendation
+     */
+    public function getKeywordMatchTypeRecommendation()
+    {
+        return $this->readOneof(20);
+    }
+
+    /**
+     * The keyword match type recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Recommendation.KeywordMatchTypeRecommendation keyword_match_type_recommendation = 20;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\Recommendation\KeywordMatchTypeRecommendation $var
+     * @return $this
+     */
+    public function setKeywordMatchTypeRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\Recommendation_KeywordMatchTypeRecommendation::class);
+        $this->writeOneof(20, $var);
+
+        return $this;
+    }
+
+    /**
+     * The move unused budget recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation move_unused_budget_recommendation = 21;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\Recommendation\MoveUnusedBudgetRecommendation
+     */
+    public function getMoveUnusedBudgetRecommendation()
+    {
+        return $this->readOneof(21);
+    }
+
+    /**
+     * The move unused budget recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Recommendation.MoveUnusedBudgetRecommendation move_unused_budget_recommendation = 21;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\Recommendation\MoveUnusedBudgetRecommendation $var
+     * @return $this
+     */
+    public function setMoveUnusedBudgetRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\Recommendation_MoveUnusedBudgetRecommendation::class);
+        $this->writeOneof(21, $var);
 
         return $this;
     }

@@ -34,9 +34,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     private $client_customer = null;
     /**
      * Specifies whether this is a hidden account. Learn more about hidden
-     * accounts
-     * <a href="https://support.google.com/google-ads/answer/7519830">here</a>.
-     * Read only.
+     * accounts <a
+     * href="https://support.google.com/google-ads/answer/7519830">here</a>. Read
+     * only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
      */
@@ -64,9 +64,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      *           the given customer. Read only.
      *     @type \Google\Protobuf\BoolValue $hidden
      *           Specifies whether this is a hidden account. Learn more about hidden
-     *           accounts
-     *           <a href="https://support.google.com/google-ads/answer/7519830">here</a>.
-     *           Read only.
+     *           accounts <a
+     *           href="https://support.google.com/google-ads/answer/7519830">here</a>. Read
+     *           only.
      *     @type \Google\Protobuf\Int64Value $level
      *           Distance between given customer and client. For self link, the level value
      *           will be 0. Read only.
@@ -137,9 +137,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies whether this is a hidden account. Learn more about hidden
-     * accounts
-     * <a href="https://support.google.com/google-ads/answer/7519830">here</a>.
-     * Read only.
+     * accounts <a
+     * href="https://support.google.com/google-ads/answer/7519830">here</a>. Read
+     * only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
      * @return \Google\Protobuf\BoolValue
@@ -151,9 +151,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies whether this is a hidden account. Learn more about hidden
-     * accounts
-     * <a href="https://support.google.com/google-ads/answer/7519830">here</a>.
-     * Read only.
+     * accounts <a
+     * href="https://support.google.com/google-ads/answer/7519830">here</a>. Read
+     * only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
      * @param \Google\Protobuf\BoolValue $var

@@ -45,10 +45,12 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      *           Availability of a product offer.
      *     @type \Google\Ads\GoogleAds\V1\Common\ProductConditionInfo $product_condition
      *           Condition of a product offer.
-     *     @type \Google\Ads\GoogleAds\V1\Common\ProductOfferIdInfo $product_offer_id
-     *           Id of a product offer.
+     *     @type \Google\Ads\GoogleAds\V1\Common\ProductItemIdInfo $product_item_id
+     *           Item id of a product offer.
      *     @type \Google\Ads\GoogleAds\V1\Common\ProductTypeInfo $product_type
      *           Type of a product offer.
+     *     @type \Google\Ads\GoogleAds\V1\Common\UnknownListingDimensionInfo $unknown_listing_dimension
+     *           Unknown dimension. Set when no other listing dimension is set.
      * }
      */
     public function __construct($data = NULL) {
@@ -343,26 +345,26 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of a product offer.
+     * Item id of a product offer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.common.ProductOfferIdInfo product_offer_id = 11;</code>
-     * @return \Google\Ads\GoogleAds\V1\Common\ProductOfferIdInfo
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.ProductItemIdInfo product_item_id = 11;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\ProductItemIdInfo
      */
-    public function getProductOfferId()
+    public function getProductItemId()
     {
         return $this->readOneof(11);
     }
 
     /**
-     * Id of a product offer.
+     * Item id of a product offer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.common.ProductOfferIdInfo product_offer_id = 11;</code>
-     * @param \Google\Ads\GoogleAds\V1\Common\ProductOfferIdInfo $var
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.ProductItemIdInfo product_item_id = 11;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\ProductItemIdInfo $var
      * @return $this
      */
-    public function setProductOfferId($var)
+    public function setProductItemId($var)
     {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\ProductOfferIdInfo::class);
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\ProductItemIdInfo::class);
         $this->writeOneof(11, $var);
 
         return $this;
@@ -390,6 +392,32 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\ProductTypeInfo::class);
         $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Unknown dimension. Set when no other listing dimension is set.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.UnknownListingDimensionInfo unknown_listing_dimension = 14;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\UnknownListingDimensionInfo
+     */
+    public function getUnknownListingDimension()
+    {
+        return $this->readOneof(14);
+    }
+
+    /**
+     * Unknown dimension. Set when no other listing dimension is set.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.UnknownListingDimensionInfo unknown_listing_dimension = 14;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\UnknownListingDimensionInfo $var
+     * @return $this
+     */
+    public function setUnknownListingDimension($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\UnknownListingDimensionInfo::class);
+        $this->writeOneof(14, $var);
 
         return $this;
     }

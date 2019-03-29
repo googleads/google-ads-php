@@ -96,6 +96,24 @@ class AdType
      * Generated from protobuf enum <code>LEGACY_RESPONSIVE_DISPLAY_AD = 16;</code>
      */
     const LEGACY_RESPONSIVE_DISPLAY_AD = 16;
+    /**
+     * The ad is an app ad.
+     *
+     * Generated from protobuf enum <code>APP_AD = 17;</code>
+     */
+    const APP_AD = 17;
+    /**
+     * The ad is a legacy app install ad.
+     *
+     * Generated from protobuf enum <code>LEGACY_APP_INSTALL_AD = 18;</code>
+     */
+    const LEGACY_APP_INSTALL_AD = 18;
+    /**
+     * The ad is a responsive display ad.
+     *
+     * Generated from protobuf enum <code>RESPONSIVE_DISPLAY_AD = 19;</code>
+     */
+    const RESPONSIVE_DISPLAY_AD = 19;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

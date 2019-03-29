@@ -113,7 +113,7 @@ class CustomerClientServiceGapicClient
 
     private static function getCustomerClientNameTemplate()
     {
-        if (self::$customerClientNameTemplate == null) {
+        if (null == self::$customerClientNameTemplate) {
             self::$customerClientNameTemplate = new PathTemplate('customers/{customer}/customerClients/{customer_client}');
         }
 
@@ -122,7 +122,7 @@ class CustomerClientServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'customerClient' => self::getCustomerClientNameTemplate(),
             ];

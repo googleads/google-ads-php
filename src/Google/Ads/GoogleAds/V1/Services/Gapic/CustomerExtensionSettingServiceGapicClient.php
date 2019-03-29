@@ -116,7 +116,7 @@ class CustomerExtensionSettingServiceGapicClient
 
     private static function getCustomerExtensionSettingNameTemplate()
     {
-        if (self::$customerExtensionSettingNameTemplate == null) {
+        if (null == self::$customerExtensionSettingNameTemplate) {
             self::$customerExtensionSettingNameTemplate = new PathTemplate('customers/{customer}/customerExtensionSettings/{customer_extension_setting}');
         }
 
@@ -125,7 +125,7 @@ class CustomerExtensionSettingServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'customerExtensionSetting' => self::getCustomerExtensionSettingNameTemplate(),
             ];

@@ -26,8 +26,7 @@ class ResourceCountLimitExceededError
     /**
      * Indicates that this request would exceed the number of allowed resources
      * for the Google Ads account. The exact resource type and limit being
-     * checked
-     * can be inferred from accountLimitType.
+     * checked can be inferred from accountLimitType.
      *
      * Generated from protobuf enum <code>ACCOUNT_LIMIT = 2;</code>
      */

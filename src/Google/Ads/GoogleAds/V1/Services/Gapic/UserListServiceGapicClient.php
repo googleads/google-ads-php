@@ -116,7 +116,7 @@ class UserListServiceGapicClient
 
     private static function getUserListNameTemplate()
     {
-        if (self::$userListNameTemplate == null) {
+        if (null == self::$userListNameTemplate) {
             self::$userListNameTemplate = new PathTemplate('customers/{customer}/userLists/{user_list}');
         }
 
@@ -125,7 +125,7 @@ class UserListServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'userList' => self::getUserListNameTemplate(),
             ];

@@ -1,6 +1,12 @@
+## 1.1.0
+
+*   Added support for v1_1 of Google Ads API.
+*   Upgraded PHPUnit dependency to v7.5.
+*   Added support for partial failures and matching example.
+
 ## 1.0.0
 
-*   Added support and examples for v1.0.0 of Google Ads API.
+*   Added support and examples for v1_0 of Google Ads API.
 *   Updated some dependencies, e.g., google/gax 0.38.0 and ulrichsg/getopt-php 3.2.2.
 *   Updated some examples to match the new API specifications, e.g., GetHotelAdsPerformance.
 *   Fixed a bug that prevented the login-customer-id header from being sent.

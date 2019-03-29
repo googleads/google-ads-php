@@ -113,7 +113,7 @@ class TopicViewServiceGapicClient
 
     private static function getTopicViewNameTemplate()
     {
-        if (self::$topicViewNameTemplate == null) {
+        if (null == self::$topicViewNameTemplate) {
             self::$topicViewNameTemplate = new PathTemplate('customers/{customer}/topicViews/{topic_view}');
         }
 
@@ -122,7 +122,7 @@ class TopicViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'topicView' => self::getTopicViewNameTemplate(),
             ];

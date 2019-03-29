@@ -84,6 +84,12 @@ class AdGroupType
      * Generated from protobuf enum <code>VIDEO_OUTSTREAM = 12;</code>
      */
     const VIDEO_OUTSTREAM = 12;
+    /**
+     * Ad group type for Dynamic Search Ads ad groups.
+     *
+     * Generated from protobuf enum <code>SEARCH_DYNAMIC_ADS = 13;</code>
+     */
+    const SEARCH_DYNAMIC_ADS = 13;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

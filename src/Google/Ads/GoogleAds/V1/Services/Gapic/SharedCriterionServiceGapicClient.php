@@ -116,7 +116,7 @@ class SharedCriterionServiceGapicClient
 
     private static function getSharedCriteriaNameTemplate()
     {
-        if (self::$sharedCriteriaNameTemplate == null) {
+        if (null == self::$sharedCriteriaNameTemplate) {
             self::$sharedCriteriaNameTemplate = new PathTemplate('customers/{customer}/sharedCriteria/{shared_criteria}');
         }
 
@@ -125,7 +125,7 @@ class SharedCriterionServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'sharedCriteria' => self::getSharedCriteriaNameTemplate(),
             ];

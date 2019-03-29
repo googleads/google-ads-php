@@ -99,6 +99,12 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.ConversionTrackingSetting conversion_tracking_setting = 14;</code>
      */
     private $conversion_tracking_setting = null;
+    /**
+     * Remarketing setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.RemarketingSetting remarketing_setting = 15;</code>
+     */
+    private $remarketing_setting = null;
 
     /**
      * Constructor.
@@ -138,6 +144,8 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           Call reporting setting for a customer.
      *     @type \Google\Ads\GoogleAds\V1\Resources\ConversionTrackingSetting $conversion_tracking_setting
      *           Conversion tracking setting for a customer.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\RemarketingSetting $remarketing_setting
+     *           Remarketing setting for a customer.
      * }
      */
     public function __construct($data = NULL) {
@@ -491,6 +499,32 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\ConversionTrackingSetting::class);
         $this->conversion_tracking_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * Remarketing setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.RemarketingSetting remarketing_setting = 15;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\RemarketingSetting
+     */
+    public function getRemarketingSetting()
+    {
+        return $this->remarketing_setting;
+    }
+
+    /**
+     * Remarketing setting for a customer.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.RemarketingSetting remarketing_setting = 15;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\RemarketingSetting $var
+     * @return $this
+     */
+    public function setRemarketingSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\RemarketingSetting::class);
+        $this->remarketing_setting = $var;
 
         return $this;
     }

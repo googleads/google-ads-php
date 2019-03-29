@@ -116,7 +116,7 @@ class KeywordPlanAdGroupServiceGapicClient
 
     private static function getKeywordPlanAdGroupNameTemplate()
     {
-        if (self::$keywordPlanAdGroupNameTemplate == null) {
+        if (null == self::$keywordPlanAdGroupNameTemplate) {
             self::$keywordPlanAdGroupNameTemplate = new PathTemplate('customers/{customer}/keywordPlanAdGroups/{keyword_plan_ad_group}');
         }
 
@@ -125,7 +125,7 @@ class KeywordPlanAdGroupServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'keywordPlanAdGroup' => self::getKeywordPlanAdGroupNameTemplate(),
             ];

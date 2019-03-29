@@ -5,7 +5,9 @@
 namespace Google\Ads\GoogleAds\V1\Enums\BiddingSourceEnum;
 
 /**
- * Enum describing possible bidding sources.
+ * Indicates where a bid or target is defined. For example, an ad group
+ * criterion may define a cpc bid directly, or it can inherit its cpc bid from
+ * the ad group.
  *
  * Protobuf type <code>google.ads.googleads.v1.enums.BiddingSourceEnum.BiddingSource</code>
  */
@@ -24,23 +26,23 @@ class BiddingSource
      */
     const UNKNOWN = 1;
     /**
-     * Bidding entity is defined on the ad group.
-     *
-     * Generated from protobuf enum <code>ADGROUP = 2;</code>
-     */
-    const ADGROUP = 2;
-    /**
-     * Bidding entity is defined on the ad group criterion.
-     *
-     * Generated from protobuf enum <code>CRITERION = 3;</code>
-     */
-    const CRITERION = 3;
-    /**
-     * Effective bidding entity is inherited from campaign bidding strategy.
+     * Effective bid or target is inherited from campaign bidding strategy.
      *
      * Generated from protobuf enum <code>CAMPAIGN_BIDDING_STRATEGY = 5;</code>
      */
     const CAMPAIGN_BIDDING_STRATEGY = 5;
+    /**
+     * The bid or target is defined on the ad group.
+     *
+     * Generated from protobuf enum <code>AD_GROUP = 6;</code>
+     */
+    const AD_GROUP = 6;
+    /**
+     * The bid or target is defined on the ad group criterion.
+     *
+     * Generated from protobuf enum <code>AD_GROUP_CRITERION = 7;</code>
+     */
+    const AD_GROUP_CRITERION = 7;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

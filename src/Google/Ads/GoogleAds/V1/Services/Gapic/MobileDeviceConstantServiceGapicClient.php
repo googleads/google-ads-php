@@ -113,7 +113,7 @@ class MobileDeviceConstantServiceGapicClient
 
     private static function getMobileDeviceConstantNameTemplate()
     {
-        if (self::$mobileDeviceConstantNameTemplate == null) {
+        if (null == self::$mobileDeviceConstantNameTemplate) {
             self::$mobileDeviceConstantNameTemplate = new PathTemplate('mobileDeviceConstants/{mobile_device_constant}');
         }
 
@@ -122,7 +122,7 @@ class MobileDeviceConstantServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'mobileDeviceConstant' => self::getMobileDeviceConstantNameTemplate(),
             ];

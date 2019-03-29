@@ -29,7 +29,7 @@ class AdGroupCriterionLabelOperation extends \Google\Protobuf\Internal\Message
      *     @type string $remove
      *           Remove operation: A resource name for the ad group criterion label
      *           being removed, in this format:
-     *           `customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}_{criterion_id}_{label_id}`
+     *           `customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}~{criterion_id}~{label_id}`
      * }
      */
     public function __construct($data = NULL) {
@@ -68,7 +68,7 @@ class AdGroupCriterionLabelOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the ad group criterion label
      * being removed, in this format:
-     * `customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}_{criterion_id}_{label_id}`
+     * `customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}~{criterion_id}~{label_id}`
      *
      * Generated from protobuf field <code>string remove = 2;</code>
      * @return string
@@ -81,7 +81,7 @@ class AdGroupCriterionLabelOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the ad group criterion label
      * being removed, in this format:
-     * `customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}_{criterion_id}_{label_id}`
+     * `customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}~{criterion_id}~{label_id}`
      *
      * Generated from protobuf field <code>string remove = 2;</code>
      * @param string $var

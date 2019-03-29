@@ -116,7 +116,7 @@ class CampaignBidModifierServiceGapicClient
 
     private static function getCampaignBidModifierNameTemplate()
     {
-        if (self::$campaignBidModifierNameTemplate == null) {
+        if (null == self::$campaignBidModifierNameTemplate) {
             self::$campaignBidModifierNameTemplate = new PathTemplate('customers/{customer}/campaignBidModifiers/{campaign_bid_modifier}');
         }
 
@@ -125,7 +125,7 @@ class CampaignBidModifierServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'campaignBidModifier' => self::getCampaignBidModifierNameTemplate(),
             ];

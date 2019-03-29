@@ -251,6 +251,12 @@ class CampaignError
      * Generated from protobuf enum <code>CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP = 40;</code>
      */
     const CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP = 40;
+    /**
+     * The app ID was not found.
+     *
+     * Generated from protobuf enum <code>APP_NOT_FOUND = 41;</code>
+     */
+    const APP_NOT_FOUND = 41;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

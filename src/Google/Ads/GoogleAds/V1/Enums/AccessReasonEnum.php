@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Indicates the way the entity such as user list is related to a user.
+ * Indicates the way the resource such as user list is related to a user.
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.enums.AccessReasonEnum</code>
  */

@@ -32,7 +32,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     private $id = null;
     /**
      * The type of this shared set: each shared set holds only a single kind
-     * of entity. Required. Immutable.
+     * of resource. Required. Immutable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SharedSetTypeEnum.SharedSetType type = 3;</code>
      */
@@ -80,7 +80,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      *           The ID of this shared set. Read only.
      *     @type int $type
      *           The type of this shared set: each shared set holds only a single kind
-     *           of entity. Required. Immutable.
+     *           of resource. Required. Immutable.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of this shared set. Required.
      *           Shared Sets must have names that are unique among active shared sets of
@@ -158,7 +158,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of this shared set: each shared set holds only a single kind
-     * of entity. Required. Immutable.
+     * of resource. Required. Immutable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SharedSetTypeEnum.SharedSetType type = 3;</code>
      * @return int
@@ -170,7 +170,7 @@ class SharedSet extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of this shared set: each shared set holds only a single kind
-     * of entity. Required. Immutable.
+     * of resource. Required. Immutable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SharedSetTypeEnum.SharedSetType type = 3;</code>
      * @param int $var

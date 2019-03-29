@@ -42,6 +42,12 @@ class CriterionType
      */
     const MOBILE_APP_CATEGORY = 4;
     /**
+     * Mobile applications to target.
+     *
+     * Generated from protobuf enum <code>MOBILE_APPLICATION = 5;</code>
+     */
+    const MOBILE_APPLICATION = 5;
+    /**
      * Devices to target.
      *
      * Generated from protobuf enum <code>DEVICE = 6;</code>

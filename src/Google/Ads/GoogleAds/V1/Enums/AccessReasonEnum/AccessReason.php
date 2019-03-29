@@ -24,31 +24,31 @@ class AccessReason
      */
     const UNKNOWN = 1;
     /**
-     * The entity is owned by the user.
+     * The resource is owned by the user.
      *
      * Generated from protobuf enum <code>OWNED = 2;</code>
      */
     const OWNED = 2;
     /**
-     * The entity is shared to the user.
+     * The resource is shared to the user.
      *
      * Generated from protobuf enum <code>SHARED = 3;</code>
      */
     const SHARED = 3;
     /**
-     * The entity is licensed to the user.
+     * The resource is licensed to the user.
      *
      * Generated from protobuf enum <code>LICENSED = 4;</code>
      */
     const LICENSED = 4;
     /**
-     * The user subscribed to the entity.
+     * The user subscribed to the resource.
      *
      * Generated from protobuf enum <code>SUBSCRIBED = 5;</code>
      */
     const SUBSCRIBED = 5;
     /**
-     * The entity is accessible to the user.
+     * The resource is accessible to the user.
      *
      * Generated from protobuf enum <code>AFFILIATED = 6;</code>
      */

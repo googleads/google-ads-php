@@ -19,7 +19,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the search term view.
      * Search term view resource names have the form:
-     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}_
+     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~
      * {URL-base64 search term}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
@@ -54,7 +54,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           The resource name of the search term view.
      *           Search term view resource names have the form:
-     *           `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}_
+     *           `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~
      *           {URL-base64 search term}`
      *     @type \Google\Protobuf\StringValue $search_term
      *           The search term.
@@ -73,7 +73,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the search term view.
      * Search term view resource names have the form:
-     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}_
+     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~
      * {URL-base64 search term}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
@@ -87,7 +87,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the search term view.
      * Search term view resource names have the form:
-     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}_
+     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~
      * {URL-base64 search term}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>

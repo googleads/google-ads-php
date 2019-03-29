@@ -40,7 +40,7 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
     private $upload_key_type = 0;
     /**
      * Data source of the list. Default value is FIRST_PARTY.
-     * Only whitelisted customers can create third party sourced crm lists.
+     * Only whitelisted customers can create third-party sourced CRM lists.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType data_source_type = 3;</code>
      */
@@ -69,7 +69,7 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
      *           This field is required for an ADD operation.
      *     @type int $data_source_type
      *           Data source of the list. Default value is FIRST_PARTY.
-     *           Only whitelisted customers can create third party sourced crm lists.
+     *           Only whitelisted customers can create third-party sourced CRM lists.
      * }
      */
     public function __construct($data = NULL) {
@@ -153,7 +153,7 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Data source of the list. Default value is FIRST_PARTY.
-     * Only whitelisted customers can create third party sourced crm lists.
+     * Only whitelisted customers can create third-party sourced CRM lists.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType data_source_type = 3;</code>
      * @return int
@@ -165,7 +165,7 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Data source of the list. Default value is FIRST_PARTY.
-     * Only whitelisted customers can create third party sourced crm lists.
+     * Only whitelisted customers can create third-party sourced CRM lists.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType data_source_type = 3;</code>
      * @param int $var

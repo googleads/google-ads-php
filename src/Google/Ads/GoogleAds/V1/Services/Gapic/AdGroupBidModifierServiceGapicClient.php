@@ -116,7 +116,7 @@ class AdGroupBidModifierServiceGapicClient
 
     private static function getAdGroupBidModifierNameTemplate()
     {
-        if (self::$adGroupBidModifierNameTemplate == null) {
+        if (null == self::$adGroupBidModifierNameTemplate) {
             self::$adGroupBidModifierNameTemplate = new PathTemplate('customers/{customer}/adGroupBidModifiers/{ad_group_bid_modifier}');
         }
 
@@ -125,7 +125,7 @@ class AdGroupBidModifierServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'adGroupBidModifier' => self::getAdGroupBidModifierNameTemplate(),
             ];

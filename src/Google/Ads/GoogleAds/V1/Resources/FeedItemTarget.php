@@ -36,7 +36,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      */
     private $feed_item_target_type = 0;
     /**
-     * The ID of the targeted entity. This field is read-only.
+     * The ID of the targeted resource. This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
      */
@@ -58,7 +58,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      *     @type int $feed_item_target_type
      *           The target type of this feed item target. This field is read-only.
      *     @type \Google\Protobuf\Int64Value $feed_item_target_id
-     *           The ID of the targeted entity. This field is read-only.
+     *           The ID of the targeted resource. This field is read-only.
      *     @type \Google\Protobuf\StringValue $campaign
      *           The targeted campaign.
      *     @type \Google\Protobuf\StringValue $ad_group
@@ -161,7 +161,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the targeted entity. This field is read-only.
+     * The ID of the targeted resource. This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
      * @return \Google\Protobuf\Int64Value
@@ -172,7 +172,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the targeted entity. This field is read-only.
+     * The ID of the targeted resource. This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
      * @param \Google\Protobuf\Int64Value $var

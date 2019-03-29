@@ -116,7 +116,7 @@ class SharedSetServiceGapicClient
 
     private static function getSharedSetNameTemplate()
     {
-        if (self::$sharedSetNameTemplate == null) {
+        if (null == self::$sharedSetNameTemplate) {
             self::$sharedSetNameTemplate = new PathTemplate('customers/{customer}/sharedSets/{shared_set}');
         }
 
@@ -125,7 +125,7 @@ class SharedSetServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'sharedSet' => self::getSharedSetNameTemplate(),
             ];

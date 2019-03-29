@@ -113,7 +113,7 @@ class AdGroupAudienceViewServiceGapicClient
 
     private static function getAdGroupAudienceViewNameTemplate()
     {
-        if (self::$adGroupAudienceViewNameTemplate == null) {
+        if (null == self::$adGroupAudienceViewNameTemplate) {
             self::$adGroupAudienceViewNameTemplate = new PathTemplate('customers/{customer}/adGroupAudienceViews/{ad_group_audience_view}');
         }
 
@@ -122,7 +122,7 @@ class AdGroupAudienceViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'adGroupAudienceView' => self::getAdGroupAudienceViewNameTemplate(),
             ];

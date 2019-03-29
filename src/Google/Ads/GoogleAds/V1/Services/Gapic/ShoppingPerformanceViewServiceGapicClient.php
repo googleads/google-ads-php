@@ -46,7 +46,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $shoppingPerformanceViewServiceClient = new ShoppingPerformanceViewServiceClient();
  * try {
- *     $formattedResourceName = $shoppingPerformanceViewServiceClient->shoppingPerformanceViewName('[CUSTOMER]', '[SHOPPING_PERFORMANCE_VIEW]');
+ *     $formattedResourceName = $shoppingPerformanceViewServiceClient->customerName('[CUSTOMER]');
  *     $response = $shoppingPerformanceViewServiceClient->getShoppingPerformanceView($formattedResourceName);
  * } finally {
  *     $shoppingPerformanceViewServiceClient->close();
@@ -90,6 +90,7 @@ class ShoppingPerformanceViewServiceGapicClient
     public static $serviceScopes = [
     ];
     private static $shoppingPerformanceViewNameTemplate;
+    private static $customerNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -113,18 +114,28 @@ class ShoppingPerformanceViewServiceGapicClient
 
     private static function getShoppingPerformanceViewNameTemplate()
     {
-        if (self::$shoppingPerformanceViewNameTemplate == null) {
-            self::$shoppingPerformanceViewNameTemplate = new PathTemplate('customers/{customer}/shoppingPerformanceView/{shopping_performance_view}');
+        if (null == self::$shoppingPerformanceViewNameTemplate) {
+            self::$shoppingPerformanceViewNameTemplate = new PathTemplate('customers/{customer}/shoppingPerformanceView');
         }
 
         return self::$shoppingPerformanceViewNameTemplate;
     }
 
+    private static function getCustomerNameTemplate()
+    {
+        if (null == self::$customerNameTemplate) {
+            self::$customerNameTemplate = new PathTemplate('customers/{customer}');
+        }
+
+        return self::$customerNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'shoppingPerformanceView' => self::getShoppingPerformanceViewNameTemplate(),
+                'customer' => self::getCustomerNameTemplate(),
             ];
         }
 
@@ -136,16 +147,30 @@ class ShoppingPerformanceViewServiceGapicClient
      * a shopping_performance_view resource.
      *
      * @param string $customer
-     * @param string $shoppingPerformanceView
      *
      * @return string The formatted shopping_performance_view resource.
      * @experimental
      */
-    public static function shoppingPerformanceViewName($customer, $shoppingPerformanceView)
+    public static function shoppingPerformanceViewName($customer)
     {
         return self::getShoppingPerformanceViewNameTemplate()->render([
             'customer' => $customer,
-            'shopping_performance_view' => $shoppingPerformanceView,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a customer resource.
+     *
+     * @param string $customer
+     *
+     * @return string The formatted customer resource.
+     * @experimental
+     */
+    public static function customerName($customer)
+    {
+        return self::getCustomerNameTemplate()->render([
+            'customer' => $customer,
         ]);
     }
 
@@ -153,7 +178,8 @@ class ShoppingPerformanceViewServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - shoppingPerformanceView: customers/{customer}/shoppingPerformanceView/{shopping_performance_view}.
+     * - shoppingPerformanceView: customers/{customer}/shoppingPerformanceView
+     * - customer: customers/{customer}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -255,7 +281,7 @@ class ShoppingPerformanceViewServiceGapicClient
      * ```
      * $shoppingPerformanceViewServiceClient = new ShoppingPerformanceViewServiceClient();
      * try {
-     *     $formattedResourceName = $shoppingPerformanceViewServiceClient->shoppingPerformanceViewName('[CUSTOMER]', '[SHOPPING_PERFORMANCE_VIEW]');
+     *     $formattedResourceName = $shoppingPerformanceViewServiceClient->customerName('[CUSTOMER]');
      *     $response = $shoppingPerformanceViewServiceClient->getShoppingPerformanceView($formattedResourceName);
      * } finally {
      *     $shoppingPerformanceViewServiceClient->close();

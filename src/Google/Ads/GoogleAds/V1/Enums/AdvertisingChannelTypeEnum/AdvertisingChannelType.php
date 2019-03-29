@@ -54,6 +54,13 @@ class AdvertisingChannelType
      * Generated from protobuf enum <code>VIDEO = 6;</code>
      */
     const VIDEO = 6;
+    /**
+     * Universal App Campaigns, including universal app install and universal
+     * app reengagement campaigns, that run across multiple channels.
+     *
+     * Generated from protobuf enum <code>MULTI_CHANNEL = 7;</code>
+     */
+    const MULTI_CHANNEL = 7;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

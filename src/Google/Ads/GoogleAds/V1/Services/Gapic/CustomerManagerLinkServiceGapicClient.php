@@ -116,7 +116,7 @@ class CustomerManagerLinkServiceGapicClient
 
     private static function getCustomerManagerLinkNameTemplate()
     {
-        if (self::$customerManagerLinkNameTemplate == null) {
+        if (null == self::$customerManagerLinkNameTemplate) {
             self::$customerManagerLinkNameTemplate = new PathTemplate('customers/{customer}/customerManagerLinks/{customer_manager_link}');
         }
 
@@ -125,7 +125,7 @@ class CustomerManagerLinkServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'customerManagerLink' => self::getCustomerManagerLinkNameTemplate(),
             ];

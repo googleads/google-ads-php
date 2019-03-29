@@ -113,7 +113,7 @@ class ManagedPlacementViewServiceGapicClient
 
     private static function getManagedPlacementViewNameTemplate()
     {
-        if (self::$managedPlacementViewNameTemplate == null) {
+        if (null == self::$managedPlacementViewNameTemplate) {
             self::$managedPlacementViewNameTemplate = new PathTemplate('customers/{customer}/managedPlacementViews/{managed_placement_view}');
         }
 
@@ -122,7 +122,7 @@ class ManagedPlacementViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'managedPlacementView' => self::getManagedPlacementViewNameTemplate(),
             ];

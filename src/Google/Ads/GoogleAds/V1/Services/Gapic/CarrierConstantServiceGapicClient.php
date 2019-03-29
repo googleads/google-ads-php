@@ -113,7 +113,7 @@ class CarrierConstantServiceGapicClient
 
     private static function getCarrierConstantNameTemplate()
     {
-        if (self::$carrierConstantNameTemplate == null) {
+        if (null == self::$carrierConstantNameTemplate) {
             self::$carrierConstantNameTemplate = new PathTemplate('carrierConstants/{carrier_constant}');
         }
 
@@ -122,7 +122,7 @@ class CarrierConstantServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'carrierConstant' => self::getCarrierConstantNameTemplate(),
             ];

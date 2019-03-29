@@ -29,7 +29,7 @@ class AdGroupAdLabelOperation extends \Google\Protobuf\Internal\Message
      *     @type string $remove
      *           Remove operation: A resource name for the ad group ad label
      *           being removed, in this format:
-     *           `customers/{customer_id}/adGroupAdLabels/{ad_group_id}_{ad_id}
+     *           `customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}
      *           _{label_id}`
      * }
      */
@@ -69,7 +69,7 @@ class AdGroupAdLabelOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the ad group ad label
      * being removed, in this format:
-     * `customers/{customer_id}/adGroupAdLabels/{ad_group_id}_{ad_id}
+     * `customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}
      * _{label_id}`
      *
      * Generated from protobuf field <code>string remove = 2;</code>
@@ -83,7 +83,7 @@ class AdGroupAdLabelOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the ad group ad label
      * being removed, in this format:
-     * `customers/{customer_id}/adGroupAdLabels/{ad_group_id}_{ad_id}
+     * `customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}
      * _{label_id}`
      *
      * Generated from protobuf field <code>string remove = 2;</code>

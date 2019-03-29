@@ -116,7 +116,7 @@ class LabelServiceGapicClient
 
     private static function getLabelNameTemplate()
     {
-        if (self::$labelNameTemplate == null) {
+        if (null == self::$labelNameTemplate) {
             self::$labelNameTemplate = new PathTemplate('customers/{customer}/labels/{label}');
         }
 
@@ -125,7 +125,7 @@ class LabelServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'label' => self::getLabelNameTemplate(),
             ];

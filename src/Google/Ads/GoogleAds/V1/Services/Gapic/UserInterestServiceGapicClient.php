@@ -113,7 +113,7 @@ class UserInterestServiceGapicClient
 
     private static function getUserInterestNameTemplate()
     {
-        if (self::$userInterestNameTemplate == null) {
+        if (null == self::$userInterestNameTemplate) {
             self::$userInterestNameTemplate = new PathTemplate('customers/{customer}/userInterests/{user_interest}');
         }
 
@@ -122,7 +122,7 @@ class UserInterestServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'userInterest' => self::getUserInterestNameTemplate(),
             ];

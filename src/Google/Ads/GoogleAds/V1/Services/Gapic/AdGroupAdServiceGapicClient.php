@@ -116,7 +116,7 @@ class AdGroupAdServiceGapicClient
 
     private static function getAdGroupAdNameTemplate()
     {
-        if (self::$adGroupAdNameTemplate == null) {
+        if (null == self::$adGroupAdNameTemplate) {
             self::$adGroupAdNameTemplate = new PathTemplate('customers/{customer}/adGroupAds/{ad_group_ad}');
         }
 
@@ -125,7 +125,7 @@ class AdGroupAdServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'adGroupAd' => self::getAdGroupAdNameTemplate(),
             ];

@@ -57,7 +57,7 @@ class BillingSetupError
      */
     const INVALID_PAYMENTS_ACCOUNT = 6;
     /**
-     * Only billable and third party customers can create billing setups.
+     * Only billable and third-party customers can create billing setups.
      *
      * Generated from protobuf enum <code>BILLING_SETUP_NOT_PERMITTED_FOR_CUSTOMER_CATEGORY = 7;</code>
      */
@@ -69,7 +69,7 @@ class BillingSetupError
      */
     const INVALID_START_TIME_TYPE = 8;
     /**
-     * Billing Setups can only be created for a third party customer if they do
+     * Billing Setups can only be created for a third-party customer if they do
      * not already have a setup.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_ALREADY_HAS_BILLING = 9;</code>

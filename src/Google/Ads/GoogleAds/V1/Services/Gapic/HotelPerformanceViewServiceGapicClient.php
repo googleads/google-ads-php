@@ -114,7 +114,7 @@ class HotelPerformanceViewServiceGapicClient
 
     private static function getHotelPerformanceViewNameTemplate()
     {
-        if (self::$hotelPerformanceViewNameTemplate == null) {
+        if (null == self::$hotelPerformanceViewNameTemplate) {
             self::$hotelPerformanceViewNameTemplate = new PathTemplate('customers/{customer}/hotelPerformanceView');
         }
 
@@ -123,7 +123,7 @@ class HotelPerformanceViewServiceGapicClient
 
     private static function getCustomerNameTemplate()
     {
-        if (self::$customerNameTemplate == null) {
+        if (null == self::$customerNameTemplate) {
             self::$customerNameTemplate = new PathTemplate('customers/{customer}');
         }
 
@@ -132,7 +132,7 @@ class HotelPerformanceViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'hotelPerformanceView' => self::getHotelPerformanceViewNameTemplate(),
                 'customer' => self::getCustomerNameTemplate(),

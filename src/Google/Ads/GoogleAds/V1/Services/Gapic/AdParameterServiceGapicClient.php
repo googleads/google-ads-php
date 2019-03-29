@@ -116,7 +116,7 @@ class AdParameterServiceGapicClient
 
     private static function getAdParameterNameTemplate()
     {
-        if (self::$adParameterNameTemplate == null) {
+        if (null == self::$adParameterNameTemplate) {
             self::$adParameterNameTemplate = new PathTemplate('customers/{customer}/adParameters/{ad_parameter}');
         }
 
@@ -125,7 +125,7 @@ class AdParameterServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'adParameter' => self::getAdParameterNameTemplate(),
             ];

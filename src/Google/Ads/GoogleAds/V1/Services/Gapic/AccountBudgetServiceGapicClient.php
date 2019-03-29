@@ -115,7 +115,7 @@ class AccountBudgetServiceGapicClient
 
     private static function getAccountBudgetNameTemplate()
     {
-        if (self::$accountBudgetNameTemplate == null) {
+        if (null == self::$accountBudgetNameTemplate) {
             self::$accountBudgetNameTemplate = new PathTemplate('customers/{customer}/accountBudgets/{account_budget}');
         }
 
@@ -124,7 +124,7 @@ class AccountBudgetServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'accountBudget' => self::getAccountBudgetNameTemplate(),
             ];

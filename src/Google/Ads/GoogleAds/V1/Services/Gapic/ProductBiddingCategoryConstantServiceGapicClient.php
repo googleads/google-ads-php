@@ -113,7 +113,7 @@ class ProductBiddingCategoryConstantServiceGapicClient
 
     private static function getProductBiddingCategoryConstantNameTemplate()
     {
-        if (self::$productBiddingCategoryConstantNameTemplate == null) {
+        if (null == self::$productBiddingCategoryConstantNameTemplate) {
             self::$productBiddingCategoryConstantNameTemplate = new PathTemplate('productBiddingCategoryConstants/{product_bidding_category_constant}');
         }
 
@@ -122,7 +122,7 @@ class ProductBiddingCategoryConstantServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'productBiddingCategoryConstant' => self::getProductBiddingCategoryConstantNameTemplate(),
             ];

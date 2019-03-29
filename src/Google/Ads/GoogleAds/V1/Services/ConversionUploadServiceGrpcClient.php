@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2018 Google LLC.
+// Copyright 2019 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -44,6 +44,20 @@ class ConversionUploadServiceGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.ads.googleads.v1.services.ConversionUploadService/UploadClickConversions',
         $argument,
         ['\Google\Ads\GoogleAds\V1\Services\UploadClickConversionsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Processes the given call conversions.
+     * @param \Google\Ads\GoogleAds\V1\Services\UploadCallConversionsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function UploadCallConversions(\Google\Ads\GoogleAds\V1\Services\UploadCallConversionsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v1.services.ConversionUploadService/UploadCallConversions',
+        $argument,
+        ['\Google\Ads\GoogleAds\V1\Services\UploadCallConversionsResponse', 'decode'],
         $metadata, $options);
     }
 

@@ -116,7 +116,7 @@ class CampaignSharedSetServiceGapicClient
 
     private static function getCampaignSharedSetNameTemplate()
     {
-        if (self::$campaignSharedSetNameTemplate == null) {
+        if (null == self::$campaignSharedSetNameTemplate) {
             self::$campaignSharedSetNameTemplate = new PathTemplate('customers/{customer}/campaignSharedSets/{campaign_shared_set}');
         }
 
@@ -125,7 +125,7 @@ class CampaignSharedSetServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'campaignSharedSet' => self::getCampaignSharedSetNameTemplate(),
             ];

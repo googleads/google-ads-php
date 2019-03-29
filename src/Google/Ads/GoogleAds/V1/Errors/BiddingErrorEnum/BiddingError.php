@@ -154,6 +154,12 @@ class BiddingError
      * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_PAYMENT_MODE = 34;</code>
      */
     const NOT_COMPATIBLE_WITH_PAYMENT_MODE = 34;
+    /**
+     * Bidding strategy is incompatible with the budget type.
+     *
+     * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_BUDGET_TYPE = 35;</code>
+     */
+    const NOT_COMPATIBLE_WITH_BUDGET_TYPE = 35;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

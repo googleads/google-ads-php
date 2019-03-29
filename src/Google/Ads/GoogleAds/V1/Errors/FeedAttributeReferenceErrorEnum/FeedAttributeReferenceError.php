@@ -24,19 +24,19 @@ class FeedAttributeReferenceError
      */
     const UNKNOWN = 1;
     /**
-     * A feed referenced by ID has been deleted.
+     * A feed referenced by ID has been removed.
      *
-     * Generated from protobuf enum <code>CANNOT_REFERENCE_DELETED_FEED = 2;</code>
+     * Generated from protobuf enum <code>CANNOT_REFERENCE_REMOVED_FEED = 2;</code>
      */
-    const CANNOT_REFERENCE_DELETED_FEED = 2;
+    const CANNOT_REFERENCE_REMOVED_FEED = 2;
     /**
-     * There is no active feed with the given name.
+     * There is no enabled feed with the given name.
      *
      * Generated from protobuf enum <code>INVALID_FEED_NAME = 3;</code>
      */
     const INVALID_FEED_NAME = 3;
     /**
-     * There is no feed attribute in an active feed with the given name.
+     * There is no feed attribute in an enabled feed with the given name.
      *
      * Generated from protobuf enum <code>INVALID_FEED_ATTRIBUTE_NAME = 4;</code>
      */

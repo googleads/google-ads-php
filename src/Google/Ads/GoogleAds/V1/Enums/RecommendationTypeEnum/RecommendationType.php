@@ -81,6 +81,20 @@ class RecommendationType
      * Generated from protobuf enum <code>OPTIMIZE_AD_ROTATION = 10;</code>
      */
     const OPTIMIZE_AD_ROTATION = 10;
+    /**
+     * Recommendation to change an existing keyword from one match type to a
+     * broader match type.
+     *
+     * Generated from protobuf enum <code>KEYWORD_MATCH_TYPE = 14;</code>
+     */
+    const KEYWORD_MATCH_TYPE = 14;
+    /**
+     * Recommendation to move unused budget from one budget to a constrained
+     * budget.
+     *
+     * Generated from protobuf enum <code>MOVE_UNUSED_BUDGET = 15;</code>
+     */
+    const MOVE_UNUSED_BUDGET = 15;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

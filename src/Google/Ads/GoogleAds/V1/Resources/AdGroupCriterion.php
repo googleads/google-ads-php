@@ -69,6 +69,12 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      */
     private $system_serving_status = 0;
     /**
+     * Approval status of the criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53;</code>
+     */
+    private $approval_status = 0;
+    /**
      * The modifier for the bid when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      *
@@ -216,6 +222,8 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           remove then re-add it.
      *     @type int $system_serving_status
      *           Serving status of the criterion.
+     *     @type int $approval_status
+     *           Approval status of the criterion.
      *     @type \Google\Protobuf\DoubleValue $bid_modifier
      *           The modifier for the bid when the criterion matches. The modifier must be
      *           in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
@@ -265,6 +273,8 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           Placement.
      *     @type \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo $mobile_app_category
      *           Mobile app category.
+     *     @type \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo $mobile_application
+     *           Mobile application.
      *     @type \Google\Ads\GoogleAds\V1\Common\ListingGroupInfo $listing_group
      *           Listing group.
      *     @type \Google\Ads\GoogleAds\V1\Common\AgeRangeInfo $age_range
@@ -514,6 +524,32 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\CriterionSystemServingStatusEnum_CriterionSystemServingStatus::class);
         $this->system_serving_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Approval status of the criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53;</code>
+     * @return int
+     */
+    public function getApprovalStatus()
+    {
+        return $this->approval_status;
+    }
+
+    /**
+     * Approval status of the criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setApprovalStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\AdGroupCriterionApprovalStatusEnum_AdGroupCriterionApprovalStatus::class);
+        $this->approval_status = $var;
 
         return $this;
     }
@@ -1096,6 +1132,32 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo::class);
         $this->writeOneof(29, $var);
+
+        return $this;
+    }
+
+    /**
+     * Mobile application.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 30;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo
+     */
+    public function getMobileApplication()
+    {
+        return $this->readOneof(30);
+    }
+
+    /**
+     * Mobile application.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 30;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo $var
+     * @return $this
+     */
+    public function setMobileApplication($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo::class);
+        $this->writeOneof(30, $var);
 
         return $this;
     }

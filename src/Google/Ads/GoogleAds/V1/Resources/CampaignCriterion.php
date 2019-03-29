@@ -87,6 +87,8 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Placement.
      *     @type \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo $mobile_app_category
      *           Mobile app category.
+     *     @type \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo $mobile_application
+     *           Mobile application.
      *     @type \Google\Ads\GoogleAds\V1\Common\LocationInfo $location
      *           Location.
      *     @type \Google\Ads\GoogleAds\V1\Common\DeviceInfo $device
@@ -376,6 +378,32 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo::class);
         $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Mobile application.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 11;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo
+     */
+    public function getMobileApplication()
+    {
+        return $this->readOneof(11);
+    }
+
+    /**
+     * Mobile application.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 11;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo $var
+     * @return $this
+     */
+    public function setMobileApplication($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo::class);
+        $this->writeOneof(11, $var);
 
         return $this;
     }

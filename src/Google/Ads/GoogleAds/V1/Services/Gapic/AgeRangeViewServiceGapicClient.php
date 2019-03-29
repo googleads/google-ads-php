@@ -113,7 +113,7 @@ class AgeRangeViewServiceGapicClient
 
     private static function getAgeRangeViewNameTemplate()
     {
-        if (self::$ageRangeViewNameTemplate == null) {
+        if (null == self::$ageRangeViewNameTemplate) {
             self::$ageRangeViewNameTemplate = new PathTemplate('customers/{customer}/ageRangeViews/{age_range_view}');
         }
 
@@ -122,7 +122,7 @@ class AgeRangeViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'ageRangeView' => self::getAgeRangeViewNameTemplate(),
             ];

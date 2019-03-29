@@ -225,6 +225,18 @@ class CriterionError
      */
     const CANNOT_ADD_URLS_TO_CRITERION_TYPE_FOR_CAMPAIGN_TYPE = 33;
     /**
+     * Invalid custom affinity criterion.
+     *
+     * Generated from protobuf enum <code>INVALID_CUSTOM_AFFINITY = 96;</code>
+     */
+    const INVALID_CUSTOM_AFFINITY = 96;
+    /**
+     * Invalid custom intent criterion.
+     *
+     * Generated from protobuf enum <code>INVALID_CUSTOM_INTENT = 97;</code>
+     */
+    const INVALID_CUSTOM_INTENT = 97;
+    /**
      * IP address is not valid.
      *
      * Generated from protobuf enum <code>INVALID_IP_ADDRESS = 34;</code>

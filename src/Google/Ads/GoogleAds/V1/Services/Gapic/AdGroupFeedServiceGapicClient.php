@@ -116,7 +116,7 @@ class AdGroupFeedServiceGapicClient
 
     private static function getAdGroupFeedNameTemplate()
     {
-        if (self::$adGroupFeedNameTemplate == null) {
+        if (null == self::$adGroupFeedNameTemplate) {
             self::$adGroupFeedNameTemplate = new PathTemplate('customers/{customer}/adGroupFeeds/{ad_group_feed}');
         }
 
@@ -125,7 +125,7 @@ class AdGroupFeedServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'adGroupFeed' => self::getAdGroupFeedNameTemplate(),
             ];
