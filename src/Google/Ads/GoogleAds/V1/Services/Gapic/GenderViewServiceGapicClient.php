@@ -113,7 +113,7 @@ class GenderViewServiceGapicClient
 
     private static function getGenderViewNameTemplate()
     {
-        if (self::$genderViewNameTemplate == null) {
+        if (null == self::$genderViewNameTemplate) {
             self::$genderViewNameTemplate = new PathTemplate('customers/{customer}/genderViews/{gender_view}');
         }
 
@@ -122,7 +122,7 @@ class GenderViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'genderView' => self::getGenderViewNameTemplate(),
             ];

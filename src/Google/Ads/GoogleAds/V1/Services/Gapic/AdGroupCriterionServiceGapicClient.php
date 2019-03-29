@@ -116,7 +116,7 @@ class AdGroupCriterionServiceGapicClient
 
     private static function getAdGroupCriteriaNameTemplate()
     {
-        if (self::$adGroupCriteriaNameTemplate == null) {
+        if (null == self::$adGroupCriteriaNameTemplate) {
             self::$adGroupCriteriaNameTemplate = new PathTemplate('customers/{customer}/adGroupCriteria/{ad_group_criteria}');
         }
 
@@ -125,7 +125,7 @@ class AdGroupCriterionServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'adGroupCriteria' => self::getAdGroupCriteriaNameTemplate(),
             ];

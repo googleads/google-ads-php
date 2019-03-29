@@ -83,6 +83,12 @@ class AdvertisingChannelSubType
      * Generated from protobuf enum <code>VIDEO_NON_SKIPPABLE = 11;</code>
      */
     const VIDEO_NON_SKIPPABLE = 11;
+    /**
+     * Universal App Campaign.
+     *
+     * Generated from protobuf enum <code>APP_CAMPAIGN = 12;</code>
+     */
+    const APP_CAMPAIGN = 12;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

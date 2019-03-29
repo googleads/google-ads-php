@@ -115,7 +115,7 @@ class GoogleAdsFieldServiceGapicClient
 
     private static function getGoogleAdsFieldNameTemplate()
     {
-        if (self::$googleAdsFieldNameTemplate == null) {
+        if (null == self::$googleAdsFieldNameTemplate) {
             self::$googleAdsFieldNameTemplate = new PathTemplate('googleAdsFields/{google_ads_field}');
         }
 
@@ -124,7 +124,7 @@ class GoogleAdsFieldServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'googleAdsField' => self::getGoogleAdsFieldNameTemplate(),
             ];

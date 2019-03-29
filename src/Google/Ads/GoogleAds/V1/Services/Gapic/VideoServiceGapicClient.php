@@ -113,7 +113,7 @@ class VideoServiceGapicClient
 
     private static function getVideoNameTemplate()
     {
-        if (self::$videoNameTemplate == null) {
+        if (null == self::$videoNameTemplate) {
             self::$videoNameTemplate = new PathTemplate('customers/{customer}/videos/{video}');
         }
 
@@ -122,7 +122,7 @@ class VideoServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'video' => self::getVideoNameTemplate(),
             ];

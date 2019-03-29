@@ -105,6 +105,12 @@ class RecommendationError
      * Generated from protobuf enum <code>RECOMMENDATION_ALREADY_DISMISSED = 14;</code>
      */
     const RECOMMENDATION_ALREADY_DISMISSED = 14;
+    /**
+     * The recommendation apply request was malformed and invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_APPLY_REQUEST = 15;</code>
+     */
+    const INVALID_APPLY_REQUEST = 15;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

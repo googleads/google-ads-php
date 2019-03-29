@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateJobResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Index of the Simply operation.
+     * Index of the mutate operation.
      *
      * Generated from protobuf field <code>int64 operation_index = 1;</code>
      */
@@ -42,7 +42,7 @@ class MutateJobResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $operation_index
-     *           Index of the Simply operation.
+     *           Index of the mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateOperationResponse $mutate_operation_response
      *           Response for the mutate.
      *           May be empty if errors occurred.
@@ -56,7 +56,7 @@ class MutateJobResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Index of the Simply operation.
+     * Index of the mutate operation.
      *
      * Generated from protobuf field <code>int64 operation_index = 1;</code>
      * @return int|string
@@ -67,7 +67,7 @@ class MutateJobResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Index of the Simply operation.
+     * Index of the mutate operation.
      *
      * Generated from protobuf field <code>int64 operation_index = 1;</code>
      * @param int|string $var

@@ -21,6 +21,19 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     private $update_mask = null;
+    /**
+     * The list of policy violation keys that should not cause a
+     * PolicyViolationError to be reported. Not all policy violations are
+     * exemptable, please refer to the is_exemptible field in the returned
+     * PolicyViolationError.
+     * Resources violating these polices will be saved, but will not be eligible
+     * to serve. They may begin serving at a later time due to a change in
+     * policies, re-review of the resource, or a change in advertiser
+     * certificates.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.PolicyViolationKey exempt_policy_violation_keys = 5;</code>
+     */
+    private $exempt_policy_violation_keys;
     protected $operation;
 
     /**
@@ -31,6 +44,15 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           FieldMask that determines which resource fields are modified in an update.
+     *     @type \Google\Ads\GoogleAds\V1\Common\PolicyViolationKey[]|\Google\Protobuf\Internal\RepeatedField $exempt_policy_violation_keys
+     *           The list of policy violation keys that should not cause a
+     *           PolicyViolationError to be reported. Not all policy violations are
+     *           exemptable, please refer to the is_exemptible field in the returned
+     *           PolicyViolationError.
+     *           Resources violating these polices will be saved, but will not be eligible
+     *           to serve. They may begin serving at a later time due to a change in
+     *           policies, re-review of the resource, or a change in advertiser
+     *           certificates.
      *     @type \Google\Ads\GoogleAds\V1\Resources\AdGroupCriterion $create
      *           Create operation: No resource name is expected for the new criterion.
      *     @type \Google\Ads\GoogleAds\V1\Resources\AdGroupCriterion $update
@@ -69,6 +91,46 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
+
+        return $this;
+    }
+
+    /**
+     * The list of policy violation keys that should not cause a
+     * PolicyViolationError to be reported. Not all policy violations are
+     * exemptable, please refer to the is_exemptible field in the returned
+     * PolicyViolationError.
+     * Resources violating these polices will be saved, but will not be eligible
+     * to serve. They may begin serving at a later time due to a change in
+     * policies, re-review of the resource, or a change in advertiser
+     * certificates.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.PolicyViolationKey exempt_policy_violation_keys = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExemptPolicyViolationKeys()
+    {
+        return $this->exempt_policy_violation_keys;
+    }
+
+    /**
+     * The list of policy violation keys that should not cause a
+     * PolicyViolationError to be reported. Not all policy violations are
+     * exemptable, please refer to the is_exemptible field in the returned
+     * PolicyViolationError.
+     * Resources violating these polices will be saved, but will not be eligible
+     * to serve. They may begin serving at a later time due to a change in
+     * policies, re-review of the resource, or a change in advertiser
+     * certificates.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.PolicyViolationKey exempt_policy_violation_keys = 5;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\PolicyViolationKey[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExemptPolicyViolationKeys($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V1\Common\PolicyViolationKey::class);
+        $this->exempt_policy_violation_keys = $arr;
 
         return $this;
     }

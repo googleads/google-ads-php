@@ -85,8 +85,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * with the campaign's name and status. Attempting to share the budget with a
      * second campaign will result in an error.
      * A non-shared budget can become an explicitly shared. The same operation
-     * must
-     * also assign the budget a name.
+     * must also assign the budget a name.
      * A shared campaign budget can never become non-shared.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue explicitly_shared = 8;</code>
@@ -152,6 +151,12 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
      */
     private $recommended_budget_estimated_change_weekly_views = null;
+    /**
+     * The type of the campaign budget.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType type = 18;</code>
+     */
+    private $type = 0;
 
     /**
      * Constructor.
@@ -201,8 +206,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *           with the campaign's name and status. Attempting to share the budget with a
      *           second campaign will result in an error.
      *           A non-shared budget can become an explicitly shared. The same operation
-     *           must
-     *           also assign the budget a name.
+     *           must also assign the budget a name.
      *           A shared campaign budget can never become non-shared.
      *     @type \Google\Protobuf\Int64Value $reference_count
      *           The number of campaigns actively using the budget.
@@ -232,6 +236,8 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_views
      *           The estimated change in weekly views if the recommended budget is applied.
      *           This field is read-only.
+     *     @type int $type
+     *           The type of the campaign budget.
      * }
      */
     public function __construct($data = NULL) {
@@ -467,8 +473,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * with the campaign's name and status. Attempting to share the budget with a
      * second campaign will result in an error.
      * A non-shared budget can become an explicitly shared. The same operation
-     * must
-     * also assign the budget a name.
+     * must also assign the budget a name.
      * A shared campaign budget can never become non-shared.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue explicitly_shared = 8;</code>
@@ -489,8 +494,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      * with the campaign's name and status. Attempting to share the budget with a
      * second campaign will result in an error.
      * A non-shared budget can become an explicitly shared. The same operation
-     * must
-     * also assign the budget a name.
+     * must also assign the budget a name.
      * A shared campaign budget can never become non-shared.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue explicitly_shared = 8;</code>
@@ -733,6 +737,32 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
         $this->recommended_budget_estimated_change_weekly_views = $var;
+
+        return $this;
+    }
+
+    /**
+     * The type of the campaign budget.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType type = 18;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * The type of the campaign budget.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BudgetTypeEnum.BudgetType type = 18;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\BudgetTypeEnum_BudgetType::class);
+        $this->type = $var;
 
         return $this;
     }

@@ -71,6 +71,8 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      *           Placement.
      *     @type \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo $mobile_app_category
      *           Mobile App Category.
+     *     @type \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo $mobile_application
+     *           Mobile application.
      * }
      */
     public function __construct($data = NULL) {
@@ -314,6 +316,32 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo::class);
         $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Mobile application.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 9;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo
+     */
+    public function getMobileApplication()
+    {
+        return $this->readOneof(9);
+    }
+
+    /**
+     * Mobile application.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 9;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo $var
+     * @return $this
+     */
+    public function setMobileApplication($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

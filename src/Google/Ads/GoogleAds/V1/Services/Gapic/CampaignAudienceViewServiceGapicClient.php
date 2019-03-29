@@ -113,7 +113,7 @@ class CampaignAudienceViewServiceGapicClient
 
     private static function getCampaignAudienceViewNameTemplate()
     {
-        if (self::$campaignAudienceViewNameTemplate == null) {
+        if (null == self::$campaignAudienceViewNameTemplate) {
             self::$campaignAudienceViewNameTemplate = new PathTemplate('customers/{customer}/campaignAudienceViews/{campaign_audience_view}');
         }
 
@@ -122,7 +122,7 @@ class CampaignAudienceViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'campaignAudienceView' => self::getCampaignAudienceViewNameTemplate(),
             ];

@@ -101,6 +101,30 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     private $external_conversion_source = 0;
     /**
+     * Resource name of the geo target constant that represents an airport.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_airport = 65;</code>
+     */
+    private $geo_target_airport = null;
+    /**
+     * Resource name of the geo target constant that represents a city.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_city = 62;</code>
+     */
+    private $geo_target_city = null;
+    /**
+     * Resource name of the geo target constant that represents a metro.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_metro = 63;</code>
+     */
+    private $geo_target_metro = null;
+    /**
+     * Resource name of the geo target constant that represents a region.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_region = 64;</code>
+     */
+    private $geo_target_region = null;
+    /**
      * Hotel booking window in days.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_booking_window_days = 6;</code>
@@ -266,7 +290,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     private $product_condition = 0;
     /**
-     * Resource name of the geo target constant for the country of the product.
+     * Resource name of the geo target constant for the country of sale of the
+     * product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_country = 33;</code>
      */
@@ -382,6 +407,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     private $slot = 0;
     /**
+     * Resource name of the ad group criterion that represents webpage criterion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue webpage = 66;</code>
+     */
+    private $webpage = null;
+    /**
      * Week as defined as Monday through Sunday, and represented by the date of
      * Monday. Formatted as yyyy-MM-dd.
      *
@@ -434,6 +465,14 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Device to which metrics apply.
      *     @type int $external_conversion_source
      *           External conversion source.
+     *     @type \Google\Protobuf\StringValue $geo_target_airport
+     *           Resource name of the geo target constant that represents an airport.
+     *     @type \Google\Protobuf\StringValue $geo_target_city
+     *           Resource name of the geo target constant that represents a city.
+     *     @type \Google\Protobuf\StringValue $geo_target_metro
+     *           Resource name of the geo target constant that represents a metro.
+     *     @type \Google\Protobuf\StringValue $geo_target_region
+     *           Resource name of the geo target constant that represents a region.
      *     @type \Google\Protobuf\Int64Value $hotel_booking_window_days
      *           Hotel booking window in days.
      *     @type \Google\Protobuf\Int64Value $hotel_center_id
@@ -492,7 +531,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *     @type int $product_condition
      *           Condition of the product.
      *     @type \Google\Protobuf\StringValue $product_country
-     *           Resource name of the geo target constant for the country of the product.
+     *           Resource name of the geo target constant for the country of sale of the
+     *           product.
      *     @type \Google\Protobuf\StringValue $product_custom_attribute0
      *           Custom attribute 0 of the product.
      *     @type \Google\Protobuf\StringValue $product_custom_attribute1
@@ -531,6 +571,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Match type of the keyword that triggered the ad, including variants.
      *     @type int $slot
      *           Position of the ad.
+     *     @type \Google\Protobuf\StringValue $webpage
+     *           Resource name of the ad group criterion that represents webpage criterion.
      *     @type \Google\Protobuf\StringValue $week
      *           Week as defined as Monday through Sunday, and represented by the date of
      *           Monday. Formatted as yyyy-MM-dd.
@@ -891,6 +933,110 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\ExternalConversionSourceEnum_ExternalConversionSource::class);
         $this->external_conversion_source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the geo target constant that represents an airport.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_airport = 65;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getGeoTargetAirport()
+    {
+        return $this->geo_target_airport;
+    }
+
+    /**
+     * Resource name of the geo target constant that represents an airport.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_airport = 65;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setGeoTargetAirport($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->geo_target_airport = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the geo target constant that represents a city.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_city = 62;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getGeoTargetCity()
+    {
+        return $this->geo_target_city;
+    }
+
+    /**
+     * Resource name of the geo target constant that represents a city.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_city = 62;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setGeoTargetCity($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->geo_target_city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the geo target constant that represents a metro.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_metro = 63;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getGeoTargetMetro()
+    {
+        return $this->geo_target_metro;
+    }
+
+    /**
+     * Resource name of the geo target constant that represents a metro.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_metro = 63;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setGeoTargetMetro($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->geo_target_metro = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the geo target constant that represents a region.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_region = 64;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getGeoTargetRegion()
+    {
+        return $this->geo_target_region;
+    }
+
+    /**
+     * Resource name of the geo target constant that represents a region.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_region = 64;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setGeoTargetRegion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->geo_target_region = $var;
 
         return $this;
     }
@@ -1604,7 +1750,8 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the geo target constant for the country of the product.
+     * Resource name of the geo target constant for the country of sale of the
+     * product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_country = 33;</code>
      * @return \Google\Protobuf\StringValue
@@ -1615,7 +1762,8 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the geo target constant for the country of the product.
+     * Resource name of the geo target constant for the country of sale of the
+     * product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_country = 33;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -2097,6 +2245,32 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\SlotEnum_Slot::class);
         $this->slot = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource name of the ad group criterion that represents webpage criterion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue webpage = 66;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getWebpage()
+    {
+        return $this->webpage;
+    }
+
+    /**
+     * Resource name of the ad group criterion that represents webpage criterion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue webpage = 66;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setWebpage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->webpage = $var;
 
         return $this;
     }

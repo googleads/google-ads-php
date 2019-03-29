@@ -23,6 +23,7 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 use Google\Ads\GoogleAds\V1\Services\ConversionUploadServiceClient;
+use Google\Ads\GoogleAds\V1\Services\UploadCallConversionsResponse;
 use Google\Ads\GoogleAds\V1\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -124,6 +125,82 @@ class ConversionUploadServiceClientTest extends GeneratedTest
 
         try {
             $client->uploadClickConversions($customerId, $conversions);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function uploadCallConversionsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        // Mock response
+        $expectedResponse = new UploadCallConversionsResponse();
+        $transport->addResponse($expectedResponse);
+
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $conversions = [];
+
+        $response = $client->uploadCallConversions($customerId, $conversions);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v1.services.ConversionUploadService/UploadCallConversions', $actualFuncCall);
+
+        $actualValue = $actualRequestObject->getCustomerId();
+
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getConversions();
+
+        $this->assertProtobufEquals($conversions, $actualValue);
+
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function uploadCallConversionsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient(['transport' => $transport]);
+
+        $this->assertTrue($transport->isExhausted());
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $conversions = [];
+
+        try {
+            $client->uploadCallConversions($customerId, $conversions);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

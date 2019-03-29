@@ -113,7 +113,7 @@ class ClickViewServiceGapicClient
 
     private static function getClickViewNameTemplate()
     {
-        if (self::$clickViewNameTemplate == null) {
+        if (null == self::$clickViewNameTemplate) {
             self::$clickViewNameTemplate = new PathTemplate('customers/{customer}/clickViews/{click_view}');
         }
 
@@ -122,7 +122,7 @@ class ClickViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'clickView' => self::getClickViewNameTemplate(),
             ];

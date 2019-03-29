@@ -113,7 +113,7 @@ class FeedPlaceholderViewServiceGapicClient
 
     private static function getFeedPlaceholderViewNameTemplate()
     {
-        if (self::$feedPlaceholderViewNameTemplate == null) {
+        if (null == self::$feedPlaceholderViewNameTemplate) {
             self::$feedPlaceholderViewNameTemplate = new PathTemplate('customers/{customer}/feedPlaceholderViews/{feed_placeholder_view}');
         }
 
@@ -122,7 +122,7 @@ class FeedPlaceholderViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'feedPlaceholderView' => self::getFeedPlaceholderViewNameTemplate(),
             ];

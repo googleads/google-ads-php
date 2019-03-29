@@ -12,7 +12,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * A category generated automatically by crawling a domain. If a campaign uses
  * the DynamicSearchAdsSetting, then domain categories will be generated for
  * the domain. The categories can be targeted using WebpageConditionInfo.
- * See: https://support.google.com/google-ads/answer/2471185?hl=en
+ * See: https://support.google.com/google-ads/answer/2471185
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.resources.DomainCategory</code>
  */
@@ -21,7 +21,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the domain category.
      * Domain category resource names have the form:
-     * `customers/{customer_id}/domainCategories/{campaign_id}~{category}~{language_code}`
+     * `customers/{customer_id}/domainCategories/{campaign_id}~{category_base64}~{language_code}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
@@ -91,7 +91,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           The resource name of the domain category.
      *           Domain category resource names have the form:
-     *           `customers/{customer_id}/domainCategories/{campaign_id}~{category}~{language_code}`
+     *           `customers/{customer_id}/domainCategories/{campaign_id}~{category_base64}~{language_code}`
      *     @type \Google\Protobuf\StringValue $campaign
      *           The campaign this category is recommended for.
      *     @type \Google\Protobuf\StringValue $category
@@ -125,7 +125,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the domain category.
      * Domain category resource names have the form:
-     * `customers/{customer_id}/domainCategories/{campaign_id}~{category}~{language_code}`
+     * `customers/{customer_id}/domainCategories/{campaign_id}~{category_base64}~{language_code}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @return string
@@ -138,7 +138,7 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the domain category.
      * Domain category resource names have the form:
-     * `customers/{customer_id}/domainCategories/{campaign_id}~{category}~{language_code}`
+     * `customers/{customer_id}/domainCategories/{campaign_id}~{category_base64}~{language_code}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @param string $var

@@ -116,7 +116,7 @@ class CampaignCriterionServiceGapicClient
 
     private static function getCampaignCriteriaNameTemplate()
     {
-        if (self::$campaignCriteriaNameTemplate == null) {
+        if (null == self::$campaignCriteriaNameTemplate) {
             self::$campaignCriteriaNameTemplate = new PathTemplate('customers/{customer}/campaignCriteria/{campaign_criteria}');
         }
 
@@ -125,7 +125,7 @@ class CampaignCriterionServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'campaignCriteria' => self::getCampaignCriteriaNameTemplate(),
             ];

@@ -24,6 +24,13 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     private $resource_name = '';
     /**
+     * The extension type of the extension feed item.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;</code>
+     */
+    private $extension_type = 0;
+    /**
      * Start time in which this feed item is effective and can begin serving.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
@@ -59,6 +66,9 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           The resource name of the extension feed item.
      *           Extension feed item resource names have the form:
      *           `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
+     *     @type int $extension_type
+     *           The extension type of the extension feed item.
+     *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $start_date_time
      *           Start time in which this feed item is effective and can begin serving.
      *           The format is "YYYY-MM-DD HH:MM:SS".
@@ -120,6 +130,34 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The extension type of the extension feed item.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;</code>
+     * @return int
+     */
+    public function getExtensionType()
+    {
+        return $this->extension_type;
+    }
+
+    /**
+     * The extension type of the extension feed item.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setExtensionType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\ExtensionTypeEnum_ExtensionType::class);
+        $this->extension_type = $var;
 
         return $this;
     }

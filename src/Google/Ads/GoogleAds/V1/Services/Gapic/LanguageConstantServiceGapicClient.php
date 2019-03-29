@@ -113,7 +113,7 @@ class LanguageConstantServiceGapicClient
 
     private static function getLanguageConstantNameTemplate()
     {
-        if (self::$languageConstantNameTemplate == null) {
+        if (null == self::$languageConstantNameTemplate) {
             self::$languageConstantNameTemplate = new PathTemplate('languageConstants/{language_constant}');
         }
 
@@ -122,7 +122,7 @@ class LanguageConstantServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'languageConstant' => self::getLanguageConstantNameTemplate(),
             ];

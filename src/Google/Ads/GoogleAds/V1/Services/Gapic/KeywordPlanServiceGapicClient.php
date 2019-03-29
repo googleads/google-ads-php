@@ -120,7 +120,7 @@ class KeywordPlanServiceGapicClient
 
     private static function getKeywordPlanNameTemplate()
     {
-        if (self::$keywordPlanNameTemplate == null) {
+        if (null == self::$keywordPlanNameTemplate) {
             self::$keywordPlanNameTemplate = new PathTemplate('customers/{customer}/keywordPlans/{keyword_plan}');
         }
 
@@ -129,7 +129,7 @@ class KeywordPlanServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'keywordPlan' => self::getKeywordPlanNameTemplate(),
             ];

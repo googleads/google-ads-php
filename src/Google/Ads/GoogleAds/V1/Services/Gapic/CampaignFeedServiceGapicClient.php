@@ -116,7 +116,7 @@ class CampaignFeedServiceGapicClient
 
     private static function getCampaignFeedNameTemplate()
     {
-        if (self::$campaignFeedNameTemplate == null) {
+        if (null == self::$campaignFeedNameTemplate) {
             self::$campaignFeedNameTemplate = new PathTemplate('customers/{customer}/campaignFeeds/{campaign_feed}');
         }
 
@@ -125,7 +125,7 @@ class CampaignFeedServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'campaignFeed' => self::getCampaignFeedNameTemplate(),
             ];

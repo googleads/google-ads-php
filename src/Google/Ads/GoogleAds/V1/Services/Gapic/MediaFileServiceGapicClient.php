@@ -116,7 +116,7 @@ class MediaFileServiceGapicClient
 
     private static function getMediaFileNameTemplate()
     {
-        if (self::$mediaFileNameTemplate == null) {
+        if (null == self::$mediaFileNameTemplate) {
             self::$mediaFileNameTemplate = new PathTemplate('customers/{customer}/mediaFiles/{media_file}');
         }
 
@@ -125,7 +125,7 @@ class MediaFileServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'mediaFile' => self::getMediaFileNameTemplate(),
             ];

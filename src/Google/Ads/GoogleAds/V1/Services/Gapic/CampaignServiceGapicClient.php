@@ -116,7 +116,7 @@ class CampaignServiceGapicClient
 
     private static function getCampaignNameTemplate()
     {
-        if (self::$campaignNameTemplate == null) {
+        if (null == self::$campaignNameTemplate) {
             self::$campaignNameTemplate = new PathTemplate('customers/{customer}/campaigns/{campaign}');
         }
 
@@ -125,7 +125,7 @@ class CampaignServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'campaign' => self::getCampaignNameTemplate(),
             ];

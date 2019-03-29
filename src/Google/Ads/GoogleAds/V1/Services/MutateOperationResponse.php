@@ -23,28 +23,74 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupAdLabelResult $ad_group_ad_label_result
+     *           The result for the ad group ad label mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupAdResult $ad_group_ad_result
      *           The result for the ad group ad mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupBidModifierResult $ad_group_bid_modifier_result
      *           The result for the ad group bid modifier mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupCriterionLabelResult $ad_group_criterion_label_result
+     *           The result for the ad group criterion label mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupCriterionResult $ad_group_criterion_result
      *           The result for the ad group criterion mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupExtensionSettingResult $ad_group_extension_setting_result
+     *           The result for the ad group extension setting mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupFeedResult $ad_group_feed_result
+     *           The result for the ad group feed mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupLabelResult $ad_group_label_result
+     *           The result for the ad group label mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdGroupResult $ad_group_result
      *           The result for the ad group mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateAdParameterResult $ad_parameter_result
+     *           The result for the ad parameter mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateAssetResult $asset_result
+     *           The result for the asset mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateBiddingStrategyResult $bidding_strategy_result
      *           The result for the bidding strategy mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignBidModifierResult $campaign_bid_modifier_result
      *           The result for the campaign bid modifier mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignBudgetResult $campaign_budget_result
      *           The result for the campaign budget mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult $campaign_criterion_result
+     *           The result for the campaign criterion mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignExtensionSettingResult $campaign_extension_setting_result
+     *           The result for the campaign extension setting mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignFeedResult $campaign_feed_result
+     *           The result for the campaign feed mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignLabelResult $campaign_label_result
+     *           The result for the campaign label mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignResult $campaign_result
      *           The result for the campaign mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignSharedSetResult $campaign_shared_set_result
      *           The result for the campaign shared set mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateConversionActionResult $conversion_action_result
      *           The result for the conversion action mutate.
-     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult $campaign_criterion_result
-     *           The result for the campaign criterion mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCustomerExtensionSettingResult $customer_extension_setting_result
+     *           The result for the customer extension setting mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCustomerFeedResult $customer_feed_result
+     *           The result for the customer feed mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCustomerLabelResult $customer_label_result
+     *           The result for the customer label mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCustomerNegativeCriteriaResult $customer_negative_criterion_result
+     *           The result for the customer negative criterion mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCustomerResult $customer_result
+     *           The result for the customer mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateExtensionFeedItemResult $extension_feed_item_result
+     *           The result for the extension feed item mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateFeedItemResult $feed_item_result
+     *           The result for the feed item mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateFeedItemTargetResult $feed_item_target_result
+     *           The result for the feed item target mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateFeedMappingResult $feed_mapping_result
+     *           The result for the feed mapping mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateFeedResult $feed_result
+     *           The result for the feed mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateLabelResult $label_result
+     *           The result for the label mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateMediaFileResult $media_file_result
+     *           The result for the media file mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateRemarketingActionResult $remarketing_action_result
+     *           The result for the remarketing action mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateSharedCriterionResult $shared_criterion_result
      *           The result for the shared criterion mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateSharedSetResult $shared_set_result
@@ -56,6 +102,32 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V1\Services\GoogleAdsService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * The result for the ad group ad label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupAdLabelResult ad_group_ad_label_result = 17;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateAdGroupAdLabelResult
+     */
+    public function getAdGroupAdLabelResult()
+    {
+        return $this->readOneof(17);
+    }
+
+    /**
+     * The result for the ad group ad label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupAdLabelResult ad_group_ad_label_result = 17;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateAdGroupAdLabelResult $var
+     * @return $this
+     */
+    public function setAdGroupAdLabelResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateAdGroupAdLabelResult::class);
+        $this->writeOneof(17, $var);
+
+        return $this;
     }
 
     /**
@@ -111,6 +183,32 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The result for the ad group criterion label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupCriterionLabelResult ad_group_criterion_label_result = 18;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateAdGroupCriterionLabelResult
+     */
+    public function getAdGroupCriterionLabelResult()
+    {
+        return $this->readOneof(18);
+    }
+
+    /**
+     * The result for the ad group criterion label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupCriterionLabelResult ad_group_criterion_label_result = 18;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateAdGroupCriterionLabelResult $var
+     * @return $this
+     */
+    public function setAdGroupCriterionLabelResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateAdGroupCriterionLabelResult::class);
+        $this->writeOneof(18, $var);
+
+        return $this;
+    }
+
+    /**
      * The result for the ad group criterion mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupCriterionResult ad_group_criterion_result = 3;</code>
@@ -137,6 +235,84 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The result for the ad group extension setting mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupExtensionSettingResult ad_group_extension_setting_result = 19;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateAdGroupExtensionSettingResult
+     */
+    public function getAdGroupExtensionSettingResult()
+    {
+        return $this->readOneof(19);
+    }
+
+    /**
+     * The result for the ad group extension setting mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupExtensionSettingResult ad_group_extension_setting_result = 19;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateAdGroupExtensionSettingResult $var
+     * @return $this
+     */
+    public function setAdGroupExtensionSettingResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateAdGroupExtensionSettingResult::class);
+        $this->writeOneof(19, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the ad group feed mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupFeedResult ad_group_feed_result = 20;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateAdGroupFeedResult
+     */
+    public function getAdGroupFeedResult()
+    {
+        return $this->readOneof(20);
+    }
+
+    /**
+     * The result for the ad group feed mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupFeedResult ad_group_feed_result = 20;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateAdGroupFeedResult $var
+     * @return $this
+     */
+    public function setAdGroupFeedResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateAdGroupFeedResult::class);
+        $this->writeOneof(20, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the ad group label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupLabelResult ad_group_label_result = 21;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateAdGroupLabelResult
+     */
+    public function getAdGroupLabelResult()
+    {
+        return $this->readOneof(21);
+    }
+
+    /**
+     * The result for the ad group label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupLabelResult ad_group_label_result = 21;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateAdGroupLabelResult $var
+     * @return $this
+     */
+    public function setAdGroupLabelResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateAdGroupLabelResult::class);
+        $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
      * The result for the ad group mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdGroupResult ad_group_result = 5;</code>
@@ -158,6 +334,58 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateAdGroupResult::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the ad parameter mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdParameterResult ad_parameter_result = 22;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateAdParameterResult
+     */
+    public function getAdParameterResult()
+    {
+        return $this->readOneof(22);
+    }
+
+    /**
+     * The result for the ad parameter mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAdParameterResult ad_parameter_result = 22;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateAdParameterResult $var
+     * @return $this
+     */
+    public function setAdParameterResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateAdParameterResult::class);
+        $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the asset mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAssetResult asset_result = 23;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateAssetResult
+     */
+    public function getAssetResult()
+    {
+        return $this->readOneof(23);
+    }
+
+    /**
+     * The result for the asset mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAssetResult asset_result = 23;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateAssetResult $var
+     * @return $this
+     */
+    public function setAssetResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateAssetResult::class);
+        $this->writeOneof(23, $var);
 
         return $this;
     }
@@ -241,6 +469,110 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The result for the campaign criterion mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignCriterionResult campaign_criterion_result = 13;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult
+     */
+    public function getCampaignCriterionResult()
+    {
+        return $this->readOneof(13);
+    }
+
+    /**
+     * The result for the campaign criterion mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignCriterionResult campaign_criterion_result = 13;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult $var
+     * @return $this
+     */
+    public function setCampaignCriterionResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult::class);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the campaign extension setting mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignExtensionSettingResult campaign_extension_setting_result = 26;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCampaignExtensionSettingResult
+     */
+    public function getCampaignExtensionSettingResult()
+    {
+        return $this->readOneof(26);
+    }
+
+    /**
+     * The result for the campaign extension setting mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignExtensionSettingResult campaign_extension_setting_result = 26;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCampaignExtensionSettingResult $var
+     * @return $this
+     */
+    public function setCampaignExtensionSettingResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCampaignExtensionSettingResult::class);
+        $this->writeOneof(26, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the campaign feed mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignFeedResult campaign_feed_result = 27;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCampaignFeedResult
+     */
+    public function getCampaignFeedResult()
+    {
+        return $this->readOneof(27);
+    }
+
+    /**
+     * The result for the campaign feed mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignFeedResult campaign_feed_result = 27;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCampaignFeedResult $var
+     * @return $this
+     */
+    public function setCampaignFeedResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCampaignFeedResult::class);
+        $this->writeOneof(27, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the campaign label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignLabelResult campaign_label_result = 28;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCampaignLabelResult
+     */
+    public function getCampaignLabelResult()
+    {
+        return $this->readOneof(28);
+    }
+
+    /**
+     * The result for the campaign label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignLabelResult campaign_label_result = 28;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCampaignLabelResult $var
+     * @return $this
+     */
+    public function setCampaignLabelResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCampaignLabelResult::class);
+        $this->writeOneof(28, $var);
+
+        return $this;
+    }
+
+    /**
      * The result for the campaign mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignResult campaign_result = 10;</code>
@@ -319,27 +651,339 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The result for the campaign criterion mutate.
+     * The result for the customer extension setting mutate.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignCriterionResult campaign_criterion_result = 13;</code>
-     * @return \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerExtensionSettingResult customer_extension_setting_result = 30;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCustomerExtensionSettingResult
      */
-    public function getCampaignCriterionResult()
+    public function getCustomerExtensionSettingResult()
     {
-        return $this->readOneof(13);
+        return $this->readOneof(30);
     }
 
     /**
-     * The result for the campaign criterion mutate.
+     * The result for the customer extension setting mutate.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignCriterionResult campaign_criterion_result = 13;</code>
-     * @param \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult $var
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerExtensionSettingResult customer_extension_setting_result = 30;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCustomerExtensionSettingResult $var
      * @return $this
      */
-    public function setCampaignCriterionResult($var)
+    public function setCustomerExtensionSettingResult($var)
     {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult::class);
-        $this->writeOneof(13, $var);
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCustomerExtensionSettingResult::class);
+        $this->writeOneof(30, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the customer feed mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerFeedResult customer_feed_result = 31;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCustomerFeedResult
+     */
+    public function getCustomerFeedResult()
+    {
+        return $this->readOneof(31);
+    }
+
+    /**
+     * The result for the customer feed mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerFeedResult customer_feed_result = 31;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCustomerFeedResult $var
+     * @return $this
+     */
+    public function setCustomerFeedResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCustomerFeedResult::class);
+        $this->writeOneof(31, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the customer label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerLabelResult customer_label_result = 32;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCustomerLabelResult
+     */
+    public function getCustomerLabelResult()
+    {
+        return $this->readOneof(32);
+    }
+
+    /**
+     * The result for the customer label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerLabelResult customer_label_result = 32;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCustomerLabelResult $var
+     * @return $this
+     */
+    public function setCustomerLabelResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCustomerLabelResult::class);
+        $this->writeOneof(32, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the customer negative criterion mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerNegativeCriteriaResult customer_negative_criterion_result = 34;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCustomerNegativeCriteriaResult
+     */
+    public function getCustomerNegativeCriterionResult()
+    {
+        return $this->readOneof(34);
+    }
+
+    /**
+     * The result for the customer negative criterion mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerNegativeCriteriaResult customer_negative_criterion_result = 34;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCustomerNegativeCriteriaResult $var
+     * @return $this
+     */
+    public function setCustomerNegativeCriterionResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCustomerNegativeCriteriaResult::class);
+        $this->writeOneof(34, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the customer mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerResult customer_result = 35;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCustomerResult
+     */
+    public function getCustomerResult()
+    {
+        return $this->readOneof(35);
+    }
+
+    /**
+     * The result for the customer mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerResult customer_result = 35;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCustomerResult $var
+     * @return $this
+     */
+    public function setCustomerResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCustomerResult::class);
+        $this->writeOneof(35, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the extension feed item mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateExtensionFeedItemResult extension_feed_item_result = 36;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateExtensionFeedItemResult
+     */
+    public function getExtensionFeedItemResult()
+    {
+        return $this->readOneof(36);
+    }
+
+    /**
+     * The result for the extension feed item mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateExtensionFeedItemResult extension_feed_item_result = 36;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateExtensionFeedItemResult $var
+     * @return $this
+     */
+    public function setExtensionFeedItemResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateExtensionFeedItemResult::class);
+        $this->writeOneof(36, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the feed item mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateFeedItemResult feed_item_result = 37;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateFeedItemResult
+     */
+    public function getFeedItemResult()
+    {
+        return $this->readOneof(37);
+    }
+
+    /**
+     * The result for the feed item mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateFeedItemResult feed_item_result = 37;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateFeedItemResult $var
+     * @return $this
+     */
+    public function setFeedItemResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateFeedItemResult::class);
+        $this->writeOneof(37, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the feed item target mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateFeedItemTargetResult feed_item_target_result = 38;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateFeedItemTargetResult
+     */
+    public function getFeedItemTargetResult()
+    {
+        return $this->readOneof(38);
+    }
+
+    /**
+     * The result for the feed item target mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateFeedItemTargetResult feed_item_target_result = 38;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateFeedItemTargetResult $var
+     * @return $this
+     */
+    public function setFeedItemTargetResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateFeedItemTargetResult::class);
+        $this->writeOneof(38, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the feed mapping mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateFeedMappingResult feed_mapping_result = 39;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateFeedMappingResult
+     */
+    public function getFeedMappingResult()
+    {
+        return $this->readOneof(39);
+    }
+
+    /**
+     * The result for the feed mapping mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateFeedMappingResult feed_mapping_result = 39;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateFeedMappingResult $var
+     * @return $this
+     */
+    public function setFeedMappingResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateFeedMappingResult::class);
+        $this->writeOneof(39, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the feed mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateFeedResult feed_result = 40;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateFeedResult
+     */
+    public function getFeedResult()
+    {
+        return $this->readOneof(40);
+    }
+
+    /**
+     * The result for the feed mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateFeedResult feed_result = 40;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateFeedResult $var
+     * @return $this
+     */
+    public function setFeedResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateFeedResult::class);
+        $this->writeOneof(40, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateLabelResult label_result = 41;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateLabelResult
+     */
+    public function getLabelResult()
+    {
+        return $this->readOneof(41);
+    }
+
+    /**
+     * The result for the label mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateLabelResult label_result = 41;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateLabelResult $var
+     * @return $this
+     */
+    public function setLabelResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateLabelResult::class);
+        $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the media file mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateMediaFileResult media_file_result = 42;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateMediaFileResult
+     */
+    public function getMediaFileResult()
+    {
+        return $this->readOneof(42);
+    }
+
+    /**
+     * The result for the media file mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateMediaFileResult media_file_result = 42;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateMediaFileResult $var
+     * @return $this
+     */
+    public function setMediaFileResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateMediaFileResult::class);
+        $this->writeOneof(42, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the remarketing action mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateRemarketingActionResult remarketing_action_result = 43;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateRemarketingActionResult
+     */
+    public function getRemarketingActionResult()
+    {
+        return $this->readOneof(43);
+    }
+
+    /**
+     * The result for the remarketing action mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateRemarketingActionResult remarketing_action_result = 43;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateRemarketingActionResult $var
+     * @return $this
+     */
+    public function setRemarketingActionResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateRemarketingActionResult::class);
+        $this->writeOneof(43, $var);
 
         return $this;
     }

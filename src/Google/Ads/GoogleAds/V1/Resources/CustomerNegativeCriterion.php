@@ -53,6 +53,10 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      *           The type of the criterion.
      *     @type \Google\Ads\GoogleAds\V1\Common\ContentLabelInfo $content_label
      *           ContentLabel.
+     *     @type \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo $mobile_application
+     *           MobileApplication.
+     *     @type \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo $mobile_app_category
+     *           MobileAppCategory.
      *     @type \Google\Ads\GoogleAds\V1\Common\PlacementInfo $placement
      *           Placement.
      *     @type \Google\Ads\GoogleAds\V1\Common\YouTubeVideoInfo $youtube_video
@@ -170,6 +174,58 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\ContentLabelInfo::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * MobileApplication.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 5;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo
+     */
+    public function getMobileApplication()
+    {
+        return $this->readOneof(5);
+    }
+
+    /**
+     * MobileApplication.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileApplicationInfo mobile_application = 5;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo $var
+     * @return $this
+     */
+    public function setMobileApplication($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileApplicationInfo::class);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * MobileAppCategory.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileAppCategoryInfo mobile_app_category = 6;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo
+     */
+    public function getMobileAppCategory()
+    {
+        return $this->readOneof(6);
+    }
+
+    /**
+     * MobileAppCategory.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.MobileAppCategoryInfo mobile_app_category = 6;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo $var
+     * @return $this
+     */
+    public function setMobileAppCategory($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileAppCategoryInfo::class);
+        $this->writeOneof(6, $var);
 
         return $this;
     }

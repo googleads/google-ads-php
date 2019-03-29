@@ -73,6 +73,20 @@ class AuthorizationError
      * Generated from protobuf enum <code>CUSTOMER_NOT_ENABLED = 24;</code>
      */
     const CUSTOMER_NOT_ENABLED = 24;
+    /**
+     * The developer must sign the terms of service. They can be found here:
+     * ads.google.com/aw/apicenter
+     *
+     * Generated from protobuf enum <code>MISSING_TOS = 9;</code>
+     */
+    const MISSING_TOS = 9;
+    /**
+     * The developer token is not approved. Non-approved developer tokens can
+     * only be used with test accounts.
+     *
+     * Generated from protobuf enum <code>DEVELOPER_TOKEN_NOT_APPROVED = 10;</code>
+     */
+    const DEVELOPER_TOKEN_NOT_APPROVED = 10;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

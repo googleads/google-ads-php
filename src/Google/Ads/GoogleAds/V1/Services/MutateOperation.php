@@ -23,28 +23,74 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupAdLabelOperation $ad_group_ad_label_operation
+     *           An ad group ad label mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupAdOperation $ad_group_ad_operation
      *           An ad group ad mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupBidModifierOperation $ad_group_bid_modifier_operation
      *           An ad group bid modifier mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupCriterionLabelOperation $ad_group_criterion_label_operation
+     *           An ad group criterion label mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupCriterionOperation $ad_group_criterion_operation
      *           An ad group criterion mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupExtensionSettingOperation $ad_group_extension_setting_operation
+     *           An ad group extension setting mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupFeedOperation $ad_group_feed_operation
+     *           An ad group feed mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupLabelOperation $ad_group_label_operation
+     *           An ad group label mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\AdGroupOperation $ad_group_operation
      *           An ad group mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\AdParameterOperation $ad_parameter_operation
+     *           An ad parameter mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\AssetOperation $asset_operation
+     *           An asset mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\BiddingStrategyOperation $bidding_strategy_operation
      *           A bidding strategy mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\CampaignBidModifierOperation $campaign_bid_modifier_operation
      *           A campaign bid modifier mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\CampaignBudgetOperation $campaign_budget_operation
      *           A campaign budget mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation $campaign_criterion_operation
+     *           A campaign criterion mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CampaignExtensionSettingOperation $campaign_extension_setting_operation
+     *           A campaign extension setting mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CampaignFeedOperation $campaign_feed_operation
+     *           A campaign feed mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CampaignLabelOperation $campaign_label_operation
+     *           A campaign label mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\CampaignOperation $campaign_operation
      *           A campaign mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\CampaignSharedSetOperation $campaign_shared_set_operation
      *           A campaign shared set mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\ConversionActionOperation $conversion_action_operation
      *           A conversion action mutate operation.
-     *     @type \Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation $campaign_criterion_operation
-     *           A campaign criterion mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CustomerExtensionSettingOperation $customer_extension_setting_operation
+     *           A customer extension setting mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CustomerFeedOperation $customer_feed_operation
+     *           A customer feed mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CustomerLabelOperation $customer_label_operation
+     *           A customer label mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CustomerNegativeCriterionOperation $customer_negative_criterion_operation
+     *           A customer negative criterion mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\CustomerOperation $customer_operation
+     *           A customer mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\ExtensionFeedItemOperation $extension_feed_item_operation
+     *           An extension feed item mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\FeedItemOperation $feed_item_operation
+     *           A feed item mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\FeedItemTargetOperation $feed_item_target_operation
+     *           A feed item target mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\FeedMappingOperation $feed_mapping_operation
+     *           A feed mapping mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\FeedOperation $feed_operation
+     *           A feed mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\LabelOperation $label_operation
+     *           A label mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MediaFileOperation $media_file_operation
+     *           A media file mutate operation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\RemarketingActionOperation $remarketing_action_operation
+     *           A remarketing action mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\SharedCriterionOperation $shared_criterion_operation
      *           A shared criterion mutate operation.
      *     @type \Google\Ads\GoogleAds\V1\Services\SharedSetOperation $shared_set_operation
@@ -56,6 +102,32 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\V1\Services\GoogleAdsService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * An ad group ad label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupAdLabelOperation ad_group_ad_label_operation = 17;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\AdGroupAdLabelOperation
+     */
+    public function getAdGroupAdLabelOperation()
+    {
+        return $this->readOneof(17);
+    }
+
+    /**
+     * An ad group ad label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupAdLabelOperation ad_group_ad_label_operation = 17;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\AdGroupAdLabelOperation $var
+     * @return $this
+     */
+    public function setAdGroupAdLabelOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\AdGroupAdLabelOperation::class);
+        $this->writeOneof(17, $var);
+
+        return $this;
     }
 
     /**
@@ -111,6 +183,32 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * An ad group criterion label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupCriterionLabelOperation ad_group_criterion_label_operation = 18;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\AdGroupCriterionLabelOperation
+     */
+    public function getAdGroupCriterionLabelOperation()
+    {
+        return $this->readOneof(18);
+    }
+
+    /**
+     * An ad group criterion label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupCriterionLabelOperation ad_group_criterion_label_operation = 18;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\AdGroupCriterionLabelOperation $var
+     * @return $this
+     */
+    public function setAdGroupCriterionLabelOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\AdGroupCriterionLabelOperation::class);
+        $this->writeOneof(18, $var);
+
+        return $this;
+    }
+
+    /**
      * An ad group criterion mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupCriterionOperation ad_group_criterion_operation = 3;</code>
@@ -137,6 +235,84 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * An ad group extension setting mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupExtensionSettingOperation ad_group_extension_setting_operation = 19;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\AdGroupExtensionSettingOperation
+     */
+    public function getAdGroupExtensionSettingOperation()
+    {
+        return $this->readOneof(19);
+    }
+
+    /**
+     * An ad group extension setting mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupExtensionSettingOperation ad_group_extension_setting_operation = 19;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\AdGroupExtensionSettingOperation $var
+     * @return $this
+     */
+    public function setAdGroupExtensionSettingOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\AdGroupExtensionSettingOperation::class);
+        $this->writeOneof(19, $var);
+
+        return $this;
+    }
+
+    /**
+     * An ad group feed mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupFeedOperation ad_group_feed_operation = 20;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\AdGroupFeedOperation
+     */
+    public function getAdGroupFeedOperation()
+    {
+        return $this->readOneof(20);
+    }
+
+    /**
+     * An ad group feed mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupFeedOperation ad_group_feed_operation = 20;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\AdGroupFeedOperation $var
+     * @return $this
+     */
+    public function setAdGroupFeedOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\AdGroupFeedOperation::class);
+        $this->writeOneof(20, $var);
+
+        return $this;
+    }
+
+    /**
+     * An ad group label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupLabelOperation ad_group_label_operation = 21;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\AdGroupLabelOperation
+     */
+    public function getAdGroupLabelOperation()
+    {
+        return $this->readOneof(21);
+    }
+
+    /**
+     * An ad group label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupLabelOperation ad_group_label_operation = 21;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\AdGroupLabelOperation $var
+     * @return $this
+     */
+    public function setAdGroupLabelOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\AdGroupLabelOperation::class);
+        $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
      * An ad group mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdGroupOperation ad_group_operation = 5;</code>
@@ -158,6 +334,58 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\AdGroupOperation::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * An ad parameter mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdParameterOperation ad_parameter_operation = 22;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\AdParameterOperation
+     */
+    public function getAdParameterOperation()
+    {
+        return $this->readOneof(22);
+    }
+
+    /**
+     * An ad parameter mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AdParameterOperation ad_parameter_operation = 22;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\AdParameterOperation $var
+     * @return $this
+     */
+    public function setAdParameterOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\AdParameterOperation::class);
+        $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * An asset mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AssetOperation asset_operation = 23;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\AssetOperation
+     */
+    public function getAssetOperation()
+    {
+        return $this->readOneof(23);
+    }
+
+    /**
+     * An asset mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.AssetOperation asset_operation = 23;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\AssetOperation $var
+     * @return $this
+     */
+    public function setAssetOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\AssetOperation::class);
+        $this->writeOneof(23, $var);
 
         return $this;
     }
@@ -241,6 +469,110 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A campaign criterion mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignCriterionOperation campaign_criterion_operation = 13;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation
+     */
+    public function getCampaignCriterionOperation()
+    {
+        return $this->readOneof(13);
+    }
+
+    /**
+     * A campaign criterion mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignCriterionOperation campaign_criterion_operation = 13;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation $var
+     * @return $this
+     */
+    public function setCampaignCriterionOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation::class);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * A campaign extension setting mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignExtensionSettingOperation campaign_extension_setting_operation = 26;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CampaignExtensionSettingOperation
+     */
+    public function getCampaignExtensionSettingOperation()
+    {
+        return $this->readOneof(26);
+    }
+
+    /**
+     * A campaign extension setting mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignExtensionSettingOperation campaign_extension_setting_operation = 26;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CampaignExtensionSettingOperation $var
+     * @return $this
+     */
+    public function setCampaignExtensionSettingOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CampaignExtensionSettingOperation::class);
+        $this->writeOneof(26, $var);
+
+        return $this;
+    }
+
+    /**
+     * A campaign feed mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignFeedOperation campaign_feed_operation = 27;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CampaignFeedOperation
+     */
+    public function getCampaignFeedOperation()
+    {
+        return $this->readOneof(27);
+    }
+
+    /**
+     * A campaign feed mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignFeedOperation campaign_feed_operation = 27;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CampaignFeedOperation $var
+     * @return $this
+     */
+    public function setCampaignFeedOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CampaignFeedOperation::class);
+        $this->writeOneof(27, $var);
+
+        return $this;
+    }
+
+    /**
+     * A campaign label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignLabelOperation campaign_label_operation = 28;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CampaignLabelOperation
+     */
+    public function getCampaignLabelOperation()
+    {
+        return $this->readOneof(28);
+    }
+
+    /**
+     * A campaign label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignLabelOperation campaign_label_operation = 28;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CampaignLabelOperation $var
+     * @return $this
+     */
+    public function setCampaignLabelOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CampaignLabelOperation::class);
+        $this->writeOneof(28, $var);
+
+        return $this;
+    }
+
+    /**
      * A campaign mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignOperation campaign_operation = 10;</code>
@@ -319,27 +651,339 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A campaign criterion mutate operation.
+     * A customer extension setting mutate operation.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignCriterionOperation campaign_criterion_operation = 13;</code>
-     * @return \Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerExtensionSettingOperation customer_extension_setting_operation = 30;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CustomerExtensionSettingOperation
      */
-    public function getCampaignCriterionOperation()
+    public function getCustomerExtensionSettingOperation()
     {
-        return $this->readOneof(13);
+        return $this->readOneof(30);
     }
 
     /**
-     * A campaign criterion mutate operation.
+     * A customer extension setting mutate operation.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CampaignCriterionOperation campaign_criterion_operation = 13;</code>
-     * @param \Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation $var
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerExtensionSettingOperation customer_extension_setting_operation = 30;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CustomerExtensionSettingOperation $var
      * @return $this
      */
-    public function setCampaignCriterionOperation($var)
+    public function setCustomerExtensionSettingOperation($var)
     {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation::class);
-        $this->writeOneof(13, $var);
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CustomerExtensionSettingOperation::class);
+        $this->writeOneof(30, $var);
+
+        return $this;
+    }
+
+    /**
+     * A customer feed mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerFeedOperation customer_feed_operation = 31;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CustomerFeedOperation
+     */
+    public function getCustomerFeedOperation()
+    {
+        return $this->readOneof(31);
+    }
+
+    /**
+     * A customer feed mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerFeedOperation customer_feed_operation = 31;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CustomerFeedOperation $var
+     * @return $this
+     */
+    public function setCustomerFeedOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CustomerFeedOperation::class);
+        $this->writeOneof(31, $var);
+
+        return $this;
+    }
+
+    /**
+     * A customer label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerLabelOperation customer_label_operation = 32;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CustomerLabelOperation
+     */
+    public function getCustomerLabelOperation()
+    {
+        return $this->readOneof(32);
+    }
+
+    /**
+     * A customer label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerLabelOperation customer_label_operation = 32;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CustomerLabelOperation $var
+     * @return $this
+     */
+    public function setCustomerLabelOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CustomerLabelOperation::class);
+        $this->writeOneof(32, $var);
+
+        return $this;
+    }
+
+    /**
+     * A customer negative criterion mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerNegativeCriterionOperation customer_negative_criterion_operation = 34;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CustomerNegativeCriterionOperation
+     */
+    public function getCustomerNegativeCriterionOperation()
+    {
+        return $this->readOneof(34);
+    }
+
+    /**
+     * A customer negative criterion mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerNegativeCriterionOperation customer_negative_criterion_operation = 34;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CustomerNegativeCriterionOperation $var
+     * @return $this
+     */
+    public function setCustomerNegativeCriterionOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CustomerNegativeCriterionOperation::class);
+        $this->writeOneof(34, $var);
+
+        return $this;
+    }
+
+    /**
+     * A customer mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerOperation customer_operation = 35;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\CustomerOperation
+     */
+    public function getCustomerOperation()
+    {
+        return $this->readOneof(35);
+    }
+
+    /**
+     * A customer mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.CustomerOperation customer_operation = 35;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\CustomerOperation $var
+     * @return $this
+     */
+    public function setCustomerOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\CustomerOperation::class);
+        $this->writeOneof(35, $var);
+
+        return $this;
+    }
+
+    /**
+     * An extension feed item mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ExtensionFeedItemOperation extension_feed_item_operation = 36;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\ExtensionFeedItemOperation
+     */
+    public function getExtensionFeedItemOperation()
+    {
+        return $this->readOneof(36);
+    }
+
+    /**
+     * An extension feed item mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ExtensionFeedItemOperation extension_feed_item_operation = 36;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\ExtensionFeedItemOperation $var
+     * @return $this
+     */
+    public function setExtensionFeedItemOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\ExtensionFeedItemOperation::class);
+        $this->writeOneof(36, $var);
+
+        return $this;
+    }
+
+    /**
+     * A feed item mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.FeedItemOperation feed_item_operation = 37;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\FeedItemOperation
+     */
+    public function getFeedItemOperation()
+    {
+        return $this->readOneof(37);
+    }
+
+    /**
+     * A feed item mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.FeedItemOperation feed_item_operation = 37;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\FeedItemOperation $var
+     * @return $this
+     */
+    public function setFeedItemOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\FeedItemOperation::class);
+        $this->writeOneof(37, $var);
+
+        return $this;
+    }
+
+    /**
+     * A feed item target mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.FeedItemTargetOperation feed_item_target_operation = 38;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\FeedItemTargetOperation
+     */
+    public function getFeedItemTargetOperation()
+    {
+        return $this->readOneof(38);
+    }
+
+    /**
+     * A feed item target mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.FeedItemTargetOperation feed_item_target_operation = 38;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\FeedItemTargetOperation $var
+     * @return $this
+     */
+    public function setFeedItemTargetOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\FeedItemTargetOperation::class);
+        $this->writeOneof(38, $var);
+
+        return $this;
+    }
+
+    /**
+     * A feed mapping mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.FeedMappingOperation feed_mapping_operation = 39;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\FeedMappingOperation
+     */
+    public function getFeedMappingOperation()
+    {
+        return $this->readOneof(39);
+    }
+
+    /**
+     * A feed mapping mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.FeedMappingOperation feed_mapping_operation = 39;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\FeedMappingOperation $var
+     * @return $this
+     */
+    public function setFeedMappingOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\FeedMappingOperation::class);
+        $this->writeOneof(39, $var);
+
+        return $this;
+    }
+
+    /**
+     * A feed mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.FeedOperation feed_operation = 40;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\FeedOperation
+     */
+    public function getFeedOperation()
+    {
+        return $this->readOneof(40);
+    }
+
+    /**
+     * A feed mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.FeedOperation feed_operation = 40;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\FeedOperation $var
+     * @return $this
+     */
+    public function setFeedOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\FeedOperation::class);
+        $this->writeOneof(40, $var);
+
+        return $this;
+    }
+
+    /**
+     * A label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.LabelOperation label_operation = 41;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\LabelOperation
+     */
+    public function getLabelOperation()
+    {
+        return $this->readOneof(41);
+    }
+
+    /**
+     * A label mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.LabelOperation label_operation = 41;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\LabelOperation $var
+     * @return $this
+     */
+    public function setLabelOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\LabelOperation::class);
+        $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * A media file mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MediaFileOperation media_file_operation = 42;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MediaFileOperation
+     */
+    public function getMediaFileOperation()
+    {
+        return $this->readOneof(42);
+    }
+
+    /**
+     * A media file mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MediaFileOperation media_file_operation = 42;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MediaFileOperation $var
+     * @return $this
+     */
+    public function setMediaFileOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MediaFileOperation::class);
+        $this->writeOneof(42, $var);
+
+        return $this;
+    }
+
+    /**
+     * A remarketing action mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.RemarketingActionOperation remarketing_action_operation = 43;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\RemarketingActionOperation
+     */
+    public function getRemarketingActionOperation()
+    {
+        return $this->readOneof(43);
+    }
+
+    /**
+     * A remarketing action mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.RemarketingActionOperation remarketing_action_operation = 43;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\RemarketingActionOperation $var
+     * @return $this
+     */
+    public function setRemarketingActionOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\RemarketingActionOperation::class);
+        $this->writeOneof(43, $var);
 
         return $this;
     }

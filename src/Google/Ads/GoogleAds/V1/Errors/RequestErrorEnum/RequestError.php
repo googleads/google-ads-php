@@ -72,6 +72,12 @@ class RequestError
      */
     const EXPIRED_PAGE_TOKEN = 8;
     /**
+     * Page size specified in user request is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_PAGE_SIZE = 22;</code>
+     */
+    const INVALID_PAGE_SIZE = 22;
+    /**
      * Required field is missing.
      *
      * Generated from protobuf enum <code>REQUIRED_FIELD_MISSING = 9;</code>

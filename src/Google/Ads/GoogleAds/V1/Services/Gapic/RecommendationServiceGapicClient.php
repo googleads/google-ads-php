@@ -119,7 +119,7 @@ class RecommendationServiceGapicClient
 
     private static function getRecommendationNameTemplate()
     {
-        if (self::$recommendationNameTemplate == null) {
+        if (null == self::$recommendationNameTemplate) {
             self::$recommendationNameTemplate = new PathTemplate('customers/{customer}/recommendations/{recommendation}');
         }
 
@@ -128,7 +128,7 @@ class RecommendationServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'recommendation' => self::getRecommendationNameTemplate(),
             ];

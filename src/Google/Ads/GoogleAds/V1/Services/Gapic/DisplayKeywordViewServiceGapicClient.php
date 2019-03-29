@@ -113,7 +113,7 @@ class DisplayKeywordViewServiceGapicClient
 
     private static function getDisplayKeywordViewNameTemplate()
     {
-        if (self::$displayKeywordViewNameTemplate == null) {
+        if (null == self::$displayKeywordViewNameTemplate) {
             self::$displayKeywordViewNameTemplate = new PathTemplate('customers/{customer}/displayKeywordViews/{display_keyword_view}');
         }
 
@@ -122,7 +122,7 @@ class DisplayKeywordViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'displayKeywordView' => self::getDisplayKeywordViewNameTemplate(),
             ];

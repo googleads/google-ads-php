@@ -106,6 +106,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $domain_category = null;
     /**
+     * The asset referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Asset asset = 105;</code>
+     */
+    private $asset = null;
+    /**
      * The bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.BiddingStrategy bidding_strategy = 18;</code>
@@ -147,12 +153,6 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignCriterion campaign_criterion = 20;</code>
      */
     private $campaign_criterion = null;
-    /**
-     * The campaign criterion simulation referenced in the query.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;</code>
-     */
-    private $campaign_criterion_simulation = null;
     /**
      * The campaign extension setting referenced in the query.
      *
@@ -321,6 +321,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.GeoTargetConstant geo_target_constant = 23;</code>
      */
     private $geo_target_constant = null;
+    /**
+     * The geographic view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.GeographicView geographic_view = 125;</code>
+     */
+    private $geographic_view = null;
     /**
      * The group placement view referenced in the query.
      *
@@ -556,6 +562,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The ad schedule view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\DomainCategory $domain_category
      *           The domain category referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\Asset $asset
+     *           The asset referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\BiddingStrategy $bidding_strategy
      *           The bidding strategy referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\BillingSetup $billing_setup
@@ -570,8 +578,6 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The campaign bid modifier referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignCriterion $campaign_criterion
      *           The campaign criterion referenced in the query.
-     *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation $campaign_criterion_simulation
-     *           The campaign criterion simulation referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignExtensionSetting $campaign_extension_setting
      *           The campaign extension setting referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignFeed $campaign_feed
@@ -628,6 +634,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The gender view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\GeoTargetConstant $geo_target_constant
      *           The geo target constant referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\GeographicView $geographic_view
+     *           The geographic view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\GroupPlacementView $group_placement_view
      *           The group placement view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\HotelGroupView $hotel_group_view
@@ -1092,6 +1100,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The asset referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Asset asset = 105;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\Asset
+     */
+    public function getAsset()
+    {
+        return $this->asset;
+    }
+
+    /**
+     * The asset referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Asset asset = 105;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\Asset $var
+     * @return $this
+     */
+    public function setAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\Asset::class);
+        $this->asset = $var;
+
+        return $this;
+    }
+
+    /**
      * The bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.BiddingStrategy bidding_strategy = 18;</code>
@@ -1269,32 +1303,6 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\CampaignCriterion::class);
         $this->campaign_criterion = $var;
-
-        return $this;
-    }
-
-    /**
-     * The campaign criterion simulation referenced in the query.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;</code>
-     * @return \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation
-     */
-    public function getCampaignCriterionSimulation()
-    {
-        return $this->campaign_criterion_simulation;
-    }
-
-    /**
-     * The campaign criterion simulation referenced in the query.
-     *
-     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;</code>
-     * @param \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation $var
-     * @return $this
-     */
-    public function setCampaignCriterionSimulation($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation::class);
-        $this->campaign_criterion_simulation = $var;
 
         return $this;
     }
@@ -2023,6 +2031,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\GeoTargetConstant::class);
         $this->geo_target_constant = $var;
+
+        return $this;
+    }
+
+    /**
+     * The geographic view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.GeographicView geographic_view = 125;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\GeographicView
+     */
+    public function getGeographicView()
+    {
+        return $this->geographic_view;
+    }
+
+    /**
+     * The geographic view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.GeographicView geographic_view = 125;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\GeographicView $var
+     * @return $this
+     */
+    public function setGeographicView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\GeographicView::class);
+        $this->geographic_view = $var;
 
         return $this;
     }

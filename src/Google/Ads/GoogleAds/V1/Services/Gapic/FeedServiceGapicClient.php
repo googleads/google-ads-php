@@ -116,7 +116,7 @@ class FeedServiceGapicClient
 
     private static function getFeedNameTemplate()
     {
-        if (self::$feedNameTemplate == null) {
+        if (null == self::$feedNameTemplate) {
             self::$feedNameTemplate = new PathTemplate('customers/{customer}/feeds/{feed}');
         }
 
@@ -125,7 +125,7 @@ class FeedServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'feed' => self::getFeedNameTemplate(),
             ];

@@ -40,12 +40,11 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     /**
      * Any extra information related to this error which is not captured by
      * validation_error and feed_attribute_id (e.g. placeholder field IDs when
-     * feed_attribute_id is not mapped). Note that extra_information is not
-     * localized.
+     * feed_attribute_id is not mapped). Note that extra_info is not localized.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue extra_information = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue extra_info = 5;</code>
      */
-    private $extra_information = null;
+    private $extra_info = null;
 
     /**
      * Constructor.
@@ -62,11 +61,10 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      *           Set of feed attributes in the feed item flagged during validation. If
      *           empty, no specific feed attributes can be associated with the error
      *           (e.g. error across the entire feed item).
-     *     @type \Google\Protobuf\StringValue $extra_information
+     *     @type \Google\Protobuf\StringValue $extra_info
      *           Any extra information related to this error which is not captured by
      *           validation_error and feed_attribute_id (e.g. placeholder field IDs when
-     *           feed_attribute_id is not mapped). Note that extra_information is not
-     *           localized.
+     *           feed_attribute_id is not mapped). Note that extra_info is not localized.
      * }
      */
     public function __construct($data = NULL) {
@@ -161,31 +159,29 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     /**
      * Any extra information related to this error which is not captured by
      * validation_error and feed_attribute_id (e.g. placeholder field IDs when
-     * feed_attribute_id is not mapped). Note that extra_information is not
-     * localized.
+     * feed_attribute_id is not mapped). Note that extra_info is not localized.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue extra_information = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue extra_info = 5;</code>
      * @return \Google\Protobuf\StringValue
      */
-    public function getExtraInformation()
+    public function getExtraInfo()
     {
-        return $this->extra_information;
+        return $this->extra_info;
     }
 
     /**
      * Any extra information related to this error which is not captured by
      * validation_error and feed_attribute_id (e.g. placeholder field IDs when
-     * feed_attribute_id is not mapped). Note that extra_information is not
-     * localized.
+     * feed_attribute_id is not mapped). Note that extra_info is not localized.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue extra_information = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue extra_info = 5;</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
-    public function setExtraInformation($var)
+    public function setExtraInfo($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->extra_information = $var;
+        $this->extra_info = $var;
 
         return $this;
     }

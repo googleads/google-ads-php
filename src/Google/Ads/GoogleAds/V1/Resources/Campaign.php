@@ -135,6 +135,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $geo_target_type_setting = null;
     /**
+     * The setting related to App Campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting app_campaign_setting = 51;</code>
+     */
+    private $app_campaign_setting = null;
+    /**
      * The budget of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
@@ -202,6 +208,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.TrackingSetting tracking_setting = 46;</code>
      */
     private $tracking_setting = null;
+    /**
+     * Payment mode for the campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode payment_mode = 52;</code>
+     */
+    private $payment_mode = 0;
     protected $campaign_bidding_strategy;
 
     /**
@@ -261,6 +273,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           Setting for targeting related features.
      *     @type \Google\Ads\GoogleAds\V1\Resources\Campaign\GeoTargetTypeSetting $geo_target_type_setting
      *           The setting for ads geotargeting.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\Campaign\AppCampaignSetting $app_campaign_setting
+     *           The setting related to App Campaign.
      *     @type \Google\Protobuf\StringValue $campaign_budget
      *           The budget of the campaign.
      *     @type int $bidding_strategy_type
@@ -289,8 +303,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           conversion actions to optimize this campaign towards.
      *     @type \Google\Ads\GoogleAds\V1\Resources\Campaign\TrackingSetting $tracking_setting
      *           Campaign level settings for tracking information.
+     *     @type int $payment_mode
+     *           Payment mode for the campaign.
      *     @type \Google\Protobuf\StringValue $bidding_strategy
      *           Portfolio bidding strategy used by campaign.
+     *     @type \Google\Ads\GoogleAds\V1\Common\Commission $commission
+     *           Commission is an automatic bidding strategy in which the advertiser pays
+     *           a certain portion of the conversion value.
      *     @type \Google\Ads\GoogleAds\V1\Common\ManualCpc $manual_cpc
      *           Standard Manual CPC bidding strategy.
      *           Manual click-based bidding where user pays per click.
@@ -809,6 +828,32 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The setting related to App Campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting app_campaign_setting = 51;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\Campaign\AppCampaignSetting
+     */
+    public function getAppCampaignSetting()
+    {
+        return $this->app_campaign_setting;
+    }
+
+    /**
+     * The setting related to App Campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting app_campaign_setting = 51;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\Campaign\AppCampaignSetting $var
+     * @return $this
+     */
+    public function setAppCampaignSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\Campaign_AppCampaignSetting::class);
+        $this->app_campaign_setting = $var;
+
+        return $this;
+    }
+
+    /**
      * The budget of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
@@ -1085,6 +1130,32 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Payment mode for the campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode payment_mode = 52;</code>
+     * @return int
+     */
+    public function getPaymentMode()
+    {
+        return $this->payment_mode;
+    }
+
+    /**
+     * Payment mode for the campaign.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode payment_mode = 52;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPaymentMode($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\PaymentModeEnum_PaymentMode::class);
+        $this->payment_mode = $var;
+
+        return $this;
+    }
+
+    /**
      * Portfolio bidding strategy used by campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
@@ -1106,6 +1177,34 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->writeOneof(23, $var);
+
+        return $this;
+    }
+
+    /**
+     * Commission is an automatic bidding strategy in which the advertiser pays
+     * a certain portion of the conversion value.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.Commission commission = 49;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\Commission
+     */
+    public function getCommission()
+    {
+        return $this->readOneof(49);
+    }
+
+    /**
+     * Commission is an automatic bidding strategy in which the advertiser pays
+     * a certain portion of the conversion value.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.Commission commission = 49;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\Commission $var
+     * @return $this
+     */
+    public function setCommission($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\Commission::class);
+        $this->writeOneof(49, $var);
 
         return $this;
     }

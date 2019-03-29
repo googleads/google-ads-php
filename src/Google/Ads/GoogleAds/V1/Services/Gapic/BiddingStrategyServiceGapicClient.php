@@ -116,7 +116,7 @@ class BiddingStrategyServiceGapicClient
 
     private static function getBiddingStrategyNameTemplate()
     {
-        if (self::$biddingStrategyNameTemplate == null) {
+        if (null == self::$biddingStrategyNameTemplate) {
             self::$biddingStrategyNameTemplate = new PathTemplate('customers/{customer}/biddingStrategies/{bidding_strategy}');
         }
 
@@ -125,7 +125,7 @@ class BiddingStrategyServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'biddingStrategy' => self::getBiddingStrategyNameTemplate(),
             ];

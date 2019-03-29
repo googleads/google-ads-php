@@ -113,7 +113,7 @@ class ParentalStatusViewServiceGapicClient
 
     private static function getParentalStatusViewNameTemplate()
     {
-        if (self::$parentalStatusViewNameTemplate == null) {
+        if (null == self::$parentalStatusViewNameTemplate) {
             self::$parentalStatusViewNameTemplate = new PathTemplate('customers/{customer}/parentalStatusViews/{parental_status_view}');
         }
 
@@ -122,7 +122,7 @@ class ParentalStatusViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'parentalStatusView' => self::getParentalStatusViewNameTemplate(),
             ];

@@ -116,7 +116,7 @@ class ExtensionFeedItemServiceGapicClient
 
     private static function getExtensionFeedItemNameTemplate()
     {
-        if (self::$extensionFeedItemNameTemplate == null) {
+        if (null == self::$extensionFeedItemNameTemplate) {
             self::$extensionFeedItemNameTemplate = new PathTemplate('customers/{customer}/extensionFeedItems/{extension_feed_item}');
         }
 
@@ -125,7 +125,7 @@ class ExtensionFeedItemServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'extensionFeedItem' => self::getExtensionFeedItemNameTemplate(),
             ];

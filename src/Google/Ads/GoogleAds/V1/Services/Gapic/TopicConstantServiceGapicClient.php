@@ -113,7 +113,7 @@ class TopicConstantServiceGapicClient
 
     private static function getTopicConstantNameTemplate()
     {
-        if (self::$topicConstantNameTemplate == null) {
+        if (null == self::$topicConstantNameTemplate) {
             self::$topicConstantNameTemplate = new PathTemplate('topicConstants/{topic_constant}');
         }
 
@@ -122,7 +122,7 @@ class TopicConstantServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'topicConstant' => self::getTopicConstantNameTemplate(),
             ];

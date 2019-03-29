@@ -116,7 +116,7 @@ class RemarketingActionServiceGapicClient
 
     private static function getRemarketingActionNameTemplate()
     {
-        if (self::$remarketingActionNameTemplate == null) {
+        if (null == self::$remarketingActionNameTemplate) {
             self::$remarketingActionNameTemplate = new PathTemplate('customers/{customer}/remarketingActions/{remarketing_action}');
         }
 
@@ -125,7 +125,7 @@ class RemarketingActionServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'remarketingAction' => self::getRemarketingActionNameTemplate(),
             ];

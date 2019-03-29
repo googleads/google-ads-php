@@ -33,6 +33,7 @@ use Google\Ads\GoogleAds\V1\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdParameterServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdScheduleViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AgeRangeViewServiceClient;
+use Google\Ads\GoogleAds\V1\Services\AssetServiceClient;
 use Google\Ads\GoogleAds\V1\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V1\Services\BillingSetupServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignAudienceViewServiceClient;
@@ -49,6 +50,7 @@ use Google\Ads\GoogleAds\V1\Services\CarrierConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ChangeStatusServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ClickViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ConversionActionServiceClient;
+use Google\Ads\GoogleAds\V1\Services\ConversionAdjustmentUploadServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ConversionUploadServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CustomerClientServiceClient;
@@ -60,6 +62,7 @@ use Google\Ads\GoogleAds\V1\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V1\Services\DisplayKeywordViewServiceClient;
+use Google\Ads\GoogleAds\V1\Services\DetailPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\DomainCategoryServiceClient;
 use Google\Ads\GoogleAds\V1\Services\DynamicSearchAdsSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ExtensionFeedItemServiceClient;
@@ -69,9 +72,11 @@ use Google\Ads\GoogleAds\V1\Services\FeedMappingServiceClient;
 use Google\Ads\GoogleAds\V1\Services\FeedPlaceholderViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\FeedServiceClient;
 use Google\Ads\GoogleAds\V1\Services\GenderViewServiceClient;
+use Google\Ads\GoogleAds\V1\Services\GeographicViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsFieldServiceClient;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\V1\Services\GroupPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\HotelGroupViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\HotelPerformanceViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\KeywordPlanAdGroupServiceClient;
@@ -86,6 +91,7 @@ use Google\Ads\GoogleAds\V1\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\LocationViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ManagedPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\MediaFileServiceClient;
+use Google\Ads\GoogleAds\V1\Services\MerchantCenterLinkServiceClient;
 use Google\Ads\GoogleAds\V1\Services\MobileAppCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\MobileDeviceConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\MutateJobServiceClient;
@@ -275,6 +281,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return AssetServiceClient
+     */
+    public function getAssetServiceClient()
+    {
+        return new AssetServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return BiddingStrategyServiceClient
      */
     public function getBiddingStrategyServiceClient()
@@ -403,6 +417,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return ConversionAdjustmentUploadServiceClient
+     */
+    public function getConversionAdjustmentUploadServiceClient()
+    {
+        return new ConversionAdjustmentUploadServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return ConversionUploadServiceClient
      */
     public function getConversionUploadServiceClient()
@@ -491,6 +513,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return DetailPlacementViewServiceClient
+     */
+    public function getDetailPlacementViewServiceClient()
+    {
+        return new DetailPlacementViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return DomainCategoryServiceClient
      */
     public function getDomainCategoryServiceClient()
@@ -563,6 +593,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return GeographicViewServiceClient
+     */
+    public function getGeographicViewServiceClient()
+    {
+        return new GeographicViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return GeoTargetConstantServiceClient
      */
     public function getGeoTargetConstantServiceClient()
@@ -592,6 +630,14 @@ trait ServiceClientFactoryTrait
     public function getHotelPerformanceViewServiceClient()
     {
         return new HotelPerformanceViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return GroupPlacementViewServiceClient
+     */
+    public function getGroupPlacementViewServiceClient()
+    {
+        return new GroupPlacementViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -696,6 +742,14 @@ trait ServiceClientFactoryTrait
     public function getMediaFileServiceClient()
     {
         return new MediaFileServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return MerchantCenterLinkServiceClient
+     */
+    public function getMerchantCenterLinkServiceClient()
+    {
+        return new MerchantCenterLinkServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

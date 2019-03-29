@@ -116,7 +116,7 @@ class AdGroupExtensionSettingServiceGapicClient
 
     private static function getAdGroupExtensionSettingNameTemplate()
     {
-        if (self::$adGroupExtensionSettingNameTemplate == null) {
+        if (null == self::$adGroupExtensionSettingNameTemplate) {
             self::$adGroupExtensionSettingNameTemplate = new PathTemplate('customers/{customer}/adGroupExtensionSettings/{ad_group_extension_setting}');
         }
 
@@ -125,7 +125,7 @@ class AdGroupExtensionSettingServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'adGroupExtensionSetting' => self::getAdGroupExtensionSettingNameTemplate(),
             ];

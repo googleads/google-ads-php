@@ -113,7 +113,7 @@ class MobileAppCategoryConstantServiceGapicClient
 
     private static function getMobileAppCategoryConstantNameTemplate()
     {
-        if (self::$mobileAppCategoryConstantNameTemplate == null) {
+        if (null == self::$mobileAppCategoryConstantNameTemplate) {
             self::$mobileAppCategoryConstantNameTemplate = new PathTemplate('mobileAppCategoryConstants/{mobile_app_category_constant}');
         }
 
@@ -122,7 +122,7 @@ class MobileAppCategoryConstantServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'mobileAppCategoryConstant' => self::getMobileAppCategoryConstantNameTemplate(),
             ];

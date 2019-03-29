@@ -63,6 +63,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the ad sharing error
      *     @type int $adx_error
      *           The reasons for the adx error
+     *     @type int $asset_error
+     *           The reasons for the asset error
      *     @type int $bidding_error
      *           The reasons for the bidding errors
      *     @type int $campaign_criterion_error
@@ -139,6 +141,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the campaign shared set error
      *     @type int $conversion_action_error
      *           The reasons for the conversion action error
+     *     @type int $conversion_adjustment_upload_error
+     *           The reasons for the conversion adjustment upload error
      *     @type int $conversion_upload_error
      *           The reasons for the conversion upload error
      *     @type int $header_error
@@ -173,6 +177,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the geo target constant suggestion error.
      *     @type int $feed_item_error
      *           The reasons for the feed item error
+     *     @type int $label_error
+     *           The reason for the label error.
      *     @type int $billing_setup_error
      *           The reasons for the billing setup error
      *     @type int $customer_client_link_error
@@ -205,6 +211,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the mutate job error
      *     @type int $partial_failure_error
      *           The reasons for the mutate job error
+     *     @type int $policy_validation_parameter_error
+     *           The reasons for the policy validation parameter error
      * }
      */
     public function __construct($data = NULL) {
@@ -728,6 +736,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\AdxErrorEnum_AdxError::class);
         $this->writeOneof(25, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the asset error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.AssetErrorEnum.AssetError asset_error = 107;</code>
+     * @return int
+     */
+    public function getAssetError()
+    {
+        return $this->readOneof(107);
+    }
+
+    /**
+     * The reasons for the asset error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.AssetErrorEnum.AssetError asset_error = 107;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAssetError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\AssetErrorEnum_AssetError::class);
+        $this->writeOneof(107, $var);
 
         return $this;
     }
@@ -1721,6 +1755,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for the conversion adjustment upload error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError conversion_adjustment_upload_error = 115;</code>
+     * @return int
+     */
+    public function getConversionAdjustmentUploadError()
+    {
+        return $this->readOneof(115);
+    }
+
+    /**
+     * The reasons for the conversion adjustment upload error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ConversionAdjustmentUploadErrorEnum.ConversionAdjustmentUploadError conversion_adjustment_upload_error = 115;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionAdjustmentUploadError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\ConversionAdjustmentUploadErrorEnum_ConversionAdjustmentUploadError::class);
+        $this->writeOneof(115, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the conversion upload error
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ConversionUploadErrorEnum.ConversionUploadError conversion_upload_error = 111;</code>
@@ -2163,6 +2223,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reason for the label error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.LabelErrorEnum.LabelError label_error = 84;</code>
+     * @return int
+     */
+    public function getLabelError()
+    {
+        return $this->readOneof(84);
+    }
+
+    /**
+     * The reason for the label error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.LabelErrorEnum.LabelError label_error = 84;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLabelError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\LabelErrorEnum_LabelError::class);
+        $this->writeOneof(84, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the billing setup error
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.BillingSetupErrorEnum.BillingSetupError billing_setup_error = 87;</code>
@@ -2574,6 +2660,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\PartialFailureErrorEnum_PartialFailureError::class);
         $this->writeOneof(112, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the policy validation parameter error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.PolicyValidationParameterErrorEnum.PolicyValidationParameterError policy_validation_parameter_error = 114;</code>
+     * @return int
+     */
+    public function getPolicyValidationParameterError()
+    {
+        return $this->readOneof(114);
+    }
+
+    /**
+     * The reasons for the policy validation parameter error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.PolicyValidationParameterErrorEnum.PolicyValidationParameterError policy_validation_parameter_error = 114;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPolicyValidationParameterError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\PolicyValidationParameterErrorEnum_PolicyValidationParameterError::class);
+        $this->writeOneof(114, $var);
 
         return $this;
     }

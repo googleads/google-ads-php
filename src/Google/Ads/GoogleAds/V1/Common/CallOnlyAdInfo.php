@@ -34,6 +34,18 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      */
     private $business_name = null;
     /**
+     * First headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline1 = 11;</code>
+     */
+    private $headline1 = null;
+    /**
+     * Second headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline2 = 12;</code>
+     */
+    private $headline2 = null;
+    /**
      * The first line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 4;</code>
@@ -95,6 +107,10 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      *           The phone number in the ad.
      *     @type \Google\Protobuf\StringValue $business_name
      *           The business name in the ad.
+     *     @type \Google\Protobuf\StringValue $headline1
+     *           First headline in the ad.
+     *     @type \Google\Protobuf\StringValue $headline2
+     *           Second headline in the ad.
      *     @type \Google\Protobuf\StringValue $description1
      *           The first line of the ad's description.
      *     @type \Google\Protobuf\StringValue $description2
@@ -197,6 +213,58 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->business_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * First headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline1 = 11;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getHeadline1()
+    {
+        return $this->headline1;
+    }
+
+    /**
+     * First headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline1 = 11;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setHeadline1($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->headline1 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Second headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline2 = 12;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getHeadline2()
+    {
+        return $this->headline2;
+    }
+
+    /**
+     * Second headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline2 = 12;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setHeadline2($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->headline2 = $var;
 
         return $this;
     }

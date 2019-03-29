@@ -126,7 +126,7 @@ class MutateJobServiceGapicClient
 
     private static function getMutateJobNameTemplate()
     {
-        if (self::$mutateJobNameTemplate == null) {
+        if (null == self::$mutateJobNameTemplate) {
             self::$mutateJobNameTemplate = new PathTemplate('customers/{customer}/mutateJobs/{mutate_job}');
         }
 
@@ -135,7 +135,7 @@ class MutateJobServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'mutateJob' => self::getMutateJobNameTemplate(),
             ];

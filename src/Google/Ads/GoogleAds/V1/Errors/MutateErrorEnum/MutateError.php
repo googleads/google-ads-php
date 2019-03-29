@@ -54,6 +54,12 @@ class MutateError
      * Generated from protobuf enum <code>RESOURCE_NOT_IN_GOOGLE_ADS = 10;</code>
      */
     const RESOURCE_NOT_IN_GOOGLE_ADS = 10;
+    /**
+     * The resource being created already exists.
+     *
+     * Generated from protobuf enum <code>RESOURCE_ALREADY_EXISTS = 11;</code>
+     */
+    const RESOURCE_ALREADY_EXISTS = 11;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

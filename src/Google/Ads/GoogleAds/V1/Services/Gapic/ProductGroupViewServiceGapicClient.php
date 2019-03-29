@@ -113,7 +113,7 @@ class ProductGroupViewServiceGapicClient
 
     private static function getProductGroupViewNameTemplate()
     {
-        if (self::$productGroupViewNameTemplate == null) {
+        if (null == self::$productGroupViewNameTemplate) {
             self::$productGroupViewNameTemplate = new PathTemplate('customers/{customer}/productGroupViews/{product_group_view}');
         }
 
@@ -122,7 +122,7 @@ class ProductGroupViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'productGroupView' => self::getProductGroupViewNameTemplate(),
             ];

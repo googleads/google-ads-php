@@ -10,8 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Information about the operation to apply a recommendation and any parameters
- * to
- * customize it.
+ * to customize it.
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.services.ApplyRecommendationOperation</code>
  */
@@ -43,6 +42,8 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\TargetCpaOptInParameters $target_cpa_opt_in
      *           Optional parameters to use when applying target CPA opt-in
      *           recommendation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters $move_unused_budget
+     *           Parameters to use when applying move unused budget recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -180,6 +181,32 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation_TargetCpaOptInParameters::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parameters to use when applying move unused budget recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters move_unused_budget = 9;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters
+     */
+    public function getMoveUnusedBudget()
+    {
+        return $this->readOneof(9);
+    }
+
+    /**
+     * Parameters to use when applying move unused budget recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters move_unused_budget = 9;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters $var
+     * @return $this
+     */
+    public function setMoveUnusedBudget($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation_MoveUnusedBudgetParameters::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }

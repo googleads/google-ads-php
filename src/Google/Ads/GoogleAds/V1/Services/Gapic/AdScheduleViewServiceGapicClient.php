@@ -113,7 +113,7 @@ class AdScheduleViewServiceGapicClient
 
     private static function getAdScheduleViewNameTemplate()
     {
-        if (self::$adScheduleViewNameTemplate == null) {
+        if (null == self::$adScheduleViewNameTemplate) {
             self::$adScheduleViewNameTemplate = new PathTemplate('customers/{customer}/adScheduleViews/{ad_schedule_view}');
         }
 
@@ -122,7 +122,7 @@ class AdScheduleViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'adScheduleView' => self::getAdScheduleViewNameTemplate(),
             ];

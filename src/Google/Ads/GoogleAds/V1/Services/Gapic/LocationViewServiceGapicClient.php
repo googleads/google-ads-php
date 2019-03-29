@@ -113,7 +113,7 @@ class LocationViewServiceGapicClient
 
     private static function getLocationViewNameTemplate()
     {
-        if (self::$locationViewNameTemplate == null) {
+        if (null == self::$locationViewNameTemplate) {
             self::$locationViewNameTemplate = new PathTemplate('customers/{customer}/locationViews/{location_view}');
         }
 
@@ -122,7 +122,7 @@ class LocationViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'locationView' => self::getLocationViewNameTemplate(),
             ];

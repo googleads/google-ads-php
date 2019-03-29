@@ -124,7 +124,7 @@ class BillingSetupServiceGapicClient
 
     private static function getBillingSetupNameTemplate()
     {
-        if (self::$billingSetupNameTemplate == null) {
+        if (null == self::$billingSetupNameTemplate) {
             self::$billingSetupNameTemplate = new PathTemplate('customers/{customer}/billingSetups/{billing_setup}');
         }
 
@@ -133,7 +133,7 @@ class BillingSetupServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'billingSetup' => self::getBillingSetupNameTemplate(),
             ];

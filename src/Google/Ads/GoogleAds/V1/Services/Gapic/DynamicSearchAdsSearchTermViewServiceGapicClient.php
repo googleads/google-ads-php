@@ -113,7 +113,7 @@ class DynamicSearchAdsSearchTermViewServiceGapicClient
 
     private static function getDynamicSearchAdsSearchTermViewNameTemplate()
     {
-        if (self::$dynamicSearchAdsSearchTermViewNameTemplate == null) {
+        if (null == self::$dynamicSearchAdsSearchTermViewNameTemplate) {
             self::$dynamicSearchAdsSearchTermViewNameTemplate = new PathTemplate('customers/{customer}/dynamicSearchAdsSearchTermViews/{dynamic_search_ads_search_term_view}');
         }
 
@@ -122,7 +122,7 @@ class DynamicSearchAdsSearchTermViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'dynamicSearchAdsSearchTermView' => self::getDynamicSearchAdsSearchTermViewNameTemplate(),
             ];

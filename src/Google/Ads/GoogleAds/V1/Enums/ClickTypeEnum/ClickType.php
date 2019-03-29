@@ -330,7 +330,7 @@ class ClickType
      */
     const PRICE_EXTENSION = 54;
     /**
-     * Hotel Book-on-Google room selection.
+     * Book on Google hotel room selection.
      *
      * Generated from protobuf enum <code>HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION = 55;</code>
      */

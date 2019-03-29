@@ -37,6 +37,19 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue estimated_completion_ratio = 3;</code>
      */
     private $estimated_completion_ratio = null;
+    /**
+     * The number of mutate operations in the mutate job.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value operation_count = 4;</code>
+     */
+    private $operation_count = null;
+    /**
+     * The number of mutate operations executed by the mutate job.
+     * Present only if the job has started running.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value executed_operation_count = 5;</code>
+     */
+    private $executed_operation_count = null;
 
     /**
      * Constructor.
@@ -53,6 +66,11 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\DoubleValue $estimated_completion_ratio
      *           The fraction (between 0.0 and 1.0) of mutates that have been processed.
      *           This is empty if the job hasn't started running yet.
+     *     @type \Google\Protobuf\Int64Value $operation_count
+     *           The number of mutate operations in the mutate job.
+     *     @type \Google\Protobuf\Int64Value $executed_operation_count
+     *           The number of mutate operations executed by the mutate job.
+     *           Present only if the job has started running.
      * }
      */
     public function __construct($data = NULL) {
@@ -140,6 +158,60 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->estimated_completion_ratio = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of mutate operations in the mutate job.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value operation_count = 4;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getOperationCount()
+    {
+        return $this->operation_count;
+    }
+
+    /**
+     * The number of mutate operations in the mutate job.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value operation_count = 4;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setOperationCount($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->operation_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of mutate operations executed by the mutate job.
+     * Present only if the job has started running.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value executed_operation_count = 5;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getExecutedOperationCount()
+    {
+        return $this->executed_operation_count;
+    }
+
+    /**
+     * The number of mutate operations executed by the mutate job.
+     * Present only if the job has started running.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value executed_operation_count = 5;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setExecutedOperationCount($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->executed_operation_count = $var;
 
         return $this;
     }

@@ -113,7 +113,7 @@ class DomainCategoryServiceGapicClient
 
     private static function getDomainCategoryNameTemplate()
     {
-        if (self::$domainCategoryNameTemplate == null) {
+        if (null == self::$domainCategoryNameTemplate) {
             self::$domainCategoryNameTemplate = new PathTemplate('customers/{customer}/domainCategories/{domain_category}');
         }
 
@@ -122,7 +122,7 @@ class DomainCategoryServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'domainCategory' => self::getDomainCategoryNameTemplate(),
             ];

@@ -54,7 +54,7 @@ class UserListType
      */
     const SIMILAR = 6;
     /**
-     * UserList of first party CRM data provided by advertiser in the form of
+     * UserList of first-party CRM data provided by advertiser in the form of
      * emails or other formats.
      *
      * Generated from protobuf enum <code>CRM_BASED = 7;</code>

@@ -116,7 +116,7 @@ class KeywordPlanNegativeKeywordServiceGapicClient
 
     private static function getKeywordPlanNegativeKeywordNameTemplate()
     {
-        if (self::$keywordPlanNegativeKeywordNameTemplate == null) {
+        if (null == self::$keywordPlanNegativeKeywordNameTemplate) {
             self::$keywordPlanNegativeKeywordNameTemplate = new PathTemplate('customers/{customer}/keywordPlanNegativeKeywords/{keyword_plan_negative_keyword}');
         }
 
@@ -125,7 +125,7 @@ class KeywordPlanNegativeKeywordServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'keywordPlanNegativeKeyword' => self::getKeywordPlanNegativeKeywordNameTemplate(),
             ];

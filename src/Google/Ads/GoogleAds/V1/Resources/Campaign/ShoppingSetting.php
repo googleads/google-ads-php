@@ -46,8 +46,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     private $campaign_priority = null;
     /**
-     * Enable local inventory ads. This field is ignored for Smart Shopping
-     * campaigns.
+     * Whether to include local products.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enable_local = 4;</code>
      */
@@ -76,8 +75,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           This field is optional for Smart Shopping campaigns, but must be equal to
      *           3 if set.
      *     @type \Google\Protobuf\BoolValue $enable_local
-     *           Enable local inventory ads. This field is ignored for Smart Shopping
-     *           campaigns.
+     *           Whether to include local products.
      * }
      */
     public function __construct($data = NULL) {
@@ -184,8 +182,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Enable local inventory ads. This field is ignored for Smart Shopping
-     * campaigns.
+     * Whether to include local products.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enable_local = 4;</code>
      * @return \Google\Protobuf\BoolValue
@@ -196,8 +193,7 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Enable local inventory ads. This field is ignored for Smart Shopping
-     * campaigns.
+     * Whether to include local products.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enable_local = 4;</code>
      * @param \Google\Protobuf\BoolValue $var

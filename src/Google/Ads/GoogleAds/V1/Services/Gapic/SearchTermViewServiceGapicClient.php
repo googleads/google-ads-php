@@ -113,7 +113,7 @@ class SearchTermViewServiceGapicClient
 
     private static function getSearchTermViewNameTemplate()
     {
-        if (self::$searchTermViewNameTemplate == null) {
+        if (null == self::$searchTermViewNameTemplate) {
             self::$searchTermViewNameTemplate = new PathTemplate('customers/{customer}/searchTermViews/{search_term_view}');
         }
 
@@ -122,7 +122,7 @@ class SearchTermViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'searchTermView' => self::getSearchTermViewNameTemplate(),
             ];

@@ -116,7 +116,7 @@ class ConversionActionServiceGapicClient
 
     private static function getConversionActionNameTemplate()
     {
-        if (self::$conversionActionNameTemplate == null) {
+        if (null == self::$conversionActionNameTemplate) {
             self::$conversionActionNameTemplate = new PathTemplate('customers/{customer}/conversionActions/{conversion_action}');
         }
 
@@ -125,7 +125,7 @@ class ConversionActionServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'conversionAction' => self::getConversionActionNameTemplate(),
             ];

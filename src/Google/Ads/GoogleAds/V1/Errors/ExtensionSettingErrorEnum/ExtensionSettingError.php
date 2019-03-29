@@ -420,6 +420,13 @@ class ExtensionSettingError
      * Generated from protobuf enum <code>CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED = 66;</code>
      */
     const CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED = 66;
+    /**
+     * The UPDATE operation does not specify any fields other than the resource
+     * name in the update mask.
+     *
+     * Generated from protobuf enum <code>EXTENSION_SETTING_UPDATE_IS_A_NOOP = 67;</code>
+     */
+    const EXTENSION_SETTING_UPDATE_IS_A_NOOP = 67;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

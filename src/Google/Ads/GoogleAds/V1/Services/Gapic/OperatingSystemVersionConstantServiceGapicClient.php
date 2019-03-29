@@ -113,7 +113,7 @@ class OperatingSystemVersionConstantServiceGapicClient
 
     private static function getOperatingSystemVersionConstantNameTemplate()
     {
-        if (self::$operatingSystemVersionConstantNameTemplate == null) {
+        if (null == self::$operatingSystemVersionConstantNameTemplate) {
             self::$operatingSystemVersionConstantNameTemplate = new PathTemplate('operatingSystemVersionConstants/{operating_system_version_constant}');
         }
 
@@ -122,7 +122,7 @@ class OperatingSystemVersionConstantServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'operatingSystemVersionConstant' => self::getOperatingSystemVersionConstantNameTemplate(),
             ];

@@ -77,7 +77,7 @@ class ShoppingPerformanceViewServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedResourceName = $client->shoppingPerformanceViewName('[CUSTOMER]', '[SHOPPING_PERFORMANCE_VIEW]');
+        $formattedResourceName = $client->customerName('[CUSTOMER]');
 
         $response = $client->getShoppingPerformanceView($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
@@ -117,7 +117,7 @@ class ShoppingPerformanceViewServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedResourceName = $client->shoppingPerformanceViewName('[CUSTOMER]', '[SHOPPING_PERFORMANCE_VIEW]');
+        $formattedResourceName = $client->customerName('[CUSTOMER]');
 
         try {
             $client->getShoppingPerformanceView($formattedResourceName);

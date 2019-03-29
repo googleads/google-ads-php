@@ -26,7 +26,10 @@
 
 namespace Google\Ads\GoogleAds\V1\Services\Gapic;
 
+use Google\Ads\GoogleAds\V1\Services\CallConversion;
 use Google\Ads\GoogleAds\V1\Services\ClickConversion;
+use Google\Ads\GoogleAds\V1\Services\UploadCallConversionsRequest;
+use Google\Ads\GoogleAds\V1\Services\UploadCallConversionsResponse;
 use Google\Ads\GoogleAds\V1\Services\UploadClickConversionsRequest;
 use Google\Ads\GoogleAds\V1\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
@@ -212,6 +215,60 @@ class ConversionUploadServiceGapicClient
         return $this->startCall(
             'UploadClickConversions',
             UploadClickConversionsResponse::class,
+            $optionalArgs,
+            $request
+        )->wait();
+    }
+
+    /**
+     * Processes the given call conversions.
+     *
+     * Sample code:
+     * ```
+     * $conversionUploadServiceClient = new ConversionUploadServiceClient();
+     * try {
+     *     $customerId = '';
+     *     $conversions = [];
+     *     $response = $conversionUploadServiceClient->uploadCallConversions($customerId, $conversions);
+     * } finally {
+     *     $conversionUploadServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string           $customerId   The ID of the customer performing the upload.
+     * @param CallConversion[] $conversions  The conversions that are being uploaded.
+     * @param array            $optionalArgs {
+     *                                       Optional.
+     *
+     *     @type bool $partialFailure
+     *          If true, successful operations will be carried out and invalid
+     *          operations will return errors. If false, all operations will be carried
+     *          out in one transaction if and only if they are all valid.
+     *          This should always be set to true.
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V1\Services\UploadCallConversionsResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function uploadCallConversions($customerId, $conversions, array $optionalArgs = [])
+    {
+        $request = new UploadCallConversionsRequest();
+        $request->setCustomerId($customerId);
+        $request->setConversions($conversions);
+        if (isset($optionalArgs['partialFailure'])) {
+            $request->setPartialFailure($optionalArgs['partialFailure']);
+        }
+
+        return $this->startCall(
+            'UploadCallConversions',
+            UploadCallConversionsResponse::class,
             $optionalArgs,
             $request
         )->wait();

@@ -131,6 +131,47 @@ class ConversionUploadError
      * Generated from protobuf enum <code>DUPLICATE_ORDER_ID = 16;</code>
      */
     const DUPLICATE_ORDER_ID = 16;
+    /**
+     * The call occurred too recently. Please try uploading again after 24 hours
+     * have passed since the call occurred.
+     *
+     * Generated from protobuf enum <code>TOO_RECENT_CALL = 17;</code>
+     */
+    const TOO_RECENT_CALL = 17;
+    /**
+     * The click that initiated the call is too old for this conversion to be
+     * imported.
+     *
+     * Generated from protobuf enum <code>EXPIRED_CALL = 18;</code>
+     */
+    const EXPIRED_CALL = 18;
+    /**
+     * The call or the click leading to the call was not found.
+     *
+     * Generated from protobuf enum <code>CALL_NOT_FOUND = 19;</code>
+     */
+    const CALL_NOT_FOUND = 19;
+    /**
+     * The specified conversion_date_time is before the call_start_date_time.
+     *
+     * Generated from protobuf enum <code>CONVERSION_PRECEDES_CALL = 20;</code>
+     */
+    const CONVERSION_PRECEDES_CALL = 20;
+    /**
+     * The click associated with the call does not contain conversion tracking
+     * information.
+     *
+     * Generated from protobuf enum <code>CONVERSION_TRACKING_NOT_ENABLED_AT_CALL_TIME = 21;</code>
+     */
+    const CONVERSION_TRACKING_NOT_ENABLED_AT_CALL_TIME = 21;
+    /**
+     * The caller’s phone number cannot be parsed. It should be formatted either
+     * as E.164 "+16502531234", International "+64 3-331 6005" or US national
+     * number "6502531234".
+     *
+     * Generated from protobuf enum <code>UNPARSEABLE_CALLERS_PHONE_NUMBER = 22;</code>
+     */
+    const UNPARSEABLE_CALLERS_PHONE_NUMBER = 22;
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -113,7 +113,7 @@ class HotelGroupViewServiceGapicClient
 
     private static function getHotelGroupViewNameTemplate()
     {
-        if (self::$hotelGroupViewNameTemplate == null) {
+        if (null == self::$hotelGroupViewNameTemplate) {
             self::$hotelGroupViewNameTemplate = new PathTemplate('customers/{customer}/hotelGroupViews/{hotel_group_view}');
         }
 
@@ -122,7 +122,7 @@ class HotelGroupViewServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (self::$pathTemplateMap == null) {
+        if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'hotelGroupView' => self::getHotelGroupViewNameTemplate(),
             ];
