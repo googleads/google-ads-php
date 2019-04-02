@@ -60,7 +60,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * @throws InvalidArgumentException if the configuration file could not be
      *     found
      */
-    public function fromFile(?string $path)
+    public function fromFile(string $path = null)
     {
         if ($path === null) {
             $path = self::DEFAULT_CONFIGURATION_FILENAME;
