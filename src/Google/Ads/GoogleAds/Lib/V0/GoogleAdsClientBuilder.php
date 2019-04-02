@@ -55,12 +55,12 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * is optional, and if omitted, it will look for the default configuration
      * filename in the home directory of the user running PHP.
      *
-     * @param string $path the file path
+     * @param string|null $path the file path
      * @return self this builder populated from the configuration
      * @throws InvalidArgumentException if the configuration file could not be
      *     found
      */
-    public function fromFile($path = null)
+    public function fromFile(?$path)
     {
         if ($path === null) {
             $path = self::DEFAULT_CONFIGURATION_FILENAME;
@@ -97,7 +97,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * @param string $developerToken
      * @return self this builder
      */
-    public function withDeveloperToken($developerToken)
+    public function withDeveloperToken(string $developerToken)
     {
         $this->developerToken = $developerToken;
         return $this;
@@ -112,10 +112,10 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * create a separate GoogleAdsClient instance for each manager account. Use this method to
      * set each login customer ID and call build() to create a separate instance.
      *
-     * @param int $loginCustomerId the login customer ID
+     * @param string|null $loginCustomerId the login customer ID
      * @return self this builder
      */
-    public function withLoginCustomerId($loginCustomerId)
+    public function withLoginCustomerId(?string $loginCustomerId)
     {
         $this->loginCustomerId = $loginCustomerId;
         return $this;
