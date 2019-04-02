@@ -60,7 +60,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * @throws InvalidArgumentException if the configuration file could not be
      *     found
      */
-    public function fromFile($path = null)
+    public function fromFile(string $path = null)
     {
         if ($path === null) {
             $path = self::DEFAULT_CONFIGURATION_FILENAME;
@@ -97,7 +97,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * @param string $developerToken
      * @return self this builder
      */
-    public function withDeveloperToken($developerToken)
+    public function withDeveloperToken(string $developerToken)
     {
         $this->developerToken = $developerToken;
         return $this;
@@ -112,10 +112,10 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * create a separate GoogleAdsClient instance for each manager account. Use this method to
      * set each login customer ID and call build() to create a separate instance.
      *
-     * @param int $loginCustomerId the login customer ID
+     * @param string|null $loginCustomerId the login customer ID
      * @return self this builder
      */
-    public function withLoginCustomerId($loginCustomerId)
+    public function withLoginCustomerId(?string $loginCustomerId)
     {
         $this->loginCustomerId = $loginCustomerId;
         return $this;
@@ -164,7 +164,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * @param string $logLevel the PSR-3 log level name, e.g., INFO
      * @return self this builder
      */
-    public function withLogLevel($logLevel)
+    public function withLogLevel(string $logLevel)
     {
         $this->logLevel = $logLevel;
         return $this;
