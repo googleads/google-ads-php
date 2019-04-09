@@ -45,7 +45,7 @@ class RunExamples
 
     // Login Customer ID is a new configuration setting required in Google Ads API. This
     // is the customer ID of the authorized customer to use in the request, without
-    // hyphens(-). If your access to the customer account is through a manager account,
+    // hyphens (-). If your access to the customer account is through a manager account,
     // this parameter is required and must be set to the customer ID of the manager account.
     // See https://developers.google.com/google-ads/api/docs/concepts/call-structure#login-customer-id
     // to learn more about this setting.

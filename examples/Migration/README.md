@@ -10,8 +10,8 @@ The code example does the following operations:
 
   - Create a budget
   - Create a campaign
-  - Create an ad group.
-  - Create Text Ads
+  - Create an ad group
+  - Create text ads
   - Create keywords
 
 The code example starts with CreateCompleteCampaignAdWordsApiOnly.php that shows the whole
