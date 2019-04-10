@@ -53,14 +53,6 @@ class RunExamples
 
     public static function main()
     {
-        // Either pass the required parameters for this example on the command line, or insert them
-        // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
-        ]);
-
-        $customerId = $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID;
-
         // Generate a refreshable OAuth2 credential to be used for authentication against the
         // Google Ads API.
         $oAuth2Credential = (new OAuth2TokenBuilder())
@@ -92,12 +84,13 @@ class RunExamples
 
         // Uncomment the relevant code example to run it.
 
-        //CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, $customerId);
-        //CreateCompleteCampaignBothApisPhase1::runExample($adWordsSession, $customerId);
-        //CreateCompleteCampaignBothApisPhase2::runExample($adWordsSession, $customerId);
-        //CreateCompleteCampaignBothApisPhase3::runExample($adWordsSession, $customerId);
-        //CreateCompleteCampaignBothApisPhase4::runExample($adWordsSession, $customerId);
-        //CreateCompleteCampaignGoogleAdsApiOnly::runExample($adWordsSession, $customerId);
+        // CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, $customerId);
+        // CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, $customerId);
+        // CreateCompleteCampaignBothApisPhase1::runExample($adWordsSession, $customerId);
+        // CreateCompleteCampaignBothApisPhase2::runExample($adWordsSession, $customerId);
+        // CreateCompleteCampaignBothApisPhase3::runExample($adWordsSession, $customerId);
+        // CreateCompleteCampaignBothApisPhase4::runExample($adWordsSession, $customerId);
+        // CreateCompleteCampaignGoogleAdsApiOnly::runExample($adWordsSession, $customerId);
     }
 }
 

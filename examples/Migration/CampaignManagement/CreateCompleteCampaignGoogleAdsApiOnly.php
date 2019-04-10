@@ -126,7 +126,7 @@ class CreateCompleteCampaignGoogleAdsApiOnly
             $campaignBudgetResourceName
         );
 
-        printf("Added budget named '%s'%s", $newCampaignBudget->getName()->getValue(), PHP_EOL);
+        printf("Added budget named '%s'.%s", $newCampaignBudget->getName()->getValue(), PHP_EOL);
 
         return $newCampaignBudget;
     }
@@ -144,9 +144,9 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         string $resourceName
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $query = "SELECT campaign_budget.id, campaign_budget.name, " .
-                 "campaign_budget.resource_name from campaign_budget where " .
-                 "campaign_budget.resource_name='$resourceName'";
+        $query = "SELECT campaign_budget.id, campaign_budget.name, campaign_budget.resource_name " .
+                 "FROM campaign_budget " .
+                 "WHERE campaign_budget.resource_name = '$resourceName'";
 
         $response =
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
@@ -172,28 +172,23 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         $startDate = new StringValue(['value' => date('Ymd', strtotime('+1 day'))]);
         $endDate = new StringValue(['value' => date('Ymd', strtotime('+1 month'))]);
 
-        // Configures the campaign network options.
-        $networkSettings = new NetworkSettings([
-            'target_google_search' => $trueValue,
-            'target_search_network' => $trueValue,
-            'target_content_network' => $falseValue,
-            'target_partner_search_network' => $falseValue
-        ]);
-
-        $budgetResourceName = $campaignBudget->getResourceName();
-
         $campaign = new Campaign([
             'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
-            // the ads from immediately serving. Set to ENABLED once you've added
+            // the ads FROM immediately serving. Set to ENABLED once you've added
             // targeting and the ads are ready to serve.
             'status' => CampaignStatus::PAUSED,
             // Sets the bidding strategy and budget.
             'manual_cpc' => new ManualCpc(),
-            'campaign_budget' => $budgetResourceName,
+            'campaign_budget' => $campaignBudget->getResourceName(),
             // Adds the network settings configured above.
-            'network_settings' => $networkSettings,
+            'network_settings' => new NetworkSettings([
+                'target_google_search' => $trueValue,
+                'target_search_network' => $trueValue,
+                'target_content_network' => $falseValue,
+                'target_partner_search_network' => $falseValue
+            ]),
             // Optional: Sets the start and end dates.
             'start_date' => $startDate,
             'end_date' => $endDate
@@ -231,9 +226,9 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         string $campaignResourceName
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $query = "SELECT campaign.id, campaign.name, " .
-                 "campaign.resource_name from campaign where " .
-                 "campaign.resource_name='$campaignResourceName'";
+        $query = "SELECT campaign.id, campaign.name, campaign.resource_name " .
+                 "FROM campaign " .
+                 "WHERE campaign.resource_name = '$campaignResourceName'";
 
         $response =
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
@@ -242,7 +237,7 @@ class CreateCompleteCampaignGoogleAdsApiOnly
     }
 
     /**
-     * Creates an Ad group.
+     * Creates an ad group.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $customerId the client customer ID without hyphens
      * @param Campaign $campaign the campaign
@@ -253,12 +248,10 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         string $customerId,
         Campaign $campaign
     ) {
-        $campaignResourceName = $campaign->getResourceName();
-
         // Constructs an ad group and sets an optional CPC value.
         $adGroup = new AdGroup([
             'name' => new StringValue(['value' => 'Earth to Mars Cruises #' . uniqid()]),
-            'campaign' => $campaignResourceName,
+            'campaign' => $campaign->getResourceName(),
             'status' => AdGroupStatus::ENABLED,
             'type' => AdGroupType::SEARCH_STANDARD,
             'cpc_bid_micros' => new Int64Value(['value' => 10000000])
@@ -275,13 +268,13 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         $adGroupResourceName = $adGroupResponse->getResults()[0]->getResourceName();
         $newAdGroup = self::getAdGroup($googleAdsClient, $customerId, $adGroupResourceName);
 
-        printf("Added ad group named '%s'%s", $newAdGroup->getName()->getValue(), PHP_EOL);
+        printf("Added ad group named '%s'.%s", $newAdGroup->getName()->getValue(), PHP_EOL);
 
         return $newAdGroup;
     }
 
     /**
-     * Gets a campaign.
+     * Gets an ad group.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $customerId the client customer ID without hyphens
      * @param string $resourceName the resource name of the ad group to retrieve
@@ -293,9 +286,9 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         string $adGroupResourceName
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $query = "SELECT ad_group.id, ad_group.name, " .
-                 "ad_group.resource_name from ad_group where " .
-                 "ad_group.resource_name='$adGroupResourceName'";
+        $query = "SELECT ad_group.id, ad_group.name, ad_group.resource_name " .
+                 "FROM ad_group " .
+                 "WHERE ad_group.resource_name = '$adGroupResourceName'";
 
         $response =
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
@@ -315,8 +308,6 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         string $customerId,
         AdGroup $adGroup
     ) {
-        $adGroupResourceName = $adGroup->getResourceName();
-
         $operations = [];
         for ($i = 0; $i < self::NUMBER_OF_ADS; $i++) {
             // Creates the expanded text ad info.
@@ -326,17 +317,14 @@ class CreateCompleteCampaignGoogleAdsApiOnly
                 'description' => new StringValue(['value' => 'Buy your tickets now!'])
             ]);
 
-            // Sets the expanded text ad info on an Ad.
-            $ad = new Ad([
-                'expanded_text_ad' => $expandedTextAdInfo,
-                'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
-            ]);
-
             // Creates an ad group ad to hold the above ad.
             $adGroupAd = new AdGroupAd([
-                'ad_group' => $adGroupResourceName,
+                'ad_group' => $adGroup->getResourceName(),
                 'status' => AdGroupAdStatus::PAUSED,
-                'ad' => $ad
+                'ad' => new Ad([
+                    'expanded_text_ad' => $expandedTextAdInfo,
+                    'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+                ])
             ]);
 
             // Creates an ad group ad operation and add it to the operations array.
@@ -356,8 +344,11 @@ class CreateCompleteCampaignGoogleAdsApiOnly
 
         $newAds = self::getAds($googleAdsClient, $customerId, $newAdResourceNames);
         foreach ($newAds as $newAd) {
+            // Note that the status printed below is an enum value.
+            // For example, a value of 2 will be returned when the ad status is 'ENABLED'.
+            // A mapping of enum names to values can be found at AdGroupAdStatus.php.
             printf(
-                "Created expanded text ad with id '%d', status %d and headline '%s - %s'.%s",
+                "Created expanded text ad with ID %d, status %d and headline '%s - %s'.%s",
                 $newAd->getAd()->getId()->getValue(),
                 $newAd->getStatus(),
                 $newAd->getAd()->getExpandedTextAd()->getHeadlinePart1()->getValue(),
@@ -387,8 +378,9 @@ class CreateCompleteCampaignGoogleAdsApiOnly
                  "ad_group_ad.ad.expanded_text_ad.headline_part1, " .
                  "ad_group_ad.ad.expanded_text_ad.headline_part2, " .
                  "ad_group_ad.status, ad_group_ad.ad.final_urls, " .
-                 "ad_group_ad.resource_name from ad_group_ad where " .
-                 "ad_group_ad.resource_name in ($resourceNames)";
+                 "ad_group_ad.resource_name " .
+                 "FROM ad_group_ad " .
+                 "WHERE ad_group_ad.resource_name in ($resourceNames)";
 
         $response =
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
@@ -405,7 +397,7 @@ class CreateCompleteCampaignGoogleAdsApiOnly
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $customerId the client customer ID without hyphens
      * @param AdGroup $adGroup the ad group
-     * @param int $numberOfKeywords the number of keywords to create
+     * @param array $keywordsToAdd the keywords to create
      * @return AdGroupCriterion[] an array of keywords
      */
     private static function createKeywords(
@@ -417,17 +409,14 @@ class CreateCompleteCampaignGoogleAdsApiOnly
 
         $adGroupCriterionOperations = [];
         foreach ($keywordsToAdd as $keywordText) {
-            // Configures the keyword text and match type settings.
-            $keywordInfo = new KeywordInfo([
-                'text' => new StringValue(['value' => $keywordText]),
-                'match_type' => KeywordMatchType::EXACT
-            ]);
-
             // Constructs an ad group criterion using the keyword text info above.
             $adGroupCriterion = new AdGroupCriterion([
                 'ad_group' => new StringValue(['value' => $adGroup->getResourceName()]),
                 'status' => AdGroupCriterionStatus::ENABLED,
-                'keyword' => $keywordInfo
+                'keyword' => new KeywordInfo([
+                    'text' => new StringValue(['value' => $keywordText]),
+                    'match_type' => KeywordMatchType::EXACT
+                ])
             ]);
 
             $adGroupCriterionOperation = new AdGroupCriterionOperation();
@@ -453,6 +442,9 @@ class CreateCompleteCampaignGoogleAdsApiOnly
             $newAdGroupCriterionResourceNames
         );
         foreach ($newKeywords as $newKeyword) {
+            // Note that the match type printed below is an enum value.
+            // For example, a value of 2 will be returned when the keyword match type is 'EXACT'.
+            // A mapping of enum names to values can be found at KeywordMatchType.php.
             printf(
                 "Keyword with text '%s', id = %d and match type %d was created.%s",
                 $newKeyword->getKeyword()->getText()->getValue(),
