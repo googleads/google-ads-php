@@ -84,13 +84,13 @@ class RunExamples
 
         // Uncomment the relevant code example to run it.
 
-        // CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, $customerId);
-        // CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, $customerId);
-        // CreateCompleteCampaignBothApisPhase1::runExample($adWordsSession, $customerId);
-        // CreateCompleteCampaignBothApisPhase2::runExample($adWordsSession, $customerId);
-        // CreateCompleteCampaignBothApisPhase3::runExample($adWordsSession, $customerId);
-        // CreateCompleteCampaignBothApisPhase4::runExample($adWordsSession, $customerId);
-        // CreateCompleteCampaignGoogleAdsApiOnly::runExample($adWordsSession, $customerId);
+        //CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, self::CUSTOMER_ID);
+        //CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, self::CUSTOMER_ID);
+        //CreateCompleteCampaignBothApisPhase1::runExample($adWordsSession, self::CUSTOMER_ID);
+        //CreateCompleteCampaignBothApisPhase2::runExample($adWordsSession, self::CUSTOMER_ID);
+        //CreateCompleteCampaignBothApisPhase3::runExample($adWordsSession, self::CUSTOMER_ID);
+        //CreateCompleteCampaignBothApisPhase4::runExample($adWordsSession, self::CUSTOMER_ID);
+        //CreateCompleteCampaignGoogleAdsApiOnly::runExample($adWordsSession, self::CUSTOMER_ID);
     }
 }
 

@@ -208,7 +208,7 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         $campaignResourceName = $campaignResponse->getResults()[0]->getResourceName();
         $newCampaign = self::getCampaign($googleAdsClient, $customerId, $campaignResourceName);
 
-        printf("Added campaign named '%s'%s", $newCampaign->getName()->getValue(), PHP_EOL);
+        printf("Added campaign named '%s'.%s", $newCampaign->getName()->getValue(), PHP_EOL);
 
         return $newCampaign;
     }
