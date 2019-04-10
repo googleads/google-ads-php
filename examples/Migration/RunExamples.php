@@ -32,6 +32,8 @@ use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\AdsApi\AdWords\AdWordsSessionBuilder;
 use Google\AdsApi\Common\OAuth2TokenBuilder as AdWordsApiOAuth2TokenBuilder;
 use Google\ApiCore\ApiException;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 /** This class creates the API client objects and runs the migration examples. */
 class RunExamples
@@ -53,6 +55,10 @@ class RunExamples
 
     public static function main()
     {
+        // Create a logger instance to be used by both API clients.
+        $logger = new Logger("migration-examples-logger");
+        $logger->pushHandler(new StreamHandler("php://stderr", Logger::INFO));
+
         // Generate a refreshable OAuth2 credential to be used for authentication against the
         // Google Ads API.
         $oAuth2Credential = (new OAuth2TokenBuilder())
@@ -66,6 +72,7 @@ class RunExamples
             ->withDeveloperToken(self::DEVELOPER_TOKEN)
             ->withLoginCustomerId(self::LOGIN_CUSTOMER_ID)
             ->withOAuth2Credential($oAuth2Credential)
+            ->withLogger($logger)
             ->build();
 
         // Generate a refreshable OAuth2 credential to be used for authentication against the
@@ -80,6 +87,7 @@ class RunExamples
         $adWordsSession = (new AdWordsSessionBuilder())
             ->withDeveloperToken(self::DEVELOPER_TOKEN)
             ->withOAuth2Credential($adWordsApiOAuth2Credential)
+            ->withSoapLogger($logger)
             ->build();
 
         // Uncomment the relevant code example to run it.
