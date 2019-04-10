@@ -84,13 +84,28 @@ class RunExamples
 
         // Uncomment the relevant code example to run it.
 
-        //CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, self::CUSTOMER_ID);
-        //CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, self::CUSTOMER_ID);
-        //CreateCompleteCampaignBothApisPhase1::runExample($adWordsSession, self::CUSTOMER_ID);
-        //CreateCompleteCampaignBothApisPhase2::runExample($adWordsSession, self::CUSTOMER_ID);
-        //CreateCompleteCampaignBothApisPhase3::runExample($adWordsSession, self::CUSTOMER_ID);
-        //CreateCompleteCampaignBothApisPhase4::runExample($adWordsSession, self::CUSTOMER_ID);
-        //CreateCompleteCampaignGoogleAdsApiOnly::runExample($adWordsSession, self::CUSTOMER_ID);
+        // CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, self::CUSTOMER_ID);
+        // CreateCompleteCampaignBothApisPhase1::runExample(
+        //     $adWordsSession,
+        //     $googleAdsClient,
+        //     self::CUSTOMER_ID
+        // );
+        // CreateCompleteCampaignBothApisPhase2::runExample(
+        //     $adWordsSession,
+        //     $googleAdsClient,
+        //     self::CUSTOMER_ID
+        // );
+        // CreateCompleteCampaignBothApisPhase3::runExample(
+        //     $adWordsSession,
+        //     $googleAdsClient,
+        //     self::CUSTOMER_ID
+        // );
+        // CreateCompleteCampaignBothApisPhase4::runExample(
+        //     $adWordsSession,
+        //     $googleAdsClient,
+        //     self::CUSTOMER_ID
+        // );
+        //CreateCompleteCampaignGoogleAdsApiOnly::runExample($googleAdsClient, self::CUSTOMER_ID);
     }
 }
 
