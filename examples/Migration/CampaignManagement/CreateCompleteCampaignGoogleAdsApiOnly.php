@@ -176,7 +176,7 @@ class CreateCompleteCampaignGoogleAdsApiOnly
             'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
-            // the ads FROM immediately serving. Set to ENABLED once you've added
+            // the ads from immediately serving. Set to ENABLED once you've added
             // targeting and the ads are ready to serve.
             'status' => CampaignStatus::PAUSED,
             // Sets the bidding strategy and budget.
