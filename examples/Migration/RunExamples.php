@@ -29,6 +29,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSessionBuilder;
 use Google\AdsApi\Common\OAuth2TokenBuilder as AdWordsApiOAuth2TokenBuilder;
 use Google\ApiCore\ApiException;
@@ -86,29 +87,34 @@ class RunExamples
         // Construct an AdWords session to be used for AdWords API calls.
         $adWordsSession = (new AdWordsSessionBuilder())
             ->withDeveloperToken(self::DEVELOPER_TOKEN)
+            ->withClientCustomerId(self::CUSTOMER_ID)
             ->withOAuth2Credential($adWordsApiOAuth2Credential)
             ->withSoapLogger($logger)
             ->build();
 
         // Uncomment the relevant code example to run it.
 
-        // CreateCompleteCampaignAdwordsApiOnly::runExample($adWordsSession, self::CUSTOMER_ID);
+        // CreateCompleteCampaignAdwordsApiOnly::runExample(new AdWordsServices(), $adWordsSession);
         // CreateCompleteCampaignBothApisPhase1::runExample(
+        //     new AdWordsServices(),
         //     $adWordsSession,
         //     $googleAdsClient,
         //     self::CUSTOMER_ID
         // );
         // CreateCompleteCampaignBothApisPhase2::runExample(
+        //     new AdWordsServices(),
         //     $adWordsSession,
         //     $googleAdsClient,
         //     self::CUSTOMER_ID
         // );
         // CreateCompleteCampaignBothApisPhase3::runExample(
+        //     new AdWordsServices(),
         //     $adWordsSession,
         //     $googleAdsClient,
         //     self::CUSTOMER_ID
         // );
         // CreateCompleteCampaignBothApisPhase4::runExample(
+        //     new AdWordsServices(),
         //     $adWordsSession,
         //     $googleAdsClient,
         //     self::CUSTOMER_ID
