@@ -81,13 +81,8 @@ class CreateCompleteCampaignGoogleAdsApiOnly
         $campaignBudget = self::createCampaignBudget($googleAdsClient, $customerId);
         $campaign = self::createCampaign($googleAdsClient, $customerId, $campaignBudget);
         $adGroup = self::createAdGroup($googleAdsClient, $customerId, $campaign);
-        $adGroupAds = self::createTextAds($googleAdsClient, $customerId, $adGroup);
-        $keywords = self::createKeywords(
-            $googleAdsClient,
-            $customerId,
-            $adGroup,
-            self::KEYWORDS_TO_ADD
-        );
+        self::createTextAds($googleAdsClient, $customerId, $adGroup);
+        self::createKeywords($googleAdsClient, $customerId, $adGroup, self::KEYWORDS_TO_ADD);
     }
 
     /**
