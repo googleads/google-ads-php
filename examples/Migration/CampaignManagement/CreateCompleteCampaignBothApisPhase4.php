@@ -19,10 +19,448 @@ namespace Google\Ads\GoogleAds\Examples\Migration\CampaignManagement;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
+use Google\Ads\GoogleAds\V1\Common\ManualCpc;
+use Google\Ads\GoogleAds\V1\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V1\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V1\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V1\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V1\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V1\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V1\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V1\Resources\Ad;
+use Google\Ads\GoogleAds\V1\Resources\AdGroup;
+use Google\Ads\GoogleAds\V1\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V1\Resources\Campaign;
+use Google\Ads\GoogleAds\V1\Resources\Campaign\NetworkSettings;
+use Google\Ads\GoogleAds\V1\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V1\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V1\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V1\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V1\Services\CampaignOperation;
+use Google\AdsApi\AdWords\AdWordsServices;
+use Google\AdsApi\AdWords\AdWordsSession;
+use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterion;
+use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionOperation;
+use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionService;
+use Google\AdsApi\AdWords\v201809\cm\BiddableAdGroupCriterion;
+use Google\AdsApi\AdWords\v201809\cm\Keyword;
+use Google\AdsApi\AdWords\v201809\cm\KeywordMatchType;
+use Google\AdsApi\AdWords\v201809\cm\Operator;
+use Google\AdsApi\AdWords\v201809\cm\UrlList;
+use Google\AdsApi\AdWords\v201809\cm\UserStatus;
+use Google\Protobuf\BoolValue;
+use Google\Protobuf\Int64Value;
+use Google\Protobuf\StringValue;
+
+/**
+ * This code example is the fifth in a series of code examples that shows how to create
+ * a Search campign using the AdWords API, and then migrate it to the Google Ads API one
+ * functionality at a time. See CreateCompleteCampaignAdwordsApiOnly.php through
+ * CreateCompleteCampaignBothApisPhase4.php for code examples in various stages of migration.
+ *
+ * In this code example, the functionalities to create a campaign budget, a search campaign, an
+ * ad group and expanded text ads have been migrated to the Google Ads API. The only remaining
+ * functionality using the AdWords API is creating keywords.
+ */
 class CreateCompleteCampaignBothApisPhase4
 {
-    public static function runExample()
-    {
-        echo "Not implemented yet";
+
+    // Number of ads being added/updated in this code example.
+    const NUMBER_OF_ADS = 5;
+    // The list of keywords being added in this code example.
+    const KEYWORDS_TO_ADD = [
+        "mars cruise",
+        "space hotel"
+    ];
+
+    // The default page size for search queries
+    const PAGE_SIZE = 1000;
+
+    /**
+     * Runs the CreateCompleteCampaignGoogleAdsApiOnly example.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     */
+    public static function runExample(
+        AdWordsServices $adWordsServices,
+        AdWordsSession $adWordsSession,
+        GoogleAdsClient $googleAdsClient,
+        string $customerId
+    ) {
+        $campaignBudget = self::createCampaignBudget($googleAdsClient, $customerId);
+        $campaign = self::createCampaign($googleAdsClient, $customerId, $campaignBudget);
+        $adGroup = self::createAdGroup($googleAdsClient, $customerId, $campaign);
+        self::createTextAds($googleAdsClient, $customerId, $adGroup);
+        self::createKeywords(
+            $adWordsServices,
+            $adWordsSession,
+            $adGroup->getId()->getValue(),
+            self::KEYWORDS_TO_ADD
+        );
+    }
+
+    /**
+     * Creates a campaign budget.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     * @return CampaignBudget the newly created campaign budget
+     */
+    private static function createCampaignBudget(
+        GoogleAdsClient $googleAdsClient,
+        string $customerId
+    ) {
+        $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
+
+        // Creates a campaign budget.
+        $campaignBudget = new CampaignBudget([
+            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'delivery_method' => BudgetDeliveryMethod::STANDARD,
+            'amount_micros' => new Int64Value(['value' => 500000])
+        ]);
+
+        // Creates a campaign budget operation.
+        $campaignBudgetOperation = new CampaignBudgetOperation();
+        $campaignBudgetOperation->setCreate($campaignBudget);
+
+        /** @var MutateCampaignBudgetResponse $campaignBudgetResponse */
+        $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
+            $customerId,
+            [$campaignBudgetOperation]
+        );
+
+        $campaignBudgetResourceName = $campaignBudgetResponse->getResults()[0]->getResourceName();
+        $newCampaignBudget = self::getCampaignBudget(
+            $googleAdsClient,
+            $customerId,
+            $campaignBudgetResourceName
+        );
+
+        printf("Added budget named '%s'.%s", $newCampaignBudget->getName()->getValue(), PHP_EOL);
+
+        return $newCampaignBudget;
+    }
+
+    /**
+     * Gets a campaign budget.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     * @param string $resourceName the resource name of the campaign budget to retrieve
+     * @return CampaignBudget the campaign budget
+     */
+    private static function getCampaignBudget(
+        GoogleAdsClient $googleAdsClient,
+        string $customerId,
+        string $resourceName
+    ) {
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+        $query = "SELECT campaign_budget.id, campaign_budget.name, campaign_budget.resource_name " .
+                 "FROM campaign_budget " .
+                 "WHERE campaign_budget.resource_name = '$resourceName'";
+
+        $response =
+            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+
+        return $response->getIterator()->current()->getCampaignBudget();
+    }
+
+    /**
+     * Creates a campaign.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     * @param CampaignBudget $campaignBudget the campaign budget
+     * @return Campaign the newly created campaign
+     */
+    private static function createCampaign(
+        GoogleAdsClient $googleAdsClient,
+        string $customerId,
+        CampaignBudget $campaignBudget
+    ) {
+        $trueValue = new BoolValue(['value' => true]);
+        $falseValue = new BoolValue(['value' => false]);
+
+        $startDate = new StringValue(['value' => date('Ymd', strtotime('+1 day'))]);
+        $endDate = new StringValue(['value' => date('Ymd', strtotime('+1 month'))]);
+
+        $campaign = new Campaign([
+            'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
+            'advertising_channel_type' => AdvertisingChannelType::SEARCH,
+            // Recommendation: Set the campaign to PAUSED when creating it to prevent
+            // the ads from immediately serving. Set to ENABLED once you've added
+            // targeting and the ads are ready to serve.
+            'status' => CampaignStatus::PAUSED,
+            // Sets the bidding strategy and budget.
+            'manual_cpc' => new ManualCpc(),
+            'campaign_budget' => $campaignBudget->getResourceName(),
+            // Adds the network settings configured above.
+            'network_settings' => new NetworkSettings([
+                'target_google_search' => $trueValue,
+                'target_search_network' => $trueValue,
+                'target_content_network' => $falseValue,
+                'target_partner_search_network' => $falseValue
+            ]),
+            // Optional: Sets the start and end dates.
+            'start_date' => $startDate,
+            'end_date' => $endDate
+        ]);
+
+        // Creates a campaign operation.
+        $campaignOperation = new CampaignOperation();
+        $campaignOperation->setCreate($campaign);
+
+        // Issues a mutate request to add campaigns.
+        $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
+        $campaignResponse = $campaignServiceClient->mutateCampaigns(
+            $customerId,
+            [$campaignOperation]
+        );
+
+        $campaignResourceName = $campaignResponse->getResults()[0]->getResourceName();
+        $newCampaign = self::getCampaign($googleAdsClient, $customerId, $campaignResourceName);
+
+        printf("Added campaign named '%s'.%s", $newCampaign->getName()->getValue(), PHP_EOL);
+
+        return $newCampaign;
+    }
+
+    /**
+     * Gets a campaign.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     * @param string $resourceName the resource name of the campaign to retrieve
+     * @return Campaign the campaign
+     */
+    private static function getCampaign(
+        GoogleAdsClient $googleAdsClient,
+        string $customerId,
+        string $campaignResourceName
+    ) {
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+        $query = "SELECT campaign.id, campaign.name, campaign.resource_name " .
+                 "FROM campaign " .
+                 "WHERE campaign.resource_name = '$campaignResourceName'";
+
+        $response =
+            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+
+        return $response->getIterator()->current()->getCampaign();
+    }
+
+    /**
+     * Creates an ad group.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     * @param Campaign $campaign the campaign
+     * @return AdGroup the newly created ad group
+     */
+    private static function createAdGroup(
+        GoogleAdsClient $googleAdsClient,
+        string $customerId,
+        Campaign $campaign
+    ) {
+        // Constructs an ad group and sets an optional CPC value.
+        $adGroup = new AdGroup([
+            'name' => new StringValue(['value' => 'Earth to Mars Cruises #' . uniqid()]),
+            'campaign' => $campaign->getResourceName(),
+            'status' => AdGroupStatus::ENABLED,
+            'type' => AdGroupType::SEARCH_STANDARD,
+            'cpc_bid_micros' => new Int64Value(['value' => 10000000])
+        ]);
+
+        // Creates an ad group operation.
+        $adGroupOperation = new AdGroupOperation();
+        $adGroupOperation->setCreate($adGroup);
+
+        // Issues a mutate request to add the ad groups.
+        $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
+        $adGroupResponse = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
+
+        $adGroupResourceName = $adGroupResponse->getResults()[0]->getResourceName();
+        $newAdGroup = self::getAdGroup($googleAdsClient, $customerId, $adGroupResourceName);
+
+        printf("Added ad group named '%s'.%s", $newAdGroup->getName()->getValue(), PHP_EOL);
+
+        return $newAdGroup;
+    }
+
+    /**
+     * Gets an ad group.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     * @param string $resourceName the resource name of the ad group to retrieve
+     * @return AdGroup the ad group
+     */
+    private static function getAdGroup(
+        GoogleAdsClient $googleAdsClient,
+        string $customerId,
+        string $adGroupResourceName
+    ) {
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+        $query = "SELECT ad_group.id, ad_group.name, ad_group.resource_name " .
+                 "FROM ad_group " .
+                 "WHERE ad_group.resource_name = '$adGroupResourceName'";
+
+        $response =
+            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+
+        return $response->getIterator()->current()->getAdGroup();
+    }
+
+    /**
+     * Creates text ads.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     * @param AdGroup $adGroup the ad group
+     * @return AdGroupAd[] an array of text ads
+     */
+    private static function createTextAds(
+        GoogleAdsClient $googleAdsClient,
+        string $customerId,
+        AdGroup $adGroup
+    ) {
+        $operations = [];
+        for ($i = 0; $i < self::NUMBER_OF_ADS; $i++) {
+            // Creates the expanded text ad info.
+            $expandedTextAdInfo = new ExpandedTextAdInfo([
+                'headline_part1' => new StringValue(['value' => 'Cruise to Mars #' . uniqid()]),
+                'headline_part2' => new StringValue(['value' => 'Best Space Cruise Line']),
+                'description' => new StringValue(['value' => 'Buy your tickets now!'])
+            ]);
+
+            // Creates an ad group ad to hold the above ad.
+            $adGroupAd = new AdGroupAd([
+                'ad_group' => $adGroup->getResourceName(),
+                'status' => AdGroupAdStatus::PAUSED,
+                'ad' => new Ad([
+                    'expanded_text_ad' => $expandedTextAdInfo,
+                    'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+                ])
+            ]);
+
+            // Creates an ad group ad operation and add it to the operations array.
+            $adGroupAdOperation = new AdGroupAdOperation();
+            $adGroupAdOperation->setCreate($adGroupAd);
+            $operations[] = $adGroupAdOperation;
+        }
+
+        // Issues a mutate request to add the ad group ads.
+        $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
+        $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds($customerId, $operations);
+
+        $newAdResourceNames = [];
+        foreach ($adGroupAdResponse->getResults() as $result) {
+            $newAdResourceNames[] = $result->getResourceName();
+        }
+
+        $newAds = self::getAds($googleAdsClient, $customerId, $newAdResourceNames);
+        foreach ($newAds as $newAd) {
+            // Note that the status printed below is an enum value.
+            // For example, a value of 2 will be returned when the ad status is 'ENABLED'.
+            // A mapping of enum names to values can be found at AdGroupAdStatus.php.
+            printf(
+                "Created expanded text ad with ID %d, status %d and headline '%s - %s'.%s",
+                $newAd->getAd()->getId()->getValue(),
+                $newAd->getStatus(),
+                $newAd->getAd()->getExpandedTextAd()->getHeadlinePart1()->getValue(),
+                $newAd->getAd()->getExpandedTextAd()->getHeadlinePart2()->getValue(),
+                PHP_EOL
+            );
+        }
+    }
+
+    /**
+     * Gets an array of ads by their resource names.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $customerId the client customer ID without hyphens
+     * @param array $adResourceNames the resource names of the ads to retrieve
+     * @return array an array of ads
+     */
+    private static function getAds(
+        GoogleAdsClient $googleAdsClient,
+        string $customerId,
+        array $adResourceNames
+    ) {
+        $resourceNames = join(",", array_map(function ($resourceName) {
+            return "'$resourceName'";
+        }, $adResourceNames));
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+        $query = "SELECT ad_group_ad.ad.id, " .
+                 "ad_group_ad.ad.expanded_text_ad.headline_part1, " .
+                 "ad_group_ad.ad.expanded_text_ad.headline_part2, " .
+                 "ad_group_ad.status, ad_group_ad.ad.final_urls, " .
+                 "ad_group_ad.resource_name " .
+                 "FROM ad_group_ad " .
+                 "WHERE ad_group_ad.resource_name in ($resourceNames)";
+
+        $response =
+            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+
+        $ads = [];
+        foreach ($response->iterateAllElements() as $result) {
+            $ads[] = $result->getAdGroupAd();
+        }
+        return $ads;
+    }
+
+    /**
+     * Creates keywords.
+     *
+     * @param AdWordsServices $adWordsServices the AdWords services
+     * @param AdWordsSession $adWordsSession the AdWords session
+     * @param int $adGroupId the ad group ID
+     * @param string[] $keywordsToAdd
+     */
+    private static function createKeywords(
+        AdWordsServices $adWordsServices,
+        AdWordsSession $adWordsSession,
+        int $adGroupId,
+        array $keywordsToAdd
+    ) {
+        /** @var AdGroupCriterionService $adGroupCriterionService */
+        $adGroupCriterionService =
+            $adWordsServices->get($adWordsSession, AdGroupCriterionService::class);
+
+        $operations = [];
+
+        foreach ($keywordsToAdd as $keywordText) {
+            // Create a keyword.
+            $keyword = new Keyword();
+            $keyword->setText($keywordText);
+            $keyword->setMatchType(KeywordMatchType::BROAD);
+
+            // Create a biddable ad group criterion.
+            $adGroupCriterion = new BiddableAdGroupCriterion();
+            $adGroupCriterion->setAdGroupId($adGroupId);
+            $adGroupCriterion->setCriterion($keyword);
+
+            // Optional: Set the user status.
+            $adGroupCriterion->setUserStatus(UserStatus::PAUSED);
+            // Optional: Set the keyword destination url.
+            $adGroupCriterion->setFinalUrls(
+                new UrlList(['http://www.example.com/mars/cruise/?kw=' . urlencode($keywordText)])
+            );
+
+            // Create an ad group criterion operation and add it to the list.
+            $operation = new AdGroupCriterionOperation();
+            $operation->setOperand($adGroupCriterion);
+            $operation->setOperator(Operator::ADD);
+            $operations[] = $operation;
+        }
+
+        // Create the keywords on the server and print out their information.
+        $result = $adGroupCriterionService->mutate($operations);
+        foreach ($result->getValue() as $adGroupCriterion) {
+            /** @var Keyword $keyword */
+            $keyword = $adGroupCriterion->getCriterion();
+            printf(
+                "Keyword with ad group ID %d, keyword ID %d, text '%s' and match type '%s'"
+                . " was created.%s",
+                $adGroupCriterion->getAdGroupId(),
+                $keyword->getId(),
+                $keyword->getText(),
+                $keyword->getMatchType(),
+                PHP_EOL
+            );
+        }
     }
 }

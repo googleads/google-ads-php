@@ -388,7 +388,7 @@ class CreateCompleteCampaignGoogleAdsApiOnly
     }
 
     /**
-     * Creates <code>$numberOfKeywords</code> keywords.
+     * Creates keywords.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $customerId the client customer ID without hyphens
      * @param AdGroup $adGroup the ad group
