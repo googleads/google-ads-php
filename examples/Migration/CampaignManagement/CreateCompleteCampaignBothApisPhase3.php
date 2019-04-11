@@ -69,18 +69,20 @@ class CreateCompleteCampaignBothApisPhase3
 {
 
     // Number of ads being added/updated in this code example.
-    const NUMBER_OF_ADS = 5;
+    private const NUMBER_OF_ADS = 5;
     // The list of keywords being added in this code example.
-    const KEYWORDS_TO_ADD = [
+    private const KEYWORDS_TO_ADD = [
         "mars cruise",
         "space hotel"
     ];
 
-    // The default page size for search queries
+    // The default page size for search queries.
     const PAGE_SIZE = 1000;
 
-    /**
-     * Runs the CreateCompleteCampaignGoogleAdsApiOnly example.
+/**
+     * Runs the CreateCompleteCampaignBothApisPhase3 example.
+     * @param AdWordsServices $adWordsServices the AdWords services
+     * @param AdWordsSession $adWordsSession the AdWords session
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $customerId the client customer ID without hyphens
      */

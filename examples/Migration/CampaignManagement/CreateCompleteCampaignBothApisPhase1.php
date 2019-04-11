@@ -75,18 +75,20 @@ class CreateCompleteCampaignBothApisPhase1
 {
 
     // Number of ads being added/updated in this code example.
-    const NUMBER_OF_ADS = 5;
+    private const NUMBER_OF_ADS = 5;
     // The list of keywords being added in this code example.
-    const KEYWORDS_TO_ADD = [
+    private const KEYWORDS_TO_ADD = [
         "mars cruise",
         "space hotel"
     ];
 
-    // The default page size for search queries
+    // The default page size for search queries.
     const PAGE_SIZE = 1000;
 
     /**
-     * Runs the CreateCompleteCampaignGoogleAdsApiOnly example.
+     * Runs the CreateCompleteCampaignBothApisPhase1 example.
+     * @param AdWordsServices $adWordsServices the AdWords services
+     * @param AdWordsSession $adWordsSession the AdWords session
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $customerId the client customer ID without hyphens
      */
@@ -246,29 +248,6 @@ class CreateCompleteCampaignBothApisPhase1
     }
 
     /**
-     * Gets a campaign.
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
-     * @param string $resourceName the resource name of the campaign to retrieve
-     * @return Campaign the campaign
-     */
-    private static function getCampaign(
-        GoogleAdsClient $googleAdsClient,
-        string $customerId,
-        string $campaignResourceName
-    ) {
-        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $query = "SELECT campaign.id, campaign.name, campaign.resource_name " .
-                 "FROM campaign " .
-                 "WHERE campaign.resource_name = '$campaignResourceName'";
-
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
-
-        return $response->getIterator()->current()->getCampaign();
-    }
-
-     /**
      * Creates an ad group.
      *
      * @param AdWordsServices $adWordsServices the AdWords services
