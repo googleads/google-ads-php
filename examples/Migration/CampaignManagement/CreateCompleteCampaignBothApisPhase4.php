@@ -78,7 +78,7 @@ class CreateCompleteCampaignBothApisPhase4
     const PAGE_SIZE = 1000;
 
 /**
-     * Runs the CreateCompleteCampaignBothApisPhase3 example.
+     * Runs the CreateCompleteCampaignBothApisPhase4 example.
      * @param AdWordsServices $adWordsServices the AdWords services
      * @param AdWordsSession $adWordsSession the AdWords session
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
