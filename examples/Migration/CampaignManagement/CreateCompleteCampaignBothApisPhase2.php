@@ -222,13 +222,13 @@ class CreateCompleteCampaignBothApisPhase2
 
         // Issues a mutate request to add campaigns.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
+        /** @var MutateCampaignsResponse $campaignResponse */
         $campaignResponse = $campaignServiceClient->mutateCampaigns(
             $customerId,
             [$campaignOperation]
         );
 
         $campaignResourceName = $campaignResponse->getResults()[0]->getResourceName();
-        /** @var MutateCampaignsResponse $campaignResponse */
         $newCampaign = self::getCampaign($googleAdsClient, $customerId, $campaignResourceName);
 
         printf("Added campaign named '%s'.%s", $newCampaign->getName()->getValue(), PHP_EOL);
