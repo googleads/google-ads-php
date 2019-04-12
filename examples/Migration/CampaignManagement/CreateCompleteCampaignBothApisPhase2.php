@@ -29,6 +29,8 @@ use Google\Ads\GoogleAds\V1\Resources\Campaign\NetworkSettings;
 use Google\Ads\GoogleAds\V1\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V1\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V1\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V1\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V1\Services\MutateCampaignsResponse;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroup;
@@ -120,8 +122,6 @@ class CreateCompleteCampaignBothApisPhase2
         GoogleAdsClient $googleAdsClient,
         string $customerId
     ) {
-        $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
-
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
             'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
@@ -132,7 +132,10 @@ class CreateCompleteCampaignBothApisPhase2
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
-        
+
+        // Issues a mutate request to add campaign budgets.
+        $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
+        /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
             $customerId,
             [$campaignBudgetOperation]
@@ -225,6 +228,7 @@ class CreateCompleteCampaignBothApisPhase2
         );
 
         $campaignResourceName = $campaignResponse->getResults()[0]->getResourceName();
+        /** @var MutateCampaignsResponse $campaignResponse */
         $newCampaign = self::getCampaign($googleAdsClient, $customerId, $campaignResourceName);
 
         printf("Added campaign named '%s'.%s", $newCampaign->getName()->getValue(), PHP_EOL);

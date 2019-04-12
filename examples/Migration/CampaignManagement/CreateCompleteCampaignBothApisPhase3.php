@@ -33,6 +33,9 @@ use Google\Ads\GoogleAds\V1\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V1\Services\AdGroupOperation;
 use Google\Ads\GoogleAds\V1\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V1\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V1\Services\MutateAdGroupsResponse;
+use Google\Ads\GoogleAds\V1\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V1\Services\MutateCampaignsResponse;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAd;
@@ -110,9 +113,7 @@ class CreateCompleteCampaignBothApisPhase3
     private static function createCampaignBudget(
         GoogleAdsClient $googleAdsClient,
         string $customerId
-    ) {
-        $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
-
+    ) {    
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
             'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
@@ -124,6 +125,9 @@ class CreateCompleteCampaignBothApisPhase3
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
         
+        // Issues a mutate request to add campaign budgets.
+        $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
+        /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
             $customerId,
             [$campaignBudgetOperation]
@@ -210,6 +214,7 @@ class CreateCompleteCampaignBothApisPhase3
 
         // Issues a mutate request to add campaigns.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
+        /** @var MutateCampaignsResponse $campaignResponse */
         $campaignResponse = $campaignServiceClient->mutateCampaigns(
             $customerId,
             [$campaignOperation]
@@ -273,6 +278,7 @@ class CreateCompleteCampaignBothApisPhase3
 
         // Issues a mutate request to add the ad groups.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
+        /** @var MutateAdGroupsResponse $adGroupResponse */
         $adGroupResponse = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
 
         $adGroupResourceName = $adGroupResponse->getResults()[0]->getResourceName();

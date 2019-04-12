@@ -23,6 +23,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\V1\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
 use Google\Ads\GoogleAds\V1\Resources\CampaignBudget;
 use Google\Ads\GoogleAds\V1\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V1\Services\MutateCampaignBudgetsResponse;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroup;
@@ -126,8 +127,6 @@ class CreateCompleteCampaignBothApisPhase1
         GoogleAdsClient $googleAdsClient,
         string $customerId
     ) {
-        $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
-
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
             'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
@@ -138,7 +137,10 @@ class CreateCompleteCampaignBothApisPhase1
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
-        
+       
+        // Issues a mutate request to add campaign budgets.
+        $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
+        /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
             $customerId,
             [$campaignBudgetOperation]
