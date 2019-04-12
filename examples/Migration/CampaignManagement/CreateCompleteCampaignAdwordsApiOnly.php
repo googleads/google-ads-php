@@ -76,7 +76,7 @@ class CreateCompleteCampaignAdWordsApiOnly
     ];
 
     /**
-     * Runs the CreateCompleteCampaignGoogleAdsApiOnly example.
+     * Runs the CreateCompleteCampaignAdWordsApiOnly example.
      * @param AdWordsServices $adWordsServices the AdWords services
      * @param AdWordsSession $adWordsSession the AdWords session
      */
