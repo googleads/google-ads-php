@@ -19,20 +19,17 @@ namespace Google\Ads\GoogleAds\Examples\Migration;
 
 require __DIR__ . '/vendor/autoload.php';
 
-use GetOpt\GetOpt;
-use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignAdwordsApiOnly;
-use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
-use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
+use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignAdWordsApiOnly;
+use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignBothApisPhase1;
+use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignBothApisPhase2;
+use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignBothApisPhase3;
+use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignBothApisPhase4;
+use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignGoogleAdsApiOnly;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSessionBuilder;
 use Google\AdsApi\Common\OAuth2TokenBuilder as AdWordsApiOAuth2TokenBuilder;
-use Google\ApiCore\ApiException;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
@@ -94,7 +91,7 @@ class RunExamples
 
         // Uncomment the relevant code example to run it.
 
-        // CreateCompleteCampaignAdwordsApiOnly::runExample(new AdWordsServices(), $adWordsSession);
+        // CreateCompleteCampaignAdWordsApiOnly::runExample(new AdWordsServices(), $adWordsSession);
         // CreateCompleteCampaignBothApisPhase1::runExample(
         //     new AdWordsServices(),
         //     $adWordsSession,

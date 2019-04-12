@@ -31,7 +31,6 @@ use Google\AdsApi\AdWords\v201809\cm\AdGroupAdOperation;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdRotationMode;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdService;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdStatus;
-use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterion;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionOperation;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionService;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupOperation;
@@ -56,13 +55,12 @@ use Google\AdsApi\AdWords\v201809\cm\NetworkSetting;
 use Google\AdsApi\AdWords\v201809\cm\Operator;
 use Google\AdsApi\AdWords\v201809\cm\UrlList;
 use Google\AdsApi\AdWords\v201809\cm\UserStatus;
-use Google\Protobuf\BoolValue;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 
 /**
  * This code example is the second in a series of code examples that shows how to create
- * a Search campign using the AdWords API, and then migrate it to the Google Ads API one
+ * a Search campaign using the AdWords API, and then migrate it to the Google Ads API one
  * functionality at a time. See CreateCompleteCampaignAdwordsApiOnly.php through
  * CreateCompleteCampaignBothApisPhase4.php for code examples in various stages of migration.
  *
@@ -140,8 +138,7 @@ class CreateCompleteCampaignBothApisPhase1
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
-
-        /** @var MutateCampaignBudgetResponse $campaignBudgetResponse */
+        
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
             $customerId,
             [$campaignBudgetOperation]

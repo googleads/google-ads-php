@@ -26,7 +26,6 @@ use Google\Ads\GoogleAds\V1\Enums\AdGroupTypeEnum\AdGroupType;
 use Google\Ads\GoogleAds\V1\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
 use Google\Ads\GoogleAds\V1\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
 use Google\Ads\GoogleAds\V1\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V1\Resources\Ad;
 use Google\Ads\GoogleAds\V1\Resources\AdGroup;
 use Google\Ads\GoogleAds\V1\Resources\Campaign;
 use Google\Ads\GoogleAds\V1\Resources\Campaign\NetworkSettings;
@@ -38,10 +37,8 @@ use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAd;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdOperation;
-use Google\AdsApi\AdWords\v201809\cm\AdGroupAdRotationMode;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdService;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdStatus;
-use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterion;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionOperation;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionService;
 use Google\AdsApi\AdWords\v201809\cm\BiddableAdGroupCriterion;
@@ -57,7 +54,7 @@ use Google\Protobuf\StringValue;
 
 /**
  * This code example is the fourth in a series of code examples that shows how to create
- * a Search campign using the AdWords API, and then migrate it to the Google Ads API one
+ * a Search campaign using the AdWords API, and then migrate it to the Google Ads API one
  * functionality at a time. See CreateCompleteCampaignAdwordsApiOnly.php through
  * CreateCompleteCampaignBothApisPhase4.php for code examples in various stages of migration.
  *
@@ -126,8 +123,7 @@ class CreateCompleteCampaignBothApisPhase3
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
-
-        /** @var MutateCampaignBudgetResponse $campaignBudgetResponse */
+        
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
             $customerId,
             [$campaignBudgetOperation]
@@ -231,7 +227,7 @@ class CreateCompleteCampaignBothApisPhase3
      * Gets a campaign.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $customerId the client customer ID without hyphens
-     * @param string $resourceName the resource name of the campaign to retrieve
+     * @param string $campaignResourceName the resource name of the campaign to retrieve
      * @return Campaign the campaign
      */
     private static function getCampaign(
@@ -291,7 +287,7 @@ class CreateCompleteCampaignBothApisPhase3
      * Gets an ad group.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $customerId the client customer ID without hyphens
-     * @param string $resourceName the resource name of the ad group to retrieve
+     * @param string $adGroupResourceName the resource name of the ad group to retrieve
      * @return AdGroup the ad group
      */
     private static function getAdGroup(

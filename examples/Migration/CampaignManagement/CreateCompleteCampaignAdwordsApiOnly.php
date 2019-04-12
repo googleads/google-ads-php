@@ -17,6 +17,8 @@
 
 namespace Google\Ads\GoogleAds\Examples\Migration\CampaignManagement;
 
+require __DIR__ . '/../vendor/autoload.php';
+
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroup;
@@ -25,7 +27,6 @@ use Google\AdsApi\AdWords\v201809\cm\AdGroupAdOperation;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdRotationMode;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdService;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupAdStatus;
-use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterion;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionOperation;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionService;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupOperation;
@@ -54,8 +55,6 @@ use Google\AdsApi\AdWords\v201809\cm\Operator;
 use Google\AdsApi\AdWords\v201809\cm\UrlList;
 use Google\AdsApi\AdWords\v201809\cm\UserStatus;
 
-require __DIR__ . '/../vendor/autoload.php';
-
 /**
  * This code example is the first in a series of code examples that shows how to create
  * a Search campaign using the AdWords API, and then migrate it to Google Ads API one
@@ -66,7 +65,7 @@ require __DIR__ . '/../vendor/autoload.php';
  * campaign budget, a Search campaign, ad groups, keywords and expanded text ads. None of the
  * functionality has yet been migrated to the Google Ads API.
  */
-class CreateCompleteCampaignAdwordsApiOnly
+class CreateCompleteCampaignAdWordsApiOnly
 {
     // Number of ads being added/updated in this code example.
     private const NUMBER_OF_ADS = 5;
