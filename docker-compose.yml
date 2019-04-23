@@ -2,7 +2,7 @@ version: '2'
 services:
   web:
     build: .
-    volumes: 
-      - ./:/google-ads-php
+    volumes:
+    - ./:/google-ads-php
       - ~/:/root
       
