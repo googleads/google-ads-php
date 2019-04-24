@@ -182,6 +182,25 @@ $googleAdsClient = (new GoogleAdsClientBuilder())
 Once you have an instance of `GoogleAdsClient`, you can obtain a service client
 for a particular service using one of the `get...ServiceClient()` methods.
 
+## Running in a Docker container
+
+You can also execute the examples and develop your Google Ads API application inside a Docker 
+container, built using the provided [Dockerfile](Dockerfile).
+
+To do so, provided that you have a Docker environment [installed](https://docs.docker.com/install/),
+you can run the following command in the directory where you cloned this repository:
+
+    docker-compose up --build -d
+
+This will provide a Docker container instance with all the required dependencies already installed.
+
+To open a BASH shell inside the Docker container, you can run `docker ps` to get the container id and
+then run `docker exec -it <YOUR_CONTAINER_ID> bash`; this will allow you to run code examples and
+other applications inside the container.
+
+As a shorthand, in case you only have a single Docker container running on your machine, you can
+also run `docker exec -it $(docker ps -a -q) bash`.
+
 ## Logging
 
 This library conforms to [PSR-3](http://www.php-fig.org/psr/psr-3) for logging
