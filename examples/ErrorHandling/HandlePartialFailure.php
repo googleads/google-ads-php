@@ -33,6 +33,7 @@ use Google\Ads\GoogleAds\Util\V1\ResourceNames;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Resources\AdGroup;
 use Google\Ads\GoogleAds\V1\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V1\Services\MutateAdGroupsResponse;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -111,6 +112,24 @@ class HandlePartialFailure
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $campaignId)
     {
+        $response = self::createAdGroups($googleAdsClient, $customerId, $campaignId);
+        self::checkIfPartialFailureErrorExists($response);
+        self::printResults($response);
+    }
+
+    /**
+     * Create ad groups by enabling partial failure mode.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the client customer ID without hyphens
+     * @param int $campaignId a campaign ID
+     * @return MutateAdGroupsResponse
+     */
+    private static function createAdGroups(
+        GoogleAdsClient $googleAdsClient,
+        $customerId,
+        $campaignId
+    ) {
         $campaignResourceName =
             new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]);
 
@@ -146,15 +165,23 @@ class HandlePartialFailure
         $adGroupOperation3 = new AdGroupOperation();
         $adGroupOperation3->setCreate($adGroup3);
         $operations[] = $adGroupOperation3;
-        
+
         // Issues the mutate request, enabling partial failure mode.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
-        $response = $adGroupServiceClient->mutateAdGroups(
+        return $adGroupServiceClient->mutateAdGroups(
             $customerId,
             $operations,
             ['partialFailure' => true]
         );
+    }
 
+    /**
+     * Check if there exists partial failure error in the given mutate ad group response.
+     *
+     * @param MutateAdGroupsResponse $response the mutate ad group response
+     */
+    private static function checkIfPartialFailureErrorExists(MutateAdGroupsResponse $response)
+    {
         if (!is_null($response->getPartialFailureError())) {
             printf("Partial failures occurred. Details will be shown below.%s", PHP_EOL);
         } else {
@@ -163,10 +190,21 @@ class HandlePartialFailure
                 PHP_EOL
             );
         }
+    }
 
+    /**
+     * Print results of the given mutate ad group response. For those that are partial failure,
+     * print all their errors with corresponding operation indices. For those that succeeded, print
+     * the resource names of created ad groups.
+     *
+     * @param MutateAdGroupsResponse $response the mutate ad group response
+     */
+    private static function printResults(MutateAdGroupsResponse $response)
+    {
         // Finds the failed operations by looping through the results.
         $operationIndex = 0;
         foreach ($response->getResults() as $result) {
+            /** @var AdGroup $result */
             if (PartialFailures::isPartialFailure($result)) {
                 $errors = GoogleAdsErrors::fromStatus(
                     $operationIndex,
@@ -181,7 +219,12 @@ class HandlePartialFailure
                     );
                 }
             } else {
-                printf("Operation %d succeeded.%s", $operationIndex, PHP_EOL);
+                printf(
+                    "Operation %d succeeded: ad group with resource name '%s'.%s",
+                    $operationIndex,
+                    $result->getResourceName(),
+                    PHP_EOL
+                );
             }
             $operationIndex++;
         }
