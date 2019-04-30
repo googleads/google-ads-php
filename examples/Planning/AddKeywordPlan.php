@@ -170,9 +170,7 @@ class AddKeywordPlan
         $keywordPlanServiceClient = $googleAdsClient->getKeywordPlanServiceClient();
         $response = $keywordPlanServiceClient->mutateKeywordPlans(
             $customerId,
-            [$keywordPlanOperation],
-            false,
-            false
+            [$keywordPlanOperation]
         );
 
         $resourceName = $response->getResults()[0]->getResourceName();
@@ -226,9 +224,7 @@ class AddKeywordPlan
             $googleAdsClient->getKeywordPlanCampaignServiceClient();
         $response = $keywordPlanCampaignServiceClient->mutateKeywordPlanCampaigns(
             $customerId,
-            [$keywordPlanCampaignOperation],
-            false,
-            false
+            [$keywordPlanCampaignOperation]
         );
 
         $planCampaignResource = $response->getResults()[0]->getResourceName();
@@ -266,9 +262,7 @@ class AddKeywordPlan
         $keywordPlanAdGroupServiceClient = $googleAdsClient->getKeywordPlanAdGroupServiceClient();
         $response = $keywordPlanAdGroupServiceClient->mutateKeywordPlanAdGroups(
             $customerId,
-            [$keywordPlanAdGroupOperation],
-            false,
-            false
+            [$keywordPlanAdGroupOperation]
         );
 
         $planAdGroupResource = $response->getResults()[0]->getResourceName();
@@ -328,9 +322,7 @@ class AddKeywordPlan
         // Adds the keyword plan keywords.
         $response = $keywordPlanKeywordServiceClient->mutateKeywordPlanKeywords(
             $customerId,
-            $keywordPlanKeywordOperations,
-            false,
-            false
+            $keywordPlanKeywordOperations
         );
 
         /** @var KeywordPlanKeyword $result */
@@ -368,9 +360,7 @@ class AddKeywordPlan
         // Adds the negative keyword.
         $response = $keywordPlanNegativeKeywordServiceClient->mutateKeywordPlanNegativeKeywords(
             $customerId,
-            [$keywordPlanNegativeKeywordOperation],
-            false,
-            false
+            [$keywordPlanNegativeKeywordOperation]
         );
 
         /** @var KeywordPlanNegativeKeyword $result */
