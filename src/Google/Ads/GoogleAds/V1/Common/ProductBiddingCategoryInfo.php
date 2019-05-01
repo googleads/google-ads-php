@@ -73,6 +73,22 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * ID of the product bidding category.
+     * This ID is equivalent to the google_product_category ID as described in
+     * this article: https://support.google.com/merchants/answer/6324436.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
@@ -90,6 +106,23 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * ID of the product bidding category.
+     * This ID is equivalent to the google_product_category ID as described in
+     * this article: https://support.google.com/merchants/answer/6324436.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Two-letter upper-case country code of the product bidding category. It must
      * match the campaign.shopping_setting.sales_country field.
      *
@@ -99,6 +132,21 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
     public function getCountryCode()
     {
         return $this->country_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCountryCode()</code>
+
+     * Two-letter upper-case country code of the product bidding category. It must
+     * match the campaign.shopping_setting.sales_country field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
+     * @return string|null
+     */
+    public function getCountryCodeValue()
+    {
+        $wrapper = $this->getCountryCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -115,6 +163,22 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
         $this->country_code = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Two-letter upper-case country code of the product bidding category. It must
+     * match the campaign.shopping_setting.sales_country field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryCode($wrappedVar);
     }
 
     /**

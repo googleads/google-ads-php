@@ -52,6 +52,21 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getNewBudgetAmountMicros()</code>
+
+     * New budget amount to set for target budget resource. This is a required
+     * field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
+     * @return int|string|null
+     */
+    public function getNewBudgetAmountMicrosValue()
+    {
+        $wrapper = $this->getNewBudgetAmountMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * New budget amount to set for target budget resource. This is a required
      * field.
      *
@@ -65,6 +80,22 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
         $this->new_budget_amount_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * New budget amount to set for target budget resource. This is a required
+     * field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setNewBudgetAmountMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setNewBudgetAmountMicros($wrappedVar);
     }
 
 }

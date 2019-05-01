@@ -181,6 +181,20 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFeed()</code>
+
+     * The feed to which this feed item belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * @return string|null
+     */
+    public function getFeedValue()
+    {
+        $wrapper = $this->getFeed();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The feed to which this feed item belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
@@ -196,6 +210,21 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The feed to which this feed item belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFeedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFeed($wrappedVar);
+    }
+
+    /**
      * The ID of this feed item.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
@@ -204,6 +233,20 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of this feed item.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -222,6 +265,21 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of this feed item.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Start time in which this feed item is effective and can begin serving.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
@@ -232,6 +290,22 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     public function getStartDateTime()
     {
         return $this->start_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getStartDateTime()</code>
+
+     * Start time in which this feed item is effective and can begin serving.
+     * The format is "YYYY-MM-DD HH:MM:SS".
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 4;</code>
+     * @return string|null
+     */
+    public function getStartDateTimeValue()
+    {
+        $wrapper = $this->getStartDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -252,6 +326,23 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Start time in which this feed item is effective and can begin serving.
+     * The format is "YYYY-MM-DD HH:MM:SS".
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setStartDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setStartDateTime($wrappedVar);
+    }
+
+    /**
      * End time in which this feed item is no longer effective and will stop
      * serving.
      * The format is "YYYY-MM-DD HH:MM:SS".
@@ -263,6 +354,23 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     public function getEndDateTime()
     {
         return $this->end_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEndDateTime()</code>
+
+     * End time in which this feed item is no longer effective and will stop
+     * serving.
+     * The format is "YYYY-MM-DD HH:MM:SS".
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 5;</code>
+     * @return string|null
+     */
+    public function getEndDateTimeValue()
+    {
+        $wrapper = $this->getEndDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -281,6 +389,24 @@ class FeedItem extends \Google\Protobuf\Internal\Message
         $this->end_date_time = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * End time in which this feed item is no longer effective and will stop
+     * serving.
+     * The format is "YYYY-MM-DD HH:MM:SS".
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setEndDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setEndDateTime($wrappedVar);
     }
 
     /**

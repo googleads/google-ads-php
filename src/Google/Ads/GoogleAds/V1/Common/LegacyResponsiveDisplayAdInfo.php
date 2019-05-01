@@ -180,6 +180,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getShortHeadline()</code>
+
+     * The short version of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue short_headline = 1;</code>
+     * @return string|null
+     */
+    public function getShortHeadlineValue()
+    {
+        $wrapper = $this->getShortHeadline();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The short version of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue short_headline = 1;</code>
@@ -195,6 +209,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The short version of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue short_headline = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setShortHeadlineValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setShortHeadline($wrappedVar);
+    }
+
+    /**
      * The long version of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue long_headline = 2;</code>
@@ -203,6 +232,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getLongHeadline()
     {
         return $this->long_headline;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLongHeadline()</code>
+
+     * The long version of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_headline = 2;</code>
+     * @return string|null
+     */
+    public function getLongHeadlineValue()
+    {
+        $wrapper = $this->getLongHeadline();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -221,6 +264,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The long version of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_headline = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLongHeadlineValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLongHeadline($wrappedVar);
+    }
+
+    /**
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
@@ -229,6 +287,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * The description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -247,6 +319,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
+    }
+
+    /**
      * The business name in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 4;</code>
@@ -255,6 +342,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getBusinessName()
     {
         return $this->business_name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBusinessName()</code>
+
+     * The business name in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 4;</code>
+     * @return string|null
+     */
+    public function getBusinessNameValue()
+    {
+        $wrapper = $this->getBusinessName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -273,6 +374,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The business name in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBusinessNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBusinessName($wrappedVar);
+    }
+
+    /**
      * Advertiser's consent to allow flexible color. When true, the ad may be
      * served with different color if necessary. When false, the ad will be served
      * with the specified colors or a neutral color.
@@ -285,6 +401,24 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getAllowFlexibleColor()
     {
         return $this->allow_flexible_color;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAllowFlexibleColor()</code>
+
+     * Advertiser's consent to allow flexible color. When true, the ad may be
+     * served with different color if necessary. When false, the ad will be served
+     * with the specified colors or a neutral color.
+     * The default value is true.
+     * Must be true if main_color and accent_color are not set.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue allow_flexible_color = 5;</code>
+     * @return bool|null
+     */
+    public function getAllowFlexibleColorValue()
+    {
+        $wrapper = $this->getAllowFlexibleColor();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -307,6 +441,25 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Advertiser's consent to allow flexible color. When true, the ad may be
+     * served with different color if necessary. When false, the ad will be served
+     * with the specified colors or a neutral color.
+     * The default value is true.
+     * Must be true if main_color and accent_color are not set.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue allow_flexible_color = 5;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setAllowFlexibleColorValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setAllowFlexibleColor($wrappedVar);
+    }
+
+    /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
      * If one of main_color and accent_color is set, the other is required as
      * well.
@@ -317,6 +470,22 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getAccentColor()
     {
         return $this->accent_color;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAccentColor()</code>
+
+     * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     * If one of main_color and accent_color is set, the other is required as
+     * well.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue accent_color = 6;</code>
+     * @return string|null
+     */
+    public function getAccentColorValue()
+    {
+        $wrapper = $this->getAccentColor();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -337,6 +506,23 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
+     * If one of main_color and accent_color is set, the other is required as
+     * well.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue accent_color = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAccentColorValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAccentColor($wrappedVar);
+    }
+
+    /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
      * If one of main_color and accent_color is set, the other is required as
      * well.
@@ -347,6 +533,22 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getMainColor()
     {
         return $this->main_color;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMainColor()</code>
+
+     * The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     * If one of main_color and accent_color is set, the other is required as
+     * well.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue main_color = 7;</code>
+     * @return string|null
+     */
+    public function getMainColorValue()
+    {
+        $wrapper = $this->getMainColor();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -367,6 +569,23 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The main color of the ad in hexadecimal, e.g. #ffffff for white.
+     * If one of main_color and accent_color is set, the other is required as
+     * well.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue main_color = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setMainColorValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setMainColor($wrappedVar);
+    }
+
+    /**
      * The call-to-action text for the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_to_action_text = 8;</code>
@@ -375,6 +594,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getCallToActionText()
     {
         return $this->call_to_action_text;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCallToActionText()</code>
+
+     * The call-to-action text for the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_to_action_text = 8;</code>
+     * @return string|null
+     */
+    public function getCallToActionTextValue()
+    {
+        $wrapper = $this->getCallToActionText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -393,6 +626,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The call-to-action text for the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_to_action_text = 8;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCallToActionTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCallToActionText($wrappedVar);
+    }
+
+    /**
      * The MediaFile resource name of the logo image used in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue logo_image = 9;</code>
@@ -401,6 +649,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getLogoImage()
     {
         return $this->logo_image;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLogoImage()</code>
+
+     * The MediaFile resource name of the logo image used in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue logo_image = 9;</code>
+     * @return string|null
+     */
+    public function getLogoImageValue()
+    {
+        $wrapper = $this->getLogoImage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -419,6 +681,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource name of the logo image used in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue logo_image = 9;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLogoImageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLogoImage($wrappedVar);
+    }
+
+    /**
      * The MediaFile resource name of the square logo image used in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue square_logo_image = 10;</code>
@@ -427,6 +704,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getSquareLogoImage()
     {
         return $this->square_logo_image;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getSquareLogoImage()</code>
+
+     * The MediaFile resource name of the square logo image used in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue square_logo_image = 10;</code>
+     * @return string|null
+     */
+    public function getSquareLogoImageValue()
+    {
+        $wrapper = $this->getSquareLogoImage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -445,6 +736,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource name of the square logo image used in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue square_logo_image = 10;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSquareLogoImageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSquareLogoImage($wrappedVar);
+    }
+
+    /**
      * The MediaFile resource name of the marketing image used in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image = 11;</code>
@@ -453,6 +759,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getMarketingImage()
     {
         return $this->marketing_image;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMarketingImage()</code>
+
+     * The MediaFile resource name of the marketing image used in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image = 11;</code>
+     * @return string|null
+     */
+    public function getMarketingImageValue()
+    {
+        $wrapper = $this->getMarketingImage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -471,6 +791,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource name of the marketing image used in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image = 11;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setMarketingImageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setMarketingImage($wrappedVar);
+    }
+
+    /**
      * The MediaFile resource name of the square marketing image used in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue square_marketing_image = 12;</code>
@@ -479,6 +814,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getSquareMarketingImage()
     {
         return $this->square_marketing_image;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getSquareMarketingImage()</code>
+
+     * The MediaFile resource name of the square marketing image used in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue square_marketing_image = 12;</code>
+     * @return string|null
+     */
+    public function getSquareMarketingImageValue()
+    {
+        $wrapper = $this->getSquareMarketingImage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -494,6 +843,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
         $this->square_marketing_image = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource name of the square marketing image used in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue square_marketing_image = 12;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSquareMarketingImageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSquareMarketingImage($wrappedVar);
     }
 
     /**
@@ -534,6 +898,20 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPricePrefix()</code>
+
+     * Prefix before price. E.g. 'as low as'.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue price_prefix = 14;</code>
+     * @return string|null
+     */
+    public function getPricePrefixValue()
+    {
+        $wrapper = $this->getPricePrefix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Prefix before price. E.g. 'as low as'.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue price_prefix = 14;</code>
@@ -549,6 +927,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Prefix before price. E.g. 'as low as'.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue price_prefix = 14;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPricePrefixValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPricePrefix($wrappedVar);
+    }
+
+    /**
      * Promotion text used for dyanmic formats of responsive ads. For example
      * 'Free two-day shipping'.
      *
@@ -558,6 +951,21 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     public function getPromoText()
     {
         return $this->promo_text;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPromoText()</code>
+
+     * Promotion text used for dyanmic formats of responsive ads. For example
+     * 'Free two-day shipping'.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promo_text = 15;</code>
+     * @return string|null
+     */
+    public function getPromoTextValue()
+    {
+        $wrapper = $this->getPromoText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -574,6 +982,22 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
         $this->promo_text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Promotion text used for dyanmic formats of responsive ads. For example
+     * 'Free two-day shipping'.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promo_text = 15;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPromoTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPromoText($wrappedVar);
     }
 
 }

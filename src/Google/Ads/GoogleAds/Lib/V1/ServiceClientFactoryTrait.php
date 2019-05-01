@@ -26,10 +26,12 @@ use Google\Ads\GoogleAds\V1\Services\AdGroupAudienceViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdGroupBidModifierServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdGroupCriterionLabelServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdGroupCriterionServiceClient;
+use Google\Ads\GoogleAds\V1\Services\AdGroupCriterionSimulationServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdGroupExtensionSettingServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdGroupFeedServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdGroupLabelServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdGroupServiceClient;
+use Google\Ads\GoogleAds\V1\Services\AdGroupSimulationServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdParameterServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AdScheduleViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\AgeRangeViewServiceClient;
@@ -66,6 +68,7 @@ use Google\Ads\GoogleAds\V1\Services\DetailPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\DomainCategoryServiceClient;
 use Google\Ads\GoogleAds\V1\Services\DynamicSearchAdsSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ExtensionFeedItemServiceClient;
+use Google\Ads\GoogleAds\V1\Services\ExpandedLandingPageViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\FeedItemServiceClient;
 use Google\Ads\GoogleAds\V1\Services\FeedItemTargetServiceClient;
 use Google\Ads\GoogleAds\V1\Services\FeedMappingServiceClient;
@@ -87,6 +90,7 @@ use Google\Ads\GoogleAds\V1\Services\KeywordPlanNegativeKeywordServiceClient;
 use Google\Ads\GoogleAds\V1\Services\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V1\Services\KeywordViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\LabelServiceClient;
+use Google\Ads\GoogleAds\V1\Services\LandingPageViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\LocationViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ManagedPlacementViewServiceClient;
@@ -99,6 +103,7 @@ use Google\Ads\GoogleAds\V1\Services\OperatingSystemVersionConstantServiceClient
 use Google\Ads\GoogleAds\V1\Services\ParentalStatusViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ProductBiddingCategoryConstantServiceClient;
+use Google\Ads\GoogleAds\V1\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ProductGroupViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V1\Services\RemarketingActionServiceClient;
@@ -225,6 +230,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return AdGroupCriterionSimulationServiceClient
+     */
+    public function getAdGroupCriterionSimulationServiceClient()
+    {
+        return new AdGroupCriterionSimulationServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return AdGroupExtensionSettingServiceClient
      */
     public function getAdGroupExtensionSettingServiceClient()
@@ -254,6 +267,14 @@ trait ServiceClientFactoryTrait
     public function getAdGroupServiceClient()
     {
         return new AdGroupServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return AdGroupSimulationServiceClient
+     */
+    public function getAdGroupSimulationServiceClient()
+    {
+        return new AdGroupSimulationServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -545,6 +566,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return ExpandedLandingPageViewServiceClient
+     */
+    public function getExpandedLandingPageViewServiceClient()
+    {
+        return new ExpandedLandingPageViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return FeedItemServiceClient
      */
     public function getFeedItemServiceClient()
@@ -713,6 +742,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return LandingPageViewServiceClient
+     */
+    public function getLandingPageViewServiceClient()
+    {
+        return new LandingPageViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return LanguageConstantServiceClient
      */
     public function getLanguageConstantServiceClient()
@@ -806,6 +843,14 @@ trait ServiceClientFactoryTrait
     public function getProductBiddingCategoryConstantServiceClient()
     {
         return new ProductBiddingCategoryConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return PaidOrganicSearchTermViewServiceClient
+     */
+    public function getPaidOrganicSearchTermViewServiceClient()
+    {
+        return new PaidOrganicSearchTermViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

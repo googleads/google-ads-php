@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AppPlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for App placeholder fields.
  *
@@ -78,6 +80,39 @@ class AppPlaceholderField
      * Generated from protobuf enum <code>FINAL_URL_SUFFIX = 9;</code>
      */
     const FINAL_URL_SUFFIX = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::STORE => 'STORE',
+        self::ID => 'ID',
+        self::LINK_TEXT => 'LINK_TEXT',
+        self::URL => 'URL',
+        self::FINAL_URLS => 'FINAL_URLS',
+        self::FINAL_MOBILE_URLS => 'FINAL_MOBILE_URLS',
+        self::TRACKING_URL => 'TRACKING_URL',
+        self::FINAL_URL_SUFFIX => 'FINAL_URL_SUFFIX',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

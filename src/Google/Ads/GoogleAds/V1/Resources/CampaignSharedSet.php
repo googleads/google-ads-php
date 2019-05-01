@@ -118,6 +118,20 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCampaign()</code>
+
+     * The campaign to which the campaign shared set belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
+     * @return string|null
+     */
+    public function getCampaignValue()
+    {
+        $wrapper = $this->getCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The campaign to which the campaign shared set belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
@@ -130,6 +144,21 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
         $this->campaign = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The campaign to which the campaign shared set belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCampaign($wrappedVar);
     }
 
     /**
@@ -146,6 +175,25 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     public function getSharedSet()
     {
         return $this->shared_set;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getSharedSet()</code>
+
+     * The shared set associated with the campaign. This may be a negative keyword
+     * shared set of another customer. This customer should be a manager of the
+     * other customer, otherwise the campaign shared set will exist but have no
+     * serving effect. Only negative keyword shared sets can be associated with
+     * Shopping campaigns. Only negative placement shared sets can be associated
+     * with Display mobile app campaigns.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4;</code>
+     * @return string|null
+     */
+    public function getSharedSetValue()
+    {
+        $wrapper = $this->getSharedSet();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -166,6 +214,26 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
         $this->shared_set = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The shared set associated with the campaign. This may be a negative keyword
+     * shared set of another customer. This customer should be a manager of the
+     * other customer, otherwise the campaign shared set will exist but have no
+     * serving effect. Only negative keyword shared sets can be associated with
+     * Shopping campaigns. Only negative placement shared sets can be associated
+     * with Display mobile app campaigns.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSharedSetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSharedSet($wrappedVar);
     }
 
     /**

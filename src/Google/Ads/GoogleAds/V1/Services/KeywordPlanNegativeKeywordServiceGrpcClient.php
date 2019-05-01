@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the keyword plan negative keyword service.
+ *
  * Service to manage Keyword Plan negative keywords.
  */
 class KeywordPlanNegativeKeywordServiceGrpcClient extends \Grpc\BaseStub {

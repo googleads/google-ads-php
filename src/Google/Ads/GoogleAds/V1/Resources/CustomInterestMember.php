@@ -87,6 +87,21 @@ class CustomInterestMember extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getParameter()</code>
+
+     * Keyword text when member_type is KEYWORD or URL string when
+     * member_type is URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue parameter = 2;</code>
+     * @return string|null
+     */
+    public function getParameterValue()
+    {
+        $wrapper = $this->getParameter();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Keyword text when member_type is KEYWORD or URL string when
      * member_type is URL.
      *
@@ -100,6 +115,22 @@ class CustomInterestMember extends \Google\Protobuf\Internal\Message
         $this->parameter = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Keyword text when member_type is KEYWORD or URL string when
+     * member_type is URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue parameter = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setParameterValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setParameter($wrappedVar);
     }
 
 }

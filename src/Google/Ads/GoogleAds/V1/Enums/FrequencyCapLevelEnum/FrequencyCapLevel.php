@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\FrequencyCapLevelEnum;
 
+use UnexpectedValueException;
+
 /**
  * The level on which the cap is to be applied (e.g ad group ad, ad group).
  * Cap is applied to all the resources of this level.
@@ -42,6 +44,34 @@ class FrequencyCapLevel
      * Generated from protobuf enum <code>CAMPAIGN = 4;</code>
      */
     const CAMPAIGN = 4;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::AD_GROUP_AD => 'AD_GROUP_AD',
+        self::AD_GROUP => 'AD_GROUP',
+        self::CAMPAIGN => 'CAMPAIGN',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

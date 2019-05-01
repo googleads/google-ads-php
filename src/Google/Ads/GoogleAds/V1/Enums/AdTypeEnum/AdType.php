@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AdTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The possible types of an ad.
  *
@@ -114,6 +116,68 @@ class AdType
      * Generated from protobuf enum <code>RESPONSIVE_DISPLAY_AD = 19;</code>
      */
     const RESPONSIVE_DISPLAY_AD = 19;
+    /**
+     * The ad is a display upload ad with the HTML5_UPLOAD_AD product type.
+     *
+     * Generated from protobuf enum <code>HTML5_UPLOAD_AD = 21;</code>
+     */
+    const HTML5_UPLOAD_AD = 21;
+    /**
+     * The ad is a display upload ad with one of the DYNAMIC_HTML5_* product
+     * types.
+     *
+     * Generated from protobuf enum <code>DYNAMIC_HTML5_AD = 22;</code>
+     */
+    const DYNAMIC_HTML5_AD = 22;
+    /**
+     * The ad is an app engagement ad.
+     *
+     * Generated from protobuf enum <code>APP_ENGAGEMENT_AD = 23;</code>
+     */
+    const APP_ENGAGEMENT_AD = 23;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::TEXT_AD => 'TEXT_AD',
+        self::EXPANDED_TEXT_AD => 'EXPANDED_TEXT_AD',
+        self::CALL_ONLY_AD => 'CALL_ONLY_AD',
+        self::EXPANDED_DYNAMIC_SEARCH_AD => 'EXPANDED_DYNAMIC_SEARCH_AD',
+        self::HOTEL_AD => 'HOTEL_AD',
+        self::SHOPPING_SMART_AD => 'SHOPPING_SMART_AD',
+        self::SHOPPING_PRODUCT_AD => 'SHOPPING_PRODUCT_AD',
+        self::VIDEO_AD => 'VIDEO_AD',
+        self::GMAIL_AD => 'GMAIL_AD',
+        self::IMAGE_AD => 'IMAGE_AD',
+        self::RESPONSIVE_SEARCH_AD => 'RESPONSIVE_SEARCH_AD',
+        self::LEGACY_RESPONSIVE_DISPLAY_AD => 'LEGACY_RESPONSIVE_DISPLAY_AD',
+        self::APP_AD => 'APP_AD',
+        self::LEGACY_APP_INSTALL_AD => 'LEGACY_APP_INSTALL_AD',
+        self::RESPONSIVE_DISPLAY_AD => 'RESPONSIVE_DISPLAY_AD',
+        self::HTML5_UPLOAD_AD => 'HTML5_UPLOAD_AD',
+        self::DYNAMIC_HTML5_AD => 'DYNAMIC_HTML5_AD',
+        self::APP_ENGAGEMENT_AD => 'APP_ENGAGEMENT_AD',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

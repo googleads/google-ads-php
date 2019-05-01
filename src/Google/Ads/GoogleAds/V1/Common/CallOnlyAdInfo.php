@@ -151,6 +151,20 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCountryCode()</code>
+
+     * The country code in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 1;</code>
+     * @return string|null
+     */
+    public function getCountryCodeValue()
+    {
+        $wrapper = $this->getCountryCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The country code in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 1;</code>
@@ -166,6 +180,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The country code in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryCode($wrappedVar);
+    }
+
+    /**
      * The phone number in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 2;</code>
@@ -174,6 +203,20 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getPhoneNumber()
     {
         return $this->phone_number;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPhoneNumber()</code>
+
+     * The phone number in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 2;</code>
+     * @return string|null
+     */
+    public function getPhoneNumberValue()
+    {
+        $wrapper = $this->getPhoneNumber();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -192,6 +235,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The phone number in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPhoneNumberValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPhoneNumber($wrappedVar);
+    }
+
+    /**
      * The business name in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 3;</code>
@@ -200,6 +258,20 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getBusinessName()
     {
         return $this->business_name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBusinessName()</code>
+
+     * The business name in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 3;</code>
+     * @return string|null
+     */
+    public function getBusinessNameValue()
+    {
+        $wrapper = $this->getBusinessName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -218,6 +290,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The business name in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBusinessNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBusinessName($wrappedVar);
+    }
+
+    /**
      * First headline in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline1 = 11;</code>
@@ -226,6 +313,20 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getHeadline1()
     {
         return $this->headline1;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHeadline1()</code>
+
+     * First headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline1 = 11;</code>
+     * @return string|null
+     */
+    public function getHeadline1Value()
+    {
+        $wrapper = $this->getHeadline1();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -244,6 +345,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * First headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline1 = 11;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeadline1Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeadline1($wrappedVar);
+    }
+
+    /**
      * Second headline in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline2 = 12;</code>
@@ -252,6 +368,20 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getHeadline2()
     {
         return $this->headline2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHeadline2()</code>
+
+     * Second headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline2 = 12;</code>
+     * @return string|null
+     */
+    public function getHeadline2Value()
+    {
+        $wrapper = $this->getHeadline2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -270,6 +400,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Second headline in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline2 = 12;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeadline2Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeadline2($wrappedVar);
+    }
+
+    /**
      * The first line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 4;</code>
@@ -278,6 +423,20 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getDescription1()
     {
         return $this->description1;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription1()</code>
+
+     * The first line of the ad's description.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 4;</code>
+     * @return string|null
+     */
+    public function getDescription1Value()
+    {
+        $wrapper = $this->getDescription1();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -296,6 +455,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The first line of the ad's description.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescription1Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription1($wrappedVar);
+    }
+
+    /**
      * The second line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 5;</code>
@@ -304,6 +478,20 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getDescription2()
     {
         return $this->description2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription2()</code>
+
+     * The second line of the ad's description.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 5;</code>
+     * @return string|null
+     */
+    public function getDescription2Value()
+    {
+        $wrapper = $this->getDescription2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -322,6 +510,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The second line of the ad's description.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescription2Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription2($wrappedVar);
+    }
+
+    /**
      * Whether to enable call tracking for the creative. Enabling call
      * tracking also enables call conversions.
      *
@@ -331,6 +534,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getCallTracked()
     {
         return $this->call_tracked;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCallTracked()</code>
+
+     * Whether to enable call tracking for the creative. Enabling call
+     * tracking also enables call conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_tracked = 6;</code>
+     * @return bool|null
+     */
+    public function getCallTrackedValue()
+    {
+        $wrapper = $this->getCallTracked();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -350,6 +568,22 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether to enable call tracking for the creative. Enabling call
+     * tracking also enables call conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_tracked = 6;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setCallTrackedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setCallTracked($wrappedVar);
+    }
+
+    /**
      * Whether to disable call conversion for the creative.
      * If set to `true`, disables call conversions even when `call_tracked` is
      * `true`.
@@ -361,6 +595,23 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getDisableCallConversion()
     {
         return $this->disable_call_conversion;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDisableCallConversion()</code>
+
+     * Whether to disable call conversion for the creative.
+     * If set to `true`, disables call conversions even when `call_tracked` is
+     * `true`.
+     * If `call_tracked` is `false`, this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue disable_call_conversion = 7;</code>
+     * @return bool|null
+     */
+    public function getDisableCallConversionValue()
+    {
+        $wrapper = $this->getDisableCallConversion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -382,6 +633,24 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether to disable call conversion for the creative.
+     * If set to `true`, disables call conversions even when `call_tracked` is
+     * `true`.
+     * If `call_tracked` is `false`, this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue disable_call_conversion = 7;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setDisableCallConversionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setDisableCallConversion($wrappedVar);
+    }
+
+    /**
      * The URL to be used for phone number verification.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number_verification_url = 8;</code>
@@ -390,6 +659,20 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getPhoneNumberVerificationUrl()
     {
         return $this->phone_number_verification_url;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPhoneNumberVerificationUrl()</code>
+
+     * The URL to be used for phone number verification.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue phone_number_verification_url = 8;</code>
+     * @return string|null
+     */
+    public function getPhoneNumberVerificationUrlValue()
+    {
+        $wrapper = $this->getPhoneNumberVerificationUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -408,6 +691,21 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL to be used for phone number verification.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue phone_number_verification_url = 8;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPhoneNumberVerificationUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPhoneNumberVerificationUrl($wrappedVar);
+    }
+
+    /**
      * The conversion action to attribute a call conversion to. If not set a
      * default conversion action is used. This field only has effect if
      * call_tracked is set to true. Otherwise this field is ignored.
@@ -418,6 +716,22 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     public function getConversionAction()
     {
         return $this->conversion_action;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConversionAction()</code>
+
+     * The conversion action to attribute a call conversion to. If not set a
+     * default conversion action is used. This field only has effect if
+     * call_tracked is set to true. Otherwise this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 9;</code>
+     * @return string|null
+     */
+    public function getConversionActionValue()
+    {
+        $wrapper = $this->getConversionAction();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -435,6 +749,23 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
         $this->conversion_action = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The conversion action to attribute a call conversion to. If not set a
+     * default conversion action is used. This field only has effect if
+     * call_tracked is set to true. Otherwise this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 9;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setConversionActionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setConversionAction($wrappedVar);
     }
 
     /**

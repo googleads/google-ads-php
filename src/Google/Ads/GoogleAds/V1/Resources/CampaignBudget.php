@@ -291,6 +291,24 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the campaign budget.
+     * A campaign budget is created using the CampaignBudgetService create
+     * operation and is assigned a budget ID. A budget ID can be shared across
+     * different campaigns; the system will then allocate the campaign budget
+     * among different campaigns to get optimum results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the campaign budget.
      * A campaign budget is created using the CampaignBudgetService create
      * operation and is assigned a budget ID. A budget ID can be shared across
@@ -310,6 +328,25 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the campaign budget.
+     * A campaign budget is created using the CampaignBudgetService create
+     * operation and is assigned a budget ID. A budget ID can be shared across
+     * different campaigns; the system will then allocate the campaign budget
+     * among different campaigns to get optimum results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the campaign budget.
      * When creating a campaign budget through CampaignBudgetService, every
      * explicitly shared campaign budget must have a non-null, non-empty name.
@@ -324,6 +361,26 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the campaign budget.
+     * When creating a campaign budget through CampaignBudgetService, every
+     * explicitly shared campaign budget must have a non-null, non-empty name.
+     * Campaign budgets that are not explicitly shared derive their name from the
+     * attached campaign's name.
+     * The length of this string must be between 1 and 255, inclusive,
+     * in UTF-8 bytes, (trimmed).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -348,6 +405,27 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the campaign budget.
+     * When creating a campaign budget through CampaignBudgetService, every
+     * explicitly shared campaign budget must have a non-null, non-empty name.
+     * Campaign budgets that are not explicitly shared derive their name from the
+     * attached campaign's name.
+     * The length of this string must be between 1 and 255, inclusive,
+     * in UTF-8 bytes, (trimmed).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * The amount of the budget, in the local currency for the account.
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
@@ -358,6 +436,22 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getAmountMicros()
     {
         return $this->amount_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAmountMicros()</code>
+
+     * The amount of the budget, in the local currency for the account.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 5;</code>
+     * @return int|string|null
+     */
+    public function getAmountMicrosValue()
+    {
+        $wrapper = $this->getAmountMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -378,6 +472,23 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The amount of the budget, in the local currency for the account.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 5;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setAmountMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setAmountMicros($wrappedVar);
+    }
+
+    /**
      * The lifetime amount of the budget, in the local currency for the account.
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
@@ -388,6 +499,22 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getTotalAmountMicros()
     {
         return $this->total_amount_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTotalAmountMicros()</code>
+
+     * The lifetime amount of the budget, in the local currency for the account.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 10;</code>
+     * @return int|string|null
+     */
+    public function getTotalAmountMicrosValue()
+    {
+        $wrapper = $this->getTotalAmountMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -405,6 +532,23 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         $this->total_amount_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The lifetime amount of the budget, in the local currency for the account.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 10;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setTotalAmountMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setTotalAmountMicros($wrappedVar);
     }
 
     /**
@@ -485,6 +629,30 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getExplicitlyShared()</code>
+
+     * Specifies whether the budget is explicitly shared. Defaults to true if
+     * unspecified in a create operation.
+     * If true, the budget was created with the purpose of sharing
+     * across one or more campaigns.
+     * If false, the budget was created with the intention of only being used
+     * with a single campaign. The budget's name and status will stay in sync
+     * with the campaign's name and status. Attempting to share the budget with a
+     * second campaign will result in an error.
+     * A non-shared budget can become an explicitly shared. The same operation
+     * must also assign the budget a name.
+     * A shared campaign budget can never become non-shared.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue explicitly_shared = 8;</code>
+     * @return bool|null
+     */
+    public function getExplicitlySharedValue()
+    {
+        $wrapper = $this->getExplicitlyShared();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Specifies whether the budget is explicitly shared. Defaults to true if
      * unspecified in a create operation.
      * If true, the budget was created with the purpose of sharing
@@ -510,6 +678,31 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Specifies whether the budget is explicitly shared. Defaults to true if
+     * unspecified in a create operation.
+     * If true, the budget was created with the purpose of sharing
+     * across one or more campaigns.
+     * If false, the budget was created with the intention of only being used
+     * with a single campaign. The budget's name and status will stay in sync
+     * with the campaign's name and status. Attempting to share the budget with a
+     * second campaign will result in an error.
+     * A non-shared budget can become an explicitly shared. The same operation
+     * must also assign the budget a name.
+     * A shared campaign budget can never become non-shared.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue explicitly_shared = 8;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setExplicitlySharedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setExplicitlyShared($wrappedVar);
+    }
+
+    /**
      * The number of campaigns actively using the budget.
      * This field is read-only.
      *
@@ -519,6 +712,21 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getReferenceCount()
     {
         return $this->reference_count;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getReferenceCount()</code>
+
+     * The number of campaigns actively using the budget.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9;</code>
+     * @return int|string|null
+     */
+    public function getReferenceCountValue()
+    {
+        $wrapper = $this->getReferenceCount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -538,6 +746,22 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The number of campaigns actively using the budget.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setReferenceCountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setReferenceCount($wrappedVar);
+    }
+
+    /**
      * Indicates whether there is a recommended budget for this campaign budget.
      * This field is read-only.
      *
@@ -547,6 +771,21 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getHasRecommendedBudget()
     {
         return $this->has_recommended_budget;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHasRecommendedBudget()</code>
+
+     * Indicates whether there is a recommended budget for this campaign budget.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * @return bool|null
+     */
+    public function getHasRecommendedBudgetValue()
+    {
+        $wrapper = $this->getHasRecommendedBudget();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -566,6 +805,22 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Indicates whether there is a recommended budget for this campaign budget.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setHasRecommendedBudgetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setHasRecommendedBudget($wrappedVar);
+    }
+
+    /**
      * The recommended budget amount. If no recommendation is available, this will
      * be set to the budget amount.
      * Amount is specified in micros, where one million is equivalent to one
@@ -578,6 +833,24 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getRecommendedBudgetAmountMicros()
     {
         return $this->recommended_budget_amount_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRecommendedBudgetAmountMicros()</code>
+
+     * The recommended budget amount. If no recommendation is available, this will
+     * be set to the budget amount.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * @return int|string|null
+     */
+    public function getRecommendedBudgetAmountMicrosValue()
+    {
+        $wrapper = $this->getRecommendedBudgetAmountMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -597,6 +870,25 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         $this->recommended_budget_amount_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The recommended budget amount. If no recommendation is available, this will
+     * be set to the budget amount.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRecommendedBudgetAmountMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRecommendedBudgetAmountMicros($wrappedVar);
     }
 
     /**
@@ -638,6 +930,21 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getRecommendedBudgetEstimatedChangeWeeklyClicks()</code>
+
+     * The estimated change in weekly clicks if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * @return int|string|null
+     */
+    public function getRecommendedBudgetEstimatedChangeWeeklyClicksValue()
+    {
+        $wrapper = $this->getRecommendedBudgetEstimatedChangeWeeklyClicks();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The estimated change in weekly clicks if the recommended budget is applied.
      * This field is read-only.
      *
@@ -654,6 +961,22 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The estimated change in weekly clicks if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRecommendedBudgetEstimatedChangeWeeklyClicksValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRecommendedBudgetEstimatedChangeWeeklyClicks($wrappedVar);
+    }
+
+    /**
      * The estimated change in weekly cost in micros if the recommended budget is
      * applied. One million is equivalent to one currency unit.
      * This field is read-only.
@@ -664,6 +987,22 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getRecommendedBudgetEstimatedChangeWeeklyCostMicros()
     {
         return $this->recommended_budget_estimated_change_weekly_cost_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRecommendedBudgetEstimatedChangeWeeklyCostMicros()</code>
+
+     * The estimated change in weekly cost in micros if the recommended budget is
+     * applied. One million is equivalent to one currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * @return int|string|null
+     */
+    public function getRecommendedBudgetEstimatedChangeWeeklyCostMicrosValue()
+    {
+        $wrapper = $this->getRecommendedBudgetEstimatedChangeWeeklyCostMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -684,6 +1023,23 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The estimated change in weekly cost in micros if the recommended budget is
+     * applied. One million is equivalent to one currency unit.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRecommendedBudgetEstimatedChangeWeeklyCostMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRecommendedBudgetEstimatedChangeWeeklyCostMicros($wrappedVar);
+    }
+
+    /**
      * The estimated change in weekly interactions if the recommended budget is
      * applied.
      * This field is read-only.
@@ -694,6 +1050,22 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getRecommendedBudgetEstimatedChangeWeeklyInteractions()
     {
         return $this->recommended_budget_estimated_change_weekly_interactions;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRecommendedBudgetEstimatedChangeWeeklyInteractions()</code>
+
+     * The estimated change in weekly interactions if the recommended budget is
+     * applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * @return int|string|null
+     */
+    public function getRecommendedBudgetEstimatedChangeWeeklyInteractionsValue()
+    {
+        $wrapper = $this->getRecommendedBudgetEstimatedChangeWeeklyInteractions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -714,6 +1086,23 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The estimated change in weekly interactions if the recommended budget is
+     * applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRecommendedBudgetEstimatedChangeWeeklyInteractionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRecommendedBudgetEstimatedChangeWeeklyInteractions($wrappedVar);
+    }
+
+    /**
      * The estimated change in weekly views if the recommended budget is applied.
      * This field is read-only.
      *
@@ -723,6 +1112,21 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     public function getRecommendedBudgetEstimatedChangeWeeklyViews()
     {
         return $this->recommended_budget_estimated_change_weekly_views;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRecommendedBudgetEstimatedChangeWeeklyViews()</code>
+
+     * The estimated change in weekly views if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * @return int|string|null
+     */
+    public function getRecommendedBudgetEstimatedChangeWeeklyViewsValue()
+    {
+        $wrapper = $this->getRecommendedBudgetEstimatedChangeWeeklyViews();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -739,6 +1143,22 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         $this->recommended_budget_estimated_change_weekly_views = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The estimated change in weekly views if the recommended budget is applied.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRecommendedBudgetEstimatedChangeWeeklyViewsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRecommendedBudgetEstimatedChangeWeeklyViews($wrappedVar);
     }
 
     /**

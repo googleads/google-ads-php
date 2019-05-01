@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\GeoTargetConstantSuggestionErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible geo target constant suggestion errors.
  *
@@ -49,6 +51,35 @@ class GeoTargetConstantSuggestionError
      * Generated from protobuf enum <code>REQUEST_PARAMETERS_UNSET = 5;</code>
      */
     const REQUEST_PARAMETERS_UNSET = 5;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::LOCATION_NAME_SIZE_LIMIT => 'LOCATION_NAME_SIZE_LIMIT',
+        self::LOCATION_NAME_LIMIT => 'LOCATION_NAME_LIMIT',
+        self::INVALID_COUNTRY_CODE => 'INVALID_COUNTRY_CODE',
+        self::REQUEST_PARAMETERS_UNSET => 'REQUEST_PARAMETERS_UNSET',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

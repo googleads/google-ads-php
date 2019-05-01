@@ -123,6 +123,20 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the mobile device constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the mobile device constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -138,6 +152,21 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the mobile device constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
@@ -146,6 +175,20 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the mobile device.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -164,6 +207,21 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the mobile device.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * The manufacturer of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue manufacturer_name = 4;</code>
@@ -172,6 +230,20 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
     public function getManufacturerName()
     {
         return $this->manufacturer_name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getManufacturerName()</code>
+
+     * The manufacturer of the mobile device.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue manufacturer_name = 4;</code>
+     * @return string|null
+     */
+    public function getManufacturerNameValue()
+    {
+        $wrapper = $this->getManufacturerName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -190,6 +262,21 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The manufacturer of the mobile device.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue manufacturer_name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setManufacturerNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setManufacturerName($wrappedVar);
+    }
+
+    /**
      * The operating system of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_name = 5;</code>
@@ -198,6 +285,20 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
     public function getOperatingSystemName()
     {
         return $this->operating_system_name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getOperatingSystemName()</code>
+
+     * The operating system of the mobile device.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_name = 5;</code>
+     * @return string|null
+     */
+    public function getOperatingSystemNameValue()
+    {
+        $wrapper = $this->getOperatingSystemName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -213,6 +314,21 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
         $this->operating_system_name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The operating system of the mobile device.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_name = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setOperatingSystemNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setOperatingSystemName($wrappedVar);
     }
 
     /**

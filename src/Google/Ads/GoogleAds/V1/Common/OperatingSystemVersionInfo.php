@@ -49,6 +49,20 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getOperatingSystemVersionConstant()</code>
+
+     * The operating system version constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_version_constant = 1;</code>
+     * @return string|null
+     */
+    public function getOperatingSystemVersionConstantValue()
+    {
+        $wrapper = $this->getOperatingSystemVersionConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The operating system version constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_version_constant = 1;</code>
@@ -61,6 +75,21 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
         $this->operating_system_version_constant = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The operating system version constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_version_constant = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setOperatingSystemVersionConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setOperatingSystemVersionConstant($wrappedVar);
     }
 
 }

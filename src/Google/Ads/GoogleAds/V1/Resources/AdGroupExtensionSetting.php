@@ -154,6 +154,23 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdGroup()</code>
+
+     * The resource name of the ad group. The linked extension feed items will
+     * serve under this ad group.
+     * AdGroup resource names have the form:
+     * `customers/{customer_id}/adGroups/{ad_group_id}`
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * @return string|null
+     */
+    public function getAdGroupValue()
+    {
+        $wrapper = $this->getAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The resource name of the ad group. The linked extension feed items will
      * serve under this ad group.
      * AdGroup resource names have the form:
@@ -169,6 +186,24 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
         $this->ad_group = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the ad group. The linked extension feed items will
+     * serve under this ad group.
+     * AdGroup resource names have the form:
+     * `customers/{customer_id}/adGroups/{ad_group_id}`
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroup($wrappedVar);
     }
 
     /**

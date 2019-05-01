@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the AccountBudget service.
+ *
  * A service for fetching an account-level budget.
  *
  * Account-level budgets are mutated by creating proposal resources.

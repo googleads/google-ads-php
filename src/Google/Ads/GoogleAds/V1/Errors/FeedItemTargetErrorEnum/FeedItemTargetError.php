@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\FeedItemTargetErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible feed item target errors.
  *
@@ -61,6 +63,37 @@ class FeedItemTargetError
      * Generated from protobuf enum <code>CANNOT_HAVE_ENABLED_CAMPAIGN_AND_ENABLED_AD_GROUP_TARGETS = 7;</code>
      */
     const CANNOT_HAVE_ENABLED_CAMPAIGN_AND_ENABLED_AD_GROUP_TARGETS = 7;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::MUST_SET_TARGET_ONEOF_ON_CREATE => 'MUST_SET_TARGET_ONEOF_ON_CREATE',
+        self::FEED_ITEM_TARGET_ALREADY_EXISTS => 'FEED_ITEM_TARGET_ALREADY_EXISTS',
+        self::FEED_ITEM_SCHEDULES_CANNOT_OVERLAP => 'FEED_ITEM_SCHEDULES_CANNOT_OVERLAP',
+        self::TARGET_LIMIT_EXCEEDED_FOR_GIVEN_TYPE => 'TARGET_LIMIT_EXCEEDED_FOR_GIVEN_TYPE',
+        self::TOO_MANY_SCHEDULES_PER_DAY => 'TOO_MANY_SCHEDULES_PER_DAY',
+        self::CANNOT_HAVE_ENABLED_CAMPAIGN_AND_ENABLED_AD_GROUP_TARGETS => 'CANNOT_HAVE_ENABLED_CAMPAIGN_AND_ENABLED_AD_GROUP_TARGETS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

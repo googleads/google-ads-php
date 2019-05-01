@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\BiddingSourceEnum;
 
+use UnexpectedValueException;
+
 /**
  * Indicates where a bid or target is defined. For example, an ad group
  * criterion may define a cpc bid directly, or it can inherit its cpc bid from
@@ -43,6 +45,34 @@ class BiddingSource
      * Generated from protobuf enum <code>AD_GROUP_CRITERION = 7;</code>
      */
     const AD_GROUP_CRITERION = 7;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CAMPAIGN_BIDDING_STRATEGY => 'CAMPAIGN_BIDDING_STRATEGY',
+        self::AD_GROUP => 'AD_GROUP',
+        self::AD_GROUP_CRITERION => 'AD_GROUP_CRITERION',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\CustomerClientLinkErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible CustomerClientLink errors.
  *
@@ -65,6 +67,38 @@ class CustomerClientLinkError
      * Generated from protobuf enum <code>CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER = 8;</code>
      */
     const CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER = 8;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CLIENT_ALREADY_INVITED_BY_THIS_MANAGER => 'CLIENT_ALREADY_INVITED_BY_THIS_MANAGER',
+        self::CLIENT_ALREADY_MANAGED_IN_HIERARCHY => 'CLIENT_ALREADY_MANAGED_IN_HIERARCHY',
+        self::CYCLIC_LINK_NOT_ALLOWED => 'CYCLIC_LINK_NOT_ALLOWED',
+        self::CUSTOMER_HAS_TOO_MANY_ACCOUNTS => 'CUSTOMER_HAS_TOO_MANY_ACCOUNTS',
+        self::CLIENT_HAS_TOO_MANY_INVITATIONS => 'CLIENT_HAS_TOO_MANY_INVITATIONS',
+        self::CANNOT_HIDE_OR_UNHIDE_MANAGER_ACCOUNTS => 'CANNOT_HIDE_OR_UNHIDE_MANAGER_ACCOUNTS',
+        self::CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER => 'CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

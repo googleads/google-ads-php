@@ -69,6 +69,22 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLocale()</code>
+
+     * If possible, returned geo targets are translated using this locale. If not,
+     * en is used by default. This is also used as a hint for returned geo
+     * targets.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue locale = 3;</code>
+     * @return string|null
+     */
+    public function getLocaleValue()
+    {
+        $wrapper = $this->getLocale();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * If possible, returned geo targets are translated using this locale. If not,
      * en is used by default. This is also used as a hint for returned geo
      * targets.
@@ -86,6 +102,23 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * If possible, returned geo targets are translated using this locale. If not,
+     * en is used by default. This is also used as a hint for returned geo
+     * targets.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue locale = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLocaleValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLocale($wrappedVar);
+    }
+
+    /**
      * Returned geo targets are restricted to this country code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
@@ -94,6 +127,20 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
     public function getCountryCode()
     {
         return $this->country_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCountryCode()</code>
+
+     * Returned geo targets are restricted to this country code.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * @return string|null
+     */
+    public function getCountryCodeValue()
+    {
+        $wrapper = $this->getCountryCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -109,6 +156,21 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
         $this->country_code = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Returned geo targets are restricted to this country code.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryCode($wrappedVar);
     }
 
     /**

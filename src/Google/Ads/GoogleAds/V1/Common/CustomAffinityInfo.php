@@ -50,6 +50,20 @@ class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCustomAffinity()</code>
+
+     * The CustomInterest resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue custom_affinity = 1;</code>
+     * @return string|null
+     */
+    public function getCustomAffinityValue()
+    {
+        $wrapper = $this->getCustomAffinity();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The CustomInterest resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_affinity = 1;</code>
@@ -62,6 +76,21 @@ class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
         $this->custom_affinity = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The CustomInterest resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue custom_affinity = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCustomAffinityValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCustomAffinity($wrappedVar);
     }
 
 }

@@ -191,6 +191,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLastChangeDateTime()</code>
+
+     * Time at which the most recent change has occurred on this resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
+     * @return string|null
+     */
+    public function getLastChangeDateTimeValue()
+    {
+        $wrapper = $this->getLastChangeDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Time at which the most recent change has occurred on this resource.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
@@ -203,6 +217,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         $this->last_change_date_time = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Time at which the most recent change has occurred on this resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLastChangeDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLastChangeDateTime($wrappedVar);
     }
 
     /**
@@ -247,6 +276,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCampaign()</code>
+
+     * The Campaign affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
+     * @return string|null
+     */
+    public function getCampaignValue()
+    {
+        $wrapper = $this->getCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Campaign affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
@@ -262,6 +305,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Campaign affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCampaign($wrappedVar);
+    }
+
+    /**
      * The AdGroup affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
@@ -270,6 +328,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     public function getAdGroup()
     {
         return $this->ad_group;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAdGroup()</code>
+
+     * The AdGroup affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
+     * @return string|null
+     */
+    public function getAdGroupValue()
+    {
+        $wrapper = $this->getAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -285,6 +357,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         $this->ad_group = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The AdGroup affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroup($wrappedVar);
     }
 
     /**
@@ -325,6 +412,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdGroupAd()</code>
+
+     * The AdGroupAd affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
+     * @return string|null
+     */
+    public function getAdGroupAdValue()
+    {
+        $wrapper = $this->getAdGroupAd();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The AdGroupAd affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
@@ -340,6 +441,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The AdGroupAd affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupAdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroupAd($wrappedVar);
+    }
+
+    /**
      * The AdGroupCriterion affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
@@ -348,6 +464,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     public function getAdGroupCriterion()
     {
         return $this->ad_group_criterion;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAdGroupCriterion()</code>
+
+     * The AdGroupCriterion affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
+     * @return string|null
+     */
+    public function getAdGroupCriterionValue()
+    {
+        $wrapper = $this->getAdGroupCriterion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -366,6 +496,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The AdGroupCriterion affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupCriterionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroupCriterion($wrappedVar);
+    }
+
+    /**
      * The CampaignCriterion affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
@@ -374,6 +519,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     public function getCampaignCriterion()
     {
         return $this->campaign_criterion;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCampaignCriterion()</code>
+
+     * The CampaignCriterion affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
+     * @return string|null
+     */
+    public function getCampaignCriterionValue()
+    {
+        $wrapper = $this->getCampaignCriterion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -392,6 +551,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The CampaignCriterion affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCampaignCriterionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCampaignCriterion($wrappedVar);
+    }
+
+    /**
      * The Feed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
@@ -400,6 +574,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     public function getFeed()
     {
         return $this->feed;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFeed()</code>
+
+     * The Feed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * @return string|null
+     */
+    public function getFeedValue()
+    {
+        $wrapper = $this->getFeed();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -418,6 +606,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Feed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFeedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFeed($wrappedVar);
+    }
+
+    /**
      * The FeedItem affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
@@ -426,6 +629,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     public function getFeedItem()
     {
         return $this->feed_item;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFeedItem()</code>
+
+     * The FeedItem affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * @return string|null
+     */
+    public function getFeedItemValue()
+    {
+        $wrapper = $this->getFeedItem();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -444,6 +661,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The FeedItem affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFeedItemValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFeedItem($wrappedVar);
+    }
+
+    /**
      * The AdGroupFeed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
@@ -452,6 +684,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     public function getAdGroupFeed()
     {
         return $this->ad_group_feed;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAdGroupFeed()</code>
+
+     * The AdGroupFeed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
+     * @return string|null
+     */
+    public function getAdGroupFeedValue()
+    {
+        $wrapper = $this->getAdGroupFeed();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -470,6 +716,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The AdGroupFeed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupFeedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroupFeed($wrappedVar);
+    }
+
+    /**
      * The CampaignFeed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
@@ -478,6 +739,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     public function getCampaignFeed()
     {
         return $this->campaign_feed;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCampaignFeed()</code>
+
+     * The CampaignFeed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
+     * @return string|null
+     */
+    public function getCampaignFeedValue()
+    {
+        $wrapper = $this->getCampaignFeed();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -496,6 +771,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The CampaignFeed affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCampaignFeedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCampaignFeed($wrappedVar);
+    }
+
+    /**
      * The AdGroupBidModifier affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
@@ -504,6 +794,20 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     public function getAdGroupBidModifier()
     {
         return $this->ad_group_bid_modifier;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAdGroupBidModifier()</code>
+
+     * The AdGroupBidModifier affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
+     * @return string|null
+     */
+    public function getAdGroupBidModifierValue()
+    {
+        $wrapper = $this->getAdGroupBidModifier();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -519,6 +823,21 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         $this->ad_group_bid_modifier = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The AdGroupBidModifier affected by this change.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupBidModifierValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroupBidModifier($wrappedVar);
     }
 
 }

@@ -49,6 +49,20 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getEnhancedCpcEnabled()</code>
+
+     * Whether bids are to be enhanced based on conversion optimizer data.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 1;</code>
+     * @return bool|null
+     */
+    public function getEnhancedCpcEnabledValue()
+    {
+        $wrapper = $this->getEnhancedCpcEnabled();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Whether bids are to be enhanced based on conversion optimizer data.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 1;</code>
@@ -61,6 +75,21 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
         $this->enhanced_cpc_enabled = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether bids are to be enhanced based on conversion optimizer data.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 1;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setEnhancedCpcEnabledValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setEnhancedCpcEnabled($wrappedVar);
     }
 
 }

@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the user interest service
+ *
  * Service to fetch Google Ads User Interest.
  */
 class UserInterestServiceGrpcClient extends \Grpc\BaseStub {

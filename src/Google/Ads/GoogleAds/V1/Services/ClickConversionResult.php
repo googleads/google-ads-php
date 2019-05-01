@@ -67,6 +67,20 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getGclid()</code>
+
+     * The Google Click ID (gclid) associated with this conversion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
+     * @return string|null
+     */
+    public function getGclidValue()
+    {
+        $wrapper = $this->getGclid();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Google Click ID (gclid) associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
@@ -82,6 +96,21 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Google Click ID (gclid) associated with this conversion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setGclidValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setGclid($wrappedVar);
+    }
+
+    /**
      * Resource name of the conversion action associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 2;</code>
@@ -90,6 +119,20 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     public function getConversionAction()
     {
         return $this->conversion_action;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConversionAction()</code>
+
+     * Resource name of the conversion action associated with this conversion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 2;</code>
+     * @return string|null
+     */
+    public function getConversionActionValue()
+    {
+        $wrapper = $this->getConversionAction();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -108,6 +151,21 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Resource name of the conversion action associated with this conversion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setConversionActionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setConversionAction($wrappedVar);
+    }
+
+    /**
      * The date time at which the conversion occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
      *
@@ -117,6 +175,21 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     public function getConversionDateTime()
     {
         return $this->conversion_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConversionDateTime()</code>
+
+     * The date time at which the conversion occurred. The format is
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 3;</code>
+     * @return string|null
+     */
+    public function getConversionDateTimeValue()
+    {
+        $wrapper = $this->getConversionDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -133,6 +206,22 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
         $this->conversion_date_time = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The date time at which the conversion occurred. The format is
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setConversionDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setConversionDateTime($wrappedVar);
     }
 
 }

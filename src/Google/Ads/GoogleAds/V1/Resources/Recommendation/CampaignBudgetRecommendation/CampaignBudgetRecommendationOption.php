@@ -59,6 +59,20 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Returns the unboxed value from <code>getBudgetAmountMicros()</code>
+
+     * The budget amount for this option.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
+     * @return int|string|null
+     */
+    public function getBudgetAmountMicrosValue()
+    {
+        $wrapper = $this->getBudgetAmountMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The budget amount for this option.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
@@ -71,6 +85,21 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
         $this->budget_amount_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The budget amount for this option.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setBudgetAmountMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setBudgetAmountMicros($wrappedVar);
     }
 
     /**

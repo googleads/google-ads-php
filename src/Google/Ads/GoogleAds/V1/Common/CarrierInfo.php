@@ -49,6 +49,20 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCarrierConstant()</code>
+
+     * The Carrier constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue carrier_constant = 1;</code>
+     * @return string|null
+     */
+    public function getCarrierConstantValue()
+    {
+        $wrapper = $this->getCarrierConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Carrier constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue carrier_constant = 1;</code>
@@ -61,6 +75,21 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
         $this->carrier_constant = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Carrier constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue carrier_constant = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCarrierConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCarrierConstant($wrappedVar);
     }
 
 }

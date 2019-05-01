@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Campaign Audience View service.
+ *
  * Service to manage campaign audience views.
  */
 class CampaignAudienceViewServiceGrpcClient extends \Grpc\BaseStub {

@@ -91,6 +91,21 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCreationDateTime()</code>
+
+     * The time when this mutate job was created.
+     * Formatted as yyyy-mm-dd hh:mm:ss. Example: "2018-03-05 09:15:00"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 1;</code>
+     * @return string|null
+     */
+    public function getCreationDateTimeValue()
+    {
+        $wrapper = $this->getCreationDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The time when this mutate job was created.
      * Formatted as yyyy-mm-dd hh:mm:ss. Example: "2018-03-05 09:15:00"
      *
@@ -107,6 +122,22 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The time when this mutate job was created.
+     * Formatted as yyyy-mm-dd hh:mm:ss. Example: "2018-03-05 09:15:00"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCreationDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCreationDateTime($wrappedVar);
+    }
+
+    /**
      * The time when this mutate job was completed.
      * Formatted as yyyy-MM-dd HH:mm:ss. Example: "2018-03-05 09:16:00"
      *
@@ -116,6 +147,21 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     public function getCompletionDateTime()
     {
         return $this->completion_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCompletionDateTime()</code>
+
+     * The time when this mutate job was completed.
+     * Formatted as yyyy-MM-dd HH:mm:ss. Example: "2018-03-05 09:16:00"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue completion_date_time = 2;</code>
+     * @return string|null
+     */
+    public function getCompletionDateTimeValue()
+    {
+        $wrapper = $this->getCompletionDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -135,6 +181,22 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The time when this mutate job was completed.
+     * Formatted as yyyy-MM-dd HH:mm:ss. Example: "2018-03-05 09:16:00"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue completion_date_time = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCompletionDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCompletionDateTime($wrappedVar);
+    }
+
+    /**
      * The fraction (between 0.0 and 1.0) of mutates that have been processed.
      * This is empty if the job hasn't started running yet.
      *
@@ -144,6 +206,21 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     public function getEstimatedCompletionRatio()
     {
         return $this->estimated_completion_ratio;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEstimatedCompletionRatio()</code>
+
+     * The fraction (between 0.0 and 1.0) of mutates that have been processed.
+     * This is empty if the job hasn't started running yet.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue estimated_completion_ratio = 3;</code>
+     * @return float|null
+     */
+    public function getEstimatedCompletionRatioValue()
+    {
+        $wrapper = $this->getEstimatedCompletionRatio();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -163,6 +240,22 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The fraction (between 0.0 and 1.0) of mutates that have been processed.
+     * This is empty if the job hasn't started running yet.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue estimated_completion_ratio = 3;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setEstimatedCompletionRatioValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setEstimatedCompletionRatio($wrappedVar);
+    }
+
+    /**
      * The number of mutate operations in the mutate job.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value operation_count = 4;</code>
@@ -171,6 +264,20 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     public function getOperationCount()
     {
         return $this->operation_count;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getOperationCount()</code>
+
+     * The number of mutate operations in the mutate job.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value operation_count = 4;</code>
+     * @return int|string|null
+     */
+    public function getOperationCountValue()
+    {
+        $wrapper = $this->getOperationCount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -189,6 +296,21 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The number of mutate operations in the mutate job.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value operation_count = 4;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setOperationCountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setOperationCount($wrappedVar);
+    }
+
+    /**
      * The number of mutate operations executed by the mutate job.
      * Present only if the job has started running.
      *
@@ -198,6 +320,21 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
     public function getExecutedOperationCount()
     {
         return $this->executed_operation_count;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getExecutedOperationCount()</code>
+
+     * The number of mutate operations executed by the mutate job.
+     * Present only if the job has started running.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value executed_operation_count = 5;</code>
+     * @return int|string|null
+     */
+    public function getExecutedOperationCountValue()
+    {
+        $wrapper = $this->getExecutedOperationCount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -214,6 +351,22 @@ class MutateJobMetadata extends \Google\Protobuf\Internal\Message
         $this->executed_operation_count = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The number of mutate operations executed by the mutate job.
+     * Present only if the job has started running.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value executed_operation_count = 5;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setExecutedOperationCountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setExecutedOperationCount($wrappedVar);
     }
 
 }

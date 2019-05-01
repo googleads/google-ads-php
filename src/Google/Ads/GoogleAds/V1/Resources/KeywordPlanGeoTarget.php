@@ -50,6 +50,20 @@ class KeywordPlanGeoTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getGeoTargetConstant()</code>
+
+     * Required. The resource name of the geo target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1;</code>
+     * @return string|null
+     */
+    public function getGeoTargetConstantValue()
+    {
+        $wrapper = $this->getGeoTargetConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Required. The resource name of the geo target.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1;</code>
@@ -62,6 +76,21 @@ class KeywordPlanGeoTarget extends \Google\Protobuf\Internal\Message
         $this->geo_target_constant = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Required. The resource name of the geo target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setGeoTargetConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setGeoTargetConstant($wrappedVar);
     }
 
 }

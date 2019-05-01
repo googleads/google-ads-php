@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\ContentLabelTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum listing the content label types supported by ContentLabel criterion.
  *
@@ -113,6 +115,46 @@ class ContentLabelType
      * Generated from protobuf enum <code>LIVE_STREAMING_VIDEO = 16;</code>
      */
     const LIVE_STREAMING_VIDEO = 16;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::SEXUALLY_SUGGESTIVE => 'SEXUALLY_SUGGESTIVE',
+        self::BELOW_THE_FOLD => 'BELOW_THE_FOLD',
+        self::PARKED_DOMAIN => 'PARKED_DOMAIN',
+        self::GAME => 'GAME',
+        self::JUVENILE => 'JUVENILE',
+        self::PROFANITY => 'PROFANITY',
+        self::TRAGEDY => 'TRAGEDY',
+        self::VIDEO => 'VIDEO',
+        self::VIDEO_RATING_DV_G => 'VIDEO_RATING_DV_G',
+        self::VIDEO_RATING_DV_PG => 'VIDEO_RATING_DV_PG',
+        self::VIDEO_RATING_DV_T => 'VIDEO_RATING_DV_T',
+        self::VIDEO_RATING_DV_MA => 'VIDEO_RATING_DV_MA',
+        self::VIDEO_NOT_YET_RATED => 'VIDEO_NOT_YET_RATED',
+        self::EMBEDDED_VIDEO => 'EMBEDDED_VIDEO',
+        self::LIVE_STREAMING_VIDEO => 'LIVE_STREAMING_VIDEO',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Hotel Performance View Service.
+ *
  * Service to manage Hotel Performance Views.
  */
 class HotelPerformanceViewServiceGrpcClient extends \Grpc\BaseStub {

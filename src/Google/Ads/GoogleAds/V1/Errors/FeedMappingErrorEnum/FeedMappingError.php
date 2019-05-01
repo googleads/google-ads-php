@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\FeedMappingErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible feed item errors.
  *
@@ -124,6 +126,47 @@ class FeedMappingError
      * Generated from protobuf enum <code>INVALID_PLACEHOLDER_TYPE_FOR_SYSTEM_GENERATED_FEED_TYPE = 18;</code>
      */
     const INVALID_PLACEHOLDER_TYPE_FOR_SYSTEM_GENERATED_FEED_TYPE = 18;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INVALID_PLACEHOLDER_FIELD => 'INVALID_PLACEHOLDER_FIELD',
+        self::INVALID_CRITERION_FIELD => 'INVALID_CRITERION_FIELD',
+        self::INVALID_PLACEHOLDER_TYPE => 'INVALID_PLACEHOLDER_TYPE',
+        self::INVALID_CRITERION_TYPE => 'INVALID_CRITERION_TYPE',
+        self::NO_ATTRIBUTE_FIELD_MAPPINGS => 'NO_ATTRIBUTE_FIELD_MAPPINGS',
+        self::FEED_ATTRIBUTE_TYPE_MISMATCH => 'FEED_ATTRIBUTE_TYPE_MISMATCH',
+        self::CANNOT_OPERATE_ON_MAPPINGS_FOR_SYSTEM_GENERATED_FEED => 'CANNOT_OPERATE_ON_MAPPINGS_FOR_SYSTEM_GENERATED_FEED',
+        self::MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_TYPE => 'MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_TYPE',
+        self::MULTIPLE_MAPPINGS_FOR_CRITERION_TYPE => 'MULTIPLE_MAPPINGS_FOR_CRITERION_TYPE',
+        self::MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_FIELD => 'MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_FIELD',
+        self::MULTIPLE_MAPPINGS_FOR_CRITERION_FIELD => 'MULTIPLE_MAPPINGS_FOR_CRITERION_FIELD',
+        self::UNEXPECTED_ATTRIBUTE_FIELD_MAPPINGS => 'UNEXPECTED_ATTRIBUTE_FIELD_MAPPINGS',
+        self::LOCATION_PLACEHOLDER_ONLY_FOR_PLACES_FEEDS => 'LOCATION_PLACEHOLDER_ONLY_FOR_PLACES_FEEDS',
+        self::CANNOT_MODIFY_MAPPINGS_FOR_TYPED_FEED => 'CANNOT_MODIFY_MAPPINGS_FOR_TYPED_FEED',
+        self::INVALID_PLACEHOLDER_TYPE_FOR_NON_SYSTEM_GENERATED_FEED => 'INVALID_PLACEHOLDER_TYPE_FOR_NON_SYSTEM_GENERATED_FEED',
+        self::INVALID_PLACEHOLDER_TYPE_FOR_SYSTEM_GENERATED_FEED_TYPE => 'INVALID_PLACEHOLDER_TYPE_FOR_SYSTEM_GENERATED_FEED_TYPE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

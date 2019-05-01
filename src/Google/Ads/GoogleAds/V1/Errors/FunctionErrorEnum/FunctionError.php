@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\FunctionErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible function errors.
  *
@@ -120,6 +122,47 @@ class FunctionError
      * Generated from protobuf enum <code>INVALID_ATTRIBUTE_NAME = 17;</code>
      */
     const INVALID_ATTRIBUTE_NAME = 17;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INVALID_FUNCTION_FORMAT => 'INVALID_FUNCTION_FORMAT',
+        self::DATA_TYPE_MISMATCH => 'DATA_TYPE_MISMATCH',
+        self::INVALID_CONJUNCTION_OPERANDS => 'INVALID_CONJUNCTION_OPERANDS',
+        self::INVALID_NUMBER_OF_OPERANDS => 'INVALID_NUMBER_OF_OPERANDS',
+        self::INVALID_OPERAND_TYPE => 'INVALID_OPERAND_TYPE',
+        self::INVALID_OPERATOR => 'INVALID_OPERATOR',
+        self::INVALID_REQUEST_CONTEXT_TYPE => 'INVALID_REQUEST_CONTEXT_TYPE',
+        self::INVALID_FUNCTION_FOR_CALL_PLACEHOLDER => 'INVALID_FUNCTION_FOR_CALL_PLACEHOLDER',
+        self::INVALID_FUNCTION_FOR_PLACEHOLDER => 'INVALID_FUNCTION_FOR_PLACEHOLDER',
+        self::INVALID_OPERAND => 'INVALID_OPERAND',
+        self::MISSING_CONSTANT_OPERAND_VALUE => 'MISSING_CONSTANT_OPERAND_VALUE',
+        self::INVALID_CONSTANT_OPERAND_VALUE => 'INVALID_CONSTANT_OPERAND_VALUE',
+        self::INVALID_NESTING => 'INVALID_NESTING',
+        self::MULTIPLE_FEED_IDS_NOT_SUPPORTED => 'MULTIPLE_FEED_IDS_NOT_SUPPORTED',
+        self::INVALID_FUNCTION_FOR_FEED_WITH_FIXED_SCHEMA => 'INVALID_FUNCTION_FOR_FEED_WITH_FIXED_SCHEMA',
+        self::INVALID_ATTRIBUTE_NAME => 'INVALID_ATTRIBUTE_NAME',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\PlacementTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible placement types for a feed mapping.
  *
@@ -53,6 +55,36 @@ class PlacementType
      * Generated from protobuf enum <code>YOUTUBE_CHANNEL = 6;</code>
      */
     const YOUTUBE_CHANNEL = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::WEBSITE => 'WEBSITE',
+        self::MOBILE_APP_CATEGORY => 'MOBILE_APP_CATEGORY',
+        self::MOBILE_APPLICATION => 'MOBILE_APPLICATION',
+        self::YOUTUBE_VIDEO => 'YOUTUBE_VIDEO',
+        self::YOUTUBE_CHANNEL => 'YOUTUBE_CHANNEL',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

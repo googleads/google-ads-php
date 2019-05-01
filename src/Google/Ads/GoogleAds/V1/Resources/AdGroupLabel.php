@@ -99,6 +99,20 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdGroup()</code>
+
+     * The ad group to which the label is attached.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
+     * @return string|null
+     */
+    public function getAdGroupValue()
+    {
+        $wrapper = $this->getAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ad group to which the label is attached.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
@@ -114,6 +128,21 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The ad group to which the label is attached.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroup($wrappedVar);
+    }
+
+    /**
      * The label assigned to the ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
@@ -122,6 +151,20 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
     public function getLabel()
     {
         return $this->label;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLabel()</code>
+
+     * The label assigned to the ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
+     * @return string|null
+     */
+    public function getLabelValue()
+    {
+        $wrapper = $this->getLabel();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -137,6 +180,21 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
         $this->label = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The label assigned to the ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLabelValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLabel($wrappedVar);
     }
 
 }

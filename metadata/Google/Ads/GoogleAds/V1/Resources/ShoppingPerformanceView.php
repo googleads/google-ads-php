@@ -31,7 +31,7 @@ class ShoppingPerformanceView
             "5c476f6f676c654164735c56315c5265736f7572636573ea0225476f6f67" .
             "6c653a3a4164733a3a476f6f676c654164733a3a56313a3a5265736f7572" .
             "636573620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

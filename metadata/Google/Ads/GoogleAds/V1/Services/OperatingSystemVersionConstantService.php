@@ -44,7 +44,7 @@ class OperatingSystemVersionConstantService
             "6f676c654164735c56315c5365727669636573ea0224476f6f676c653a3a" .
             "4164733a3a476f6f676c654164733a3a56313a3a53657276696365736206" .
             "70726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

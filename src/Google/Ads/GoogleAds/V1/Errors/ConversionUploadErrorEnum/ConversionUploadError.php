@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\ConversionUploadErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible conversion upload errors.
  *
@@ -172,6 +174,52 @@ class ConversionUploadError
      * Generated from protobuf enum <code>UNPARSEABLE_CALLERS_PHONE_NUMBER = 22;</code>
      */
     const UNPARSEABLE_CALLERS_PHONE_NUMBER = 22;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::TOO_MANY_CONVERSIONS_IN_REQUEST => 'TOO_MANY_CONVERSIONS_IN_REQUEST',
+        self::UNPARSEABLE_GCLID => 'UNPARSEABLE_GCLID',
+        self::CONVERSION_PRECEDES_GCLID => 'CONVERSION_PRECEDES_GCLID',
+        self::EXPIRED_GCLID => 'EXPIRED_GCLID',
+        self::TOO_RECENT_GCLID => 'TOO_RECENT_GCLID',
+        self::GCLID_NOT_FOUND => 'GCLID_NOT_FOUND',
+        self::UNAUTHORIZED_CUSTOMER => 'UNAUTHORIZED_CUSTOMER',
+        self::INVALID_CONVERSION_ACTION => 'INVALID_CONVERSION_ACTION',
+        self::TOO_RECENT_CONVERSION_ACTION => 'TOO_RECENT_CONVERSION_ACTION',
+        self::CONVERSION_TRACKING_NOT_ENABLED_AT_IMPRESSION_TIME => 'CONVERSION_TRACKING_NOT_ENABLED_AT_IMPRESSION_TIME',
+        self::EXTERNAL_ATTRIBUTION_DATA_SET_FOR_NON_EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION => 'EXTERNAL_ATTRIBUTION_DATA_SET_FOR_NON_EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION',
+        self::EXTERNAL_ATTRIBUTION_DATA_NOT_SET_FOR_EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION => 'EXTERNAL_ATTRIBUTION_DATA_NOT_SET_FOR_EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION',
+        self::ORDER_ID_NOT_PERMITTED_FOR_EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION => 'ORDER_ID_NOT_PERMITTED_FOR_EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION',
+        self::ORDER_ID_ALREADY_IN_USE => 'ORDER_ID_ALREADY_IN_USE',
+        self::DUPLICATE_ORDER_ID => 'DUPLICATE_ORDER_ID',
+        self::TOO_RECENT_CALL => 'TOO_RECENT_CALL',
+        self::EXPIRED_CALL => 'EXPIRED_CALL',
+        self::CALL_NOT_FOUND => 'CALL_NOT_FOUND',
+        self::CONVERSION_PRECEDES_CALL => 'CONVERSION_PRECEDES_CALL',
+        self::CONVERSION_TRACKING_NOT_ENABLED_AT_CALL_TIME => 'CONVERSION_TRACKING_NOT_ENABLED_AT_CALL_TIME',
+        self::UNPARSEABLE_CALLERS_PHONE_NUMBER => 'UNPARSEABLE_CALLERS_PHONE_NUMBER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

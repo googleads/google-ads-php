@@ -77,6 +77,24 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCriterionName()</code>
+
+     * The name of the criterion that is defined by this parameter. The name value
+     * will be used for identifying, sorting and filtering criteria with this type
+     * of parameters.
+     * This field is required for CREATE operations and is prohibited on UPDATE
+     * operations.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue criterion_name = 1;</code>
+     * @return string|null
+     */
+    public function getCriterionNameValue()
+    {
+        $wrapper = $this->getCriterionName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The name of the criterion that is defined by this parameter. The name value
      * will be used for identifying, sorting and filtering criteria with this type
      * of parameters.
@@ -93,6 +111,25 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
         $this->criterion_name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the criterion that is defined by this parameter. The name value
+     * will be used for identifying, sorting and filtering criteria with this type
+     * of parameters.
+     * This field is required for CREATE operations and is prohibited on UPDATE
+     * operations.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue criterion_name = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCriterionNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCriterionName($wrappedVar);
     }
 
     /**

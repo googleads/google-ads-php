@@ -150,6 +150,20 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdGroup()</code>
+
+     * The ad group to which this criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
+     * @return string|null
+     */
+    public function getAdGroupValue()
+    {
+        $wrapper = $this->getAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ad group to which this criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
@@ -165,6 +179,21 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The ad group to which this criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroup($wrappedVar);
+    }
+
+    /**
      * The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
@@ -174,6 +203,21 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     public function getCriterionId()
     {
         return $this->criterion_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCriterionId()</code>
+
+     * The ID of the criterion to bid modify.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * @return int|string|null
+     */
+    public function getCriterionIdValue()
+    {
+        $wrapper = $this->getCriterionId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -193,6 +237,22 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the criterion to bid modify.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCriterionIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCriterionId($wrappedVar);
+    }
+
+    /**
      * The modifier for the bid when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
      * Use 0 to opt out of a Device type.
@@ -203,6 +263,22 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     public function getBidModifier()
     {
         return $this->bid_modifier;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBidModifier()</code>
+
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
+     * Use 0 to opt out of a Device type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
+     * @return float|null
+     */
+    public function getBidModifierValue()
+    {
+        $wrapper = $this->getBidModifier();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -223,6 +299,23 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
+     * Use 0 to opt out of a Device type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setBidModifierValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setBidModifier($wrappedVar);
+    }
+
+    /**
      * The base ad group from which this draft/trial adgroup bid modifier was
      * created. If ad_group is a base ad group then this field will be equal to
      * ad_group. If the ad group was created in the draft or trial and has no
@@ -235,6 +328,24 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
     public function getBaseAdGroup()
     {
         return $this->base_ad_group;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBaseAdGroup()</code>
+
+     * The base ad group from which this draft/trial adgroup bid modifier was
+     * created. If ad_group is a base ad group then this field will be equal to
+     * ad_group. If the ad group was created in the draft or trial and has no
+     * corresponding base ad group, then this field will be null.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 9;</code>
+     * @return string|null
+     */
+    public function getBaseAdGroupValue()
+    {
+        $wrapper = $this->getBaseAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -254,6 +365,25 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
         $this->base_ad_group = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The base ad group from which this draft/trial adgroup bid modifier was
+     * created. If ad_group is a base ad group then this field will be equal to
+     * ad_group. If the ad group was created in the draft or trial and has no
+     * corresponding base ad group, then this field will be null.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 9;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBaseAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBaseAdGroup($wrappedVar);
     }
 
     /**

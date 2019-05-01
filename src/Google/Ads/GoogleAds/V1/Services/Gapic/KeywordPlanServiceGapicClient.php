@@ -39,6 +39,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -290,6 +291,13 @@ class KeywordPlanServiceGapicClient
         $request = new GetKeywordPlanRequest();
         $request->setResourceName($resourceName);
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->startCall(
             'GetKeywordPlan',
             KeywordPlan::class,
@@ -351,6 +359,13 @@ class KeywordPlanServiceGapicClient
             $request->setValidateOnly($optionalArgs['validateOnly']);
         }
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->startCall(
             'MutateKeywordPlans',
             MutateKeywordPlansResponse::class,
@@ -393,6 +408,13 @@ class KeywordPlanServiceGapicClient
     {
         $request = new GenerateForecastMetricsRequest();
         $request->setKeywordPlan($keywordPlan);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'keyword_plan' => $request->getKeywordPlan(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'GenerateForecastMetrics',
@@ -437,6 +459,13 @@ class KeywordPlanServiceGapicClient
     {
         $request = new GenerateHistoricalMetricsRequest();
         $request->setKeywordPlan($keywordPlan);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'keyword_plan' => $request->getKeywordPlan(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'GenerateHistoricalMetrics',

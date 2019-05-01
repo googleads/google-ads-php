@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the MutateJobService.
+ *
  * Service to manage mutate jobs.
  */
 class MutateJobServiceGrpcClient extends \Grpc\BaseStub {

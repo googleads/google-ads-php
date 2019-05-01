@@ -112,6 +112,20 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCampaign()</code>
+
+     * The campaign to which this criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * @return string|null
+     */
+    public function getCampaignValue()
+    {
+        $wrapper = $this->getCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The campaign to which this criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
@@ -127,6 +141,21 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The campaign to which this criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCampaign($wrappedVar);
+    }
+
+    /**
      * The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
@@ -136,6 +165,21 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     public function getCriterionId()
     {
         return $this->criterion_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCriterionId()</code>
+
+     * The ID of the criterion to bid modify.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * @return int|string|null
+     */
+    public function getCriterionIdValue()
+    {
+        $wrapper = $this->getCriterionId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -155,6 +199,22 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the criterion to bid modify.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCriterionIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCriterionId($wrappedVar);
+    }
+
+    /**
      * The modifier for the bid when the criterion matches.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
@@ -163,6 +223,20 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     public function getBidModifier()
     {
         return $this->bid_modifier;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBidModifier()</code>
+
+     * The modifier for the bid when the criterion matches.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
+     * @return float|null
+     */
+    public function getBidModifierValue()
+    {
+        $wrapper = $this->getBidModifier();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -178,6 +252,21 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
         $this->bid_modifier = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The modifier for the bid when the criterion matches.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setBidModifierValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setBidModifier($wrappedVar);
     }
 
     /**

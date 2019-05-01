@@ -85,7 +85,7 @@ class CustomerService
             "6f6f676c655c4164735c476f6f676c654164735c56315c53657276696365" .
             "73ea0224476f6f676c653a3a4164733a3a476f6f676c654164733a3a5631" .
             "3a3a5365727669636573620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

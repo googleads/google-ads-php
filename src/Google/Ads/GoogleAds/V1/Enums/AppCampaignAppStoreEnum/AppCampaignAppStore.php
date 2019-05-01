@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AppCampaignAppStoreEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing app campaign app store.
  *
@@ -35,6 +37,33 @@ class AppCampaignAppStore
      * Generated from protobuf enum <code>GOOGLE_APP_STORE = 3;</code>
      */
     const GOOGLE_APP_STORE = 3;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::APPLE_APP_STORE => 'APPLE_APP_STORE',
+        self::GOOGLE_APP_STORE => 'GOOGLE_APP_STORE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

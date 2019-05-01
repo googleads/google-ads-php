@@ -49,6 +49,20 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLanguageConstant()</code>
+
+     * The language constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_constant = 1;</code>
+     * @return string|null
+     */
+    public function getLanguageConstantValue()
+    {
+        $wrapper = $this->getLanguageConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The language constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_constant = 1;</code>
@@ -61,6 +75,21 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
         $this->language_constant = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The language constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_constant = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLanguageConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLanguageConstant($wrappedVar);
     }
 
 }

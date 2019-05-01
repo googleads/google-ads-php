@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\GeoTargetingRestrictionEnum;
 
+use UnexpectedValueException;
+
 /**
  * A restriction used to determine if the request context's
  * geo should be matched.
@@ -31,6 +33,32 @@ class GeoTargetingRestriction
      * Generated from protobuf enum <code>LOCATION_OF_PRESENCE = 2;</code>
      */
     const LOCATION_OF_PRESENCE = 2;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::LOCATION_OF_PRESENCE => 'LOCATION_OF_PRESENCE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

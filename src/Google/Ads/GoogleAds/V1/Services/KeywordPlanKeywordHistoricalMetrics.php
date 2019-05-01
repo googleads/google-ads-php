@@ -74,6 +74,25 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Returns the unboxed value from <code>getSearchQuery()</code>
+
+     * The text of the query associated with one or more ad_group_keywords in the
+     * plan.
+     * Note that we de-dupe your keywords list, eliminating close variants before
+     * returning the plan's keywords as text. For example, if your plan originally
+     * contained the keywords 'car' and 'cars', the returned search query will
+     * only contain 'car'.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_query = 1;</code>
+     * @return string|null
+     */
+    public function getSearchQueryValue()
+    {
+        $wrapper = $this->getSearchQuery();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The text of the query associated with one or more ad_group_keywords in the
      * plan.
      * Note that we de-dupe your keywords list, eliminating close variants before
@@ -91,6 +110,26 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
         $this->search_query = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The text of the query associated with one or more ad_group_keywords in the
+     * plan.
+     * Note that we de-dupe your keywords list, eliminating close variants before
+     * returning the plan's keywords as text. For example, if your plan originally
+     * contained the keywords 'car' and 'cars', the returned search query will
+     * only contain 'car'.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_query = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSearchQueryValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSearchQuery($wrappedVar);
     }
 
     /**

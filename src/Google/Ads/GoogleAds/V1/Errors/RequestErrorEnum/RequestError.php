@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\RequestErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible request errors.
  *
@@ -134,6 +136,49 @@ class RequestError
      * Generated from protobuf enum <code>VALIDATE_ONLY_REQUEST_HAS_PAGE_TOKEN = 21;</code>
      */
     const VALIDATE_ONLY_REQUEST_HAS_PAGE_TOKEN = 21;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::RESOURCE_NAME_MISSING => 'RESOURCE_NAME_MISSING',
+        self::RESOURCE_NAME_MALFORMED => 'RESOURCE_NAME_MALFORMED',
+        self::BAD_RESOURCE_ID => 'BAD_RESOURCE_ID',
+        self::INVALID_CUSTOMER_ID => 'INVALID_CUSTOMER_ID',
+        self::OPERATION_REQUIRED => 'OPERATION_REQUIRED',
+        self::RESOURCE_NOT_FOUND => 'RESOURCE_NOT_FOUND',
+        self::INVALID_PAGE_TOKEN => 'INVALID_PAGE_TOKEN',
+        self::EXPIRED_PAGE_TOKEN => 'EXPIRED_PAGE_TOKEN',
+        self::INVALID_PAGE_SIZE => 'INVALID_PAGE_SIZE',
+        self::REQUIRED_FIELD_MISSING => 'REQUIRED_FIELD_MISSING',
+        self::IMMUTABLE_FIELD => 'IMMUTABLE_FIELD',
+        self::TOO_MANY_MUTATE_OPERATIONS => 'TOO_MANY_MUTATE_OPERATIONS',
+        self::CANNOT_BE_EXECUTED_BY_MANAGER_ACCOUNT => 'CANNOT_BE_EXECUTED_BY_MANAGER_ACCOUNT',
+        self::CANNOT_MODIFY_FOREIGN_FIELD => 'CANNOT_MODIFY_FOREIGN_FIELD',
+        self::INVALID_ENUM_VALUE => 'INVALID_ENUM_VALUE',
+        self::DEVELOPER_TOKEN_PARAMETER_MISSING => 'DEVELOPER_TOKEN_PARAMETER_MISSING',
+        self::LOGIN_CUSTOMER_ID_PARAMETER_MISSING => 'LOGIN_CUSTOMER_ID_PARAMETER_MISSING',
+        self::VALIDATE_ONLY_REQUEST_HAS_PAGE_TOKEN => 'VALIDATE_ONLY_REQUEST_HAS_PAGE_TOKEN',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

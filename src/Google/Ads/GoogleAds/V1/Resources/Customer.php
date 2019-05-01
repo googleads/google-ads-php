@@ -105,6 +105,13 @@ class Customer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.RemarketingSetting remarketing_setting = 15;</code>
      */
     private $remarketing_setting = null;
+    /**
+     * Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
+     * the list is empty, the customer is eligible. This field is read-only.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16;</code>
+     */
+    private $pay_per_conversion_eligibility_failure_reasons;
 
     /**
      * Constructor.
@@ -146,6 +153,9 @@ class Customer extends \Google\Protobuf\Internal\Message
      *           Conversion tracking setting for a customer.
      *     @type \Google\Ads\GoogleAds\V1\Resources\RemarketingSetting $remarketing_setting
      *           Remarketing setting for a customer.
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $pay_per_conversion_eligibility_failure_reasons
+     *           Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
+     *           the list is empty, the customer is eligible. This field is read-only.
      * }
      */
     public function __construct($data = NULL) {
@@ -195,6 +205,20 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
@@ -210,6 +234,21 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Optional, non-unique descriptive name of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 4;</code>
@@ -218,6 +257,20 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getDescriptiveName()
     {
         return $this->descriptive_name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescriptiveName()</code>
+
+     * Optional, non-unique descriptive name of the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 4;</code>
+     * @return string|null
+     */
+    public function getDescriptiveNameValue()
+    {
+        $wrapper = $this->getDescriptiveName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -236,6 +289,21 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Optional, non-unique descriptive name of the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptiveNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescriptiveName($wrappedVar);
+    }
+
+    /**
      * The currency in which the account operates.
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
@@ -246,6 +314,22 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getCurrencyCode()
     {
         return $this->currency_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCurrencyCode()</code>
+
+     * The currency in which the account operates.
+     * A subset of the currency codes from the ISO 4217 standard is
+     * supported.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
+     * @return string|null
+     */
+    public function getCurrencyCodeValue()
+    {
+        $wrapper = $this->getCurrencyCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -266,6 +350,23 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The currency in which the account operates.
+     * A subset of the currency codes from the ISO 4217 standard is
+     * supported.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCurrencyCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCurrencyCode($wrappedVar);
+    }
+
+    /**
      * The local timezone ID of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
@@ -274,6 +375,20 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getTimeZone()
     {
         return $this->time_zone;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTimeZone()</code>
+
+     * The local timezone ID of the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * @return string|null
+     */
+    public function getTimeZoneValue()
+    {
+        $wrapper = $this->getTimeZone();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -292,6 +407,21 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The local timezone ID of the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTimeZoneValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTimeZone($wrappedVar);
+    }
+
+    /**
      * The URL template for constructing a tracking URL out of parameters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 7;</code>
@@ -300,6 +430,20 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getTrackingUrlTemplate()
     {
         return $this->tracking_url_template;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * The URL template for constructing a tracking URL out of parameters.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 7;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -318,6 +462,21 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL template for constructing a tracking URL out of parameters.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
+    }
+
+    /**
      * The URL template for appending params to the final URL
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 11;</code>
@@ -326,6 +485,20 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getFinalUrlSuffix()
     {
         return $this->final_url_suffix;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFinalUrlSuffix()</code>
+
+     * The URL template for appending params to the final URL
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 11;</code>
+     * @return string|null
+     */
+    public function getFinalUrlSuffixValue()
+    {
+        $wrapper = $this->getFinalUrlSuffix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -344,6 +517,21 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL template for appending params to the final URL
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 11;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFinalUrlSuffixValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFinalUrlSuffix($wrappedVar);
+    }
+
+    /**
      * Whether auto-tagging is enabled for the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue auto_tagging_enabled = 8;</code>
@@ -352,6 +540,20 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getAutoTaggingEnabled()
     {
         return $this->auto_tagging_enabled;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAutoTaggingEnabled()</code>
+
+     * Whether auto-tagging is enabled for the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue auto_tagging_enabled = 8;</code>
+     * @return bool|null
+     */
+    public function getAutoTaggingEnabledValue()
+    {
+        $wrapper = $this->getAutoTaggingEnabled();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -370,6 +572,21 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether auto-tagging is enabled for the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue auto_tagging_enabled = 8;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setAutoTaggingEnabledValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setAutoTaggingEnabled($wrappedVar);
+    }
+
+    /**
      * Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
@@ -380,6 +597,22 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getHasPartnersBadge()
     {
         return $this->has_partners_badge;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHasPartnersBadge()</code>
+
+     * Whether the Customer has a Partners program badge. If the Customer is not
+     * associated with the Partners program, this will be false. For more
+     * information, see https://support.google.com/partners/answer/3125774.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
+     * @return bool|null
+     */
+    public function getHasPartnersBadgeValue()
+    {
+        $wrapper = $this->getHasPartnersBadge();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -400,6 +633,23 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the Customer has a Partners program badge. If the Customer is not
+     * associated with the Partners program, this will be false. For more
+     * information, see https://support.google.com/partners/answer/3125774.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setHasPartnersBadgeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setHasPartnersBadge($wrappedVar);
+    }
+
+    /**
      * Whether the customer is a manager.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
@@ -408,6 +658,20 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getManager()
     {
         return $this->manager;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getManager()</code>
+
+     * Whether the customer is a manager.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * @return bool|null
+     */
+    public function getManagerValue()
+    {
+        $wrapper = $this->getManager();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -426,6 +690,21 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the customer is a manager.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setManagerValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setManager($wrappedVar);
+    }
+
+    /**
      * Whether the customer is a test account.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
@@ -434,6 +713,20 @@ class Customer extends \Google\Protobuf\Internal\Message
     public function getTestAccount()
     {
         return $this->test_account;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTestAccount()</code>
+
+     * Whether the customer is a test account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * @return bool|null
+     */
+    public function getTestAccountValue()
+    {
+        $wrapper = $this->getTestAccount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -449,6 +742,21 @@ class Customer extends \Google\Protobuf\Internal\Message
         $this->test_account = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the customer is a test account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setTestAccountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setTestAccount($wrappedVar);
     }
 
     /**
@@ -525,6 +833,34 @@ class Customer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\RemarketingSetting::class);
         $this->remarketing_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
+     * the list is empty, the customer is eligible. This field is read-only.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPayPerConversionEligibilityFailureReasons()
+    {
+        return $this->pay_per_conversion_eligibility_failure_reasons;
+    }
+
+    /**
+     * Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
+     * the list is empty, the customer is eligible. This field is read-only.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPayPerConversionEligibilityFailureReasons($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Ads\GoogleAds\V1\Enums\CustomerPayPerConversionEligibilityFailureReasonEnum\CustomerPayPerConversionEligibilityFailureReason::class);
+        $this->pay_per_conversion_eligibility_failure_reasons = $arr;
 
         return $this;
     }

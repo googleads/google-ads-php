@@ -94,6 +94,23 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLocale()</code>
+
+     * The language this GeoTargetConstantSuggestion is currently translated to.
+     * It affects the name of geo target fields. For example, if locale=en, then
+     * name=Spain. If locale=es, then name=España. The default locale will be
+     * returned if no translation exists for the locale in the request.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue locale = 1;</code>
+     * @return string|null
+     */
+    public function getLocaleValue()
+    {
+        $wrapper = $this->getLocale();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The language this GeoTargetConstantSuggestion is currently translated to.
      * It affects the name of geo target fields. For example, if locale=en, then
      * name=Spain. If locale=es, then name=España. The default locale will be
@@ -112,6 +129,24 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The language this GeoTargetConstantSuggestion is currently translated to.
+     * It affects the name of geo target fields. For example, if locale=en, then
+     * name=Spain. If locale=es, then name=España. The default locale will be
+     * returned if no translation exists for the locale in the request.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue locale = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLocaleValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLocale($wrappedVar);
+    }
+
+    /**
      * Approximate user population that will be targeted, rounded to the
      * nearest 100.
      *
@@ -121,6 +156,21 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
     public function getReach()
     {
         return $this->reach;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getReach()</code>
+
+     * Approximate user population that will be targeted, rounded to the
+     * nearest 100.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reach = 2;</code>
+     * @return int|string|null
+     */
+    public function getReachValue()
+    {
+        $wrapper = $this->getReach();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -140,6 +190,22 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Approximate user population that will be targeted, rounded to the
+     * nearest 100.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reach = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setReachValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setReach($wrappedVar);
+    }
+
+    /**
      * If the request searched by location name, this is the location name that
      * matched the geo target.
      *
@@ -149,6 +215,21 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
     public function getSearchTerm()
     {
         return $this->search_term;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getSearchTerm()</code>
+
+     * If the request searched by location name, this is the location name that
+     * matched the geo target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 3;</code>
+     * @return string|null
+     */
+    public function getSearchTermValue()
+    {
+        $wrapper = $this->getSearchTerm();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -165,6 +246,22 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
         $this->search_term = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * If the request searched by location name, this is the location name that
+     * matched the geo target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSearchTermValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSearchTerm($wrappedVar);
     }
 
     /**

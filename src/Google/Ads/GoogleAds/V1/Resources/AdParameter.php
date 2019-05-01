@@ -136,6 +136,20 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdGroupCriterion()</code>
+
+     * The ad group criterion that this ad parameter belongs to.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
+     * @return string|null
+     */
+    public function getAdGroupCriterionValue()
+    {
+        $wrapper = $this->getAdGroupCriterion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ad group criterion that this ad parameter belongs to.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
@@ -151,6 +165,21 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The ad group criterion that this ad parameter belongs to.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupCriterionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroupCriterion($wrappedVar);
+    }
+
+    /**
      * The unique index of this ad parameter. Must be either 1 or 2.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
@@ -159,6 +188,20 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     public function getParameterIndex()
     {
         return $this->parameter_index;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getParameterIndex()</code>
+
+     * The unique index of this ad parameter. Must be either 1 or 2.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
+     * @return int|string|null
+     */
+    public function getParameterIndexValue()
+    {
+        $wrapper = $this->getParameterIndex();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -174,6 +217,21 @@ class AdParameter extends \Google\Protobuf\Internal\Message
         $this->parameter_index = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The unique index of this ad parameter. Must be either 1 or 2.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setParameterIndexValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setParameterIndex($wrappedVar);
     }
 
     /**
@@ -197,6 +255,32 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     public function getInsertionText()
     {
         return $this->insertion_text;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getInsertionText()</code>
+
+     * Numeric value to insert into the ad text. The following restrictions
+     *  apply:
+     *  - Can use comma or period as a separator, with an optional period or
+     *    comma (respectively) for fractional values. For example, 1,000,000.00
+     *    and 2.000.000,10 are valid.
+     *  - Can be prepended or appended with a currency symbol. For example,
+     *    $99.99 and 200£ are valid.
+     *  - Can be prepended or appended with a currency code. For example, 99.99USD
+     *    and EUR200 are valid.
+     *  - Can use '%'. For example, 1.0% and 1,0% are valid.
+     *  - Can use plus or minus. For example, -10.99 and 25+ are valid.
+     *  - Can use '/' between two numbers. For example 4/1 and 0.95/0.45 are
+     *    valid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue insertion_text = 4;</code>
+     * @return string|null
+     */
+    public function getInsertionTextValue()
+    {
+        $wrapper = $this->getInsertionText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -224,6 +308,33 @@ class AdParameter extends \Google\Protobuf\Internal\Message
         $this->insertion_text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Numeric value to insert into the ad text. The following restrictions
+     *  apply:
+     *  - Can use comma or period as a separator, with an optional period or
+     *    comma (respectively) for fractional values. For example, 1,000,000.00
+     *    and 2.000.000,10 are valid.
+     *  - Can be prepended or appended with a currency symbol. For example,
+     *    $99.99 and 200£ are valid.
+     *  - Can be prepended or appended with a currency code. For example, 99.99USD
+     *    and EUR200 are valid.
+     *  - Can use '%'. For example, 1.0% and 1,0% are valid.
+     *  - Can use plus or minus. For example, -10.99 and 25+ are valid.
+     *  - Can use '/' between two numbers. For example 4/1 and 0.95/0.45 are
+     *    valid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue insertion_text = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setInsertionTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setInsertionText($wrappedVar);
     }
 
 }

@@ -92,6 +92,21 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFirstPageCpcMicros()</code>
+
+     * The estimate of the CPC bid required for ad to be shown on first
+     * page of search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value first_page_cpc_micros = 1;</code>
+     * @return int|string|null
+     */
+    public function getFirstPageCpcMicrosValue()
+    {
+        $wrapper = $this->getFirstPageCpcMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The estimate of the CPC bid required for ad to be shown on first
      * page of search results.
      *
@@ -108,6 +123,22 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The estimate of the CPC bid required for ad to be shown on first
+     * page of search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value first_page_cpc_micros = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setFirstPageCpcMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setFirstPageCpcMicros($wrappedVar);
+    }
+
+    /**
      * The estimate of the CPC bid required for ad to be displayed in first
      * position, at the top of the first page of search results.
      *
@@ -117,6 +148,21 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     public function getFirstPositionCpcMicros()
     {
         return $this->first_position_cpc_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFirstPositionCpcMicros()</code>
+
+     * The estimate of the CPC bid required for ad to be displayed in first
+     * position, at the top of the first page of search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value first_position_cpc_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getFirstPositionCpcMicrosValue()
+    {
+        $wrapper = $this->getFirstPositionCpcMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -136,6 +182,22 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The estimate of the CPC bid required for ad to be displayed in first
+     * position, at the top of the first page of search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value first_position_cpc_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setFirstPositionCpcMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setFirstPositionCpcMicros($wrappedVar);
+    }
+
+    /**
      * The estimate of the CPC bid required for ad to be displayed at the top
      * of the first page of search results.
      *
@@ -145,6 +207,21 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     public function getTopOfPageCpcMicros()
     {
         return $this->top_of_page_cpc_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTopOfPageCpcMicros()</code>
+
+     * The estimate of the CPC bid required for ad to be displayed at the top
+     * of the first page of search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value top_of_page_cpc_micros = 3;</code>
+     * @return int|string|null
+     */
+    public function getTopOfPageCpcMicrosValue()
+    {
+        $wrapper = $this->getTopOfPageCpcMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -164,6 +241,22 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The estimate of the CPC bid required for ad to be displayed at the top
+     * of the first page of search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value top_of_page_cpc_micros = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setTopOfPageCpcMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setTopOfPageCpcMicros($wrappedVar);
+    }
+
+    /**
      * Estimate of how many clicks per week you might get by changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
@@ -173,6 +266,21 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     public function getEstimatedAddClicksAtFirstPositionCpc()
     {
         return $this->estimated_add_clicks_at_first_position_cpc;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEstimatedAddClicksAtFirstPositionCpc()</code>
+
+     * Estimate of how many clicks per week you might get by changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_clicks_at_first_position_cpc = 4;</code>
+     * @return int|string|null
+     */
+    public function getEstimatedAddClicksAtFirstPositionCpcValue()
+    {
+        $wrapper = $this->getEstimatedAddClicksAtFirstPositionCpc();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -192,6 +300,22 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Estimate of how many clicks per week you might get by changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_clicks_at_first_position_cpc = 4;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setEstimatedAddClicksAtFirstPositionCpcValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setEstimatedAddClicksAtFirstPositionCpc($wrappedVar);
+    }
+
+    /**
      * Estimate of how your cost per week might change when changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
@@ -201,6 +325,21 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
     public function getEstimatedAddCostAtFirstPositionCpc()
     {
         return $this->estimated_add_cost_at_first_position_cpc;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEstimatedAddCostAtFirstPositionCpc()</code>
+
+     * Estimate of how your cost per week might change when changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_cost_at_first_position_cpc = 5;</code>
+     * @return int|string|null
+     */
+    public function getEstimatedAddCostAtFirstPositionCpcValue()
+    {
+        $wrapper = $this->getEstimatedAddCostAtFirstPositionCpc();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -217,6 +356,22 @@ class PositionEstimates extends \Google\Protobuf\Internal\Message
         $this->estimated_add_cost_at_first_position_cpc = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Estimate of how your cost per week might change when changing your
+     * keyword bid to the value in first_position_cpc_micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_cost_at_first_position_cpc = 5;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setEstimatedAddCostAtFirstPositionCpcValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setEstimatedAddCostAtFirstPositionCpc($wrappedVar);
     }
 
 }

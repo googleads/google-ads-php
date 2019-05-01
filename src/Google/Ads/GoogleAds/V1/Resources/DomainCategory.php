@@ -164,6 +164,20 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCampaign()</code>
+
+     * The campaign this category is recommended for.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * @return string|null
+     */
+    public function getCampaignValue()
+    {
+        $wrapper = $this->getCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The campaign this category is recommended for.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
@@ -179,6 +193,21 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The campaign this category is recommended for.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCampaign($wrappedVar);
+    }
+
+    /**
      * Recommended category for the website domain. e.g. if you have a website
      * about electronics, the categories could be "cameras", "televisions", etc.
      *
@@ -188,6 +217,21 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCategory()</code>
+
+     * Recommended category for the website domain. e.g. if you have a website
+     * about electronics, the categories could be "cameras", "televisions", etc.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue category = 3;</code>
+     * @return string|null
+     */
+    public function getCategoryValue()
+    {
+        $wrapper = $this->getCategory();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -207,6 +251,22 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Recommended category for the website domain. e.g. if you have a website
+     * about electronics, the categories could be "cameras", "televisions", etc.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue category = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCategoryValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCategory($wrappedVar);
+    }
+
+    /**
      * The language code specifying the language of the website. e.g. "en" for
      * English. The language can be specified in the DynamicSearchAdsSetting
      * required for dynamic search ads. This is the language of the pages from
@@ -219,6 +279,24 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     public function getLanguageCode()
     {
         return $this->language_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLanguageCode()</code>
+
+     * The language code specifying the language of the website. e.g. "en" for
+     * English. The language can be specified in the DynamicSearchAdsSetting
+     * required for dynamic search ads. This is the language of the pages from
+     * your website that you want Google Ads to find, create ads for,
+     * and match searches with.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 4;</code>
+     * @return string|null
+     */
+    public function getLanguageCodeValue()
+    {
+        $wrapper = $this->getLanguageCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -241,6 +319,25 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The language code specifying the language of the website. e.g. "en" for
+     * English. The language can be specified in the DynamicSearchAdsSetting
+     * required for dynamic search ads. This is the language of the pages from
+     * your website that you want Google Ads to find, create ads for,
+     * and match searches with.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLanguageCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLanguageCode($wrappedVar);
+    }
+
+    /**
      * The domain for the website. The domain can be specified in the
      * DynamicSearchAdsSetting required for dynamic search ads.
      *
@@ -250,6 +347,21 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     public function getDomain()
     {
         return $this->domain;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDomain()</code>
+
+     * The domain for the website. The domain can be specified in the
+     * DynamicSearchAdsSetting required for dynamic search ads.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue domain = 5;</code>
+     * @return string|null
+     */
+    public function getDomainValue()
+    {
+        $wrapper = $this->getDomain();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -269,6 +381,22 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The domain for the website. The domain can be specified in the
+     * DynamicSearchAdsSetting required for dynamic search ads.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue domain = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDomainValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDomain($wrappedVar);
+    }
+
+    /**
      * Fraction of pages on your site that this category matches.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue coverage_fraction = 6;</code>
@@ -277,6 +405,20 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     public function getCoverageFraction()
     {
         return $this->coverage_fraction;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCoverageFraction()</code>
+
+     * Fraction of pages on your site that this category matches.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue coverage_fraction = 6;</code>
+     * @return float|null
+     */
+    public function getCoverageFractionValue()
+    {
+        $wrapper = $this->getCoverageFraction();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -295,6 +437,21 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Fraction of pages on your site that this category matches.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue coverage_fraction = 6;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setCoverageFractionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setCoverageFraction($wrappedVar);
+    }
+
+    /**
      * The position of this category in the set of categories. Lower numbers
      * indicate a better match for the domain. null indicates not recommended.
      *
@@ -304,6 +461,21 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     public function getCategoryRank()
     {
         return $this->category_rank;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCategoryRank()</code>
+
+     * The position of this category in the set of categories. Lower numbers
+     * indicate a better match for the domain. null indicates not recommended.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value category_rank = 7;</code>
+     * @return int|string|null
+     */
+    public function getCategoryRankValue()
+    {
+        $wrapper = $this->getCategoryRank();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -323,6 +495,22 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The position of this category in the set of categories. Lower numbers
+     * indicate a better match for the domain. null indicates not recommended.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value category_rank = 7;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCategoryRankValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCategoryRank($wrappedVar);
+    }
+
+    /**
      * Indicates whether this category has sub-categories.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_children = 8;</code>
@@ -331,6 +519,20 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     public function getHasChildren()
     {
         return $this->has_children;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHasChildren()</code>
+
+     * Indicates whether this category has sub-categories.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_children = 8;</code>
+     * @return bool|null
+     */
+    public function getHasChildrenValue()
+    {
+        $wrapper = $this->getHasChildren();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -349,6 +551,21 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Indicates whether this category has sub-categories.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_children = 8;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setHasChildrenValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setHasChildren($wrappedVar);
+    }
+
+    /**
      * The recommended cost per click for the category.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 9;</code>
@@ -357,6 +574,20 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
     public function getRecommendedCpcBidMicros()
     {
         return $this->recommended_cpc_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRecommendedCpcBidMicros()</code>
+
+     * The recommended cost per click for the category.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 9;</code>
+     * @return int|string|null
+     */
+    public function getRecommendedCpcBidMicrosValue()
+    {
+        $wrapper = $this->getRecommendedCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -372,6 +603,21 @@ class DomainCategory extends \Google\Protobuf\Internal\Message
         $this->recommended_cpc_bid_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The recommended cost per click for the category.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 9;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRecommendedCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRecommendedCpcBidMicros($wrappedVar);
     }
 
 }

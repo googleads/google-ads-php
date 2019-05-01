@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A list of countries where a resource's serving is constrained.
- * Next Id: 3
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicConstraint.CountryConstraintList</code>
  */
@@ -58,6 +57,20 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTotalTargetedCountries()</code>
+
+     * Total number of countries targeted by the resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
+     * @return int|null
+     */
+    public function getTotalTargetedCountriesValue()
+    {
+        $wrapper = $this->getTotalTargetedCountries();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Total number of countries targeted by the resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
@@ -70,6 +83,21 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
         $this->total_targeted_countries = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * Total number of countries targeted by the resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setTotalTargetedCountriesValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setTotalTargetedCountries($wrappedVar);
     }
 
     /**

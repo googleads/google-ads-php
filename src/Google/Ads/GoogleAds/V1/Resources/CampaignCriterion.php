@@ -131,6 +131,8 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Operating system version.
      *     @type \Google\Ads\GoogleAds\V1\Common\MobileDeviceInfo $mobile_device
      *           Mobile Device.
+     *     @type \Google\Ads\GoogleAds\V1\Common\LocationGroupInfo $location_group
+     *           Location Group
      * }
      */
     public function __construct($data = NULL) {
@@ -180,6 +182,20 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCampaign()</code>
+
+     * The campaign to which the criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * @return string|null
+     */
+    public function getCampaignValue()
+    {
+        $wrapper = $this->getCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The campaign to which the criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
@@ -195,6 +211,21 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The campaign to which the criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCampaign($wrappedVar);
+    }
+
+    /**
      * The ID of the criterion.
      * This field is ignored during mutate.
      *
@@ -204,6 +235,21 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     public function getCriterionId()
     {
         return $this->criterion_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCriterionId()</code>
+
+     * The ID of the criterion.
+     * This field is ignored during mutate.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
+     * @return int|string|null
+     */
+    public function getCriterionIdValue()
+    {
+        $wrapper = $this->getCriterionId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -223,6 +269,22 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the criterion.
+     * This field is ignored during mutate.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCriterionIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCriterionId($wrappedVar);
+    }
+
+    /**
      * The modifier for the bids when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      * Use 0 to opt out of a Device type.
@@ -233,6 +295,22 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     public function getBidModifier()
     {
         return $this->bid_modifier;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBidModifier()</code>
+
+     * The modifier for the bids when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+     * Use 0 to opt out of a Device type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.FloatValue bid_modifier = 14;</code>
+     * @return float|null
+     */
+    public function getBidModifierValue()
+    {
+        $wrapper = $this->getBidModifier();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -253,6 +331,23 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\FloatValue object.
+
+     * The modifier for the bids when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+     * Use 0 to opt out of a Device type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.FloatValue bid_modifier = 14;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setBidModifierValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\FloatValue(['value' => $var]);
+        return $this->setBidModifier($wrappedVar);
+    }
+
+    /**
      * Whether to target (`false`) or exclude (`true`) the criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
@@ -261,6 +356,20 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     public function getNegative()
     {
         return $this->negative;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getNegative()</code>
+
+     * Whether to target (`false`) or exclude (`true`) the criterion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
+     * @return bool|null
+     */
+    public function getNegativeValue()
+    {
+        $wrapper = $this->getNegative();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -276,6 +385,21 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
         $this->negative = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether to target (`false`) or exclude (`true`) the criterion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setNegativeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setNegative($wrappedVar);
     }
 
     /**
@@ -950,6 +1074,32 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\MobileDeviceInfo::class);
         $this->writeOneof(33, $var);
+
+        return $this;
+    }
+
+    /**
+     * Location Group
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.LocationGroupInfo location_group = 34;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\LocationGroupInfo
+     */
+    public function getLocationGroup()
+    {
+        return $this->readOneof(34);
+    }
+
+    /**
+     * Location Group
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.LocationGroupInfo location_group = 34;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\LocationGroupInfo $var
+     * @return $this
+     */
+    public function setLocationGroup($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\LocationGroupInfo::class);
+        $this->writeOneof(34, $var);
 
         return $this;
     }

@@ -57,6 +57,20 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getMinDays()</code>
+
+     * Low end of the number of days prior to the stay.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value min_days = 1;</code>
+     * @return int|string|null
+     */
+    public function getMinDaysValue()
+    {
+        $wrapper = $this->getMinDays();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Low end of the number of days prior to the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value min_days = 1;</code>
@@ -72,6 +86,21 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Low end of the number of days prior to the stay.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value min_days = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setMinDaysValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setMinDays($wrappedVar);
+    }
+
+    /**
      * High end of the number of days prior to the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value max_days = 2;</code>
@@ -80,6 +109,20 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
     public function getMaxDays()
     {
         return $this->max_days;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMaxDays()</code>
+
+     * High end of the number of days prior to the stay.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value max_days = 2;</code>
+     * @return int|string|null
+     */
+    public function getMaxDaysValue()
+    {
+        $wrapper = $this->getMaxDays();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -95,6 +138,21 @@ class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
         $this->max_days = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * High end of the number of days prior to the stay.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value max_days = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setMaxDaysValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setMaxDays($wrappedVar);
     }
 
 }

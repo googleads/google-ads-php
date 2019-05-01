@@ -124,6 +124,21 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getParentAdGroupCriterion()</code>
+
+     * Resource name of ad group criterion which is the parent listing group
+     * subdivision. Null for the root group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue parent_ad_group_criterion = 3;</code>
+     * @return string|null
+     */
+    public function getParentAdGroupCriterionValue()
+    {
+        $wrapper = $this->getParentAdGroupCriterion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Resource name of ad group criterion which is the parent listing group
      * subdivision. Null for the root group.
      *
@@ -137,6 +152,22 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
         $this->parent_ad_group_criterion = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Resource name of ad group criterion which is the parent listing group
+     * subdivision. Null for the root group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue parent_ad_group_criterion = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setParentAdGroupCriterionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setParentAdGroupCriterion($wrappedVar);
     }
 
 }

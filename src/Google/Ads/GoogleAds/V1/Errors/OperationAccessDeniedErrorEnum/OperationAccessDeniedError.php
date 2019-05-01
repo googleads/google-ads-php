@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\OperationAccessDeniedErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible operation access denied errors.
  *
@@ -83,6 +85,41 @@ class OperationAccessDeniedError
      * Generated from protobuf enum <code>MUTATE_NOT_PERMITTED_FOR_CUSTOMER = 11;</code>
      */
     const MUTATE_NOT_PERMITTED_FOR_CUSTOMER = 11;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::ACTION_NOT_PERMITTED => 'ACTION_NOT_PERMITTED',
+        self::CREATE_OPERATION_NOT_PERMITTED => 'CREATE_OPERATION_NOT_PERMITTED',
+        self::REMOVE_OPERATION_NOT_PERMITTED => 'REMOVE_OPERATION_NOT_PERMITTED',
+        self::UPDATE_OPERATION_NOT_PERMITTED => 'UPDATE_OPERATION_NOT_PERMITTED',
+        self::MUTATE_ACTION_NOT_PERMITTED_FOR_CLIENT => 'MUTATE_ACTION_NOT_PERMITTED_FOR_CLIENT',
+        self::OPERATION_NOT_PERMITTED_FOR_CAMPAIGN_TYPE => 'OPERATION_NOT_PERMITTED_FOR_CAMPAIGN_TYPE',
+        self::CREATE_AS_REMOVED_NOT_PERMITTED => 'CREATE_AS_REMOVED_NOT_PERMITTED',
+        self::OPERATION_NOT_PERMITTED_FOR_REMOVED_RESOURCE => 'OPERATION_NOT_PERMITTED_FOR_REMOVED_RESOURCE',
+        self::OPERATION_NOT_PERMITTED_FOR_AD_GROUP_TYPE => 'OPERATION_NOT_PERMITTED_FOR_AD_GROUP_TYPE',
+        self::MUTATE_NOT_PERMITTED_FOR_CUSTOMER => 'MUTATE_NOT_PERMITTED_FOR_CUSTOMER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

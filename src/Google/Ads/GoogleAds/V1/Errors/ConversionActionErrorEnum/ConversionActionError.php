@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\ConversionActionErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible conversion action errors.
  *
@@ -78,6 +80,39 @@ class ConversionActionError
      * Generated from protobuf enum <code>DATA_DRIVEN_MODEL_UNKNOWN = 9;</code>
      */
     const DATA_DRIVEN_MODEL_UNKNOWN = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::DUPLICATE_NAME => 'DUPLICATE_NAME',
+        self::DUPLICATE_APP_ID => 'DUPLICATE_APP_ID',
+        self::TWO_CONVERSION_ACTIONS_BIDDING_ON_SAME_APP_DOWNLOAD => 'TWO_CONVERSION_ACTIONS_BIDDING_ON_SAME_APP_DOWNLOAD',
+        self::BIDDING_ON_SAME_APP_DOWNLOAD_AS_GLOBAL_ACTION => 'BIDDING_ON_SAME_APP_DOWNLOAD_AS_GLOBAL_ACTION',
+        self::DATA_DRIVEN_MODEL_WAS_NEVER_GENERATED => 'DATA_DRIVEN_MODEL_WAS_NEVER_GENERATED',
+        self::DATA_DRIVEN_MODEL_EXPIRED => 'DATA_DRIVEN_MODEL_EXPIRED',
+        self::DATA_DRIVEN_MODEL_STALE => 'DATA_DRIVEN_MODEL_STALE',
+        self::DATA_DRIVEN_MODEL_UNKNOWN => 'DATA_DRIVEN_MODEL_UNKNOWN',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

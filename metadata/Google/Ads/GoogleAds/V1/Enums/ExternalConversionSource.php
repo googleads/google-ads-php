@@ -45,7 +45,7 @@ class ExternalConversionSource
             "732e56312e456e756d73ca021d476f6f676c655c4164735c476f6f676c65" .
             "4164735c56315c456e756d73ea0221476f6f676c653a3a4164733a3a476f" .
             "6f676c654164733a3a56313a3a456e756d73620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

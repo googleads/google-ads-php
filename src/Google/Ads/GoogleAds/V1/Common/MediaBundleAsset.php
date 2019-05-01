@@ -58,6 +58,23 @@ class MediaBundleAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getData()</code>
+
+     * Media bundle (ZIP file) asset data. The format of the uploaded ZIP file
+     * depends on the ad field where it will be used. For more information on the
+     * format, see the documentation of the ad field where you plan on using the
+     * MediaBundleAsset. This field is mutate only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * @return string|null
+     */
+    public function getDataValue()
+    {
+        $wrapper = $this->getData();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Media bundle (ZIP file) asset data. The format of the uploaded ZIP file
      * depends on the ad field where it will be used. For more information on the
      * format, see the documentation of the ad field where you plan on using the
@@ -73,6 +90,24 @@ class MediaBundleAsset extends \Google\Protobuf\Internal\Message
         $this->data = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BytesValue object.
+
+     * Media bundle (ZIP file) asset data. The format of the uploaded ZIP file
+     * depends on the ad field where it will be used. For more information on the
+     * format, see the documentation of the ad field where you plan on using the
+     * MediaBundleAsset. This field is mutate only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDataValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BytesValue(['value' => $var]);
+        return $this->setData($wrappedVar);
     }
 
 }

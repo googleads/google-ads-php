@@ -120,6 +120,21 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getClientCustomer()</code>
+
+     * The resource name of the client-customer which is linked to
+     * the given customer. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * @return string|null
+     */
+    public function getClientCustomerValue()
+    {
+        $wrapper = $this->getClientCustomer();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
@@ -136,6 +151,22 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the client-customer which is linked to
+     * the given customer. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setClientCustomerValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setClientCustomer($wrappedVar);
+    }
+
+    /**
      * Specifies whether this is a hidden account. Learn more about hidden
      * accounts <a
      * href="https://support.google.com/google-ads/answer/7519830">here</a>. Read
@@ -147,6 +178,23 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     public function getHidden()
     {
         return $this->hidden;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHidden()</code>
+
+     * Specifies whether this is a hidden account. Learn more about hidden
+     * accounts <a
+     * href="https://support.google.com/google-ads/answer/7519830">here</a>. Read
+     * only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
+     * @return bool|null
+     */
+    public function getHiddenValue()
+    {
+        $wrapper = $this->getHidden();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -168,6 +216,24 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Specifies whether this is a hidden account. Learn more about hidden
+     * accounts <a
+     * href="https://support.google.com/google-ads/answer/7519830">here</a>. Read
+     * only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setHiddenValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setHidden($wrappedVar);
+    }
+
+    /**
      * Distance between given customer and client. For self link, the level value
      * will be 0. Read only.
      *
@@ -177,6 +243,21 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     public function getLevel()
     {
         return $this->level;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLevel()</code>
+
+     * Distance between given customer and client. For self link, the level value
+     * will be 0. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
+     * @return int|string|null
+     */
+    public function getLevelValue()
+    {
+        $wrapper = $this->getLevel();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -193,6 +274,22 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         $this->level = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Distance between given customer and client. For self link, the level value
+     * will be 0. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setLevelValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setLevel($wrappedVar);
     }
 
 }

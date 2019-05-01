@@ -1,3 +1,11 @@
+## 1.2.0
+
+*   Added support for v1_2 of Google Ads API.
+*   Added utility functions to convert enum names to integer values and vice versa.
+*   Added convenience functions for automatic unboxing of protobuf values, e.g. `getNameValue` along
+    with the existing `getName`.
+*   Added an example on campaign management migration from the legacy AdWords API.
+
 ## 1.1.0
 
 *   Added support for v1_1 of Google Ads API.

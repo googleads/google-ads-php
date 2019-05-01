@@ -32,6 +32,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -46,7 +47,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $hotelPerformanceViewServiceClient = new HotelPerformanceViewServiceClient();
  * try {
- *     $formattedResourceName = $hotelPerformanceViewServiceClient->customerName('[CUSTOMER]');
+ *     $formattedResourceName = $hotelPerformanceViewServiceClient->hotelPerformanceViewName('[CUSTOMER]');
  *     $response = $hotelPerformanceViewServiceClient->getHotelPerformanceView($formattedResourceName);
  * } finally {
  *     $hotelPerformanceViewServiceClient->close();
@@ -90,7 +91,6 @@ class HotelPerformanceViewServiceGapicClient
     public static $serviceScopes = [
     ];
     private static $hotelPerformanceViewNameTemplate;
-    private static $customerNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -121,21 +121,11 @@ class HotelPerformanceViewServiceGapicClient
         return self::$hotelPerformanceViewNameTemplate;
     }
 
-    private static function getCustomerNameTemplate()
-    {
-        if (null == self::$customerNameTemplate) {
-            self::$customerNameTemplate = new PathTemplate('customers/{customer}');
-        }
-
-        return self::$customerNameTemplate;
-    }
-
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'hotelPerformanceView' => self::getHotelPerformanceViewNameTemplate(),
-                'customer' => self::getCustomerNameTemplate(),
             ];
         }
 
@@ -159,27 +149,10 @@ class HotelPerformanceViewServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a customer resource.
-     *
-     * @param string $customer
-     *
-     * @return string The formatted customer resource.
-     * @experimental
-     */
-    public static function customerName($customer)
-    {
-        return self::getCustomerNameTemplate()->render([
-            'customer' => $customer,
-        ]);
-    }
-
-    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - hotelPerformanceView: customers/{customer}/hotelPerformanceView
-     * - customer: customers/{customer}.
+     * - hotelPerformanceView: customers/{customer}/hotelPerformanceView.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -281,7 +254,7 @@ class HotelPerformanceViewServiceGapicClient
      * ```
      * $hotelPerformanceViewServiceClient = new HotelPerformanceViewServiceClient();
      * try {
-     *     $formattedResourceName = $hotelPerformanceViewServiceClient->customerName('[CUSTOMER]');
+     *     $formattedResourceName = $hotelPerformanceViewServiceClient->hotelPerformanceViewName('[CUSTOMER]');
      *     $response = $hotelPerformanceViewServiceClient->getHotelPerformanceView($formattedResourceName);
      * } finally {
      *     $hotelPerformanceViewServiceClient->close();
@@ -308,6 +281,13 @@ class HotelPerformanceViewServiceGapicClient
     {
         $request = new GetHotelPerformanceViewRequest();
         $request->setResourceName($resourceName);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'GetHotelPerformanceView',

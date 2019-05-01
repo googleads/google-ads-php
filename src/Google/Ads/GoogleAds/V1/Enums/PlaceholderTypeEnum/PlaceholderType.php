@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\PlaceholderTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible placeholder types for a feed mapping.
  *
@@ -157,6 +159,50 @@ class PlaceholderType
      * Generated from protobuf enum <code>DYNAMIC_JOB = 20;</code>
      */
     const DYNAMIC_JOB = 20;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::SITELINK => 'SITELINK',
+        self::CALL => 'CALL',
+        self::APP => 'APP',
+        self::LOCATION => 'LOCATION',
+        self::AFFILIATE_LOCATION => 'AFFILIATE_LOCATION',
+        self::CALLOUT => 'CALLOUT',
+        self::STRUCTURED_SNIPPET => 'STRUCTURED_SNIPPET',
+        self::MESSAGE => 'MESSAGE',
+        self::PRICE => 'PRICE',
+        self::PROMOTION => 'PROMOTION',
+        self::AD_CUSTOMIZER => 'AD_CUSTOMIZER',
+        self::DYNAMIC_EDUCATION => 'DYNAMIC_EDUCATION',
+        self::DYNAMIC_FLIGHT => 'DYNAMIC_FLIGHT',
+        self::DYNAMIC_CUSTOM => 'DYNAMIC_CUSTOM',
+        self::DYNAMIC_HOTEL => 'DYNAMIC_HOTEL',
+        self::DYNAMIC_REAL_ESTATE => 'DYNAMIC_REAL_ESTATE',
+        self::DYNAMIC_TRAVEL => 'DYNAMIC_TRAVEL',
+        self::DYNAMIC_LOCAL => 'DYNAMIC_LOCAL',
+        self::DYNAMIC_JOB => 'DYNAMIC_JOB',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

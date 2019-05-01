@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\RealEstatePlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Real Estate placeholder fields.
  *
@@ -146,6 +148,49 @@ class RealEstatePlaceholderField
      * Generated from protobuf enum <code>IOS_APP_STORE_ID = 19;</code>
      */
     const IOS_APP_STORE_ID = 19;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::LISTING_ID => 'LISTING_ID',
+        self::LISTING_NAME => 'LISTING_NAME',
+        self::CITY_NAME => 'CITY_NAME',
+        self::DESCRIPTION => 'DESCRIPTION',
+        self::ADDRESS => 'ADDRESS',
+        self::PRICE => 'PRICE',
+        self::FORMATTED_PRICE => 'FORMATTED_PRICE',
+        self::IMAGE_URL => 'IMAGE_URL',
+        self::PROPERTY_TYPE => 'PROPERTY_TYPE',
+        self::LISTING_TYPE => 'LISTING_TYPE',
+        self::CONTEXTUAL_KEYWORDS => 'CONTEXTUAL_KEYWORDS',
+        self::FINAL_URLS => 'FINAL_URLS',
+        self::FINAL_MOBILE_URLS => 'FINAL_MOBILE_URLS',
+        self::TRACKING_URL => 'TRACKING_URL',
+        self::ANDROID_APP_LINK => 'ANDROID_APP_LINK',
+        self::SIMILAR_LISTING_IDS => 'SIMILAR_LISTING_IDS',
+        self::IOS_APP_LINK => 'IOS_APP_LINK',
+        self::IOS_APP_STORE_ID => 'IOS_APP_STORE_ID',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

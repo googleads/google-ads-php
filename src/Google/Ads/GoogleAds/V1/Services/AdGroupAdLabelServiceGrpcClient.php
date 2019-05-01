@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Ad Group Ad Label service.
+ *
  * Service to manage labels on ad group ads.
  */
 class AdGroupAdLabelServiceGrpcClient extends \Grpc\BaseStub {

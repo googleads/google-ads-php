@@ -67,7 +67,7 @@ class FeedMappingService
             "654164735c56315c5365727669636573ea0224476f6f676c653a3a416473" .
             "3a3a476f6f676c654164733a3a56313a3a5365727669636573620670726f" .
             "746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

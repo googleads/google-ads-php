@@ -82,6 +82,20 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * ID of the attribute.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * ID of the attribute.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
@@ -97,6 +111,21 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * ID of the attribute.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the attribute. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
@@ -105,6 +134,20 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the attribute. Required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -120,6 +163,21 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the attribute. Required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -163,6 +221,23 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getIsPartOfKey()</code>
+
+     * Indicates that data corresponding to this attribute is part of a
+     * FeedItem's unique key. It defaults to false if it is unspecified. Note
+     * that a unique key is not required in a Feed's schema, in which case the
+     * FeedItems must be referenced by their feed_item_id.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_part_of_key = 4;</code>
+     * @return bool|null
+     */
+    public function getIsPartOfKeyValue()
+    {
+        $wrapper = $this->getIsPartOfKey();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Indicates that data corresponding to this attribute is part of a
      * FeedItem's unique key. It defaults to false if it is unspecified. Note
      * that a unique key is not required in a Feed's schema, in which case the
@@ -178,6 +253,24 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
         $this->is_part_of_key = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Indicates that data corresponding to this attribute is part of a
+     * FeedItem's unique key. It defaults to false if it is unspecified. Note
+     * that a unique key is not required in a Feed's schema, in which case the
+     * FeedItems must be referenced by their feed_item_id.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_part_of_key = 4;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setIsPartOfKeyValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setIsPartOfKey($wrappedVar);
     }
 
 }

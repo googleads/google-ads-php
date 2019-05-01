@@ -157,6 +157,20 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getUserInterestId()</code>
+
+     * The ID of the user interest.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
+     * @return int|string|null
+     */
+    public function getUserInterestIdValue()
+    {
+        $wrapper = $this->getUserInterestId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the user interest.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
@@ -172,6 +186,21 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the user interest.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setUserInterestIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setUserInterestId($wrappedVar);
+    }
+
+    /**
      * The name of the user interest.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
@@ -180,6 +209,20 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the user interest.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -198,6 +241,21 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the user interest.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * The parent of the user interest.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
@@ -206,6 +264,20 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     public function getUserInterestParent()
     {
         return $this->user_interest_parent;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getUserInterestParent()</code>
+
+     * The parent of the user interest.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
+     * @return string|null
+     */
+    public function getUserInterestParentValue()
+    {
+        $wrapper = $this->getUserInterestParent();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -224,6 +296,21 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The parent of the user interest.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setUserInterestParentValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setUserInterestParent($wrappedVar);
+    }
+
+    /**
      * True if the user interest is launched to all channels and locales.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
@@ -232,6 +319,20 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     public function getLaunchedToAll()
     {
         return $this->launched_to_all;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLaunchedToAll()</code>
+
+     * True if the user interest is launched to all channels and locales.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
+     * @return bool|null
+     */
+    public function getLaunchedToAllValue()
+    {
+        $wrapper = $this->getLaunchedToAll();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -247,6 +348,21 @@ class UserInterest extends \Google\Protobuf\Internal\Message
         $this->launched_to_all = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * True if the user interest is launched to all channels and locales.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setLaunchedToAllValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setLaunchedToAll($wrappedVar);
     }
 
     /**

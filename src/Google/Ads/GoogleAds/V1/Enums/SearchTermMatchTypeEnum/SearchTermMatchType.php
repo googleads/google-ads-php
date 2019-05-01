@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\SearchTermMatchTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible match types for a keyword triggering an ad, including variants.
  *
@@ -53,6 +55,36 @@ class SearchTermMatchType
      * Generated from protobuf enum <code>NEAR_PHRASE = 6;</code>
      */
     const NEAR_PHRASE = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::BROAD => 'BROAD',
+        self::EXACT => 'EXACT',
+        self::PHRASE => 'PHRASE',
+        self::NEAR_EXACT => 'NEAR_EXACT',
+        self::NEAR_PHRASE => 'NEAR_PHRASE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

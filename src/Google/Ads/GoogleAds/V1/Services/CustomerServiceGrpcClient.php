@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Customer service.
+ *
  * Service to manage customers.
  */
 class CustomerServiceGrpcClient extends \Grpc\BaseStub {

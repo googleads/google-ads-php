@@ -46,6 +46,20 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getConversionAction()</code>
+
+     * A conversion action that's not generated from remarketing.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 1;</code>
+     * @return string|null
+     */
+    public function getConversionActionValue()
+    {
+        $wrapper = $this->getConversionAction();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * A conversion action that's not generated from remarketing.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 1;</code>
@@ -61,6 +75,21 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A conversion action that's not generated from remarketing.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setConversionActionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setConversionAction($wrappedVar);
+    }
+
+    /**
      * A remarketing action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue remarketing_action = 2;</code>
@@ -69,6 +98,20 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
     public function getRemarketingAction()
     {
         return $this->readOneof(2);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRemarketingAction()</code>
+
+     * A remarketing action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue remarketing_action = 2;</code>
+     * @return string|null
+     */
+    public function getRemarketingActionValue()
+    {
+        $wrapper = $this->getRemarketingAction();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -84,6 +127,21 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
         $this->writeOneof(2, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A remarketing action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue remarketing_action = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setRemarketingActionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setRemarketingAction($wrappedVar);
     }
 
     /**

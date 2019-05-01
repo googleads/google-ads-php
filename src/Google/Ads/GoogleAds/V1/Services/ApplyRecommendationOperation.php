@@ -42,6 +42,12 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\TargetCpaOptInParameters $target_cpa_opt_in
      *           Optional parameters to use when applying target CPA opt-in
      *           recommendation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\CalloutExtensionParameters $callout_extension
+     *           Parameters to use when applying callout extension recommendation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\CallExtensionParameters $call_extension
+     *           Parameters to use when applying call extension recommendation.
+     *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\SitelinkExtensionParameters $sitelink_extension
+     *           Parameters to use when applying call extension recommendation.
      *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters $move_unused_budget
      *           Parameters to use when applying move unused budget recommendation.
      * }
@@ -181,6 +187,84 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation_TargetCpaOptInParameters::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parameters to use when applying callout extension recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.CalloutExtensionParameters callout_extension = 6;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\CalloutExtensionParameters
+     */
+    public function getCalloutExtension()
+    {
+        return $this->readOneof(6);
+    }
+
+    /**
+     * Parameters to use when applying callout extension recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.CalloutExtensionParameters callout_extension = 6;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\CalloutExtensionParameters $var
+     * @return $this
+     */
+    public function setCalloutExtension($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation_CalloutExtensionParameters::class);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parameters to use when applying call extension recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.CallExtensionParameters call_extension = 7;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\CallExtensionParameters
+     */
+    public function getCallExtension()
+    {
+        return $this->readOneof(7);
+    }
+
+    /**
+     * Parameters to use when applying call extension recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.CallExtensionParameters call_extension = 7;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\CallExtensionParameters $var
+     * @return $this
+     */
+    public function setCallExtension($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation_CallExtensionParameters::class);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parameters to use when applying call extension recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.SitelinkExtensionParameters sitelink_extension = 8;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\SitelinkExtensionParameters
+     */
+    public function getSitelinkExtension()
+    {
+        return $this->readOneof(8);
+    }
+
+    /**
+     * Parameters to use when applying call extension recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.SitelinkExtensionParameters sitelink_extension = 8;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\SitelinkExtensionParameters $var
+     * @return $this
+     */
+    public function setSitelinkExtension($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation_SitelinkExtensionParameters::class);
+        $this->writeOneof(8, $var);
 
         return $this;
     }

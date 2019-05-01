@@ -30,14 +30,12 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     private $discount_modifier = 0;
     /**
      * Start date of when the promotion is eligible to be redeemed.
-     * This field is currently mutate only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_start_date = 7;</code>
      */
     private $promotion_start_date = null;
     /**
      * End date of when the promotion is eligible to be redeemed.
-     * This field is currently mutate only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_end_date = 8;</code>
      */
@@ -106,10 +104,8 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      *           Enum that modifies the qualification of the discount.
      *     @type \Google\Protobuf\StringValue $promotion_start_date
      *           Start date of when the promotion is eligible to be redeemed.
-     *           This field is currently mutate only.
      *     @type \Google\Protobuf\StringValue $promotion_end_date
      *           End date of when the promotion is eligible to be redeemed.
-     *           This field is currently mutate only.
      *     @type int $occasion
      *           The occasion the promotion was intended for.
      *           If an occasion is set, the redemption window will need to fall within
@@ -162,6 +158,21 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPromotionTarget()</code>
+
+     * A freeform description of what the promotion is targeting.
+     * This field is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promotion_target = 1;</code>
+     * @return string|null
+     */
+    public function getPromotionTargetValue()
+    {
+        $wrapper = $this->getPromotionTarget();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * A freeform description of what the promotion is targeting.
      * This field is required.
      *
@@ -175,6 +186,22 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
         $this->promotion_target = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A freeform description of what the promotion is targeting.
+     * This field is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promotion_target = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPromotionTargetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPromotionTarget($wrappedVar);
     }
 
     /**
@@ -205,7 +232,6 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * Start date of when the promotion is eligible to be redeemed.
-     * This field is currently mutate only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_start_date = 7;</code>
      * @return \Google\Protobuf\StringValue
@@ -216,8 +242,21 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPromotionStartDate()</code>
+
      * Start date of when the promotion is eligible to be redeemed.
-     * This field is currently mutate only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promotion_start_date = 7;</code>
+     * @return string|null
+     */
+    public function getPromotionStartDateValue()
+    {
+        $wrapper = $this->getPromotionStartDate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Start date of when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_start_date = 7;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -232,8 +271,22 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Start date of when the promotion is eligible to be redeemed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promotion_start_date = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPromotionStartDateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPromotionStartDate($wrappedVar);
+    }
+
+    /**
      * End date of when the promotion is eligible to be redeemed.
-     * This field is currently mutate only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_end_date = 8;</code>
      * @return \Google\Protobuf\StringValue
@@ -244,8 +297,21 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPromotionEndDate()</code>
+
      * End date of when the promotion is eligible to be redeemed.
-     * This field is currently mutate only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promotion_end_date = 8;</code>
+     * @return string|null
+     */
+    public function getPromotionEndDateValue()
+    {
+        $wrapper = $this->getPromotionEndDate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * End date of when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_end_date = 8;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -257,6 +323,21 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
         $this->promotion_end_date = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * End date of when the promotion is eligible to be redeemed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promotion_end_date = 8;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPromotionEndDateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPromotionEndDate($wrappedVar);
     }
 
     /**
@@ -355,6 +436,20 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
@@ -367,6 +462,21 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
         $this->tracking_url_template = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
     }
 
     /**
@@ -410,6 +520,21 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFinalUrlSuffix()</code>
+
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 14;</code>
+     * @return string|null
+     */
+    public function getFinalUrlSuffixValue()
+    {
+        $wrapper = $this->getFinalUrlSuffix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
@@ -426,6 +551,22 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 14;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFinalUrlSuffixValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFinalUrlSuffix($wrappedVar);
+    }
+
+    /**
      * The language of the promotion.
      * Represented as BCP 47 language tag.
      *
@@ -435,6 +576,21 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     public function getLanguageCode()
     {
         return $this->language_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLanguageCode()</code>
+
+     * The language of the promotion.
+     * Represented as BCP 47 language tag.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 15;</code>
+     * @return string|null
+     */
+    public function getLanguageCodeValue()
+    {
+        $wrapper = $this->getLanguageCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -454,6 +610,22 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The language of the promotion.
+     * Represented as BCP 47 language tag.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 15;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLanguageCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLanguageCode($wrappedVar);
+    }
+
+    /**
      * Percentage off discount in the promotion in micros.
      * One million is equivalent to one percent.
      * Either this or money_off_amount is required.
@@ -464,6 +636,22 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     public function getPercentOff()
     {
         return $this->readOneof(3);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPercentOff()</code>
+
+     * Percentage off discount in the promotion in micros.
+     * One million is equivalent to one percent.
+     * Either this or money_off_amount is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_off = 3;</code>
+     * @return int|string|null
+     */
+    public function getPercentOffValue()
+    {
+        $wrapper = $this->getPercentOff();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -481,6 +669,23 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
         $this->writeOneof(3, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Percentage off discount in the promotion in micros.
+     * One million is equivalent to one percent.
+     * Either this or money_off_amount is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_off = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setPercentOffValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setPercentOff($wrappedVar);
     }
 
     /**
@@ -523,6 +728,20 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPromotionCode()</code>
+
+     * A code the user should use in order to be eligible for the promotion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promotion_code = 5;</code>
+     * @return string|null
+     */
+    public function getPromotionCodeValue()
+    {
+        $wrapper = $this->getPromotionCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * A code the user should use in order to be eligible for the promotion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_code = 5;</code>
@@ -535,6 +754,21 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
         $this->writeOneof(5, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A code the user should use in order to be eligible for the promotion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue promotion_code = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPromotionCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPromotionCode($wrappedVar);
     }
 
     /**

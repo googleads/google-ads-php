@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\PromotionExtensionOccasionEnum;
 
+use UnexpectedValueException;
+
 /**
  * A promotion extension occasion.
  *
@@ -245,6 +247,68 @@ class PromotionExtensionOccasion
      * Generated from protobuf enum <code>YEAR_END_GIFT = 38;</code>
      */
     const YEAR_END_GIFT = 38;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::NEW_YEARS => 'NEW_YEARS',
+        self::CHINESE_NEW_YEAR => 'CHINESE_NEW_YEAR',
+        self::VALENTINES_DAY => 'VALENTINES_DAY',
+        self::EASTER => 'EASTER',
+        self::MOTHERS_DAY => 'MOTHERS_DAY',
+        self::FATHERS_DAY => 'FATHERS_DAY',
+        self::LABOR_DAY => 'LABOR_DAY',
+        self::BACK_TO_SCHOOL => 'BACK_TO_SCHOOL',
+        self::HALLOWEEN => 'HALLOWEEN',
+        self::BLACK_FRIDAY => 'BLACK_FRIDAY',
+        self::CYBER_MONDAY => 'CYBER_MONDAY',
+        self::CHRISTMAS => 'CHRISTMAS',
+        self::BOXING_DAY => 'BOXING_DAY',
+        self::INDEPENDENCE_DAY => 'INDEPENDENCE_DAY',
+        self::NATIONAL_DAY => 'NATIONAL_DAY',
+        self::END_OF_SEASON => 'END_OF_SEASON',
+        self::WINTER_SALE => 'WINTER_SALE',
+        self::SUMMER_SALE => 'SUMMER_SALE',
+        self::FALL_SALE => 'FALL_SALE',
+        self::SPRING_SALE => 'SPRING_SALE',
+        self::RAMADAN => 'RAMADAN',
+        self::EID_AL_FITR => 'EID_AL_FITR',
+        self::EID_AL_ADHA => 'EID_AL_ADHA',
+        self::SINGLES_DAY => 'SINGLES_DAY',
+        self::WOMENS_DAY => 'WOMENS_DAY',
+        self::HOLI => 'HOLI',
+        self::PARENTS_DAY => 'PARENTS_DAY',
+        self::ST_NICHOLAS_DAY => 'ST_NICHOLAS_DAY',
+        self::CARNIVAL => 'CARNIVAL',
+        self::EPIPHANY => 'EPIPHANY',
+        self::ROSH_HASHANAH => 'ROSH_HASHANAH',
+        self::PASSOVER => 'PASSOVER',
+        self::HANUKKAH => 'HANUKKAH',
+        self::DIWALI => 'DIWALI',
+        self::NAVRATRI => 'NAVRATRI',
+        self::SONGKRAN => 'SONGKRAN',
+        self::YEAR_END_GIFT => 'YEAR_END_GIFT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -86,6 +86,21 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getRecommendedTargetCpaMicros()</code>
+
+     * The recommended average CPA target. See required budget amount and impact
+     * of using this recommendation in options list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getRecommendedTargetCpaMicrosValue()
+    {
+        $wrapper = $this->getRecommendedTargetCpaMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The recommended average CPA target. See required budget amount and impact
      * of using this recommendation in options list.
      *
@@ -99,6 +114,22 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
         $this->recommended_target_cpa_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The recommended average CPA target. See required budget amount and impact
+     * of using this recommendation in options list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRecommendedTargetCpaMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRecommendedTargetCpaMicros($wrappedVar);
     }
 
 }

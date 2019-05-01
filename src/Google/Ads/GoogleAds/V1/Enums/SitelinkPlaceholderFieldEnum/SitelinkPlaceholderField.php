@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\SitelinkPlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Sitelink placeholder fields.
  *
@@ -69,6 +71,38 @@ class SitelinkPlaceholderField
      * Generated from protobuf enum <code>FINAL_URL_SUFFIX = 8;</code>
      */
     const FINAL_URL_SUFFIX = 8;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::TEXT => 'TEXT',
+        self::LINE_1 => 'LINE_1',
+        self::LINE_2 => 'LINE_2',
+        self::FINAL_URLS => 'FINAL_URLS',
+        self::FINAL_MOBILE_URLS => 'FINAL_MOBILE_URLS',
+        self::TRACKING_URL => 'TRACKING_URL',
+        self::FINAL_URL_SUFFIX => 'FINAL_URL_SUFFIX',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

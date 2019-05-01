@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Campaign service.
+ *
  * Service to manage campaigns.
  */
 class CampaignServiceGrpcClient extends \Grpc\BaseStub {

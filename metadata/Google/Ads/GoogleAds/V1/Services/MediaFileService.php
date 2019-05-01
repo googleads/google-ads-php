@@ -65,7 +65,7 @@ class MediaFileService
             "6f6f676c654164735c56315c5365727669636573ea0224476f6f676c653a" .
             "3a4164733a3a476f6f676c654164733a3a56313a3a536572766963657362" .
             "0670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

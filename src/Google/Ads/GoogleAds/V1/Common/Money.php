@@ -57,6 +57,20 @@ class Money extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCurrencyCode()</code>
+
+     * Three-character ISO 4217 currency code.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 1;</code>
+     * @return string|null
+     */
+    public function getCurrencyCodeValue()
+    {
+        $wrapper = $this->getCurrencyCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 1;</code>
@@ -72,6 +86,21 @@ class Money extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Three-character ISO 4217 currency code.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCurrencyCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCurrencyCode($wrappedVar);
+    }
+
+    /**
      * Amount in micros. One million is equivalent to one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 2;</code>
@@ -80,6 +109,20 @@ class Money extends \Google\Protobuf\Internal\Message
     public function getAmountMicros()
     {
         return $this->amount_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAmountMicros()</code>
+
+     * Amount in micros. One million is equivalent to one unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getAmountMicrosValue()
+    {
+        $wrapper = $this->getAmountMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -95,6 +138,21 @@ class Money extends \Google\Protobuf\Internal\Message
         $this->amount_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Amount in micros. One million is equivalent to one unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setAmountMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setAmountMicros($wrappedVar);
     }
 
 }

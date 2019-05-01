@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\LabelErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible label errors.
  *
@@ -79,6 +81,40 @@ class LabelError
      * Generated from protobuf enum <code>CANNOT_ATTACH_NON_MANAGER_LABEL_TO_CUSTOMER = 10;</code>
      */
     const CANNOT_ATTACH_NON_MANAGER_LABEL_TO_CUSTOMER = 10;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CANNOT_APPLY_INACTIVE_LABEL => 'CANNOT_APPLY_INACTIVE_LABEL',
+        self::CANNOT_APPLY_LABEL_TO_DISABLED_AD_GROUP_CRITERION => 'CANNOT_APPLY_LABEL_TO_DISABLED_AD_GROUP_CRITERION',
+        self::CANNOT_APPLY_LABEL_TO_NEGATIVE_AD_GROUP_CRITERION => 'CANNOT_APPLY_LABEL_TO_NEGATIVE_AD_GROUP_CRITERION',
+        self::EXCEEDED_LABEL_LIMIT_PER_TYPE => 'EXCEEDED_LABEL_LIMIT_PER_TYPE',
+        self::INVALID_RESOURCE_FOR_MANAGER_LABEL => 'INVALID_RESOURCE_FOR_MANAGER_LABEL',
+        self::DUPLICATE_NAME => 'DUPLICATE_NAME',
+        self::INVALID_LABEL_NAME => 'INVALID_LABEL_NAME',
+        self::CANNOT_ATTACH_LABEL_TO_DRAFT => 'CANNOT_ATTACH_LABEL_TO_DRAFT',
+        self::CANNOT_ATTACH_NON_MANAGER_LABEL_TO_CUSTOMER => 'CANNOT_ATTACH_NON_MANAGER_LABEL_TO_CUSTOMER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

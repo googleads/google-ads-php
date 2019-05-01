@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Topic View service.
+ *
  * Service to manage topic views.
  */
 class TopicViewServiceGrpcClient extends \Grpc\BaseStub {

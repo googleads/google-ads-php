@@ -145,6 +145,22 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHeaderImage()</code>
+
+     * The MediaFile resource name of the header image. Valid image types are GIF,
+     * JPEG and PNG. The minimum size is 300x100 pixels and the aspect ratio must
+     * be between 3:1 and 5:1 (+-1%).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue header_image = 2;</code>
+     * @return string|null
+     */
+    public function getHeaderImageValue()
+    {
+        $wrapper = $this->getHeaderImage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The MediaFile resource name of the header image. Valid image types are GIF,
      * JPEG and PNG. The minimum size is 300x100 pixels and the aspect ratio must
      * be between 3:1 and 5:1 (+-1%).
@@ -162,6 +178,23 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource name of the header image. Valid image types are GIF,
+     * JPEG and PNG. The minimum size is 300x100 pixels and the aspect ratio must
+     * be between 3:1 and 5:1 (+-1%).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue header_image = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeaderImageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeaderImage($wrappedVar);
+    }
+
+    /**
      * The MediaFile resource name of the marketing image. Valid image types are
      * GIF, JPEG and PNG. The image must either be landscape with a minimum size
      * of 600x314 pixels and aspect ratio of 600:314 (+-1%) or square with a
@@ -173,6 +206,23 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     public function getMarketingImage()
     {
         return $this->marketing_image;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMarketingImage()</code>
+
+     * The MediaFile resource name of the marketing image. Valid image types are
+     * GIF, JPEG and PNG. The image must either be landscape with a minimum size
+     * of 600x314 pixels and aspect ratio of 600:314 (+-1%) or square with a
+     * minimum size of 300x300 pixels and aspect ratio of 1:1 (+-1%)
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image = 3;</code>
+     * @return string|null
+     */
+    public function getMarketingImageValue()
+    {
+        $wrapper = $this->getMarketingImage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -194,6 +244,24 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource name of the marketing image. Valid image types are
+     * GIF, JPEG and PNG. The image must either be landscape with a minimum size
+     * of 600x314 pixels and aspect ratio of 600:314 (+-1%) or square with a
+     * minimum size of 300x300 pixels and aspect ratio of 1:1 (+-1%)
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setMarketingImageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setMarketingImage($wrappedVar);
+    }
+
+    /**
      * Headline of the marketing image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_headline = 4;</code>
@@ -202,6 +270,20 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     public function getMarketingImageHeadline()
     {
         return $this->marketing_image_headline;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMarketingImageHeadline()</code>
+
+     * Headline of the marketing image.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_headline = 4;</code>
+     * @return string|null
+     */
+    public function getMarketingImageHeadlineValue()
+    {
+        $wrapper = $this->getMarketingImageHeadline();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -220,6 +302,21 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Headline of the marketing image.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_headline = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setMarketingImageHeadlineValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setMarketingImageHeadline($wrappedVar);
+    }
+
+    /**
      * Description of the marketing image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_description = 5;</code>
@@ -228,6 +325,20 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
     public function getMarketingImageDescription()
     {
         return $this->marketing_image_description;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMarketingImageDescription()</code>
+
+     * Description of the marketing image.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_description = 5;</code>
+     * @return string|null
+     */
+    public function getMarketingImageDescriptionValue()
+    {
+        $wrapper = $this->getMarketingImageDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -243,6 +354,21 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
         $this->marketing_image_description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Description of the marketing image.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_description = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setMarketingImageDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setMarketingImageDescription($wrappedVar);
     }
 
     /**

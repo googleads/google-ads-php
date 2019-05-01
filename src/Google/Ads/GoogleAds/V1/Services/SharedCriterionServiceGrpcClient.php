@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Shared Criterion service.
+ *
  * Service to manage shared criteria.
  */
 class SharedCriterionServiceGrpcClient extends \Grpc\BaseStub {

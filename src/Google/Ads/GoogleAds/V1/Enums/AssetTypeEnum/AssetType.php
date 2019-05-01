@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AssetTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible types of asset.
  *
@@ -41,6 +43,41 @@ class AssetType
      * Generated from protobuf enum <code>IMAGE = 4;</code>
      */
     const IMAGE = 4;
+    /**
+     * Text asset.
+     *
+     * Generated from protobuf enum <code>TEXT = 5;</code>
+     */
+    const TEXT = 5;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::YOUTUBE_VIDEO => 'YOUTUBE_VIDEO',
+        self::MEDIA_BUNDLE => 'MEDIA_BUNDLE',
+        self::IMAGE => 'IMAGE',
+        self::TEXT => 'TEXT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

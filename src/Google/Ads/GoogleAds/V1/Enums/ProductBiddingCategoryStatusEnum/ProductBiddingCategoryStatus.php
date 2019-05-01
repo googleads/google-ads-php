@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\ProductBiddingCategoryStatusEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing the status of the product bidding category.
  *
@@ -35,6 +37,33 @@ class ProductBiddingCategoryStatus
      * Generated from protobuf enum <code>OBSOLETE = 3;</code>
      */
     const OBSOLETE = 3;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::ACTIVE => 'ACTIVE',
+        self::OBSOLETE => 'OBSOLETE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

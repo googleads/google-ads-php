@@ -89,6 +89,21 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getBusinessName()</code>
+
+     * The business name to prepend to the message text.
+     * This field is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 1;</code>
+     * @return string|null
+     */
+    public function getBusinessNameValue()
+    {
+        $wrapper = $this->getBusinessName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The business name to prepend to the message text.
      * This field is required.
      *
@@ -105,6 +120,22 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The business name to prepend to the message text.
+     * This field is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBusinessNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBusinessName($wrappedVar);
+    }
+
+    /**
      * Uppercase two-letter country code of the advertiser's phone number.
      * This field is required.
      *
@@ -114,6 +145,21 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     public function getCountryCode()
     {
         return $this->country_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCountryCode()</code>
+
+     * Uppercase two-letter country code of the advertiser's phone number.
+     * This field is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
+     * @return string|null
+     */
+    public function getCountryCodeValue()
+    {
+        $wrapper = $this->getCountryCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -133,6 +179,22 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Uppercase two-letter country code of the advertiser's phone number.
+     * This field is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryCode($wrappedVar);
+    }
+
+    /**
      * The advertiser's phone number the message will be sent to. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 3;</code>
@@ -141,6 +203,20 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     public function getPhoneNumber()
     {
         return $this->phone_number;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPhoneNumber()</code>
+
+     * The advertiser's phone number the message will be sent to. Required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 3;</code>
+     * @return string|null
+     */
+    public function getPhoneNumberValue()
+    {
+        $wrapper = $this->getPhoneNumber();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -159,6 +235,21 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The advertiser's phone number the message will be sent to. Required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPhoneNumberValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPhoneNumber($wrappedVar);
+    }
+
+    /**
      * The text to show in the ad.
      * This field is required.
      *
@@ -168,6 +259,21 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     public function getText()
     {
         return $this->text;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getText()</code>
+
+     * The text to show in the ad.
+     * This field is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
+     * @return string|null
+     */
+    public function getTextValue()
+    {
+        $wrapper = $this->getText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -187,6 +293,22 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The text to show in the ad.
+     * This field is required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setText($wrappedVar);
+    }
+
+    /**
      * The message text populated in the messaging app.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue extension_text = 5;</code>
@@ -195,6 +317,20 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
     public function getExtensionText()
     {
         return $this->extension_text;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getExtensionText()</code>
+
+     * The message text populated in the messaging app.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue extension_text = 5;</code>
+     * @return string|null
+     */
+    public function getExtensionTextValue()
+    {
+        $wrapper = $this->getExtensionText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -210,6 +346,21 @@ class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
         $this->extension_text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The message text populated in the messaging app.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue extension_text = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setExtensionTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setExtensionText($wrappedVar);
     }
 
 }

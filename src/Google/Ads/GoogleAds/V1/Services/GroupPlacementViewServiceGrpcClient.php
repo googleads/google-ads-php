@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Group Placement View service.
+ *
  * Service to fetch Group Placement views.
  */
 class GroupPlacementViewServiceGrpcClient extends \Grpc\BaseStub {

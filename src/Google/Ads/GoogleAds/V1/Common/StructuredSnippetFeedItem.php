@@ -62,6 +62,21 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHeader()</code>
+
+     * The header of the snippet.
+     * This string must not be empty.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
+     * @return string|null
+     */
+    public function getHeaderValue()
+    {
+        $wrapper = $this->getHeader();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The header of the snippet.
      * This string must not be empty.
      *
@@ -75,6 +90,22 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
         $this->header = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The header of the snippet.
+     * This string must not be empty.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeaderValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeader($wrappedVar);
     }
 
     /**

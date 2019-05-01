@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\CallPlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Call placeholder fields.
  *
@@ -60,6 +62,36 @@ class CallPlaceholderField
      * Generated from protobuf enum <code>CONVERSION_REPORTING_STATE = 6;</code>
      */
     const CONVERSION_REPORTING_STATE = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::PHONE_NUMBER => 'PHONE_NUMBER',
+        self::COUNTRY_CODE => 'COUNTRY_CODE',
+        self::TRACKED => 'TRACKED',
+        self::CONVERSION_TYPE_ID => 'CONVERSION_TYPE_ID',
+        self::CONVERSION_REPORTING_STATE => 'CONVERSION_REPORTING_STATE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

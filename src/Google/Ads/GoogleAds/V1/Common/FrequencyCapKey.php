@@ -156,6 +156,20 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTimeLength()</code>
+
+     * Number of time units the cap lasts.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value time_length = 4;</code>
+     * @return int|null
+     */
+    public function getTimeLengthValue()
+    {
+        $wrapper = $this->getTimeLength();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Number of time units the cap lasts.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value time_length = 4;</code>
@@ -168,6 +182,21 @@ class FrequencyCapKey extends \Google\Protobuf\Internal\Message
         $this->time_length = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * Number of time units the cap lasts.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value time_length = 4;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setTimeLengthValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setTimeLength($wrappedVar);
     }
 
 }

@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the ProductGroup View service.
+ *
  * Service to manage product group views.
  */
 class ProductGroupViewServiceGrpcClient extends \Grpc\BaseStub {

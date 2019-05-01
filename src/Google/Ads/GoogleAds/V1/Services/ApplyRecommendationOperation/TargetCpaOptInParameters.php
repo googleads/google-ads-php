@@ -60,6 +60,21 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTargetCpaMicros()</code>
+
+     * Average CPA to use for Target CPA bidding strategy. This is a required
+     * field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
+     * @return int|string|null
+     */
+    public function getTargetCpaMicrosValue()
+    {
+        $wrapper = $this->getTargetCpaMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Average CPA to use for Target CPA bidding strategy. This is a required
      * field.
      *
@@ -76,6 +91,22 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Average CPA to use for Target CPA bidding strategy. This is a required
+     * field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setTargetCpaMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setTargetCpaMicros($wrappedVar);
+    }
+
+    /**
      * Optional, budget amount to set for the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value new_campaign_budget_amount_micros = 2;</code>
@@ -84,6 +115,20 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
     public function getNewCampaignBudgetAmountMicros()
     {
         return $this->new_campaign_budget_amount_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getNewCampaignBudgetAmountMicros()</code>
+
+     * Optional, budget amount to set for the campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value new_campaign_budget_amount_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getNewCampaignBudgetAmountMicrosValue()
+    {
+        $wrapper = $this->getNewCampaignBudgetAmountMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -99,6 +144,21 @@ class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
         $this->new_campaign_budget_amount_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Optional, budget amount to set for the campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value new_campaign_budget_amount_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setNewCampaignBudgetAmountMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setNewCampaignBudgetAmountMicros($wrappedVar);
     }
 
 }

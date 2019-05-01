@@ -80,6 +80,21 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCallerId()</code>
+
+     * The caller id from which this call was placed. Caller id is expected to be
+     * in E.164 format with preceding '+' sign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue caller_id = 1;</code>
+     * @return string|null
+     */
+    public function getCallerIdValue()
+    {
+        $wrapper = $this->getCallerId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The caller id from which this call was placed. Caller id is expected to be
      * in E.164 format with preceding '+' sign.
      *
@@ -96,6 +111,22 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The caller id from which this call was placed. Caller id is expected to be
+     * in E.164 format with preceding '+' sign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue caller_id = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCallerIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCallerId($wrappedVar);
+    }
+
+    /**
      * The date time at which the call occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
@@ -105,6 +136,21 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     public function getCallStartDateTime()
     {
         return $this->call_start_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCallStartDateTime()</code>
+
+     * The date time at which the call occurred. The format is
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_start_date_time = 2;</code>
+     * @return string|null
+     */
+    public function getCallStartDateTimeValue()
+    {
+        $wrapper = $this->getCallStartDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -124,6 +170,22 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The date time at which the call occurred. The format is
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_start_date_time = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCallStartDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCallStartDateTime($wrappedVar);
+    }
+
+    /**
      * Resource name of the conversion action associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
@@ -132,6 +194,20 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     public function getConversionAction()
     {
         return $this->conversion_action;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConversionAction()</code>
+
+     * Resource name of the conversion action associated with this conversion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
+     * @return string|null
+     */
+    public function getConversionActionValue()
+    {
+        $wrapper = $this->getConversionAction();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -150,6 +226,21 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Resource name of the conversion action associated with this conversion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setConversionActionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setConversionAction($wrappedVar);
+    }
+
+    /**
      * The date time at which the conversion occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
@@ -159,6 +250,21 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
     public function getConversionDateTime()
     {
         return $this->conversion_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConversionDateTime()</code>
+
+     * The date time at which the conversion occurred. The format is
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 4;</code>
+     * @return string|null
+     */
+    public function getConversionDateTimeValue()
+    {
+        $wrapper = $this->getConversionDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -175,6 +281,22 @@ class CallConversionResult extends \Google\Protobuf\Internal\Message
         $this->conversion_date_time = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The date time at which the conversion occurred. The format is
+     * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setConversionDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setConversionDateTime($wrappedVar);
     }
 
 }

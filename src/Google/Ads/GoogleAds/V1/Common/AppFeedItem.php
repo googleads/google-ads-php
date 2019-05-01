@@ -114,6 +114,21 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLinkText()</code>
+
+     * The visible text displayed when the link is rendered in an ad.
+     * The length of this string should be between 1 and 25, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
+     * @return string|null
+     */
+    public function getLinkTextValue()
+    {
+        $wrapper = $this->getLinkText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The visible text displayed when the link is rendered in an ad.
      * The length of this string should be between 1 and 25, inclusive.
      *
@@ -130,6 +145,22 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The visible text displayed when the link is rendered in an ad.
+     * The length of this string should be between 1 and 25, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLinkTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLinkText($wrappedVar);
+    }
+
+    /**
      * The store-specific ID for the target application.
      * This string must not be empty.
      *
@@ -139,6 +170,21 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     public function getAppId()
     {
         return $this->app_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAppId()</code>
+
+     * The store-specific ID for the target application.
+     * This string must not be empty.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * @return string|null
+     */
+    public function getAppIdValue()
+    {
+        $wrapper = $this->getAppId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -155,6 +201,22 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
         $this->app_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The store-specific ID for the target application.
+     * This string must not be empty.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAppIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAppId($wrappedVar);
     }
 
     /**
@@ -247,6 +309,20 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * URL template for constructing a tracking URL. Default value is "{lpurl}".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL template for constructing a tracking URL. Default value is "{lpurl}".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
@@ -259,6 +335,21 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
         $this->tracking_url_template = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL template for constructing a tracking URL. Default value is "{lpurl}".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
     }
 
     /**
@@ -302,6 +393,21 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFinalUrlSuffix()</code>
+
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
+     * @return string|null
+     */
+    public function getFinalUrlSuffixValue()
+    {
+        $wrapper = $this->getFinalUrlSuffix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
@@ -315,6 +421,22 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
         $this->final_url_suffix = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFinalUrlSuffixValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFinalUrlSuffix($wrappedVar);
     }
 
 }

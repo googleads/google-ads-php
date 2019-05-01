@@ -65,6 +65,21 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getGclid()</code>
+
+     * Google click ID (gclid) associated with the original conversion for this
+     * adjustment.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
+     * @return string|null
+     */
+    public function getGclidValue()
+    {
+        $wrapper = $this->getGclid();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Google click ID (gclid) associated with the original conversion for this
      * adjustment.
      *
@@ -81,6 +96,22 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Google click ID (gclid) associated with the original conversion for this
+     * adjustment.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setGclidValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setGclid($wrappedVar);
+    }
+
+    /**
      * The date time at which the original conversion for this adjustment
      * occurred. The timezone must be specified. The format is "yyyy-mm-dd
      * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
@@ -91,6 +122,22 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
     public function getConversionDateTime()
     {
         return $this->conversion_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConversionDateTime()</code>
+
+     * The date time at which the original conversion for this adjustment
+     * occurred. The timezone must be specified. The format is "yyyy-mm-dd
+     * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 2;</code>
+     * @return string|null
+     */
+    public function getConversionDateTimeValue()
+    {
+        $wrapper = $this->getConversionDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -108,6 +155,23 @@ class GclidDateTimePair extends \Google\Protobuf\Internal\Message
         $this->conversion_date_time = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The date time at which the original conversion for this adjustment
+     * occurred. The timezone must be specified. The format is "yyyy-mm-dd
+     * hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setConversionDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setConversionDateTime($wrappedVar);
     }
 
 }

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\BiddingStrategyTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible bidding strategy types.
  *
@@ -125,6 +127,45 @@ class BiddingStrategyType
      * Generated from protobuf enum <code>TARGET_SPEND = 9;</code>
      */
     const TARGET_SPEND = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::ENHANCED_CPC => 'ENHANCED_CPC',
+        self::MANUAL_CPC => 'MANUAL_CPC',
+        self::MANUAL_CPM => 'MANUAL_CPM',
+        self::MANUAL_CPV => 'MANUAL_CPV',
+        self::MAXIMIZE_CONVERSIONS => 'MAXIMIZE_CONVERSIONS',
+        self::MAXIMIZE_CONVERSION_VALUE => 'MAXIMIZE_CONVERSION_VALUE',
+        self::PAGE_ONE_PROMOTED => 'PAGE_ONE_PROMOTED',
+        self::PERCENT_CPC => 'PERCENT_CPC',
+        self::TARGET_CPA => 'TARGET_CPA',
+        self::TARGET_CPM => 'TARGET_CPM',
+        self::TARGET_IMPRESSION_SHARE => 'TARGET_IMPRESSION_SHARE',
+        self::TARGET_OUTRANK_SHARE => 'TARGET_OUTRANK_SHARE',
+        self::TARGET_ROAS => 'TARGET_ROAS',
+        self::TARGET_SPEND => 'TARGET_SPEND',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

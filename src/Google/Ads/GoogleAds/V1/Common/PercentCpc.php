@@ -73,6 +73,23 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCpcBidCeilingMicros()</code>
+
+     * Maximum bid limit that can be set by the bid strategy. This is
+     * an optional field entered by the advertiser and specified in local micros.
+     * Note: A zero value is interpreted in the same way as having bid_ceiling
+     * undefined.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 1;</code>
+     * @return int|string|null
+     */
+    public function getCpcBidCeilingMicrosValue()
+    {
+        $wrapper = $this->getCpcBidCeilingMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Maximum bid limit that can be set by the bid strategy. This is
      * an optional field entered by the advertiser and specified in local micros.
      * Note: A zero value is interpreted in the same way as having bid_ceiling
@@ -91,6 +108,24 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Maximum bid limit that can be set by the bid strategy. This is
+     * an optional field entered by the advertiser and specified in local micros.
+     * Note: A zero value is interpreted in the same way as having bid_ceiling
+     * undefined.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpcBidCeilingMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpcBidCeilingMicros($wrappedVar);
+    }
+
+    /**
      * Adjusts the bid for each auction upward or downward, depending on the
      * likelihood of a conversion. Individual bids may exceed
      * cpc_bid_ceiling_micros, but the average bid amount for a campaign should
@@ -102,6 +137,23 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
     public function getEnhancedCpcEnabled()
     {
         return $this->enhanced_cpc_enabled;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEnhancedCpcEnabled()</code>
+
+     * Adjusts the bid for each auction upward or downward, depending on the
+     * likelihood of a conversion. Individual bids may exceed
+     * cpc_bid_ceiling_micros, but the average bid amount for a campaign should
+     * not.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 2;</code>
+     * @return bool|null
+     */
+    public function getEnhancedCpcEnabledValue()
+    {
+        $wrapper = $this->getEnhancedCpcEnabled();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -120,6 +172,24 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
         $this->enhanced_cpc_enabled = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Adjusts the bid for each auction upward or downward, depending on the
+     * likelihood of a conversion. Individual bids may exceed
+     * cpc_bid_ceiling_micros, but the average bid amount for a campaign should
+     * not.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 2;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setEnhancedCpcEnabledValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setEnhancedCpcEnabled($wrappedVar);
     }
 
 }

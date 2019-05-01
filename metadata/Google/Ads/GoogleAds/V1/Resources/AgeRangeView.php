@@ -30,7 +30,7 @@ class AgeRangeView
             "6f676c654164735c56315c5265736f7572636573ea0225476f6f676c653a" .
             "3a4164733a3a476f6f676c654164733a3a56313a3a5265736f7572636573" .
             "620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

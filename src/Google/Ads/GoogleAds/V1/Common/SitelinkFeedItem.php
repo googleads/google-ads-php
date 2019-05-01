@@ -120,6 +120,21 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLinkText()</code>
+
+     * URL display text for the sitelink.
+     * The length of this string should be between 1 and 25, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
+     * @return string|null
+     */
+    public function getLinkTextValue()
+    {
+        $wrapper = $this->getLinkText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL display text for the sitelink.
      * The length of this string should be between 1 and 25, inclusive.
      *
@@ -136,6 +151,22 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL display text for the sitelink.
+     * The length of this string should be between 1 and 25, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLinkTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLinkText($wrappedVar);
+    }
+
+    /**
      * First line of the description for the sitelink.
      * If this value is set, line2 must also be set.
      * The length of this string should be between 0 and 35, inclusive.
@@ -146,6 +177,22 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     public function getLine1()
     {
         return $this->line1;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLine1()</code>
+
+     * First line of the description for the sitelink.
+     * If this value is set, line2 must also be set.
+     * The length of this string should be between 0 and 35, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue line1 = 2;</code>
+     * @return string|null
+     */
+    public function getLine1Value()
+    {
+        $wrapper = $this->getLine1();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -166,6 +213,23 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * First line of the description for the sitelink.
+     * If this value is set, line2 must also be set.
+     * The length of this string should be between 0 and 35, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue line1 = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLine1Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLine1($wrappedVar);
+    }
+
+    /**
      * Second line of the description for the sitelink.
      * If this value is set, line1 must also be set.
      * The length of this string should be between 0 and 35, inclusive.
@@ -176,6 +240,22 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     public function getLine2()
     {
         return $this->line2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLine2()</code>
+
+     * Second line of the description for the sitelink.
+     * If this value is set, line1 must also be set.
+     * The length of this string should be between 0 and 35, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue line2 = 3;</code>
+     * @return string|null
+     */
+    public function getLine2Value()
+    {
+        $wrapper = $this->getLine2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -193,6 +273,23 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
         $this->line2 = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Second line of the description for the sitelink.
+     * If this value is set, line1 must also be set.
+     * The length of this string should be between 0 and 35, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue line2 = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLine2Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLine2($wrappedVar);
     }
 
     /**
@@ -259,6 +356,20 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
@@ -271,6 +382,21 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
         $this->tracking_url_template = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
     }
 
     /**
@@ -314,6 +440,21 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFinalUrlSuffix()</code>
+
+     * Final URL suffix to be appended to landing page URLs served with
+     * parallel tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
+     * @return string|null
+     */
+    public function getFinalUrlSuffixValue()
+    {
+        $wrapper = $this->getFinalUrlSuffix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Final URL suffix to be appended to landing page URLs served with
      * parallel tracking.
      *
@@ -327,6 +468,22 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
         $this->final_url_suffix = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Final URL suffix to be appended to landing page URLs served with
+     * parallel tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFinalUrlSuffixValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFinalUrlSuffix($wrappedVar);
     }
 
 }

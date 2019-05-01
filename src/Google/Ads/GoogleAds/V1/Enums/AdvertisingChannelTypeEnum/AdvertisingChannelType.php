@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AdvertisingChannelTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing the various advertising channel types.
  *
@@ -55,12 +57,43 @@ class AdvertisingChannelType
      */
     const VIDEO = 6;
     /**
-     * Universal App Campaigns, including universal app install and universal
-     * app reengagement campaigns, that run across multiple channels.
+     * App Campaigns, and App Campaigns for Engagement, that run
+     * across multiple channels.
      *
      * Generated from protobuf enum <code>MULTI_CHANNEL = 7;</code>
      */
     const MULTI_CHANNEL = 7;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::SEARCH => 'SEARCH',
+        self::DISPLAY => 'DISPLAY',
+        self::SHOPPING => 'SHOPPING',
+        self::HOTEL => 'HOTEL',
+        self::VIDEO => 'VIDEO',
+        self::MULTI_CHANNEL => 'MULTI_CHANNEL',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

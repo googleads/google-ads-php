@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Detail Placement View service.
+ *
  * Service to fetch Detail Placement views.
  */
 class DetailPlacementViewServiceGrpcClient extends \Grpc\BaseStub {

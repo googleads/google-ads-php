@@ -123,6 +123,20 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the topic.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the topic.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -138,6 +152,21 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the topic.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Resource name of parent of the topic constant.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
@@ -146,6 +175,20 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     public function getTopicConstantParent()
     {
         return $this->topic_constant_parent;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTopicConstantParent()</code>
+
+     * Resource name of parent of the topic constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
+     * @return string|null
+     */
+    public function getTopicConstantParentValue()
+    {
+        $wrapper = $this->getTopicConstantParent();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -161,6 +204,21 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
         $this->topic_constant_parent = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Resource name of parent of the topic constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTopicConstantParentValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTopicConstantParent($wrappedVar);
     }
 
     /**

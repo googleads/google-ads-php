@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Conversion Action service.
+ *
  * Service to manage conversion actions.
  */
 class ConversionActionServiceGrpcClient extends \Grpc\BaseStub {

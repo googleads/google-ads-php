@@ -89,6 +89,20 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHeader()</code>
+
+     * Header text of this offer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
+     * @return string|null
+     */
+    public function getHeaderValue()
+    {
+        $wrapper = $this->getHeader();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Header text of this offer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
@@ -104,6 +118,21 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Header text of this offer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeaderValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeader($wrappedVar);
+    }
+
+    /**
      * Description text of this offer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
@@ -112,6 +141,20 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * Description text of this offer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -127,6 +170,21 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
         $this->description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Description text of this offer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
     }
 
     /**

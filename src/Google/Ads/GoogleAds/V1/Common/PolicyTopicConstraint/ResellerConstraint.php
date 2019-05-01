@@ -11,7 +11,6 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Indicates that a policy topic was constrained due to disapproval of the
  * website for reseller purposes.
- * Next Id: 1
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicConstraint.ResellerConstraint</code>
  */

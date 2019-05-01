@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the GeographicViewService.
+ *
  * Service to manage geographic views.
  */
 class GeographicViewServiceGrpcClient extends \Grpc\BaseStub {

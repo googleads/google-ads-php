@@ -143,6 +143,20 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPath1()</code>
+
+     * First part of text that may appear appended to the url displayed in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 3;</code>
+     * @return string|null
+     */
+    public function getPath1Value()
+    {
+        $wrapper = $this->getPath1();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * First part of text that may appear appended to the url displayed in the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 3;</code>
@@ -158,6 +172,21 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * First part of text that may appear appended to the url displayed in the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPath1Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPath1($wrappedVar);
+    }
+
+    /**
      * Second part of text that may appear appended to the url displayed in the
      * ad. This field can only be set when path1 is also set.
      *
@@ -167,6 +196,21 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     public function getPath2()
     {
         return $this->path2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPath2()</code>
+
+     * Second part of text that may appear appended to the url displayed in the
+     * ad. This field can only be set when path1 is also set.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 4;</code>
+     * @return string|null
+     */
+    public function getPath2Value()
+    {
+        $wrapper = $this->getPath2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -183,6 +227,22 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
         $this->path2 = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Second part of text that may appear appended to the url displayed in the
+     * ad. This field can only be set when path1 is also set.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPath2Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPath2($wrappedVar);
     }
 
 }

@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Campaign Budget service.
+ *
  * Service to manage campaign budgets.
  */
 class CampaignBudgetServiceGrpcClient extends \Grpc\BaseStub {

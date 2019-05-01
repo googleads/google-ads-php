@@ -149,6 +149,21 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getEmailAddress()</code>
+
+     * Email address of a Google My Business account or email address of a
+     * manager of the Google My Business account. Required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue email_address = 2;</code>
+     * @return string|null
+     */
+    public function getEmailAddressValue()
+    {
+        $wrapper = $this->getEmailAddress();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Email address of a Google My Business account or email address of a
      * manager of the Google My Business account. Required.
      *
@@ -165,6 +180,22 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Email address of a Google My Business account or email address of a
+     * manager of the Google My Business account. Required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue email_address = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setEmailAddressValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setEmailAddress($wrappedVar);
+    }
+
+    /**
      * Plus page ID of the managed business whose locations should be used. If
      * this field is not set, then all businesses accessible by the user
      * (specified by email_address) are used.
@@ -176,6 +207,23 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     public function getBusinessAccountId()
     {
         return $this->business_account_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBusinessAccountId()</code>
+
+     * Plus page ID of the managed business whose locations should be used. If
+     * this field is not set, then all businesses accessible by the user
+     * (specified by email_address) are used.
+     * This field is mutate-only and is not selectable.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_account_id = 10;</code>
+     * @return string|null
+     */
+    public function getBusinessAccountIdValue()
+    {
+        $wrapper = $this->getBusinessAccountId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -197,6 +245,24 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Plus page ID of the managed business whose locations should be used. If
+     * this field is not set, then all businesses accessible by the user
+     * (specified by email_address) are used.
+     * This field is mutate-only and is not selectable.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_account_id = 10;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBusinessAccountIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBusinessAccountId($wrappedVar);
+    }
+
+    /**
      * Used to filter Google My Business listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
@@ -207,6 +273,22 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     public function getBusinessNameFilter()
     {
         return $this->business_name_filter;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBusinessNameFilter()</code>
+
+     * Used to filter Google My Business listings by business name. If
+     * business_name_filter is set, only listings with a matching business name
+     * are candidates to be sync'd into FeedItems.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_name_filter = 4;</code>
+     * @return string|null
+     */
+    public function getBusinessNameFilterValue()
+    {
+        $wrapper = $this->getBusinessNameFilter();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -224,6 +306,23 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
         $this->business_name_filter = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Used to filter Google My Business listings by business name. If
+     * business_name_filter is set, only listings with a matching business name
+     * are candidates to be sync'd into FeedItems.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue business_name_filter = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBusinessNameFilterValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBusinessNameFilter($wrappedVar);
     }
 
     /**

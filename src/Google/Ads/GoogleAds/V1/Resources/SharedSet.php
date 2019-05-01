@@ -142,6 +142,20 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of this shared set. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -154,6 +168,21 @@ class SharedSet extends \Google\Protobuf\Internal\Message
         $this->id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of this shared set. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
     }
 
     /**
@@ -200,6 +229,24 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of this shared set. Required.
+     * Shared Sets must have names that are unique among active shared sets of
+     * the same type.
+     * The length of this string should be between 1 and 255 UTF-8 bytes,
+     * inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The name of this shared set. Required.
      * Shared Sets must have names that are unique among active shared sets of
      * the same type.
@@ -216,6 +263,25 @@ class SharedSet extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of this shared set. Required.
+     * Shared Sets must have names that are unique among active shared sets of
+     * the same type.
+     * The length of this string should be between 1 and 255 UTF-8 bytes,
+     * inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -256,6 +322,20 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getMemberCount()</code>
+
+     * The number of shared criteria within this shared set. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
+     * @return int|string|null
+     */
+    public function getMemberCountValue()
+    {
+        $wrapper = $this->getMemberCount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The number of shared criteria within this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
@@ -271,6 +351,21 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The number of shared criteria within this shared set. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setMemberCountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setMemberCount($wrappedVar);
+    }
+
+    /**
      * The number of campaigns associated with this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
@@ -279,6 +374,20 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     public function getReferenceCount()
     {
         return $this->reference_count;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getReferenceCount()</code>
+
+     * The number of campaigns associated with this shared set. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
+     * @return int|string|null
+     */
+    public function getReferenceCountValue()
+    {
+        $wrapper = $this->getReferenceCount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -294,6 +403,21 @@ class SharedSet extends \Google\Protobuf\Internal\Message
         $this->reference_count = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The number of campaigns associated with this shared set. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setReferenceCountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setReferenceCount($wrappedVar);
     }
 
 }

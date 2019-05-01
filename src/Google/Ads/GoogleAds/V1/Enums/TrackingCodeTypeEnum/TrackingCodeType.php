@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\TrackingCodeTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The type of the generated tag snippets for tracking conversions.
  *
@@ -44,6 +46,34 @@ class TrackingCodeType
      * Generated from protobuf enum <code>CLICK_TO_CALL = 4;</code>
      */
     const CLICK_TO_CALL = 4;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::WEBPAGE => 'WEBPAGE',
+        self::WEBPAGE_ONCLICK => 'WEBPAGE_ONCLICK',
+        self::CLICK_TO_CALL => 'CLICK_TO_CALL',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

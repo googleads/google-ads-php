@@ -112,6 +112,21 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLanguage()</code>
+
+     * The resource name of the language to target.
+     * Required
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7;</code>
+     * @return string|null
+     */
+    public function getLanguageValue()
+    {
+        $wrapper = $this->getLanguage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The resource name of the language to target.
      * Required
      *
@@ -125,6 +140,22 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
         $this->language = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the language to target.
+     * Required
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLanguageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLanguage($wrappedVar);
     }
 
     /**

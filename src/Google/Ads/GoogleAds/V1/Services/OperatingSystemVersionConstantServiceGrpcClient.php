@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the OS version constant service
+ *
  * Service to fetch Operating System Version constants.
  */
 class OperatingSystemVersionConstantServiceGrpcClient extends \Grpc\BaseStub {

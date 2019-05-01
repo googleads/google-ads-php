@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Product Bidding Category constant service
+ *
  * Service to fetch Product Bidding Categories.
  */
 class ProductBiddingCategoryConstantServiceGrpcClient extends \Grpc\BaseStub {

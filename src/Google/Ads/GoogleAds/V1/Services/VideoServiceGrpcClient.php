@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Video service.
+ *
  * Service to manage videos.
  */
 class VideoServiceGrpcClient extends \Grpc\BaseStub {

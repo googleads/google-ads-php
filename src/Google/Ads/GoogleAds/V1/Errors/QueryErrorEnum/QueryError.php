@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\QueryErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible query errors.
  *
@@ -65,6 +67,18 @@ class QueryError
      * Generated from protobuf enum <code>BAD_OPERATOR = 3;</code>
      */
     const BAD_OPERATOR = 3;
+    /**
+     * Parameter unknown or not supported.
+     *
+     * Generated from protobuf enum <code>BAD_PARAMETER_NAME = 61;</code>
+     */
+    const BAD_PARAMETER_NAME = 61;
+    /**
+     * Parameter have invalid value.
+     *
+     * Generated from protobuf enum <code>BAD_PARAMETER_VALUE = 62;</code>
+     */
+    const BAD_PARAMETER_VALUE = 62;
     /**
      * Invalid resource type was specified in the FROM clause.
      *
@@ -337,6 +351,83 @@ class QueryError
      * Generated from protobuf enum <code>REQUESTED_METRICS_FOR_MANAGER = 59;</code>
      */
     const REQUESTED_METRICS_FOR_MANAGER = 59;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::QUERY_ERROR => 'QUERY_ERROR',
+        self::BAD_ENUM_CONSTANT => 'BAD_ENUM_CONSTANT',
+        self::BAD_ESCAPE_SEQUENCE => 'BAD_ESCAPE_SEQUENCE',
+        self::BAD_FIELD_NAME => 'BAD_FIELD_NAME',
+        self::BAD_LIMIT_VALUE => 'BAD_LIMIT_VALUE',
+        self::BAD_NUMBER => 'BAD_NUMBER',
+        self::BAD_OPERATOR => 'BAD_OPERATOR',
+        self::BAD_PARAMETER_NAME => 'BAD_PARAMETER_NAME',
+        self::BAD_PARAMETER_VALUE => 'BAD_PARAMETER_VALUE',
+        self::BAD_RESOURCE_TYPE_IN_FROM_CLAUSE => 'BAD_RESOURCE_TYPE_IN_FROM_CLAUSE',
+        self::BAD_SYMBOL => 'BAD_SYMBOL',
+        self::BAD_VALUE => 'BAD_VALUE',
+        self::DATE_RANGE_TOO_WIDE => 'DATE_RANGE_TOO_WIDE',
+        self::EXPECTED_AND => 'EXPECTED_AND',
+        self::EXPECTED_BY => 'EXPECTED_BY',
+        self::EXPECTED_DIMENSION_FIELD_IN_SELECT_CLAUSE => 'EXPECTED_DIMENSION_FIELD_IN_SELECT_CLAUSE',
+        self::EXPECTED_FILTERS_ON_DATE_RANGE => 'EXPECTED_FILTERS_ON_DATE_RANGE',
+        self::EXPECTED_FROM => 'EXPECTED_FROM',
+        self::EXPECTED_LIST => 'EXPECTED_LIST',
+        self::EXPECTED_REFERENCED_FIELD_IN_SELECT_CLAUSE => 'EXPECTED_REFERENCED_FIELD_IN_SELECT_CLAUSE',
+        self::EXPECTED_SELECT => 'EXPECTED_SELECT',
+        self::EXPECTED_SINGLE_VALUE => 'EXPECTED_SINGLE_VALUE',
+        self::EXPECTED_VALUE_WITH_BETWEEN_OPERATOR => 'EXPECTED_VALUE_WITH_BETWEEN_OPERATOR',
+        self::INVALID_DATE_FORMAT => 'INVALID_DATE_FORMAT',
+        self::INVALID_STRING_VALUE => 'INVALID_STRING_VALUE',
+        self::INVALID_VALUE_WITH_BETWEEN_OPERATOR => 'INVALID_VALUE_WITH_BETWEEN_OPERATOR',
+        self::INVALID_VALUE_WITH_DURING_OPERATOR => 'INVALID_VALUE_WITH_DURING_OPERATOR',
+        self::INVALID_VALUE_WITH_LIKE_OPERATOR => 'INVALID_VALUE_WITH_LIKE_OPERATOR',
+        self::OPERATOR_FIELD_MISMATCH => 'OPERATOR_FIELD_MISMATCH',
+        self::PROHIBITED_EMPTY_LIST_IN_CONDITION => 'PROHIBITED_EMPTY_LIST_IN_CONDITION',
+        self::PROHIBITED_ENUM_CONSTANT => 'PROHIBITED_ENUM_CONSTANT',
+        self::PROHIBITED_FIELD_COMBINATION_IN_SELECT_CLAUSE => 'PROHIBITED_FIELD_COMBINATION_IN_SELECT_CLAUSE',
+        self::PROHIBITED_FIELD_IN_ORDER_BY_CLAUSE => 'PROHIBITED_FIELD_IN_ORDER_BY_CLAUSE',
+        self::PROHIBITED_FIELD_IN_SELECT_CLAUSE => 'PROHIBITED_FIELD_IN_SELECT_CLAUSE',
+        self::PROHIBITED_FIELD_IN_WHERE_CLAUSE => 'PROHIBITED_FIELD_IN_WHERE_CLAUSE',
+        self::PROHIBITED_RESOURCE_TYPE_IN_FROM_CLAUSE => 'PROHIBITED_RESOURCE_TYPE_IN_FROM_CLAUSE',
+        self::PROHIBITED_RESOURCE_TYPE_IN_SELECT_CLAUSE => 'PROHIBITED_RESOURCE_TYPE_IN_SELECT_CLAUSE',
+        self::PROHIBITED_RESOURCE_TYPE_IN_WHERE_CLAUSE => 'PROHIBITED_RESOURCE_TYPE_IN_WHERE_CLAUSE',
+        self::PROHIBITED_METRIC_IN_SELECT_OR_WHERE_CLAUSE => 'PROHIBITED_METRIC_IN_SELECT_OR_WHERE_CLAUSE',
+        self::PROHIBITED_SEGMENT_IN_SELECT_OR_WHERE_CLAUSE => 'PROHIBITED_SEGMENT_IN_SELECT_OR_WHERE_CLAUSE',
+        self::PROHIBITED_SEGMENT_WITH_METRIC_IN_SELECT_OR_WHERE_CLAUSE => 'PROHIBITED_SEGMENT_WITH_METRIC_IN_SELECT_OR_WHERE_CLAUSE',
+        self::LIMIT_VALUE_TOO_LOW => 'LIMIT_VALUE_TOO_LOW',
+        self::PROHIBITED_NEWLINE_IN_STRING => 'PROHIBITED_NEWLINE_IN_STRING',
+        self::PROHIBITED_VALUE_COMBINATION_IN_LIST => 'PROHIBITED_VALUE_COMBINATION_IN_LIST',
+        self::PROHIBITED_VALUE_COMBINATION_WITH_BETWEEN_OPERATOR => 'PROHIBITED_VALUE_COMBINATION_WITH_BETWEEN_OPERATOR',
+        self::STRING_NOT_TERMINATED => 'STRING_NOT_TERMINATED',
+        self::TOO_MANY_SEGMENTS => 'TOO_MANY_SEGMENTS',
+        self::UNEXPECTED_END_OF_QUERY => 'UNEXPECTED_END_OF_QUERY',
+        self::UNEXPECTED_FROM_CLAUSE => 'UNEXPECTED_FROM_CLAUSE',
+        self::UNRECOGNIZED_FIELD => 'UNRECOGNIZED_FIELD',
+        self::UNEXPECTED_INPUT => 'UNEXPECTED_INPUT',
+        self::REQUESTED_METRICS_FOR_MANAGER => 'REQUESTED_METRICS_FOR_MANAGER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

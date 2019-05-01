@@ -133,6 +133,20 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the geo target constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the geo target constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
@@ -148,6 +162,21 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the geo target constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Geo target constant English name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
@@ -156,6 +185,20 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * Geo target constant English name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -174,6 +217,21 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Geo target constant English name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * The ISO-3166-1 alpha-2 country code that is associated with the target.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
@@ -182,6 +240,20 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     public function getCountryCode()
     {
         return $this->country_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCountryCode()</code>
+
+     * The ISO-3166-1 alpha-2 country code that is associated with the target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * @return string|null
+     */
+    public function getCountryCodeValue()
+    {
+        $wrapper = $this->getCountryCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -200,6 +272,21 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The ISO-3166-1 alpha-2 country code that is associated with the target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryCode($wrappedVar);
+    }
+
+    /**
      * Geo target constant target type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
@@ -208,6 +295,20 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     public function getTargetType()
     {
         return $this->target_type;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTargetType()</code>
+
+     * Geo target constant target type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
+     * @return string|null
+     */
+    public function getTargetTypeValue()
+    {
+        $wrapper = $this->getTargetType();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -223,6 +324,21 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
         $this->target_type = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Geo target constant target type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTargetTypeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTargetType($wrappedVar);
     }
 
     /**
@@ -264,6 +380,21 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCanonicalName()</code>
+
+     * The fully qualified English name, consisting of the target's name and that
+     * of its parent and country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * @return string|null
+     */
+    public function getCanonicalNameValue()
+    {
+        $wrapper = $this->getCanonicalName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The fully qualified English name, consisting of the target's name and that
      * of its parent and country.
      *
@@ -277,6 +408,22 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
         $this->canonical_name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The fully qualified English name, consisting of the target's name and that
+     * of its parent and country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCanonicalNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCanonicalName($wrappedVar);
     }
 
 }

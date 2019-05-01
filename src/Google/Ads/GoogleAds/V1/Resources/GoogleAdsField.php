@@ -229,6 +229,20 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the artifact.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The name of the artifact.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
@@ -241,6 +255,21 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the artifact.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -282,6 +311,21 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getSelectable()</code>
+
+     * Whether the artifact can be used in a SELECT clause in search
+     * queries.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4;</code>
+     * @return bool|null
+     */
+    public function getSelectableValue()
+    {
+        $wrapper = $this->getSelectable();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
@@ -298,6 +342,22 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the artifact can be used in a SELECT clause in search
+     * queries.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setSelectableValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setSelectable($wrappedVar);
+    }
+
+    /**
      * Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
@@ -307,6 +367,21 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     public function getFilterable()
     {
         return $this->filterable;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFilterable()</code>
+
+     * Whether the artifact can be used in a WHERE clause in search
+     * queries.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5;</code>
+     * @return bool|null
+     */
+    public function getFilterableValue()
+    {
+        $wrapper = $this->getFilterable();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -326,6 +401,22 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the artifact can be used in a WHERE clause in search
+     * queries.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setFilterableValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setFilterable($wrappedVar);
+    }
+
+    /**
      * Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
@@ -335,6 +426,21 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     public function getSortable()
     {
         return $this->sortable;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getSortable()</code>
+
+     * Whether the artifact can be used in a ORDER BY clause in search
+     * queries.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6;</code>
+     * @return bool|null
+     */
+    public function getSortableValue()
+    {
+        $wrapper = $this->getSortable();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -351,6 +457,22 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
         $this->sortable = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the artifact can be used in a ORDER BY clause in search
+     * queries.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setSortableValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setSortable($wrappedVar);
     }
 
     /**
@@ -557,6 +679,20 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTypeUrl()</code>
+
+     * The URL of proto describing the artifact's data type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
+     * @return string|null
+     */
+    public function getTypeUrlValue()
+    {
+        $wrapper = $this->getTypeUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The URL of proto describing the artifact's data type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
@@ -572,6 +708,21 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL of proto describing the artifact's data type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTypeUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTypeUrl($wrappedVar);
+    }
+
+    /**
      * Whether the field artifact is repeated.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
@@ -580,6 +731,20 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     public function getIsRepeated()
     {
         return $this->is_repeated;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getIsRepeated()</code>
+
+     * Whether the field artifact is repeated.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
+     * @return bool|null
+     */
+    public function getIsRepeatedValue()
+    {
+        $wrapper = $this->getIsRepeated();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -595,6 +760,21 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
         $this->is_repeated = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the field artifact is repeated.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setIsRepeatedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setIsRepeated($wrappedVar);
     }
 
 }

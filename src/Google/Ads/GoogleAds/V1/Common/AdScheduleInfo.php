@@ -175,6 +175,23 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getStartHour()</code>
+
+     * Starting hour in 24 hour time.
+     * This field must be between 0 and 23, inclusive.
+     * This field is required for CREATE operations and is prohibited on UPDATE
+     * operations.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value start_hour = 3;</code>
+     * @return int|null
+     */
+    public function getStartHourValue()
+    {
+        $wrapper = $this->getStartHour();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Starting hour in 24 hour time.
      * This field must be between 0 and 23, inclusive.
      * This field is required for CREATE operations and is prohibited on UPDATE
@@ -193,6 +210,24 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * Starting hour in 24 hour time.
+     * This field must be between 0 and 23, inclusive.
+     * This field is required for CREATE operations and is prohibited on UPDATE
+     * operations.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value start_hour = 3;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setStartHourValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setStartHour($wrappedVar);
+    }
+
+    /**
      * Ending hour in 24 hour time; 24 signifies end of the day.
      * This field must be between 0 and 24, inclusive.
      * This field is required for CREATE operations and is prohibited on UPDATE
@@ -204,6 +239,23 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
     public function getEndHour()
     {
         return $this->end_hour;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEndHour()</code>
+
+     * Ending hour in 24 hour time; 24 signifies end of the day.
+     * This field must be between 0 and 24, inclusive.
+     * This field is required for CREATE operations and is prohibited on UPDATE
+     * operations.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value end_hour = 4;</code>
+     * @return int|null
+     */
+    public function getEndHourValue()
+    {
+        $wrapper = $this->getEndHour();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -222,6 +274,24 @@ class AdScheduleInfo extends \Google\Protobuf\Internal\Message
         $this->end_hour = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * Ending hour in 24 hour time; 24 signifies end of the day.
+     * This field must be between 0 and 24, inclusive.
+     * This field is required for CREATE operations and is prohibited on UPDATE
+     * operations.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value end_hour = 4;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setEndHourValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setEndHour($wrappedVar);
     }
 
     /**

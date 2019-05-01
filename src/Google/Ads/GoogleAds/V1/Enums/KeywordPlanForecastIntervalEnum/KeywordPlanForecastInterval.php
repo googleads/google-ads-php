@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\KeywordPlanForecastIntervalEnum;
 
+use UnexpectedValueException;
+
 /**
  * Forecast intervals.
  *
@@ -44,6 +46,34 @@ class KeywordPlanForecastInterval
      * Generated from protobuf enum <code>NEXT_QUARTER = 5;</code>
      */
     const NEXT_QUARTER = 5;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::NEXT_WEEK => 'NEXT_WEEK',
+        self::NEXT_MONTH => 'NEXT_MONTH',
+        self::NEXT_QUARTER => 'NEXT_QUARTER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

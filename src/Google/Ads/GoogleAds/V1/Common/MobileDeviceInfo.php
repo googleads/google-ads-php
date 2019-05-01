@@ -49,6 +49,20 @@ class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getMobileDeviceConstant()</code>
+
+     * The mobile device constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue mobile_device_constant = 1;</code>
+     * @return string|null
+     */
+    public function getMobileDeviceConstantValue()
+    {
+        $wrapper = $this->getMobileDeviceConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The mobile device constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue mobile_device_constant = 1;</code>
@@ -61,6 +75,21 @@ class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
         $this->mobile_device_constant = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The mobile device constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue mobile_device_constant = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setMobileDeviceConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setMobileDeviceConstant($wrappedVar);
     }
 
 }

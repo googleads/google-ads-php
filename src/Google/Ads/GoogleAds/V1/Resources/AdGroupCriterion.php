@@ -353,6 +353,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCriterionId()</code>
+
+     * The ID of the criterion.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * @return int|string|null
+     */
+    public function getCriterionIdValue()
+    {
+        $wrapper = $this->getCriterionId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the criterion.
      * This field is ignored for mutates.
      *
@@ -366,6 +381,22 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         $this->criterion_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the criterion.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCriterionIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCriterionId($wrappedVar);
     }
 
     /**
@@ -432,6 +463,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdGroup()</code>
+
+     * The ad group to which the criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * @return string|null
+     */
+    public function getAdGroupValue()
+    {
+        $wrapper = $this->getAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ad group to which the criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
@@ -444,6 +489,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         $this->ad_group = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The ad group to which the criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroup($wrappedVar);
     }
 
     /**
@@ -486,6 +546,22 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getNegative()</code>
+
+     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * This field is immutable. To switch a criterion from positive to negative,
+     * remove then re-add it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31;</code>
+     * @return bool|null
+     */
+    public function getNegativeValue()
+    {
+        $wrapper = $this->getNegative();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Whether to target (`false`) or exclude (`true`) the criterion.
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
@@ -500,6 +576,23 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         $this->negative = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * This field is immutable. To switch a criterion from positive to negative,
+     * remove then re-add it.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setNegativeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setNegative($wrappedVar);
     }
 
     /**
@@ -567,6 +660,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getBidModifier()</code>
+
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 44;</code>
+     * @return float|null
+     */
+    public function getBidModifierValue()
+    {
+        $wrapper = $this->getBidModifier();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The modifier for the bid when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      *
@@ -583,6 +691,22 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The modifier for the bid when the criterion matches. The modifier must be
+     * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 44;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setBidModifierValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setBidModifier($wrappedVar);
+    }
+
+    /**
      * The CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 16;</code>
@@ -591,6 +715,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getCpcBidMicros()
     {
         return $this->cpc_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCpcBidMicros()</code>
+
+     * The CPC (cost-per-click) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 16;</code>
+     * @return int|string|null
+     */
+    public function getCpcBidMicrosValue()
+    {
+        $wrapper = $this->getCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -609,6 +747,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The CPC (cost-per-click) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 16;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpcBidMicros($wrappedVar);
+    }
+
+    /**
      * The CPM (cost-per-thousand viewable impressions) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpm_bid_micros = 17;</code>
@@ -617,6 +770,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getCpmBidMicros()
     {
         return $this->cpm_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCpmBidMicros()</code>
+
+     * The CPM (cost-per-thousand viewable impressions) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpm_bid_micros = 17;</code>
+     * @return int|string|null
+     */
+    public function getCpmBidMicrosValue()
+    {
+        $wrapper = $this->getCpmBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -635,6 +802,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The CPM (cost-per-thousand viewable impressions) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpm_bid_micros = 17;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpmBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpmBidMicros($wrappedVar);
+    }
+
+    /**
      * The CPV (cost-per-view) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 24;</code>
@@ -643,6 +825,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getCpvBidMicros()
     {
         return $this->cpv_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCpvBidMicros()</code>
+
+     * The CPV (cost-per-view) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 24;</code>
+     * @return int|string|null
+     */
+    public function getCpvBidMicrosValue()
+    {
+        $wrapper = $this->getCpvBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -661,6 +857,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The CPV (cost-per-view) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 24;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpvBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpvBidMicros($wrappedVar);
+    }
+
+    /**
      * The CPC bid amount, expressed as a fraction of the advertised price
      * for some good or service. The valid range for the fraction is [0,1) and the
      * value stored here is 1,000,000 * [fraction].
@@ -671,6 +882,22 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getPercentCpcBidMicros()
     {
         return $this->percent_cpc_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPercentCpcBidMicros()</code>
+
+     * The CPC bid amount, expressed as a fraction of the advertised price
+     * for some good or service. The valid range for the fraction is [0,1) and the
+     * value stored here is 1,000,000 * [fraction].
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 33;</code>
+     * @return int|string|null
+     */
+    public function getPercentCpcBidMicrosValue()
+    {
+        $wrapper = $this->getPercentCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -691,6 +918,23 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The CPC bid amount, expressed as a fraction of the advertised price
+     * for some good or service. The valid range for the fraction is [0,1) and the
+     * value stored here is 1,000,000 * [fraction].
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 33;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setPercentCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setPercentCpcBidMicros($wrappedVar);
+    }
+
+    /**
      * The effective CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
@@ -699,6 +943,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getEffectiveCpcBidMicros()
     {
         return $this->effective_cpc_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEffectiveCpcBidMicros()</code>
+
+     * The effective CPC (cost-per-click) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
+     * @return int|string|null
+     */
+    public function getEffectiveCpcBidMicrosValue()
+    {
+        $wrapper = $this->getEffectiveCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -717,6 +975,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The effective CPC (cost-per-click) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setEffectiveCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setEffectiveCpcBidMicros($wrappedVar);
+    }
+
+    /**
      * The effective CPM (cost-per-thousand viewable impressions) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19;</code>
@@ -725,6 +998,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getEffectiveCpmBidMicros()
     {
         return $this->effective_cpm_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEffectiveCpmBidMicros()</code>
+
+     * The effective CPM (cost-per-thousand viewable impressions) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19;</code>
+     * @return int|string|null
+     */
+    public function getEffectiveCpmBidMicrosValue()
+    {
+        $wrapper = $this->getEffectiveCpmBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -743,6 +1030,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The effective CPM (cost-per-thousand viewable impressions) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setEffectiveCpmBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setEffectiveCpmBidMicros($wrappedVar);
+    }
+
+    /**
      * The effective CPV (cost-per-view) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20;</code>
@@ -751,6 +1053,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getEffectiveCpvBidMicros()
     {
         return $this->effective_cpv_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEffectiveCpvBidMicros()</code>
+
+     * The effective CPV (cost-per-view) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20;</code>
+     * @return int|string|null
+     */
+    public function getEffectiveCpvBidMicrosValue()
+    {
+        $wrapper = $this->getEffectiveCpvBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -769,6 +1085,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The effective CPV (cost-per-view) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setEffectiveCpvBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setEffectiveCpvBidMicros($wrappedVar);
+    }
+
+    /**
      * The effective Percent CPC bid amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
@@ -777,6 +1108,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getEffectivePercentCpcBidMicros()
     {
         return $this->effective_percent_cpc_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEffectivePercentCpcBidMicros()</code>
+
+     * The effective Percent CPC bid amount.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * @return int|string|null
+     */
+    public function getEffectivePercentCpcBidMicrosValue()
+    {
+        $wrapper = $this->getEffectivePercentCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -792,6 +1137,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         $this->effective_percent_cpc_bid_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The effective Percent CPC bid amount.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setEffectivePercentCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setEffectivePercentCpcBidMicros($wrappedVar);
     }
 
     /**
@@ -990,6 +1350,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFinalUrlSuffix()</code>
+
+     * URL template for appending params to final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 50;</code>
+     * @return string|null
+     */
+    public function getFinalUrlSuffixValue()
+    {
+        $wrapper = $this->getFinalUrlSuffix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL template for appending params to final URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 50;</code>
@@ -1005,6 +1379,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL template for appending params to final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 50;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFinalUrlSuffixValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFinalUrlSuffix($wrappedVar);
+    }
+
+    /**
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 13;</code>
@@ -1013,6 +1402,20 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     public function getTrackingUrlTemplate()
     {
         return $this->tracking_url_template;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * The URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 13;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -1028,6 +1431,21 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         $this->tracking_url_template = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 13;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
     }
 
     /**

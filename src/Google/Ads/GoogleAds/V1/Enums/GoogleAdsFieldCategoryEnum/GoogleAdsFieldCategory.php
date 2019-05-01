@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\GoogleAdsFieldCategoryEnum;
 
+use UnexpectedValueException;
+
 /**
  * The category of the artifact.
  *
@@ -51,6 +53,35 @@ class GoogleAdsFieldCategory
      * Generated from protobuf enum <code>METRIC = 6;</code>
      */
     const METRIC = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::RESOURCE => 'RESOURCE',
+        self::ATTRIBUTE => 'ATTRIBUTE',
+        self::SEGMENT => 'SEGMENT',
+        self::METRIC => 'METRIC',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

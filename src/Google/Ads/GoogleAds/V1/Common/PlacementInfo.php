@@ -53,6 +53,21 @@ class PlacementInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getUrl()</code>
+
+     * URL of the placement.
+     * For example, "http://www.domain.com".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue url = 1;</code>
+     * @return string|null
+     */
+    public function getUrlValue()
+    {
+        $wrapper = $this->getUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL of the placement.
      * For example, "http://www.domain.com".
      *
@@ -66,6 +81,22 @@ class PlacementInfo extends \Google\Protobuf\Internal\Message
         $this->url = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL of the placement.
+     * For example, "http://www.domain.com".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue url = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setUrl($wrappedVar);
     }
 
 }

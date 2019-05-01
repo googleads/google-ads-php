@@ -129,6 +129,20 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the operating system version.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the operating system version.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -144,6 +158,21 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the operating system version.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Name of the operating system.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
@@ -152,6 +181,20 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * Name of the operating system.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -170,6 +213,21 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Name of the operating system.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * The OS Major Version number.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
@@ -178,6 +236,20 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     public function getOsMajorVersion()
     {
         return $this->os_major_version;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getOsMajorVersion()</code>
+
+     * The OS Major Version number.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
+     * @return int|null
+     */
+    public function getOsMajorVersionValue()
+    {
+        $wrapper = $this->getOsMajorVersion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -196,6 +268,21 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * The OS Major Version number.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setOsMajorVersionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setOsMajorVersion($wrappedVar);
+    }
+
+    /**
      * The OS Minor Version number.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
@@ -204,6 +291,20 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     public function getOsMinorVersion()
     {
         return $this->os_minor_version;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getOsMinorVersion()</code>
+
+     * The OS Minor Version number.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
+     * @return int|null
+     */
+    public function getOsMinorVersionValue()
+    {
+        $wrapper = $this->getOsMinorVersion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -219,6 +320,21 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
         $this->os_minor_version = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * The OS Minor Version number.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setOsMinorVersionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setOsMinorVersion($wrappedVar);
     }
 
     /**

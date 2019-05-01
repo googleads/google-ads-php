@@ -141,6 +141,20 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $app_campaign_setting = null;
     /**
+     * The type of campaign: normal, draft, or experiment.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17;</code>
+     */
+    private $experiment_type = 0;
+    /**
+     * The resource name of the base campaign of a draft or experiment campaign.
+     * For base campaigns, this is equal to `resource_name`.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     */
+    private $base_campaign = null;
+    /**
      * The budget of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
@@ -275,6 +289,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The setting for ads geotargeting.
      *     @type \Google\Ads\GoogleAds\V1\Resources\Campaign\AppCampaignSetting $app_campaign_setting
      *           The setting related to App Campaign.
+     *     @type int $experiment_type
+     *           The type of campaign: normal, draft, or experiment.
+     *     @type \Google\Protobuf\StringValue $base_campaign
+     *           The resource name of the base campaign of a draft or experiment campaign.
+     *           For base campaigns, this is equal to `resource_name`.
+     *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $campaign_budget
      *           The budget of the campaign.
      *     @type int $bidding_strategy_type
@@ -393,6 +413,20 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
@@ -408,6 +442,21 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the campaign.
      * This field is required and should not be empty when creating new
      * campaigns.
@@ -420,6 +469,24 @@ class Campaign extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the campaign.
+     * This field is required and should not be empty when creating new
+     * campaigns.
+     * It must not contain any null (code point 0x0), NL line feed
+     * (code point 0xA) or carriage return (code point 0xD) characters.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -439,6 +506,25 @@ class Campaign extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the campaign.
+     * This field is required and should not be empty when creating new
+     * campaigns.
+     * It must not contain any null (code point 0x0), NL line feed
+     * (code point 0xA) or carriage return (code point 0xD) characters.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -601,6 +687,20 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * The URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 11;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 11;</code>
@@ -613,6 +713,21 @@ class Campaign extends \Google\Protobuf\Internal\Message
         $this->tracking_url_template = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 11;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
     }
 
     /**
@@ -854,6 +969,95 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The type of campaign: normal, draft, or experiment.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17;</code>
+     * @return int
+     */
+    public function getExperimentType()
+    {
+        return $this->experiment_type;
+    }
+
+    /**
+     * The type of campaign: normal, draft, or experiment.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setExperimentType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\CampaignExperimentTypeEnum_CampaignExperimentType::class);
+        $this->experiment_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * The resource name of the base campaign of a draft or experiment campaign.
+     * For base campaigns, this is equal to `resource_name`.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getBaseCampaign()
+    {
+        return $this->base_campaign;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBaseCampaign()</code>
+
+     * The resource name of the base campaign of a draft or experiment campaign.
+     * For base campaigns, this is equal to `resource_name`.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * @return string|null
+     */
+    public function getBaseCampaignValue()
+    {
+        $wrapper = $this->getBaseCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The resource name of the base campaign of a draft or experiment campaign.
+     * For base campaigns, this is equal to `resource_name`.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setBaseCampaign($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->base_campaign = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the base campaign of a draft or experiment campaign.
+     * For base campaigns, this is equal to `resource_name`.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBaseCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBaseCampaign($wrappedVar);
+    }
+
+    /**
      * The budget of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
@@ -862,6 +1066,20 @@ class Campaign extends \Google\Protobuf\Internal\Message
     public function getCampaignBudget()
     {
         return $this->campaign_budget;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCampaignBudget()</code>
+
+     * The budget of the campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
+     * @return string|null
+     */
+    public function getCampaignBudgetValue()
+    {
+        $wrapper = $this->getCampaignBudget();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -877,6 +1095,21 @@ class Campaign extends \Google\Protobuf\Internal\Message
         $this->campaign_budget = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The budget of the campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCampaignBudgetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCampaignBudget($wrappedVar);
     }
 
     /**
@@ -926,6 +1159,21 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getStartDate()</code>
+
+     * The date when campaign started.
+     * This field must not be used in WHERE clauses.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 19;</code>
+     * @return string|null
+     */
+    public function getStartDateValue()
+    {
+        $wrapper = $this->getStartDate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The date when campaign started.
      * This field must not be used in WHERE clauses.
      *
@@ -942,6 +1190,22 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The date when campaign started.
+     * This field must not be used in WHERE clauses.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 19;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setStartDateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setStartDate($wrappedVar);
+    }
+
+    /**
      * The date when campaign ended.
      * This field must not be used in WHERE clauses.
      *
@@ -951,6 +1215,21 @@ class Campaign extends \Google\Protobuf\Internal\Message
     public function getEndDate()
     {
         return $this->end_date;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEndDate()</code>
+
+     * The date when campaign ended.
+     * This field must not be used in WHERE clauses.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 20;</code>
+     * @return string|null
+     */
+    public function getEndDateValue()
+    {
+        $wrapper = $this->getEndDate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -970,6 +1249,22 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The date when campaign ended.
+     * This field must not be used in WHERE clauses.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 20;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setEndDateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setEndDate($wrappedVar);
+    }
+
+    /**
      * Suffix used to append query parameters to landing pages that are served
      * with parallel tracking.
      *
@@ -979,6 +1274,21 @@ class Campaign extends \Google\Protobuf\Internal\Message
     public function getFinalUrlSuffix()
     {
         return $this->final_url_suffix;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFinalUrlSuffix()</code>
+
+     * Suffix used to append query parameters to landing pages that are served
+     * with parallel tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     * @return string|null
+     */
+    public function getFinalUrlSuffixValue()
+    {
+        $wrapper = $this->getFinalUrlSuffix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -995,6 +1305,22 @@ class Campaign extends \Google\Protobuf\Internal\Message
         $this->final_url_suffix = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Suffix used to append query parameters to landing pages that are served
+     * with parallel tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFinalUrlSuffixValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFinalUrlSuffix($wrappedVar);
     }
 
     /**
@@ -1167,6 +1493,20 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getBiddingStrategy()</code>
+
+     * Portfolio bidding strategy used by campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
+     * @return string|null
+     */
+    public function getBiddingStrategyValue()
+    {
+        $wrapper = $this->getBiddingStrategy();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Portfolio bidding strategy used by campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
@@ -1179,6 +1519,21 @@ class Campaign extends \Google\Protobuf\Internal\Message
         $this->writeOneof(23, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Portfolio bidding strategy used by campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBiddingStrategyValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBiddingStrategy($wrappedVar);
     }
 
     /**

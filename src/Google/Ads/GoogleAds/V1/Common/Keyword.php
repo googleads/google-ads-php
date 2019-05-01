@@ -57,6 +57,20 @@ class Keyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdGroupCriterion()</code>
+
+     * The AdGroupCriterion resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 1;</code>
+     * @return string|null
+     */
+    public function getAdGroupCriterionValue()
+    {
+        $wrapper = $this->getAdGroupCriterion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The AdGroupCriterion resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 1;</code>
@@ -69,6 +83,21 @@ class Keyword extends \Google\Protobuf\Internal\Message
         $this->ad_group_criterion = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The AdGroupCriterion resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupCriterionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroupCriterion($wrappedVar);
     }
 
     /**

@@ -108,6 +108,21 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCustomer()</code>
+
+     * The resource name of the customer to which the label is attached.
+     * Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2;</code>
+     * @return string|null
+     */
+    public function getCustomerValue()
+    {
+        $wrapper = $this->getCustomer();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The resource name of the customer to which the label is attached.
      * Read only.
      *
@@ -124,6 +139,22 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the customer to which the label is attached.
+     * Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCustomerValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCustomer($wrappedVar);
+    }
+
+    /**
      * The resource name of the label assigned to the customer.
      * Note: the Customer ID portion of the label resource name is not
      * validated when creating a new CustomerLabel.
@@ -134,6 +165,22 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
     public function getLabel()
     {
         return $this->label;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLabel()</code>
+
+     * The resource name of the label assigned to the customer.
+     * Note: the Customer ID portion of the label resource name is not
+     * validated when creating a new CustomerLabel.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
+     * @return string|null
+     */
+    public function getLabelValue()
+    {
+        $wrapper = $this->getLabel();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -151,6 +198,23 @@ class CustomerLabel extends \Google\Protobuf\Internal\Message
         $this->label = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the label assigned to the customer.
+     * Note: the Customer ID portion of the label resource name is not
+     * validated when creating a new CustomerLabel.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLabelValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLabel($wrappedVar);
     }
 
 }

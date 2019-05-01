@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\PolicyTopicEntryTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The possible policy topic entry types.
  *
@@ -37,6 +39,13 @@ class PolicyTopicEntryType
      */
     const LIMITED = 4;
     /**
+     * The resource cannot serve at all because of the current targeting
+     * criteria.
+     *
+     * Generated from protobuf enum <code>FULLY_LIMITED = 8;</code>
+     */
+    const FULLY_LIMITED = 8;
+    /**
      * May be of interest, but does not limit how the resource is served.
      *
      * Generated from protobuf enum <code>DESCRIPTIVE = 5;</code>
@@ -55,6 +64,37 @@ class PolicyTopicEntryType
      * Generated from protobuf enum <code>AREA_OF_INTEREST_ONLY = 7;</code>
      */
     const AREA_OF_INTEREST_ONLY = 7;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::PROHIBITED => 'PROHIBITED',
+        self::LIMITED => 'LIMITED',
+        self::FULLY_LIMITED => 'FULLY_LIMITED',
+        self::DESCRIPTIVE => 'DESCRIPTIVE',
+        self::BROADENING => 'BROADENING',
+        self::AREA_OF_INTEREST_ONLY => 'AREA_OF_INTEREST_ONLY',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

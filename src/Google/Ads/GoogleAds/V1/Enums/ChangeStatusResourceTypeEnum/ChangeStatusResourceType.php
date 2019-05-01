@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\ChangeStatusResourceTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum listing the resource types support by the ChangeStatus resource.
  *
@@ -84,6 +86,41 @@ class ChangeStatusResourceType
      * Generated from protobuf enum <code>AD_GROUP_BID_MODIFIER = 13;</code>
      */
     const AD_GROUP_BID_MODIFIER = 13;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::AD_GROUP => 'AD_GROUP',
+        self::AD_GROUP_AD => 'AD_GROUP_AD',
+        self::AD_GROUP_CRITERION => 'AD_GROUP_CRITERION',
+        self::CAMPAIGN => 'CAMPAIGN',
+        self::CAMPAIGN_CRITERION => 'CAMPAIGN_CRITERION',
+        self::FEED => 'FEED',
+        self::FEED_ITEM => 'FEED_ITEM',
+        self::AD_GROUP_FEED => 'AD_GROUP_FEED',
+        self::CAMPAIGN_FEED => 'CAMPAIGN_FEED',
+        self::AD_GROUP_BID_MODIFIER => 'AD_GROUP_BID_MODIFIER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

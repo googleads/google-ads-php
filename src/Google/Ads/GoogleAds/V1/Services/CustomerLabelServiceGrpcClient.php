@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Customer Label service.
+ *
  * Service to manage labels on customers.
  */
 class CustomerLabelServiceGrpcClient extends \Grpc\BaseStub {

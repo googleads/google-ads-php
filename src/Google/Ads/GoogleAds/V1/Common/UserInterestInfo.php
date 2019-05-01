@@ -49,6 +49,20 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getUserInterestCategory()</code>
+
+     * The UserInterest resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_category = 1;</code>
+     * @return string|null
+     */
+    public function getUserInterestCategoryValue()
+    {
+        $wrapper = $this->getUserInterestCategory();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The UserInterest resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_category = 1;</code>
@@ -61,6 +75,21 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
         $this->user_interest_category = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The UserInterest resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_category = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setUserInterestCategoryValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setUserInterestCategory($wrappedVar);
     }
 
 }

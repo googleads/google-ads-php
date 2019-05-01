@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\MutateJobErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible request errors.
  *
@@ -54,6 +56,36 @@ class MutateJobError
      * Generated from protobuf enum <code>INVALID_PAGE_SIZE = 6;</code>
      */
     const INVALID_PAGE_SIZE = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CANNOT_MODIFY_JOB_AFTER_JOB_STARTS_RUNNING => 'CANNOT_MODIFY_JOB_AFTER_JOB_STARTS_RUNNING',
+        self::EMPTY_OPERATIONS => 'EMPTY_OPERATIONS',
+        self::INVALID_SEQUENCE_TOKEN => 'INVALID_SEQUENCE_TOKEN',
+        self::RESULTS_NOT_READY => 'RESULTS_NOT_READY',
+        self::INVALID_PAGE_SIZE => 'INVALID_PAGE_SIZE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

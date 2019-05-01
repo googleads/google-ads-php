@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\SystemManagedResourceSourceEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum listing the possible system managed entity sources.
  *
@@ -29,6 +31,32 @@ class SystemManagedResourceSource
      * Generated from protobuf enum <code>AD_VARIATIONS = 2;</code>
      */
     const AD_VARIATIONS = 2;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::AD_VARIATIONS => 'AD_VARIATIONS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

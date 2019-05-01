@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\EducationPlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Education placeholder fields.
  *
@@ -139,6 +141,48 @@ class EducationPlaceholderField
      * Generated from protobuf enum <code>IOS_APP_STORE_ID = 18;</code>
      */
     const IOS_APP_STORE_ID = 18;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::PROGRAM_ID => 'PROGRAM_ID',
+        self::LOCATION_ID => 'LOCATION_ID',
+        self::PROGRAM_NAME => 'PROGRAM_NAME',
+        self::AREA_OF_STUDY => 'AREA_OF_STUDY',
+        self::PROGRAM_DESCRIPTION => 'PROGRAM_DESCRIPTION',
+        self::SCHOOL_NAME => 'SCHOOL_NAME',
+        self::ADDRESS => 'ADDRESS',
+        self::THUMBNAIL_IMAGE_URL => 'THUMBNAIL_IMAGE_URL',
+        self::ALTERNATIVE_THUMBNAIL_IMAGE_URL => 'ALTERNATIVE_THUMBNAIL_IMAGE_URL',
+        self::FINAL_URLS => 'FINAL_URLS',
+        self::FINAL_MOBILE_URLS => 'FINAL_MOBILE_URLS',
+        self::TRACKING_URL => 'TRACKING_URL',
+        self::CONTEXTUAL_KEYWORDS => 'CONTEXTUAL_KEYWORDS',
+        self::ANDROID_APP_LINK => 'ANDROID_APP_LINK',
+        self::SIMILAR_PROGRAM_IDS => 'SIMILAR_PROGRAM_IDS',
+        self::IOS_APP_LINK => 'IOS_APP_LINK',
+        self::IOS_APP_STORE_ID => 'IOS_APP_STORE_ID',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

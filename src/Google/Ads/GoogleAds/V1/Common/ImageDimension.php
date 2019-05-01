@@ -65,6 +65,20 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHeightPixels()</code>
+
+     * Height of the image.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value height_pixels = 1;</code>
+     * @return int|string|null
+     */
+    public function getHeightPixelsValue()
+    {
+        $wrapper = $this->getHeightPixels();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Height of the image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value height_pixels = 1;</code>
@@ -80,6 +94,21 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Height of the image.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value height_pixels = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setHeightPixelsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setHeightPixels($wrappedVar);
+    }
+
+    /**
      * Width of the image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value width_pixels = 2;</code>
@@ -88,6 +117,20 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     public function getWidthPixels()
     {
         return $this->width_pixels;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getWidthPixels()</code>
+
+     * Width of the image.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value width_pixels = 2;</code>
+     * @return int|string|null
+     */
+    public function getWidthPixelsValue()
+    {
+        $wrapper = $this->getWidthPixels();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -106,6 +149,21 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Width of the image.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value width_pixels = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setWidthPixelsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setWidthPixels($wrappedVar);
+    }
+
+    /**
      * A URL that returns the image with this height and width.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url = 3;</code>
@@ -114,6 +172,20 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getUrl()</code>
+
+     * A URL that returns the image with this height and width.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue url = 3;</code>
+     * @return string|null
+     */
+    public function getUrlValue()
+    {
+        $wrapper = $this->getUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -129,6 +201,21 @@ class ImageDimension extends \Google\Protobuf\Internal\Message
         $this->url = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A URL that returns the image with this height and width.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue url = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setUrl($wrappedVar);
     }
 
 }

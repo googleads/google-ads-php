@@ -42,7 +42,7 @@ class ClickView
             "6c654164735c56315c5265736f7572636573ea0225476f6f676c653a3a41" .
             "64733a3a476f6f676c654164733a3a56313a3a5265736f75726365736206" .
             "70726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

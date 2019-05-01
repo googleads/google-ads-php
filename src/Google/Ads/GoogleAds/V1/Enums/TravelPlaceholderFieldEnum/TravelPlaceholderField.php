@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\TravelPlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Travel placeholder fields.
  *
@@ -165,6 +167,51 @@ class TravelPlaceholderField
      * Generated from protobuf enum <code>IOS_APP_STORE_ID = 21;</code>
      */
     const IOS_APP_STORE_ID = 21;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::DESTINATION_ID => 'DESTINATION_ID',
+        self::ORIGIN_ID => 'ORIGIN_ID',
+        self::TITLE => 'TITLE',
+        self::DESTINATION_NAME => 'DESTINATION_NAME',
+        self::ORIGIN_NAME => 'ORIGIN_NAME',
+        self::PRICE => 'PRICE',
+        self::FORMATTED_PRICE => 'FORMATTED_PRICE',
+        self::SALE_PRICE => 'SALE_PRICE',
+        self::FORMATTED_SALE_PRICE => 'FORMATTED_SALE_PRICE',
+        self::IMAGE_URL => 'IMAGE_URL',
+        self::CATEGORY => 'CATEGORY',
+        self::CONTEXTUAL_KEYWORDS => 'CONTEXTUAL_KEYWORDS',
+        self::DESTINATION_ADDRESS => 'DESTINATION_ADDRESS',
+        self::FINAL_URL => 'FINAL_URL',
+        self::FINAL_MOBILE_URLS => 'FINAL_MOBILE_URLS',
+        self::TRACKING_URL => 'TRACKING_URL',
+        self::ANDROID_APP_LINK => 'ANDROID_APP_LINK',
+        self::SIMILAR_DESTINATION_IDS => 'SIMILAR_DESTINATION_IDS',
+        self::IOS_APP_LINK => 'IOS_APP_LINK',
+        self::IOS_APP_STORE_ID => 'IOS_APP_STORE_ID',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

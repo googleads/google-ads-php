@@ -124,6 +124,20 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getKeywordPlanCampaign()</code>
+
+     * The keyword plan campaign to which this ad group belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 2;</code>
+     * @return string|null
+     */
+    public function getKeywordPlanCampaignValue()
+    {
+        $wrapper = $this->getKeywordPlanCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The keyword plan campaign to which this ad group belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 2;</code>
@@ -139,6 +153,21 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The keyword plan campaign to which this ad group belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setKeywordPlanCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setKeywordPlanCampaign($wrappedVar);
+    }
+
+    /**
      * The ID of the keyword plan ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
@@ -147,6 +176,20 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the keyword plan ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -165,6 +208,21 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the keyword plan ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the keyword plan ad group.
      * This field is required and should not be empty when creating keyword plan
      * ad group.
@@ -175,6 +233,22 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the keyword plan ad group.
+     * This field is required and should not be empty when creating keyword plan
+     * ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -195,6 +269,23 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the keyword plan ad group.
+     * This field is required and should not be empty when creating keyword plan
+     * ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * A default ad group max cpc bid in micros in account currency for all
      * biddable keywords under the keyword plan ad group.
      * If not set, will inherit from parent campaign.
@@ -205,6 +296,22 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
     public function getCpcBidMicros()
     {
         return $this->cpc_bid_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCpcBidMicros()</code>
+
+     * A default ad group max cpc bid in micros in account currency for all
+     * biddable keywords under the keyword plan ad group.
+     * If not set, will inherit from parent campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 5;</code>
+     * @return int|string|null
+     */
+    public function getCpcBidMicrosValue()
+    {
+        $wrapper = $this->getCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -222,6 +329,23 @@ class KeywordPlanAdGroup extends \Google\Protobuf\Internal\Message
         $this->cpc_bid_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * A default ad group max cpc bid in micros in account currency for all
+     * biddable keywords under the keyword plan ad group.
+     * If not set, will inherit from parent campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 5;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpcBidMicros($wrappedVar);
     }
 
 }

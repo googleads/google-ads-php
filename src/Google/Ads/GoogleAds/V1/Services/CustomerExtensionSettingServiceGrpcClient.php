@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the CustomerExtensionSetting service.
+ *
  * Service to manage customer extension settings.
  */
 class CustomerExtensionSettingServiceGrpcClient extends \Grpc\BaseStub {

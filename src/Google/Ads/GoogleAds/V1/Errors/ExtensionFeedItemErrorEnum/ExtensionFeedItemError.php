@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\ExtensionFeedItemErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible extension feed item errors.
  *
@@ -122,7 +124,8 @@ class ExtensionFeedItemError
     const CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY = 16;
     /**
      * Customer hasn't consented for call recording, which is required for
-     * creating/updating call feed items.
+     * creating/updating call feed items. Please see
+     * https://support.google.com/google-ads/answer/7412639.
      *
      * Generated from protobuf enum <code>CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED = 17;</code>
      */
@@ -295,6 +298,74 @@ class ExtensionFeedItemError
      * Generated from protobuf enum <code>TOO_MANY_DECIMAL_PLACES_SPECIFIED = 44;</code>
      */
     const TOO_MANY_DECIMAL_PLACES_SPECIFIED = 44;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::VALUE_OUT_OF_RANGE => 'VALUE_OUT_OF_RANGE',
+        self::URL_LIST_TOO_LONG => 'URL_LIST_TOO_LONG',
+        self::CANNOT_HAVE_RESTRICTION_ON_EMPTY_GEO_TARGETING => 'CANNOT_HAVE_RESTRICTION_ON_EMPTY_GEO_TARGETING',
+        self::CANNOT_SET_WITH_FINAL_URLS => 'CANNOT_SET_WITH_FINAL_URLS',
+        self::CANNOT_SET_WITHOUT_FINAL_URLS => 'CANNOT_SET_WITHOUT_FINAL_URLS',
+        self::INVALID_PHONE_NUMBER => 'INVALID_PHONE_NUMBER',
+        self::PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY => 'PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY',
+        self::CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED => 'CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED',
+        self::PREMIUM_RATE_NUMBER_NOT_ALLOWED => 'PREMIUM_RATE_NUMBER_NOT_ALLOWED',
+        self::DISALLOWED_NUMBER_TYPE => 'DISALLOWED_NUMBER_TYPE',
+        self::INVALID_DOMESTIC_PHONE_NUMBER_FORMAT => 'INVALID_DOMESTIC_PHONE_NUMBER_FORMAT',
+        self::VANITY_PHONE_NUMBER_NOT_ALLOWED => 'VANITY_PHONE_NUMBER_NOT_ALLOWED',
+        self::INVALID_CALL_CONVERSION_ACTION => 'INVALID_CALL_CONVERSION_ACTION',
+        self::CUSTOMER_NOT_WHITELISTED_FOR_CALLTRACKING => 'CUSTOMER_NOT_WHITELISTED_FOR_CALLTRACKING',
+        self::CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY => 'CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY',
+        self::CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED => 'CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED',
+        self::INVALID_APP_ID => 'INVALID_APP_ID',
+        self::QUOTES_IN_REVIEW_EXTENSION_SNIPPET => 'QUOTES_IN_REVIEW_EXTENSION_SNIPPET',
+        self::HYPHENS_IN_REVIEW_EXTENSION_SNIPPET => 'HYPHENS_IN_REVIEW_EXTENSION_SNIPPET',
+        self::REVIEW_EXTENSION_SOURCE_INELIGIBLE => 'REVIEW_EXTENSION_SOURCE_INELIGIBLE',
+        self::SOURCE_NAME_IN_REVIEW_EXTENSION_TEXT => 'SOURCE_NAME_IN_REVIEW_EXTENSION_TEXT',
+        self::INCONSISTENT_CURRENCY_CODES => 'INCONSISTENT_CURRENCY_CODES',
+        self::PRICE_EXTENSION_HAS_DUPLICATED_HEADERS => 'PRICE_EXTENSION_HAS_DUPLICATED_HEADERS',
+        self::PRICE_ITEM_HAS_DUPLICATED_HEADER_AND_DESCRIPTION => 'PRICE_ITEM_HAS_DUPLICATED_HEADER_AND_DESCRIPTION',
+        self::PRICE_EXTENSION_HAS_TOO_FEW_ITEMS => 'PRICE_EXTENSION_HAS_TOO_FEW_ITEMS',
+        self::PRICE_EXTENSION_HAS_TOO_MANY_ITEMS => 'PRICE_EXTENSION_HAS_TOO_MANY_ITEMS',
+        self::UNSUPPORTED_VALUE => 'UNSUPPORTED_VALUE',
+        self::UNSUPPORTED_VALUE_IN_SELECTED_LANGUAGE => 'UNSUPPORTED_VALUE_IN_SELECTED_LANGUAGE',
+        self::INVALID_DEVICE_PREFERENCE => 'INVALID_DEVICE_PREFERENCE',
+        self::INVALID_SCHEDULE_END => 'INVALID_SCHEDULE_END',
+        self::DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE => 'DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE',
+        self::INVALID_SNIPPETS_HEADER => 'INVALID_SNIPPETS_HEADER',
+        self::CANNOT_OPERATE_ON_REMOVED_FEED_ITEM => 'CANNOT_OPERATE_ON_REMOVED_FEED_ITEM',
+        self::PHONE_NUMBER_NOT_SUPPORTED_WITH_CALLTRACKING_FOR_COUNTRY => 'PHONE_NUMBER_NOT_SUPPORTED_WITH_CALLTRACKING_FOR_COUNTRY',
+        self::CONFLICTING_CALL_CONVERSION_SETTINGS => 'CONFLICTING_CALL_CONVERSION_SETTINGS',
+        self::EXTENSION_TYPE_MISMATCH => 'EXTENSION_TYPE_MISMATCH',
+        self::EXTENSION_SUBTYPE_REQUIRED => 'EXTENSION_SUBTYPE_REQUIRED',
+        self::EXTENSION_TYPE_UNSUPPORTED => 'EXTENSION_TYPE_UNSUPPORTED',
+        self::CANNOT_OPERATE_ON_FEED_WITH_MULTIPLE_MAPPINGS => 'CANNOT_OPERATE_ON_FEED_WITH_MULTIPLE_MAPPINGS',
+        self::CANNOT_OPERATE_ON_FEED_WITH_KEY_ATTRIBUTES => 'CANNOT_OPERATE_ON_FEED_WITH_KEY_ATTRIBUTES',
+        self::INVALID_PRICE_FORMAT => 'INVALID_PRICE_FORMAT',
+        self::PROMOTION_INVALID_TIME => 'PROMOTION_INVALID_TIME',
+        self::TOO_MANY_DECIMAL_PLACES_SPECIFIED => 'TOO_MANY_DECIMAL_PLACES_SPECIFIED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

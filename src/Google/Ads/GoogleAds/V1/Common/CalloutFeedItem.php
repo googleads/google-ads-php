@@ -52,6 +52,21 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCalloutText()</code>
+
+     * The callout text.
+     * The length of this string should be between 1 and 25, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue callout_text = 1;</code>
+     * @return string|null
+     */
+    public function getCalloutTextValue()
+    {
+        $wrapper = $this->getCalloutText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The callout text.
      * The length of this string should be between 1 and 25, inclusive.
      *
@@ -65,6 +80,22 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
         $this->callout_text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The callout text.
+     * The length of this string should be between 1 and 25, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue callout_text = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCalloutTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCalloutText($wrappedVar);
     }
 
 }

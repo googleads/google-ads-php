@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Parental Status View service.
+ *
  * Service to manage parental status views.
  */
 class ParentalStatusViewServiceGrpcClient extends \Grpc\BaseStub {

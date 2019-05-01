@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\BrandSafetySuitabilityEnum;
 
+use UnexpectedValueException;
+
 /**
  * 3-Tier brand safety suitability control.
  *
@@ -61,6 +63,34 @@ class BrandSafetySuitability
      * Generated from protobuf enum <code>LIMITED_INVENTORY = 4;</code>
      */
     const LIMITED_INVENTORY = 4;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::EXPANDED_INVENTORY => 'EXPANDED_INVENTORY',
+        self::STANDARD_INVENTORY => 'STANDARD_INVENTORY',
+        self::LIMITED_INVENTORY => 'LIMITED_INVENTORY',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

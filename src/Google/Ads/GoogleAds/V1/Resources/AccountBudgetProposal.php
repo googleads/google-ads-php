@@ -214,6 +214,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the proposal.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 14;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the proposal.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 14;</code>
@@ -229,6 +243,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the proposal.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 14;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The resource name of the billing setup associated with this proposal.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 2;</code>
@@ -237,6 +266,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     public function getBillingSetup()
     {
         return $this->billing_setup;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBillingSetup()</code>
+
+     * The resource name of the billing setup associated with this proposal.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 2;</code>
+     * @return string|null
+     */
+    public function getBillingSetupValue()
+    {
+        $wrapper = $this->getBillingSetup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -255,6 +298,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the billing setup associated with this proposal.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBillingSetupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBillingSetup($wrappedVar);
+    }
+
+    /**
      * The resource name of the account-level budget associated with this
      * proposal.
      *
@@ -264,6 +322,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     public function getAccountBudget()
     {
         return $this->account_budget;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAccountBudget()</code>
+
+     * The resource name of the account-level budget associated with this
+     * proposal.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
+     * @return string|null
+     */
+    public function getAccountBudgetValue()
+    {
+        $wrapper = $this->getAccountBudget();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -280,6 +353,22 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
         $this->account_budget = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the account-level budget associated with this
+     * proposal.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAccountBudgetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAccountBudget($wrappedVar);
     }
 
     /**
@@ -350,6 +439,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getProposedName()</code>
+
+     * The name to assign to the account-level budget.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_name = 5;</code>
+     * @return string|null
+     */
+    public function getProposedNameValue()
+    {
+        $wrapper = $this->getProposedName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The name to assign to the account-level budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_name = 5;</code>
@@ -365,6 +468,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name to assign to the account-level budget.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_name = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setProposedNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setProposedName($wrappedVar);
+    }
+
+    /**
      * The approved start date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
@@ -373,6 +491,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     public function getApprovedStartDateTime()
     {
         return $this->approved_start_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getApprovedStartDateTime()</code>
+
+     * The approved start date time in yyyy-mm-dd hh:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
+     * @return string|null
+     */
+    public function getApprovedStartDateTimeValue()
+    {
+        $wrapper = $this->getApprovedStartDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -391,6 +523,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The approved start date time in yyyy-mm-dd hh:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setApprovedStartDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setApprovedStartDateTime($wrappedVar);
+    }
+
+    /**
      * A purchase order number is a value that enables the user to help them
      * reference this budget in their monthly invoices.
      *
@@ -400,6 +547,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     public function getProposedPurchaseOrderNumber()
     {
         return $this->proposed_purchase_order_number;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getProposedPurchaseOrderNumber()</code>
+
+     * A purchase order number is a value that enables the user to help them
+     * reference this budget in their monthly invoices.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_purchase_order_number = 12;</code>
+     * @return string|null
+     */
+    public function getProposedPurchaseOrderNumberValue()
+    {
+        $wrapper = $this->getProposedPurchaseOrderNumber();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -419,6 +581,22 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A purchase order number is a value that enables the user to help them
+     * reference this budget in their monthly invoices.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_purchase_order_number = 12;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setProposedPurchaseOrderNumberValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setProposedPurchaseOrderNumber($wrappedVar);
+    }
+
+    /**
      * Notes associated with this budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_notes = 13;</code>
@@ -427,6 +605,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     public function getProposedNotes()
     {
         return $this->proposed_notes;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getProposedNotes()</code>
+
+     * Notes associated with this budget.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_notes = 13;</code>
+     * @return string|null
+     */
+    public function getProposedNotesValue()
+    {
+        $wrapper = $this->getProposedNotes();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -445,6 +637,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Notes associated with this budget.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_notes = 13;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setProposedNotesValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setProposedNotes($wrappedVar);
+    }
+
+    /**
      * The date time when this account-level budget proposal was created, which is
      * not the same as its approval date time, if applicable.
      *
@@ -454,6 +661,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     public function getCreationDateTime()
     {
         return $this->creation_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCreationDateTime()</code>
+
+     * The date time when this account-level budget proposal was created, which is
+     * not the same as its approval date time, if applicable.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 16;</code>
+     * @return string|null
+     */
+    public function getCreationDateTimeValue()
+    {
+        $wrapper = $this->getCreationDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -473,6 +695,22 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The date time when this account-level budget proposal was created, which is
+     * not the same as its approval date time, if applicable.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 16;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCreationDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCreationDateTime($wrappedVar);
+    }
+
+    /**
      * The date time when this account-level budget was approved, if applicable.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approval_date_time = 17;</code>
@@ -481,6 +719,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     public function getApprovalDateTime()
     {
         return $this->approval_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getApprovalDateTime()</code>
+
+     * The date time when this account-level budget was approved, if applicable.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approval_date_time = 17;</code>
+     * @return string|null
+     */
+    public function getApprovalDateTimeValue()
+    {
+        $wrapper = $this->getApprovalDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -499,6 +751,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The date time when this account-level budget was approved, if applicable.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approval_date_time = 17;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setApprovalDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setApprovalDateTime($wrappedVar);
+    }
+
+    /**
      * The proposed start date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 18;</code>
@@ -507,6 +774,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     public function getProposedStartDateTime()
     {
         return $this->readOneof(18);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getProposedStartDateTime()</code>
+
+     * The proposed start date time in yyyy-mm-dd hh:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 18;</code>
+     * @return string|null
+     */
+    public function getProposedStartDateTimeValue()
+    {
+        $wrapper = $this->getProposedStartDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -522,6 +803,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
         $this->writeOneof(18, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The proposed start date time in yyyy-mm-dd hh:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 18;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setProposedStartDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setProposedStartDateTime($wrappedVar);
     }
 
     /**
@@ -562,6 +858,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getProposedEndDateTime()</code>
+
+     * The proposed end date time in yyyy-mm-dd hh:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 19;</code>
+     * @return string|null
+     */
+    public function getProposedEndDateTimeValue()
+    {
+        $wrapper = $this->getProposedEndDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The proposed end date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 19;</code>
@@ -574,6 +884,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
         $this->writeOneof(19, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The proposed end date time in yyyy-mm-dd hh:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 19;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setProposedEndDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setProposedEndDateTime($wrappedVar);
     }
 
     /**
@@ -614,6 +939,20 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getApprovedEndDateTime()</code>
+
+     * The approved end date time in yyyy-mm-dd hh:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 21;</code>
+     * @return string|null
+     */
+    public function getApprovedEndDateTimeValue()
+    {
+        $wrapper = $this->getApprovedEndDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The approved end date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 21;</code>
@@ -626,6 +965,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
         $this->writeOneof(21, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The approved end date time in yyyy-mm-dd hh:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 21;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setApprovedEndDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setApprovedEndDateTime($wrappedVar);
     }
 
     /**
@@ -667,6 +1021,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getProposedSpendingLimitMicros()</code>
+
+     * The proposed spending limit in micros.  One million is equivalent to
+     * one unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 10;</code>
+     * @return int|string|null
+     */
+    public function getProposedSpendingLimitMicrosValue()
+    {
+        $wrapper = $this->getProposedSpendingLimitMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The proposed spending limit in micros.  One million is equivalent to
      * one unit.
      *
@@ -680,6 +1049,22 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
         $this->writeOneof(10, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The proposed spending limit in micros.  One million is equivalent to
+     * one unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 10;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setProposedSpendingLimitMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setProposedSpendingLimitMicros($wrappedVar);
     }
 
     /**
@@ -721,6 +1106,21 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getApprovedSpendingLimitMicros()</code>
+
+     * The approved spending limit in micros.  One million is equivalent to
+     * one unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 23;</code>
+     * @return int|string|null
+     */
+    public function getApprovedSpendingLimitMicrosValue()
+    {
+        $wrapper = $this->getApprovedSpendingLimitMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The approved spending limit in micros.  One million is equivalent to
      * one unit.
      *
@@ -734,6 +1134,22 @@ class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
         $this->writeOneof(23, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The approved spending limit in micros.  One million is equivalent to
+     * one unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 23;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setApprovedSpendingLimitMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setApprovedSpendingLimitMicros($wrappedVar);
     }
 
     /**

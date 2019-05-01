@@ -42,6 +42,7 @@ use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PathTemplate;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -332,6 +333,13 @@ class MutateJobServiceGapicClient
         $request = new CreateMutateJobRequest();
         $request->setCustomerId($customerId);
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->startCall(
             'CreateMutateJob',
             CreateMutateJobResponse::class,
@@ -374,6 +382,13 @@ class MutateJobServiceGapicClient
     {
         $request = new GetMutateJobRequest();
         $request->setResourceName($resourceName);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'GetMutateJob',
@@ -449,6 +464,13 @@ class MutateJobServiceGapicClient
             $request->setPageSize($optionalArgs['pageSize']);
         }
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->getPagedListResponse(
             'ListMutateJobResults',
             $optionalArgs,
@@ -522,6 +544,13 @@ class MutateJobServiceGapicClient
         $request = new RunMutateJobRequest();
         $request->setResourceName($resourceName);
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->startOperationsCall(
             'RunMutateJob',
             $optionalArgs,
@@ -583,6 +612,13 @@ class MutateJobServiceGapicClient
         $request->setResourceName($resourceName);
         $request->setSequenceToken($sequenceToken);
         $request->setMutateOperations($mutateOperations);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'AddMutateJobOperations',

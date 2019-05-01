@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\PromotionPlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Promotion placeholder fields.
  *
@@ -116,6 +118,45 @@ class PromotionPlaceholderField
      * Generated from protobuf enum <code>FINAL_URL_SUFFIX = 15;</code>
      */
     const FINAL_URL_SUFFIX = 15;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::PROMOTION_TARGET => 'PROMOTION_TARGET',
+        self::DISCOUNT_MODIFIER => 'DISCOUNT_MODIFIER',
+        self::PERCENT_OFF => 'PERCENT_OFF',
+        self::MONEY_AMOUNT_OFF => 'MONEY_AMOUNT_OFF',
+        self::PROMOTION_CODE => 'PROMOTION_CODE',
+        self::ORDERS_OVER_AMOUNT => 'ORDERS_OVER_AMOUNT',
+        self::PROMOTION_START => 'PROMOTION_START',
+        self::PROMOTION_END => 'PROMOTION_END',
+        self::OCCASION => 'OCCASION',
+        self::FINAL_URLS => 'FINAL_URLS',
+        self::FINAL_MOBILE_URLS => 'FINAL_MOBILE_URLS',
+        self::TRACKING_URL => 'TRACKING_URL',
+        self::LANGUAGE => 'LANGUAGE',
+        self::FINAL_URL_SUFFIX => 'FINAL_URL_SUFFIX',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

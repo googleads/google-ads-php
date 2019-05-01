@@ -76,6 +76,21 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getDomainName()</code>
+
+     * The Internet domain name that this setting represents, e.g., "google.com"
+     * or "www.google.com".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue domain_name = 1;</code>
+     * @return string|null
+     */
+    public function getDomainNameValue()
+    {
+        $wrapper = $this->getDomainName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Internet domain name that this setting represents, e.g., "google.com"
      * or "www.google.com".
      *
@@ -92,6 +107,22 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Internet domain name that this setting represents, e.g., "google.com"
+     * or "www.google.com".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue domain_name = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDomainNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDomainName($wrappedVar);
+    }
+
+    /**
      * The language code specifying the language of the domain, e.g., "en".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 2;</code>
@@ -100,6 +131,20 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     public function getLanguageCode()
     {
         return $this->language_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLanguageCode()</code>
+
+     * The language code specifying the language of the domain, e.g., "en".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 2;</code>
+     * @return string|null
+     */
+    public function getLanguageCodeValue()
+    {
+        $wrapper = $this->getLanguageCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -118,6 +163,21 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The language code specifying the language of the domain, e.g., "en".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLanguageCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLanguageCode($wrappedVar);
+    }
+
+    /**
      * Whether the campaign uses advertiser supplied URLs exclusively.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue use_supplied_urls_only = 3;</code>
@@ -126,6 +186,20 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     public function getUseSuppliedUrlsOnly()
     {
         return $this->use_supplied_urls_only;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getUseSuppliedUrlsOnly()</code>
+
+     * Whether the campaign uses advertiser supplied URLs exclusively.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue use_supplied_urls_only = 3;</code>
+     * @return bool|null
+     */
+    public function getUseSuppliedUrlsOnlyValue()
+    {
+        $wrapper = $this->getUseSuppliedUrlsOnly();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -141,6 +215,21 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
         $this->use_supplied_urls_only = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the campaign uses advertiser supplied URLs exclusively.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue use_supplied_urls_only = 3;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setUseSuppliedUrlsOnlyValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setUseSuppliedUrlsOnly($wrappedVar);
     }
 
     /**

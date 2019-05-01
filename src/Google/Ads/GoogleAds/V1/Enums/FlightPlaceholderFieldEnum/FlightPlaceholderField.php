@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\FlightPlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Flight placeholder fields.
  *
@@ -146,6 +148,48 @@ class FlightPlaceholderField
      * Generated from protobuf enum <code>IOS_APP_STORE_ID = 18;</code>
      */
     const IOS_APP_STORE_ID = 18;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::DESTINATION_ID => 'DESTINATION_ID',
+        self::ORIGIN_ID => 'ORIGIN_ID',
+        self::FLIGHT_DESCRIPTION => 'FLIGHT_DESCRIPTION',
+        self::ORIGIN_NAME => 'ORIGIN_NAME',
+        self::DESTINATION_NAME => 'DESTINATION_NAME',
+        self::FLIGHT_PRICE => 'FLIGHT_PRICE',
+        self::FORMATTED_PRICE => 'FORMATTED_PRICE',
+        self::FLIGHT_SALE_PRICE => 'FLIGHT_SALE_PRICE',
+        self::FORMATTED_SALE_PRICE => 'FORMATTED_SALE_PRICE',
+        self::IMAGE_URL => 'IMAGE_URL',
+        self::FINAL_URLS => 'FINAL_URLS',
+        self::FINAL_MOBILE_URLS => 'FINAL_MOBILE_URLS',
+        self::TRACKING_URL => 'TRACKING_URL',
+        self::ANDROID_APP_LINK => 'ANDROID_APP_LINK',
+        self::SIMILAR_DESTINATION_IDS => 'SIMILAR_DESTINATION_IDS',
+        self::IOS_APP_LINK => 'IOS_APP_LINK',
+        self::IOS_APP_STORE_ID => 'IOS_APP_STORE_ID',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

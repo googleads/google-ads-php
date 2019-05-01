@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\AccountBudgetProposalErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible account budget proposal errors.
  *
@@ -159,6 +161,53 @@ class AccountBudgetProposalError
      * Generated from protobuf enum <code>INVALID_BILLING_SETUP = 23;</code>
      */
     const INVALID_BILLING_SETUP = 23;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::FIELD_MASK_NOT_ALLOWED => 'FIELD_MASK_NOT_ALLOWED',
+        self::IMMUTABLE_FIELD => 'IMMUTABLE_FIELD',
+        self::REQUIRED_FIELD_MISSING => 'REQUIRED_FIELD_MISSING',
+        self::CANNOT_CANCEL_APPROVED_PROPOSAL => 'CANNOT_CANCEL_APPROVED_PROPOSAL',
+        self::CANNOT_REMOVE_UNAPPROVED_BUDGET => 'CANNOT_REMOVE_UNAPPROVED_BUDGET',
+        self::CANNOT_REMOVE_RUNNING_BUDGET => 'CANNOT_REMOVE_RUNNING_BUDGET',
+        self::CANNOT_END_UNAPPROVED_BUDGET => 'CANNOT_END_UNAPPROVED_BUDGET',
+        self::CANNOT_END_INACTIVE_BUDGET => 'CANNOT_END_INACTIVE_BUDGET',
+        self::BUDGET_NAME_REQUIRED => 'BUDGET_NAME_REQUIRED',
+        self::CANNOT_UPDATE_OLD_BUDGET => 'CANNOT_UPDATE_OLD_BUDGET',
+        self::CANNOT_END_IN_PAST => 'CANNOT_END_IN_PAST',
+        self::CANNOT_EXTEND_END_TIME => 'CANNOT_EXTEND_END_TIME',
+        self::PURCHASE_ORDER_NUMBER_REQUIRED => 'PURCHASE_ORDER_NUMBER_REQUIRED',
+        self::PENDING_UPDATE_PROPOSAL_EXISTS => 'PENDING_UPDATE_PROPOSAL_EXISTS',
+        self::MULTIPLE_BUDGETS_NOT_ALLOWED_FOR_UNAPPROVED_BILLING_SETUP => 'MULTIPLE_BUDGETS_NOT_ALLOWED_FOR_UNAPPROVED_BILLING_SETUP',
+        self::CANNOT_UPDATE_START_TIME_FOR_STARTED_BUDGET => 'CANNOT_UPDATE_START_TIME_FOR_STARTED_BUDGET',
+        self::SPENDING_LIMIT_LOWER_THAN_ACCRUED_COST_NOT_ALLOWED => 'SPENDING_LIMIT_LOWER_THAN_ACCRUED_COST_NOT_ALLOWED',
+        self::UPDATE_IS_NO_OP => 'UPDATE_IS_NO_OP',
+        self::END_TIME_MUST_FOLLOW_START_TIME => 'END_TIME_MUST_FOLLOW_START_TIME',
+        self::BUDGET_DATE_RANGE_INCOMPATIBLE_WITH_BILLING_SETUP => 'BUDGET_DATE_RANGE_INCOMPATIBLE_WITH_BILLING_SETUP',
+        self::NOT_AUTHORIZED => 'NOT_AUTHORIZED',
+        self::INVALID_BILLING_SETUP => 'INVALID_BILLING_SETUP',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Keyword View service.
+ *
  * Service to manage keyword views.
  */
 class KeywordViewServiceGrpcClient extends \Grpc\BaseStub {

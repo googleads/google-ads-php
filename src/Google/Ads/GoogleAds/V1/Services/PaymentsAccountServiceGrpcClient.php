@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Payments account service.
+ *
  * Service to provide Payments accounts that can be used to set up consolidated
  * billing.
  */

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\NegativeGeoTargetTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The possible negative geo target types.
  *
@@ -38,6 +40,33 @@ class NegativeGeoTargetType
      * Generated from protobuf enum <code>LOCATION_OF_PRESENCE = 3;</code>
      */
     const LOCATION_OF_PRESENCE = 3;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::DONT_CARE => 'DONT_CARE',
+        self::LOCATION_OF_PRESENCE => 'LOCATION_OF_PRESENCE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

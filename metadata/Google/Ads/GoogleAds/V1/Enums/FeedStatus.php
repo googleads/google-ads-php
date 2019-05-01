@@ -30,7 +30,7 @@ class FeedStatus
             "6e756d73ca021d476f6f676c655c4164735c476f6f676c654164735c5631" .
             "5c456e756d73ea0221476f6f676c653a3a4164733a3a476f6f676c654164" .
             "733a3a56313a3a456e756d73620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

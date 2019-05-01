@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\DatabaseErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible database errors.
  *
@@ -30,6 +32,32 @@ class DatabaseError
      * Generated from protobuf enum <code>CONCURRENT_MODIFICATION = 2;</code>
      */
     const CONCURRENT_MODIFICATION = 2;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CONCURRENT_MODIFICATION => 'CONCURRENT_MODIFICATION',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

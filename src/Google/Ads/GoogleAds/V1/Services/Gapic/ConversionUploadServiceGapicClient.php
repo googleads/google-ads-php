@@ -35,6 +35,7 @@ use Google\Ads\GoogleAds\V1\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -212,6 +213,13 @@ class ConversionUploadServiceGapicClient
             $request->setPartialFailure($optionalArgs['partialFailure']);
         }
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->startCall(
             'UploadClickConversions',
             UploadClickConversionsResponse::class,
@@ -265,6 +273,13 @@ class ConversionUploadServiceGapicClient
         if (isset($optionalArgs['partialFailure'])) {
             $request->setPartialFailure($optionalArgs['partialFailure']);
         }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'UploadCallConversions',

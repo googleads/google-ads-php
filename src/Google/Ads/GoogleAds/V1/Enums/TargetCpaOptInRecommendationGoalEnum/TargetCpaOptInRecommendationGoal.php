@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\TargetCpaOptInRecommendationGoalEnum;
 
+use UnexpectedValueException;
+
 /**
  * Goal of TargetCpaOptIn recommendation.
  *
@@ -48,6 +50,35 @@ class TargetCpaOptInRecommendationGoal
      * Generated from protobuf enum <code>CLOSEST_CPA = 5;</code>
      */
     const CLOSEST_CPA = 5;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::SAME_COST => 'SAME_COST',
+        self::SAME_CONVERSIONS => 'SAME_CONVERSIONS',
+        self::SAME_CPA => 'SAME_CPA',
+        self::CLOSEST_CPA => 'CLOSEST_CPA',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

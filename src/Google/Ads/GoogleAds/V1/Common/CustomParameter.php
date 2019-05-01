@@ -58,6 +58,20 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getKey()</code>
+
+     * The key matching the parameter tag name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue key = 1;</code>
+     * @return string|null
+     */
+    public function getKeyValue()
+    {
+        $wrapper = $this->getKey();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The key matching the parameter tag name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue key = 1;</code>
@@ -73,6 +87,21 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The key matching the parameter tag name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue key = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setKeyValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setKey($wrappedVar);
+    }
+
+    /**
      * The value to be substituted.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
@@ -81,6 +110,20 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
     public function getValue()
     {
         return $this->value;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getValue()</code>
+
+     * The value to be substituted.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
+     * @return string|null
+     */
+    public function getValueValue()
+    {
+        $wrapper = $this->getValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -96,6 +139,21 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
         $this->value = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The value to be substituted.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setValue($wrappedVar);
     }
 
 }

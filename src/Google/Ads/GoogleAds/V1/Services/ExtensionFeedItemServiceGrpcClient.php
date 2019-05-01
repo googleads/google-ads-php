@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the ExtensionFeedItem service.
+ *
  * Service to manage extension feed items.
  */
 class ExtensionFeedItemServiceGrpcClient extends \Grpc\BaseStub {

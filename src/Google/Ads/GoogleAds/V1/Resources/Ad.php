@@ -29,6 +29,13 @@ class Ad extends \Google\Protobuf\Internal\Message
      */
     private $final_urls;
     /**
+     * A list of final app URLs that will be used on mobile if the user has the
+     * specific app installed.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.FinalAppUrl final_app_urls = 35;</code>
+     */
+    private $final_app_urls;
+    /**
      * The list of possible final mobile URLs after all cross-domain redirects
      * for the ad.
      *
@@ -114,6 +121,9 @@ class Ad extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           The list of possible final URLs after all cross-domain redirects for the
      *           ad.
+     *     @type \Google\Ads\GoogleAds\V1\Common\FinalAppUrl[]|\Google\Protobuf\Internal\RepeatedField $final_app_urls
+     *           A list of final app URLs that will be used on mobile if the user has the
+     *           specific app installed.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           The list of possible final mobile URLs after all cross-domain redirects
      *           for the ad.
@@ -181,6 +191,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Details pertaining to a legacy app install ad.
      *     @type \Google\Ads\GoogleAds\V1\Common\ResponsiveDisplayAdInfo $responsive_display_ad
      *           Details pertaining to a responsive display ad.
+     *     @type \Google\Ads\GoogleAds\V1\Common\DisplayUploadAdInfo $display_upload_ad
+     *           Details pertaining to a display upload ad.
+     *     @type \Google\Ads\GoogleAds\V1\Common\AppEngagementAdInfo $app_engagement_ad
+     *           Details pertaining to an app engagement ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -200,6 +214,20 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
@@ -212,6 +240,21 @@ class Ad extends \Google\Protobuf\Internal\Message
         $this->id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
     }
 
     /**
@@ -238,6 +281,34 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\StringValue::class);
         $this->final_urls = $arr;
+
+        return $this;
+    }
+
+    /**
+     * A list of final app URLs that will be used on mobile if the user has the
+     * specific app installed.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.FinalAppUrl final_app_urls = 35;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFinalAppUrls()
+    {
+        return $this->final_app_urls;
+    }
+
+    /**
+     * A list of final app URLs that will be used on mobile if the user has the
+     * specific app installed.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.FinalAppUrl final_app_urls = 35;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\FinalAppUrl[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFinalAppUrls($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V1\Common\FinalAppUrl::class);
+        $this->final_app_urls = $arr;
 
         return $this;
     }
@@ -282,6 +353,20 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * The URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
@@ -294,6 +379,21 @@ class Ad extends \Google\Protobuf\Internal\Message
         $this->tracking_url_template = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
     }
 
     /**
@@ -336,6 +436,20 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getDisplayUrl()</code>
+
+     * The URL that appears in the ad description for some ad formats.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue display_url = 4;</code>
+     * @return string|null
+     */
+    public function getDisplayUrlValue()
+    {
+        $wrapper = $this->getDisplayUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The URL that appears in the ad description for some ad formats.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue display_url = 4;</code>
@@ -348,6 +462,21 @@ class Ad extends \Google\Protobuf\Internal\Message
         $this->display_url = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL that appears in the ad description for some ad formats.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue display_url = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDisplayUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDisplayUrl($wrappedVar);
     }
 
     /**
@@ -391,6 +520,23 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAddedByGoogleAds()</code>
+
+     * Indicates if this ad was automatically added by Google Ads and not by a
+     * user. For example, this could happen when ads are automatically created as
+     * suggestions for new ads based on knowledge of how existing ads are
+     * performing.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * @return bool|null
+     */
+    public function getAddedByGoogleAdsValue()
+    {
+        $wrapper = $this->getAddedByGoogleAds();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Indicates if this ad was automatically added by Google Ads and not by a
      * user. For example, this could happen when ads are automatically created as
      * suggestions for new ads based on knowledge of how existing ads are
@@ -406,6 +552,24 @@ class Ad extends \Google\Protobuf\Internal\Message
         $this->added_by_google_ads = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Indicates if this ad was automatically added by Google Ads and not by a
+     * user. For example, this could happen when ads are automatically created as
+     * suggestions for new ads based on knowledge of how existing ads are
+     * performing.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setAddedByGoogleAdsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setAddedByGoogleAds($wrappedVar);
     }
 
     /**
@@ -485,6 +649,21 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the ad. This is only used to be able to identify the ad. It
+     * does not need to be unique and does not affect the served ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The name of the ad. This is only used to be able to identify the ad. It
      * does not need to be unique and does not affect the served ad.
      *
@@ -498,6 +677,22 @@ class Ad extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the ad. This is only used to be able to identify the ad. It
+     * does not need to be unique and does not affect the served ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -922,6 +1117,58 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\ResponsiveDisplayAdInfo::class);
         $this->writeOneof(31, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a display upload ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.DisplayUploadAdInfo display_upload_ad = 33;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\DisplayUploadAdInfo
+     */
+    public function getDisplayUploadAd()
+    {
+        return $this->readOneof(33);
+    }
+
+    /**
+     * Details pertaining to a display upload ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.DisplayUploadAdInfo display_upload_ad = 33;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\DisplayUploadAdInfo $var
+     * @return $this
+     */
+    public function setDisplayUploadAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\DisplayUploadAdInfo::class);
+        $this->writeOneof(33, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to an app engagement ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.AppEngagementAdInfo app_engagement_ad = 34;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\AppEngagementAdInfo
+     */
+    public function getAppEngagementAd()
+    {
+        return $this->readOneof(34);
+    }
+
+    /**
+     * Details pertaining to an app engagement ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.AppEngagementAdInfo app_engagement_ad = 34;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\AppEngagementAdInfo $var
+     * @return $this
+     */
+    public function setAppEngagementAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\AppEngagementAdInfo::class);
+        $this->writeOneof(34, $var);
 
         return $this;
     }

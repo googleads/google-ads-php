@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\UserListStringRuleItemOperatorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible user list string rule item operators.
  *
@@ -71,6 +73,39 @@ class UserListStringRuleItemOperator
      * Generated from protobuf enum <code>NOT_ENDS_WITH = 9;</code>
      */
     const NOT_ENDS_WITH = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CONTAINS => 'CONTAINS',
+        self::EQUALS => 'EQUALS',
+        self::STARTS_WITH => 'STARTS_WITH',
+        self::ENDS_WITH => 'ENDS_WITH',
+        self::NOT_EQUALS => 'NOT_EQUALS',
+        self::NOT_CONTAINS => 'NOT_CONTAINS',
+        self::NOT_STARTS_WITH => 'NOT_STARTS_WITH',
+        self::NOT_ENDS_WITH => 'NOT_ENDS_WITH',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -99,6 +99,20 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the mobile app category constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
+     * @return int|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the mobile app category constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
@@ -114,6 +128,21 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * The ID of the mobile app category constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Mobile app category name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
@@ -122,6 +151,20 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * Mobile app category name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -137,6 +180,21 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Mobile app category name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
 }

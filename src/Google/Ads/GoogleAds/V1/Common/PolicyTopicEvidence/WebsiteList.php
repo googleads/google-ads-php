@@ -13,7 +13,6 @@ use Google\Protobuf\Internal\GPBUtil;
  * ONE_WEBSITE_PER_AD_GROUP policy topic, for example. In case there are more
  * than five websites, only the top five (those that appear in resources the
  * most) will be listed here.
- * Next Id: 2
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicEvidence.WebsiteList</code>
  */

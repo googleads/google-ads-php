@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the GoogleAdsFieldService
+ *
  * Service to fetch Google Ads API fields.
  */
 class GoogleAdsFieldServiceGrpcClient extends \Grpc\BaseStub {

@@ -49,6 +49,20 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getUserList()</code>
+
+     * Resource name of a user list as an operand.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_list = 1;</code>
+     * @return string|null
+     */
+    public function getUserListValue()
+    {
+        $wrapper = $this->getUserList();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Resource name of a user list as an operand.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_list = 1;</code>
@@ -61,6 +75,21 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
         $this->user_list = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Resource name of a user list as an operand.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_list = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setUserListValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setUserList($wrappedVar);
     }
 
 }

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\ClickTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enumerates Google Ads click types.
  *
@@ -335,6 +337,83 @@ class ClickType
      * Generated from protobuf enum <code>HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION = 55;</code>
      */
     const HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION = 55;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::APP_DEEPLINK => 'APP_DEEPLINK',
+        self::BREADCRUMBS => 'BREADCRUMBS',
+        self::BROADBAND_PLAN => 'BROADBAND_PLAN',
+        self::CALL_TRACKING => 'CALL_TRACKING',
+        self::CALLS => 'CALLS',
+        self::CLICK_ON_ENGAGEMENT_AD => 'CLICK_ON_ENGAGEMENT_AD',
+        self::GET_DIRECTIONS => 'GET_DIRECTIONS',
+        self::LOCATION_EXPANSION => 'LOCATION_EXPANSION',
+        self::LOCATION_FORMAT_CALL => 'LOCATION_FORMAT_CALL',
+        self::LOCATION_FORMAT_DIRECTIONS => 'LOCATION_FORMAT_DIRECTIONS',
+        self::LOCATION_FORMAT_IMAGE => 'LOCATION_FORMAT_IMAGE',
+        self::LOCATION_FORMAT_LANDING_PAGE => 'LOCATION_FORMAT_LANDING_PAGE',
+        self::LOCATION_FORMAT_MAP => 'LOCATION_FORMAT_MAP',
+        self::LOCATION_FORMAT_STORE_INFO => 'LOCATION_FORMAT_STORE_INFO',
+        self::LOCATION_FORMAT_TEXT => 'LOCATION_FORMAT_TEXT',
+        self::MOBILE_CALL_TRACKING => 'MOBILE_CALL_TRACKING',
+        self::OFFER_PRINTS => 'OFFER_PRINTS',
+        self::OTHER => 'OTHER',
+        self::PRODUCT_EXTENSION_CLICKS => 'PRODUCT_EXTENSION_CLICKS',
+        self::PRODUCT_LISTING_AD_CLICKS => 'PRODUCT_LISTING_AD_CLICKS',
+        self::SITELINKS => 'SITELINKS',
+        self::STORE_LOCATOR => 'STORE_LOCATOR',
+        self::URL_CLICKS => 'URL_CLICKS',
+        self::VIDEO_APP_STORE_CLICKS => 'VIDEO_APP_STORE_CLICKS',
+        self::VIDEO_CALL_TO_ACTION_CLICKS => 'VIDEO_CALL_TO_ACTION_CLICKS',
+        self::VIDEO_CARD_ACTION_HEADLINE_CLICKS => 'VIDEO_CARD_ACTION_HEADLINE_CLICKS',
+        self::VIDEO_END_CAP_CLICKS => 'VIDEO_END_CAP_CLICKS',
+        self::VIDEO_WEBSITE_CLICKS => 'VIDEO_WEBSITE_CLICKS',
+        self::VISUAL_SITELINKS => 'VISUAL_SITELINKS',
+        self::WIRELESS_PLAN => 'WIRELESS_PLAN',
+        self::PRODUCT_LISTING_AD_LOCAL => 'PRODUCT_LISTING_AD_LOCAL',
+        self::PRODUCT_LISTING_AD_MULTICHANNEL_LOCAL => 'PRODUCT_LISTING_AD_MULTICHANNEL_LOCAL',
+        self::PRODUCT_LISTING_AD_MULTICHANNEL_ONLINE => 'PRODUCT_LISTING_AD_MULTICHANNEL_ONLINE',
+        self::PRODUCT_LISTING_ADS_COUPON => 'PRODUCT_LISTING_ADS_COUPON',
+        self::PRODUCT_LISTING_AD_TRANSACTABLE => 'PRODUCT_LISTING_AD_TRANSACTABLE',
+        self::PRODUCT_AD_APP_DEEPLINK => 'PRODUCT_AD_APP_DEEPLINK',
+        self::SHOWCASE_AD_CATEGORY_LINK => 'SHOWCASE_AD_CATEGORY_LINK',
+        self::SHOWCASE_AD_LOCAL_STOREFRONT_LINK => 'SHOWCASE_AD_LOCAL_STOREFRONT_LINK',
+        self::SHOWCASE_AD_ONLINE_PRODUCT_LINK => 'SHOWCASE_AD_ONLINE_PRODUCT_LINK',
+        self::SHOWCASE_AD_LOCAL_PRODUCT_LINK => 'SHOWCASE_AD_LOCAL_PRODUCT_LINK',
+        self::PROMOTION_EXTENSION => 'PROMOTION_EXTENSION',
+        self::SWIPEABLE_GALLERY_AD_HEADLINE => 'SWIPEABLE_GALLERY_AD_HEADLINE',
+        self::SWIPEABLE_GALLERY_AD_SWIPES => 'SWIPEABLE_GALLERY_AD_SWIPES',
+        self::SWIPEABLE_GALLERY_AD_SEE_MORE => 'SWIPEABLE_GALLERY_AD_SEE_MORE',
+        self::SWIPEABLE_GALLERY_AD_SITELINK_ONE => 'SWIPEABLE_GALLERY_AD_SITELINK_ONE',
+        self::SWIPEABLE_GALLERY_AD_SITELINK_TWO => 'SWIPEABLE_GALLERY_AD_SITELINK_TWO',
+        self::SWIPEABLE_GALLERY_AD_SITELINK_THREE => 'SWIPEABLE_GALLERY_AD_SITELINK_THREE',
+        self::SWIPEABLE_GALLERY_AD_SITELINK_FOUR => 'SWIPEABLE_GALLERY_AD_SITELINK_FOUR',
+        self::SWIPEABLE_GALLERY_AD_SITELINK_FIVE => 'SWIPEABLE_GALLERY_AD_SITELINK_FIVE',
+        self::HOTEL_PRICE => 'HOTEL_PRICE',
+        self::PRICE_EXTENSION => 'PRICE_EXTENSION',
+        self::HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION => 'HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

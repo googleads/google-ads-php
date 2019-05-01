@@ -57,6 +57,20 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getUrl()</code>
+
+     * The URL to crawl in order to generate keyword ideas.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue url = 1;</code>
+     * @return string|null
+     */
+    public function getUrlValue()
+    {
+        $wrapper = $this->getUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The URL to crawl in order to generate keyword ideas.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url = 1;</code>
@@ -69,6 +83,21 @@ class KeywordAndUrlSeed extends \Google\Protobuf\Internal\Message
         $this->url = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL to crawl in order to generate keyword ideas.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue url = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setUrl($wrappedVar);
     }
 
     /**

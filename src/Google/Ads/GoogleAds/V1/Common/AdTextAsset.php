@@ -63,6 +63,20 @@ class AdTextAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getText()</code>
+
+     * Asset text.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
+     * @return string|null
+     */
+    public function getTextValue()
+    {
+        $wrapper = $this->getText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Asset text.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
@@ -75,6 +89,21 @@ class AdTextAsset extends \Google\Protobuf\Internal\Message
         $this->text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Asset text.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setText($wrappedVar);
     }
 
     /**

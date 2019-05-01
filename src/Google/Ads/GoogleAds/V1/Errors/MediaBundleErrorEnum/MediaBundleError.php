@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\MediaBundleErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible media bundle errors.
  *
@@ -155,6 +157,53 @@ class MediaBundleError
      * Generated from protobuf enum <code>CUSTOM_EXIT_NOT_ALLOWED = 24;</code>
      */
     const CUSTOM_EXIT_NOT_ALLOWED = 24;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::BAD_REQUEST => 'BAD_REQUEST',
+        self::DOUBLECLICK_BUNDLE_NOT_ALLOWED => 'DOUBLECLICK_BUNDLE_NOT_ALLOWED',
+        self::EXTERNAL_URL_NOT_ALLOWED => 'EXTERNAL_URL_NOT_ALLOWED',
+        self::FILE_TOO_LARGE => 'FILE_TOO_LARGE',
+        self::GOOGLE_WEB_DESIGNER_ZIP_FILE_NOT_PUBLISHED => 'GOOGLE_WEB_DESIGNER_ZIP_FILE_NOT_PUBLISHED',
+        self::INVALID_INPUT => 'INVALID_INPUT',
+        self::INVALID_MEDIA_BUNDLE => 'INVALID_MEDIA_BUNDLE',
+        self::INVALID_MEDIA_BUNDLE_ENTRY => 'INVALID_MEDIA_BUNDLE_ENTRY',
+        self::INVALID_MIME_TYPE => 'INVALID_MIME_TYPE',
+        self::INVALID_PATH => 'INVALID_PATH',
+        self::INVALID_URL_REFERENCE => 'INVALID_URL_REFERENCE',
+        self::MEDIA_DATA_TOO_LARGE => 'MEDIA_DATA_TOO_LARGE',
+        self::MISSING_PRIMARY_MEDIA_BUNDLE_ENTRY => 'MISSING_PRIMARY_MEDIA_BUNDLE_ENTRY',
+        self::SERVER_ERROR => 'SERVER_ERROR',
+        self::STORAGE_ERROR => 'STORAGE_ERROR',
+        self::SWIFFY_BUNDLE_NOT_ALLOWED => 'SWIFFY_BUNDLE_NOT_ALLOWED',
+        self::TOO_MANY_FILES => 'TOO_MANY_FILES',
+        self::UNEXPECTED_SIZE => 'UNEXPECTED_SIZE',
+        self::UNSUPPORTED_GOOGLE_WEB_DESIGNER_ENVIRONMENT => 'UNSUPPORTED_GOOGLE_WEB_DESIGNER_ENVIRONMENT',
+        self::UNSUPPORTED_HTML5_FEATURE => 'UNSUPPORTED_HTML5_FEATURE',
+        self::URL_IN_MEDIA_BUNDLE_NOT_SSL_COMPLIANT => 'URL_IN_MEDIA_BUNDLE_NOT_SSL_COMPLIANT',
+        self::CUSTOM_EXIT_NOT_ALLOWED => 'CUSTOM_EXIT_NOT_ALLOWED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -26,7 +26,7 @@ final class GoogleAdsFailures
     /**
      * Unpacks a single GoogleAdsFailure from an Any instance.
      *
-     * @param Any an Any instance to unpack
+     * @param Any $any an Any instance to unpack
      * @return GoogleAdsFailure
      */
     public static function fromAny(Any $any)
@@ -43,7 +43,7 @@ final class GoogleAdsFailures
      * Unpacks GoogleAdsFailure from the partial failure Status.
      *
      * @param Status $status
-     * @return GoogleAdsFailure
+     * @return GoogleAdsFailure[]
      */
     public static function fromStatus(Status $status)
     {

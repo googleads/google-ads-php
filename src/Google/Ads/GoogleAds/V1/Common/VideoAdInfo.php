@@ -58,6 +58,20 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getMediaFile()</code>
+
+     * The MediaFile resource to use for the video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
+     * @return string|null
+     */
+    public function getMediaFileValue()
+    {
+        $wrapper = $this->getMediaFile();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The MediaFile resource to use for the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
@@ -70,6 +84,21 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
         $this->media_file = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource to use for the video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setMediaFileValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setMediaFile($wrappedVar);
     }
 
     /**

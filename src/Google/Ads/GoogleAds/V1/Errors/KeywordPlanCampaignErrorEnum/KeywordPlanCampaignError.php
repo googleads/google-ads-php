@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\KeywordPlanCampaignErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible errors from applying a keyword plan campaign.
  *
@@ -55,6 +57,36 @@ class KeywordPlanCampaignError
      * Generated from protobuf enum <code>MAX_GEOS_EXCEEDED = 6;</code>
      */
     const MAX_GEOS_EXCEEDED = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INVALID_NAME => 'INVALID_NAME',
+        self::INVALID_LANGUAGES => 'INVALID_LANGUAGES',
+        self::INVALID_GEOS => 'INVALID_GEOS',
+        self::DUPLICATE_NAME => 'DUPLICATE_NAME',
+        self::MAX_GEOS_EXCEEDED => 'MAX_GEOS_EXCEEDED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

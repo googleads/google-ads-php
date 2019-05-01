@@ -33,7 +33,7 @@ class PageOnePromotedStrategyGoal
             "73ca021d476f6f676c655c4164735c476f6f676c654164735c56315c456e" .
             "756d73ea0221476f6f676c653a3a4164733a3a476f6f676c654164733a3a" .
             "56313a3a456e756d73620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

@@ -116,6 +116,20 @@ class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getKeywordPlanCampaign()</code>
+
+     * The Keyword Plan campaign to which this negative keyword belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 2;</code>
+     * @return string|null
+     */
+    public function getKeywordPlanCampaignValue()
+    {
+        $wrapper = $this->getKeywordPlanCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Keyword Plan campaign to which this negative keyword belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 2;</code>
@@ -131,6 +145,21 @@ class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Keyword Plan campaign to which this negative keyword belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setKeywordPlanCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setKeywordPlanCampaign($wrappedVar);
+    }
+
+    /**
      * The ID of the Keyword Plan negative keyword.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
@@ -139,6 +168,20 @@ class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the Keyword Plan negative keyword.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -157,6 +200,21 @@ class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the Keyword Plan negative keyword.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The keyword text.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
@@ -165,6 +223,20 @@ class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
     public function getText()
     {
         return $this->text;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getText()</code>
+
+     * The keyword text.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
+     * @return string|null
+     */
+    public function getTextValue()
+    {
+        $wrapper = $this->getText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -180,6 +252,21 @@ class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
         $this->text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The keyword text.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setText($wrappedVar);
     }
 
     /**

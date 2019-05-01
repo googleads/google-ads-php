@@ -50,6 +50,20 @@ class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getSeedUserList()</code>
+
+     * Seed UserList from which this list is derived.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue seed_user_list = 1;</code>
+     * @return string|null
+     */
+    public function getSeedUserListValue()
+    {
+        $wrapper = $this->getSeedUserList();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Seed UserList from which this list is derived.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue seed_user_list = 1;</code>
@@ -62,6 +76,21 @@ class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
         $this->seed_user_list = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Seed UserList from which this list is derived.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue seed_user_list = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSeedUserListValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSeedUserList($wrappedVar);
     }
 
 }

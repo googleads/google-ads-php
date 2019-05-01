@@ -52,6 +52,21 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getBudgetMicrosToMove()</code>
+
+     * Budget amount to move from excess budget to constrained budget. This is
+     * a required field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros_to_move = 1;</code>
+     * @return int|string|null
+     */
+    public function getBudgetMicrosToMoveValue()
+    {
+        $wrapper = $this->getBudgetMicrosToMove();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Budget amount to move from excess budget to constrained budget. This is
      * a required field.
      *
@@ -65,6 +80,22 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
         $this->budget_micros_to_move = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Budget amount to move from excess budget to constrained budget. This is
+     * a required field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros_to_move = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setBudgetMicrosToMoveValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setBudgetMicrosToMove($wrappedVar);
     }
 
 }

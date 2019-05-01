@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\CampaignBudgetErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible campaign budget errors.
  *
@@ -118,6 +120,46 @@ class CampaignBudgetError
      * Generated from protobuf enum <code>NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT = 16;</code>
      */
     const NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT = 16;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CAMPAIGN_BUDGET_CANNOT_BE_SHARED => 'CAMPAIGN_BUDGET_CANNOT_BE_SHARED',
+        self::CAMPAIGN_BUDGET_REMOVED => 'CAMPAIGN_BUDGET_REMOVED',
+        self::CAMPAIGN_BUDGET_IN_USE => 'CAMPAIGN_BUDGET_IN_USE',
+        self::CAMPAIGN_BUDGET_PERIOD_NOT_AVAILABLE => 'CAMPAIGN_BUDGET_PERIOD_NOT_AVAILABLE',
+        self::CANNOT_MODIFY_FIELD_OF_IMPLICITLY_SHARED_CAMPAIGN_BUDGET => 'CANNOT_MODIFY_FIELD_OF_IMPLICITLY_SHARED_CAMPAIGN_BUDGET',
+        self::CANNOT_UPDATE_CAMPAIGN_BUDGET_TO_IMPLICITLY_SHARED => 'CANNOT_UPDATE_CAMPAIGN_BUDGET_TO_IMPLICITLY_SHARED',
+        self::CANNOT_UPDATE_CAMPAIGN_BUDGET_TO_EXPLICITLY_SHARED_WITHOUT_NAME => 'CANNOT_UPDATE_CAMPAIGN_BUDGET_TO_EXPLICITLY_SHARED_WITHOUT_NAME',
+        self::CANNOT_UPDATE_CAMPAIGN_BUDGET_TO_EXPLICITLY_SHARED => 'CANNOT_UPDATE_CAMPAIGN_BUDGET_TO_EXPLICITLY_SHARED',
+        self::CANNOT_USE_IMPLICITLY_SHARED_CAMPAIGN_BUDGET_WITH_MULTIPLE_CAMPAIGNS => 'CANNOT_USE_IMPLICITLY_SHARED_CAMPAIGN_BUDGET_WITH_MULTIPLE_CAMPAIGNS',
+        self::DUPLICATE_NAME => 'DUPLICATE_NAME',
+        self::MONEY_AMOUNT_IN_WRONG_CURRENCY => 'MONEY_AMOUNT_IN_WRONG_CURRENCY',
+        self::MONEY_AMOUNT_LESS_THAN_CURRENCY_MINIMUM_CPC => 'MONEY_AMOUNT_LESS_THAN_CURRENCY_MINIMUM_CPC',
+        self::MONEY_AMOUNT_TOO_LARGE => 'MONEY_AMOUNT_TOO_LARGE',
+        self::NEGATIVE_MONEY_AMOUNT => 'NEGATIVE_MONEY_AMOUNT',
+        self::NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT => 'NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

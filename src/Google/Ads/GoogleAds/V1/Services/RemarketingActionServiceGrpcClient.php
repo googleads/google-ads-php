@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Remarketing Action service.
+ *
  * Service to manage remarketing actions.
  */
 class RemarketingActionServiceGrpcClient extends \Grpc\BaseStub {

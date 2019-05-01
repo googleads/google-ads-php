@@ -57,6 +57,20 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getExcessCampaignBudget()</code>
+
+     * The excess budget's resource_name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
+     * @return string|null
+     */
+    public function getExcessCampaignBudgetValue()
+    {
+        $wrapper = $this->getExcessCampaignBudget();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The excess budget's resource_name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
@@ -69,6 +83,21 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
         $this->excess_campaign_budget = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The excess budget's resource_name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setExcessCampaignBudgetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setExcessCampaignBudget($wrappedVar);
     }
 
     /**

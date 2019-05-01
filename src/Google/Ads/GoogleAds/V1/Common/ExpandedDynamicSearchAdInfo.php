@@ -49,6 +49,20 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * The description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 1;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 1;</code>
@@ -61,6 +75,21 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
         $this->description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
     }
 
 }

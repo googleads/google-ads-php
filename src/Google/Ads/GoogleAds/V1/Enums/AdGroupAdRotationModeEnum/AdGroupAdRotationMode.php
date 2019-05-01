@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AdGroupAdRotationModeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The possible ad rotation modes of an ad group.
  *
@@ -36,6 +38,33 @@ class AdGroupAdRotationMode
      * Generated from protobuf enum <code>ROTATE_FOREVER = 3;</code>
      */
     const ROTATE_FOREVER = 3;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::OPTIMIZE => 'OPTIMIZE',
+        self::ROTATE_FOREVER => 'ROTATE_FOREVER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

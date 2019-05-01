@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\ImageErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible image errors.
  *
@@ -246,6 +248,68 @@ class ImageError
      * Generated from protobuf enum <code>PROBLEM_READING_FILE = 38;</code>
      */
     const PROBLEM_READING_FILE = 38;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INVALID_IMAGE => 'INVALID_IMAGE',
+        self::STORAGE_ERROR => 'STORAGE_ERROR',
+        self::BAD_REQUEST => 'BAD_REQUEST',
+        self::UNEXPECTED_SIZE => 'UNEXPECTED_SIZE',
+        self::ANIMATED_NOT_ALLOWED => 'ANIMATED_NOT_ALLOWED',
+        self::ANIMATION_TOO_LONG => 'ANIMATION_TOO_LONG',
+        self::SERVER_ERROR => 'SERVER_ERROR',
+        self::CMYK_JPEG_NOT_ALLOWED => 'CMYK_JPEG_NOT_ALLOWED',
+        self::FLASH_NOT_ALLOWED => 'FLASH_NOT_ALLOWED',
+        self::FLASH_WITHOUT_CLICKTAG => 'FLASH_WITHOUT_CLICKTAG',
+        self::FLASH_ERROR_AFTER_FIXING_CLICK_TAG => 'FLASH_ERROR_AFTER_FIXING_CLICK_TAG',
+        self::ANIMATED_VISUAL_EFFECT => 'ANIMATED_VISUAL_EFFECT',
+        self::FLASH_ERROR => 'FLASH_ERROR',
+        self::LAYOUT_PROBLEM => 'LAYOUT_PROBLEM',
+        self::PROBLEM_READING_IMAGE_FILE => 'PROBLEM_READING_IMAGE_FILE',
+        self::ERROR_STORING_IMAGE => 'ERROR_STORING_IMAGE',
+        self::ASPECT_RATIO_NOT_ALLOWED => 'ASPECT_RATIO_NOT_ALLOWED',
+        self::FLASH_HAS_NETWORK_OBJECTS => 'FLASH_HAS_NETWORK_OBJECTS',
+        self::FLASH_HAS_NETWORK_METHODS => 'FLASH_HAS_NETWORK_METHODS',
+        self::FLASH_HAS_URL => 'FLASH_HAS_URL',
+        self::FLASH_HAS_MOUSE_TRACKING => 'FLASH_HAS_MOUSE_TRACKING',
+        self::FLASH_HAS_RANDOM_NUM => 'FLASH_HAS_RANDOM_NUM',
+        self::FLASH_SELF_TARGETS => 'FLASH_SELF_TARGETS',
+        self::FLASH_BAD_GETURL_TARGET => 'FLASH_BAD_GETURL_TARGET',
+        self::FLASH_VERSION_NOT_SUPPORTED => 'FLASH_VERSION_NOT_SUPPORTED',
+        self::FLASH_WITHOUT_HARD_CODED_CLICK_URL => 'FLASH_WITHOUT_HARD_CODED_CLICK_URL',
+        self::INVALID_FLASH_FILE => 'INVALID_FLASH_FILE',
+        self::FAILED_TO_FIX_CLICK_TAG_IN_FLASH => 'FAILED_TO_FIX_CLICK_TAG_IN_FLASH',
+        self::FLASH_ACCESSES_NETWORK_RESOURCES => 'FLASH_ACCESSES_NETWORK_RESOURCES',
+        self::FLASH_EXTERNAL_JS_CALL => 'FLASH_EXTERNAL_JS_CALL',
+        self::FLASH_EXTERNAL_FS_CALL => 'FLASH_EXTERNAL_FS_CALL',
+        self::FILE_TOO_LARGE => 'FILE_TOO_LARGE',
+        self::IMAGE_DATA_TOO_LARGE => 'IMAGE_DATA_TOO_LARGE',
+        self::IMAGE_PROCESSING_ERROR => 'IMAGE_PROCESSING_ERROR',
+        self::IMAGE_TOO_SMALL => 'IMAGE_TOO_SMALL',
+        self::INVALID_INPUT => 'INVALID_INPUT',
+        self::PROBLEM_READING_FILE => 'PROBLEM_READING_FILE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

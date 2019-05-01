@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the keyword plan idea service.
+ *
  * Service to generate keyword ideas.
  */
 class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {

@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Search Term View service.
+ *
  * Service to manage search term views.
  */
 class SearchTermViewServiceGrpcClient extends \Grpc\BaseStub {

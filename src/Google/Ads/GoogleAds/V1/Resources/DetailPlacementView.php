@@ -132,6 +132,21 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPlacement()</code>
+
+     * The automatic placement string at detail level, e. g. website URL, mobile
+     * application ID, or a YouTube video ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue placement = 2;</code>
+     * @return string|null
+     */
+    public function getPlacementValue()
+    {
+        $wrapper = $this->getPlacement();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The automatic placement string at detail level, e. g. website URL, mobile
      * application ID, or a YouTube video ID.
      *
@@ -148,6 +163,22 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The automatic placement string at detail level, e. g. website URL, mobile
+     * application ID, or a YouTube video ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue placement = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPlacementValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPlacement($wrappedVar);
+    }
+
+    /**
      * The display name is URL name for websites, YouTube video name for YouTube
      * videos, and translated mobile app name for mobile apps.
      *
@@ -157,6 +188,21 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     public function getDisplayName()
     {
         return $this->display_name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDisplayName()</code>
+
+     * The display name is URL name for websites, YouTube video name for YouTube
+     * videos, and translated mobile app name for mobile apps.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue display_name = 3;</code>
+     * @return string|null
+     */
+    public function getDisplayNameValue()
+    {
+        $wrapper = $this->getDisplayName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -176,6 +222,22 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The display name is URL name for websites, YouTube video name for YouTube
+     * videos, and translated mobile app name for mobile apps.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue display_name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDisplayNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDisplayName($wrappedVar);
+    }
+
+    /**
      * URL of the group placement, e.g. domain, link to the mobile application in
      * app store, or a YouTube channel URL.
      *
@@ -185,6 +247,21 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     public function getGroupPlacementTargetUrl()
     {
         return $this->group_placement_target_url;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getGroupPlacementTargetUrl()</code>
+
+     * URL of the group placement, e.g. domain, link to the mobile application in
+     * app store, or a YouTube channel URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue group_placement_target_url = 4;</code>
+     * @return string|null
+     */
+    public function getGroupPlacementTargetUrlValue()
+    {
+        $wrapper = $this->getGroupPlacementTargetUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -204,6 +281,22 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL of the group placement, e.g. domain, link to the mobile application in
+     * app store, or a YouTube channel URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue group_placement_target_url = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setGroupPlacementTargetUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setGroupPlacementTargetUrl($wrappedVar);
+    }
+
+    /**
      * URL of the placement, e.g. website, link to the mobile application in app
      * store, or a YouTube video URL.
      *
@@ -213,6 +306,21 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
     public function getTargetUrl()
     {
         return $this->target_url;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTargetUrl()</code>
+
+     * URL of the placement, e.g. website, link to the mobile application in app
+     * store, or a YouTube video URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_url = 5;</code>
+     * @return string|null
+     */
+    public function getTargetUrlValue()
+    {
+        $wrapper = $this->getTargetUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -229,6 +337,22 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
         $this->target_url = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL of the placement, e.g. website, link to the mobile application in app
+     * store, or a YouTube video URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_url = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTargetUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTargetUrl($wrappedVar);
     }
 
     /**
