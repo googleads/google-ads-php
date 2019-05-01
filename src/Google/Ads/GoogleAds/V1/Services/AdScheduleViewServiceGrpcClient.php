@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the AdSchedule View service.
+ *
  * Service to fetch ad schedule views.
  */
 class AdScheduleViewServiceGrpcClient extends \Grpc\BaseStub {

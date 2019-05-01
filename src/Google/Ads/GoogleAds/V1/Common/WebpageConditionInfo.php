@@ -117,6 +117,20 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getArgument()</code>
+
+     * Argument of webpage targeting condition.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue argument = 3;</code>
+     * @return string|null
+     */
+    public function getArgumentValue()
+    {
+        $wrapper = $this->getArgument();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Argument of webpage targeting condition.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue argument = 3;</code>
@@ -129,6 +143,21 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
         $this->argument = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Argument of webpage targeting condition.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue argument = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setArgumentValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setArgument($wrappedVar);
     }
 
 }

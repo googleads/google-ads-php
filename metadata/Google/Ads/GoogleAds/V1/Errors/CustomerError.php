@@ -32,7 +32,7 @@ class CustomerError
             "4164735c476f6f676c654164735c56315c4572726f7273ea0222476f6f67" .
             "6c653a3a4164733a3a476f6f676c654164733a3a56313a3a4572726f7273" .
             "620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

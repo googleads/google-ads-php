@@ -53,6 +53,20 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getIpAddress()</code>
+
+     * The IP address of this IP block.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ip_address = 1;</code>
+     * @return string|null
+     */
+    public function getIpAddressValue()
+    {
+        $wrapper = $this->getIpAddress();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The IP address of this IP block.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ip_address = 1;</code>
@@ -65,6 +79,21 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
         $this->ip_address = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The IP address of this IP block.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ip_address = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setIpAddressValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setIpAddress($wrappedVar);
     }
 
 }

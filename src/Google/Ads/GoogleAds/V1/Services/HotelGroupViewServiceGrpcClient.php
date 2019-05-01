@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Hotel Group View Service.
+ *
  * Service to manage Hotel Group Views.
  */
 class HotelGroupViewServiceGrpcClient extends \Grpc\BaseStub {

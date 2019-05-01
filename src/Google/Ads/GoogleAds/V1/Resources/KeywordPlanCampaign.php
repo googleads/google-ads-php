@@ -158,6 +158,20 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getKeywordPlan()</code>
+
+     * The keyword plan this campaign belongs to.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan = 2;</code>
+     * @return string|null
+     */
+    public function getKeywordPlanValue()
+    {
+        $wrapper = $this->getKeywordPlan();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The keyword plan this campaign belongs to.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan = 2;</code>
@@ -173,6 +187,21 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The keyword plan this campaign belongs to.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setKeywordPlanValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setKeywordPlan($wrappedVar);
+    }
+
+    /**
      * The ID of the Keyword Plan campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
@@ -181,6 +210,20 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the Keyword Plan campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -199,6 +242,21 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the Keyword Plan campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the Keyword Plan campaign.
      * This field is required and should not be empty when creating Keyword Plan
      * campaigns.
@@ -209,6 +267,22 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the Keyword Plan campaign.
+     * This field is required and should not be empty when creating Keyword Plan
+     * campaigns.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -226,6 +300,23 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the Keyword Plan campaign.
+     * This field is required and should not be empty when creating Keyword Plan
+     * campaigns.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -301,6 +392,23 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCpcBidMicros()</code>
+
+     * A default max cpc bid in micros, and in the account currency, for all ad
+     * groups under the campaign.
+     * This field is required and should not be empty when creating Keyword Plan
+     * campaigns.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 7;</code>
+     * @return int|string|null
+     */
+    public function getCpcBidMicrosValue()
+    {
+        $wrapper = $this->getCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * A default max cpc bid in micros, and in the account currency, for all ad
      * groups under the campaign.
      * This field is required and should not be empty when creating Keyword Plan
@@ -316,6 +424,24 @@ class KeywordPlanCampaign extends \Google\Protobuf\Internal\Message
         $this->cpc_bid_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * A default max cpc bid in micros, and in the account currency, for all ad
+     * groups under the campaign.
+     * This field is required and should not be empty when creating Keyword Plan
+     * campaigns.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 7;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpcBidMicros($wrappedVar);
     }
 
     /**

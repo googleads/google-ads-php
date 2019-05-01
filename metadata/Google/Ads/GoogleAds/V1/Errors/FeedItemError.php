@@ -41,7 +41,7 @@ class FeedItemError
             "6c655c4164735c476f6f676c654164735c56315c4572726f7273ea022247" .
             "6f6f676c653a3a4164733a3a476f6f676c654164733a3a56313a3a457272" .
             "6f7273620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

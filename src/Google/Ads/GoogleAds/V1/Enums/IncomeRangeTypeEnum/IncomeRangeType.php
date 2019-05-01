@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\IncomeRangeTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The type of demographic income ranges (e.g. between 0% to 50%).
  *
@@ -65,6 +67,38 @@ class IncomeRangeType
      * Generated from protobuf enum <code>INCOME_RANGE_UNDETERMINED = 510000;</code>
      */
     const INCOME_RANGE_UNDETERMINED = 510000;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INCOME_RANGE_0_50 => 'INCOME_RANGE_0_50',
+        self::INCOME_RANGE_50_60 => 'INCOME_RANGE_50_60',
+        self::INCOME_RANGE_60_70 => 'INCOME_RANGE_60_70',
+        self::INCOME_RANGE_70_80 => 'INCOME_RANGE_70_80',
+        self::INCOME_RANGE_80_90 => 'INCOME_RANGE_80_90',
+        self::INCOME_RANGE_90_UP => 'INCOME_RANGE_90_UP',
+        self::INCOME_RANGE_UNDETERMINED => 'INCOME_RANGE_UNDETERMINED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

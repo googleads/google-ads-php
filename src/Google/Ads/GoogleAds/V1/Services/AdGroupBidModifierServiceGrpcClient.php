@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Ad Group Bid Modifier service.
+ *
  * Service to manage ad group bid modifiers.
  */
 class AdGroupBidModifierServiceGrpcClient extends \Grpc\BaseStub {

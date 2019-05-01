@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\AuthenticationErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible authentication errors.
  *
@@ -136,6 +138,49 @@ class AuthenticationError
      * Generated from protobuf enum <code>ADVANCED_PROTECTION_NOT_ENROLLED = 24;</code>
      */
     const ADVANCED_PROTECTION_NOT_ENROLLED = 24;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::AUTHENTICATION_ERROR => 'AUTHENTICATION_ERROR',
+        self::CLIENT_CUSTOMER_ID_INVALID => 'CLIENT_CUSTOMER_ID_INVALID',
+        self::CUSTOMER_NOT_FOUND => 'CUSTOMER_NOT_FOUND',
+        self::GOOGLE_ACCOUNT_DELETED => 'GOOGLE_ACCOUNT_DELETED',
+        self::GOOGLE_ACCOUNT_COOKIE_INVALID => 'GOOGLE_ACCOUNT_COOKIE_INVALID',
+        self::GOOGLE_ACCOUNT_AUTHENTICATION_FAILED => 'GOOGLE_ACCOUNT_AUTHENTICATION_FAILED',
+        self::GOOGLE_ACCOUNT_USER_AND_ADS_USER_MISMATCH => 'GOOGLE_ACCOUNT_USER_AND_ADS_USER_MISMATCH',
+        self::LOGIN_COOKIE_REQUIRED => 'LOGIN_COOKIE_REQUIRED',
+        self::NOT_ADS_USER => 'NOT_ADS_USER',
+        self::OAUTH_TOKEN_INVALID => 'OAUTH_TOKEN_INVALID',
+        self::OAUTH_TOKEN_EXPIRED => 'OAUTH_TOKEN_EXPIRED',
+        self::OAUTH_TOKEN_DISABLED => 'OAUTH_TOKEN_DISABLED',
+        self::OAUTH_TOKEN_REVOKED => 'OAUTH_TOKEN_REVOKED',
+        self::OAUTH_TOKEN_HEADER_INVALID => 'OAUTH_TOKEN_HEADER_INVALID',
+        self::LOGIN_COOKIE_INVALID => 'LOGIN_COOKIE_INVALID',
+        self::USER_ID_INVALID => 'USER_ID_INVALID',
+        self::TWO_STEP_VERIFICATION_NOT_ENROLLED => 'TWO_STEP_VERIFICATION_NOT_ENROLLED',
+        self::ADVANCED_PROTECTION_NOT_ENROLLED => 'ADVANCED_PROTECTION_NOT_ENROLLED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Campaign Label service.
+ *
  * Service to manage labels on campaigns.
  */
 class CampaignLabelServiceGrpcClient extends \Grpc\BaseStub {

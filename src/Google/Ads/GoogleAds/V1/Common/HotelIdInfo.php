@@ -49,6 +49,20 @@ class HotelIdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getValue()</code>
+
+     * String value of the hotel ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
+     * @return string|null
+     */
+    public function getValueValue()
+    {
+        $wrapper = $this->getValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * String value of the hotel ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
@@ -61,6 +75,21 @@ class HotelIdInfo extends \Google\Protobuf\Internal\Message
         $this->value = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * String value of the hotel ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setValue($wrappedVar);
     }
 
 }

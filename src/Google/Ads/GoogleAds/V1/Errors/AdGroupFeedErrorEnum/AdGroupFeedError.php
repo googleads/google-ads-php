@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\AdGroupFeedErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible ad group feed errors.
  *
@@ -67,6 +69,38 @@ class AdGroupFeedError
      * Generated from protobuf enum <code>NO_EXISTING_LOCATION_CUSTOMER_FEED = 8;</code>
      */
     const NO_EXISTING_LOCATION_CUSTOMER_FEED = 8;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE => 'FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE',
+        self::CANNOT_CREATE_FOR_REMOVED_FEED => 'CANNOT_CREATE_FOR_REMOVED_FEED',
+        self::ADGROUP_FEED_ALREADY_EXISTS => 'ADGROUP_FEED_ALREADY_EXISTS',
+        self::CANNOT_OPERATE_ON_REMOVED_ADGROUP_FEED => 'CANNOT_OPERATE_ON_REMOVED_ADGROUP_FEED',
+        self::INVALID_PLACEHOLDER_TYPE => 'INVALID_PLACEHOLDER_TYPE',
+        self::MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE => 'MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE',
+        self::NO_EXISTING_LOCATION_CUSTOMER_FEED => 'NO_EXISTING_LOCATION_CUSTOMER_FEED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -97,6 +97,22 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getValue()</code>
+
+     * Number value to be compared with the variable.
+     * This field is required and must be populated when creating a new number
+     * rule item.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue value = 2;</code>
+     * @return float|null
+     */
+    public function getValueValue()
+    {
+        $wrapper = $this->getValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Number value to be compared with the variable.
      * This field is required and must be populated when creating a new number
      * rule item.
@@ -111,6 +127,23 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
         $this->value = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Number value to be compared with the variable.
+     * This field is required and must be populated when creating a new number
+     * rule item.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue value = 2;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setValue($wrappedVar);
     }
 
 }

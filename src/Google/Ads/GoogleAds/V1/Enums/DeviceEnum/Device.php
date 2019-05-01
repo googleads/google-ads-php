@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\DeviceEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enumerates Google Ads devices available for targeting.
  *
@@ -47,6 +49,35 @@ class Device
      * Generated from protobuf enum <code>OTHER = 5;</code>
      */
     const OTHER = 5;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::MOBILE => 'MOBILE',
+        self::TABLET => 'TABLET',
+        self::DESKTOP => 'DESKTOP',
+        self::OTHER => 'OTHER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

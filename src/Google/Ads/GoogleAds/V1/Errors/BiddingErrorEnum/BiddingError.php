@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\BiddingErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible bidding errors.
  *
@@ -160,6 +162,53 @@ class BiddingError
      * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_BUDGET_TYPE = 35;</code>
      */
     const NOT_COMPATIBLE_WITH_BUDGET_TYPE = 35;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::BIDDING_STRATEGY_TRANSITION_NOT_ALLOWED => 'BIDDING_STRATEGY_TRANSITION_NOT_ALLOWED',
+        self::CANNOT_ATTACH_BIDDING_STRATEGY_TO_CAMPAIGN => 'CANNOT_ATTACH_BIDDING_STRATEGY_TO_CAMPAIGN',
+        self::INVALID_ANONYMOUS_BIDDING_STRATEGY_TYPE => 'INVALID_ANONYMOUS_BIDDING_STRATEGY_TYPE',
+        self::INVALID_BIDDING_STRATEGY_TYPE => 'INVALID_BIDDING_STRATEGY_TYPE',
+        self::INVALID_BID => 'INVALID_BID',
+        self::BIDDING_STRATEGY_NOT_AVAILABLE_FOR_ACCOUNT_TYPE => 'BIDDING_STRATEGY_NOT_AVAILABLE_FOR_ACCOUNT_TYPE',
+        self::CONVERSION_TRACKING_NOT_ENABLED => 'CONVERSION_TRACKING_NOT_ENABLED',
+        self::NOT_ENOUGH_CONVERSIONS => 'NOT_ENOUGH_CONVERSIONS',
+        self::CANNOT_CREATE_CAMPAIGN_WITH_BIDDING_STRATEGY => 'CANNOT_CREATE_CAMPAIGN_WITH_BIDDING_STRATEGY',
+        self::CANNOT_TARGET_CONTENT_NETWORK_ONLY_WITH_CAMPAIGN_LEVEL_POP_BIDDING_STRATEGY => 'CANNOT_TARGET_CONTENT_NETWORK_ONLY_WITH_CAMPAIGN_LEVEL_POP_BIDDING_STRATEGY',
+        self::BIDDING_STRATEGY_NOT_SUPPORTED_WITH_AD_SCHEDULE => 'BIDDING_STRATEGY_NOT_SUPPORTED_WITH_AD_SCHEDULE',
+        self::PAY_PER_CONVERSION_NOT_AVAILABLE_FOR_CUSTOMER => 'PAY_PER_CONVERSION_NOT_AVAILABLE_FOR_CUSTOMER',
+        self::PAY_PER_CONVERSION_NOT_ALLOWED_WITH_TARGET_CPA => 'PAY_PER_CONVERSION_NOT_ALLOWED_WITH_TARGET_CPA',
+        self::BIDDING_STRATEGY_NOT_ALLOWED_FOR_SEARCH_ONLY_CAMPAIGNS => 'BIDDING_STRATEGY_NOT_ALLOWED_FOR_SEARCH_ONLY_CAMPAIGNS',
+        self::BIDDING_STRATEGY_NOT_SUPPORTED_IN_DRAFTS_OR_EXPERIMENTS => 'BIDDING_STRATEGY_NOT_SUPPORTED_IN_DRAFTS_OR_EXPERIMENTS',
+        self::BIDDING_STRATEGY_TYPE_DOES_NOT_SUPPORT_PRODUCT_TYPE_ADGROUP_CRITERION => 'BIDDING_STRATEGY_TYPE_DOES_NOT_SUPPORT_PRODUCT_TYPE_ADGROUP_CRITERION',
+        self::BID_TOO_SMALL => 'BID_TOO_SMALL',
+        self::BID_TOO_BIG => 'BID_TOO_BIG',
+        self::BID_TOO_MANY_FRACTIONAL_DIGITS => 'BID_TOO_MANY_FRACTIONAL_DIGITS',
+        self::INVALID_DOMAIN_NAME => 'INVALID_DOMAIN_NAME',
+        self::NOT_COMPATIBLE_WITH_PAYMENT_MODE => 'NOT_COMPATIBLE_WITH_PAYMENT_MODE',
+        self::NOT_COMPATIBLE_WITH_BUDGET_TYPE => 'NOT_COMPATIBLE_WITH_BUDGET_TYPE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

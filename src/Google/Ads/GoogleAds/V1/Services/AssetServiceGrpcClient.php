@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Asset service.
+ *
  * Service to manage assets.
  */
 class AssetServiceGrpcClient extends \Grpc\BaseStub {

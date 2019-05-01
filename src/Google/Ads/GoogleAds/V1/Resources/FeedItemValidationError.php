@@ -112,6 +112,20 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * The description of the validation error.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The description of the validation error.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
@@ -124,6 +138,21 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
         $this->description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The description of the validation error.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
     }
 
     /**
@@ -170,6 +199,22 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getExtraInfo()</code>
+
+     * Any extra information related to this error which is not captured by
+     * validation_error and feed_attribute_id (e.g. placeholder field IDs when
+     * feed_attribute_id is not mapped). Note that extra_info is not localized.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue extra_info = 5;</code>
+     * @return string|null
+     */
+    public function getExtraInfoValue()
+    {
+        $wrapper = $this->getExtraInfo();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Any extra information related to this error which is not captured by
      * validation_error and feed_attribute_id (e.g. placeholder field IDs when
      * feed_attribute_id is not mapped). Note that extra_info is not localized.
@@ -184,6 +229,23 @@ class FeedItemValidationError extends \Google\Protobuf\Internal\Message
         $this->extra_info = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Any extra information related to this error which is not captured by
+     * validation_error and feed_attribute_id (e.g. placeholder field IDs when
+     * feed_attribute_id is not mapped). Note that extra_info is not localized.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue extra_info = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setExtraInfoValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setExtraInfo($wrappedVar);
     }
 
 }

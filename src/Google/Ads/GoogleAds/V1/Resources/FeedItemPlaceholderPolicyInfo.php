@@ -116,6 +116,20 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPlaceholderType()</code>
+
+     * The placeholder type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value placeholder_type = 1;</code>
+     * @return int|null
+     */
+    public function getPlaceholderTypeValue()
+    {
+        $wrapper = $this->getPlaceholderType();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The placeholder type.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value placeholder_type = 1;</code>
@@ -131,6 +145,21 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * The placeholder type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value placeholder_type = 1;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setPlaceholderTypeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setPlaceholderType($wrappedVar);
+    }
+
+    /**
      * The FeedMapping that contains the placeholder type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_mapping_resource_name = 2;</code>
@@ -139,6 +168,20 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
     public function getFeedMappingResourceName()
     {
         return $this->feed_mapping_resource_name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFeedMappingResourceName()</code>
+
+     * The FeedMapping that contains the placeholder type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_mapping_resource_name = 2;</code>
+     * @return string|null
+     */
+    public function getFeedMappingResourceNameValue()
+    {
+        $wrapper = $this->getFeedMappingResourceName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -154,6 +197,21 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
         $this->feed_mapping_resource_name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The FeedMapping that contains the placeholder type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_mapping_resource_name = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFeedMappingResourceNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFeedMappingResourceName($wrappedVar);
     }
 
     /**

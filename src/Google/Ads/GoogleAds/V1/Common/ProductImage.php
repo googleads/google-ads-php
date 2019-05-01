@@ -71,6 +71,22 @@ class ProductImage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getProductImage()</code>
+
+     * The MediaFile resource name of the product image. Valid image types are
+     * GIF, JPEG and PNG. The minimum size is 300x300 pixels and the aspect ratio
+     * must be 1:1 (+-1%).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_image = 1;</code>
+     * @return string|null
+     */
+    public function getProductImageValue()
+    {
+        $wrapper = $this->getProductImage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The MediaFile resource name of the product image. Valid image types are
      * GIF, JPEG and PNG. The minimum size is 300x300 pixels and the aspect ratio
      * must be 1:1 (+-1%).
@@ -88,6 +104,23 @@ class ProductImage extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource name of the product image. Valid image types are
+     * GIF, JPEG and PNG. The minimum size is 300x300 pixels and the aspect ratio
+     * must be 1:1 (+-1%).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_image = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setProductImageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setProductImage($wrappedVar);
+    }
+
+    /**
      * Description of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
@@ -96,6 +129,20 @@ class ProductImage extends \Google\Protobuf\Internal\Message
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * Description of the product.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -111,6 +158,21 @@ class ProductImage extends \Google\Protobuf\Internal\Message
         $this->description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Description of the product.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
     }
 
     /**

@@ -49,6 +49,20 @@ class AdVideoAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAsset()</code>
+
+     * The Asset resource name of this video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 1;</code>
+     * @return string|null
+     */
+    public function getAssetValue()
+    {
+        $wrapper = $this->getAsset();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Asset resource name of this video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue asset = 1;</code>
@@ -61,6 +75,21 @@ class AdVideoAsset extends \Google\Protobuf\Internal\Message
         $this->asset = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Asset resource name of this video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAssetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAsset($wrappedVar);
     }
 
 }

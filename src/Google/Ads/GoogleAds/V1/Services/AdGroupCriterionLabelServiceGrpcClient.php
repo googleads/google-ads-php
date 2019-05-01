@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Ad Group Criterion Label service.
+ *
  * Service to manage labels on ad group criteria.
  */
 class AdGroupCriterionLabelServiceGrpcClient extends \Grpc\BaseStub {

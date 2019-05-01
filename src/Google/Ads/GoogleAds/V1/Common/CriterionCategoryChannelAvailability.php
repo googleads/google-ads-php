@@ -181,6 +181,23 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Returns the unboxed value from <code>getIncludeDefaultChannelSubType()</code>
+
+     * Whether default channel sub type is included. For example,
+     * advertising_channel_type being DISPLAY and include_default_channel_sub_type
+     * being false means that the default display campaign where channel sub type
+     * is not set is not included in this availability configuration.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue include_default_channel_sub_type = 4;</code>
+     * @return bool|null
+     */
+    public function getIncludeDefaultChannelSubTypeValue()
+    {
+        $wrapper = $this->getIncludeDefaultChannelSubType();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Whether default channel sub type is included. For example,
      * advertising_channel_type being DISPLAY and include_default_channel_sub_type
      * being false means that the default display campaign where channel sub type
@@ -196,6 +213,24 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
         $this->include_default_channel_sub_type = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether default channel sub type is included. For example,
+     * advertising_channel_type being DISPLAY and include_default_channel_sub_type
+     * being false means that the default display campaign where channel sub type
+     * is not set is not included in this availability configuration.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue include_default_channel_sub_type = 4;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setIncludeDefaultChannelSubTypeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setIncludeDefaultChannelSubType($wrappedVar);
     }
 
 }

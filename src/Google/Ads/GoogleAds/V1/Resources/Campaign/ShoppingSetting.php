@@ -97,6 +97,22 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getMerchantId()</code>
+
+     * ID of the Merchant Center account.
+     * This field is required for create operations. This field is immutable for
+     * Shopping campaigns.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1;</code>
+     * @return int|string|null
+     */
+    public function getMerchantIdValue()
+    {
+        $wrapper = $this->getMerchantId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * ID of the Merchant Center account.
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
@@ -114,6 +130,23 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * ID of the Merchant Center account.
+     * This field is required for create operations. This field is immutable for
+     * Shopping campaigns.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setMerchantIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setMerchantId($wrappedVar);
+    }
+
+    /**
      * Sales country of products to include in the campaign.
      * This field is required for Shopping campaigns. This field is immutable.
      * This field is optional for non-Shopping campaigns, but it must be equal
@@ -125,6 +158,23 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     public function getSalesCountry()
     {
         return $this->sales_country;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getSalesCountry()</code>
+
+     * Sales country of products to include in the campaign.
+     * This field is required for Shopping campaigns. This field is immutable.
+     * This field is optional for non-Shopping campaigns, but it must be equal
+     * to 'ZZ' if set.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2;</code>
+     * @return string|null
+     */
+    public function getSalesCountryValue()
+    {
+        $wrapper = $this->getSalesCountry();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -146,6 +196,24 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Sales country of products to include in the campaign.
+     * This field is required for Shopping campaigns. This field is immutable.
+     * This field is optional for non-Shopping campaigns, but it must be equal
+     * to 'ZZ' if set.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSalesCountryValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSalesCountry($wrappedVar);
+    }
+
+    /**
      * Priority of the campaign. Campaigns with numerically higher priorities
      * take precedence over those with lower priorities.
      * This field is required for Shopping campaigns, with values between 0 and
@@ -159,6 +227,25 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     public function getCampaignPriority()
     {
         return $this->campaign_priority;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCampaignPriority()</code>
+
+     * Priority of the campaign. Campaigns with numerically higher priorities
+     * take precedence over those with lower priorities.
+     * This field is required for Shopping campaigns, with values between 0 and
+     * 2, inclusive.
+     * This field is optional for Smart Shopping campaigns, but must be equal to
+     * 3 if set.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value campaign_priority = 3;</code>
+     * @return int|null
+     */
+    public function getCampaignPriorityValue()
+    {
+        $wrapper = $this->getCampaignPriority();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -182,6 +269,26 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * Priority of the campaign. Campaigns with numerically higher priorities
+     * take precedence over those with lower priorities.
+     * This field is required for Shopping campaigns, with values between 0 and
+     * 2, inclusive.
+     * This field is optional for Smart Shopping campaigns, but must be equal to
+     * 3 if set.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value campaign_priority = 3;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setCampaignPriorityValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setCampaignPriority($wrappedVar);
+    }
+
+    /**
      * Whether to include local products.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enable_local = 4;</code>
@@ -190,6 +297,20 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     public function getEnableLocal()
     {
         return $this->enable_local;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEnableLocal()</code>
+
+     * Whether to include local products.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue enable_local = 4;</code>
+     * @return bool|null
+     */
+    public function getEnableLocalValue()
+    {
+        $wrapper = $this->getEnableLocal();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -205,6 +326,21 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
         $this->enable_local = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether to include local products.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue enable_local = 4;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setEnableLocalValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setEnableLocal($wrappedVar);
     }
 
 }

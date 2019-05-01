@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\VanityPharmaTextEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible text.
  *
@@ -101,6 +103,43 @@ class VanityPharmaText
      * Generated from protobuf enum <code>PRESCRIPTION_VACCINE_WEBSITE_ES = 13;</code>
      */
     const PRESCRIPTION_VACCINE_WEBSITE_ES = 13;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::PRESCRIPTION_TREATMENT_WEBSITE_EN => 'PRESCRIPTION_TREATMENT_WEBSITE_EN',
+        self::PRESCRIPTION_TREATMENT_WEBSITE_ES => 'PRESCRIPTION_TREATMENT_WEBSITE_ES',
+        self::PRESCRIPTION_DEVICE_WEBSITE_EN => 'PRESCRIPTION_DEVICE_WEBSITE_EN',
+        self::PRESCRIPTION_DEVICE_WEBSITE_ES => 'PRESCRIPTION_DEVICE_WEBSITE_ES',
+        self::MEDICAL_DEVICE_WEBSITE_EN => 'MEDICAL_DEVICE_WEBSITE_EN',
+        self::MEDICAL_DEVICE_WEBSITE_ES => 'MEDICAL_DEVICE_WEBSITE_ES',
+        self::PREVENTATIVE_TREATMENT_WEBSITE_EN => 'PREVENTATIVE_TREATMENT_WEBSITE_EN',
+        self::PREVENTATIVE_TREATMENT_WEBSITE_ES => 'PREVENTATIVE_TREATMENT_WEBSITE_ES',
+        self::PRESCRIPTION_CONTRACEPTION_WEBSITE_EN => 'PRESCRIPTION_CONTRACEPTION_WEBSITE_EN',
+        self::PRESCRIPTION_CONTRACEPTION_WEBSITE_ES => 'PRESCRIPTION_CONTRACEPTION_WEBSITE_ES',
+        self::PRESCRIPTION_VACCINE_WEBSITE_EN => 'PRESCRIPTION_VACCINE_WEBSITE_EN',
+        self::PRESCRIPTION_VACCINE_WEBSITE_ES => 'PRESCRIPTION_VACCINE_WEBSITE_ES',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

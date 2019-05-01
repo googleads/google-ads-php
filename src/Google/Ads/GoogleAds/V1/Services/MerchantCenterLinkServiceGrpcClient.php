@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the MerchantCenterLink service.
+ *
  * This service allows management of links between Google Ads and Google
  * Merchant Center.
  */

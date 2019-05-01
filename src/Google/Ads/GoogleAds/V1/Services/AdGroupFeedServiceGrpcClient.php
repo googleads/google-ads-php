@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the AdGroupFeed service.
+ *
  * Service to manage ad group feeds.
  */
 class AdGroupFeedServiceGrpcClient extends \Grpc\BaseStub {

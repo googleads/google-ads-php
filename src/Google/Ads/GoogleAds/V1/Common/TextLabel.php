@@ -65,6 +65,22 @@ class TextLabel extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getBackgroundColor()</code>
+
+     * Background color of the label in RGB format. This string must match the
+     * regular expression '^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$'.
+     * Note: The background color may not be visible for manager accounts.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue background_color = 1;</code>
+     * @return string|null
+     */
+    public function getBackgroundColorValue()
+    {
+        $wrapper = $this->getBackgroundColor();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Background color of the label in RGB format. This string must match the
      * regular expression '^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$'.
      * Note: The background color may not be visible for manager accounts.
@@ -82,6 +98,23 @@ class TextLabel extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Background color of the label in RGB format. This string must match the
+     * regular expression '^\#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$'.
+     * Note: The background color may not be visible for manager accounts.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue background_color = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBackgroundColorValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBackgroundColor($wrappedVar);
+    }
+
+    /**
      * A short description of the label. The length must be no more than 200
      * characters.
      *
@@ -91,6 +124,21 @@ class TextLabel extends \Google\Protobuf\Internal\Message
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * A short description of the label. The length must be no more than 200
+     * characters.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -107,6 +155,22 @@ class TextLabel extends \Google\Protobuf\Internal\Message
         $this->description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A short description of the label. The length must be no more than 200
+     * characters.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
     }
 
 }

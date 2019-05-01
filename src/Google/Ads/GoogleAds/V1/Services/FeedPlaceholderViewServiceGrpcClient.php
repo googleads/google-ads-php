@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the FeedPlaceholderView service.
+ *
  * Service to fetch feed placeholder views.
  */
 class FeedPlaceholderViewServiceGrpcClient extends \Grpc\BaseStub {

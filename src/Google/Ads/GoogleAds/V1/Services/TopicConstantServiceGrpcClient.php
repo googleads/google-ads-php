@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Topic constant service
+ *
  * Service to fetch topic constants.
  */
 class TopicConstantServiceGrpcClient extends \Grpc\BaseStub {

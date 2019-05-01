@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the CustomerFeed service.
+ *
  * Service to manage customer feeds.
  */
 class CustomerFeedServiceGrpcClient extends \Grpc\BaseStub {

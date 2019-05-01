@@ -124,6 +124,21 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getSearchTerm()</code>
+
+     * Search term
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * @return string|null
+     */
+    public function getSearchTermValue()
+    {
+        $wrapper = $this->getSearchTerm();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Search term
      * This field is read-only.
      *
@@ -140,6 +155,22 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Search term
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSearchTermValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSearchTerm($wrappedVar);
+    }
+
+    /**
      * The dynamically generated headline of the Dynamic Search Ad.
      * This field is read-only.
      *
@@ -149,6 +180,21 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     public function getHeadline()
     {
         return $this->headline;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHeadline()</code>
+
+     * The dynamically generated headline of the Dynamic Search Ad.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
+     * @return string|null
+     */
+    public function getHeadlineValue()
+    {
+        $wrapper = $this->getHeadline();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -168,6 +214,22 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The dynamically generated headline of the Dynamic Search Ad.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeadlineValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeadline($wrappedVar);
+    }
+
+    /**
      * The dynamically selected landing page URL of the impression.
      * This field is read-only.
      *
@@ -177,6 +239,21 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     public function getLandingPage()
     {
         return $this->landing_page;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLandingPage()</code>
+
+     * The dynamically selected landing page URL of the impression.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4;</code>
+     * @return string|null
+     */
+    public function getLandingPageValue()
+    {
+        $wrapper = $this->getLandingPage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -196,6 +273,22 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The dynamically selected landing page URL of the impression.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLandingPageValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLandingPage($wrappedVar);
+    }
+
+    /**
      * The URL of page feed item served for the impression.
      * This field is read-only.
      *
@@ -205,6 +298,21 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     public function getPageUrl()
     {
         return $this->page_url;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPageUrl()</code>
+
+     * The URL of page feed item served for the impression.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5;</code>
+     * @return string|null
+     */
+    public function getPageUrlValue()
+    {
+        $wrapper = $this->getPageUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -221,6 +329,22 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
         $this->page_url = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL of page feed item served for the impression.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPageUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPageUrl($wrappedVar);
     }
 
 }

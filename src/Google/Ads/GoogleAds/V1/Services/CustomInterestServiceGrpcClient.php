@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Custom Interest service.
+ *
  * Service to manage custom interests.
  */
 class CustomInterestServiceGrpcClient extends \Grpc\BaseStub {

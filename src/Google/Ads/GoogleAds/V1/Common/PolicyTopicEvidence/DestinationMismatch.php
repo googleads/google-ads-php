@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Evidence of mismatches between the URLs of a resource.
- * Next Id: 2
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicEvidence.DestinationMismatch</code>
  */

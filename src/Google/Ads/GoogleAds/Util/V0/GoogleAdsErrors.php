@@ -72,8 +72,8 @@ final class GoogleAdsErrors
      * A single GoogleAdsError instance would be returned for operation index 1 and 2, and an empty
      * list otherwise.
      *
-     * @param int operationIndex the index of the operation, starting from 0.
-     * @param Status partialFailureStatus a partialFailure status, with the detail list
+     * @param int $operationIndex the index of the operation, starting from 0.
+     * @param Status $partialFailureStatus a partialFailure status, with the detail list
      *     containing GoogleAdsFailure instances
      * @return GoogleAdsError[] an array containing the
      *     GoogleAdsError instances for a given operation index

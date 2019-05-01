@@ -103,6 +103,20 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Returns the unboxed value from <code>getCountryCode()</code>
+
+     * Code of the country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
+     * @return string|null
+     */
+    public function getCountryCodeValue()
+    {
+        $wrapper = $this->getCountryCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Code of the country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
@@ -118,6 +132,21 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Code of the country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryCode($wrappedVar);
+    }
+
+    /**
      * Code of the language.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 3;</code>
@@ -126,6 +155,20 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
     public function getLanguageCode()
     {
         return $this->language_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLanguageCode()</code>
+
+     * Code of the language.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 3;</code>
+     * @return string|null
+     */
+    public function getLanguageCodeValue()
+    {
+        $wrapper = $this->getLanguageCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -141,6 +184,21 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
         $this->language_code = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Code of the language.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLanguageCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLanguageCode($wrappedVar);
     }
 
 }

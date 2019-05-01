@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Dynamic Search Ads Search Term View service.
+ *
  * Service to fetch dynamic search ads views.
  */
 class DynamicSearchAdsSearchTermViewServiceGrpcClient extends \Grpc\BaseStub {

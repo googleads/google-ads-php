@@ -95,6 +95,20 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAppId()</code>
+
+     * A string that uniquely identifies a mobile application.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * @return string|null
+     */
+    public function getAppIdValue()
+    {
+        $wrapper = $this->getAppId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * A string that uniquely identifies a mobile application.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
@@ -107,6 +121,21 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
         $this->app_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A string that uniquely identifies a mobile application.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAppIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAppId($wrappedVar);
     }
 
     /**

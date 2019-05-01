@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\CustomerManagerLinkErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible CustomerManagerLink errors.
  *
@@ -74,6 +76,39 @@ class CustomerManagerLinkError
      * Generated from protobuf enum <code>DUPLICATE_CHILD_FOUND = 9;</code>
      */
     const DUPLICATE_CHILD_FOUND = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::NO_PENDING_INVITE => 'NO_PENDING_INVITE',
+        self::SAME_CLIENT_MORE_THAN_ONCE_PER_CALL => 'SAME_CLIENT_MORE_THAN_ONCE_PER_CALL',
+        self::MANAGER_HAS_MAX_NUMBER_OF_LINKED_ACCOUNTS => 'MANAGER_HAS_MAX_NUMBER_OF_LINKED_ACCOUNTS',
+        self::CANNOT_UNLINK_ACCOUNT_WITHOUT_ACTIVE_USER => 'CANNOT_UNLINK_ACCOUNT_WITHOUT_ACTIVE_USER',
+        self::CANNOT_REMOVE_LAST_CLIENT_ACCOUNT_OWNER => 'CANNOT_REMOVE_LAST_CLIENT_ACCOUNT_OWNER',
+        self::CANNOT_CHANGE_ROLE_BY_NON_ACCOUNT_OWNER => 'CANNOT_CHANGE_ROLE_BY_NON_ACCOUNT_OWNER',
+        self::CANNOT_CHANGE_ROLE_FOR_NON_ACTIVE_LINK_ACCOUNT => 'CANNOT_CHANGE_ROLE_FOR_NON_ACTIVE_LINK_ACCOUNT',
+        self::DUPLICATE_CHILD_FOUND => 'DUPLICATE_CHILD_FOUND',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

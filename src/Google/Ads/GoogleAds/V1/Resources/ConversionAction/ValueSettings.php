@@ -80,6 +80,22 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getDefaultValue()</code>
+
+     * The value to use when conversion events for this conversion action are
+     * sent with an invalid, disallowed or missing value, or when
+     * this conversion action is configured to always use the default value.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue default_value = 1;</code>
+     * @return float|null
+     */
+    public function getDefaultValueValue()
+    {
+        $wrapper = $this->getDefaultValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The value to use when conversion events for this conversion action are
      * sent with an invalid, disallowed or missing value, or when
      * this conversion action is configured to always use the default value.
@@ -97,6 +113,23 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The value to use when conversion events for this conversion action are
+     * sent with an invalid, disallowed or missing value, or when
+     * this conversion action is configured to always use the default value.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue default_value = 1;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setDefaultValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setDefaultValue($wrappedVar);
+    }
+
+    /**
      * The currency code to use when conversion events for this conversion
      * action are sent with an invalid or missing currency code, or when this
      * conversion action is configured to always use the default value.
@@ -107,6 +140,22 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
     public function getDefaultCurrencyCode()
     {
         return $this->default_currency_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDefaultCurrencyCode()</code>
+
+     * The currency code to use when conversion events for this conversion
+     * action are sent with an invalid or missing currency code, or when this
+     * conversion action is configured to always use the default value.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue default_currency_code = 2;</code>
+     * @return string|null
+     */
+    public function getDefaultCurrencyCodeValue()
+    {
+        $wrapper = $this->getDefaultCurrencyCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -127,6 +176,23 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The currency code to use when conversion events for this conversion
+     * action are sent with an invalid or missing currency code, or when this
+     * conversion action is configured to always use the default value.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue default_currency_code = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDefaultCurrencyCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDefaultCurrencyCode($wrappedVar);
+    }
+
+    /**
      * Controls whether the default value and default currency code are used in
      * place of the value and currency code specified in conversion events for
      * this conversion action.
@@ -137,6 +203,22 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
     public function getAlwaysUseDefaultValue()
     {
         return $this->always_use_default_value;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAlwaysUseDefaultValue()</code>
+
+     * Controls whether the default value and default currency code are used in
+     * place of the value and currency code specified in conversion events for
+     * this conversion action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue always_use_default_value = 3;</code>
+     * @return bool|null
+     */
+    public function getAlwaysUseDefaultValueValue()
+    {
+        $wrapper = $this->getAlwaysUseDefaultValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -154,6 +236,23 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
         $this->always_use_default_value = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Controls whether the default value and default currency code are used in
+     * place of the value and currency code specified in conversion events for
+     * this conversion action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue always_use_default_value = 3;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setAlwaysUseDefaultValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setAlwaysUseDefaultValue($wrappedVar);
     }
 
 }

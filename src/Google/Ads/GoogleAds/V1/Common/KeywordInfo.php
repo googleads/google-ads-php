@@ -57,6 +57,20 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getText()</code>
+
+     * The text of the keyword (at most 80 characters and 10 words).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
+     * @return string|null
+     */
+    public function getTextValue()
+    {
+        $wrapper = $this->getText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The text of the keyword (at most 80 characters and 10 words).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
@@ -69,6 +83,21 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
         $this->text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The text of the keyword (at most 80 characters and 10 words).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setText($wrappedVar);
     }
 
     /**

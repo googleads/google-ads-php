@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the DomainCategory Service.
+ *
  * Service to fetch domain categories.
  */
 class DomainCategoryServiceGrpcClient extends \Grpc\BaseStub {

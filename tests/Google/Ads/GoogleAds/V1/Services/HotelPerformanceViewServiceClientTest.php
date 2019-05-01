@@ -77,7 +77,7 @@ class HotelPerformanceViewServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedResourceName = $client->customerName('[CUSTOMER]');
+        $formattedResourceName = $client->hotelPerformanceViewName('[CUSTOMER]');
 
         $response = $client->getHotelPerformanceView($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
@@ -117,7 +117,7 @@ class HotelPerformanceViewServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedResourceName = $client->customerName('[CUSTOMER]');
+        $formattedResourceName = $client->hotelPerformanceViewName('[CUSTOMER]');
 
         try {
             $client->getHotelPerformanceView($formattedResourceName);

@@ -73,6 +73,20 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getData()</code>
+
+     * The raw bytes data of an image. This field is mutate only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * @return string|null
+     */
+    public function getDataValue()
+    {
+        $wrapper = $this->getData();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The raw bytes data of an image. This field is mutate only.
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
@@ -88,6 +102,21 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BytesValue object.
+
+     * The raw bytes data of an image. This field is mutate only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDataValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BytesValue(['value' => $var]);
+        return $this->setData($wrappedVar);
+    }
+
+    /**
      * File size of the image asset in bytes.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 2;</code>
@@ -96,6 +125,20 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
     public function getFileSize()
     {
         return $this->file_size;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFileSize()</code>
+
+     * File size of the image asset in bytes.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 2;</code>
+     * @return int|string|null
+     */
+    public function getFileSizeValue()
+    {
+        $wrapper = $this->getFileSize();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -111,6 +154,21 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
         $this->file_size = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * File size of the image asset in bytes.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setFileSizeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setFileSize($wrappedVar);
     }
 
     /**

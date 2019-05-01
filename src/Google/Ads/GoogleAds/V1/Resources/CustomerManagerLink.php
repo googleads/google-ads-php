@@ -107,6 +107,20 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getManagerCustomer()</code>
+
+     * The manager customer linked to the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3;</code>
+     * @return string|null
+     */
+    public function getManagerCustomerValue()
+    {
+        $wrapper = $this->getManagerCustomer();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The manager customer linked to the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3;</code>
@@ -122,6 +136,21 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The manager customer linked to the customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue manager_customer = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setManagerCustomerValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setManagerCustomer($wrappedVar);
+    }
+
+    /**
      * ID of the customer-manager link. This field is read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
@@ -130,6 +159,20 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     public function getManagerLinkId()
     {
         return $this->manager_link_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getManagerLinkId()</code>
+
+     * ID of the customer-manager link. This field is read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * @return int|string|null
+     */
+    public function getManagerLinkIdValue()
+    {
+        $wrapper = $this->getManagerLinkId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -145,6 +188,21 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
         $this->manager_link_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * ID of the customer-manager link. This field is read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setManagerLinkIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setManagerLinkId($wrappedVar);
     }
 
     /**

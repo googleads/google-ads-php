@@ -97,6 +97,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the language code error
      *     @type int $media_bundle_error
      *           The reasons for the media bundle error
+     *     @type int $media_upload_error
+     *           The reasons for media uploading errors.
      *     @type int $media_file_error
      *           The reasons for the media file error
      *     @type int $multiplier_error
@@ -127,6 +129,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the resource access denied error
      *     @type int $resource_count_limit_exceeded_error
      *           The reasons for the resource count limit exceeded error
+     *     @type int $youtube_video_registration_error
+     *           The reasons for YouTube video registration errors.
      *     @type int $ad_group_bid_modifier_error
      *           The reasons for the ad group bid modifier error
      *     @type int $context_error
@@ -213,6 +217,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the mutate job error
      *     @type int $policy_validation_parameter_error
      *           The reasons for the policy validation parameter error
+     *     @type int $size_limit_error
+     *           The reasons for the size limit error
      * }
      */
     public function __construct($data = NULL) {
@@ -1183,6 +1189,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for media uploading errors.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.MediaUploadErrorEnum.MediaUploadError media_upload_error = 116;</code>
+     * @return int
+     */
+    public function getMediaUploadError()
+    {
+        return $this->readOneof(116);
+    }
+
+    /**
+     * The reasons for media uploading errors.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.MediaUploadErrorEnum.MediaUploadError media_upload_error = 116;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMediaUploadError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\MediaUploadErrorEnum_MediaUploadError::class);
+        $this->writeOneof(116, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the media file error
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.MediaFileErrorEnum.MediaFileError media_file_error = 86;</code>
@@ -1568,6 +1600,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\ResourceCountLimitExceededErrorEnum_ResourceCountLimitExceededError::class);
         $this->writeOneof(57, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for YouTube video registration errors.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError youtube_video_registration_error = 117;</code>
+     * @return int
+     */
+    public function getYoutubeVideoRegistrationError()
+    {
+        return $this->readOneof(117);
+    }
+
+    /**
+     * The reasons for YouTube video registration errors.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.YoutubeVideoRegistrationErrorEnum.YoutubeVideoRegistrationError youtube_video_registration_error = 117;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setYoutubeVideoRegistrationError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\YoutubeVideoRegistrationErrorEnum_YoutubeVideoRegistrationError::class);
+        $this->writeOneof(117, $var);
 
         return $this;
     }
@@ -2686,6 +2744,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\PolicyValidationParameterErrorEnum_PolicyValidationParameterError::class);
         $this->writeOneof(114, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the size limit error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;</code>
+     * @return int
+     */
+    public function getSizeLimitError()
+    {
+        return $this->readOneof(118);
+    }
+
+    /**
+     * The reasons for the size limit error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.SizeLimitErrorEnum.SizeLimitError size_limit_error = 118;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSizeLimitError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\SizeLimitErrorEnum_SizeLimitError::class);
+        $this->writeOneof(118, $var);
 
         return $this;
     }

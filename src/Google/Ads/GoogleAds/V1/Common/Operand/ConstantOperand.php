@@ -50,6 +50,20 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getStringValue()</code>
+
+     * String value of the operand if it is a string type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 1;</code>
+     * @return string|null
+     */
+    public function getStringValueValue()
+    {
+        $wrapper = $this->getStringValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * String value of the operand if it is a string type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 1;</code>
@@ -65,6 +79,21 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * String value of the operand if it is a string type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setStringValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setStringValue($wrappedVar);
+    }
+
+    /**
      * Int64 value of the operand if it is a int64 type.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value long_value = 2;</code>
@@ -73,6 +102,20 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
     public function getLongValue()
     {
         return $this->readOneof(2);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLongValue()</code>
+
+     * Int64 value of the operand if it is a int64 type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value long_value = 2;</code>
+     * @return int|string|null
+     */
+    public function getLongValueValue()
+    {
+        $wrapper = $this->getLongValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -91,6 +134,21 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Int64 value of the operand if it is a int64 type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value long_value = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setLongValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setLongValue($wrappedVar);
+    }
+
+    /**
      * Boolean value of the operand if it is a boolean type.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue boolean_value = 3;</code>
@@ -99,6 +157,20 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
     public function getBooleanValue()
     {
         return $this->readOneof(3);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBooleanValue()</code>
+
+     * Boolean value of the operand if it is a boolean type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue boolean_value = 3;</code>
+     * @return bool|null
+     */
+    public function getBooleanValueValue()
+    {
+        $wrapper = $this->getBooleanValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -117,6 +189,21 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Boolean value of the operand if it is a boolean type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue boolean_value = 3;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setBooleanValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setBooleanValue($wrappedVar);
+    }
+
+    /**
      * Double value of the operand if it is a double type.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue double_value = 4;</code>
@@ -125,6 +212,20 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
     public function getDoubleValue()
     {
         return $this->readOneof(4);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDoubleValue()</code>
+
+     * Double value of the operand if it is a double type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue double_value = 4;</code>
+     * @return float|null
+     */
+    public function getDoubleValueValue()
+    {
+        $wrapper = $this->getDoubleValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -140,6 +241,21 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
         $this->writeOneof(4, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Double value of the operand if it is a double type.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue double_value = 4;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setDoubleValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setDoubleValue($wrappedVar);
     }
 
     /**

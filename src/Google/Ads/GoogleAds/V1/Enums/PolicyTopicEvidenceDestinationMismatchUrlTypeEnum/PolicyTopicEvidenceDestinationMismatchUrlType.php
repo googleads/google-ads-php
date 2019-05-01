@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\PolicyTopicEvidenceDestinationMismatchUrlTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The possible policy topic evidence destination mismatch url types.
  *
@@ -54,6 +56,36 @@ class PolicyTopicEvidenceDestinationMismatchUrlType
      * Generated from protobuf enum <code>MOBILE_TRACKING_URL = 6;</code>
      */
     const MOBILE_TRACKING_URL = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::DISPLAY_URL => 'DISPLAY_URL',
+        self::FINAL_URL => 'FINAL_URL',
+        self::FINAL_MOBILE_URL => 'FINAL_MOBILE_URL',
+        self::TRACKING_URL => 'TRACKING_URL',
+        self::MOBILE_TRACKING_URL => 'MOBILE_TRACKING_URL',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

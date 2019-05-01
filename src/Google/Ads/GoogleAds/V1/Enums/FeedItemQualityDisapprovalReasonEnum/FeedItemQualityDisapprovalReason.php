@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\FeedItemQualityDisapprovalReasonEnum;
 
+use UnexpectedValueException;
+
 /**
  * The possible quality evaluation disapproval reasons of a feed item.
  *
@@ -131,6 +133,49 @@ class FeedItemQualityDisapprovalReason
      * Generated from protobuf enum <code>STRUCTURED_SNIPPETS_HAS_PROMOTIONAL_TEXT = 19;</code>
      */
     const STRUCTURED_SNIPPETS_HAS_PROMOTIONAL_TEXT = 19;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::PRICE_TABLE_REPETITIVE_HEADERS => 'PRICE_TABLE_REPETITIVE_HEADERS',
+        self::PRICE_TABLE_REPETITIVE_DESCRIPTION => 'PRICE_TABLE_REPETITIVE_DESCRIPTION',
+        self::PRICE_TABLE_INCONSISTENT_ROWS => 'PRICE_TABLE_INCONSISTENT_ROWS',
+        self::PRICE_DESCRIPTION_HAS_PRICE_QUALIFIERS => 'PRICE_DESCRIPTION_HAS_PRICE_QUALIFIERS',
+        self::PRICE_UNSUPPORTED_LANGUAGE => 'PRICE_UNSUPPORTED_LANGUAGE',
+        self::PRICE_TABLE_ROW_HEADER_TABLE_TYPE_MISMATCH => 'PRICE_TABLE_ROW_HEADER_TABLE_TYPE_MISMATCH',
+        self::PRICE_TABLE_ROW_HEADER_HAS_PROMOTIONAL_TEXT => 'PRICE_TABLE_ROW_HEADER_HAS_PROMOTIONAL_TEXT',
+        self::PRICE_TABLE_ROW_DESCRIPTION_NOT_RELEVANT => 'PRICE_TABLE_ROW_DESCRIPTION_NOT_RELEVANT',
+        self::PRICE_TABLE_ROW_DESCRIPTION_HAS_PROMOTIONAL_TEXT => 'PRICE_TABLE_ROW_DESCRIPTION_HAS_PROMOTIONAL_TEXT',
+        self::PRICE_TABLE_ROW_HEADER_DESCRIPTION_REPETITIVE => 'PRICE_TABLE_ROW_HEADER_DESCRIPTION_REPETITIVE',
+        self::PRICE_TABLE_ROW_UNRATEABLE => 'PRICE_TABLE_ROW_UNRATEABLE',
+        self::PRICE_TABLE_ROW_PRICE_INVALID => 'PRICE_TABLE_ROW_PRICE_INVALID',
+        self::PRICE_TABLE_ROW_URL_INVALID => 'PRICE_TABLE_ROW_URL_INVALID',
+        self::PRICE_HEADER_OR_DESCRIPTION_HAS_PRICE => 'PRICE_HEADER_OR_DESCRIPTION_HAS_PRICE',
+        self::STRUCTURED_SNIPPETS_HEADER_POLICY_VIOLATED => 'STRUCTURED_SNIPPETS_HEADER_POLICY_VIOLATED',
+        self::STRUCTURED_SNIPPETS_REPEATED_VALUES => 'STRUCTURED_SNIPPETS_REPEATED_VALUES',
+        self::STRUCTURED_SNIPPETS_EDITORIAL_GUIDELINES => 'STRUCTURED_SNIPPETS_EDITORIAL_GUIDELINES',
+        self::STRUCTURED_SNIPPETS_HAS_PROMOTIONAL_TEXT => 'STRUCTURED_SNIPPETS_HAS_PROMOTIONAL_TEXT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

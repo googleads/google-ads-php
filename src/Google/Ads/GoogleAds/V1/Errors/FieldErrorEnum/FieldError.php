@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\FieldErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible field errors.
  *
@@ -24,7 +26,7 @@ class FieldError
      */
     const UNKNOWN = 1;
     /**
-     * The required field was not present in the resource.
+     * The required field was not present.
      *
      * Generated from protobuf enum <code>REQUIRED = 2;</code>
      */
@@ -65,6 +67,38 @@ class FieldError
      * Generated from protobuf enum <code>BLACKLISTED_VALUE = 8;</code>
      */
     const BLACKLISTED_VALUE = 8;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::REQUIRED => 'REQUIRED',
+        self::IMMUTABLE_FIELD => 'IMMUTABLE_FIELD',
+        self::INVALID_VALUE => 'INVALID_VALUE',
+        self::VALUE_MUST_BE_UNSET => 'VALUE_MUST_BE_UNSET',
+        self::REQUIRED_NONEMPTY_LIST => 'REQUIRED_NONEMPTY_LIST',
+        self::FIELD_CANNOT_BE_CLEARED => 'FIELD_CANNOT_BE_CLEARED',
+        self::BLACKLISTED_VALUE => 'BLACKLISTED_VALUE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -33,7 +33,7 @@ class UserListCombinedRuleOperator
             "6f6f676c654164735c56315c456e756d73ea0221476f6f676c653a3a4164" .
             "733a3a476f6f676c654164733a3a56313a3a456e756d73620670726f746f" .
             "33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

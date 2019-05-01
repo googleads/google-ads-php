@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\RecommendationTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Types of recommendations.
  *
@@ -82,6 +84,24 @@ class RecommendationType
      */
     const OPTIMIZE_AD_ROTATION = 10;
     /**
+     * Recommendation to add callout extensions to a campaign.
+     *
+     * Generated from protobuf enum <code>CALLOUT_EXTENSION = 11;</code>
+     */
+    const CALLOUT_EXTENSION = 11;
+    /**
+     * Recommendation to add sitelink extensions to a campaign.
+     *
+     * Generated from protobuf enum <code>SITELINK_EXTENSION = 12;</code>
+     */
+    const SITELINK_EXTENSION = 12;
+    /**
+     * Recommendation to add call extensions to a campaign.
+     *
+     * Generated from protobuf enum <code>CALL_EXTENSION = 13;</code>
+     */
+    const CALL_EXTENSION = 13;
+    /**
      * Recommendation to change an existing keyword from one match type to a
      * broader match type.
      *
@@ -95,6 +115,45 @@ class RecommendationType
      * Generated from protobuf enum <code>MOVE_UNUSED_BUDGET = 15;</code>
      */
     const MOVE_UNUSED_BUDGET = 15;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CAMPAIGN_BUDGET => 'CAMPAIGN_BUDGET',
+        self::KEYWORD => 'KEYWORD',
+        self::TEXT_AD => 'TEXT_AD',
+        self::TARGET_CPA_OPT_IN => 'TARGET_CPA_OPT_IN',
+        self::MAXIMIZE_CONVERSIONS_OPT_IN => 'MAXIMIZE_CONVERSIONS_OPT_IN',
+        self::ENHANCED_CPC_OPT_IN => 'ENHANCED_CPC_OPT_IN',
+        self::SEARCH_PARTNERS_OPT_IN => 'SEARCH_PARTNERS_OPT_IN',
+        self::MAXIMIZE_CLICKS_OPT_IN => 'MAXIMIZE_CLICKS_OPT_IN',
+        self::OPTIMIZE_AD_ROTATION => 'OPTIMIZE_AD_ROTATION',
+        self::CALLOUT_EXTENSION => 'CALLOUT_EXTENSION',
+        self::SITELINK_EXTENSION => 'SITELINK_EXTENSION',
+        self::CALL_EXTENSION => 'CALL_EXTENSION',
+        self::KEYWORD_MATCH_TYPE => 'KEYWORD_MATCH_TYPE',
+        self::MOVE_UNUSED_BUDGET => 'MOVE_UNUSED_BUDGET',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

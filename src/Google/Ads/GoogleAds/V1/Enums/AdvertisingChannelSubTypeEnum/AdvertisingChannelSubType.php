@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AdvertisingChannelSubTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing the different channel subtypes.
  *
@@ -84,11 +86,58 @@ class AdvertisingChannelSubType
      */
     const VIDEO_NON_SKIPPABLE = 11;
     /**
-     * Universal App Campaign.
+     * App Campaign that allows you to easily promote your Android or iOS app
+     * across Google's top properties including Search, Play, YouTube, and the
+     * Google Display Network.
      *
      * Generated from protobuf enum <code>APP_CAMPAIGN = 12;</code>
      */
     const APP_CAMPAIGN = 12;
+    /**
+     * App Campaign for engagement, focused on driving re-engagement with the
+     * app across several of Google’s top properties including Search, YouTube,
+     * and the Google Display Network.
+     *
+     * Generated from protobuf enum <code>APP_CAMPAIGN_FOR_ENGAGEMENT = 13;</code>
+     */
+    const APP_CAMPAIGN_FOR_ENGAGEMENT = 13;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::SEARCH_MOBILE_APP => 'SEARCH_MOBILE_APP',
+        self::DISPLAY_MOBILE_APP => 'DISPLAY_MOBILE_APP',
+        self::SEARCH_EXPRESS => 'SEARCH_EXPRESS',
+        self::DISPLAY_EXPRESS => 'DISPLAY_EXPRESS',
+        self::SHOPPING_SMART_ADS => 'SHOPPING_SMART_ADS',
+        self::DISPLAY_GMAIL_AD => 'DISPLAY_GMAIL_AD',
+        self::DISPLAY_SMART_CAMPAIGN => 'DISPLAY_SMART_CAMPAIGN',
+        self::VIDEO_OUTSTREAM => 'VIDEO_OUTSTREAM',
+        self::VIDEO_ACTION => 'VIDEO_ACTION',
+        self::VIDEO_NON_SKIPPABLE => 'VIDEO_NON_SKIPPABLE',
+        self::APP_CAMPAIGN => 'APP_CAMPAIGN',
+        self::APP_CAMPAIGN_FOR_ENGAGEMENT => 'APP_CAMPAIGN_FOR_ENGAGEMENT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

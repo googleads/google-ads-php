@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Shared Set service.
+ *
  * Service to manage shared sets.
  */
 class SharedSetServiceGrpcClient extends \Grpc\BaseStub {

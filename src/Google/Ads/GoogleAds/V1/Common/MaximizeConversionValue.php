@@ -62,6 +62,24 @@ class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTargetRoas()</code>
+
+     * The target return on ad spend (ROAS) option. If set, the bid strategy will
+     * maximize revenue while averaging the target return on ad spend. If the
+     * target ROAS is high, the bid strategy may not be able to spend the full
+     * budget. If the target ROAS is not set, the bid strategy will aim to
+     * achieve the highest possible ROAS for the budget.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 1;</code>
+     * @return float|null
+     */
+    public function getTargetRoasValue()
+    {
+        $wrapper = $this->getTargetRoas();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The target return on ad spend (ROAS) option. If set, the bid strategy will
      * maximize revenue while averaging the target return on ad spend. If the
      * target ROAS is high, the bid strategy may not be able to spend the full
@@ -78,6 +96,25 @@ class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
         $this->target_roas = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The target return on ad spend (ROAS) option. If set, the bid strategy will
+     * maximize revenue while averaging the target return on ad spend. If the
+     * target ROAS is high, the bid strategy may not be able to spend the full
+     * budget. If the target ROAS is not set, the bid strategy will aim to
+     * achieve the highest possible ROAS for the budget.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 1;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setTargetRoasValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setTargetRoas($wrappedVar);
     }
 
 }

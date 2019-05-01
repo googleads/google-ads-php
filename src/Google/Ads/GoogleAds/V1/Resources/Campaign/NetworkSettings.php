@@ -79,6 +79,20 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTargetGoogleSearch()</code>
+
+     * Whether ads will be served with google.com search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue target_google_search = 1;</code>
+     * @return bool|null
+     */
+    public function getTargetGoogleSearchValue()
+    {
+        $wrapper = $this->getTargetGoogleSearch();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Whether ads will be served with google.com search results.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_google_search = 1;</code>
@@ -94,6 +108,21 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether ads will be served with google.com search results.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue target_google_search = 1;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setTargetGoogleSearchValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setTargetGoogleSearch($wrappedVar);
+    }
+
+    /**
      * Whether ads will be served on partner sites in the Google Search Network
      * (requires `target_google_search` to also be `true`).
      *
@@ -103,6 +132,21 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     public function getTargetSearchNetwork()
     {
         return $this->target_search_network;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTargetSearchNetwork()</code>
+
+     * Whether ads will be served on partner sites in the Google Search Network
+     * (requires `target_google_search` to also be `true`).
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue target_search_network = 2;</code>
+     * @return bool|null
+     */
+    public function getTargetSearchNetworkValue()
+    {
+        $wrapper = $this->getTargetSearchNetwork();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -122,6 +166,22 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether ads will be served on partner sites in the Google Search Network
+     * (requires `target_google_search` to also be `true`).
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue target_search_network = 2;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setTargetSearchNetworkValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setTargetSearchNetwork($wrappedVar);
+    }
+
+    /**
      * Whether ads will be served on specified placements in the Google Display
      * Network. Placements are specified using the Placement criterion.
      *
@@ -131,6 +191,21 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     public function getTargetContentNetwork()
     {
         return $this->target_content_network;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTargetContentNetwork()</code>
+
+     * Whether ads will be served on specified placements in the Google Display
+     * Network. Placements are specified using the Placement criterion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue target_content_network = 3;</code>
+     * @return bool|null
+     */
+    public function getTargetContentNetworkValue()
+    {
+        $wrapper = $this->getTargetContentNetwork();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -150,6 +225,22 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether ads will be served on specified placements in the Google Display
+     * Network. Placements are specified using the Placement criterion.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue target_content_network = 3;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setTargetContentNetworkValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setTargetContentNetwork($wrappedVar);
+    }
+
+    /**
      * Whether ads will be served on the Google Partner Network.
      * This is available only to some select Google partner accounts.
      *
@@ -159,6 +250,21 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
     public function getTargetPartnerSearchNetwork()
     {
         return $this->target_partner_search_network;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTargetPartnerSearchNetwork()</code>
+
+     * Whether ads will be served on the Google Partner Network.
+     * This is available only to some select Google partner accounts.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue target_partner_search_network = 4;</code>
+     * @return bool|null
+     */
+    public function getTargetPartnerSearchNetworkValue()
+    {
+        $wrapper = $this->getTargetPartnerSearchNetwork();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -175,6 +281,22 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
         $this->target_partner_search_network = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether ads will be served on the Google Partner Network.
+     * This is available only to some select Google partner accounts.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue target_partner_search_network = 4;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setTargetPartnerSearchNetworkValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setTargetPartnerSearchNetwork($wrappedVar);
     }
 
 }

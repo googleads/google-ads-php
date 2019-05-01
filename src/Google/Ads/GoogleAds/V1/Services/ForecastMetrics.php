@@ -81,6 +81,20 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getImpressions()</code>
+
+     * Impressions
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * @return float|null
+     */
+    public function getImpressionsValue()
+    {
+        $wrapper = $this->getImpressions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Impressions
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
@@ -96,6 +110,21 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Impressions
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setImpressionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setImpressions($wrappedVar);
+    }
+
+    /**
      * Ctr
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 2;</code>
@@ -104,6 +133,20 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     public function getCtr()
     {
         return $this->ctr;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCtr()</code>
+
+     * Ctr
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 2;</code>
+     * @return float|null
+     */
+    public function getCtrValue()
+    {
+        $wrapper = $this->getCtr();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -122,6 +165,21 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Ctr
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 2;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setCtrValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setCtr($wrappedVar);
+    }
+
+    /**
      * AVG cpc
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value average_cpc = 3;</code>
@@ -130,6 +188,20 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     public function getAverageCpc()
     {
         return $this->average_cpc;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAverageCpc()</code>
+
+     * AVG cpc
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value average_cpc = 3;</code>
+     * @return int|string|null
+     */
+    public function getAverageCpcValue()
+    {
+        $wrapper = $this->getAverageCpc();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -148,6 +220,21 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * AVG cpc
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value average_cpc = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setAverageCpcValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setAverageCpc($wrappedVar);
+    }
+
+    /**
      * Clicks
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 5;</code>
@@ -156,6 +243,20 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     public function getClicks()
     {
         return $this->clicks;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getClicks()</code>
+
+     * Clicks
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 5;</code>
+     * @return float|null
+     */
+    public function getClicksValue()
+    {
+        $wrapper = $this->getClicks();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -174,6 +275,21 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Clicks
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 5;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setClicksValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setClicks($wrappedVar);
+    }
+
+    /**
      * Cost
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 6;</code>
@@ -182,6 +298,20 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
     public function getCostMicros()
     {
         return $this->cost_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCostMicros()</code>
+
+     * Cost
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 6;</code>
+     * @return int|string|null
+     */
+    public function getCostMicrosValue()
+    {
+        $wrapper = $this->getCostMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -197,6 +327,21 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
         $this->cost_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Cost
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 6;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCostMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCostMicros($wrappedVar);
     }
 
 }

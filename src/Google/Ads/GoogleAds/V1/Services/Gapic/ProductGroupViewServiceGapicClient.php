@@ -32,6 +32,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -282,6 +283,13 @@ class ProductGroupViewServiceGapicClient
     {
         $request = new GetProductGroupViewRequest();
         $request->setResourceName($resourceName);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'GetProductGroupView',

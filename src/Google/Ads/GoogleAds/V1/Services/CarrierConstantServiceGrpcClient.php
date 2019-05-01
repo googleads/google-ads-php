@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the carrier constant service.
+ *
  * Service to fetch carrier constants.
  */
 class CarrierConstantServiceGrpcClient extends \Grpc\BaseStub {

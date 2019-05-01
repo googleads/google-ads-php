@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the language constant service.
+ *
  * Service to fetch language constants.
  */
 class LanguageConstantServiceGrpcClient extends \Grpc\BaseStub {

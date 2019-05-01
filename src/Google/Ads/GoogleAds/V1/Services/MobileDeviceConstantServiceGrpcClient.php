@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the mobile device constant service.
+ *
  * Service to fetch mobile device constants.
  */
 class MobileDeviceConstantServiceGrpcClient extends \Grpc\BaseStub {

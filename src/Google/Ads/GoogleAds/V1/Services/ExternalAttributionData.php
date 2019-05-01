@@ -60,6 +60,21 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getExternalAttributionCredit()</code>
+
+     * Represents the fraction of the conversion that is attributed to the
+     * Google Ads click.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue external_attribution_credit = 1;</code>
+     * @return float|null
+     */
+    public function getExternalAttributionCreditValue()
+    {
+        $wrapper = $this->getExternalAttributionCredit();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Represents the fraction of the conversion that is attributed to the
      * Google Ads click.
      *
@@ -76,6 +91,22 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Represents the fraction of the conversion that is attributed to the
+     * Google Ads click.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue external_attribution_credit = 1;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setExternalAttributionCreditValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setExternalAttributionCredit($wrappedVar);
+    }
+
+    /**
      * Specifies the attribution model name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue external_attribution_model = 2;</code>
@@ -84,6 +115,20 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
     public function getExternalAttributionModel()
     {
         return $this->external_attribution_model;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getExternalAttributionModel()</code>
+
+     * Specifies the attribution model name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue external_attribution_model = 2;</code>
+     * @return string|null
+     */
+    public function getExternalAttributionModelValue()
+    {
+        $wrapper = $this->getExternalAttributionModel();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -99,6 +144,21 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
         $this->external_attribution_model = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Specifies the attribution model name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue external_attribution_model = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setExternalAttributionModelValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setExternalAttributionModel($wrappedVar);
     }
 
 }

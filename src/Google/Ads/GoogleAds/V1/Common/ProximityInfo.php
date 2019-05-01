@@ -105,6 +105,20 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getRadius()</code>
+
+     * The radius of the proximity.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue radius = 2;</code>
+     * @return float|null
+     */
+    public function getRadiusValue()
+    {
+        $wrapper = $this->getRadius();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The radius of the proximity.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue radius = 2;</code>
@@ -117,6 +131,21 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
         $this->radius = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The radius of the proximity.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue radius = 2;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setRadiusValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setRadius($wrappedVar);
     }
 
     /**

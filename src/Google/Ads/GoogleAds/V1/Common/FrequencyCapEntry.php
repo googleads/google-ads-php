@@ -88,6 +88,20 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCap()</code>
+
+     * Maximum number of events allowed during the time range by this cap.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value cap = 2;</code>
+     * @return int|null
+     */
+    public function getCapValue()
+    {
+        $wrapper = $this->getCap();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Maximum number of events allowed during the time range by this cap.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cap = 2;</code>
@@ -100,6 +114,21 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
         $this->cap = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * Maximum number of events allowed during the time range by this cap.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value cap = 2;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setCapValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setCap($wrappedVar);
     }
 
 }

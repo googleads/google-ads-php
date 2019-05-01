@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Bidding Strategy service.
+ *
  * Service to manage bidding strategies.
  */
 class BiddingStrategyServiceGrpcClient extends \Grpc\BaseStub {

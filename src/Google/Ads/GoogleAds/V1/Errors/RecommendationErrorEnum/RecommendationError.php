@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\RecommendationErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible errors from applying a recommendation.
  *
@@ -111,6 +113,45 @@ class RecommendationError
      * Generated from protobuf enum <code>INVALID_APPLY_REQUEST = 15;</code>
      */
     const INVALID_APPLY_REQUEST = 15;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::BUDGET_AMOUNT_TOO_SMALL => 'BUDGET_AMOUNT_TOO_SMALL',
+        self::BUDGET_AMOUNT_TOO_LARGE => 'BUDGET_AMOUNT_TOO_LARGE',
+        self::INVALID_BUDGET_AMOUNT => 'INVALID_BUDGET_AMOUNT',
+        self::POLICY_ERROR => 'POLICY_ERROR',
+        self::INVALID_BID_AMOUNT => 'INVALID_BID_AMOUNT',
+        self::ADGROUP_KEYWORD_LIMIT => 'ADGROUP_KEYWORD_LIMIT',
+        self::RECOMMENDATION_ALREADY_APPLIED => 'RECOMMENDATION_ALREADY_APPLIED',
+        self::RECOMMENDATION_INVALIDATED => 'RECOMMENDATION_INVALIDATED',
+        self::TOO_MANY_OPERATIONS => 'TOO_MANY_OPERATIONS',
+        self::NO_OPERATIONS => 'NO_OPERATIONS',
+        self::DIFFERENT_TYPES_NOT_SUPPORTED => 'DIFFERENT_TYPES_NOT_SUPPORTED',
+        self::DUPLICATE_RESOURCE_NAME => 'DUPLICATE_RESOURCE_NAME',
+        self::RECOMMENDATION_ALREADY_DISMISSED => 'RECOMMENDATION_ALREADY_DISMISSED',
+        self::INVALID_APPLY_REQUEST => 'INVALID_APPLY_REQUEST',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

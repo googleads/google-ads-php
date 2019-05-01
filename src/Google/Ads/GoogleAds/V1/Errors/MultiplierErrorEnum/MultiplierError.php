@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\MultiplierErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible multiplier errors.
  *
@@ -96,6 +98,43 @@ class MultiplierError
      * Generated from protobuf enum <code>MULTIPLIER_AND_BIDDING_STRATEGY_TYPE_MISMATCH = 13;</code>
      */
     const MULTIPLIER_AND_BIDDING_STRATEGY_TYPE_MISMATCH = 13;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::MULTIPLIER_TOO_HIGH => 'MULTIPLIER_TOO_HIGH',
+        self::MULTIPLIER_TOO_LOW => 'MULTIPLIER_TOO_LOW',
+        self::TOO_MANY_FRACTIONAL_DIGITS => 'TOO_MANY_FRACTIONAL_DIGITS',
+        self::MULTIPLIER_NOT_ALLOWED_FOR_BIDDING_STRATEGY => 'MULTIPLIER_NOT_ALLOWED_FOR_BIDDING_STRATEGY',
+        self::MULTIPLIER_NOT_ALLOWED_WHEN_BASE_BID_IS_MISSING => 'MULTIPLIER_NOT_ALLOWED_WHEN_BASE_BID_IS_MISSING',
+        self::NO_MULTIPLIER_SPECIFIED => 'NO_MULTIPLIER_SPECIFIED',
+        self::MULTIPLIER_CAUSES_BID_TO_EXCEED_DAILY_BUDGET => 'MULTIPLIER_CAUSES_BID_TO_EXCEED_DAILY_BUDGET',
+        self::MULTIPLIER_CAUSES_BID_TO_EXCEED_MONTHLY_BUDGET => 'MULTIPLIER_CAUSES_BID_TO_EXCEED_MONTHLY_BUDGET',
+        self::MULTIPLIER_CAUSES_BID_TO_EXCEED_CUSTOM_BUDGET => 'MULTIPLIER_CAUSES_BID_TO_EXCEED_CUSTOM_BUDGET',
+        self::MULTIPLIER_CAUSES_BID_TO_EXCEED_MAX_ALLOWED_BID => 'MULTIPLIER_CAUSES_BID_TO_EXCEED_MAX_ALLOWED_BID',
+        self::BID_LESS_THAN_MIN_ALLOWED_BID_WITH_MULTIPLIER => 'BID_LESS_THAN_MIN_ALLOWED_BID_WITH_MULTIPLIER',
+        self::MULTIPLIER_AND_BIDDING_STRATEGY_TYPE_MISMATCH => 'MULTIPLIER_AND_BIDDING_STRATEGY_TYPE_MISMATCH',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

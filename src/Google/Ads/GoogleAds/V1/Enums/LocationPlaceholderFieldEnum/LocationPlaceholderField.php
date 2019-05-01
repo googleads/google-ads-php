@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\LocationPlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Location placeholder fields.
  *
@@ -71,6 +73,39 @@ class LocationPlaceholderField
      * Generated from protobuf enum <code>PHONE_NUMBER = 9;</code>
      */
     const PHONE_NUMBER = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::BUSINESS_NAME => 'BUSINESS_NAME',
+        self::ADDRESS_LINE_1 => 'ADDRESS_LINE_1',
+        self::ADDRESS_LINE_2 => 'ADDRESS_LINE_2',
+        self::CITY => 'CITY',
+        self::PROVINCE => 'PROVINCE',
+        self::POSTAL_CODE => 'POSTAL_CODE',
+        self::COUNTRY_CODE => 'COUNTRY_CODE',
+        self::PHONE_NUMBER => 'PHONE_NUMBER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

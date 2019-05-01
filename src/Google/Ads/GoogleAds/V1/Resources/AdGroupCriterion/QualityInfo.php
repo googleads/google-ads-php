@@ -79,6 +79,22 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getQualityScore()</code>
+
+     * The quality score.
+     * This field may not be populated if Google does not have enough
+     * information to determine a value.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
+     * @return int|null
+     */
+    public function getQualityScoreValue()
+    {
+        $wrapper = $this->getQualityScore();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The quality score.
      * This field may not be populated if Google does not have enough
      * information to determine a value.
@@ -93,6 +109,23 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
         $this->quality_score = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * The quality score.
+     * This field may not be populated if Google does not have enough
+     * information to determine a value.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setQualityScoreValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setQualityScore($wrappedVar);
     }
 
     /**

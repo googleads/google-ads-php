@@ -77,6 +77,27 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * Rule variable name. It should match the corresponding key name fired
+     * by the pixel.
+     * A name must begin with US-ascii letters or underscore or UTF8 code that is
+     * greater than 127 and consist of US-ascii letters or digits or underscore or
+     * UTF8 code that is greater than 127.
+     * For websites, there are two built-in variable URL (name = 'url__') and
+     * referrer URL (name = 'ref_url__').
+     * This field must be populated when creating a new rule item.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 1;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Rule variable name. It should match the corresponding key name fired
      * by the pixel.
      * A name must begin with US-ascii letters or underscore or UTF8 code that is
@@ -96,6 +117,28 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Rule variable name. It should match the corresponding key name fired
+     * by the pixel.
+     * A name must begin with US-ascii letters or underscore or UTF8 code that is
+     * greater than 127 and consist of US-ascii letters or digits or underscore or
+     * UTF8 code that is greater than 127.
+     * For websites, there are two built-in variable URL (name = 'url__') and
+     * referrer URL (name = 'ref_url__').
+     * This field must be populated when creating a new rule item.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**

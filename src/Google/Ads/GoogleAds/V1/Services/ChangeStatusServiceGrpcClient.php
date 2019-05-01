@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Change Status service.
+ *
  * Service to fetch change statuses.
  */
 class ChangeStatusServiceGrpcClient extends \Grpc\BaseStub {

@@ -113,6 +113,21 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the Merchant Center account.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the Merchant Center account.
      * This field is readonly.
      *
@@ -129,6 +144,22 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the Merchant Center account.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the Merchant Center account.
      * This field is readonly.
      *
@@ -138,6 +169,21 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     public function getMerchantCenterAccountName()
     {
         return $this->merchant_center_account_name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMerchantCenterAccountName()</code>
+
+     * The name of the Merchant Center account.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4;</code>
+     * @return string|null
+     */
+    public function getMerchantCenterAccountNameValue()
+    {
+        $wrapper = $this->getMerchantCenterAccountName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -154,6 +200,22 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
         $this->merchant_center_account_name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the Merchant Center account.
+     * This field is readonly.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setMerchantCenterAccountNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setMerchantCenterAccountName($wrappedVar);
     }
 
     /**

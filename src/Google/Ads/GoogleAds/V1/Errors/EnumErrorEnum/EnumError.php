@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\EnumErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible enum errors.
  *
@@ -29,6 +31,32 @@ class EnumError
      * Generated from protobuf enum <code>ENUM_VALUE_NOT_PERMITTED = 3;</code>
      */
     const ENUM_VALUE_NOT_PERMITTED = 3;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::ENUM_VALUE_NOT_PERMITTED => 'ENUM_VALUE_NOT_PERMITTED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

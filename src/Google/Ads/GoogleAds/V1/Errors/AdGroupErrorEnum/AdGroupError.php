@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\AdGroupErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible ad group errors.
  *
@@ -98,6 +100,43 @@ class AdGroupError
      * Generated from protobuf enum <code>CANNOT_ADD_ADGROUP_OF_TYPE_DSA_TO_CAMPAIGN_WITHOUT_DSA_SETTING = 14;</code>
      */
     const CANNOT_ADD_ADGROUP_OF_TYPE_DSA_TO_CAMPAIGN_WITHOUT_DSA_SETTING = 14;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::DUPLICATE_ADGROUP_NAME => 'DUPLICATE_ADGROUP_NAME',
+        self::INVALID_ADGROUP_NAME => 'INVALID_ADGROUP_NAME',
+        self::ADVERTISER_NOT_ON_CONTENT_NETWORK => 'ADVERTISER_NOT_ON_CONTENT_NETWORK',
+        self::BID_TOO_BIG => 'BID_TOO_BIG',
+        self::BID_TYPE_AND_BIDDING_STRATEGY_MISMATCH => 'BID_TYPE_AND_BIDDING_STRATEGY_MISMATCH',
+        self::MISSING_ADGROUP_NAME => 'MISSING_ADGROUP_NAME',
+        self::ADGROUP_LABEL_DOES_NOT_EXIST => 'ADGROUP_LABEL_DOES_NOT_EXIST',
+        self::ADGROUP_LABEL_ALREADY_EXISTS => 'ADGROUP_LABEL_ALREADY_EXISTS',
+        self::INVALID_CONTENT_BID_CRITERION_TYPE_GROUP => 'INVALID_CONTENT_BID_CRITERION_TYPE_GROUP',
+        self::AD_GROUP_TYPE_NOT_VALID_FOR_ADVERTISING_CHANNEL_TYPE => 'AD_GROUP_TYPE_NOT_VALID_FOR_ADVERTISING_CHANNEL_TYPE',
+        self::ADGROUP_TYPE_NOT_SUPPORTED_FOR_CAMPAIGN_SALES_COUNTRY => 'ADGROUP_TYPE_NOT_SUPPORTED_FOR_CAMPAIGN_SALES_COUNTRY',
+        self::CANNOT_ADD_ADGROUP_OF_TYPE_DSA_TO_CAMPAIGN_WITHOUT_DSA_SETTING => 'CANNOT_ADD_ADGROUP_OF_TYPE_DSA_TO_CAMPAIGN_WITHOUT_DSA_SETTING',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

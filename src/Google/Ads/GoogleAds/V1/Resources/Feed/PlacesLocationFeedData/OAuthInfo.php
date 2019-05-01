@@ -65,6 +65,20 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHttpMethod()</code>
+
+     * The HTTP method used to obtain authorization.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue http_method = 1;</code>
+     * @return string|null
+     */
+    public function getHttpMethodValue()
+    {
+        $wrapper = $this->getHttpMethod();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The HTTP method used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_method = 1;</code>
@@ -80,6 +94,21 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The HTTP method used to obtain authorization.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue http_method = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHttpMethodValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHttpMethod($wrappedVar);
+    }
+
+    /**
      * The HTTP request URL used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_request_url = 2;</code>
@@ -88,6 +117,20 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     public function getHttpRequestUrl()
     {
         return $this->http_request_url;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHttpRequestUrl()</code>
+
+     * The HTTP request URL used to obtain authorization.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue http_request_url = 2;</code>
+     * @return string|null
+     */
+    public function getHttpRequestUrlValue()
+    {
+        $wrapper = $this->getHttpRequestUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -106,6 +149,21 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The HTTP request URL used to obtain authorization.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue http_request_url = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHttpRequestUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHttpRequestUrl($wrappedVar);
+    }
+
+    /**
      * The HTTP authorization header used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_authorization_header = 3;</code>
@@ -114,6 +172,20 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
     public function getHttpAuthorizationHeader()
     {
         return $this->http_authorization_header;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHttpAuthorizationHeader()</code>
+
+     * The HTTP authorization header used to obtain authorization.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue http_authorization_header = 3;</code>
+     * @return string|null
+     */
+    public function getHttpAuthorizationHeaderValue()
+    {
+        $wrapper = $this->getHttpAuthorizationHeader();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -129,6 +201,21 @@ class OAuthInfo extends \Google\Protobuf\Internal\Message
         $this->http_authorization_header = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The HTTP authorization header used to obtain authorization.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue http_authorization_header = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHttpAuthorizationHeaderValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHttpAuthorizationHeader($wrappedVar);
     }
 
 }

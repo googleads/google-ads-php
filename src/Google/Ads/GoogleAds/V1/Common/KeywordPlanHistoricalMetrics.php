@@ -57,6 +57,20 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAvgMonthlySearches()</code>
+
+     * Average monthly searches for the past 12 months.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value avg_monthly_searches = 1;</code>
+     * @return int|string|null
+     */
+    public function getAvgMonthlySearchesValue()
+    {
+        $wrapper = $this->getAvgMonthlySearches();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Average monthly searches for the past 12 months.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value avg_monthly_searches = 1;</code>
@@ -69,6 +83,21 @@ class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
         $this->avg_monthly_searches = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Average monthly searches for the past 12 months.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value avg_monthly_searches = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setAvgMonthlySearchesValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setAvgMonthlySearches($wrappedVar);
     }
 
     /**

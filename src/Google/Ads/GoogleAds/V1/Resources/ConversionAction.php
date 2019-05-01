@@ -221,6 +221,20 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the conversion action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -236,6 +250,21 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the conversion action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the conversion action.
      * This field is required and should not be empty when creating new
      * conversion actions.
@@ -246,6 +275,22 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the conversion action.
+     * This field is required and should not be empty when creating new
+     * conversion actions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -263,6 +308,23 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the conversion action.
+     * This field is required and should not be empty when creating new
+     * conversion actions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -356,6 +418,21 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getOwnerCustomer()</code>
+
+     * The resource name of the conversion action owner customer, or null if this
+     * is a system-defined conversion action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7;</code>
+     * @return string|null
+     */
+    public function getOwnerCustomerValue()
+    {
+        $wrapper = $this->getOwnerCustomer();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
@@ -372,6 +449,22 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the conversion action owner customer, or null if this
+     * is a system-defined conversion action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setOwnerCustomerValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setOwnerCustomer($wrappedVar);
+    }
+
+    /**
      * Whether this conversion action should be included in the "conversions"
      * metric.
      *
@@ -381,6 +474,21 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     public function getIncludeInConversionsMetric()
     {
         return $this->include_in_conversions_metric;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getIncludeInConversionsMetric()</code>
+
+     * Whether this conversion action should be included in the "conversions"
+     * metric.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue include_in_conversions_metric = 8;</code>
+     * @return bool|null
+     */
+    public function getIncludeInConversionsMetricValue()
+    {
+        $wrapper = $this->getIncludeInConversionsMetric();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -400,6 +508,22 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether this conversion action should be included in the "conversions"
+     * metric.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue include_in_conversions_metric = 8;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setIncludeInConversionsMetricValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setIncludeInConversionsMetric($wrappedVar);
+    }
+
+    /**
      * The maximum number of days that may elapse between an interaction
      * (e.g., a click) and a conversion event.
      *
@@ -409,6 +533,21 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     public function getClickThroughLookbackWindowDays()
     {
         return $this->click_through_lookback_window_days;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getClickThroughLookbackWindowDays()</code>
+
+     * The maximum number of days that may elapse between an interaction
+     * (e.g., a click) and a conversion event.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value click_through_lookback_window_days = 9;</code>
+     * @return int|string|null
+     */
+    public function getClickThroughLookbackWindowDaysValue()
+    {
+        $wrapper = $this->getClickThroughLookbackWindowDays();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -428,6 +567,22 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The maximum number of days that may elapse between an interaction
+     * (e.g., a click) and a conversion event.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value click_through_lookback_window_days = 9;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setClickThroughLookbackWindowDaysValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setClickThroughLookbackWindowDays($wrappedVar);
+    }
+
+    /**
      * The maximum number of days which may elapse between an impression and a
      * conversion without an interaction.
      *
@@ -437,6 +592,21 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     public function getViewThroughLookbackWindowDays()
     {
         return $this->view_through_lookback_window_days;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getViewThroughLookbackWindowDays()</code>
+
+     * The maximum number of days which may elapse between an impression and a
+     * conversion without an interaction.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value view_through_lookback_window_days = 10;</code>
+     * @return int|string|null
+     */
+    public function getViewThroughLookbackWindowDaysValue()
+    {
+        $wrapper = $this->getViewThroughLookbackWindowDays();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -453,6 +623,22 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
         $this->view_through_lookback_window_days = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The maximum number of days which may elapse between an impression and a
+     * conversion without an interaction.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value view_through_lookback_window_days = 10;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setViewThroughLookbackWindowDaysValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setViewThroughLookbackWindowDays($wrappedVar);
     }
 
     /**
@@ -575,6 +761,22 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPhoneCallDurationSeconds()</code>
+
+     * The phone call duration in seconds after which a conversion should be
+     * reported for this conversion action.
+     * The value must be between 0 and 10000, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value phone_call_duration_seconds = 15;</code>
+     * @return int|string|null
+     */
+    public function getPhoneCallDurationSecondsValue()
+    {
+        $wrapper = $this->getPhoneCallDurationSeconds();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The phone call duration in seconds after which a conversion should be
      * reported for this conversion action.
      * The value must be between 0 and 10000, inclusive.
@@ -592,6 +794,23 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The phone call duration in seconds after which a conversion should be
+     * reported for this conversion action.
+     * The value must be between 0 and 10000, inclusive.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value phone_call_duration_seconds = 15;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setPhoneCallDurationSecondsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setPhoneCallDurationSeconds($wrappedVar);
+    }
+
+    /**
      * App ID for an app conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 16;</code>
@@ -600,6 +819,20 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     public function getAppId()
     {
         return $this->app_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAppId()</code>
+
+     * App ID for an app conversion action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 16;</code>
+     * @return string|null
+     */
+    public function getAppIdValue()
+    {
+        $wrapper = $this->getAppId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -615,6 +848,21 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
         $this->app_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * App ID for an app conversion action.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 16;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAppIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAppId($wrappedVar);
     }
 
 }

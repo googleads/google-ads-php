@@ -66,6 +66,8 @@ class Asset extends \Google\Protobuf\Internal\Message
      *           A media bundle asset.
      *     @type \Google\Ads\GoogleAds\V1\Common\ImageAsset $image_asset
      *           An image asset.
+     *     @type \Google\Ads\GoogleAds\V1\Common\TextAsset $text_asset
+     *           A text asset.
      * }
      */
     public function __construct($data = NULL) {
@@ -115,6 +117,20 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the asset.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the asset.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -130,6 +146,21 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the asset.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Optional name of the asset.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
@@ -138,6 +169,20 @@ class Asset extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * Optional name of the asset.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -153,6 +198,21 @@ class Asset extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Optional name of the asset.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -255,6 +315,32 @@ class Asset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\ImageAsset::class);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * A text asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.TextAsset text_asset = 8;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\TextAsset
+     */
+    public function getTextAsset()
+    {
+        return $this->readOneof(8);
+    }
+
+    /**
+     * A text asset.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.TextAsset text_asset = 8;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\TextAsset $var
+     * @return $this
+     */
+    public function setTextAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\TextAsset::class);
+        $this->writeOneof(8, $var);
 
         return $this;
     }

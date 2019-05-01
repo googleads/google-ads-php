@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A list of fragments of text that violated a policy.
- * Next Id: 2
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicEvidence.TextList</code>
  */

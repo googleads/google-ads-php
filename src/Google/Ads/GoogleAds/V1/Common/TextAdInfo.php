@@ -65,6 +65,20 @@ class TextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHeadline()</code>
+
+     * The headline of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
+     * @return string|null
+     */
+    public function getHeadlineValue()
+    {
+        $wrapper = $this->getHeadline();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The headline of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
@@ -80,6 +94,21 @@ class TextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The headline of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeadlineValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeadline($wrappedVar);
+    }
+
+    /**
      * The first line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 2;</code>
@@ -88,6 +117,20 @@ class TextAdInfo extends \Google\Protobuf\Internal\Message
     public function getDescription1()
     {
         return $this->description1;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription1()</code>
+
+     * The first line of the ad's description.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 2;</code>
+     * @return string|null
+     */
+    public function getDescription1Value()
+    {
+        $wrapper = $this->getDescription1();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -106,6 +149,21 @@ class TextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The first line of the ad's description.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescription1Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription1($wrappedVar);
+    }
+
+    /**
      * The second line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 3;</code>
@@ -114,6 +172,20 @@ class TextAdInfo extends \Google\Protobuf\Internal\Message
     public function getDescription2()
     {
         return $this->description2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription2()</code>
+
+     * The second line of the ad's description.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 3;</code>
+     * @return string|null
+     */
+    public function getDescription2Value()
+    {
+        $wrapper = $this->getDescription2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -129,6 +201,21 @@ class TextAdInfo extends \Google\Protobuf\Internal\Message
         $this->description2 = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The second line of the ad's description.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescription2Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription2($wrappedVar);
     }
 
 }

@@ -137,6 +137,21 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCpcBidCeilingMicros()</code>
+
+     * Maximum bid limit that can be set by the bid strategy.
+     * The limit applies to all keywords managed by the strategy.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getCpcBidCeilingMicrosValue()
+    {
+        $wrapper = $this->getCpcBidCeilingMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
@@ -153,6 +168,22 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Maximum bid limit that can be set by the bid strategy.
+     * The limit applies to all keywords managed by the strategy.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpcBidCeilingMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpcBidCeilingMicros($wrappedVar);
+    }
+
+    /**
      * Bid multiplier to be applied to the relevant bid estimate (depending on
      * the `strategy_goal`) in determining a keyword's new CPC bid.
      *
@@ -162,6 +193,21 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     public function getBidModifier()
     {
         return $this->bid_modifier;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBidModifier()</code>
+
+     * Bid multiplier to be applied to the relevant bid estimate (depending on
+     * the `strategy_goal`) in determining a keyword's new CPC bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 3;</code>
+     * @return float|null
+     */
+    public function getBidModifierValue()
+    {
+        $wrapper = $this->getBidModifier();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -181,6 +227,22 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Bid multiplier to be applied to the relevant bid estimate (depending on
+     * the `strategy_goal`) in determining a keyword's new CPC bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 3;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setBidModifierValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setBidModifier($wrappedVar);
+    }
+
+    /**
      * Whether the strategy should always follow bid estimate changes, or only
      * increase.
      * If false, always sets a keyword's new bid to the current bid estimate.
@@ -193,6 +255,24 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     public function getOnlyRaiseCpcBids()
     {
         return $this->only_raise_cpc_bids;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getOnlyRaiseCpcBids()</code>
+
+     * Whether the strategy should always follow bid estimate changes, or only
+     * increase.
+     * If false, always sets a keyword's new bid to the current bid estimate.
+     * If true, only updates a keyword's bid if the current bid estimate is
+     * greater than the current bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue only_raise_cpc_bids = 4;</code>
+     * @return bool|null
+     */
+    public function getOnlyRaiseCpcBidsValue()
+    {
+        $wrapper = $this->getOnlyRaiseCpcBids();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -215,6 +295,25 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the strategy should always follow bid estimate changes, or only
+     * increase.
+     * If false, always sets a keyword's new bid to the current bid estimate.
+     * If true, only updates a keyword's bid if the current bid estimate is
+     * greater than the current bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue only_raise_cpc_bids = 4;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setOnlyRaiseCpcBidsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setOnlyRaiseCpcBids($wrappedVar);
+    }
+
+    /**
      * Whether the strategy is allowed to raise bids when the throttling
      * rate of the budget it is serving out of rises above a threshold.
      *
@@ -224,6 +323,21 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     public function getRaiseCpcBidWhenBudgetConstrained()
     {
         return $this->raise_cpc_bid_when_budget_constrained;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRaiseCpcBidWhenBudgetConstrained()</code>
+
+     * Whether the strategy is allowed to raise bids when the throttling
+     * rate of the budget it is serving out of rises above a threshold.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue raise_cpc_bid_when_budget_constrained = 5;</code>
+     * @return bool|null
+     */
+    public function getRaiseCpcBidWhenBudgetConstrainedValue()
+    {
+        $wrapper = $this->getRaiseCpcBidWhenBudgetConstrained();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -243,6 +357,22 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the strategy is allowed to raise bids when the throttling
+     * rate of the budget it is serving out of rises above a threshold.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue raise_cpc_bid_when_budget_constrained = 5;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setRaiseCpcBidWhenBudgetConstrainedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setRaiseCpcBidWhenBudgetConstrained($wrappedVar);
+    }
+
+    /**
      * Whether the strategy is allowed to raise bids on keywords with
      * lower-range quality scores.
      *
@@ -252,6 +382,21 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
     public function getRaiseCpcBidWhenQualityScoreIsLow()
     {
         return $this->raise_cpc_bid_when_quality_score_is_low;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRaiseCpcBidWhenQualityScoreIsLow()</code>
+
+     * Whether the strategy is allowed to raise bids on keywords with
+     * lower-range quality scores.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue raise_cpc_bid_when_quality_score_is_low = 6;</code>
+     * @return bool|null
+     */
+    public function getRaiseCpcBidWhenQualityScoreIsLowValue()
+    {
+        $wrapper = $this->getRaiseCpcBidWhenQualityScoreIsLow();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -268,6 +413,22 @@ class PageOnePromoted extends \Google\Protobuf\Internal\Message
         $this->raise_cpc_bid_when_quality_score_is_low = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether the strategy is allowed to raise bids on keywords with
+     * lower-range quality scores.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue raise_cpc_bid_when_quality_score_is_low = 6;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setRaiseCpcBidWhenQualityScoreIsLowValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setRaiseCpcBidWhenQualityScoreIsLow($wrappedVar);
     }
 
 }

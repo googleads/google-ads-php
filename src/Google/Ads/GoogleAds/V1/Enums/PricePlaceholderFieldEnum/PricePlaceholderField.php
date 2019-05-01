@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\PricePlaceholderFieldEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible values for Price placeholder fields.
  *
@@ -378,6 +380,84 @@ class PricePlaceholderField
      * Generated from protobuf enum <code>ITEM_8_FINAL_MOBILE_URLS = 805;</code>
      */
     const ITEM_8_FINAL_MOBILE_URLS = 805;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::TYPE => 'TYPE',
+        self::PRICE_QUALIFIER => 'PRICE_QUALIFIER',
+        self::TRACKING_TEMPLATE => 'TRACKING_TEMPLATE',
+        self::LANGUAGE => 'LANGUAGE',
+        self::FINAL_URL_SUFFIX => 'FINAL_URL_SUFFIX',
+        self::ITEM_1_HEADER => 'ITEM_1_HEADER',
+        self::ITEM_1_DESCRIPTION => 'ITEM_1_DESCRIPTION',
+        self::ITEM_1_PRICE => 'ITEM_1_PRICE',
+        self::ITEM_1_UNIT => 'ITEM_1_UNIT',
+        self::ITEM_1_FINAL_URLS => 'ITEM_1_FINAL_URLS',
+        self::ITEM_1_FINAL_MOBILE_URLS => 'ITEM_1_FINAL_MOBILE_URLS',
+        self::ITEM_2_HEADER => 'ITEM_2_HEADER',
+        self::ITEM_2_DESCRIPTION => 'ITEM_2_DESCRIPTION',
+        self::ITEM_2_PRICE => 'ITEM_2_PRICE',
+        self::ITEM_2_UNIT => 'ITEM_2_UNIT',
+        self::ITEM_2_FINAL_URLS => 'ITEM_2_FINAL_URLS',
+        self::ITEM_2_FINAL_MOBILE_URLS => 'ITEM_2_FINAL_MOBILE_URLS',
+        self::ITEM_3_HEADER => 'ITEM_3_HEADER',
+        self::ITEM_3_DESCRIPTION => 'ITEM_3_DESCRIPTION',
+        self::ITEM_3_PRICE => 'ITEM_3_PRICE',
+        self::ITEM_3_UNIT => 'ITEM_3_UNIT',
+        self::ITEM_3_FINAL_URLS => 'ITEM_3_FINAL_URLS',
+        self::ITEM_3_FINAL_MOBILE_URLS => 'ITEM_3_FINAL_MOBILE_URLS',
+        self::ITEM_4_HEADER => 'ITEM_4_HEADER',
+        self::ITEM_4_DESCRIPTION => 'ITEM_4_DESCRIPTION',
+        self::ITEM_4_PRICE => 'ITEM_4_PRICE',
+        self::ITEM_4_UNIT => 'ITEM_4_UNIT',
+        self::ITEM_4_FINAL_URLS => 'ITEM_4_FINAL_URLS',
+        self::ITEM_4_FINAL_MOBILE_URLS => 'ITEM_4_FINAL_MOBILE_URLS',
+        self::ITEM_5_HEADER => 'ITEM_5_HEADER',
+        self::ITEM_5_DESCRIPTION => 'ITEM_5_DESCRIPTION',
+        self::ITEM_5_PRICE => 'ITEM_5_PRICE',
+        self::ITEM_5_UNIT => 'ITEM_5_UNIT',
+        self::ITEM_5_FINAL_URLS => 'ITEM_5_FINAL_URLS',
+        self::ITEM_5_FINAL_MOBILE_URLS => 'ITEM_5_FINAL_MOBILE_URLS',
+        self::ITEM_6_HEADER => 'ITEM_6_HEADER',
+        self::ITEM_6_DESCRIPTION => 'ITEM_6_DESCRIPTION',
+        self::ITEM_6_PRICE => 'ITEM_6_PRICE',
+        self::ITEM_6_UNIT => 'ITEM_6_UNIT',
+        self::ITEM_6_FINAL_URLS => 'ITEM_6_FINAL_URLS',
+        self::ITEM_6_FINAL_MOBILE_URLS => 'ITEM_6_FINAL_MOBILE_URLS',
+        self::ITEM_7_HEADER => 'ITEM_7_HEADER',
+        self::ITEM_7_DESCRIPTION => 'ITEM_7_DESCRIPTION',
+        self::ITEM_7_PRICE => 'ITEM_7_PRICE',
+        self::ITEM_7_UNIT => 'ITEM_7_UNIT',
+        self::ITEM_7_FINAL_URLS => 'ITEM_7_FINAL_URLS',
+        self::ITEM_7_FINAL_MOBILE_URLS => 'ITEM_7_FINAL_MOBILE_URLS',
+        self::ITEM_8_HEADER => 'ITEM_8_HEADER',
+        self::ITEM_8_DESCRIPTION => 'ITEM_8_DESCRIPTION',
+        self::ITEM_8_PRICE => 'ITEM_8_PRICE',
+        self::ITEM_8_UNIT => 'ITEM_8_UNIT',
+        self::ITEM_8_FINAL_URLS => 'ITEM_8_FINAL_URLS',
+        self::ITEM_8_FINAL_MOBILE_URLS => 'ITEM_8_FINAL_MOBILE_URLS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -73,6 +73,20 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getUrlCollectionId()</code>
+
+     * Unique identifier for this UrlCollection instance.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue url_collection_id = 1;</code>
+     * @return string|null
+     */
+    public function getUrlCollectionIdValue()
+    {
+        $wrapper = $this->getUrlCollectionId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Unique identifier for this UrlCollection instance.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url_collection_id = 1;</code>
@@ -85,6 +99,21 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
         $this->url_collection_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Unique identifier for this UrlCollection instance.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue url_collection_id = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setUrlCollectionIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setUrlCollectionId($wrappedVar);
     }
 
     /**
@@ -151,6 +180,20 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 4;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 4;</code>
@@ -163,6 +206,21 @@ class UrlCollection extends \Google\Protobuf\Internal\Message
         $this->tracking_url_template = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL template for constructing a tracking URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
     }
 
 }

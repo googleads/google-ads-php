@@ -49,6 +49,20 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHotelCenterId()</code>
+
+     * The linked Hotel Center account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
+     * @return int|string|null
+     */
+    public function getHotelCenterIdValue()
+    {
+        $wrapper = $this->getHotelCenterId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The linked Hotel Center account.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
@@ -61,6 +75,21 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
         $this->hotel_center_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The linked Hotel Center account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setHotelCenterIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setHotelCenterId($wrappedVar);
     }
 
 }

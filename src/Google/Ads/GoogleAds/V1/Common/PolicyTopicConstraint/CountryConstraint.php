@@ -11,7 +11,6 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Indicates that a resource's ability to serve in a particular country is
  * constrained.
- * Next Id: 2
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicConstraint.CountryConstraint</code>
  */
@@ -54,6 +53,21 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCountryCriterion()</code>
+
+     * Geo target constant resource name of the country in which serving is
+     * constrained.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
+     * @return string|null
+     */
+    public function getCountryCriterionValue()
+    {
+        $wrapper = $this->getCountryCriterion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Geo target constant resource name of the country in which serving is
      * constrained.
      *
@@ -67,6 +81,22 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
         $this->country_criterion = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Geo target constant resource name of the country in which serving is
+     * constrained.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryCriterionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryCriterion($wrappedVar);
     }
 
 }

@@ -52,7 +52,7 @@ class FeedError
             "476f6f676c655c4164735c476f6f676c654164735c56315c4572726f7273" .
             "ea0222476f6f676c653a3a4164733a3a476f6f676c654164733a3a56313a" .
             "3a4572726f7273620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

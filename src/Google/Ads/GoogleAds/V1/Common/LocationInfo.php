@@ -49,6 +49,20 @@ class LocationInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getGeoTargetConstant()</code>
+
+     * The geo target constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1;</code>
+     * @return string|null
+     */
+    public function getGeoTargetConstantValue()
+    {
+        $wrapper = $this->getGeoTargetConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The geo target constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1;</code>
@@ -61,6 +75,21 @@ class LocationInfo extends \Google\Protobuf\Internal\Message
         $this->geo_target_constant = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The geo target constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setGeoTargetConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setGeoTargetConstant($wrappedVar);
     }
 
 }

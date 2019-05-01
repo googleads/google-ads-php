@@ -105,6 +105,22 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getStartDate()</code>
+
+     * Start date of users visit. If set to 2000-01-01, then the list includes all
+     * users before end_date. The date's format should be YYYY-MM-DD.
+     * Required for creating a data specific rule user list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 2;</code>
+     * @return string|null
+     */
+    public function getStartDateValue()
+    {
+        $wrapper = $this->getStartDate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Start date of users visit. If set to 2000-01-01, then the list includes all
      * users before end_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
@@ -122,6 +138,23 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Start date of users visit. If set to 2000-01-01, then the list includes all
+     * users before end_date. The date's format should be YYYY-MM-DD.
+     * Required for creating a data specific rule user list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setStartDateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setStartDate($wrappedVar);
+    }
+
+    /**
      * End date of users visit. If set to 2037-12-30, then the list includes all
      * users after start_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
@@ -132,6 +165,22 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
     public function getEndDate()
     {
         return $this->end_date;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEndDate()</code>
+
+     * End date of users visit. If set to 2037-12-30, then the list includes all
+     * users after start_date. The date's format should be YYYY-MM-DD.
+     * Required for creating a data specific rule user list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 3;</code>
+     * @return string|null
+     */
+    public function getEndDateValue()
+    {
+        $wrapper = $this->getEndDate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -149,6 +198,23 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
         $this->end_date = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * End date of users visit. If set to 2037-12-30, then the list includes all
+     * users after start_date. The date's format should be YYYY-MM-DD.
+     * Required for creating a data specific rule user list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setEndDateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setEndDate($wrappedVar);
     }
 
 }

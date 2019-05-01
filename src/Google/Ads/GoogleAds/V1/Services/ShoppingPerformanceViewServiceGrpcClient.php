@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the ShoppingPerformanceView service.
+ *
  * Service to fetch Shopping performance views.
  */
 class ShoppingPerformanceViewServiceGrpcClient extends \Grpc\BaseStub {

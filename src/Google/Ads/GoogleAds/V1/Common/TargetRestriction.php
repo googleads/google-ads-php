@@ -101,6 +101,26 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getBidOnly()</code>
+
+     * Indicates whether to restrict your ads to show only for the criteria you
+     * have selected for this targeting_dimension, or to target all values for
+     * this targeting_dimension and show ads based on your targeting in other
+     * TargetingDimensions. A value of 'true' means that these criteria will only
+     * apply bid modifiers, and not affect targeting. A value of 'false' means
+     * that these criteria will restrict targeting as well as applying bid
+     * modifiers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue bid_only = 2;</code>
+     * @return bool|null
+     */
+    public function getBidOnlyValue()
+    {
+        $wrapper = $this->getBidOnly();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Indicates whether to restrict your ads to show only for the criteria you
      * have selected for this targeting_dimension, or to target all values for
      * this targeting_dimension and show ads based on your targeting in other
@@ -119,6 +139,27 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
         $this->bid_only = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Indicates whether to restrict your ads to show only for the criteria you
+     * have selected for this targeting_dimension, or to target all values for
+     * this targeting_dimension and show ads based on your targeting in other
+     * TargetingDimensions. A value of 'true' means that these criteria will only
+     * apply bid modifiers, and not affect targeting. A value of 'false' means
+     * that these criteria will restrict targeting as well as applying bid
+     * modifiers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue bid_only = 2;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setBidOnlyValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setBidOnly($wrappedVar);
     }
 
 }

@@ -76,7 +76,7 @@ class ConversionActionService
             "5c4164735c476f6f676c654164735c56315c5365727669636573ea022447" .
             "6f6f676c653a3a4164733a3a476f6f676c654164733a3a56313a3a536572" .
             "7669636573620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\DateRangeErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible date range errors.
  *
@@ -53,6 +55,36 @@ class DateRangeError
      * Generated from protobuf enum <code>CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED = 6;</code>
      */
     const CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INVALID_DATE => 'INVALID_DATE',
+        self::START_DATE_AFTER_END_DATE => 'START_DATE_AFTER_END_DATE',
+        self::CANNOT_SET_DATE_TO_PAST => 'CANNOT_SET_DATE_TO_PAST',
+        self::AFTER_MAXIMUM_ALLOWABLE_DATE => 'AFTER_MAXIMUM_ALLOWABLE_DATE',
+        self::CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED => 'CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

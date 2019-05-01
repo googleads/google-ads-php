@@ -49,6 +49,20 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getVideoId()</code>
+
+     * YouTube video id as it appears on the YouTube watch page.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue video_id = 1;</code>
+     * @return string|null
+     */
+    public function getVideoIdValue()
+    {
+        $wrapper = $this->getVideoId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * YouTube video id as it appears on the YouTube watch page.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue video_id = 1;</code>
@@ -61,6 +75,21 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
         $this->video_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * YouTube video id as it appears on the YouTube watch page.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue video_id = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setVideoIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setVideoId($wrappedVar);
     }
 
 }

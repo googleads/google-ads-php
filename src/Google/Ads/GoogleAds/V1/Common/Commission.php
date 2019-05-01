@@ -59,6 +59,23 @@ class Commission extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCommissionRateMicros()</code>
+
+     * Commission rate defines the portion of the conversion value that the
+     * advertiser will be billed. A commission rate of x should be passed into
+     * this field as (x * 1,000,000). For example, 106,000 represents a commission
+     * rate of 0.106 (10.6%).
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value commission_rate_micros = 1;</code>
+     * @return int|string|null
+     */
+    public function getCommissionRateMicrosValue()
+    {
+        $wrapper = $this->getCommissionRateMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Commission rate defines the portion of the conversion value that the
      * advertiser will be billed. A commission rate of x should be passed into
      * this field as (x * 1,000,000). For example, 106,000 represents a commission
@@ -74,6 +91,24 @@ class Commission extends \Google\Protobuf\Internal\Message
         $this->commission_rate_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Commission rate defines the portion of the conversion value that the
+     * advertiser will be billed. A commission rate of x should be passed into
+     * this field as (x * 1,000,000). For example, 106,000 represents a commission
+     * rate of 0.106 (10.6%).
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value commission_rate_micros = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCommissionRateMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCommissionRateMicros($wrappedVar);
     }
 
 }

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\OperatingSystemVersionOperatorTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The type of operating system version.
  *
@@ -35,6 +37,33 @@ class OperatingSystemVersionOperatorType
      * Generated from protobuf enum <code>GREATER_THAN_EQUALS_TO = 4;</code>
      */
     const GREATER_THAN_EQUALS_TO = 4;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::EQUALS_TO => 'EQUALS_TO',
+        self::GREATER_THAN_EQUALS_TO => 'GREATER_THAN_EQUALS_TO',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

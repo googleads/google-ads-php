@@ -82,6 +82,20 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getImpressions()</code>
+
+     * Number of ad impressions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * @return float|null
+     */
+    public function getImpressionsValue()
+    {
+        $wrapper = $this->getImpressions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Number of ad impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
@@ -97,6 +111,21 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Number of ad impressions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setImpressionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setImpressions($wrappedVar);
+    }
+
+    /**
      * Number of ad clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
@@ -105,6 +134,20 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     public function getClicks()
     {
         return $this->clicks;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getClicks()</code>
+
+     * Number of ad clicks.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
+     * @return float|null
+     */
+    public function getClicksValue()
+    {
+        $wrapper = $this->getClicks();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -123,6 +166,21 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Number of ad clicks.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setClicksValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setClicks($wrappedVar);
+    }
+
+    /**
      * Cost (in micros) for advertising, in the local currency for the account.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
@@ -131,6 +189,20 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     public function getCostMicros()
     {
         return $this->cost_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCostMicros()</code>
+
+     * Cost (in micros) for advertising, in the local currency for the account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
+     * @return int|string|null
+     */
+    public function getCostMicrosValue()
+    {
+        $wrapper = $this->getCostMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -149,6 +221,21 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Cost (in micros) for advertising, in the local currency for the account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCostMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCostMicros($wrappedVar);
+    }
+
+    /**
      * Number of conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
@@ -157,6 +244,20 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     public function getConversions()
     {
         return $this->conversions;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConversions()</code>
+
+     * Number of conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
+     * @return float|null
+     */
+    public function getConversionsValue()
+    {
+        $wrapper = $this->getConversions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -175,6 +276,21 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Number of conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setConversionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setConversions($wrappedVar);
+    }
+
+    /**
      * Number of video views for a video ad campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
@@ -183,6 +299,20 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     public function getVideoViews()
     {
         return $this->video_views;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getVideoViews()</code>
+
+     * Number of video views for a video ad campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
+     * @return float|null
+     */
+    public function getVideoViewsValue()
+    {
+        $wrapper = $this->getVideoViews();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -198,6 +328,21 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
         $this->video_views = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Number of video views for a video ad campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setVideoViewsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setVideoViews($wrappedVar);
     }
 
 }

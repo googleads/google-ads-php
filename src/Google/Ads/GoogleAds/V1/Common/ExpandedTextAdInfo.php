@@ -97,6 +97,20 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHeadlinePart1()</code>
+
+     * The first part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part1 = 1;</code>
+     * @return string|null
+     */
+    public function getHeadlinePart1Value()
+    {
+        $wrapper = $this->getHeadlinePart1();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The first part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part1 = 1;</code>
@@ -112,6 +126,21 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The first part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part1 = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeadlinePart1Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeadlinePart1($wrappedVar);
+    }
+
+    /**
      * The second part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part2 = 2;</code>
@@ -120,6 +149,20 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     public function getHeadlinePart2()
     {
         return $this->headline_part2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHeadlinePart2()</code>
+
+     * The second part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part2 = 2;</code>
+     * @return string|null
+     */
+    public function getHeadlinePart2Value()
+    {
+        $wrapper = $this->getHeadlinePart2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -138,6 +181,21 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The second part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part2 = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeadlinePart2Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeadlinePart2($wrappedVar);
+    }
+
+    /**
      * The third part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part3 = 6;</code>
@@ -146,6 +204,20 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     public function getHeadlinePart3()
     {
         return $this->headline_part3;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHeadlinePart3()</code>
+
+     * The third part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part3 = 6;</code>
+     * @return string|null
+     */
+    public function getHeadlinePart3Value()
+    {
+        $wrapper = $this->getHeadlinePart3();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -164,6 +236,21 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The third part of the ad's headline.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline_part3 = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeadlinePart3Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeadlinePart3($wrappedVar);
+    }
+
+    /**
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
@@ -172,6 +259,20 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * The description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -190,6 +291,21 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
+    }
+
+    /**
      * The second description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 7;</code>
@@ -198,6 +314,20 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     public function getDescription2()
     {
         return $this->description2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription2()</code>
+
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 7;</code>
+     * @return string|null
+     */
+    public function getDescription2Value()
+    {
+        $wrapper = $this->getDescription2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -216,6 +346,21 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescription2Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription2($wrappedVar);
+    }
+
+    /**
      * The text that can appear alongside the ad's displayed URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 4;</code>
@@ -224,6 +369,20 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     public function getPath1()
     {
         return $this->path1;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPath1()</code>
+
+     * The text that can appear alongside the ad's displayed URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 4;</code>
+     * @return string|null
+     */
+    public function getPath1Value()
+    {
+        $wrapper = $this->getPath1();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -242,6 +401,21 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The text that can appear alongside the ad's displayed URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPath1Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPath1($wrappedVar);
+    }
+
+    /**
      * Additional text that can appear alongside the ad's displayed URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 5;</code>
@@ -250,6 +424,20 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
     public function getPath2()
     {
         return $this->path2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPath2()</code>
+
+     * Additional text that can appear alongside the ad's displayed URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 5;</code>
+     * @return string|null
+     */
+    public function getPath2Value()
+    {
+        $wrapper = $this->getPath2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -265,6 +453,21 @@ class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
         $this->path2 = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Additional text that can appear alongside the ad's displayed URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPath2Value($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPath2($wrappedVar);
     }
 
 }

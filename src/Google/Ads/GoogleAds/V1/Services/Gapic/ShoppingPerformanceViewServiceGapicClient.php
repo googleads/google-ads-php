@@ -32,6 +32,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -46,7 +47,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $shoppingPerformanceViewServiceClient = new ShoppingPerformanceViewServiceClient();
  * try {
- *     $formattedResourceName = $shoppingPerformanceViewServiceClient->customerName('[CUSTOMER]');
+ *     $formattedResourceName = $shoppingPerformanceViewServiceClient->shoppingPerformanceViewName('[CUSTOMER]');
  *     $response = $shoppingPerformanceViewServiceClient->getShoppingPerformanceView($formattedResourceName);
  * } finally {
  *     $shoppingPerformanceViewServiceClient->close();
@@ -90,7 +91,6 @@ class ShoppingPerformanceViewServiceGapicClient
     public static $serviceScopes = [
     ];
     private static $shoppingPerformanceViewNameTemplate;
-    private static $customerNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -121,21 +121,11 @@ class ShoppingPerformanceViewServiceGapicClient
         return self::$shoppingPerformanceViewNameTemplate;
     }
 
-    private static function getCustomerNameTemplate()
-    {
-        if (null == self::$customerNameTemplate) {
-            self::$customerNameTemplate = new PathTemplate('customers/{customer}');
-        }
-
-        return self::$customerNameTemplate;
-    }
-
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
                 'shoppingPerformanceView' => self::getShoppingPerformanceViewNameTemplate(),
-                'customer' => self::getCustomerNameTemplate(),
             ];
         }
 
@@ -159,27 +149,10 @@ class ShoppingPerformanceViewServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a customer resource.
-     *
-     * @param string $customer
-     *
-     * @return string The formatted customer resource.
-     * @experimental
-     */
-    public static function customerName($customer)
-    {
-        return self::getCustomerNameTemplate()->render([
-            'customer' => $customer,
-        ]);
-    }
-
-    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - shoppingPerformanceView: customers/{customer}/shoppingPerformanceView
-     * - customer: customers/{customer}.
+     * - shoppingPerformanceView: customers/{customer}/shoppingPerformanceView.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -281,7 +254,7 @@ class ShoppingPerformanceViewServiceGapicClient
      * ```
      * $shoppingPerformanceViewServiceClient = new ShoppingPerformanceViewServiceClient();
      * try {
-     *     $formattedResourceName = $shoppingPerformanceViewServiceClient->customerName('[CUSTOMER]');
+     *     $formattedResourceName = $shoppingPerformanceViewServiceClient->shoppingPerformanceViewName('[CUSTOMER]');
      *     $response = $shoppingPerformanceViewServiceClient->getShoppingPerformanceView($formattedResourceName);
      * } finally {
      *     $shoppingPerformanceViewServiceClient->close();
@@ -308,6 +281,13 @@ class ShoppingPerformanceViewServiceGapicClient
     {
         $request = new GetShoppingPerformanceViewRequest();
         $request->setResourceName($resourceName);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'GetShoppingPerformanceView',

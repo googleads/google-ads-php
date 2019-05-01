@@ -66,6 +66,20 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPolicyName()</code>
+
+     * Unique ID of the violated policy.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue policy_name = 1;</code>
+     * @return string|null
+     */
+    public function getPolicyNameValue()
+    {
+        $wrapper = $this->getPolicyName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Unique ID of the violated policy.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue policy_name = 1;</code>
@@ -81,6 +95,21 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Unique ID of the violated policy.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue policy_name = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPolicyNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPolicyName($wrappedVar);
+    }
+
+    /**
      * The text that violates the policy if specified.
      * Otherwise, refers to the policy in general
      * (e.g., when requesting to be exempt from the whole policy).
@@ -93,6 +122,24 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
     public function getViolatingText()
     {
         return $this->violating_text;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getViolatingText()</code>
+
+     * The text that violates the policy if specified.
+     * Otherwise, refers to the policy in general
+     * (e.g., when requesting to be exempt from the whole policy).
+     * If not specified for criterion exemptions, the whole policy is implied.
+     * Must be specified for ad exemptions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue violating_text = 2;</code>
+     * @return string|null
+     */
+    public function getViolatingTextValue()
+    {
+        $wrapper = $this->getViolatingText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -112,6 +159,25 @@ class PolicyViolationKey extends \Google\Protobuf\Internal\Message
         $this->violating_text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The text that violates the policy if specified.
+     * Otherwise, refers to the policy in general
+     * (e.g., when requesting to be exempt from the whole policy).
+     * If not specified for criterion exemptions, the whole policy is implied.
+     * Must be specified for ad exemptions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue violating_text = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setViolatingTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setViolatingText($wrappedVar);
     }
 
 }

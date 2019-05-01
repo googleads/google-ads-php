@@ -16,7 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
  * on serving. It may optionally have one or more evidences that indicate the
  * reason for the finding. It may also optionally have one or more constraints
  * that provide details about how serving may be restricted.
- * Next tag: 5
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicEntry</code>
  */
@@ -93,6 +92,23 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTopic()</code>
+
+     * Policy topic this finding refers to. For example, "ALCOHOL",
+     * "TRADEMARKS_IN_AD_TEXT", or "DESTINATION_NOT_WORKING". The set of possible
+     * policy topics is not fixed for a particular API version and may change
+     * at any time.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic = 1;</code>
+     * @return string|null
+     */
+    public function getTopicValue()
+    {
+        $wrapper = $this->getTopic();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Policy topic this finding refers to. For example, "ALCOHOL",
      * "TRADEMARKS_IN_AD_TEXT", or "DESTINATION_NOT_WORKING". The set of possible
      * policy topics is not fixed for a particular API version and may change
@@ -108,6 +124,24 @@ class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
         $this->topic = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Policy topic this finding refers to. For example, "ALCOHOL",
+     * "TRADEMARKS_IN_AD_TEXT", or "DESTINATION_NOT_WORKING". The set of possible
+     * policy topics is not fixed for a particular API version and may change
+     * at any time.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTopicValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTopic($wrappedVar);
     }
 
     /**

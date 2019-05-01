@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\FeedItemValidationErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * The possible validation errors of a feed item.
  *
@@ -531,7 +533,8 @@ class FeedItemValidationError
     const INVALID_FINAL_URL_SUFFIX_FORMAT = 83;
     /**
      * Consent for call recording, which is required for the use of call
-     * extensions, was not provided by the advertiser.
+     * extensions, was not provided by the advertiser. Please see
+     * https://support.google.com/google-ads/answer/7412639.
      *
      * Generated from protobuf enum <code>CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED = 84;</code>
      */
@@ -574,6 +577,162 @@ class FeedItemValidationError
      * Generated from protobuf enum <code>AUTO_REPLY_NOT_AVAILABLE_IN_COUNTRY = 90;</code>
      */
     const AUTO_REPLY_NOT_AVAILABLE_IN_COUNTRY = 90;
+    /**
+     * Invalid value specified for latitude.
+     *
+     * Generated from protobuf enum <code>INVALID_LATITUDE_VALUE = 91;</code>
+     */
+    const INVALID_LATITUDE_VALUE = 91;
+    /**
+     * Invalid value specified for longitude.
+     *
+     * Generated from protobuf enum <code>INVALID_LONGITUDE_VALUE = 92;</code>
+     */
+    const INVALID_LONGITUDE_VALUE = 92;
+    /**
+     * Too many label fields provided.
+     *
+     * Generated from protobuf enum <code>TOO_MANY_LABELS = 93;</code>
+     */
+    const TOO_MANY_LABELS = 93;
+    /**
+     * Invalid image url.
+     *
+     * Generated from protobuf enum <code>INVALID_IMAGE_URL = 94;</code>
+     */
+    const INVALID_IMAGE_URL = 94;
+    /**
+     * Latitude value is missing.
+     *
+     * Generated from protobuf enum <code>MISSING_LATITUDE_VALUE = 95;</code>
+     */
+    const MISSING_LATITUDE_VALUE = 95;
+    /**
+     * Longitude value is missing.
+     *
+     * Generated from protobuf enum <code>MISSING_LONGITUDE_VALUE = 96;</code>
+     */
+    const MISSING_LONGITUDE_VALUE = 96;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::STRING_TOO_SHORT => 'STRING_TOO_SHORT',
+        self::STRING_TOO_LONG => 'STRING_TOO_LONG',
+        self::VALUE_NOT_SPECIFIED => 'VALUE_NOT_SPECIFIED',
+        self::INVALID_DOMESTIC_PHONE_NUMBER_FORMAT => 'INVALID_DOMESTIC_PHONE_NUMBER_FORMAT',
+        self::INVALID_PHONE_NUMBER => 'INVALID_PHONE_NUMBER',
+        self::PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY => 'PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY',
+        self::PREMIUM_RATE_NUMBER_NOT_ALLOWED => 'PREMIUM_RATE_NUMBER_NOT_ALLOWED',
+        self::DISALLOWED_NUMBER_TYPE => 'DISALLOWED_NUMBER_TYPE',
+        self::VALUE_OUT_OF_RANGE => 'VALUE_OUT_OF_RANGE',
+        self::CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY => 'CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY',
+        self::CUSTOMER_NOT_WHITELISTED_FOR_CALLTRACKING => 'CUSTOMER_NOT_WHITELISTED_FOR_CALLTRACKING',
+        self::INVALID_COUNTRY_CODE => 'INVALID_COUNTRY_CODE',
+        self::INVALID_APP_ID => 'INVALID_APP_ID',
+        self::MISSING_ATTRIBUTES_FOR_FIELDS => 'MISSING_ATTRIBUTES_FOR_FIELDS',
+        self::INVALID_TYPE_ID => 'INVALID_TYPE_ID',
+        self::INVALID_EMAIL_ADDRESS => 'INVALID_EMAIL_ADDRESS',
+        self::INVALID_HTTPS_URL => 'INVALID_HTTPS_URL',
+        self::MISSING_DELIVERY_ADDRESS => 'MISSING_DELIVERY_ADDRESS',
+        self::START_DATE_AFTER_END_DATE => 'START_DATE_AFTER_END_DATE',
+        self::MISSING_FEED_ITEM_START_TIME => 'MISSING_FEED_ITEM_START_TIME',
+        self::MISSING_FEED_ITEM_END_TIME => 'MISSING_FEED_ITEM_END_TIME',
+        self::MISSING_FEED_ITEM_ID => 'MISSING_FEED_ITEM_ID',
+        self::VANITY_PHONE_NUMBER_NOT_ALLOWED => 'VANITY_PHONE_NUMBER_NOT_ALLOWED',
+        self::INVALID_REVIEW_EXTENSION_SNIPPET => 'INVALID_REVIEW_EXTENSION_SNIPPET',
+        self::INVALID_NUMBER_FORMAT => 'INVALID_NUMBER_FORMAT',
+        self::INVALID_DATE_FORMAT => 'INVALID_DATE_FORMAT',
+        self::INVALID_PRICE_FORMAT => 'INVALID_PRICE_FORMAT',
+        self::UNKNOWN_PLACEHOLDER_FIELD => 'UNKNOWN_PLACEHOLDER_FIELD',
+        self::MISSING_ENHANCED_SITELINK_DESCRIPTION_LINE => 'MISSING_ENHANCED_SITELINK_DESCRIPTION_LINE',
+        self::REVIEW_EXTENSION_SOURCE_INELIGIBLE => 'REVIEW_EXTENSION_SOURCE_INELIGIBLE',
+        self::HYPHENS_IN_REVIEW_EXTENSION_SNIPPET => 'HYPHENS_IN_REVIEW_EXTENSION_SNIPPET',
+        self::DOUBLE_QUOTES_IN_REVIEW_EXTENSION_SNIPPET => 'DOUBLE_QUOTES_IN_REVIEW_EXTENSION_SNIPPET',
+        self::QUOTES_IN_REVIEW_EXTENSION_SNIPPET => 'QUOTES_IN_REVIEW_EXTENSION_SNIPPET',
+        self::INVALID_FORM_ENCODED_PARAMS => 'INVALID_FORM_ENCODED_PARAMS',
+        self::INVALID_URL_PARAMETER_NAME => 'INVALID_URL_PARAMETER_NAME',
+        self::NO_GEOCODING_RESULT => 'NO_GEOCODING_RESULT',
+        self::SOURCE_NAME_IN_REVIEW_EXTENSION_TEXT => 'SOURCE_NAME_IN_REVIEW_EXTENSION_TEXT',
+        self::CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED => 'CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED',
+        self::INVALID_PLACEHOLDER_FIELD_ID => 'INVALID_PLACEHOLDER_FIELD_ID',
+        self::INVALID_URL_TAG => 'INVALID_URL_TAG',
+        self::LIST_TOO_LONG => 'LIST_TOO_LONG',
+        self::INVALID_ATTRIBUTES_COMBINATION => 'INVALID_ATTRIBUTES_COMBINATION',
+        self::DUPLICATE_VALUES => 'DUPLICATE_VALUES',
+        self::INVALID_CALL_CONVERSION_ACTION_ID => 'INVALID_CALL_CONVERSION_ACTION_ID',
+        self::CANNOT_SET_WITHOUT_FINAL_URLS => 'CANNOT_SET_WITHOUT_FINAL_URLS',
+        self::APP_ID_DOESNT_EXIST_IN_APP_STORE => 'APP_ID_DOESNT_EXIST_IN_APP_STORE',
+        self::INVALID_FINAL_URL => 'INVALID_FINAL_URL',
+        self::INVALID_TRACKING_URL => 'INVALID_TRACKING_URL',
+        self::INVALID_FINAL_URL_FOR_APP_DOWNLOAD_URL => 'INVALID_FINAL_URL_FOR_APP_DOWNLOAD_URL',
+        self::LIST_TOO_SHORT => 'LIST_TOO_SHORT',
+        self::INVALID_USER_ACTION => 'INVALID_USER_ACTION',
+        self::INVALID_TYPE_NAME => 'INVALID_TYPE_NAME',
+        self::INVALID_EVENT_CHANGE_STATUS => 'INVALID_EVENT_CHANGE_STATUS',
+        self::INVALID_SNIPPETS_HEADER => 'INVALID_SNIPPETS_HEADER',
+        self::INVALID_ANDROID_APP_LINK => 'INVALID_ANDROID_APP_LINK',
+        self::NUMBER_TYPE_WITH_CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY => 'NUMBER_TYPE_WITH_CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY',
+        self::RESERVED_KEYWORD_OTHER => 'RESERVED_KEYWORD_OTHER',
+        self::DUPLICATE_OPTION_LABELS => 'DUPLICATE_OPTION_LABELS',
+        self::DUPLICATE_OPTION_PREFILLS => 'DUPLICATE_OPTION_PREFILLS',
+        self::UNEQUAL_LIST_LENGTHS => 'UNEQUAL_LIST_LENGTHS',
+        self::INCONSISTENT_CURRENCY_CODES => 'INCONSISTENT_CURRENCY_CODES',
+        self::PRICE_EXTENSION_HAS_DUPLICATED_HEADERS => 'PRICE_EXTENSION_HAS_DUPLICATED_HEADERS',
+        self::ITEM_HAS_DUPLICATED_HEADER_AND_DESCRIPTION => 'ITEM_HAS_DUPLICATED_HEADER_AND_DESCRIPTION',
+        self::PRICE_EXTENSION_HAS_TOO_FEW_ITEMS => 'PRICE_EXTENSION_HAS_TOO_FEW_ITEMS',
+        self::UNSUPPORTED_VALUE => 'UNSUPPORTED_VALUE',
+        self::INVALID_FINAL_MOBILE_URL => 'INVALID_FINAL_MOBILE_URL',
+        self::INVALID_KEYWORDLESS_AD_RULE_LABEL => 'INVALID_KEYWORDLESS_AD_RULE_LABEL',
+        self::VALUE_TRACK_PARAMETER_NOT_SUPPORTED => 'VALUE_TRACK_PARAMETER_NOT_SUPPORTED',
+        self::UNSUPPORTED_VALUE_IN_SELECTED_LANGUAGE => 'UNSUPPORTED_VALUE_IN_SELECTED_LANGUAGE',
+        self::INVALID_IOS_APP_LINK => 'INVALID_IOS_APP_LINK',
+        self::MISSING_IOS_APP_LINK_OR_IOS_APP_STORE_ID => 'MISSING_IOS_APP_LINK_OR_IOS_APP_STORE_ID',
+        self::PROMOTION_INVALID_TIME => 'PROMOTION_INVALID_TIME',
+        self::PROMOTION_CANNOT_SET_PERCENT_OFF_AND_MONEY_AMOUNT_OFF => 'PROMOTION_CANNOT_SET_PERCENT_OFF_AND_MONEY_AMOUNT_OFF',
+        self::PROMOTION_CANNOT_SET_PROMOTION_CODE_AND_ORDERS_OVER_AMOUNT => 'PROMOTION_CANNOT_SET_PROMOTION_CODE_AND_ORDERS_OVER_AMOUNT',
+        self::TOO_MANY_DECIMAL_PLACES_SPECIFIED => 'TOO_MANY_DECIMAL_PLACES_SPECIFIED',
+        self::AD_CUSTOMIZERS_NOT_ALLOWED => 'AD_CUSTOMIZERS_NOT_ALLOWED',
+        self::INVALID_LANGUAGE_CODE => 'INVALID_LANGUAGE_CODE',
+        self::UNSUPPORTED_LANGUAGE => 'UNSUPPORTED_LANGUAGE',
+        self::IF_FUNCTION_NOT_ALLOWED => 'IF_FUNCTION_NOT_ALLOWED',
+        self::INVALID_FINAL_URL_SUFFIX => 'INVALID_FINAL_URL_SUFFIX',
+        self::INVALID_TAG_IN_FINAL_URL_SUFFIX => 'INVALID_TAG_IN_FINAL_URL_SUFFIX',
+        self::INVALID_FINAL_URL_SUFFIX_FORMAT => 'INVALID_FINAL_URL_SUFFIX_FORMAT',
+        self::CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED => 'CUSTOMER_CONSENT_FOR_CALL_RECORDING_REQUIRED',
+        self::ONLY_ONE_DELIVERY_OPTION_IS_ALLOWED => 'ONLY_ONE_DELIVERY_OPTION_IS_ALLOWED',
+        self::NO_DELIVERY_OPTION_IS_SET => 'NO_DELIVERY_OPTION_IS_SET',
+        self::INVALID_CONVERSION_REPORTING_STATE => 'INVALID_CONVERSION_REPORTING_STATE',
+        self::IMAGE_SIZE_WRONG => 'IMAGE_SIZE_WRONG',
+        self::EMAIL_DELIVERY_NOT_AVAILABLE_IN_COUNTRY => 'EMAIL_DELIVERY_NOT_AVAILABLE_IN_COUNTRY',
+        self::AUTO_REPLY_NOT_AVAILABLE_IN_COUNTRY => 'AUTO_REPLY_NOT_AVAILABLE_IN_COUNTRY',
+        self::INVALID_LATITUDE_VALUE => 'INVALID_LATITUDE_VALUE',
+        self::INVALID_LONGITUDE_VALUE => 'INVALID_LONGITUDE_VALUE',
+        self::TOO_MANY_LABELS => 'TOO_MANY_LABELS',
+        self::INVALID_IMAGE_URL => 'INVALID_IMAGE_URL',
+        self::MISSING_LATITUDE_VALUE => 'MISSING_LATITUDE_VALUE',
+        self::MISSING_LONGITUDE_VALUE => 'MISSING_LONGITUDE_VALUE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

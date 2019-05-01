@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Recommendation service.
+ *
  * Service to manage recommendations.
  */
 class RecommendationServiceGrpcClient extends \Grpc\BaseStub {

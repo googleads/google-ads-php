@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AdNetworkTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enumerates Google Ads network types.
  *
@@ -59,6 +61,37 @@ class AdNetworkType
      * Generated from protobuf enum <code>MIXED = 7;</code>
      */
     const MIXED = 7;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::SEARCH => 'SEARCH',
+        self::SEARCH_PARTNERS => 'SEARCH_PARTNERS',
+        self::CONTENT => 'CONTENT',
+        self::YOUTUBE_SEARCH => 'YOUTUBE_SEARCH',
+        self::YOUTUBE_WATCH => 'YOUTUBE_WATCH',
+        self::MIXED => 'MIXED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

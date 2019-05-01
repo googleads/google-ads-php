@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\SlotEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enumerates possible positions of the Ad.
  *
@@ -65,6 +67,38 @@ class Slot
      * Generated from protobuf enum <code>MIXED = 8;</code>
      */
     const MIXED = 8;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::SEARCH_SIDE => 'SEARCH_SIDE',
+        self::SEARCH_TOP => 'SEARCH_TOP',
+        self::SEARCH_OTHER => 'SEARCH_OTHER',
+        self::CONTENT => 'CONTENT',
+        self::SEARCH_PARTNER_TOP => 'SEARCH_PARTNER_TOP',
+        self::SEARCH_PARTNER_OTHER => 'SEARCH_PARTNER_OTHER',
+        self::MIXED => 'MIXED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

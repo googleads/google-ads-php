@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\UserListSizeRangeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum containing possible user list size ranges.
  *
@@ -119,6 +121,47 @@ class UserListSizeRange
      * Generated from protobuf enum <code>OVER_FIFTY_MILLION = 17;</code>
      */
     const OVER_FIFTY_MILLION = 17;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::LESS_THAN_FIVE_HUNDRED => 'LESS_THAN_FIVE_HUNDRED',
+        self::LESS_THAN_ONE_THOUSAND => 'LESS_THAN_ONE_THOUSAND',
+        self::ONE_THOUSAND_TO_TEN_THOUSAND => 'ONE_THOUSAND_TO_TEN_THOUSAND',
+        self::TEN_THOUSAND_TO_FIFTY_THOUSAND => 'TEN_THOUSAND_TO_FIFTY_THOUSAND',
+        self::FIFTY_THOUSAND_TO_ONE_HUNDRED_THOUSAND => 'FIFTY_THOUSAND_TO_ONE_HUNDRED_THOUSAND',
+        self::ONE_HUNDRED_THOUSAND_TO_THREE_HUNDRED_THOUSAND => 'ONE_HUNDRED_THOUSAND_TO_THREE_HUNDRED_THOUSAND',
+        self::THREE_HUNDRED_THOUSAND_TO_FIVE_HUNDRED_THOUSAND => 'THREE_HUNDRED_THOUSAND_TO_FIVE_HUNDRED_THOUSAND',
+        self::FIVE_HUNDRED_THOUSAND_TO_ONE_MILLION => 'FIVE_HUNDRED_THOUSAND_TO_ONE_MILLION',
+        self::ONE_MILLION_TO_TWO_MILLION => 'ONE_MILLION_TO_TWO_MILLION',
+        self::TWO_MILLION_TO_THREE_MILLION => 'TWO_MILLION_TO_THREE_MILLION',
+        self::THREE_MILLION_TO_FIVE_MILLION => 'THREE_MILLION_TO_FIVE_MILLION',
+        self::FIVE_MILLION_TO_TEN_MILLION => 'FIVE_MILLION_TO_TEN_MILLION',
+        self::TEN_MILLION_TO_TWENTY_MILLION => 'TEN_MILLION_TO_TWENTY_MILLION',
+        self::TWENTY_MILLION_TO_THIRTY_MILLION => 'TWENTY_MILLION_TO_THIRTY_MILLION',
+        self::THIRTY_MILLION_TO_FIFTY_MILLION => 'THIRTY_MILLION_TO_FIFTY_MILLION',
+        self::OVER_FIFTY_MILLION => 'OVER_FIFTY_MILLION',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

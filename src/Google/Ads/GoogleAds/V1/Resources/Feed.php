@@ -147,6 +147,21 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the feed.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the feed.
      * This field is read-only.
      *
@@ -163,6 +178,22 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the feed.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * Name of the feed. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
@@ -171,6 +202,20 @@ class Feed extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * Name of the feed. Required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -186,6 +231,21 @@ class Feed extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Name of the feed. Required.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**

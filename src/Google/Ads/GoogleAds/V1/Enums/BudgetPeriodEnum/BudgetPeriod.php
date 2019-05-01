@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\BudgetPeriodEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible period of a Budget.
  *
@@ -41,6 +43,34 @@ class BudgetPeriod
      * Generated from protobuf enum <code>FIXED_DAILY = 4;</code>
      */
     const FIXED_DAILY = 4;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::DAILY => 'DAILY',
+        self::CUSTOM => 'CUSTOM',
+        self::FIXED_DAILY => 'FIXED_DAILY',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

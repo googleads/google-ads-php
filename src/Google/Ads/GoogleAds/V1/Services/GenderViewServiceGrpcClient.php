@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Gender View service.
+ *
  * Service to manage gender views.
  */
 class GenderViewServiceGrpcClient extends \Grpc\BaseStub {

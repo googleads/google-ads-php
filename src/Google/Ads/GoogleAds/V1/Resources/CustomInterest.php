@@ -143,6 +143,20 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * Id of the custom interest.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Id of the custom interest.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -155,6 +169,21 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
         $this->id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Id of the custom interest.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
     }
 
     /**
@@ -199,6 +228,22 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * Name of the custom interest. It should be unique across the same custom
+     * affinity audience.
+     * This field is required for create operations.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Name of the custom interest. It should be unique across the same custom
      * affinity audience.
      * This field is required for create operations.
@@ -213,6 +258,23 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Name of the custom interest. It should be unique across the same custom
+     * affinity audience.
+     * This field is required for create operations.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -255,6 +317,20 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * Description of this custom interest audience.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 6;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Description of this custom interest audience.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 6;</code>
@@ -267,6 +343,21 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
         $this->description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Description of this custom interest audience.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
     }
 
     /**

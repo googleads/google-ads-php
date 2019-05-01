@@ -98,6 +98,29 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAppId()</code>
+
+     * A string that uniquely identifies a mobile application from which the data
+     * was collected to the Google Ads API.
+     * For iOS, the ID string is the 9 digit string that appears at the end of an
+     * App Store URL (e.g., "476943146" for "Flood-It! 2" whose App Store link is
+     * http://itunes.apple.com/us/app/flood-it!-2/id476943146).
+     * For Android, the ID string is the application's package name
+     * (e.g., "com.labpixies.colordrips" for "Color Drips" given Google Play link
+     * https://play.google.com/store/apps/details?id=com.labpixies.colordrips).
+     * Required when creating CrmBasedUserList for uploading mobile advertising
+     * IDs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 1;</code>
+     * @return string|null
+     */
+    public function getAppIdValue()
+    {
+        $wrapper = $this->getAppId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * A string that uniquely identifies a mobile application from which the data
      * was collected to the Google Ads API.
      * For iOS, the ID string is the 9 digit string that appears at the end of an
@@ -119,6 +142,30 @@ class CrmBasedUserListInfo extends \Google\Protobuf\Internal\Message
         $this->app_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A string that uniquely identifies a mobile application from which the data
+     * was collected to the Google Ads API.
+     * For iOS, the ID string is the 9 digit string that appears at the end of an
+     * App Store URL (e.g., "476943146" for "Flood-It! 2" whose App Store link is
+     * http://itunes.apple.com/us/app/flood-it!-2/id476943146).
+     * For Android, the ID string is the application's package name
+     * (e.g., "com.labpixies.colordrips" for "Color Drips" given Google Play link
+     * https://play.google.com/store/apps/details?id=com.labpixies.colordrips).
+     * Required when creating CrmBasedUserList for uploading mobile advertising
+     * IDs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAppIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAppId($wrappedVar);
     }
 
     /**

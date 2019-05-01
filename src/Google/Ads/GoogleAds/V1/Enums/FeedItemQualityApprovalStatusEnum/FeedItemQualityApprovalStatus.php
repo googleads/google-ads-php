@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\FeedItemQualityApprovalStatusEnum;
 
+use UnexpectedValueException;
+
 /**
  * The possible quality evaluation approval statuses of a feed item.
  *
@@ -36,6 +38,33 @@ class FeedItemQualityApprovalStatus
      * Generated from protobuf enum <code>DISAPPROVED = 3;</code>
      */
     const DISAPPROVED = 3;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::APPROVED => 'APPROVED',
+        self::DISAPPROVED => 'DISAPPROVED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

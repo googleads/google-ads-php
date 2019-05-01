@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\UserListDateRuleItemOperatorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible user list date rule item operators.
  *
@@ -47,6 +49,35 @@ class UserListDateRuleItemOperator
      * Generated from protobuf enum <code>AFTER = 5;</code>
      */
     const AFTER = 5;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::EQUALS => 'EQUALS',
+        self::NOT_EQUALS => 'NOT_EQUALS',
+        self::BEFORE => 'BEFORE',
+        self::AFTER => 'AFTER',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

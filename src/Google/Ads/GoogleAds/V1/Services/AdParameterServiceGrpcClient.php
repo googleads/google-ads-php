@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Ad Parameter service.
+ *
  * Service to manage ad parameters.
  */
 class AdParameterServiceGrpcClient extends \Grpc\BaseStub {

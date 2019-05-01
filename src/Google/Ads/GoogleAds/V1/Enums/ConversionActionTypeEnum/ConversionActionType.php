@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\ConversionActionTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible types of a conversion action.
  *
@@ -76,6 +78,39 @@ class ConversionActionType
      * Generated from protobuf enum <code>WEBSITE_CALL = 9;</code>
      */
     const WEBSITE_CALL = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::AD_CALL => 'AD_CALL',
+        self::CLICK_TO_CALL => 'CLICK_TO_CALL',
+        self::GOOGLE_PLAY_DOWNLOAD => 'GOOGLE_PLAY_DOWNLOAD',
+        self::GOOGLE_PLAY_IN_APP_PURCHASE => 'GOOGLE_PLAY_IN_APP_PURCHASE',
+        self::UPLOAD_CALLS => 'UPLOAD_CALLS',
+        self::UPLOAD_CLICKS => 'UPLOAD_CLICKS',
+        self::WEBPAGE => 'WEBPAGE',
+        self::WEBSITE_CALL => 'WEBSITE_CALL',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

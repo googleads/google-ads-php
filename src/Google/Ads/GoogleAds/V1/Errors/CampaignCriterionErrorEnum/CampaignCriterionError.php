@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\CampaignCriterionErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible campaign criterion errors.
  *
@@ -93,6 +95,42 @@ class CampaignCriterionError
      * Generated from protobuf enum <code>CANNOT_UPDATE_NEGATIVE_CRITERION = 12;</code>
      */
     const CANNOT_UPDATE_NEGATIVE_CRITERION = 12;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CONCRETE_TYPE_REQUIRED => 'CONCRETE_TYPE_REQUIRED',
+        self::INVALID_PLACEMENT_URL => 'INVALID_PLACEMENT_URL',
+        self::CANNOT_EXCLUDE_CRITERIA_TYPE => 'CANNOT_EXCLUDE_CRITERIA_TYPE',
+        self::CANNOT_SET_STATUS_FOR_CRITERIA_TYPE => 'CANNOT_SET_STATUS_FOR_CRITERIA_TYPE',
+        self::CANNOT_SET_STATUS_FOR_EXCLUDED_CRITERIA => 'CANNOT_SET_STATUS_FOR_EXCLUDED_CRITERIA',
+        self::CANNOT_TARGET_AND_EXCLUDE => 'CANNOT_TARGET_AND_EXCLUDE',
+        self::TOO_MANY_OPERATIONS => 'TOO_MANY_OPERATIONS',
+        self::OPERATOR_NOT_SUPPORTED_FOR_CRITERION_TYPE => 'OPERATOR_NOT_SUPPORTED_FOR_CRITERION_TYPE',
+        self::SHOPPING_CAMPAIGN_SALES_COUNTRY_NOT_SUPPORTED_FOR_SALES_CHANNEL => 'SHOPPING_CAMPAIGN_SALES_COUNTRY_NOT_SUPPORTED_FOR_SALES_CHANNEL',
+        self::CANNOT_ADD_EXISTING_FIELD => 'CANNOT_ADD_EXISTING_FIELD',
+        self::CANNOT_UPDATE_NEGATIVE_CRITERION => 'CANNOT_UPDATE_NEGATIVE_CRITERION',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

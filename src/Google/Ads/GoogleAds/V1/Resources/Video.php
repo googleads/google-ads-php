@@ -115,6 +115,20 @@ class Video extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue id = 2;</code>
+     * @return string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue id = 2;</code>
@@ -130,6 +144,21 @@ class Video extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The ID of the video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue id = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The owner channel id of the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 3;</code>
@@ -138,6 +167,20 @@ class Video extends \Google\Protobuf\Internal\Message
     public function getChannelId()
     {
         return $this->channel_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getChannelId()</code>
+
+     * The owner channel id of the video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 3;</code>
+     * @return string|null
+     */
+    public function getChannelIdValue()
+    {
+        $wrapper = $this->getChannelId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -156,6 +199,21 @@ class Video extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The owner channel id of the video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setChannelIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setChannelId($wrappedVar);
+    }
+
+    /**
      * The duration of the video in milliseconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value duration_millis = 4;</code>
@@ -164,6 +222,20 @@ class Video extends \Google\Protobuf\Internal\Message
     public function getDurationMillis()
     {
         return $this->duration_millis;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDurationMillis()</code>
+
+     * The duration of the video in milliseconds.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value duration_millis = 4;</code>
+     * @return int|string|null
+     */
+    public function getDurationMillisValue()
+    {
+        $wrapper = $this->getDurationMillis();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -182,6 +254,21 @@ class Video extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The duration of the video in milliseconds.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value duration_millis = 4;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setDurationMillisValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setDurationMillis($wrappedVar);
+    }
+
+    /**
      * The title of the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue title = 5;</code>
@@ -190,6 +277,20 @@ class Video extends \Google\Protobuf\Internal\Message
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTitle()</code>
+
+     * The title of the video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue title = 5;</code>
+     * @return string|null
+     */
+    public function getTitleValue()
+    {
+        $wrapper = $this->getTitle();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -205,6 +306,21 @@ class Video extends \Google\Protobuf\Internal\Message
         $this->title = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The title of the video.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue title = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTitleValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTitle($wrappedVar);
     }
 
 }

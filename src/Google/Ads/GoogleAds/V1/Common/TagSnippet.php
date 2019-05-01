@@ -134,6 +134,21 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getGlobalSiteTag()</code>
+
+     * The site tag that adds visitors to your basic remarketing lists and sets
+     * new cookies on your domain.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue global_site_tag = 3;</code>
+     * @return string|null
+     */
+    public function getGlobalSiteTagValue()
+    {
+        $wrapper = $this->getGlobalSiteTag();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The site tag that adds visitors to your basic remarketing lists and sets
      * new cookies on your domain.
      *
@@ -150,6 +165,22 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The site tag that adds visitors to your basic remarketing lists and sets
+     * new cookies on your domain.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue global_site_tag = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setGlobalSiteTagValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setGlobalSiteTag($wrappedVar);
+    }
+
+    /**
      * The event snippet that works with the site tag to track actions that
      * should be counted as conversions.
      *
@@ -159,6 +190,21 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
     public function getEventSnippet()
     {
         return $this->event_snippet;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEventSnippet()</code>
+
+     * The event snippet that works with the site tag to track actions that
+     * should be counted as conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue event_snippet = 4;</code>
+     * @return string|null
+     */
+    public function getEventSnippetValue()
+    {
+        $wrapper = $this->getEventSnippet();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -175,6 +221,22 @@ class TagSnippet extends \Google\Protobuf\Internal\Message
         $this->event_snippet = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The event snippet that works with the site tag to track actions that
+     * should be counted as conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue event_snippet = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setEventSnippetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setEventSnippet($wrappedVar);
     }
 
 }

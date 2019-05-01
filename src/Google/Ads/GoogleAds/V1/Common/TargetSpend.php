@@ -69,6 +69,23 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTargetSpendMicros()</code>
+
+     * The spend target under which to maximize clicks.
+     * A TargetSpend bidder will attempt to spend the smaller of this value
+     * or the natural throttling spend amount.
+     * If not specified, the budget is used as the spend target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_spend_micros = 1;</code>
+     * @return int|string|null
+     */
+    public function getTargetSpendMicrosValue()
+    {
+        $wrapper = $this->getTargetSpendMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The spend target under which to maximize clicks.
      * A TargetSpend bidder will attempt to spend the smaller of this value
      * or the natural throttling spend amount.
@@ -87,6 +104,24 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The spend target under which to maximize clicks.
+     * A TargetSpend bidder will attempt to spend the smaller of this value
+     * or the natural throttling spend amount.
+     * If not specified, the budget is used as the spend target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_spend_micros = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setTargetSpendMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setTargetSpendMicros($wrappedVar);
+    }
+
+    /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
@@ -96,6 +131,21 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
     public function getCpcBidCeilingMicros()
     {
         return $this->cpc_bid_ceiling_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCpcBidCeilingMicros()</code>
+
+     * Maximum bid limit that can be set by the bid strategy.
+     * The limit applies to all keywords managed by the strategy.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getCpcBidCeilingMicrosValue()
+    {
+        $wrapper = $this->getCpcBidCeilingMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -112,6 +162,22 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
         $this->cpc_bid_ceiling_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Maximum bid limit that can be set by the bid strategy.
+     * The limit applies to all keywords managed by the strategy.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpcBidCeilingMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpcBidCeilingMicros($wrappedVar);
     }
 
 }

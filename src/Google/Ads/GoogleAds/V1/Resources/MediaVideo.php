@@ -79,6 +79,20 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdDurationMillis()</code>
+
+     * The duration of the Video in milliseconds.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * @return int|string|null
+     */
+    public function getAdDurationMillisValue()
+    {
+        $wrapper = $this->getAdDurationMillis();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The duration of the Video in milliseconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
@@ -94,6 +108,21 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The duration of the Video in milliseconds.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setAdDurationMillisValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setAdDurationMillis($wrappedVar);
+    }
+
+    /**
      * The YouTube video ID (as seen in YouTube URLs).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
@@ -102,6 +131,20 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     public function getYoutubeVideoId()
     {
         return $this->youtube_video_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getYoutubeVideoId()</code>
+
+     * The YouTube video ID (as seen in YouTube URLs).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
+     * @return string|null
+     */
+    public function getYoutubeVideoIdValue()
+    {
+        $wrapper = $this->getYoutubeVideoId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -120,6 +163,21 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The YouTube video ID (as seen in YouTube URLs).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setYoutubeVideoIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setYoutubeVideoId($wrappedVar);
+    }
+
+    /**
      * The Advertising Digital Identification code for this video, as defined by
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
@@ -130,6 +188,22 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     public function getAdvertisingIdCode()
     {
         return $this->advertising_id_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAdvertisingIdCode()</code>
+
+     * The Advertising Digital Identification code for this video, as defined by
+     * the American Association of Advertising Agencies, used mainly for
+     * television commercials.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3;</code>
+     * @return string|null
+     */
+    public function getAdvertisingIdCodeValue()
+    {
+        $wrapper = $this->getAdvertisingIdCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -150,6 +224,23 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Advertising Digital Identification code for this video, as defined by
+     * the American Association of Advertising Agencies, used mainly for
+     * television commercials.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdvertisingIdCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdvertisingIdCode($wrappedVar);
+    }
+
+    /**
      * The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
@@ -159,6 +250,21 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     public function getIsciCode()
     {
         return $this->isci_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getIsciCode()</code>
+
+     * The Industry Standard Commercial Identifier code for this video, used
+     * mainly for television commercials.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4;</code>
+     * @return string|null
+     */
+    public function getIsciCodeValue()
+    {
+        $wrapper = $this->getIsciCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -175,6 +281,22 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
         $this->isci_code = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Industry Standard Commercial Identifier code for this video, used
+     * mainly for television commercials.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setIsciCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setIsciCode($wrappedVar);
     }
 
 }

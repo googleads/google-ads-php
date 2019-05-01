@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\ConversionOrAdjustmentLagBucketEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum representing the number of days between the impression and the
  * conversion or between the impression and adjustments to the conversion.
@@ -309,6 +311,72 @@ class ConversionOrAdjustmentLagBucket
      * Generated from protobuf enum <code>ADJUSTMENT_UNKNOWN = 42;</code>
      */
     const ADJUSTMENT_UNKNOWN = 42;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CONVERSION_LESS_THAN_ONE_DAY => 'CONVERSION_LESS_THAN_ONE_DAY',
+        self::CONVERSION_ONE_TO_TWO_DAYS => 'CONVERSION_ONE_TO_TWO_DAYS',
+        self::CONVERSION_TWO_TO_THREE_DAYS => 'CONVERSION_TWO_TO_THREE_DAYS',
+        self::CONVERSION_THREE_TO_FOUR_DAYS => 'CONVERSION_THREE_TO_FOUR_DAYS',
+        self::CONVERSION_FOUR_TO_FIVE_DAYS => 'CONVERSION_FOUR_TO_FIVE_DAYS',
+        self::CONVERSION_FIVE_TO_SIX_DAYS => 'CONVERSION_FIVE_TO_SIX_DAYS',
+        self::CONVERSION_SIX_TO_SEVEN_DAYS => 'CONVERSION_SIX_TO_SEVEN_DAYS',
+        self::CONVERSION_SEVEN_TO_EIGHT_DAYS => 'CONVERSION_SEVEN_TO_EIGHT_DAYS',
+        self::CONVERSION_EIGHT_TO_NINE_DAYS => 'CONVERSION_EIGHT_TO_NINE_DAYS',
+        self::CONVERSION_NINE_TO_TEN_DAYS => 'CONVERSION_NINE_TO_TEN_DAYS',
+        self::CONVERSION_TEN_TO_ELEVEN_DAYS => 'CONVERSION_TEN_TO_ELEVEN_DAYS',
+        self::CONVERSION_ELEVEN_TO_TWELVE_DAYS => 'CONVERSION_ELEVEN_TO_TWELVE_DAYS',
+        self::CONVERSION_TWELVE_TO_THIRTEEN_DAYS => 'CONVERSION_TWELVE_TO_THIRTEEN_DAYS',
+        self::CONVERSION_THIRTEEN_TO_FOURTEEN_DAYS => 'CONVERSION_THIRTEEN_TO_FOURTEEN_DAYS',
+        self::CONVERSION_FOURTEEN_TO_TWENTY_ONE_DAYS => 'CONVERSION_FOURTEEN_TO_TWENTY_ONE_DAYS',
+        self::CONVERSION_TWENTY_ONE_TO_THIRTY_DAYS => 'CONVERSION_TWENTY_ONE_TO_THIRTY_DAYS',
+        self::CONVERSION_THIRTY_TO_FORTY_FIVE_DAYS => 'CONVERSION_THIRTY_TO_FORTY_FIVE_DAYS',
+        self::CONVERSION_FORTY_FIVE_TO_SIXTY_DAYS => 'CONVERSION_FORTY_FIVE_TO_SIXTY_DAYS',
+        self::CONVERSION_SIXTY_TO_NINETY_DAYS => 'CONVERSION_SIXTY_TO_NINETY_DAYS',
+        self::ADJUSTMENT_LESS_THAN_ONE_DAY => 'ADJUSTMENT_LESS_THAN_ONE_DAY',
+        self::ADJUSTMENT_ONE_TO_TWO_DAYS => 'ADJUSTMENT_ONE_TO_TWO_DAYS',
+        self::ADJUSTMENT_TWO_TO_THREE_DAYS => 'ADJUSTMENT_TWO_TO_THREE_DAYS',
+        self::ADJUSTMENT_THREE_TO_FOUR_DAYS => 'ADJUSTMENT_THREE_TO_FOUR_DAYS',
+        self::ADJUSTMENT_FOUR_TO_FIVE_DAYS => 'ADJUSTMENT_FOUR_TO_FIVE_DAYS',
+        self::ADJUSTMENT_FIVE_TO_SIX_DAYS => 'ADJUSTMENT_FIVE_TO_SIX_DAYS',
+        self::ADJUSTMENT_SIX_TO_SEVEN_DAYS => 'ADJUSTMENT_SIX_TO_SEVEN_DAYS',
+        self::ADJUSTMENT_SEVEN_TO_EIGHT_DAYS => 'ADJUSTMENT_SEVEN_TO_EIGHT_DAYS',
+        self::ADJUSTMENT_EIGHT_TO_NINE_DAYS => 'ADJUSTMENT_EIGHT_TO_NINE_DAYS',
+        self::ADJUSTMENT_NINE_TO_TEN_DAYS => 'ADJUSTMENT_NINE_TO_TEN_DAYS',
+        self::ADJUSTMENT_TEN_TO_ELEVEN_DAYS => 'ADJUSTMENT_TEN_TO_ELEVEN_DAYS',
+        self::ADJUSTMENT_ELEVEN_TO_TWELVE_DAYS => 'ADJUSTMENT_ELEVEN_TO_TWELVE_DAYS',
+        self::ADJUSTMENT_TWELVE_TO_THIRTEEN_DAYS => 'ADJUSTMENT_TWELVE_TO_THIRTEEN_DAYS',
+        self::ADJUSTMENT_THIRTEEN_TO_FOURTEEN_DAYS => 'ADJUSTMENT_THIRTEEN_TO_FOURTEEN_DAYS',
+        self::ADJUSTMENT_FOURTEEN_TO_TWENTY_ONE_DAYS => 'ADJUSTMENT_FOURTEEN_TO_TWENTY_ONE_DAYS',
+        self::ADJUSTMENT_TWENTY_ONE_TO_THIRTY_DAYS => 'ADJUSTMENT_TWENTY_ONE_TO_THIRTY_DAYS',
+        self::ADJUSTMENT_THIRTY_TO_FORTY_FIVE_DAYS => 'ADJUSTMENT_THIRTY_TO_FORTY_FIVE_DAYS',
+        self::ADJUSTMENT_FORTY_FIVE_TO_SIXTY_DAYS => 'ADJUSTMENT_FORTY_FIVE_TO_SIXTY_DAYS',
+        self::ADJUSTMENT_SIXTY_TO_NINETY_DAYS => 'ADJUSTMENT_SIXTY_TO_NINETY_DAYS',
+        self::ADJUSTMENT_NINETY_TO_ONE_HUNDRED_AND_FORTY_FIVE_DAYS => 'ADJUSTMENT_NINETY_TO_ONE_HUNDRED_AND_FORTY_FIVE_DAYS',
+        self::CONVERSION_UNKNOWN => 'CONVERSION_UNKNOWN',
+        self::ADJUSTMENT_UNKNOWN => 'ADJUSTMENT_UNKNOWN',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

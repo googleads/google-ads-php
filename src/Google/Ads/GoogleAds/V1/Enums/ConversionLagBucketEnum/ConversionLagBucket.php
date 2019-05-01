@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\ConversionLagBucketEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum representing the number of days between impression and conversion.
  *
@@ -154,6 +156,50 @@ class ConversionLagBucket
      * Generated from protobuf enum <code>SIXTY_TO_NINETY_DAYS = 20;</code>
      */
     const SIXTY_TO_NINETY_DAYS = 20;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::LESS_THAN_ONE_DAY => 'LESS_THAN_ONE_DAY',
+        self::ONE_TO_TWO_DAYS => 'ONE_TO_TWO_DAYS',
+        self::TWO_TO_THREE_DAYS => 'TWO_TO_THREE_DAYS',
+        self::THREE_TO_FOUR_DAYS => 'THREE_TO_FOUR_DAYS',
+        self::FOUR_TO_FIVE_DAYS => 'FOUR_TO_FIVE_DAYS',
+        self::FIVE_TO_SIX_DAYS => 'FIVE_TO_SIX_DAYS',
+        self::SIX_TO_SEVEN_DAYS => 'SIX_TO_SEVEN_DAYS',
+        self::SEVEN_TO_EIGHT_DAYS => 'SEVEN_TO_EIGHT_DAYS',
+        self::EIGHT_TO_NINE_DAYS => 'EIGHT_TO_NINE_DAYS',
+        self::NINE_TO_TEN_DAYS => 'NINE_TO_TEN_DAYS',
+        self::TEN_TO_ELEVEN_DAYS => 'TEN_TO_ELEVEN_DAYS',
+        self::ELEVEN_TO_TWELVE_DAYS => 'ELEVEN_TO_TWELVE_DAYS',
+        self::TWELVE_TO_THIRTEEN_DAYS => 'TWELVE_TO_THIRTEEN_DAYS',
+        self::THIRTEEN_TO_FOURTEEN_DAYS => 'THIRTEEN_TO_FOURTEEN_DAYS',
+        self::FOURTEEN_TO_TWENTY_ONE_DAYS => 'FOURTEEN_TO_TWENTY_ONE_DAYS',
+        self::TWENTY_ONE_TO_THIRTY_DAYS => 'TWENTY_ONE_TO_THIRTY_DAYS',
+        self::THIRTY_TO_FORTY_FIVE_DAYS => 'THIRTY_TO_FORTY_FIVE_DAYS',
+        self::FORTY_FIVE_TO_SIXTY_DAYS => 'FORTY_FIVE_TO_SIXTY_DAYS',
+        self::SIXTY_TO_NINETY_DAYS => 'SIXTY_TO_NINETY_DAYS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

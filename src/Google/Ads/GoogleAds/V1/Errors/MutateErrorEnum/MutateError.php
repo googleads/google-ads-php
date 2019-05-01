@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\MutateErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible mutate errors.
  *
@@ -60,6 +62,37 @@ class MutateError
      * Generated from protobuf enum <code>RESOURCE_ALREADY_EXISTS = 11;</code>
      */
     const RESOURCE_ALREADY_EXISTS = 11;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::RESOURCE_NOT_FOUND => 'RESOURCE_NOT_FOUND',
+        self::ID_EXISTS_IN_MULTIPLE_MUTATES => 'ID_EXISTS_IN_MULTIPLE_MUTATES',
+        self::INCONSISTENT_FIELD_VALUES => 'INCONSISTENT_FIELD_VALUES',
+        self::MUTATE_NOT_ALLOWED => 'MUTATE_NOT_ALLOWED',
+        self::RESOURCE_NOT_IN_GOOGLE_ADS => 'RESOURCE_NOT_IN_GOOGLE_ADS',
+        self::RESOURCE_ALREADY_EXISTS => 'RESOURCE_ALREADY_EXISTS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

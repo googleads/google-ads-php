@@ -57,6 +57,20 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getMinNights()</code>
+
+     * Low end of the number of nights in the stay.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value min_nights = 1;</code>
+     * @return int|string|null
+     */
+    public function getMinNightsValue()
+    {
+        $wrapper = $this->getMinNights();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Low end of the number of nights in the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value min_nights = 1;</code>
@@ -72,6 +86,21 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Low end of the number of nights in the stay.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value min_nights = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setMinNightsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setMinNights($wrappedVar);
+    }
+
+    /**
      * High end of the number of nights in the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value max_nights = 2;</code>
@@ -80,6 +109,20 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
     public function getMaxNights()
     {
         return $this->max_nights;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMaxNights()</code>
+
+     * High end of the number of nights in the stay.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value max_nights = 2;</code>
+     * @return int|string|null
+     */
+    public function getMaxNightsValue()
+    {
+        $wrapper = $this->getMaxNights();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -95,6 +138,21 @@ class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
         $this->max_nights = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * High end of the number of nights in the stay.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value max_nights = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setMaxNightsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setMaxNights($wrappedVar);
     }
 
 }

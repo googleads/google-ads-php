@@ -114,6 +114,20 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getSearchTerm()</code>
+
+     * The search term.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * @return string|null
+     */
+    public function getSearchTermValue()
+    {
+        $wrapper = $this->getSearchTerm();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The search term.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
@@ -129,6 +143,21 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The search term.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSearchTermValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSearchTerm($wrappedVar);
+    }
+
+    /**
      * The ad group the search term served in.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
@@ -137,6 +166,20 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     public function getAdGroup()
     {
         return $this->ad_group;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAdGroup()</code>
+
+     * The ad group the search term served in.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * @return string|null
+     */
+    public function getAdGroupValue()
+    {
+        $wrapper = $this->getAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -152,6 +195,21 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
         $this->ad_group = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The ad group the search term served in.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroup($wrappedVar);
     }
 
     /**

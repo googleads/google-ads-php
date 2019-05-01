@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\BillingSetupErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible billing setup errors.
  *
@@ -125,6 +127,46 @@ class BillingSetupError
      * Generated from protobuf enum <code>PAYMENTS_ACCOUNT_INELIGIBLE = 16;</code>
      */
     const PAYMENTS_ACCOUNT_INELIGIBLE = 16;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CANNOT_USE_EXISTING_AND_NEW_ACCOUNT => 'CANNOT_USE_EXISTING_AND_NEW_ACCOUNT',
+        self::CANNOT_REMOVE_STARTED_BILLING_SETUP => 'CANNOT_REMOVE_STARTED_BILLING_SETUP',
+        self::CANNOT_CHANGE_BILLING_TO_SAME_PAYMENTS_ACCOUNT => 'CANNOT_CHANGE_BILLING_TO_SAME_PAYMENTS_ACCOUNT',
+        self::BILLING_SETUP_NOT_PERMITTED_FOR_CUSTOMER_STATUS => 'BILLING_SETUP_NOT_PERMITTED_FOR_CUSTOMER_STATUS',
+        self::INVALID_PAYMENTS_ACCOUNT => 'INVALID_PAYMENTS_ACCOUNT',
+        self::BILLING_SETUP_NOT_PERMITTED_FOR_CUSTOMER_CATEGORY => 'BILLING_SETUP_NOT_PERMITTED_FOR_CUSTOMER_CATEGORY',
+        self::INVALID_START_TIME_TYPE => 'INVALID_START_TIME_TYPE',
+        self::THIRD_PARTY_ALREADY_HAS_BILLING => 'THIRD_PARTY_ALREADY_HAS_BILLING',
+        self::BILLING_SETUP_IN_PROGRESS => 'BILLING_SETUP_IN_PROGRESS',
+        self::NO_SIGNUP_PERMISSION => 'NO_SIGNUP_PERMISSION',
+        self::CHANGE_OF_BILL_TO_IN_PROGRESS => 'CHANGE_OF_BILL_TO_IN_PROGRESS',
+        self::PAYMENTS_PROFILE_NOT_FOUND => 'PAYMENTS_PROFILE_NOT_FOUND',
+        self::PAYMENTS_ACCOUNT_NOT_FOUND => 'PAYMENTS_ACCOUNT_NOT_FOUND',
+        self::PAYMENTS_PROFILE_INELIGIBLE => 'PAYMENTS_PROFILE_INELIGIBLE',
+        self::PAYMENTS_ACCOUNT_INELIGIBLE => 'PAYMENTS_ACCOUNT_INELIGIBLE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

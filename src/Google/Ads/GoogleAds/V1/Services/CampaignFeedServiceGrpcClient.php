@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the CampaignFeed service.
+ *
  * Service to manage campaign feeds.
  */
 class CampaignFeedServiceGrpcClient extends \Grpc\BaseStub {

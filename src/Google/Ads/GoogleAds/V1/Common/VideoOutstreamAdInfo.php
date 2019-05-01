@@ -58,6 +58,20 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHeadline()</code>
+
+     * The headline of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
+     * @return string|null
+     */
+    public function getHeadlineValue()
+    {
+        $wrapper = $this->getHeadline();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The headline of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
@@ -73,6 +87,21 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The headline of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHeadlineValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHeadline($wrappedVar);
+    }
+
+    /**
      * The description line.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
@@ -81,6 +110,20 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * The description line.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -96,6 +139,21 @@ class VideoOutstreamAdInfo extends \Google\Protobuf\Internal\Message
         $this->description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The description line.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
     }
 
 }

@@ -131,6 +131,20 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPaymentsAccountId()</code>
+
+     * A 16 digit ID used to identify a Payments account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2;</code>
+     * @return string|null
+     */
+    public function getPaymentsAccountIdValue()
+    {
+        $wrapper = $this->getPaymentsAccountId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * A 16 digit ID used to identify a Payments account.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2;</code>
@@ -146,6 +160,21 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A 16 digit ID used to identify a Payments account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPaymentsAccountIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPaymentsAccountId($wrappedVar);
+    }
+
+    /**
      * The name of the Payments account.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
@@ -154,6 +183,20 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the Payments account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -172,6 +215,21 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the Payments account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * The currency code of the Payments account.
      * A subset of the currency codes derived from the ISO 4217 standard is
      * supported.
@@ -182,6 +240,22 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     public function getCurrencyCode()
     {
         return $this->currency_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCurrencyCode()</code>
+
+     * The currency code of the Payments account.
+     * A subset of the currency codes derived from the ISO 4217 standard is
+     * supported.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4;</code>
+     * @return string|null
+     */
+    public function getCurrencyCodeValue()
+    {
+        $wrapper = $this->getCurrencyCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -202,6 +276,23 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The currency code of the Payments account.
+     * A subset of the currency codes derived from the ISO 4217 standard is
+     * supported.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCurrencyCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCurrencyCode($wrappedVar);
+    }
+
+    /**
      * A 12 digit ID used to identify the Payments profile associated with the
      * Payments account.
      *
@@ -211,6 +302,21 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     public function getPaymentsProfileId()
     {
         return $this->payments_profile_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPaymentsProfileId()</code>
+
+     * A 12 digit ID used to identify the Payments profile associated with the
+     * Payments account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5;</code>
+     * @return string|null
+     */
+    public function getPaymentsProfileIdValue()
+    {
+        $wrapper = $this->getPaymentsProfileId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -230,6 +336,22 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A 12 digit ID used to identify the Payments profile associated with the
+     * Payments account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPaymentsProfileIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPaymentsProfileId($wrappedVar);
+    }
+
+    /**
      * A secondary Payments profile ID present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
@@ -239,6 +361,21 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     public function getSecondaryPaymentsProfileId()
     {
         return $this->secondary_payments_profile_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getSecondaryPaymentsProfileId()</code>
+
+     * A secondary Payments profile ID present in uncommon situations, e.g.
+     * when a sequential liability agreement has been arranged.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6;</code>
+     * @return string|null
+     */
+    public function getSecondaryPaymentsProfileIdValue()
+    {
+        $wrapper = $this->getSecondaryPaymentsProfileId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -255,6 +392,22 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
         $this->secondary_payments_profile_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * A secondary Payments profile ID present in uncommon situations, e.g.
+     * when a sequential liability agreement has been arranged.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSecondaryPaymentsProfileIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSecondaryPaymentsProfileId($wrappedVar);
     }
 
 }

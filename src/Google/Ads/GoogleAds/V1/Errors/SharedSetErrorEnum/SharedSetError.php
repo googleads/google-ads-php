@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\SharedSetErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible shared set errors.
  *
@@ -47,6 +49,35 @@ class SharedSetError
      * Generated from protobuf enum <code>SHARED_SET_IN_USE = 5;</code>
      */
     const SHARED_SET_IN_USE = 5;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CUSTOMER_CANNOT_CREATE_SHARED_SET_OF_THIS_TYPE => 'CUSTOMER_CANNOT_CREATE_SHARED_SET_OF_THIS_TYPE',
+        self::DUPLICATE_NAME => 'DUPLICATE_NAME',
+        self::SHARED_SET_REMOVED => 'SHARED_SET_REMOVED',
+        self::SHARED_SET_IN_USE => 'SHARED_SET_IN_USE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

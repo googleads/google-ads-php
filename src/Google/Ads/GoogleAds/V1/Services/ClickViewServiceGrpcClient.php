@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the ClickView service.
+ *
  * Service to fetch click views.
  */
 class ClickViewServiceGrpcClient extends \Grpc\BaseStub {

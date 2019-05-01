@@ -121,6 +121,20 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getGclid()</code>
+
+     * The Google Click ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
+     * @return string|null
+     */
+    public function getGclidValue()
+    {
+        $wrapper = $this->getGclid();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Google Click ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
@@ -133,6 +147,21 @@ class ClickView extends \Google\Protobuf\Internal\Message
         $this->gclid = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Google Click ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setGclidValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setGclid($wrappedVar);
     }
 
     /**
@@ -203,6 +232,20 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPageNumber()</code>
+
+     * Page number in search results where the ad was shown.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
+     * @return int|string|null
+     */
+    public function getPageNumberValue()
+    {
+        $wrapper = $this->getPageNumber();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Page number in search results where the ad was shown.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
@@ -215,6 +258,21 @@ class ClickView extends \Google\Protobuf\Internal\Message
         $this->page_number = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Page number in search results where the ad was shown.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setPageNumberValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setPageNumber($wrappedVar);
     }
 
 }

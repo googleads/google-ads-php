@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Age Range View service.
+ *
  * Service to manage age range views.
  */
 class AgeRangeViewServiceGrpcClient extends \Grpc\BaseStub {

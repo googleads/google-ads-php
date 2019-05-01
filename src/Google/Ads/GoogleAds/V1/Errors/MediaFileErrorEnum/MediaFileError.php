@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\MediaFileErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible media file errors.
  *
@@ -161,6 +163,54 @@ class MediaFileError
      * Generated from protobuf enum <code>YOU_TUBE_VIDEO_NOT_FOUND = 24;</code>
      */
     const YOU_TUBE_VIDEO_NOT_FOUND = 24;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CANNOT_CREATE_STANDARD_ICON => 'CANNOT_CREATE_STANDARD_ICON',
+        self::CANNOT_SELECT_STANDARD_ICON_WITH_OTHER_TYPES => 'CANNOT_SELECT_STANDARD_ICON_WITH_OTHER_TYPES',
+        self::CANNOT_SPECIFY_MEDIA_FILE_ID_AND_DATA => 'CANNOT_SPECIFY_MEDIA_FILE_ID_AND_DATA',
+        self::DUPLICATE_MEDIA => 'DUPLICATE_MEDIA',
+        self::EMPTY_FIELD => 'EMPTY_FIELD',
+        self::RESOURCE_REFERENCED_IN_MULTIPLE_OPS => 'RESOURCE_REFERENCED_IN_MULTIPLE_OPS',
+        self::FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE => 'FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE',
+        self::INVALID_MEDIA_FILE_ID => 'INVALID_MEDIA_FILE_ID',
+        self::INVALID_MEDIA_SUB_TYPE => 'INVALID_MEDIA_SUB_TYPE',
+        self::INVALID_MEDIA_FILE_TYPE => 'INVALID_MEDIA_FILE_TYPE',
+        self::INVALID_MIME_TYPE => 'INVALID_MIME_TYPE',
+        self::INVALID_REFERENCE_ID => 'INVALID_REFERENCE_ID',
+        self::INVALID_YOU_TUBE_ID => 'INVALID_YOU_TUBE_ID',
+        self::MEDIA_FILE_FAILED_TRANSCODING => 'MEDIA_FILE_FAILED_TRANSCODING',
+        self::MEDIA_NOT_TRANSCODED => 'MEDIA_NOT_TRANSCODED',
+        self::MEDIA_TYPE_DOES_NOT_MATCH_MEDIA_FILE_TYPE => 'MEDIA_TYPE_DOES_NOT_MATCH_MEDIA_FILE_TYPE',
+        self::NO_FIELDS_SPECIFIED => 'NO_FIELDS_SPECIFIED',
+        self::NULL_REFERENCE_ID_AND_MEDIA_ID => 'NULL_REFERENCE_ID_AND_MEDIA_ID',
+        self::TOO_LONG => 'TOO_LONG',
+        self::UNSUPPORTED_TYPE => 'UNSUPPORTED_TYPE',
+        self::YOU_TUBE_SERVICE_UNAVAILABLE => 'YOU_TUBE_SERVICE_UNAVAILABLE',
+        self::YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION => 'YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION',
+        self::YOU_TUBE_VIDEO_NOT_FOUND => 'YOU_TUBE_VIDEO_NOT_FOUND',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

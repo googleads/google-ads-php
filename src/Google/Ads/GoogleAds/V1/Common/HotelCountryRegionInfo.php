@@ -49,6 +49,20 @@ class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCountryRegionCriterion()</code>
+
+     * The Geo Target Constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_region_criterion = 1;</code>
+     * @return string|null
+     */
+    public function getCountryRegionCriterionValue()
+    {
+        $wrapper = $this->getCountryRegionCriterion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Geo Target Constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_region_criterion = 1;</code>
@@ -61,6 +75,21 @@ class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
         $this->country_region_criterion = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Geo Target Constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_region_criterion = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryRegionCriterionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryRegionCriterion($wrappedVar);
     }
 
 }

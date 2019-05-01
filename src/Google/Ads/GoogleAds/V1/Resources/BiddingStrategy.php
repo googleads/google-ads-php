@@ -170,6 +170,20 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the bidding strategy.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the bidding strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
@@ -185,6 +199,21 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the bidding strategy.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The name of the bidding strategy.
      * All bidding strategies within an account must be named distinctly.
      * The length of this string should be between 1 and 255, inclusive,
@@ -196,6 +225,23 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the bidding strategy.
+     * All bidding strategies within an account must be named distinctly.
+     * The length of this string should be between 1 and 255, inclusive,
+     * in UTF-8 bytes, (trimmed).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -214,6 +260,24 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
         $this->name = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the bidding strategy.
+     * All bidding strategies within an account must be named distinctly.
+     * The length of this string should be between 1 and 255, inclusive,
+     * in UTF-8 bytes, (trimmed).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
     }
 
     /**
@@ -287,6 +351,21 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCampaignCount()</code>
+
+     * The number of campaigns attached to this bidding strategy.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
+     * @return int|string|null
+     */
+    public function getCampaignCountValue()
+    {
+        $wrapper = $this->getCampaignCount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
@@ -303,6 +382,22 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The number of campaigns attached to this bidding strategy.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCampaignCountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCampaignCount($wrappedVar);
+    }
+
+    /**
      * The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
@@ -312,6 +407,21 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     public function getNonRemovedCampaignCount()
     {
         return $this->non_removed_campaign_count;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getNonRemovedCampaignCount()</code>
+
+     * The number of non-removed campaigns attached to this bidding strategy.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
+     * @return int|string|null
+     */
+    public function getNonRemovedCampaignCountValue()
+    {
+        $wrapper = $this->getNonRemovedCampaignCount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -328,6 +438,22 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
         $this->non_removed_campaign_count = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The number of non-removed campaigns attached to this bidding strategy.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setNonRemovedCampaignCountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setNonRemovedCampaignCount($wrappedVar);
     }
 
     /**

@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Describes the effect on serving that a policy topic entry will have.
- * Next Id: 5
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicConstraint</code>
  */

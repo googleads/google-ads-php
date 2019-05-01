@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\CriterionCategoryChannelAvailabilityModeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum containing the possible CriterionCategoryChannelAvailabilityMode.
  *
@@ -43,6 +45,34 @@ class CriterionCategoryChannelAvailabilityMode
      * Generated from protobuf enum <code>CHANNEL_TYPE_AND_SUBSET_SUBTYPES = 4;</code>
      */
     const CHANNEL_TYPE_AND_SUBSET_SUBTYPES = 4;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::ALL_CHANNELS => 'ALL_CHANNELS',
+        self::CHANNEL_TYPE_AND_ALL_SUBTYPES => 'CHANNEL_TYPE_AND_ALL_SUBTYPES',
+        self::CHANNEL_TYPE_AND_SUBSET_SUBTYPES => 'CHANNEL_TYPE_AND_SUBSET_SUBTYPES',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

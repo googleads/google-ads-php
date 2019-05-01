@@ -287,6 +287,20 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * Id of the user list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Id of the user list.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -302,6 +316,21 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Id of the user list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * A flag that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
@@ -313,6 +342,23 @@ class UserList extends \Google\Protobuf\Internal\Message
     public function getReadOnly()
     {
         return $this->read_only;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getReadOnly()</code>
+
+     * A flag that indicates if a user may edit a list. Depends on the list
+     * ownership and list type. For example, external remarketing user lists are
+     * not editable.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3;</code>
+     * @return bool|null
+     */
+    public function getReadOnlyValue()
+    {
+        $wrapper = $this->getReadOnly();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -334,6 +380,24 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * A flag that indicates if a user may edit a list. Depends on the list
+     * ownership and list type. For example, external remarketing user lists are
+     * not editable.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setReadOnlyValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setReadOnly($wrappedVar);
+    }
+
+    /**
      * Name of this user list. Depending on its access_reason, the user list name
      * may not be unique (e.g. if access_reason=SHARED)
      *
@@ -343,6 +407,21 @@ class UserList extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * Name of this user list. Depending on its access_reason, the user list name
+     * may not be unique (e.g. if access_reason=SHARED)
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -362,6 +441,22 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Name of this user list. Depending on its access_reason, the user list name
+     * may not be unique (e.g. if access_reason=SHARED)
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * Description of this user list.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 5;</code>
@@ -370,6 +465,20 @@ class UserList extends \Google\Protobuf\Internal\Message
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription()</code>
+
+     * Description of this user list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 5;</code>
+     * @return string|null
+     */
+    public function getDescriptionValue()
+    {
+        $wrapper = $this->getDescription();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -385,6 +494,21 @@ class UserList extends \Google\Protobuf\Internal\Message
         $this->description = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Description of this user list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescriptionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription($wrappedVar);
     }
 
     /**
@@ -430,6 +554,21 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getIntegrationCode()</code>
+
+     * An ID from external system. It is used by user list sellers to correlate
+     * IDs on their systems.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue integration_code = 7;</code>
+     * @return string|null
+     */
+    public function getIntegrationCodeValue()
+    {
+        $wrapper = $this->getIntegrationCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * An ID from external system. It is used by user list sellers to correlate
      * IDs on their systems.
      *
@@ -446,6 +585,22 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * An ID from external system. It is used by user list sellers to correlate
+     * IDs on their systems.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue integration_code = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setIntegrationCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setIntegrationCode($wrappedVar);
+    }
+
+    /**
      * Number of days a user's cookie stays on your list since its most recent
      * addition to the list. This field must be between 0 and 540 inclusive.
      * However, for CRM based userlists, this field can be set to 10000 which
@@ -458,6 +613,24 @@ class UserList extends \Google\Protobuf\Internal\Message
     public function getMembershipLifeSpan()
     {
         return $this->membership_life_span;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getMembershipLifeSpan()</code>
+
+     * Number of days a user's cookie stays on your list since its most recent
+     * addition to the list. This field must be between 0 and 540 inclusive.
+     * However, for CRM based userlists, this field can be set to 10000 which
+     * means no expiration.
+     * It'll be ignored for logical_user_list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value membership_life_span = 8;</code>
+     * @return int|string|null
+     */
+    public function getMembershipLifeSpanValue()
+    {
+        $wrapper = $this->getMembershipLifeSpan();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -480,6 +653,25 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Number of days a user's cookie stays on your list since its most recent
+     * addition to the list. This field must be between 0 and 540 inclusive.
+     * However, for CRM based userlists, this field can be set to 10000 which
+     * means no expiration.
+     * It'll be ignored for logical_user_list.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value membership_life_span = 8;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setMembershipLifeSpanValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setMembershipLifeSpan($wrappedVar);
+    }
+
+    /**
      * Estimated number of users in this user list, on the Google Display Network.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
@@ -490,6 +682,22 @@ class UserList extends \Google\Protobuf\Internal\Message
     public function getSizeForDisplay()
     {
         return $this->size_for_display;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getSizeForDisplay()</code>
+
+     * Estimated number of users in this user list, on the Google Display Network.
+     * This value is null if the number of users has not yet been determined.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9;</code>
+     * @return int|string|null
+     */
+    public function getSizeForDisplayValue()
+    {
+        $wrapper = $this->getSizeForDisplay();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -507,6 +715,23 @@ class UserList extends \Google\Protobuf\Internal\Message
         $this->size_for_display = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Estimated number of users in this user list, on the Google Display Network.
+     * This value is null if the number of users has not yet been determined.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setSizeForDisplayValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setSizeForDisplay($wrappedVar);
     }
 
     /**
@@ -554,6 +779,23 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getSizeForSearch()</code>
+
+     * Estimated number of users in this user list in the google.com domain.
+     * These are the users available for targeting in Search campaigns.
+     * This value is null if the number of users has not yet been determined.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11;</code>
+     * @return int|string|null
+     */
+    public function getSizeForSearchValue()
+    {
+        $wrapper = $this->getSizeForSearch();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Estimated number of users in this user list in the google.com domain.
      * These are the users available for targeting in Search campaigns.
      * This value is null if the number of users has not yet been determined.
@@ -569,6 +811,24 @@ class UserList extends \Google\Protobuf\Internal\Message
         $this->size_for_search = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Estimated number of users in this user list in the google.com domain.
+     * These are the users available for targeting in Search campaigns.
+     * This value is null if the number of users has not yet been determined.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setSizeForSearchValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setSizeForSearch($wrappedVar);
     }
 
     /**
@@ -731,6 +991,20 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getEligibleForSearch()</code>
+
+     * Indicates if this user list is eligible for Google Search Network.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_search = 17;</code>
+     * @return bool|null
+     */
+    public function getEligibleForSearchValue()
+    {
+        $wrapper = $this->getEligibleForSearch();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Indicates if this user list is eligible for Google Search Network.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_search = 17;</code>
@@ -746,6 +1020,21 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Indicates if this user list is eligible for Google Search Network.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_search = 17;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setEligibleForSearchValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setEligibleForSearch($wrappedVar);
+    }
+
+    /**
      * Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
@@ -755,6 +1044,21 @@ class UserList extends \Google\Protobuf\Internal\Message
     public function getEligibleForDisplay()
     {
         return $this->eligible_for_display;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEligibleForDisplay()</code>
+
+     * Indicates this user list is eligible for Google Display Network.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18;</code>
+     * @return bool|null
+     */
+    public function getEligibleForDisplayValue()
+    {
+        $wrapper = $this->getEligibleForDisplay();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -771,6 +1075,22 @@ class UserList extends \Google\Protobuf\Internal\Message
         $this->eligible_for_display = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Indicates this user list is eligible for Google Display Network.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setEligibleForDisplayValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setEligibleForDisplay($wrappedVar);
     }
 
     /**

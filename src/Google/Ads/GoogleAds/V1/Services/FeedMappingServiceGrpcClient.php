@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the FeedMapping service.
+ *
  * Service to manage feed mappings.
  */
 class FeedMappingServiceGrpcClient extends \Grpc\BaseStub {

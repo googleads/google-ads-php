@@ -98,6 +98,21 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCreationDate()</code>
+
+     * Creation date of the recommended ad.
+     * YYYY-MM-DD format, e.g., 2018-04-17.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
+     * @return string|null
+     */
+    public function getCreationDateValue()
+    {
+        $wrapper = $this->getCreationDate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Creation date of the recommended ad.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
@@ -114,6 +129,22 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Creation date of the recommended ad.
+     * YYYY-MM-DD format, e.g., 2018-04-17.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCreationDateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCreationDate($wrappedVar);
+    }
+
+    /**
      * Date, if present, is the earliest when the recommendation will be auto
      * applied.
      * YYYY-MM-DD format, e.g., 2018-04-17.
@@ -124,6 +155,22 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     public function getAutoApplyDate()
     {
         return $this->auto_apply_date;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getAutoApplyDate()</code>
+
+     * Date, if present, is the earliest when the recommendation will be auto
+     * applied.
+     * YYYY-MM-DD format, e.g., 2018-04-17.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
+     * @return string|null
+     */
+    public function getAutoApplyDateValue()
+    {
+        $wrapper = $this->getAutoApplyDate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -141,6 +188,23 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
         $this->auto_apply_date = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Date, if present, is the earliest when the recommendation will be auto
+     * applied.
+     * YYYY-MM-DD format, e.g., 2018-04-17.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAutoApplyDateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAutoApplyDate($wrappedVar);
     }
 
 }

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\KeywordPlanErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible errors from applying a keyword plan.
  *
@@ -108,6 +110,45 @@ class KeywordPlanError
      * Generated from protobuf enum <code>INVALID_NAME = 16;</code>
      */
     const INVALID_NAME = 16;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::BID_MULTIPLIER_OUT_OF_RANGE => 'BID_MULTIPLIER_OUT_OF_RANGE',
+        self::BID_TOO_HIGH => 'BID_TOO_HIGH',
+        self::BID_TOO_LOW => 'BID_TOO_LOW',
+        self::BID_TOO_MANY_FRACTIONAL_DIGITS => 'BID_TOO_MANY_FRACTIONAL_DIGITS',
+        self::DAILY_BUDGET_TOO_LOW => 'DAILY_BUDGET_TOO_LOW',
+        self::DAILY_BUDGET_TOO_MANY_FRACTIONAL_DIGITS => 'DAILY_BUDGET_TOO_MANY_FRACTIONAL_DIGITS',
+        self::INVALID_VALUE => 'INVALID_VALUE',
+        self::KEYWORD_PLAN_HAS_NO_KEYWORDS => 'KEYWORD_PLAN_HAS_NO_KEYWORDS',
+        self::KEYWORD_PLAN_NOT_ENABLED => 'KEYWORD_PLAN_NOT_ENABLED',
+        self::KEYWORD_PLAN_NOT_FOUND => 'KEYWORD_PLAN_NOT_FOUND',
+        self::MISSING_BID => 'MISSING_BID',
+        self::MISSING_FORECAST_PERIOD => 'MISSING_FORECAST_PERIOD',
+        self::INVALID_FORECAST_DATE_RANGE => 'INVALID_FORECAST_DATE_RANGE',
+        self::INVALID_NAME => 'INVALID_NAME',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

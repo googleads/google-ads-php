@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\FieldMaskErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible field mask errors.
  *
@@ -49,6 +51,35 @@ class FieldMaskError
      * Generated from protobuf enum <code>FIELD_HAS_SUBFIELDS = 3;</code>
      */
     const FIELD_HAS_SUBFIELDS = 3;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::FIELD_MASK_MISSING => 'FIELD_MASK_MISSING',
+        self::FIELD_MASK_NOT_ALLOWED => 'FIELD_MASK_NOT_ALLOWED',
+        self::FIELD_NOT_FOUND => 'FIELD_NOT_FOUND',
+        self::FIELD_HAS_SUBFIELDS => 'FIELD_HAS_SUBFIELDS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -106,6 +106,21 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPhoneNumber()</code>
+
+     * The advertiser's phone number to append to the ad.
+     * This string must not be empty.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 1;</code>
+     * @return string|null
+     */
+    public function getPhoneNumberValue()
+    {
+        $wrapper = $this->getPhoneNumber();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The advertiser's phone number to append to the ad.
      * This string must not be empty.
      *
@@ -122,6 +137,22 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The advertiser's phone number to append to the ad.
+     * This string must not be empty.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPhoneNumberValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPhoneNumber($wrappedVar);
+    }
+
+    /**
      * Uppercase two-letter country code of the advertiser's phone number.
      * This string must not be empty.
      *
@@ -131,6 +162,21 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     public function getCountryCode()
     {
         return $this->country_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCountryCode()</code>
+
+     * Uppercase two-letter country code of the advertiser's phone number.
+     * This string must not be empty.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
+     * @return string|null
+     */
+    public function getCountryCodeValue()
+    {
+        $wrapper = $this->getCountryCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -150,6 +196,22 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Uppercase two-letter country code of the advertiser's phone number.
+     * This string must not be empty.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryCode($wrappedVar);
+    }
+
+    /**
      * Indicates whether call tracking is enabled. By default, call tracking is
      * not enabled.
      *
@@ -159,6 +221,21 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     public function getCallTrackingEnabled()
     {
         return $this->call_tracking_enabled;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCallTrackingEnabled()</code>
+
+     * Indicates whether call tracking is enabled. By default, call tracking is
+     * not enabled.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_tracking_enabled = 3;</code>
+     * @return bool|null
+     */
+    public function getCallTrackingEnabledValue()
+    {
+        $wrapper = $this->getCallTrackingEnabled();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -178,6 +255,22 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Indicates whether call tracking is enabled. By default, call tracking is
+     * not enabled.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_tracking_enabled = 3;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setCallTrackingEnabledValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setCallTrackingEnabled($wrappedVar);
+    }
+
+    /**
      * The conversion action to attribute a call conversion to. If not set a
      * default conversion action is used. This field only has effect if
      * call_tracking_enabled is set to true. Otherwise this field is ignored.
@@ -188,6 +281,22 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     public function getCallConversionAction()
     {
         return $this->call_conversion_action;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCallConversionAction()</code>
+
+     * The conversion action to attribute a call conversion to. If not set a
+     * default conversion action is used. This field only has effect if
+     * call_tracking_enabled is set to true. Otherwise this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 4;</code>
+     * @return string|null
+     */
+    public function getCallConversionActionValue()
+    {
+        $wrapper = $this->getCallConversionAction();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -208,6 +317,23 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The conversion action to attribute a call conversion to. If not set a
+     * default conversion action is used. This field only has effect if
+     * call_tracking_enabled is set to true. Otherwise this field is ignored.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCallConversionActionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCallConversionAction($wrappedVar);
+    }
+
+    /**
      * If true, disable call conversion tracking. call_conversion_action should
      * not be set if this is true. Optional.
      *
@@ -217,6 +343,21 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
     public function getCallConversionTrackingDisabled()
     {
         return $this->call_conversion_tracking_disabled;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCallConversionTrackingDisabled()</code>
+
+     * If true, disable call conversion tracking. call_conversion_action should
+     * not be set if this is true. Optional.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_conversion_tracking_disabled = 5;</code>
+     * @return bool|null
+     */
+    public function getCallConversionTrackingDisabledValue()
+    {
+        $wrapper = $this->getCallConversionTrackingDisabled();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -233,6 +374,22 @@ class CallFeedItem extends \Google\Protobuf\Internal\Message
         $this->call_conversion_tracking_disabled = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * If true, disable call conversion tracking. call_conversion_action should
+     * not be set if this is true. Optional.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_conversion_tracking_disabled = 5;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setCallConversionTrackingDisabledValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setCallConversionTrackingDisabled($wrappedVar);
     }
 
     /**

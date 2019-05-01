@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the FeedItem service.
+ *
  * Service to manage feed items.
  */
 class FeedItemServiceGrpcClient extends \Grpc\BaseStub {

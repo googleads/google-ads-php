@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Campaign Shared Set service.
+ *
  * Service to manage campaign shared sets.
  */
 class CampaignSharedSetServiceGrpcClient extends \Grpc\BaseStub {

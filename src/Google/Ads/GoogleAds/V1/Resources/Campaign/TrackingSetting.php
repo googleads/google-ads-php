@@ -49,6 +49,20 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTrackingUrl()</code>
+
+     * The url used for dynamic tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlValue()
+    {
+        $wrapper = $this->getTrackingUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The url used for dynamic tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
@@ -61,6 +75,21 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
         $this->tracking_url = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The url used for dynamic tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrl($wrappedVar);
     }
 
 }

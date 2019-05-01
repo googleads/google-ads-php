@@ -39,6 +39,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -288,6 +289,13 @@ class CustomerServiceGapicClient
         $request = new GetCustomerRequest();
         $request->setResourceName($resourceName);
 
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
         return $this->startCall(
             'GetCustomer',
             Customer::class,
@@ -339,6 +347,13 @@ class CustomerServiceGapicClient
         if (isset($optionalArgs['validateOnly'])) {
             $request->setValidateOnly($optionalArgs['validateOnly']);
         }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'MutateCustomer',
@@ -427,6 +442,13 @@ class CustomerServiceGapicClient
         $request = new CreateCustomerClientRequest();
         $request->setCustomerId($customerId);
         $request->setCustomerClient($customerClient);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'CreateCustomerClient',

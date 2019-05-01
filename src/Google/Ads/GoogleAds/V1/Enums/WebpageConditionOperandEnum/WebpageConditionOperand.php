@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\WebpageConditionOperandEnum;
 
+use UnexpectedValueException;
+
 /**
  * The webpage condition operand in webpage criterion.
  *
@@ -53,6 +55,36 @@ class WebpageConditionOperand
      * Generated from protobuf enum <code>CUSTOM_LABEL = 6;</code>
      */
     const CUSTOM_LABEL = 6;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::URL => 'URL',
+        self::CATEGORY => 'CATEGORY',
+        self::PAGE_TITLE => 'PAGE_TITLE',
+        self::PAGE_CONTENT => 'PAGE_CONTENT',
+        self::CUSTOM_LABEL => 'CUSTOM_LABEL',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

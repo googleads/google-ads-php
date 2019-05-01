@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\MimeTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The mime type
  *
@@ -96,6 +98,43 @@ class MimeType
      * Generated from protobuf enum <code>HTML5_AD_ZIP = 13;</code>
      */
     const HTML5_AD_ZIP = 13;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::IMAGE_JPEG => 'IMAGE_JPEG',
+        self::IMAGE_GIF => 'IMAGE_GIF',
+        self::IMAGE_PNG => 'IMAGE_PNG',
+        self::FLASH => 'FLASH',
+        self::TEXT_HTML => 'TEXT_HTML',
+        self::PDF => 'PDF',
+        self::MSWORD => 'MSWORD',
+        self::MSEXCEL => 'MSEXCEL',
+        self::RTF => 'RTF',
+        self::AUDIO_WAV => 'AUDIO_WAV',
+        self::AUDIO_MP3 => 'AUDIO_MP3',
+        self::HTML5_AD_ZIP => 'HTML5_AD_ZIP',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

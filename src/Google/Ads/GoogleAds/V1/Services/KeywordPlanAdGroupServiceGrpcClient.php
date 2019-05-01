@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the keyword plan ad group service.
+ *
  * Service to manage Keyword Plan ad groups.
  */
 class KeywordPlanAdGroupServiceGrpcClient extends \Grpc\BaseStub {

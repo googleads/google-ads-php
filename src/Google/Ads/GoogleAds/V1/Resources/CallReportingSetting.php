@@ -72,6 +72,21 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCallReportingEnabled()</code>
+
+     * Enable reporting of phone call events by redirecting them via Google
+     * System.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_reporting_enabled = 1;</code>
+     * @return bool|null
+     */
+    public function getCallReportingEnabledValue()
+    {
+        $wrapper = $this->getCallReportingEnabled();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Enable reporting of phone call events by redirecting them via Google
      * System.
      *
@@ -88,6 +103,22 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Enable reporting of phone call events by redirecting them via Google
+     * System.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_reporting_enabled = 1;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setCallReportingEnabledValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setCallReportingEnabled($wrappedVar);
+    }
+
+    /**
      * Whether to enable call conversion reporting.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue call_conversion_reporting_enabled = 2;</code>
@@ -96,6 +127,20 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     public function getCallConversionReportingEnabled()
     {
         return $this->call_conversion_reporting_enabled;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCallConversionReportingEnabled()</code>
+
+     * Whether to enable call conversion reporting.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_conversion_reporting_enabled = 2;</code>
+     * @return bool|null
+     */
+    public function getCallConversionReportingEnabledValue()
+    {
+        $wrapper = $this->getCallConversionReportingEnabled();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -114,6 +159,21 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Whether to enable call conversion reporting.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue call_conversion_reporting_enabled = 2;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setCallConversionReportingEnabledValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setCallConversionReportingEnabled($wrappedVar);
+    }
+
+    /**
      * Customer-level call conversion action to attribute a call conversion to.
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
@@ -124,6 +184,22 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
     public function getCallConversionAction()
     {
         return $this->call_conversion_action;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCallConversionAction()</code>
+
+     * Customer-level call conversion action to attribute a call conversion to.
+     * If not set a default conversion action is used. Only in effect when
+     * call_conversion_reporting_enabled is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9;</code>
+     * @return string|null
+     */
+    public function getCallConversionActionValue()
+    {
+        $wrapper = $this->getCallConversionAction();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -141,6 +217,23 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
         $this->call_conversion_action = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Customer-level call conversion action to attribute a call conversion to.
+     * If not set a default conversion action is used. Only in effect when
+     * call_conversion_reporting_enabled is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCallConversionActionValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCallConversionAction($wrappedVar);
     }
 
 }

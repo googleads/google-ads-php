@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\ResourceCountLimitExceededErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible resource count limit exceeded errors.
  *
@@ -91,6 +93,39 @@ class ResourceCountLimitExceededError
      * Generated from protobuf enum <code>RESPONSE_ROW_LIMIT_EXCEEDED = 9;</code>
      */
     const RESPONSE_ROW_LIMIT_EXCEEDED = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::ACCOUNT_LIMIT => 'ACCOUNT_LIMIT',
+        self::CAMPAIGN_LIMIT => 'CAMPAIGN_LIMIT',
+        self::ADGROUP_LIMIT => 'ADGROUP_LIMIT',
+        self::AD_GROUP_AD_LIMIT => 'AD_GROUP_AD_LIMIT',
+        self::AD_GROUP_CRITERION_LIMIT => 'AD_GROUP_CRITERION_LIMIT',
+        self::SHARED_SET_LIMIT => 'SHARED_SET_LIMIT',
+        self::MATCHING_FUNCTION_LIMIT => 'MATCHING_FUNCTION_LIMIT',
+        self::RESPONSE_ROW_LIMIT_EXCEEDED => 'RESPONSE_ROW_LIMIT_EXCEEDED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

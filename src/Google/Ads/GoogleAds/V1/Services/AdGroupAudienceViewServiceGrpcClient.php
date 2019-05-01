@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the AdGroup Audience View service.
+ *
  * Service to manage ad group audience views.
  */
 class AdGroupAudienceViewServiceGrpcClient extends \Grpc\BaseStub {

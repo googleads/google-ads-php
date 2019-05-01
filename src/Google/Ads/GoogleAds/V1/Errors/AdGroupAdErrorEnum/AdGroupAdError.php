@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\AdGroupAdErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible ad group ad errors.
  *
@@ -73,6 +75,39 @@ class AdGroupAdError
      * Generated from protobuf enum <code>RESOURCE_REFERENCED_IN_MULTIPLE_OPS = 9;</code>
      */
     const RESOURCE_REFERENCED_IN_MULTIPLE_OPS = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::AD_GROUP_AD_LABEL_DOES_NOT_EXIST => 'AD_GROUP_AD_LABEL_DOES_NOT_EXIST',
+        self::AD_GROUP_AD_LABEL_ALREADY_EXISTS => 'AD_GROUP_AD_LABEL_ALREADY_EXISTS',
+        self::AD_NOT_UNDER_ADGROUP => 'AD_NOT_UNDER_ADGROUP',
+        self::CANNOT_OPERATE_ON_REMOVED_ADGROUPAD => 'CANNOT_OPERATE_ON_REMOVED_ADGROUPAD',
+        self::CANNOT_CREATE_DEPRECATED_ADS => 'CANNOT_CREATE_DEPRECATED_ADS',
+        self::CANNOT_CREATE_TEXT_ADS => 'CANNOT_CREATE_TEXT_ADS',
+        self::EMPTY_FIELD => 'EMPTY_FIELD',
+        self::RESOURCE_REFERENCED_IN_MULTIPLE_OPS => 'RESOURCE_REFERENCED_IN_MULTIPLE_OPS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -66,6 +66,23 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getText()</code>
+
+     * Text of the keyword idea.
+     * As in Keyword Plan historical metrics, this text may not be an actual
+     * keyword, but the canonical form of multiple keywords.
+     * See KeywordPlanKeywordHistoricalMetrics message in KeywordPlanService.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 2;</code>
+     * @return string|null
+     */
+    public function getTextValue()
+    {
+        $wrapper = $this->getText();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Text of the keyword idea.
      * As in Keyword Plan historical metrics, this text may not be an actual
      * keyword, but the canonical form of multiple keywords.
@@ -81,6 +98,24 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
         $this->text = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Text of the keyword idea.
+     * As in Keyword Plan historical metrics, this text may not be an actual
+     * keyword, but the canonical form of multiple keywords.
+     * See KeywordPlanKeywordHistoricalMetrics message in KeywordPlanService.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue text = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTextValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setText($wrappedVar);
     }
 
     /**

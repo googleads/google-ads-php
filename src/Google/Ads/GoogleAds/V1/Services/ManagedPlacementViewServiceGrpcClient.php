@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Managed Placement View service.
+ *
  * Service to manage Managed Placement views.
  */
 class ManagedPlacementViewServiceGrpcClient extends \Grpc\BaseStub {

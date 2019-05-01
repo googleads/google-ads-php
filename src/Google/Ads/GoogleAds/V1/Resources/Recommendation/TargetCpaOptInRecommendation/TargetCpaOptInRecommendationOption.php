@@ -105,6 +105,20 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Returns the unboxed value from <code>getTargetCpaMicros()</code>
+
+     * Average CPA target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getTargetCpaMicrosValue()
+    {
+        $wrapper = $this->getTargetCpaMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Average CPA target.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 2;</code>
@@ -120,6 +134,21 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Average CPA target.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setTargetCpaMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setTargetCpaMicros($wrappedVar);
+    }
+
+    /**
      * The minimum campaign budget, in local currency for the account,
      * required to achieve the target CPA.
      * Amount is specified in micros, where one million is equivalent to one
@@ -131,6 +160,23 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
     public function getRequiredCampaignBudgetAmountMicros()
     {
         return $this->required_campaign_budget_amount_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getRequiredCampaignBudgetAmountMicros()</code>
+
+     * The minimum campaign budget, in local currency for the account,
+     * required to achieve the target CPA.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value required_campaign_budget_amount_micros = 3;</code>
+     * @return int|string|null
+     */
+    public function getRequiredCampaignBudgetAmountMicrosValue()
+    {
+        $wrapper = $this->getRequiredCampaignBudgetAmountMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -149,6 +195,24 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
         $this->required_campaign_budget_amount_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The minimum campaign budget, in local currency for the account,
+     * required to achieve the target CPA.
+     * Amount is specified in micros, where one million is equivalent to one
+     * currency unit.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value required_campaign_budget_amount_micros = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRequiredCampaignBudgetAmountMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRequiredCampaignBudgetAmountMicros($wrappedVar);
     }
 
     /**

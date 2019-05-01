@@ -49,6 +49,20 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getData()</code>
+
+     * Raw zipped data.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * @return string|null
+     */
+    public function getDataValue()
+    {
+        $wrapper = $this->getData();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Raw zipped data.
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
@@ -61,6 +75,21 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
         $this->data = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BytesValue object.
+
+     * Raw zipped data.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDataValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BytesValue(['value' => $var]);
+        return $this->setData($wrappedVar);
     }
 
 }

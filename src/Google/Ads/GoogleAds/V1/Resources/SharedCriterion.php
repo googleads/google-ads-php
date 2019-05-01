@@ -122,6 +122,20 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getSharedSet()</code>
+
+     * The shared set to which the shared criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
+     * @return string|null
+     */
+    public function getSharedSetValue()
+    {
+        $wrapper = $this->getSharedSet();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The shared set to which the shared criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
@@ -137,6 +151,21 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The shared set to which the shared criterion belongs.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSharedSetValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSharedSet($wrappedVar);
+    }
+
+    /**
      * The ID of the criterion.
      * This field is ignored for mutates.
      *
@@ -146,6 +175,21 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     public function getCriterionId()
     {
         return $this->criterion_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCriterionId()</code>
+
+     * The ID of the criterion.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * @return int|string|null
+     */
+    public function getCriterionIdValue()
+    {
+        $wrapper = $this->getCriterionId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -162,6 +206,22 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
         $this->criterion_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the criterion.
+     * This field is ignored for mutates.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCriterionIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCriterionId($wrappedVar);
     }
 
     /**

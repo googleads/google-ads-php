@@ -67,6 +67,20 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAdGroup()</code>
+
+     * The ad group resource to add keyword to. This is a required field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 1;</code>
+     * @return string|null
+     */
+    public function getAdGroupValue()
+    {
+        $wrapper = $this->getAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ad group resource to add keyword to. This is a required field.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 1;</code>
@@ -79,6 +93,21 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
         $this->ad_group = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The ad group resource to add keyword to. This is a required field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setAdGroup($wrappedVar);
     }
 
     /**
@@ -120,6 +149,21 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCpcBidMicros()</code>
+
+     * Optional, CPC bid to set for the keyword. If not set, keyword will use
+     * bid based on bidding strategy used by target ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 3;</code>
+     * @return int|string|null
+     */
+    public function getCpcBidMicrosValue()
+    {
+        $wrapper = $this->getCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Optional, CPC bid to set for the keyword. If not set, keyword will use
      * bid based on bidding strategy used by target ad group.
      *
@@ -133,6 +177,22 @@ class KeywordParameters extends \Google\Protobuf\Internal\Message
         $this->cpc_bid_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Optional, CPC bid to set for the keyword. If not set, keyword will use
+     * bid based on bidding strategy used by target ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpcBidMicros($wrappedVar);
     }
 
 }

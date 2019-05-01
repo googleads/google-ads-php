@@ -157,6 +157,20 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFeedAttributeId()</code>
+
+     * Id of the feed attribute for which the value is associated with.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * @return int|string|null
+     */
+    public function getFeedAttributeIdValue()
+    {
+        $wrapper = $this->getFeedAttributeId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Id of the feed attribute for which the value is associated with.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
@@ -172,6 +186,21 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Id of the feed attribute for which the value is associated with.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setFeedAttributeIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setFeedAttributeId($wrappedVar);
+    }
+
+    /**
      * Int64 value. Should be set if feed_attribute_id refers to a feed attribute
      * of type INT64.
      *
@@ -181,6 +210,21 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     public function getIntegerValue()
     {
         return $this->integer_value;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getIntegerValue()</code>
+
+     * Int64 value. Should be set if feed_attribute_id refers to a feed attribute
+     * of type INT64.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value integer_value = 2;</code>
+     * @return int|string|null
+     */
+    public function getIntegerValueValue()
+    {
+        $wrapper = $this->getIntegerValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -200,6 +244,22 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Int64 value. Should be set if feed_attribute_id refers to a feed attribute
+     * of type INT64.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value integer_value = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIntegerValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setIntegerValue($wrappedVar);
+    }
+
+    /**
      * Bool value. Should be set if feed_attribute_id refers to a feed attribute
      * of type BOOLEAN.
      *
@@ -209,6 +269,21 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     public function getBooleanValue()
     {
         return $this->boolean_value;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBooleanValue()</code>
+
+     * Bool value. Should be set if feed_attribute_id refers to a feed attribute
+     * of type BOOLEAN.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue boolean_value = 3;</code>
+     * @return bool|null
+     */
+    public function getBooleanValueValue()
+    {
+        $wrapper = $this->getBooleanValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -228,6 +303,22 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Bool value. Should be set if feed_attribute_id refers to a feed attribute
+     * of type BOOLEAN.
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue boolean_value = 3;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setBooleanValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setBooleanValue($wrappedVar);
+    }
+
+    /**
      * String value. Should be set if feed_attribute_id refers to a feed attribute
      * of type STRING, URL or DATE_TIME.
      * For STRING the maximum length is 1500 characters. For URL the maximum
@@ -240,6 +331,24 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     public function getStringValue()
     {
         return $this->string_value;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getStringValue()</code>
+
+     * String value. Should be set if feed_attribute_id refers to a feed attribute
+     * of type STRING, URL or DATE_TIME.
+     * For STRING the maximum length is 1500 characters. For URL the maximum
+     * length is 2076 characters. For DATE_TIME the format of the string must
+     * be the same as start and end time for the feed item.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 4;</code>
+     * @return string|null
+     */
+    public function getStringValueValue()
+    {
+        $wrapper = $this->getStringValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -262,6 +371,25 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * String value. Should be set if feed_attribute_id refers to a feed attribute
+     * of type STRING, URL or DATE_TIME.
+     * For STRING the maximum length is 1500 characters. For URL the maximum
+     * length is 2076 characters. For DATE_TIME the format of the string must
+     * be the same as start and end time for the feed item.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setStringValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setStringValue($wrappedVar);
+    }
+
+    /**
      * Double value. Should be set if feed_attribute_id refers to a feed attribute
      * of type DOUBLE.
      *
@@ -271,6 +399,21 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
     public function getDoubleValue()
     {
         return $this->double_value;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDoubleValue()</code>
+
+     * Double value. Should be set if feed_attribute_id refers to a feed attribute
+     * of type DOUBLE.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue double_value = 5;</code>
+     * @return float|null
+     */
+    public function getDoubleValueValue()
+    {
+        $wrapper = $this->getDoubleValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -287,6 +430,22 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
         $this->double_value = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Double value. Should be set if feed_attribute_id refers to a feed attribute
+     * of type DOUBLE.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue double_value = 5;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setDoubleValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setDoubleValue($wrappedVar);
     }
 
     /**

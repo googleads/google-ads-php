@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\CriterionTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible criterion types.
  *
@@ -197,6 +199,67 @@ class CriterionType
      * Generated from protobuf enum <code>CUSTOM_INTENT = 30;</code>
      */
     const CUSTOM_INTENT = 30;
+    /**
+     * Location group.
+     *
+     * Generated from protobuf enum <code>LOCATION_GROUP = 31;</code>
+     */
+    const LOCATION_GROUP = 31;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::KEYWORD => 'KEYWORD',
+        self::PLACEMENT => 'PLACEMENT',
+        self::MOBILE_APP_CATEGORY => 'MOBILE_APP_CATEGORY',
+        self::MOBILE_APPLICATION => 'MOBILE_APPLICATION',
+        self::DEVICE => 'DEVICE',
+        self::LOCATION => 'LOCATION',
+        self::LISTING_GROUP => 'LISTING_GROUP',
+        self::AD_SCHEDULE => 'AD_SCHEDULE',
+        self::AGE_RANGE => 'AGE_RANGE',
+        self::GENDER => 'GENDER',
+        self::INCOME_RANGE => 'INCOME_RANGE',
+        self::PARENTAL_STATUS => 'PARENTAL_STATUS',
+        self::YOUTUBE_VIDEO => 'YOUTUBE_VIDEO',
+        self::YOUTUBE_CHANNEL => 'YOUTUBE_CHANNEL',
+        self::USER_LIST => 'USER_LIST',
+        self::PROXIMITY => 'PROXIMITY',
+        self::TOPIC => 'TOPIC',
+        self::LISTING_SCOPE => 'LISTING_SCOPE',
+        self::LANGUAGE => 'LANGUAGE',
+        self::IP_BLOCK => 'IP_BLOCK',
+        self::CONTENT_LABEL => 'CONTENT_LABEL',
+        self::CARRIER => 'CARRIER',
+        self::USER_INTEREST => 'USER_INTEREST',
+        self::WEBPAGE => 'WEBPAGE',
+        self::OPERATING_SYSTEM_VERSION => 'OPERATING_SYSTEM_VERSION',
+        self::APP_PAYMENT_MODEL => 'APP_PAYMENT_MODEL',
+        self::MOBILE_DEVICE => 'MOBILE_DEVICE',
+        self::CUSTOM_AFFINITY => 'CUSTOM_AFFINITY',
+        self::CUSTOM_INTENT => 'CUSTOM_INTENT',
+        self::LOCATION_GROUP => 'LOCATION_GROUP',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

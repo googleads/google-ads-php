@@ -148,6 +148,20 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the billing setup.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -160,6 +174,21 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
         $this->id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the billing setup.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
     }
 
     /**
@@ -206,6 +235,26 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getPaymentsAccount()</code>
+
+     * The resource name of the Payments account associated with this billing
+     * setup. Payments resource names have the form:
+     * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
+     * When setting up billing, this is used to signup with an existing Payments
+     * account (and then payments_account_info should not be set).
+     * When getting a billing setup, this and payments_account_info will be
+     * populated.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
+     * @return string|null
+     */
+    public function getPaymentsAccountValue()
+    {
+        $wrapper = $this->getPaymentsAccount();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The resource name of the Payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
@@ -224,6 +273,27 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
         $this->payments_account = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the Payments account associated with this billing
+     * setup. Payments resource names have the form:
+     * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
+     * When setting up billing, this is used to signup with an existing Payments
+     * account (and then payments_account_info should not be set).
+     * When getting a billing setup, this and payments_account_info will be
+     * populated.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPaymentsAccountValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setPaymentsAccount($wrappedVar);
     }
 
     /**
@@ -273,6 +343,21 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getStartDateTime()</code>
+
+     * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     * future time is allowed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9;</code>
+     * @return string|null
+     */
+    public function getStartDateTimeValue()
+    {
+        $wrapper = $this->getStartDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
      * future time is allowed.
      *
@@ -286,6 +371,22 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
         $this->writeOneof(9, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     * future time is allowed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setStartDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setStartDateTime($wrappedVar);
     }
 
     /**
@@ -326,6 +427,20 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getEndDateTime()</code>
+
+     * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
+     * @return string|null
+     */
+    public function getEndDateTimeValue()
+    {
+        $wrapper = $this->getEndDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
@@ -338,6 +453,21 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
         $this->writeOneof(13, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setEndDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setEndDateTime($wrappedVar);
     }
 
     /**

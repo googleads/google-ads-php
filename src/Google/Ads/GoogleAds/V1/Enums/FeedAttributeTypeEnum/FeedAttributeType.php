@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\FeedAttributeTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * Possible data types for a feed attribute.
  *
@@ -101,6 +103,44 @@ class FeedAttributeType
      * Generated from protobuf enum <code>PRICE = 14;</code>
      */
     const PRICE = 14;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INT64 => 'INT64',
+        self::DOUBLE => 'DOUBLE',
+        self::STRING => 'STRING',
+        self::BOOLEAN => 'BOOLEAN',
+        self::URL => 'URL',
+        self::DATE_TIME => 'DATE_TIME',
+        self::INT64_LIST => 'INT64_LIST',
+        self::DOUBLE_LIST => 'DOUBLE_LIST',
+        self::STRING_LIST => 'STRING_LIST',
+        self::BOOLEAN_LIST => 'BOOLEAN_LIST',
+        self::URL_LIST => 'URL_LIST',
+        self::DATE_TIME_LIST => 'DATE_TIME_LIST',
+        self::PRICE => 'PRICE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

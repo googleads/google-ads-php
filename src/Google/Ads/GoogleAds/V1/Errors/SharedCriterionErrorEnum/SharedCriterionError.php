@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\SharedCriterionErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible shared criterion errors.
  *
@@ -29,6 +31,32 @@ class SharedCriterionError
      * Generated from protobuf enum <code>CRITERION_TYPE_NOT_ALLOWED_FOR_SHARED_SET_TYPE = 2;</code>
      */
     const CRITERION_TYPE_NOT_ALLOWED_FOR_SHARED_SET_TYPE = 2;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CRITERION_TYPE_NOT_ALLOWED_FOR_SHARED_SET_TYPE => 'CRITERION_TYPE_NOT_ALLOWED_FOR_SHARED_SET_TYPE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

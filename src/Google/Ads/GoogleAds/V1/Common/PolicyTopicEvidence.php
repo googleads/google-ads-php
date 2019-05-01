@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Additional information that explains a policy finding.
- * Next Id: 8
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicEvidence</code>
  */
@@ -38,6 +37,9 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      *           finding.
      *     @type \Google\Ads\GoogleAds\V1\Common\PolicyTopicEvidence\DestinationMismatch $destination_mismatch
      *           Mismatch between the destinations of a resource's URLs.
+     *     @type \Google\Ads\GoogleAds\V1\Common\PolicyTopicEvidence\DestinationNotWorking $destination_not_working
+     *           Details when the destination is returning an HTTP error code or isn't
+     *           functional in all locations for commonly used devices.
      * }
      */
     public function __construct($data = NULL) {
@@ -57,6 +59,20 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHttpCode()</code>
+
+     * HTTP code returned when the final URL was crawled.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value http_code = 2;</code>
+     * @return int|null
+     */
+    public function getHttpCodeValue()
+    {
+        $wrapper = $this->getHttpCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * HTTP code returned when the final URL was crawled.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value http_code = 2;</code>
@@ -69,6 +85,21 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
         $this->writeOneof(2, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
+
+     * HTTP code returned when the final URL was crawled.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int32Value http_code = 2;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setHttpCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
+        return $this->setHttpCode($wrappedVar);
     }
 
     /**
@@ -136,6 +167,21 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLanguageCode()</code>
+
+     * The language the resource was detected to be written in.
+     * This is an IETF language tag such as "en-US".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 5;</code>
+     * @return string|null
+     */
+    public function getLanguageCodeValue()
+    {
+        $wrapper = $this->getLanguageCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The language the resource was detected to be written in.
      * This is an IETF language tag such as "en-US".
      *
@@ -149,6 +195,22 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
         $this->writeOneof(5, $var);
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The language the resource was detected to be written in.
+     * This is an IETF language tag such as "en-US".
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLanguageCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLanguageCode($wrappedVar);
     }
 
     /**
@@ -201,6 +263,34 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\PolicyTopicEvidence_DestinationMismatch::class);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details when the destination is returning an HTTP error code or isn't
+     * functional in all locations for commonly used devices.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.PolicyTopicEvidence.DestinationNotWorking destination_not_working = 8;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\PolicyTopicEvidence\DestinationNotWorking
+     */
+    public function getDestinationNotWorking()
+    {
+        return $this->readOneof(8);
+    }
+
+    /**
+     * Details when the destination is returning an HTTP error code or isn't
+     * functional in all locations for commonly used devices.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.PolicyTopicEvidence.DestinationNotWorking destination_not_working = 8;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\PolicyTopicEvidence\DestinationNotWorking $var
+     * @return $this
+     */
+    public function setDestinationNotWorking($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\PolicyTopicEvidence_DestinationNotWorking::class);
+        $this->writeOneof(8, $var);
 
         return $this;
     }

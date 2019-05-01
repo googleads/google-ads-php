@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Campaign Criterion service.
+ *
  * Service to manage campaign criteria.
  */
 class CampaignCriterionServiceGrpcClient extends \Grpc\BaseStub {

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\AdParameterErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible ad parameter errors.
  *
@@ -35,6 +37,33 @@ class AdParameterError
      * Generated from protobuf enum <code>INVALID_INSERTION_TEXT_FORMAT = 3;</code>
      */
     const INVALID_INSERTION_TEXT_FORMAT = 3;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::AD_GROUP_CRITERION_MUST_BE_KEYWORD => 'AD_GROUP_CRITERION_MUST_BE_KEYWORD',
+        self::INVALID_INSERTION_TEXT_FORMAT => 'INVALID_INSERTION_TEXT_FORMAT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

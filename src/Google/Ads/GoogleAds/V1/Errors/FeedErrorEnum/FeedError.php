@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\FeedErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible feed errors.
  *
@@ -138,6 +140,50 @@ class FeedError
      * Generated from protobuf enum <code>INVALID_AFFILIATE_CHAIN_ID = 20;</code>
      */
     const INVALID_AFFILIATE_CHAIN_ID = 20;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::ATTRIBUTE_NAMES_NOT_UNIQUE => 'ATTRIBUTE_NAMES_NOT_UNIQUE',
+        self::ATTRIBUTES_DO_NOT_MATCH_EXISTING_ATTRIBUTES => 'ATTRIBUTES_DO_NOT_MATCH_EXISTING_ATTRIBUTES',
+        self::CANNOT_SPECIFY_USER_ORIGIN_FOR_SYSTEM_FEED => 'CANNOT_SPECIFY_USER_ORIGIN_FOR_SYSTEM_FEED',
+        self::CANNOT_SPECIFY_GOOGLE_ORIGIN_FOR_NON_SYSTEM_FEED => 'CANNOT_SPECIFY_GOOGLE_ORIGIN_FOR_NON_SYSTEM_FEED',
+        self::CANNOT_SPECIFY_FEED_ATTRIBUTES_FOR_SYSTEM_FEED => 'CANNOT_SPECIFY_FEED_ATTRIBUTES_FOR_SYSTEM_FEED',
+        self::CANNOT_UPDATE_FEED_ATTRIBUTES_WITH_ORIGIN_GOOGLE => 'CANNOT_UPDATE_FEED_ATTRIBUTES_WITH_ORIGIN_GOOGLE',
+        self::FEED_REMOVED => 'FEED_REMOVED',
+        self::INVALID_ORIGIN_VALUE => 'INVALID_ORIGIN_VALUE',
+        self::FEED_ORIGIN_IS_NOT_USER => 'FEED_ORIGIN_IS_NOT_USER',
+        self::INVALID_AUTH_TOKEN_FOR_EMAIL => 'INVALID_AUTH_TOKEN_FOR_EMAIL',
+        self::INVALID_EMAIL => 'INVALID_EMAIL',
+        self::DUPLICATE_FEED_NAME => 'DUPLICATE_FEED_NAME',
+        self::INVALID_FEED_NAME => 'INVALID_FEED_NAME',
+        self::MISSING_OAUTH_INFO => 'MISSING_OAUTH_INFO',
+        self::NEW_ATTRIBUTE_CANNOT_BE_PART_OF_UNIQUE_KEY => 'NEW_ATTRIBUTE_CANNOT_BE_PART_OF_UNIQUE_KEY',
+        self::TOO_MANY_ATTRIBUTES => 'TOO_MANY_ATTRIBUTES',
+        self::INVALID_BUSINESS_ACCOUNT => 'INVALID_BUSINESS_ACCOUNT',
+        self::BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT => 'BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT',
+        self::INVALID_AFFILIATE_CHAIN_ID => 'INVALID_AFFILIATE_CHAIN_ID',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

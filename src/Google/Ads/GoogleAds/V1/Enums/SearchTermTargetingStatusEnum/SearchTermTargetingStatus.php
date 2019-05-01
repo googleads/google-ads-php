@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\SearchTermTargetingStatusEnum;
 
+use UnexpectedValueException;
+
 /**
  * Indicates whether the search term is one of your targeted or excluded
  * keywords.
@@ -48,6 +50,35 @@ class SearchTermTargetingStatus
      * Generated from protobuf enum <code>NONE = 5;</code>
      */
     const NONE = 5;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::ADDED => 'ADDED',
+        self::EXCLUDED => 'EXCLUDED',
+        self::ADDED_EXCLUDED => 'ADDED_EXCLUDED',
+        self::NONE => 'NONE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

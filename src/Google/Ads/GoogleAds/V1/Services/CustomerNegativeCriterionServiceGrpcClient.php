@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Customer Negative Criterion service.
+ *
  * Service to manage customer negative criteria.
  */
 class CustomerNegativeCriterionServiceGrpcClient extends \Grpc\BaseStub {

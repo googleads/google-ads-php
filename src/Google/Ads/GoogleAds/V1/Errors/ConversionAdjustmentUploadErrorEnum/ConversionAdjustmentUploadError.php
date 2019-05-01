@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\ConversionAdjustmentUploadErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible conversion adjustment upload errors.
  *
@@ -85,6 +87,40 @@ class ConversionAdjustmentUploadError
      * Generated from protobuf enum <code>CANNOT_RESTATE_CONVERSION_ACTION_THAT_ALWAYS_USES_DEFAULT_CONVERSION_VALUE = 10;</code>
      */
     const CANNOT_RESTATE_CONVERSION_ACTION_THAT_ALWAYS_USES_DEFAULT_CONVERSION_VALUE = 10;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::TOO_RECENT_CONVERSION_ACTION => 'TOO_RECENT_CONVERSION_ACTION',
+        self::INVALID_CONVERSION_ACTION => 'INVALID_CONVERSION_ACTION',
+        self::CONVERSION_ALREADY_RETRACTED => 'CONVERSION_ALREADY_RETRACTED',
+        self::CONVERSION_NOT_FOUND => 'CONVERSION_NOT_FOUND',
+        self::CONVERSION_EXPIRED => 'CONVERSION_EXPIRED',
+        self::ADJUSTMENT_PRECEDES_CONVERSION => 'ADJUSTMENT_PRECEDES_CONVERSION',
+        self::MORE_RECENT_RESTATEMENT_FOUND => 'MORE_RECENT_RESTATEMENT_FOUND',
+        self::TOO_RECENT_CONVERSION => 'TOO_RECENT_CONVERSION',
+        self::CANNOT_RESTATE_CONVERSION_ACTION_THAT_ALWAYS_USES_DEFAULT_CONVERSION_VALUE => 'CANNOT_RESTATE_CONVERSION_ACTION_THAT_ALWAYS_USES_DEFAULT_CONVERSION_VALUE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

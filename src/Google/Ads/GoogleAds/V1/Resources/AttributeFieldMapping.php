@@ -106,6 +106,20 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFeedAttributeId()</code>
+
+     * Feed attribute from which to map.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * @return int|string|null
+     */
+    public function getFeedAttributeIdValue()
+    {
+        $wrapper = $this->getFeedAttributeId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Feed attribute from which to map.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
@@ -121,6 +135,21 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Feed attribute from which to map.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setFeedAttributeIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setFeedAttributeId($wrappedVar);
+    }
+
+    /**
      * The placeholder field ID. If a placeholder field enum is not published in
      * the current API version, then this field will be populated and the field
      * oneof will be empty.
@@ -132,6 +161,23 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     public function getFieldId()
     {
         return $this->field_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFieldId()</code>
+
+     * The placeholder field ID. If a placeholder field enum is not published in
+     * the current API version, then this field will be populated and the field
+     * oneof will be empty.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
+     * @return int|string|null
+     */
+    public function getFieldIdValue()
+    {
+        $wrapper = $this->getFieldId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -150,6 +196,24 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
         $this->field_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The placeholder field ID. If a placeholder field enum is not published in
+     * the current API version, then this field will be populated and the field
+     * oneof will be empty.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setFieldIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setFieldId($wrappedVar);
     }
 
     /**

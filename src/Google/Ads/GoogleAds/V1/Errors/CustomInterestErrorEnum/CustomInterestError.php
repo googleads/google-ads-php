@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\CustomInterestErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible custom interest errors.
  *
@@ -66,6 +68,38 @@ class CustomInterestError
      * Generated from protobuf enum <code>CANNOT_CHANGE_TYPE = 8;</code>
      */
     const CANNOT_CHANGE_TYPE = 8;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::NAME_ALREADY_USED => 'NAME_ALREADY_USED',
+        self::CUSTOM_INTEREST_MEMBER_ID_AND_TYPE_PARAMETER_NOT_PRESENT_IN_REMOVE => 'CUSTOM_INTEREST_MEMBER_ID_AND_TYPE_PARAMETER_NOT_PRESENT_IN_REMOVE',
+        self::TYPE_AND_PARAMETER_NOT_FOUND => 'TYPE_AND_PARAMETER_NOT_FOUND',
+        self::TYPE_AND_PARAMETER_ALREADY_EXISTED => 'TYPE_AND_PARAMETER_ALREADY_EXISTED',
+        self::INVALID_CUSTOM_INTEREST_MEMBER_TYPE => 'INVALID_CUSTOM_INTEREST_MEMBER_TYPE',
+        self::CANNOT_REMOVE_WHILE_IN_USE => 'CANNOT_REMOVE_WHILE_IN_USE',
+        self::CANNOT_CHANGE_TYPE => 'CANNOT_CHANGE_TYPE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

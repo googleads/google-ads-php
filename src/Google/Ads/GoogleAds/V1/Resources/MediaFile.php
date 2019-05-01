@@ -144,6 +144,20 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of the media file.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The ID of the media file.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -156,6 +170,21 @@ class MediaFile extends \Google\Protobuf\Internal\Message
         $this->id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of the media file.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
     }
 
     /**
@@ -223,6 +252,21 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getSourceUrl()</code>
+
+     * The URL of where the original media file was downloaded from (or a file
+     * name).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
+     * @return string|null
+     */
+    public function getSourceUrlValue()
+    {
+        $wrapper = $this->getSourceUrl();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The URL of where the original media file was downloaded from (or a file
      * name).
      *
@@ -239,6 +283,22 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The URL of where the original media file was downloaded from (or a file
+     * name).
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setSourceUrlValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setSourceUrl($wrappedVar);
+    }
+
+    /**
      * The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
@@ -248,6 +308,21 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getName()</code>
+
+     * The name of the media file. The name can be used by clients to help
+     * identify previously uploaded media.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
+     * @return string|null
+     */
+    public function getNameValue()
+    {
+        $wrapper = $this->getName();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -267,6 +342,22 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The name of the media file. The name can be used by clients to help
+     * identify previously uploaded media.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNameValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setName($wrappedVar);
+    }
+
+    /**
      * The size of the media file in bytes.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
@@ -275,6 +366,20 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     public function getFileSize()
     {
         return $this->file_size;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFileSize()</code>
+
+     * The size of the media file in bytes.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
+     * @return int|string|null
+     */
+    public function getFileSizeValue()
+    {
+        $wrapper = $this->getFileSize();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -290,6 +395,21 @@ class MediaFile extends \Google\Protobuf\Internal\Message
         $this->file_size = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The size of the media file in bytes.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setFileSizeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setFileSize($wrappedVar);
     }
 
     /**

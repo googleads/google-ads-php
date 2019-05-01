@@ -49,6 +49,20 @@ class ProductVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getProductVideo()</code>
+
+     * The MediaFile resource name of a video which must be hosted on YouTube.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_video = 1;</code>
+     * @return string|null
+     */
+    public function getProductVideoValue()
+    {
+        $wrapper = $this->getProductVideo();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The MediaFile resource name of a video which must be hosted on YouTube.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_video = 1;</code>
@@ -61,6 +75,21 @@ class ProductVideo extends \Google\Protobuf\Internal\Message
         $this->product_video = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The MediaFile resource name of a video which must be hosted on YouTube.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_video = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setProductVideoValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setProductVideo($wrappedVar);
     }
 
 }

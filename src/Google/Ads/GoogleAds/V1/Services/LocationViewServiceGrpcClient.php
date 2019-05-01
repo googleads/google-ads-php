@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Location View service.
+ *
  * Service to fetch location views.
  */
 class LocationViewServiceGrpcClient extends \Grpc\BaseStub {

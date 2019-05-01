@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Feed service.
+ *
  * Service to manage feeds.
  */
 class FeedServiceGrpcClient extends \Grpc\BaseStub {

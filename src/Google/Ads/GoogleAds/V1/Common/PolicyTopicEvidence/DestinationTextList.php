@@ -11,7 +11,6 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * A list of strings found in a destination page that caused a policy
  * finding.
- * Next Id: 2
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.PolicyTopicEvidence.DestinationTextList</code>
  */

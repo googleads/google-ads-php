@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\AuthorizationErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible authorization errors.
  *
@@ -24,7 +26,11 @@ class AuthorizationError
      */
     const UNKNOWN = 1;
     /**
-     * User doesn't have permission to access customer.
+     * User doesn't have permission to access customer. Note: If you're
+     * accessing a client customer, the manager's customer id must be set in the
+     * 'login-customer-id' header. See
+     * https://developers.google.com/google-ads/api/docs/concepts/
+     * call-structure#login-customer-id
      *
      * Generated from protobuf enum <code>USER_PERMISSION_DENIED = 2;</code>
      */
@@ -87,6 +93,41 @@ class AuthorizationError
      * Generated from protobuf enum <code>DEVELOPER_TOKEN_NOT_APPROVED = 10;</code>
      */
     const DEVELOPER_TOKEN_NOT_APPROVED = 10;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::USER_PERMISSION_DENIED => 'USER_PERMISSION_DENIED',
+        self::DEVELOPER_TOKEN_NOT_WHITELISTED => 'DEVELOPER_TOKEN_NOT_WHITELISTED',
+        self::DEVELOPER_TOKEN_PROHIBITED => 'DEVELOPER_TOKEN_PROHIBITED',
+        self::PROJECT_DISABLED => 'PROJECT_DISABLED',
+        self::AUTHORIZATION_ERROR => 'AUTHORIZATION_ERROR',
+        self::ACTION_NOT_PERMITTED => 'ACTION_NOT_PERMITTED',
+        self::INCOMPLETE_SIGNUP => 'INCOMPLETE_SIGNUP',
+        self::CUSTOMER_NOT_ENABLED => 'CUSTOMER_NOT_ENABLED',
+        self::MISSING_TOS => 'MISSING_TOS',
+        self::DEVELOPER_TOKEN_NOT_APPROVED => 'DEVELOPER_TOKEN_NOT_APPROVED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

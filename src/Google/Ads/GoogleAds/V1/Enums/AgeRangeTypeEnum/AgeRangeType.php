@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AgeRangeTypeEnum;
 
+use UnexpectedValueException;
+
 /**
  * The type of demographic age ranges (e.g. between 18 and 24 years old).
  *
@@ -65,6 +67,38 @@ class AgeRangeType
      * Generated from protobuf enum <code>AGE_RANGE_UNDETERMINED = 503999;</code>
      */
     const AGE_RANGE_UNDETERMINED = 503999;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::AGE_RANGE_18_24 => 'AGE_RANGE_18_24',
+        self::AGE_RANGE_25_34 => 'AGE_RANGE_25_34',
+        self::AGE_RANGE_35_44 => 'AGE_RANGE_35_44',
+        self::AGE_RANGE_45_54 => 'AGE_RANGE_45_54',
+        self::AGE_RANGE_55_64 => 'AGE_RANGE_55_64',
+        self::AGE_RANGE_65_UP => 'AGE_RANGE_65_UP',
+        self::AGE_RANGE_UNDETERMINED => 'AGE_RANGE_UNDETERMINED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

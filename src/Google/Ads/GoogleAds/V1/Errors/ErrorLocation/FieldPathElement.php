@@ -83,6 +83,20 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getIndex()</code>
+
+     * If field_name is a repeated field, this is the element that failed
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
+     * @return int|string|null
+     */
+    public function getIndexValue()
+    {
+        $wrapper = $this->getIndex();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * If field_name is a repeated field, this is the element that failed
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
@@ -95,6 +109,21 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
         $this->index = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * If field_name is a repeated field, this is the element that failed
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIndexValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setIndex($wrappedVar);
     }
 
 }

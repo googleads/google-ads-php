@@ -73,7 +73,7 @@ class AdGroupFeedService
             "6c654164735c56315c5365727669636573ea0224476f6f676c653a3a4164" .
             "733a3a476f6f676c654164733a3a56313a3a536572766963657362067072" .
             "6f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

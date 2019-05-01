@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\NewResourceCreationErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible new resource creation errors.
  *
@@ -42,6 +44,34 @@ class NewResourceCreationError
      * Generated from protobuf enum <code>TEMP_ID_RESOURCE_HAD_ERRORS = 4;</code>
      */
     const TEMP_ID_RESOURCE_HAD_ERRORS = 4;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::CANNOT_SET_ID_FOR_CREATE => 'CANNOT_SET_ID_FOR_CREATE',
+        self::DUPLICATE_TEMP_IDS => 'DUPLICATE_TEMP_IDS',
+        self::TEMP_ID_RESOURCE_HAD_ERRORS => 'TEMP_ID_RESOURCE_HAD_ERRORS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

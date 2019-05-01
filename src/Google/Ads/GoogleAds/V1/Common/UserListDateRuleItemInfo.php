@@ -109,6 +109,22 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getValue()</code>
+
+     * String representing date value to be compared with the rule variable.
+     * Supported date format is YYYY-MM-DD.
+     * Times are reported in the customer's time zone.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
+     * @return string|null
+     */
+    public function getValueValue()
+    {
+        $wrapper = $this->getValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * String representing date value to be compared with the rule variable.
      * Supported date format is YYYY-MM-DD.
      * Times are reported in the customer's time zone.
@@ -126,6 +142,23 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * String representing date value to be compared with the rule variable.
+     * Supported date format is YYYY-MM-DD.
+     * Times are reported in the customer's time zone.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setValue($wrappedVar);
+    }
+
+    /**
      * The relative date value of the right hand side denoted by number of days
      * offset from now. The value field will override this field when both are
      * present.
@@ -136,6 +169,22 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
     public function getOffsetInDays()
     {
         return $this->offset_in_days;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getOffsetInDays()</code>
+
+     * The relative date value of the right hand side denoted by number of days
+     * offset from now. The value field will override this field when both are
+     * present.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value offset_in_days = 3;</code>
+     * @return int|string|null
+     */
+    public function getOffsetInDaysValue()
+    {
+        $wrapper = $this->getOffsetInDays();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -153,6 +202,23 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
         $this->offset_in_days = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The relative date value of the right hand side denoted by number of days
+     * offset from now. The value field will override this field when both are
+     * present.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value offset_in_days = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setOffsetInDaysValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setOffsetInDays($wrappedVar);
     }
 
 }

@@ -35,6 +35,7 @@ use Google\Ads\GoogleAds\V1\Services\UrlSeed;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -231,6 +232,13 @@ class KeywordPlanIdeaServiceGapicClient
         if (isset($optionalArgs['urlSeed'])) {
             $request->setUrlSeed($optionalArgs['urlSeed']);
         }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
 
         return $this->startCall(
             'GenerateKeywordIdeas',

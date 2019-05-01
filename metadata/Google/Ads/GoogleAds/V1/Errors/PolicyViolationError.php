@@ -32,7 +32,7 @@ class PolicyViolationError
             "676c654164735c56315c4572726f7273ea0222476f6f676c653a3a416473" .
             "3a3a476f6f676c654164733a3a56313a3a4572726f7273620670726f746f" .
             "33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

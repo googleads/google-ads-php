@@ -49,6 +49,20 @@ class HotelClassInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getValue()</code>
+
+     * Long value of the hotel class.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value value = 1;</code>
+     * @return int|string|null
+     */
+    public function getValueValue()
+    {
+        $wrapper = $this->getValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Long value of the hotel class.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value value = 1;</code>
@@ -61,6 +75,21 @@ class HotelClassInfo extends \Google\Protobuf\Internal\Message
         $this->value = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Long value of the hotel class.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value value = 1;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setValue($wrappedVar);
     }
 
 }

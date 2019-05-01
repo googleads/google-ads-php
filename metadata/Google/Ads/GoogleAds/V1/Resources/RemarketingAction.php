@@ -39,7 +39,7 @@ class RemarketingAction
             "6573ca0221476f6f676c655c4164735c476f6f676c654164735c56315c52" .
             "65736f7572636573ea0225476f6f676c653a3a4164733a3a476f6f676c65" .
             "4164733a3a56313a3a5265736f7572636573620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

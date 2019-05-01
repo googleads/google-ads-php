@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\FunctionParsingErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible function parsing errors.
  *
@@ -89,6 +91,42 @@ class FunctionParsingError
      * Generated from protobuf enum <code>TOO_MANY_OPERANDS = 12;</code>
      */
     const TOO_MANY_OPERANDS = 12;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::NO_MORE_INPUT => 'NO_MORE_INPUT',
+        self::EXPECTED_CHARACTER => 'EXPECTED_CHARACTER',
+        self::UNEXPECTED_SEPARATOR => 'UNEXPECTED_SEPARATOR',
+        self::UNMATCHED_LEFT_BRACKET => 'UNMATCHED_LEFT_BRACKET',
+        self::UNMATCHED_RIGHT_BRACKET => 'UNMATCHED_RIGHT_BRACKET',
+        self::TOO_MANY_NESTED_FUNCTIONS => 'TOO_MANY_NESTED_FUNCTIONS',
+        self::MISSING_RIGHT_HAND_OPERAND => 'MISSING_RIGHT_HAND_OPERAND',
+        self::INVALID_OPERATOR_NAME => 'INVALID_OPERATOR_NAME',
+        self::FEED_ATTRIBUTE_OPERAND_ARGUMENT_NOT_INTEGER => 'FEED_ATTRIBUTE_OPERAND_ARGUMENT_NOT_INTEGER',
+        self::NO_OPERANDS => 'NO_OPERANDS',
+        self::TOO_MANY_OPERANDS => 'TOO_MANY_OPERANDS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

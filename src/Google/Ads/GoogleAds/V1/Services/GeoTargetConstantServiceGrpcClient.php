@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Geo target constant service.
+ *
  * Service to fetch geo target constants.
  */
 class GeoTargetConstantServiceGrpcClient extends \Grpc\BaseStub {

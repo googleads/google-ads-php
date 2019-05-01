@@ -124,6 +124,20 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFeed()</code>
+
+     * The feed of this feed mapping.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * @return string|null
+     */
+    public function getFeedValue()
+    {
+        $wrapper = $this->getFeed();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The feed of this feed mapping.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
@@ -136,6 +150,21 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
         $this->feed = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The feed of this feed mapping.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFeedValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFeed($wrappedVar);
     }
 
     /**

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AttributionModelEnum;
 
+use UnexpectedValueException;
+
 /**
  * The attribution model that describes how to distribute credit for a
  * particular conversion across potentially many prior interactions.
@@ -72,6 +74,38 @@ class AttributionModel
      * Generated from protobuf enum <code>GOOGLE_SEARCH_ATTRIBUTION_DATA_DRIVEN = 106;</code>
      */
     const GOOGLE_SEARCH_ATTRIBUTION_DATA_DRIVEN = 106;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::EXTERNAL => 'EXTERNAL',
+        self::GOOGLE_ADS_LAST_CLICK => 'GOOGLE_ADS_LAST_CLICK',
+        self::GOOGLE_SEARCH_ATTRIBUTION_FIRST_CLICK => 'GOOGLE_SEARCH_ATTRIBUTION_FIRST_CLICK',
+        self::GOOGLE_SEARCH_ATTRIBUTION_LINEAR => 'GOOGLE_SEARCH_ATTRIBUTION_LINEAR',
+        self::GOOGLE_SEARCH_ATTRIBUTION_TIME_DECAY => 'GOOGLE_SEARCH_ATTRIBUTION_TIME_DECAY',
+        self::GOOGLE_SEARCH_ATTRIBUTION_POSITION_BASED => 'GOOGLE_SEARCH_ATTRIBUTION_POSITION_BASED',
+        self::GOOGLE_SEARCH_ATTRIBUTION_DATA_DRIVEN => 'GOOGLE_SEARCH_ATTRIBUTION_DATA_DRIVEN',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

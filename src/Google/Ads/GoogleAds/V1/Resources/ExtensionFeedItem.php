@@ -48,6 +48,20 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     private $end_date_time = null;
     /**
+     * List of non-overlapping schedules specifying all time intervals
+     * for which the feed item may serve. There can be a maximum of 6 schedules
+     * per day.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.AdScheduleInfo ad_schedules = 16;</code>
+     */
+    private $ad_schedules;
+    /**
+     * The targeted device.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 17;</code>
+     */
+    private $device = 0;
+    /**
      * Status of the feed item.
      * This field is read-only.
      *
@@ -78,6 +92,12 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           serving.
      *           The format is "YYYY-MM-DD HH:MM:SS".
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *     @type \Google\Ads\GoogleAds\V1\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $ad_schedules
+     *           List of non-overlapping schedules specifying all time intervals
+     *           for which the feed item may serve. There can be a maximum of 6 schedules
+     *           per day.
+     *     @type int $device
+     *           The targeted device.
      *     @type int $status
      *           Status of the feed item.
      *           This field is read-only.
@@ -97,6 +117,13 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           Price extension.
      *     @type \Google\Ads\GoogleAds\V1\Common\PromotionFeedItem $promotion_feed_item
      *           Promotion extension.
+     *     @type \Google\Ads\GoogleAds\V1\Common\LocationFeedItem $location_feed_item
+     *           Location extension. Locations are synced from a GMB account into a feed.
+     *           This field is read-only.
+     *     @type \Google\Ads\GoogleAds\V1\Common\AffiliateLocationFeedItem $affiliate_location_feed_item
+     *           Affiliate location extension. Feed locations are populated by Google Ads
+     *           based on a chain ID.
+     *           This field is read-only.
      * }
      */
     public function __construct($data = NULL) {
@@ -176,6 +203,22 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getStartDateTime()</code>
+
+     * Start time in which this feed item is effective and can begin serving.
+     * The format is "YYYY-MM-DD HH:MM:SS".
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 5;</code>
+     * @return string|null
+     */
+    public function getStartDateTimeValue()
+    {
+        $wrapper = $this->getStartDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Start time in which this feed item is effective and can begin serving.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
@@ -193,6 +236,23 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Start time in which this feed item is effective and can begin serving.
+     * The format is "YYYY-MM-DD HH:MM:SS".
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 5;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setStartDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setStartDateTime($wrappedVar);
+    }
+
+    /**
      * End time in which this feed item is no longer effective and will stop
      * serving.
      * The format is "YYYY-MM-DD HH:MM:SS".
@@ -204,6 +264,23 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     public function getEndDateTime()
     {
         return $this->end_date_time;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getEndDateTime()</code>
+
+     * End time in which this feed item is no longer effective and will stop
+     * serving.
+     * The format is "YYYY-MM-DD HH:MM:SS".
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 6;</code>
+     * @return string|null
+     */
+    public function getEndDateTimeValue()
+    {
+        $wrapper = $this->getEndDateTime();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -220,6 +297,80 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
         $this->end_date_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * End time in which this feed item is no longer effective and will stop
+     * serving.
+     * The format is "YYYY-MM-DD HH:MM:SS".
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setEndDateTimeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setEndDateTime($wrappedVar);
+    }
+
+    /**
+     * List of non-overlapping schedules specifying all time intervals
+     * for which the feed item may serve. There can be a maximum of 6 schedules
+     * per day.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.AdScheduleInfo ad_schedules = 16;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAdSchedules()
+    {
+        return $this->ad_schedules;
+    }
+
+    /**
+     * List of non-overlapping schedules specifying all time intervals
+     * for which the feed item may serve. There can be a maximum of 6 schedules
+     * per day.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.AdScheduleInfo ad_schedules = 16;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAdSchedules($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V1\Common\AdScheduleInfo::class);
+        $this->ad_schedules = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The targeted device.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 17;</code>
+     * @return int
+     */
+    public function getDevice()
+    {
+        return $this->device;
+    }
+
+    /**
+     * The targeted device.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 17;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDevice($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\FeedItemTargetDeviceEnum_FeedItemTargetDevice::class);
+        $this->device = $var;
 
         return $this;
     }
@@ -456,6 +607,64 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\PromotionFeedItem::class);
         $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Location extension. Locations are synced from a GMB account into a feed.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.LocationFeedItem location_feed_item = 14;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\LocationFeedItem
+     */
+    public function getLocationFeedItem()
+    {
+        return $this->readOneof(14);
+    }
+
+    /**
+     * Location extension. Locations are synced from a GMB account into a feed.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.LocationFeedItem location_feed_item = 14;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\LocationFeedItem $var
+     * @return $this
+     */
+    public function setLocationFeedItem($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\LocationFeedItem::class);
+        $this->writeOneof(14, $var);
+
+        return $this;
+    }
+
+    /**
+     * Affiliate location extension. Feed locations are populated by Google Ads
+     * based on a chain ID.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\AffiliateLocationFeedItem
+     */
+    public function getAffiliateLocationFeedItem()
+    {
+        return $this->readOneof(15);
+    }
+
+    /**
+     * Affiliate location extension. Feed locations are populated by Google Ads
+     * based on a chain ID.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\AffiliateLocationFeedItem $var
+     * @return $this
+     */
+    public function setAffiliateLocationFeedItem($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\AffiliateLocationFeedItem::class);
+        $this->writeOneof(15, $var);
 
         return $this;
     }

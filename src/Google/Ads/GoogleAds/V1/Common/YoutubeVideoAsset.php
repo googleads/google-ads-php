@@ -52,6 +52,21 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getYoutubeVideoId()</code>
+
+     * YouTube video id. This is the 11 character string value used in the
+     * YouTube video URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 1;</code>
+     * @return string|null
+     */
+    public function getYoutubeVideoIdValue()
+    {
+        $wrapper = $this->getYoutubeVideoId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * YouTube video id. This is the 11 character string value used in the
      * YouTube video URL.
      *
@@ -65,6 +80,22 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
         $this->youtube_video_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * YouTube video id. This is the 11 character string value used in the
+     * YouTube video URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setYoutubeVideoIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setYoutubeVideoId($wrappedVar);
     }
 
 }

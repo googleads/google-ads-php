@@ -38,7 +38,7 @@ class ClickLocation
             "6eca021e476f6f676c655c4164735c476f6f676c654164735c56315c436f" .
             "6d6d6f6eea0222476f6f676c653a3a4164733a3a476f6f676c654164733a" .
             "3a56313a3a436f6d6d6f6e620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

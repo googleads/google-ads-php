@@ -101,6 +101,21 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getLocationFractionMicros()</code>
+
+     * The desired fraction of ads to be shown in the targeted location in micros.
+     * E.g. 1% equals 10,000.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value location_fraction_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getLocationFractionMicrosValue()
+    {
+        $wrapper = $this->getLocationFractionMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The desired fraction of ads to be shown in the targeted location in micros.
      * E.g. 1% equals 10,000.
      *
@@ -117,6 +132,22 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The desired fraction of ads to be shown in the targeted location in micros.
+     * E.g. 1% equals 10,000.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value location_fraction_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setLocationFractionMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setLocationFractionMicros($wrappedVar);
+    }
+
+    /**
      * The highest CPC bid the automated bidding system is permitted to specify.
      * This is a required field entered by the advertiser that sets the ceiling
      * and specified in local micros.
@@ -127,6 +158,22 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
     public function getCpcBidCeilingMicros()
     {
         return $this->cpc_bid_ceiling_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getCpcBidCeilingMicros()</code>
+
+     * The highest CPC bid the automated bidding system is permitted to specify.
+     * This is a required field entered by the advertiser that sets the ceiling
+     * and specified in local micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 3;</code>
+     * @return int|string|null
+     */
+    public function getCpcBidCeilingMicrosValue()
+    {
+        $wrapper = $this->getCpcBidCeilingMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -144,6 +191,23 @@ class TargetImpressionShare extends \Google\Protobuf\Internal\Message
         $this->cpc_bid_ceiling_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The highest CPC bid the automated bidding system is permitted to specify.
+     * This is a required field entered by the advertiser that sets the ceiling
+     * and specified in local micros.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 3;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setCpcBidCeilingMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setCpcBidCeilingMicros($wrappedVar);
     }
 
 }

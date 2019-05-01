@@ -83,6 +83,20 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getRecommendedCpcBidMicros()</code>
+
+     * The recommended CPC (cost-per-click) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
+     * @return int|string|null
+     */
+    public function getRecommendedCpcBidMicrosValue()
+    {
+        $wrapper = $this->getRecommendedCpcBidMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The recommended CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
@@ -95,6 +109,21 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
         $this->recommended_cpc_bid_micros = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The recommended CPC (cost-per-click) bid.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setRecommendedCpcBidMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setRecommendedCpcBidMicros($wrappedVar);
     }
 
 }

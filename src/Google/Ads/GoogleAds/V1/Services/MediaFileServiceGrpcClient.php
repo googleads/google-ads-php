@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Media File service.
+ *
  * Service to manage media files.
  */
 class MediaFileServiceGrpcClient extends \Grpc\BaseStub {

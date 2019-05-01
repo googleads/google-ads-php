@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\ExternalConversionSourceEnum;
 
+use UnexpectedValueException;
+
 /**
  * The external conversion source that is associated with a ConversionAction.
  *
@@ -173,6 +175,52 @@ class ExternalConversionSource
      * Generated from protobuf enum <code>STORE_SALES_DIRECT = 22;</code>
      */
     const STORE_SALES_DIRECT = 22;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::WEBPAGE => 'WEBPAGE',
+        self::ANALYTICS => 'ANALYTICS',
+        self::UPLOAD => 'UPLOAD',
+        self::AD_CALL_METRICS => 'AD_CALL_METRICS',
+        self::WEBSITE_CALL_METRICS => 'WEBSITE_CALL_METRICS',
+        self::STORE_VISITS => 'STORE_VISITS',
+        self::ANDROID_IN_APP => 'ANDROID_IN_APP',
+        self::IOS_IN_APP => 'IOS_IN_APP',
+        self::IOS_FIRST_OPEN => 'IOS_FIRST_OPEN',
+        self::APP_UNSPECIFIED => 'APP_UNSPECIFIED',
+        self::ANDROID_FIRST_OPEN => 'ANDROID_FIRST_OPEN',
+        self::UPLOAD_CALLS => 'UPLOAD_CALLS',
+        self::FIREBASE => 'FIREBASE',
+        self::CLICK_TO_CALL => 'CLICK_TO_CALL',
+        self::SALESFORCE => 'SALESFORCE',
+        self::STORE_SALES_CRM => 'STORE_SALES_CRM',
+        self::STORE_SALES_PAYMENT_NETWORK => 'STORE_SALES_PAYMENT_NETWORK',
+        self::GOOGLE_PLAY => 'GOOGLE_PLAY',
+        self::THIRD_PARTY_APP_ANALYTICS => 'THIRD_PARTY_APP_ANALYTICS',
+        self::GOOGLE_ATTRIBUTION => 'GOOGLE_ATTRIBUTION',
+        self::STORE_SALES_DIRECT => 'STORE_SALES_DIRECT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

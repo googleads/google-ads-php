@@ -49,6 +49,20 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getChannelId()</code>
+
+     * The YouTube uploader channel id or the channel code of a YouTube channel.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 1;</code>
+     * @return string|null
+     */
+    public function getChannelIdValue()
+    {
+        $wrapper = $this->getChannelId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The YouTube uploader channel id or the channel code of a YouTube channel.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 1;</code>
@@ -61,6 +75,21 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
         $this->channel_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The YouTube uploader channel id or the channel code of a YouTube channel.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setChannelIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setChannelId($wrappedVar);
     }
 
 }

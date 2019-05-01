@@ -70,6 +70,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $ad_group_criterion_label = null;
     /**
+     * The ad group criterion simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupCriterionSimulation ad_group_criterion_simulation = 110;</code>
+     */
+    private $ad_group_criterion_simulation = null;
+    /**
      * The ad group extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupExtensionSetting ad_group_extension_setting = 112;</code>
@@ -87,6 +93,18 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupLabel ad_group_label = 115;</code>
      */
     private $ad_group_label = null;
+    /**
+     * The ad group simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupSimulation ad_group_simulation = 107;</code>
+     */
+    private $ad_group_simulation = null;
+    /**
+     * The ad parameter referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdParameter ad_parameter = 130;</code>
+     */
+    private $ad_parameter = null;
     /**
      * The age range view referenced in the query.
      *
@@ -153,6 +171,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignCriterion campaign_criterion = 20;</code>
      */
     private $campaign_criterion = null;
+    /**
+     * The campaign criterion simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;</code>
+     */
+    private $campaign_criterion_simulation = null;
     /**
      * The campaign extension setting referenced in the query.
      *
@@ -274,6 +298,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $dynamic_search_ads_search_term_view = null;
     /**
+     * The expanded landing page view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.ExpandedLandingPageView expanded_landing_page_view = 128;</code>
+     */
+    private $expanded_landing_page_view = null;
+    /**
      * The extension feed item referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.ExtensionFeedItem extension_feed_item = 85;</code>
@@ -388,6 +418,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $label = null;
     /**
+     * The landing page view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.LandingPageView landing_page_view = 126;</code>
+     */
+    private $landing_page_view = null;
+    /**
      * The language constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.LanguageConstant language_constant = 55;</code>
@@ -424,11 +460,23 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $mobile_device_constant = null;
     /**
+     * The mutate job referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.MutateJob mutate_job = 127;</code>
+     */
+    private $mutate_job = null;
+    /**
      * The operating system version constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;</code>
      */
     private $operating_system_version_constant = null;
+    /**
+     * The paid organic search term view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.PaidOrganicSearchTermView paid_organic_search_term_view = 129;</code>
+     */
+    private $paid_organic_search_term_view = null;
     /**
      * The parental status view referenced in the query.
      *
@@ -550,12 +598,18 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The criterion referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\AdGroupCriterionLabel $ad_group_criterion_label
      *           The ad group criterion label referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\AdGroupCriterionSimulation $ad_group_criterion_simulation
+     *           The ad group criterion simulation referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\AdGroupExtensionSetting $ad_group_extension_setting
      *           The ad group extension setting referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\AdGroupFeed $ad_group_feed
      *           The ad group feed referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\AdGroupLabel $ad_group_label
      *           The ad group label referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\AdGroupSimulation $ad_group_simulation
+     *           The ad group simulation referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\AdParameter $ad_parameter
+     *           The ad parameter referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\AgeRangeView $age_range_view
      *           The age range view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\AdScheduleView $ad_schedule_view
@@ -578,6 +632,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The campaign bid modifier referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignCriterion $campaign_criterion
      *           The campaign criterion referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation $campaign_criterion_simulation
+     *           The campaign criterion simulation referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignExtensionSetting $campaign_extension_setting
      *           The campaign extension setting referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignFeed $campaign_feed
@@ -618,6 +674,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The display keyword view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\DynamicSearchAdsSearchTermView $dynamic_search_ads_search_term_view
      *           The dynamic search ads search term view referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\ExpandedLandingPageView $expanded_landing_page_view
+     *           The expanded landing page view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\ExtensionFeedItem $extension_feed_item
      *           The extension feed item referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\Feed $feed
@@ -656,6 +714,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The keyword plan keyword referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\Label $label
      *           The label referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\LandingPageView $landing_page_view
+     *           The landing page view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\LanguageConstant $language_constant
      *           The language constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\LocationView $location_view
@@ -668,8 +728,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The mobile app category constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\MobileDeviceConstant $mobile_device_constant
      *           The mobile device constant referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\MutateJob $mutate_job
+     *           The mutate job referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\OperatingSystemVersionConstant $operating_system_version_constant
      *           The operating system version constant referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\PaidOrganicSearchTermView $paid_organic_search_term_view
+     *           The paid organic search term view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\ParentalStatusView $parental_status_view
      *           The parental status view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\ProductBiddingCategoryConstant $product_bidding_category_constant
@@ -944,6 +1008,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The ad group criterion simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupCriterionSimulation ad_group_criterion_simulation = 110;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\AdGroupCriterionSimulation
+     */
+    public function getAdGroupCriterionSimulation()
+    {
+        return $this->ad_group_criterion_simulation;
+    }
+
+    /**
+     * The ad group criterion simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupCriterionSimulation ad_group_criterion_simulation = 110;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\AdGroupCriterionSimulation $var
+     * @return $this
+     */
+    public function setAdGroupCriterionSimulation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\AdGroupCriterionSimulation::class);
+        $this->ad_group_criterion_simulation = $var;
+
+        return $this;
+    }
+
+    /**
      * The ad group extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupExtensionSetting ad_group_extension_setting = 112;</code>
@@ -1017,6 +1107,58 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\AdGroupLabel::class);
         $this->ad_group_label = $var;
+
+        return $this;
+    }
+
+    /**
+     * The ad group simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupSimulation ad_group_simulation = 107;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\AdGroupSimulation
+     */
+    public function getAdGroupSimulation()
+    {
+        return $this->ad_group_simulation;
+    }
+
+    /**
+     * The ad group simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupSimulation ad_group_simulation = 107;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\AdGroupSimulation $var
+     * @return $this
+     */
+    public function setAdGroupSimulation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\AdGroupSimulation::class);
+        $this->ad_group_simulation = $var;
+
+        return $this;
+    }
+
+    /**
+     * The ad parameter referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdParameter ad_parameter = 130;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\AdParameter
+     */
+    public function getAdParameter()
+    {
+        return $this->ad_parameter;
+    }
+
+    /**
+     * The ad parameter referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdParameter ad_parameter = 130;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\AdParameter $var
+     * @return $this
+     */
+    public function setAdParameter($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\AdParameter::class);
+        $this->ad_parameter = $var;
 
         return $this;
     }
@@ -1303,6 +1445,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\CampaignCriterion::class);
         $this->campaign_criterion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The campaign criterion simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation
+     */
+    public function getCampaignCriterionSimulation()
+    {
+        return $this->campaign_criterion_simulation;
+    }
+
+    /**
+     * The campaign criterion simulation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation $var
+     * @return $this
+     */
+    public function setCampaignCriterionSimulation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation::class);
+        $this->campaign_criterion_simulation = $var;
 
         return $this;
     }
@@ -1828,6 +1996,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The expanded landing page view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.ExpandedLandingPageView expanded_landing_page_view = 128;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\ExpandedLandingPageView
+     */
+    public function getExpandedLandingPageView()
+    {
+        return $this->expanded_landing_page_view;
+    }
+
+    /**
+     * The expanded landing page view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.ExpandedLandingPageView expanded_landing_page_view = 128;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\ExpandedLandingPageView $var
+     * @return $this
+     */
+    public function setExpandedLandingPageView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\ExpandedLandingPageView::class);
+        $this->expanded_landing_page_view = $var;
+
+        return $this;
+    }
+
+    /**
      * The extension feed item referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.ExtensionFeedItem extension_feed_item = 85;</code>
@@ -2322,6 +2516,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The landing page view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.LandingPageView landing_page_view = 126;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\LandingPageView
+     */
+    public function getLandingPageView()
+    {
+        return $this->landing_page_view;
+    }
+
+    /**
+     * The landing page view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.LandingPageView landing_page_view = 126;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\LandingPageView $var
+     * @return $this
+     */
+    public function setLandingPageView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\LandingPageView::class);
+        $this->landing_page_view = $var;
+
+        return $this;
+    }
+
+    /**
      * The language constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.LanguageConstant language_constant = 55;</code>
@@ -2478,6 +2698,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The mutate job referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.MutateJob mutate_job = 127;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\MutateJob
+     */
+    public function getMutateJob()
+    {
+        return $this->mutate_job;
+    }
+
+    /**
+     * The mutate job referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.MutateJob mutate_job = 127;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\MutateJob $var
+     * @return $this
+     */
+    public function setMutateJob($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\MutateJob::class);
+        $this->mutate_job = $var;
+
+        return $this;
+    }
+
+    /**
      * The operating system version constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;</code>
@@ -2499,6 +2745,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\OperatingSystemVersionConstant::class);
         $this->operating_system_version_constant = $var;
+
+        return $this;
+    }
+
+    /**
+     * The paid organic search term view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.PaidOrganicSearchTermView paid_organic_search_term_view = 129;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\PaidOrganicSearchTermView
+     */
+    public function getPaidOrganicSearchTermView()
+    {
+        return $this->paid_organic_search_term_view;
+    }
+
+    /**
+     * The paid organic search term view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.PaidOrganicSearchTermView paid_organic_search_term_view = 129;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\PaidOrganicSearchTermView $var
+     * @return $this
+     */
+    public function setPaidOrganicSearchTermView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\PaidOrganicSearchTermView::class);
+        $this->paid_organic_search_term_view = $var;
 
         return $this;
     }

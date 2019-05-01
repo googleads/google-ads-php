@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Errors\KeywordPlanKeywordErrorEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible errors from applying a keyword plan keyword.
  *
@@ -60,6 +62,37 @@ class KeywordPlanKeywordError
      * Generated from protobuf enum <code>INVALID_KEYWORD_TEXT = 7;</code>
      */
     const INVALID_KEYWORD_TEXT = 7;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INVALID_KEYWORD_MATCH_TYPE => 'INVALID_KEYWORD_MATCH_TYPE',
+        self::DUPLICATE_KEYWORD => 'DUPLICATE_KEYWORD',
+        self::KEYWORD_TEXT_TOO_LONG => 'KEYWORD_TEXT_TOO_LONG',
+        self::KEYWORD_HAS_INVALID_CHARS => 'KEYWORD_HAS_INVALID_CHARS',
+        self::KEYWORD_HAS_TOO_MANY_WORDS => 'KEYWORD_HAS_TOO_MANY_WORDS',
+        self::INVALID_KEYWORD_TEXT => 'INVALID_KEYWORD_TEXT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

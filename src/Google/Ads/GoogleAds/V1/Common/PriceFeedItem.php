@@ -143,6 +143,20 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTrackingUrlTemplate()</code>
+
+     * Tracking URL template for all offers of this price extension.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 3;</code>
+     * @return string|null
+     */
+    public function getTrackingUrlTemplateValue()
+    {
+        $wrapper = $this->getTrackingUrlTemplate();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Tracking URL template for all offers of this price extension.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 3;</code>
@@ -158,6 +172,21 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Tracking URL template for all offers of this price extension.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTrackingUrlTemplateValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTrackingUrlTemplate($wrappedVar);
+    }
+
+    /**
      * The code of the language used for this price extension.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 4;</code>
@@ -166,6 +195,20 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     public function getLanguageCode()
     {
         return $this->language_code;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLanguageCode()</code>
+
+     * The code of the language used for this price extension.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 4;</code>
+     * @return string|null
+     */
+    public function getLanguageCodeValue()
+    {
+        $wrapper = $this->getLanguageCode();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -181,6 +224,21 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
         $this->language_code = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The code of the language used for this price extension.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 4;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLanguageCodeValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLanguageCode($wrappedVar);
     }
 
     /**
@@ -222,6 +280,21 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getFinalUrlSuffix()</code>
+
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 6;</code>
+     * @return string|null
+     */
+    public function getFinalUrlSuffixValue()
+    {
+        $wrapper = $this->getFinalUrlSuffix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * URL template for appending params to landing page URLs served with parallel
      * tracking.
      *
@@ -235,6 +308,22 @@ class PriceFeedItem extends \Google\Protobuf\Internal\Message
         $this->final_url_suffix = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * URL template for appending params to landing page URLs served with parallel
+     * tracking.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFinalUrlSuffixValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFinalUrlSuffix($wrappedVar);
     }
 
 }

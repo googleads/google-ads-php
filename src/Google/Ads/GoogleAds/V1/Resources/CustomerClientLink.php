@@ -119,6 +119,20 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getClientCustomer()</code>
+
+     * The client customer linked to this customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * @return string|null
+     */
+    public function getClientCustomerValue()
+    {
+        $wrapper = $this->getClientCustomer();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The client customer linked to this customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
@@ -134,6 +148,21 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The client customer linked to this customer.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setClientCustomerValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setClientCustomer($wrappedVar);
+    }
+
+    /**
      * This is uniquely identifies a customer client link. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
@@ -142,6 +171,20 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     public function getManagerLinkId()
     {
         return $this->manager_link_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getManagerLinkId()</code>
+
+     * This is uniquely identifies a customer client link. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * @return int|string|null
+     */
+    public function getManagerLinkIdValue()
+    {
+        $wrapper = $this->getManagerLinkId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -157,6 +200,21 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
         $this->manager_link_id = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * This is uniquely identifies a customer client link. Read only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setManagerLinkIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setManagerLinkId($wrappedVar);
     }
 
     /**
@@ -199,6 +257,22 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getHidden()</code>
+
+     * The visibility of the link. Users can choose whether or not to see hidden
+     * links in the AdWords UI.
+     * Default value is false
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 6;</code>
+     * @return bool|null
+     */
+    public function getHiddenValue()
+    {
+        $wrapper = $this->getHidden();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The visibility of the link. Users can choose whether or not to see hidden
      * links in the AdWords UI.
      * Default value is false
@@ -213,6 +287,23 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
         $this->hidden = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * The visibility of the link. Users can choose whether or not to see hidden
+     * links in the AdWords UI.
+     * Default value is false
+     *
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 6;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setHiddenValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
+        return $this->setHidden($wrappedVar);
     }
 
 }

@@ -50,6 +50,13 @@ class MutateJob extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.MutateJobStatusEnum.MutateJobStatus status = 5;</code>
      */
     private $status = 0;
+    /**
+     * The resource name of the long-running operation that can be used to poll
+     * for completion. Only set when the mutate job status is RUNNING or DONE.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     */
+    private $long_running_operation = null;
 
     /**
      * Constructor.
@@ -70,6 +77,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
      *           Contains additional information about this mutate job.
      *     @type int $status
      *           Status of this mutate job.
+     *     @type \Google\Protobuf\StringValue $long_running_operation
+     *           The resource name of the long-running operation that can be used to poll
+     *           for completion. Only set when the mutate job status is RUNNING or DONE.
      * }
      */
     public function __construct($data = NULL) {
@@ -119,6 +129,20 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * ID of this mutate job.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @return int|string|null
+     */
+    public function getIdValue()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * ID of this mutate job.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
@@ -134,6 +158,21 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * ID of this mutate job.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
+    }
+
+    /**
      * The next sequence token to use when adding operations. Only set when the
      * mutate job status is PENDING.
      *
@@ -143,6 +182,21 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     public function getNextAddSequenceToken()
     {
         return $this->next_add_sequence_token;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getNextAddSequenceToken()</code>
+
+     * The next sequence token to use when adding operations. Only set when the
+     * mutate job status is PENDING.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3;</code>
+     * @return string|null
+     */
+    public function getNextAddSequenceTokenValue()
+    {
+        $wrapper = $this->getNextAddSequenceToken();
+        return is_null($wrapper) ? null : $wrapper->getValue();
     }
 
     /**
@@ -159,6 +213,22 @@ class MutateJob extends \Google\Protobuf\Internal\Message
         $this->next_add_sequence_token = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The next sequence token to use when adding operations. Only set when the
+     * mutate job status is PENDING.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setNextAddSequenceTokenValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setNextAddSequenceToken($wrappedVar);
     }
 
     /**
@@ -211,6 +281,65 @@ class MutateJob extends \Google\Protobuf\Internal\Message
         $this->status = $var;
 
         return $this;
+    }
+
+    /**
+     * The resource name of the long-running operation that can be used to poll
+     * for completion. Only set when the mutate job status is RUNNING or DONE.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getLongRunningOperation()
+    {
+        return $this->long_running_operation;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getLongRunningOperation()</code>
+
+     * The resource name of the long-running operation that can be used to poll
+     * for completion. Only set when the mutate job status is RUNNING or DONE.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * @return string|null
+     */
+    public function getLongRunningOperationValue()
+    {
+        $wrapper = $this->getLongRunningOperation();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The resource name of the long-running operation that can be used to poll
+     * for completion. Only set when the mutate job status is RUNNING or DONE.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setLongRunningOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->long_running_operation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the long-running operation that can be used to poll
+     * for completion. Only set when the mutate job status is RUNNING or DONE.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setLongRunningOperationValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setLongRunningOperation($wrappedVar);
     }
 
 }

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\AdStrengthEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum listing the possible ad strengths.
  *
@@ -59,6 +61,37 @@ class AdStrength
      * Generated from protobuf enum <code>EXCELLENT = 7;</code>
      */
     const EXCELLENT = 7;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::PENDING => 'PENDING',
+        self::NO_ADS => 'NO_ADS',
+        self::POOR => 'POOR',
+        self::AVERAGE => 'AVERAGE',
+        self::GOOD => 'GOOD',
+        self::EXCELLENT => 'EXCELLENT',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

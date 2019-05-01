@@ -103,6 +103,20 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCountryGeoTargetConstant()</code>
+
+     * CriterionId for the geo target for a country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_geo_target_constant = 2;</code>
+     * @return string|null
+     */
+    public function getCountryGeoTargetConstantValue()
+    {
+        $wrapper = $this->getCountryGeoTargetConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * CriterionId for the geo target for a country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_geo_target_constant = 2;</code>
@@ -115,6 +129,21 @@ class GeographicView extends \Google\Protobuf\Internal\Message
         $this->country_geo_target_constant = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * CriterionId for the geo target for a country.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_geo_target_constant = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setCountryGeoTargetConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setCountryGeoTargetConstant($wrappedVar);
     }
 
     /**

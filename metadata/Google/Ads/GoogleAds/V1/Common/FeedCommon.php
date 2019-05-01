@@ -33,7 +33,7 @@ class FeedCommon
             "436f6d6d6f6eca021e476f6f676c655c4164735c476f6f676c654164735c" .
             "56315c436f6d6d6f6eea0222476f6f676c653a3a4164733a3a476f6f676c" .
             "654164733a3a56313a3a436f6d6d6f6e620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

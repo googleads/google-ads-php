@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the Ad Group service.
+ *
  * Service to manage ad groups.
  */
 class AdGroupServiceGrpcClient extends \Grpc\BaseStub {

@@ -4,6 +4,8 @@
 
 namespace Google\Ads\GoogleAds\V1\Enums\TargetingDimensionEnum;
 
+use UnexpectedValueException;
+
 /**
  * Enum describing possible targeting dimensions.
  *
@@ -77,6 +79,39 @@ class TargetingDimension
      * Generated from protobuf enum <code>INCOME_RANGE = 9;</code>
      */
     const INCOME_RANGE = 9;
+
+    private static $valueToName = [
+        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::KEYWORD => 'KEYWORD',
+        self::AUDIENCE => 'AUDIENCE',
+        self::TOPIC => 'TOPIC',
+        self::GENDER => 'GENDER',
+        self::AGE_RANGE => 'AGE_RANGE',
+        self::PLACEMENT => 'PLACEMENT',
+        self::PARENTAL_STATUS => 'PARENTAL_STATUS',
+        self::INCOME_RANGE => 'INCOME_RANGE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -20,6 +20,8 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 /**
+ * Proto file describing the User List service.
+ *
  * Service to manage user lists.
  */
 class UserListServiceGrpcClient extends \Grpc\BaseStub {

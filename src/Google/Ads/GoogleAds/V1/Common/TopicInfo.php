@@ -65,6 +65,20 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getTopicConstant()</code>
+
+     * The Topic Constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant = 1;</code>
+     * @return string|null
+     */
+    public function getTopicConstantValue()
+    {
+        $wrapper = $this->getTopicConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The Topic Constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant = 1;</code>
@@ -77,6 +91,21 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
         $this->topic_constant = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The Topic Constant resource name.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTopicConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTopicConstant($wrappedVar);
     }
 
     /**

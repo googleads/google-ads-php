@@ -60,6 +60,21 @@ class KeywordPlanKeywordForecast extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getKeywordPlanAdGroupKeyword()</code>
+
+     * The resource name of the Keyword Plan keyword related to the forecast.
+     * `customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}`
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group_keyword = 1;</code>
+     * @return string|null
+     */
+    public function getKeywordPlanAdGroupKeywordValue()
+    {
+        $wrapper = $this->getKeywordPlanAdGroupKeyword();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The resource name of the Keyword Plan keyword related to the forecast.
      * `customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}`
      *
@@ -73,6 +88,22 @@ class KeywordPlanKeywordForecast extends \Google\Protobuf\Internal\Message
         $this->keyword_plan_ad_group_keyword = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The resource name of the Keyword Plan keyword related to the forecast.
+     * `customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}`
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group_keyword = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setKeywordPlanAdGroupKeywordValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setKeywordPlanAdGroupKeyword($wrappedVar);
     }
 
     /**
