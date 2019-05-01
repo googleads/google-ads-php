@@ -17,18 +17,18 @@
 
 namespace Google\Ads\GoogleAds\Lib\V1;
 
-use Google\Ads\GoogleAds\V0\Errors\ErrorCode;
-use Google\Ads\GoogleAds\V0\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V0\Errors\GoogleAdsFailure;
-use Google\Ads\GoogleAds\V0\Resources\Campaign;
-use Google\Ads\GoogleAds\V0\Resources\GeoTargetConstant;
-use Google\Ads\GoogleAds\V0\Services\GeoTargetConstantSuggestion;
-use Google\Ads\GoogleAds\V0\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsRequest;
-use Google\Ads\GoogleAds\V0\Services\SearchGoogleAdsResponse;
-use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest;
-use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsRequest\LocationNames;
-use Google\Ads\GoogleAds\V0\Services\SuggestGeoTargetConstantsResponse;
+use Google\Ads\GoogleAds\V1\Errors\ErrorCode;
+use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure;
+use Google\Ads\GoogleAds\V1\Resources\Campaign;
+use Google\Ads\GoogleAds\V1\Resources\GeoTargetConstant;
+use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantSuggestion;
+use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V1\Services\SearchGoogleAdsRequest;
+use Google\Ads\GoogleAds\V1\Services\SearchGoogleAdsResponse;
+use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest;
+use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest\LocationNames;
+use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsResponse;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 use Grpc\UnaryCall;
