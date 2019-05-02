@@ -1824,21 +1824,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Returns the unboxed value from <code>getAllConversions()</code>
-
-     * The total number of conversions. This only includes conversion actions
-     * which include_in_conversions_metric attribute is set to true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
-     * @return float|null
-     */
-    public function getAllConversionsValue()
-    {
-        $wrapper = $this->getAllConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
      * The total number of conversions. This only includes conversion actions
      * which include_in_conversions_metric attribute is set to true.
      *
@@ -1852,22 +1837,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
         $this->all_conversions = $var;
 
         return $this;
-    }
-
-    /**
-     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
-
-     * The total number of conversions. This only includes conversion actions
-     * which include_in_conversions_metric attribute is set to true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
-     * @param float|null $var
-     * @return $this
-     */
-    public function setAllConversionsValue($var)
-    {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversions($wrappedVar);
     }
 
     /**
@@ -3969,21 +3938,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Returns the unboxed value from <code>getConversions()</code>
-
-     * The number of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
-     * @return float|null
-     */
-    public function getConversionsValue()
-    {
-        $wrapper = $this->getConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
      * The number of conversions. This only includes conversion actions which
      * include_in_conversions_metric attribute is set to true.
      *
@@ -3997,22 +3951,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
         $this->conversions = $var;
 
         return $this;
-    }
-
-    /**
-     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
-
-     * The number of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
-     * @param float|null $var
-     * @return $this
-     */
-    public function setConversionsValue($var)
-    {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setConversions($wrappedVar);
     }
 
     /**
@@ -4391,22 +4329,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Returns the unboxed value from <code>getCurrentModelAttributedConversions()</code>
-
-     * Shows how your historic conversions data would look under the attribution
-     * model you've currently selected. This only includes conversion actions
-     * which include_in_conversions_metric attribute is set to true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
-     * @return float|null
-     */
-    public function getCurrentModelAttributedConversionsValue()
-    {
-        $wrapper = $this->getCurrentModelAttributedConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
      * Shows how your historic conversions data would look under the attribution
      * model you've currently selected. This only includes conversion actions
      * which include_in_conversions_metric attribute is set to true.
@@ -4421,23 +4343,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
         $this->current_model_attributed_conversions = $var;
 
         return $this;
-    }
-
-    /**
-     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
-
-     * Shows how your historic conversions data would look under the attribution
-     * model you've currently selected. This only includes conversion actions
-     * which include_in_conversions_metric attribute is set to true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
-     * @param float|null $var
-     * @return $this
-     */
-    public function setCurrentModelAttributedConversionsValue($var)
-    {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCurrentModelAttributedConversions($wrappedVar);
     }
 
     /**
