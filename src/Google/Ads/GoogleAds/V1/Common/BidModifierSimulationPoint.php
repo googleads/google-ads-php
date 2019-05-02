@@ -152,20 +152,6 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Returns the unboxed value from <code>getBiddableConversions()</code>
-
-     * Projected number of biddable conversions.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
-     * @return float|null
-     */
-    public function getBiddableConversionsValue()
-    {
-        $wrapper = $this->getBiddableConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
      * Projected number of biddable conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
@@ -178,21 +164,6 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
         $this->biddable_conversions = $var;
 
         return $this;
-    }
-
-    /**
-     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
-
-     * Projected number of biddable conversions.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
-     * @param float|null $var
-     * @return $this
-     */
-    public function setBiddableConversionsValue($var)
-    {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBiddableConversions($wrappedVar);
     }
 
     /**
