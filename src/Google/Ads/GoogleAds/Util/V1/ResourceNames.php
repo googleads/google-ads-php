@@ -29,6 +29,7 @@ use Google\Ads\GoogleAds\V1\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\KeywordPlanServiceClient;
+use Google\Ads\GoogleAds\V1\Services\LabelServiceClient;
 use Google\Ads\GoogleAds\V1\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\RecommendationServiceClient;
 
@@ -191,6 +192,17 @@ final class ResourceNames
     public static function forGeoTargetConstant($geoTargetConstantId)
     {
         return GeoTargetConstantServiceClient::geoTargetConstantName($geoTargetConstantId);
+    }
+
+    /**
+     * Generates resource name for a label.
+     *
+     * @param int $customerId the customer ID
+     * @param int $labelId the label ID
+     */
+    public static function forLabel($customerId, $labelId)
+    {
+        return LabelServiceClient::labelName($customerId, $labelId);
     }
 
     /**
