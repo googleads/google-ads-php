@@ -121,13 +121,13 @@ class GenerateForecastMetrics
             );
             printf(
                 "Estimated daily clicks: %s%s",
-                is_null($metrics->getClicks()) ? 'null' : sprintf("%.2f", $metrics->getClicks()),
+                is_null($metrics->getClicks()) ? 'null' : sprintf("%.2f", $metrics->getClicks()->getValue()),
                 PHP_EOL
             );
             printf(
                 "Estimated daily impressions: %s%s",
                 is_null($metrics->getImpressions())
-                    ? 'null' : sprintf("%.2f", $metrics->getImpressions()),
+                    ? 'null' : sprintf("%.2f", $metrics->getImpressions()->getValue()),
                 PHP_EOL
             );
             printf(
