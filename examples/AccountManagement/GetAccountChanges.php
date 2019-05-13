@@ -124,7 +124,9 @@ class GetAccountChanges
                 $googleAdsRow->getChangeStatus()->getLastChangeDateTime()->getValue(),
                 $googleAdsRow->getChangeStatus()->getResourceName(),
                 self::getResourceNameForResourceType($googleAdsRow->getChangeStatus()),
-                ChangeStatusResourceType::name($googleAdsRow->getChangeStatus()->getResourceType()),
+                ChangeStatusResourceType::name(
+                    $googleAdsRow->getChangeStatus()->getResourceType()
+                ),
                 ChangeStatusOperation::name($googleAdsRow->getChangeStatus()->getResourceStatus()),
                 PHP_EOL
             );
