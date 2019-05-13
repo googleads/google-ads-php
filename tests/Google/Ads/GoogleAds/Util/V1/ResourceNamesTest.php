@@ -29,6 +29,7 @@ use Google\Ads\GoogleAds\V1\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\KeywordPlanServiceClient;
+use Google\Ads\GoogleAds\V1\Services\LabelServiceClient;
 use Google\Ads\GoogleAds\V1\Services\LanguageConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\RecommendationServiceClient;
 use PHPUnit\Framework\TestCase;
@@ -268,6 +269,23 @@ class ResourceNamesTest extends TestCase
 
         $names = GeoTargetConstantServiceClient::parseName($expectedResourceName);
         $this->assertEquals($japanTargetConstantId, $names['geo_target_constant']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forLabel()
+     */
+    public function testGetNameForLabel()
+    {
+        $labelId = 938;
+        $expectedResourceName = sprintf('customers/%s/labels/%s', self::CUSTOMER_ID, $labelId);
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forLabel(self::CUSTOMER_ID, $labelId)
+        );
+
+        $names = LabelServiceClient::parseName($expectedResourceName);
+        $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
+        $this->assertEquals($labelId, $names['label']);
     }
 
     /**
