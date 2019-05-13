@@ -28,7 +28,9 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V1\Common\PolicyTopicEntry;
 use Google\Ads\GoogleAds\V1\Common\PolicyTopicEvidence;
+use Google\Ads\GoogleAds\V1\Enums\AdTypeEnum\AdType;
 use Google\Ads\GoogleAds\V1\Enums\PolicyApprovalStatusEnum\PolicyApprovalStatus;
+use Google\Ads\GoogleAds\V1\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -127,27 +129,19 @@ class GetAllDisapprovedAds
 
             $disapprovedAdsCount++;
 
-            // Note that the ad type printed below is an enum value.
-            // For example, a value of 3 will be returned when the keyword match type is
-            // 'EXPANDED_TEXT_AD'.
-            // A mapping of enum names to values can be found in AdType.php.
             printf(
-                "Ad with ID %d and type '%d' was disapproved with the following policy "
+                "Ad with ID %d and type '%s' was disapproved with the following policy "
                 . "topic entries:%s",
                 $ad->getId()->getValue(),
-                $ad->getType(),
+                AdType::name($ad->getType()),
                 PHP_EOL
             );
             foreach ($policySummary->getPolicyTopicEntries() as $policyTopicEntry) {
                 /** @var PolicyTopicEntry $policyTopicEntry */
-                // Note that the policy topic entry type printed below is an enum value.
-                // For example, a value of 2 will be returned when the policy topic entry type is
-                // 'PROHIBITED'.
-                // A mapping of enum names to values can be found in PolicyTopicEntryType.php.
                 printf(
-                    "  topic: '%s', type: '%d'%s",
+                    "  topic: '%s', type: '%s'%s",
                     $policyTopicEntry->getTopic()->getValue(),
-                    $policyTopicEntry->getType(),
+                    PolicyTopicEntryType::name($policyTopicEntry->getType()),
                     PHP_EOL
                 );
                 foreach ($policyTopicEntry->getEvidences() as $evidence) {

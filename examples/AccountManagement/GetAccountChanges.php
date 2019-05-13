@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
 use Google\Ads\GoogleAds\V1\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Resources\ChangeStatus;
@@ -118,18 +119,13 @@ class GetAccountChanges
         // the change status in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the resource type and resource status printed below are enum values.
-            // For example, a value of 3 will be returned when the resource type is 'AD_GROUP'.
-            // A mapping of enum names to values can be found in the following files:
-            // * ChangeStatusResourceType.php (for resource type)
-            // * ChangeStatusOperation.php (for resource status)
             printf(
-                "On %s, change status '%s' shows resource '%s' with type %d and status %d.%s",
+                "On %s, change status '%s' shows resource '%s' with type '%s' and status '%s'.%s",
                 $googleAdsRow->getChangeStatus()->getLastChangeDateTime()->getValue(),
                 $googleAdsRow->getChangeStatus()->getResourceName(),
                 self::getResourceNameForResourceType($googleAdsRow->getChangeStatus()),
-                $googleAdsRow->getChangeStatus()->getResourceType(),
-                $googleAdsRow->getChangeStatus()->getResourceStatus(),
+                ChangeStatusResourceType::name($googleAdsRow->getChangeStatus()->getResourceType()),
+                ChangeStatusOperation::name($googleAdsRow->getChangeStatus()->getResourceStatus()),
                 PHP_EOL
             );
         }
