@@ -28,8 +28,8 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V1\Common\ExpandedDynamicSearchAdInfo;
 use Google\Ads\GoogleAds\V1\Common\ManualCpc;
-use Google\Ads\GoogleAds\V1\Common\WebPageConditionInfo;
-use Google\Ads\GoogleAds\V1\Common\WebPageInfo;
+use Google\Ads\GoogleAds\V1\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V1\Common\WebpageInfo;
 use Google\Ads\GoogleAds\V1\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
 use Google\Ads\GoogleAds\V1\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
 use Google\Ads\GoogleAds\V1\Enums\AdGroupStatusEnum\AdGroupStatus;
@@ -37,7 +37,7 @@ use Google\Ads\GoogleAds\V1\Enums\AdGroupTypeEnum\AdGroupType;
 use Google\Ads\GoogleAds\V1\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
 use Google\Ads\GoogleAds\V1\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
 use Google\Ads\GoogleAds\V1\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V1\Enums\WebpageConditionOperandEnum\WebPageConditionOperand;
+use Google\Ads\GoogleAds\V1\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
 use Google\Ads\GoogleAds\V1\Resources\Ad;
 use Google\Ads\GoogleAds\V1\Resources\AdGroup;
 use Google\Ads\GoogleAds\V1\Resources\AdGroupCriterion;
@@ -116,11 +116,11 @@ class AddDynamicSearchAds
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID without hyphens
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        string $customerId
+        int $customerId
     ) {
         $budgetResourceName = self::createCampaignBudget($googleAdsClient, $customerId);
         $campaignResourceName = self::createCampaign(
@@ -140,9 +140,9 @@ class AddDynamicSearchAds
     /**
      * Creates a campaign budget.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client.
-     * @param int $customerId the client customer ID.
-     * @return string the campaign budget resource name.
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the client customer ID
+     * @return string the campaign budget resource name
      */
     private static function createCampaignBudget(GoogleAdsClient $googleAdsClient, $customerId)
     {
@@ -173,14 +173,15 @@ class AddDynamicSearchAds
 
     /**
      * Creates a campaign.
+     *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
-     * @param CampaignBudget $campaignBudget the campaign budget
+     * @param int $customerId the client customer ID without hyphens
+     * @param string $campaignBudgetResourceName the resource name of the campaign budget
      * @return string the resource name of the newly created campaign
      */
     private static function createCampaign(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         string $campaignBudgetResourceName
     ) {
         $startDate = new StringValue(['value' => date('Ymd', strtotime('+1 day'))]);
@@ -222,14 +223,15 @@ class AddDynamicSearchAds
 
     /**
      * Creates an ad group.
+     *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
-     * @param Campaign $campaign the campaign
+     * @param int $customerId the client customer ID without hyphens
+     * @param string $campaignResourceName the resource name of the campaign
      * @return string the resource name of the newly created ad group
      */
     private static function createAdGroup(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         string $campaignResourceName
     ) {
         // Constructs an ad group and sets an optional CPC value.
@@ -261,13 +263,14 @@ class AddDynamicSearchAds
 
     /**
      * Creates an expanded dynamic search ad.
+     *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID without hyphens
      * @param string $adGroupResourceName the ad group resource name
      */
     private static function createExpandedDSA(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         string $adGroupResourceName
     ) {
         $adGroupAd = new AdGroupAd([
@@ -299,29 +302,30 @@ class AddDynamicSearchAds
 
     /**
      * Creates webpage targeting criteria for the DSA.
+     *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
-     * @param AdGroup $adGroup the ad group
+     * @param int $customerId the client customer ID without hyphens
+     * @param string $adGroupResourceName the resource name of the ad group
      */
     private static function createWebPageCriteria(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         string $adGroupResourceName
     ) {
         $adGroupCriterion = new AdGroupCriterion([
             'ad_group' => new StringValue(['value' => $adGroupResourceName]),
             'status' => AdGroupCriterionStatus::PAUSED,
             'cpc_bid_micros' => new Int64Value(['value' => 10000000]),
-            'webpage' => new WebPageInfo([
+            'webpage' => new WebpageInfo([
                 'criterion_name' => new StringValue(['value' => 'Special Offers']),
                 'conditions' => [
-                    new WebPageConditionInfo([
-                        'operand' => WebPageConditionOperand::URL,
+                    new WebpageConditionInfo([
+                        'operand' => WebpageConditionOperand::URL,
                         'argument' => new StringValue(['value' => '/specialoffers'])
                     ]),
-                    new WebPageConditionInfo([
-                        'operand' => WebPageConditionOperand::PAGE_TITLE,
-                        'argument' => new StringValue(['value' => 'Special Offer'])
+                    new WebpageConditionInfo([
+                        'operand' => WebpageConditionOperand::PAGE_TITLE,
+                        'argument' => new StringValue(['value' => 'Special Offers'])
                     ])
                 ]
             ])
