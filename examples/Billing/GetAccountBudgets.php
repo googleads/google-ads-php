@@ -136,10 +136,10 @@ class GetAccountBudgets
                 $accountBudget->getBillingSetup()
                     ? $accountBudget->getBillingSetupValue() : 'none',
                 $accountBudget->getAmountServedMicros()
-                    ? $accountBudget->getAmountServedMicrosVlue() / 1000000.0
+                    ? $accountBudget->getAmountServedMicrosValue() / 1000000.0
                     : 0.0,
-                $accountBudget->getTotalAdjustmentsMicrosValue()
-                    ? $accountBudget->getTotalAdjustmentsMicros() / 1000000.0
+                $accountBudget->getTotalAdjustmentsMicros()
+                    ? $accountBudget->getTotalAdjustmentsMicrosValue() / 1000000.0
                     : 0.0,
                 PHP_EOL,
                 $accountBudget->getApprovedSpendingLimitMicros()
