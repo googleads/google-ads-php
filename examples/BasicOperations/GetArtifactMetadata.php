@@ -112,7 +112,7 @@ class GetArtifactMetadata
             printf(
                 "An artifact named '%s' with category '%s' and data type '%s' %s selectable, %s "
                 . "filterable, %s sortable and %s repeated.%s",
-                $googleAdsField->getName()->getValue(),
+                $googleAdsField->getNameValue(),
                 GoogleAdsFieldCategory::name($googleAdsField->getCategory()),
                 GoogleAdsFieldDataType::name($googleAdsField->getDataType()),
                 self::getIsOrIsNot($googleAdsField->getSelectable()),

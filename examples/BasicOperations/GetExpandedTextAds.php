@@ -125,11 +125,11 @@ class GetExpandedTextAds
             printf(
                 "Expanded text ad with ID %d, status '%s', and headline '%s - %s' was found in ad "
                 . "group with ID %d.%s",
-                $ad->getId()->getValue(),
+                $ad->getIdValue(),
                 AdGroupAdStatus::name($googleAdsRow->getAdGroupAd()->getStatus()),
-                $ad->getExpandedTextAd()->getHeadlinePart1()->getValue(),
-                $ad->getExpandedTextAd()->getHeadlinePart2()->getValue(),
-                $googleAdsRow->getAdGroup()->getId()->getValue(),
+                $ad->getExpandedTextAd()->getHeadlinePart1Value(),
+                $ad->getExpandedTextAd()->getHeadlinePart2Value(),
+                $googleAdsRow->getAdGroup()->getIdValue(),
                 PHP_EOL
             );
         }

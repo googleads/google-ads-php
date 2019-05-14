@@ -125,13 +125,13 @@ class GetKeywords
             printf(
                 "Keyword with text '%s', match type '%s', criterion type '%s', and ID %d "
                 . "was found in ad group with ID %d.%s",
-                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getText()->getValue(),
+                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getTextValue(),
                 KeywordMatchType::name(
                     $googleAdsRow->getAdGroupCriterion()->getKeyword()->getMatchType()
                 ),
                 CriterionType::name($googleAdsRow->getAdGroupCriterion()->getType()),
-                $googleAdsRow->getAdGroupCriterion()->getCriterionId()->getValue(),
-                $googleAdsRow->getAdGroup()->getId()->getValue(),
+                $googleAdsRow->getAdGroupCriterion()->getCriterionIdValue(),
+                $googleAdsRow->getAdGroup()->getIdValue(),
                 PHP_EOL
             );
         }
