@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantSuggestion;
 use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest\LocationNames;
@@ -137,13 +138,15 @@ class GetGeoTargetConstantByNames
                 "Found '%s' ('%s','%s','%s',%s) in locale '%s' with reach %d"
                 . " for the search term '%s'.%s",
                 $geoTargetConstantSuggestion->getGeoTargetConstant()->getResourceName(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getName()->getValue(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getCountryCode()->getValue(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getTargetType()->getValue(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getStatus(),
-                $geoTargetConstantSuggestion->getLocale()->getValue(),
-                $geoTargetConstantSuggestion->getReach()->getValue(),
-                $geoTargetConstantSuggestion->getSearchTerm()->getValue(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getNameValue(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getCountryCodeValue(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getTargetTypeValue(),
+                GeoTargetConstantStatus::name(
+                    $geoTargetConstantSuggestion->getGeoTargetConstant()->getStatus()
+                ),
+                $geoTargetConstantSuggestion->getLocaleValue(),
+                $geoTargetConstantSuggestion->getReachValue(),
+                $geoTargetConstantSuggestion->getSearchTermValue(),
                 PHP_EOL
             );
         }

@@ -127,12 +127,12 @@ class GetHotelAdsPerformance
                 . "with hotel check-in on %d and %d day(s) of stay "
                 . "had %d impression(s) and %d average lead value (in micros) "
                 . "during the last 7 days.%s",
-                $googleAdsRow->getAdGroup()->getId()->getValue(),
-                $googleAdsRow->getCampaign()->getId()->getValue(),
+                $googleAdsRow->getAdGroup()->getIdValue(),
+                $googleAdsRow->getCampaign()->getIdValue(),
                 $googleAdsRow->getSegments()->getHotelCheckInDayOfWeek(),
-                $googleAdsRow->getSegments()->getHotelLengthOfStay()->getValue(),
-                $googleAdsRow->getMetrics()->getImpressions()->getValue(),
-                $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicros()->getValue(),
+                $googleAdsRow->getSegments()->getHotelLengthOfStayValue(),
+                $googleAdsRow->getMetrics()->getImpressionsValue(),
+                $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicrosValue(),
                 PHP_EOL
             );
         }

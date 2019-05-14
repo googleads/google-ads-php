@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\BillingSetupStatusEnum\BillingSetupStatus;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -128,20 +129,20 @@ class GetBillingSetup
             }
             printf(
                 'Found the billing setup with ID %1$d, %8$s'
-                . '  status \'%2$d\', %8$s'
+                . '  status \'%2$s\', %8$s'
                 . '  payments account ID \'%3$s\', %8$s'
                 . '  payments account name \'%4$s\', %8$s'
                 . '  payments profile ID \'%5$s\', %8$s'
                 . '  payments profile name \'%6$s\', %8$s'
                 . '  secondary payments profile ID \'%7$s\'.%8$s',
-                $googleAdsRow->getBillingSetup()->getId()->getValue(),
-                $googleAdsRow->getBillingSetup()->getStatus(),
-                $paymentAccountInfo->getPaymentsAccountId()->getValue(),
-                $paymentAccountInfo->getPaymentsAccountName()->getValue(),
-                $paymentAccountInfo->getPaymentsProfileId()->getValue(),
-                $paymentAccountInfo->getPaymentsProfileName()->getValue(),
+                $googleAdsRow->getBillingSetup()->getIdValue(),
+                BillingSetupStatus::name($googleAdsRow->getBillingSetup()->getStatus()),
+                $paymentAccountInfo->getPaymentsAccountIdValue(),
+                $paymentAccountInfo->getPaymentsAccountNameValue(),
+                $paymentAccountInfo->getPaymentsProfileIdValue(),
+                $paymentAccountInfo->getPaymentsProfileNameValue(),
                 $paymentAccountInfo->getSecondaryPaymentsProfileId()
-                    ? $paymentAccountInfo->getSecondaryPaymentsProfileId()->getValue()
+                    ? $paymentAccountInfo->getSecondaryPaymentsProfileIdValue()
                     : 'None',
                 PHP_EOL
             );

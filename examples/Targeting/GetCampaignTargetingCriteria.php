@@ -27,6 +27,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V1\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -118,19 +119,16 @@ class GetCampaignTargetingCriteria
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             $campaignCriterion = $googleAdsRow->getCampaignCriterion();
-            // Note that the match type printed below is an enum value.
-            // For example, a value of 4 will be returned when the keyword match type is 'BROAD'.
-            // A mapping of enum names to values can be found at KeywordMatchType.php
             printf(
                 "Campaign criterion with ID %d was found as a %s",
-                $campaignCriterion->getCriterionId()->getValue(),
-                $campaignCriterion->getNegative()->getValue() ? 'negative ' : ''
+                $campaignCriterion->getCriterionIdValue(),
+                $campaignCriterion->getNegativeValue() ? 'negative ' : ''
             );
             if ($campaignCriterion->getType() === CriterionType::KEYWORD) {
                 printf(
-                    "keyword with text '%s' and match type %d.%s",
-                    $campaignCriterion->getKeyword()->getText()->getValue(),
-                    $campaignCriterion->getKeyword()->getMatchType(),
+                    "keyword with text '%s' and match type %s.%s",
+                    $campaignCriterion->getKeyword()->getTextValue(),
+                    KeywordMatchType::name($campaignCriterion->getKeyword()->getMatchType()),
                     PHP_EOL
                 );
             } else {
