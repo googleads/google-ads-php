@@ -121,7 +121,7 @@ class GetAccountChanges
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 "On %s, change status '%s' shows resource '%s' with type '%s' and status '%s'.%s",
-                $googleAdsRow->getChangeStatus()->getLastChangeDateTime()->getValue(),
+                $googleAdsRow->getChangeStatus()->getLastChangeDateTimeValue(),
                 $googleAdsRow->getChangeStatus()->getResourceName(),
                 self::getResourceNameForResourceType($googleAdsRow->getChangeStatus()),
                 ChangeStatusResourceType::name(
@@ -150,19 +150,19 @@ class GetAccountChanges
         $resourceName = ''; // Default value for UNSPECIFIED or UNKNOWN resource type.
         switch ($resourceType) {
             case ChangeStatusResourceType::AD_GROUP:
-                $resourceName = $changeStatus->getAdGroup()->getValue();
+                $resourceName = $changeStatus->getAdGroupValue();
                 break;
             case ChangeStatusResourceType::AD_GROUP_AD:
-                $resourceName = $changeStatus->getAdGroupAd()->getValue();
+                $resourceName = $changeStatus->getAdGroupAdValue();
                 break;
             case ChangeStatusResourceType::AD_GROUP_CRITERION:
-                $resourceName = $changeStatus->getAdGroupCriterion()->getValue();
+                $resourceName = $changeStatus->getAdGroupCriterionValue();
                 break;
             case ChangeStatusResourceType::CAMPAIGN:
-                $resourceName = $changeStatus->getCampaign()->getValue();
+                $resourceName = $changeStatus->getCampaignValue();
                 break;
             case ChangeStatusResourceType::CAMPAIGN_CRITERION:
-                $resourceName = $changeStatus->getCampaignCriterion()->getValue();
+                $resourceName = $changeStatus->getCampaignCriterionValue();
                 break;
         }
 

@@ -132,7 +132,7 @@ class GetAllDisapprovedAds
             printf(
                 "Ad with ID %d and type '%s' was disapproved with the following policy "
                 . "topic entries:%s",
-                $ad->getId()->getValue(),
+                $ad->getIdValue(),
                 AdType::name($ad->getType()),
                 PHP_EOL
             );
@@ -140,7 +140,7 @@ class GetAllDisapprovedAds
                 /** @var PolicyTopicEntry $policyTopicEntry */
                 printf(
                     "  topic: '%s', type: '%s'%s",
-                    $policyTopicEntry->getTopic()->getValue(),
+                    $policyTopicEntry->getTopicValue(),
                     PolicyTopicEntryType::name($policyTopicEntry->getType()),
                     PHP_EOL
                 );
