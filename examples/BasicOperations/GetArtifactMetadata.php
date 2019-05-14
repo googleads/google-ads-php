@@ -26,6 +26,8 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
+use Google\Ads\GoogleAds\V1\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Resources\GoogleAdsField;
 use Google\ApiCore\ApiException;
@@ -107,16 +109,12 @@ class GetArtifactMetadata
         // Iterates over all rows and prints our the metadata of the returned artifacts
         foreach ($response->iterateAllElements() as $googleAdsField) {
             /** @var GoogleAdsField $googleAdsField */
-            // Note that the category and data type printed below are enum values.
-            // For example, a value of 2 will be returned when the category is 'RESOURCE'.
-            // A mapping of enum names to values can be found at GoogleAdsFieldCategory.php for the
-            // category and GoogleAdsFieldDataType.php for the data type.
             printf(
-                "An artifact named '%s' with category %d and data type %d %s selectable, %s "
+                "An artifact named '%s' with category '%s' and data type '%s' %s selectable, %s "
                 . "filterable, %s sortable and %s repeated.%s",
-                $googleAdsField->getName()->getValue(),
-                $googleAdsField->getCategory(),
-                $googleAdsField->getDataType(),
+                $googleAdsField->getNameValue(),
+                GoogleAdsFieldCategory::name($googleAdsField->getCategory()),
+                GoogleAdsFieldDataType::name($googleAdsField->getDataType()),
                 self::getIsOrIsNot($googleAdsField->getSelectable()),
                 self::getIsOrIsNot($googleAdsField->getFilterable()),
                 self::getIsOrIsNot($googleAdsField->getSortable()),

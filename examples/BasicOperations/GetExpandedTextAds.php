@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -121,17 +122,14 @@ class GetExpandedTextAds
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             $ad = $googleAdsRow->getAdGroupAd()->getAd();
-            // Note that the status printed below are enum values.
-            // For example, a value of 2 will be returned when the status is 'ENABLED'.
-            // A mapping of enum names to values can be found at AdGroupAdStatus.php
             printf(
-                "Expanded text ad with ID %d, status %d, and headline '%s - %s' was found in ad "
+                "Expanded text ad with ID %d, status '%s', and headline '%s - %s' was found in ad "
                 . "group with ID %d.%s",
-                $ad->getId()->getValue(),
-                $googleAdsRow->getAdGroupAd()->getStatus(),
-                $ad->getExpandedTextAd()->getHeadlinePart1()->getValue(),
-                $ad->getExpandedTextAd()->getHeadlinePart2()->getValue(),
-                $googleAdsRow->getAdGroup()->getId()->getValue(),
+                $ad->getIdValue(),
+                AdGroupAdStatus::name($googleAdsRow->getAdGroupAd()->getStatus()),
+                $ad->getExpandedTextAd()->getHeadlinePart1Value(),
+                $ad->getExpandedTextAd()->getHeadlinePart2Value(),
+                $googleAdsRow->getAdGroup()->getIdValue(),
                 PHP_EOL
             );
         }

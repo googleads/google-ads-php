@@ -26,6 +26,8 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -120,18 +122,16 @@ class GetKeywords
         // the keyword in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the match type and criteria type printed below are enum values.
-            // For example, a value of 2 will be returned when the keyword match type is 'EXACT'.
-            // A mapping of enum names to values can be found at KeywordMatchType.php for keyword
-            // match type and CriterionType.php for criterion type.
             printf(
-                "Keyword with text '%s', match type %d, criterion type %d, and ID %d "
+                "Keyword with text '%s', match type '%s', criterion type '%s', and ID %d "
                 . "was found in ad group with ID %d.%s",
-                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getText()->getValue(),
-                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getMatchType(),
-                $googleAdsRow->getAdGroupCriterion()->getType(),
-                $googleAdsRow->getAdGroupCriterion()->getCriterionId()->getValue(),
-                $googleAdsRow->getAdGroup()->getId()->getValue(),
+                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getTextValue(),
+                KeywordMatchType::name(
+                    $googleAdsRow->getAdGroupCriterion()->getKeyword()->getMatchType()
+                ),
+                CriterionType::name($googleAdsRow->getAdGroupCriterion()->getType()),
+                $googleAdsRow->getAdGroupCriterion()->getCriterionIdValue(),
+                $googleAdsRow->getAdGroup()->getIdValue(),
                 PHP_EOL
             );
         }
