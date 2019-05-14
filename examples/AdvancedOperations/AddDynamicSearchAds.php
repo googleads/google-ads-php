@@ -59,7 +59,7 @@ use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 
 /**
- * This example adds a new dynamic search ad (DSA) and webpage targeting criteria for the DSA.
+ * This example adds a new dynamic search ad (DSA) and a webpage targeting criterion for the DSA.
  */
 class AddDynamicSearchAds
 {
@@ -134,7 +134,7 @@ class AddDynamicSearchAds
             $campaignResourceName
         );
         self::createExpandedDSA($googleAdsClient, $customerId, $adGroupResourceName);
-        self::createWebPageCriteria($googleAdsClient, $customerId, $adGroupResourceName);
+        self::createWebPageCriterion($googleAdsClient, $customerId, $adGroupResourceName);
     }
 
     /**
@@ -144,8 +144,10 @@ class AddDynamicSearchAds
      * @param int $customerId the client customer ID
      * @return string the campaign budget resource name
      */
-    private static function createCampaignBudget(GoogleAdsClient $googleAdsClient, $customerId)
-    {
+    private static function createCampaignBudget(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId
+    ) {
         $campaignBudget = new CampaignBudget([
             'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
@@ -165,7 +167,6 @@ class AddDynamicSearchAds
         );
 
         $campaignBudgetResourceName = $campaignBudgetResponse->getResults()[0]->getResourceName();
-
         printf("Added budget named '%s'.%s", $campaignBudgetResourceName, PHP_EOL);
 
         return $campaignBudgetResourceName;
@@ -184,9 +185,6 @@ class AddDynamicSearchAds
         int $customerId,
         string $campaignBudgetResourceName
     ) {
-        $startDate = new StringValue(['value' => date('Ymd', strtotime('+1 day'))]);
-        $endDate = new StringValue(['value' => date('Ymd', strtotime('+1 month'))]);
-
         $campaign = new Campaign([
             'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
@@ -198,9 +196,10 @@ class AddDynamicSearchAds
                 'domain_name' => new StringValue(['value' => 'example.com']),
                 'language_code' => new StringValue(['value' => 'en'])
             ]),
-            // Optional: Sets the start and end dates.
-            'start_date' => $startDate,
-            'end_date' => $endDate
+            // Optional: Sets the start and end dates for the campaign, beginning one day from
+            // now and ending a month from now.
+            'start_date' => new StringValue(['value' => date('Ymd', strtotime('+1 day'))]),
+            'end_date' => new StringValue(['value' => date('Ymd', strtotime('+1 month'))])
         ]);
 
         // Creates a campaign operation.
@@ -301,13 +300,13 @@ class AddDynamicSearchAds
     }
 
     /**
-     * Creates webpage targeting criteria for the DSA.
+     * Creates a webpage targeting criterion for the DSA.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID without hyphens
      * @param string $adGroupResourceName the resource name of the ad group
      */
-    private static function createWebPageCriteria(
+    private static function createWebPageCriterion(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $adGroupResourceName
@@ -316,6 +315,7 @@ class AddDynamicSearchAds
             'ad_group' => new StringValue(['value' => $adGroupResourceName]),
             'status' => AdGroupCriterionStatus::PAUSED,
             'cpc_bid_micros' => new Int64Value(['value' => 10000000]),
+            // Sets the criterion to match a specific page URL and title.
             'webpage' => new WebpageInfo([
                 'criterion_name' => new StringValue(['value' => 'Special Offers']),
                 'conditions' => [
@@ -334,7 +334,7 @@ class AddDynamicSearchAds
         $adGroupCriterionOperation = new AdGroupCriterionOperation();
         $adGroupCriterionOperation->setCreate($adGroupCriterion);
 
-        // Issues a mutate request to add the ad group criteria.
+        // Issues a mutate request to add the ad group criterion.
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         /** @var MutateAdGroupCriteriaResponse $adGroupCriterionResponse */
         $adGroupCriterionResponse = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
