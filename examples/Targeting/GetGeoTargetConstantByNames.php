@@ -131,9 +131,6 @@ class GetGeoTargetConstantByNames
         // values for each one.
         foreach ($response->getGeoTargetConstantSuggestions() as $geoTargetConstantSuggestion) {
             /** @var GeoTargetConstantSuggestion $geoTargetConstantSuggestion */
-            // Note that the status printed below is an enum value.
-            // For example, a value of 2 will be returned when the status is 'ENABLED'.
-            // A mapping of enum names to values can be found in GeoTargetConstantStatus.php.
             printf(
                 "Found '%s' ('%s','%s','%s',%s) in locale '%s' with reach %d"
                 . " for the search term '%s'.%s",

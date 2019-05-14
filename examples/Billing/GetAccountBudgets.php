@@ -117,13 +117,6 @@ class GetAccountBudgets
         // the account budget in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the status, spending limit type, and end time type printed below are enum
-            // values. For example, a value of 2 will be returned when the account budget status is
-            // 'APPROVED'.
-            // A mapping of enum names to values can be found in the following files:
-            // * AccountBudgetStatus.php (for the account budget status)
-            // * SpendingLimitType.php (for the spending limit type)
-            // * TimeType.php (for the end time type)
             $accountBudget = $googleAdsRow->getAccountBudget();
             printf(
                 'Found the account budget \'%s\' with status \'%s\', billing setup '

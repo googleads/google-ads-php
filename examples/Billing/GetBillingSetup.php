@@ -112,10 +112,6 @@ class GetBillingSetup
         // the billing setup in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the status printed below is enum values.
-            // For example, a value of 4 will be returned when the status is 'APPROVED'.
-            // A mapping of enum names to values can be found in:
-            // BillingSetupStatus.php
             $paymentAccountInfo = $googleAdsRow->getBillingSetup()->getPaymentsAccountInfo();
             if (is_null($paymentAccountInfo)) {
                 printf(

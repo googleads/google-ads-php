@@ -119,10 +119,6 @@ class GetAccountBudgetProposals
         // the account budget proposal in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the status and proposal type printed below are enum values.
-            // For example, a value of 4 will be returned when the status is 'APPROVED' for status.
-            // A mapping of enum names to values can be found in:
-            // AccountBudgetProposalStatus.php and AccountBudgetProposalType.php
             $accountBudgetProposal = $googleAdsRow->getAccountBudgetProposal();
             printf(
                 'Found the account budget proposal with ID %1$d, %11$s'

@@ -129,8 +129,6 @@ class GetKeywordStats
             $adGroup = $googleAdsRow->getAdGroup();
             $adGroupCriterion = $googleAdsRow->getAdGroupCriterion();
             $metrics = $googleAdsRow->getMetrics();
-            // A mapping of enum names to values for keyword match type can be found at
-            // KeywordMatchType.php.
             printf(
                 "Keyword text '%s' with "
                 . "match type %s "
