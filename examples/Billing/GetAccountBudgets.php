@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\AccountBudgetStatusEnum\AccountBudgetStatus;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -116,54 +117,47 @@ class GetAccountBudgets
         // the account budget in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the status, spending limit type, and end time type printed below are enum
-            // values. For example, a value of 2 will be returned when the account budget status is
-            // 'APPROVED'.
-            // A mapping of enum names to values can be found in the following files:
-            // * AccountBudgetStatus.php (for the account budget status)
-            // * SpendingLimitType.php (for the spending limit type)
-            // * TimeType.php (for the end time type)
             $accountBudget = $googleAdsRow->getAccountBudget();
             printf(
-                'Found the account budget \'%s\' with status \'%d\', billing setup '
+                'Found the account budget \'%s\' with status \'%s\', billing setup '
                 . '\'%s\', amount served %.2f, total adjustments %.2f,%s'
                 . '  approved spending limit \'%s\' (proposed \'%s\'),%s'
                 . '  approved start time \'%s\' (proposed \'%s\'),%s'
                 . '  approved end time \'%s\' (proposed \'%s\').%s',
                 $accountBudget->getResourceName(),
-                $accountBudget->getStatus(),
+                AccountBudgetStatus::name($accountBudget->getStatus()),
                 $accountBudget->getBillingSetup()
-                    ? $accountBudget->getBillingSetup()->getValue() : 'none',
+                    ? $accountBudget->getBillingSetupValue() : 'none',
                 $accountBudget->getAmountServedMicros()
-                    ? $accountBudget->getAmountServedMicros()->getValue() / 1000000.0
+                    ? $accountBudget->getAmountServedMicrosValue() / 1000000.0
                     : 0.0,
                 $accountBudget->getTotalAdjustmentsMicros()
-                    ? $accountBudget->getTotalAdjustmentsMicros()->getValue() / 1000000.0
+                    ? $accountBudget->getTotalAdjustmentsMicrosValue() / 1000000.0
                     : 0.0,
                 PHP_EOL,
                 $accountBudget->getApprovedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getApprovedSpendingLimitMicros()->getValue() / 1000000.0
+                        $accountBudget->getApprovedSpendingLimitMicrosValue() / 1000000.0
                     ) : $accountBudget->getApprovedSpendingLimitType(),
                 $accountBudget->getProposedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getProposedSpendingLimitMicros()->getValue() / 1000000.0
+                        $accountBudget->getProposedSpendingLimitMicrosValue() / 1000000.0
                     ) : $accountBudget->getProposedSpendingLimitType(),
                 PHP_EOL,
                 $accountBudget->getApprovedStartDateTime()
-                    ? $accountBudget->getApprovedStartDateTime()->getValue()
+                    ? $accountBudget->getApprovedStartDateTimeValue()
                     : 'none',
                 $accountBudget->getProposedStartDateTime()
-                    ? $accountBudget->getProposedStartDateTime()->getValue()
+                    ? $accountBudget->getProposedStartDateTimeValue()
                     : 'none',
                 PHP_EOL,
                 $accountBudget->getApprovedEndDateTime()
-                    ? $accountBudget->getApprovedEndDateTime()->getValue()
+                    ? $accountBudget->getApprovedEndDateTimeValue()
                     : $accountBudget->getApprovedEndTimeType(),
                 $accountBudget->getProposedEndDateTime()
-                    ? $accountBudget->getProposedEndDateTime()->getValue()
+                    ? $accountBudget->getProposedEndDateTimeValue()
                     : $accountBudget->getProposedEndTimeType(),
                 PHP_EOL
             );

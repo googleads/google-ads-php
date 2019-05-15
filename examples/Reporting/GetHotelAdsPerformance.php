@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\DayOfWeekEnum\DayOfWeek;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -120,19 +121,17 @@ class GetHotelAdsPerformance
         // Iterates over all rows in all pages and prints the requested field values for each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note: A mapping of enum names to values for days of week can be found at
-            // DayOfWeek.php.
             printf(
                 "Ad group ID %d in campaign ID %d "
-                . "with hotel check-in on %d and %d day(s) of stay "
+                . "with hotel check-in on %s and %d day(s) of stay "
                 . "had %d impression(s) and %d average lead value (in micros) "
                 . "during the last 7 days.%s",
-                $googleAdsRow->getAdGroup()->getId()->getValue(),
-                $googleAdsRow->getCampaign()->getId()->getValue(),
-                $googleAdsRow->getSegments()->getHotelCheckInDayOfWeek(),
-                $googleAdsRow->getSegments()->getHotelLengthOfStay()->getValue(),
-                $googleAdsRow->getMetrics()->getImpressions()->getValue(),
-                $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicros()->getValue(),
+                $googleAdsRow->getAdGroup()->getIdValue(),
+                $googleAdsRow->getCampaign()->getIdValue(),
+                DayOfWeek::name($googleAdsRow->getSegments()->getHotelCheckInDayOfWeek()),
+                $googleAdsRow->getSegments()->getHotelLengthOfStayValue(),
+                $googleAdsRow->getMetrics()->getImpressionsValue(),
+                $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicrosValue(),
                 PHP_EOL
             );
         }

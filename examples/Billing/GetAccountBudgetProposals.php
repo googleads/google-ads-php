@@ -26,6 +26,8 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\AccountBudgetProposalStatusEnum\AccountBudgetProposalStatus;
+use Google\Ads\GoogleAds\V1\Enums\AccountBudgetProposalTypeEnum\AccountBudgetProposalType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -117,32 +119,28 @@ class GetAccountBudgetProposals
         // the account budget proposal in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the status and proposal type printed below are enum values.
-            // For example, a value of 4 will be returned when the status is 'APPROVED' for status.
-            // A mapping of enum names to values can be found in:
-            // AccountBudgetProposalStatus.php and AccountBudgetProposalType.php
             $accountBudgetProposal = $googleAdsRow->getAccountBudgetProposal();
             printf(
                 'Found the account budget proposal with ID %1$d, %11$s'
-                . '  status \'%2$d\', %11$s'
+                . '  status \'%2$s\', %11$s'
                 . '  account budget \'%3$s\', %11$s'
                 . '  billing setup \'%4$s\', %11$s'
                 . '  proposed name \'%5$s\', %11$s'
                 . '  proposed notes \'%6$s\', %11$s'
                 . '  proposed PO number \'%7$s\'.%11$s'
-                . '  proposed type \'%8$d\'.%11$s'
+                . '  proposed type \'%8$s\'.%11$s'
                 . '  approval date time \'%9$s\'.%11$s'
                 . '  creation date time \'%10$s\'.%11$s',
-                $accountBudgetProposal->getId()->getValue(),
-                $accountBudgetProposal->getStatus(),
-                $accountBudgetProposal->getAccountBudget()->getValue(),
-                $accountBudgetProposal->getBillingSetup()->getValue(),
-                $accountBudgetProposal->getProposedName()->getValue(),
-                $accountBudgetProposal->getProposedNotes()->getValue(),
-                $accountBudgetProposal->getProposedPurchaseOrderNumber()->getValue(),
-                $accountBudgetProposal->getProposalType(),
-                $accountBudgetProposal->getApprovalDateTime()->getValue(),
-                $accountBudgetProposal->getCreationDateTime()->getValue(),
+                $accountBudgetProposal->getIdValue(),
+                AccountBudgetProposalStatus::name($accountBudgetProposal->getStatus()),
+                $accountBudgetProposal->getAccountBudgetValue(),
+                $accountBudgetProposal->getBillingSetupValue(),
+                $accountBudgetProposal->getProposedNameValue(),
+                $accountBudgetProposal->getProposedNotesValue(),
+                $accountBudgetProposal->getProposedPurchaseOrderNumberValue(),
+                AccountBudgetProposalType::name($accountBudgetProposal->getProposalType()),
+                $accountBudgetProposal->getApprovalDateTimeValue(),
+                $accountBudgetProposal->getCreationDateTimeValue(),
                 PHP_EOL
             );
         }

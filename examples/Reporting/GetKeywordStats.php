@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -128,11 +129,9 @@ class GetKeywordStats
             $adGroup = $googleAdsRow->getAdGroup();
             $adGroupCriterion = $googleAdsRow->getAdGroupCriterion();
             $metrics = $googleAdsRow->getMetrics();
-            // A mapping of enum names to values for keyword match type can be found at
-            // KeywordMatchType.php.
             printf(
                 "Keyword text '%s' with "
-                . "match type %d "
+                . "match type %s "
                 . "and ID %d "
                 . "in ad group '%s' "
                 . "with ID %d "
@@ -142,16 +141,16 @@ class GetKeywordStats
                 . "%d click(s), "
                 . "and %d cost (in micros) "
                 . "during the last 7 days.%s",
-                $adGroupCriterion->getKeyword()->getText()->getValue(),
-                $adGroupCriterion->getKeyword()->getMatchType(),
-                $adGroupCriterion->getCriterionId()->getValue(),
-                $adGroup->getName()->getValue(),
-                $adGroup->getId()->getValue(),
-                $campaign->getName()->getValue(),
-                $campaign->getId()->getValue(),
-                $metrics->getImpressions()->getValue(),
-                $metrics->getClicks()->getValue(),
-                $metrics->getCostMicros()->getValue(),
+                $adGroupCriterion->getKeyword()->getTextValue(),
+                KeywordMatchType::name($adGroupCriterion->getKeyword()->getMatchType()),
+                $adGroupCriterion->getCriterionIdValue(),
+                $adGroup->getNameValue(),
+                $adGroup->getIdValue(),
+                $campaign->getNameValue(),
+                $campaign->getIdValue(),
+                $metrics->getImpressionsValue(),
+                $metrics->getClicksValue(),
+                $metrics->getCostMicrosValue(),
                 PHP_EOL
             );
         }
