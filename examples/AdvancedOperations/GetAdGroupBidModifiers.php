@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\V1\Enums\DeviceEnum\Device;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -119,17 +120,14 @@ class GetAdGroupBidModifiers
         // the ad group bid modifier in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the device types printed below are enum values.
-            // For example, a value of 2 will be returned when the device type is 'MOBILE'.
-            // A mapping of enum names to values can be found in: Device.php
             printf(
                 "Ad group bid modifier with criterion ID %d, bid modifier value %f, device "
-                . "type %d was found in an ad group ID %d of campaign ID %d.%s",
-                $googleAdsRow->getAdGroupBidModifier()->getCriterionId()->getValue(),
-                $googleAdsRow->getAdGroupBidModifier()->getBidModifier()->getValue(),
-                $googleAdsRow->getAdGroupBidModifier()->getDevice()->getType(),
-                $googleAdsRow->getAdGroup()->getId()->getValue(),
-                $googleAdsRow->getCampaign()->getId()->getValue(),
+                . "type '%s' was found in an ad group ID %d of campaign ID %d.%s",
+                $googleAdsRow->getAdGroupBidModifier()->getCriterionIdValue(),
+                $googleAdsRow->getAdGroupBidModifier()->getBidModifierValue(),
+                Device::name($googleAdsRow->getAdGroupBidModifier()->getDevice()->getType()),
+                $googleAdsRow->getAdGroup()->getIdValue(),
+                $googleAdsRow->getCampaign()->getIdValue(),
                 PHP_EOL
             );
         }
