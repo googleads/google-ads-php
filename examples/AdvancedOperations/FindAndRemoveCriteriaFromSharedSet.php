@@ -27,6 +27,7 @@ use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V1\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Resources\SharedCriterion;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
@@ -123,11 +124,11 @@ class FindAndRemoveCriteriaFromSharedSet
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 "Campaign shared set with ID %d and name '%s' was found.%s",
-                $googleAdsRow->getSharedSet()->getId()->getValue(),
-                $googleAdsRow->getSharedSet()->getName()->getValue(),
+                $googleAdsRow->getSharedSet()->getIdValue(),
+                $googleAdsRow->getSharedSet()->getNameValue(),
                 PHP_EOL
             );
-            $sharedSetIds[] = $googleAdsRow->getSharedSet()->getId()->getValue();
+            $sharedSetIds[] = $googleAdsRow->getSharedSet()->getIdValue();
         }
 
         // Next, retrieves shared criteria for all found shared sets.
@@ -144,17 +145,16 @@ class FindAndRemoveCriteriaFromSharedSet
         // the shared criterion in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
-            // Note that the match type printed below is an enum value.
-            // For example, a value of 2 will be returned when the keyword match type is 'EXACT'.
-            // A mapping of enum names to values can be found in KeywordMatchType.php.
             $sharedCriterionResourceName = $googleAdsRow->getSharedCriterion()->getResourceName();
             if ($googleAdsRow->getSharedCriterion()->getType() === CriterionType::KEYWORD) {
                 printf(
                     "Shared criterion with resource name '%s' for negative keyword with text "
-                    . "'%s' and match type %d was found.%s",
+                    . "'%s' and match type '%s' was found.%s",
                     $sharedCriterionResourceName,
-                    $googleAdsRow->getSharedCriterion()->getKeyword()->getText()->getValue(),
-                    $googleAdsRow->getSharedCriterion()->getKeyword()->getMatchType(),
+                    $googleAdsRow->getSharedCriterion()->getKeyword()->getTextValue(),
+                    KeywordMatchType::name(
+                        $googleAdsRow->getSharedCriterion()->getKeyword()->getMatchType()
+                    ),
                     PHP_EOL
                 );
             } else {
