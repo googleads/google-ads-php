@@ -129,7 +129,7 @@ class AddDynamicPageFeed
         int $campaignId,
         int $adGroupId
     ) {
-        $dsaPageUrlLabel = "discounts";
+        $dsaPageUrlLabel = 'discounts';
 
         // Creates the page feed details. This code example creates a new feed, but you can
         // fetch and re-use an existing feed.
@@ -160,13 +160,13 @@ class AddDynamicPageFeed
         // Creates a URL attribute.
         $urlAttribute = new FeedAttribute([
             'type' => FeedAttributeType::URL_LIST,
-            'name' => new StringValue(['value' => "Page URL"])
+            'name' => new StringValue(['value' => 'Page URL'])
         ]);
 
         // Creates a label attribute.
         $labelAttribute = new FeedAttribute([
             'type' => FeedAttributeType::STRING_LIST,
-            'name' => new StringValue(['value' => "Label"])
+            'name' => new StringValue(['value' => 'Label'])
         ]);
 
         // Creates the feed.
@@ -210,7 +210,7 @@ class AddDynamicPageFeed
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
 
         $feedAttributes = $response->getIterator()->current()->getFeed()->getAttributes();
-        $feedDetails = ["resource_name" => $feedResourceName];
+        $feedDetails = ['resource_name' => $feedResourceName];
         foreach ($feedAttributes as $feedAttribute) {
             /** @var FeedAttribute $feedAttribute */
             $feedDetails[$feedAttribute->getNameValue()] = $feedAttribute->getIdValue();
@@ -232,20 +232,20 @@ class AddDynamicPageFeed
     ) {
         // Maps the feed attribute IDs to the field ID constants.
         $urlFieldMapping = new AttributeFieldMapping([
-            "feed_attribute_id" => $feedDetails["Page URL"],
-            "dsa_page_feed_field" => DsaPageFeedCriterionField::PAGE_URL
+            'feed_attribute_id' => $feedDetails['Page URL'],
+            'dsa_page_feed_field' => DsaPageFeedCriterionField::PAGE_URL
         ]);
 
         $labelFieldMapping = new AttributeFieldMapping([
-            "feed_attribute_id" => $feedDetails["Label"],
-            "dsa_page_feed_field" => DsaPageFeedCriterionField::LABEL
+            'feed_attribute_id' => $feedDetails['Label'],
+            'dsa_page_feed_field' => DsaPageFeedCriterionField::LABEL
         ]);
 
         // Creates the feed mapping.
         $feedMapping = new FeedMapping([
-            "criterion_type" => FeedMappingCriterionType::DSA_PAGE_FEED,
-            "feed" => $feedDetails["resource_name"],
-            "attribute_field_mappings" => [$urlFieldMapping, $labelFieldMapping]
+            'criterion_type' => FeedMappingCriterionType::DSA_PAGE_FEED,
+            'feed' => $feedDetails['resource_name'],
+            'attribute_field_mappings' => [$urlFieldMapping, $labelFieldMapping]
         ]);
 
         // Creates the operation.
@@ -284,30 +284,30 @@ class AddDynamicPageFeed
         string $dsaPageUrlLabel
     ) {
         $urls = [
-            "http://www.example.com/discounts/rental-cars",
-            "http://www.example.com/discounts/hotel-deals",
-            "http://www.example.com/discounts/flight-deals"
+            'http://www.example.com/discounts/rental-cars',
+            'http://www.example.com/discounts/hotel-deals',
+            'http://www.example.com/discounts/flight-deals'
         ];
+
+        // Creates a label attribute.
+        $labelAttributeValue = new FeedItemAttributeValue([
+            'feed_attribute_id' => $feedDetails['Label'],
+            'string_value' => new StringValue(['value' => $dsaPageUrlLabel])
+        ]);
 
         // Creates one operation per URL.
         $feedItemOperations = [];
         foreach ($urls as $url) {
             // Creates a url attribute.
             $urlAttributeValue = new FeedItemAttributeValue([
-                "feed_attribute_id" => $feedDetails["Page URL"],
-                "string_value" => new StringValue(["value" => $url])
+                'feed_attribute_id' => $feedDetails['Page URL'],
+                'string_value' => new StringValue(['value' => $url])
             ]);
-            
-            // Creates a label attribute.
-            $labelAttributeValue = new FeedItemAttributeValue([
-                "feed_attribute_id" => $feedDetails["Label"],
-                "string_value" => new StringValue(["value" => $dsaPageUrlLabel])
-            ]);
-
+                    
             // Creates a feed item.
             $feedItem = new FeedItem([
-                "feed" => $feedDetails["resource_name"],
-                "attribute_values" => [$urlAttributeValue, $labelAttributeValue]
+                'feed' => $feedDetails['resource_name'],
+                'attribute_values' => [$urlAttributeValue, $labelAttributeValue]
             ]);
 
             // Creates an operation and adds it to the list of operations.
@@ -351,13 +351,13 @@ class AddDynamicPageFeed
             $campaignId
         );
 
-        $feedResourceName = $feedDetails["resource_name"];
-        $dsaSetting->setFeeds([new StringValue(["value" => $feedResourceName])]);
+        $feedResourceName = $feedDetails['resource_name'];
+        $dsaSetting->setFeeds([new StringValue(['value' => $feedResourceName])]);
 
         // Creates the campaign object to be updated.
         $campaign = new Campaign([
-            "resource_name" => ResourceNames::forCampaign($customerId, $campaignId),
-            "dynamic_search_ads_setting" => $dsaSetting
+            'resource_name' => ResourceNames::forCampaign($customerId, $campaignId),
+            'dynamic_search_ads_setting' => $dsaSetting
         ]);
 
         // Creates the update operation and sets the update mask.
@@ -409,7 +409,7 @@ class AddDynamicPageFeed
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
 
         // Throws an exception if a campaign with the provided ID does not exist.
-        if ($response->getPage()->getResponseObject()->getTotalResultsCount() == 0) {
+        if ($response->getPage()->getResponseObject()->getTotalResultsCount() === 0) {
             throw new \InvalidArgumentException("No campaign found with ID $campaignId");
         }
 
@@ -448,21 +448,21 @@ class AddDynamicPageFeed
 
         // Creates the webpage condition info.
         $webPageConditionInfo = new WebpageConditionInfo([
-            "operand" => WebpageConditionOperand::CUSTOM_LABEL,
-            "argument" => $dsaPageUrlLabel
+            'operand' => WebpageConditionOperand::CUSTOM_LABEL,
+            'argument' => $dsaPageUrlLabel
         ]);
 
         // Creates the webpage info.
         $webPageInfo = new WebpageInfo([
-            "criterion_name" => new StringValue(["value" => "Test Criterion"]),
-            "conditions" => [$webPageConditionInfo]
+            'criterion_name' => new StringValue(['value' => 'Test Criterion']),
+            'conditions' => [$webPageConditionInfo]
         ]);
 
         // Creates the ad group criterion.
         $adGroupCriterion = new AdGroupCriterion([
-            "ad_group" => $adGroupResourceName,
-            "webpage" => $webPageInfo,
-            "cpc_bid_micros" => new Int64Value(["value" => 1500000])
+            'ad_group' => $adGroupResourceName,
+            'webpage' => $webPageInfo,
+            'cpc_bid_micros' => new Int64Value(['value' => 1500000])
         ]);
 
         // Creates the operation.
