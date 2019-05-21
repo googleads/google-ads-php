@@ -112,7 +112,7 @@ class LinkManagerToClient
      *
      * @param int $managerCustomerId the manager customer ID
      * @param int $clientCustomerId the client customer ID
-     * @return string the ID of the manager link created for the invitation
+     * @return string the resource name of the manager link created for the invitation
      */
     private static function createInvitation(
         int $managerCustomerId,
@@ -164,7 +164,7 @@ class LinkManagerToClient
             ['pageSize' => self::PAGE_SIZE]
         );
 
-        // Creates the resource name associated to the manager link found.
+        // Gets the ID and resource name associated to the manager link found.
         $managerLinkId = $response->getIterator()->current()
             ->getCustomerClientLink()
             ->getManagerLinkIdValue();
@@ -231,7 +231,7 @@ class LinkManagerToClient
 
     /**
      * Creates a Google Ads client based on the default configuration file
-     * and the given login customer id.
+     * and a given login customer id.
      *
      * @param int $loginCustomerId  the login customer ID
      * @return GoogleAdsClient the created client
@@ -239,7 +239,10 @@ class LinkManagerToClient
     private static function createGoogleClient(int $loginCustomerId)
     {
         // Generates a refreshable OAuth2 credential for authentication.
-        $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
+        $oAuth2Credential = (new OAuth2TokenBuilder())
+            // Sets the properties based on the default properties file
+            ->fromFile()
+            ->build();
 
         // Builds and returns the Google Ads client
         return (new GoogleAdsClientBuilder())
