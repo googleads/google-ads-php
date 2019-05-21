@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\V1\Services\BillingSetupServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignServiceClient;
+use Google\Ads\GoogleAds\V1\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\KeywordPlanServiceClient;
@@ -235,6 +236,33 @@ class ResourceNamesTest extends TestCase
 
         $names = CustomerServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomerManagerLink()
+     */
+    public function testGetNameForCustomerManagerLink()
+    {
+        $customerManagerId = 111111;
+        $managerLinkId = 222222;
+        $expectedResourceName = sprintf(
+            'customers/%s/customerManagerLinks/%s~%s',
+            self::CUSTOMER_ID,
+            $customerManagerId,
+            $managerLinkId
+        );
+        $this->assertEquals($expectedResourceName, ResourceNames::forCustomerManagerLink(
+            self::CUSTOMER_ID,
+            $customerManagerId,
+            $managerLinkId
+        ));
+
+        $names = CustomerManagerLinkServiceClient::parseName($expectedResourceName);
+        $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
+        $this->assertEquals(
+            "{$customerManagerId}~{$managerLinkId}",
+            $names['customer_manager_link']
+        );
     }
 
     /**
