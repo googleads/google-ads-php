@@ -183,7 +183,7 @@ class AddGmailAd
     }
 
     /**
-     * Adds the gmail ad.
+     * Adds the Gmail ad.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
