@@ -26,6 +26,7 @@ use Google\Ads\GoogleAds\V1\Services\BillingSetupServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignServiceClient;
+use Google\Ads\GoogleAds\V1\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\KeywordPlanServiceClient;
@@ -169,6 +170,25 @@ final class ResourceNames
     public static function forCustomer($customerId)
     {
         return CustomerServiceClient::customerName($customerId);
+    }
+
+    /**
+     * Generates resource name for a customer manager link.
+     *
+     * @param int $clientCustomerId the client customer ID
+     * @param int $managerCustomerId the manager customer ID
+     * @param int $managerLinkId the manager link ID
+     * @return string the customer manager link resource name
+     */
+    public static function forCustomerManagerLink(
+        $clientCustomerId,
+        $managerCustomerId,
+        $managerLinkId
+    ) {
+        return CustomerManagerLinkServiceClient::customerManagerLinkName(
+            $clientCustomerId,
+            "{$managerCustomerId}~{$managerLinkId}"
+        );
     }
 
     /**
