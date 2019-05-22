@@ -146,7 +146,7 @@ class AddDynamicPageFeed
         printf("Dynamic page feed setup is complete for campaign ID %d.%s", campaignId, PHP_EOL);
     }
 
-    /**
+   /**
     * Creates a feed.
     *
     * @param GoogleAdsClient googleAdsClient the Google Ads API client
@@ -196,7 +196,8 @@ class AddDynamicPageFeed
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
      * @param int customerId the client customer ID
      * @param string feedResourceName the resource name of the feed
-     * @return array the names and IDs of feed attributes
+     * @return array the feed details containing the feed's resource name and the feed attributes'
+     * names and values
      */
     private static function getFeed(
         GoogleAdsClient $googleAdsClient,
