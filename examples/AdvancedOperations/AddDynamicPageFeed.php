@@ -304,7 +304,7 @@ class AddDynamicPageFeed
                 'feed_attribute_id' => $feedDetails['Page URL'],
                 'string_value' => new StringValue(['value' => $url])
             ]);
-                    
+     
             // Creates a feed item.
             $feedItem = new FeedItem([
                 'feed' => $feedDetails['resource_name'],
