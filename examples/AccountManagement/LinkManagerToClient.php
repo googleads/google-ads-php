@@ -39,7 +39,7 @@ use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to link an existing Google Ads manager customer
- * to an existing Google Ads client customer.
+ * account to an existing Google Ads client customer account.
  */
 class LinkManagerToClient
 {
@@ -101,7 +101,17 @@ class LinkManagerToClient
     public static function runExample(int $managerCustomerId, int $clientCustomerId)
     {
         // Extends an invitation to the client while authenticating as the manager.
-        $managerLinkResourceName = self::createInvitation($managerCustomerId, $clientCustomerId);
+        $customerClientLinkResourceName = self::createInvitation(
+            $managerCustomerId,
+            $clientCustomerId
+        );
+
+        // Retrieves the manager link information.
+        $managerLinkResourceName = self::getManagerLinkResourceName(
+            $managerCustomerId,
+            $clientCustomerId,
+            $customerClientLinkResourceName
+        );
 
         // Accepts the manager's invitation while authenticating as the client.
         self::acceptInvitation($clientCustomerId, $managerLinkResourceName);
@@ -112,14 +122,14 @@ class LinkManagerToClient
      *
      * @param int $managerCustomerId the manager customer ID
      * @param int $clientCustomerId the client customer ID
-     * @return string the resource name of the manager link created for the invitation
+     * @return string the resource name of the customer client link created for the invitation
      */
     private static function createInvitation(
         int $managerCustomerId,
         int $clientCustomerId
     ) {
         // Creates a client with the manager customer ID as login customer ID.
-        $googleAdsClient = self::createGoogleClient($managerCustomerId);
+        $googleAdsClient = self::createGoogleAdsClient($managerCustomerId);
 
         // Creates a customer client link.
         $customerClientLink = new CustomerClientLink([
@@ -151,8 +161,27 @@ class LinkManagerToClient
             PHP_EOL
         );
 
-        // Creates a query that retrieves the manager link ID of the customer client link
-        // that has just been created.
+        // Returns the resource name of the created customer client link.
+        return $customerClientLinkResourceName;
+    }
+
+    /**
+     * Retrieves the manager link resource name of a customer client link given its resource name.
+     *
+     * @param int $managerCustomerId the manager customer ID
+     * @param int $clientCustomerId the client customer ID
+     * @param string $customerClientLinkResourceName the customer client link resource name
+     * @return string the manager link resource name
+     */
+    private static function getManagerLinkResourceName(
+        int $managerCustomerId,
+        int $clientCustomerId,
+        string $customerClientLinkResourceName
+    ) {
+        // Creates a client with the manager customer ID as login customer ID.
+        $googleAdsClient = self::createGoogleAdsClient($managerCustomerId);
+
+        // Creates the query.
         $query = "SELECT customer_client_link.manager_link_id FROM customer_client_link" .
             " WHERE customer_client_link.resource_name = '$customerClientLinkResourceName'";
 
@@ -183,7 +212,7 @@ class LinkManagerToClient
             PHP_EOL
         );
 
-        // Returns the manager link resource name found.
+        // Returns the resource name of the manager link found.
         return $managerLinkResourceName;
     }
 
@@ -198,7 +227,7 @@ class LinkManagerToClient
         string $managerLinkResourceName
     ) {
         // Creates a client with the client customer ID as login customer ID.
-        $googleAdsClient = self::createGoogleClient($clientCustomerId);
+        $googleAdsClient = self::createGoogleAdsClient($clientCustomerId);
 
         // Creates the customer manager link with the updated status.
         $customerManagerLink = new CustomerManagerLink();
@@ -236,7 +265,7 @@ class LinkManagerToClient
      * @param int $loginCustomerId  the login customer ID
      * @return GoogleAdsClient the created client
      */
-    private static function createGoogleClient(int $loginCustomerId)
+    private static function createGoogleAdsClient(int $loginCustomerId)
     {
         // Generates a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())
