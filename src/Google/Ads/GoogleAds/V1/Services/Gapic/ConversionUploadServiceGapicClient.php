@@ -192,6 +192,9 @@ class ConversionUploadServiceGapicClient
      *          operations will return errors. If false, all operations will be carried
      *          out in one transaction if and only if they are all valid.
      *          This should always be set to true.
+     *     @type bool $validateOnly
+     *          If true, the request is validated but not executed. Only errors are
+     *          returned, not results.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -211,6 +214,9 @@ class ConversionUploadServiceGapicClient
         $request->setConversions($conversions);
         if (isset($optionalArgs['partialFailure'])) {
             $request->setPartialFailure($optionalArgs['partialFailure']);
+        }
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
@@ -253,6 +259,9 @@ class ConversionUploadServiceGapicClient
      *          operations will return errors. If false, all operations will be carried
      *          out in one transaction if and only if they are all valid.
      *          This should always be set to true.
+     *     @type bool $validateOnly
+     *          If true, the request is validated but not executed. Only errors are
+     *          returned, not results.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -272,6 +281,9 @@ class ConversionUploadServiceGapicClient
         $request->setConversions($conversions);
         if (isset($optionalArgs['partialFailure'])) {
             $request->setPartialFailure($optionalArgs['partialFailure']);
+        }
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([

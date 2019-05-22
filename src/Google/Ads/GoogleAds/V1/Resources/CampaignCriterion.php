@@ -56,6 +56,12 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CriterionTypeEnum.CriterionType type = 6;</code>
      */
     private $type = 0;
+    /**
+     * The status of the criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus status = 35;</code>
+     */
+    private $status = 0;
     protected $criterion;
 
     /**
@@ -81,6 +87,8 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Whether to target (`false`) or exclude (`true`) the criterion.
      *     @type int $type
      *           The type of the criterion.
+     *     @type int $status
+     *           The status of the criterion.
      *     @type \Google\Ads\GoogleAds\V1\Common\KeywordInfo $keyword
      *           Keyword.
      *     @type \Google\Ads\GoogleAds\V1\Common\PlacementInfo $placement
@@ -424,6 +432,32 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\CriterionTypeEnum_CriterionType::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * The status of the criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus status = 35;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The status of the criterion.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus status = 35;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\CampaignCriterionStatusEnum_CampaignCriterionStatus::class);
+        $this->status = $var;
 
         return $this;
     }

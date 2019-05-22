@@ -62,6 +62,12 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     private $device = 0;
     /**
+     * The targeted geo target constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     */
+    private $targeted_geo_target_constant = null;
+    /**
      * Status of the feed item.
      * This field is read-only.
      *
@@ -69,6 +75,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     private $status = 0;
     protected $extension;
+    protected $serving_resource_targeting;
 
     /**
      * Constructor.
@@ -98,6 +105,8 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           per day.
      *     @type int $device
      *           The targeted device.
+     *     @type \Google\Protobuf\StringValue $targeted_geo_target_constant
+     *           The targeted geo target constant.
      *     @type int $status
      *           Status of the feed item.
      *           This field is read-only.
@@ -124,6 +133,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           Affiliate location extension. Feed locations are populated by Google Ads
      *           based on a chain ID.
      *           This field is read-only.
+     *     @type \Google\Protobuf\StringValue $targeted_campaign
+     *           The targeted campaign.
+     *     @type \Google\Protobuf\StringValue $targeted_ad_group
+     *           The targeted ad group.
      * }
      */
     public function __construct($data = NULL) {
@@ -373,6 +386,61 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
         $this->device = $var;
 
         return $this;
+    }
+
+    /**
+     * The targeted geo target constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getTargetedGeoTargetConstant()
+    {
+        return $this->targeted_geo_target_constant;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTargetedGeoTargetConstant()</code>
+
+     * The targeted geo target constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * @return string|null
+     */
+    public function getTargetedGeoTargetConstantValue()
+    {
+        $wrapper = $this->getTargetedGeoTargetConstant();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The targeted geo target constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setTargetedGeoTargetConstant($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->targeted_geo_target_constant = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The targeted geo target constant.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTargetedGeoTargetConstantValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTargetedGeoTargetConstant($wrappedVar);
     }
 
     /**
@@ -670,11 +738,129 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The targeted campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getTargetedCampaign()
+    {
+        return $this->readOneof(18);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTargetedCampaign()</code>
+
+     * The targeted campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
+     * @return string|null
+     */
+    public function getTargetedCampaignValue()
+    {
+        $wrapper = $this->getTargetedCampaign();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The targeted campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setTargetedCampaign($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->writeOneof(18, $var);
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The targeted campaign.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTargetedCampaignValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTargetedCampaign($wrappedVar);
+    }
+
+    /**
+     * The targeted ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getTargetedAdGroup()
+    {
+        return $this->readOneof(19);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getTargetedAdGroup()</code>
+
+     * The targeted ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
+     * @return string|null
+     */
+    public function getTargetedAdGroupValue()
+    {
+        $wrapper = $this->getTargetedAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The targeted ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setTargetedAdGroup($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->writeOneof(19, $var);
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The targeted ad group.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setTargetedAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setTargetedAdGroup($wrappedVar);
+    }
+
+    /**
      * @return string
      */
     public function getExtension()
     {
         return $this->whichOneof("extension");
+    }
+
+    /**
+     * @return string
+     */
+    public function getServingResourceTargeting()
+    {
+        return $this->whichOneof("serving_resource_targeting");
     }
 
 }

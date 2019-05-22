@@ -50,6 +50,13 @@ class AssetError
      * Generated from protobuf enum <code>ASSET_DATA_IS_MISSING = 5;</code>
      */
     const ASSET_DATA_IS_MISSING = 5;
+    /**
+     * The asset has a name which is different from an existing duplicate that
+     * represents the same content.
+     *
+     * Generated from protobuf enum <code>CANNOT_MODIFY_ASSET_NAME = 6;</code>
+     */
+    const CANNOT_MODIFY_ASSET_NAME = 6;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -58,6 +65,7 @@ class AssetError
         self::DUPLICATE_ASSET => 'DUPLICATE_ASSET',
         self::DUPLICATE_ASSET_NAME => 'DUPLICATE_ASSET_NAME',
         self::ASSET_DATA_IS_MISSING => 'ASSET_DATA_IS_MISSING',
+        self::CANNOT_MODIFY_ASSET_NAME => 'CANNOT_MODIFY_ASSET_NAME',
     ];
 
     public static function name($value)

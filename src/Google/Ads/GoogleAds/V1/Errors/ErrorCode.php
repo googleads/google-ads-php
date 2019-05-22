@@ -179,6 +179,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the feed error
      *     @type int $geo_target_constant_suggestion_error
      *           The reasons for the geo target constant suggestion error.
+     *     @type int $campaign_draft_error
+     *           The reasons for the campaign draft error
      *     @type int $feed_item_error
      *           The reasons for the feed item error
      *     @type int $label_error
@@ -199,6 +201,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the campaign feed error
      *     @type int $custom_interest_error
      *           The reasons for the custom interest error
+     *     @type int $campaign_experiment_error
+     *           The reasons for the campaign experiment error
      *     @type int $extension_feed_item_error
      *           The reasons for the extension feed item error
      *     @type int $ad_parameter_error
@@ -219,6 +223,10 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the policy validation parameter error
      *     @type int $size_limit_error
      *           The reasons for the size limit error
+     *     @type int $not_whitelisted_error
+     *           The reasons for the not whitelisted error
+     *     @type int $manager_link_error
+     *           The reasons for the manager link error
      * }
      */
     public function __construct($data = NULL) {
@@ -2255,6 +2263,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for the campaign draft error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;</code>
+     * @return int
+     */
+    public function getCampaignDraftError()
+    {
+        return $this->readOneof(82);
+    }
+
+    /**
+     * The reasons for the campaign draft error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.CampaignDraftErrorEnum.CampaignDraftError campaign_draft_error = 82;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCampaignDraftError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\CampaignDraftErrorEnum_CampaignDraftError::class);
+        $this->writeOneof(82, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the feed item error
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.FeedItemErrorEnum.FeedItemError feed_item_error = 83;</code>
@@ -2515,6 +2549,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for the campaign experiment error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.CampaignExperimentErrorEnum.CampaignExperimentError campaign_experiment_error = 98;</code>
+     * @return int
+     */
+    public function getCampaignExperimentError()
+    {
+        return $this->readOneof(98);
+    }
+
+    /**
+     * The reasons for the campaign experiment error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.CampaignExperimentErrorEnum.CampaignExperimentError campaign_experiment_error = 98;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCampaignExperimentError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\CampaignExperimentErrorEnum_CampaignExperimentError::class);
+        $this->writeOneof(98, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the extension feed item error
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ExtensionFeedItemErrorEnum.ExtensionFeedItemError extension_feed_item_error = 100;</code>
@@ -2770,6 +2830,58 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\SizeLimitErrorEnum_SizeLimitError::class);
         $this->writeOneof(118, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the not whitelisted error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.NotWhitelistedErrorEnum.NotWhitelistedError not_whitelisted_error = 120;</code>
+     * @return int
+     */
+    public function getNotWhitelistedError()
+    {
+        return $this->readOneof(120);
+    }
+
+    /**
+     * The reasons for the not whitelisted error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.NotWhitelistedErrorEnum.NotWhitelistedError not_whitelisted_error = 120;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNotWhitelistedError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\NotWhitelistedErrorEnum_NotWhitelistedError::class);
+        $this->writeOneof(120, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the manager link error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ManagerLinkErrorEnum.ManagerLinkError manager_link_error = 121;</code>
+     * @return int
+     */
+    public function getManagerLinkError()
+    {
+        return $this->readOneof(121);
+    }
+
+    /**
+     * The reasons for the manager link error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ManagerLinkErrorEnum.ManagerLinkError manager_link_error = 121;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setManagerLinkError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Errors\ManagerLinkErrorEnum_ManagerLinkError::class);
+        $this->writeOneof(121, $var);
 
         return $this;
     }

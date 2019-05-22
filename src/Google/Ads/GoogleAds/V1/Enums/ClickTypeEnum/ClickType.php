@@ -337,6 +337,12 @@ class ClickType
      * Generated from protobuf enum <code>HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION = 55;</code>
      */
     const HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION = 55;
+    /**
+     * Shopping - Comparison Listing.
+     *
+     * Generated from protobuf enum <code>SHOPPING_COMPARISON_LISTING = 56;</code>
+     */
+    const SHOPPING_COMPARISON_LISTING = 56;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -393,6 +399,7 @@ class ClickType
         self::HOTEL_PRICE => 'HOTEL_PRICE',
         self::PRICE_EXTENSION => 'PRICE_EXTENSION',
         self::HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION => 'HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION',
+        self::SHOPPING_COMPARISON_LISTING => 'SHOPPING_COMPARISON_LISTING',
     ];
 
     public static function name($value)

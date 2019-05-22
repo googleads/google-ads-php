@@ -47,7 +47,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\CallExtensionParameters $call_extension
      *           Parameters to use when applying call extension recommendation.
      *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\SitelinkExtensionParameters $sitelink_extension
-     *           Parameters to use when applying call extension recommendation.
+     *           Parameters to use when applying sitelink extension recommendation.
      *     @type \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters $move_unused_budget
      *           Parameters to use when applying move unused budget recommendation.
      * }
@@ -244,7 +244,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Parameters to use when applying call extension recommendation.
+     * Parameters to use when applying sitelink extension recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.SitelinkExtensionParameters sitelink_extension = 8;</code>
      * @return \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\SitelinkExtensionParameters
@@ -255,7 +255,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Parameters to use when applying call extension recommendation.
+     * Parameters to use when applying sitelink extension recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.ApplyRecommendationOperation.SitelinkExtensionParameters sitelink_extension = 8;</code>
      * @param \Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation\SitelinkExtensionParameters $var

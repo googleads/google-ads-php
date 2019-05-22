@@ -43,6 +43,8 @@ use Google\Ads\GoogleAds\V1\Services\CampaignBidModifierServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignBudgetServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignCriterionServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignCriterionSimulationServiceClient;
+use Google\Ads\GoogleAds\V1\Services\CampaignDraftServiceClient;
+use Google\Ads\GoogleAds\V1\Services\CampaignExperimentServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignExtensionSettingServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignFeedServiceClient;
 use Google\Ads\GoogleAds\V1\Services\CampaignLabelServiceClient;
@@ -363,6 +365,22 @@ trait ServiceClientFactoryTrait
     public function getCampaignCriterionSimulationServiceClient()
     {
         return new CampaignCriterionSimulationServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CampaignDraftServiceClient
+     */
+    public function getCampaignDraftServiceClient()
+    {
+        return new CampaignDraftServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CampaignExperimentServiceClient
+     */
+    public function getCampaignExperimentServiceClient()
+    {
+        return new CampaignExperimentServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

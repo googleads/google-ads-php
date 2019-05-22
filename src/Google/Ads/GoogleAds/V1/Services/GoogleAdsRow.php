@@ -178,6 +178,18 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     private $campaign_criterion_simulation = null;
     /**
+     * The campaign draft referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignDraft campaign_draft = 49;</code>
+     */
+    private $campaign_draft = null;
+    /**
+     * The campaign experiment referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignExperiment campaign_experiment = 84;</code>
+     */
+    private $campaign_experiment = null;
+    /**
      * The campaign extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignExtensionSetting campaign_extension_setting = 113;</code>
@@ -634,6 +646,10 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The campaign criterion referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation $campaign_criterion_simulation
      *           The campaign criterion simulation referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignDraft $campaign_draft
+     *           The campaign draft referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignExperiment $campaign_experiment
+     *           The campaign experiment referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignExtensionSetting $campaign_extension_setting
      *           The campaign extension setting referenced in the query.
      *     @type \Google\Ads\GoogleAds\V1\Resources\CampaignFeed $campaign_feed
@@ -1471,6 +1487,58 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\CampaignCriterionSimulation::class);
         $this->campaign_criterion_simulation = $var;
+
+        return $this;
+    }
+
+    /**
+     * The campaign draft referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignDraft campaign_draft = 49;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\CampaignDraft
+     */
+    public function getCampaignDraft()
+    {
+        return $this->campaign_draft;
+    }
+
+    /**
+     * The campaign draft referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignDraft campaign_draft = 49;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\CampaignDraft $var
+     * @return $this
+     */
+    public function setCampaignDraft($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\CampaignDraft::class);
+        $this->campaign_draft = $var;
+
+        return $this;
+    }
+
+    /**
+     * The campaign experiment referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignExperiment campaign_experiment = 84;</code>
+     * @return \Google\Ads\GoogleAds\V1\Resources\CampaignExperiment
+     */
+    public function getCampaignExperiment()
+    {
+        return $this->campaign_experiment;
+    }
+
+    /**
+     * The campaign experiment referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignExperiment campaign_experiment = 84;</code>
+     * @param \Google\Ads\GoogleAds\V1\Resources\CampaignExperiment $var
+     * @return $this
+     */
+    public function setCampaignExperiment($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\CampaignExperiment::class);
+        $this->campaign_experiment = $var;
 
         return $this;
     }

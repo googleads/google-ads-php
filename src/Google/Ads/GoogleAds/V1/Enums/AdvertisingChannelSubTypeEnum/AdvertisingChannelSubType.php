@@ -101,6 +101,12 @@ class AdvertisingChannelSubType
      * Generated from protobuf enum <code>APP_CAMPAIGN_FOR_ENGAGEMENT = 13;</code>
      */
     const APP_CAMPAIGN_FOR_ENGAGEMENT = 13;
+    /**
+     * Shopping Comparison Listing campaigns.
+     *
+     * Generated from protobuf enum <code>SHOPPING_COMPARISON_LISTING_ADS = 15;</code>
+     */
+    const SHOPPING_COMPARISON_LISTING_ADS = 15;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -117,6 +123,7 @@ class AdvertisingChannelSubType
         self::VIDEO_NON_SKIPPABLE => 'VIDEO_NON_SKIPPABLE',
         self::APP_CAMPAIGN => 'APP_CAMPAIGN',
         self::APP_CAMPAIGN_FOR_ENGAGEMENT => 'APP_CAMPAIGN_FOR_ENGAGEMENT',
+        self::SHOPPING_COMPARISON_LISTING_ADS => 'SHOPPING_COMPARISON_LISTING_ADS',
     ];
 
     public static function name($value)

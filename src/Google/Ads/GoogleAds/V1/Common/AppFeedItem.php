@@ -17,7 +17,8 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The visible text displayed when the link is rendered in an ad.
-     * The length of this string should be between 1 and 25, inclusive.
+     * This string must not be empty, and the length of this string should
+     * be between 1 and 25, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      */
@@ -31,12 +32,14 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
     private $app_id = null;
     /**
      * The application store that the target application belongs to.
+     * This field is required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AppStoreEnum.AppStore app_store = 3;</code>
      */
     private $app_store = 0;
     /**
      * A list of possible final URLs after all cross domain redirects.
+     * This list must not be empty.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue final_urls = 4;</code>
      */
@@ -76,14 +79,17 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\StringValue $link_text
      *           The visible text displayed when the link is rendered in an ad.
-     *           The length of this string should be between 1 and 25, inclusive.
+     *           This string must not be empty, and the length of this string should
+     *           be between 1 and 25, inclusive.
      *     @type \Google\Protobuf\StringValue $app_id
      *           The store-specific ID for the target application.
      *           This string must not be empty.
      *     @type int $app_store
      *           The application store that the target application belongs to.
+     *           This field is required.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           A list of possible final URLs after all cross domain redirects.
+     *           This list must not be empty.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $final_mobile_urls
      *           A list of possible final mobile URLs after all cross domain redirects.
      *     @type \Google\Protobuf\StringValue $tracking_url_template
@@ -103,7 +109,8 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * The visible text displayed when the link is rendered in an ad.
-     * The length of this string should be between 1 and 25, inclusive.
+     * This string must not be empty, and the length of this string should
+     * be between 1 and 25, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      * @return \Google\Protobuf\StringValue
@@ -117,7 +124,8 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getLinkText()</code>
 
      * The visible text displayed when the link is rendered in an ad.
-     * The length of this string should be between 1 and 25, inclusive.
+     * This string must not be empty, and the length of this string should
+     * be between 1 and 25, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      * @return string|null
@@ -130,7 +138,8 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * The visible text displayed when the link is rendered in an ad.
-     * The length of this string should be between 1 and 25, inclusive.
+     * This string must not be empty, and the length of this string should
+     * be between 1 and 25, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -148,7 +157,8 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
      * The visible text displayed when the link is rendered in an ad.
-     * The length of this string should be between 1 and 25, inclusive.
+     * This string must not be empty, and the length of this string should
+     * be between 1 and 25, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      * @param string|null $var
@@ -221,6 +231,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * The application store that the target application belongs to.
+     * This field is required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AppStoreEnum.AppStore app_store = 3;</code>
      * @return int
@@ -232,6 +243,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * The application store that the target application belongs to.
+     * This field is required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AppStoreEnum.AppStore app_store = 3;</code>
      * @param int $var
@@ -247,6 +259,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of possible final URLs after all cross domain redirects.
+     * This list must not be empty.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue final_urls = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -258,6 +271,7 @@ class AppFeedItem extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of possible final URLs after all cross domain redirects.
+     * This list must not be empty.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue final_urls = 4;</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var

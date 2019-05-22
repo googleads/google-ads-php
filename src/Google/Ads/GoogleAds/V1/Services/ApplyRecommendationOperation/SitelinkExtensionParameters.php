@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Parameters to use when applying call extension recommendation.
+ * Parameters to use when applying sitelink extension recommendation.
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.services.ApplyRecommendationOperation.SitelinkExtensionParameters</code>
  */

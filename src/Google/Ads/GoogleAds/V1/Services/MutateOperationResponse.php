@@ -53,6 +53,10 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      *           The result for the campaign budget mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult $campaign_criterion_result
      *           The result for the campaign criterion mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignDraftResult $campaign_draft_result
+     *           The result for the campaign draft mutate.
+     *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignExperimentResult $campaign_experiment_result
+     *           The result for the campaign experiment mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignExtensionSettingResult $campaign_extension_setting_result
      *           The result for the campaign extension setting mutate.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateCampaignFeedResult $campaign_feed_result
@@ -490,6 +494,58 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCampaignCriterionResult::class);
         $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the campaign draft mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignDraftResult campaign_draft_result = 24;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCampaignDraftResult
+     */
+    public function getCampaignDraftResult()
+    {
+        return $this->readOneof(24);
+    }
+
+    /**
+     * The result for the campaign draft mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignDraftResult campaign_draft_result = 24;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCampaignDraftResult $var
+     * @return $this
+     */
+    public function setCampaignDraftResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCampaignDraftResult::class);
+        $this->writeOneof(24, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the campaign experiment mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignExperimentResult campaign_experiment_result = 25;</code>
+     * @return \Google\Ads\GoogleAds\V1\Services\MutateCampaignExperimentResult
+     */
+    public function getCampaignExperimentResult()
+    {
+        return $this->readOneof(25);
+    }
+
+    /**
+     * The result for the campaign experiment mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCampaignExperimentResult campaign_experiment_result = 25;</code>
+     * @param \Google\Ads\GoogleAds\V1\Services\MutateCampaignExperimentResult $var
+     * @return $this
+     */
+    public function setCampaignExperimentResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Services\MutateCampaignExperimentResult::class);
+        $this->writeOneof(25, $var);
 
         return $this;
     }

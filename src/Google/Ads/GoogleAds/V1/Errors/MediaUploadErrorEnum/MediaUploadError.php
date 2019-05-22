@@ -43,6 +43,12 @@ class MediaUploadError
      * Generated from protobuf enum <code>ANIMATED_IMAGE_NOT_ALLOWED = 4;</code>
      */
     const ANIMATED_IMAGE_NOT_ALLOWED = 4;
+    /**
+     * The image or media bundle format is not allowed.
+     *
+     * Generated from protobuf enum <code>FORMAT_NOT_ALLOWED = 5;</code>
+     */
+    const FORMAT_NOT_ALLOWED = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -50,6 +56,7 @@ class MediaUploadError
         self::FILE_TOO_BIG => 'FILE_TOO_BIG',
         self::UNPARSEABLE_IMAGE => 'UNPARSEABLE_IMAGE',
         self::ANIMATED_IMAGE_NOT_ALLOWED => 'ANIMATED_IMAGE_NOT_ALLOWED',
+        self::FORMAT_NOT_ALLOWED => 'FORMAT_NOT_ALLOWED',
     ];
 
     public static function name($value)

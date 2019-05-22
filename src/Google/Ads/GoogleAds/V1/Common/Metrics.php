@@ -98,8 +98,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $all_conversions_value_per_cost = null;
     /**
-     * The number of times people clicked the “Call” button to call a store during
-     * or after clicking an ad. This number doesn’t include whether or not calls
+     * The number of times people clicked the "Call" button to call a store during
+     * or after clicking an ad. This number doesn't include whether or not calls
      * were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
@@ -107,7 +107,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $all_conversions_from_click_to_call = null;
     /**
-     * The number of times people clicked a “Get directions” button to navigate to
+     * The number of times people clicked a "Get directions" button to navigate to
      * a store after clicking an ad.
      * This metric applies to feed items only.
      *
@@ -122,7 +122,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $all_conversions_from_interactions_value_per_interaction = null;
     /**
-     * The number of times people clicked a link to view a store’s menu after
+     * The number of times people clicked a link to view a store's menu after
      * clicking an ad.
      * This metric applies to feed items only.
      *
@@ -877,19 +877,19 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           The value of all conversions divided by the total cost of ad interactions
      *           (such as clicks for text ads or views for video ads).
      *     @type \Google\Protobuf\DoubleValue $all_conversions_from_click_to_call
-     *           The number of times people clicked the “Call” button to call a store during
-     *           or after clicking an ad. This number doesn’t include whether or not calls
+     *           The number of times people clicked the "Call" button to call a store during
+     *           or after clicking an ad. This number doesn't include whether or not calls
      *           were connected, or the duration of any calls.
      *           This metric applies to feed items only.
      *     @type \Google\Protobuf\DoubleValue $all_conversions_from_directions
-     *           The number of times people clicked a “Get directions” button to navigate to
+     *           The number of times people clicked a "Get directions" button to navigate to
      *           a store after clicking an ad.
      *           This metric applies to feed items only.
      *     @type \Google\Protobuf\DoubleValue $all_conversions_from_interactions_value_per_interaction
      *           The value of all conversions from interactions divided by the total number
      *           of interactions.
      *     @type \Google\Protobuf\DoubleValue $all_conversions_from_menu
-     *           The number of times people clicked a link to view a store’s menu after
+     *           The number of times people clicked a link to view a store's menu after
      *           clicking an ad.
      *           This metric applies to feed items only.
      *     @type \Google\Protobuf\DoubleValue $all_conversions_from_order
@@ -1757,17 +1757,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total value of all conversions.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
-     * @return \Google\Protobuf\DoubleValue
-     */
-    public function getAllConversionsValue()
-    {
-        return $this->all_conversions_value;
-    }
-
-    /**
      * Returns the unboxed value from <code>getAllConversionsValue()</code>
 
      * The total value of all conversions.
@@ -1779,21 +1768,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         $wrapper = $this->getAllConversionsValue();
         return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
-     * The total value of all conversions.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
-     * @param \Google\Protobuf\DoubleValue $var
-     * @return $this
-     */
-    public function setAllConversionsValue($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->all_conversions_value = $var;
-
-        return $this;
     }
 
     /**
@@ -1824,6 +1798,21 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAllConversions()</code>
+
+     * The total number of conversions. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
+     * @return float|null
+     */
+    public function getAllConversionsValue()
+    {
+        $wrapper = $this->getAllConversions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The total number of conversions. This only includes conversion actions
      * which include_in_conversions_metric attribute is set to true.
      *
@@ -1837,6 +1826,22 @@ class Metrics extends \Google\Protobuf\Internal\Message
         $this->all_conversions = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The total number of conversions. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setAllConversionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setAllConversions($wrappedVar);
     }
 
     /**
@@ -1899,8 +1904,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked the “Call” button to call a store during
-     * or after clicking an ad. This number doesn’t include whether or not calls
+     * The number of times people clicked the "Call" button to call a store during
+     * or after clicking an ad. This number doesn't include whether or not calls
      * were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
@@ -1915,8 +1920,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAllConversionsFromClickToCall()</code>
 
-     * The number of times people clicked the “Call” button to call a store during
-     * or after clicking an ad. This number doesn’t include whether or not calls
+     * The number of times people clicked the "Call" button to call a store during
+     * or after clicking an ad. This number doesn't include whether or not calls
      * were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
@@ -1930,8 +1935,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked the “Call” button to call a store during
-     * or after clicking an ad. This number doesn’t include whether or not calls
+     * The number of times people clicked the "Call" button to call a store during
+     * or after clicking an ad. This number doesn't include whether or not calls
      * were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
@@ -1950,8 +1955,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * The number of times people clicked the “Call” button to call a store during
-     * or after clicking an ad. This number doesn’t include whether or not calls
+     * The number of times people clicked the "Call" button to call a store during
+     * or after clicking an ad. This number doesn't include whether or not calls
      * were connected, or the duration of any calls.
      * This metric applies to feed items only.
      *
@@ -1966,7 +1971,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked a “Get directions” button to navigate to
+     * The number of times people clicked a "Get directions" button to navigate to
      * a store after clicking an ad.
      * This metric applies to feed items only.
      *
@@ -1981,7 +1986,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAllConversionsFromDirections()</code>
 
-     * The number of times people clicked a “Get directions” button to navigate to
+     * The number of times people clicked a "Get directions" button to navigate to
      * a store after clicking an ad.
      * This metric applies to feed items only.
      *
@@ -1995,7 +2000,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked a “Get directions” button to navigate to
+     * The number of times people clicked a "Get directions" button to navigate to
      * a store after clicking an ad.
      * This metric applies to feed items only.
      *
@@ -2014,7 +2019,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * The number of times people clicked a “Get directions” button to navigate to
+     * The number of times people clicked a "Get directions" button to navigate to
      * a store after clicking an ad.
      * This metric applies to feed items only.
      *
@@ -2088,7 +2093,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked a link to view a store’s menu after
+     * The number of times people clicked a link to view a store's menu after
      * clicking an ad.
      * This metric applies to feed items only.
      *
@@ -2103,7 +2108,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAllConversionsFromMenu()</code>
 
-     * The number of times people clicked a link to view a store’s menu after
+     * The number of times people clicked a link to view a store's menu after
      * clicking an ad.
      * This metric applies to feed items only.
      *
@@ -2117,7 +2122,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of times people clicked a link to view a store’s menu after
+     * The number of times people clicked a link to view a store's menu after
      * clicking an ad.
      * This metric applies to feed items only.
      *
@@ -2136,7 +2141,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * The number of times people clicked a link to view a store’s menu after
+     * The number of times people clicked a link to view a store's menu after
      * clicking an ad.
      * This metric applies to feed items only.
      *
@@ -3741,18 +3746,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total value of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
-     * @return \Google\Protobuf\DoubleValue
-     */
-    public function getConversionsValue()
-    {
-        return $this->conversions_value;
-    }
-
-    /**
      * Returns the unboxed value from <code>getConversionsValue()</code>
 
      * The total value of conversions. This only includes conversion actions which
@@ -3765,22 +3758,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         $wrapper = $this->getConversionsValue();
         return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
-     * The total value of conversions. This only includes conversion actions which
-     * include_in_conversions_metric attribute is set to true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
-     * @param \Google\Protobuf\DoubleValue $var
-     * @return $this
-     */
-    public function setConversionsValue($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->conversions_value = $var;
-
-        return $this;
     }
 
     /**
@@ -3938,6 +3915,21 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getConversions()</code>
+
+     * The number of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
+     * @return float|null
+     */
+    public function getConversionsValue()
+    {
+        $wrapper = $this->getConversions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The number of conversions. This only includes conversion actions which
      * include_in_conversions_metric attribute is set to true.
      *
@@ -3951,6 +3943,22 @@ class Metrics extends \Google\Protobuf\Internal\Message
         $this->conversions = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The number of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setConversionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setConversions($wrappedVar);
     }
 
     /**
@@ -4329,6 +4337,22 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getCurrentModelAttributedConversions()</code>
+
+     * Shows how your historic conversions data would look under the attribution
+     * model you've currently selected. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
+     * @return float|null
+     */
+    public function getCurrentModelAttributedConversionsValue()
+    {
+        $wrapper = $this->getCurrentModelAttributedConversions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Shows how your historic conversions data would look under the attribution
      * model you've currently selected. This only includes conversion actions
      * which include_in_conversions_metric attribute is set to true.
@@ -4343,6 +4367,23 @@ class Metrics extends \Google\Protobuf\Internal\Message
         $this->current_model_attributed_conversions = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Shows how your historic conversions data would look under the attribution
+     * model you've currently selected. This only includes conversion actions
+     * which include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setCurrentModelAttributedConversionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setCurrentModelAttributedConversions($wrappedVar);
     }
 
     /**
@@ -4476,19 +4517,6 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total value of current model attributed conversions. This only includes
-     * conversion actions which include_in_conversions_metric attribute is set to
-     * true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
-     * @return \Google\Protobuf\DoubleValue
-     */
-    public function getCurrentModelAttributedConversionsValue()
-    {
-        return $this->current_model_attributed_conversions_value;
-    }
-
-    /**
      * Returns the unboxed value from <code>getCurrentModelAttributedConversionsValue()</code>
 
      * The total value of current model attributed conversions. This only includes
@@ -4503,24 +4531,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
         $wrapper = $this->getCurrentModelAttributedConversionsValue();
         return is_null($wrapper) ? null : $wrapper->getValue();
     }
-
-    /**
-     * The total value of current model attributed conversions. This only includes
-     * conversion actions which include_in_conversions_metric attribute is set to
-     * true.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
-     * @param \Google\Protobuf\DoubleValue $var
-     * @return $this
-     */
-    public function setCurrentModelAttributedConversionsValue($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->current_model_attributed_conversions_value = $var;
-
-        return $this;
-    }
-
+    
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 

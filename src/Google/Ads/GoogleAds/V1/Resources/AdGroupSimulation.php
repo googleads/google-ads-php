@@ -9,7 +9,17 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * An ad group simulation.
+ * An ad group simulation. Supported combinations of advertising
+ * channel type, simulation type and simulation modification method is
+ * detailed below respectively.
+ * SEARCH   CPC_BID     DEFAULT
+ * SEARCH   CPC_BID     UNIFORM
+ * SEARCH   TARGET_CPA  UNIFORM
+ * DISPLAY  CPC_BID     DEFAULT
+ * DISPLAY  CPC_BID     UNIFORM
+ * DISPLAY  TARGET_CPA  UNIFORM
+ * VIDEO    CPV_BID     DEFAULT
+ * VIDEO    CPV_BID     UNIFORM
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.resources.AdGroupSimulation</code>
  */
@@ -77,6 +87,8 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      *           Last day on which the simulation is based, in YYYY-MM-DD format
      *     @type \Google\Ads\GoogleAds\V1\Common\CpcBidSimulationPointList $cpc_bid_point_list
      *           Simulation points if the simulation type is CPC_BID.
+     *     @type \Google\Ads\GoogleAds\V1\Common\CpvBidSimulationPointList $cpv_bid_point_list
+     *           Simulation points if the simulation type is CPV_BID.
      *     @type \Google\Ads\GoogleAds\V1\Common\TargetCpaSimulationPointList $target_cpa_point_list
      *           Simulation points if the simulation type is TARGET_CPA.
      * }
@@ -355,6 +367,32 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\CpcBidSimulationPointList::class);
         $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Simulation points if the simulation type is CPV_BID.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.CpvBidSimulationPointList cpv_bid_point_list = 10;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\CpvBidSimulationPointList
+     */
+    public function getCpvBidPointList()
+    {
+        return $this->readOneof(10);
+    }
+
+    /**
+     * Simulation points if the simulation type is CPV_BID.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.CpvBidSimulationPointList cpv_bid_point_list = 10;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\CpvBidSimulationPointList $var
+     * @return $this
+     */
+    public function setCpvBidPointList($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\CpvBidSimulationPointList::class);
+        $this->writeOneof(10, $var);
 
         return $this;
     }

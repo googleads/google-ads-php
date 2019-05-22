@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CpcBidSimulationPointList extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Projected metrics for a series of cpc bid amounts.
+     * Projected metrics for a series of CPC bid amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.CpcBidSimulationPoint points = 1;</code>
      */
@@ -29,7 +29,7 @@ class CpcBidSimulationPointList extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V1\Common\CpcBidSimulationPoint[]|\Google\Protobuf\Internal\RepeatedField $points
-     *           Projected metrics for a series of cpc bid amounts.
+     *           Projected metrics for a series of CPC bid amounts.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class CpcBidSimulationPointList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Projected metrics for a series of cpc bid amounts.
+     * Projected metrics for a series of CPC bid amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.CpcBidSimulationPoint points = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -49,7 +49,7 @@ class CpcBidSimulationPointList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Projected metrics for a series of cpc bid amounts.
+     * Projected metrics for a series of CPC bid amounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.common.CpcBidSimulationPoint points = 1;</code>
      * @param \Google\Ads\GoogleAds\V1\Common\CpcBidSimulationPoint[]|\Google\Protobuf\Internal\RepeatedField $var

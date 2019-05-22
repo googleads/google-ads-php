@@ -50,7 +50,7 @@ class DateRangeError
      */
     const AFTER_MAXIMUM_ALLOWABLE_DATE = 5;
     /**
-     * Trying to change start date on a campaign that has started.
+     * Trying to change start date on a resource that has started.
      *
      * Generated from protobuf enum <code>CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED = 6;</code>
      */

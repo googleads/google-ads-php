@@ -32,13 +32,19 @@ class PaymentMode
      */
     const CLICKS = 4;
     /**
-     * Pay per conversion value.
+     * Pay per conversion value. This mode is only supported by campaigns with
+     * AdvertisingChannelType.HOTEL, BiddingStrategyType.COMMISSION, and
+     * BudgetType.HOTEL_ADS_COMMISSION.
      *
      * Generated from protobuf enum <code>CONVERSION_VALUE = 5;</code>
      */
     const CONVERSION_VALUE = 5;
     /**
-     * Pay per conversion.
+     * Pay per conversion. This mode is only supported by campaigns with
+     * AdvertisingChannelType.DISPLAY (excluding
+     * AdvertisingChannelSubType.DISPLAY_GMAIL), BiddingStrategyType.TARGET_CPA,
+     * and BudgetType.FIXED_CPA. The customer must also be eligible for this
+     * mode. See Customer.eligibility_failure_reasons for details.
      *
      * Generated from protobuf enum <code>CONVERSIONS = 6;</code>
      */

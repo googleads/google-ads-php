@@ -40,7 +40,7 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
      *     @type string $remove
      *           Remove operation: A resource name for the removed ad group extension
      *           setting is expected, in this format:
-     *           `customers/{customer_id}/adGroupExtensionSettings/{feed_id}`
+     *           `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
      * }
      */
     public function __construct($data = NULL) {
@@ -133,7 +133,7 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the removed ad group extension
      * setting is expected, in this format:
-     * `customers/{customer_id}/adGroupExtensionSettings/{feed_id}`
+     * `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
      *
      * Generated from protobuf field <code>string remove = 3;</code>
      * @return string
@@ -146,7 +146,7 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
     /**
      * Remove operation: A resource name for the removed ad group extension
      * setting is expected, in this format:
-     * `customers/{customer_id}/adGroupExtensionSettings/{feed_id}`
+     * `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
      *
      * Generated from protobuf field <code>string remove = 3;</code>
      * @param string $var

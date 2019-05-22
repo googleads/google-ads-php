@@ -22,7 +22,9 @@ namespace Google\Ads\GoogleAds\V1\Services;
 /**
  * Proto file describing the Asset service.
  *
- * Service to manage assets.
+ * Service to manage assets. Asset types can be created with AssetService are
+ * YoutubeVideoAsset, MediaBundleAsset and ImageAsset. TextAsset should be
+ * created with Ad inline.
  */
 class AssetServiceGrpcClient extends \Grpc\BaseStub {
 

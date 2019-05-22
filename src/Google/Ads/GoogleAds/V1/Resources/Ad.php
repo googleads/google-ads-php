@@ -195,6 +195,8 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Details pertaining to a display upload ad.
      *     @type \Google\Ads\GoogleAds\V1\Common\AppEngagementAdInfo $app_engagement_ad
      *           Details pertaining to an app engagement ad.
+     *     @type \Google\Ads\GoogleAds\V1\Common\ShoppingComparisonListingAdInfo $shopping_comparison_listing_ad
+     *           Details pertaining to a Shopping Comparison Listing ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -1169,6 +1171,32 @@ class Ad extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\AppEngagementAdInfo::class);
         $this->writeOneof(34, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details pertaining to a Shopping Comparison Listing ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.ShoppingComparisonListingAdInfo shopping_comparison_listing_ad = 36;</code>
+     * @return \Google\Ads\GoogleAds\V1\Common\ShoppingComparisonListingAdInfo
+     */
+    public function getShoppingComparisonListingAd()
+    {
+        return $this->readOneof(36);
+    }
+
+    /**
+     * Details pertaining to a Shopping Comparison Listing ad.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.common.ShoppingComparisonListingAdInfo shopping_comparison_listing_ad = 36;</code>
+     * @param \Google\Ads\GoogleAds\V1\Common\ShoppingComparisonListingAdInfo $var
+     * @return $this
+     */
+    public function setShoppingComparisonListingAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Common\ShoppingComparisonListingAdInfo::class);
+        $this->writeOneof(36, $var);
 
         return $this;
     }
