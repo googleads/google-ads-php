@@ -98,7 +98,7 @@ class GetCampaigns
         // Issues a search request by specifying page size.
         $response =
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
-        
+
         // Iterates over all rows in all pages and prints the requested field values for
         // the campaign in each row.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
