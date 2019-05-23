@@ -57,6 +57,42 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      */
     private $top_slot_impressions = null;
+    /**
+     * Projected number of biddable conversions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
+     */
+    private $parent_biddable_conversions = null;
+    /**
+     * Projected total value of biddable conversions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
+     */
+    private $parent_biddable_conversions_value = null;
+    /**
+     * Projected number of clicks for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
+     */
+    private $parent_clicks = null;
+    /**
+     * Projected cost in micros for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
+     */
+    private $parent_cost_micros = null;
+    /**
+     * Projected number of impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
+     */
+    private $parent_impressions = null;
+    /**
+     * Projected number of top slot impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
+     */
+    private $parent_top_slot_impressions = null;
 
     /**
      * Constructor.
@@ -78,6 +114,18 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      *           Projected number of impressions.
      *     @type \Google\Protobuf\Int64Value $top_slot_impressions
      *           Projected number of top slot impressions.
+     *     @type \Google\Protobuf\DoubleValue $parent_biddable_conversions
+     *           Projected number of biddable conversions for the parent resource.
+     *     @type \Google\Protobuf\DoubleValue $parent_biddable_conversions_value
+     *           Projected total value of biddable conversions for the parent resource.
+     *     @type \Google\Protobuf\Int64Value $parent_clicks
+     *           Projected number of clicks for the parent resource.
+     *     @type \Google\Protobuf\Int64Value $parent_cost_micros
+     *           Projected cost in micros for the parent resource.
+     *     @type \Google\Protobuf\Int64Value $parent_impressions
+     *           Projected number of impressions for the parent resource.
+     *     @type \Google\Protobuf\Int64Value $parent_top_slot_impressions
+     *           Projected number of top slot impressions for the parent resource.
      * }
      */
     public function __construct($data = NULL) {
@@ -152,6 +200,20 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getBiddableConversions()</code>
+
+     * Projected number of biddable conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
+     * @return float|null
+     */
+    public function getBiddableConversionsValue()
+    {
+        $wrapper = $this->getBiddableConversions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Projected number of biddable conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
@@ -167,14 +229,18 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Projected total value of biddable conversions.
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Projected number of biddable conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
+     * @param float|null $var
+     * @return $this
      */
-    public function getBiddableConversionsValue()
+    public function setBiddableConversionsValue($var)
     {
-        return $this->biddable_conversions_value;
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setBiddableConversions($wrappedVar);
     }
 
     /**
@@ -189,21 +255,6 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     {
         $wrapper = $this->getBiddableConversionsValue();
         return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
-     * Projected total value of biddable conversions.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
-     * @param \Google\Protobuf\DoubleValue $var
-     * @return $this
-     */
-    public function setBiddableConversionsValue($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->biddable_conversions_value = $var;
-
-        return $this;
     }
 
     /**
@@ -439,6 +490,310 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
     {
         $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
         return $this->setTopSlotImpressions($wrappedVar);
+    }
+
+    /**
+     * Projected number of biddable conversions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getParentBiddableConversions()
+    {
+        return $this->parent_biddable_conversions;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getParentBiddableConversions()</code>
+
+     * Projected number of biddable conversions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
+     * @return float|null
+     */
+    public function getParentBiddableConversionsValue()
+    {
+        $wrapper = $this->getParentBiddableConversions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Projected number of biddable conversions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setParentBiddableConversions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->parent_biddable_conversions = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Projected number of biddable conversions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setParentBiddableConversionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setParentBiddableConversions($wrappedVar);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getParentBiddableConversionsValue()</code>
+
+     * Projected total value of biddable conversions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
+     * @return float|null
+     */
+    public function getParentBiddableConversionsValueValue()
+    {
+        $wrapper = $this->getParentBiddableConversionsValue();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Projected total value of biddable conversions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setParentBiddableConversionsValueValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setParentBiddableConversionsValue($wrappedVar);
+    }
+
+    /**
+     * Projected number of clicks for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getParentClicks()
+    {
+        return $this->parent_clicks;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getParentClicks()</code>
+
+     * Projected number of clicks for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
+     * @return int|string|null
+     */
+    public function getParentClicksValue()
+    {
+        $wrapper = $this->getParentClicks();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Projected number of clicks for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setParentClicks($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->parent_clicks = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Projected number of clicks for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setParentClicksValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setParentClicks($wrappedVar);
+    }
+
+    /**
+     * Projected cost in micros for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getParentCostMicros()
+    {
+        return $this->parent_cost_micros;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getParentCostMicros()</code>
+
+     * Projected cost in micros for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
+     * @return int|string|null
+     */
+    public function getParentCostMicrosValue()
+    {
+        $wrapper = $this->getParentCostMicros();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Projected cost in micros for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setParentCostMicros($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->parent_cost_micros = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Projected cost in micros for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setParentCostMicrosValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setParentCostMicros($wrappedVar);
+    }
+
+    /**
+     * Projected number of impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getParentImpressions()
+    {
+        return $this->parent_impressions;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getParentImpressions()</code>
+
+     * Projected number of impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
+     * @return int|string|null
+     */
+    public function getParentImpressionsValue()
+    {
+        $wrapper = $this->getParentImpressions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Projected number of impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setParentImpressions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->parent_impressions = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Projected number of impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setParentImpressionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setParentImpressions($wrappedVar);
+    }
+
+    /**
+     * Projected number of top slot impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getParentTopSlotImpressions()
+    {
+        return $this->parent_top_slot_impressions;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getParentTopSlotImpressions()</code>
+
+     * Projected number of top slot impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
+     * @return int|string|null
+     */
+    public function getParentTopSlotImpressionsValue()
+    {
+        $wrapper = $this->getParentTopSlotImpressions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Projected number of top slot impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setParentTopSlotImpressions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->parent_top_slot_impressions = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * Projected number of top slot impressions for the parent resource.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setParentTopSlotImpressionsValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setParentTopSlotImpressions($wrappedVar);
     }
 
 }

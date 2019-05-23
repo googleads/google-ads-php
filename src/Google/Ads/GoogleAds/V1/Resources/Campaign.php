@@ -141,6 +141,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $app_campaign_setting = null;
     /**
+     * The resource names of labels attached to this campaign.
+     *
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53;</code>
+     */
+    private $labels;
+    /**
      * The type of campaign: normal, draft, or experiment.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17;</code>
@@ -289,6 +295,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The setting for ads geotargeting.
      *     @type \Google\Ads\GoogleAds\V1\Resources\Campaign\AppCampaignSetting $app_campaign_setting
      *           The setting related to App Campaign.
+     *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *           The resource names of labels attached to this campaign.
      *     @type int $experiment_type
      *           The type of campaign: normal, draft, or experiment.
      *     @type \Google\Protobuf\StringValue $base_campaign
@@ -964,6 +972,32 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V1\Resources\Campaign_AppCampaignSetting::class);
         $this->app_campaign_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * The resource names of labels attached to this campaign.
+     *
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
+
+    /**
+     * The resource names of labels attached to this campaign.
+     *
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53;</code>
+     * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLabels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\StringValue::class);
+        $this->labels = $arr;
 
         return $this;
     }

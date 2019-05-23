@@ -26,22 +26,22 @@ class PositiveGeoTargetType
      */
     const UNKNOWN = 1;
     /**
-     * Specifies that either Area of Interest (AOI) or
-     * Location of Presence (LOP) may trigger the ad.
+     * Specifies that an ad is triggered if the user is in,
+     * or shows interest in, advertiser's targeted locations.
      *
      * Generated from protobuf enum <code>DONT_CARE = 2;</code>
      */
     const DONT_CARE = 2;
     /**
-     * Specifies that the ad is triggered only if the user's Area of Interest
-     * (AOI) matches.
+     * Specifies that an ad is triggered if the user
+     * searches for advertiser's targeted locations.
      *
      * Generated from protobuf enum <code>AREA_OF_INTEREST = 3;</code>
      */
     const AREA_OF_INTEREST = 3;
     /**
-     * Specifies that the ad is triggered only if the user's
-     * Location of Presence (LOP) matches.
+     * Specifies that an ad is triggered if the user is in
+     * or regularly in advertiser's targeted locations.
      *
      * Generated from protobuf enum <code>LOCATION_OF_PRESENCE = 4;</code>
      */

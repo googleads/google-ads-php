@@ -144,6 +144,12 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     private $geo_target_postal_code = null;
     /**
+     * Resource name of the geo target constant that represents a province.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_province = 75;</code>
+     */
+    private $geo_target_province = null;
+    /**
      * Resource name of the geo target constant that represents a region.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_region = 64;</code>
@@ -209,6 +215,18 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_length_of_stay = 14;</code>
      */
     private $hotel_length_of_stay = null;
+    /**
+     * Hotel rate rule ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_rate_rule_id = 73;</code>
+     */
+    private $hotel_rate_rule_id = null;
+    /**
+     * Hotel rate type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType hotel_rate_type = 74;</code>
+     */
+    private $hotel_rate_type = 0;
     /**
      * Hotel state.
      *
@@ -517,6 +535,8 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           specific location.
      *     @type \Google\Protobuf\StringValue $geo_target_postal_code
      *           Resource name of the geo target constant that represents a postal code.
+     *     @type \Google\Protobuf\StringValue $geo_target_province
+     *           Resource name of the geo target constant that represents a province.
      *     @type \Google\Protobuf\StringValue $geo_target_region
      *           Resource name of the geo target constant that represents a region.
      *     @type \Google\Protobuf\StringValue $geo_target_state
@@ -539,6 +559,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Hotel date selection type.
      *     @type \Google\Protobuf\Int32Value $hotel_length_of_stay
      *           Hotel length of stay.
+     *     @type \Google\Protobuf\StringValue $hotel_rate_rule_id
+     *           Hotel rate rule ID.
+     *     @type int $hotel_rate_type
+     *           Hotel rate type.
      *     @type \Google\Protobuf\StringValue $hotel_state
      *           Hotel state.
      *     @type \Google\Protobuf\Int32Value $hour
@@ -1503,6 +1527,61 @@ class Segments extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Resource name of the geo target constant that represents a province.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_province = 75;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getGeoTargetProvince()
+    {
+        return $this->geo_target_province;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getGeoTargetProvince()</code>
+
+     * Resource name of the geo target constant that represents a province.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_province = 75;</code>
+     * @return string|null
+     */
+    public function getGeoTargetProvinceValue()
+    {
+        $wrapper = $this->getGeoTargetProvince();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Resource name of the geo target constant that represents a province.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_province = 75;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setGeoTargetProvince($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->geo_target_province = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Resource name of the geo target constant that represents a province.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_province = 75;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setGeoTargetProvinceValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setGeoTargetProvince($wrappedVar);
+    }
+
+    /**
      * Resource name of the geo target constant that represents a region.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_region = 64;</code>
@@ -2047,6 +2126,87 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
         return $this->setHotelLengthOfStay($wrappedVar);
+    }
+
+    /**
+     * Hotel rate rule ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_rate_rule_id = 73;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getHotelRateRuleId()
+    {
+        return $this->hotel_rate_rule_id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHotelRateRuleId()</code>
+
+     * Hotel rate rule ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_rate_rule_id = 73;</code>
+     * @return string|null
+     */
+    public function getHotelRateRuleIdValue()
+    {
+        $wrapper = $this->getHotelRateRuleId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * Hotel rate rule ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_rate_rule_id = 73;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setHotelRateRuleId($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->hotel_rate_rule_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Hotel rate rule ID.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue hotel_rate_rule_id = 73;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setHotelRateRuleIdValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setHotelRateRuleId($wrappedVar);
+    }
+
+    /**
+     * Hotel rate type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType hotel_rate_type = 74;</code>
+     * @return int
+     */
+    public function getHotelRateType()
+    {
+        return $this->hotel_rate_type;
+    }
+
+    /**
+     * Hotel rate type.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType hotel_rate_type = 74;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHotelRateType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V1\Enums\HotelRateTypeEnum_HotelRateType::class);
+        $this->hotel_rate_type = $var;
+
+        return $this;
     }
 
     /**

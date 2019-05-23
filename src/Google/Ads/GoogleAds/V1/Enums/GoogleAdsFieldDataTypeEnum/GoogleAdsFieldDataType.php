@@ -98,6 +98,13 @@ class GoogleAdsFieldDataType
      * Generated from protobuf enum <code>STRING = 11;</code>
      */
     const STRING = 11;
+    /**
+     * Maps to google.protobuf.UInt64Value
+     * Applicable operators:  =, !=, <, >, <=, >=, BETWEEN, IN, NOT IN
+     *
+     * Generated from protobuf enum <code>UINT64 = 12;</code>
+     */
+    const UINT64 = 12;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -112,6 +119,7 @@ class GoogleAdsFieldDataType
         self::MESSAGE => 'MESSAGE',
         self::RESOURCE_NAME => 'RESOURCE_NAME',
         self::STRING => 'STRING',
+        self::UINT64 => 'UINT64',
     ];
 
     public static function name($value)

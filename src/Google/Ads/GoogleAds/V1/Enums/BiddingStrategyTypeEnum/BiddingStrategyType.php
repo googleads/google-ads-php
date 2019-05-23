@@ -26,6 +26,13 @@ class BiddingStrategyType
      */
     const UNKNOWN = 1;
     /**
+     * Commission is an automatic bidding strategy in which the advertiser pays
+     * a certain portion of the conversion value.
+     *
+     * Generated from protobuf enum <code>COMMISSION = 16;</code>
+     */
+    const COMMISSION = 16;
+    /**
      * Enhanced CPC is a bidding strategy that raises bids for clicks
      * that seem more likely to lead to a conversion and lowers
      * them for clicks where they seem less likely.
@@ -131,6 +138,7 @@ class BiddingStrategyType
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
+        self::COMMISSION => 'COMMISSION',
         self::ENHANCED_CPC => 'ENHANCED_CPC',
         self::MANUAL_CPC => 'MANUAL_CPC',
         self::MANUAL_CPM => 'MANUAL_CPM',

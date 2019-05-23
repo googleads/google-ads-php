@@ -151,17 +151,23 @@ class BiddingError
      */
     const INVALID_DOMAIN_NAME = 33;
     /**
-     * The field is not compatible with payment mode.
+     * The field is not compatible with the payment mode.
      *
      * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_PAYMENT_MODE = 34;</code>
      */
     const NOT_COMPATIBLE_WITH_PAYMENT_MODE = 34;
     /**
-     * Bidding strategy is incompatible with the budget type.
+     * The field is not compatible with the budget type.
      *
      * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_BUDGET_TYPE = 35;</code>
      */
     const NOT_COMPATIBLE_WITH_BUDGET_TYPE = 35;
+    /**
+     * The field is not compatible with the bidding strategy type.
+     *
+     * Generated from protobuf enum <code>NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE = 36;</code>
+     */
+    const NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE = 36;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -188,6 +194,7 @@ class BiddingError
         self::INVALID_DOMAIN_NAME => 'INVALID_DOMAIN_NAME',
         self::NOT_COMPATIBLE_WITH_PAYMENT_MODE => 'NOT_COMPATIBLE_WITH_PAYMENT_MODE',
         self::NOT_COMPATIBLE_WITH_BUDGET_TYPE => 'NOT_COMPATIBLE_WITH_BUDGET_TYPE',
+        self::NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE => 'NOT_COMPATIBLE_WITH_BIDDING_STRATEGY_TYPE',
     ];
 
     public static function name($value)

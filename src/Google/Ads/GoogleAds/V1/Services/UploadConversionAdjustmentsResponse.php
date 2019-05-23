@@ -27,7 +27,8 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
     private $partial_failure_error = null;
     /**
      * Returned for successfully processed conversion adjustments. Proto will be
-     * empty for rows that received an error.
+     * empty for rows that received an error. Results are not returned when
+     * validate_only is true.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.services.ConversionAdjustmentResult results = 2;</code>
      */
@@ -46,7 +47,8 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
      *           level error.
      *     @type \Google\Ads\GoogleAds\V1\Services\ConversionAdjustmentResult[]|\Google\Protobuf\Internal\RepeatedField $results
      *           Returned for successfully processed conversion adjustments. Proto will be
-     *           empty for rows that received an error.
+     *           empty for rows that received an error. Results are not returned when
+     *           validate_only is true.
      * }
      */
     public function __construct($data = NULL) {
@@ -88,7 +90,8 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
 
     /**
      * Returned for successfully processed conversion adjustments. Proto will be
-     * empty for rows that received an error.
+     * empty for rows that received an error. Results are not returned when
+     * validate_only is true.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.services.ConversionAdjustmentResult results = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -100,7 +103,8 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
 
     /**
      * Returned for successfully processed conversion adjustments. Proto will be
-     * empty for rows that received an error.
+     * empty for rows that received an error. Results are not returned when
+     * validate_only is true.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v1.services.ConversionAdjustmentResult results = 2;</code>
      * @param \Google\Ads\GoogleAds\V1\Services\ConversionAdjustmentResult[]|\Google\Protobuf\Internal\RepeatedField $var

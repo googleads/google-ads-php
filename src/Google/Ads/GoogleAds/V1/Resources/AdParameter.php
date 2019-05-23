@@ -47,7 +47,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *    comma (respectively) for fractional values. For example, 1,000,000.00
      *    and 2.000.000,10 are valid.
      *  - Can be prepended or appended with a currency symbol. For example,
-     *    $99.99 and 200£ are valid.
+     *    $99.99 is valid.
      *  - Can be prepended or appended with a currency code. For example, 99.99USD
      *    and EUR200 are valid.
      *  - Can use '%'. For example, 1.0% and 1,0% are valid.
@@ -80,7 +80,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *              comma (respectively) for fractional values. For example, 1,000,000.00
      *              and 2.000.000,10 are valid.
      *            - Can be prepended or appended with a currency symbol. For example,
-     *              $99.99 and 200£ are valid.
+     *              $99.99 is valid.
      *            - Can be prepended or appended with a currency code. For example, 99.99USD
      *              and EUR200 are valid.
      *            - Can use '%'. For example, 1.0% and 1,0% are valid.
@@ -241,7 +241,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *    comma (respectively) for fractional values. For example, 1,000,000.00
      *    and 2.000.000,10 are valid.
      *  - Can be prepended or appended with a currency symbol. For example,
-     *    $99.99 and 200£ are valid.
+     *    $99.99 is valid.
      *  - Can be prepended or appended with a currency code. For example, 99.99USD
      *    and EUR200 are valid.
      *  - Can use '%'. For example, 1.0% and 1,0% are valid.
@@ -266,7 +266,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *    comma (respectively) for fractional values. For example, 1,000,000.00
      *    and 2.000.000,10 are valid.
      *  - Can be prepended or appended with a currency symbol. For example,
-     *    $99.99 and 200£ are valid.
+     *    $99.99 is valid.
      *  - Can be prepended or appended with a currency code. For example, 99.99USD
      *    and EUR200 are valid.
      *  - Can use '%'. For example, 1.0% and 1,0% are valid.
@@ -290,7 +290,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *    comma (respectively) for fractional values. For example, 1,000,000.00
      *    and 2.000.000,10 are valid.
      *  - Can be prepended or appended with a currency symbol. For example,
-     *    $99.99 and 200£ are valid.
+     *    $99.99 is valid.
      *  - Can be prepended or appended with a currency code. For example, 99.99USD
      *    and EUR200 are valid.
      *  - Can use '%'. For example, 1.0% and 1,0% are valid.
@@ -319,7 +319,7 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *    comma (respectively) for fractional values. For example, 1,000,000.00
      *    and 2.000.000,10 are valid.
      *  - Can be prepended or appended with a currency symbol. For example,
-     *    $99.99 and 200£ are valid.
+     *    $99.99 is valid.
      *  - Can be prepended or appended with a currency code. For example, 99.99USD
      *    and EUR200 are valid.
      *  - Can use '%'. For example, 1.0% and 1,0% are valid.

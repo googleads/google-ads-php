@@ -26,16 +26,15 @@ class NegativeGeoTargetType
      */
     const UNKNOWN = 1;
     /**
-     * Specifies that a user is excluded from seeing the ad if either their
-     * Area of Interest (AOI) or their Location of Presence (LOP) matches the
-     * geo target.
+     * Specifies that a user is excluded from seeing the ad if they
+     * are in, or show interest in, advertiser's excluded locations.
      *
      * Generated from protobuf enum <code>DONT_CARE = 2;</code>
      */
     const DONT_CARE = 2;
     /**
-     * Specifies that a user is excluded from seeing the ad
-     * only if their Location of Presence (LOP) matches the geo target.
+     * Specifies that a user is excluded from seeing the ad if they
+     * are in advertiser's excluded locations.
      *
      * Generated from protobuf enum <code>LOCATION_OF_PRESENCE = 3;</code>
      */

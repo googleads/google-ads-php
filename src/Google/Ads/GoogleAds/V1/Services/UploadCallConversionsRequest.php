@@ -36,6 +36,13 @@ class UploadCallConversionsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool partial_failure = 3;</code>
      */
     private $partial_failure = false;
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 4;</code>
+     */
+    private $validate_only = false;
 
     /**
      * Constructor.
@@ -52,6 +59,9 @@ class UploadCallConversionsRequest extends \Google\Protobuf\Internal\Message
      *           operations will return errors. If false, all operations will be carried
      *           out in one transaction if and only if they are all valid.
      *           This should always be set to true.
+     *     @type bool $validate_only
+     *           If true, the request is validated but not executed. Only errors are
+     *           returned, not results.
      * }
      */
     public function __construct($data = NULL) {
@@ -139,6 +149,34 @@ class UploadCallConversionsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->partial_failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 4;</code>
+     * @return bool
+     */
+    public function getValidateOnly()
+    {
+        return $this->validate_only;
+    }
+
+    /**
+     * If true, the request is validated but not executed. Only errors are
+     * returned, not results.
+     *
+     * Generated from protobuf field <code>bool validate_only = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setValidateOnly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->validate_only = $var;
 
         return $this;
     }

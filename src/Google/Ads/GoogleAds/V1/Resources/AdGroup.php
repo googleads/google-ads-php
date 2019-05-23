@@ -59,6 +59,16 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     private $ad_rotation_mode = 0;
     /**
+     * For draft or experiment ad groups, this field is the resource name of the
+     * base ad group from which this ad group was created. If a draft or
+     * experiment ad group does not have a base ad group, then this field is null.
+     * For base ad groups, this field equals the ad group resource name.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     */
+    private $base_ad_group = null;
+    /**
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 13;</code>
@@ -205,6 +215,12 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           The type of the ad group.
      *     @type int $ad_rotation_mode
      *           The ad rotation mode of the ad group.
+     *     @type \Google\Protobuf\StringValue $base_ad_group
+     *           For draft or experiment ad groups, this field is the resource name of the
+     *           base ad group from which this ad group was created. If a draft or
+     *           experiment ad group does not have a base ad group, then this field is null.
+     *           For base ad groups, this field equals the ad group resource name.
+     *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $tracking_url_template
      *           The URL template for constructing a tracking URL.
      *     @type \Google\Ads\GoogleAds\V1\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
@@ -497,6 +513,77 @@ class AdGroup extends \Google\Protobuf\Internal\Message
         $this->ad_rotation_mode = $var;
 
         return $this;
+    }
+
+    /**
+     * For draft or experiment ad groups, this field is the resource name of the
+     * base ad group from which this ad group was created. If a draft or
+     * experiment ad group does not have a base ad group, then this field is null.
+     * For base ad groups, this field equals the ad group resource name.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getBaseAdGroup()
+    {
+        return $this->base_ad_group;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getBaseAdGroup()</code>
+
+     * For draft or experiment ad groups, this field is the resource name of the
+     * base ad group from which this ad group was created. If a draft or
+     * experiment ad group does not have a base ad group, then this field is null.
+     * For base ad groups, this field equals the ad group resource name.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * @return string|null
+     */
+    public function getBaseAdGroupValue()
+    {
+        $wrapper = $this->getBaseAdGroup();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * For draft or experiment ad groups, this field is the resource name of the
+     * base ad group from which this ad group was created. If a draft or
+     * experiment ad group does not have a base ad group, then this field is null.
+     * For base ad groups, this field equals the ad group resource name.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setBaseAdGroup($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->base_ad_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * For draft or experiment ad groups, this field is the resource name of the
+     * base ad group from which this ad group was created. If a draft or
+     * experiment ad group does not have a base ad group, then this field is null.
+     * For base ad groups, this field equals the ad group resource name.
+     * This field is read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setBaseAdGroupValue($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setBaseAdGroup($wrappedVar);
     }
 
     /**

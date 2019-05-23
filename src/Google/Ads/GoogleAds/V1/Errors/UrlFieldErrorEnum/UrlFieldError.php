@@ -346,6 +346,12 @@ class UrlFieldError
      * Generated from protobuf enum <code>MISSING_HOST = 56;</code>
      */
     const MISSING_HOST = 56;
+    /**
+     * Custom parameter value cannot be null.
+     *
+     * Generated from protobuf enum <code>NULL_CUSTOM_PARAMETER_VALUE = 57;</code>
+     */
+    const NULL_CUSTOM_PARAMETER_VALUE = 57;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -401,6 +407,7 @@ class UrlFieldError
         self::MALFORMED_TOP_LEVEL_DOMAIN => 'MALFORMED_TOP_LEVEL_DOMAIN',
         self::MALFORMED_URL => 'MALFORMED_URL',
         self::MISSING_HOST => 'MISSING_HOST',
+        self::NULL_CUSTOM_PARAMETER_VALUE => 'NULL_CUSTOM_PARAMETER_VALUE',
     ];
 
     public static function name($value)

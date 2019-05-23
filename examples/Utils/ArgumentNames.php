@@ -39,6 +39,7 @@ final class ArgumentNames
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     const KEYWORD_PLAN_ID = 'keywordPlanId';
     const KEYWORD_TEXT = 'keywordText';
+    const LABEL_ID = "labelId";
     const LANGUAGE_ID = 'languageId';
     const LOCALE = 'locale';
     const LOCATION_ID = 'locationId';
@@ -69,6 +70,7 @@ final class ArgumentNames
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
+        self::LABEL_ID =>'The label ID',
         self::LANGUAGE_ID => 'The language ID',
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',

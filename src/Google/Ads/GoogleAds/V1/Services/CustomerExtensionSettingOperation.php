@@ -40,7 +40,7 @@ class CustomerExtensionSettingOperation extends \Google\Protobuf\Internal\Messag
      *     @type string $remove
      *           Remove operation: A resource name for the removed customer extension
      *           setting is expected, in this format:
-     *           `customers/{customer_id}/customerExtensionSettings/{feed_id}`
+     *           `customers/{customer_id}/customerExtensionSettings/{extension_type}`
      * }
      */
     public function __construct($data = NULL) {
@@ -133,7 +133,7 @@ class CustomerExtensionSettingOperation extends \Google\Protobuf\Internal\Messag
     /**
      * Remove operation: A resource name for the removed customer extension
      * setting is expected, in this format:
-     * `customers/{customer_id}/customerExtensionSettings/{feed_id}`
+     * `customers/{customer_id}/customerExtensionSettings/{extension_type}`
      *
      * Generated from protobuf field <code>string remove = 3;</code>
      * @return string
@@ -146,7 +146,7 @@ class CustomerExtensionSettingOperation extends \Google\Protobuf\Internal\Messag
     /**
      * Remove operation: A resource name for the removed customer extension
      * setting is expected, in this format:
-     * `customers/{customer_id}/customerExtensionSettings/{feed_id}`
+     * `customers/{customer_id}/customerExtensionSettings/{extension_type}`
      *
      * Generated from protobuf field <code>string remove = 3;</code>
      * @param string $var

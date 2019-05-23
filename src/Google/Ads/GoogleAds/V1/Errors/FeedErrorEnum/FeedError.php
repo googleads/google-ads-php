@@ -140,6 +140,12 @@ class FeedError
      * Generated from protobuf enum <code>INVALID_AFFILIATE_CHAIN_ID = 20;</code>
      */
     const INVALID_AFFILIATE_CHAIN_ID = 20;
+    /**
+     * There is already a feed with the given system feed generation data.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_SYSTEM_FEED = 21;</code>
+     */
+    const DUPLICATE_SYSTEM_FEED = 21;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -163,6 +169,7 @@ class FeedError
         self::INVALID_BUSINESS_ACCOUNT => 'INVALID_BUSINESS_ACCOUNT',
         self::BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT => 'BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT',
         self::INVALID_AFFILIATE_CHAIN_ID => 'INVALID_AFFILIATE_CHAIN_ID',
+        self::DUPLICATE_SYSTEM_FEED => 'DUPLICATE_SYSTEM_FEED',
     ];
 
     public static function name($value)

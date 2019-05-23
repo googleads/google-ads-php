@@ -92,6 +92,12 @@ class AdGroupType
      * Generated from protobuf enum <code>SEARCH_DYNAMIC_ADS = 13;</code>
      */
     const SEARCH_DYNAMIC_ADS = 13;
+    /**
+     * The type for ad groups in Shopping Comparison Listing campaigns.
+     *
+     * Generated from protobuf enum <code>SHOPPING_COMPARISON_LISTING_ADS = 14;</code>
+     */
+    const SHOPPING_COMPARISON_LISTING_ADS = 14;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -107,6 +113,7 @@ class AdGroupType
         self::VIDEO_NON_SKIPPABLE_IN_STREAM => 'VIDEO_NON_SKIPPABLE_IN_STREAM',
         self::VIDEO_OUTSTREAM => 'VIDEO_OUTSTREAM',
         self::SEARCH_DYNAMIC_ADS => 'SEARCH_DYNAMIC_ADS',
+        self::SHOPPING_COMPARISON_LISTING_ADS => 'SHOPPING_COMPARISON_LISTING_ADS',
     ];
 
     public static function name($value)

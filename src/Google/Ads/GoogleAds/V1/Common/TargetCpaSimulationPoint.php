@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Projected metrics for a specific target cpa amount.
+ * Projected metrics for a specific target CPA amount.
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.TargetCpaSimulationPoint</code>
  */
 class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The simulated target cpa upon which projected metrics are based.
+     * The simulated target CPA upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      */
@@ -66,7 +66,7 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $target_cpa_micros
-     *           The simulated target cpa upon which projected metrics are based.
+     *           The simulated target CPA upon which projected metrics are based.
      *     @type \Google\Protobuf\DoubleValue $biddable_conversions
      *           Projected number of biddable conversions.
      *     @type \Google\Protobuf\DoubleValue $biddable_conversions_value
@@ -88,7 +88,7 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The simulated target cpa upon which projected metrics are based.
+     * The simulated target CPA upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      * @return \Google\Protobuf\Int64Value
@@ -101,7 +101,7 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTargetCpaMicros()</code>
 
-     * The simulated target cpa upon which projected metrics are based.
+     * The simulated target CPA upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      * @return int|string|null
@@ -113,7 +113,7 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The simulated target cpa upon which projected metrics are based.
+     * The simulated target CPA upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      * @param \Google\Protobuf\Int64Value $var
@@ -130,7 +130,7 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The simulated target cpa upon which projected metrics are based.
+     * The simulated target CPA upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      * @param int|string|null $var
@@ -154,6 +154,20 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getBiddableConversions()</code>
+
+     * Projected number of biddable conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
+     * @return float|null
+     */
+    public function getBiddableConversionsValue()
+    {
+        $wrapper = $this->getBiddableConversions();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * Projected number of biddable conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
@@ -169,14 +183,18 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Projected total value of biddable conversions.
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * Projected number of biddable conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
-     * @return \Google\Protobuf\DoubleValue
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
+     * @param float|null $var
+     * @return $this
      */
-    public function getBiddableConversionsValue()
+    public function setBiddableConversionsValue($var)
     {
-        return $this->biddable_conversions_value;
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setBiddableConversions($wrappedVar);
     }
 
     /**
@@ -191,21 +209,6 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
     {
         $wrapper = $this->getBiddableConversionsValue();
         return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
-     * Projected total value of biddable conversions.
-     *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
-     * @param \Google\Protobuf\DoubleValue $var
-     * @return $this
-     */
-    public function setBiddableConversionsValue($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
-        $this->biddable_conversions_value = $var;
-
-        return $this;
     }
 
     /**

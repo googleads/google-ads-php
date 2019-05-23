@@ -9,7 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A single operation to create an asset.
+ * A single operation to create an asset. Supported asset types are
+ * YoutubeVideoAsset, MediaBundleAsset and ImageAsset. TextAsset should be
+ * created with Ad inline.
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.services.AssetOperation</code>
  */

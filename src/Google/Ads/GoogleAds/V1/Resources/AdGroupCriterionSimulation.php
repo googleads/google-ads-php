@@ -9,7 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * An ad group criterion simulation.
+ * An ad group criterion simulation. Supported combinations of advertising
+ * channel type, criterion type, simulation type, and simulation modification
+ * method are detailed below respectively.
+ * SEARCH  KEYWORD  CPC_BID  UNIFORM
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.resources.AdGroupCriterionSimulation</code>
  */

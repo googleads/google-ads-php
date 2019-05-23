@@ -259,6 +259,20 @@ class CampaignError
      * Generated from protobuf enum <code>APP_NOT_FOUND = 41;</code>
      */
     const APP_NOT_FOUND = 41;
+    /**
+     * Campaign.shopping_setting.enable_local is not supported for the specified
+     * campaign type.
+     *
+     * Generated from protobuf enum <code>SHOPPING_ENABLE_LOCAL_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE = 42;</code>
+     */
+    const SHOPPING_ENABLE_LOCAL_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE = 42;
+    /**
+     * The merchant does not support the creation of campaigns for Shopping
+     * Comparison Listing Ads.
+     *
+     * Generated from protobuf enum <code>MERCHANT_NOT_ALLOWED_FOR_COMPARISON_LISTING_ADS = 43;</code>
+     */
+    const MERCHANT_NOT_ALLOWED_FOR_COMPARISON_LISTING_ADS = 43;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -300,6 +314,8 @@ class CampaignError
         self::MISSING_HOTEL_SETTING => 'MISSING_HOTEL_SETTING',
         self::CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP => 'CANNOT_USE_SHARED_CAMPAIGN_BUDGET_WHILE_PART_OF_CAMPAIGN_GROUP',
         self::APP_NOT_FOUND => 'APP_NOT_FOUND',
+        self::SHOPPING_ENABLE_LOCAL_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE => 'SHOPPING_ENABLE_LOCAL_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE',
+        self::MERCHANT_NOT_ALLOWED_FOR_COMPARISON_LISTING_ADS => 'MERCHANT_NOT_ALLOWED_FOR_COMPARISON_LISTING_ADS',
     ];
 
     public static function name($value)

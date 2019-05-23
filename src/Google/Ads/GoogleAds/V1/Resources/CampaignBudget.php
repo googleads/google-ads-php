@@ -48,7 +48,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * The amount of the budget, in the local currency for the account.
      * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
+     * currency unit. Monthly spend is capped at 30.4 times this amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 5;</code>
      */
@@ -185,7 +185,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int64Value $amount_micros
      *           The amount of the budget, in the local currency for the account.
      *           Amount is specified in micros, where one million is equivalent to one
-     *           currency unit.
+     *           currency unit. Monthly spend is capped at 30.4 times this amount.
      *     @type \Google\Protobuf\Int64Value $total_amount_micros
      *           The lifetime amount of the budget, in the local currency for the account.
      *           Amount is specified in micros, where one million is equivalent to one
@@ -428,7 +428,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * The amount of the budget, in the local currency for the account.
      * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
+     * currency unit. Monthly spend is capped at 30.4 times this amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 5;</code>
      * @return \Google\Protobuf\Int64Value
@@ -443,7 +443,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
 
      * The amount of the budget, in the local currency for the account.
      * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
+     * currency unit. Monthly spend is capped at 30.4 times this amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 5;</code>
      * @return int|string|null
@@ -457,7 +457,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * The amount of the budget, in the local currency for the account.
      * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
+     * currency unit. Monthly spend is capped at 30.4 times this amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 5;</code>
      * @param \Google\Protobuf\Int64Value $var
@@ -476,7 +476,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
 
      * The amount of the budget, in the local currency for the account.
      * Amount is specified in micros, where one million is equivalent to one
-     * currency unit.
+     * currency unit. Monthly spend is capped at 30.4 times this amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 5;</code>
      * @param int|string|null $var

@@ -42,7 +42,9 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 
 /**
- * Service Description: Service to manage assets.
+ * Service Description: Service to manage assets. Asset types can be created with AssetService are
+ * YoutubeVideoAsset, MediaBundleAsset and ImageAsset. TextAsset should be
+ * created with Ad inline.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

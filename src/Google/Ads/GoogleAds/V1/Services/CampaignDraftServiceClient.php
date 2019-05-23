@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,21 +15,24 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Util\V0;
+/*
+ * GENERATED CODE WARNING
+ * This file was generated from the file
+ * https://github.com/google/googleapis/blob/master/google/ads/googleads/v1/services/campaign_draft_service.proto
+ * and updates to that file get reflected here through a refresh process.
+ *
+ * @experimental
+ */
 
-use Google\Protobuf\Internal\Message;
-use Google\Ads\GoogleAds\V0\Errors\GoogleAdsFailure;
+namespace Google\Ads\GoogleAds\V1\Services;
 
-final class PartialFailures
+use Google\Ads\GoogleAds\Lib\V1\GoogleAdsGapicClientTrait;
+use Google\Ads\GoogleAds\V1\Services\Gapic\CampaignDraftServiceGapicClient;
+
+/**
+ * {@inheritdoc}
+ */
+class CampaignDraftServiceClient extends CampaignDraftServiceGapicClient
 {
-    /**
-     * Checks if a result in a mutate response is a partial failure.
-     *
-     * @param Message $message
-     * @return bool
-     */
-    public static function isPartialFailure(Message $message)
-    {
-        return strlen($message->serializeToString()) === 0;
-    }
+    use GoogleAdsGapicClientTrait;
 }

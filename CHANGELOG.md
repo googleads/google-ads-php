@@ -1,3 +1,7 @@
+## 1.3.0
+*   Added support for v1_3 of Google Ads API.
+*   Added examples for ad parameters, campaign labels and media upload and retrieval.
+
 ## 1.2.0
 
 *   Added support for v1_2 of Google Ads API.

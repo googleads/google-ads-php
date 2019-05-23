@@ -44,6 +44,12 @@ class Device
      */
     const DESKTOP = 4;
     /**
+     * Smart TVs and game consoles.
+     *
+     * Generated from protobuf enum <code>CONNECTED_TV = 6;</code>
+     */
+    const CONNECTED_TV = 6;
+    /**
      * Other device types.
      *
      * Generated from protobuf enum <code>OTHER = 5;</code>
@@ -56,6 +62,7 @@ class Device
         self::MOBILE => 'MOBILE',
         self::TABLET => 'TABLET',
         self::DESKTOP => 'DESKTOP',
+        self::CONNECTED_TV => 'CONNECTED_TV',
         self::OTHER => 'OTHER',
     ];
 
