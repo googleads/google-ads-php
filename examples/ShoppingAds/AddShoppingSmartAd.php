@@ -63,8 +63,8 @@ use Google\Protobuf\StringValue;
  * Prerequisites
  * - You need to have access to a Merchant Center account. You can find instructions
  * to create a Merchant Center account here: https://support.google.com/merchants/answer/188924.
- * This account must be linked to your AdWords account. The integration instructions can be found
- * at: https://developers.google.com/adwords/shopping/full-automation/articles/t15.
+ * This account must be linked to your Google Ads account. The integration instructions can be
+ * found at: https://developers.google.com/adwords/shopping/full-automation/articles/t15.
  * - You need your Google Ads account to track conversions. The different ways to track conversions
  * can be found here: https://support.google.com/google-ads/answer/1722054.
  */
@@ -348,13 +348,10 @@ class AddShoppingSmartAd
         int $customerId,
         string $adGroupResourceName
     ) {
-        // Creates a new Smart Shopping ad.
-        $ad = new Ad(['shopping_smart_ad' => new ShoppingSmartAdInfo()]);
-
         // Creates a new ad group ad and sets the Smart Shopping ad to it.
         $adGroupAd = new AdGroupAd([
             // Sets the ad to the ad created above.
-            'ad' => $ad,
+            'ad' => new Ad(['shopping_smart_ad' => new ShoppingSmartAdInfo()]),
             // Sets the ad group.
             'ad_group' => new StringValue(['value' => $adGroupResourceName])
         ]);
