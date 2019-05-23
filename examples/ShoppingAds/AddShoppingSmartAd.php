@@ -348,9 +348,9 @@ class AddShoppingSmartAd
         int $customerId,
         string $adGroupResourceName
     ) {
-        // Creates a new ad group ad and sets the Smart Shopping ad to it.
+        // Creates a new ad group ad.
         $adGroupAd = new AdGroupAd([
-            // Sets the ad to the ad created above.
+            // Sets a new Smart Shopping ad.
             'ad' => new Ad(['shopping_smart_ad' => new ShoppingSmartAdInfo()]),
             // Sets the ad group.
             'ad_group' => new StringValue(['value' => $adGroupResourceName])
