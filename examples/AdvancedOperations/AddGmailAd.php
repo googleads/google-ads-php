@@ -121,11 +121,11 @@ class AddGmailAd
     }
 
     /**
-     * Adds the image files.
+     * Adds the media files based on URLs.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @return array the image file resource names
+     * @return array the media file resource names
      */
     private static function addMediaFiles(
         GoogleAdsClient $googleAdsClient,
