@@ -121,7 +121,7 @@ class AddGmailAd
     }
 
     /**
-     * Adds the media files based on URLs.
+     * Adds the media files by using the class constants.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
