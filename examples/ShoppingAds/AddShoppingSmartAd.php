@@ -284,13 +284,14 @@ class AddShoppingSmartAd
 
         /** @var Campaign $addedCampaign */
         $addedCampaign = $response->getResults()[0];
+        $addedCampaignResourceName = $addedCampaign->getResourceName();
         printf(
             "Added a Smart Shopping campaign with resource name: '%s'.%s",
-            $addedCampaign->getResourceName(),
+            $addedCampaignResourceName,
             PHP_EOL
         );
 
-        return $addedCampaign->getResourceName();
+        return $addedCampaignResourceName;
     }
 
     /**
@@ -326,13 +327,14 @@ class AddShoppingSmartAd
 
         /** @var AdGroup $addedAdGroup */
         $addedAdGroup = $response->getResults()[0];
+        $addedAdGroupResourceName = $addedAdGroup->getResourceName();
         printf(
             "Added a Smart Shopping ad group with resource name: '%s'.%s",
-            $addedAdGroup->getResourceName(),
+            $addedAdGroupResourceName,
             PHP_EOL
         );
 
-        return $addedAdGroup->getResourceName();
+        return $addedAdGroupResourceName;
     }
 
     /**
