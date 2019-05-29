@@ -37,6 +37,8 @@ class GoogleAdsClientTest extends TestCase
 
     private static $DEVELOPER_TOKEN = 'ABcdeFGH93KL-NOPQ_STUv';
     private static $LOGIN_CUSTOMER_ID = '1234567890';
+    
+    private static $PROXY = 'http://localhost:8080';
 
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder*/
     private $googleAdsClientBuilder;
@@ -66,6 +68,7 @@ class GoogleAdsClientTest extends TestCase
             ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withLogger(new Logger('', [new NullHandler()]))
+            ->withProxy(self::$PROXY)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
@@ -84,6 +87,10 @@ class GoogleAdsClientTest extends TestCase
         $this->assertInstanceOf(
             GoogleAdsLoggingInterceptor::class,
             $clientOptions['transportConfig']['grpc']['interceptors'][0]
+        );
+        $this->assertSame(
+            getenv('http_proxy'),
+            self::$PROXY
         );
     }
 

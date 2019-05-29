@@ -41,6 +41,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     private $oAuth2Credential;
     private $logger;
     private $logLevel;
+    private $proxy;
 
     private $configurationLoader;
 
@@ -87,6 +88,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
             $configuration->getConfiguration('logFilePath', 'LOGGING'),
             $this->logLevel
         );
+        $this->proxy = $configuration->getConfiguration('proxy', 'CONNECTION');
 
         return $this;
     }
@@ -171,6 +173,18 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     }
 
     /**
+     * Sets the proxy URI for Google Ads API requests in the format protocol://user:pass@host:port.
+     *
+     * @param string $proxy the proxy URI, e.g., http://user:password@localhost:8080
+     * @return self this builder
+     */
+    public function withProxy(string $proxy)
+    {
+        $this->proxy = $proxy;
+        return $this;
+    }
+
+    /**
      * @see GoogleAdsBuilder::build()
      *
      * @return GoogleAdsClient the created Google Ads client
@@ -208,6 +222,13 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
         // but filter_var doesn't allow that.
         if (!empty($this->endpoint) && parse_url($this->endpoint) === false) {
             throw new InvalidArgumentException('Endpoint must be a valid URL.');
+        }
+
+        if (!empty($this->proxy) &&
+            filter_var($this->proxy, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED) === false) {
+            throw new InvalidArgumentException(
+                'Proxy must be a valid URI in the form protocol://user:pass@host:port'
+            );
         }
 
         if ($this->oAuth2Credential === null) {
@@ -275,5 +296,15 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     public function getLogLevel()
     {
         return $this->logLevel;
+    }
+
+    /**
+     * Gets the proxy URI in the form protocol://user:pass@host:port.
+     *
+     * @return string the proxy URI
+     */
+    public function getProxy()
+    {
+        return $this->proxy;
     }
 }

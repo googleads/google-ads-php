@@ -41,5 +41,6 @@ final class GoogleAdsClient
         $this->oAuth2Credential = $builder->getOAuth2Credential();
         $this->logger = $builder->getLogger();
         $this->logLevel = $builder->getLogLevel();
+        $this->proxy = $builder->getProxy();
     }
 }
