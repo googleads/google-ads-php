@@ -31,6 +31,7 @@ use Google\Ads\GoogleAds\V1\Services\ListPaymentsAccountsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -85,6 +86,8 @@ class PaymentsAccountServiceGapicClient
      */
     public static $serviceScopes = [
     ];
+    private static $paymentsAccountNameTemplate;
+    private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
@@ -103,6 +106,85 @@ class PaymentsAccountServiceGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function getPaymentsAccountNameTemplate()
+    {
+        if (null == self::$paymentsAccountNameTemplate) {
+            self::$paymentsAccountNameTemplate = new PathTemplate('customers/{customer}/paymentsAccounts/{payments_account}');
+        }
+
+        return self::$paymentsAccountNameTemplate;
+    }
+
+    private static function getPathTemplateMap()
+    {
+        if (null == self::$pathTemplateMap) {
+            self::$pathTemplateMap = [
+                'paymentsAccount' => self::getPaymentsAccountNameTemplate(),
+            ];
+        }
+
+        return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a payments_account resource.
+     *
+     * @param string $customer
+     * @param string $paymentsAccount
+     *
+     * @return string The formatted payments_account resource.
+     * @experimental
+     */
+    public static function paymentsAccountName($customer, $paymentsAccount)
+    {
+        return self::getPaymentsAccountNameTemplate()->render([
+            'customer' => $customer,
+            'payments_account' => $paymentsAccount,
+        ]);
+    }
+
+    /**
+     * Parses a formatted name string and returns an associative array of the components in the name.
+     * The following name formats are supported:
+     * Template: Pattern
+     * - paymentsAccount: customers/{customer}/paymentsAccounts/{payments_account}.
+     *
+     * The optional $template argument can be supplied to specify a particular pattern, and must
+     * match one of the templates listed above. If no $template argument is provided, or if the
+     * $template argument does not match one of the templates listed, then parseName will check
+     * each of the supported templates, and return the first match.
+     *
+     * @param string $formattedName The formatted name string
+     * @param string $template      Optional name of template to match
+     *
+     * @return array An associative array from name component IDs to component values.
+     *
+     * @throws ValidationException If $formattedName could not be matched.
+     * @experimental
+     */
+    public static function parseName($formattedName, $template = null)
+    {
+        $templateMap = self::getPathTemplateMap();
+
+        if ($template) {
+            if (!isset($templateMap[$template])) {
+                throw new ValidationException("Template name $template does not exist");
+            }
+
+            return $templateMap[$template]->match($formattedName);
+        }
+
+        foreach ($templateMap as $templateName => $pathTemplate) {
+            try {
+                return $pathTemplate->match($formattedName);
+            } catch (ValidationException $ex) {
+                // Swallow the exception to continue trying other path templates
+            }
+        }
+        throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
     /**
