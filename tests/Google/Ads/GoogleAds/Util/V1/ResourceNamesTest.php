@@ -97,7 +97,6 @@ use Google\Ads\GoogleAds\V1\Services\MutateJobServiceClient;
 use Google\Ads\GoogleAds\V1\Services\OperatingSystemVersionConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ParentalStatusViewServiceClient;
-use Google\Ads\GoogleAds\V1\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ProductBiddingCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V1\Services\ProductGroupViewServiceClient;
 use Google\Ads\GoogleAds\V1\Services\RecommendationServiceClient;
@@ -1907,27 +1906,6 @@ class ResourceNamesTest extends TestCase
         $names = ParentalStatusViewServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
         $this->assertEquals("{$adGroupId}~{$criterionId}", $names['parental_status_view']);
-    }
-
-    /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forPaymentsAccount()
-     */
-    public function testGetNameForPaymentsAccount()
-    {
-        $paymentsAccountId = 123412341234;
-        $expectedResourceName = sprintf(
-            'customers/%s/paymentsAccounts/%s',
-            self::CUSTOMER_ID,
-            $paymentsAccountId
-        );
-        $this->assertEquals(
-            $expectedResourceName,
-            ResourceNames::forPaymentsAccount(self::CUSTOMER_ID, $paymentsAccountId)
-        );
-
-        $names = PaymentsAccountServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
-        $this->assertEquals($paymentsAccountId, $names['payments_account']);
     }
 
     /**
