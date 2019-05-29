@@ -224,6 +224,8 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
             throw new InvalidArgumentException('Endpoint must be a valid URL.');
         }
 
+        // For the proxy URI using filter_var is ok because the GRPC library expects the URI
+        // in a very specific format.
         if (!empty($this->proxy) &&
             filter_var($this->proxy, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED) === false) {
             throw new InvalidArgumentException(
