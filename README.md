@@ -244,6 +244,29 @@ $googleAdsClient = (new GoogleAdsClientBuilder())
     ->build();
 ```
 
+## Proxy configuration
+
+If you need to connect to the Google Ads API through a proxy, you can do so by setting the `proxy`
+property in the `CONNECTION` section of your `google_ads_php.ini` file:
+
+```
+[CONNECTION]
+; Optional proxy settings to be used by requests.
+; If you don't have username and password, just specify host and port.
+proxy = "protocol://user:pass@host:port"
+```
+
+Alternatively, you can configure the proxy setting programmatically like every other configuration
+setting:
+
+```php
+$googleAdsClient = (new GoogleAdsClientBuilder())
+    ...
+    ->withProxy('protocol://user:pass@host:port')
+    ->build();
+```
+
+
 ## Miscellaneous
 
 ### Wiki
