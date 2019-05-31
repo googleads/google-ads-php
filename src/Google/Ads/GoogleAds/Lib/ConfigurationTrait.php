@@ -94,7 +94,7 @@ trait ConfigurationTrait
     }
 
     /**
-     * Gets the proxy URI in the form protocol://user:pass@host:port.
+     * Gets the proxy URI.
      *
      * @return string the proxy URI
      */

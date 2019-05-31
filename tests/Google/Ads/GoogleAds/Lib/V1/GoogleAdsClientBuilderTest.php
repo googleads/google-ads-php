@@ -141,15 +141,26 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
+    public function provideInvalidProxyURIs()
+    {
+        return [
+            ['foo'],
+            ['http://'],
+            ['foo.com'],
+            ['http://.com']
+        ];
+    }
+
     /**
      * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @dataProvider provideInvalidProxyURIs
      * @expectedException \InvalidArgumentException
      */
-    public function testBuildFailsWithInvalidProxyUri()
+    public function testBuildFailsWithInvalidProxyUri($invalidProxyUri)
     {
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-            ->withProxy('foo')
+            ->withProxy($invalidProxyUri)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
     }
