@@ -141,16 +141,6 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    public function provideInvalidProxyURIs()
-    {
-        return [
-            ['foo'],
-            ['http://'],
-            ['foo.com'],
-            ['http://.com']
-        ];
-    }
-
     /**
      * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
      * @dataProvider provideInvalidProxyURIs
@@ -163,6 +153,17 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withProxy($invalidProxyUri)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
+    }
+
+
+    public function provideInvalidProxyURIs()
+    {
+        return [
+            ['foo'],
+            ['http://'],
+            ['foo.com'],
+            ['http://.com']
+        ];
     }
 
     /**
