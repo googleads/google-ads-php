@@ -4,5 +4,5 @@ services:
     build: .
     volumes:
     - ./:/google-ads-php
-      - ~/:/root
+    - ~/:/root
       
