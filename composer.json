@@ -5,10 +5,7 @@
   "description": "Google Ads API client for PHP",
   "require": {
     "php": ">=7.1",
-    "ext-grpc": "*",
     "google/gax": "^0.38.0",
-    "google/protobuf": "^3.4.0",
-    "google/common-protos": "^0.1.0",
     "ulrichsg/getopt-php": "^3.2.2",
     "monolog/monolog": "^1.23.0"
   },
