@@ -35,12 +35,12 @@ use Google\Protobuf\StringValue;
 
 /**
  * This example adds a campaign draft for a campaign. Make sure you specify a
- * campaign that has a budget with explicitly_shared set to false.
+ * campaign that has a non-shared budget.
  */
 class AddCampaignDraft
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
+    const BASE_CAMPAIGN_ID = 'INSERT_BASE_CAMPAIGN_ID_HERE';
 
     public static function main()
     {
@@ -48,7 +48,7 @@ class AddCampaignDraft
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CAMPAIGN_ID=> GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::BASE_CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -65,7 +65,7 @@ class AddCampaignDraft
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID
+                $options[ArgumentNames::BASE_CAMPAIGN_ID] ?: self::BASE_CAMPAIGN_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -97,17 +97,17 @@ class AddCampaignDraft
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID to base the draft on
+     * @param int $baseCampaignId the campaign ID to base the draft on
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        int $campaignId
+        int $baseCampaignId
     ) {
         // Creates a campaign draft.
         $campaignDraft = new CampaignDraft([
             'base_campaign' => new StringValue([
-                'value' => ResourceNames::forCampaign($customerId, $campaignId)
+                'value' => ResourceNames::forCampaign($customerId, $baseCampaignId)
             ]),
             'name' => new StringValue(['value' => 'Campaign Draft #' . uniqid()])
         ]);

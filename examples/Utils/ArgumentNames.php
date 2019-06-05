@@ -25,6 +25,7 @@ final class ArgumentNames
     const AD_ID = 'adId';
     const AD_GROUP_ID = 'adGroupId';
     const ARTIFACT_NAME = 'artifactName';
+    const BASE_CAMPAIGN_ID = 'baseCampaignId';
     const BID_MODIFIER_VALUE = 'bidModifierValue';
     const BILLING_SETUP_ID = 'billingSetupId';
     const CAMPAIGN_BUDGET_ID = 'campaignBudgetId';
@@ -56,6 +57,7 @@ final class ArgumentNames
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::ARTIFACT_NAME => 'The artifact name',
+        self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
         self::CAMPAIGN_BUDGET_ID => 'The campaign budget ID',
