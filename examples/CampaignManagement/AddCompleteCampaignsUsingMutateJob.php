@@ -289,7 +289,7 @@ class AddCompleteCampaignsUsingMutateJob
                 // Creates a resource name using the temporary ID.
                 'resource_name' => ResourceNames::forCampaignBudget(
                     $customerId,
-                    self::$temporaryId--
+                    self::getNextTemporaryId()
                 ),
                 'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
                 'delivery_method' => BudgetDeliveryMethod::STANDARD,
@@ -313,7 +313,7 @@ class AddCompleteCampaignsUsingMutateJob
         $operations = [];
         for ($i = 0; $i < self::NUMBER_OF_CAMPAIGNS_TO_ADD; $i++) {
             // Creates a campaign.
-            $campaignId = self::$temporaryId--;
+            $campaignId = self::getNextTemporaryId();
             $campaign = new Campaign([
                 // Creates a resource name using the temporary ID.
                 'resource_name' => ResourceNames::forCampaign($customerId, $campaignId),
@@ -382,7 +382,7 @@ class AddCompleteCampaignsUsingMutateJob
         foreach ($campaignOperations as $campaignOperation) {
             for ($i = 0; $i < self::NUMBER_OF_ADGROUPS_TO_ADD; $i++) {
                 // Creates an ad group.
-                $adGroupId = self::$temporaryId--;
+                $adGroupId = self::getNextTemporaryId();
                 $adGroup = new AdGroup([
                     // Creates a resource name using the temporary ID.
                     'resource_name' => ResourceNames::forAdGroup($customerId, $adGroupId),
@@ -477,6 +477,15 @@ class AddCompleteCampaignsUsingMutateJob
             $operations[] = new AdGroupAdOperation(['create' => $adGroupAd]);
         }
         return $operations;
+    }
+
+    /**
+     * Returns the next temporary ID and decrease it by one.
+     *
+     * @return int the next temporary ID
+     */
+    private static function getNextTemporaryId() {
+        return self::$temporaryId--;
     }
 }
 
