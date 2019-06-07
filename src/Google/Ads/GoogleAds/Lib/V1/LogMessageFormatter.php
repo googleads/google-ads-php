@@ -106,6 +106,13 @@ final class LogMessageFormatter
             self::redactHeaders(self::joinPluckedArrays($metadata)),
             JSON_PRETTY_PRINT
         );
+        // ListMutateJobResults can return objects that contain GoogleAdsFailure. We need to
+        // initialize an unused GoogleAdsFailure object, as the pool needs to be aware of this
+        // class, in order to serialize the response correctly.
+        if (!isset(self::$unusedGoogleAdsFailure)
+            && strpos($method, 'ListMutateJobResults')) {
+            self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
+        }
         $logMessageTokens[] = "Request: " . $argument->serializeToJsonString();
 
         $logMessageTokens[] = "\nResponse";
