@@ -27,29 +27,19 @@ class GoogleAdsFailureTest extends TestCase
 {
     public function testFromAny()
     {
-        $anyMock = $this
-            ->getMockBuilder(Any::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $anyMock
-            ->method("unpack")
-            ->willReturn(new GoogleAdsFailure());
+        $any = new Any();
+        $any->pack(new GoogleAdsFailure());
         
-        $this->assertInstanceOf(GoogleAdsFailure::class, GoogleAdsFailures::fromAny($anyMock));
+        $this->assertInstanceOf(GoogleAdsFailure::class, GoogleAdsFailures::fromAny($any));
     }
 
     public function testFromAnyContainingInvalidTypeWillThrowException()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $anyMock = $this
-            ->getMockBuilder(Any::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $anyMock
-            ->method("unpack")
-            ->willReturn(new GoogleAdsError());
+        $any = new Any();
+        $any->pack(new GoogleAdsError());
         
-        GoogleAdsFailures::fromAny($anyMock);
+        GoogleAdsFailures::fromAny($any);
     }
 
     public function testFromEmptyStatus()
@@ -59,15 +49,10 @@ class GoogleAdsFailureTest extends TestCase
 
     public function testFromStatusWithSingleFailure()
     {
-        $anyMock = $this
-            ->getMockBuilder(Any::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $anyMock
-            ->method("unpack")
-            ->willReturn(new GoogleAdsFailure());
+        $any = new Any();
+        $any->pack(new GoogleAdsFailure());
 
-        $status = new Status(['details' => [$anyMock]]);
+        $status = new Status(['details' => [$any]]);
         $failures = GoogleAdsFailures::fromStatus($status);
         $this->assertCount(1, $failures);
         $this->assertInstanceOf(GoogleAdsFailure::class, $failures[0]);

@@ -54,17 +54,11 @@ class GoogleAdsErrorsTest extends TestCase
                 ])
             ]
         ]);
-                
-        $anyMock = $this
-            ->getMockBuilder(Any::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $anyMock
-            ->method("unpack")
-            ->willReturn($this->failure);
 
+        $any = new Any();
+        $any->pack($this->failure);
         $this->status = new Status([
-            'details' => [$anyMock]
+            'details' => [$any]
         ]);
     }
 

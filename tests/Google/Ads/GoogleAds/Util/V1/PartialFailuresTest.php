@@ -17,7 +17,8 @@
 
 namespace Google\Ads\GoogleAds\Util\V1;
 
-use Google\Protobuf\Internal\Message;
+use Google\Rpc\Status;
+use Google\Protobuf\GPBEmpty;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -30,27 +31,15 @@ class PartialFailuresTest extends TestCase
 {
     public function testIsPartialFailure()
     {
-        $messageMock = $this
-            ->getMockBuilder(Message::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $messageMock
-            ->method("serializeToString")
-            ->willReturn("");
+        $emptyMessage = new GPBEmpty();
 
-        $this->assertTrue(PartialFailures::isPartialFailure($messageMock));
+        $this->assertTrue(PartialFailures::isPartialFailure($emptyMessage));
     }
 
     public function testNotPartialFailure()
     {
-        $messageMock = $this
-            ->getMockBuilder(Message::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $messageMock
-            ->method("serializeToString")
-            ->willReturn("a");
+        $someMessage = new Status(['message' => 'a']);
 
-        $this->assertFalse(PartialFailures::isPartialFailure($messageMock));
+        $this->assertFalse(PartialFailures::isPartialFailure($someMessage));
     }
 }
