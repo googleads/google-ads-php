@@ -1324,12 +1324,12 @@ final class ResourceNames
     }
 
     /**
-     * Generates resource name for a paid organic search term view.
+     * Generates resource name for a product bidding category constant.
      *
      * @param string $countryCode the country code
      * @param int $level the level
      * @param int $id ID of the product bidding category
-     * @return string the paid organic search term view resource name
+     * @return string the product bidding category constant resource name
      */
     public static function forProductBiddingCategoryConstant(
         $countryCode,
