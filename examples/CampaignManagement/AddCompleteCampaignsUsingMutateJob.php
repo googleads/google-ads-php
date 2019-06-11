@@ -153,7 +153,7 @@ class AddCompleteCampaignsUsingMutateJob
      *
      * @param MutateJobServiceClient $mutateJobServiceClient the mutate job service client
      * @param int $customerId the client customer ID
-     * @return string the created mutate job's resource name
+     * @return string the resource name of the created mutate job
      */
     private static function createMutateJob(
         MutateJobServiceClient $mutateJobServiceClient,
