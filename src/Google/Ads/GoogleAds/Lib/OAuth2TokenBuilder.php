@@ -121,8 +121,7 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
     {
         $this->defaultOptionals();
         $this->validate();
-        putenv('http_proxy=cane');
-
+        
         return new UserRefreshCredentials(
             null,
             [
