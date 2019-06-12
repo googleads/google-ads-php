@@ -1,3 +1,10 @@
+## 1.4.0
+*   Added support for more resources in `ResourceNames`.
+*   Added examples for Smart Shopping campaigns, batch processing using
+    MutateJobService, and campaign draft.
+*   Increased default deadline to 1 hour and added retry support for
+    GoogleAdsService.search().
+
 ## 1.3.0
 *   Added support for v1_3 of Google Ads API.
 *   Added examples for ad parameters, campaign labels and media upload and retrieval.
