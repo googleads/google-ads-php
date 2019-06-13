@@ -52,6 +52,7 @@ final class ArgumentNames
     const RECOMMENDATION_ID = 'recommendationId';
     const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
     const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
+    const TAXONOMY_TYPE = 'taxonomyType';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::AD_ID => 'The ad ID',
@@ -86,6 +87,7 @@ final class ArgumentNames
         self::SHOULD_CREATE_DEFAULT_LISTING_GROUP =>
             'Whether it should create a default listing group',
         self::SHOULD_REPLACE_EXISTING_TREE =>
-            'Whether it should replace the existing listing group tree on an ad group'
+            'Whether it should replace the existing listing group tree on an ad group',
+        self::TAXONOMY_TYPE => 'The taxonomy type'
     ];
 }
