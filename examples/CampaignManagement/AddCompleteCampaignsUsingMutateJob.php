@@ -38,7 +38,6 @@ use Google\Ads\GoogleAds\V1\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
 use Google\Ads\GoogleAds\V1\Enums\CampaignStatusEnum\CampaignStatus;
 use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure;
 use Google\Ads\GoogleAds\V1\Resources\Ad;
 use Google\Ads\GoogleAds\V1\Resources\AdGroup;
 use Google\Ads\GoogleAds\V1\Resources\AdGroupAd;
@@ -52,10 +51,11 @@ use Google\Ads\GoogleAds\V1\Services\AdGroupOperation;
 use Google\Ads\GoogleAds\V1\Services\CampaignBudgetOperation;
 use Google\Ads\GoogleAds\V1\Services\CampaignCriterionOperation;
 use Google\Ads\GoogleAds\V1\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V1\Services\CampaignServiceClient;
 use Google\Ads\GoogleAds\V1\Services\MutateJobResult;
+use Google\Ads\GoogleAds\V1\Services\MutateJobServiceClient;
 use Google\Ads\GoogleAds\V1\Services\MutateOperation;
 use Google\ApiCore\ApiException;
+use Google\ApiCore\OperationResponse;
 use Google\Protobuf\BoolValue;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -69,7 +69,7 @@ class AddCompleteCampaignsUsingMutateJob
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
     const NUMBER_OF_CAMPAIGNS_TO_ADD = 2;
-    const NUMBER_OF_ADGROUPS_TO_ADD = 2;
+    const NUMBER_OF_AD_GROUPS_TO_ADD = 2;
     const NUMBER_OF_KEYWORDS_TO_ADD = 5;
     const POLL_FREQUENCY_SECONDS = 1;
     const MAX_TOTAL_POLL_INTERVAL_SECONDS = 60;
@@ -137,7 +137,28 @@ class AddCompleteCampaignsUsingMutateJob
     {
         $mutateJobServiceClient = $googleAdsClient->getMutateJobServiceClient();
 
-        // Creates a new mutate job.
+        $mutateJobResourceName = self::createMutateJob($mutateJobServiceClient, $customerId);
+        self::addAllMutateJobOperations(
+            $mutateJobServiceClient,
+            $customerId,
+            $mutateJobResourceName
+        );
+        $operationResponse = self::runMutateJob($mutateJobServiceClient, $mutateJobResourceName);
+        self::pollMutateJob($operationResponse);
+        self::fetchAndPrintResults($mutateJobServiceClient, $mutateJobResourceName);
+    }
+
+    /**
+     * Creates a new mutate job for the specified customer ID.
+     *
+     * @param MutateJobServiceClient $mutateJobServiceClient the mutate job service client
+     * @param int $customerId the client customer ID
+     * @return string the resource name of the created mutate job
+     */
+    private static function createMutateJob(
+        MutateJobServiceClient $mutateJobServiceClient,
+        int $customerId
+    ) {
         $mutateJobResourceName =
             $mutateJobServiceClient->createMutateJob($customerId)->getResourceName();
         printf(
@@ -145,9 +166,24 @@ class AddCompleteCampaignsUsingMutateJob
             $mutateJobResourceName,
             PHP_EOL
         );
+        return $mutateJobResourceName;
+    }
 
-        // Adds all mutate job operations to the mutate job. As this is the first time for this
-        // mutate job, pass null as a sequence token.
+    /**
+     * Adds all mutate job operations to the mutate job. As this is the first time for this
+     * mutate job, pass null as a sequence token. The response will contain the next sequence token
+     * that you can use to upload more operations in the future.
+     *
+     * @param MutateJobServiceClient $mutateJobServiceClient the mutate job service client
+     * @param int $customerId the client customer ID
+     * @param string $mutateJobResourceName the resource name of mutate job to which the mutate job
+     *     operations will be added
+     */
+    private static function addAllMutateJobOperations(
+        MutateJobServiceClient $mutateJobServiceClient,
+        int $customerId,
+        string $mutateJobResourceName
+    ) {
         $response = $mutateJobServiceClient->addMutateJobOperations(
             $mutateJobResourceName,
             null,
@@ -164,22 +200,52 @@ class AddCompleteCampaignsUsingMutateJob
             $response->getNextSequenceToken(),
             PHP_EOL
         );
+    }
 
-        // Runs the mutate job for executing the added operations.
+    /**
+     * Requests the API to run the mutate job for executing all uploaded mutate job operations.
+     *
+     * @param MutateJobServiceClient $mutateJobServiceClient the mutate job service client
+     * @param string $mutateJobResourceName the resource name of mutate job to be run
+     * @return OperationResponse the operation response from running mutate job
+     */
+    private static function runMutateJob(
+        MutateJobServiceClient $mutateJobServiceClient,
+        string $mutateJobResourceName
+    ) {
         $operationResponse = $mutateJobServiceClient->runMutateJob($mutateJobResourceName);
         printf(
             "Mutate job with resource name '%s' has been executed.%s",
             $mutateJobResourceName,
             PHP_EOL
         );
+        return $operationResponse;
+    }
 
-        // Polls the server until the mutate job execution finishes by setting the initial poll
-        // delay time and the total time to wait before time-out.
+    /**
+     * Polls the server until the mutate job execution finishes by setting the initial poll
+     * delay time and the total time to wait before time-out.
+     *
+     * @param OperationResponse $operationResponse the operation response used to poll the server
+     */
+    private static function pollMutateJob(OperationResponse $operationResponse)
+    {
         $operationResponse->pollUntilComplete([
             'initialPollDelayMillis' => self::POLL_FREQUENCY_SECONDS * 1000,
             'totalPollTimeoutMillis' => self::MAX_TOTAL_POLL_INTERVAL_SECONDS * 1000
         ]);
+    }
 
+    /**
+     * Prints all the results from running the mutate job.
+     *
+     * @param MutateJobServiceClient $mutateJobServiceClient the mutate job service client
+     * @param string $mutateJobResourceName the resource name of mutate job to get its results
+     */
+    private static function fetchAndPrintResults(
+        MutateJobServiceClient $mutateJobServiceClient,
+        string $mutateJobResourceName
+    ) {
         printf(
             "Mutate job with resource name '%s' has finished. Now, printing its results...%s",
             $mutateJobResourceName,
@@ -193,7 +259,7 @@ class AddCompleteCampaignsUsingMutateJob
         foreach ($mutateJobResults->iterateAllElements() as $mutateJobResult) {
             /** @var MutateJobResult $mutateJobResult */
             printf(
-                "Mutate job #%d has a status '%s' and response '%s'.%s",
+                "Mutate job #%d has a status '%s' and response of type '%s'.%s",
                 $mutateJobResult->getOperationIndex(),
                 $mutateJobResult->getStatus()
                     ? $mutateJobResult->getStatus()->getMessage() : 'N/A',
@@ -380,7 +446,7 @@ class AddCompleteCampaignsUsingMutateJob
     {
         $operations = [];
         foreach ($campaignOperations as $campaignOperation) {
-            for ($i = 0; $i < self::NUMBER_OF_ADGROUPS_TO_ADD; $i++) {
+            for ($i = 0; $i < self::NUMBER_OF_AD_GROUPS_TO_ADD; $i++) {
                 // Creates an ad group.
                 $adGroupId = self::getNextTemporaryId();
                 $adGroup = new AdGroup([
@@ -484,7 +550,8 @@ class AddCompleteCampaignsUsingMutateJob
      *
      * @return int the next temporary ID
      */
-    private static function getNextTemporaryId() {
+    private static function getNextTemporaryId()
+    {
         return self::$temporaryId--;
     }
 }
