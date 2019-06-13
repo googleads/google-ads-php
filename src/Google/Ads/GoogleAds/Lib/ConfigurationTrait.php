@@ -31,6 +31,7 @@ trait ConfigurationTrait
     private $oAuth2Credential;
     private $logger;
     private $logLevel;
+    private $proxy;
 
     /**
      * Gets the developer token.
@@ -90,5 +91,15 @@ trait ConfigurationTrait
     public function getLogLevel()
     {
         return $this->logLevel;
+    }
+
+    /**
+     * Gets the proxy URI.
+     *
+     * @return string the proxy URI
+     */
+    public function getProxy()
+    {
+        return $this->proxy;
     }
 }

@@ -59,7 +59,8 @@ class GoogleAdsClientBuilderTest extends TestCase
             /* Config name, section, value */
             ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN],
             ['loginCustomerId', 'GOOGLE_ADS', self::$LOGIN_CUSTOMER_ID],
-            ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443']
+            ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443'],
+            ['proxy', 'CONNECTION', 'https://localhost:8080']
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
@@ -76,6 +77,7 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
         $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
+        $this->assertSame('https://localhost:8080', $googleAdsClient->getProxy());
     }
 
     /**
@@ -137,6 +139,31 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->build();
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @dataProvider provideInvalidProxyURIs
+     * @expectedException \InvalidArgumentException
+     */
+    public function testBuildFailsWithInvalidProxyUri($invalidProxyUri)
+    {
+        $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withProxy($invalidProxyUri)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+    }
+
+
+    public function provideInvalidProxyURIs()
+    {
+        return [
+            ['foo'],
+            ['http://'],
+            ['foo.com'],
+            ['http://.com']
+        ];
     }
 
     /**
@@ -215,5 +242,30 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withLoginCustomerId(-1)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @dataProvider provideValidProxyURIs
+     */
+    public function testBuildWithValidProxyURIs(string $proxy)
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withProxy($proxy)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($proxy, $googleAdsClient->getProxy());
+    }
+
+    public function provideValidProxyURIs()
+    {
+        return [
+            ['http://localhost:8080'],
+            ['http://user:pass@localhost:8080'],
+            ['https://localhost:8080'],
+            ['https://user:pass@localhost:8080']
+        ];
     }
 }

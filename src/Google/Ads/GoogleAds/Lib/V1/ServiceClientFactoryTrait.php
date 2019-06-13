@@ -164,6 +164,10 @@ trait ServiceClientFactoryTrait
             ];
         }
 
+        if (!empty($this->getProxy())) {
+            putenv('http_proxy=' . $this->getProxy());
+        }
+        
         return $clientOptions;
     }
 
