@@ -56,7 +56,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * is optional, and if omitted, it will look for the default configuration
      * filename in the home directory of the user running PHP.
      *
-     * @param string $path the file path
+     * @param  string $path the file path
      * @return self this builder populated from the configuration
      * @throws InvalidArgumentException if the configuration file could not be
      *     found
@@ -72,7 +72,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     /**
      * Populates this builder from the specified configuration object.
      *
-     * @param Configuration $configuration the configuration
+     * @param  Configuration $configuration the configuration
      * @return self this builder populated from the configuration
      */
     public function from(Configuration $configuration)
@@ -96,7 +96,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     /**
      * Includes a developer token. This is required.
      *
-     * @param string $developerToken
+     * @param  string $developerToken
      * @return self this builder
      */
     public function withDeveloperToken(string $developerToken)
@@ -114,7 +114,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * create a separate GoogleAdsClient instance for each manager account. Use this method to
      * set each login customer ID and call build() to create a separate instance.
      *
-     * @param string|null $loginCustomerId the login customer ID
+     * @param  string|null $loginCustomerId the login customer ID
      * @return self this builder
      */
     public function withLoginCustomerId(?string $loginCustomerId)
@@ -126,7 +126,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     /**
      * Includes the Google Ads API server's base endpoint. This is optional.
      *
-     * @param string|null $endpoint
+     * @param  string|null $endpoint
      * @return self this builder
      */
     public function withEndpoint($endpoint)
@@ -139,7 +139,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
      * Includes the OAuth2 credential to be used for authentication. This is
      * required.
      *
-     * @param FetchAuthTokenInterface $oAuth2Credential
+     * @param  FetchAuthTokenInterface $oAuth2Credential
      * @return self this builder
      */
     public function withOAuth2Credential(FetchAuthTokenInterface $oAuth2Credential)
@@ -151,7 +151,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     /**
      * Includes a logger to log requests and responses.
      *
-     * @param LoggerInterface $logger
+     * @param  LoggerInterface $logger
      * @return self this builder
      */
     public function withLogger(LoggerInterface $logger)
@@ -163,7 +163,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     /**
      * Sets the log level for Google Ads API requests and responses.
      *
-     * @param string $logLevel the PSR-3 log level name, e.g., INFO
+     * @param  string $logLevel the PSR-3 log level name, e.g., INFO
      * @return self this builder
      */
     public function withLogLevel(string $logLevel)
@@ -175,7 +175,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     /**
      * Sets the proxy URI for Google Ads API requests in the format protocol://user:pass@host:port.
      *
-     * @param string $proxy the proxy URI, e.g., http://user:password@localhost:8080
+     * @param  string $proxy the proxy URI, e.g., http://user:password@localhost:8080
      * @return self this builder
      */
     public function withProxy(string $proxy)
@@ -226,12 +226,13 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
 
         // For the proxy URI using filter_var is ok because the GRPC library expects the URI
         // in a very specific format.
-        if (!empty($this->proxy) &&
-            filter_var(
+        if (!empty($this->proxy)
+            && filter_var(
                 $this->proxy,
                 FILTER_VALIDATE_URL,
                 FILTER_FLAG_SCHEME_REQUIRED | FILTER_FLAG_HOST_REQUIRED
-            ) === false) {
+            ) === false
+        ) {
             throw new InvalidArgumentException(
                 'Proxy must be a valid URI in the form protocol://user:pass@host:port'
             );

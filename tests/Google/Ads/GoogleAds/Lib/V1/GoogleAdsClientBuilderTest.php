@@ -265,7 +265,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['http://localhost:8080'],
             ['http://user:pass@localhost:8080'],
             ['https://localhost:8080'],
-            ['https://user:pass@localhost:8080'],
+            ['https://user:pass@localhost:8080']
         ];
     }
 }

@@ -121,7 +121,7 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
     {
         $this->defaultOptionals();
         $this->validate();
-        
+
         return new UserRefreshCredentials(
             null,
             [
