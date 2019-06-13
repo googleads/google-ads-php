@@ -145,7 +145,7 @@ class AddCompleteCampaignsUsingMutateJob
         );
         $operationResponse = self::runMutateJob($mutateJobServiceClient, $mutateJobResourceName);
         self::pollMutateJob($operationResponse);
-        self::printResults($mutateJobServiceClient, $mutateJobResourceName);
+        self::fetchAndPrintResults($mutateJobServiceClient, $mutateJobResourceName);
     }
 
     /**
@@ -242,7 +242,7 @@ class AddCompleteCampaignsUsingMutateJob
      * @param MutateJobServiceClient $mutateJobServiceClient the mutate job service client
      * @param string $mutateJobResourceName the resource name of mutate job to get its results
      */
-    private static function printResults(
+    private static function fetchAndPrintResults(
         MutateJobServiceClient $mutateJobServiceClient,
         string $mutateJobResourceName
     ) {
