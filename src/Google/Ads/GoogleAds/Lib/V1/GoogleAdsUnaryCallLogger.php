@@ -30,7 +30,7 @@ final class GoogleAdsUnaryCallLogger
     use ArrayTrait;
 
     private $logger;
-    private $logLevel;
+    private $filterLevel;
     private $endpoint;
     private $logMessageFormatter;
     private $context;
@@ -41,20 +41,20 @@ final class GoogleAdsUnaryCallLogger
      * Constructs the Google Ads unary call logger with the specified PSR-3 logger interface.
      *
      * @param LoggerInterface $logger the PSR-3 logger
-     * @param string $logLevel the PSR-3 log level
+     * @param string $filterLevel the PSR-3 minimum log level to log
      * @param string $endpoint the API endpoint for the gRPC call
      * @param null|LogMessageFormatter $logMessageFormatter the log message formatter
      * @param array $context the context for logging
      */
     public function __construct(
         LoggerInterface $logger,
-        $logLevel,
+        $filterLevel,
         $endpoint,
         LogMessageFormatter $logMessageFormatter = null,
         $context = []
     ) {
         $this->logger = $logger;
-        $this->logLevel = $logLevel;
+        $this->filterLevel = $filterLevel;
         $this->endpoint = $endpoint;
         $this->logMessageFormatter = $logMessageFormatter ?: new LogMessageFormatter();
         $this->context = $context;
@@ -125,7 +125,7 @@ final class GoogleAdsUnaryCallLogger
      */
     private function isEnabled(string $level): bool
     {
-        return self::$logLevelNamesToNormalizedValues[$this->logLevel] <=
+        return self::$logLevelNamesToNormalizedValues[$this->filterLevel] <=
                 self::$logLevelNamesToNormalizedValues[$level];
     }
 
