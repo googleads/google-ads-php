@@ -113,7 +113,7 @@ class CreateCompleteCampaignBothApisPhase3
     private static function createCampaignBudget(
         GoogleAdsClient $googleAdsClient,
         string $customerId
-    ) {    
+    ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
             'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),

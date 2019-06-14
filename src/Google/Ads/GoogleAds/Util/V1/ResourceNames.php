@@ -880,7 +880,8 @@ final class ResourceNames
      * @param int $feedItemId the feed item ID
      * @return string the extension feed item resource name
      */
-    public static function forExtensionFeedItem($customerId, $feedItemId) {
+    public static function forExtensionFeedItem($customerId, $feedItemId)
+    {
         return ExtensionFeedItemServiceClient::extensionFeedItemName($customerId, $feedItemId);
     }
 
@@ -946,7 +947,8 @@ final class ResourceNames
      * @param int $placeholderType the placeholder type
      * @return string the feed placeholder view resource name
      */
-    public static function forFeedPlaceholderView($customerId, $placeholderType) {
+    public static function forFeedPlaceholderView($customerId, $placeholderType)
+    {
         return FeedPlaceholderViewServiceClient::feedPlaceholderViewName(
             $customerId,
             $placeholderType
@@ -960,7 +962,8 @@ final class ResourceNames
      * @param int $feedId the feed ID
      * @return string the feed resource name
      */
-    public static function forFeed($customerId, $feedId) {
+    public static function forFeed($customerId, $feedId)
+    {
         return FeedServiceClient::feedName($customerId, $feedId);
     }
 
