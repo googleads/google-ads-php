@@ -1521,7 +1521,8 @@ class ResourceNamesTest extends TestCase
     public function testGetNameForHotelPerformanceView()
     {
         $expectedResourceName = sprintf(
-            'customers/%s/hotelPerformanceView', self::CUSTOMER_ID
+            'customers/%s/hotelPerformanceView',
+            self::CUSTOMER_ID
         );
         $this->assertEquals($expectedResourceName, ResourceNames::forHotelPerformanceView(
             self::CUSTOMER_ID
@@ -1915,7 +1916,7 @@ class ResourceNamesTest extends TestCase
     {
         $countryCode = 'US';
         $level = 222222;
-        $id = 3333333;;
+        $id = 3333333;
         $expectedResourceName = sprintf(
             'productBiddingCategoryConstants/%s~%s~%s',
             $countryCode,
