@@ -26,8 +26,6 @@ use Psr\Log\LoggerInterface;
  */
 final class LoggerFactory
 {
-    use GoogleAdsLoggerTrait;
-
     /**
      * Creates a Monolog logger with a stream handler configured for this library.
      *
@@ -43,7 +41,7 @@ final class LoggerFactory
     {
         $stream = $stream === null ? STDERR : $stream;
         // Detailed message will be logged at one level finer than that specified by the user.
-        $level = $level === null ? Logger::DEBUG : self::getNextFinerLogLevel($level);
+        $level = $level !== null ? $level : Logger::DEBUG;
         $handler = new StreamHandler($stream, $level);
         $handler->getFormatter()->ignoreEmptyContextAndExtra();
         $handler->getFormatter()->allowInlineLineBreaks();
