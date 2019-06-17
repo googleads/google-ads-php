@@ -125,8 +125,8 @@ final class GoogleAdsUnaryCallLogger
      */
     private function isEnabled(string $level): bool
     {
-        return self::$logLevelNamesToNormalizedValues[$this->filterLevel] <=
-                self::$logLevelNamesToNormalizedValues[$level];
+        return self::$logLevelNamesToNormalizedValues[strtoupper($this->filterLevel)] <=
+                self::$logLevelNamesToNormalizedValues[strtoupper($level)];
     }
 
     /**

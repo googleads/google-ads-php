@@ -23,6 +23,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 
 /**
  * Builds Google Ads API clients.
@@ -241,6 +242,10 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
             throw new InvalidArgumentException(
                 'OAuth2 authentication credentials must not be null.'
             );
+        }
+
+        if ($this->logLevel === null) {
+            $this->logLevel = LogLevel::INFO;
         }
     }
 
