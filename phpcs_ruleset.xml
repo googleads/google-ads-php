@@ -2,6 +2,7 @@
 <ruleset name="google-ads-php-psr2">
     <rule ref="PSR2"/>
     <exclude-pattern>metadata</exclude-pattern>
+    <exclude-pattern>vendor/</exclude-pattern>
     <exclude-pattern>src/Google/Ads/GoogleAds/V[0-9]+</exclude-pattern>
     <exclude-pattern>src/Google/Ads/GoogleAds/Util/Testing/Google</exclude-pattern>
     <exclude-pattern>src/Google/Ads/GoogleAds/Util/Testing/metadata</exclude-pattern>
