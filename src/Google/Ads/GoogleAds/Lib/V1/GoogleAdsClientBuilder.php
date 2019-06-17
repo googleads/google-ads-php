@@ -246,7 +246,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
 
         if (is_null($this->logLevel)) {
             $this->logLevel = LogLevel::INFO;
-        } elseif (!defined('Psr\Log\LogLevel::' . $this->logLevel)) {
+        } elseif (!defined('Psr\Log\LogLevel::' . strtoupper($this->logLevel))) {
             throw new InvalidArgumentException("The log level must be a valid PSR log level");
         }
     }

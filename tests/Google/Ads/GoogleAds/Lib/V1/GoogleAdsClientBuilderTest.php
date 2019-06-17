@@ -295,4 +295,15 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withLogLevel("banana")
             ->build();
     }
+
+    public function testBuildWithLowercaseLogLevel()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->withLogLevel("debug")
+            ->build();
+
+        $this->assertSame(LogLevel::DEBUG, $googleAdsClient->getLogLevel());
+    }
 }
