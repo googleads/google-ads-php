@@ -282,4 +282,17 @@ class GoogleAdsClientBuilderTest extends TestCase
 
         $this->assertSame(LogLevel::INFO, $googleAdsClient->getLogLevel());
     }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @expectedException \InvalidArgumentException
+     */
+    public function testBuildWithInvalidLogLevelThrowsException()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->withLogLevel("banana")
+            ->build();
+    }
 }
