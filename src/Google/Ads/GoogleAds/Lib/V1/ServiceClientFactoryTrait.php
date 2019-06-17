@@ -164,6 +164,17 @@ trait ServiceClientFactoryTrait
             ];
         }
 
+        $clientOptions['transportConfig']['grpc'] += [
+            'stubOpts' => [
+                // Inbound headers may exceed default (8kb) max header size.
+                // Sets max header size to 16MB, which should be more than necessary.
+                'grpc.max_metadata_size' => 16 * 1024 * 1024,
+                // Sets max response size to 64MB, since large responses will often exceed the default
+                // (4MB).
+                'grpc.max_receive_message_length' => 64 * 1024 * 1024
+            ]
+        ];
+
         if (!empty($this->getProxy())) {
             putenv('http_proxy=' . $this->getProxy());
         }
