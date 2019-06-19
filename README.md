@@ -184,88 +184,15 @@ for a particular service using one of the `get...ServiceClient()` methods.
 
 ## Running in a Docker container
 
-You can also execute the examples and develop your Google Ads API application inside a Docker 
-container, built using the provided [Dockerfile](Dockerfile).
-
-To do so, provided that you have a Docker environment [installed](https://docs.docker.com/install/),
-you can run the following command in the directory where you cloned this repository:
-
-    docker-compose up --build -d
-
-This will provide a Docker container instance with all the required dependencies already installed.
-
-To open a BASH shell inside the Docker container, you can run `docker ps` to get the container id and
-then run `docker exec -it <YOUR_CONTAINER_ID> bash`; this will allow you to run code examples and
-other applications inside the container.
-
-As a shorthand, in case you only have a single Docker container running on your machine, you can
-also run `docker exec -it $(docker ps -a -q) bash`.
+See the [Running in a Docker container guide](https://developers.google.com/google-ads/api/docs/client-libs/php/docker).
 
 ## Logging
 
-This library conforms to [PSR-3](http://www.php-fig.org/psr/psr-3) for logging
-and provides a logger for gRPC calls.
-
-The
-[level](http://www.php-fig.org/psr/psr-3/#5-psr-log-loglevel) at which messages
-are logged depends on whether the event succeeded.
-
-Log message \ Event status         | Success | Failure
----------------------------------- | ------- | -------
-One-line summary                   | INFO    | WARNING
-Debug message (e.g., call queries) | DEBUG   | NOTICE
-
-#### Configuring logging
-
-By default, each of the library loggers logs to
-[`STDERR`](http://php.net/manual/en/features.commandline.io-streams.php) on a channel with default name specified
-[here](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/V1/GoogleAdsClientBuilder.php#L34) using a [Monolog
-StreamHandler](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php).
-
-You can configure some options for the default logger in the `google_ads_php.ini`
-file:
-
-```ini
-[LOGGING]
-; Optional logging settings.
-logFilePath = "path/to/your/file.log"
-logLevel = "INFO"
-```
-
-If you need to further customize logging, you can specify your own logger
-entirely by providing a logger that implements
-[LoggerInterface](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php)
-in [`GoogleAdsClientBuilder`](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/V1/GoogleAdsClientBuilder.php):
-
-```php
-$googleAdsClient = (new GoogleAdsClientBuilder())
-    ...
-    ->withLogger(new MyCustomLogger())
-    ->build();
-```
+See the [Logging guide](https://developers.google.com/google-ads/api/docs/client-libs/php/logging).
 
 ## Proxy configuration
 
-If you need to connect to the Google Ads API through a proxy, you can do so by setting the `proxy`
-property in the `CONNECTION` section of your `google_ads_php.ini` file:
-
-```
-[CONNECTION]
-; Optional proxy settings to be used by requests.
-; If you don't have username and password, just specify host and port.
-proxy = "protocol://user:pass@host:port"
-```
-
-Alternatively, you can configure the proxy setting programmatically like every other configuration
-setting:
-
-```php
-$googleAdsClient = (new GoogleAdsClientBuilder())
-    ...
-    ->withProxy('protocol://user:pass@host:port')
-    ->build();
-```
-
+See the [Proxy guide](https://developers.google.com/google-ads/api/docs/client-libs/php/proxy).
 
 ## Miscellaneous
 
@@ -289,3 +216,4 @@ $googleAdsClient = (new GoogleAdsClientBuilder())
 
 *   [Thanet Knack Praneenararat](https://github.com/fiboknacky)
 *   [Mattia Tommasone](https://github.com/Raibaz)
+*   [Pierrick Voulet](https://github.com/PierrickVoulet)
