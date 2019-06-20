@@ -1,3 +1,7 @@
+## 1.4.1
+*   Fixed logging level configuration ([#120](https://github.com/googleads/google-ads-php/pull/120)).
+*   Set max response message and metadata size ([#127](https://github.com/googleads/google-ads-php/pull/127)).
+
 ## 1.4.0
 *   Added support for more resources in `ResourceNames`.
 *   Added examples for Smart Shopping campaigns, batch processing using
