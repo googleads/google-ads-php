@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds\Lib\V1;
 use Google\Ads\GoogleAds\Lib\Configuration;
 use Google\Auth\FetchAuthTokenInterface;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\LogLevel;
 
 /**
  * Unit tests for `GoogleAdsClientBuilder`.
@@ -267,5 +268,42 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['https://localhost:8080'],
             ['https://user:pass@localhost:8080']
         ];
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     */
+    public function testBuildWithoutLogLevelSetsDefault()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame(LogLevel::INFO, $googleAdsClient->getLogLevel());
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @expectedException \InvalidArgumentException
+     */
+    public function testBuildWithInvalidLogLevelThrowsException()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->withLogLevel("banana")
+            ->build();
+    }
+
+    public function testBuildWithLowercaseLogLevel()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->withLogLevel("debug")
+            ->build();
+
+        $this->assertSame(LogLevel::DEBUG, $googleAdsClient->getLogLevel());
     }
 }
