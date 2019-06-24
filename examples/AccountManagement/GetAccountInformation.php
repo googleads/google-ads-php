@@ -106,7 +106,8 @@ class GetAccountInformation
             $customer->getDescriptiveName()->getValue(),
             $customer->getCurrencyCode()->getValue(),
             $customer->getTimeZone()->getValue(),
-            $customer->getTrackingUrlTemplate()->getValue(),
+            is_null($customer->getTrackingUrlTemplate())
+                ? 'N/A' : $customer->getTrackingUrlTemplate()->getValue(),
             $customer->getAutoTaggingEnabled()->getValue() ? 'true' : 'false',
             PHP_EOL
         );
