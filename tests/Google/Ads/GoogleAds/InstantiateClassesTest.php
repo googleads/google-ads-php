@@ -36,6 +36,9 @@ class InstantiateClassesTest extends TestCase
      */
     public function testInstantiateClass($class)
     {
+        // Prevent phpunit from marking as risky tests that don't perform any assertion.
+        $this->assertTrue(true);
+
         if (strpos($class, 'metadata') !== false || strpos($class, 'Testing') !== false) {
             return;
         }
