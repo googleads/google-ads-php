@@ -22,17 +22,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Common\PolicyTopicEntry;
-use Google\Ads\GoogleAds\V1\Common\PolicyTopicEvidence;
-use Google\Ads\GoogleAds\V1\Enums\AdTypeEnum\AdType;
-use Google\Ads\GoogleAds\V1\Enums\PolicyApprovalStatusEnum\PolicyApprovalStatus;
-use Google\Ads\GoogleAds\V1\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Common\PolicyTopicEntry;
+use Google\Ads\GoogleAds\V2\Common\PolicyTopicEvidence;
+use Google\Ads\GoogleAds\V2\Enums\AdTypeEnum\AdType;
+use Google\Ads\GoogleAds\V2\Enums\PolicyApprovalStatusEnum\PolicyApprovalStatus;
+use Google\Ads\GoogleAds\V2\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all the disapproved ads in a given campaign. */
@@ -132,7 +132,7 @@ class GetAllDisapprovedAds
             printf(
                 "Ad with ID %d and type '%s' was disapproved with the following policy "
                 . "topic entries:%s",
-                $ad->getIdValue(),
+                $ad->getIdUnwrapped(),
                 AdType::name($ad->getType()),
                 PHP_EOL
             );
@@ -140,7 +140,7 @@ class GetAllDisapprovedAds
                 /** @var PolicyTopicEntry $policyTopicEntry */
                 printf(
                     "  topic: '%s', type: '%s'%s",
-                    $policyTopicEntry->getTopicValue(),
+                    $policyTopicEntry->getTopicUnwrapped(),
                     PolicyTopicEntryType::name($policyTopicEntry->getType()),
                     PHP_EOL
                 );

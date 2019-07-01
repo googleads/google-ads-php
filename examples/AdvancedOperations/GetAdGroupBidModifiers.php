@@ -22,13 +22,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example gets ad group bid modifiers. */
@@ -123,11 +123,11 @@ class GetAdGroupBidModifiers
             printf(
                 "Ad group bid modifier with criterion ID %d, bid modifier value %f, device "
                 . "type '%s' was found in an ad group ID %d of campaign ID %d.%s",
-                $googleAdsRow->getAdGroupBidModifier()->getCriterionIdValue(),
-                $googleAdsRow->getAdGroupBidModifier()->getBidModifierValue(),
+                $googleAdsRow->getAdGroupBidModifier()->getCriterionIdUnwrapped(),
+                $googleAdsRow->getAdGroupBidModifier()->getBidModifierUnwrapped(),
                 Device::name($googleAdsRow->getAdGroupBidModifier()->getDevice()->getType()),
-                $googleAdsRow->getAdGroup()->getIdValue(),
-                $googleAdsRow->getCampaign()->getIdValue(),
+                $googleAdsRow->getAdGroup()->getIdUnwrapped(),
+                $googleAdsRow->getCampaign()->getIdUnwrapped(),
                 PHP_EOL
             );
         }

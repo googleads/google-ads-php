@@ -22,16 +22,16 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V1\ResourceNames;
-use Google\Ads\GoogleAds\V1\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Resources\Campaign;
-use Google\Ads\GoogleAds\V1\Services\CampaignOperation;
+use Google\Ads\GoogleAds\Util\V2\ResourceNames;
+use Google\Ads\GoogleAds\V2\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Resources\Campaign;
+use Google\Ads\GoogleAds\V2\Services\CampaignOperation;
 use Google\ApiCore\ApiException;
 
 /**

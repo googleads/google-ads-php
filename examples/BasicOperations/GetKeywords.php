@@ -22,14 +22,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V2\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example gets keywords from ad group criteria. */
@@ -125,13 +125,13 @@ class GetKeywords
             printf(
                 "Keyword with text '%s', match type '%s', criterion type '%s', and ID %d "
                 . "was found in ad group with ID %d.%s",
-                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getTextValue(),
+                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getTextUnwrapped(),
                 KeywordMatchType::name(
                     $googleAdsRow->getAdGroupCriterion()->getKeyword()->getMatchType()
                 ),
                 CriterionType::name($googleAdsRow->getAdGroupCriterion()->getType()),
-                $googleAdsRow->getAdGroupCriterion()->getCriterionIdValue(),
-                $googleAdsRow->getAdGroup()->getIdValue(),
+                $googleAdsRow->getAdGroupCriterion()->getCriterionIdUnwrapped(),
+                $googleAdsRow->getAdGroup()->getIdUnwrapped(),
                 PHP_EOL
             );
         }

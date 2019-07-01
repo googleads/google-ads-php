@@ -22,14 +22,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
-use Google\Ads\GoogleAds\V1\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Resources\GoogleAdsField;
+use Google\Ads\GoogleAds\V2\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
+use Google\Ads\GoogleAds\V2\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Resources\GoogleAdsField;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\BoolValue;
 use Google\Protobuf\StringValue;
@@ -112,7 +112,7 @@ class GetArtifactMetadata
             printf(
                 "An artifact named '%s' with category '%s' and data type '%s' %s selectable, %s "
                 . "filterable, %s sortable and %s repeated.%s",
-                $googleAdsField->getNameValue(),
+                $googleAdsField->getNameUnwrapped(),
                 GoogleAdsFieldCategory::name($googleAdsField->getCategory()),
                 GoogleAdsFieldDataType::name($googleAdsField->getDataType()),
                 self::getIsOrIsNot($googleAdsField->getSelectable()),

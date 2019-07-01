@@ -22,16 +22,16 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Resources\SharedCriterion;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V1\Services\SharedCriterionOperation;
+use Google\Ads\GoogleAds\V2\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V2\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Resources\SharedCriterion;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Services\SharedCriterionOperation;
 use Google\ApiCore\ApiException;
 
 /**
@@ -124,11 +124,11 @@ class FindAndRemoveCriteriaFromSharedSet
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 "Campaign shared set with ID %d and name '%s' was found.%s",
-                $googleAdsRow->getSharedSet()->getIdValue(),
-                $googleAdsRow->getSharedSet()->getNameValue(),
+                $googleAdsRow->getSharedSet()->getIdUnwrapped(),
+                $googleAdsRow->getSharedSet()->getNameUnwrapped(),
                 PHP_EOL
             );
-            $sharedSetIds[] = $googleAdsRow->getSharedSet()->getIdValue();
+            $sharedSetIds[] = $googleAdsRow->getSharedSet()->getIdUnwrapped();
         }
 
         // Next, retrieves shared criteria for all found shared sets.
@@ -151,7 +151,7 @@ class FindAndRemoveCriteriaFromSharedSet
                     "Shared criterion with resource name '%s' for negative keyword with text "
                     . "'%s' and match type '%s' was found.%s",
                     $sharedCriterionResourceName,
-                    $googleAdsRow->getSharedCriterion()->getKeyword()->getTextValue(),
+                    $googleAdsRow->getSharedCriterion()->getKeyword()->getTextUnwrapped(),
                     KeywordMatchType::name(
                         $googleAdsRow->getSharedCriterion()->getKeyword()->getMatchType()
                     ),

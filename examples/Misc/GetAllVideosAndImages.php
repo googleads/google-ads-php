@@ -22,13 +22,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\MediaTypeEnum\MediaType;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\MediaTypeEnum\MediaType;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example gets information about all video and image files. */
@@ -108,8 +108,8 @@ class GetAllVideosAndImages
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 "Media file with ID %d, name '%s', and type '%s' was found.%s",
-                $googleAdsRow->getMediaFile()->getIdValue(),
-                $googleAdsRow->getMediaFile()->getNameValue(),
+                $googleAdsRow->getMediaFile()->getIdUnwrapped(),
+                $googleAdsRow->getMediaFile()->getNameUnwrapped(),
                 MediaType::name($googleAdsRow->getMediaFile()->getType()),
                 PHP_EOL
             );

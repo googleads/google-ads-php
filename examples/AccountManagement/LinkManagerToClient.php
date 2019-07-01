@@ -22,18 +22,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V1\ResourceNames;
-use Google\Ads\GoogleAds\V1\Enums\ManagerLinkStatusEnum\ManagerLinkStatus;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Resources\CustomerClientLink;
-use Google\Ads\GoogleAds\V1\Resources\CustomerManagerLink;
-use Google\Ads\GoogleAds\V1\Services\CustomerClientLinkOperation;
-use Google\Ads\GoogleAds\V1\Services\CustomerManagerLinkOperation;
+use Google\Ads\GoogleAds\Util\V2\ResourceNames;
+use Google\Ads\GoogleAds\V2\Enums\ManagerLinkStatusEnum\ManagerLinkStatus;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Resources\CustomerClientLink;
+use Google\Ads\GoogleAds\V2\Resources\CustomerManagerLink;
+use Google\Ads\GoogleAds\V2\Services\CustomerClientLinkOperation;
+use Google\Ads\GoogleAds\V2\Services\CustomerManagerLinkOperation;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -196,7 +196,7 @@ class LinkManagerToClient
         // Gets the ID and resource name associated to the manager link found.
         $managerLinkId = $response->getIterator()->current()
             ->getCustomerClientLink()
-            ->getManagerLinkIdValue();
+            ->getManagerLinkIdUnwrapped();
         $managerLinkResourceName = ResourceNames::forCustomerManagerLink(
             $clientCustomerId,
             $managerCustomerId,
