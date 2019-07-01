@@ -22,13 +22,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\AccountBudgetStatusEnum\AccountBudgetStatus;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\AccountBudgetStatusEnum\AccountBudgetStatus;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all account budgets for a Google Ads customer. */
@@ -127,37 +127,37 @@ class GetAccountBudgets
                 $accountBudget->getResourceName(),
                 AccountBudgetStatus::name($accountBudget->getStatus()),
                 $accountBudget->getBillingSetup()
-                    ? $accountBudget->getBillingSetupValue() : 'none',
+                    ? $accountBudget->getBillingSetupUnwrapped() : 'none',
                 $accountBudget->getAmountServedMicros()
-                    ? $accountBudget->getAmountServedMicrosValue() / 1000000.0
+                    ? $accountBudget->getAmountServedMicrosUnwrapped() / 1000000.0
                     : 0.0,
                 $accountBudget->getTotalAdjustmentsMicros()
-                    ? $accountBudget->getTotalAdjustmentsMicrosValue() / 1000000.0
+                    ? $accountBudget->getTotalAdjustmentsMicrosUnwrapped() / 1000000.0
                     : 0.0,
                 PHP_EOL,
                 $accountBudget->getApprovedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getApprovedSpendingLimitMicrosValue() / 1000000.0
+                        $accountBudget->getApprovedSpendingLimitMicrosUnwrapped() / 1000000.0
                     ) : $accountBudget->getApprovedSpendingLimitType(),
                 $accountBudget->getProposedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getProposedSpendingLimitMicrosValue() / 1000000.0
+                        $accountBudget->getProposedSpendingLimitMicrosUnwrapped() / 1000000.0
                     ) : $accountBudget->getProposedSpendingLimitType(),
                 PHP_EOL,
                 $accountBudget->getApprovedStartDateTime()
-                    ? $accountBudget->getApprovedStartDateTimeValue()
+                    ? $accountBudget->getApprovedStartDateTimeUnwrapped()
                     : 'none',
                 $accountBudget->getProposedStartDateTime()
-                    ? $accountBudget->getProposedStartDateTimeValue()
+                    ? $accountBudget->getProposedStartDateTimeUnwrapped()
                     : 'none',
                 PHP_EOL,
                 $accountBudget->getApprovedEndDateTime()
-                    ? $accountBudget->getApprovedEndDateTimeValue()
+                    ? $accountBudget->getApprovedEndDateTimeUnwrapped()
                     : $accountBudget->getApprovedEndTimeType(),
                 $accountBudget->getProposedEndDateTime()
-                    ? $accountBudget->getProposedEndDateTimeValue()
+                    ? $accountBudget->getProposedEndDateTimeUnwrapped()
                     : $accountBudget->getProposedEndTimeType(),
                 PHP_EOL
             );

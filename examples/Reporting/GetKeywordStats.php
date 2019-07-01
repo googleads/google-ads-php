@@ -22,13 +22,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -141,16 +141,16 @@ class GetKeywordStats
                 . "%d click(s), "
                 . "and %d cost (in micros) "
                 . "during the last 7 days.%s",
-                $adGroupCriterion->getKeyword()->getTextValue(),
+                $adGroupCriterion->getKeyword()->getTextUnwrapped(),
                 KeywordMatchType::name($adGroupCriterion->getKeyword()->getMatchType()),
-                $adGroupCriterion->getCriterionIdValue(),
-                $adGroup->getNameValue(),
-                $adGroup->getIdValue(),
-                $campaign->getNameValue(),
-                $campaign->getIdValue(),
-                $metrics->getImpressionsValue(),
-                $metrics->getClicksValue(),
-                $metrics->getCostMicrosValue(),
+                $adGroupCriterion->getCriterionIdUnwrapped(),
+                $adGroup->getNameUnwrapped(),
+                $adGroup->getIdUnwrapped(),
+                $campaign->getNameUnwrapped(),
+                $campaign->getIdUnwrapped(),
+                $metrics->getImpressionsUnwrapped(),
+                $metrics->getClicksUnwrapped(),
+                $metrics->getCostMicrosUnwrapped(),
                 PHP_EOL
             );
         }

@@ -1,3 +1,10 @@
+## 2.0.0
+*   Added support for v2 of Google Ads API.
+*   Renamed the getter and setter functions for unwrapped values from getXXXValue/setXXXValue to
+    getXXXUnwrapped/setXXXUnwrapped to prevent them from clashing with other field names.
+*   Added a test to instantiate all classes in the codebase to make sure there are no syntax errors.
+*   Upgraded dependencies.
+
 ## 1.4.1
 *   Fixed logging level configuration ([#120](https://github.com/googleads/google-ads-php/pull/120)).
 *   Set max response message and metadata size ([#127](https://github.com/googleads/google-ads-php/pull/127)).

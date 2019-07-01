@@ -22,13 +22,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\BillingSetupStatusEnum\BillingSetupStatus;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\BillingSetupStatusEnum\BillingSetupStatus;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This sample gets all BillingSetup objects available for the specified customer ID. */
@@ -131,14 +131,14 @@ class GetBillingSetup
                 . '  payments profile ID \'%5$s\', %8$s'
                 . '  payments profile name \'%6$s\', %8$s'
                 . '  secondary payments profile ID \'%7$s\'.%8$s',
-                $googleAdsRow->getBillingSetup()->getIdValue(),
+                $googleAdsRow->getBillingSetup()->getIdUnwrapped(),
                 BillingSetupStatus::name($googleAdsRow->getBillingSetup()->getStatus()),
-                $paymentAccountInfo->getPaymentsAccountIdValue(),
-                $paymentAccountInfo->getPaymentsAccountNameValue(),
-                $paymentAccountInfo->getPaymentsProfileIdValue(),
-                $paymentAccountInfo->getPaymentsProfileNameValue(),
+                $paymentAccountInfo->getPaymentsAccountIdUnwrapped(),
+                $paymentAccountInfo->getPaymentsAccountNameUnwrapped(),
+                $paymentAccountInfo->getPaymentsProfileIdUnwrapped(),
+                $paymentAccountInfo->getPaymentsProfileNameUnwrapped(),
                 $paymentAccountInfo->getSecondaryPaymentsProfileId()
-                    ? $paymentAccountInfo->getSecondaryPaymentsProfileIdValue()
+                    ? $paymentAccountInfo->getSecondaryPaymentsProfileIdUnwrapped()
                     : 'None',
                 PHP_EOL
             );

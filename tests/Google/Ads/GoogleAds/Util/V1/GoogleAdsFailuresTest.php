@@ -29,7 +29,7 @@ class GoogleAdsFailureTest extends TestCase
     {
         $any = new Any();
         $any->pack(new GoogleAdsFailure());
-        
+
         $this->assertInstanceOf(GoogleAdsFailure::class, GoogleAdsFailures::fromAny($any));
     }
 
@@ -38,7 +38,7 @@ class GoogleAdsFailureTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $any = new Any();
         $any->pack(new GoogleAdsError());
-        
+
         GoogleAdsFailures::fromAny($any);
     }
 

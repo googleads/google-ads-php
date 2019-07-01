@@ -22,14 +22,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V1\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V2\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -121,13 +121,13 @@ class GetCampaignTargetingCriteria
             $campaignCriterion = $googleAdsRow->getCampaignCriterion();
             printf(
                 "Campaign criterion with ID %d was found as a %s",
-                $campaignCriterion->getCriterionIdValue(),
-                $campaignCriterion->getNegativeValue() ? 'negative ' : ''
+                $campaignCriterion->getCriterionIdUnwrapped(),
+                $campaignCriterion->getNegativeUnwrapped() ? 'negative ' : ''
             );
             if ($campaignCriterion->getType() === CriterionType::KEYWORD) {
                 printf(
                     "keyword with text '%s' and match type %s.%s",
-                    $campaignCriterion->getKeyword()->getTextValue(),
+                    $campaignCriterion->getKeyword()->getTextUnwrapped(),
                     KeywordMatchType::name($campaignCriterion->getKeyword()->getMatchType()),
                     PHP_EOL
                 );

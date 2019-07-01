@@ -22,13 +22,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -126,12 +126,12 @@ class GetHotelAdsPerformance
                 . "with hotel check-in on %s and %d day(s) of stay "
                 . "had %d impression(s) and %d average lead value (in micros) "
                 . "during the last 7 days.%s",
-                $googleAdsRow->getAdGroup()->getIdValue(),
-                $googleAdsRow->getCampaign()->getIdValue(),
+                $googleAdsRow->getAdGroup()->getIdUnwrapped(),
+                $googleAdsRow->getCampaign()->getIdUnwrapped(),
                 DayOfWeek::name($googleAdsRow->getSegments()->getHotelCheckInDayOfWeek()),
-                $googleAdsRow->getSegments()->getHotelLengthOfStayValue(),
-                $googleAdsRow->getMetrics()->getImpressionsValue(),
-                $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicrosValue(),
+                $googleAdsRow->getSegments()->getHotelLengthOfStayUnwrapped(),
+                $googleAdsRow->getMetrics()->getImpressionsUnwrapped(),
+                $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicrosUnwrapped(),
                 PHP_EOL
             );
         }

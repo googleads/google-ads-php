@@ -22,33 +22,33 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Common\WebpageConditionInfo;
-use Google\Ads\GoogleAds\V1\Common\WebpageInfo;
-use Google\Ads\GoogleAds\V1\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
-use Google\Ads\GoogleAds\V1\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V1\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V1\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
-use Google\Ads\GoogleAds\V1\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
-use Google\Ads\GoogleAds\V1\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V1\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V1\Resources\Campaign;
-use Google\Ads\GoogleAds\V1\Resources\Campaign\DynamicSearchAdsSetting;
-use Google\Ads\GoogleAds\V1\Resources\Feed;
-use Google\Ads\GoogleAds\V1\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V1\Resources\FeedItem;
-use Google\Ads\GoogleAds\V1\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V1\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V1\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V1\Services\FeedOperation;
-use Google\Ads\GoogleAds\V1\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V1\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V1\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V2\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V2\Common\WebpageInfo;
+use Google\Ads\GoogleAds\V2\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
+use Google\Ads\GoogleAds\V2\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V2\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V2\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
+use Google\Ads\GoogleAds\V2\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
+use Google\Ads\GoogleAds\V2\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V2\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V2\Resources\Campaign;
+use Google\Ads\GoogleAds\V2\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V2\Resources\Feed;
+use Google\Ads\GoogleAds\V2\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V2\Resources\FeedItem;
+use Google\Ads\GoogleAds\V2\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V2\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V2\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V2\Services\FeedOperation;
+use Google\Ads\GoogleAds\V2\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V2\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V2\Resources\FeedItemAttributeValue;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V1\ResourceNames;
+use Google\Ads\GoogleAds\Util\V2\ResourceNames;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 
@@ -214,7 +214,7 @@ class AddDynamicPageFeed
         $feedDetails = ['resource_name' => $feedResourceName];
         foreach ($feedAttributes as $feedAttribute) {
             /** @var FeedAttribute $feedAttribute */
-            $feedDetails[$feedAttribute->getNameValue()] = $feedAttribute->getIdValue();
+            $feedDetails[$feedAttribute->getNameUnwrapped()] = $feedAttribute->getIdUnwrapped();
         }
         return $feedDetails;
     }

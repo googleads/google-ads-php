@@ -22,15 +22,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
-use Google\Ads\GoogleAds\V1\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Resources\ChangeStatus;
-use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V2\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
+use Google\Ads\GoogleAds\V2\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Resources\ChangeStatus;
+use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -121,7 +121,7 @@ class GetAccountChanges
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 "On %s, change status '%s' shows resource '%s' with type '%s' and status '%s'.%s",
-                $googleAdsRow->getChangeStatus()->getLastChangeDateTimeValue(),
+                $googleAdsRow->getChangeStatus()->getLastChangeDateTimeUnwrapped(),
                 $googleAdsRow->getChangeStatus()->getResourceName(),
                 self::getResourceNameForResourceType($googleAdsRow->getChangeStatus()),
                 ChangeStatusResourceType::name(
@@ -150,19 +150,19 @@ class GetAccountChanges
         $resourceName = ''; // Default value for UNSPECIFIED or UNKNOWN resource type.
         switch ($resourceType) {
             case ChangeStatusResourceType::AD_GROUP:
-                $resourceName = $changeStatus->getAdGroupValue();
+                $resourceName = $changeStatus->getAdGroupUnwrapped();
                 break;
             case ChangeStatusResourceType::AD_GROUP_AD:
-                $resourceName = $changeStatus->getAdGroupAdValue();
+                $resourceName = $changeStatus->getAdGroupAdUnwrapped();
                 break;
             case ChangeStatusResourceType::AD_GROUP_CRITERION:
-                $resourceName = $changeStatus->getAdGroupCriterionValue();
+                $resourceName = $changeStatus->getAdGroupCriterionUnwrapped();
                 break;
             case ChangeStatusResourceType::CAMPAIGN:
-                $resourceName = $changeStatus->getCampaignValue();
+                $resourceName = $changeStatus->getCampaignUnwrapped();
                 break;
             case ChangeStatusResourceType::CAMPAIGN_CRITERION:
-                $resourceName = $changeStatus->getCampaignCriterionValue();
+                $resourceName = $changeStatus->getCampaignCriterionUnwrapped();
                 break;
         }
 

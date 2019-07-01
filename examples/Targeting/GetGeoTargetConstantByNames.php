@@ -22,14 +22,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V1\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V1\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
-use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantSuggestion;
-use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest\LocationNames;
+use Google\Ads\GoogleAds\V2\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
+use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\GeoTargetConstantSuggestion;
+use Google\Ads\GoogleAds\V2\Services\SuggestGeoTargetConstantsRequest\LocationNames;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -135,15 +135,15 @@ class GetGeoTargetConstantByNames
                 "Found '%s' ('%s','%s','%s',%s) in locale '%s' with reach %d"
                 . " for the search term '%s'.%s",
                 $geoTargetConstantSuggestion->getGeoTargetConstant()->getResourceName(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getNameValue(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getCountryCodeValue(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getTargetTypeValue(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getNameUnwrapped(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getCountryCodeUnwrapped(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getTargetTypeUnwrapped(),
                 GeoTargetConstantStatus::name(
                     $geoTargetConstantSuggestion->getGeoTargetConstant()->getStatus()
                 ),
-                $geoTargetConstantSuggestion->getLocaleValue(),
-                $geoTargetConstantSuggestion->getReachValue(),
-                $geoTargetConstantSuggestion->getSearchTermValue(),
+                $geoTargetConstantSuggestion->getLocaleUnwrapped(),
+                $geoTargetConstantSuggestion->getReachUnwrapped(),
+                $geoTargetConstantSuggestion->getSearchTermUnwrapped(),
                 PHP_EOL
             );
         }
