@@ -410,7 +410,6 @@ class AddShoppingProductAd
             $addedAdGroupCriterion->getResourceName(),
             PHP_EOL
         );
-
     }
     // [END addDefaultShoppingListingGroup]
 }
