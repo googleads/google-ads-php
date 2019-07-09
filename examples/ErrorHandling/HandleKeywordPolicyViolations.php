@@ -43,6 +43,11 @@ use Google\Protobuf\StringValue;
  * Note that the example uses an exemptible policy-violating keyword by default. If you use a
  * keyword that contains non-exemptible policy violations, they will not be sent for exemption
  * request and you will still fail to create a keyword.
+ * If you specify a keyword that doesn't violate any policies, this example will just add the
+ * keyword as usual, similar to what the AddKeywords example does.
+ *
+ * Note that once you've requested policy exemption for a keyword, when you send a request for
+ * adding it again, the request will pass like when you add a non-violating keyword.
  */
 class HandleKeywordPolicyViolations
 {
@@ -106,7 +111,7 @@ class HandleKeywordPolicyViolations
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param int $adGroupId the ad group ID to add a keyword to
      * @param string $keywordText the keyword text to add
      */
@@ -146,9 +151,6 @@ class HandleKeywordPolicyViolations
                 $response->getResults()[0]->getResourceName(),
                 PHP_EOL
             );
-            // You may hit this line when you run this example using the default keyword for the
-            // second time. This is because the keyword will already be exempted and the mutate
-            // request can thus be successful.
             return;
         } catch (GoogleAdsException $googleAdsException) {
             $exemptPolicyViolationKeys = self::fetchExemptPolicyViolationKeys($googleAdsException);
@@ -165,13 +167,15 @@ class HandleKeywordPolicyViolations
                 $exemptPolicyViolationKeys
             );
         } else {
-            print "No exemption request is sent because your keyword contained some non-exemptible"
-                . " policy violations" . PHP_EOL;
+            print "No exemption request is sent because 1) your keyword contained some"
+                . " non-exemptible policy violations or 2) there are other non-policy related"
+                . " errors thrown." . PHP_EOL;
         }
     }
 
     /**
-     * Collects all policy violation key that can be exempted for sending exemption request later.
+     * Collects all policy violation keys that can be exempted for sending a exemption request
+     * later.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @return PolicyViolationKey[] the exemptible policy violation keys
