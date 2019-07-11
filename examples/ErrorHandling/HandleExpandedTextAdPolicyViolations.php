@@ -44,7 +44,7 @@ use GPBMetadata\Google\Ads\GoogleAds\V2\Errors\PolicyFindingError;
 /**
  * This example demonstrates how to request an exemption for policy violations of an expanded text
  * ad. If the request somehow fails with exceptions that are not policy finding errors, the example
- * will stops instead of trying sending an exemption request.
+ * will stop instead of trying sending an exemption request.
  */
 class HandleExpandedTextAdPolicyViolations
 {
@@ -127,6 +127,8 @@ class HandleExpandedTextAdPolicyViolations
         // Creates an ad group ad to hold the above ad.
         $adGroupAd = new AdGroupAd([
             'ad_group' => $adGroupResourceName,
+            // Set the ad group ad to PAUSED to prevent it from immediately serving.
+            // Set to ENABLED once you've added targeting and the ad are ready to serve.
             'status' => AdGroupAdStatus::PAUSED,
             // Sets the expanded text ad info on an Ad.
             'ad' => new Ad([
@@ -145,6 +147,8 @@ class HandleExpandedTextAdPolicyViolations
             // Try sending a mutate request to add the ad group ad.
             $adGroupAdServiceClient->mutateAdGroupAds($customerId, [$adGroupAdOperation]);
         } catch (GoogleAdsException $googleAdsException) {
+            // The request will always fail because of the policy violation in the description of
+            // the ad.
             $ignorablePolicyTopics = self::fetchIgnorablePolicyTopics($googleAdsException);
         }
 
@@ -200,7 +204,7 @@ class HandleExpandedTextAdPolicyViolations
                         PolicyTopicEntryType::name($policyTopicEntry->getType()),
                         PHP_EOL
                     );
-                    // For the brevity sake, we exclude printing "policy topic evidences" and
+                    // For the sake of brevity, we exclude printing "policy topic evidences" and
                     // "policy topic constraints" here. You can fetch those data by calling:
                     // - $policyTopicEntry->getEvidences()
                     // - $policyTopicEntry->getConstraints()
