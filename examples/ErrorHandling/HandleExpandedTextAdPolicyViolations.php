@@ -105,7 +105,7 @@ class HandleExpandedTextAdPolicyViolations
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param int $adGroupId the ad group ID to add a keyword to
+     * @param int $adGroupId the ad group ID to add an expanded text ad to
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -115,6 +115,7 @@ class HandleExpandedTextAdPolicyViolations
         $adGroupResourceName =
             new StringValue(['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]);
 
+        // Creates an expanded text ad info object.
         $expandedTextAdInfo = new ExpandedTextAdInfo([
             'headline_part1' => new StringValue(['value' => 'Cruise to Mars #' . uniqid()]),
             'headline_part2' => new StringValue(['value' => 'Best Space Cruise Line']),
