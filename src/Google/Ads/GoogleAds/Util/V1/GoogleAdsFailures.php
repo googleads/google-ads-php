@@ -31,6 +31,9 @@ final class GoogleAdsFailures
      */
     public static function fromAny(Any $any)
     {
+        // This initialization is needed to populate the descriptor pool with the GoogleAdsFailure
+        // class and prevent exceptions from being thrown.
+        $tmpVar = new GoogleAdsFailure();
         $ret = $any->unpack();
         if (!$ret instanceof GoogleAdsFailure) {
             throw new \InvalidArgumentException("Message did not contain a GoogleAdsFailure");
