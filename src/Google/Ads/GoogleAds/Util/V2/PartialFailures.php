@@ -18,7 +18,6 @@
 namespace Google\Ads\GoogleAds\Util\V2;
 
 use Google\Protobuf\Internal\Message;
-use Google\Ads\GoogleAds\V2\Errors\GoogleAdsFailure;
 
 final class PartialFailures
 {

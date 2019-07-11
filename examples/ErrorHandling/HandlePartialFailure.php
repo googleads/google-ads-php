@@ -27,7 +27,6 @@ use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\V2\GoogleAdsErrors;
-use Google\Ads\GoogleAds\Util\V2\GoogleAdsFailures;
 use Google\Ads\GoogleAds\Util\V2\PartialFailures;
 use Google\Ads\GoogleAds\Util\V2\ResourceNames;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;

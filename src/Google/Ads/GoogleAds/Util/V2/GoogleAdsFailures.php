@@ -23,6 +23,9 @@ use Google\Ads\GoogleAds\V2\Errors\GoogleAdsFailure;
 
 final class GoogleAdsFailures
 {
+
+    private static $unusedGoogleAdsFailure;
+
     /**
      * Unpacks a single GoogleAdsFailure from an Any instance.
      *
@@ -31,6 +34,12 @@ final class GoogleAdsFailures
      */
     public static function fromAny(Any $any)
     {
+        // This initialization is needed to populate the descriptor pool with the GoogleAdsFailure
+        // class and prevent exceptions from being thrown.
+        if (!isset(self::$unusedGoogleAdsFailure)) {
+            self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
+        }
+        
         $ret = $any->unpack();
         if (!$ret instanceof GoogleAdsFailure) {
             throw new \InvalidArgumentException("Message did not contain a GoogleAdsFailure");
