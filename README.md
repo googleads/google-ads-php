@@ -208,7 +208,7 @@ There are two implementations available for PHP
 1. C (native): for better performance
 1. PHP (pure): to get started easily
 
-By default implementation of Protobuf used is C. This might not be suitable for some users
+By default, the C implementation is used. This might not be suitable for some users
 who then need to use the PHP implementation instead. The PHP implementation
 is automatically installed like any other [`googleapis/gax-php`](https://github.com/googleapis/gax-php)
 dependency via Composer but it is only used if the C implementation is not
