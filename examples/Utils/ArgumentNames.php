@@ -46,12 +46,14 @@ final class ArgumentNames
     const LOCATION_ID = 'locationId';
     const LOCATION_NAMES = 'locationNames';
     const MANAGER_CUSTOMER_ID = 'managerCustomerId';
+    const MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'marketingImageAssetResourceName';
     const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
     const PAGE_URL = 'pageUrl';
     const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     const RECOMMENDATION_ID = 'recommendationId';
     const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
     const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
+    const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'squareMarketingImageAssetResourceName';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::AD_ID => 'The ad ID',
@@ -78,6 +80,7 @@ final class ArgumentNames
         self::LOCATION_ID => 'The location ID',
         self::LOCATION_NAMES => 'The list of location names',
         self::MANAGER_CUSTOMER_ID => 'The manager customer ID',
+        self::MARKETING_IMAGE_ASSET_RESOURCE_NAME => 'The resource name of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
         self::PAGE_URL => 'The page URL',
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
@@ -86,6 +89,8 @@ final class ArgumentNames
         self::SHOULD_CREATE_DEFAULT_LISTING_GROUP =>
             'Whether it should create a default listing group',
         self::SHOULD_REPLACE_EXISTING_TREE =>
-            'Whether it should replace the existing listing group tree on an ad group'
+            'Whether it should replace the existing listing group tree on an ad group',
+        self::SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =>
+            'The resource name of square marketing image asset'
     ];
 }
