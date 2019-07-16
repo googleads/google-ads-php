@@ -208,13 +208,14 @@ There are two implementations available for PHP
 1. C (native): for better performance
 1. PHP (pure): to get started easily
 
-By default, the C implementation is used. This might not be suitable for some users
-who then need to use the PHP implementation instead. The PHP implementation
-is automatically installed like any other [`googleapis/gax-php`](https://github.com/googleapis/gax-php)
-dependency via Composer but it is only used if the C implementation is not
-installed and configured.
+In the [Getting Started section](#getting-started), we provide steps to use the C implementation.
+But some users might prefer to use the PHP implementation
+instead because of security for example. The PHP implementation is automatically
+installed like any other [`googleapis/gax-php`](https://github.com/googleapis/gax-php)
+dependency via Composer but it is only used if the C implementation is not installed
+and configured.
 
-### Determine which  implementation is being used
+### Determine which implementation is being used
 
 The easiest way is to run `php -i | grep protobuf`
 
