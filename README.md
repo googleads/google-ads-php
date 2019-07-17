@@ -28,7 +28,6 @@ API](https://developers.google.com/google-ads/api/docs/start).
         1.  Add a line `extension=protobuf.so` to the `php.ini` file.
         1.  Run `php -i | grep protobuf` in a terminal: it is well installed
         and configured if it returns something
-    of [this page](https://grpc.io/docs/quickstart/php.html).
 *   This library depends on [Composer](https://getcomposer.org/). If you don't
     have it installed on your computer yet, follow the [installation guide for
     Linux/Unix/OS
