@@ -12,22 +12,6 @@ API](https://developers.google.com/google-ads/api/docs/start).
 
 ## Requirements
 
-*   Two PHP extensions need to be installed to use the library at runtime
-    *   gRPC: follow the section `Install the gRPC PHP extension`
-    of [this page](https://grpc.io/docs/quickstart/php.html)
-        1.  Install the extension using the command `sudo pecl install grpc`.
-        1.  Add a line `extension=grpc.so` to the `php.ini` file.
-        1.  Run `php -i | grep grpc` in a terminal: it is well installed
-        and configured if it returns something
-    *   Protobuf: follow the section `C implementation` under
-        `Protobuf Runtime library` of [this
-        page](https://grpc.io/docs/quickstart/php.html). If you encounter any error
-        you can skip this step and the PHP implementation will be used instead. More details
-        can be found in the [Protobuf section](#protobuf). 
-        1.  Install the extension using the command `sudo pecl install protobuf`.
-        1.  Add a line `extension=protobuf.so` to the `php.ini` file.
-        1.  Run `php -i | grep protobuf` in a terminal: it is well installed
-        and configured if it returns something
 *   This library depends on [Composer](https://getcomposer.org/). If you don't
     have it installed on your computer yet, follow the [installation guide for
     Linux/Unix/OS
@@ -38,9 +22,24 @@ API](https://developers.google.com/google-ads/api/docs/start).
     have Composer installed
     [globally](https://getcomposer.org/doc/00-intro.md#globally), thus, your
     installed Composer is available on the command line as `composer`.
-*   The library dependencies can be found in
-    [composer.json](composer.json) of this library and are managed
-    by Composer.
+*   System requirements and dependencies can be found in
+    [composer.json](composer.json) of this library.
+    *   To install the gRPC PHP extension, follow the section
+        **Install the gRPC PHP extension**
+        of [this page](https://grpc.io/docs/quickstart/php.html).
+        1.  Install the extension using the command `sudo pecl install grpc`.
+        1.  Add a line `extension=grpc.so` to the `php.ini` file.
+        1.  Run `php -i | grep grpc` in a terminal: it is well installed
+            and configured if it returns something
+    *   To install the Protobuf PHP extension, follow the section **C implementation** under
+        **Protobuf Runtime library** of [this
+        page](https://grpc.io/docs/quickstart/php.html). If you encounter any error
+        you can skip this step and the PHP implementation will be used instead. More details
+        can be found in the [Protobuf section](#protobuf). 
+        1.  Install the extension using the command `sudo pecl install protobuf`.
+        1.  Add a line `extension=protobuf.so` to the `php.ini` file.
+        1.  Run `php -i | grep protobuf` in a terminal: it is well installed
+            and configured if it returns something
 *   You need a [developer
     token](https://developers.google.com/google-ads/api/docs/first-call/dev-token)
     to connect to the Google Ads API.
