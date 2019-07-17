@@ -308,7 +308,7 @@ class AddSmartDisplayAd
         string $marketingImageAssetResourceName = null,
         string $squareMarketingImageAssetResourceName = null
     ) {
-        // Creates a new image asset for marketing image and square marketing image if there is no
+        // Creates a new image asset for marketing image and square marketing image if there are no
         // assets' resource names specified.
         $marketingImageAssetResourceName = $marketingImageAssetResourceName ?:
             self::createImageAsset(
@@ -325,48 +325,50 @@ class AddSmartDisplayAd
                 'Square Marketing Image'
             );
 
-        // Creates an ad group ad with the ad info related to the responsive display ad.
+        // Creates a responsive display ad info.
+        $responsiveDisplayAdInfo = new ResponsiveDisplayAdInfo([
+            // Sets some basic required information for the responsive display ad.
+            'headlines' => [
+                new AdTextAsset(['text' => new StringValue(['value' => 'Travel'])])
+            ],
+            'long_headline' => new AdTextAsset([
+                'text' => new StringValue(['value' => 'Travel the World'])
+            ]),
+            'descriptions' => [
+                new AdTextAsset([
+                    'text' => new StringValue(['value' => 'Take to the air!'])
+                ])
+            ],
+            'business_name' => new StringValue(['value' => 'Google']),
+            // Sets the marketing image and square marketing image to the previously created
+            // image assets.
+            'marketing_images' => [
+                new AdImageAsset([
+                    'asset' => new StringValue([
+                        'value' => $marketingImageAssetResourceName
+                    ])
+                ])
+            ],
+            'square_marketing_images' => [
+                new AdImageAsset([
+                    'asset' => new StringValue([
+                        'value' => $squareMarketingImageAssetResourceName
+                    ])
+                ])
+            ],
+            // Optional: Sets call to action text, price prefix and promotion text.
+            'call_to_action_text' => new StringValue(['value' => 'Shop Now']),
+            'price_prefix' => new StringValue(['value' => 'as low as']),
+            'promo_text' => new StringValue(['value' => 'Free shipping!']),
+        ]);
+
+        // Creates an ad group ad with the created responsive display ad info.
         $adGroupAd = new AdGroupAd([
             'ad_group' => $adGroupResourceName,
             'status' => AdGroupAdStatus::PAUSED,
             'ad' => new Ad([
                 'final_urls' => [new StringValue(['value' => 'https://www.example.com'])],
-                // Creates a responsive display ad info.
-                'responsive_display_ad' => new ResponsiveDisplayAdInfo([
-                    // Sets some basic required information for the responsive display ad.
-                    'headlines' => [
-                        new AdTextAsset(['text' => new StringValue(['value' => 'Travel'])])
-                    ],
-                    'long_headline' => new AdTextAsset([
-                        'text' => new StringValue(['value' => 'Travel the World'])
-                    ]),
-                    'descriptions' => [
-                        new AdTextAsset([
-                            'text' => new StringValue(['value' => 'Take to the air!'])
-                        ])
-                    ],
-                    'business_name' => new StringValue(['value' => 'Google']),
-                    // Sets the marketing image and square marketing image to the previously created
-                    // image assets.
-                    'marketing_images' => [
-                        new AdImageAsset([
-                            'asset' => new StringValue([
-                                'value' => $marketingImageAssetResourceName
-                            ])
-                        ])
-                    ],
-                    'square_marketing_images' => [
-                        new AdImageAsset([
-                            'asset' => new StringValue([
-                                'value' => $squareMarketingImageAssetResourceName
-                            ])
-                        ])
-                    ],
-                    // Optional: Sets call to action text, price prefix and promotion text.
-                    'call_to_action_text' => new StringValue(['value' => 'Shop Now']),
-                    'price_prefix' => new StringValue(['value' => 'as low as']),
-                    'promo_text' => new StringValue(['value' => 'Free shipping!']),
-                ])
+                'responsive_display_ad' => $responsiveDisplayAdInfo
             ])
         ]);
 
