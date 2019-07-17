@@ -21,7 +21,9 @@ API](https://developers.google.com/google-ads/api/docs/start).
         and configured if it returns something
     *   Protobuf: follow the section `C implementation` under
         `Protobuf Runtime library` of [this
-        page](https://grpc.io/docs/quickstart/php.html)
+        page](https://grpc.io/docs/quickstart/php.html). If you encounter any error
+        you can skip this step and the PHP implementation will be used instead. More details
+        can be found in the [Protobuf section](#protobuf). 
         1.  Install the extension using the command `sudo pecl install protobuf`.
         1.  Add a line `extension=protobuf.so` to the `php.ini` file.
         1.  Run `php -i | grep protobuf` in a terminal: it is well installed
@@ -203,30 +205,8 @@ for a particular service using one of the `get...ServiceClient()` methods.
 [gRPC](https://grpc.io/about/), a core dependency of the Google Ads API for request and
 response transport.
 
-There are two implementations available for PHP
-
-1. C (native): for better performance
-1. PHP (pure): to get started easily
-
-In the [Getting Started section](#getting-started), we provide steps to use the C implementation.
-But some users might prefer to use the PHP implementation
-instead because of security for example. The PHP implementation is automatically
-installed like any other [`googleapis/gax-php`](https://github.com/googleapis/gax-php)
-dependency via Composer but it is only used if the C implementation is not installed
-and configured.
-
-### Determine which implementation is being used
-
-The easiest way is to run `php -i | grep protobuf`
-
-*   If not empty, you're using the C implementation
-*   Otherwise, you're _not_ using the C implementation and the Google Ads API
-    PHP library will rely on the PHP implementation (if installed correctly
-    via Composer)
-
-### Switch back from C to PHP implementation
-
-Comment out the `extension=protobuf.so` line of the `php.ini` file.
+See the [Protobuf guide](https://developers.google.com/google-ads/api/docs/client-libs/php/protobuf)
+for more information.
 
 ## Running in a Docker container
 
