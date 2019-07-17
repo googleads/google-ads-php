@@ -18,14 +18,12 @@
 namespace Google\Ads\GoogleAds\Util\V1;
 
 use Google\Protobuf\Any;
+use Google\Protobuf\DescriptorPool;
 use Google\Rpc\Status;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure;
 
 final class GoogleAdsFailures
 {
-    
-    private static $unusedGoogleAdsFailure;
-
     /**
      * Unpacks a single GoogleAdsFailure from an Any instance.
      *
@@ -36,8 +34,10 @@ final class GoogleAdsFailures
     {
         // This initialization is needed to populate the descriptor pool with the GoogleAdsFailure
         // class and prevent exceptions from being thrown.
-        if (!isset(self::$unusedGoogleAdsFailure)) {
-            self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
+        if (is_null(
+            DescriptorPool::getGeneratedPool()->getDescriptorByClassName(GoogleAdsFailure::class)
+        )) {
+            new GoogleAdsFailure();
         }
 
         $ret = $any->unpack();
