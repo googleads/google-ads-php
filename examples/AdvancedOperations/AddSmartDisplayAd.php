@@ -74,13 +74,10 @@ use Google\Protobuf\StringValue;
 class AddSmartDisplayAd
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    // See the description of the 'marketing_images' field in ResponsiveDisplayAdInfo.php for
-    // specifications of marketing images. This can be used to create an image asset for your
-    // customer account only once.
+    // See the descriptions of the 'marketing_images' and 'square_marketing_images' fields in
+    // ResponsiveDisplayAdInfo.php for specifications of marketing and square marketing images.
+    // They can be used to create an image asset for your customer account only once.
     const MARKETING_IMAGE_URL = 'https://goo.gl/3b9Wfh';
-    // See the description of the 'square_marketing_images' field in ResponsiveDisplayAdInfo.php for
-    // specifications of square marketing images. This can be used to create an image asset for your
-    // customer account only once.
     const SQUARE_MARKETING_IMAGE_URL = 'https://goo.gl/mtt54n';
 
     public static function main()
@@ -181,6 +178,7 @@ class AddSmartDisplayAd
         GoogleAdsClient $googleAdsClient,
         int $customerId
     ) {
+        // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
             'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
@@ -199,6 +197,7 @@ class AddSmartDisplayAd
             [$campaignBudgetOperation]
         );
 
+        // Prints out some information about the created campaign budget.
         $campaignBudgetResourceName = $campaignBudgetResponse->getResults()[0]->getResourceName();
         printf("Added budget named '%s'.%s", $campaignBudgetResourceName, PHP_EOL);
 
@@ -209,7 +208,7 @@ class AddSmartDisplayAd
      * Creates a Smart Display campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param string $campaignBudgetResourceName the resource name of the campaign budget
      * @return string the resource name of the newly created campaign
      */
@@ -328,32 +327,24 @@ class AddSmartDisplayAd
         // Creates a responsive display ad info.
         $responsiveDisplayAdInfo = new ResponsiveDisplayAdInfo([
             // Sets some basic required information for the responsive display ad.
-            'headlines' => [
-                new AdTextAsset(['text' => new StringValue(['value' => 'Travel'])])
-            ],
+            'headlines' => [new AdTextAsset(['text' => new StringValue(['value' => 'Travel'])])],
             'long_headline' => new AdTextAsset([
                 'text' => new StringValue(['value' => 'Travel the World'])
             ]),
             'descriptions' => [
-                new AdTextAsset([
-                    'text' => new StringValue(['value' => 'Take to the air!'])
-                ])
+                new AdTextAsset(['text' => new StringValue(['value' => 'Take to the air!'])])
             ],
             'business_name' => new StringValue(['value' => 'Google']),
             // Sets the marketing image and square marketing image to the previously created
             // image assets.
             'marketing_images' => [
                 new AdImageAsset([
-                    'asset' => new StringValue([
-                        'value' => $marketingImageAssetResourceName
-                    ])
+                    'asset' => new StringValue(['value' => $marketingImageAssetResourceName])
                 ])
             ],
             'square_marketing_images' => [
                 new AdImageAsset([
-                    'asset' => new StringValue([
-                        'value' => $squareMarketingImageAssetResourceName
-                    ])
+                    'asset' => new StringValue(['value' => $squareMarketingImageAssetResourceName])
                 ])
             ],
             // Optional: Sets call to action text, price prefix and promotion text.
