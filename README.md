@@ -24,7 +24,22 @@ API](https://developers.google.com/google-ads/api/docs/start).
     installed Composer is available on the command line as `composer`.
 *   System requirements and dependencies can be found in
     [composer.json](composer.json) of this library.
-    *   To install the gRPC PHP extension, see [this page](https://grpc.io/docs/quickstart/php.html).
+    *   To install the gRPC PHP extension, follow the section
+        **Install the gRPC PHP extension**
+        of [this page](https://grpc.io/docs/quickstart/php.html).
+        1.  Install the extension using the command `sudo pecl install grpc`.
+        1.  Add a line `extension=grpc.so` to the `php.ini` file.
+        1.  Run `php -i | grep grpc` in a terminal: it is well installed
+            and configured if it returns something
+    *   To install the Protobuf PHP extension, follow the section **C implementation** under
+        **Protobuf Runtime library** of [this
+        page](https://grpc.io/docs/quickstart/php.html). If you encounter any error
+        you can skip this step and the PHP implementation will be used instead. More details
+        can be found in the [Protobuf section](#protobuf). 
+        1.  Install the extension using the command `sudo pecl install protobuf`.
+        1.  Add a line `extension=protobuf.so` to the `php.ini` file.
+        1.  Run `php -i | grep protobuf` in a terminal: it is well installed
+            and configured if it returns something
 *   You need a [developer
     token](https://developers.google.com/google-ads/api/docs/first-call/dev-token)
     to connect to the Google Ads API.
@@ -181,6 +196,15 @@ $googleAdsClient = (new GoogleAdsClientBuilder())
 
 Once you have an instance of `GoogleAdsClient`, you can obtain a service client
 for a particular service using one of the `get...ServiceClient()` methods.
+
+## Protobuf
+
+[Protobuf](https://developers.google.com/protocol-buffers/docs/overview) is used by
+[gRPC](https://grpc.io/about/), a core dependency of the Google Ads API for request and
+response transport.
+
+See the [Protobuf guide](https://developers.google.com/google-ads/api/docs/client-libs/php/protobuf)
+for more information.
 
 ## Running in a Docker container
 

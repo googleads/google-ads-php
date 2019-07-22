@@ -17,7 +17,9 @@
   },
   "suggest": {
     "php-64bit": ">=7.1",
-    "react/http": "To run the AuthenticateInWebApplication.php example"
+    "react/http": "To run the AuthenticateInWebApplication.php example",
+    "ext-protobuf": "For better performance, use the C implementation of Protobuf",
+    "google/protobuf": "In case the C implementation of Protobuf is not suitable, use the PHP one"
   },
   "license": "Apache-2.0",
   "autoload": {
