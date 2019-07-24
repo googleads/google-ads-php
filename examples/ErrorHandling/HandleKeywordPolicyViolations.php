@@ -246,8 +246,8 @@ class HandleKeywordPolicyViolations
         int $customerId,
         AdGroupCriterionServiceClient $adGroupCriterionServiceClient,
         AdGroupCriterionOperation $adGroupCriterionOperation,
-        array $exemptPolicyViolationKeys)
-    {
+        array $exemptPolicyViolationKeys
+    ) {
         print "Try adding a keyword again by requesting exemption for its policy"
             . " violations." . PHP_EOL;
         $adGroupCriterionOperation->setExemptPolicyViolationKeys($exemptPolicyViolationKeys);
