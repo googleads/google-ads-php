@@ -28,6 +28,7 @@ final class ArgumentNames
     const BASE_CAMPAIGN_ID = 'baseCampaignId';
     const BID_MODIFIER_VALUE = 'bidModifierValue';
     const BILLING_SETUP_ID = 'billingSetupId';
+    const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
     const CAMPAIGN_BUDGET_ID = 'campaignBudgetId';
     const CAMPAIGN_ID = 'campaignId';
     const CAMPAIGN_IDS = 'campaignIds';
@@ -37,6 +38,8 @@ final class ArgumentNames
     const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
     const CRITERION_ID = 'criterionId';
     const CUSTOMER_ID = 'customerId';
+    const GMB_ACCESS_TOKEN = 'gmbAccessToken';
+    const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     const KEYWORD_PLAN_ID = 'keywordPlanId';
     const KEYWORD_TEXT = 'keywordText';
@@ -62,6 +65,7 @@ final class ArgumentNames
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
+        self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the GMB account',
         self::CAMPAIGN_BUDGET_ID => 'The campaign budget ID',
         self::CAMPAIGN_ID => 'The campaign ID',
         self::CAMPAIGN_IDS => 'The campaign IDs',
@@ -71,6 +75,8 @@ final class ArgumentNames
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
+        self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
+        self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
