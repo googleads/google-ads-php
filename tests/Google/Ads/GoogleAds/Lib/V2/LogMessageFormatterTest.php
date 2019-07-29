@@ -61,7 +61,7 @@ class LogMessageFormatterTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\LogMessageFormatter::formatSummary()
+     * @covers \Google\Ads\GoogleAds\Lib\V2\LogMessageFormatter::formatSummary()
      */
     public function testFormatSummary()
     {
@@ -81,7 +81,7 @@ class LogMessageFormatterTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\LogMessageFormatter::formatSummary()
+     * @covers \Google\Ads\GoogleAds\Lib\V2\LogMessageFormatter::formatSummary()
      */
     public function testFormatSummaryWithFailureRequest()
     {
@@ -109,7 +109,7 @@ class LogMessageFormatterTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\LogMessageFormatter::formatSummary()
+     * @covers \Google\Ads\GoogleAds\Lib\V2\LogMessageFormatter::formatSummary()
      */
     public function testFormatSummaryWithNoCustomerIdInRequest()
     {
@@ -132,7 +132,7 @@ class LogMessageFormatterTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\LogMessageFormatter::formatDetail()
+     * @covers \Google\Ads\GoogleAds\Lib\V2\LogMessageFormatter::formatDetail()
      */
     public function testFormatDetail()
     {
@@ -160,7 +160,7 @@ class LogMessageFormatterTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\LogMessageFormatter::formatDetail()
+     * @covers \Google\Ads\GoogleAds\Lib\V2\LogMessageFormatter::formatDetail()
      */
     public function testFormatDetailWithFailureRequest()
     {
