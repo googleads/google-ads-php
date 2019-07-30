@@ -124,7 +124,7 @@ class ResourceNamesTest extends TestCase
     const CUSTOMER_ID = 1234567890;
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAccountBudgetProposal()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAccountBudgetProposal()
      */
     public function testGetNameForAccountBudgetProposal()
     {
@@ -145,7 +145,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAccountBudget()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAccountBudget()
      */
     public function testGetNameForAccountBudget()
     {
@@ -163,7 +163,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupAdLabel()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupAdLabel()
      */
     public function testGetNameForAdGroupAdLabel()
     {
@@ -188,7 +188,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupAd()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupAd()
      */
     public function testGetNameForAdGroupAd()
     {
@@ -207,7 +207,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupAudienceView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupAudienceView()
      */
     public function testGetNameForAdGroupAudienceView()
     {
@@ -234,7 +234,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupBidModifier()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupBidModifier()
      */
     public function testGetNameForAdGroupBidModifier()
     {
@@ -257,7 +257,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupCriterionLabel()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupCriterionLabel()
      */
     public function testGetNameForAdGroupCriterionLabel()
     {
@@ -290,7 +290,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupCriterion()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupCriterion()
      */
     public function testGetNameForAdGroupCriterion()
     {
@@ -313,7 +313,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupCriterionSimulation()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupCriterionSimulation()
      */
     public function testGetNameForAdGroupCriterionSimulation()
     {
@@ -355,7 +355,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupExtensionSetting()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupExtensionSetting()
      */
     public function testGetNameForAdGroupExtensionSetting()
     {
@@ -382,7 +382,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupFeed()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupFeed()
      */
     public function testGetNameForAdGroupFeed()
     {
@@ -401,7 +401,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupLabel()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupLabel()
      */
     public function testGetNameForAdGroupLabel()
     {
@@ -420,7 +420,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroup()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroup()
      */
     public function testGetNameForAdGroup()
     {
@@ -437,7 +437,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdGroupSimulation()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdGroupSimulation()
      */
     public function testGetNameForAdGroupSimulation()
     {
@@ -476,7 +476,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdParameter()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdParameter()
      */
     public function testGetNameForAdParameter()
     {
@@ -509,7 +509,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAdScheduleView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAdScheduleView()
      */
     public function testGetNameForAdScheduleView()
     {
@@ -532,7 +532,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAgeRangeView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAgeRangeView()
      */
     public function testGetNameForAgeRangeView()
     {
@@ -555,7 +555,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forAsset()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forAsset()
      */
     public function testGetNameForAsset()
     {
@@ -572,7 +572,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forBiddingStrategy()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forBiddingStrategy()
      */
     public function testGetNameForBiddingStrategy()
     {
@@ -590,7 +590,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forBillingSetup()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forBillingSetup()
      */
     public function testGetNameForBillingSetup()
     {
@@ -608,7 +608,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignAudienceView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignAudienceView()
      */
     public function testGetNameForCampaignAudienceView()
     {
@@ -631,7 +631,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignBidModifier()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignBidModifier()
      */
     public function testGetNameForCampaignBidModifier()
     {
@@ -654,7 +654,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignBudget()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignBudget()
      */
     public function testGetNameForCampaignBudget()
     {
@@ -672,7 +672,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignCriterion()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignCriterion()
      */
     public function testGetNameForCampaignCriterion()
     {
@@ -695,7 +695,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignCriterionSimulation()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignCriterionSimulation()
      */
     public function testGetNameForCampaignCriterionSimulation()
     {
@@ -737,7 +737,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignDraft()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignDraft()
      */
     public function testGetNameForCampaignDraft()
     {
@@ -760,7 +760,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignExperiment()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignExperiment()
      */
     public function testGetNameForCampaignExperiment()
     {
@@ -781,7 +781,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignExtensionSetting()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignExtensionSetting()
      */
     public function testGetNameForCampaignExtensionSetting()
     {
@@ -811,7 +811,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignFeed()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignFeed()
      */
     public function testGetNameForCampaignFeed()
     {
@@ -838,7 +838,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignLabel()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignLabel()
      */
     public function testGetNameForCampaignLabel()
     {
@@ -865,7 +865,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaign()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaign()
      */
     public function testGetNameForCampaign()
     {
@@ -883,7 +883,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCampaignSharedSet()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCampaignSharedSet()
      */
     public function testGetNameForCampaignSharedSet()
     {
@@ -910,7 +910,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCarrierConstant()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCarrierConstant()
      */
     public function testGetNameForCarrierConstant()
     {
@@ -926,7 +926,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forChangeStatus()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forChangeStatus()
      */
     public function testGetNameForChangeStatus()
     {
@@ -944,7 +944,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forClickView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forClickView()
      */
     public function testGetNameForClickView()
     {
@@ -963,7 +963,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forConversionAction()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forConversionAction()
      */
     public function testGetNameForConversionAction()
     {
@@ -981,7 +981,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomInterest()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomInterest()
      */
     public function testGetNameForCustomInterest()
     {
@@ -999,7 +999,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomerClientLink()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomerClientLink()
      */
     public function testGetNameForCustomerClientLink()
     {
@@ -1029,7 +1029,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomerClient()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomerClient()
      */
     public function testGetNameForCustomerClient()
     {
@@ -1047,7 +1047,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomerExtensionSetting()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomerExtensionSetting()
      */
     public function testGetNameForCustomerExtensionSetting()
     {
@@ -1068,7 +1068,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomerFeed()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomerFeed()
      */
     public function testGetNameForCustomerFeed()
     {
@@ -1086,7 +1086,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomerLabel()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomerLabel()
      */
     public function testGetNameForCustomerLabel()
     {
@@ -1104,7 +1104,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomerManagerLink()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomerManagerLink()
      */
     public function testGetNameForCustomerManagerLink()
     {
@@ -1131,7 +1131,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomerNegativeCriterion()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomerNegativeCriterion()
      */
     public function testGetNameForCustomerNegativeCriterion()
     {
@@ -1149,7 +1149,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forCustomer()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forCustomer()
      */
     public function testGetNameForCustomer()
     {
@@ -1164,7 +1164,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forDetailPlacementView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forDetailPlacementView()
      */
     public function testGetNameForDetailPlacementView()
     {
@@ -1188,7 +1188,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forDisplayKeywordView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forDisplayKeywordView()
      */
     public function testGetNameForDisplayKeywordView()
     {
@@ -1212,7 +1212,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forDomainCategory()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forDomainCategory()
      */
     public function testGetNameForDomainCategory()
     {
@@ -1245,7 +1245,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forExpandedLandingPageView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forExpandedLandingPageView()
      */
     public function testGetNameForExpandedLandingPageView()
     {
@@ -1269,7 +1269,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forExtensionFeedItem()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forExtensionFeedItem()
      */
     public function testGetNameForExtensionFeedItem()
     {
@@ -1287,7 +1287,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forFeedItem()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forFeedItem()
      */
     public function testGetNameForFeedItem()
     {
@@ -1311,7 +1311,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forFeedItemTarget()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forFeedItemTarget()
      */
     public function testGetNameForFeedItemTarget()
     {
@@ -1347,7 +1347,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forFeedMapping()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forFeedMapping()
      */
     public function testGetNameForFeedMapping()
     {
@@ -1371,7 +1371,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forFeed()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forFeed()
      */
     public function testGetNameForFeed()
     {
@@ -1388,7 +1388,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forGenderView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forGenderView()
      */
     public function testGetNameForGenderView()
     {
@@ -1412,7 +1412,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forGeoTargetConstant()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forGeoTargetConstant()
      */
     public function testGetNameForGeoTargetConstant()
     {
@@ -1428,7 +1428,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forGeographicView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forGeographicView()
      */
     public function testGetNameForGeographicView()
     {
@@ -1452,7 +1452,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forGoogleAdsField()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forGoogleAdsField()
      */
     public function testGetNameForGoogleAdsField()
     {
@@ -1468,7 +1468,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forGroupPlacementView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forGroupPlacementView()
      */
     public function testGetNameForGroupPlacementView()
     {
@@ -1492,7 +1492,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forHotelGroupView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forHotelGroupView()
      */
     public function testGetNameForHotelGroupView()
     {
@@ -1516,7 +1516,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forHotelPerformanceView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forHotelPerformanceView()
      */
     public function testGetNameForHotelPerformanceView()
     {
@@ -1533,7 +1533,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forKeywordPlanAdGroup()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forKeywordPlanAdGroup()
      */
     public function testGetNameForKeywordPlanAdGroup()
     {
@@ -1555,7 +1555,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forKeywordPlanCampaign()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forKeywordPlanCampaign()
      */
     public function testGetNameForKeywordPlanCampaign()
     {
@@ -1577,7 +1577,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forKeywordPlanKeyword()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forKeywordPlanKeyword()
      */
     public function testGetNameForKeywordPlanKeyword()
     {
@@ -1599,7 +1599,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forKeywordPlanNegativeKeyword()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forKeywordPlanNegativeKeyword()
      */
     public function testGetNameForKeywordPlanNegativeKeyword()
     {
@@ -1627,7 +1627,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forKeywordPlan()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forKeywordPlan()
      */
     public function testGetNameForKeywordPlan()
     {
@@ -1649,7 +1649,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forLabel()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forLabel()
      */
     public function testGetNameForLabel()
     {
@@ -1666,7 +1666,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forLandingPageView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forLandingPageView()
      */
     public function testGetNameForLandingPageView()
     {
@@ -1688,7 +1688,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forLanguageConstant()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forLanguageConstant()
      */
     public function testGetNameForLanguageConstant()
     {
@@ -1704,7 +1704,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forLocationView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forLocationView()
      */
     public function testGetNameForLocationView()
     {
@@ -1727,7 +1727,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forManagedPlacementView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forManagedPlacementView()
      */
     public function testGetNameForManagedPlacementView()
     {
@@ -1751,7 +1751,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forMediaFile()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forMediaFile()
      */
     public function testGetNameForMediaFile()
     {
@@ -1769,7 +1769,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forMerchantCenterLink()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forMerchantCenterLink()
      */
     public function testGetNameForMerchantCenterLink()
     {
@@ -1787,7 +1787,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forMobileAppCategoryConstant()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forMobileAppCategoryConstant()
      */
     public function testGetNameForMobileAppCategoryConstant()
     {
@@ -1803,7 +1803,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forMobileDeviceConstant()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forMobileDeviceConstant()
      */
     public function testGetNameForMobileDeviceConstant()
     {
@@ -1819,7 +1819,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forMutateJob()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forMutateJob()
      */
     public function testGetNameForMutateJob()
     {
@@ -1837,7 +1837,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forOperatingSystemVersionConstant()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forOperatingSystemVersionConstant()
      */
     public function testGetNameForOperatingSystemVersionConstant()
     {
@@ -1853,7 +1853,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forPaidOrganicSearchTermView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forPaidOrganicSearchTermView()
      */
     public function testGetNameForPaidOrganicSearchTermView()
     {
@@ -1886,7 +1886,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forParentalStatusView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forParentalStatusView()
      */
     public function testGetNameForParentalStatusView()
     {
@@ -1910,7 +1910,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forProductBiddingCategoryConstant()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forProductBiddingCategoryConstant()
      */
     public function testGetNameForProductBiddingCategoryConstant()
     {
@@ -1940,7 +1940,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forProductGroupView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forProductGroupView()
      */
     public function testGetNameForProductGroupView()
     {
@@ -1964,7 +1964,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forRecommendation()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forRecommendation()
      */
     public function testGetNameForRecommendation()
     {
@@ -1982,7 +1982,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forRemarketingAction()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forRemarketingAction()
      */
     public function testGetNameForRemarketingAction()
     {
@@ -2000,7 +2000,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forSearchTermView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forSearchTermView()
      */
     public function testGetNameForSearchTermView()
     {
@@ -2033,7 +2033,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forSharedCriterion()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forSharedCriterion()
      */
     public function testGetNameForSharedCriterion()
     {
@@ -2057,7 +2057,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forSharedSet()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forSharedSet()
      */
     public function testGetNameForSharedSet()
     {
@@ -2075,7 +2075,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forShoppingPerformanceView()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forShoppingPerformanceView()
      */
     public function testGetNameForShoppingPerformanceView()
     {
@@ -2091,7 +2091,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forTopicConstant()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forTopicConstant()
      */
     public function testGetNameForTopicConstant()
     {
@@ -2108,7 +2108,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forUserInterest()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forUserInterest()
      */
     public function testGetNameForUserInterest()
     {
@@ -2126,7 +2126,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forUserList()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forUserList()
      */
     public function testGetNameForUserList()
     {
@@ -2144,7 +2144,7 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\ResourceNames::forVideo()
+     * @covers \Google\Ads\GoogleAds\Util\V1\ResourceNames::forVideo()
      */
     public function testGetNameForVideo()
     {

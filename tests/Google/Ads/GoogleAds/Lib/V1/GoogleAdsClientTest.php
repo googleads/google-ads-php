@@ -57,8 +57,8 @@ class GoogleAdsClientTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClient::getGoogleAdsClientOptions
+     * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient::getGoogleAdsClientOptions
      */
     public function testGetClientOptions()
     {
@@ -95,8 +95,8 @@ class GoogleAdsClientTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClient::getGoogleAdsClientOptions
+     * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient::getGoogleAdsClientOptions
      */
     public function testNullLoginCustomerIdNotAppearInClientOptions()
     {
