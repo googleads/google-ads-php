@@ -10,13 +10,13 @@ branches:
   - /.*/
 
 env:
-  - GOOGLE_APPLICATION_CREDENTIALS=/root/emptycredentials.json
+  - GOOGLE_APPLICATION_CREDENTIALS=~/emptycredentials.json
 
 before_script:
   - composer install
   - pecl install grpc
   - "echo 'extension=grpc.so' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/grpc.ini"
-  - "sudo echo '{\"type\": \"authorized_user\",\"client_id\": \"\",\"client_secret\": \"\",\"refresh_token\": \"\"}' >> /root/emptycredentials.json"
+  - "sudo echo '{\"type\": \"authorized_user\",\"client_id\": \"\",\"client_secret\": \"\",\"refresh_token\": \"\"}' >> $GOOGLE_APPLICATION_CREDENTIALS"
 
 script:
   - vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover=coverage.xml
