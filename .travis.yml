@@ -16,7 +16,7 @@ before_script:
   - composer install
   - pecl install grpc
   - echo 'extension=grpc.so' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/grpc.ini
-  - echo '{"type": "authorized_user","client_id": "","client_secret": "","refresh_token": ""}' >> /root/emptycredentials.json
+  - echo "{\"type\": \"authorized_user\",\"client_id\": \"\",\"client_secret\": \"\",\"refresh_token\": \"\"}" >> /root/emptycredentials.json
 
 script:
   - vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover=coverage.xml
