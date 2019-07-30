@@ -152,8 +152,11 @@ class LogMessageFormatterTest extends TestCase
             $actualOutput
         );
         $this->assertContains('Host: googleads.api.com', $actualOutput);
-        $this->assertRegExp('/Response: {"results":\[{"campaign":{"id":"?1"?}},'
-            . '{"campaign":{"id":"?2"?}},{"campaign":{"id":"?3"?}}\]}/', $actualOutput);
+        $this->assertContains(
+            'Response: {"results":[{"campaign":{"id":"1"}},{"campaign":{"id":"2"}},'
+            . '{"campaign":{"id":"3"}}]}',
+            $actualOutput
+        );
     }
 
     /**
