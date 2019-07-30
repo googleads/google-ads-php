@@ -5,6 +5,10 @@ php:
   - 7.2
   - 7.3
 
+branches:
+  only:
+  - /.*/
+
 env:
   - GOOGLE_APPLICATION_CREDENTIALS=/root/emptycredentials.json
 
