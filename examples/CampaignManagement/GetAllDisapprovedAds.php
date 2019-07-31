@@ -97,11 +97,14 @@ class GetAllDisapprovedAds
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the campaign ID for which campaign ads will be retrieved
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $campaignId)
-    {
+    public static function runExample(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        int $campaignId
+    ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves all ads of the specified campaign ID.
         $query = 'SELECT ad_group_ad.ad.id, '

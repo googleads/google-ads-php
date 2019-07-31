@@ -80,18 +80,18 @@ class CreateCompleteCampaignBothApisPhase4
     // The default page size for search queries.
     const PAGE_SIZE = 1000;
 
-/**
+    /**
      * Runs the CreateCompleteCampaignBothApisPhase4 example.
      * @param AdWordsServices $adWordsServices the AdWords services
      * @param AdWordsSession $adWordsSession the AdWords session
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      */
     public static function runExample(
         AdWordsServices $adWordsServices,
         AdWordsSession $adWordsSession,
         GoogleAdsClient $googleAdsClient,
-        string $customerId
+        int $customerId
     ) {
         $campaignBudget = self::createCampaignBudget($googleAdsClient, $customerId);
         $campaign = self::createCampaign($googleAdsClient, $customerId, $campaignBudget);
@@ -108,12 +108,12 @@ class CreateCompleteCampaignBothApisPhase4
     /**
      * Creates a campaign budget.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @return CampaignBudget the newly created campaign budget
      */
     private static function createCampaignBudget(
         GoogleAdsClient $googleAdsClient,
-        string $customerId
+        int $customerId
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
@@ -149,13 +149,13 @@ class CreateCompleteCampaignBothApisPhase4
     /**
      * Gets a campaign budget.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param string $resourceName the resource name of the campaign budget to retrieve
      * @return CampaignBudget the campaign budget
      */
     private static function getCampaignBudget(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         string $resourceName
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -172,13 +172,13 @@ class CreateCompleteCampaignBothApisPhase4
     /**
      * Creates a campaign.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param CampaignBudget $campaignBudget the campaign budget
      * @return Campaign the newly created campaign
      */
     private static function createCampaign(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         CampaignBudget $campaignBudget
     ) {
         $trueValue = new BoolValue(['value' => true]);
@@ -232,13 +232,13 @@ class CreateCompleteCampaignBothApisPhase4
     /**
      * Gets a campaign.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param string $campaignResourceName the resource name of the campaign to retrieve
      * @return Campaign the campaign
      */
     private static function getCampaign(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         string $campaignResourceName
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -255,13 +255,13 @@ class CreateCompleteCampaignBothApisPhase4
     /**
      * Creates an ad group.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param Campaign $campaign the campaign
      * @return AdGroup the newly created ad group
      */
     private static function createAdGroup(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         Campaign $campaign
     ) {
         // Constructs an ad group and sets an optional CPC value.
@@ -293,13 +293,13 @@ class CreateCompleteCampaignBothApisPhase4
     /**
      * Gets an ad group.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param string $adGroupResourceName the resource name of the ad group to retrieve
      * @return AdGroup the ad group
      */
     private static function getAdGroup(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         string $adGroupResourceName
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -316,12 +316,12 @@ class CreateCompleteCampaignBothApisPhase4
     /**
      * Creates text ads.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param AdGroup $adGroup the ad group
      */
     private static function createTextAds(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         AdGroup $adGroup
     ) {
         $operations = [];
@@ -378,13 +378,13 @@ class CreateCompleteCampaignBothApisPhase4
     /**
      * Gets an array of ads by their resource names.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param int $customerId the client customer ID
      * @param array $adResourceNames the resource names of the ads to retrieve
      * @return array an array of ads
      */
     private static function getAds(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         array $adResourceNames
     ) {
         $resourceNames = join(",", array_map(function ($resourceName) {

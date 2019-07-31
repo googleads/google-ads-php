@@ -100,14 +100,14 @@ class UpdateAdGroup
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ID of ad group to update
      * @param int $cpcBidMicroAmount the bid amount in micros to use for the ad group bid
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId,
+        int $customerId,
+        int $adGroupId,
         $cpcBidMicroAmount
     ) {
         // Creates an ad group object with the specified resource name and other changes.

@@ -96,7 +96,7 @@ class AddCampaignDraft
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param int $baseCampaignId the campaign ID to base the draft on
      */
     public static function runExample(

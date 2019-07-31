@@ -108,7 +108,7 @@ class AddGmailAd
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID to add an ad to
      */
     public static function runExample(
@@ -124,7 +124,7 @@ class AddGmailAd
      * Adds the media files by using the class constants.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return array the media file resource names
      */
     private static function addMediaFiles(
@@ -186,7 +186,7 @@ class AddGmailAd
      * Adds the Gmail ad.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      * @param array $mediaFiles the media file resource names
      */

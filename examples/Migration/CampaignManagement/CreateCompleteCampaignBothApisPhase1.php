@@ -89,7 +89,7 @@ class CreateCompleteCampaignBothApisPhase1
      * @param AdWordsServices $adWordsServices the AdWords services
      * @param AdWordsSession $adWordsSession the AdWords session
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param string $customerId the customer ID
      */
     public static function runExample(
         AdWordsServices $adWordsServices,
@@ -120,7 +120,7 @@ class CreateCompleteCampaignBothApisPhase1
     /**
      * Creates a campaign budget.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param string $customerId the customer ID
      * @return CampaignBudget the newly created campaign budget
      */
     private static function createCampaignBudget(
@@ -161,13 +161,13 @@ class CreateCompleteCampaignBothApisPhase1
     /**
      * Gets a campaign budget.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the client customer ID without hyphens
+     * @param string $customerId the customer ID
      * @param string $resourceName the resource name of the campaign budget to retrieve
      * @return CampaignBudget the campaign budget
      */
     private static function getCampaignBudget(
         GoogleAdsClient $googleAdsClient,
-        string $customerId,
+        int $customerId,
         string $resourceName
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();

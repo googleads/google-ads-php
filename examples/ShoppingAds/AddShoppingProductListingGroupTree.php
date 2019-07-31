@@ -121,7 +121,7 @@ class AddShoppingProductListingGroupTree
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      * @param bool $shouldReplaceExistingTree true if it should replace the existing listing group
      *     tree on the ad group, if it already exists. The example will throw a
@@ -130,9 +130,9 @@ class AddShoppingProductListingGroupTree
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId,
-        $shouldReplaceExistingTree
+        int $customerId,
+        int $adGroupId,
+        bool $shouldReplaceExistingTree
     ) {
         // 1) Optional: Remove the existing listing group tree, if it already exists on the ad
         // group.
@@ -280,14 +280,14 @@ class AddShoppingProductListingGroupTree
      * group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ID of ad group that the existing listing group tree will be
      *     removed from
      */
     private static function removeListingGroupTree(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId
+        int $customerId,
+        int $adGroupId
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves a listing group tree.
@@ -333,7 +333,7 @@ class AddShoppingProductListingGroupTree
      * Creates a new criterion containing a subdivision listing group node. If the parent ad group
      * criterion resource name is not specified, this method creates a root node.
      *
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      * @param string|null $parentAdGroupCriterionResourceName the resource name of the parent of
      *     this criterion. If null, this method will create a root of the tree
@@ -342,9 +342,9 @@ class AddShoppingProductListingGroupTree
      * @return AdGroupCriterion the ad group criterion that contains the listing group root node
      */
     private static function createListingGroupSubdivision(
-        $customerId,
-        $adGroupId,
-        $parentAdGroupCriterionResourceName = null,
+        int $customerId,
+        int $adGroupId,
+        string $parentAdGroupCriterionResourceName = null,
         ListingDimensionInfo $listingDimensionInfo = null
     ) {
         static $tempId = 0;
@@ -386,7 +386,7 @@ class AddShoppingProductListingGroupTree
     /**
      * Creates a new criterion containing a biddable unit listing group node.
      *
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      * @param string $parentAdGroupCriterionResourceName the resource name of the parent of this
      *     criterion
@@ -398,11 +398,11 @@ class AddShoppingProductListingGroupTree
      *     group node
      */
     private static function createListingGroupUnitBiddable(
-        $customerId,
-        $adGroupId,
-        $parentAdGroupCriterionResourceName,
+        int $customerId,
+        int $adGroupId,
+        string $parentAdGroupCriterionResourceName,
         ListingDimensionInfo $listingDimensionInfo,
-        $cpcBidMicros
+        int $cpcBidMicros
     ) {
         // Note: There are two approaches for creating new unit nodes:
         // (1) Set the ad group resource name on the criterion (no temporary ID required).

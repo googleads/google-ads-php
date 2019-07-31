@@ -99,9 +99,9 @@ class AddCampaigns
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId)
+    public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a single shared budget to be used by the campaigns added below.
         $budgetResourceName =
@@ -163,10 +163,10 @@ class AddCampaigns
      * Creates a new campaign budget in the specified client account.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return string the resource name of the newly created budget
      */
-    private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, $customerId)
+    private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a campaign budget.
         $budget = new CampaignBudget([

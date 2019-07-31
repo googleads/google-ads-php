@@ -106,11 +106,14 @@ class HandlePartialFailure
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId a campaign ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $campaignId)
-    {
+    public static function runExample(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        int $campaignId
+    ) {
         $response = self::createAdGroups($googleAdsClient, $customerId, $campaignId);
         self::checkIfPartialFailureErrorExists($response);
         self::printResults($response);
@@ -120,14 +123,14 @@ class HandlePartialFailure
      * Create ad groups by enabling partial failure mode.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId a campaign ID
      * @return MutateAdGroupsResponse
      */
     private static function createAdGroups(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignId
+        int $customerId,
+        int $campaignId
     ) {
         $campaignResourceName =
             new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]);

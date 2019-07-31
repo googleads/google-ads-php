@@ -101,15 +101,15 @@ class UpdateKeyword
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID that the criterion ID belongs to
      * @param int $criterionId the ID of the ad group criterion to update
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId,
-        $criterionId
+        int $customerId,
+        int $adGroupId,
+        int $criterionId
     ) {
         // Creates an ad group criterion with the proper resource name and any other changes.
         $adGroupCriterion = new AdGroupCriterion([

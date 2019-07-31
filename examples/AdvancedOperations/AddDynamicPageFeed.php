@@ -119,7 +119,7 @@ class AddDynamicPageFeed
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the campaign ID
      * @param int $adGroupId the ad group ID
      */
@@ -150,7 +150,7 @@ class AddDynamicPageFeed
     * Creates a feed.
     *
     * @param GoogleAdsClient googleAdsClient the Google Ads API client
-    * @param int customerId the client customer ID in which to create the feed
+    * @param int $customerId the customer ID in which to create the feed
     * @return array the names and IDs of feed attributes
     */
     private static function createFeed(
@@ -194,7 +194,7 @@ class AddDynamicPageFeed
      * Retrieves details about a feed.
      *
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the client customer ID
+     * @param int customerId the customer ID
      * @param string feedResourceName the resource name of the feed
      * @return array the feed details containing the feed's resource name and the feed attributes'
      * names and values
@@ -223,7 +223,7 @@ class AddDynamicPageFeed
      * Creates a feed mapping for a given feed.
      *
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the client customer ID
+     * @param int customerId the customer ID
      * @param array feedDetails the names and IDs of feed attributes
      */
     private static function createFeedMapping(
@@ -274,9 +274,9 @@ class AddDynamicPageFeed
      * Creates feed items for a given feed.
      *
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the client customer ID
-     * @param array feedDetails the names and IDs of feed attributes
-     * @param string dsaPageUrlLabel the label for the DSA page URLs
+     * @param int $customerId the customer ID
+     * @param array $feedDetails the names and IDs of feed attributes
+     * @param string $dsaPageUrlLabel the label for the DSA page URLs
      */
     private function createFeedItems(
         GoogleAdsClient $googleAdsClient,
@@ -335,9 +335,9 @@ class AddDynamicPageFeed
      * Updates a campaign to set the DSA feed.
      *
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the client customer ID
-     * @param array feedDetails the names and IDs of feed attributes
-     * @param int campaignId the campaign ID of the campaign to update
+     * @param int $customerId the customer ID
+     * @param array $feedDetails the names and IDs of feed attributes
+     * @param int $campaignId the campaign ID of the campaign to update
      */
     private static function updateCampaignDsaSetting(
         GoogleAdsClient $googleAdsClient,
@@ -387,8 +387,8 @@ class AddDynamicPageFeed
      * is not a DSA campaign.
      *
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the client customer ID
-     * @param int campaignId the campaign ID of the campaign to update
+     * @param int $customerId the customer ID
+     * @param int $campaignId the campaign ID of the campaign to update
      * @return DynamicSearchAdsSetting the DSA settings for the campaign
      */
     private static function getDsaSetting(
@@ -435,9 +435,9 @@ class AddDynamicPageFeed
      * Creates an ad group criterion targeting the DSA label.
      *
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
-     * @param string dsaPageUrlLabel the label for the DSA page URLs
+     * @param string $dsaPageUrlLabel the label for the DSA page URLs
      */
     public static function addDsaTarget(
         GoogleAdsClient $googleAdsClient,

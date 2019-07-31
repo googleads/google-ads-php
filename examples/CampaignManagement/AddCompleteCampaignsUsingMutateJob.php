@@ -131,9 +131,9 @@ class AddCompleteCampaignsUsingMutateJob
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId)
+    public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $mutateJobServiceClient = $googleAdsClient->getMutateJobServiceClient();
 
@@ -152,7 +152,7 @@ class AddCompleteCampaignsUsingMutateJob
      * Creates a new mutate job for the specified customer ID.
      *
      * @param MutateJobServiceClient $mutateJobServiceClient the mutate job service client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return string the resource name of the created mutate job
      */
     private static function createMutateJob(
@@ -175,7 +175,7 @@ class AddCompleteCampaignsUsingMutateJob
      * that you can use to upload more operations in the future.
      *
      * @param MutateJobServiceClient $mutateJobServiceClient the mutate job service client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $mutateJobResourceName the resource name of mutate job to which the mutate job
      *     operations will be added
      */
@@ -275,7 +275,7 @@ class AddCompleteCampaignsUsingMutateJob
      * Builds all operations for creating a complete campaign and return an array of their
      * corresponding mutate operations.
      *
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return MutateOperation[] the mutate operations to be added to a mutate job
      */
     private static function buildAllOperations(int $customerId)
@@ -344,7 +344,7 @@ class AddCompleteCampaignsUsingMutateJob
     /**
      * Builds a new campaign budget operation for the specified customer ID.
      *
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return CampaignBudgetOperation the campaign budget operation
      */
     private static function buildCampaignBudgetOperation(int $customerId)
@@ -367,7 +367,7 @@ class AddCompleteCampaignsUsingMutateJob
     /**
      * Builds new campaign operations for the specified customer ID.
      *
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $campaignBudgetResourceName the resource name of campaign budget to be used
      *     to create campaigns
      * @return CampaignOperation[] the campaign operations
@@ -437,7 +437,7 @@ class AddCompleteCampaignsUsingMutateJob
     /**
      * Builds new ad group operations for the specified customer ID.
      *
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param CampaignOperation[] $campaignOperations the campaign operations to be used to create
      *     ad groups
      * @return AdGroupOperation[] the ad group operations

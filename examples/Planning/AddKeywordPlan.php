@@ -107,9 +107,9 @@ class AddKeywordPlan
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId)
+    public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $keywordPlanResource = self::createKeywordPlan(
             $googleAdsClient,
@@ -145,12 +145,12 @@ class AddKeywordPlan
      * Creates a keyword plan.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @return string the newly created keyword plan resource
      */
     private static function createKeywordPlan(
         GoogleAdsClient $googleAdsClient,
-        $customerId
+        int $customerId
     ) {
         // Creates a keyword plan.
         $keywordPlan = new KeywordPlan([
@@ -183,14 +183,14 @@ class AddKeywordPlan
      * Creates the campaign for the keyword plan.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $keywordPlanResource the keyword plan resource
      * @return string the newly created campaign resource
      */
     private static function createKeywordPlanCampaign(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $keywordPlanResource
+        int $customerId,
+        string $keywordPlanResource
     ) {
         // Creates a keyword plan campaign.
         $keywordPlanCampaign = new KeywordPlanCampaign([
@@ -237,7 +237,7 @@ class AddKeywordPlan
      * Creates the ad group for the keyword plan.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $planCampaignResource the resource name of the campaign under which the
      *     ad group is created
      * @return string the newly created ad group resource
@@ -245,8 +245,8 @@ class AddKeywordPlan
 
     private static function createKeywordPlanAdGroup(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $planCampaignResource
+        int $customerId,
+        string $planCampaignResource
     ) {
         // Creates a keyword plan ad group.
         $keywordPlanAdGroup = new KeywordPlanAdGroup([
@@ -275,14 +275,14 @@ class AddKeywordPlan
      * Creates keywords for the keyword plan.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $planAdGroupResource the resource name of the ad group under which the
      *     keywords are created
      */
     private static function createKeywordPlanKeywords(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $planAdGroupResource
+        int $customerId,
+        string $planAdGroupResource
     ) {
         // Creates the keywords for the keyword plan.
         $keywordPlanKeyword1 = new KeywordPlanKeyword([
@@ -335,14 +335,14 @@ class AddKeywordPlan
      * Creates negative keywords for the keyword plan.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $planCampaignResource the resource name of the campaign under which
      *     the keywords are created
      */
     private static function createKeywordPlanNegativeKeywords(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $planCampaignResource
+        int $customerId,
+        string $planCampaignResource
     ) {
         // Creates a negative keyword for the keyword plan.
         $keywordPlanNegativeKeyword = new KeywordPlanNegativeKeyword([

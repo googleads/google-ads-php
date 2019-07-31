@@ -98,13 +98,13 @@ class DismissRecommendation
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $recommendationId the recommendation ID to dismiss
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $recommendationId
+        int $customerId,
+        string $recommendationId
     ) {
         $recommendationResourceName =
             ResourceNames::forRecommendation($customerId, $recommendationId);

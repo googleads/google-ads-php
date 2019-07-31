@@ -112,8 +112,8 @@ class GetGeoTargetConstantByNames
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         array $locationNames,
-        $locale,
-        $countryCode
+        string $locale,
+        string $countryCode
     ) {
         $geoTargetConstantServiceClient = $googleAdsClient->getGeoTargetConstantServiceClient();
 

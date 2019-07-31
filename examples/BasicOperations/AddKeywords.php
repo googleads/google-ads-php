@@ -99,15 +99,15 @@ class AddKeywords
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID to add a keyword to
      * @param string $keywordText the keyword text to add
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId,
-        $keywordText
+        int $customerId,
+        int $adGroupId,
+        string $keywordText
     ) {
         // Configures the keyword text and match type settings.
         $keywordInfo = new KeywordInfo([

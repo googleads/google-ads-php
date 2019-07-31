@@ -102,15 +102,15 @@ class AddAdGroupBidModifier
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID to add an ad group bid modifier to
      * @param float $bidModifierValue the bid modifier value to set
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId,
-        $bidModifierValue
+        int $customerId,
+        int $adGroupId,
+        float $bidModifierValue
     ) {
         // Creates an ad group bid modifier for mobile devices with the specified ad group ID and
         // bid modifier value.
