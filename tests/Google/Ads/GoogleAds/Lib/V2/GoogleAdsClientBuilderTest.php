@@ -51,8 +51,8 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::from
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::from
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      */
     public function testBuildClientFromConfiguration()
     {
@@ -82,7 +82,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::from
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::from
      */
     public function testBuildFromDefaults()
     {
@@ -108,7 +108,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildFailsWithoutDeveloperToken()
@@ -119,7 +119,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildFailsWithInvalidEndpointUrl()
@@ -132,7 +132,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildFailsWithoutOAuth2Credential()
@@ -143,7 +143,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      * @dataProvider provideInvalidProxyURIs
      * @expectedException \InvalidArgumentException
      */
@@ -168,7 +168,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      */
     public function testBuild()
     {
@@ -189,7 +189,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      */
     public function testBuildDefaults()
     {
@@ -206,7 +206,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      */
     public function testBuildWithLoginCustomerId()
     {
@@ -220,7 +220,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      */
     public function testBuildWithNullLoginCustomerId()
     {
@@ -233,7 +233,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildWithNegativeLoginCustomerId()
@@ -246,7 +246,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      * @dataProvider provideValidProxyURIs
      */
     public function testBuildWithValidProxyURIs(string $proxy)
@@ -271,7 +271,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      */
     public function testBuildWithoutLogLevelSetsDefault()
     {
@@ -284,7 +284,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\GoogleAdsClientBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildWithInvalidLogLevelThrowsException()

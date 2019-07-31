@@ -8,4 +8,15 @@
     <logging>
         <log type="coverage-text" target="php://stdout"/>
     </logging>
+
+    <filter>
+        <whitelist>
+            <directory>src</directory>
+            <exclude>
+                <directory>src/Google/Ads/GoogleAds/V*</directory>
+                <directory>src/Google/Ads/GoogleAds/Lib/Testing</directory>
+                <directory>src/Google/Ads/GoogleAds/Util/Testing</directory>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
