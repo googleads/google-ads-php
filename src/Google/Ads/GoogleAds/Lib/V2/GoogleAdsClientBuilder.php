@@ -227,12 +227,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
 
         // For the proxy URI using filter_var is ok because the GRPC library expects the URI
         // in a very specific format.
-        if (!empty($this->proxy) &&
-            filter_var(
-                $this->proxy,
-                FILTER_VALIDATE_URL,
-                FILTER_FLAG_SCHEME_REQUIRED | FILTER_FLAG_HOST_REQUIRED
-            ) === false) {
+        if (!empty($this->proxy) && filter_var($this->proxy, FILTER_VALIDATE_URL) === false) {
             throw new InvalidArgumentException(
                 'Proxy must be a valid URI in the form protocol://user:pass@host:port'
             );
