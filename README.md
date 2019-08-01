@@ -1,5 +1,13 @@
 # Google Ads API Client Library for PHP
 
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg)](https://www.php.net/supported-versions.php)
+[![Latest Stable
+Version](https://img.shields.io/packagist/v/googleads/google-ads-php.svg)](https://packagist.org/packages/googleads/google-ads-php)
+[![Build
+Status](https://travis-ci.org/googleads/google-ads-php.svg?branch=master)](https://travis-ci.org/googleads/google-ads-php) 
+[![Total Downloads](https://poser.pugx.org/googleads/google-ads-php/downloads.svg)](https://packagist.org/packages/googleads/google-ads-php)
+[![License](https://poser.pugx.org/googleads/google-ads-php/license.svg)](https://packagist.org/packages/googleads/google-ads-php)
+
 This project hosts the PHP client library for the [Google Ads
 API](https://developers.google.com/google-ads/api/docs/start).
 
