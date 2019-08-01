@@ -29,6 +29,7 @@ final class ArgumentNames
     const BID_MODIFIER_VALUE = 'bidModifierValue';
     const BILLING_SETUP_ID = 'billingSetupId';
     const CAMPAIGN_BUDGET_ID = 'campaignBudgetId';
+    const CAMPAIGN_EXPERIMENT_ID = 'campaignExperimentId';
     const CAMPAIGN_ID = 'campaignId';
     const CAMPAIGN_IDS = 'campaignIds';
     const CHECK_IN_DAY_CRITERION_ID = 'checkInDayCriterionId';
@@ -37,6 +38,7 @@ final class ArgumentNames
     const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
     const CRITERION_ID = 'criterionId';
     const CUSTOMER_ID = 'customerId';
+    const DRAFT_ID = 'draftId';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     const KEYWORD_PLAN_ID = 'keywordPlanId';
     const KEYWORD_TEXT = 'keywordText';
@@ -63,6 +65,7 @@ final class ArgumentNames
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
         self::CAMPAIGN_BUDGET_ID => 'The campaign budget ID',
+        self::CAMPAIGN_EXPERIMENT_ID => 'The campaign experiment ID',
         self::CAMPAIGN_ID => 'The campaign ID',
         self::CAMPAIGN_IDS => 'The campaign IDs',
         self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
@@ -71,6 +74,7 @@ final class ArgumentNames
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
+        self::DRAFT_ID => 'The draft ID',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
