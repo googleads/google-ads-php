@@ -102,7 +102,7 @@ class CreateCampaignExperiment
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
      * @param int $baseCampaignId the base campaign ID
-     * @param int $draftId the draft resource name used to create an experiment
+     * @param int $draftId the draft ID used to create an experiment
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
