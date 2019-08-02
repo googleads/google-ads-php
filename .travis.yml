@@ -21,3 +21,5 @@ script:
   - vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover=coverage.xml
   - vendor/bin/phpcs --standard=phpcs_ruleset.xml -np
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
