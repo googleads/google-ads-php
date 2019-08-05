@@ -132,48 +132,47 @@ class AddGoogleMyBusinessLocationExtensions
         string $gmbAccessToken,
         string $businessAccountIdentifier
     ) {
-//        // Creates a feed that will sync to the Google My Business account specified by
-//        // $gmbEmailAddress. Do not add feed attributes to this object as Google Ads will add them
-//        // automatically because this will be a system generated feed.
-//        $gmbFeed = new Feed([
-//            'name' => new StringValue(['value' => 'Google My Business feed #' . uniqid()]),
-//            'origin' => FeedOrigin::GOOGLE,
-//            'places_location_feed_data' => new PlacesLocationFeedData([
-//                'email_address' => new StringValue(['value' => $gmbEmailAddress]),
-//                'business_account_id' => new StringValue(['value' => $businessAccountIdentifier]),
-//                // Used to filter Google My Business listings by labels. If entries exist in
-//                // label_filters, only listings that have at least one of the labels set are
-//                // candidates to be synchronized into FeedItems. If no entries exist in
-//                // label_filters, then all listings are candidates for syncing.
-//                'label_filters' => [new StringValue(['value' => 'Stores in New York'])],
-//                // Sets the authentication info to be able to connect Google Ads to the GMB
-//                // account.
-//                'oauth_info' => new OAuthInfo([
-//                    'http_method' => new StringValue(['value' => 'GET']),
-//                    'http_request_url' => new StringValue(['value' => self::GOOGLE_ADS_SCOPE]),
-//                    'http_authorization_header' =>
-//                        new StringValue(['value' => 'Bearer ' . $gmbAccessToken])
-//                ])
-//
-//            ])
-//        ]);
-//        // Creates a feed operation.
-//        $feedOperation = new FeedOperation();
-//        $feedOperation->setCreate($gmbFeed);
-//
-//        // Issues a mutate request to add the feed and print its information.
-//        // Since it is a system generated feed, Google Ads will automatically:
-//        // 1. Set up the feed attributes on the feed.
-//        // 2. Set up a feed mapping that associates the feed attributes of the feed with the
-//        //    placeholder fields of the LOCATION placeholder type.
-//        $feedServiceClient = $googleAdsClient->getFeedServiceClient();
-//        $response = $feedServiceClient->mutateFeeds(
-//            $customerId,
-//            [$feedOperation]
-//        );
-//        $gmbFeedResourceName = $response->getResults()[0]->getResourceName();
-//        printf("GMB feed created with resource name: %s.%s", $gmbFeedResourceName, PHP_EOL);
-        $gmbFeedResourceName = 'sdfasd';
+        // Creates a feed that will sync to the Google My Business account specified by
+        // $gmbEmailAddress. Do not add feed attributes to this object as Google Ads will add them
+        // automatically because this will be a system generated feed.
+        $gmbFeed = new Feed([
+            'name' => new StringValue(['value' => 'Google My Business feed #' . uniqid()]),
+            'origin' => FeedOrigin::GOOGLE,
+            'places_location_feed_data' => new PlacesLocationFeedData([
+                'email_address' => new StringValue(['value' => $gmbEmailAddress]),
+                'business_account_id' => new StringValue(['value' => $businessAccountIdentifier]),
+                // Used to filter Google My Business listings by labels. If entries exist in
+                // label_filters, only listings that have at least one of the labels set are
+                // candidates to be synchronized into FeedItems. If no entries exist in
+                // label_filters, then all listings are candidates for syncing.
+                'label_filters' => [new StringValue(['value' => 'Stores in New York'])],
+                // Sets the authentication info to be able to connect Google Ads to the GMB
+                // account.
+                'oauth_info' => new OAuthInfo([
+                    'http_method' => new StringValue(['value' => 'GET']),
+                    'http_request_url' => new StringValue(['value' => self::GOOGLE_ADS_SCOPE]),
+                    'http_authorization_header' =>
+                        new StringValue(['value' => 'Bearer ' . $gmbAccessToken])
+                ])
+
+            ])
+        ]);
+        // Creates a feed operation.
+        $feedOperation = new FeedOperation();
+        $feedOperation->setCreate($gmbFeed);
+
+        // Issues a mutate request to add the feed and print its information.
+        // Since it is a system generated feed, Google Ads will automatically:
+        // 1. Set up the feed attributes on the feed.
+        // 2. Set up a feed mapping that associates the feed attributes of the feed with the
+        //    placeholder fields of the LOCATION placeholder type.
+        $feedServiceClient = $googleAdsClient->getFeedServiceClient();
+        $response = $feedServiceClient->mutateFeeds(
+            $customerId,
+            [$feedOperation]
+        );
+        $gmbFeedResourceName = $response->getResults()[0]->getResourceName();
+        printf("GMB feed created with resource name: '%s'.%s", $gmbFeedResourceName, PHP_EOL);
         // Creates a customer feed that associates the feed with this customer for the LOCATION
         // placeholder type.
         $customerFeed = new CustomerFeed([
@@ -211,8 +210,8 @@ class AddGoogleMyBusinessLocationExtensions
                     [$customerFeedOperation]
                 );
                 printf(
-                    "Customer feed created with resource name: %s.%s",
-                    $addedCustomerFeed,
+                    "Customer feed created with resource name: '%s'.%s",
+                    $addedCustomerFeed->getResults()[0]->getResourceName(),
                     PHP_EOL
                 );
             } catch (GoogleAdsException $googleAdsException) {
