@@ -140,7 +140,7 @@ class CreateCampaignExperiment
 
         // pollUntilComplete() implements a default back-off policy for retrying. You can tweak the
         // retrying parameters like the maximum polling interval to use by passing them as an array
-        // to the pollUntilComplete() function. Visits the OperationResponse.php file for more
+        // to the pollUntilComplete() function. Visit the OperationResponse.php file for more
         // details.
         $operationResponse->pollUntilComplete();
 
