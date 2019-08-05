@@ -135,7 +135,7 @@ class AddShoppingSmartAd
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param int $merchantCenterAccountId the Merchant Center account ID
      * @param bool $shouldCreateDefaultListingGroup indicates if a default listing
      *     group should be created for the ad group. Set to false if the listing group will be
@@ -182,7 +182,7 @@ class AddShoppingSmartAd
      * Creates a new campaign budget for Smart Shopping ads in the specified client account.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return string the resource name of the newly created budget
      */
     private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, int $customerId)
@@ -225,7 +225,7 @@ class AddShoppingSmartAd
      * Creates a new shopping campaign for Smart Shopping ads in the specified client account.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $budgetResourceName the resource name of budget for a new campaign
      * @param int $merchantCenterAccountId the Merchant Center account ID
      * @return string the resource name of the newly created campaign
@@ -298,7 +298,7 @@ class AddShoppingSmartAd
      * Creates a new ad group in the specified Smart Shopping campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $campaignResourceName the resource name of the campaign that
      *     the new ad group will belong to
      * @return string the resource name of the newly created ad group
@@ -341,7 +341,7 @@ class AddShoppingSmartAd
      * Creates a new ad group ad in the specified Smart Shopping ad group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $adGroupResourceName the resource name of the ad group that
      *     the new ad group ad will belong to
      */
@@ -382,7 +382,7 @@ class AddShoppingSmartAd
      * API Shopping guide: https://developers.google.com/google-ads/api/docs/shopping-ads/overview.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $adGroupResourceName the resource name of the ad group that
      *     the new listing group will belong to
      */

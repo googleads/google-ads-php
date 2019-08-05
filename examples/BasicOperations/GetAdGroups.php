@@ -92,12 +92,15 @@ class GetAdGroups
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the campaign ID for which ad groups will be retrieved. If `null`,
      *     returns from all campaigns
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $campaignId)
-    {
+    public static function runExample(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        int $campaignId
+    ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves all ad groups.
         $query = 'SELECT campaign.id, ad_group.id, ad_group.name FROM ad_group';

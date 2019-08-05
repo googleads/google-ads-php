@@ -100,15 +100,15 @@ class AddCampaignBidModifier
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the ID of the campaign where the bid modifier will be added
      * @param float $bidModifierValue the value of the bid modifier to add
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignId,
-        $bidModifierValue
+        int $customerId,
+        int $campaignId,
+        float $bidModifierValue
     ) {
         // Creates a campaign bid modifier.
         $campaignBidModifier = new CampaignBidModifier([

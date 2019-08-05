@@ -40,6 +40,10 @@ class RunExamples
     const CLIENT_ID = 'INSERT_YOUR_OAUTH2_CLIENT_ID_HERE';
     const CLIENT_SECRET = 'INSERT_YOUR_OAUTH2_CLIENT_SECRET_HERE';
     const REFRESH_TOKEN = 'INSERT_YOUR_OAUTH2_REFRESH_TOKEN_HERE';
+    // Replace the below string with your (client) customer ID as "an integer". Although the AdWords
+    // API library can handle a client customer ID as a string with hyphens included, this variable
+    // is also shared with the Google Ads API client library, which accepts only customer ID as an
+    // integer.
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     const PAGE_SIZE = 1000;
 

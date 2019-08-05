@@ -135,7 +135,7 @@ class AddSmartDisplayAd
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string|null $marketingImageAssetResourceName optional, the resource name of marketing
      *     image asset
      * @param string|null $squareMarketingImageAssetResourceName optional, the resource name of
@@ -171,7 +171,7 @@ class AddSmartDisplayAd
      * Creates a campaign budget.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return string the resource name of newly created campaign budget
      */
     private static function createCampaignBudget(
@@ -208,7 +208,7 @@ class AddSmartDisplayAd
      * Creates a Smart Display campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $campaignBudgetResourceName the resource name of the campaign budget
      * @return string the resource name of the newly created campaign
      */
@@ -257,7 +257,7 @@ class AddSmartDisplayAd
      * Creates an ad group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $campaignResourceName the resource name of the campaign
      * @return string the resource name of the newly created ad group
      */
@@ -293,7 +293,7 @@ class AddSmartDisplayAd
      * Creates a responsive display ad, which is a recommended ad type for Smart Display campaigns.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $adGroupResourceName the ad group resource name
      * @param string|null $marketingImageAssetResourceName optional, the resource name of marketing
      *     image asset
@@ -384,7 +384,7 @@ class AddSmartDisplayAd
      * Creates an image asset to be used for creating ads.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $imageUrl the image URL to be downloaded
      * @param string $imageName the image name
      * @return string the created image asset's resource name

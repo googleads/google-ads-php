@@ -96,13 +96,13 @@ class UpdateCampaign
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the ID of campaign to update
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignId
+        int $customerId,
+        int $campaignId
     ) {
         // Creates a campaign object with the specified resource name and other changes.
         $campaign = new Campaign([

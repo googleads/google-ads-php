@@ -94,12 +94,15 @@ class GetKeywords
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID for which keywords will be retrieved. If `null`,
      *     returns from all ad groups
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $adGroupId)
-    {
+    public static function runExample(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        int $adGroupId
+    ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves keywords.
         $query =

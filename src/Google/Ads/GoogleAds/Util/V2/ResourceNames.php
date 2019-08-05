@@ -1364,7 +1364,7 @@ final class ResourceNames
      * Generates resource name for a recommendation.
      *
      * @param int $customerId the customer ID
-     * @param int $recommendationId the recommendation ID
+     * @param string $recommendationId the recommendation ID
      * @return string the recommendation resource name
      */
     public static function forRecommendation($customerId, $recommendationId)

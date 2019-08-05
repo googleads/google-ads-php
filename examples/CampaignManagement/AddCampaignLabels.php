@@ -97,7 +97,7 @@ class AddCampaignLabels
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param array $campaignIds the IDs of the campaigns to which the label will be added
      * @param int $labelId the ID of the label to attach to campaigns
      */

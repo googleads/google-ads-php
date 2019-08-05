@@ -113,16 +113,16 @@ class AddCampaignTargetingCriteria
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the campaign ID to add a criterion to
      * @param string $keywordText the keyword text to be added as a negative campaign criterion
      * @param int $locationId the location ID to be targeted
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignId,
-        $keywordText,
+        int $customerId,
+        int $campaignId,
+        string $keywordText,
         $locationId
     ) {
         $campaignResourceName = ResourceNames::forCampaign($customerId, $campaignId);
@@ -163,7 +163,7 @@ class AddCampaignTargetingCriteria
      * @return CampaignCriterionOperation the created campaign criterion operation
      */
     private static function createNegativeKeywordCampaignCriterionOperation(
-        $keywordText,
+        string $keywordText,
         $campaignResourceName
     ) {
         // Constructs a negative campaign criterion for the specified campaign ID using the
@@ -191,8 +191,8 @@ class AddCampaignTargetingCriteria
      * @return CampaignCriterionOperation the created campaign criterion operation
      */
     private static function createLocationCampaignCriterionOperation(
-        $locationId,
-        $campaignResourceName
+        int $locationId,
+        string $campaignResourceName
     ) {
         // Constructs a campaign criterion for the specified campaign ID using the specified
         // location ID.
@@ -220,7 +220,7 @@ class AddCampaignTargetingCriteria
      *      belongs to
      * @return CampaignCriterionOperation the created campaign criterion operation
      */
-    private static function createProximityCampaignCriterionOperation($campaignResourceName)
+    private static function createProximityCampaignCriterionOperation(string $campaignResourceName)
     {
         // Constructs a campaign criterion as a proximity.
         $campaignCriterion = new CampaignCriterion([

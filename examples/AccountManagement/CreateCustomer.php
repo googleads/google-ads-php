@@ -94,9 +94,9 @@ class CreateCustomer
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $managerCustomerId the manager customer ID without hyphens
+     * @param int $managerCustomerId the manager customer ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $managerCustomerId)
+    public static function runExample(GoogleAdsClient $googleAdsClient, int $managerCustomerId)
     {
         $customer = new Customer([
             'descriptive_name' => new StringValue(

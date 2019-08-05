@@ -98,13 +98,13 @@ class FindAndRemoveCriteriaFromSharedSet
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the ID of the campaign
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignId
+        int $customerId,
+        int $campaignId
     ) {
         $sharedSetIds = [];
         $criterionResourceNames = [];

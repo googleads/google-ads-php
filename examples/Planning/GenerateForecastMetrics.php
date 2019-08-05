@@ -96,11 +96,14 @@ class GenerateForecastMetrics
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $keywordPlanId the keyword plan ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $keywordPlanId)
-    {
+    public static function runExample(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        int $keywordPlanId
+    ) {
         $keywordPlanServiceClient = $googleAdsClient->getKeywordPlanServiceClient();
 
         // Issues a request to generate forecast metrics based on the specific keyword plan ID.
