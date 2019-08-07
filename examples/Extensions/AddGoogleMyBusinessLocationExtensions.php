@@ -132,9 +132,43 @@ class AddGoogleMyBusinessLocationExtensions
         string $gmbAccessToken,
         string $businessAccountIdentifier
     ) {
-        // Creates a feed that will sync to the Google My Business account specified by
-        // $gmbEmailAddress. Do not add feed attributes to this object as Google Ads will add them
-        // automatically because this will be a system generated feed.
+        $gmbFeedResourceName = self::createFeed(
+            $googleAdsClient,
+            $customerId,
+            $gmbEmailAddress,
+            $gmbAccessToken,
+            $businessAccountIdentifier
+        );
+        self::createCustomerFeed($googleAdsClient, $customerId, $gmbFeedResourceName);
+
+        // OPTIONAL: Create a campaign feed to specify which feed items to use at the campaign
+        // level.
+
+        // OPTIONAL: Create an ad group feed for even more fine grained control over which feed
+        // items are used at the ad group level.
+    }
+
+    /**
+     * Creates a location feed that will sync to the Google My Business account specified by
+     * `$gmbEmailAddress`. Do not add feed attributes to this object as Google Ads will add them
+     * automatically because this will be a system generated feed.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the client customer ID
+     * @param string $gmbEmailAddress the email address associated with the GMB account
+     * @param string $gmbAccessToken the access token created using the 'AdWords' scope and the
+     *     client ID and client secret of with the Cloud project associated with the GMB account
+     * @param int $businessAccountIdentifier the account number of the GMB account
+     * @return string the feed's resource name
+     */
+    private static function createFeed(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        string $gmbEmailAddress,
+        string $gmbAccessToken,
+        string $businessAccountIdentifier
+    ) {
+
         $gmbFeed = new Feed([
             'name' => new StringValue(['value' => 'Google My Business feed #' . uniqid()]),
             'origin' => FeedOrigin::GOOGLE,
@@ -173,6 +207,24 @@ class AddGoogleMyBusinessLocationExtensions
         );
         $gmbFeedResourceName = $response->getResults()[0]->getResourceName();
         printf("GMB feed created with resource name: '%s'.%s", $gmbFeedResourceName, PHP_EOL);
+
+        return $gmbFeedResourceName;
+    }
+
+    /**
+     * Creates a customer feed to attach the previously created GMB feed to the specified customer
+     * ID.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the client customer ID
+     * @param string $gmbFeedResourceName the feed's resource name to be used to create a customer
+     *     feed
+     */
+    private static function createCustomerFeed(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        string $gmbFeedResourceName
+    ) {
         // Creates a customer feed that associates the feed with this customer for the LOCATION
         // placeholder type.
         $customerFeed = new CustomerFeed([
@@ -220,7 +272,7 @@ class AddGoogleMyBusinessLocationExtensions
                 // Exits the loop early if $sleepSeconds grows too large in the event that
                 // MAX_CUSTOMER_FEED_ADD_ATTEMPTS is set too high.
                 if ($sleepSeconds > self::POLL_FREQUENCY_SECONDS
-                        * pow(2, self::MAX_CUSTOMER_FEED_ADD_ATTEMPTS)) {
+                    * pow(2, self::MAX_CUSTOMER_FEED_ADD_ATTEMPTS)) {
                     break;
                 }
                 printf(
@@ -241,11 +293,6 @@ class AddGoogleMyBusinessLocationExtensions
                 . ' attempts. Please retry the customer feed ADD operation later.'
             );
         }
-        // OPTIONAL: Create a campaign feed to specify which feed items to use at the campaign
-        // level.
-
-        // OPTIONAL: Create an ad group feed for even more fine grained control over which feed
-        // items are used at the ad group level.
     }
 }
 
