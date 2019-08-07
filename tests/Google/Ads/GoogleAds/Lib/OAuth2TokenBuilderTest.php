@@ -116,7 +116,7 @@ class OAuth2TokenBuilderTest extends TestCase
             ], [
                 'impersonatedEmail',
                 'OAUTH2',
-                'google-ads-api-noreply-test-only@gmail.com'
+                'noreply@example.com'
             ]
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
@@ -167,7 +167,7 @@ class OAuth2TokenBuilderTest extends TestCase
         $tokenFetcher = $this->oAuth2TokenBuilder
             ->withJsonKeyFilePath($this->jsonKeyFilePath)
             ->withScopes('https://www.googleapis.com/auth/adwords')
-            ->withImpersonatedEmail('google-ads-api-noreply-test-only@gmail.com')
+            ->withImpersonatedEmail('noreply@example.com')
             ->build();
         $this->assertInstanceOf(ServiceAccountCredentials::class, $tokenFetcher);
     }
