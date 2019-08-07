@@ -17,6 +17,7 @@
 
 namespace Google\Ads\GoogleAds\Lib;
 
+use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;
@@ -31,6 +32,10 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
 {
 
     private $configurationLoader;
+
+    private $jsonKeyFilePath;
+    private $scopes;
+    private $impersonatedEmail;
 
     private $clientId;
     private $clientSecret;
@@ -69,6 +74,9 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
         $this->clientId = $configuration->getConfiguration('clientId', 'OAUTH2');
         $this->clientSecret = $configuration->getConfiguration('clientSecret', 'OAUTH2');
         $this->refreshToken = $configuration->getConfiguration('refreshToken', 'OAUTH2');
+        $this->jsonKeyFilePath = $configuration->getConfiguration('jsonKeyFilePath', 'OAUTH2');
+        $this->scopes = $configuration->getConfiguration('scopes', 'OAUTH2');
+        $this->impersonatedEmail = $configuration->getConfiguration('impersonatedEmail', 'OAUTH2');
 
         return $this;
     }
@@ -113,6 +121,45 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
     }
 
     /**
+     * Includes an absolute path to an OAuth2 JSON key file when using service
+     * account flow. Required and only applicable when using service account flow.
+     *
+     * @param string $jsonKeyFilePath
+     * @return OAuth2TokenBuilder this builder
+     */
+    public function withJsonKeyFilePath(string $jsonKeyFilePath) : self
+    {
+        $this->jsonKeyFilePath = $jsonKeyFilePath;
+        return $this;
+    }
+
+    /**
+     * Includes OAuth2 scopes. Required and only applicable when using service
+     * account flow.
+     *
+     * @param string $scopes a space-delimited list of scopes
+     * @return OAuth2TokenBuilder this builder
+     */
+    public function withScopes($scopes) : self
+    {
+        $this->scopes = $scopes;
+        return $this;
+    }
+
+    /**
+     * Includes an email of account to impersonate when using service account
+     * flow. Optional and only applicable when using service account flow.
+     *
+     * @param string|null $impersonatedEmail
+     * @return OAuth2TokenBuilder this builder
+     */
+    public function withImpersonatedEmail(?string $impersonatedEmail) : self
+    {
+        $this->impersonatedEmail = $impersonatedEmail;
+        return $this;
+    }
+
+    /**
      * @see GoogleAdsBuilder::build()
      *
      * @return FetchAuthTokenInterface the created OAuth2 object that can fetch auth tokens
@@ -122,14 +169,19 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
         $this->defaultOptionals();
         $this->validate();
 
-        return new UserRefreshCredentials(
-            null,
-            [
+        if ($this->jsonKeyFilePath !== null) {
+            return new ServiceAccountCredentials(
+                $this->scopes,
+                $this->jsonKeyFilePath,
+                $this->impersonatedEmail
+            );
+        } else {
+            return new UserRefreshCredentials(null, [
                 'client_id' => $this->clientId,
                 'client_secret' => $this->clientSecret,
                 'refresh_token' => $this->refreshToken
-            ]
-        );
+            ]);
+        }
     }
 
     /**
@@ -145,7 +197,22 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
      */
     public function validate()
     {
-        if (is_null($this->clientId)
+        if ((!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
+            && (!is_null($this->clientId) || !is_null($this->clientSecret)
+                || !is_null($this->refreshToken))) {
+            throw new InvalidArgumentException(
+                'Cannot have both service account '
+                . 'flow and installed/web application flow credential values set.'
+            );
+        }
+        if (!is_null($this->jsonKeyFilePath) || !is_null($this->scopes)) {
+            if (is_null($this->jsonKeyFilePath) || is_null($this->scopes)) {
+                throw new InvalidArgumentException(
+                    "Both 'jsonKeyFilePath' and "
+                    . "'scopes' must be set when using service account flow."
+                );
+            }
+        } elseif (is_null($this->clientId)
             || is_null($this->clientSecret)
             || is_null($this->refreshToken)) {
             throw new UnexpectedValueException(
@@ -183,5 +250,35 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
     public function getRefreshToken()
     {
         return $this->refreshToken;
+    }
+
+    /**
+     * Gets the JSON key file path.
+     *
+     * @return string|null
+     */
+    public function getJsonKeyFilePath()
+    {
+        return $this->jsonKeyFilePath;
+    }
+
+    /**
+     * Gets the scopes.
+     *
+     * @return string|null
+     */
+    public function getScopes()
+    {
+        return $this->scopes;
+    }
+
+    /**
+     * Gets the impersonated email.
+     *
+     * @return string|null
+     */
+    public function getImpersonatedEmail()
+    {
+        return $this->impersonatedEmail;
     }
 }
