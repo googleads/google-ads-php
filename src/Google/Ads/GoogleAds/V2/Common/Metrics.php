@@ -449,6 +449,13 @@ final class Metrics extends \Google\Protobuf\Internal\Message
      */
     private $hotel_average_lead_value_micros = null;
     /**
+     * The average price difference between the price offered by reporting hotel
+     * advertiser and the cheapest price offered by the competing advertiser.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_price_difference_percentage = 129;</code>
+     */
+    private $hotel_price_difference_percentage = null;
+    /**
      * The creative historical quality score.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.QualityScoreBucketEnum.QualityScoreBucket historical_creative_quality_score = 80;</code>
@@ -1046,6 +1053,9 @@ final class Metrics extends \Google\Protobuf\Internal\Message
      *           future, other ad types may support engagement metrics.
      *     @type \Google\Protobuf\DoubleValue $hotel_average_lead_value_micros
      *           Average lead value of hotel.
+     *     @type \Google\Protobuf\DoubleValue $hotel_price_difference_percentage
+     *           The average price difference between the price offered by reporting hotel
+     *           advertiser and the cheapest price offered by the competing advertiser.
      *     @type int $historical_creative_quality_score
      *           The creative historical quality score.
      *     @type int $historical_landing_page_quality_score
@@ -4763,6 +4773,65 @@ final class Metrics extends \Google\Protobuf\Internal\Message
     {
         $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
         return $this->setHotelAverageLeadValueMicros($wrappedVar);
+    }
+
+    /**
+     * The average price difference between the price offered by reporting hotel
+     * advertiser and the cheapest price offered by the competing advertiser.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_price_difference_percentage = 129;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getHotelPriceDifferencePercentage()
+    {
+        return $this->hotel_price_difference_percentage;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getHotelPriceDifferencePercentage()</code>
+
+     * The average price difference between the price offered by reporting hotel
+     * advertiser and the cheapest price offered by the competing advertiser.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_price_difference_percentage = 129;</code>
+     * @return float|null
+     */
+    public function getHotelPriceDifferencePercentageUnwrapped()
+    {
+        $wrapper = $this->getHotelPriceDifferencePercentage();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The average price difference between the price offered by reporting hotel
+     * advertiser and the cheapest price offered by the competing advertiser.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_price_difference_percentage = 129;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setHotelPriceDifferencePercentage($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->hotel_price_difference_percentage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
+
+     * The average price difference between the price offered by reporting hotel
+     * advertiser and the cheapest price offered by the competing advertiser.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_price_difference_percentage = 129;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setHotelPriceDifferencePercentageUnwrapped($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
+        return $this->setHotelPriceDifferencePercentage($wrappedVar);
     }
 
     /**

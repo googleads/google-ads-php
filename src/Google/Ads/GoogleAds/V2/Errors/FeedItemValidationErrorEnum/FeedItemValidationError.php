@@ -613,6 +613,18 @@ class FeedItemValidationError
      * Generated from protobuf enum <code>MISSING_LONGITUDE_VALUE = 96;</code>
      */
     const MISSING_LONGITUDE_VALUE = 96;
+    /**
+     * Unable to find address.
+     *
+     * Generated from protobuf enum <code>ADDRESS_NOT_FOUND = 97;</code>
+     */
+    const ADDRESS_NOT_FOUND = 97;
+    /**
+     * Cannot target provided address.
+     *
+     * Generated from protobuf enum <code>ADDRESS_NOT_TARGETABLE = 98;</code>
+     */
+    const ADDRESS_NOT_TARGETABLE = 98;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -712,6 +724,8 @@ class FeedItemValidationError
         self::INVALID_IMAGE_URL => 'INVALID_IMAGE_URL',
         self::MISSING_LATITUDE_VALUE => 'MISSING_LATITUDE_VALUE',
         self::MISSING_LONGITUDE_VALUE => 'MISSING_LONGITUDE_VALUE',
+        self::ADDRESS_NOT_FOUND => 'ADDRESS_NOT_FOUND',
+        self::ADDRESS_NOT_TARGETABLE => 'ADDRESS_NOT_TARGETABLE',
     ];
 
     public static function name($value)

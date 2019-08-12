@@ -26,34 +26,34 @@ class BillingSetupError
      */
     const UNKNOWN = 1;
     /**
-     * Cannot use both an existing Payments account and a new Payments account
-     * when setting up billing.
+     * Cannot specify both an existing payments account and a new payments
+     * account when setting up billing.
      *
      * Generated from protobuf enum <code>CANNOT_USE_EXISTING_AND_NEW_ACCOUNT = 2;</code>
      */
     const CANNOT_USE_EXISTING_AND_NEW_ACCOUNT = 2;
     /**
-     * Cannot cancel an APPROVED billing setup whose start time has passed.
+     * Cannot cancel an approved billing setup whose start time has passed.
      *
      * Generated from protobuf enum <code>CANNOT_REMOVE_STARTED_BILLING_SETUP = 3;</code>
      */
     const CANNOT_REMOVE_STARTED_BILLING_SETUP = 3;
     /**
-     * Cannot perform a Change of Bill-To (CBT) to the same Payments account.
+     * Cannot perform a Change of Bill-To (CBT) to the same payments account.
      *
      * Generated from protobuf enum <code>CANNOT_CHANGE_BILLING_TO_SAME_PAYMENTS_ACCOUNT = 4;</code>
      */
     const CANNOT_CHANGE_BILLING_TO_SAME_PAYMENTS_ACCOUNT = 4;
     /**
-     * Billing Setups can only be used by customers with ENABLED or DRAFT
+     * Billing setups can only be used by customers with ENABLED or DRAFT
      * status.
      *
      * Generated from protobuf enum <code>BILLING_SETUP_NOT_PERMITTED_FOR_CUSTOMER_STATUS = 5;</code>
      */
     const BILLING_SETUP_NOT_PERMITTED_FOR_CUSTOMER_STATUS = 5;
     /**
-     * Billing Setups must either include a correctly formatted existing
-     * Payments account id, or a non-empty new Payments account name.
+     * Billing setups must either include a correctly formatted existing
+     * payments account id, or a non-empty new payments account name.
      *
      * Generated from protobuf enum <code>INVALID_PAYMENTS_ACCOUNT = 6;</code>
      */
@@ -65,27 +65,27 @@ class BillingSetupError
      */
     const BILLING_SETUP_NOT_PERMITTED_FOR_CUSTOMER_CATEGORY = 7;
     /**
-     * Billing Setup creations can only use NOW for start time type.
+     * Billing setup creations can only use NOW for start time type.
      *
      * Generated from protobuf enum <code>INVALID_START_TIME_TYPE = 8;</code>
      */
     const INVALID_START_TIME_TYPE = 8;
     /**
-     * Billing Setups can only be created for a third-party customer if they do
+     * Billing setups can only be created for a third-party customer if they do
      * not already have a setup.
      *
      * Generated from protobuf enum <code>THIRD_PARTY_ALREADY_HAS_BILLING = 9;</code>
      */
     const THIRD_PARTY_ALREADY_HAS_BILLING = 9;
     /**
-     * Billing Setups cannot be created if there is already a pending billing in
-     * progress, ie. a billing known to Payments.
+     * Billing setups cannot be created if there is already a pending billing in
+     * progress.
      *
      * Generated from protobuf enum <code>BILLING_SETUP_IN_PROGRESS = 10;</code>
      */
     const BILLING_SETUP_IN_PROGRESS = 10;
     /**
-     * Billing Setups can only be created by customers who have permission to
+     * Billing setups can only be created by customers who have permission to
      * setup billings. Users can contact a representative for help setting up
      * permissions.
      *
@@ -93,40 +93,43 @@ class BillingSetupError
      */
     const NO_SIGNUP_PERMISSION = 11;
     /**
-     * Billing Setups cannot be created if there is already a future-approved
+     * Billing setups cannot be created if there is already a future-approved
      * billing.
      *
      * Generated from protobuf enum <code>CHANGE_OF_BILL_TO_IN_PROGRESS = 12;</code>
      */
     const CHANGE_OF_BILL_TO_IN_PROGRESS = 12;
     /**
-     * Billing Setup creation failed because Payments could not find the
-     * requested Payments profile.
+     * Requested payments profile not found.
      *
      * Generated from protobuf enum <code>PAYMENTS_PROFILE_NOT_FOUND = 13;</code>
      */
     const PAYMENTS_PROFILE_NOT_FOUND = 13;
     /**
-     * Billing Setup creation failed because Payments could not find the
-     * requested Payments account.
+     * Requested payments account not found.
      *
      * Generated from protobuf enum <code>PAYMENTS_ACCOUNT_NOT_FOUND = 14;</code>
      */
     const PAYMENTS_ACCOUNT_NOT_FOUND = 14;
     /**
-     * Billing Setup creation failed because Payments considers requested
-     * Payments profile ineligible.
+     * Billing setup creation failed because the payments profile is ineligible.
      *
      * Generated from protobuf enum <code>PAYMENTS_PROFILE_INELIGIBLE = 15;</code>
      */
     const PAYMENTS_PROFILE_INELIGIBLE = 15;
     /**
-     * Billing Setup creation failed because Payments considers requested
-     * Payments account ineligible.
+     * Billing setup creation failed because the payments account is ineligible.
      *
      * Generated from protobuf enum <code>PAYMENTS_ACCOUNT_INELIGIBLE = 16;</code>
      */
     const PAYMENTS_ACCOUNT_INELIGIBLE = 16;
+    /**
+     * Billing setup creation failed because the payments profile needs internal
+     * approval.
+     *
+     * Generated from protobuf enum <code>CUSTOMER_NEEDS_INTERNAL_APPROVAL = 17;</code>
+     */
+    const CUSTOMER_NEEDS_INTERNAL_APPROVAL = 17;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -146,6 +149,7 @@ class BillingSetupError
         self::PAYMENTS_ACCOUNT_NOT_FOUND => 'PAYMENTS_ACCOUNT_NOT_FOUND',
         self::PAYMENTS_PROFILE_INELIGIBLE => 'PAYMENTS_PROFILE_INELIGIBLE',
         self::PAYMENTS_ACCOUNT_INELIGIBLE => 'PAYMENTS_ACCOUNT_INELIGIBLE',
+        self::CUSTOMER_NEEDS_INTERNAL_APPROVAL => 'CUSTOMER_NEEDS_INTERNAL_APPROVAL',
     ];
 
     public static function name($value)

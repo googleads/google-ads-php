@@ -231,6 +231,8 @@ final class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the currency code error
      *     @type int $access_invitation_error
      *           The reasons for the access invitation error
+     *     @type int $reach_plan_error
+     *           The reasons for the reach plan error
      * }
      */
     public function __construct($data = NULL) {
@@ -2938,6 +2940,32 @@ final class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V2\Errors\AccessInvitationErrorEnum_AccessInvitationError::class);
         $this->writeOneof(124, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the reach plan error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.errors.ReachPlanErrorEnum.ReachPlanError reach_plan_error = 125;</code>
+     * @return int
+     */
+    public function getReachPlanError()
+    {
+        return $this->readOneof(125);
+    }
+
+    /**
+     * The reasons for the reach plan error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.errors.ReachPlanErrorEnum.ReachPlanError reach_plan_error = 125;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setReachPlanError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V2\Errors\ReachPlanErrorEnum_ReachPlanError::class);
+        $this->writeOneof(125, $var);
 
         return $this;
     }
