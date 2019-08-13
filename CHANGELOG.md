@@ -1,4 +1,4 @@
-## 2.1.1
+## 2.1.0
 *   Added support for v2_1 of Google Ads API.
 *   Switched the default implementation of protobuf to use the C extension and added related
     documentation.
