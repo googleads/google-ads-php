@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 final class ListPaymentsAccountsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The list of accessible Payments accounts.
+     * The list of accessible payments accounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.PaymentsAccount payments_accounts = 1;</code>
      */
@@ -29,7 +29,7 @@ final class ListPaymentsAccountsResponse extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V2\Resources\PaymentsAccount[]|\Google\Protobuf\Internal\RepeatedField $payments_accounts
-     *           The list of accessible Payments accounts.
+     *           The list of accessible payments accounts.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ final class ListPaymentsAccountsResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The list of accessible Payments accounts.
+     * The list of accessible payments accounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.PaymentsAccount payments_accounts = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -49,7 +49,7 @@ final class ListPaymentsAccountsResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The list of accessible Payments accounts.
+     * The list of accessible payments accounts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.PaymentsAccount payments_accounts = 1;</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\PaymentsAccount[]|\Google\Protobuf\Internal\RepeatedField $var

@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Container of Payments account information for this billing.
+ * Container of payments account information for this billing.
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo</code>
  */
 final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A 16 digit id used to identify the Payments account associated with the
+     * A 16 digit id used to identify the payments account associated with the
      * billing setup.
      * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *
@@ -24,8 +24,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     private $payments_account_id = null;
     /**
-     * The name of the Payments account associated with the billing setup.
-     * This enables the user to specify a meaningful name for a Payments account
+     * The name of the payments account associated with the billing setup.
+     * This enables the user to specify a meaningful name for a payments account
      * to aid in reconciling monthly invoices.
      * This name will be printed in the monthly invoices.
      *
@@ -33,7 +33,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     private $payments_account_name = null;
     /**
-     * A 12 digit id used to identify the Payments profile associated with the
+     * A 12 digit id used to identify the payments profile associated with the
      * billing setup.
      * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *
@@ -41,7 +41,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     private $payments_profile_id = null;
     /**
-     * The name of the Payments profile associated with the billing setup.
+     * The name of the payments profile associated with the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 4;</code>
      */
@@ -61,20 +61,20 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\StringValue $payments_account_id
-     *           A 16 digit id used to identify the Payments account associated with the
+     *           A 16 digit id used to identify the payments account associated with the
      *           billing setup.
      *           This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *     @type \Google\Protobuf\StringValue $payments_account_name
-     *           The name of the Payments account associated with the billing setup.
-     *           This enables the user to specify a meaningful name for a Payments account
+     *           The name of the payments account associated with the billing setup.
+     *           This enables the user to specify a meaningful name for a payments account
      *           to aid in reconciling monthly invoices.
      *           This name will be printed in the monthly invoices.
      *     @type \Google\Protobuf\StringValue $payments_profile_id
-     *           A 12 digit id used to identify the Payments profile associated with the
+     *           A 12 digit id used to identify the payments profile associated with the
      *           billing setup.
      *           This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *     @type \Google\Protobuf\StringValue $payments_profile_name
-     *           The name of the Payments profile associated with the billing setup.
+     *           The name of the payments profile associated with the billing setup.
      *     @type \Google\Protobuf\StringValue $secondary_payments_profile_id
      *           A secondary payments profile id present in uncommon situations, e.g.
      *           when a sequential liability agreement has been arranged.
@@ -86,7 +86,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 16 digit id used to identify the Payments account associated with the
+     * A 16 digit id used to identify the payments account associated with the
      * billing setup.
      * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *
@@ -101,7 +101,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPaymentsAccountId()</code>
 
-     * A 16 digit id used to identify the Payments account associated with the
+     * A 16 digit id used to identify the payments account associated with the
      * billing setup.
      * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *
@@ -115,7 +115,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 16 digit id used to identify the Payments account associated with the
+     * A 16 digit id used to identify the payments account associated with the
      * billing setup.
      * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *
@@ -134,7 +134,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * A 16 digit id used to identify the Payments account associated with the
+     * A 16 digit id used to identify the payments account associated with the
      * billing setup.
      * This must be passed as a string with dashes, e.g. "1234-5678-9012-3456".
      *
@@ -149,8 +149,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the Payments account associated with the billing setup.
-     * This enables the user to specify a meaningful name for a Payments account
+     * The name of the payments account associated with the billing setup.
+     * This enables the user to specify a meaningful name for a payments account
      * to aid in reconciling monthly invoices.
      * This name will be printed in the monthly invoices.
      *
@@ -165,8 +165,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPaymentsAccountName()</code>
 
-     * The name of the Payments account associated with the billing setup.
-     * This enables the user to specify a meaningful name for a Payments account
+     * The name of the payments account associated with the billing setup.
+     * This enables the user to specify a meaningful name for a payments account
      * to aid in reconciling monthly invoices.
      * This name will be printed in the monthly invoices.
      *
@@ -180,8 +180,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the Payments account associated with the billing setup.
-     * This enables the user to specify a meaningful name for a Payments account
+     * The name of the payments account associated with the billing setup.
+     * This enables the user to specify a meaningful name for a payments account
      * to aid in reconciling monthly invoices.
      * This name will be printed in the monthly invoices.
      *
@@ -200,8 +200,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the Payments account associated with the billing setup.
-     * This enables the user to specify a meaningful name for a Payments account
+     * The name of the payments account associated with the billing setup.
+     * This enables the user to specify a meaningful name for a payments account
      * to aid in reconciling monthly invoices.
      * This name will be printed in the monthly invoices.
      *
@@ -216,7 +216,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 12 digit id used to identify the Payments profile associated with the
+     * A 12 digit id used to identify the payments profile associated with the
      * billing setup.
      * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *
@@ -231,7 +231,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPaymentsProfileId()</code>
 
-     * A 12 digit id used to identify the Payments profile associated with the
+     * A 12 digit id used to identify the payments profile associated with the
      * billing setup.
      * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *
@@ -245,7 +245,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 12 digit id used to identify the Payments profile associated with the
+     * A 12 digit id used to identify the payments profile associated with the
      * billing setup.
      * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *
@@ -264,7 +264,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * A 12 digit id used to identify the Payments profile associated with the
+     * A 12 digit id used to identify the payments profile associated with the
      * billing setup.
      * This must be passed in as a string with dashes, e.g. "1234-5678-9012".
      *
@@ -279,7 +279,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the Payments profile associated with the billing setup.
+     * The name of the payments profile associated with the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 4;</code>
      * @return \Google\Protobuf\StringValue
@@ -292,7 +292,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPaymentsProfileName()</code>
 
-     * The name of the Payments profile associated with the billing setup.
+     * The name of the payments profile associated with the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 4;</code>
      * @return string|null
@@ -304,7 +304,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the Payments profile associated with the billing setup.
+     * The name of the payments profile associated with the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 4;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -321,7 +321,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the Payments profile associated with the billing setup.
+     * The name of the payments profile associated with the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 4;</code>
      * @param string|null $var

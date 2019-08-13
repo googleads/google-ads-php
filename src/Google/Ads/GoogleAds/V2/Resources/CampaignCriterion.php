@@ -141,6 +141,8 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *           Mobile Device.
      *     @type \Google\Ads\GoogleAds\V2\Common\LocationGroupInfo $location_group
      *           Location Group
+     *     @type \Google\Ads\GoogleAds\V2\Common\CustomAffinityInfo $custom_affinity
+     *           Custom Affinity.
      * }
      */
     public function __construct($data = NULL) {
@@ -1134,6 +1136,32 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V2\Common\LocationGroupInfo::class);
         $this->writeOneof(34, $var);
+
+        return $this;
+    }
+
+    /**
+     * Custom Affinity.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CustomAffinityInfo custom_affinity = 36;</code>
+     * @return \Google\Ads\GoogleAds\V2\Common\CustomAffinityInfo
+     */
+    public function getCustomAffinity()
+    {
+        return $this->readOneof(36);
+    }
+
+    /**
+     * Custom Affinity.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CustomAffinityInfo custom_affinity = 36;</code>
+     * @param \Google\Ads\GoogleAds\V2\Common\CustomAffinityInfo $var
+     * @return $this
+     */
+    public function setCustomAffinity($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V2\Common\CustomAffinityInfo::class);
+        $this->writeOneof(36, $var);
 
         return $this;
     }

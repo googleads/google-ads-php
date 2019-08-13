@@ -9,9 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A billing setup across Ads and Payments systems; an association between a
- * Payments account and an advertiser. A billing setup is specific to one
- * advertiser.
+ * A billing setup, which associates a payments account and an advertiser. A
+ * billing setup is specific to one advertiser.
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.BillingSetup</code>
  */
@@ -38,10 +37,10 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     private $status = 0;
     /**
-     * The resource name of the Payments account associated with this billing
+     * The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
-     * When setting up billing, this is used to signup with an existing Payments
+     * When setting up billing, this is used to signup with an existing payments
      * account (and then payments_account_info should not be set).
      * When getting a billing setup, this and payments_account_info will be
      * populated.
@@ -50,8 +49,8 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     private $payments_account = null;
     /**
-     * The Payments account information associated with this billing setup.
-     * When setting up billing, this is used to signup with a new Payments account
+     * The payments account information associated with this billing setup.
+     * When setting up billing, this is used to signup with a new payments account
      * (and then payments_account should not be set).
      * When getting a billing setup, this and payments_account will be
      * populated.
@@ -77,16 +76,16 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *           The status of the billing setup.
      *     @type \Google\Protobuf\StringValue $payments_account
-     *           The resource name of the Payments account associated with this billing
+     *           The resource name of the payments account associated with this billing
      *           setup. Payments resource names have the form:
      *           `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
-     *           When setting up billing, this is used to signup with an existing Payments
+     *           When setting up billing, this is used to signup with an existing payments
      *           account (and then payments_account_info should not be set).
      *           When getting a billing setup, this and payments_account_info will be
      *           populated.
      *     @type \Google\Ads\GoogleAds\V2\Resources\BillingSetup\PaymentsAccountInfo $payments_account_info
-     *           The Payments account information associated with this billing setup.
-     *           When setting up billing, this is used to signup with a new Payments account
+     *           The payments account information associated with this billing setup.
+     *           When setting up billing, this is used to signup with a new payments account
      *           (and then payments_account should not be set).
      *           When getting a billing setup, this and payments_account will be
      *           populated.
@@ -218,10 +217,10 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the Payments account associated with this billing
+     * The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
-     * When setting up billing, this is used to signup with an existing Payments
+     * When setting up billing, this is used to signup with an existing payments
      * account (and then payments_account_info should not be set).
      * When getting a billing setup, this and payments_account_info will be
      * populated.
@@ -237,10 +236,10 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPaymentsAccount()</code>
 
-     * The resource name of the Payments account associated with this billing
+     * The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
-     * When setting up billing, this is used to signup with an existing Payments
+     * When setting up billing, this is used to signup with an existing payments
      * account (and then payments_account_info should not be set).
      * When getting a billing setup, this and payments_account_info will be
      * populated.
@@ -255,10 +254,10 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the Payments account associated with this billing
+     * The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
-     * When setting up billing, this is used to signup with an existing Payments
+     * When setting up billing, this is used to signup with an existing payments
      * account (and then payments_account_info should not be set).
      * When getting a billing setup, this and payments_account_info will be
      * populated.
@@ -278,10 +277,10 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the Payments account associated with this billing
+     * The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
-     * When setting up billing, this is used to signup with an existing Payments
+     * When setting up billing, this is used to signup with an existing payments
      * account (and then payments_account_info should not be set).
      * When getting a billing setup, this and payments_account_info will be
      * populated.
@@ -297,8 +296,8 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Payments account information associated with this billing setup.
-     * When setting up billing, this is used to signup with a new Payments account
+     * The payments account information associated with this billing setup.
+     * When setting up billing, this is used to signup with a new payments account
      * (and then payments_account should not be set).
      * When getting a billing setup, this and payments_account will be
      * populated.
@@ -312,8 +311,8 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Payments account information associated with this billing setup.
-     * When setting up billing, this is used to signup with a new Payments account
+     * The payments account information associated with this billing setup.
+     * When setting up billing, this is used to signup with a new payments account
      * (and then payments_account should not be set).
      * When getting a billing setup, this and payments_account will be
      * populated.

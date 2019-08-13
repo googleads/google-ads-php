@@ -92,6 +92,13 @@ class AuthorizationError
      * Generated from protobuf enum <code>DEVELOPER_TOKEN_NOT_APPROVED = 10;</code>
      */
     const DEVELOPER_TOKEN_NOT_APPROVED = 10;
+    /**
+     * The login customer specified does not have access to the account
+     * specified, so the request is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION = 11;</code>
+     */
+    const INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION = 11;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -106,6 +113,7 @@ class AuthorizationError
         self::CUSTOMER_NOT_ENABLED => 'CUSTOMER_NOT_ENABLED',
         self::MISSING_TOS => 'MISSING_TOS',
         self::DEVELOPER_TOKEN_NOT_APPROVED => 'DEVELOPER_TOKEN_NOT_APPROVED',
+        self::INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION => 'INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION',
     ];
 
     public static function name($value)

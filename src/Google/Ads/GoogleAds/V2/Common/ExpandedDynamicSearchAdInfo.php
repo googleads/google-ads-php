@@ -21,6 +21,12 @@ final class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 1;</code>
      */
     private $description = null;
+    /**
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 2;</code>
+     */
+    private $description2 = null;
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ final class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Messag
      *
      *     @type \Google\Protobuf\StringValue $description
      *           The description of the ad.
+     *     @type \Google\Protobuf\StringValue $description2
+     *           The second description of the ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,6 +98,61 @@ final class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Messag
     {
         $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
         return $this->setDescription($wrappedVar);
+    }
+
+    /**
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 2;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getDescription2()
+    {
+        return $this->description2;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getDescription2()</code>
+
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 2;</code>
+     * @return string|null
+     */
+    public function getDescription2Unwrapped()
+    {
+        $wrapper = $this->getDescription2();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 2;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setDescription2($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->description2 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The second description of the ad.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 2;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setDescription2Unwrapped($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setDescription2($wrappedVar);
     }
 
 }
