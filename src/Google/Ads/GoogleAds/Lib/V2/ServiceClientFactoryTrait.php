@@ -102,7 +102,6 @@ use Google\Ads\GoogleAds\V2\Services\MerchantCenterLinkServiceClient;
 use Google\Ads\GoogleAds\V2\Services\MobileAppCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\MobileDeviceConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\MutateJobServiceClient;
-use Google\Ads\GoogleAds\V2\Services\OfflineUserDataJobServiceClient;
 use Google\Ads\GoogleAds\V2\Services\OperatingSystemVersionConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ParentalStatusViewServiceClient;
@@ -854,14 +853,6 @@ trait ServiceClientFactoryTrait
     public function getMutateJobServiceClient()
     {
         return new MutateJobServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
-     * @return OfflineUserDataJobServiceClient
-     */
-    public function getOfflineUserDataJobServiceClient()
-    {
-        return new OfflineUserDataJobServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
