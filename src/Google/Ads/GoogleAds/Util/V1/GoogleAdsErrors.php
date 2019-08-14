@@ -108,7 +108,8 @@ final class GoogleAdsErrors
                 $element = $pathElements[0];
                 $fieldName = $element->getFieldName();
                 $index = $element->getIndex();
-                if ($fieldName === "operations" && $index->getValue() == $operationIndex) {
+                if (($fieldName === "operations" || $fieldName === "mutate_operations")
+                    && $index->getValue() == $operationIndex) {
                     $result[] = $error;
                 }
             }
