@@ -37,22 +37,7 @@ class GoogleAdsErrorsTest extends TestCase
 
     public function setUp()
     {
-        $this->failure = new GoogleAdsFailure([
-            "errors" => [
-                new GoogleAdsError([
-                    "message" => "A test message.",
-                    "location" => new ErrorLocation([
-                        "field_path_elements" => [
-                            new FieldPathElement([
-                                "index" => 0,
-                                "field_name" => "operations"
-                            ])
-                        ]
-                    ])
-                ])
-            ]
-        ]);
-
+        $this->failure = $this->createGoogleAdsFailure();
         $any = new Any();
         $any->pack($this->failure);
         $this->status = new Status([
@@ -106,7 +91,17 @@ class GoogleAdsErrorsTest extends TestCase
 
     public function testFromFailureWithMutateOperation()
     {
-        $failureWithMutateOperation = new GoogleAdsFailure([
+        $failureWithMutateOperation = $this->createGoogleAdsFailure("mutate_operations");
+        $errors = GoogleAdsErrors::fromFailure(0, $failureWithMutateOperation);
+        $this->assertCount(1, $errors);
+        
+        $expectedMessage = "A test message.";
+        $this->assertEquals($expectedMessage, $errors[0]->getMessage());
+    }
+
+    private function createGoogleAdsFailure($fieldName = "operations")
+    {
+        return new GoogleAdsFailure([
             "errors" => [
                 new GoogleAdsError([
                     "message" => "A test message.",
@@ -114,17 +109,12 @@ class GoogleAdsErrorsTest extends TestCase
                         "field_path_elements" => [
                             new FieldPathElement([
                                 "index" => 0,
-                                "field_name" => "mutate_operations"
+                                "field_name" => $fieldName
                             ])
                         ]
                     ])
                 ])
             ]
         ]);
-        $errors = GoogleAdsErrors::fromFailure(0, $failureWithMutateOperation);
-        $this->assertCount(1, $errors);
-        
-        $expectedMessage = "A test message.";
-        $this->assertEquals($expectedMessage, $errors[0]->getMessage());
     }
 }
