@@ -88,7 +88,7 @@ class ListAccessibleCustomers
 
         // Issues a request for listing all accessible customers.
         $accessibleCustomers = $customerServiceClient->listAccessibleCustomers();
-        print 'Total results: ' . count($accessibleCustomers) . PHP_EOL;
+        print 'Total results: ' . count($accessibleCustomers->getResourceNames()) . PHP_EOL;
 
         // Iterates over all accessible customers' resource names and prints them.
         foreach ($accessibleCustomers->getResourceNames() as $resourceName) {
