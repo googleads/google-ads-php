@@ -20,9 +20,9 @@
 namespace Google\Ads\GoogleAds\V2\Services;
 
 /**
- * Proto file describing the Payments account service.
+ * Proto file describing the payments account service.
  *
- * Service to provide Payments accounts that can be used to set up consolidated
+ * Service to provide payments accounts that can be used to set up consolidated
  * billing.
  */
 class PaymentsAccountServiceGrpcClient extends \Grpc\BaseStub {
@@ -37,7 +37,7 @@ class PaymentsAccountServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns all Payments accounts associated with all managers
+     * Returns all payments accounts associated with all managers
      * between the login customer ID and specified serving customer in the
      * hierarchy, inclusive.
      * @param \Google\Ads\GoogleAds\V2\Services\ListPaymentsAccountsRequest $argument input argument

@@ -134,16 +134,16 @@ class AddHotelListingGroupTree
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      * @param int $percentCpcBidMicroAmount the percent CPC bid micro amount to set on created ad
      *     group criteria
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId,
-        $percentCpcBidMicroAmount
+        int $customerId,
+        int $adGroupId,
+        int $percentCpcBidMicroAmount
     ) {
         $operations = [];
 
@@ -190,10 +190,10 @@ class AddHotelListingGroupTree
      * @return string the root node's resource name
      */
     private static function addRootNode(
-        $customerId,
-        $adGroupId,
+        int $customerId,
+        int $adGroupId,
         array &$operations,
-        $percentCpcBidMicroAmount
+        int $percentCpcBidMicroAmount
     ) {
         // Creates the root of the tree as a SUBDIVISION node.
         $root = self::createListingGroupInfo(ListingGroupType::SUBDIVISION);
@@ -220,11 +220,11 @@ class AddHotelListingGroupTree
      */
     // [START addLevel1Nodes]
     private static function addLevel1Nodes(
-        $customerId,
-        $adGroupId,
-        $rootResourceName,
+        int $customerId,
+        int $adGroupId,
+        string $rootResourceName,
         array &$operations,
-        $percentCpcBidMicroAmount
+        int $percentCpcBidMicroAmount
     ) {
         // Creates hotel class info and dimension info for 5-star hotels.
         $fiveStarredDimensionInfo = new ListingDimensionInfo([
@@ -292,11 +292,11 @@ class AddHotelListingGroupTree
      *     criteria
      */
     private static function addLevel2Nodes(
-        $customerId,
-        $adGroupId,
-        $parentResourceName,
+        int $customerId,
+        int $adGroupId,
+        string $parentResourceName,
         array &$operations,
-        $percentCpcBidMicroAmount
+        int $percentCpcBidMicroAmount
     ) {
         // The criterion ID for Japan is 2392.
         // See https://developers.google.com/adwords/api/docs/appendix/geotargeting for criteria ID
@@ -361,8 +361,8 @@ class AddHotelListingGroupTree
      * @return ListingGroupInfo the created listing group info
      */
     private static function createListingGroupInfo(
-        $listingGroupType,
-        $parentCriterionResourceName = null,
+        int $listingGroupType,
+        string $parentCriterionResourceName = null,
         ListingDimensionInfo $caseValue = null
     ) {
         $listingGroupInfo = new ListingGroupInfo([
@@ -391,10 +391,10 @@ class AddHotelListingGroupTree
      * @return AdGroupCriterion the created ad group criterion
      */
     private static function createAdGroupCriterion(
-        $customerId,
-        $adGroupId,
+        int $customerId,
+        int $adGroupId,
         ListingGroupInfo $listingGroupInfo,
-        $percentCpcBidMicroAmount
+        int $percentCpcBidMicroAmount
     ) {
         $adGroupCriterion = new AdGroupCriterion([
             'status' => AdGroupStatus::ENABLED,

@@ -98,15 +98,15 @@ class RemoveKeyword
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID that the ad group criterion belongs to
      * @param int $criterionId the ID of the ad group criterion to remove
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId,
-        $criterionId
+        int $customerId,
+        int $adGroupId,
+        int $criterionId
     ) {
         // Creates ad group criterion resource name.
         $adGroupCriterionResourceName =

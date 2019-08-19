@@ -1,3 +1,10 @@
+## 2.1.0
+*   Added support for v2_1 of Google Ads API.
+*   Switched the default implementation of protobuf to use the C extension and added related
+    documentation.
+*   Added examples for Google My Business location extensions, Smart display ads and campaign
+    experiments.
+
 ## 2.0.0
 *   Added support for v2 of Google Ads API.
 *   Renamed the getter and setter functions for unwrapped values from getXXXValue/setXXXValue to

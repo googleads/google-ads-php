@@ -126,7 +126,7 @@ class AddShoppingProductAd
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $merchantCenterAccountId the Merchant Center account ID
      * @param bool $shouldCreateDefaultListingGroup true if a default listing group should be
      *     created for the ad group. Set to false if the listing group will be constructed
@@ -134,9 +134,9 @@ class AddShoppingProductAd
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $merchantCenterAccountId,
-        $shouldCreateDefaultListingGroup
+        int $customerId,
+        int $merchantCenterAccountId,
+        bool $shouldCreateDefaultListingGroup
     ) {
         // Creates a budget to be used by the campaign that will be created below.
         $budgetResourceName = self::addCampaignBudget($googleAdsClient, $customerId);
@@ -169,10 +169,10 @@ class AddShoppingProductAd
      * Creates a new campaign budget in the specified client account.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return string the resource name of the newly created budget
      */
-    private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, $customerId)
+    private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a campaign budget.
         $budget = new CampaignBudget([
@@ -208,7 +208,7 @@ class AddShoppingProductAd
      * Creates a new shopping product campaign in the specified client account.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $budgetResourceName the resource name of budget for a new campaign
      * @param int $merchantCenterAccountId the Merchant Center account ID
      * @return string the resource name of the newly created campaign
@@ -216,9 +216,9 @@ class AddShoppingProductAd
     // [START addShoppingProductCampaign]
     private static function addStandardShoppingCampaign(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $budgetResourceName,
-        $merchantCenterAccountId
+        int $customerId,
+        string $budgetResourceName,
+        int $merchantCenterAccountId
     ) {
         // Creates a standard shopping campaign.
         $campaign = new Campaign([
@@ -277,7 +277,7 @@ class AddShoppingProductAd
      * Creates a new shopping product ad group in the specified campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $campaignResourceName the resource name of campaign that a new ad group will
      *     belong to
      * @return string the resource name of the newly created ad group
@@ -285,8 +285,8 @@ class AddShoppingProductAd
     // [START addShoppingProductAdGroup]
     private static function addShoppingProductAdGroup(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignResourceName
+        int $customerId,
+        string $campaignResourceName
     ) {
         // Creates an ad group.
         $adGroup = new AdGroup([
@@ -324,15 +324,15 @@ class AddShoppingProductAd
      * Creates a new shopping product ad group ad in the specified ad group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $adGroupResourceName the resource name of ad group that a new ad group ad will
      *     belong to
      */
     // [START addShoppingProductAdGroupAd]
     private static function addShoppingProductAdGroupAd(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupResourceName
+        int $customerId,
+        string $adGroupResourceName
     ) {
         // Creates a new shopping product ad.
         $ad = new Ad(['shopping_product_ad' => new ShoppingProductAdInfo()]);
@@ -370,15 +370,15 @@ class AddShoppingProductAd
      * The criterion will contain the bid for a given listing group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $adGroupResourceName the resource name of ad group that the new listing group
      *     will belong to
      */
     // [START addDefaultShoppingListingGroup]
     private static function addDefaultShoppingListingGroup(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupResourceName
+        int $customerId,
+        string $adGroupResourceName
     ) {
         // Creates a new ad group criterion. This will contain the "default" listing group (All
         // products).

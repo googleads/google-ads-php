@@ -96,15 +96,15 @@ class RemoveAd
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID that the ad group ad belongs to
      * @param int $adId the ID of the ad to remove
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupId,
-        $adId
+        int $customerId,
+        int $adGroupId,
+        int $adId
     ) {
         // Creates ad group ad resource name.
         $adGroupAdResourceName = ResourceNames::forAdGroupAd($customerId, $adGroupId, $adId);

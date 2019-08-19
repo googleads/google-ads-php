@@ -98,7 +98,7 @@ class GetArtifactMetadata
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $artifactName the name of artifact to get its metadata
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $artifactName)
+    public static function runExample(GoogleAdsClient $googleAdsClient, int $artifactName)
     {
         $googleAdsFieldServiceClient = $googleAdsClient->getGoogleAdsFieldServiceClient();
         // Searches for an artifact whose name is the same as the specified artifactName.

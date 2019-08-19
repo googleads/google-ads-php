@@ -109,13 +109,13 @@ class UsePortfolioBiddingStrategy
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignBudgetId the campaign budget ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignBudgetId
+        int $customerId,
+        int $campaignBudgetId
     ) {
         $biddingStrategyResourceName = self::createBiddingStrategy($googleAdsClient, $customerId);
         if (is_null($campaignBudgetId)) {
@@ -137,10 +137,10 @@ class UsePortfolioBiddingStrategy
      * Creates the portfolio bidding strategy.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @return string the resource name of created bidding strategy
      */
-    private static function createBiddingStrategy(GoogleAdsClient $googleAdsClient, $customerId)
+    private static function createBiddingStrategy(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a portfolio bidding strategy.
         $portfolioBiddingStrategy = new BiddingStrategy([
@@ -178,12 +178,12 @@ class UsePortfolioBiddingStrategy
      * Creates an explicitly shared budget to be used to create the campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @return string the resource name of created shared budget
      */
     private static function createSharedCampaignBudget(
         GoogleAdsClient $googleAdsClient,
-        $customerId
+        int $customerId
     ) {
         // Creates a shared budget.
         $budget = new CampaignBudget([
@@ -221,15 +221,15 @@ class UsePortfolioBiddingStrategy
      * Creates a campaign with the created portfolio bidding strategy.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $biddingStrategyResourceName the bidding strategy resource name to use
      * @param string $campaignBudgetResourceName the shared budget resource name to use
      */
     private static function createCampaignWithBiddingStrategy(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $biddingStrategyResourceName,
-        $campaignBudgetResourceName
+        int $customerId,
+        string $biddingStrategyResourceName,
+        string $campaignBudgetResourceName
     ) {
         // Creates a Search campaign.
         $campaign = new Campaign([

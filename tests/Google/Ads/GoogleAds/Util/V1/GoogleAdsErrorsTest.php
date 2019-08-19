@@ -18,7 +18,6 @@
 namespace Google\Ads\GoogleAds\Util\V1;
 
 use Google\Protobuf\Any;
-use Google\Protobuf\Int64Value;
 use Google\Rpc\Status;
 use Google\Ads\GoogleAds\V1\Errors\ErrorLocation;
 use Google\Ads\GoogleAds\V1\Errors\ErrorLocation\FieldPathElement;
@@ -35,26 +34,10 @@ use PHPUnit\Framework\TestCase;
 class GoogleAdsErrorsTest extends TestCase
 {
     private $failure;
-    private $statusMock;
 
     public function setUp()
     {
-        $this->failure = new GoogleAdsFailure([
-            "errors" => [
-                new GoogleAdsError([
-                    "message" => "A test message.",
-                    "location" => new ErrorLocation([
-                        "field_path_elements" => [
-                            new FieldPathElement([
-                                "index" => 0,
-                                "field_name" => "operations"
-                            ])
-                        ]
-                    ])
-                ])
-            ]
-        ]);
-
+        $this->failure = $this->createGoogleAdsFailure();
         $any = new Any();
         $any->pack($this->failure);
         $this->status = new Status([
@@ -104,5 +87,34 @@ class GoogleAdsErrorsTest extends TestCase
     {
         $errors = GoogleAdsErrors::fromFailure(1, $this->failure);
         $this->assertCount(0, $errors);
+    }
+
+    public function testFromFailureWithMutateOperation()
+    {
+        $failureWithMutateOperation = $this->createGoogleAdsFailure("mutate_operations");
+        $errors = GoogleAdsErrors::fromFailure(0, $failureWithMutateOperation);
+        $this->assertCount(1, $errors);
+        
+        $expectedMessage = "A test message.";
+        $this->assertEquals($expectedMessage, $errors[0]->getMessage());
+    }
+
+    private function createGoogleAdsFailure($fieldName = "operations")
+    {
+        return new GoogleAdsFailure([
+            "errors" => [
+                new GoogleAdsError([
+                    "message" => "A test message.",
+                    "location" => new ErrorLocation([
+                        "field_path_elements" => [
+                            new FieldPathElement([
+                                "index" => 0,
+                                "field_name" => $fieldName
+                            ])
+                        ]
+                    ])
+                ])
+            ]
+        ]);
     }
 }

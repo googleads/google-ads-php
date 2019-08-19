@@ -66,12 +66,12 @@ use Google\Ads\GoogleAds\V2\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomInterestServiceClient;
-use Google\Ads\GoogleAds\V2\Services\DisplayKeywordViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\DetailPlacementViewServiceClient;
+use Google\Ads\GoogleAds\V2\Services\DisplayKeywordViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\DomainCategoryServiceClient;
 use Google\Ads\GoogleAds\V2\Services\DynamicSearchAdsSearchTermViewServiceClient;
-use Google\Ads\GoogleAds\V2\Services\ExtensionFeedItemServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ExpandedLandingPageViewServiceClient;
+use Google\Ads\GoogleAds\V2\Services\ExtensionFeedItemServiceClient;
 use Google\Ads\GoogleAds\V2\Services\FeedItemServiceClient;
 use Google\Ads\GoogleAds\V2\Services\FeedItemTargetServiceClient;
 use Google\Ads\GoogleAds\V2\Services\FeedMappingServiceClient;
@@ -103,10 +103,10 @@ use Google\Ads\GoogleAds\V2\Services\MobileAppCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\MobileDeviceConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\MutateJobServiceClient;
 use Google\Ads\GoogleAds\V2\Services\OperatingSystemVersionConstantServiceClient;
+use Google\Ads\GoogleAds\V2\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ParentalStatusViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ProductBiddingCategoryConstantServiceClient;
-use Google\Ads\GoogleAds\V2\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ProductGroupViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V2\Services\RemarketingActionServiceClient;
@@ -901,6 +901,14 @@ trait ServiceClientFactoryTrait
     public function getProductGroupViewServiceClient()
     {
         return new ProductGroupViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ReachPlanServiceClient
+     */
+    public function getReachPlanServiceClient()
+    {
+        return new ReachPlanServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

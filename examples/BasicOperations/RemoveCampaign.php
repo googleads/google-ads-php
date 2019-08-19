@@ -93,11 +93,14 @@ class RemoveCampaign
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the ID of the campaign to remove
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, $customerId, $campaignId)
-    {
+    public static function runExample(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        int $campaignId
+    ) {
         // Creates the resource name of a campaign to remove.
         $campaignResourceName = ResourceNames::forCampaign($customerId, $campaignId);
 

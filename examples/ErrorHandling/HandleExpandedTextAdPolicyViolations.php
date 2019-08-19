@@ -104,7 +104,7 @@ class HandleExpandedTextAdPolicyViolations
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID to add an expanded text ad to
      */
     public static function runExample(

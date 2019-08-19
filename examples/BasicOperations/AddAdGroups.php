@@ -95,13 +95,13 @@ class AddAdGroups
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $campaignId the campaign ID to add ad groups to
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignId
+        int $customerId,
+        int $campaignId
     ) {
         $campaignResourceName =
             new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]);

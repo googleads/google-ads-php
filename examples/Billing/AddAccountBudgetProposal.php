@@ -98,13 +98,13 @@ class AddAccountBudgetProposal
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $billingSetupId the billing setup ID used to add the account budget proposal
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $billingSetupId
+        int $customerId,
+        int $billingSetupId
     ) {
         // Constructs an account budget proposal.
         $accountBudgetProposal = new AccountBudgetProposal([

@@ -45,6 +45,13 @@ class PolicyReviewStatus
      * Generated from protobuf enum <code>UNDER_APPEAL = 4;</code>
      */
     const UNDER_APPEAL = 4;
+    /**
+     * The resource is eligible and may be serving but could still undergo
+     * further review.
+     *
+     * Generated from protobuf enum <code>ELIGIBLE_MAY_SERVE = 5;</code>
+     */
+    const ELIGIBLE_MAY_SERVE = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -52,6 +59,7 @@ class PolicyReviewStatus
         self::REVIEW_IN_PROGRESS => 'REVIEW_IN_PROGRESS',
         self::REVIEWED => 'REVIEWED',
         self::UNDER_APPEAL => 'UNDER_APPEAL',
+        self::ELIGIBLE_MAY_SERVE => 'ELIGIBLE_MAY_SERVE',
     ];
 
     public static function name($value)

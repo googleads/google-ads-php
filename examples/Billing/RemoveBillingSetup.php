@@ -94,13 +94,13 @@ class RemoveBillingSetup
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $billingSetupId the ID of the billing setup to remove
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $billingSetupId
+        int $customerId,
+        int $billingSetupId
     ) {
         // Creates the resource name of a billing setup to remove.
         $billingSetupResourceName = ResourceNames::forBillingSetup($customerId, $billingSetupId);

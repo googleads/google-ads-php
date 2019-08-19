@@ -120,7 +120,7 @@ class GenerateKeywordIdeas
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int[] $locationIds the location IDs
      * @param int $languageId the language ID
      * @param string[] $keywords the list of keywords to use as a seed for ideas
@@ -128,11 +128,11 @@ class GenerateKeywordIdeas
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
+        int $customerId,
         array $locationIds,
-        $languageId,
+        int $languageId,
         array $keywords,
-        $pageUrl
+        string $pageUrl
     ) {
         $keywordPlanIdeaServiceClient = $googleAdsClient->getKeywordPlanIdeaServiceClient();
 

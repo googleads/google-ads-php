@@ -126,15 +126,15 @@ class AddHotelAds
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param int $hotelCenterAccountId the Hotel Center account ID
      * @param int $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $hotelCenterAccountId,
-        $cpcBidCeilingMicroAmount
+        int $customerId,
+        int $hotelCenterAccountId,
+        int $cpcBidCeilingMicroAmount
     ) {
         // Creates a budget to be used by the campaign that will be created below.
         $budgetResourceName = self::addCampaignBudget($googleAdsClient, $customerId);
@@ -157,10 +157,10 @@ class AddHotelAds
      * Creates a new campaign budget in the specified client account.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return string the resource name of the newly created budget
      */
-    private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, $customerId)
+    private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a campaign budget.
         $budget = new CampaignBudget([
@@ -198,7 +198,7 @@ class AddHotelAds
      * Creates a new hotel campaign in the specified client account.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $budgetResourceName the resource name of budget for a new campaign
      * @param int $hotelCenterAccountId the Hotel Center account ID
      * @param int $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
@@ -207,10 +207,10 @@ class AddHotelAds
     // [START addHotelCampaign]
     private static function addHotelCampaign(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $budgetResourceName,
-        $hotelCenterAccountId,
-        $cpcBidCeilingMicroAmount
+        int $customerId,
+        string $budgetResourceName,
+        int $hotelCenterAccountId,
+        int $cpcBidCeilingMicroAmount
     ) {
         // Creates a campaign.
         $campaign = new Campaign([
@@ -263,7 +263,7 @@ class AddHotelAds
      * Creates a new hotel ad group in the specified campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $campaignResourceName the resource name of campaign that a new ad group will
      *     belong to
      * @return string the resource name of the newly created ad group
@@ -271,8 +271,8 @@ class AddHotelAds
     // [START addHotelAdGroup]
     private static function addHotelAdGroup(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $campaignResourceName
+        int $customerId,
+        string $campaignResourceName
     ) {
         // Creates an ad group.
         $adGroup = new AdGroup([
@@ -310,15 +310,15 @@ class AddHotelAds
      * Creates a new hotel ad group ad in the specified ad group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @param string $adGroupResourceName the resource name of ad group that a new ad group ad will
      *     belong to
      */
     // [START addHotelAdGroupAd]
     private static function addHotelAdGroupAd(
         GoogleAdsClient $googleAdsClient,
-        $customerId,
-        $adGroupResourceName
+        int $customerId,
+        string $adGroupResourceName
     ) {
         // Creates a new hotel ad.
         $ad = new Ad([

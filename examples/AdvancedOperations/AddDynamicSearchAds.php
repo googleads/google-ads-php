@@ -116,7 +116,7 @@ class AddDynamicSearchAds
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -141,7 +141,7 @@ class AddDynamicSearchAds
      * Creates a campaign budget.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
+     * @param int $customerId the customer ID
      * @return string the campaign budget resource name
      */
     private static function createCampaignBudget(
@@ -176,7 +176,7 @@ class AddDynamicSearchAds
      * Creates a campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $campaignBudgetResourceName the resource name of the campaign budget
      * @return string the resource name of the newly created campaign
      */
@@ -224,7 +224,7 @@ class AddDynamicSearchAds
      * Creates an ad group.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $campaignResourceName the resource name of the campaign
      * @return string the resource name of the newly created ad group
      */
@@ -264,7 +264,7 @@ class AddDynamicSearchAds
      * Creates an expanded dynamic search ad.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $adGroupResourceName the ad group resource name
      */
     private static function createExpandedDSA(
@@ -303,7 +303,7 @@ class AddDynamicSearchAds
      * Creates a webpage targeting criterion for the DSA.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID without hyphens
+     * @param int $customerId the customer ID
      * @param string $adGroupResourceName the resource name of the ad group
      */
     private static function createWebPageCriterion(

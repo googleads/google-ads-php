@@ -96,7 +96,7 @@ class LinkManagerToClient
      * sure to update the configuration before fetching any services you need to use.
      *
      * @param int $managerCustomerId the manager customer ID
-     * @param int $clientCustomerId the client customer ID
+     * @param int $clientCustomerId the customer ID
      */
     public static function runExample(int $managerCustomerId, int $clientCustomerId)
     {
@@ -121,7 +121,7 @@ class LinkManagerToClient
      * Extends an invitation from a manager customer to a client customer.
      *
      * @param int $managerCustomerId the manager customer ID
-     * @param int $clientCustomerId the client customer ID
+     * @param int $clientCustomerId the customer ID
      * @return string the resource name of the customer client link created for the invitation
      */
     private static function createInvitation(
@@ -169,7 +169,7 @@ class LinkManagerToClient
      * Retrieves the manager link resource name of a customer client link given its resource name.
      *
      * @param int $managerCustomerId the manager customer ID
-     * @param int $clientCustomerId the client customer ID
+     * @param int $clientCustomerId the customer ID
      * @param string $customerClientLinkResourceName the customer client link resource name
      * @return string the manager link resource name
      */
@@ -219,7 +219,7 @@ class LinkManagerToClient
     /**
      * Accepts an invitation.
      *
-     * @param int $clientCustomerId the client customer ID
+     * @param int $clientCustomerId the customer ID
      * @param string $managerLinkResourceName the resource name of the manager link to accept
      */
     private static function acceptInvitation(
