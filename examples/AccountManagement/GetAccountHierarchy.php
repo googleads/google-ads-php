@@ -114,11 +114,6 @@ class GetAccountHierarchy
                 ['pageSize' => self::PAGE_SIZE]
             );
 
-            printf(
-                "Customer clients for the customer ID %d are found:%s",
-                $managerAccountId,
-                PHP_EOL
-            );
             // Iterates over all rows in all pages and prints the requested field values for
             // the change status in each row.
             foreach ($response->iterateAllElements() as $googleAdsRow) {
@@ -134,22 +129,11 @@ class GetAccountHierarchy
                     continue;
                 }
 
-                printf(
-                    "Customer client ID %d with name '%s', currency code '%s', time zone '%s'"
-                    . " is found.%s",
-                    $customerClient->getIdUnwrapped(),
-                    $customerClient->getDescriptiveNameUnwrapped(),
-                    $customerClient->getCurrencyCodeUnwrapped(),
-                    $customerClient->getTimeZoneUnwrapped(),
-                    PHP_EOL
-                );
-
                 // For all level-1 child accounts that are a manager account, the above query will
                 // be run against them to create an associative array of managers to their child
                 // accounts for printing the hierarchy afterwards.
                 $customerIdsToChildAccounts[$managerAccountId][] = $customerClient;
                 if ($customerClient->getManagerUnwrapped()) {
-                    print '  This customer account is also a manager.' . PHP_EOL;
                     // A customer can be managed by multiple managers, so to prevent visiting the
                     // same customer many times, we need to check if it's already in the map.
                     $alreadyVisited = array_key_exists(
@@ -161,10 +145,14 @@ class GetAccountHierarchy
                     }
                 }
             }
-            print PHP_EOL;
         };
 
-        print '(Customer ID, Descriptive Name)' . PHP_EOL;
+        printf(
+            "The hiearchy of the customer ID %d is printed below:%s",
+            $rootCustomerClient->getIdUnwrapped(),
+            PHP_EOL
+        );
+        print 'Customer ID (Descriptive Name, Currency Code, Time Zone)' . PHP_EOL;
         self::printAccountHierarchy($rootCustomerClient, $customerIdsToChildAccounts, 0);
     }
 
@@ -186,9 +174,11 @@ class GetAccountHierarchy
         $customerId = $customerClient->getIdUnwrapped();
         print str_repeat('-', $depth * 2);
         printf(
-            "%d, '%s'%s",
+            " %d ('%s', '%s', '%s')%s",
             $customerId,
             $customerClient->getDescriptiveNameUnwrapped(),
+            $customerClient->getCurrencyCodeUnwrapped(),
+            $customerClient->getTimeZoneUnwrapped(),
             PHP_EOL
         );
 
