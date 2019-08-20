@@ -101,7 +101,7 @@ class GetKeywords
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        int $adGroupId
+        ?int $adGroupId
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves keywords.

@@ -99,7 +99,7 @@ class GetAdGroups
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        int $campaignId
+        ?int $campaignId
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves all ad groups.

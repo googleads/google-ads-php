@@ -100,7 +100,7 @@ class GetAdGroupBidModifiers
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        int $adGroupId
+        ?int $adGroupId
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves ad group bid modifiers.
