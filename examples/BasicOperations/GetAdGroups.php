@@ -93,7 +93,7 @@ class GetAdGroups
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID for which ad groups will be retrieved. If `null`,
+     * @param int|null $campaignId the campaign ID for which ad groups will be retrieved. If `null`,
      *     returns from all campaigns
      */
     public static function runExample(

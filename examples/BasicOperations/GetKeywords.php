@@ -95,7 +95,7 @@ class GetKeywords
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID for which keywords will be retrieved. If `null`,
+     * @param int|null $adGroupId the ad group ID for which keywords will be retrieved. If `null`,
      *     returns from all ad groups
      */
     public static function runExample(
