@@ -102,6 +102,8 @@ class GetAccountHierarchy
             . ' customer_client.id'
             . ' FROM customer_client';
 
+        // Performs a breadth-first search algorithm to build an associative array mapping managers
+        // to their child accounts ($customerIdsToChildAccounts).
         $unprocessedManagerAccounts = [$customerId];
         $customerIdsToChildAccounts = [];
         $rootCustomerClient = null;
@@ -114,8 +116,8 @@ class GetAccountHierarchy
                 ['pageSize' => self::PAGE_SIZE]
             );
 
-            // Iterates over all rows in all pages and prints the requested field values for
-            // the change status in each row.
+            // Iterates over all rows in all pages to get all customer clients under the specified
+            // customer's hierarchy.
             foreach ($response->iterateAllElements() as $googleAdsRow) {
                 /** @var GoogleAdsRow $googleAdsRow */
                 $customerClient = $googleAdsRow->getCustomerClient();
@@ -129,9 +131,9 @@ class GetAccountHierarchy
                     continue;
                 }
 
-                // For all level-1 child accounts that are a manager account, the above query will
-                // be run against them to create an associative array of managers to their child
-                // accounts for printing the hierarchy afterwards.
+                // For all level-1 (direct child) accounts that are a manager account, the above
+                // query will be run against them to create an associative array of managers to
+                // their child accounts for printing the hierarchy afterwards.
                 $customerIdsToChildAccounts[$managerAccountId][] = $customerClient;
                 if ($customerClient->getManagerUnwrapped()) {
                     // A customer can be managed by multiple managers, so to prevent visiting the
