@@ -32,11 +32,11 @@ use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
- * This example gets the account hierarchy of the specified customer account.
+ * This example gets the account hierarchy of the specified manager account.
  */
 class GetAccountHierarchy
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    const MANAGER_CUSTOMER_ID = 'INSERT_MANAGER_CUSTOMER_ID_HERE';
     const PAGE_SIZE = 1000;
 
     public static function main()
@@ -44,7 +44,7 @@ class GetAccountHierarchy
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::MANAGER_CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -59,7 +59,7 @@ class GetAccountHierarchy
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID
+                $options[ArgumentNames::MANAGER_CUSTOMER_ID] ?: self::MANAGER_CUSTOMER_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -90,12 +90,13 @@ class GetAccountHierarchy
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
+     * @param int $managerCustomerId the customer ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
+    public static function runExample(GoogleAdsClient $googleAdsClient, int $managerCustomerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        // Creates a query that retrieves all child accounts of the specified customer ID.
+        // Creates a query that retrieves all child accounts of the manager specified in search
+        // calls below.
         $query = 'SELECT customer_client.client_customer, customer_client.level,'
             . ' customer_client.manager, customer_client.descriptive_name,'
             . ' customer_client.currency_code, customer_client.time_zone,'
@@ -104,7 +105,7 @@ class GetAccountHierarchy
 
         // Performs a breadth-first search algorithm to build an associative array mapping managers
         // to their child accounts ($customerIdsToChildAccounts).
-        $unprocessedManagerAccounts = [$customerId];
+        $unprocessedManagerAccounts = [$managerCustomerId];
         $customerIdsToChildAccounts = [];
         $rootCustomerClient = null;
         while (!empty($unprocessedManagerAccounts)) {
@@ -150,11 +151,10 @@ class GetAccountHierarchy
         };
 
         printf(
-            "The hiearchy of the customer ID %d is printed below:%s",
+            "The hierarchy of manager customer ID %d is printed below:%s",
             $rootCustomerClient->getIdUnwrapped(),
             PHP_EOL
         );
-        print 'Customer ID (Descriptive Name, Currency Code, Time Zone)' . PHP_EOL;
         self::printAccountHierarchy($rootCustomerClient, $customerIdsToChildAccounts, 0);
     }
 
@@ -173,6 +173,9 @@ class GetAccountHierarchy
         array $customerIdsToChildAccounts,
         int $depth
     ) {
+        if ($depth === 0) {
+            print 'Customer ID (Descriptive Name, Currency Code, Time Zone)' . PHP_EOL;
+        }
         $customerId = $customerClient->getIdUnwrapped();
         print str_repeat('-', $depth * 2);
         printf(
