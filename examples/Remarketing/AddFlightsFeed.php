@@ -108,9 +108,8 @@ class AddFlightsFeed
     {
         // Creates a new flights feed.
         $feedResourceName = self::createFeed($googleAdsClient, $customerId);
-
-        // Get the newly creates feed's attributes and packages them into a map. This read operation
-        // is required to retrieve the attribute IDs.
+        // Gets the newly created feed's attributes and packages them into a map. This read
+        // operation is required to retrieve the attribute IDs.
         $placeHoldersToFeedAttributesMap =
             self::getFeed($googleAdsClient, $customerId, $feedResourceName);
         // Creates the feed mapping.
@@ -164,7 +163,7 @@ class AddFlightsFeed
             'name' => new StringValue(['value' => 'Final URLs'])
         ]);
 
-        // Creates the feed.
+        // Creates the feed with the newly created feed attributes.
         $feed = new Feed([
             'name' => new StringValue(['value' => 'Flights Feed #' . uniqid()]),
             'attributes' => [
@@ -192,13 +191,16 @@ class AddFlightsFeed
     /**
      * Retrieves details about a feed. The initial query retrieves the feed attributes, or columns,
      * of the feed. Each feed attribute will also include the feed attribute ID, which will be used
-     * in a subsequent step. The example then inserts a new key, value pair into a map for each
-     * feed attribute, which is the return value of the method. The keys are the placeholder types
-     * that the columns will be. The values are the feed attributes.
+     * in a subsequent step.
+     *
+     * The example then inserts a new key-value pair into a map for each
+     * feed attribute, which is the return value of the method:
+     * - The keys are the placeholder types that the columns will be.
+     * - The values are the feed attributes.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param string $feedResourceName the feed resource name to get its attributes
+     * @param string $feedResourceName the feed resource name to get the attributes from
      * @return array the map from placeholder fields to feed attributes
      */
     private static function getFeed(
