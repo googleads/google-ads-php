@@ -28,15 +28,21 @@ use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V2\Resources\CustomerClient;
+use Google\Ads\GoogleAds\V2\Services\CustomerServiceClient;
 use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
- * This example gets the account hierarchy of the specified manager account.
+ * This example gets the account hierarchy of the specified manager account. If you don't specify
+ * manager customer ID, the example will instead print the hierarchies of all accessible customer
+ * accounts for your authenticated Google account.
+ * Note that if your accessible customers have manager-client relationships, you may get hierarchies
+ * that are subset of each other.
  */
 class GetAccountHierarchy
 {
-    const MANAGER_CUSTOMER_ID = 'INSERT_MANAGER_CUSTOMER_ID_HERE';
+    // Optional: Inserts the manager customer ID below.
+    const MANAGER_CUSTOMER_ID = null;
     const PAGE_SIZE = 1000;
 
     public static function main()
@@ -44,7 +50,7 @@ class GetAccountHierarchy
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::MANAGER_CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::MANAGER_CUSTOMER_ID => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -90,72 +96,97 @@ class GetAccountHierarchy
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $managerCustomerId the customer ID
+     * @param int|null $managerCustomerId the customer ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, int $managerCustomerId)
+    public static function runExample(GoogleAdsClient $googleAdsClient, ?int $managerCustomerId)
     {
-        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        // Creates a query that retrieves all child accounts of the manager specified in search
-        // calls below.
-        $query = 'SELECT customer_client.client_customer, customer_client.level,'
-            . ' customer_client.manager, customer_client.descriptive_name,'
-            . ' customer_client.currency_code, customer_client.time_zone,'
-            . ' customer_client.id'
-            . ' FROM customer_client';
+        $seedCustomerIds = [];
+        if ($managerCustomerId) {
+            $seedCustomerIds[] = $managerCustomerId;
+        } else {
+            // Issues a request for listing all accessible customers by this authenticated Google
+            // account.
+            $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
+            $accessibleCustomers = $customerServiceClient->listAccessibleCustomers();
+            print 'No manager customer ID is specified. The example will print the hierarchies of'
+                . ' all accessible customer IDs:' . PHP_EOL;
 
-        // Performs a breadth-first search algorithm to build an associative array mapping managers
-        // to their child accounts ($customerIdsToChildAccounts).
-        $unprocessedManagerAccounts = [$managerCustomerId];
-        $customerIdsToChildAccounts = [];
-        $rootCustomerClient = null;
-        while (!empty($unprocessedManagerAccounts)) {
-            $managerAccountId = array_shift($unprocessedManagerAccounts);
-            // Issues a search request by specifying page size.
-            $response = $googleAdsServiceClient->search(
-                $managerAccountId,
-                $query,
-                ['pageSize' => self::PAGE_SIZE]
-            );
-
-            // Iterates over all rows in all pages to get all customer clients under the specified
-            // customer's hierarchy.
-            foreach ($response->iterateAllElements() as $googleAdsRow) {
-                /** @var GoogleAdsRow $googleAdsRow */
-                $customerClient = $googleAdsRow->getCustomerClient();
-                // The customer client that has level of 0 is the specified customer.
-                if ($customerClient->getLevelUnwrapped() === 0) {
-                    // Store the root customer client, which is the first encountered customer
-                    // client that has level of 0.
-                    if (is_null($rootCustomerClient)) {
-                        $rootCustomerClient = $customerClient;
-                    }
-                    continue;
-                }
-
-                // For all level-1 (direct child) accounts that are a manager account, the above
-                // query will be run against them to create an associative array of managers to
-                // their child accounts for printing the hierarchy afterwards.
-                $customerIdsToChildAccounts[$managerAccountId][] = $customerClient;
-                if ($customerClient->getManagerUnwrapped()) {
-                    // A customer can be managed by multiple managers, so to prevent visiting the
-                    // same customer many times, we need to check if it's already in the map.
-                    $alreadyVisited = array_key_exists(
-                        $customerClient->getIdUnwrapped(),
-                        $customerIdsToChildAccounts
-                    );
-                    if (!$alreadyVisited && $customerClient->getLevelUnwrapped() === 1) {
-                        array_push($unprocessedManagerAccounts, $customerClient->getIdUnwrapped());
-                    }
-                }
+            foreach ($accessibleCustomers->getResourceNames() as $customerResourceName) {
+                $customer = CustomerServiceClient::parseName($customerResourceName)['customer'];
+                print $customer . PHP_EOL;
+                $seedCustomerIds[] = $customer;
             }
-        };
+            print PHP_EOL;
+        }
 
-        printf(
-            "The hierarchy of manager customer ID %d is printed below:%s",
-            $rootCustomerClient->getIdUnwrapped(),
-            PHP_EOL
-        );
-        self::printAccountHierarchy($rootCustomerClient, $customerIdsToChildAccounts, 0);
+        foreach ($seedCustomerIds as $seedCustomerId) {
+            $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+            // Creates a query that retrieves all child accounts of the manager specified in search
+            // calls below.
+            $query = 'SELECT customer_client.client_customer, customer_client.level,'
+                . ' customer_client.manager, customer_client.descriptive_name,'
+                . ' customer_client.currency_code, customer_client.time_zone,'
+                . ' customer_client.id FROM customer_client';
+
+            // Performs a breadth-first search algorithm to build an associative array mapping
+            // managers to their child accounts ($customerIdsToChildAccounts).
+            $unprocessedCustomerIds = [$seedCustomerId];
+            $customerIdsToChildAccounts = [];
+            $rootCustomerClient = null;
+            while (!empty($unprocessedCustomerIds)) {
+                $customerId = array_shift($unprocessedCustomerIds);
+                // Issues a search request by specifying page size.
+                $response = $googleAdsServiceClient->search(
+                    $customerId,
+                    $query,
+                    ['pageSize' => self::PAGE_SIZE]
+                );
+
+                // Iterates over all rows in all pages to get all customer clients under the
+                // specified customer's hierarchy.
+                foreach ($response->iterateAllElements() as $googleAdsRow) {
+                    /** @var GoogleAdsRow $googleAdsRow */
+                    $customerClient = $googleAdsRow->getCustomerClient();
+                    // The customer client that has level of 0 is the specified customer.
+                    if ($customerClient->getLevelUnwrapped() === 0) {
+                        // Store the root customer client, which is the first encountered customer
+                        // client that has level of 0.
+                        if (is_null($rootCustomerClient)) {
+                            $rootCustomerClient = $customerClient;
+                        }
+                        continue;
+                    }
+
+                    // For all level-1 (direct child) accounts that are a manager account, the above
+                    // query will be run against them to create an associative array of managers to
+                    // their child accounts for printing the hierarchy afterwards.
+                    $customerIdsToChildAccounts[$customerId][] = $customerClient;
+                    if ($customerClient->getManagerUnwrapped()) {
+                        // A customer can be managed by multiple managers, so to prevent visiting
+                        // the same customer many times, we need to check if it's already in the
+                        // map.
+                        $alreadyVisited = array_key_exists(
+                            $customerClient->getIdUnwrapped(),
+                            $customerIdsToChildAccounts
+                        );
+                        if (!$alreadyVisited && $customerClient->getLevelUnwrapped() === 1) {
+                            array_push(
+                                $unprocessedCustomerIds,
+                                $customerClient->getIdUnwrapped()
+                            );
+                        }
+                    }
+                }
+            };
+
+            printf(
+                "The hierarchy of customer ID %d is printed below:%s",
+                $rootCustomerClient->getIdUnwrapped(),
+                PHP_EOL
+            );
+            self::printAccountHierarchy($rootCustomerClient, $customerIdsToChildAccounts, 0);
+            print PHP_EOL;
+        }
     }
 
     /**
