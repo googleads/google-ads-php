@@ -277,7 +277,7 @@ class AddRealEstateFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::LISTING_ID]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'real_estate_field' => RealEstatePlaceholderField::LISTING_ID
         ]);
@@ -285,7 +285,7 @@ class AddRealEstateFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::LISTING_NAME]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'real_estate_field' => RealEstatePlaceholderField::LISTING_NAME
         ]);
@@ -293,7 +293,7 @@ class AddRealEstateFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::FINAL_URLS]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'real_estate_field' => RealEstatePlaceholderField::FINAL_URLS
         ]);
@@ -301,7 +301,7 @@ class AddRealEstateFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::IMAGE_URL]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'real_estate_field' => RealEstatePlaceholderField::IMAGE_URL
         ]);
@@ -310,7 +310,7 @@ class AddRealEstateFeed
                 'value' =>
                     $placeHoldersToFeedAttributesMap[
                         RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS
-                    ]->getId()->getValue()
+                    ]->getIdUnwrapped()
             ]),
             'real_estate_field' => RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS
         ]);
@@ -362,7 +362,7 @@ class AddRealEstateFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::LISTING_ID]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_value' => new StringValue(['value' => 'ABC123DEF'])
         ]);
@@ -371,7 +371,7 @@ class AddRealEstateFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::LISTING_NAME]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_value' => new StringValue(['value' => 'Two bedroom with magnificent views'])
         ]);
@@ -380,7 +380,7 @@ class AddRealEstateFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::FINAL_URLS]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_values' => [new StringValue(['value' => 'http://www.example.com/listings/'])]
         ]);
@@ -389,7 +389,7 @@ class AddRealEstateFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::IMAGE_URL]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_value' => new StringValue([
                 'value' => 'http://www.example.com/listings/images?listing_id=ABC123DEF'
@@ -401,7 +401,7 @@ class AddRealEstateFeed
                 'value' =>
                     $placeHoldersToFeedAttributesMap[
                         RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS
-                    ]->getId()->getValue()
+                    ]->getIdUnwrapped()
             ]),
             'string_values' => [
                 new StringValue(['value' => 'beach community']),
