@@ -110,7 +110,7 @@ class GetAllImageAssets
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 "Image with name '%s', file size %d bytes, width %dpx, height %dpx, ".
-                    "and url '%s' was found.%s",
+                    "and URL '%s' was found.%s",
                 $googleAdsRow->getAsset()->getNameUnwrapped(),
                 $googleAdsRow->getAsset()->getImageAsset()->getFileSizeUnwrapped(),
                 $googleAdsRow
