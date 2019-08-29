@@ -399,8 +399,9 @@ class AddRealEstateFeed
         $contextualKeywordsAttributeValue = new FeedItemAttributeValue([
             'feed_attribute_id' => new Int64Value([
                 'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS]
-                        ->getId()->getValue()
+                    $placeHoldersToFeedAttributesMap[
+                        RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS
+                    ]->getId()->getValue()
             ]),
             'string_values' => [
                 new StringValue(['value' => 'beach community']),
