@@ -26,7 +26,7 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
-use Google\Ads\GoogleAds\V1\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
+use Google\Ads\GoogleAds\V2\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
 use Google\Ads\GoogleAds\V2\Enums\FeedAttributeTypeEnum\FeedAttributeType;
 use Google\Ads\GoogleAds\V2\Enums\PlaceholderTypeEnum\PlaceholderType;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
