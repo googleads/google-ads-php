@@ -36,8 +36,9 @@ use Google\ApiCore\ApiException;
  * This example gets the account hierarchy of the specified manager account. If you don't specify
  * manager customer ID, the example will instead print the hierarchies of all accessible customer
  * accounts for your authenticated Google account.
- * Note that if your accessible customers have manager-client relationships, you may get hierarchies
- * that are subset of each other.
+ * Note that if the list of accessible customers for your authenticated Google account includes
+ * accounts within the same hierarchy, this example will retrieve and print the overlapping
+ * portions of the hierarchy for each accessible customer.
  */
 class GetAccountHierarchy
 {
