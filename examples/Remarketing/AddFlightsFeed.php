@@ -129,7 +129,7 @@ class AddFlightsFeed
     }
 
     /**
-     * Creates a flight feed.
+     * Creates a feed that will be used as a flight feed.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
