@@ -129,8 +129,8 @@ class AddAdCustomizer
     ) {
         if (count($adGroupIds) != self::NUMBER_OF_AD_GROUPS) {
             throw new \InvalidArgumentException(
-                "Please pass exactly . " . self::NUMBER_OF_AD_GROUPS .
-                " ad group IDs in the adGroupId parameter."
+                'Please pass exactly ' . self::NUMBER_OF_AD_GROUPS .
+                ' ad group IDs in the adGroupId parameter.'
             );
         }
 
@@ -241,8 +241,8 @@ class AddAdCustomizer
         int $customerId,
         string $feedResourceName
     ) {
-        $query = "SELECT feed.attributes, feed.name FROM feed " .
-                 "WHERE feed.resource_name = '$feedResourceName'";
+        $query = "SELECT feed.attributes, feed.name FROM feed "
+            . "WHERE feed.resource_name = '$feedResourceName'";
 
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         $response =
@@ -386,7 +386,7 @@ class AddAdCustomizer
      * @param string date the value of the Date attribute
      * @param string adCustomizerFeedResourceName the resource name of the feed
      * @param array adCustomizerFeedAttributes the attributes to be set on the feed
-     * @return FeedItemOperation to create a feed item
+     * @return FeedItemOperation the feed item operation to create a feed item
      */
     private function createFeedItemOperation(
         string $name,
