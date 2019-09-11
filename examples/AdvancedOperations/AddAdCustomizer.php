@@ -51,8 +51,8 @@ use Google\Protobuf\StringValue;
 use Google\ApiCore\ApiException;
 
 /**
- * This code example adds a page feed to specify precisely which URLs to use with your Dynamic
- * Search Ads campaign.
+ * Adds an ad customizer feed and associates it with the customer. Then it adds an ad that uses the
+ * feed to populate dynamic data.
  */
 class AddAdCustomizer
 {
@@ -60,11 +60,11 @@ class AddAdCustomizer
     const AD_GROUP_ID_1 = 'INSERT_AD_GROUP_ID_1_HERE';
     const AD_GROUP_ID_2 = 'INSERT_AD_GROUP_ID_2_HERE';
 
-    // We're doing only searches by resource_name in this example, we can set page size = 1.
-    const PAGE_SIZE = 1;
-
     // We're creating two different ad groups to be dynamically populated by the same feed.
     const NUMBER_OF_AD_GROUPS = 2;
+
+    // We're doing only searches by resource_name in this example, we can set page size = 1.
+    const PAGE_SIZE = 1;
 
     public static function main()
     {
@@ -129,11 +129,12 @@ class AddAdCustomizer
     ) {
         if (count($adGroupIds) != self::NUMBER_OF_AD_GROUPS) {
             throw new \InvalidArgumentException(
-                "Please pass exactly two ad group IDs in the adGroupId parameter."
+                "Please pass exactly . " . self::NUMBER_OF_AD_GROUPS .
+                " ad group IDs in the adGroupId parameter."
             );
         }
 
-        $feedName = "Ad Customizer example feed " . uniqid();
+        $feedName = 'Ad Customizer example feed ' . uniqid();
 
         $adCustomizerFeedResourceName = self::createAdCustomizerFeed(
             $googleAdsClient,
@@ -222,7 +223,7 @@ class AddAdCustomizer
         $feedResponse = $feedServiceClient->mutateFeeds($customerId, [$feedOperation]);
 
         $feedResourceName = $feedResponse->getResults()[0]->getResourceName();
-        printf("Added feed named '%s'.%s", $feedResourceName, PHP_EOL);
+        printf("Added feed with resource name '%s'.%s", $feedResourceName, PHP_EOL);
 
         return $feedResourceName;
     }
@@ -240,22 +241,21 @@ class AddAdCustomizer
         int $customerId,
         string $feedResourceName
     ) {
-        $query = "SELECT feed.attributes, feed.name FROM feed WHERE feed.resource_name = " .
-                "'$feedResourceName'";
+        $query = "SELECT feed.attributes, feed.name FROM feed " .
+                 "WHERE feed.resource_name = '$feedResourceName'";
 
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         $response =
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
 
         $feed = $response->getIterator()->current()->getFeed();
-        $feedAttributes = $feed->getAttributes();
         $feedDetails = [];
         printf(
             "Found the following attributes for feed with name %s:%s",
             $feed->getNameUnwrapped(),
             PHP_EOL
         );
-        foreach ($feedAttributes as $feedAttribute) {
+        foreach ($$feed->getAttributes() as $feedAttribute) {
             /** @var FeedAttribute $feedAttribute */
             $feedDetails[$feedAttribute->getNameUnwrapped()] = $feedAttribute->getIdUnwrapped();
             printf(
@@ -274,7 +274,8 @@ class AddAdCustomizer
      *
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
      * @param int customerId the customer ID
-     * @param array feedDetails the names and IDs of feed attributes
+     * @param string $adCustomizerFeedResourceName the resource name of the ad customizer feed
+     * @param array feedDetails an associative array from feed attribute names to their IDs
      */
     private static function createAdCustomizerMapping(
         GoogleAdsClient $googleAdsClient,
@@ -341,21 +342,20 @@ class AddAdCustomizer
         array $adCustomizerFeedAttributes
     ) {
         $feedItemOperations = [];
-        
-        $marsDate = new DateTime('first day of this month');
-        $feedItemOperations []= self::createFeedItemOperation(
-            "Mars",
-            "$1234.56",
-            date_format($marsDate, "Ymd His"),
+                
+        $feedItemOperations[] = self::createFeedItemOperation(
+            'Mars',
+            '$1234.56',
+            date_format(new DateTime('first day of this month'), 'Ymd His'),
             $adCustomizerFeedResourceName,
             $adCustomizerFeedAttributes
         );
-
-        $venusDate = DateTime::createFromFormat('d', '15');
-        $feedItemOperations []= self::createFeedItemOperation(
-            "Venus",
-            "$6543.21",
-            date_format($venusDate, "Ymd His"),
+        
+        $feedItemOperations[] = self::createFeedItemOperation(
+            'Venus',
+            '$6543.21',
+            // Set the date to the 15th of the current month.
+            date_format(DateTime::createFromFormat('d', '15'), 'Ymd His'),
             $adCustomizerFeedResourceName,
             $adCustomizerFeedAttributes
         );
@@ -372,21 +372,21 @@ class AddAdCustomizer
                 $result->getResourceName(),
                 PHP_EOL
             );
-            $feedItemResourceNames []= $result->getResourceName();
+            $feedItemResourceNames[] = $result->getResourceName();
         }
 
         return $feedItemResourceNames;
     }
 
     /**
-     * Helper function to create a FeedItemOperation.
+     * Creates a FeedItemOperation.
      *
-     * @param string name the value of the Name attribute.
-     * @param string price the value of the Price attribute.
-     * @param string date the value of the Date attribute.
-     * @param feedResourceName the resource name of the feed.
-     * @param feedAttributes the attributes to be set on the feed.
-     * @return a FeedItemOperation to create a feed item.
+     * @param string name the value of the Name attribute
+     * @param string price the value of the Price attribute
+     * @param string date the value of the Date attribute
+     * @param string adCustomizerFeedResourceName the resource name of the feed
+     * @param array adCustomizerFeedAttributes the attributes to be set on the feed
+     * @return FeedItemOperation to create a feed item
      */
     private function createFeedItemOperation(
         string $name,
@@ -432,8 +432,8 @@ class AddAdCustomizer
    *
    * @param GoogleAdsClient googleAdsClient the Google Ads API client
    * @param int $customerId the customer ID
-   * @param array adGroupIds the ad group IDs to bind the feed items to.
-   * @param array feedItemResourceNames the resource names of the feed items.
+   * @param array adGroupIds the ad group IDs to bind the feed items to
+   * @param array feedItemResourceNames the resource names of the feed items
    */
     private function createFeedItemTargets(
         GoogleAdsClient $googleAdsClient,
@@ -448,8 +448,8 @@ class AddAdCustomizer
             $adGroupId = $adGroupIds[$i];
 
             $feedItemTarget = new FeedItemTarget([
-                "feed_item" => new StringValue(["value" => $feedItemResourceName]),
-                "ad_group" => ResourceNames::forAdGroup($customerId, $adGroupId)
+                'feed_item' => new StringValue(['value' => $feedItemResourceName]),
+                'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
             ]);
 
             // Creates the operation.
@@ -465,17 +465,21 @@ class AddAdCustomizer
 
             $feedItemTargetResourceName =
                 $feedItemTargetResponse->getResults()[0]->getResourceName();
-            printf("Added feed item target named '%s'.%s", $feedItemTargetResourceName, PHP_EOL);
+            printf(
+                "Added feed item target with resource name '%s'.%s",
+                $feedItemTargetResourceName,
+                PHP_EOL
+            );
         }
     }
 
     /**
      * Creates expanded text ads that use the ad customizer feed to populate the placeholders.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client.
-     * @param int customerId the client customer ID.
-     * @param array adGroupIds the ad group IDs in which to create the ads.
-     * @param string feedName the name of the feed.
+     * @param GoogleAdsClient googleAdsClient the Google Ads API client
+     * @param int customerId the client customer ID
+     * @param array adGroupIds the ad group IDs in which to create the ads
+     * @param string feedName the name of the feed
      */
     private function createAdsWithCustomizations(
         GoogleAdsClient $googleAdsClient,
@@ -484,32 +488,32 @@ class AddAdCustomizer
         string $feedName
     ) {
         $expandedTextAdInfo = new ExpandedTextAdInfo([
-            "headline_part1" => new StringValue(["value" => "Luxury cruise to {=$feedName.Name}"]),
-            "headline_part2" => new StringValue(["value" => "Only {=$feedName.Price}"]),
-            "description" => new StringValue([
-                "value" => "Offer ends in {=countdown($feedName.Date)}!"
+            'headline_part1' => new StringValue(['value' => "Luxury cruise to {=$feedName.Name}"]),
+            'headline_part2' => new StringValue(['value' => "Only {=$feedName.Price}"]),
+            'description' => new StringValue([
+                'value' => "Offer ends in {=countdown($feedName.Date)}!"
             ])
         ]);
 
         $ad = new Ad([
-            "expanded_text_ad" => $expandedTextAdInfo,
-            "final_urls" => ["http://www.example.com"]
+            'expanded_text_ad' => $expandedTextAdInfo,
+            'final_urls' => ['http://www.example.com']
         ]);
 
         $adGroupAdOperations = [];
 
         foreach ($adGroupIds as $adGroupId) {
             $adGroupAd = new AdGroupAd([
-                "ad" => $ad,
-                "ad_group" => new StringValue([
-                    "value" => ResourceNames::forAdGroup($customerId, $adGroupId)
+                'ad' => $ad,
+                'ad_group' => new StringValue([
+                    'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
                 ])
             ]);
 
             $adGroupAdOperation = new AdGroupAdOperation();
             $adGroupAdOperation->setCreate($adGroupAd);
 
-            $adGroupAdOperations []= $adGroupAdOperation;
+            $adGroupAdOperations[] = $adGroupAdOperation;
         }
 
         // Issues a mutate request to add the ads.
@@ -519,7 +523,7 @@ class AddAdCustomizer
             $adGroupAdOperations
         );
 
-        printf("Added %d ads:%s", count($adGroupAdResponse->getResults()), PHP_EOL);
+        printf('Added %d ads:%s', count($adGroupAdResponse->getResults()), PHP_EOL);
         foreach ($adGroupAdResponse->getResults() as $result) {
             printf("Added an ad with resource name '%s'.%s", $result->getResourceName(), PHP_EOL);
         }
