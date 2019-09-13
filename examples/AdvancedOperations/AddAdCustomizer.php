@@ -72,7 +72,7 @@ class AddAdCustomizer
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::AD_GROUP_IDS => GetOpt::MULTIPLE_ARGUMENT
+            ArgumentNames::AD_GROUP_ID => GetOpt::MULTIPLE_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -88,7 +88,7 @@ class AddAdCustomizer
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::AD_GROUP_IDS] ?: [self::AD_GROUP_ID_1, self::AD_GROUP_ID_2]
+                $options[ArgumentNames::AD_GROUP_ID] ?: [self::AD_GROUP_ID_1, self::AD_GROUP_ID_2]
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -130,7 +130,7 @@ class AddAdCustomizer
         if (count($adGroupIds) != self::NUMBER_OF_AD_GROUPS) {
             throw new \InvalidArgumentException(
                 'Please pass exactly ' . self::NUMBER_OF_AD_GROUPS .
-                ' ad group IDs in the adGroupIds parameter.'
+                ' ad group IDs in the adGroupId parameter.'
             );
         }
 
