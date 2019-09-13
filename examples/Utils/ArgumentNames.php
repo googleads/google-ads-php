@@ -24,6 +24,7 @@ final class ArgumentNames
 {
     const AD_ID = 'adId';
     const AD_GROUP_ID = 'adGroupId';
+    const AD_GROUP_IDS = 'adGroupIds';
     const ARTIFACT_NAME = 'artifactName';
     const BASE_CAMPAIGN_ID = 'baseCampaignId';
     const BID_MODIFIER_VALUE = 'bidModifierValue';
@@ -63,6 +64,7 @@ final class ArgumentNames
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
+        self::AD_GROUP_IDS => 'The ad group IDs',
         self::ARTIFACT_NAME => 'The artifact name',
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
