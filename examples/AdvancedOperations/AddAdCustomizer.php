@@ -72,7 +72,7 @@ class AddAdCustomizer
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::AD_GROUP_ID => GetOpt::MULTIPLE_ARGUMENT
+            ArgumentNames::AD_GROUP_IDS => GetOpt::MULTIPLE_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -88,7 +88,7 @@ class AddAdCustomizer
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::AD_GROUP_ID] ?: [self::AD_GROUP_ID_1, self::AD_GROUP_ID_2]
+                $options[ArgumentNames::AD_GROUP_IDS] ?: [self::AD_GROUP_ID_1, self::AD_GROUP_ID_2]
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -120,7 +120,7 @@ class AddAdCustomizer
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
+     * @param int $adGroupIds the ad group IDs
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -130,24 +130,27 @@ class AddAdCustomizer
         if (count($adGroupIds) != self::NUMBER_OF_AD_GROUPS) {
             throw new \InvalidArgumentException(
                 'Please pass exactly ' . self::NUMBER_OF_AD_GROUPS .
-                ' ad group IDs in the adGroupId parameter.'
+                ' ad group IDs in the adGroupIds parameter.'
             );
         }
 
         $feedName = 'Ad Customizer example feed ' . uniqid();
 
+        // Create a feed to be used for ad customization.
         $adCustomizerFeedResourceName = self::createAdCustomizerFeed(
             $googleAdsClient,
             $customerId,
             $feedName
         );
 
+        // Retrieve the attributes of the feed.
         $adCustomizerFeedAttributes = self::getFeedAttributes(
             $googleAdsClient,
             $customerId,
             $adCustomizerFeedResourceName
         );
 
+        // Map the feed to the ad customizer placeholder fields.
         self::createAdCustomizerMapping(
             $googleAdsClient,
             $customerId,
@@ -155,6 +158,7 @@ class AddAdCustomizer
             $adCustomizerFeedAttributes
         );
 
+        // Create feed items to be used to customize ads.
         $feedItemResourceNames = self::createFeedItems(
             $googleAdsClient,
             $customerId,
@@ -162,6 +166,7 @@ class AddAdCustomizer
             $adCustomizerFeedAttributes
         );
 
+        // Set the feed to be used only with the specified ad groups.
         self::createFeedItemTargets(
             $googleAdsClient,
             $customerId,
@@ -169,6 +174,7 @@ class AddAdCustomizer
             $feedItemResourceNames
         );
 
+        // Create ads that use the feed for customization.
         self::createAdsWithCustomizations(
             $googleAdsClient,
             $customerId,
@@ -255,7 +261,7 @@ class AddAdCustomizer
             $feed->getNameUnwrapped(),
             PHP_EOL
         );
-        foreach ($$feed->getAttributes() as $feedAttribute) {
+        foreach ($feed->getAttributes() as $feedAttribute) {
             /** @var FeedAttribute $feedAttribute */
             $feedDetails[$feedAttribute->getNameUnwrapped()] = $feedAttribute->getIdUnwrapped();
             printf(
@@ -332,8 +338,8 @@ class AddAdCustomizer
      *
      * @param GoogleAdsClient googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param array $feedDetails the names and IDs of feed attributes
-     * @param string $dsaPageUrlLabel the label for the DSA page URLs
+     * @param string $adCustomizerFeedResourceName the resource name of the feed
+     * @param array $adCustomizerFeedAttributes the attributes of the feed
      */
     private function createFeedItems(
         GoogleAdsClient $googleAdsClient,
