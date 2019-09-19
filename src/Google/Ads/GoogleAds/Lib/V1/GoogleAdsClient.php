@@ -17,6 +17,9 @@
 
 namespace Google\Ads\GoogleAds\Lib\V1;
 
+use Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure;
+use Google\Protobuf\DescriptorPool;
+
 /**
  * A Google Ads API client for handling common configuration and OAuth2 settings.
  */
@@ -42,5 +45,13 @@ final class GoogleAdsClient
         $this->logger = $builder->getLogger();
         $this->logLevel = $builder->getLogLevel();
         $this->proxy = $builder->getProxy();
+
+        // This initialization is needed to populate the descriptor pool with the GoogleAdsFailure
+        // class and prevent exceptions from being thrown.
+        if (is_null(
+            DescriptorPool::getGeneratedPool()->getDescriptorByClassName(GoogleAdsFailure::class)
+        )) {
+            new GoogleAdsFailure();
+        }
     }
 }
