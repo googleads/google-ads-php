@@ -59,7 +59,8 @@ final class GoogleAdsFailures
     /**
      * Initializes
      */
-    public static function init() {
+    public static function init()
+    {
         // This initialization is needed to populate the descriptor pool with the GoogleAdsFailure
         // class and prevent exceptions from being thrown.
         if (is_null(
