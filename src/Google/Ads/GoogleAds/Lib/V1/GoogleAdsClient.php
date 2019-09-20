@@ -17,6 +17,8 @@
 
 namespace Google\Ads\GoogleAds\Lib\V1;
 
+use Google\Ads\GoogleAds\Util\V1\GoogleAdsFailures;
+
 /**
  * A Google Ads API client for handling common configuration and OAuth2 settings.
  */
@@ -42,5 +44,7 @@ final class GoogleAdsClient
         $this->logger = $builder->getLogger();
         $this->logLevel = $builder->getLogLevel();
         $this->proxy = $builder->getProxy();
+
+        GoogleAdsFailures::init();
     }
 }
