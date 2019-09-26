@@ -256,7 +256,7 @@ class MerchantCenterLinkServiceGapicClient
     }
 
     /**
-     * Returns Merchant Center links available tor this customer.
+     * Returns Merchant Center links available for this customer.
      *
      * Sample code:
      * ```

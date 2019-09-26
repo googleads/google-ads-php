@@ -40,7 +40,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns the list of plannable locations (e.g. countries, DMAs).
+     * Returns the list of plannable locations (for example, countries & DMAs).
      * @param \Google\Ads\GoogleAds\V2\Services\ListPlannableLocationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

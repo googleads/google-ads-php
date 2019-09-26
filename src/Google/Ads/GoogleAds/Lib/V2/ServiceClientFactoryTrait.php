@@ -85,6 +85,7 @@ use Google\Ads\GoogleAds\V2\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V2\Services\GroupPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\HotelGroupViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\HotelPerformanceViewServiceClient;
+use Google\Ads\GoogleAds\V2\Services\InvoiceServiceClient;
 use Google\Ads\GoogleAds\V2\Services\KeywordPlanAdGroupServiceClient;
 use Google\Ads\GoogleAds\V2\Services\KeywordPlanCampaignServiceClient;
 use Google\Ads\GoogleAds\V2\Services\KeywordPlanIdeaServiceClient;
@@ -701,6 +702,14 @@ trait ServiceClientFactoryTrait
     public function getHotelPerformanceViewServiceClient()
     {
         return new HotelPerformanceViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return InvoiceServiceClient
+     */
+    public function getInvoiceServiceClient()
+    {
+        return new InvoiceServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

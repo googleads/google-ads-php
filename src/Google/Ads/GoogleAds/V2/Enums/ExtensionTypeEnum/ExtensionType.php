@@ -91,6 +91,12 @@ class ExtensionType
      * Generated from protobuf enum <code>AFFILIATE_LOCATION = 13;</code>
      */
     const AFFILIATE_LOCATION = 13;
+    /**
+     * Hotel callout
+     *
+     * Generated from protobuf enum <code>HOTEL_CALLOUT = 15;</code>
+     */
+    const HOTEL_CALLOUT = 15;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -106,6 +112,7 @@ class ExtensionType
         self::STRUCTURED_SNIPPET => 'STRUCTURED_SNIPPET',
         self::LOCATION => 'LOCATION',
         self::AFFILIATE_LOCATION => 'AFFILIATE_LOCATION',
+        self::HOTEL_CALLOUT => 'HOTEL_CALLOUT',
     ];
 
     public static function name($value)

@@ -1,3 +1,10 @@
+## 2.2.0
+*   Added support for v2_2 of Google Ads API.
+*   Added examples for feeds (ad customizer, real estate, flights, Google My Business), negative
+    criteria, image assets and account hierarchy.
+*   Enhanced error management of mutate operations.
+*   Added support for monolog 2.0.
+
 ## 2.1.0
 *   Added support for v2_1 of Google Ads API.
 *   Switched the default implementation of protobuf to use the C extension and added related

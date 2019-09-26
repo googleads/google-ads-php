@@ -179,7 +179,7 @@ class ReachPlanServiceGapicClient
     }
 
     /**
-     * Returns the list of plannable locations (e.g. countries, DMAs).
+     * Returns the list of plannable locations (for example, countries & DMAs).
      *
      * Sample code:
      * ```

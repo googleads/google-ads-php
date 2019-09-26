@@ -24,6 +24,12 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     private $resource_name = '';
     /**
+     * The ID of this feed item. Read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     */
+    private $id = null;
+    /**
      * The extension type of the extension feed item.
      * This field is read-only.
      *
@@ -94,6 +100,8 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           The resource name of the extension feed item.
      *           Extension feed item resource names have the form:
      *           `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
+     *     @type \Google\Protobuf\Int64Value $id
+     *           The ID of this feed item. Read-only.
      *     @type int $extension_type
      *           The extension type of the extension feed item.
      *           This field is read-only.
@@ -143,6 +151,8 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           Affiliate location extension. Feed locations are populated by Google Ads
      *           based on a chain ID.
      *           This field is read-only.
+     *     @type \Google\Ads\GoogleAds\V2\Common\HotelCalloutFeedItem $hotel_callout_feed_item
+     *           Hotel Callout extension.
      *     @type \Google\Protobuf\StringValue $targeted_campaign
      *           The targeted campaign.
      *     @type \Google\Protobuf\StringValue $targeted_ad_group
@@ -182,6 +192,61 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
         $this->resource_name = $var;
 
         return $this;
+    }
+
+    /**
+     * The ID of this feed item. Read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * @return \Google\Protobuf\Int64Value
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getId()</code>
+
+     * The ID of this feed item. Read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * @return int|string|null
+     */
+    public function getIdUnwrapped()
+    {
+        $wrapper = $this->getId();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The ID of this feed item. Read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * @param \Google\Protobuf\Int64Value $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Int64Value::class);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
+
+     * The ID of this feed item. Read-only.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * @param int|string|null $var
+     * @return $this
+     */
+    public function setIdUnwrapped($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
+        return $this->setId($wrappedVar);
     }
 
     /**
@@ -773,6 +838,32 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V2\Common\AffiliateLocationFeedItem::class);
         $this->writeOneof(15, $var);
+
+        return $this;
+    }
+
+    /**
+     * Hotel Callout extension.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.HotelCalloutFeedItem hotel_callout_feed_item = 23;</code>
+     * @return \Google\Ads\GoogleAds\V2\Common\HotelCalloutFeedItem
+     */
+    public function getHotelCalloutFeedItem()
+    {
+        return $this->readOneof(23);
+    }
+
+    /**
+     * Hotel Callout extension.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.HotelCalloutFeedItem hotel_callout_feed_item = 23;</code>
+     * @param \Google\Ads\GoogleAds\V2\Common\HotelCalloutFeedItem $var
+     * @return $this
+     */
+    public function setHotelCalloutFeedItem($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V2\Common\HotelCalloutFeedItem::class);
+        $this->writeOneof(23, $var);
 
         return $this;
     }
