@@ -240,6 +240,12 @@ final class Segments extends \Google\Protobuf\Internal\Message
      */
     private $hotel_rate_type = 0;
     /**
+     * Hotel price bucket.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.HotelPriceBucketEnum.HotelPriceBucket hotel_price_bucket = 78;</code>
+     */
+    private $hotel_price_bucket = 0;
+    /**
      * Hotel state.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_state = 15;</code>
@@ -579,6 +585,8 @@ final class Segments extends \Google\Protobuf\Internal\Message
      *           Hotel rate rule ID.
      *     @type int $hotel_rate_type
      *           Hotel rate type.
+     *     @type int $hotel_price_bucket
+     *           Hotel price bucket.
      *     @type \Google\Protobuf\StringValue $hotel_state
      *           Hotel state.
      *     @type \Google\Protobuf\Int32Value $hour
@@ -2331,6 +2339,32 @@ final class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V2\Enums\HotelRateTypeEnum_HotelRateType::class);
         $this->hotel_rate_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Hotel price bucket.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.HotelPriceBucketEnum.HotelPriceBucket hotel_price_bucket = 78;</code>
+     * @return int
+     */
+    public function getHotelPriceBucket()
+    {
+        return $this->hotel_price_bucket;
+    }
+
+    /**
+     * Hotel price bucket.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.HotelPriceBucketEnum.HotelPriceBucket hotel_price_bucket = 78;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHotelPriceBucket($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V2\Enums\HotelPriceBucketEnum_HotelPriceBucket::class);
+        $this->hotel_price_bucket = $var;
 
         return $this;
     }

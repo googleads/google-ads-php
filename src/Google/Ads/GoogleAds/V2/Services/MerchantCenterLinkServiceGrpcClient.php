@@ -37,7 +37,7 @@ class MerchantCenterLinkServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns Merchant Center links available tor this customer.
+     * Returns Merchant Center links available for this customer.
      * @param \Google\Ads\GoogleAds\V2\Services\ListMerchantCenterLinksRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

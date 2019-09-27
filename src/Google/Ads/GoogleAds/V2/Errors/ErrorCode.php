@@ -233,6 +233,8 @@ final class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the access invitation error
      *     @type int $reach_plan_error
      *           The reasons for the reach plan error
+     *     @type int $invoice_error
+     *           The reasons for the invoice error
      * }
      */
     public function __construct($data = NULL) {
@@ -2966,6 +2968,32 @@ final class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V2\Errors\ReachPlanErrorEnum_ReachPlanError::class);
         $this->writeOneof(125, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the invoice error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.errors.InvoiceErrorEnum.InvoiceError invoice_error = 126;</code>
+     * @return int
+     */
+    public function getInvoiceError()
+    {
+        return $this->readOneof(126);
+    }
+
+    /**
+     * The reasons for the invoice error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v2.errors.InvoiceErrorEnum.InvoiceError invoice_error = 126;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInvoiceError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V2\Errors\InvoiceErrorEnum_InvoiceError::class);
+        $this->writeOneof(126, $var);
 
         return $this;
     }

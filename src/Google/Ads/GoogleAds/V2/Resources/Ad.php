@@ -57,6 +57,12 @@ final class Ad extends \Google\Protobuf\Internal\Message
      */
     private $tracking_url_template = null;
     /**
+     * The suffix to use when constructing a final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     */
+    private $final_url_suffix = null;
+    /**
      * The list of mappings that can be used to substitute custom parameter tags
      * in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *
@@ -141,6 +147,8 @@ final class Ad extends \Google\Protobuf\Internal\Message
      *           for the ad.
      *     @type \Google\Protobuf\StringValue $tracking_url_template
      *           The URL template for constructing a tracking URL.
+     *     @type \Google\Protobuf\StringValue $final_url_suffix
+     *           The suffix to use when constructing a final URL.
      *     @type \Google\Ads\GoogleAds\V2\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           The list of mappings that can be used to substitute custom parameter tags
      *           in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
@@ -438,6 +446,61 @@ final class Ad extends \Google\Protobuf\Internal\Message
     {
         $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
         return $this->setTrackingUrlTemplate($wrappedVar);
+    }
+
+    /**
+     * The suffix to use when constructing a final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getFinalUrlSuffix()
+    {
+        return $this->final_url_suffix;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getFinalUrlSuffix()</code>
+
+     * The suffix to use when constructing a final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     * @return string|null
+     */
+    public function getFinalUrlSuffixUnwrapped()
+    {
+        $wrapper = $this->getFinalUrlSuffix();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
+     * The suffix to use when constructing a final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setFinalUrlSuffix($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->final_url_suffix = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * The suffix to use when constructing a final URL.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setFinalUrlSuffixUnwrapped($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
+        return $this->setFinalUrlSuffix($wrappedVar);
     }
 
     /**
