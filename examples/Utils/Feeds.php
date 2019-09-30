@@ -24,6 +24,9 @@ use Google\Ads\GoogleAds\V2\Resources\FeedItem;
 use Google\Ads\GoogleAds\V2\Resources\FeedItemAttributeValue;
 use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 
+/**
+ * Utilities that are shared between code examples related to feeds.
+ */
 final class Feeds
 {
     const PAGE_SIZE = 1000;
@@ -91,7 +94,7 @@ final class Feeds
     }
 
     /**
-     * Retrieves the place holder fields to field attributes map for a flights feed.
+     * Retrieves the place holder fields to feed attributes map for a flights feed.
      *
      * @see Feeds::placeholderFieldsMapFor()
      *
@@ -135,12 +138,11 @@ final class Feeds
     }
 
     /**
-     * Retrieves the place holder fields to field attributes map for a feed. The initial
+     * Retrieves the place holder fields to feed attributes map for a feed. The initial
      * query retrieves the feed attributes, or columns, of the feed. Each feed attribute will also
      * include the feed attribute ID, which will be used in a subsequent step.
      *
-     * The example then inserts a new key-value pair into a map for each
-     * feed attribute, which is the return value of the method:
+     * Then a map is created for the feed attributes (columns) and returned:
      * - The keys are the placeholder types that the columns will be.
      * - The values are the feed attributes.
      *
@@ -172,7 +174,6 @@ final class Feeds
         // values of each corresponding ID.
         $feedAttributes =
             iterator_to_array($googleAdsRow->getFeed()->getAttributes()->getIterator());
-
         return array_combine(array_map($mappingFunction, $feedAttributes), $feedAttributes);
     }
 }

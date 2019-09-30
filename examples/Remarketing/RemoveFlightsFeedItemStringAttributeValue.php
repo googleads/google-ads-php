@@ -129,7 +129,8 @@ class RemoveFlightsFeedItemStringAttributeValue
         // Gets the ID of the feed attribute for the placeholder field.
         $attributeId = $placeHoldersToFeedAttributesMap[
             FlightPlaceholderField::value($flightPlaceholderFieldName)]->getIdUnwrapped();
-        // Creates the feed item attribute value that will be removed.
+        // Creates the feed item attribute value that will be removed, so only the feed attribute ID
+        // is needed.
         $removedFeedItemAttributeValue = new FeedItemAttributeValue([
             'feed_attribute_id' => new Int64Value(['value' => $attributeId])
         ]);
