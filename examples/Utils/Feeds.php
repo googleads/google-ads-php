@@ -64,7 +64,8 @@ final class Feeds
      *
      * @param FeedItemAttributeValue $targetFeedItemAttributeValue the new feed item attribute value
      *     that will be updated
-     * @param FeedItem $feedItem the feed item that will be updated
+     * @param FeedItem $feedItem the feed item that will be updated. It should be populated with
+     *     the current attribute values
      */
     public static function attributeIndexFor(
         FeedItemAttributeValue $targetFeedItemAttributeValue,
@@ -95,6 +96,7 @@ final class Feeds
 
     /**
      * Retrieves the place holder fields to feed attributes map for a flights feed.
+     * See FlightPlaceholderField.php for all available placeholder field values.
      *
      * @see Feeds::placeholderFieldsMapFor()
      *
@@ -112,7 +114,6 @@ final class Feeds
             $feedResourceName,
             $customerId,
             $googleAdsClient,
-            // See FlightPlaceholderField.php for all available placeholder values.
             [
                 'Flight Description' => FlightPlaceholderField::FLIGHT_DESCRIPTION,
                 'Destination ID' => FlightPlaceholderField::DESTINATION_ID,

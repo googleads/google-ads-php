@@ -60,7 +60,7 @@ class UpdateFlightsFeedItemStringAttributeValue
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::FEED_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::FEED_ITEM_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::FLIGHT_PLACEHOLDER_FIELD_NAME => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::FEED_PLACEHOLDER_FIELD_NAME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::FEED_ITEM_ATTRIBUTE_VALUE => GetOpt::REQUIRED_ARGUMENT
         ]);
 
@@ -80,7 +80,7 @@ class UpdateFlightsFeedItemStringAttributeValue
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::FEED_ID] ?: self::FEED_ID,
                 $options[ArgumentNames::FEED_ITEM_ID] ?: self::FEED_ITEM_ID,
-                $options[ArgumentNames::FLIGHT_PLACEHOLDER_FIELD_NAME]
+                $options[ArgumentNames::FEED_PLACEHOLDER_FIELD_NAME]
                     ?: self::FLIGHT_PLACEHOLDER_FIELD_NAME,
                 $options[ArgumentNames::FEED_ITEM_ATTRIBUTE_VALUE]
                     ?: self::FEED_ITEM_ATTRIBUTE_VALUE
@@ -155,7 +155,7 @@ class UpdateFlightsFeedItemStringAttributeValue
         $attributeIndex = Feeds::attributeIndexFor($updatedFeedItemAttributeValue, $feedItem);
         // Any feed item attribute values that are not included in the updated feed item will be
         // removed from the feed item, which is why you must create the feed item from the existing
-        // feed item and its attribute values. Then, update only the field that you want.
+        // feed item and its attribute values. Then, update only the attribute that you want.
         $feedItemAttributeValues = $feedItem->getAttributeValues();
         $feedItemAttributeValues[$attributeIndex] = $updatedFeedItemAttributeValue;
         $feedItem->setAttributeValues($feedItemAttributeValues);
