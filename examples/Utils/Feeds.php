@@ -112,33 +112,19 @@ final class Feeds
             $feedResourceName,
             $customerId,
             $googleAdsClient,
-            function (FeedAttribute $feedAttribute) {
-                switch ($feedAttribute->getNameUnwrapped()) {
-                    case 'Flight Description':
-                        return FlightPlaceholderField::FLIGHT_DESCRIPTION;
-                        break;
-                    case 'Destination ID':
-                        return FlightPlaceholderField::DESTINATION_ID;
-                        break;
-                    case 'Flight Price':
-                        return FlightPlaceholderField::FLIGHT_PRICE;
-                        break;
-                    case 'Flight Sale Price':
-                        return FlightPlaceholderField::FLIGHT_SALE_PRICE;
-                        break;
-                    case 'Final URLs':
-                        return FlightPlaceholderField::FINAL_URLS;
-                        break;
-                    // See FlightPlaceholderField.php for all available values.
-                    default:
-                        throw new \RuntimeException('Invalid feed attribute name.');
-                }
-            }
+            // See FlightPlaceholderField.php for all available placeholder values.
+            [
+                'Flight Description' => FlightPlaceholderField::FLIGHT_DESCRIPTION,
+                'Destination ID' => FlightPlaceholderField::DESTINATION_ID,
+                'Flight Price' => FlightPlaceholderField::FLIGHT_PRICE,
+                'Flight Sale Price' => FlightPlaceholderField::FLIGHT_SALE_PRICE,
+                'Final URLs' => FlightPlaceholderField::FINAL_URLS
+            ]
         );
     }
 
     /**
-     * Retrieves the place holder fields to feed attributes map for a feed. The initial
+     * Retrieves the placeholder fields to feed attributes map for a feed. The initial
      * query retrieves the feed attributes, or columns, of the feed. Each feed attribute will also
      * include the feed attribute ID, which will be used in a subsequent step.
      *
@@ -149,15 +135,15 @@ final class Feeds
      * @param string $feedResourceName the feed resource name to get the attributes from
      * @param int $customerId the customer ID
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param callable $mappingFunction the function that maps feed attribute names to placeholder
-     *     fields
+     * @param array $feedAttributeNamesMap the associative array mapping from feed attribute names
+     *     to placeholder fields
      * @return array the map from placeholder fields to feed attributes
      */
     private static function placeholderFieldsMapFor(
         string $feedResourceName,
         int $customerId,
         GoogleAdsClient $googleAdsClient,
-        callable $mappingFunction
+        array $feedAttributeNamesMap
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Constructs the query to get the feed attributes for the specified feed resource name.
@@ -170,10 +156,19 @@ final class Feeds
         /** @var GoogleAdsRow $googleAdsRow */
         $googleAdsRow = $response->getIterator()->current();
 
-        // Gets the attributes list from the feed and creates a map with keys of each attribute and
-        // values of each corresponding ID.
+        // Gets the attributes list from the feed and creates a map with keys of placeholder fields
+        // and values of feed attributes.
         $feedAttributes =
             iterator_to_array($googleAdsRow->getFeed()->getAttributes()->getIterator());
-        return array_combine(array_map($mappingFunction, $feedAttributes), $feedAttributes);
+        $flightPlaceholderFields = array_map(
+            function (FeedAttribute $feedAttribute) use ($feedAttributeNamesMap) {
+                if (!array_key_exists($feedAttribute->getNameUnwrapped(), $feedAttributeNamesMap)) {
+                    throw new \RuntimeException('Invalid feed attribute name.');
+                }
+                return $feedAttributeNamesMap[$feedAttribute->getNameUnwrapped()];
+            },
+            $feedAttributes
+        );
+        return array_combine($flightPlaceholderFields, $feedAttributes);
     }
 }
