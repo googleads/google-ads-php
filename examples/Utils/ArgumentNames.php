@@ -26,6 +26,7 @@ final class ArgumentNames
     const AD_GROUP_ID = 'adGroupId';
     const AD_GROUP_IDS = 'adGroupIds';
     const ARTIFACT_NAME = 'artifactName';
+    const FEED_ITEM_ATTRIBUTE_VALUE = 'feedItemAttributeValue';
     const BASE_CAMPAIGN_ID = 'baseCampaignId';
     const BID_MODIFIER_VALUE = 'bidModifierValue';
     const BILLING_SETUP_ID = 'billingSetupId';
@@ -41,6 +42,9 @@ final class ArgumentNames
     const CRITERION_ID = 'criterionId';
     const CUSTOMER_ID = 'customerId';
     const DRAFT_ID = 'draftId';
+    const FEED_ID = 'feedId';
+    const FEED_ITEM_ID = 'feedItemId';
+    const FEED_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
     const GMB_ACCESS_TOKEN = 'gmbAccessToken';
     const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
@@ -66,6 +70,7 @@ final class ArgumentNames
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
         self::ARTIFACT_NAME => 'The artifact name',
+        self::FEED_ITEM_ATTRIBUTE_VALUE => 'The attribute value of the feed item',
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
@@ -81,6 +86,9 @@ final class ArgumentNames
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::DRAFT_ID => 'The draft ID',
+        self::FEED_ID => 'The feed ID',
+        self::FEED_ITEM_ID => 'The feed item ID',
+        self::FEED_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
         self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',

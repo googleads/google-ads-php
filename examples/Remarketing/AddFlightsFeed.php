@@ -22,6 +22,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Feeds;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
@@ -39,7 +40,6 @@ use Google\Ads\GoogleAds\V2\Resources\FeedMapping;
 use Google\Ads\GoogleAds\V2\Services\FeedItemOperation;
 use Google\Ads\GoogleAds\V2\Services\FeedMappingOperation;
 use Google\Ads\GoogleAds\V2\Services\FeedOperation;
-use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -111,7 +111,7 @@ class AddFlightsFeed
         // Gets the newly created feed's attributes and packages them into a map. This read
         // operation is required to retrieve the attribute IDs.
         $placeHoldersToFeedAttributesMap =
-            self::getFeed($googleAdsClient, $customerId, $feedResourceName);
+            Feeds::flightPlaceholderFieldsMapFor($feedResourceName, $customerId, $googleAdsClient);
         // Creates the feed mapping.
         self::createFeedMapping(
             $googleAdsClient,
@@ -189,68 +189,6 @@ class AddFlightsFeed
     }
 
     /**
-     * Retrieves details about a feed. The initial query retrieves the feed attributes, or columns,
-     * of the feed. Each feed attribute will also include the feed attribute ID, which will be used
-     * in a subsequent step.
-     *
-     * The example then inserts a new key-value pair into a map for each
-     * feed attribute, which is the return value of the method:
-     * - The keys are the placeholder types that the columns will be.
-     * - The values are the feed attributes.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $feedResourceName the feed resource name to get the attributes from
-     * @return array the map from placeholder fields to feed attributes
-     */
-    private static function getFeed(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        string $feedResourceName
-    ) {
-        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        // Constructs the query to get the feed attributes for the specified feed resource name.
-        $query = "SELECT feed.attributes FROM feed WHERE feed.resource_name = '$feedResourceName'";
-        // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
-
-        // Gets the first result because we only need the single feed we created previously.
-        /** @var GoogleAdsRow $googleAdsRow */
-        $googleAdsRow = $response->getIterator()->current();
-
-        // Gets the attributes list from the feed and creates a map with keys of each attribute and
-        // values of each corresponding ID.
-        $feedAttributes =
-            iterator_to_array($googleAdsRow->getFeed()->getAttributes()->getIterator());
-
-        $feedPlaceHolderFieldsList = array_map(function (FeedAttribute $feedAttribute) {
-            switch ($feedAttribute->getNameUnwrapped()) {
-                case 'Flight Description':
-                    return FlightPlaceholderField::FLIGHT_DESCRIPTION;
-                    break;
-                case 'Destination ID':
-                    return FlightPlaceholderField::DESTINATION_ID;
-                    break;
-                case 'Flight Price':
-                    return FlightPlaceholderField::FLIGHT_PRICE;
-                    break;
-                case 'Flight Sale Price':
-                    return FlightPlaceholderField::FLIGHT_SALE_PRICE;
-                    break;
-                case 'Final URLs':
-                    return FlightPlaceholderField::FINAL_URLS;
-                    break;
-                // See FlightPlaceholderField.php for all available values.
-                default:
-                    throw new \RuntimeException('Invalid feed attribute name.');
-            }
-        }, $feedAttributes);
-
-        return array_combine($feedPlaceHolderFieldsList, $feedAttributes);
-    }
-
-    /**
      * Creates a feed mapping for a given feed.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
@@ -270,7 +208,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_DESCRIPTION]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'flight_field' => FlightPlaceholderField::FLIGHT_DESCRIPTION
         ]);
@@ -278,7 +216,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::DESTINATION_ID]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'flight_field' => FlightPlaceholderField::DESTINATION_ID
         ]);
@@ -286,7 +224,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_PRICE]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'flight_field' => FlightPlaceholderField::FLIGHT_PRICE
         ]);
@@ -294,7 +232,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_SALE_PRICE]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'flight_field' => FlightPlaceholderField::FLIGHT_SALE_PRICE
         ]);
@@ -302,7 +240,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FINAL_URLS]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'flight_field' => FlightPlaceholderField::FINAL_URLS
         ]);
@@ -354,7 +292,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_DESCRIPTION]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_value' => new StringValue(['value' => 'Earth to Mars'])
         ]);
@@ -363,7 +301,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::DESTINATION_ID]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_value' => new StringValue(['value' => 'Mars'])
         ]);
@@ -372,7 +310,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_PRICE]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_value' => new StringValue(['value' => '499.99 USD'])
         ]);
@@ -381,7 +319,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_SALE_PRICE]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_value' => new StringValue(['value' => '299.99 USD'])
         ]);
@@ -390,7 +328,7 @@ class AddFlightsFeed
             'feed_attribute_id' => new Int64Value([
                 'value' =>
                     $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FINAL_URLS]
-                        ->getId()->getValue()
+                        ->getIdUnwrapped()
             ]),
             'string_values' => [new StringValue(['value' => 'http://www.example.com/flights/'])]
         ]);
