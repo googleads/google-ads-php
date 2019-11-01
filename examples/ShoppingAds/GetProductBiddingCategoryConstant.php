@@ -31,7 +31,7 @@ use Google\Ads\GoogleAds\V2\Resources\ProductBiddingCategoryConstant;
 use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
-/** Fetches the set of valid ProductBiddingCategories.*/
+/** Fetches the set of valid ProductBiddingCategories. */
 class GetProductBiddingCategoryConstant
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
