@@ -143,10 +143,10 @@ class GetProductBiddingCategoryConstant
                 }
                 // Adds the category as a child category of the parent category.
                 $biddingCategories[$parentResourceName]['children'][$resourceName] =
-                    $biddingCategories[$resourceName];
+                    &$biddingCategories[$resourceName];
             } else {
                 // Otherwise adds the category as a root category.
-                $rootCategories[$resourceName] = $biddingCategories[$resourceName];
+                $rootCategories[$resourceName] = &$biddingCategories[$resourceName];
             }
         }
 
