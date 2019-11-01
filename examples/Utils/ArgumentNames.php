@@ -41,6 +41,8 @@ final class ArgumentNames
     const CRITERION_ID = 'criterionId';
     const CUSTOMER_ID = 'customerId';
     const DRAFT_ID = 'draftId';
+    const FEED_ID = 'feedId';
+    const FEED_ITEM_IDS = 'feedItemIds';
     const GMB_ACCESS_TOKEN = 'gmbAccessToken';
     const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
@@ -81,6 +83,8 @@ final class ArgumentNames
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::DRAFT_ID => 'The draft ID',
+        self::FEED_ID => 'The feed ID',
+        self::FEED_ITEM_IDS => 'The feed item IDs',
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
         self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
