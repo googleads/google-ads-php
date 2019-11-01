@@ -44,6 +44,7 @@ final class ArgumentNames
     const DRAFT_ID = 'draftId';
     const FEED_ID = 'feedId';
     const FEED_ITEM_ID = 'feedItemId';
+    const FEED_ITEM_IDS = 'feedItemIds';
     const FEED_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
     const GMB_ACCESS_TOKEN = 'gmbAccessToken';
     const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
@@ -88,6 +89,7 @@ final class ArgumentNames
         self::DRAFT_ID => 'The draft ID',
         self::FEED_ID => 'The feed ID',
         self::FEED_ITEM_ID => 'The feed item ID',
+        self::FEED_ITEM_IDS => 'The feed item IDs',
         self::FEED_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
         self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
