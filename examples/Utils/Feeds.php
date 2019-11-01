@@ -19,6 +19,7 @@ namespace Google\Ads\GoogleAds\Examples\Utils;
 
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
 use Google\Ads\GoogleAds\V2\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
+use Google\Ads\GoogleAds\V2\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
 use Google\Ads\GoogleAds\V2\Resources\FeedAttribute;
 use Google\Ads\GoogleAds\V2\Resources\FeedItem;
 use Google\Ads\GoogleAds\V2\Resources\FeedItemAttributeValue;
@@ -125,6 +126,36 @@ final class Feeds
     }
 
     /**
+     * Retrieves the place holder fields to feed attributes map for a real estate feed.
+     * See RealEstatePlaceholderField.php for all available placeholder field values.
+     *
+     * @see Feeds::placeholderFieldsMapFor()
+     *
+     * @param string $feedResourceName the feed resource name to get the attributes from
+     * @param int $customerId the customer ID
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @return array the map from placeholder fields to feed attributes
+     */
+    public static function realEstatePlaceholderFieldsMapFor(
+        string $feedResourceName,
+        int $customerId,
+        GoogleAdsClient $googleAdsClient
+    ) {
+        return self::placeholderFieldsMapFor(
+            $feedResourceName,
+            $customerId,
+            $googleAdsClient,
+            [
+                'Listing ID' => RealEstatePlaceholderField::LISTING_ID,
+                'Listing Name' => RealEstatePlaceholderField::LISTING_NAME,
+                'Final URLs' => RealEstatePlaceholderField::FINAL_URLS,
+                'Image URL' => RealEstatePlaceholderField::IMAGE_URL,
+                'Contextual Keywords' => RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS
+            ]
+        );
+    }
+
+    /**
      * Retrieves the placeholder fields to feed attributes map for a feed. The initial
      * query retrieves the feed attributes, or columns, of the feed. Each feed attribute will also
      * include the feed attribute ID, which will be used in a subsequent step.
@@ -161,7 +192,7 @@ final class Feeds
         // and values of feed attributes.
         $feedAttributes =
             iterator_to_array($googleAdsRow->getFeed()->getAttributes()->getIterator());
-        $flightPlaceholderFields = array_map(
+        $placeholderFields = array_map(
             function (FeedAttribute $feedAttribute) use ($feedAttributeNamesMap) {
                 if (!array_key_exists($feedAttribute->getNameUnwrapped(), $feedAttributeNamesMap)) {
                     throw new \RuntimeException('Invalid feed attribute name.');
@@ -170,6 +201,6 @@ final class Feeds
             },
             $feedAttributes
         );
-        return array_combine($flightPlaceholderFields, $feedAttributes);
+        return array_combine($placeholderFields, $feedAttributes);
     }
 }
