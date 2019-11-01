@@ -34,7 +34,7 @@ use Google\ApiCore\ApiException;
 /** Fetches the set of valid ProductBiddingCategories.*/
 class GetProductBiddingCategoryConstant
 {
-    const CUSTOMER_ID = '7556834180';
+    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     const PAGE_SIZE = 1000;
 
     public static function main()
@@ -101,15 +101,18 @@ class GetProductBiddingCategoryConstant
             WHERE product_bidding_category_constant.country_code IN (\'US\')
             ORDER BY product_bidding_category_constant.localized_name ASC';
 
-        // Creates a list of top level category nodes.
+        // Creates a map of top level categories.
         $rootCategories = [];
-        // Creates a map of category ID to category node for all categories found in the results.
-        // This Map is a convenience lookup to enable fast retrieval of existing nodes.
+        // Creates a map of all categories found in the results.
+        // This is a convenience lookup to enable fast retrieval of existing categories.
         $biddingCategories = [];
 
         // Performs the search request.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = $googleAdsServiceClient->search(
+            $customerId,
+            $query,
+            ['pageSize' => self::PAGE_SIZE]
+        );
 
         // Iterates over all rows in all pages to extract the result.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
@@ -118,58 +121,62 @@ class GetProductBiddingCategoryConstant
              * @var ProductBiddingCategoryConstant $productBiddingCategory
              */
             $productBiddingCategory = $googleAdsRow->getProductBiddingCategoryConstant();
-            $localizedName = $productBiddingCategory->getLocalizedNameUnwrapped();
             $resourceName = $productBiddingCategory->getResourceName();
+
+            // Adds the category in the map if new.
             if (!array_key_exists($resourceName, $biddingCategories)) {
                 $biddingCategories[$resourceName] = [];
             }
-
-            // Ensures that the name attribute for the node is set. Name will be null for nodes added
-            // to biddingCategories as a result of being a parentNode below.
-            $biddingCategories[$resourceName]['localizedName'] = $localizedName;
+            // Ensures that the localized name attribute for the categories is set.
+            // It will not be initialized for new categories or categories added
+            // to biddingCategories as a result of being a parent category below.
+            $biddingCategories[$resourceName]['localizedName'] =
+                $productBiddingCategory->getLocalizedNameUnwrapped();
 
             if ($productBiddingCategory->getProductBiddingCategoryConstantParent() != null) {
+                // If the category has a parent.
                 $parentResourceName =
                     $productBiddingCategory->getProductBiddingCategoryConstantParentUnwrapped();
+                // Adds the parent category in the map if new.
                 if (!array_key_exists($parentResourceName, $biddingCategories)) {
                     $biddingCategories[$parentResourceName] = [];
                 }
-                $biddingCategories[$parentResourceName]['children'][$resourceName] = $biddingCategories[$resourceName];
+                // Adds the category as a child category of the parent category.
+                $biddingCategories[$parentResourceName]['children'][$resourceName] =
+                    $biddingCategories[$resourceName];
             } else {
+                // Otherwise adds the category as a root category.
                 $rootCategories[$resourceName] = $biddingCategories[$resourceName];
             }
         }
 
-        // Prints the extracted results.
+        // Prints the result.
         self::displayCategories($rootCategories, "");
     }
 
     /**
-     * Recursively prints out each category node and its children.
+     * Recursively prints out each category and its children.
      *
-     * @param CategoryNode[] $categories the categories to print
+     * @param array $categories the map of categories to print
      * @param string $prefix the string to print at the beginning of each line of output
      */
     private static function displayCategories(
         array $categories,
         string $prefix
     ) {
-        foreach ($categories as $categoryKey => $category) {
+        foreach ($categories as $categoryKey => $categoryValue) {
+            $localizedName = $categoryValue['localizedName'];
             printf(
                 "%s%s [%s]%s",
                 $prefix,
-                $category['localizedName'],
+                $localizedName,
                 $categoryKey,
                 PHP_EOL
             );
-            if (array_key_exists('children', $category)) {
+            if (array_key_exists('children', $categoryValue)) {
                 self::displayCategories(
-                    $category['children'],
-                    sprintf(
-                        "%s%s > ",
-                        $prefix,
-                        $category['localizedName']
-                    )
+                    $categoryValue['children'],
+                    sprintf("%s%s > ", $prefix, $localizedName)
                 );
             }
         }
