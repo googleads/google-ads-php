@@ -41,7 +41,7 @@ use \Exception;
 
 /**
  * Handles RateExceededError in an application. This code example runs 5 requests sequentially,
- * each request attempting to validate 100 keywords at once. While it is unlikely that running
+ * each request attempting to validate 100 keywords. While it is unlikely that running
  * these requests would trigger a rate exceeded error, substantially increasing the
  * number of requests may have that effect. Note that this example is for illustrative
  * purposes only, and you shouldn't intentionally try to trigger a rate exceed error in your
@@ -56,9 +56,9 @@ class HandleRateExceededError
     const NUM_REQUESTS = 5;
     // Number of keywords to be validated in each API call.
     const NUM_KEYWORDS = 100;
-    // Number of retries to run in case of RateExceededError.
+    // Number of retries to be run in case of a RateExceededError.
     const NUM_RETRIES = 3;
-    // Initial number of seconds to wait before a retry.
+    // Minimum number of seconds to wait before a retry.
     const RETRY_SECONDS = 10;
 
     public static function main()
@@ -115,24 +115,24 @@ class HandleRateExceededError
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to add a keyword to
+     * @param int $adGroupId the ad group ID to validate keywords from
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $adGroupId
     ) {
-        // Sends all the requests.
+        // Sequentially sends the requests.
         for ($i = 0; $i < self::NUM_REQUESTS; $i++) {
-            // Creates the operations.
+            // Creates operations.
             $operations = self::createAdGroupCriterionOperations($customerId, $adGroupId, $i);
 
-            // Handles the request.
             try {
                 $retryCount = 0;
                 $retrySeconds = self::RETRY_SECONDS;
                 while ($retryCount < self::NUM_RETRIES) {
                     try {
+                        // Sends request.
                         self::requestMutateAndDisplayResult(
                             $googleAdsClient,
                             $customerId,
@@ -141,7 +141,7 @@ class HandleRateExceededError
                         break;
                     } catch (GoogleAdsException $googleAdsException) {
                         foreach ($googleAdsException->getGoogleAdsFailure()
-                                     =->getErrors() as $googleAdsError) {
+                                     ->getErrors() as $googleAdsError) {
                             // Checks if any of the errors are QuotaError.RESOURCE_EXHAUSTED or
                             // QuotaError.RESOURCE_TEMPORARILY_EXHAUSTED.
                             if ($googleAdsError->getErrorCode()->getQuotaError() ==
@@ -155,15 +155,15 @@ class HandleRateExceededError
                                 );
                                 sleep($retrySeconds);
                                 $retryCount++;
-                                // Uses an exponential backoff policy.
+                                // Uses an exponential back-off policy.
                                 $retrySeconds *= 2;
                                 break;
                             }
                         }
-                        // Bubbles up if the failure is not a RateExceededError
+                        // Bubbles up when not a RateExceededError
                         throw $googleAdsException;
                     } finally {
-                        // Bubbles up if the number of retries has been reached.
+                        // Bubbles up when the number of retries has already been reached.
                         if ($retryCount == self::NUM_RETRIES) {
                             throw new Exception(sprintf(
                                 "Could not recover after making %d attempts.%s",
@@ -186,7 +186,7 @@ class HandleRateExceededError
     }
 
     /**
-     * Create ad group criterion operations.
+     * Creates ad group criterion operations.
      *
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID to link the ad group criteria to
@@ -222,12 +222,11 @@ class HandleRateExceededError
             $adGroupCriterionOperation->setCreate($adGroupCriterion);
             $operations[] = $adGroupCriterionOperation;
         }
-
         return $operations;
     }
 
     /**
-     * Requests a mutate for ad group criterion operations and displays the results.
+     * Requests a mutate of ad group criterion operations and displays the results.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
@@ -239,7 +238,7 @@ class HandleRateExceededError
         array $operations
     ) {
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
-        // Makes the validateOnly mutate request.
+        // Makes a validateOnly mutate request.
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
             $customerId,
             $operations,
@@ -248,7 +247,7 @@ class HandleRateExceededError
                 'validateOnly' => true
             ]
         );
-        // Prints the results.
+        // Displays the results.
         printf(
             "Added %d ad group criteria:%s",
             $response->getResults()->count(),
