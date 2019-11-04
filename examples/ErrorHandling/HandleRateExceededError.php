@@ -125,62 +125,23 @@ class HandleRateExceededError
         // Sends all the requests.
         for ($i = 0; $i < self::NUM_REQUESTS; $i++) {
             // Creates the operations.
-            $operations = [];
-            for ($j = 0; $j < self::NUM_KEYWORDS; $j++) {
-                // Creates a keyword info.
-                $keywordInfo = new KeywordInfo([
-                    'text' => new StringValue([
-                        'value' => "mars cruise req " . $i . " seed " . $j
-                    ]),
-                    'match_type' => KeywordMatchType::EXACT
-                ]);
-
-                // Constructs an ad group criterion using the keyword text info above.
-                $adGroupCriterion = new AdGroupCriterion([
-                    'ad_group' => new StringValue(
-                        ['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]
-                    ),
-                    'status' => AdGroupCriterionStatus::ENABLED,
-                    'keyword' => $keywordInfo
-                ]);
-
-                // Creates a ad group criterion operation.
-                $adGroupCriterionOperation = new AdGroupCriterionOperation();
-                $adGroupCriterionOperation->setCreate($adGroupCriterion);
-                $operations[] = $adGroupCriterionOperation;
-            }
+            $operations = self::createAdGroupCriterionOperations($customerId, $adGroupId, $i);
 
             // Handles the request.
             try {
                 $retryCount = 0;
                 $retrySeconds = self::RETRY_SECONDS;
-                $adGroupCriterionServiceClient =
-                    $googleAdsClient->getAdGroupCriterionServiceClient();
                 while ($retryCount < self::NUM_RETRIES) {
                     try {
-                        // Makes the validateOnly mutate request.
-                        $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
+                        self::requestMutateAndDisplayResult(
+                            $googleAdsClient,
                             $customerId,
-                            $operations,
-                            [
-                                'partialFailure' => false,
-                                'validateOnly' => true
-                            ]
+                            $operations
                         );
-                        // Prints the results.
-                        printf(
-                            "Added %d ad group criteria:%s",
-                            $response->getResults()->count(),
-                            PHP_EOL
-                        );
-                        foreach ($response->getResults() as $result) {
-                            /** @var GoogleAdsRow $result */
-                            print($result->getResourceName() . PHP_EOL);
-                        }
                         break;
                     } catch (GoogleAdsException $googleAdsException) {
                         foreach ($googleAdsException->getGoogleAdsFailure()
-                                     ->getErrors() as $googleAdsError) {
+                                     =->getErrors() as $googleAdsError) {
                             // Checks if any of the errors are QuotaError.RESOURCE_EXHAUSTED or
                             // QuotaError.RESOURCE_TEMPORARILY_EXHAUSTED.
                             if ($googleAdsError->getErrorCode()->getQuotaError() ==
@@ -194,8 +155,7 @@ class HandleRateExceededError
                                 );
                                 sleep($retrySeconds);
                                 $retryCount++;
-                                // Uses an exponential backoff policy to avoid polling too
-                                // aggressively.
+                                // Uses an exponential backoff policy.
                                 $retrySeconds *= 2;
                                 break;
                             }
@@ -222,6 +182,81 @@ class HandleRateExceededError
                 );
                 return;
             }
+        }
+    }
+
+    /**
+     * Create ad group criterion operations.
+     *
+     * @param int $customerId the customer ID
+     * @param int $adGroupId the ad group ID to link the ad group criteria to
+     * @param int $reqIndex the request index
+     * @return array the created ad group criterion operations
+     */
+    private static function createAdGroupCriterionOperations(
+        int $customerId,
+        int $adGroupId,
+        int $reqIndex
+    ) {
+        $operations = [];
+        for ($i = 0; $i < self::NUM_KEYWORDS; $i++) {
+            // Creates a keyword info.
+            $keywordInfo = new KeywordInfo([
+                'text' => new StringValue([
+                    'value' => "mars cruise req " . $reqIndex . " seed " . $i
+                ]),
+                'match_type' => KeywordMatchType::EXACT
+            ]);
+
+            // Constructs an ad group criterion using the keyword text info above.
+            $adGroupCriterion = new AdGroupCriterion([
+                'ad_group' => new StringValue(
+                    ['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]
+                ),
+                'status' => AdGroupCriterionStatus::ENABLED,
+                'keyword' => $keywordInfo
+            ]);
+
+            // Creates a ad group criterion operation.
+            $adGroupCriterionOperation = new AdGroupCriterionOperation();
+            $adGroupCriterionOperation->setCreate($adGroupCriterion);
+            $operations[] = $adGroupCriterionOperation;
+        }
+
+        return $operations;
+    }
+
+    /**
+     * Requests a mutate for ad group criterion operations and displays the results.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
+     * @param array $operations the ad group criterion operations
+     */
+    private static function requestMutateAndDisplayResult(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        array $operations
+    ) {
+        $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
+        // Makes the validateOnly mutate request.
+        $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
+            $customerId,
+            $operations,
+            [
+                'partialFailure' => false,
+                'validateOnly' => true
+            ]
+        );
+        // Prints the results.
+        printf(
+            "Added %d ad group criteria:%s",
+            $response->getResults()->count(),
+            PHP_EOL
+        );
+        foreach ($response->getResults() as $result) {
+            /** @var GoogleAdsRow $result */
+            print($result->getAdGroupCriterion()->getResourceName() . PHP_EOL);
         }
     }
 }
