@@ -140,6 +140,7 @@ class HandleRateExceededError
                         );
                         break;
                     } catch (GoogleAdsException $googleAdsException) {
+                        $hasRateExceededError = false;
                         foreach ($googleAdsException->getGoogleAdsFailure()
                                      ->getErrors() as $googleAdsError) {
                             // Checks if any of the errors are QuotaError.RESOURCE_EXHAUSTED or
@@ -154,14 +155,17 @@ class HandleRateExceededError
                                     PHP_EOL
                                 );
                                 sleep($retrySeconds);
+                                $hasRateExceededError = true;
                                 $retryCount++;
                                 // Uses an exponential back-off policy.
                                 $retrySeconds *= 2;
                                 break;
                             }
                         }
-                        // Bubbles up when not a RateExceededError
-                        throw $googleAdsException;
+                        // Bubbles up when there is not RateExceededError
+                        if (!$hasRateExceededError) {
+                            throw $googleAdsException;
+                        }
                     } finally {
                         // Bubbles up when the number of retries has already been reached.
                         if ($retryCount == self::NUM_RETRIES) {
