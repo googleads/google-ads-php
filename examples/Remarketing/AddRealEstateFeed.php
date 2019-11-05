@@ -22,6 +22,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Feeds;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
@@ -39,7 +40,6 @@ use Google\Ads\GoogleAds\V2\Resources\FeedMapping;
 use Google\Ads\GoogleAds\V2\Services\FeedItemOperation;
 use Google\Ads\GoogleAds\V2\Services\FeedMappingOperation;
 use Google\Ads\GoogleAds\V2\Services\FeedOperation;
-use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -111,8 +111,11 @@ class AddRealEstateFeed
         // getFeed method.
         $feedResourceName = self::createFeed($googleAdsClient, $customerId);
         // Gets the page feed details.
-        $placeHoldersToFeedAttributesMap =
-            self::getFeed($googleAdsClient, $customerId, $feedResourceName);
+        $placeHoldersToFeedAttributesMap = Feeds::realEstatePlaceholderFieldsMapFor(
+            $feedResourceName,
+            $customerId,
+            $googleAdsClient
+        );
         // Creates the feed mapping.
         self::createFeedMapping(
             $googleAdsClient,
@@ -187,68 +190,6 @@ class AddRealEstateFeed
         printf("Feed with resource name '%s' was created.%s", $feedResourceName, PHP_EOL);
 
         return $feedResourceName;
-    }
-
-    /**
-     * Retrieves details about a feed. The initial query retrieves the feed attributes, or columns,
-     * of the feed. Each feed attribute will also include the feed attribute ID, which will be used
-     * in a subsequent step.
-     *
-     * The example then inserts a new key-value pair into a map for each
-     * feed attribute, which is the return value of the method:
-     * - The keys are the placeholder types that the columns will be.
-     * - The values are the feed attributes.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param string $feedResourceName the feed resource name to get the attributes from
-     * @return array the map from placeholder fields to feed attributes
-     */
-    private static function getFeed(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        string $feedResourceName
-    ) {
-        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        // Constructs the query to get the feed attributes for the specified feed resource name.
-        $query = "SELECT feed.attributes FROM feed WHERE feed.resource_name = '$feedResourceName'";
-        // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
-
-        // Gets the first result because we only need the single feed we created previously.
-        /** @var GoogleAdsRow $googleAdsRow */
-        $googleAdsRow = $response->getIterator()->current();
-
-        // Gets the attributes list from the feed and creates a map with keys of each attribute and
-        // values of each corresponding ID.
-        $feedAttributes =
-            iterator_to_array($googleAdsRow->getFeed()->getAttributes()->getIterator());
-
-        $feedPlaceHolderFieldsList = array_map(function (FeedAttribute $feedAttribute) {
-            switch ($feedAttribute->getNameUnwrapped()) {
-                case 'Listing ID':
-                    return RealEstatePlaceholderField::LISTING_ID;
-                    break;
-                case 'Listing Name':
-                    return RealEstatePlaceholderField::LISTING_NAME;
-                    break;
-                case 'Final URLs':
-                    return RealEstatePlaceholderField::FINAL_URLS;
-                    break;
-                case 'Image URL':
-                    return RealEstatePlaceholderField::IMAGE_URL;
-                    break;
-                case 'Contextual Keywords':
-                    return RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS;
-                    break;
-                // Optionally add other real estate placeholder fields.
-                default:
-                    throw new \RuntimeException('Invalid feed attribute name.');
-            }
-        }, $feedAttributes);
-
-        return array_combine($feedPlaceHolderFieldsList, $feedAttributes);
     }
 
     /**
