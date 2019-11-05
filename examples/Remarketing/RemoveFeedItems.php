@@ -134,7 +134,7 @@ class RemoveFeedItems
         foreach ($response->getResults() as $removedFeedItem) {
             /** @var FeedItem $removedFeedItem */
             printf(
-                "Removed feed item with resource name '%s'%s",
+                "Removed feed item with resource name '%s'.%s",
                 $removedFeedItem->getResourceName(),
                 PHP_EOL
             );
