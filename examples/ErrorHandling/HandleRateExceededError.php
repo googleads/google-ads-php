@@ -144,12 +144,12 @@ class HandleRateExceededError
                                      ->getErrors() as $googleAdsError) {
                             // Checks if any of the errors are QuotaError.RESOURCE_EXHAUSTED or
                             // QuotaError.RESOURCE_TEMPORARILY_EXHAUSTED.
-                            if ($googleAdsError->getErrorCode()->getQuotaError() ==
-                                QuotaError::RESOURCE_EXHAUSTED ||
-                                $googleAdsError->getErrorCode()->getQuotaError() ==
-                                QuotaError::RESOURCE_TEMPORARILY_EXHAUSTED) {
+                            if ($googleAdsError->getErrorCode()->getQuotaError()
+                                == QuotaError::RESOURCE_EXHAUSTED
+                                || $googleAdsError->getErrorCode()->getQuotaError()
+                                == QuotaError::RESOURCE_TEMPORARILY_EXHAUSTED) {
                                 printf(
-                                    "Received rate exceeded error, retry after %d seconds.%s",
+                                    'Received rate exceeded error, retry after %d seconds.%s',
                                     $retrySeconds,
                                     PHP_EOL
                                 );
@@ -166,7 +166,7 @@ class HandleRateExceededError
                         // Bubbles up when the number of retries has already been reached.
                         if ($retryCount == self::NUM_RETRIES) {
                             throw new Exception(sprintf(
-                                "Could not recover after making %d attempts.%s",
+                                'Could not recover after making %d attempts.%s',
                                 $retryCount,
                                 PHP_EOL
                             ));
@@ -176,7 +176,7 @@ class HandleRateExceededError
             } catch (Exception $exception) {
                 // Catches and prints any unhandled exception.
                 printf(
-                    "Failed to validate keywords.%n%s",
+                    'Failed to validate keywords.%n%s',
                     $exception->getMessage(),
                     PHP_EOL
                 );
@@ -203,7 +203,7 @@ class HandleRateExceededError
             // Creates a keyword info.
             $keywordInfo = new KeywordInfo([
                 'text' => new StringValue([
-                    'value' => "mars cruise req " . $reqIndex . " seed " . $i
+                    'value' => 'mars cruise req ' . $reqIndex . ' seed ' . $i
                 ]),
                 'match_type' => KeywordMatchType::EXACT
             ]);
@@ -217,7 +217,7 @@ class HandleRateExceededError
                 'keyword' => $keywordInfo
             ]);
 
-            // Creates a ad group criterion operation.
+            // Creates an ad group criterion operation.
             $adGroupCriterionOperation = new AdGroupCriterionOperation();
             $adGroupCriterionOperation->setCreate($adGroupCriterion);
             $operations[] = $adGroupCriterionOperation;
@@ -242,10 +242,7 @@ class HandleRateExceededError
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
             $customerId,
             $operations,
-            [
-                'partialFailure' => false,
-                'validateOnly' => true
-            ]
+            ['partialFailure' => false, 'validateOnly' => true]
         );
         // Displays the results.
         printf(
@@ -255,7 +252,7 @@ class HandleRateExceededError
         );
         foreach ($response->getResults() as $result) {
             /** @var GoogleAdsRow $result */
-            print($result->getAdGroupCriterion()->getResourceName() . PHP_EOL);
+            print $result->getAdGroupCriterion()->getResourceName() . PHP_EOL;
         }
     }
 }
