@@ -101,18 +101,18 @@ class GetProductBiddingCategoryConstant
             WHERE product_bidding_category_constant.country_code IN (\'US\')
             ORDER BY product_bidding_category_constant.localized_name ASC';
 
-        // Creates a map of top level categories.
-        $rootCategories = [];
-        // Creates a map of all categories found in the results.
-        // This is a convenience lookup to enable fast retrieval of existing categories.
-        $biddingCategories = [];
-
         // Performs the search request.
         $response = $googleAdsServiceClient->search(
             $customerId,
             $query,
             ['pageSize' => self::PAGE_SIZE]
         );
+
+        // Creates a map of top level categories.
+        $rootCategories = [];
+        // Creates a map of all categories found in the results.
+        // This is a convenience lookup to enable fast retrieval of existing categories.
+        $biddingCategories = [];
 
         // Iterates over all rows in all pages to extract the result.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
@@ -127,14 +127,15 @@ class GetProductBiddingCategoryConstant
             if (!array_key_exists($resourceName, $biddingCategories)) {
                 $biddingCategories[$resourceName] = [];
             }
-            // Ensures that the localized name attribute for the categories is set.
-            // It will not be initialized for new categories or categories added
-            // to biddingCategories as a result of being a parent category below.
-            $biddingCategories[$resourceName]['localizedName'] =
-                $productBiddingCategory->getLocalizedNameUnwrapped();
 
-            if ($productBiddingCategory->getProductBiddingCategoryConstantParent() != null) {
-                // If the category has a parent.
+            // Sets the localized name attribute if not already set.
+            if (!array_key_exists('localizedName', $biddingCategories[$resourceName])) {
+                $biddingCategories[$resourceName]['localizedName'] =
+                    $productBiddingCategory->getLocalizedNameUnwrapped();
+            }
+
+            if ($productBiddingCategory->getProductBiddingCategoryConstantParent() !== null) {
+                // Links the category to the parent category if any.
                 $parentResourceName =
                     $productBiddingCategory->getProductBiddingCategoryConstantParentUnwrapped();
                 // Adds the parent category in the map if new.
@@ -151,8 +152,10 @@ class GetProductBiddingCategoryConstant
         }
 
         // Prints the result.
-        self::displayCategories($rootCategories, "");
+        self::displayCategories($rootCategories, '');
     }
+
+
 
     /**
      * Recursively prints out each category and its children.
@@ -167,7 +170,7 @@ class GetProductBiddingCategoryConstant
         foreach ($categories as $categoryKey => $categoryValue) {
             $localizedName = $categoryValue['localizedName'];
             printf(
-                "%s%s [%s]%s",
+                '%s%s [%s]%s',
                 $prefix,
                 $localizedName,
                 $categoryKey,
@@ -176,7 +179,7 @@ class GetProductBiddingCategoryConstant
             if (array_key_exists('children', $categoryValue)) {
                 self::displayCategories(
                     $categoryValue['children'],
-                    sprintf("%s%s > ", $prefix, $localizedName)
+                    sprintf('%s%s > ', $prefix, $localizedName)
                 );
             }
         }
