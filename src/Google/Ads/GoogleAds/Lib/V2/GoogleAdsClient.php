@@ -18,6 +18,7 @@
 namespace Google\Ads\GoogleAds\Lib\V2;
 
 use Google\Ads\GoogleAds\Util\V2\GoogleAdsFailures;
+use Google\ApiCore\GrpcSupportTrait;
 
 /**
  * A Google Ads API client for handling common configuration and OAuth2 settings.
@@ -25,6 +26,7 @@ use Google\Ads\GoogleAds\Util\V2\GoogleAdsFailures;
 final class GoogleAdsClient
 {
     use ServiceClientFactoryTrait;
+    use GrpcSupportTrait;
 
     /**
      * Creates a Google Ads API client from the specified builder.
@@ -45,6 +47,10 @@ final class GoogleAdsClient
         $this->logLevel = $builder->getLogLevel();
         $this->proxy = $builder->getProxy();
 
-        GoogleAdsFailures::init();
+        // Initializes preemptively the GoogleAdsFailures type when
+        // gRPC is not available.
+        if (!self::getGrpcDependencyStatus()) {
+            GoogleAdsFailures::init();
+        }
     }
 }
