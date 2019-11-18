@@ -34,6 +34,7 @@ API](https://developers.google.com/google-ads/api/docs/start).
     installed Composer is available on the command line as `composer`.
 *   System requirements and dependencies can be found in
     [composer.json](composer.json) of this library.
+    *   The minimum required PHP version of this library is the minimum PHP version for which the PHP development team still provide security fixes. Whenever, such a version is sunset, we'll update the composer file accordingly. Currently, the update frequency is around once a year based on the [official schedule](https://www.php.net/supported-versions.php). 
     *   To install the gRPC PHP extension, follow the section
         **Install the gRPC PHP extension**
         of [this page](https://grpc.io/docs/quickstart/php.html).
