@@ -328,7 +328,7 @@ class AddHotelAds
         // Creates a new ad group ad and sets the hotel ad to it.
         $adGroupAd = new AdGroupAd([
             'ad' => $ad,
-            'status' => AdGroupAdStatus::PAUSED,
+            'status' => AdGroupAdStatus::ENABLED,
             // Sets the ad group.
             'ad_group' => new StringValue(['value' => $adGroupResourceName])
         ]);
