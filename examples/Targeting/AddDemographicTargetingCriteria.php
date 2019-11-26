@@ -40,7 +40,7 @@ use Google\Protobuf\StringValue;
 
 /**
  * This example adds demographic target criteria to an ad group, one as positive ad group criterion
- * and one as a negative ad group criterion. To get ad groups, run AddAdGroups.php.
+ * and one as negative ad group criterion. To create ad groups, run AddAdGroups.php.
  */
 class AddDemographicTargetingCriteria
 {
@@ -108,11 +108,11 @@ class AddDemographicTargetingCriteria
         int $customerId,
         int $adGroupId
     ) {
-        $adGroupResourceName = new StringValue(
-            ['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]
-        );
+        $adGroupResourceName = new StringValue([
+            'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
+        ]);
 
-        // Creates an ad group criterion for gender.
+        // Creates a positive ad group criterion for gender.
         $genderAdGroupCriterion = new AdGroupCriterion([
             'ad_group' => $adGroupResourceName,
             // Targets male.
