@@ -38,7 +38,7 @@ use Google\Protobuf\StringValue;
  * This code example imports offline conversion values for specific clicks to
  * your account. To get Google Click ID for a click, use the "click_view"
  * resource of report. To set up a conversion action, run the
- * AddConversionAction example.
+ * AddConversionAction.php example.
  */
 class UploadOfflineConversions
 {
@@ -128,7 +128,7 @@ class UploadOfflineConversions
                 'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
             ]),
             'gclid' => new StringValue(['value' => $gclId]),
-            'conversion_value' => new DoubleValue(['value' => $conversionValue]),
+            'conversion_value' => new DoubleValue(['value' => doubleval($conversionValue)]),
             'conversion_date_time' => new StringValue(['value' => $conversionTime]),
             'currency_code' => new StringValue(['value' => 'USD']),
         ]);
@@ -138,7 +138,8 @@ class UploadOfflineConversions
         /** @var UploadClickConversionsResponse $response */
         $response = $conversionUploadServiceClient->uploadClickConversions(
             $customerId,
-            [$clickConversion]
+            [$clickConversion],
+            ['partialFailure' => true]
         );
 
         // Prints the result;
