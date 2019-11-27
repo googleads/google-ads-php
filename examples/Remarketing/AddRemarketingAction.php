@@ -125,7 +125,7 @@ class AddRemarketingAction
         $remarketingActionOperation =
             new RemarketingActionOperation(['create' => $remarketingAction]);
 
-        // Issues a mutate request to add the remarketing action and print out some information.
+        // Issues a mutate request to add the remarketing action and prints out some information.
         $remarketingActionServiceClient = $googleAdsClient->getRemarketingActionServiceClient();
         $response = $remarketingActionServiceClient->mutateRemarketingActions(
             $customerId,
@@ -157,7 +157,7 @@ class AddRemarketingAction
         /** @var GoogleAdsRow $googleAdsRow */
         $googleAdsRow = $response->iterateAllElements()->current();
 
-        // Print some attributes of the remarketing action. The ID and tag snippets are generated
+        // Prints some attributes of the remarketing action. The ID and tag snippets are generated
         // by the API.
         printf(
             "Remarketing action has ID %d and name '%s'.%s%s",
