@@ -29,6 +29,7 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\V1\ResourceNames;
 use Google\Ads\GoogleAds\V2\Services\ClickConversion;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\ClickConversionResult;
 use Google\Ads\GoogleAds\V2\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\DoubleValue;
@@ -111,8 +112,9 @@ class UploadOfflineConversions
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of the conversion action to upload to
      * @param string $gclId the GCLID for the conversion (should be newer than 30 days)
-     * @param string $conversionTime the date and time of the conversion (should be after the click time)
-     * @param int $conversionValue the value of the conversion
+     * @param string $conversionTime the date and time of the conversion (should be after the
+     * click time)
+     * @param float $conversionValue the value of the conversion
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -120,7 +122,7 @@ class UploadOfflineConversions
         int $conversionActionId,
         string $gclId,
         string $conversionTime,
-        int $conversionValue
+        float $conversionValue
     ) {
         // Creates a click conversion.
         $clickConversion = new ClickConversion([
@@ -128,7 +130,7 @@ class UploadOfflineConversions
                 'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
             ]),
             'gclid' => new StringValue(['value' => $gclId]),
-            'conversion_value' => new DoubleValue(['value' => doubleval($conversionValue)]),
+            'conversion_value' => new DoubleValue(['value' => $conversionValue]),
             'conversion_date_time' => new StringValue(['value' => $conversionTime]),
             'currency_code' => new StringValue(['value' => 'USD']),
         ]);
@@ -137,16 +139,14 @@ class UploadOfflineConversions
         $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
         /** @var UploadClickConversionsResponse $response */
         $response = $conversionUploadServiceClient->uploadClickConversions(
-            $customerId,
-            [$clickConversion],
-            ['partialFailure' => true]
+            $customerId, [$clickConversion], ['partialFailure' => true]
         );
 
         // Prints the result;
-        /** @var ClickConversion $uploadedClickConversion */
+        /** @var ClickConversionResult $uploadedClickConversion */
         $uploadedClickConversion = $response->getResults()[0];
-        printf("Uploaded click conversion value of %.4f for Google Click ID '%s' to '%s'.%n",
-            $uploadedClickConversion->getConversionValueUnwrapped(),
+        printf("Uploaded conversion that occurred at '%s' from Google Click ID '%s' to '%s'.%s",
+            $uploadedClickConversion->getConversionDateTimeUnwrapped(),
             $uploadedClickConversion->getGclidUnwrapped(),
             $uploadedClickConversion->getConversionActionUnwrapped(),
             PHP_EOL
