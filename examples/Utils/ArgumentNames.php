@@ -49,7 +49,7 @@ final class ArgumentNames
     const FEED_ITEM_ID = 'feedItemId';
     const FEED_ITEM_IDS = 'feedItemIds';
     const FEED_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
-    const GCL_ID = 'gclId';
+    const GCLID = 'gclid';
     const GMB_ACCESS_TOKEN = 'gmbAccessToken';
     const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
@@ -98,7 +98,7 @@ final class ArgumentNames
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
         self::FEED_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
-        self::GCL_ID => 'The Google Click ID',
+        self::GCLID => 'The Google Click ID',
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
         self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',

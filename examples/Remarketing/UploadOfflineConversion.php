@@ -22,13 +22,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V1\ResourceNames;
-use Google\Ads\GoogleAds\V2\Services\ClickConversion;
+use Google\Ads\GoogleAds\Util\V2\ResourceNames;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V2\Services\ClickConversion;
 use Google\Ads\GoogleAds\V2\Services\ClickConversionResult;
 use Google\Ads\GoogleAds\V2\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
@@ -36,16 +36,16 @@ use Google\Protobuf\DoubleValue;
 use Google\Protobuf\StringValue;
 
 /**
- * This code example imports offline conversion values for specific clicks to
- * your account. To get Google Click ID for a click, use the "click_view"
- * resource of report. To set up a conversion action, run the
- * AddConversionAction.php example.
+ * This code example imports offline conversion values for specific clicks to your account.
+ * To get Google Click ID for a click, use the "click_view" resource:
+ * https://developers.google.com/google-ads/api/fields/latest/click_view.
+ * To set up a conversion action, run the AddConversionAction.php example.
  */
-class UploadOfflineConversions
+class UploadOfflineConversion
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
-    const GCL_ID = 'INSERT_GCL_ID_HERE';
+    const GCLID = 'INSERT_GCLID_HERE';
     const CONVERSION_TIME = 'INSERT_CONVERSION_TIME_HERE';
     const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
 
@@ -56,7 +56,7 @@ class UploadOfflineConversions
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::GCL_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::GCLID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT
         ]);
@@ -76,7 +76,7 @@ class UploadOfflineConversions
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CONVERSION_ACTION_ID] ?: self::CONVERSION_ACTION_ID,
-                $options[ArgumentNames::GCL_ID] ?: self::GCL_ID,
+                $options[ArgumentNames::GCLID] ?: self::GCLID,
                 $options[ArgumentNames::CONVERSION_TIME] ?: self::CONVERSION_TIME,
                 $options[ArgumentNames::CONVERSION_VALUE] ?: self::CONVERSION_VALUE
             );
@@ -111,25 +111,26 @@ class UploadOfflineConversions
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of the conversion action to upload to
-     * @param string $gclId the GCLID for the conversion (should be newer than 30 days)
+     * @param string $gclid the GCLID for the conversion (should be newer than 30 days)
      * @param string $conversionTime the date and time of the conversion (should be after the
-     * click time)
+     *      click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
+     *      “2019-01-01 12:32:45-08:00”
      * @param float $conversionValue the value of the conversion
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $conversionActionId,
-        string $gclId,
+        string $gclid,
         string $conversionTime,
         float $conversionValue
     ) {
-        // Creates a click conversion.
+        // Creates a click conversion by specifying currency as USD.
         $clickConversion = new ClickConversion([
             'conversion_action' => new StringValue([
                 'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
             ]),
-            'gclid' => new StringValue(['value' => $gclId]),
+            'gclid' => new StringValue(['value' => $gclid]),
             'conversion_value' => new DoubleValue(['value' => $conversionValue]),
             'conversion_date_time' => new StringValue(['value' => $conversionTime]),
             'currency_code' => new StringValue(['value' => 'USD']),
@@ -139,13 +140,16 @@ class UploadOfflineConversions
         $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
         /** @var UploadClickConversionsResponse $response */
         $response = $conversionUploadServiceClient->uploadClickConversions(
-            $customerId, [$clickConversion], ['partialFailure' => true]
+            $customerId,
+            [$clickConversion],
+            ['partialFailure' => true]
         );
 
         // Prints the result;
         /** @var ClickConversionResult $uploadedClickConversion */
         $uploadedClickConversion = $response->getResults()[0];
-        printf("Uploaded conversion that occurred at '%s' from Google Click ID '%s' to '%s'.%s",
+        printf(
+            "Uploaded conversion that occurred at '%s' from Google Click ID '%s' to '%s'.%s",
             $uploadedClickConversion->getConversionDateTimeUnwrapped(),
             $uploadedClickConversion->getGclidUnwrapped(),
             $uploadedClickConversion->getConversionActionUnwrapped(),
@@ -154,4 +158,4 @@ class UploadOfflineConversions
     }
 }
 
-UploadOfflineConversions::main();
+UploadOfflineConversion::main();
