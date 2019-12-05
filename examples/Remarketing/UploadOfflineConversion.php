@@ -111,7 +111,8 @@ class UploadOfflineConversion
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of the conversion action to upload to
-     * @param string $gclid the GCLID for the conversion (should be newer than 30 days)
+     * @param string $gclid the GCLID for the conversion (should be newer than the number of days
+     *      set on the conversion window of the conversion action)
      * @param string $conversionTime the date and time of the conversion (should be after the
      *      click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
      *      “2019-01-01 12:32:45-08:00”
