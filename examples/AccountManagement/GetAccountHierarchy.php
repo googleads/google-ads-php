@@ -127,7 +127,7 @@ class GetAccountHierarchy
             $query = 'SELECT customer_client.client_customer, customer_client.level,'
                 . ' customer_client.manager, customer_client.descriptive_name,'
                 . ' customer_client.currency_code, customer_client.time_zone,'
-                . ' customer_client.id FROM customer_client';
+                . ' customer_client.id FROM customer_client WHERE customer_client.level <= 1';
 
             // Performs a breadth-first search algorithm to build an associative array mapping
             // managers to their child accounts ($customerIdsToChildAccounts).
@@ -180,13 +180,18 @@ class GetAccountHierarchy
                 }
             };
 
-            printf(
-                "The hierarchy of customer ID %d is printed below:%s",
-                $rootCustomerClient->getIdUnwrapped(),
-                PHP_EOL
-            );
-            self::printAccountHierarchy($rootCustomerClient, $customerIdsToChildAccounts, 0);
-            print PHP_EOL;
+            if ($rootCustomerClient !== null) {
+                printf(
+                    "The hierarchy of customer ID %d is printed below:%s",
+                    $rootCustomerClient->getIdUnwrapped(),
+                    PHP_EOL
+                );
+                self::printAccountHierarchy($rootCustomerClient, $customerIdsToChildAccounts, 0);
+                print PHP_EOL;
+            } else {
+                print "Customer ID $customerId is likely a test account, so its customer client "
+                    . " information cannot be retrieved." . PHP_EOL;
+            }
         }
     }
 
