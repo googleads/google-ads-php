@@ -36,6 +36,9 @@ final class ArgumentNames
     const CAMPAIGN_ID = 'campaignId';
     const CAMPAIGN_IDS = 'campaignIds';
     const CHECK_IN_DAY_CRITERION_ID = 'checkInDayCriterionId';
+    const CONVERSION_ACTION_ID = 'conversionActionId';
+    const CONVERSION_TIME = 'conversionTime';
+    const CONVERSION_VALUE = 'conversionValue';
     const COUNTRY_CODE = 'countryCode';
     const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
     const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
@@ -46,6 +49,7 @@ final class ArgumentNames
     const FEED_ITEM_ID = 'feedItemId';
     const FEED_ITEM_IDS = 'feedItemIds';
     const FEED_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
+    const GCLID = 'gclid';
     const GMB_ACCESS_TOKEN = 'gmbAccessToken';
     const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
@@ -81,6 +85,9 @@ final class ArgumentNames
         self::CAMPAIGN_ID => 'The campaign ID',
         self::CAMPAIGN_IDS => 'The campaign IDs',
         self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
+        self::CONVERSION_ACTION_ID => 'The conversion action ID',
+        self::CONVERSION_TIME => 'The conversion time',
+        self::CONVERSION_VALUE => 'The conversion value',
         self::COUNTRY_CODE => 'The country code',
         self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
@@ -91,6 +98,7 @@ final class ArgumentNames
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
         self::FEED_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
+        self::GCLID => 'The Google Click ID',
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
         self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
