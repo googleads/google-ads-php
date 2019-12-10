@@ -161,7 +161,7 @@ class AddSitelinks
         int $customerId,
         string $campaignResourceName
     ) {
-        // Creates a site link feed item 1.
+        // Creates the first sitelink feed item.
         $sitelinkFeedItem1 =
             self::createSitelinkFeedItem('Store Hours', 'http://www.example.com/storehours');
 
@@ -172,7 +172,7 @@ class AddSitelinks
             'targeted_campaign' => new StringValue(['value' => $campaignResourceName])
         ]);
 
-        // Creates a site link feed item 2.
+        // Creates the second sitelink feed item.
         $sitelinkFeedItem2 = self::createSitelinkFeedItem(
             'Thanksgiving Specials',
             'http://www.example.com/thanksgiving'
@@ -203,7 +203,7 @@ class AddSitelinks
             'targeted_geo_target_constant' => new StringValue(['value' => $unitedStates])
         ]);
 
-        // Creates a site link feed item 3.
+        // Creates the third sitelink feed item.
         $sitelinkFeedItem3 =
             self::createSitelinkFeedItem('Wifi available', 'http://www.example.com/mobile/wifi');
 
@@ -219,7 +219,7 @@ class AddSitelinks
             ])
         ]);
 
-        // Creates a site link feed item 4.
+        // Creates the fourth sitelink feed item.
         $sitelinkFeedItem4 =
             self::createSitelinkFeedItem('Happy hours', 'http://www.example.com/happyhours');
 
@@ -288,18 +288,19 @@ class AddSitelinks
         $createdExtensionFeedItemsResourceNames = [];
         foreach ($response->getResults() as $addedExtensionFeedItem) {
             /** @var ExtensionFeedItem $addedExtensionFeedItem */
-            print "{$addedExtensionFeedItem->getResourceName()}" . PHP_EOL;
-            $createdExtensionFeedItemsResourceNames[] = $addedExtensionFeedItem->getResourceName();
+            $addedExtensionFeedItemResourceName = $addedExtensionFeedItem->getResourceName();
+            print $addedExtensionFeedItemResourceName . PHP_EOL;
+            $createdExtensionFeedItemsResourceNames[] = $addedExtensionFeedItemResourceName;
         }
         return $createdExtensionFeedItemsResourceNames;
     }
 
     /**
-     * Creates a new site link feed item with the specified attributes.
+     * Creates a new sitelink feed item with the specified attributes.
      *
      * @param $sitelinkText string the text of the sitelink feed item
      * @param $sitelinkUrl string the URL of the sitelink feed item
-     * @return SitelinkFeedItem the created site link feed item
+     * @return SitelinkFeedItem the created sitelink feed item
      */
     private static function createSitelinkFeedItem(string $sitelinkText, string $sitelinkUrl)
     {
@@ -310,14 +311,14 @@ class AddSitelinks
     }
 
     /**
-     * Creates a new AdScheduleInfo with the specified attributes.
+     * Creates a new ad schedule info object with the specified attributes.
      *
-     * @param int $day the enum value of day of the week of the AdScheduleInfo
-     * @param int $startHour the starting hour of the AdScheduleInfo
-     * @param int $startMinute the enum value of the starting minute of the AdScheduleInfo
-     * @param int $endHour the ending hour of the AdScheduleInfo
-     * @param int $endMinute the enum value of ending minute of the AdScheduleInfo
-     * @return AdScheduleInfo the created AdScheduleInfo
+     * @param int $day the enum value of day of the week of the ad schedule info
+     * @param int $startHour the starting hour of the ad schedule info
+     * @param int $startMinute the enum value of the starting minute of the ad schedule info
+     * @param int $endHour the ending hour of the ad schedule info
+     * @param int $endMinute the enum value of ending minute of the ad schedule info
+     * @return AdScheduleInfo the created ad schedule info
      */
     private static function createAdScheduleInfo(
         int $day,
