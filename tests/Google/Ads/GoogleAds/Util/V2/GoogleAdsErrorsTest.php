@@ -38,7 +38,6 @@ class GoogleAdsErrorsTest extends TestCase
     public function setUp()
     {
         $this->failure = $this->createGoogleAdsFailure();
-
         $any = new Any();
         $any->pack($this->failure);
         $this->status = new Status([
@@ -93,10 +92,19 @@ class GoogleAdsErrorsTest extends TestCase
     public function testFromFailureWithMutateOperation()
     {
         $failureWithMutateOperation = $this->createGoogleAdsFailure("mutate_operations");
-        
         $errors = GoogleAdsErrors::fromFailure(0, $failureWithMutateOperation);
         $this->assertCount(1, $errors);
         
+        $expectedMessage = "A test message.";
+        $this->assertEquals($expectedMessage, $errors[0]->getMessage());
+    }
+
+    public function testFromFailureWithConversions()
+    {
+        $failureWithConversions = $this->createGoogleAdsFailure("conversions");
+        $errors = GoogleAdsErrors::fromFailure(0, $failureWithConversions);
+        $this->assertCount(1, $errors);
+
         $expectedMessage = "A test message.";
         $this->assertEquals($expectedMessage, $errors[0]->getMessage());
     }
