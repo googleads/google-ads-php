@@ -233,7 +233,8 @@ class UploadOfflineConversion
                 }
             } else {
                 printf(
-                    "Uploaded conversion that occurred at '%s' from Google Click ID '%s' to '%s'.%s",
+                    "Uploaded conversion that occurred at '%s' from Google Click ID '%s' " .
+                    "to '%s'.%s",
                     $result->getConversionDateTimeUnwrapped(),
                     $result->getGclidUnwrapped(),
                     $result->getConversionActionUnwrapped(),
