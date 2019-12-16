@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.MutateJob</code>
  */
-final class MutateJob extends \Google\Protobuf\Internal\Message
+class MutateJob extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the mutate job.
@@ -24,39 +24,39 @@ final class MutateJob extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * ID of this mutate job.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The next sequence token to use when adding operations. Only set when the
      * mutate job status is PENDING.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3;</code>
      */
-    private $next_add_sequence_token = null;
+    protected $next_add_sequence_token = null;
     /**
      * Contains additional information about this mutate job.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MutateJob.MutateJobMetadata metadata = 4;</code>
      */
-    private $metadata = null;
+    protected $metadata = null;
     /**
      * Status of this mutate job.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MutateJobStatusEnum.MutateJobStatus status = 5;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the mutate job status is RUNNING or DONE.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
      */
-    private $long_running_operation = null;
+    protected $long_running_operation = null;
 
     /**
      * Constructor.
@@ -138,8 +138,7 @@ final class MutateJob extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -168,9 +167,8 @@ final class MutateJob extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The next sequence token to use when adding operations. Only set when the
@@ -195,8 +193,7 @@ final class MutateJob extends \Google\Protobuf\Internal\Message
      */
     public function getNextAddSequenceTokenUnwrapped()
     {
-        $wrapper = $this->getNextAddSequenceToken();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("next_add_sequence_token");
     }
 
     /**
@@ -227,9 +224,8 @@ final class MutateJob extends \Google\Protobuf\Internal\Message
      */
     public function setNextAddSequenceTokenUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setNextAddSequenceToken($wrappedVar);
-    }
+        $this->writeWrapperValue("next_add_sequence_token", $var);
+        return $this;}
 
     /**
      * Contains additional information about this mutate job.
@@ -306,8 +302,7 @@ final class MutateJob extends \Google\Protobuf\Internal\Message
      */
     public function getLongRunningOperationUnwrapped()
     {
-        $wrapper = $this->getLongRunningOperation();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("long_running_operation");
     }
 
     /**
@@ -338,9 +333,8 @@ final class MutateJob extends \Google\Protobuf\Internal\Message
      */
     public function setLongRunningOperationUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLongRunningOperation($wrappedVar);
-    }
+        $this->writeWrapperValue("long_running_operation", $var);
+        return $this;}
 
 }
 

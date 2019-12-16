@@ -21,7 +21,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue caller_id = 1;</code>
      */
-    private $caller_id = null;
+    protected $caller_id = null;
     /**
      * The date time at which the call occurred. The timezone must be specified.
      * The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm",
@@ -29,7 +29,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_start_date_time = 2;</code>
      */
-    private $call_start_date_time = null;
+    protected $call_start_date_time = null;
     /**
      * Resource name of the conversion action associated with this conversion.
      * Note: Although this resource name consists of a customer id and a
@@ -38,7 +38,7 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
      */
-    private $conversion_action = null;
+    protected $conversion_action = null;
     /**
      * The date time at which the conversion occurred. Must be after the call
      * time. The timezone must be specified. The format is
@@ -46,20 +46,20 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 4;</code>
      */
-    private $conversion_date_time = null;
+    protected $conversion_date_time = null;
     /**
      * The value of the conversion for the advertiser.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value = 5;</code>
      */
-    private $conversion_value = null;
+    protected $conversion_value = null;
     /**
      * Currency associated with the conversion value. This is the ISO 4217
      * 3-character currency code. For example: USD, EUR.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 6;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
 
     /**
      * Constructor.
@@ -116,10 +116,9 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue caller_id = 1;</code>
      * @return string|null
      */
-    public function getCallerIdValue()
+    public function getCallerIdUnwrapped()
     {
-        $wrapper = $this->getCallerId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("caller_id");
     }
 
     /**
@@ -148,11 +147,10 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCallerIdValue($var)
+    public function setCallerIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCallerId($wrappedVar);
-    }
+        $this->writeWrapperValue("caller_id", $var);
+        return $this;}
 
     /**
      * The date time at which the call occurred. The timezone must be specified.
@@ -177,10 +175,9 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue call_start_date_time = 2;</code>
      * @return string|null
      */
-    public function getCallStartDateTimeValue()
+    public function getCallStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getCallStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("call_start_date_time");
     }
 
     /**
@@ -211,11 +208,10 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCallStartDateTimeValue($var)
+    public function setCallStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCallStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("call_start_date_time", $var);
+        return $this;}
 
     /**
      * Resource name of the conversion action associated with this conversion.
@@ -242,10 +238,9 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
      * @return string|null
      */
-    public function getConversionActionValue()
+    public function getConversionActionUnwrapped()
     {
-        $wrapper = $this->getConversionAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_action");
     }
 
     /**
@@ -278,11 +273,10 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionActionValue($var)
+    public function setConversionActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionAction($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_action", $var);
+        return $this;}
 
     /**
      * The date time at which the conversion occurred. Must be after the call
@@ -307,10 +301,9 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 4;</code>
      * @return string|null
      */
-    public function getConversionDateTimeValue()
+    public function getConversionDateTimeUnwrapped()
     {
-        $wrapper = $this->getConversionDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_date_time");
     }
 
     /**
@@ -341,11 +334,10 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionDateTimeValue($var)
+    public function setConversionDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_date_time", $var);
+        return $this;}
 
     /**
      * The value of the conversion for the advertiser.
@@ -366,10 +358,9 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversion_value = 5;</code>
      * @return float|null
      */
-    public function getConversionValueValue()
+    public function getConversionValueUnwrapped()
     {
-        $wrapper = $this->getConversionValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_value");
     }
 
     /**
@@ -396,11 +387,10 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setConversionValueValue($var)
+    public function setConversionValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setConversionValue($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_value", $var);
+        return $this;}
 
     /**
      * Currency associated with the conversion value. This is the ISO 4217
@@ -423,10 +413,9 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 6;</code>
      * @return string|null
      */
-    public function getCurrencyCodeValue()
+    public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -455,11 +444,10 @@ class CallConversion extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCurrencyCodeValue($var)
+    public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
 }
 

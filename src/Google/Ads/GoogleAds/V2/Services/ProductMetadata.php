@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ProductMetadata</code>
  */
-final class ProductMetadata extends \Google\Protobuf\Internal\Message
+class ProductMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
      * The code associated with the ad product. E.g. Trueview, Bumper
@@ -21,13 +21,13 @@ final class ProductMetadata extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_product_code = 1;</code>
      */
-    private $plannable_product_code = null;
+    protected $plannable_product_code = null;
     /**
      * The allowed plannable targeting for this product.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.PlannableTargeting plannable_targeting = 2;</code>
      */
-    private $plannable_targeting = null;
+    protected $plannable_targeting = null;
 
     /**
      * Constructor.
@@ -70,8 +70,7 @@ final class ProductMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getPlannableProductCodeUnwrapped()
     {
-        $wrapper = $this->getPlannableProductCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("plannable_product_code");
     }
 
     /**
@@ -102,9 +101,8 @@ final class ProductMetadata extends \Google\Protobuf\Internal\Message
      */
     public function setPlannableProductCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPlannableProductCode($wrappedVar);
-    }
+        $this->writeWrapperValue("plannable_product_code", $var);
+        return $this;}
 
     /**
      * The allowed plannable targeting for this product.

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.FeedItemValidationError</code>
  */
-final class FeedItemValidationError extends \Google\Protobuf\Internal\Message
+class FeedItemValidationError extends \Google\Protobuf\Internal\Message
 {
     /**
      * Error code indicating what validation error was triggered. The description
@@ -22,13 +22,13 @@ final class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.errors.FeedItemValidationErrorEnum.FeedItemValidationError validation_error = 1;</code>
      */
-    private $validation_error = 0;
+    protected $validation_error = 0;
     /**
      * The description of the validation error.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
      */
-    private $description = null;
+    protected $description = null;
     /**
      * Set of feed attributes in the feed item flagged during validation. If
      * empty, no specific feed attributes can be associated with the error
@@ -44,7 +44,7 @@ final class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue extra_info = 5;</code>
      */
-    private $extra_info = null;
+    protected $extra_info = null;
 
     /**
      * Constructor.
@@ -121,8 +121,7 @@ final class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      */
     public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -151,9 +150,8 @@ final class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      */
     public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
     /**
      * Set of feed attributes in the feed item flagged during validation. If
@@ -210,8 +208,7 @@ final class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      */
     public function getExtraInfoUnwrapped()
     {
-        $wrapper = $this->getExtraInfo();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("extra_info");
     }
 
     /**
@@ -244,9 +241,8 @@ final class FeedItemValidationError extends \Google\Protobuf\Internal\Message
      */
     public function setExtraInfoUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setExtraInfo($wrappedVar);
-    }
+        $this->writeWrapperValue("extra_info", $var);
+        return $this;}
 
 }
 

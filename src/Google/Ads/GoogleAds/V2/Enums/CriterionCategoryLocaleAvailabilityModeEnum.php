@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.CriterionCategoryLocaleAvailabilityModeEnum</code>
  */
-final class CriterionCategoryLocaleAvailabilityModeEnum extends \Google\Protobuf\Internal\Message
+class CriterionCategoryLocaleAvailabilityModeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

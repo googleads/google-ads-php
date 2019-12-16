@@ -20,7 +20,7 @@ class MediaImage extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
      */
-    private $data = null;
+    protected $data = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class MediaImage extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
      * @return string|null
      */
-    public function getDataValue()
+    public function getDataUnwrapped()
     {
-        $wrapper = $this->getData();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("data");
     }
 
     /**
@@ -86,11 +85,10 @@ class MediaImage extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDataValue($var)
+    public function setDataUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BytesValue(['value' => $var]);
-        return $this->setData($wrappedVar);
-    }
+        $this->writeWrapperValue("data", $var);
+        return $this;}
 
 }
 

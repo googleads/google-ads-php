@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.BillingSetupErrorEnum</code>
  */
-final class BillingSetupErrorEnum extends \Google\Protobuf\Internal\Message
+class BillingSetupErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

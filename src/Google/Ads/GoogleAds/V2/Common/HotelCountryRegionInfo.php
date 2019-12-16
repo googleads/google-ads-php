@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.HotelCountryRegionInfo</code>
  */
-final class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
+class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The Geo Target Constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_region_criterion = 1;</code>
      */
-    private $country_region_criterion = null;
+    protected $country_region_criterion = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCountryRegionCriterionUnwrapped()
     {
-        $wrapper = $this->getCountryRegionCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_region_criterion");
     }
 
     /**
@@ -88,9 +87,8 @@ final class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
      */
     public function setCountryRegionCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryRegionCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("country_region_criterion", $var);
+        return $this;}
 
 }
 

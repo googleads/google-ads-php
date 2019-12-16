@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.JobPlaceholderFieldEnum</code>
  */
-final class JobPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
+class JobPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

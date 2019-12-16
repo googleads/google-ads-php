@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.PolicyReviewStatusEnum</code>
  */
-final class PolicyReviewStatusEnum extends \Google\Protobuf\Internal\Message
+class PolicyReviewStatusEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

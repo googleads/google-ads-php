@@ -24,28 +24,25 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the topic.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Resource name of parent of the topic constant.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
      */
-    private $topic_constant_parent = null;
+    protected $topic_constant_parent = null;
     /**
      * The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
-     * "Pets & Animals/Pets/Dogs" category. A complete list of available topic
-     * categories is available
-     * <a
-     * href="https://developers.google.com/adwords/api/docs/appendix/verticals">
-     * here</a>
+     * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
+     * https://developers.google.com/adwords/api/docs/appendix/verticals
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4;</code>
      */
@@ -69,11 +66,8 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      *           The category to target or exclude. Each subsequent element in the array
      *           describes a more specific sub-category. For example,
      *           {"Pets & Animals", "Pets", "Dogs"} represents the
-     *           "Pets & Animals/Pets/Dogs" category. A complete list of available topic
-     *           categories is available
-     *           <a
-     *           href="https://developers.google.com/adwords/api/docs/appendix/verticals">
-     *           here</a>
+     *           "Pets & Animals/Pets/Dogs" category. List of available topic categories at
+     *           https://developers.google.com/adwords/api/docs/appendix/verticals
      * }
      */
     public function __construct($data = NULL) {
@@ -130,10 +124,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -160,11 +153,10 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Resource name of parent of the topic constant.
@@ -185,10 +177,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
      * @return string|null
      */
-    public function getTopicConstantParentValue()
+    public function getTopicConstantParentUnwrapped()
     {
-        $wrapper = $this->getTopicConstantParent();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("topic_constant_parent");
     }
 
     /**
@@ -215,21 +206,17 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTopicConstantParentValue($var)
+    public function setTopicConstantParentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTopicConstantParent($wrappedVar);
-    }
+        $this->writeWrapperValue("topic_constant_parent", $var);
+        return $this;}
 
     /**
      * The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
-     * "Pets & Animals/Pets/Dogs" category. A complete list of available topic
-     * categories is available
-     * <a
-     * href="https://developers.google.com/adwords/api/docs/appendix/verticals">
-     * here</a>
+     * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
+     * https://developers.google.com/adwords/api/docs/appendix/verticals
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -243,11 +230,8 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      * The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
-     * "Pets & Animals/Pets/Dogs" category. A complete list of available topic
-     * categories is available
-     * <a
-     * href="https://developers.google.com/adwords/api/docs/appendix/verticals">
-     * here</a>
+     * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
+     * https://developers.google.com/adwords/api/docs/appendix/verticals
      *
      * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4;</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var

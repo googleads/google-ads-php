@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.FrequencyCapEventTypeEnum</code>
  */
-final class FrequencyCapEventTypeEnum extends \Google\Protobuf\Internal\Message
+class FrequencyCapEventTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

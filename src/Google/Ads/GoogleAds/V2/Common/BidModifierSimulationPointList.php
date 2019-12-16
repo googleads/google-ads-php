@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.BidModifierSimulationPointList</code>
  */
-final class BidModifierSimulationPointList extends \Google\Protobuf\Internal\Message
+class BidModifierSimulationPointList extends \Google\Protobuf\Internal\Message
 {
     /**
      * Projected metrics for a series of bid modifier amounts.

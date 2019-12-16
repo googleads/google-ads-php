@@ -20,13 +20,13 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.KeywordInfo keyword = 1;</code>
      */
-    private $keyword = null;
+    protected $keyword = null;
     /**
      * The recommended new match type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2;</code>
      */
-    private $recommended_match_type = 0;
+    protected $recommended_match_type = 0;
 
     /**
      * Constructor.

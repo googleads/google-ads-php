@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Feed</code>
  */
-final class Feed extends \Google\Protobuf\Internal\Message
+class Feed extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the feed.
@@ -22,22 +22,24 @@ final class Feed extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the feed.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Name of the feed. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
-     * The Feed's attributes. Required on CREATE.
+     * The Feed's attributes. Required on CREATE, unless
+     * system_feed_generation_data is provided, in which case Google Ads will
+     * update the feed with the correct attributes.
      * Disallowed on UPDATE. Use attribute_operations to add new attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.FeedAttribute attributes = 4;</code>
@@ -55,14 +57,14 @@ final class Feed extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedOriginEnum.FeedOrigin origin = 5;</code>
      */
-    private $origin = 0;
+    protected $origin = 0;
     /**
      * Status of the feed.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedStatusEnum.FeedStatus status = 8;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     protected $system_feed_generation_data;
 
     /**
@@ -81,7 +83,9 @@ final class Feed extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $name
      *           Name of the feed. Required.
      *     @type \Google\Ads\GoogleAds\V2\Resources\FeedAttribute[]|\Google\Protobuf\Internal\RepeatedField $attributes
-     *           The Feed's attributes. Required on CREATE.
+     *           The Feed's attributes. Required on CREATE, unless
+     *           system_feed_generation_data is provided, in which case Google Ads will
+     *           update the feed with the correct attributes.
      *           Disallowed on UPDATE. Use attribute_operations to add new attributes.
      *     @type \Google\Ads\GoogleAds\V2\Resources\FeedAttributeOperation[]|\Google\Protobuf\Internal\RepeatedField $attribute_operations
      *           The list of operations changing the feed attributes. Attributes can only
@@ -157,8 +161,7 @@ final class Feed extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -189,9 +192,8 @@ final class Feed extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Name of the feed. Required.
@@ -214,8 +216,7 @@ final class Feed extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -244,12 +245,13 @@ final class Feed extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
-     * The Feed's attributes. Required on CREATE.
+     * The Feed's attributes. Required on CREATE, unless
+     * system_feed_generation_data is provided, in which case Google Ads will
+     * update the feed with the correct attributes.
      * Disallowed on UPDATE. Use attribute_operations to add new attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.FeedAttribute attributes = 4;</code>
@@ -261,7 +263,9 @@ final class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Feed's attributes. Required on CREATE.
+     * The Feed's attributes. Required on CREATE, unless
+     * system_feed_generation_data is provided, in which case Google Ads will
+     * update the feed with the correct attributes.
      * Disallowed on UPDATE. Use attribute_operations to add new attributes.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.FeedAttribute attributes = 4;</code>

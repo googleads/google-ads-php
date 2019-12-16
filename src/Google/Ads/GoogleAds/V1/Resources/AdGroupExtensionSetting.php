@@ -22,13 +22,13 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The extension type of the ad group extension setting.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType extension_type = 2;</code>
      */
-    private $extension_type = 0;
+    protected $extension_type = 0;
     /**
      * The resource name of the ad group. The linked extension feed items will
      * serve under this ad group.
@@ -37,7 +37,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * The resource names of the extension feed items to serve under the ad group.
      * ExtensionFeedItem resource names have the form:
@@ -51,7 +51,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ExtensionSettingDeviceEnum.ExtensionSettingDevice device = 5;</code>
      */
-    private $device = 0;
+    protected $device = 0;
 
     /**
      * Constructor.
@@ -164,10 +164,9 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
      * @return string|null
      */
-    public function getAdGroupValue()
+    public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -200,11 +199,10 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupValue($var)
+    public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * The resource names of the extension feed items to serve under the ad group.

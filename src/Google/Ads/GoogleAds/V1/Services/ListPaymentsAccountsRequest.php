@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request message for fetching all accessible Payments accounts.
+ * Request message for fetching all accessible payments accounts.
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.services.ListPaymentsAccountsRequest</code>
  */
@@ -20,7 +20,7 @@ class ListPaymentsAccountsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
 
     /**
      * Constructor.

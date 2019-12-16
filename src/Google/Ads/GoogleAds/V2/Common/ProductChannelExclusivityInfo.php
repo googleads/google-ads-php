@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ProductChannelExclusivityInfo</code>
  */
-final class ProductChannelExclusivityInfo extends \Google\Protobuf\Internal\Message
+class ProductChannelExclusivityInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Value of the availability.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity channel_exclusivity = 1;</code>
      */
-    private $channel_exclusivity = 0;
+    protected $channel_exclusivity = 0;
 
     /**
      * Constructor.

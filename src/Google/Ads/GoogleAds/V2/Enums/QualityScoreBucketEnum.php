@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.QualityScoreBucketEnum</code>
  */
-final class QualityScoreBucketEnum extends \Google\Protobuf\Internal\Message
+class QualityScoreBucketEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

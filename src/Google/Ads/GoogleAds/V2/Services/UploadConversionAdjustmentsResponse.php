@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.UploadConversionAdjustmentsResponse</code>
  */
-final class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Message
+class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Errors that pertain to conversion adjustment failures in the partial
@@ -24,7 +24,7 @@ final class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Interna
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      */
-    private $partial_failure_error = null;
+    protected $partial_failure_error = null;
     /**
      * Returned for successfully processed conversion adjustments. Proto will be
      * empty for rows that received an error. Results are not returned when

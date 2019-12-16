@@ -20,7 +20,7 @@ class TextAsset extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
      */
-    private $text = null;
+    protected $text = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class TextAsset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
      * @return string|null
      */
-    public function getTextValue()
+    public function getTextUnwrapped()
     {
-        $wrapper = $this->getText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text");
     }
 
     /**
@@ -86,11 +85,10 @@ class TextAsset extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTextValue($var)
+    public function setTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setText($wrappedVar);
-    }
+        $this->writeWrapperValue("text", $var);
+        return $this;}
 
 }
 

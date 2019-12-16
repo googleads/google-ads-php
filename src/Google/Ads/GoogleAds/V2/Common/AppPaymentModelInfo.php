@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.AppPaymentModelInfo</code>
  */
-final class AppPaymentModelInfo extends \Google\Protobuf\Internal\Message
+class AppPaymentModelInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the app payment model.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AppPaymentModelTypeEnum.AppPaymentModelType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

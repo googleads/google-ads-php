@@ -13,35 +13,35 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.CreateCustomerClientRequest</code>
  */
-final class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
+class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the Manager under whom client customer is being created.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The new client customer to create. The resource name on this customer
      * will be ignored.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Customer customer_client = 2;</code>
      */
-    private $customer_client = null;
+    protected $customer_client = null;
     /**
      * Email address of the user who should be invited on the created client
      * customer. Accessible to whitelisted customers only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue email_address = 3;</code>
      */
-    private $email_address = null;
+    protected $email_address = null;
     /**
      * The proposed role of user on the created client customer.
      * Accessible to whitelisted customers only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccessRoleEnum.AccessRole access_role = 4;</code>
      */
-    private $access_role = 0;
+    protected $access_role = 0;
 
     /**
      * Constructor.
@@ -144,8 +144,7 @@ final class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getEmailAddressUnwrapped()
     {
-        $wrapper = $this->getEmailAddress();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("email_address");
     }
 
     /**
@@ -176,9 +175,8 @@ final class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Messag
      */
     public function setEmailAddressUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEmailAddress($wrappedVar);
-    }
+        $this->writeWrapperValue("email_address", $var);
+        return $this;}
 
     /**
      * The proposed role of user on the created client customer.

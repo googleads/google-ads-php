@@ -24,7 +24,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 1;</code>
      */
-    private $cpc_bid_ceiling_micros = null;
+    protected $cpc_bid_ceiling_micros = null;
     /**
      * Adjusts the bid for each auction upward or downward, depending on the
      * likelihood of a conversion. Individual bids may exceed
@@ -33,7 +33,7 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 2;</code>
      */
-    private $enhanced_cpc_enabled = null;
+    protected $enhanced_cpc_enabled = null;
 
     /**
      * Constructor.
@@ -83,10 +83,9 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 1;</code>
      * @return int|string|null
      */
-    public function getCpcBidCeilingMicrosValue()
+    public function getCpcBidCeilingMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidCeilingMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_ceiling_micros");
     }
 
     /**
@@ -119,11 +118,10 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCpcBidCeilingMicrosValue($var)
+    public function setCpcBidCeilingMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidCeilingMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_ceiling_micros", $var);
+        return $this;}
 
     /**
      * Adjusts the bid for each auction upward or downward, depending on the
@@ -150,10 +148,9 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 2;</code>
      * @return bool|null
      */
-    public function getEnhancedCpcEnabledValue()
+    public function getEnhancedCpcEnabledUnwrapped()
     {
-        $wrapper = $this->getEnhancedCpcEnabled();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("enhanced_cpc_enabled");
     }
 
     /**
@@ -186,11 +183,10 @@ class PercentCpc extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setEnhancedCpcEnabledValue($var)
+    public function setEnhancedCpcEnabledUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setEnhancedCpcEnabled($wrappedVar);
-    }
+        $this->writeWrapperValue("enhanced_cpc_enabled", $var);
+        return $this;}
 
 }
 

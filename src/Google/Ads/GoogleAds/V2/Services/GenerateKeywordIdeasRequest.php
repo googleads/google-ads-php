@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateKeywordIdeasRequest</code>
  */
-final class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
+class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer with the recommendation.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The resource name of the language to target.
      * Required
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language = 7;</code>
      */
-    private $language = null;
+    protected $language = null;
     /**
      * The resource names of the location to target.
      * Max 10
@@ -40,7 +40,7 @@ final class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.KeywordPlanNetworkEnum.KeywordPlanNetwork keyword_plan_network = 9;</code>
      */
-    private $keyword_plan_network = 0;
+    protected $keyword_plan_network = 0;
     protected $seed;
 
     /**
@@ -122,8 +122,7 @@ final class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Messag
      */
     public function getLanguageUnwrapped()
     {
-        $wrapper = $this->getLanguage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language");
     }
 
     /**
@@ -154,9 +153,8 @@ final class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Messag
      */
     public function setLanguageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguage($wrappedVar);
-    }
+        $this->writeWrapperValue("language", $var);
+        return $this;}
 
     /**
      * The resource names of the location to target.

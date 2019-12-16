@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.MediaVideo</code>
  */
-final class MediaVideo extends \Google\Protobuf\Internal\Message
+class MediaVideo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The duration of the Video in milliseconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
      */
-    private $ad_duration_millis = null;
+    protected $ad_duration_millis = null;
     /**
      * The YouTube video ID (as seen in YouTube URLs).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
      */
-    private $youtube_video_id = null;
+    protected $youtube_video_id = null;
     /**
      * The Advertising Digital Identification code for this video, as defined by
      * the American Association of Advertising Agencies, used mainly for
@@ -34,14 +34,14 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3;</code>
      */
-    private $advertising_id_code = null;
+    protected $advertising_id_code = null;
     /**
      * The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4;</code>
      */
-    private $isci_code = null;
+    protected $isci_code = null;
 
     /**
      * Constructor.
@@ -88,8 +88,7 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     public function getAdDurationMillisUnwrapped()
     {
-        $wrapper = $this->getAdDurationMillis();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_duration_millis");
     }
 
     /**
@@ -118,9 +117,8 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     public function setAdDurationMillisUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAdDurationMillis($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_duration_millis", $var);
+        return $this;}
 
     /**
      * The YouTube video ID (as seen in YouTube URLs).
@@ -143,8 +141,7 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     public function getYoutubeVideoIdUnwrapped()
     {
-        $wrapper = $this->getYoutubeVideoId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("youtube_video_id");
     }
 
     /**
@@ -173,9 +170,8 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     public function setYoutubeVideoIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setYoutubeVideoId($wrappedVar);
-    }
+        $this->writeWrapperValue("youtube_video_id", $var);
+        return $this;}
 
     /**
      * The Advertising Digital Identification code for this video, as defined by
@@ -202,8 +198,7 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     public function getAdvertisingIdCodeUnwrapped()
     {
-        $wrapper = $this->getAdvertisingIdCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("advertising_id_code");
     }
 
     /**
@@ -236,9 +231,8 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     public function setAdvertisingIdCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdvertisingIdCode($wrappedVar);
-    }
+        $this->writeWrapperValue("advertising_id_code", $var);
+        return $this;}
 
     /**
      * The Industry Standard Commercial Identifier code for this video, used
@@ -263,8 +257,7 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     public function getIsciCodeUnwrapped()
     {
-        $wrapper = $this->getIsciCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("isci_code");
     }
 
     /**
@@ -295,9 +288,8 @@ final class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     public function setIsciCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setIsciCode($wrappedVar);
-    }
+        $this->writeWrapperValue("isci_code", $var);
+        return $this;}
 
 }
 

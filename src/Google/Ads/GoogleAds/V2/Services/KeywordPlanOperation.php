@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.KeywordPlanOperation</code>
  */
-final class KeywordPlanOperation extends \Google\Protobuf\Internal\Message
+class KeywordPlanOperation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The FieldMask that determines which resource fields are modified in an
@@ -21,7 +21,7 @@ final class KeywordPlanOperation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
     protected $operation;
 
     /**

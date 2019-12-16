@@ -28,7 +28,7 @@ class AffiliateLocationFeedData extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AffiliateLocationFeedRelationshipTypeEnum.AffiliateLocationFeedRelationshipType relationship_type = 2;</code>
      */
-    private $relationship_type = 0;
+    protected $relationship_type = 0;
 
     /**
      * Constructor.

@@ -20,7 +20,7 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1;</code>
      */
-    private $google_global_site_tag = null;
+    protected $google_global_site_tag = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1;</code>
      * @return string|null
      */
-    public function getGoogleGlobalSiteTagValue()
+    public function getGoogleGlobalSiteTagUnwrapped()
     {
-        $wrapper = $this->getGoogleGlobalSiteTag();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("google_global_site_tag");
     }
 
     /**
@@ -86,11 +85,10 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGoogleGlobalSiteTagValue($var)
+    public function setGoogleGlobalSiteTagUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGoogleGlobalSiteTag($wrappedVar);
-    }
+        $this->writeWrapperValue("google_global_site_tag", $var);
+        return $this;}
 
 }
 

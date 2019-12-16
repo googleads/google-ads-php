@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Describes locale availabilty mode for a criterion availability - whether
+ * Describes locale availability mode for a criterion availability - whether
  * it's available globally, or a particular country with all languages, or a
  * particular language with all countries, or a country-language pair.
  *

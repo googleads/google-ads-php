@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.LocationGroupRadiusUnitsEnum</code>
  */
-final class LocationGroupRadiusUnitsEnum extends \Google\Protobuf\Internal\Message
+class LocationGroupRadiusUnitsEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

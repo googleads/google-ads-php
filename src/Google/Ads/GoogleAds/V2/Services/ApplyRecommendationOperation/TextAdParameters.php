@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ApplyRecommendationOperation.TextAdParameters</code>
  */
-final class TextAdParameters extends \Google\Protobuf\Internal\Message
+class TextAdParameters extends \Google\Protobuf\Internal\Message
 {
     /**
      * New ad to add to recommended ad group. All necessary fields need to be
@@ -21,7 +21,7 @@ final class TextAdParameters extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Ad ad = 1;</code>
      */
-    private $ad = null;
+    protected $ad = null;
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.NotWhitelistedErrorEnum</code>
  */
-final class NotWhitelistedErrorEnum extends \Google\Protobuf\Internal\Message
+class NotWhitelistedErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

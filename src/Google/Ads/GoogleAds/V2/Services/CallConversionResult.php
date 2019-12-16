@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.CallConversionResult</code>
  */
-final class CallConversionResult extends \Google\Protobuf\Internal\Message
+class CallConversionResult extends \Google\Protobuf\Internal\Message
 {
     /**
      * The caller id from which this call was placed. Caller id is expected to be
@@ -21,27 +21,27 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue caller_id = 1;</code>
      */
-    private $caller_id = null;
+    protected $caller_id = null;
     /**
      * The date time at which the call occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_start_date_time = 2;</code>
      */
-    private $call_start_date_time = null;
+    protected $call_start_date_time = null;
     /**
      * Resource name of the conversion action associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
      */
-    private $conversion_action = null;
+    protected $conversion_action = null;
     /**
      * The date time at which the conversion occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01 12:32:45-08:00".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 4;</code>
      */
-    private $conversion_date_time = null;
+    protected $conversion_date_time = null;
 
     /**
      * Constructor.
@@ -90,8 +90,7 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      */
     public function getCallerIdUnwrapped()
     {
-        $wrapper = $this->getCallerId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("caller_id");
     }
 
     /**
@@ -122,9 +121,8 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      */
     public function setCallerIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCallerId($wrappedVar);
-    }
+        $this->writeWrapperValue("caller_id", $var);
+        return $this;}
 
     /**
      * The date time at which the call occurred. The format is
@@ -149,8 +147,7 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      */
     public function getCallStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getCallStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("call_start_date_time");
     }
 
     /**
@@ -181,9 +178,8 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      */
     public function setCallStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCallStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("call_start_date_time", $var);
+        return $this;}
 
     /**
      * Resource name of the conversion action associated with this conversion.
@@ -206,8 +202,7 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      */
     public function getConversionActionUnwrapped()
     {
-        $wrapper = $this->getConversionAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_action");
     }
 
     /**
@@ -236,9 +231,8 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      */
     public function setConversionActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionAction($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_action", $var);
+        return $this;}
 
     /**
      * The date time at which the conversion occurred. The format is
@@ -263,8 +257,7 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      */
     public function getConversionDateTimeUnwrapped()
     {
-        $wrapper = $this->getConversionDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_date_time");
     }
 
     /**
@@ -295,9 +288,8 @@ final class CallConversionResult extends \Google\Protobuf\Internal\Message
      */
     public function setConversionDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_date_time", $var);
+        return $this;}
 
 }
 

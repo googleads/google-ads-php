@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.AdMediaBundleAsset</code>
  */
-final class AdMediaBundleAsset extends \Google\Protobuf\Internal\Message
+class AdMediaBundleAsset extends \Google\Protobuf\Internal\Message
 {
     /**
      * The Asset resource name of this media bundle.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue asset = 1;</code>
      */
-    private $asset = null;
+    protected $asset = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class AdMediaBundleAsset extends \Google\Protobuf\Internal\Message
      */
     public function getAssetUnwrapped()
     {
-        $wrapper = $this->getAsset();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("asset");
     }
 
     /**
@@ -88,9 +87,8 @@ final class AdMediaBundleAsset extends \Google\Protobuf\Internal\Message
      */
     public function setAssetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAsset($wrappedVar);
-    }
+        $this->writeWrapperValue("asset", $var);
+        return $this;}
 
 }
 

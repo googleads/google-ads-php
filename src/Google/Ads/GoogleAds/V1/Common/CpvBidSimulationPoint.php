@@ -20,19 +20,19 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 1;</code>
      */
-    private $cpv_bid_micros = null;
+    protected $cpv_bid_micros = null;
     /**
      * Projected cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 2;</code>
      */
-    private $cost_micros = null;
+    protected $cost_micros = null;
     /**
      * Projected number of impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 3;</code>
      */
-    private $impressions = null;
+    protected $impressions = null;
 
     /**
      * Constructor.
@@ -72,10 +72,9 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 1;</code>
      * @return int|string|null
      */
-    public function getCpvBidMicrosValue()
+    public function getCpvBidMicrosUnwrapped()
     {
-        $wrapper = $this->getCpvBidMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpv_bid_micros");
     }
 
     /**
@@ -102,11 +101,10 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCpvBidMicrosValue($var)
+    public function setCpvBidMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpvBidMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpv_bid_micros", $var);
+        return $this;}
 
     /**
      * Projected cost in micros.
@@ -127,10 +125,9 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 2;</code>
      * @return int|string|null
      */
-    public function getCostMicrosValue()
+    public function getCostMicrosUnwrapped()
     {
-        $wrapper = $this->getCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_micros");
     }
 
     /**
@@ -157,11 +154,10 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCostMicrosValue($var)
+    public function setCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_micros", $var);
+        return $this;}
 
     /**
      * Projected number of impressions.
@@ -182,10 +178,9 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 3;</code>
      * @return int|string|null
      */
-    public function getImpressionsValue()
+    public function getImpressionsUnwrapped()
     {
-        $wrapper = $this->getImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impressions");
     }
 
     /**
@@ -212,11 +207,10 @@ class CpvBidSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setImpressionsValue($var)
+    public function setImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("impressions", $var);
+        return $this;}
 
 }
 

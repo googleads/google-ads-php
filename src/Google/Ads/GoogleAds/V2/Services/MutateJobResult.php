@@ -13,27 +13,27 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateJobResult</code>
  */
-final class MutateJobResult extends \Google\Protobuf\Internal\Message
+class MutateJobResult extends \Google\Protobuf\Internal\Message
 {
     /**
      * Index of the mutate operation.
      *
      * Generated from protobuf field <code>int64 operation_index = 1;</code>
      */
-    private $operation_index = 0;
+    protected $operation_index = 0;
     /**
      * Response for the mutate.
      * May be empty if errors occurred.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.MutateOperationResponse mutate_operation_response = 2;</code>
      */
-    private $mutate_operation_response = null;
+    protected $mutate_operation_response = null;
     /**
      * Details of the errors when processing the operation.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 3;</code>
      */
-    private $status = null;
+    protected $status = null;
 
     /**
      * Constructor.

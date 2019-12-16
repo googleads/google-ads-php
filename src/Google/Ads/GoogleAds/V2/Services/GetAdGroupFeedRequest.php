@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetAdGroupFeedRequest</code>
  */
-final class GetAdGroupFeedRequest extends \Google\Protobuf\Internal\Message
+class GetAdGroupFeedRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the ad group feed to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

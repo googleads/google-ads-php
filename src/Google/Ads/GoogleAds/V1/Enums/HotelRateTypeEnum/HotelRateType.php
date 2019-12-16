@@ -40,9 +40,9 @@ class HotelRateType
     /**
      * A membership program rate is available and satisfies basic requirements
      * like having a public rate available. UI treatment will strikethrough the
-     * public rate and indicate that a discount is available to the user. See
+     * public rate and indicate that a discount is available to the user. For
+     * more on Qualified Rates, visit
      * https://developers.google.com/hotels/hotel-ads/dev-guide/qualified-rates
-     * for more information.
      *
      * Generated from protobuf enum <code>QUALIFIED_RATE = 4;</code>
      */

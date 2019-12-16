@@ -10,10 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A mobile operating system version or a range of versions, depending on
- * 'operator_type'. The complete list of available mobile platforms is available
- * <a
- * href="https://developers.google.com/adwords/api/docs/appendix/codes-formats#mobile-platforms>
- * here</a>.
+ * `operator_type`. List of available mobile platforms at
+ * https://developers.google.com/adwords/api/docs/appendix/codes-formats#mobile-platforms
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.resources.OperatingSystemVersionConstant</code>
  */
@@ -26,38 +24,38 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the operating system version.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Name of the operating system.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The OS Major Version number.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
      */
-    private $os_major_version = null;
+    protected $os_major_version = null;
     /**
      * The OS Minor Version number.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
      */
-    private $os_minor_version = null;
+    protected $os_minor_version = null;
     /**
      * Determines whether this constant represents a single version or a range of
      * versions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType operator_type = 6;</code>
      */
-    private $operator_type = 0;
+    protected $operator_type = 0;
 
     /**
      * Constructor.
@@ -136,10 +134,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -166,11 +163,10 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Name of the operating system.
@@ -191,10 +187,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -221,11 +216,10 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The OS Major Version number.
@@ -246,10 +240,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
      * @return int|null
      */
-    public function getOsMajorVersionValue()
+    public function getOsMajorVersionUnwrapped()
     {
-        $wrapper = $this->getOsMajorVersion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("os_major_version");
     }
 
     /**
@@ -276,11 +269,10 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setOsMajorVersionValue($var)
+    public function setOsMajorVersionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setOsMajorVersion($wrappedVar);
-    }
+        $this->writeWrapperValue("os_major_version", $var);
+        return $this;}
 
     /**
      * The OS Minor Version number.
@@ -301,10 +293,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
      * @return int|null
      */
-    public function getOsMinorVersionValue()
+    public function getOsMinorVersionUnwrapped()
     {
-        $wrapper = $this->getOsMinorVersion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("os_minor_version");
     }
 
     /**
@@ -331,11 +322,10 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setOsMinorVersionValue($var)
+    public function setOsMinorVersionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setOsMinorVersion($wrappedVar);
-    }
+        $this->writeWrapperValue("os_minor_version", $var);
+        return $this;}
 
     /**
      * Determines whether this constant represents a single version or a range of

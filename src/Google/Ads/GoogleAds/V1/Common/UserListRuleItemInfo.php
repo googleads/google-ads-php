@@ -27,7 +27,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 1;</code>
      */
-    private $name = null;
+    protected $name = null;
     protected $rule_item;
 
     /**
@@ -91,10 +91,9 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 1;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -135,11 +134,10 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * An atomic rule fragment composed of a number operation.

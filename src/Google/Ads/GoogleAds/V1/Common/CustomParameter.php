@@ -21,13 +21,13 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue key = 1;</code>
      */
-    private $key = null;
+    protected $key = null;
     /**
      * The value to be substituted.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * Constructor.
@@ -65,10 +65,9 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue key = 1;</code>
      * @return string|null
      */
-    public function getKeyValue()
+    public function getKeyUnwrapped()
     {
-        $wrapper = $this->getKey();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("key");
     }
 
     /**
@@ -95,11 +94,10 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setKeyValue($var)
+    public function setKeyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setKey($wrappedVar);
-    }
+        $this->writeWrapperValue("key", $var);
+        return $this;}
 
     /**
      * The value to be substituted.
@@ -120,10 +118,9 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
      * @return string|null
      */
-    public function getValueValue()
+    public function getValueUnwrapped()
     {
-        $wrapper = $this->getValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value");
     }
 
     /**
@@ -150,11 +147,10 @@ class CustomParameter extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setValueValue($var)
+    public function setValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setValue($wrappedVar);
-    }
+        $this->writeWrapperValue("value", $var);
+        return $this;}
 
 }
 

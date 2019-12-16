@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Feed.AffiliateLocationFeedData</code>
  */
-final class AffiliateLocationFeedData extends \Google\Protobuf\Internal\Message
+class AffiliateLocationFeedData extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of chains that the affiliate location feed will sync the
@@ -28,7 +28,7 @@ final class AffiliateLocationFeedData extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AffiliateLocationFeedRelationshipTypeEnum.AffiliateLocationFeedRelationshipType relationship_type = 2;</code>
      */
-    private $relationship_type = 0;
+    protected $relationship_type = 0;
 
     /**
      * Constructor.

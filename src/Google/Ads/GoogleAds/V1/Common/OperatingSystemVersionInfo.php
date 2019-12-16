@@ -20,7 +20,7 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_version_constant = 1;</code>
      */
-    private $operating_system_version_constant = null;
+    protected $operating_system_version_constant = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_version_constant = 1;</code>
      * @return string|null
      */
-    public function getOperatingSystemVersionConstantValue()
+    public function getOperatingSystemVersionConstantUnwrapped()
     {
-        $wrapper = $this->getOperatingSystemVersionConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("operating_system_version_constant");
     }
 
     /**
@@ -86,11 +85,10 @@ class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setOperatingSystemVersionConstantValue($var)
+    public function setOperatingSystemVersionConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setOperatingSystemVersionConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("operating_system_version_constant", $var);
+        return $this;}
 
 }
 

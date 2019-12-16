@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.FeedItemQualityApprovalStatusEnum</code>
  */
-final class FeedItemQualityApprovalStatusEnum extends \Google\Protobuf\Internal\Message
+class FeedItemQualityApprovalStatusEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

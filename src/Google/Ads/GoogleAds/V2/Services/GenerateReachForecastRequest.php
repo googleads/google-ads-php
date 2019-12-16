@@ -13,27 +13,27 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateReachForecastRequest</code>
  */
-final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
+class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * Required. The currency code.
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
     /**
      * Campaign duration.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.CampaignDuration campaign_duration = 3;</code>
      */
-    private $campaign_duration = null;
+    protected $campaign_duration = null;
     /**
      * Desired cookie frequency cap that will be applied to each planned product.
      * This is equivalent to the frequency cap exposed in Google Ads when creating
@@ -43,7 +43,7 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cookie_frequency_cap = 4;</code>
      */
-    private $cookie_frequency_cap = null;
+    protected $cookie_frequency_cap = null;
     /**
      * Desired minimum effective frequency (the number of times a person was
      * exposed to the ad) for the reported reach metrics [1-10].
@@ -52,7 +52,7 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value min_effective_frequency = 5;</code>
      */
-    private $min_effective_frequency = null;
+    protected $min_effective_frequency = null;
     /**
      * The targeting to be applied to all products selected in the product mix.
      * This is planned targeting: execution details might vary based on the
@@ -65,7 +65,7 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.Targeting targeting = 6;</code>
      */
-    private $targeting = null;
+    protected $targeting = null;
     /**
      * The product to be planned.
      *
@@ -164,8 +164,7 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -196,9 +195,8 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      */
     public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
     /**
      * Campaign duration.
@@ -255,8 +253,7 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getCookieFrequencyCapUnwrapped()
     {
-        $wrapper = $this->getCookieFrequencyCap();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cookie_frequency_cap");
     }
 
     /**
@@ -293,9 +290,8 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      */
     public function setCookieFrequencyCapUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setCookieFrequencyCap($wrappedVar);
-    }
+        $this->writeWrapperValue("cookie_frequency_cap", $var);
+        return $this;}
 
     /**
      * Desired minimum effective frequency (the number of times a person was
@@ -324,8 +320,7 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getMinEffectiveFrequencyUnwrapped()
     {
-        $wrapper = $this->getMinEffectiveFrequency();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("min_effective_frequency");
     }
 
     /**
@@ -360,9 +355,8 @@ final class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Messa
      */
     public function setMinEffectiveFrequencyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setMinEffectiveFrequency($wrappedVar);
-    }
+        $this->writeWrapperValue("min_effective_frequency", $var);
+        return $this;}
 
     /**
      * The targeting to be applied to all products selected in the product mix.

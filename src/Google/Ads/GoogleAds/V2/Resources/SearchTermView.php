@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.SearchTermView</code>
  */
-final class SearchTermView extends \Google\Protobuf\Internal\Message
+class SearchTermView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the search term view.
@@ -23,26 +23,26 @@ final class SearchTermView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The search term.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
      */
-    private $search_term = null;
+    protected $search_term = null;
     /**
      * The ad group the search term served in.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * Indicates whether the search term is currently one of your
      * targeted or excluded keywords.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SearchTermTargetingStatusEnum.SearchTermTargetingStatus status = 4;</code>
      */
-    private $status = 0;
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -119,8 +119,7 @@ final class SearchTermView extends \Google\Protobuf\Internal\Message
      */
     public function getSearchTermUnwrapped()
     {
-        $wrapper = $this->getSearchTerm();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_term");
     }
 
     /**
@@ -149,9 +148,8 @@ final class SearchTermView extends \Google\Protobuf\Internal\Message
      */
     public function setSearchTermUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSearchTerm($wrappedVar);
-    }
+        $this->writeWrapperValue("search_term", $var);
+        return $this;}
 
     /**
      * The ad group the search term served in.
@@ -174,8 +172,7 @@ final class SearchTermView extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -204,9 +201,8 @@ final class SearchTermView extends \Google\Protobuf\Internal\Message
      */
     public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * Indicates whether the search term is currently one of your

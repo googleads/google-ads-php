@@ -13,26 +13,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TextAdInfo</code>
  */
-final class TextAdInfo extends \Google\Protobuf\Internal\Message
+class TextAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The headline of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
      */
-    private $headline = null;
+    protected $headline = null;
     /**
      * The first line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 2;</code>
      */
-    private $description1 = null;
+    protected $description1 = null;
     /**
      * The second line of the ad's description.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 3;</code>
      */
-    private $description2 = null;
+    protected $description2 = null;
 
     /**
      * Constructor.
@@ -74,8 +74,7 @@ final class TextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHeadlineUnwrapped()
     {
-        $wrapper = $this->getHeadline();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("headline");
     }
 
     /**
@@ -104,9 +103,8 @@ final class TextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHeadlineUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeadline($wrappedVar);
-    }
+        $this->writeWrapperValue("headline", $var);
+        return $this;}
 
     /**
      * The first line of the ad's description.
@@ -129,8 +127,7 @@ final class TextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getDescription1Unwrapped()
     {
-        $wrapper = $this->getDescription1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description1");
     }
 
     /**
@@ -159,9 +156,8 @@ final class TextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setDescription1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription1($wrappedVar);
-    }
+        $this->writeWrapperValue("description1", $var);
+        return $this;}
 
     /**
      * The second line of the ad's description.
@@ -184,8 +180,7 @@ final class TextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getDescription2Unwrapped()
     {
-        $wrapper = $this->getDescription2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description2");
     }
 
     /**
@@ -214,9 +209,8 @@ final class TextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setDescription2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription2($wrappedVar);
-    }
+        $this->writeWrapperValue("description2", $var);
+        return $this;}
 
 }
 

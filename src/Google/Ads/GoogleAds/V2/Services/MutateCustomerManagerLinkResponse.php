@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateCustomerManagerLinkResponse</code>
  */
-final class MutateCustomerManagerLinkResponse extends \Google\Protobuf\Internal\Message
+class MutateCustomerManagerLinkResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A result that identifies the resource affected by the mutate request.

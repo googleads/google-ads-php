@@ -29,8 +29,8 @@ namespace Google\Ads\GoogleAds\V1\Services\Gapic;
 use Google\Ads\GoogleAds\V1\Resources\GeoTargetConstant;
 use Google\Ads\GoogleAds\V1\Services\GetGeoTargetConstantRequest;
 use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest;
-use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest_GeoTargets;
-use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest_LocationNames;
+use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest\GeoTargets;
+use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsRequest\LocationNames;
 use Google\Ads\GoogleAds\V1\Services\SuggestGeoTargetConstantsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -324,9 +324,9 @@ class GeoTargetConstantServiceGapicClient
      * @param array       $optionalArgs {
      *                                  Optional.
      *
-     *     @type SuggestGeoTargetConstantsRequest_LocationNames $locationNames
+     *     @type LocationNames $locationNames
      *          The location names to search by. At most 25 names can be set.
-     *     @type SuggestGeoTargetConstantsRequest_GeoTargets $geoTargets
+     *     @type GeoTargets $geoTargets
      *          The geo target constant resource names to filter by.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a

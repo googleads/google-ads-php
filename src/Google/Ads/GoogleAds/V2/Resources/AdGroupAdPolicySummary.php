@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AdGroupAdPolicySummary</code>
  */
-final class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
+class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of policy findings for this ad.
@@ -26,14 +26,14 @@ final class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 2;</code>
      */
-    private $review_status = 0;
+    protected $review_status = 0;
     /**
      * The overall approval status of this ad, calculated based on the status of
      * its individual policy topic entries.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 3;</code>
      */
-    private $approval_status = 0;
+    protected $approval_status = 0;
 
     /**
      * Constructor.

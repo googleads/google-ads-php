@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.Money</code>
  */
-final class Money extends \Google\Protobuf\Internal\Message
+class Money extends \Google\Protobuf\Internal\Message
 {
     /**
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 1;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
     /**
      * Amount in micros. One million is equivalent to one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 2;</code>
      */
-    private $amount_micros = null;
+    protected $amount_micros = null;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class Money extends \Google\Protobuf\Internal\Message
      */
     public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -96,9 +95,8 @@ final class Money extends \Google\Protobuf\Internal\Message
      */
     public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
     /**
      * Amount in micros. One million is equivalent to one unit.
@@ -121,8 +119,7 @@ final class Money extends \Google\Protobuf\Internal\Message
      */
     public function getAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("amount_micros");
     }
 
     /**
@@ -151,9 +148,8 @@ final class Money extends \Google\Protobuf\Internal\Message
      */
     public function setAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("amount_micros", $var);
+        return $this;}
 
 }
 

@@ -17,14 +17,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.IpBlockInfo</code>
  */
-final class IpBlockInfo extends \Google\Protobuf\Internal\Message
+class IpBlockInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The IP address of this IP block.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ip_address = 1;</code>
      */
-    private $ip_address = null;
+    protected $ip_address = null;
 
     /**
      * Constructor.
@@ -62,8 +62,7 @@ final class IpBlockInfo extends \Google\Protobuf\Internal\Message
      */
     public function getIpAddressUnwrapped()
     {
-        $wrapper = $this->getIpAddress();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ip_address");
     }
 
     /**
@@ -92,9 +91,8 @@ final class IpBlockInfo extends \Google\Protobuf\Internal\Message
      */
     public function setIpAddressUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setIpAddress($wrappedVar);
-    }
+        $this->writeWrapperValue("ip_address", $var);
+        return $this;}
 
 }
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ConversionAdjustment</code>
  */
-final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
+class ConversionAdjustment extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of the conversion action associated with this conversion
@@ -23,7 +23,7 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 3;</code>
      */
-    private $conversion_action = null;
+    protected $conversion_action = null;
     /**
      * The date time at which the adjustment occurred. Must be after the
      * conversion_date_time. The timezone must be specified. The format is
@@ -31,13 +31,13 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue adjustment_date_time = 4;</code>
      */
-    private $adjustment_date_time = null;
+    protected $adjustment_date_time = null;
     /**
      * The adjustment type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionAdjustmentTypeEnum.ConversionAdjustmentType adjustment_type = 5;</code>
      */
-    private $adjustment_type = 0;
+    protected $adjustment_type = 0;
     /**
      * Information needed to restate the conversion's value.
      * Required for restatements. Should not be supplied for retractions. An error
@@ -45,7 +45,7 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.RestatementValue restatement_value = 6;</code>
      */
-    private $restatement_value = null;
+    protected $restatement_value = null;
     protected $conversion_identifier;
 
     /**
@@ -110,8 +110,7 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      */
     public function getConversionActionUnwrapped()
     {
-        $wrapper = $this->getConversionAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_action");
     }
 
     /**
@@ -146,9 +145,8 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      */
     public function setConversionActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionAction($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_action", $var);
+        return $this;}
 
     /**
      * The date time at which the adjustment occurred. Must be after the
@@ -175,8 +173,7 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      */
     public function getAdjustmentDateTimeUnwrapped()
     {
-        $wrapper = $this->getAdjustmentDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("adjustment_date_time");
     }
 
     /**
@@ -209,9 +206,8 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      */
     public function setAdjustmentDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdjustmentDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("adjustment_date_time", $var);
+        return $this;}
 
     /**
      * The adjustment type.
@@ -322,8 +318,7 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      */
     public function getOrderIdUnwrapped()
     {
-        $wrapper = $this->getOrderId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("order_id");
     }
 
     /**
@@ -356,9 +351,8 @@ final class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      */
     public function setOrderIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setOrderId($wrappedVar);
-    }
+        $this->writeWrapperValue("order_id", $var);
+        return $this;}
 
     /**
      * @return string

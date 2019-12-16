@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.LabelErrorEnum</code>
  */
-final class LabelErrorEnum extends \Google\Protobuf\Internal\Message
+class LabelErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.GeoTargetConstantSuggestionErrorEnum</code>
  */
-final class GeoTargetConstantSuggestionErrorEnum extends \Google\Protobuf\Internal\Message
+class GeoTargetConstantSuggestionErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

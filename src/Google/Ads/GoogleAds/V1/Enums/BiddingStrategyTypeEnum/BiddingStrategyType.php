@@ -76,6 +76,7 @@ class BiddingStrategyType
     /**
      * Page-One Promoted bidding scheme, which sets max cpc bids to
      * target impressions on page one or page one promoted slots on google.com.
+     * This enum value is deprecated.
      *
      * Generated from protobuf enum <code>PAGE_ONE_PROMOTED = 5;</code>
      */
@@ -115,6 +116,7 @@ class BiddingStrategyType
      * Target Outrank Share is an automated bidding strategy that sets bids
      * based on the target fraction of auctions where the advertiser
      * should outrank a specific competitor.
+     * This enum value is deprecated.
      *
      * Generated from protobuf enum <code>TARGET_OUTRANK_SHARE = 7;</code>
      */

@@ -13,99 +13,99 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.BidModifierSimulationPoint</code>
  */
-final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
+class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
 {
     /**
      * The simulated bid modifier upon which projected metrics are based.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 1;</code>
      */
-    private $bid_modifier = null;
+    protected $bid_modifier = null;
     /**
      * Projected number of biddable conversions.
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
      */
-    private $biddable_conversions = null;
+    protected $biddable_conversions = null;
     /**
      * Projected total value of biddable conversions.
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
      */
-    private $biddable_conversions_value = null;
+    protected $biddable_conversions_value = null;
     /**
      * Projected number of clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 4;</code>
      */
-    private $clicks = null;
+    protected $clicks = null;
     /**
      * Projected cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 5;</code>
      */
-    private $cost_micros = null;
+    protected $cost_micros = null;
     /**
      * Projected number of impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 6;</code>
      */
-    private $impressions = null;
+    protected $impressions = null;
     /**
      * Projected number of top slot impressions.
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      */
-    private $top_slot_impressions = null;
+    protected $top_slot_impressions = null;
     /**
      * Projected number of biddable conversions for the parent resource.
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
      */
-    private $parent_biddable_conversions = null;
+    protected $parent_biddable_conversions = null;
     /**
      * Projected total value of biddable conversions for the parent resource.
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
      */
-    private $parent_biddable_conversions_value = null;
+    protected $parent_biddable_conversions_value = null;
     /**
      * Projected number of clicks for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
      */
-    private $parent_clicks = null;
+    protected $parent_clicks = null;
     /**
      * Projected cost in micros for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
      */
-    private $parent_cost_micros = null;
+    protected $parent_cost_micros = null;
     /**
      * Projected number of impressions for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
      */
-    private $parent_impressions = null;
+    protected $parent_impressions = null;
     /**
      * Projected number of top slot impressions for the parent resource.
      * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
      */
-    private $parent_top_slot_impressions = null;
+    protected $parent_top_slot_impressions = null;
     /**
      * Projected minimum daily budget that must be available to the parent
      * resource to realize this simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_required_budget_micros = 14;</code>
      */
-    private $parent_required_budget_micros = null;
+    protected $parent_required_budget_micros = null;
 
     /**
      * Constructor.
@@ -176,8 +176,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getBidModifierUnwrapped()
     {
-        $wrapper = $this->getBidModifier();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_modifier");
     }
 
     /**
@@ -206,9 +205,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setBidModifierUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBidModifier($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_modifier", $var);
+        return $this;}
 
     /**
      * Projected number of biddable conversions.
@@ -233,8 +231,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getBiddableConversionsUnwrapped()
     {
-        $wrapper = $this->getBiddableConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("biddable_conversions");
     }
 
     /**
@@ -265,9 +262,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setBiddableConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBiddableConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("biddable_conversions", $var);
+        return $this;}
 
     /**
      * Projected total value of biddable conversions.
@@ -292,8 +288,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getBiddableConversionsValueUnwrapped()
     {
-        $wrapper = $this->getBiddableConversionsValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("biddable_conversions_value");
     }
 
     /**
@@ -324,9 +319,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setBiddableConversionsValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBiddableConversionsValue($wrappedVar);
-    }
+        $this->writeWrapperValue("biddable_conversions_value", $var);
+        return $this;}
 
     /**
      * Projected number of clicks.
@@ -349,8 +343,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getClicksUnwrapped()
     {
-        $wrapper = $this->getClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("clicks");
     }
 
     /**
@@ -379,9 +372,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("clicks", $var);
+        return $this;}
 
     /**
      * Projected cost in micros.
@@ -404,8 +396,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getCostMicrosUnwrapped()
     {
-        $wrapper = $this->getCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_micros");
     }
 
     /**
@@ -434,9 +425,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_micros", $var);
+        return $this;}
 
     /**
      * Projected number of impressions.
@@ -459,8 +449,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getImpressionsUnwrapped()
     {
-        $wrapper = $this->getImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impressions");
     }
 
     /**
@@ -489,9 +478,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("impressions", $var);
+        return $this;}
 
     /**
      * Projected number of top slot impressions.
@@ -516,8 +504,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getTopSlotImpressionsUnwrapped()
     {
-        $wrapper = $this->getTopSlotImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("top_slot_impressions");
     }
 
     /**
@@ -548,9 +535,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setTopSlotImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTopSlotImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("top_slot_impressions", $var);
+        return $this;}
 
     /**
      * Projected number of biddable conversions for the parent resource.
@@ -575,8 +561,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getParentBiddableConversionsUnwrapped()
     {
-        $wrapper = $this->getParentBiddableConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_biddable_conversions");
     }
 
     /**
@@ -607,9 +592,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setParentBiddableConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setParentBiddableConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_biddable_conversions", $var);
+        return $this;}
 
     /**
      * Projected total value of biddable conversions for the parent resource.
@@ -634,8 +618,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getParentBiddableConversionsValueUnwrapped()
     {
-        $wrapper = $this->getParentBiddableConversionsValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_biddable_conversions_value");
     }
 
     /**
@@ -666,9 +649,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setParentBiddableConversionsValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setParentBiddableConversionsValue($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_biddable_conversions_value", $var);
+        return $this;}
 
     /**
      * Projected number of clicks for the parent resource.
@@ -691,8 +673,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getParentClicksUnwrapped()
     {
-        $wrapper = $this->getParentClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_clicks");
     }
 
     /**
@@ -721,9 +702,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setParentClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_clicks", $var);
+        return $this;}
 
     /**
      * Projected cost in micros for the parent resource.
@@ -746,8 +726,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getParentCostMicrosUnwrapped()
     {
-        $wrapper = $this->getParentCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_cost_micros");
     }
 
     /**
@@ -776,9 +755,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setParentCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_cost_micros", $var);
+        return $this;}
 
     /**
      * Projected number of impressions for the parent resource.
@@ -801,8 +779,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getParentImpressionsUnwrapped()
     {
-        $wrapper = $this->getParentImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_impressions");
     }
 
     /**
@@ -831,9 +808,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setParentImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_impressions", $var);
+        return $this;}
 
     /**
      * Projected number of top slot impressions for the parent resource.
@@ -858,8 +834,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getParentTopSlotImpressionsUnwrapped()
     {
-        $wrapper = $this->getParentTopSlotImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_top_slot_impressions");
     }
 
     /**
@@ -890,9 +865,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setParentTopSlotImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentTopSlotImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_top_slot_impressions", $var);
+        return $this;}
 
     /**
      * Projected minimum daily budget that must be available to the parent
@@ -917,8 +891,7 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function getParentRequiredBudgetMicrosUnwrapped()
     {
-        $wrapper = $this->getParentRequiredBudgetMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_required_budget_micros");
     }
 
     /**
@@ -949,9 +922,8 @@ final class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      */
     public function setParentRequiredBudgetMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentRequiredBudgetMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_required_budget_micros", $var);
+        return $this;}
 
 }
 

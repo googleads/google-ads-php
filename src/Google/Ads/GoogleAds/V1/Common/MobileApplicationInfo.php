@@ -33,13 +33,13 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
      */
-    private $app_id = null;
+    protected $app_id = null;
     /**
      * Name of this mobile application.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
 
     /**
      * Constructor.
@@ -116,10 +116,9 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
      * @return string|null
      */
-    public function getAppIdValue()
+    public function getAppIdUnwrapped()
     {
-        $wrapper = $this->getAppId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("app_id");
     }
 
     /**
@@ -172,11 +171,10 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAppIdValue($var)
+    public function setAppIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAppId($wrappedVar);
-    }
+        $this->writeWrapperValue("app_id", $var);
+        return $this;}
 
     /**
      * Name of this mobile application.
@@ -197,10 +195,9 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -227,11 +224,10 @@ class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
 }
 

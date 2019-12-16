@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetCampaignExtensionSettingRequest</code>
  */
-final class GetCampaignExtensionSettingRequest extends \Google\Protobuf\Internal\Message
+class GetCampaignExtensionSettingRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the campaign extension setting to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

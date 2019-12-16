@@ -20,7 +20,7 @@ class HotelCityInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city_criterion = 1;</code>
      */
-    private $city_criterion = null;
+    protected $city_criterion = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class HotelCityInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue city_criterion = 1;</code>
      * @return string|null
      */
-    public function getCityCriterionValue()
+    public function getCityCriterionUnwrapped()
     {
-        $wrapper = $this->getCityCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("city_criterion");
     }
 
     /**
@@ -86,11 +85,10 @@ class HotelCityInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCityCriterionValue($var)
+    public function setCityCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCityCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("city_criterion", $var);
+        return $this;}
 
 }
 

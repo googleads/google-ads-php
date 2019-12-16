@@ -20,13 +20,13 @@ class CustomerOperation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Customer update = 1;</code>
      */
-    private $update = null;
+    protected $update = null;
     /**
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
 
     /**
      * Constructor.

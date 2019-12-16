@@ -12,8 +12,9 @@ use Google\Protobuf\Internal\GPBUtil;
  * A campaign criterion simulation. Supported combinations of advertising
  * channel type, criterion ids, simulation type and simulation modification
  * method is detailed below respectively.
- * SEARCH   30000,30001,30002  BID_MODIFIER  UNIFORM
- * DISPLAY  30001              BID_MODIFIER  UNIFORM
+ * SEARCH     30000,30001,30002  BID_MODIFIER  UNIFORM
+ * SHOPPING   30000,30001,30002  BID_MODIFIER  UNIFORM
+ * DISPLAY    30001              BID_MODIFIER  UNIFORM
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.resources.CampaignCriterionSimulation</code>
  */
@@ -26,43 +27,43 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Campaign ID of the simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2;</code>
      */
-    private $campaign_id = null;
+    protected $campaign_id = null;
     /**
      * Criterion ID of the simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
      */
-    private $criterion_id = null;
+    protected $criterion_id = null;
     /**
      * The field that the simulation modifies.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SimulationTypeEnum.SimulationType type = 4;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * How the simulation modifies the field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 5;</code>
      */
-    private $modification_method = 0;
+    protected $modification_method = 0;
     /**
      * First day on which the simulation is based, in YYYY-MM-DD format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6;</code>
      */
-    private $start_date = null;
+    protected $start_date = null;
     /**
      * Last day on which the simulation is based, in YYYY-MM-DD format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7;</code>
      */
-    private $end_date = null;
+    protected $end_date = null;
     protected $point_list;
 
     /**
@@ -145,10 +146,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2;</code>
      * @return int|string|null
      */
-    public function getCampaignIdValue()
+    public function getCampaignIdUnwrapped()
     {
-        $wrapper = $this->getCampaignId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_id");
     }
 
     /**
@@ -175,11 +175,10 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCampaignIdValue($var)
+    public function setCampaignIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCampaignId($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_id", $var);
+        return $this;}
 
     /**
      * Criterion ID of the simulation.
@@ -200,10 +199,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
      * @return int|string|null
      */
-    public function getCriterionIdValue()
+    public function getCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_id");
     }
 
     /**
@@ -230,11 +228,10 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCriterionIdValue($var)
+    public function setCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_id", $var);
+        return $this;}
 
     /**
      * The field that the simulation modifies.
@@ -307,10 +304,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6;</code>
      * @return string|null
      */
-    public function getStartDateValue()
+    public function getStartDateUnwrapped()
     {
-        $wrapper = $this->getStartDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date");
     }
 
     /**
@@ -337,11 +333,10 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setStartDateValue($var)
+    public function setStartDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDate($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date", $var);
+        return $this;}
 
     /**
      * Last day on which the simulation is based, in YYYY-MM-DD format.
@@ -362,10 +357,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7;</code>
      * @return string|null
      */
-    public function getEndDateValue()
+    public function getEndDateUnwrapped()
     {
-        $wrapper = $this->getEndDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date");
     }
 
     /**
@@ -392,11 +386,10 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setEndDateValue($var)
+    public function setEndDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDate($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date", $var);
+        return $this;}
 
     /**
      * Simulation points if the simulation type is BID_MODIFIER.

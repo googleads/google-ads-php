@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class DateRange extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The start date, in yyyy-mm-dd format.
+     * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 1;</code>
      */
-    private $start_date = null;
+    protected $start_date = null;
     /**
-     * The end date, in yyyy-mm-dd format.
+     * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 2;</code>
      */
-    private $end_date = null;
+    protected $end_date = null;
 
     /**
      * Constructor.
@@ -35,9 +35,9 @@ class DateRange extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\StringValue $start_date
-     *           The start date, in yyyy-mm-dd format.
+     *           The start date, in yyyy-mm-dd format. This date is inclusive.
      *     @type \Google\Protobuf\StringValue $end_date
-     *           The end date, in yyyy-mm-dd format.
+     *           The end date, in yyyy-mm-dd format. This date is inclusive.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +46,7 @@ class DateRange extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The start date, in yyyy-mm-dd format.
+     * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 1;</code>
      * @return \Google\Protobuf\StringValue
@@ -59,19 +59,18 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getStartDate()</code>
 
-     * The start date, in yyyy-mm-dd format.
+     * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 1;</code>
      * @return string|null
      */
-    public function getStartDateValue()
+    public function getStartDateUnwrapped()
     {
-        $wrapper = $this->getStartDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date");
     }
 
     /**
-     * The start date, in yyyy-mm-dd format.
+     * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 1;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -88,20 +87,19 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The start date, in yyyy-mm-dd format.
+     * The start date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 1;</code>
      * @param string|null $var
      * @return $this
      */
-    public function setStartDateValue($var)
+    public function setStartDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDate($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date", $var);
+        return $this;}
 
     /**
-     * The end date, in yyyy-mm-dd format.
+     * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 2;</code>
      * @return \Google\Protobuf\StringValue
@@ -114,19 +112,18 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEndDate()</code>
 
-     * The end date, in yyyy-mm-dd format.
+     * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 2;</code>
      * @return string|null
      */
-    public function getEndDateValue()
+    public function getEndDateUnwrapped()
     {
-        $wrapper = $this->getEndDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date");
     }
 
     /**
-     * The end date, in yyyy-mm-dd format.
+     * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 2;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -143,17 +140,16 @@ class DateRange extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The end date, in yyyy-mm-dd format.
+     * The end date, in yyyy-mm-dd format. This date is inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 2;</code>
      * @param string|null $var
      * @return $this
      */
-    public function setEndDateValue($var)
+    public function setEndDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDate($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date", $var);
+        return $this;}
 
 }
 

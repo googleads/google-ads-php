@@ -13,596 +13,596 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GoogleAdsRow</code>
  */
-final class GoogleAdsRow extends \Google\Protobuf\Internal\Message
+class GoogleAdsRow extends \Google\Protobuf\Internal\Message
 {
     /**
      * The account budget in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AccountBudget account_budget = 42;</code>
      */
-    private $account_budget = null;
+    protected $account_budget = null;
     /**
      * The account budget proposal referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AccountBudgetProposal account_budget_proposal = 43;</code>
      */
-    private $account_budget_proposal = null;
+    protected $account_budget_proposal = null;
     /**
      * The ad group referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroup ad_group = 3;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * The ad referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupAd ad_group_ad = 16;</code>
      */
-    private $ad_group_ad = null;
+    protected $ad_group_ad = null;
     /**
      * The ad group ad asset view in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupAdAssetView ad_group_ad_asset_view = 131;</code>
      */
-    private $ad_group_ad_asset_view = null;
+    protected $ad_group_ad_asset_view = null;
     /**
      * The ad group ad label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupAdLabel ad_group_ad_label = 120;</code>
      */
-    private $ad_group_ad_label = null;
+    protected $ad_group_ad_label = null;
     /**
      * The ad group audience view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupAudienceView ad_group_audience_view = 57;</code>
      */
-    private $ad_group_audience_view = null;
+    protected $ad_group_audience_view = null;
     /**
      * The bid modifier referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupBidModifier ad_group_bid_modifier = 24;</code>
      */
-    private $ad_group_bid_modifier = null;
+    protected $ad_group_bid_modifier = null;
     /**
      * The criterion referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupCriterion ad_group_criterion = 17;</code>
      */
-    private $ad_group_criterion = null;
+    protected $ad_group_criterion = null;
     /**
      * The ad group criterion label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupCriterionLabel ad_group_criterion_label = 121;</code>
      */
-    private $ad_group_criterion_label = null;
+    protected $ad_group_criterion_label = null;
     /**
      * The ad group criterion simulation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupCriterionSimulation ad_group_criterion_simulation = 110;</code>
      */
-    private $ad_group_criterion_simulation = null;
+    protected $ad_group_criterion_simulation = null;
     /**
      * The ad group extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupExtensionSetting ad_group_extension_setting = 112;</code>
      */
-    private $ad_group_extension_setting = null;
+    protected $ad_group_extension_setting = null;
     /**
      * The ad group feed referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupFeed ad_group_feed = 67;</code>
      */
-    private $ad_group_feed = null;
+    protected $ad_group_feed = null;
     /**
      * The ad group label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupLabel ad_group_label = 115;</code>
      */
-    private $ad_group_label = null;
+    protected $ad_group_label = null;
     /**
      * The ad group simulation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupSimulation ad_group_simulation = 107;</code>
      */
-    private $ad_group_simulation = null;
+    protected $ad_group_simulation = null;
     /**
      * The ad parameter referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdParameter ad_parameter = 130;</code>
      */
-    private $ad_parameter = null;
+    protected $ad_parameter = null;
     /**
      * The age range view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AgeRangeView age_range_view = 48;</code>
      */
-    private $age_range_view = null;
+    protected $age_range_view = null;
     /**
      * The ad schedule view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdScheduleView ad_schedule_view = 89;</code>
      */
-    private $ad_schedule_view = null;
+    protected $ad_schedule_view = null;
     /**
      * The domain category referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.DomainCategory domain_category = 91;</code>
      */
-    private $domain_category = null;
+    protected $domain_category = null;
     /**
      * The asset referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Asset asset = 105;</code>
      */
-    private $asset = null;
+    protected $asset = null;
     /**
      * The bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BiddingStrategy bidding_strategy = 18;</code>
      */
-    private $bidding_strategy = null;
+    protected $bidding_strategy = null;
     /**
      * The billing setup referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BillingSetup billing_setup = 41;</code>
      */
-    private $billing_setup = null;
+    protected $billing_setup = null;
     /**
      * The campaign budget referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignBudget campaign_budget = 19;</code>
      */
-    private $campaign_budget = null;
+    protected $campaign_budget = null;
     /**
      * The campaign referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign campaign = 2;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The campaign audience view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignAudienceView campaign_audience_view = 69;</code>
      */
-    private $campaign_audience_view = null;
+    protected $campaign_audience_view = null;
     /**
      * The campaign bid modifier referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignBidModifier campaign_bid_modifier = 26;</code>
      */
-    private $campaign_bid_modifier = null;
+    protected $campaign_bid_modifier = null;
     /**
      * The campaign criterion referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignCriterion campaign_criterion = 20;</code>
      */
-    private $campaign_criterion = null;
+    protected $campaign_criterion = null;
     /**
      * The campaign criterion simulation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;</code>
      */
-    private $campaign_criterion_simulation = null;
+    protected $campaign_criterion_simulation = null;
     /**
      * The campaign draft referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignDraft campaign_draft = 49;</code>
      */
-    private $campaign_draft = null;
+    protected $campaign_draft = null;
     /**
      * The campaign experiment referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignExperiment campaign_experiment = 84;</code>
      */
-    private $campaign_experiment = null;
+    protected $campaign_experiment = null;
     /**
      * The campaign extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignExtensionSetting campaign_extension_setting = 113;</code>
      */
-    private $campaign_extension_setting = null;
+    protected $campaign_extension_setting = null;
     /**
      * The campaign feed referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignFeed campaign_feed = 63;</code>
      */
-    private $campaign_feed = null;
+    protected $campaign_feed = null;
     /**
      * The campaign label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignLabel campaign_label = 108;</code>
      */
-    private $campaign_label = null;
+    protected $campaign_label = null;
     /**
      * Campaign Shared Set referenced in AWQL query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignSharedSet campaign_shared_set = 30;</code>
      */
-    private $campaign_shared_set = null;
+    protected $campaign_shared_set = null;
     /**
      * The carrier constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CarrierConstant carrier_constant = 66;</code>
      */
-    private $carrier_constant = null;
+    protected $carrier_constant = null;
     /**
      * The ChangeStatus referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ChangeStatus change_status = 37;</code>
      */
-    private $change_status = null;
+    protected $change_status = null;
     /**
      * The conversion action referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionAction conversion_action = 103;</code>
      */
-    private $conversion_action = null;
+    protected $conversion_action = null;
     /**
      * The ClickView referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ClickView click_view = 122;</code>
      */
-    private $click_view = null;
+    protected $click_view = null;
     /**
      * The CustomInterest referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CustomInterest custom_interest = 104;</code>
      */
-    private $custom_interest = null;
+    protected $custom_interest = null;
     /**
      * The customer referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Customer customer = 1;</code>
      */
-    private $customer = null;
+    protected $customer = null;
     /**
      * The CustomerManagerLink referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CustomerManagerLink customer_manager_link = 61;</code>
      */
-    private $customer_manager_link = null;
+    protected $customer_manager_link = null;
     /**
      * The CustomerClientLink referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CustomerClientLink customer_client_link = 62;</code>
      */
-    private $customer_client_link = null;
+    protected $customer_client_link = null;
     /**
      * The CustomerClient referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CustomerClient customer_client = 70;</code>
      */
-    private $customer_client = null;
+    protected $customer_client = null;
     /**
      * The customer extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CustomerExtensionSetting customer_extension_setting = 114;</code>
      */
-    private $customer_extension_setting = null;
+    protected $customer_extension_setting = null;
     /**
      * The customer feed referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CustomerFeed customer_feed = 64;</code>
      */
-    private $customer_feed = null;
+    protected $customer_feed = null;
     /**
      * The customer label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CustomerLabel customer_label = 124;</code>
      */
-    private $customer_label = null;
+    protected $customer_label = null;
     /**
      * The customer negative criterion referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CustomerNegativeCriterion customer_negative_criterion = 88;</code>
      */
-    private $customer_negative_criterion = null;
+    protected $customer_negative_criterion = null;
     /**
      * The detail placement view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.DetailPlacementView detail_placement_view = 118;</code>
      */
-    private $detail_placement_view = null;
+    protected $detail_placement_view = null;
     /**
      * The display keyword view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.DisplayKeywordView display_keyword_view = 47;</code>
      */
-    private $display_keyword_view = null;
+    protected $display_keyword_view = null;
     /**
      * The distance view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.DistanceView distance_view = 132;</code>
      */
-    private $distance_view = null;
+    protected $distance_view = null;
     /**
      * The dynamic search ads search term view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.DynamicSearchAdsSearchTermView dynamic_search_ads_search_term_view = 106;</code>
      */
-    private $dynamic_search_ads_search_term_view = null;
+    protected $dynamic_search_ads_search_term_view = null;
     /**
      * The expanded landing page view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ExpandedLandingPageView expanded_landing_page_view = 128;</code>
      */
-    private $expanded_landing_page_view = null;
+    protected $expanded_landing_page_view = null;
     /**
      * The extension feed item referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ExtensionFeedItem extension_feed_item = 85;</code>
      */
-    private $extension_feed_item = null;
+    protected $extension_feed_item = null;
     /**
      * The feed referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Feed feed = 46;</code>
      */
-    private $feed = null;
+    protected $feed = null;
     /**
      * The feed item referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.FeedItem feed_item = 50;</code>
      */
-    private $feed_item = null;
+    protected $feed_item = null;
     /**
      * The feed item target referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.FeedItemTarget feed_item_target = 116;</code>
      */
-    private $feed_item_target = null;
+    protected $feed_item_target = null;
     /**
      * The feed mapping referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.FeedMapping feed_mapping = 58;</code>
      */
-    private $feed_mapping = null;
+    protected $feed_mapping = null;
     /**
      * The feed placeholder view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.FeedPlaceholderView feed_placeholder_view = 97;</code>
      */
-    private $feed_placeholder_view = null;
+    protected $feed_placeholder_view = null;
     /**
      * The gender view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.GenderView gender_view = 40;</code>
      */
-    private $gender_view = null;
+    protected $gender_view = null;
     /**
      * The geo target constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.GeoTargetConstant geo_target_constant = 23;</code>
      */
-    private $geo_target_constant = null;
+    protected $geo_target_constant = null;
     /**
      * The geographic view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.GeographicView geographic_view = 125;</code>
      */
-    private $geographic_view = null;
+    protected $geographic_view = null;
     /**
      * The group placement view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.GroupPlacementView group_placement_view = 119;</code>
      */
-    private $group_placement_view = null;
+    protected $group_placement_view = null;
     /**
      * The hotel group view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.HotelGroupView hotel_group_view = 51;</code>
      */
-    private $hotel_group_view = null;
+    protected $hotel_group_view = null;
     /**
      * The hotel performance view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.HotelPerformanceView hotel_performance_view = 71;</code>
      */
-    private $hotel_performance_view = null;
+    protected $hotel_performance_view = null;
     /**
      * The keyword view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.KeywordView keyword_view = 21;</code>
      */
-    private $keyword_view = null;
+    protected $keyword_view = null;
     /**
      * The keyword plan referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.KeywordPlan keyword_plan = 32;</code>
      */
-    private $keyword_plan = null;
+    protected $keyword_plan = null;
     /**
      * The keyword plan campaign referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.KeywordPlanCampaign keyword_plan_campaign = 33;</code>
      */
-    private $keyword_plan_campaign = null;
+    protected $keyword_plan_campaign = null;
     /**
      * The keyword plan negative keyword referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.KeywordPlanNegativeKeyword keyword_plan_negative_keyword = 34;</code>
      */
-    private $keyword_plan_negative_keyword = null;
+    protected $keyword_plan_negative_keyword = null;
     /**
      * The keyword plan ad group referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.KeywordPlanAdGroup keyword_plan_ad_group = 35;</code>
      */
-    private $keyword_plan_ad_group = null;
+    protected $keyword_plan_ad_group = null;
     /**
      * The keyword plan keyword referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.KeywordPlanKeyword keyword_plan_keyword = 36;</code>
      */
-    private $keyword_plan_keyword = null;
+    protected $keyword_plan_keyword = null;
     /**
      * The label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Label label = 52;</code>
      */
-    private $label = null;
+    protected $label = null;
     /**
      * The landing page view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.LandingPageView landing_page_view = 126;</code>
      */
-    private $landing_page_view = null;
+    protected $landing_page_view = null;
     /**
      * The language constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.LanguageConstant language_constant = 55;</code>
      */
-    private $language_constant = null;
+    protected $language_constant = null;
     /**
      * The location view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.LocationView location_view = 123;</code>
      */
-    private $location_view = null;
+    protected $location_view = null;
     /**
      * The managed placement view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ManagedPlacementView managed_placement_view = 53;</code>
      */
-    private $managed_placement_view = null;
+    protected $managed_placement_view = null;
     /**
      * The media file referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaFile media_file = 90;</code>
      */
-    private $media_file = null;
+    protected $media_file = null;
     /**
      * The mobile app category constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MobileAppCategoryConstant mobile_app_category_constant = 87;</code>
      */
-    private $mobile_app_category_constant = null;
+    protected $mobile_app_category_constant = null;
     /**
      * The mobile device constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MobileDeviceConstant mobile_device_constant = 98;</code>
      */
-    private $mobile_device_constant = null;
+    protected $mobile_device_constant = null;
     /**
      * The mutate job referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MutateJob mutate_job = 127;</code>
      */
-    private $mutate_job = null;
+    protected $mutate_job = null;
     /**
      * The operating system version constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;</code>
      */
-    private $operating_system_version_constant = null;
+    protected $operating_system_version_constant = null;
     /**
      * The paid organic search term view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.PaidOrganicSearchTermView paid_organic_search_term_view = 129;</code>
      */
-    private $paid_organic_search_term_view = null;
+    protected $paid_organic_search_term_view = null;
     /**
      * The parental status view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ParentalStatusView parental_status_view = 45;</code>
      */
-    private $parental_status_view = null;
+    protected $parental_status_view = null;
     /**
      * The Product Bidding Category referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ProductBiddingCategoryConstant product_bidding_category_constant = 109;</code>
      */
-    private $product_bidding_category_constant = null;
+    protected $product_bidding_category_constant = null;
     /**
      * The product group view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ProductGroupView product_group_view = 54;</code>
      */
-    private $product_group_view = null;
+    protected $product_group_view = null;
     /**
      * The recommendation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation recommendation = 22;</code>
      */
-    private $recommendation = null;
+    protected $recommendation = null;
     /**
      * The search term view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.SearchTermView search_term_view = 68;</code>
      */
-    private $search_term_view = null;
+    protected $search_term_view = null;
     /**
      * The shared set referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.SharedCriterion shared_criterion = 29;</code>
      */
-    private $shared_criterion = null;
+    protected $shared_criterion = null;
     /**
      * The shared set referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.SharedSet shared_set = 27;</code>
      */
-    private $shared_set = null;
+    protected $shared_set = null;
     /**
      * The shopping performance view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ShoppingPerformanceView shopping_performance_view = 117;</code>
      */
-    private $shopping_performance_view = null;
+    protected $shopping_performance_view = null;
     /**
      * The topic view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.TopicView topic_view = 44;</code>
      */
-    private $topic_view = null;
+    protected $topic_view = null;
     /**
      * The user interest referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.UserInterest user_interest = 59;</code>
      */
-    private $user_interest = null;
+    protected $user_interest = null;
     /**
      * The user list referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.UserList user_list = 38;</code>
      */
-    private $user_list = null;
+    protected $user_list = null;
     /**
      * The user location view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.UserLocationView user_location_view = 135;</code>
      */
-    private $user_location_view = null;
+    protected $user_location_view = null;
     /**
      * The remarketing action referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.RemarketingAction remarketing_action = 60;</code>
      */
-    private $remarketing_action = null;
+    protected $remarketing_action = null;
     /**
      * The topic constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.TopicConstant topic_constant = 31;</code>
      */
-    private $topic_constant = null;
+    protected $topic_constant = null;
     /**
      * The video referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Video video = 39;</code>
      */
-    private $video = null;
+    protected $video = null;
     /**
      * The metrics.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.Metrics metrics = 4;</code>
      */
-    private $metrics = null;
+    protected $metrics = null;
     /**
      * The segments.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.Segments segments = 102;</code>
      */
-    private $segments = null;
+    protected $segments = null;
 
     /**
      * Constructor.

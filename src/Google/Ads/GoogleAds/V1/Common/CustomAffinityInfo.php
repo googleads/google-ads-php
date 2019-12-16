@@ -21,7 +21,7 @@ class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_affinity = 1;</code>
      */
-    private $custom_affinity = null;
+    protected $custom_affinity = null;
 
     /**
      * Constructor.
@@ -57,10 +57,9 @@ class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_affinity = 1;</code>
      * @return string|null
      */
-    public function getCustomAffinityValue()
+    public function getCustomAffinityUnwrapped()
     {
-        $wrapper = $this->getCustomAffinity();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("custom_affinity");
     }
 
     /**
@@ -87,11 +86,10 @@ class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCustomAffinityValue($var)
+    public function setCustomAffinityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCustomAffinity($wrappedVar);
-    }
+        $this->writeWrapperValue("custom_affinity", $var);
+        return $this;}
 
 }
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.KeywordMatchTypeEnum</code>
  */
-final class KeywordMatchTypeEnum extends \Google\Protobuf\Internal\Message
+class KeywordMatchTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

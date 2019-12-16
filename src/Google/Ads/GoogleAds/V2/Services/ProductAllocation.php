@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ProductAllocation</code>
  */
-final class ProductAllocation extends \Google\Protobuf\Internal\Message
+class ProductAllocation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Selected product for planning. The product codes returned are within the
@@ -22,14 +22,14 @@ final class ProductAllocation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_product_code = 1;</code>
      */
-    private $plannable_product_code = null;
+    protected $plannable_product_code = null;
     /**
      * The value to be allocated for the suggested product in requested currency.
      * Amount in micros. One million is equivalent to one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 2;</code>
      */
-    private $budget_micros = null;
+    protected $budget_micros = null;
 
     /**
      * Constructor.
@@ -76,8 +76,7 @@ final class ProductAllocation extends \Google\Protobuf\Internal\Message
      */
     public function getPlannableProductCodeUnwrapped()
     {
-        $wrapper = $this->getPlannableProductCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("plannable_product_code");
     }
 
     /**
@@ -110,9 +109,8 @@ final class ProductAllocation extends \Google\Protobuf\Internal\Message
      */
     public function setPlannableProductCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPlannableProductCode($wrappedVar);
-    }
+        $this->writeWrapperValue("plannable_product_code", $var);
+        return $this;}
 
     /**
      * The value to be allocated for the suggested product in requested currency.
@@ -137,8 +135,7 @@ final class ProductAllocation extends \Google\Protobuf\Internal\Message
      */
     public function getBudgetMicrosUnwrapped()
     {
-        $wrapper = $this->getBudgetMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("budget_micros");
     }
 
     /**
@@ -169,9 +166,8 @@ final class ProductAllocation extends \Google\Protobuf\Internal\Message
      */
     public function setBudgetMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setBudgetMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("budget_micros", $var);
+        return $this;}
 
 }
 

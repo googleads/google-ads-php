@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.UploadClickConversionsResponse</code>
  */
-final class UploadClickConversionsResponse extends \Google\Protobuf\Internal\Message
+class UploadClickConversionsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Errors that pertain to conversion failures in the partial failure mode.
@@ -22,7 +22,7 @@ final class UploadClickConversionsResponse extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      */
-    private $partial_failure_error = null;
+    protected $partial_failure_error = null;
     /**
      * Returned for successfully processed conversions. Proto will be empty for
      * rows that received an error. Results are not returned when validate_only is

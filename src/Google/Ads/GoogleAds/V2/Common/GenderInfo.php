@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.GenderInfo</code>
  */
-final class GenderInfo extends \Google\Protobuf\Internal\Message
+class GenderInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the gender.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GenderTypeEnum.GenderType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

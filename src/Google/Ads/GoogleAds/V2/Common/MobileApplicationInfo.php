@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.MobileApplicationInfo</code>
  */
-final class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
+class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * A string that uniquely identifies a mobile application to Google Ads API.
@@ -33,13 +33,13 @@ final class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
      */
-    private $app_id = null;
+    protected $app_id = null;
     /**
      * Name of this mobile application.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
 
     /**
      * Constructor.
@@ -118,8 +118,7 @@ final class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      */
     public function getAppIdUnwrapped()
     {
-        $wrapper = $this->getAppId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("app_id");
     }
 
     /**
@@ -174,9 +173,8 @@ final class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      */
     public function setAppIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAppId($wrappedVar);
-    }
+        $this->writeWrapperValue("app_id", $var);
+        return $this;}
 
     /**
      * Name of this mobile application.
@@ -199,8 +197,7 @@ final class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -229,9 +226,8 @@ final class MobileApplicationInfo extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
 }
 

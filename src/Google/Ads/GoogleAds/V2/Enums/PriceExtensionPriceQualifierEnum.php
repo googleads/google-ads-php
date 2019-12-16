@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.PriceExtensionPriceQualifierEnum</code>
  */
-final class PriceExtensionPriceQualifierEnum extends \Google\Protobuf\Internal\Message
+class PriceExtensionPriceQualifierEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

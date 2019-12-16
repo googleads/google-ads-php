@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ProductChannelInfo</code>
  */
-final class ProductChannelInfo extends \Google\Protobuf\Internal\Message
+class ProductChannelInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Value of the locality.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductChannelEnum.ProductChannel channel = 1;</code>
      */
-    private $channel = 0;
+    protected $channel = 0;
 
     /**
      * Constructor.

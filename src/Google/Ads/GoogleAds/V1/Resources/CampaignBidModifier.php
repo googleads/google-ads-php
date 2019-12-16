@@ -22,26 +22,26 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The campaign to which this criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
      */
-    private $criterion_id = null;
+    protected $criterion_id = null;
     /**
      * The modifier for the bid when the criterion matches.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
      */
-    private $bid_modifier = null;
+    protected $bid_modifier = null;
     protected $criterion;
 
     /**
@@ -119,10 +119,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
      * @return string|null
      */
-    public function getCampaignValue()
+    public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -149,11 +148,10 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignValue($var)
+    public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The ID of the criterion to bid modify.
@@ -176,10 +174,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
      * @return int|string|null
      */
-    public function getCriterionIdValue()
+    public function getCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_id");
     }
 
     /**
@@ -208,11 +205,10 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCriterionIdValue($var)
+    public function setCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_id", $var);
+        return $this;}
 
     /**
      * The modifier for the bid when the criterion matches.
@@ -233,10 +229,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
      * @return float|null
      */
-    public function getBidModifierValue()
+    public function getBidModifierUnwrapped()
     {
-        $wrapper = $this->getBidModifier();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_modifier");
     }
 
     /**
@@ -263,11 +258,10 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBidModifierValue($var)
+    public function setBidModifierUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBidModifier($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_modifier", $var);
+        return $this;}
 
     /**
      * Criterion for interaction type. Only supported for search campaigns.

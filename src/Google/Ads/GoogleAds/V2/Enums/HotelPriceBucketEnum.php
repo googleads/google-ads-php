@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.HotelPriceBucketEnum</code>
  */
-final class HotelPriceBucketEnum extends \Google\Protobuf\Internal\Message
+class HotelPriceBucketEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

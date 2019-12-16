@@ -20,7 +20,7 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
      */
-    private $hotel_center_id = null;
+    protected $hotel_center_id = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
      * @return int|string|null
      */
-    public function getHotelCenterIdValue()
+    public function getHotelCenterIdUnwrapped()
     {
-        $wrapper = $this->getHotelCenterId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_center_id");
     }
 
     /**
@@ -86,11 +85,10 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setHotelCenterIdValue($var)
+    public function setHotelCenterIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setHotelCenterId($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_center_id", $var);
+        return $this;}
 
 }
 

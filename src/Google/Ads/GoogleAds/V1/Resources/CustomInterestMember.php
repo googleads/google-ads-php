@@ -21,14 +21,14 @@ class CustomInterestMember extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CustomInterestMemberTypeEnum.CustomInterestMemberType member_type = 1;</code>
      */
-    private $member_type = 0;
+    protected $member_type = 0;
     /**
      * Keyword text when member_type is KEYWORD or URL string when
      * member_type is URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue parameter = 2;</code>
      */
-    private $parameter = null;
+    protected $parameter = null;
 
     /**
      * Constructor.
@@ -95,10 +95,9 @@ class CustomInterestMember extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue parameter = 2;</code>
      * @return string|null
      */
-    public function getParameterValue()
+    public function getParameterUnwrapped()
     {
-        $wrapper = $this->getParameter();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parameter");
     }
 
     /**
@@ -127,11 +126,10 @@ class CustomInterestMember extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setParameterValue($var)
+    public function setParameterUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setParameter($wrappedVar);
-    }
+        $this->writeWrapperValue("parameter", $var);
+        return $this;}
 
 }
 

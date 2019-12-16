@@ -23,7 +23,7 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1;</code>
      */
-    private $conversion_tracking_id = null;
+    protected $conversion_tracking_id = null;
     /**
      * The conversion tracking id of the customer's manager. This is set when the
      * customer is opted into cross account conversion tracking, and it overrides
@@ -32,7 +32,7 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2;</code>
      */
-    private $cross_account_conversion_tracking_id = null;
+    protected $cross_account_conversion_tracking_id = null;
 
     /**
      * Constructor.
@@ -79,10 +79,9 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1;</code>
      * @return int|string|null
      */
-    public function getConversionTrackingIdValue()
+    public function getConversionTrackingIdUnwrapped()
     {
-        $wrapper = $this->getConversionTrackingId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_tracking_id");
     }
 
     /**
@@ -113,11 +112,10 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setConversionTrackingIdValue($var)
+    public function setConversionTrackingIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setConversionTrackingId($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_tracking_id", $var);
+        return $this;}
 
     /**
      * The conversion tracking id of the customer's manager. This is set when the
@@ -144,10 +142,9 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2;</code>
      * @return int|string|null
      */
-    public function getCrossAccountConversionTrackingIdValue()
+    public function getCrossAccountConversionTrackingIdUnwrapped()
     {
-        $wrapper = $this->getCrossAccountConversionTrackingId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cross_account_conversion_tracking_id");
     }
 
     /**
@@ -180,11 +177,10 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCrossAccountConversionTrackingIdValue($var)
+    public function setCrossAccountConversionTrackingIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCrossAccountConversionTrackingId($wrappedVar);
-    }
+        $this->writeWrapperValue("cross_account_conversion_tracking_id", $var);
+        return $this;}
 
 }
 

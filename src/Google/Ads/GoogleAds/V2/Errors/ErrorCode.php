@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.ErrorCode</code>
  */
-final class ErrorCode extends \Google\Protobuf\Internal\Message
+class ErrorCode extends \Google\Protobuf\Internal\Message
 {
     protected $error_code;
 

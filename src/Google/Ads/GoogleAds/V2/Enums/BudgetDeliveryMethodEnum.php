@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.BudgetDeliveryMethodEnum</code>
  */
-final class BudgetDeliveryMethodEnum extends \Google\Protobuf\Internal\Message
+class BudgetDeliveryMethodEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

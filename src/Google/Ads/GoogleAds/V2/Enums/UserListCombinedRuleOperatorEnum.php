@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.UserListCombinedRuleOperatorEnum</code>
  */
-final class UserListCombinedRuleOperatorEnum extends \Google\Protobuf\Internal\Message
+class UserListCombinedRuleOperatorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

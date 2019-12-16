@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.SearchEngineResultsPageTypeEnum</code>
  */
-final class SearchEngineResultsPageTypeEnum extends \Google\Protobuf\Internal\Message
+class SearchEngineResultsPageTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

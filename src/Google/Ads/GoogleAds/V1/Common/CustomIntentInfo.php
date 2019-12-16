@@ -21,7 +21,7 @@ class CustomIntentInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_intent = 1;</code>
      */
-    private $custom_intent = null;
+    protected $custom_intent = null;
 
     /**
      * Constructor.
@@ -57,10 +57,9 @@ class CustomIntentInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_intent = 1;</code>
      * @return string|null
      */
-    public function getCustomIntentValue()
+    public function getCustomIntentUnwrapped()
     {
-        $wrapper = $this->getCustomIntent();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("custom_intent");
     }
 
     /**
@@ -87,11 +86,10 @@ class CustomIntentInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCustomIntentValue($var)
+    public function setCustomIntentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCustomIntent($wrappedVar);
-    }
+        $this->writeWrapperValue("custom_intent", $var);
+        return $this;}
 
 }
 

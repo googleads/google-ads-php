@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.DistanceBucketEnum</code>
  */
-final class DistanceBucketEnum extends \Google\Protobuf\Internal\Message
+class DistanceBucketEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -20,7 +20,7 @@ class ProductChannelInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductChannelEnum.ProductChannel channel = 1;</code>
      */
-    private $channel = 0;
+    protected $channel = 0;
 
     /**
      * Constructor.

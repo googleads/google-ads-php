@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Campaign.HotelSettingInfo</code>
  */
-final class HotelSettingInfo extends \Google\Protobuf\Internal\Message
+class HotelSettingInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The linked Hotel Center account.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
      */
-    private $hotel_center_id = null;
+    protected $hotel_center_id = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class HotelSettingInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHotelCenterIdUnwrapped()
     {
-        $wrapper = $this->getHotelCenterId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_center_id");
     }
 
     /**
@@ -88,9 +87,8 @@ final class HotelSettingInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHotelCenterIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setHotelCenterId($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_center_id", $var);
+        return $this;}
 
 }
 

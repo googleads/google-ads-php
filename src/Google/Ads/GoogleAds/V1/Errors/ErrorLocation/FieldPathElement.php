@@ -20,13 +20,13 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string field_name = 1;</code>
      */
-    private $field_name = '';
+    protected $field_name = '';
     /**
      * If field_name is a repeated field, this is the element that failed
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
      */
-    private $index = null;
+    protected $index = null;
 
     /**
      * Constructor.
@@ -90,10 +90,9 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
      * @return int|string|null
      */
-    public function getIndexValue()
+    public function getIndexUnwrapped()
     {
-        $wrapper = $this->getIndex();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("index");
     }
 
     /**
@@ -120,11 +119,10 @@ class FieldPathElement extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIndexValue($var)
+    public function setIndexUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setIndex($wrappedVar);
-    }
+        $this->writeWrapperValue("index", $var);
+        return $this;}
 
 }
 

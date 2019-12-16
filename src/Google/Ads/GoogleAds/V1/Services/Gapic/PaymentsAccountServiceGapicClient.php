@@ -38,7 +38,7 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 
 /**
- * Service Description: Service to provide Payments accounts that can be used to set up consolidated
+ * Service Description: Service to provide payments accounts that can be used to set up consolidated
  * billing.
  *
  * This class provides the ability to make remote calls to the backing service through method
@@ -164,7 +164,7 @@ class PaymentsAccountServiceGapicClient
     }
 
     /**
-     * Returns all Payments accounts associated with all managers
+     * Returns all payments accounts associated with all managers
      * between the login customer ID and specified serving customer in the
      * hierarchy, inclusive.
      *

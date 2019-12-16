@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.FeedItemTargetDeviceEnum</code>
  */
-final class FeedItemTargetDeviceEnum extends \Google\Protobuf\Internal\Message
+class FeedItemTargetDeviceEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

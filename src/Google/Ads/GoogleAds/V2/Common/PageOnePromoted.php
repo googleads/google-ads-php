@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PageOnePromoted</code>
  */
-final class PageOnePromoted extends \Google\Protobuf\Internal\Message
+class PageOnePromoted extends \Google\Protobuf\Internal\Message
 {
     /**
      * The strategy goal of where impressions are desired to be shown on
@@ -23,21 +23,21 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PageOnePromotedStrategyGoalEnum.PageOnePromotedStrategyGoal strategy_goal = 1;</code>
      */
-    private $strategy_goal = 0;
+    protected $strategy_goal = 0;
     /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
      */
-    private $cpc_bid_ceiling_micros = null;
+    protected $cpc_bid_ceiling_micros = null;
     /**
      * Bid multiplier to be applied to the relevant bid estimate (depending on
      * the `strategy_goal`) in determining a keyword's new CPC bid.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 3;</code>
      */
-    private $bid_modifier = null;
+    protected $bid_modifier = null;
     /**
      * Whether the strategy should always follow bid estimate changes, or only
      * increase.
@@ -47,21 +47,21 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue only_raise_cpc_bids = 4;</code>
      */
-    private $only_raise_cpc_bids = null;
+    protected $only_raise_cpc_bids = null;
     /**
      * Whether the strategy is allowed to raise bids when the throttling
      * rate of the budget it is serving out of rises above a threshold.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue raise_cpc_bid_when_budget_constrained = 5;</code>
      */
-    private $raise_cpc_bid_when_budget_constrained = null;
+    protected $raise_cpc_bid_when_budget_constrained = null;
     /**
      * Whether the strategy is allowed to raise bids on keywords with
      * lower-range quality scores.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue raise_cpc_bid_when_quality_score_is_low = 6;</code>
      */
-    private $raise_cpc_bid_when_quality_score_is_low = null;
+    protected $raise_cpc_bid_when_quality_score_is_low = null;
 
     /**
      * Constructor.
@@ -148,8 +148,7 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function getCpcBidCeilingMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidCeilingMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_ceiling_micros");
     }
 
     /**
@@ -180,9 +179,8 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function setCpcBidCeilingMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidCeilingMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_ceiling_micros", $var);
+        return $this;}
 
     /**
      * Bid multiplier to be applied to the relevant bid estimate (depending on
@@ -207,8 +205,7 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function getBidModifierUnwrapped()
     {
-        $wrapper = $this->getBidModifier();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_modifier");
     }
 
     /**
@@ -239,9 +236,8 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function setBidModifierUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBidModifier($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_modifier", $var);
+        return $this;}
 
     /**
      * Whether the strategy should always follow bid estimate changes, or only
@@ -272,8 +268,7 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function getOnlyRaiseCpcBidsUnwrapped()
     {
-        $wrapper = $this->getOnlyRaiseCpcBids();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("only_raise_cpc_bids");
     }
 
     /**
@@ -310,9 +305,8 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function setOnlyRaiseCpcBidsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setOnlyRaiseCpcBids($wrappedVar);
-    }
+        $this->writeWrapperValue("only_raise_cpc_bids", $var);
+        return $this;}
 
     /**
      * Whether the strategy is allowed to raise bids when the throttling
@@ -337,8 +331,7 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function getRaiseCpcBidWhenBudgetConstrainedUnwrapped()
     {
-        $wrapper = $this->getRaiseCpcBidWhenBudgetConstrained();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("raise_cpc_bid_when_budget_constrained");
     }
 
     /**
@@ -369,9 +362,8 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function setRaiseCpcBidWhenBudgetConstrainedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setRaiseCpcBidWhenBudgetConstrained($wrappedVar);
-    }
+        $this->writeWrapperValue("raise_cpc_bid_when_budget_constrained", $var);
+        return $this;}
 
     /**
      * Whether the strategy is allowed to raise bids on keywords with
@@ -396,8 +388,7 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function getRaiseCpcBidWhenQualityScoreIsLowUnwrapped()
     {
-        $wrapper = $this->getRaiseCpcBidWhenQualityScoreIsLow();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("raise_cpc_bid_when_quality_score_is_low");
     }
 
     /**
@@ -428,9 +419,8 @@ final class PageOnePromoted extends \Google\Protobuf\Internal\Message
      */
     public function setRaiseCpcBidWhenQualityScoreIsLowUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setRaiseCpcBidWhenQualityScoreIsLow($wrappedVar);
-    }
+        $this->writeWrapperValue("raise_cpc_bid_when_quality_score_is_low", $var);
+        return $this;}
 
 }
 

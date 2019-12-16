@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.WebpageConditionOperatorEnum</code>
  */
-final class WebpageConditionOperatorEnum extends \Google\Protobuf\Internal\Message
+class WebpageConditionOperatorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -22,7 +22,7 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
@@ -30,44 +30,44 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Two-letter upper-case country code of the product bidding category.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     /**
      * Resource name of the parent product bidding category.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4;</code>
      */
-    private $product_bidding_category_constant_parent = null;
+    protected $product_bidding_category_constant_parent = null;
     /**
      * Level of the product bidding category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel level = 5;</code>
      */
-    private $level = 0;
+    protected $level = 0;
     /**
      * Status of the product bidding category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus status = 6;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * Language code of the product bidding category.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7;</code>
      */
-    private $language_code = null;
+    protected $language_code = null;
     /**
      * Display value of the product bidding category localized according to
      * language_code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8;</code>
      */
-    private $localized_name = null;
+    protected $localized_name = null;
 
     /**
      * Constructor.
@@ -156,10 +156,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -190,11 +189,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Two-letter upper-case country code of the product bidding category.
@@ -215,10 +213,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
      * @return string|null
      */
-    public function getCountryCodeValue()
+    public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -245,11 +242,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCountryCodeValue($var)
+    public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * Resource name of the parent product bidding category.
@@ -270,10 +266,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4;</code>
      * @return string|null
      */
-    public function getProductBiddingCategoryConstantParentValue()
+    public function getProductBiddingCategoryConstantParentUnwrapped()
     {
-        $wrapper = $this->getProductBiddingCategoryConstantParent();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_bidding_category_constant_parent");
     }
 
     /**
@@ -300,11 +295,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductBiddingCategoryConstantParentValue($var)
+    public function setProductBiddingCategoryConstantParentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductBiddingCategoryConstantParent($wrappedVar);
-    }
+        $this->writeWrapperValue("product_bidding_category_constant_parent", $var);
+        return $this;}
 
     /**
      * Level of the product bidding category.
@@ -377,10 +371,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7;</code>
      * @return string|null
      */
-    public function getLanguageCodeValue()
+    public function getLanguageCodeUnwrapped()
     {
-        $wrapper = $this->getLanguageCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_code");
     }
 
     /**
@@ -407,11 +400,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLanguageCodeValue($var)
+    public function setLanguageCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageCode($wrappedVar);
-    }
+        $this->writeWrapperValue("language_code", $var);
+        return $this;}
 
     /**
      * Display value of the product bidding category localized according to
@@ -434,10 +426,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8;</code>
      * @return string|null
      */
-    public function getLocalizedNameValue()
+    public function getLocalizedNameUnwrapped()
     {
-        $wrapper = $this->getLocalizedName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("localized_name");
     }
 
     /**
@@ -466,11 +457,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLocalizedNameValue($var)
+    public function setLocalizedNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLocalizedName($wrappedVar);
-    }
+        $this->writeWrapperValue("localized_name", $var);
+        return $this;}
 
 }
 

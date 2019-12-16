@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.CustomerPayPerConversionEligibilityFailureReasonEnum</code>
  */
-final class CustomerPayPerConversionEligibilityFailureReasonEnum extends \Google\Protobuf\Internal\Message
+class CustomerPayPerConversionEligibilityFailureReasonEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

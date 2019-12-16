@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ManualCpm</code>
  */
-final class ManualCpm extends \Google\Protobuf\Internal\Message
+class ManualCpm extends \Google\Protobuf\Internal\Message
 {
 
     /**

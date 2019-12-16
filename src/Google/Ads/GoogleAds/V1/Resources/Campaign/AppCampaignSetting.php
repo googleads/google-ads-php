@@ -21,19 +21,19 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType bidding_strategy_goal_type = 1;</code>
      */
-    private $bidding_strategy_goal_type = 0;
+    protected $bidding_strategy_goal_type = 0;
     /**
      * A string that uniquely identifies a mobile application.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
      */
-    private $app_id = null;
+    protected $app_id = null;
     /**
      * The application store that distributes this specific app.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3;</code>
      */
-    private $app_store = 0;
+    protected $app_store = 0;
 
     /**
      * Constructor.
@@ -102,10 +102,9 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
      * @return string|null
      */
-    public function getAppIdValue()
+    public function getAppIdUnwrapped()
     {
-        $wrapper = $this->getAppId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("app_id");
     }
 
     /**
@@ -132,11 +131,10 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAppIdValue($var)
+    public function setAppIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAppId($wrappedVar);
-    }
+        $this->writeWrapperValue("app_id", $var);
+        return $this;}
 
     /**
      * The application store that distributes this specific app.

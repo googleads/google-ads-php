@@ -33,7 +33,7 @@ use Google\Rpc\Code;
 use stdClass;
 
 /**
- * @group googleads
+ * @group services
  * @group gapic
  */
 class KeywordViewServiceClientTest extends GeneratedTest
@@ -47,14 +47,22 @@ class KeywordViewServiceClientTest extends GeneratedTest
     }
 
     /**
+     * @return CredentialsWrapper
+     */
+    private function createCredentials()
+    {
+        return $this->getMockBuilder(CredentialsWrapper::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
      * @return KeywordViewServiceClient
      */
     private function createClient(array $options = [])
     {
         $options += [
-            'credentials' => $this->getMockBuilder(CredentialsWrapper::class)
-                ->disableOriginalConstructor()
-                ->getMock(),
+            'credentials' => $this->createCredentials(),
         ];
 
         return new KeywordViewServiceClient($options);

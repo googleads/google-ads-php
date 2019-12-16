@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ProductVideo</code>
  */
-final class ProductVideo extends \Google\Protobuf\Internal\Message
+class ProductVideo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The MediaFile resource name of a video which must be hosted on YouTube.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_video = 1;</code>
      */
-    private $product_video = null;
+    protected $product_video = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class ProductVideo extends \Google\Protobuf\Internal\Message
      */
     public function getProductVideoUnwrapped()
     {
-        $wrapper = $this->getProductVideo();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_video");
     }
 
     /**
@@ -88,9 +87,8 @@ final class ProductVideo extends \Google\Protobuf\Internal\Message
      */
     public function setProductVideoUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductVideo($wrappedVar);
-    }
+        $this->writeWrapperValue("product_video", $var);
+        return $this;}
 
 }
 

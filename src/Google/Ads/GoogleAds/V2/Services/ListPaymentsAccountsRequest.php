@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListPaymentsAccountsRequest</code>
  */
-final class ListPaymentsAccountsRequest extends \Google\Protobuf\Internal\Message
+class ListPaymentsAccountsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer to apply the PaymentsAccount list operation to.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
 
     /**
      * Constructor.

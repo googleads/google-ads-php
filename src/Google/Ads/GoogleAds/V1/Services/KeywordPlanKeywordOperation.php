@@ -21,7 +21,7 @@ class KeywordPlanKeywordOperation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
     protected $operation;
 
     /**

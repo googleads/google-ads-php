@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.KeywordPlanKeywordHistoricalMetrics</code>
  */
-final class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Message
+class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
      * The text of the query associated with one or more ad_group_keywords in the
@@ -25,14 +25,14 @@ final class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Interna
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_query = 1;</code>
      */
-    private $search_query = null;
+    protected $search_query = null;
     /**
      * The historical metrics for the query associated with one or more
      * ad_group_keywords in the plan.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordPlanHistoricalMetrics keyword_metrics = 2;</code>
      */
-    private $keyword_metrics = null;
+    protected $keyword_metrics = null;
 
     /**
      * Constructor.
@@ -88,8 +88,7 @@ final class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Interna
      */
     public function getSearchQueryUnwrapped()
     {
-        $wrapper = $this->getSearchQuery();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_query");
     }
 
     /**
@@ -128,9 +127,8 @@ final class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Interna
      */
     public function setSearchQueryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSearchQuery($wrappedVar);
-    }
+        $this->writeWrapperValue("search_query", $var);
+        return $this;}
 
     /**
      * The historical metrics for the query associated with one or more

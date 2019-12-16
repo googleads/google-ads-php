@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.AppCampaignBiddingStrategyGoalTypeEnum</code>
  */
-final class AppCampaignBiddingStrategyGoalTypeEnum extends \Google\Protobuf\Internal\Message
+class AppCampaignBiddingStrategyGoalTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

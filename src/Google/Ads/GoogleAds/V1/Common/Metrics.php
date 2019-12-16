@@ -21,82 +21,82 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue absolute_top_impression_percentage = 95;</code>
      */
-    private $absolute_top_impression_percentage = null;
+    protected $absolute_top_impression_percentage = null;
     /**
      * Average cost of viewable impressions (`active_view_impressions`).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_cpm = 1;</code>
      */
-    private $active_view_cpm = null;
+    protected $active_view_cpm = null;
     /**
      * Active view measurable clicks divided by active view viewable impressions.
      * This metric is reported only for display network.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_ctr = 79;</code>
      */
-    private $active_view_ctr = null;
+    protected $active_view_ctr = null;
     /**
      * A measurement of how often your ad has become viewable on a Display
      * Network site.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_impressions = 2;</code>
      */
-    private $active_view_impressions = null;
+    protected $active_view_impressions = null;
     /**
      * The ratio of impressions that could be measured by Active View over the
      * number of served impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_measurability = 96;</code>
      */
-    private $active_view_measurability = null;
+    protected $active_view_measurability = null;
     /**
      * The cost of the impressions you received that were measurable by Active
      * View.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_cost_micros = 3;</code>
      */
-    private $active_view_measurable_cost_micros = null;
+    protected $active_view_measurable_cost_micros = null;
     /**
      * The number of times your ads are appearing on placements in positions
      * where they can be seen.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_impressions = 4;</code>
      */
-    private $active_view_measurable_impressions = null;
+    protected $active_view_measurable_impressions = null;
     /**
      * The percentage of time when your ad appeared on an Active View enabled site
      * (measurable impressions) and was viewable (viewable impressions).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_viewability = 97;</code>
      */
-    private $active_view_viewability = null;
+    protected $active_view_viewability = null;
     /**
      * All conversions from interactions (as oppose to view through conversions)
      * divided by the number of ad interactions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_rate = 65;</code>
      */
-    private $all_conversions_from_interactions_rate = null;
+    protected $all_conversions_from_interactions_rate = null;
     /**
      * The total value of all conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
      */
-    private $all_conversions_value = null;
+    protected $all_conversions_value = null;
     /**
      * The total number of conversions. This only includes conversion actions
      * which include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
      */
-    private $all_conversions = null;
+    protected $all_conversions = null;
     /**
      * The value of all conversions divided by the total cost of ad interactions
      * (such as clicks for text ads or views for video ads).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value_per_cost = 62;</code>
      */
-    private $all_conversions_value_per_cost = null;
+    protected $all_conversions_value_per_cost = null;
     /**
      * The number of times people clicked the "Call" button to call a store during
      * or after clicking an ad. This number doesn't include whether or not calls
@@ -105,7 +105,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_click_to_call = 118;</code>
      */
-    private $all_conversions_from_click_to_call = null;
+    protected $all_conversions_from_click_to_call = null;
     /**
      * The number of times people clicked a "Get directions" button to navigate to
      * a store after clicking an ad.
@@ -113,14 +113,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_directions = 119;</code>
      */
-    private $all_conversions_from_directions = null;
+    protected $all_conversions_from_directions = null;
     /**
      * The value of all conversions from interactions divided by the total number
      * of interactions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_value_per_interaction = 67;</code>
      */
-    private $all_conversions_from_interactions_value_per_interaction = null;
+    protected $all_conversions_from_interactions_value_per_interaction = null;
     /**
      * The number of times people clicked a link to view a store's menu after
      * clicking an ad.
@@ -128,14 +128,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_menu = 120;</code>
      */
-    private $all_conversions_from_menu = null;
+    protected $all_conversions_from_menu = null;
     /**
      * The number of times people placed an order at a store after clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_order = 121;</code>
      */
-    private $all_conversions_from_order = null;
+    protected $all_conversions_from_order = null;
     /**
      * The number of other conversions (for example, posting a review or saving a
      * location for a store) that occurred after people clicked an ad.
@@ -143,14 +143,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_other_engagement = 122;</code>
      */
-    private $all_conversions_from_other_engagement = null;
+    protected $all_conversions_from_other_engagement = null;
     /**
      * Estimated number of times people visited a store after clicking an ad.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_store_visit = 123;</code>
      */
-    private $all_conversions_from_store_visit = null;
+    protected $all_conversions_from_store_visit = null;
     /**
      * The number of times that people were taken to a store's URL after clicking
      * an ad.
@@ -158,21 +158,21 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_store_website = 124;</code>
      */
-    private $all_conversions_from_store_website = null;
+    protected $all_conversions_from_store_website = null;
     /**
      * The average amount you pay per interaction. This amount is the total cost
      * of your ads divided by the total number of interactions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cost = 8;</code>
      */
-    private $average_cost = null;
+    protected $average_cost = null;
     /**
      * The total cost of all clicks divided by the total number of clicks
      * received.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpc = 9;</code>
      */
-    private $average_cpc = null;
+    protected $average_cpc = null;
     /**
      * The average amount that you've been charged for an ad engagement. This
      * amount is the total cost of all ad engagements divided by the total number
@@ -180,13 +180,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpe = 98;</code>
      */
-    private $average_cpe = null;
+    protected $average_cpe = null;
     /**
      * Average cost-per-thousand impressions (CPM).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpm = 10;</code>
      */
-    private $average_cpm = null;
+    protected $average_cpm = null;
     /**
      * The average amount you pay each time someone views your ad.
      * The average CPV is defined by the total cost of all ad views divided by
@@ -194,59 +194,59 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpv = 11;</code>
      */
-    private $average_cpv = null;
+    protected $average_cpv = null;
     /**
      * Average number of times a unique cookie was exposed to your ad
      * over a given time period. Imported from Google Analytics.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_frequency = 12;</code>
      */
-    private $average_frequency = null;
+    protected $average_frequency = null;
     /**
      * Average number of pages viewed per session.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_page_views = 99;</code>
      */
-    private $average_page_views = null;
+    protected $average_page_views = null;
     /**
      * Your ad's position relative to those of other advertisers.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_position = 13;</code>
      */
-    private $average_position = null;
+    protected $average_position = null;
     /**
      * Total duration of all sessions (in seconds) / number of sessions. Imported
      * from Google Analytics.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_time_on_site = 84;</code>
      */
-    private $average_time_on_site = null;
+    protected $average_time_on_site = null;
     /**
      * An indication of how other advertisers are bidding on similar products.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_average_max_cpc = 14;</code>
      */
-    private $benchmark_average_max_cpc = null;
+    protected $benchmark_average_max_cpc = null;
     /**
      * An indication on how other advertisers' Shopping ads for similar products
      * are performing based on how often people who see their ad click on it.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_ctr = 77;</code>
      */
-    private $benchmark_ctr = null;
+    protected $benchmark_ctr = null;
     /**
      * Percentage of clicks where the user only visited a single page on your
      * site. Imported from Google Analytics.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bounce_rate = 15;</code>
      */
-    private $bounce_rate = null;
+    protected $bounce_rate = null;
     /**
      * The number of clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 19;</code>
      */
-    private $clicks = null;
+    protected $clicks = null;
     /**
      * The number of times your ad or your site's listing in the unpaid
      * results was clicked. See the help page at
@@ -254,7 +254,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value combined_clicks = 115;</code>
      */
-    private $combined_clicks = null;
+    protected $combined_clicks = null;
     /**
      * The number of times your ad or your site's listing in the unpaid
      * results was clicked (combined_clicks) divided by combined_queries. See the
@@ -263,7 +263,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue combined_clicks_per_query = 116;</code>
      */
-    private $combined_clicks_per_query = null;
+    protected $combined_clicks_per_query = null;
     /**
      * The number of searches that returned pages from your site in the unpaid
      * results or showed one of your text ads. See the help page at
@@ -271,7 +271,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value combined_queries = 117;</code>
      */
-    private $combined_queries = null;
+    protected $combined_queries = null;
     /**
      * The estimated percent of times that your ad was eligible to show
      * on the Display Network but didn't because your budget was too low.
@@ -280,7 +280,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue content_budget_lost_impression_share = 20;</code>
      */
-    private $content_budget_lost_impression_share = null;
+    protected $content_budget_lost_impression_share = null;
     /**
      * The impressions you've received on the Display Network divided
      * by the estimated number of impressions you were eligible to receive.
@@ -289,7 +289,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue content_impression_share = 21;</code>
      */
-    private $content_impression_share = null;
+    protected $content_impression_share = null;
     /**
      * The last date/time a conversion tag for this conversion action successfully
      * fired and was seen by Google Ads. This firing event may not have been the
@@ -299,14 +299,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_received_request_date_time = 73;</code>
      */
-    private $conversion_last_received_request_date_time = null;
+    protected $conversion_last_received_request_date_time = null;
     /**
      * The date of the most recent conversion for this conversion action. The date
      * is in the customer's time zone.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_conversion_date = 74;</code>
      */
-    private $conversion_last_conversion_date = null;
+    protected $conversion_last_conversion_date = null;
     /**
      * The estimated percentage of impressions on the Display Network
      * that your ads didn't receive due to poor Ad Rank.
@@ -315,7 +315,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue content_rank_lost_impression_share = 22;</code>
      */
-    private $content_rank_lost_impression_share = null;
+    protected $content_rank_lost_impression_share = null;
     /**
      * Conversions from interactions divided by the number of ad interactions
      * (such as clicks for text ads or views for video ads). This only includes
@@ -324,14 +324,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_rate = 69;</code>
      */
-    private $conversions_from_interactions_rate = null;
+    protected $conversions_from_interactions_rate = null;
     /**
      * The total value of conversions. This only includes conversion actions which
      * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
      */
-    private $conversions_value = null;
+    protected $conversions_value = null;
     /**
      * The value of conversions divided by the cost of ad interactions. This only
      * includes conversion actions which include_in_conversions_metric attribute
@@ -339,7 +339,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value_per_cost = 71;</code>
      */
-    private $conversions_value_per_cost = null;
+    protected $conversions_value_per_cost = null;
     /**
      * The value of conversions from interactions divided by the number of ad
      * interactions. This only includes conversion actions which
@@ -347,27 +347,27 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_value_per_interaction = 72;</code>
      */
-    private $conversions_from_interactions_value_per_interaction = null;
+    protected $conversions_from_interactions_value_per_interaction = null;
     /**
      * The number of conversions. This only includes conversion actions which
      * include_in_conversions_metric attribute is set to true.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
      */
-    private $conversions = null;
+    protected $conversions = null;
     /**
      * The sum of your cost-per-click (CPC) and cost-per-thousand impressions
      * (CPM) costs during this period.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 26;</code>
      */
-    private $cost_micros = null;
+    protected $cost_micros = null;
     /**
      * The cost of ad interactions divided by all conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_all_conversions = 68;</code>
      */
-    private $cost_per_all_conversions = null;
+    protected $cost_per_all_conversions = null;
     /**
      * The cost of ad interactions divided by conversions. This only includes
      * conversion actions which include_in_conversions_metric attribute is set to
@@ -375,7 +375,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_conversion = 28;</code>
      */
-    private $cost_per_conversion = null;
+    protected $cost_per_conversion = null;
     /**
      * The cost of ad interactions divided by current model attributed
      * conversions. This only includes conversion actions which
@@ -383,7 +383,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_current_model_attributed_conversion = 106;</code>
      */
-    private $cost_per_current_model_attributed_conversion = null;
+    protected $cost_per_current_model_attributed_conversion = null;
     /**
      * Conversions from when a customer clicks on a Google Ads ad on one device,
      * then converts on a different device or browser.
@@ -391,14 +391,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cross_device_conversions = 29;</code>
      */
-    private $cross_device_conversions = null;
+    protected $cross_device_conversions = null;
     /**
      * The number of clicks your ad receives (Clicks) divided by the number
      * of times your ad is shown (Impressions).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 30;</code>
      */
-    private $ctr = null;
+    protected $ctr = null;
     /**
      * Shows how your historic conversions data would look under the attribution
      * model you've currently selected. This only includes conversion actions
@@ -406,7 +406,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
      */
-    private $current_model_attributed_conversions = null;
+    protected $current_model_attributed_conversions = null;
     /**
      * Current model attributed conversions from interactions divided by the
      * number of ad interactions (such as clicks for text ads or views for video
@@ -415,7 +415,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_rate = 102;</code>
      */
-    private $current_model_attributed_conversions_from_interactions_rate = null;
+    protected $current_model_attributed_conversions_from_interactions_rate = null;
     /**
      * The value of current model attributed conversions from interactions divided
      * by the number of ad interactions. This only includes conversion actions
@@ -423,7 +423,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_value_per_interaction = 103;</code>
      */
-    private $current_model_attributed_conversions_from_interactions_value_per_interaction = null;
+    protected $current_model_attributed_conversions_from_interactions_value_per_interaction = null;
     /**
      * The total value of current model attributed conversions. This only includes
      * conversion actions which include_in_conversions_metric attribute is set to
@@ -431,7 +431,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
      */
-    private $current_model_attributed_conversions_value = null;
+    protected $current_model_attributed_conversions_value = null;
     /**
      * The value of current model attributed conversions divided by the cost of ad
      * interactions. This only includes conversion actions which
@@ -439,14 +439,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value_per_cost = 105;</code>
      */
-    private $current_model_attributed_conversions_value_per_cost = null;
+    protected $current_model_attributed_conversions_value_per_cost = null;
     /**
      * How often people engage with your ad after it's shown to them. This is the
      * number of ad expansions divided by the number of times your ad is shown.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue engagement_rate = 31;</code>
      */
-    private $engagement_rate = null;
+    protected $engagement_rate = null;
     /**
      * The number of engagements.
      * An engagement occurs when a viewer expands your Lightbox ad. Also, in the
@@ -454,78 +454,78 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value engagements = 32;</code>
      */
-    private $engagements = null;
+    protected $engagements = null;
     /**
      * Average lead value of hotel.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      */
-    private $hotel_average_lead_value_micros = null;
+    protected $hotel_average_lead_value_micros = null;
     /**
      * The creative historical quality score.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.QualityScoreBucketEnum.QualityScoreBucket historical_creative_quality_score = 80;</code>
      */
-    private $historical_creative_quality_score = 0;
+    protected $historical_creative_quality_score = 0;
     /**
      * The quality of historical landing page experience.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.QualityScoreBucketEnum.QualityScoreBucket historical_landing_page_quality_score = 81;</code>
      */
-    private $historical_landing_page_quality_score = 0;
+    protected $historical_landing_page_quality_score = 0;
     /**
      * The historical quality score.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value historical_quality_score = 82;</code>
      */
-    private $historical_quality_score = null;
+    protected $historical_quality_score = null;
     /**
      * The historical search predicted click through rate (CTR).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.QualityScoreBucketEnum.QualityScoreBucket historical_search_predicted_ctr = 83;</code>
      */
-    private $historical_search_predicted_ctr = 0;
+    protected $historical_search_predicted_ctr = 0;
     /**
      * The number of times the ad was forwarded to someone else as a message.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_forwards = 85;</code>
      */
-    private $gmail_forwards = null;
+    protected $gmail_forwards = null;
     /**
      * The number of times someone has saved your Gmail ad to their inbox as a
      * message.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_saves = 86;</code>
      */
-    private $gmail_saves = null;
+    protected $gmail_saves = null;
     /**
      * The number of clicks to the landing page on the expanded state of Gmail
      * ads.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_secondary_clicks = 87;</code>
      */
-    private $gmail_secondary_clicks = null;
+    protected $gmail_secondary_clicks = null;
     /**
      * Number of unique cookies that were exposed to your ad over a given time
      * period.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impression_reach = 36;</code>
      */
-    private $impression_reach = null;
+    protected $impression_reach = null;
     /**
      * The number of times a store's location-based ad was shown.
      * This metric applies to feed items only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions_from_store_reach = 125;</code>
      */
-    private $impressions_from_store_reach = null;
+    protected $impressions_from_store_reach = null;
     /**
      * Count of how often your ad has appeared on a search results page or
      * website on the Google Network.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 37;</code>
      */
-    private $impressions = null;
+    protected $impressions = null;
     /**
      * How often people interact with your ad after it is shown to them.
      * This is the number of interactions divided by the number of times your ad
@@ -533,7 +533,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue interaction_rate = 38;</code>
      */
-    private $interaction_rate = null;
+    protected $interaction_rate = null;
     /**
      * The number of interactions.
      * An interaction is the main user action associated with an ad format-clicks
@@ -541,7 +541,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value interactions = 39;</code>
      */
-    private $interactions = null;
+    protected $interactions = null;
     /**
      * The types of payable and free interactions.
      *
@@ -554,19 +554,19 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue invalid_click_rate = 40;</code>
      */
-    private $invalid_click_rate = null;
+    protected $invalid_click_rate = null;
     /**
      * Number of clicks Google considers illegitimate and doesn't charge you for.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value invalid_clicks = 41;</code>
      */
-    private $invalid_clicks = null;
+    protected $invalid_clicks = null;
     /**
      * The percentage of mobile clicks that go to a mobile-friendly page.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue mobile_friendly_clicks_percentage = 109;</code>
      */
-    private $mobile_friendly_clicks_percentage = null;
+    protected $mobile_friendly_clicks_percentage = null;
     /**
      * The number of times someone clicked your site's listing in the unpaid
      * results for a particular query. See the help page at
@@ -574,7 +574,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value organic_clicks = 110;</code>
      */
-    private $organic_clicks = null;
+    protected $organic_clicks = null;
     /**
      * The number of times someone clicked your site's listing in the unpaid
      * results (organic_clicks) divided by the total number of searches that
@@ -583,7 +583,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue organic_clicks_per_query = 111;</code>
      */
-    private $organic_clicks_per_query = null;
+    protected $organic_clicks_per_query = null;
     /**
      * The number of listings for your site in the unpaid search results. See the
      * help page at https://support.google.com/google-ads/answer/3097241 for
@@ -591,7 +591,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value organic_impressions = 112;</code>
      */
-    private $organic_impressions = null;
+    protected $organic_impressions = null;
     /**
      * The number of times a page from your site was listed in the unpaid search
      * results (organic_impressions) divided by the number of searches returning
@@ -600,7 +600,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue organic_impressions_per_query = 113;</code>
      */
-    private $organic_impressions_per_query = null;
+    protected $organic_impressions_per_query = null;
     /**
      * The total number of searches that returned your site's listing in the
      * unpaid results. See the help page at
@@ -608,33 +608,33 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value organic_queries = 114;</code>
      */
-    private $organic_queries = null;
+    protected $organic_queries = null;
     /**
      * Percentage of first-time sessions (from people who had never visited your
      * site before). Imported from Google Analytics.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue percent_new_visitors = 42;</code>
      */
-    private $percent_new_visitors = null;
+    protected $percent_new_visitors = null;
     /**
      * Number of offline phone calls.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value phone_calls = 43;</code>
      */
-    private $phone_calls = null;
+    protected $phone_calls = null;
     /**
      * Number of offline phone impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value phone_impressions = 44;</code>
      */
-    private $phone_impressions = null;
+    protected $phone_impressions = null;
     /**
      * Number of phone calls received (phone_calls) divided by the number of
      * times your phone number is shown (phone_impressions).
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue phone_through_rate = 45;</code>
      */
-    private $phone_through_rate = null;
+    protected $phone_through_rate = null;
     /**
      * Your clickthrough rate (Ctr) divided by the average clickthrough rate of
      * all advertisers on the websites that show your ads. Measures how your ads
@@ -642,16 +642,16 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue relative_ctr = 46;</code>
      */
-    private $relative_ctr = null;
+    protected $relative_ctr = null;
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
-     * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
      */
-    private $search_absolute_top_impression_share = null;
+    protected $search_absolute_top_impression_share = null;
     /**
      * The number estimating how often your ad wasn't the very first ad above the
      * organic search results due to a low budget. Note: Search
@@ -660,7 +660,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_absolute_top_impression_share = 88;</code>
      */
-    private $search_budget_lost_absolute_top_impression_share = null;
+    protected $search_budget_lost_absolute_top_impression_share = null;
     /**
      * The estimated percent of times that your ad was eligible to show on the
      * Search Network but didn't because your budget was too low. Note: Search
@@ -669,7 +669,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_impression_share = 47;</code>
      */
-    private $search_budget_lost_impression_share = null;
+    protected $search_budget_lost_impression_share = null;
     /**
      * The number estimating how often your ad didn't show anywhere above the
      * organic search results due to a low budget. Note: Search
@@ -678,7 +678,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_top_impression_share = 89;</code>
      */
-    private $search_budget_lost_top_impression_share = null;
+    protected $search_budget_lost_top_impression_share = null;
     /**
      * The number of clicks you've received on the Search Network
      * divided by the estimated number of clicks you were eligible to receive.
@@ -687,7 +687,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_click_share = 48;</code>
      */
-    private $search_click_share = null;
+    protected $search_click_share = null;
     /**
      * The impressions you've received divided by the estimated number of
      * impressions you were eligible to receive on the Search Network for search
@@ -698,7 +698,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_exact_match_impression_share = 49;</code>
      */
-    private $search_exact_match_impression_share = null;
+    protected $search_exact_match_impression_share = null;
     /**
      * The impressions you've received on the Search Network divided
      * by the estimated number of impressions you were eligible to receive.
@@ -707,7 +707,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_impression_share = 50;</code>
      */
-    private $search_impression_share = null;
+    protected $search_impression_share = null;
     /**
      * The number estimating how often your ad wasn't the very first ad above the
      * organic search results due to poor Ad Rank.
@@ -716,7 +716,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_absolute_top_impression_share = 90;</code>
      */
-    private $search_rank_lost_absolute_top_impression_share = null;
+    protected $search_rank_lost_absolute_top_impression_share = null;
     /**
      * The estimated percentage of impressions on the Search Network
      * that your ads didn't receive due to poor Ad Rank.
@@ -725,7 +725,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_impression_share = 51;</code>
      */
-    private $search_rank_lost_impression_share = null;
+    protected $search_rank_lost_impression_share = null;
     /**
      * The number estimating how often your ad didn't show anywhere above the
      * organic search results due to poor Ad Rank.
@@ -734,7 +734,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_top_impression_share = 91;</code>
      */
-    private $search_rank_lost_top_impression_share = null;
+    protected $search_rank_lost_top_impression_share = null;
     /**
      * The impressions you've received in the top location (anywhere above the
      * organic search results) compared to the estimated number of impressions you
@@ -744,34 +744,34 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_top_impression_share = 92;</code>
      */
-    private $search_top_impression_share = null;
+    protected $search_top_impression_share = null;
     /**
      * A measure of how quickly your page loads after clicks on your mobile ads.
      * The score is a range from 1 to 10, 10 being the fastest.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value speed_score = 107;</code>
      */
-    private $speed_score = null;
+    protected $speed_score = null;
     /**
      * The percent of your ad impressions that are shown anywhere above the
      * organic search results.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue top_impression_percentage = 93;</code>
      */
-    private $top_impression_percentage = null;
+    protected $top_impression_percentage = null;
     /**
      * The percentage of ad clicks to Accelerated Mobile Pages (AMP) landing pages
      * that reach a valid AMP page.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue valid_accelerated_mobile_pages_clicks_percentage = 108;</code>
      */
-    private $valid_accelerated_mobile_pages_clicks_percentage = null;
+    protected $valid_accelerated_mobile_pages_clicks_percentage = null;
     /**
      * The value of all conversions divided by the number of all conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_all_conversions = 52;</code>
      */
-    private $value_per_all_conversions = null;
+    protected $value_per_all_conversions = null;
     /**
      * The value of conversions divided by the number of conversions. This only
      * includes conversion actions which include_in_conversions_metric attribute
@@ -779,7 +779,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_conversion = 53;</code>
      */
-    private $value_per_conversion = null;
+    protected $value_per_conversion = null;
     /**
      * The value of current model attributed conversions divided by the number of
      * the conversions. This only includes conversion actions which
@@ -787,31 +787,31 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_current_model_attributed_conversion = 94;</code>
      */
-    private $value_per_current_model_attributed_conversion = null;
+    protected $value_per_current_model_attributed_conversion = null;
     /**
      * Percentage of impressions where the viewer watched all of your video.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_100_rate = 54;</code>
      */
-    private $video_quartile_100_rate = null;
+    protected $video_quartile_100_rate = null;
     /**
      * Percentage of impressions where the viewer watched 25% of your video.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_25_rate = 55;</code>
      */
-    private $video_quartile_25_rate = null;
+    protected $video_quartile_25_rate = null;
     /**
      * Percentage of impressions where the viewer watched 50% of your video.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_50_rate = 56;</code>
      */
-    private $video_quartile_50_rate = null;
+    protected $video_quartile_50_rate = null;
     /**
      * Percentage of impressions where the viewer watched 75% of your video.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_75_rate = 57;</code>
      */
-    private $video_quartile_75_rate = null;
+    protected $video_quartile_75_rate = null;
     /**
      * The number of views your TrueView video ad receives divided by its number
      * of impressions, including thumbnail impressions for TrueView in-display
@@ -819,13 +819,13 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_view_rate = 58;</code>
      */
-    private $video_view_rate = null;
+    protected $video_view_rate = null;
     /**
      * The number of times your video ads were viewed.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value video_views = 59;</code>
      */
-    private $video_views = null;
+    protected $video_views = null;
     /**
      * The total number of view-through conversions.
      * These happen when a customer sees an image or rich media ad, then later
@@ -834,7 +834,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value view_through_conversions = 60;</code>
      */
-    private $view_through_conversions = null;
+    protected $view_through_conversions = null;
 
     /**
      * Constructor.
@@ -1129,8 +1129,8 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\DoubleValue $search_absolute_top_impression_share
      *           The percentage of the customer's Shopping or Search ad impressions that are
      *           shown in the most prominent Shopping position. See
-     *           <a href="https://support.google.com/adwords/answer/7501826">this Merchant
-     *           Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     *           [this article](https://support.google.com/google-ads/answer/7501826)
+     *           for details. Any value below 0.1 is reported as 0.0999.
      *     @type \Google\Protobuf\DoubleValue $search_budget_lost_absolute_top_impression_share
      *           The number estimating how often your ad wasn't the very first ad above the
      *           organic search results due to a low budget. Note: Search
@@ -1250,10 +1250,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue absolute_top_impression_percentage = 95;</code>
      * @return float|null
      */
-    public function getAbsoluteTopImpressionPercentageValue()
+    public function getAbsoluteTopImpressionPercentageUnwrapped()
     {
-        $wrapper = $this->getAbsoluteTopImpressionPercentage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("absolute_top_impression_percentage");
     }
 
     /**
@@ -1282,11 +1281,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAbsoluteTopImpressionPercentageValue($var)
+    public function setAbsoluteTopImpressionPercentageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAbsoluteTopImpressionPercentage($wrappedVar);
-    }
+        $this->writeWrapperValue("absolute_top_impression_percentage", $var);
+        return $this;}
 
     /**
      * Average cost of viewable impressions (`active_view_impressions`).
@@ -1307,10 +1305,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_cpm = 1;</code>
      * @return float|null
      */
-    public function getActiveViewCpmValue()
+    public function getActiveViewCpmUnwrapped()
     {
-        $wrapper = $this->getActiveViewCpm();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("active_view_cpm");
     }
 
     /**
@@ -1337,11 +1334,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setActiveViewCpmValue($var)
+    public function setActiveViewCpmUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setActiveViewCpm($wrappedVar);
-    }
+        $this->writeWrapperValue("active_view_cpm", $var);
+        return $this;}
 
     /**
      * Active view measurable clicks divided by active view viewable impressions.
@@ -1364,10 +1360,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_ctr = 79;</code>
      * @return float|null
      */
-    public function getActiveViewCtrValue()
+    public function getActiveViewCtrUnwrapped()
     {
-        $wrapper = $this->getActiveViewCtr();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("active_view_ctr");
     }
 
     /**
@@ -1396,11 +1391,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setActiveViewCtrValue($var)
+    public function setActiveViewCtrUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setActiveViewCtr($wrappedVar);
-    }
+        $this->writeWrapperValue("active_view_ctr", $var);
+        return $this;}
 
     /**
      * A measurement of how often your ad has become viewable on a Display
@@ -1423,10 +1417,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_impressions = 2;</code>
      * @return int|string|null
      */
-    public function getActiveViewImpressionsValue()
+    public function getActiveViewImpressionsUnwrapped()
     {
-        $wrapper = $this->getActiveViewImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("active_view_impressions");
     }
 
     /**
@@ -1455,11 +1448,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setActiveViewImpressionsValue($var)
+    public function setActiveViewImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setActiveViewImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("active_view_impressions", $var);
+        return $this;}
 
     /**
      * The ratio of impressions that could be measured by Active View over the
@@ -1482,10 +1474,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_measurability = 96;</code>
      * @return float|null
      */
-    public function getActiveViewMeasurabilityValue()
+    public function getActiveViewMeasurabilityUnwrapped()
     {
-        $wrapper = $this->getActiveViewMeasurability();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("active_view_measurability");
     }
 
     /**
@@ -1514,11 +1505,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setActiveViewMeasurabilityValue($var)
+    public function setActiveViewMeasurabilityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setActiveViewMeasurability($wrappedVar);
-    }
+        $this->writeWrapperValue("active_view_measurability", $var);
+        return $this;}
 
     /**
      * The cost of the impressions you received that were measurable by Active
@@ -1541,10 +1531,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_cost_micros = 3;</code>
      * @return int|string|null
      */
-    public function getActiveViewMeasurableCostMicrosValue()
+    public function getActiveViewMeasurableCostMicrosUnwrapped()
     {
-        $wrapper = $this->getActiveViewMeasurableCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("active_view_measurable_cost_micros");
     }
 
     /**
@@ -1573,11 +1562,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setActiveViewMeasurableCostMicrosValue($var)
+    public function setActiveViewMeasurableCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setActiveViewMeasurableCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("active_view_measurable_cost_micros", $var);
+        return $this;}
 
     /**
      * The number of times your ads are appearing on placements in positions
@@ -1600,10 +1588,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value active_view_measurable_impressions = 4;</code>
      * @return int|string|null
      */
-    public function getActiveViewMeasurableImpressionsValue()
+    public function getActiveViewMeasurableImpressionsUnwrapped()
     {
-        $wrapper = $this->getActiveViewMeasurableImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("active_view_measurable_impressions");
     }
 
     /**
@@ -1632,11 +1619,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setActiveViewMeasurableImpressionsValue($var)
+    public function setActiveViewMeasurableImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setActiveViewMeasurableImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("active_view_measurable_impressions", $var);
+        return $this;}
 
     /**
      * The percentage of time when your ad appeared on an Active View enabled site
@@ -1659,10 +1645,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue active_view_viewability = 97;</code>
      * @return float|null
      */
-    public function getActiveViewViewabilityValue()
+    public function getActiveViewViewabilityUnwrapped()
     {
-        $wrapper = $this->getActiveViewViewability();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("active_view_viewability");
     }
 
     /**
@@ -1691,11 +1676,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setActiveViewViewabilityValue($var)
+    public function setActiveViewViewabilityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setActiveViewViewability($wrappedVar);
-    }
+        $this->writeWrapperValue("active_view_viewability", $var);
+        return $this;}
 
     /**
      * All conversions from interactions (as oppose to view through conversions)
@@ -1718,10 +1702,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_rate = 65;</code>
      * @return float|null
      */
-    public function getAllConversionsFromInteractionsRateValue()
+    public function getAllConversionsFromInteractionsRateUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromInteractionsRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_interactions_rate");
     }
 
     /**
@@ -1750,10 +1733,20 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromInteractionsRateValue($var)
+    public function setAllConversionsFromInteractionsRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromInteractionsRate($wrappedVar);
+        $this->writeWrapperValue("all_conversions_from_interactions_rate", $var);
+        return $this;}
+
+    /**
+     * The total value of all conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getAllConversionsValue()
+    {
+        return $this->all_conversions_value;
     }
 
     /**
@@ -1764,10 +1757,24 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
      * @return float|null
      */
-    public function getAllConversionsValueValue()
+    public function getAllConversionsValueUnwrapped()
     {
-        $wrapper = $this->getAllConversionsValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_value");
+    }
+
+    /**
+     * The total value of all conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value = 66;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setAllConversionsValue($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->all_conversions_value = $var;
+
+        return $this;
     }
 
     /**
@@ -1779,11 +1786,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsValueValue($var)
+    public function setAllConversionsValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsValue($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_value", $var);
+        return $this;}
 
     /**
      * The total number of conversions. This only includes conversion actions
@@ -1806,10 +1812,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions = 7;</code>
      * @return float|null
      */
-    public function getAllConversionsValue()
+    public function getAllConversionsUnwrapped()
     {
-        $wrapper = $this->getAllConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions");
     }
 
     /**
@@ -1838,11 +1843,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsValue($var)
+    public function setAllConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions", $var);
+        return $this;}
 
     /**
      * The value of all conversions divided by the total cost of ad interactions
@@ -1865,10 +1869,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_value_per_cost = 62;</code>
      * @return float|null
      */
-    public function getAllConversionsValuePerCostValue()
+    public function getAllConversionsValuePerCostUnwrapped()
     {
-        $wrapper = $this->getAllConversionsValuePerCost();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_value_per_cost");
     }
 
     /**
@@ -1897,11 +1900,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsValuePerCostValue($var)
+    public function setAllConversionsValuePerCostUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsValuePerCost($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_value_per_cost", $var);
+        return $this;}
 
     /**
      * The number of times people clicked the "Call" button to call a store during
@@ -1928,10 +1930,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_click_to_call = 118;</code>
      * @return float|null
      */
-    public function getAllConversionsFromClickToCallValue()
+    public function getAllConversionsFromClickToCallUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromClickToCall();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_click_to_call");
     }
 
     /**
@@ -1964,11 +1965,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromClickToCallValue($var)
+    public function setAllConversionsFromClickToCallUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromClickToCall($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_from_click_to_call", $var);
+        return $this;}
 
     /**
      * The number of times people clicked a "Get directions" button to navigate to
@@ -1993,10 +1993,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_directions = 119;</code>
      * @return float|null
      */
-    public function getAllConversionsFromDirectionsValue()
+    public function getAllConversionsFromDirectionsUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromDirections();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_directions");
     }
 
     /**
@@ -2027,11 +2026,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromDirectionsValue($var)
+    public function setAllConversionsFromDirectionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromDirections($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_from_directions", $var);
+        return $this;}
 
     /**
      * The value of all conversions from interactions divided by the total number
@@ -2054,10 +2052,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_interactions_value_per_interaction = 67;</code>
      * @return float|null
      */
-    public function getAllConversionsFromInteractionsValuePerInteractionValue()
+    public function getAllConversionsFromInteractionsValuePerInteractionUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromInteractionsValuePerInteraction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_interactions_value_per_interaction");
     }
 
     /**
@@ -2086,11 +2083,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromInteractionsValuePerInteractionValue($var)
+    public function setAllConversionsFromInteractionsValuePerInteractionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromInteractionsValuePerInteraction($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_from_interactions_value_per_interaction", $var);
+        return $this;}
 
     /**
      * The number of times people clicked a link to view a store's menu after
@@ -2115,10 +2111,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_menu = 120;</code>
      * @return float|null
      */
-    public function getAllConversionsFromMenuValue()
+    public function getAllConversionsFromMenuUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromMenu();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_menu");
     }
 
     /**
@@ -2149,11 +2144,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromMenuValue($var)
+    public function setAllConversionsFromMenuUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromMenu($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_from_menu", $var);
+        return $this;}
 
     /**
      * The number of times people placed an order at a store after clicking an ad.
@@ -2176,10 +2170,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_order = 121;</code>
      * @return float|null
      */
-    public function getAllConversionsFromOrderValue()
+    public function getAllConversionsFromOrderUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromOrder();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_order");
     }
 
     /**
@@ -2208,11 +2201,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromOrderValue($var)
+    public function setAllConversionsFromOrderUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromOrder($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_from_order", $var);
+        return $this;}
 
     /**
      * The number of other conversions (for example, posting a review or saving a
@@ -2237,10 +2229,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_other_engagement = 122;</code>
      * @return float|null
      */
-    public function getAllConversionsFromOtherEngagementValue()
+    public function getAllConversionsFromOtherEngagementUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromOtherEngagement();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_other_engagement");
     }
 
     /**
@@ -2271,11 +2262,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromOtherEngagementValue($var)
+    public function setAllConversionsFromOtherEngagementUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromOtherEngagement($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_from_other_engagement", $var);
+        return $this;}
 
     /**
      * Estimated number of times people visited a store after clicking an ad.
@@ -2298,10 +2288,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_store_visit = 123;</code>
      * @return float|null
      */
-    public function getAllConversionsFromStoreVisitValue()
+    public function getAllConversionsFromStoreVisitUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromStoreVisit();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_store_visit");
     }
 
     /**
@@ -2330,11 +2319,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromStoreVisitValue($var)
+    public function setAllConversionsFromStoreVisitUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromStoreVisit($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_from_store_visit", $var);
+        return $this;}
 
     /**
      * The number of times that people were taken to a store's URL after clicking
@@ -2359,10 +2347,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue all_conversions_from_store_website = 124;</code>
      * @return float|null
      */
-    public function getAllConversionsFromStoreWebsiteValue()
+    public function getAllConversionsFromStoreWebsiteUnwrapped()
     {
-        $wrapper = $this->getAllConversionsFromStoreWebsite();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("all_conversions_from_store_website");
     }
 
     /**
@@ -2393,11 +2380,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAllConversionsFromStoreWebsiteValue($var)
+    public function setAllConversionsFromStoreWebsiteUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAllConversionsFromStoreWebsite($wrappedVar);
-    }
+        $this->writeWrapperValue("all_conversions_from_store_website", $var);
+        return $this;}
 
     /**
      * The average amount you pay per interaction. This amount is the total cost
@@ -2420,10 +2406,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cost = 8;</code>
      * @return float|null
      */
-    public function getAverageCostValue()
+    public function getAverageCostUnwrapped()
     {
-        $wrapper = $this->getAverageCost();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_cost");
     }
 
     /**
@@ -2452,11 +2437,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAverageCostValue($var)
+    public function setAverageCostUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAverageCost($wrappedVar);
-    }
+        $this->writeWrapperValue("average_cost", $var);
+        return $this;}
 
     /**
      * The total cost of all clicks divided by the total number of clicks
@@ -2479,10 +2463,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpc = 9;</code>
      * @return float|null
      */
-    public function getAverageCpcValue()
+    public function getAverageCpcUnwrapped()
     {
-        $wrapper = $this->getAverageCpc();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_cpc");
     }
 
     /**
@@ -2511,11 +2494,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAverageCpcValue($var)
+    public function setAverageCpcUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAverageCpc($wrappedVar);
-    }
+        $this->writeWrapperValue("average_cpc", $var);
+        return $this;}
 
     /**
      * The average amount that you've been charged for an ad engagement. This
@@ -2540,10 +2522,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpe = 98;</code>
      * @return float|null
      */
-    public function getAverageCpeValue()
+    public function getAverageCpeUnwrapped()
     {
-        $wrapper = $this->getAverageCpe();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_cpe");
     }
 
     /**
@@ -2574,11 +2555,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAverageCpeValue($var)
+    public function setAverageCpeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAverageCpe($wrappedVar);
-    }
+        $this->writeWrapperValue("average_cpe", $var);
+        return $this;}
 
     /**
      * Average cost-per-thousand impressions (CPM).
@@ -2599,10 +2579,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpm = 10;</code>
      * @return float|null
      */
-    public function getAverageCpmValue()
+    public function getAverageCpmUnwrapped()
     {
-        $wrapper = $this->getAverageCpm();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_cpm");
     }
 
     /**
@@ -2629,11 +2608,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAverageCpmValue($var)
+    public function setAverageCpmUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAverageCpm($wrappedVar);
-    }
+        $this->writeWrapperValue("average_cpm", $var);
+        return $this;}
 
     /**
      * The average amount you pay each time someone views your ad.
@@ -2658,10 +2636,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_cpv = 11;</code>
      * @return float|null
      */
-    public function getAverageCpvValue()
+    public function getAverageCpvUnwrapped()
     {
-        $wrapper = $this->getAverageCpv();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_cpv");
     }
 
     /**
@@ -2692,11 +2669,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAverageCpvValue($var)
+    public function setAverageCpvUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAverageCpv($wrappedVar);
-    }
+        $this->writeWrapperValue("average_cpv", $var);
+        return $this;}
 
     /**
      * Average number of times a unique cookie was exposed to your ad
@@ -2719,10 +2695,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_frequency = 12;</code>
      * @return float|null
      */
-    public function getAverageFrequencyValue()
+    public function getAverageFrequencyUnwrapped()
     {
-        $wrapper = $this->getAverageFrequency();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_frequency");
     }
 
     /**
@@ -2751,11 +2726,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAverageFrequencyValue($var)
+    public function setAverageFrequencyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAverageFrequency($wrappedVar);
-    }
+        $this->writeWrapperValue("average_frequency", $var);
+        return $this;}
 
     /**
      * Average number of pages viewed per session.
@@ -2776,10 +2750,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_page_views = 99;</code>
      * @return float|null
      */
-    public function getAveragePageViewsValue()
+    public function getAveragePageViewsUnwrapped()
     {
-        $wrapper = $this->getAveragePageViews();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_page_views");
     }
 
     /**
@@ -2806,11 +2779,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAveragePageViewsValue($var)
+    public function setAveragePageViewsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAveragePageViews($wrappedVar);
-    }
+        $this->writeWrapperValue("average_page_views", $var);
+        return $this;}
 
     /**
      * Your ad's position relative to those of other advertisers.
@@ -2831,10 +2803,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_position = 13;</code>
      * @return float|null
      */
-    public function getAveragePositionValue()
+    public function getAveragePositionUnwrapped()
     {
-        $wrapper = $this->getAveragePosition();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_position");
     }
 
     /**
@@ -2861,11 +2832,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAveragePositionValue($var)
+    public function setAveragePositionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAveragePosition($wrappedVar);
-    }
+        $this->writeWrapperValue("average_position", $var);
+        return $this;}
 
     /**
      * Total duration of all sessions (in seconds) / number of sessions. Imported
@@ -2888,10 +2858,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue average_time_on_site = 84;</code>
      * @return float|null
      */
-    public function getAverageTimeOnSiteValue()
+    public function getAverageTimeOnSiteUnwrapped()
     {
-        $wrapper = $this->getAverageTimeOnSite();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_time_on_site");
     }
 
     /**
@@ -2920,11 +2889,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAverageTimeOnSiteValue($var)
+    public function setAverageTimeOnSiteUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAverageTimeOnSite($wrappedVar);
-    }
+        $this->writeWrapperValue("average_time_on_site", $var);
+        return $this;}
 
     /**
      * An indication of how other advertisers are bidding on similar products.
@@ -2945,10 +2913,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_average_max_cpc = 14;</code>
      * @return float|null
      */
-    public function getBenchmarkAverageMaxCpcValue()
+    public function getBenchmarkAverageMaxCpcUnwrapped()
     {
-        $wrapper = $this->getBenchmarkAverageMaxCpc();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("benchmark_average_max_cpc");
     }
 
     /**
@@ -2975,11 +2942,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBenchmarkAverageMaxCpcValue($var)
+    public function setBenchmarkAverageMaxCpcUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBenchmarkAverageMaxCpc($wrappedVar);
-    }
+        $this->writeWrapperValue("benchmark_average_max_cpc", $var);
+        return $this;}
 
     /**
      * An indication on how other advertisers' Shopping ads for similar products
@@ -3002,10 +2968,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue benchmark_ctr = 77;</code>
      * @return float|null
      */
-    public function getBenchmarkCtrValue()
+    public function getBenchmarkCtrUnwrapped()
     {
-        $wrapper = $this->getBenchmarkCtr();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("benchmark_ctr");
     }
 
     /**
@@ -3034,11 +2999,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBenchmarkCtrValue($var)
+    public function setBenchmarkCtrUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBenchmarkCtr($wrappedVar);
-    }
+        $this->writeWrapperValue("benchmark_ctr", $var);
+        return $this;}
 
     /**
      * Percentage of clicks where the user only visited a single page on your
@@ -3061,10 +3025,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bounce_rate = 15;</code>
      * @return float|null
      */
-    public function getBounceRateValue()
+    public function getBounceRateUnwrapped()
     {
-        $wrapper = $this->getBounceRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bounce_rate");
     }
 
     /**
@@ -3093,11 +3056,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBounceRateValue($var)
+    public function setBounceRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBounceRate($wrappedVar);
-    }
+        $this->writeWrapperValue("bounce_rate", $var);
+        return $this;}
 
     /**
      * The number of clicks.
@@ -3118,10 +3080,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 19;</code>
      * @return int|string|null
      */
-    public function getClicksValue()
+    public function getClicksUnwrapped()
     {
-        $wrapper = $this->getClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("clicks");
     }
 
     /**
@@ -3148,11 +3109,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setClicksValue($var)
+    public function setClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("clicks", $var);
+        return $this;}
 
     /**
      * The number of times your ad or your site's listing in the unpaid
@@ -3177,10 +3137,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value combined_clicks = 115;</code>
      * @return int|string|null
      */
-    public function getCombinedClicksValue()
+    public function getCombinedClicksUnwrapped()
     {
-        $wrapper = $this->getCombinedClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("combined_clicks");
     }
 
     /**
@@ -3211,11 +3170,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCombinedClicksValue($var)
+    public function setCombinedClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCombinedClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("combined_clicks", $var);
+        return $this;}
 
     /**
      * The number of times your ad or your site's listing in the unpaid
@@ -3242,10 +3200,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue combined_clicks_per_query = 116;</code>
      * @return float|null
      */
-    public function getCombinedClicksPerQueryValue()
+    public function getCombinedClicksPerQueryUnwrapped()
     {
-        $wrapper = $this->getCombinedClicksPerQuery();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("combined_clicks_per_query");
     }
 
     /**
@@ -3278,11 +3235,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCombinedClicksPerQueryValue($var)
+    public function setCombinedClicksPerQueryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCombinedClicksPerQuery($wrappedVar);
-    }
+        $this->writeWrapperValue("combined_clicks_per_query", $var);
+        return $this;}
 
     /**
      * The number of searches that returned pages from your site in the unpaid
@@ -3307,10 +3263,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value combined_queries = 117;</code>
      * @return int|string|null
      */
-    public function getCombinedQueriesValue()
+    public function getCombinedQueriesUnwrapped()
     {
-        $wrapper = $this->getCombinedQueries();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("combined_queries");
     }
 
     /**
@@ -3341,11 +3296,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCombinedQueriesValue($var)
+    public function setCombinedQueriesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCombinedQueries($wrappedVar);
-    }
+        $this->writeWrapperValue("combined_queries", $var);
+        return $this;}
 
     /**
      * The estimated percent of times that your ad was eligible to show
@@ -3372,10 +3326,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue content_budget_lost_impression_share = 20;</code>
      * @return float|null
      */
-    public function getContentBudgetLostImpressionShareValue()
+    public function getContentBudgetLostImpressionShareUnwrapped()
     {
-        $wrapper = $this->getContentBudgetLostImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("content_budget_lost_impression_share");
     }
 
     /**
@@ -3408,11 +3361,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setContentBudgetLostImpressionShareValue($var)
+    public function setContentBudgetLostImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setContentBudgetLostImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("content_budget_lost_impression_share", $var);
+        return $this;}
 
     /**
      * The impressions you've received on the Display Network divided
@@ -3439,10 +3391,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue content_impression_share = 21;</code>
      * @return float|null
      */
-    public function getContentImpressionShareValue()
+    public function getContentImpressionShareUnwrapped()
     {
-        $wrapper = $this->getContentImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("content_impression_share");
     }
 
     /**
@@ -3475,11 +3426,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setContentImpressionShareValue($var)
+    public function setContentImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setContentImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("content_impression_share", $var);
+        return $this;}
 
     /**
      * The last date/time a conversion tag for this conversion action successfully
@@ -3508,10 +3458,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_received_request_date_time = 73;</code>
      * @return string|null
      */
-    public function getConversionLastReceivedRequestDateTimeValue()
+    public function getConversionLastReceivedRequestDateTimeUnwrapped()
     {
-        $wrapper = $this->getConversionLastReceivedRequestDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_last_received_request_date_time");
     }
 
     /**
@@ -3546,11 +3495,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionLastReceivedRequestDateTimeValue($var)
+    public function setConversionLastReceivedRequestDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionLastReceivedRequestDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_last_received_request_date_time", $var);
+        return $this;}
 
     /**
      * The date of the most recent conversion for this conversion action. The date
@@ -3573,10 +3521,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_last_conversion_date = 74;</code>
      * @return string|null
      */
-    public function getConversionLastConversionDateValue()
+    public function getConversionLastConversionDateUnwrapped()
     {
-        $wrapper = $this->getConversionLastConversionDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_last_conversion_date");
     }
 
     /**
@@ -3605,11 +3552,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionLastConversionDateValue($var)
+    public function setConversionLastConversionDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionLastConversionDate($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_last_conversion_date", $var);
+        return $this;}
 
     /**
      * The estimated percentage of impressions on the Display Network
@@ -3636,10 +3582,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue content_rank_lost_impression_share = 22;</code>
      * @return float|null
      */
-    public function getContentRankLostImpressionShareValue()
+    public function getContentRankLostImpressionShareUnwrapped()
     {
-        $wrapper = $this->getContentRankLostImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("content_rank_lost_impression_share");
     }
 
     /**
@@ -3672,11 +3617,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setContentRankLostImpressionShareValue($var)
+    public function setContentRankLostImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setContentRankLostImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("content_rank_lost_impression_share", $var);
+        return $this;}
 
     /**
      * Conversions from interactions divided by the number of ad interactions
@@ -3703,10 +3647,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_rate = 69;</code>
      * @return float|null
      */
-    public function getConversionsFromInteractionsRateValue()
+    public function getConversionsFromInteractionsRateUnwrapped()
     {
-        $wrapper = $this->getConversionsFromInteractionsRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversions_from_interactions_rate");
     }
 
     /**
@@ -3739,10 +3682,21 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setConversionsFromInteractionsRateValue($var)
+    public function setConversionsFromInteractionsRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setConversionsFromInteractionsRate($wrappedVar);
+        $this->writeWrapperValue("conversions_from_interactions_rate", $var);
+        return $this;}
+
+    /**
+     * The total value of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getConversionsValue()
+    {
+        return $this->conversions_value;
     }
 
     /**
@@ -3754,10 +3708,25 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
      * @return float|null
      */
-    public function getConversionsValueValue()
+    public function getConversionsValueUnwrapped()
     {
-        $wrapper = $this->getConversionsValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversions_value");
+    }
+
+    /**
+     * The total value of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value = 70;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setConversionsValue($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->conversions_value = $var;
+
+        return $this;
     }
 
     /**
@@ -3770,11 +3739,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setConversionsValueValue($var)
+    public function setConversionsValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setConversionsValue($wrappedVar);
-    }
+        $this->writeWrapperValue("conversions_value", $var);
+        return $this;}
 
     /**
      * The value of conversions divided by the cost of ad interactions. This only
@@ -3799,10 +3767,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_value_per_cost = 71;</code>
      * @return float|null
      */
-    public function getConversionsValuePerCostValue()
+    public function getConversionsValuePerCostUnwrapped()
     {
-        $wrapper = $this->getConversionsValuePerCost();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversions_value_per_cost");
     }
 
     /**
@@ -3833,11 +3800,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setConversionsValuePerCostValue($var)
+    public function setConversionsValuePerCostUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setConversionsValuePerCost($wrappedVar);
-    }
+        $this->writeWrapperValue("conversions_value_per_cost", $var);
+        return $this;}
 
     /**
      * The value of conversions from interactions divided by the number of ad
@@ -3862,10 +3828,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions_from_interactions_value_per_interaction = 72;</code>
      * @return float|null
      */
-    public function getConversionsFromInteractionsValuePerInteractionValue()
+    public function getConversionsFromInteractionsValuePerInteractionUnwrapped()
     {
-        $wrapper = $this->getConversionsFromInteractionsValuePerInteraction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversions_from_interactions_value_per_interaction");
     }
 
     /**
@@ -3896,11 +3861,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setConversionsFromInteractionsValuePerInteractionValue($var)
+    public function setConversionsFromInteractionsValuePerInteractionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setConversionsFromInteractionsValuePerInteraction($wrappedVar);
-    }
+        $this->writeWrapperValue("conversions_from_interactions_value_per_interaction", $var);
+        return $this;}
 
     /**
      * The number of conversions. This only includes conversion actions which
@@ -3923,10 +3887,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 25;</code>
      * @return float|null
      */
-    public function getConversionsValue()
+    public function getConversionsUnwrapped()
     {
-        $wrapper = $this->getConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversions");
     }
 
     /**
@@ -3955,11 +3918,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setConversionsValue($var)
+    public function setConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("conversions", $var);
+        return $this;}
 
     /**
      * The sum of your cost-per-click (CPC) and cost-per-thousand impressions
@@ -3982,10 +3944,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 26;</code>
      * @return int|string|null
      */
-    public function getCostMicrosValue()
+    public function getCostMicrosUnwrapped()
     {
-        $wrapper = $this->getCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_micros");
     }
 
     /**
@@ -4014,11 +3975,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCostMicrosValue($var)
+    public function setCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_micros", $var);
+        return $this;}
 
     /**
      * The cost of ad interactions divided by all conversions.
@@ -4039,10 +3999,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_all_conversions = 68;</code>
      * @return float|null
      */
-    public function getCostPerAllConversionsValue()
+    public function getCostPerAllConversionsUnwrapped()
     {
-        $wrapper = $this->getCostPerAllConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_per_all_conversions");
     }
 
     /**
@@ -4069,11 +4028,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCostPerAllConversionsValue($var)
+    public function setCostPerAllConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCostPerAllConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_per_all_conversions", $var);
+        return $this;}
 
     /**
      * The cost of ad interactions divided by conversions. This only includes
@@ -4098,10 +4056,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_conversion = 28;</code>
      * @return float|null
      */
-    public function getCostPerConversionValue()
+    public function getCostPerConversionUnwrapped()
     {
-        $wrapper = $this->getCostPerConversion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_per_conversion");
     }
 
     /**
@@ -4132,11 +4089,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCostPerConversionValue($var)
+    public function setCostPerConversionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCostPerConversion($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_per_conversion", $var);
+        return $this;}
 
     /**
      * The cost of ad interactions divided by current model attributed
@@ -4161,10 +4117,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cost_per_current_model_attributed_conversion = 106;</code>
      * @return float|null
      */
-    public function getCostPerCurrentModelAttributedConversionValue()
+    public function getCostPerCurrentModelAttributedConversionUnwrapped()
     {
-        $wrapper = $this->getCostPerCurrentModelAttributedConversion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_per_current_model_attributed_conversion");
     }
 
     /**
@@ -4195,11 +4150,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCostPerCurrentModelAttributedConversionValue($var)
+    public function setCostPerCurrentModelAttributedConversionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCostPerCurrentModelAttributedConversion($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_per_current_model_attributed_conversion", $var);
+        return $this;}
 
     /**
      * Conversions from when a customer clicks on a Google Ads ad on one device,
@@ -4224,10 +4178,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue cross_device_conversions = 29;</code>
      * @return float|null
      */
-    public function getCrossDeviceConversionsValue()
+    public function getCrossDeviceConversionsUnwrapped()
     {
-        $wrapper = $this->getCrossDeviceConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cross_device_conversions");
     }
 
     /**
@@ -4258,11 +4211,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCrossDeviceConversionsValue($var)
+    public function setCrossDeviceConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCrossDeviceConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("cross_device_conversions", $var);
+        return $this;}
 
     /**
      * The number of clicks your ad receives (Clicks) divided by the number
@@ -4285,10 +4237,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 30;</code>
      * @return float|null
      */
-    public function getCtrValue()
+    public function getCtrUnwrapped()
     {
-        $wrapper = $this->getCtr();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ctr");
     }
 
     /**
@@ -4317,11 +4268,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCtrValue($var)
+    public function setCtrUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCtr($wrappedVar);
-    }
+        $this->writeWrapperValue("ctr", $var);
+        return $this;}
 
     /**
      * Shows how your historic conversions data would look under the attribution
@@ -4346,10 +4296,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions = 101;</code>
      * @return float|null
      */
-    public function getCurrentModelAttributedConversionsValue()
+    public function getCurrentModelAttributedConversionsUnwrapped()
     {
-        $wrapper = $this->getCurrentModelAttributedConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("current_model_attributed_conversions");
     }
 
     /**
@@ -4380,11 +4329,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCurrentModelAttributedConversionsValue($var)
+    public function setCurrentModelAttributedConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCurrentModelAttributedConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("current_model_attributed_conversions", $var);
+        return $this;}
 
     /**
      * Current model attributed conversions from interactions divided by the
@@ -4411,10 +4359,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_rate = 102;</code>
      * @return float|null
      */
-    public function getCurrentModelAttributedConversionsFromInteractionsRateValue()
+    public function getCurrentModelAttributedConversionsFromInteractionsRateUnwrapped()
     {
-        $wrapper = $this->getCurrentModelAttributedConversionsFromInteractionsRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("current_model_attributed_conversions_from_interactions_rate");
     }
 
     /**
@@ -4447,11 +4394,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCurrentModelAttributedConversionsFromInteractionsRateValue($var)
+    public function setCurrentModelAttributedConversionsFromInteractionsRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCurrentModelAttributedConversionsFromInteractionsRate($wrappedVar);
-    }
+        $this->writeWrapperValue("current_model_attributed_conversions_from_interactions_rate", $var);
+        return $this;}
 
     /**
      * The value of current model attributed conversions from interactions divided
@@ -4476,10 +4422,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_from_interactions_value_per_interaction = 103;</code>
      * @return float|null
      */
-    public function getCurrentModelAttributedConversionsFromInteractionsValuePerInteractionValue()
+    public function getCurrentModelAttributedConversionsFromInteractionsValuePerInteractionUnwrapped()
     {
-        $wrapper = $this->getCurrentModelAttributedConversionsFromInteractionsValuePerInteraction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("current_model_attributed_conversions_from_interactions_value_per_interaction");
     }
 
     /**
@@ -4510,10 +4455,22 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCurrentModelAttributedConversionsFromInteractionsValuePerInteractionValue($var)
+    public function setCurrentModelAttributedConversionsFromInteractionsValuePerInteractionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCurrentModelAttributedConversionsFromInteractionsValuePerInteraction($wrappedVar);
+        $this->writeWrapperValue("current_model_attributed_conversions_from_interactions_value_per_interaction", $var);
+        return $this;}
+
+    /**
+     * The total value of current model attributed conversions. This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getCurrentModelAttributedConversionsValue()
+    {
+        return $this->current_model_attributed_conversions_value;
     }
 
     /**
@@ -4526,12 +4483,28 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
      * @return float|null
      */
-    public function getCurrentModelAttributedConversionsValueValue()
+    public function getCurrentModelAttributedConversionsValueUnwrapped()
     {
-        $wrapper = $this->getCurrentModelAttributedConversionsValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("current_model_attributed_conversions_value");
     }
-    
+
+    /**
+     * The total value of current model attributed conversions. This only includes
+     * conversion actions which include_in_conversions_metric attribute is set to
+     * true.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value = 104;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setCurrentModelAttributedConversionsValue($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->current_model_attributed_conversions_value = $var;
+
+        return $this;
+    }
+
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
@@ -4543,11 +4516,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCurrentModelAttributedConversionsValueValue($var)
+    public function setCurrentModelAttributedConversionsValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCurrentModelAttributedConversionsValue($wrappedVar);
-    }
+        $this->writeWrapperValue("current_model_attributed_conversions_value", $var);
+        return $this;}
 
     /**
      * The value of current model attributed conversions divided by the cost of ad
@@ -4572,10 +4544,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue current_model_attributed_conversions_value_per_cost = 105;</code>
      * @return float|null
      */
-    public function getCurrentModelAttributedConversionsValuePerCostValue()
+    public function getCurrentModelAttributedConversionsValuePerCostUnwrapped()
     {
-        $wrapper = $this->getCurrentModelAttributedConversionsValuePerCost();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("current_model_attributed_conversions_value_per_cost");
     }
 
     /**
@@ -4606,11 +4577,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCurrentModelAttributedConversionsValuePerCostValue($var)
+    public function setCurrentModelAttributedConversionsValuePerCostUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCurrentModelAttributedConversionsValuePerCost($wrappedVar);
-    }
+        $this->writeWrapperValue("current_model_attributed_conversions_value_per_cost", $var);
+        return $this;}
 
     /**
      * How often people engage with your ad after it's shown to them. This is the
@@ -4633,10 +4603,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue engagement_rate = 31;</code>
      * @return float|null
      */
-    public function getEngagementRateValue()
+    public function getEngagementRateUnwrapped()
     {
-        $wrapper = $this->getEngagementRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("engagement_rate");
     }
 
     /**
@@ -4665,11 +4634,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setEngagementRateValue($var)
+    public function setEngagementRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setEngagementRate($wrappedVar);
-    }
+        $this->writeWrapperValue("engagement_rate", $var);
+        return $this;}
 
     /**
      * The number of engagements.
@@ -4694,10 +4662,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value engagements = 32;</code>
      * @return int|string|null
      */
-    public function getEngagementsValue()
+    public function getEngagementsUnwrapped()
     {
-        $wrapper = $this->getEngagements();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("engagements");
     }
 
     /**
@@ -4728,11 +4695,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setEngagementsValue($var)
+    public function setEngagementsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setEngagements($wrappedVar);
-    }
+        $this->writeWrapperValue("engagements", $var);
+        return $this;}
 
     /**
      * Average lead value of hotel.
@@ -4753,10 +4719,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @return float|null
      */
-    public function getHotelAverageLeadValueMicrosValue()
+    public function getHotelAverageLeadValueMicrosUnwrapped()
     {
-        $wrapper = $this->getHotelAverageLeadValueMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_average_lead_value_micros");
     }
 
     /**
@@ -4783,11 +4748,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setHotelAverageLeadValueMicrosValue($var)
+    public function setHotelAverageLeadValueMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setHotelAverageLeadValueMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_average_lead_value_micros", $var);
+        return $this;}
 
     /**
      * The creative historical quality score.
@@ -4860,10 +4824,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value historical_quality_score = 82;</code>
      * @return int|string|null
      */
-    public function getHistoricalQualityScoreValue()
+    public function getHistoricalQualityScoreUnwrapped()
     {
-        $wrapper = $this->getHistoricalQualityScore();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("historical_quality_score");
     }
 
     /**
@@ -4890,11 +4853,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setHistoricalQualityScoreValue($var)
+    public function setHistoricalQualityScoreUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setHistoricalQualityScore($wrappedVar);
-    }
+        $this->writeWrapperValue("historical_quality_score", $var);
+        return $this;}
 
     /**
      * The historical search predicted click through rate (CTR).
@@ -4941,10 +4903,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_forwards = 85;</code>
      * @return int|string|null
      */
-    public function getGmailForwardsValue()
+    public function getGmailForwardsUnwrapped()
     {
-        $wrapper = $this->getGmailForwards();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("gmail_forwards");
     }
 
     /**
@@ -4971,11 +4932,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setGmailForwardsValue($var)
+    public function setGmailForwardsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setGmailForwards($wrappedVar);
-    }
+        $this->writeWrapperValue("gmail_forwards", $var);
+        return $this;}
 
     /**
      * The number of times someone has saved your Gmail ad to their inbox as a
@@ -4998,10 +4958,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_saves = 86;</code>
      * @return int|string|null
      */
-    public function getGmailSavesValue()
+    public function getGmailSavesUnwrapped()
     {
-        $wrapper = $this->getGmailSaves();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("gmail_saves");
     }
 
     /**
@@ -5030,11 +4989,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setGmailSavesValue($var)
+    public function setGmailSavesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setGmailSaves($wrappedVar);
-    }
+        $this->writeWrapperValue("gmail_saves", $var);
+        return $this;}
 
     /**
      * The number of clicks to the landing page on the expanded state of Gmail
@@ -5057,10 +5015,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value gmail_secondary_clicks = 87;</code>
      * @return int|string|null
      */
-    public function getGmailSecondaryClicksValue()
+    public function getGmailSecondaryClicksUnwrapped()
     {
-        $wrapper = $this->getGmailSecondaryClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("gmail_secondary_clicks");
     }
 
     /**
@@ -5089,11 +5046,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setGmailSecondaryClicksValue($var)
+    public function setGmailSecondaryClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setGmailSecondaryClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("gmail_secondary_clicks", $var);
+        return $this;}
 
     /**
      * Number of unique cookies that were exposed to your ad over a given time
@@ -5116,10 +5072,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value impression_reach = 36;</code>
      * @return int|string|null
      */
-    public function getImpressionReachValue()
+    public function getImpressionReachUnwrapped()
     {
-        $wrapper = $this->getImpressionReach();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impression_reach");
     }
 
     /**
@@ -5148,11 +5103,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setImpressionReachValue($var)
+    public function setImpressionReachUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setImpressionReach($wrappedVar);
-    }
+        $this->writeWrapperValue("impression_reach", $var);
+        return $this;}
 
     /**
      * The number of times a store's location-based ad was shown.
@@ -5175,10 +5129,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions_from_store_reach = 125;</code>
      * @return int|string|null
      */
-    public function getImpressionsFromStoreReachValue()
+    public function getImpressionsFromStoreReachUnwrapped()
     {
-        $wrapper = $this->getImpressionsFromStoreReach();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impressions_from_store_reach");
     }
 
     /**
@@ -5207,11 +5160,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setImpressionsFromStoreReachValue($var)
+    public function setImpressionsFromStoreReachUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setImpressionsFromStoreReach($wrappedVar);
-    }
+        $this->writeWrapperValue("impressions_from_store_reach", $var);
+        return $this;}
 
     /**
      * Count of how often your ad has appeared on a search results page or
@@ -5234,10 +5186,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 37;</code>
      * @return int|string|null
      */
-    public function getImpressionsValue()
+    public function getImpressionsUnwrapped()
     {
-        $wrapper = $this->getImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impressions");
     }
 
     /**
@@ -5266,11 +5217,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setImpressionsValue($var)
+    public function setImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("impressions", $var);
+        return $this;}
 
     /**
      * How often people interact with your ad after it is shown to them.
@@ -5295,10 +5245,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue interaction_rate = 38;</code>
      * @return float|null
      */
-    public function getInteractionRateValue()
+    public function getInteractionRateUnwrapped()
     {
-        $wrapper = $this->getInteractionRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("interaction_rate");
     }
 
     /**
@@ -5329,11 +5278,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setInteractionRateValue($var)
+    public function setInteractionRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setInteractionRate($wrappedVar);
-    }
+        $this->writeWrapperValue("interaction_rate", $var);
+        return $this;}
 
     /**
      * The number of interactions.
@@ -5358,10 +5306,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value interactions = 39;</code>
      * @return int|string|null
      */
-    public function getInteractionsValue()
+    public function getInteractionsUnwrapped()
     {
-        $wrapper = $this->getInteractions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("interactions");
     }
 
     /**
@@ -5392,11 +5339,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setInteractionsValue($var)
+    public function setInteractionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setInteractions($wrappedVar);
-    }
+        $this->writeWrapperValue("interactions", $var);
+        return $this;}
 
     /**
      * The types of payable and free interactions.
@@ -5445,10 +5391,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue invalid_click_rate = 40;</code>
      * @return float|null
      */
-    public function getInvalidClickRateValue()
+    public function getInvalidClickRateUnwrapped()
     {
-        $wrapper = $this->getInvalidClickRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("invalid_click_rate");
     }
 
     /**
@@ -5477,11 +5422,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setInvalidClickRateValue($var)
+    public function setInvalidClickRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setInvalidClickRate($wrappedVar);
-    }
+        $this->writeWrapperValue("invalid_click_rate", $var);
+        return $this;}
 
     /**
      * Number of clicks Google considers illegitimate and doesn't charge you for.
@@ -5502,10 +5446,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value invalid_clicks = 41;</code>
      * @return int|string|null
      */
-    public function getInvalidClicksValue()
+    public function getInvalidClicksUnwrapped()
     {
-        $wrapper = $this->getInvalidClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("invalid_clicks");
     }
 
     /**
@@ -5532,11 +5475,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setInvalidClicksValue($var)
+    public function setInvalidClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setInvalidClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("invalid_clicks", $var);
+        return $this;}
 
     /**
      * The percentage of mobile clicks that go to a mobile-friendly page.
@@ -5557,10 +5499,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue mobile_friendly_clicks_percentage = 109;</code>
      * @return float|null
      */
-    public function getMobileFriendlyClicksPercentageValue()
+    public function getMobileFriendlyClicksPercentageUnwrapped()
     {
-        $wrapper = $this->getMobileFriendlyClicksPercentage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("mobile_friendly_clicks_percentage");
     }
 
     /**
@@ -5587,11 +5528,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setMobileFriendlyClicksPercentageValue($var)
+    public function setMobileFriendlyClicksPercentageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setMobileFriendlyClicksPercentage($wrappedVar);
-    }
+        $this->writeWrapperValue("mobile_friendly_clicks_percentage", $var);
+        return $this;}
 
     /**
      * The number of times someone clicked your site's listing in the unpaid
@@ -5616,10 +5556,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value organic_clicks = 110;</code>
      * @return int|string|null
      */
-    public function getOrganicClicksValue()
+    public function getOrganicClicksUnwrapped()
     {
-        $wrapper = $this->getOrganicClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("organic_clicks");
     }
 
     /**
@@ -5650,11 +5589,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setOrganicClicksValue($var)
+    public function setOrganicClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setOrganicClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("organic_clicks", $var);
+        return $this;}
 
     /**
      * The number of times someone clicked your site's listing in the unpaid
@@ -5681,10 +5619,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue organic_clicks_per_query = 111;</code>
      * @return float|null
      */
-    public function getOrganicClicksPerQueryValue()
+    public function getOrganicClicksPerQueryUnwrapped()
     {
-        $wrapper = $this->getOrganicClicksPerQuery();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("organic_clicks_per_query");
     }
 
     /**
@@ -5717,11 +5654,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setOrganicClicksPerQueryValue($var)
+    public function setOrganicClicksPerQueryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setOrganicClicksPerQuery($wrappedVar);
-    }
+        $this->writeWrapperValue("organic_clicks_per_query", $var);
+        return $this;}
 
     /**
      * The number of listings for your site in the unpaid search results. See the
@@ -5746,10 +5682,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value organic_impressions = 112;</code>
      * @return int|string|null
      */
-    public function getOrganicImpressionsValue()
+    public function getOrganicImpressionsUnwrapped()
     {
-        $wrapper = $this->getOrganicImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("organic_impressions");
     }
 
     /**
@@ -5780,11 +5715,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setOrganicImpressionsValue($var)
+    public function setOrganicImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setOrganicImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("organic_impressions", $var);
+        return $this;}
 
     /**
      * The number of times a page from your site was listed in the unpaid search
@@ -5811,10 +5745,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue organic_impressions_per_query = 113;</code>
      * @return float|null
      */
-    public function getOrganicImpressionsPerQueryValue()
+    public function getOrganicImpressionsPerQueryUnwrapped()
     {
-        $wrapper = $this->getOrganicImpressionsPerQuery();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("organic_impressions_per_query");
     }
 
     /**
@@ -5847,11 +5780,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setOrganicImpressionsPerQueryValue($var)
+    public function setOrganicImpressionsPerQueryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setOrganicImpressionsPerQuery($wrappedVar);
-    }
+        $this->writeWrapperValue("organic_impressions_per_query", $var);
+        return $this;}
 
     /**
      * The total number of searches that returned your site's listing in the
@@ -5876,10 +5808,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value organic_queries = 114;</code>
      * @return int|string|null
      */
-    public function getOrganicQueriesValue()
+    public function getOrganicQueriesUnwrapped()
     {
-        $wrapper = $this->getOrganicQueries();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("organic_queries");
     }
 
     /**
@@ -5910,11 +5841,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setOrganicQueriesValue($var)
+    public function setOrganicQueriesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setOrganicQueries($wrappedVar);
-    }
+        $this->writeWrapperValue("organic_queries", $var);
+        return $this;}
 
     /**
      * Percentage of first-time sessions (from people who had never visited your
@@ -5937,10 +5867,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue percent_new_visitors = 42;</code>
      * @return float|null
      */
-    public function getPercentNewVisitorsValue()
+    public function getPercentNewVisitorsUnwrapped()
     {
-        $wrapper = $this->getPercentNewVisitors();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("percent_new_visitors");
     }
 
     /**
@@ -5969,11 +5898,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setPercentNewVisitorsValue($var)
+    public function setPercentNewVisitorsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setPercentNewVisitors($wrappedVar);
-    }
+        $this->writeWrapperValue("percent_new_visitors", $var);
+        return $this;}
 
     /**
      * Number of offline phone calls.
@@ -5994,10 +5922,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value phone_calls = 43;</code>
      * @return int|string|null
      */
-    public function getPhoneCallsValue()
+    public function getPhoneCallsUnwrapped()
     {
-        $wrapper = $this->getPhoneCalls();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("phone_calls");
     }
 
     /**
@@ -6024,11 +5951,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setPhoneCallsValue($var)
+    public function setPhoneCallsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPhoneCalls($wrappedVar);
-    }
+        $this->writeWrapperValue("phone_calls", $var);
+        return $this;}
 
     /**
      * Number of offline phone impressions.
@@ -6049,10 +5975,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value phone_impressions = 44;</code>
      * @return int|string|null
      */
-    public function getPhoneImpressionsValue()
+    public function getPhoneImpressionsUnwrapped()
     {
-        $wrapper = $this->getPhoneImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("phone_impressions");
     }
 
     /**
@@ -6079,11 +6004,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setPhoneImpressionsValue($var)
+    public function setPhoneImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPhoneImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("phone_impressions", $var);
+        return $this;}
 
     /**
      * Number of phone calls received (phone_calls) divided by the number of
@@ -6106,10 +6030,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue phone_through_rate = 45;</code>
      * @return float|null
      */
-    public function getPhoneThroughRateValue()
+    public function getPhoneThroughRateUnwrapped()
     {
-        $wrapper = $this->getPhoneThroughRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("phone_through_rate");
     }
 
     /**
@@ -6138,11 +6061,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setPhoneThroughRateValue($var)
+    public function setPhoneThroughRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setPhoneThroughRate($wrappedVar);
-    }
+        $this->writeWrapperValue("phone_through_rate", $var);
+        return $this;}
 
     /**
      * Your clickthrough rate (Ctr) divided by the average clickthrough rate of
@@ -6167,10 +6089,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue relative_ctr = 46;</code>
      * @return float|null
      */
-    public function getRelativeCtrValue()
+    public function getRelativeCtrUnwrapped()
     {
-        $wrapper = $this->getRelativeCtr();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("relative_ctr");
     }
 
     /**
@@ -6201,17 +6122,16 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setRelativeCtrValue($var)
+    public function setRelativeCtrUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setRelativeCtr($wrappedVar);
-    }
+        $this->writeWrapperValue("relative_ctr", $var);
+        return $this;}
 
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
-     * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -6226,23 +6146,22 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
-     * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
      * @return float|null
      */
-    public function getSearchAbsoluteTopImpressionShareValue()
+    public function getSearchAbsoluteTopImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchAbsoluteTopImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_absolute_top_impression_share");
     }
 
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
-     * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -6261,18 +6180,17 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * <a href="https://support.google.com/adwords/answer/7501826">this Merchant
-     * Center article</a> for details. Any value below 0.1 is reported as 0.0999.
+     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
      * @param float|null $var
      * @return $this
      */
-    public function setSearchAbsoluteTopImpressionShareValue($var)
+    public function setSearchAbsoluteTopImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchAbsoluteTopImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_absolute_top_impression_share", $var);
+        return $this;}
 
     /**
      * The number estimating how often your ad wasn't the very first ad above the
@@ -6299,10 +6217,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_absolute_top_impression_share = 88;</code>
      * @return float|null
      */
-    public function getSearchBudgetLostAbsoluteTopImpressionShareValue()
+    public function getSearchBudgetLostAbsoluteTopImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchBudgetLostAbsoluteTopImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_budget_lost_absolute_top_impression_share");
     }
 
     /**
@@ -6335,11 +6252,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchBudgetLostAbsoluteTopImpressionShareValue($var)
+    public function setSearchBudgetLostAbsoluteTopImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchBudgetLostAbsoluteTopImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_budget_lost_absolute_top_impression_share", $var);
+        return $this;}
 
     /**
      * The estimated percent of times that your ad was eligible to show on the
@@ -6366,10 +6282,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_impression_share = 47;</code>
      * @return float|null
      */
-    public function getSearchBudgetLostImpressionShareValue()
+    public function getSearchBudgetLostImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchBudgetLostImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_budget_lost_impression_share");
     }
 
     /**
@@ -6402,11 +6317,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchBudgetLostImpressionShareValue($var)
+    public function setSearchBudgetLostImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchBudgetLostImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_budget_lost_impression_share", $var);
+        return $this;}
 
     /**
      * The number estimating how often your ad didn't show anywhere above the
@@ -6433,10 +6347,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_budget_lost_top_impression_share = 89;</code>
      * @return float|null
      */
-    public function getSearchBudgetLostTopImpressionShareValue()
+    public function getSearchBudgetLostTopImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchBudgetLostTopImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_budget_lost_top_impression_share");
     }
 
     /**
@@ -6469,11 +6382,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchBudgetLostTopImpressionShareValue($var)
+    public function setSearchBudgetLostTopImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchBudgetLostTopImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_budget_lost_top_impression_share", $var);
+        return $this;}
 
     /**
      * The number of clicks you've received on the Search Network
@@ -6500,10 +6412,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_click_share = 48;</code>
      * @return float|null
      */
-    public function getSearchClickShareValue()
+    public function getSearchClickShareUnwrapped()
     {
-        $wrapper = $this->getSearchClickShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_click_share");
     }
 
     /**
@@ -6536,11 +6447,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchClickShareValue($var)
+    public function setSearchClickShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchClickShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_click_share", $var);
+        return $this;}
 
     /**
      * The impressions you've received divided by the estimated number of
@@ -6571,10 +6481,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_exact_match_impression_share = 49;</code>
      * @return float|null
      */
-    public function getSearchExactMatchImpressionShareValue()
+    public function getSearchExactMatchImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchExactMatchImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_exact_match_impression_share");
     }
 
     /**
@@ -6611,11 +6520,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchExactMatchImpressionShareValue($var)
+    public function setSearchExactMatchImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchExactMatchImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_exact_match_impression_share", $var);
+        return $this;}
 
     /**
      * The impressions you've received on the Search Network divided
@@ -6642,10 +6550,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_impression_share = 50;</code>
      * @return float|null
      */
-    public function getSearchImpressionShareValue()
+    public function getSearchImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_impression_share");
     }
 
     /**
@@ -6678,11 +6585,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchImpressionShareValue($var)
+    public function setSearchImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_impression_share", $var);
+        return $this;}
 
     /**
      * The number estimating how often your ad wasn't the very first ad above the
@@ -6709,10 +6615,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_absolute_top_impression_share = 90;</code>
      * @return float|null
      */
-    public function getSearchRankLostAbsoluteTopImpressionShareValue()
+    public function getSearchRankLostAbsoluteTopImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchRankLostAbsoluteTopImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_rank_lost_absolute_top_impression_share");
     }
 
     /**
@@ -6745,11 +6650,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchRankLostAbsoluteTopImpressionShareValue($var)
+    public function setSearchRankLostAbsoluteTopImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchRankLostAbsoluteTopImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_rank_lost_absolute_top_impression_share", $var);
+        return $this;}
 
     /**
      * The estimated percentage of impressions on the Search Network
@@ -6776,10 +6680,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_impression_share = 51;</code>
      * @return float|null
      */
-    public function getSearchRankLostImpressionShareValue()
+    public function getSearchRankLostImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchRankLostImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_rank_lost_impression_share");
     }
 
     /**
@@ -6812,11 +6715,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchRankLostImpressionShareValue($var)
+    public function setSearchRankLostImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchRankLostImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_rank_lost_impression_share", $var);
+        return $this;}
 
     /**
      * The number estimating how often your ad didn't show anywhere above the
@@ -6843,10 +6745,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_rank_lost_top_impression_share = 91;</code>
      * @return float|null
      */
-    public function getSearchRankLostTopImpressionShareValue()
+    public function getSearchRankLostTopImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchRankLostTopImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_rank_lost_top_impression_share");
     }
 
     /**
@@ -6879,11 +6780,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchRankLostTopImpressionShareValue($var)
+    public function setSearchRankLostTopImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchRankLostTopImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_rank_lost_top_impression_share", $var);
+        return $this;}
 
     /**
      * The impressions you've received in the top location (anywhere above the
@@ -6912,10 +6812,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_top_impression_share = 92;</code>
      * @return float|null
      */
-    public function getSearchTopImpressionShareValue()
+    public function getSearchTopImpressionShareUnwrapped()
     {
-        $wrapper = $this->getSearchTopImpressionShare();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_top_impression_share");
     }
 
     /**
@@ -6950,11 +6849,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setSearchTopImpressionShareValue($var)
+    public function setSearchTopImpressionShareUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setSearchTopImpressionShare($wrappedVar);
-    }
+        $this->writeWrapperValue("search_top_impression_share", $var);
+        return $this;}
 
     /**
      * A measure of how quickly your page loads after clicks on your mobile ads.
@@ -6977,10 +6875,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value speed_score = 107;</code>
      * @return int|string|null
      */
-    public function getSpeedScoreValue()
+    public function getSpeedScoreUnwrapped()
     {
-        $wrapper = $this->getSpeedScore();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("speed_score");
     }
 
     /**
@@ -7009,11 +6906,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setSpeedScoreValue($var)
+    public function setSpeedScoreUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setSpeedScore($wrappedVar);
-    }
+        $this->writeWrapperValue("speed_score", $var);
+        return $this;}
 
     /**
      * The percent of your ad impressions that are shown anywhere above the
@@ -7036,10 +6932,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue top_impression_percentage = 93;</code>
      * @return float|null
      */
-    public function getTopImpressionPercentageValue()
+    public function getTopImpressionPercentageUnwrapped()
     {
-        $wrapper = $this->getTopImpressionPercentage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("top_impression_percentage");
     }
 
     /**
@@ -7068,11 +6963,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setTopImpressionPercentageValue($var)
+    public function setTopImpressionPercentageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setTopImpressionPercentage($wrappedVar);
-    }
+        $this->writeWrapperValue("top_impression_percentage", $var);
+        return $this;}
 
     /**
      * The percentage of ad clicks to Accelerated Mobile Pages (AMP) landing pages
@@ -7095,10 +6989,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue valid_accelerated_mobile_pages_clicks_percentage = 108;</code>
      * @return float|null
      */
-    public function getValidAcceleratedMobilePagesClicksPercentageValue()
+    public function getValidAcceleratedMobilePagesClicksPercentageUnwrapped()
     {
-        $wrapper = $this->getValidAcceleratedMobilePagesClicksPercentage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("valid_accelerated_mobile_pages_clicks_percentage");
     }
 
     /**
@@ -7127,11 +7020,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setValidAcceleratedMobilePagesClicksPercentageValue($var)
+    public function setValidAcceleratedMobilePagesClicksPercentageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setValidAcceleratedMobilePagesClicksPercentage($wrappedVar);
-    }
+        $this->writeWrapperValue("valid_accelerated_mobile_pages_clicks_percentage", $var);
+        return $this;}
 
     /**
      * The value of all conversions divided by the number of all conversions.
@@ -7152,10 +7044,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_all_conversions = 52;</code>
      * @return float|null
      */
-    public function getValuePerAllConversionsValue()
+    public function getValuePerAllConversionsUnwrapped()
     {
-        $wrapper = $this->getValuePerAllConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value_per_all_conversions");
     }
 
     /**
@@ -7182,11 +7073,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setValuePerAllConversionsValue($var)
+    public function setValuePerAllConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setValuePerAllConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("value_per_all_conversions", $var);
+        return $this;}
 
     /**
      * The value of conversions divided by the number of conversions. This only
@@ -7211,10 +7101,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_conversion = 53;</code>
      * @return float|null
      */
-    public function getValuePerConversionValue()
+    public function getValuePerConversionUnwrapped()
     {
-        $wrapper = $this->getValuePerConversion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value_per_conversion");
     }
 
     /**
@@ -7245,11 +7134,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setValuePerConversionValue($var)
+    public function setValuePerConversionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setValuePerConversion($wrappedVar);
-    }
+        $this->writeWrapperValue("value_per_conversion", $var);
+        return $this;}
 
     /**
      * The value of current model attributed conversions divided by the number of
@@ -7274,10 +7162,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value_per_current_model_attributed_conversion = 94;</code>
      * @return float|null
      */
-    public function getValuePerCurrentModelAttributedConversionValue()
+    public function getValuePerCurrentModelAttributedConversionUnwrapped()
     {
-        $wrapper = $this->getValuePerCurrentModelAttributedConversion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value_per_current_model_attributed_conversion");
     }
 
     /**
@@ -7308,11 +7195,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setValuePerCurrentModelAttributedConversionValue($var)
+    public function setValuePerCurrentModelAttributedConversionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setValuePerCurrentModelAttributedConversion($wrappedVar);
-    }
+        $this->writeWrapperValue("value_per_current_model_attributed_conversion", $var);
+        return $this;}
 
     /**
      * Percentage of impressions where the viewer watched all of your video.
@@ -7333,10 +7219,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_100_rate = 54;</code>
      * @return float|null
      */
-    public function getVideoQuartile100RateValue()
+    public function getVideoQuartile100RateUnwrapped()
     {
-        $wrapper = $this->getVideoQuartile100Rate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_quartile_100_rate");
     }
 
     /**
@@ -7363,11 +7248,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setVideoQuartile100RateValue($var)
+    public function setVideoQuartile100RateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setVideoQuartile100Rate($wrappedVar);
-    }
+        $this->writeWrapperValue("video_quartile_100_rate", $var);
+        return $this;}
 
     /**
      * Percentage of impressions where the viewer watched 25% of your video.
@@ -7388,10 +7272,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_25_rate = 55;</code>
      * @return float|null
      */
-    public function getVideoQuartile25RateValue()
+    public function getVideoQuartile25RateUnwrapped()
     {
-        $wrapper = $this->getVideoQuartile25Rate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_quartile_25_rate");
     }
 
     /**
@@ -7418,11 +7301,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setVideoQuartile25RateValue($var)
+    public function setVideoQuartile25RateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setVideoQuartile25Rate($wrappedVar);
-    }
+        $this->writeWrapperValue("video_quartile_25_rate", $var);
+        return $this;}
 
     /**
      * Percentage of impressions where the viewer watched 50% of your video.
@@ -7443,10 +7325,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_50_rate = 56;</code>
      * @return float|null
      */
-    public function getVideoQuartile50RateValue()
+    public function getVideoQuartile50RateUnwrapped()
     {
-        $wrapper = $this->getVideoQuartile50Rate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_quartile_50_rate");
     }
 
     /**
@@ -7473,11 +7354,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setVideoQuartile50RateValue($var)
+    public function setVideoQuartile50RateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setVideoQuartile50Rate($wrappedVar);
-    }
+        $this->writeWrapperValue("video_quartile_50_rate", $var);
+        return $this;}
 
     /**
      * Percentage of impressions where the viewer watched 75% of your video.
@@ -7498,10 +7378,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_quartile_75_rate = 57;</code>
      * @return float|null
      */
-    public function getVideoQuartile75RateValue()
+    public function getVideoQuartile75RateUnwrapped()
     {
-        $wrapper = $this->getVideoQuartile75Rate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_quartile_75_rate");
     }
 
     /**
@@ -7528,11 +7407,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setVideoQuartile75RateValue($var)
+    public function setVideoQuartile75RateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setVideoQuartile75Rate($wrappedVar);
-    }
+        $this->writeWrapperValue("video_quartile_75_rate", $var);
+        return $this;}
 
     /**
      * The number of views your TrueView video ad receives divided by its number
@@ -7557,10 +7435,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_view_rate = 58;</code>
      * @return float|null
      */
-    public function getVideoViewRateValue()
+    public function getVideoViewRateUnwrapped()
     {
-        $wrapper = $this->getVideoViewRate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_view_rate");
     }
 
     /**
@@ -7591,11 +7468,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setVideoViewRateValue($var)
+    public function setVideoViewRateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setVideoViewRate($wrappedVar);
-    }
+        $this->writeWrapperValue("video_view_rate", $var);
+        return $this;}
 
     /**
      * The number of times your video ads were viewed.
@@ -7616,10 +7492,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value video_views = 59;</code>
      * @return int|string|null
      */
-    public function getVideoViewsValue()
+    public function getVideoViewsUnwrapped()
     {
-        $wrapper = $this->getVideoViews();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_views");
     }
 
     /**
@@ -7646,11 +7521,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setVideoViewsValue($var)
+    public function setVideoViewsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setVideoViews($wrappedVar);
-    }
+        $this->writeWrapperValue("video_views", $var);
+        return $this;}
 
     /**
      * The total number of view-through conversions.
@@ -7677,10 +7551,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value view_through_conversions = 60;</code>
      * @return int|string|null
      */
-    public function getViewThroughConversionsValue()
+    public function getViewThroughConversionsUnwrapped()
     {
-        $wrapper = $this->getViewThroughConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("view_through_conversions");
     }
 
     /**
@@ -7713,11 +7586,10 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setViewThroughConversionsValue($var)
+    public function setViewThroughConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setViewThroughConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("view_through_conversions", $var);
+        return $this;}
 
 }
 

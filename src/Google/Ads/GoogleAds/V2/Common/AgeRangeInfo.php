@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.AgeRangeInfo</code>
  */
-final class AgeRangeInfo extends \Google\Protobuf\Internal\Message
+class AgeRangeInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the age range.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AgeRangeTypeEnum.AgeRangeType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

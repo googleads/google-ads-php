@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Campaign.GeoTargetTypeSetting</code>
  */
-final class GeoTargetTypeSetting extends \Google\Protobuf\Internal\Message
+class GeoTargetTypeSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * The setting used for positive geotargeting in this particular campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PositiveGeoTargetTypeEnum.PositiveGeoTargetType positive_geo_target_type = 1;</code>
      */
-    private $positive_geo_target_type = 0;
+    protected $positive_geo_target_type = 0;
     /**
      * The setting used for negative geotargeting in this particular campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.NegativeGeoTargetTypeEnum.NegativeGeoTargetType negative_geo_target_type = 2;</code>
      */
-    private $negative_geo_target_type = 0;
+    protected $negative_geo_target_type = 0;
 
     /**
      * Constructor.

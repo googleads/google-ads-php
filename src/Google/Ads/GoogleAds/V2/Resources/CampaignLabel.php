@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CampaignLabel</code>
  */
-final class CampaignLabel extends \Google\Protobuf\Internal\Message
+class CampaignLabel extends \Google\Protobuf\Internal\Message
 {
     /**
      * Name of the resource.
@@ -22,19 +22,19 @@ final class CampaignLabel extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The campaign to which the label is attached.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The label assigned to the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
      */
-    private $label = null;
+    protected $label = null;
 
     /**
      * Constructor.
@@ -108,8 +108,7 @@ final class CampaignLabel extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -138,9 +137,8 @@ final class CampaignLabel extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The label assigned to the campaign.
@@ -163,8 +161,7 @@ final class CampaignLabel extends \Google\Protobuf\Internal\Message
      */
     public function getLabelUnwrapped()
     {
-        $wrapper = $this->getLabel();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("label");
     }
 
     /**
@@ -193,9 +190,8 @@ final class CampaignLabel extends \Google\Protobuf\Internal\Message
      */
     public function setLabelUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLabel($wrappedVar);
-    }
+        $this->writeWrapperValue("label", $var);
+        return $this;}
 
 }
 

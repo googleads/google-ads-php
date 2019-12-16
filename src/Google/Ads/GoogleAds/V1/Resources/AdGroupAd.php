@@ -22,37 +22,37 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The status of the ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdGroupAdStatusEnum.AdGroupAdStatus status = 3;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The ad group to which the ad belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * The ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Ad ad = 5;</code>
      */
-    private $ad = null;
+    protected $ad = null;
     /**
      * Policy information for the ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.AdGroupAdPolicySummary policy_summary = 6;</code>
      */
-    private $policy_summary = null;
+    protected $policy_summary = null;
     /**
      * Overall ad strength for this ad group ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdStrengthEnum.AdStrength ad_strength = 7;</code>
      */
-    private $ad_strength = 0;
+    protected $ad_strength = 0;
 
     /**
      * Constructor.
@@ -156,10 +156,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
      * @return string|null
      */
-    public function getAdGroupValue()
+    public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -186,11 +185,10 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupValue($var)
+    public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * The ad.

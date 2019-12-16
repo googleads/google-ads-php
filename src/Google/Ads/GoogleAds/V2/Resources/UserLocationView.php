@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.UserLocationView</code>
  */
-final class UserLocationView extends \Google\Protobuf\Internal\Message
+class UserLocationView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the user location view.
@@ -26,19 +26,19 @@ final class UserLocationView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Criterion Id for the country.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2;</code>
      */
-    private $country_criterion_id = null;
+    protected $country_criterion_id = null;
     /**
      * Indicates whether location was targeted or not.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3;</code>
      */
-    private $targeting_location = null;
+    protected $targeting_location = null;
 
     /**
      * Constructor.
@@ -112,8 +112,7 @@ final class UserLocationView extends \Google\Protobuf\Internal\Message
      */
     public function getCountryCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCountryCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_criterion_id");
     }
 
     /**
@@ -142,9 +141,8 @@ final class UserLocationView extends \Google\Protobuf\Internal\Message
      */
     public function setCountryCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCountryCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("country_criterion_id", $var);
+        return $this;}
 
     /**
      * Indicates whether location was targeted or not.
@@ -167,8 +165,7 @@ final class UserLocationView extends \Google\Protobuf\Internal\Message
      */
     public function getTargetingLocationUnwrapped()
     {
-        $wrapper = $this->getTargetingLocation();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("targeting_location");
     }
 
     /**
@@ -197,9 +194,8 @@ final class UserLocationView extends \Google\Protobuf\Internal\Message
      */
     public function setTargetingLocationUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTargetingLocation($wrappedVar);
-    }
+        $this->writeWrapperValue("targeting_location", $var);
+        return $this;}
 
 }
 

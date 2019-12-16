@@ -20,7 +20,7 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 1;</code>
      */
-    private $channel_id = null;
+    protected $channel_id = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 1;</code>
      * @return string|null
      */
-    public function getChannelIdValue()
+    public function getChannelIdUnwrapped()
     {
-        $wrapper = $this->getChannelId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("channel_id");
     }
 
     /**
@@ -86,11 +85,10 @@ class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setChannelIdValue($var)
+    public function setChannelIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setChannelId($wrappedVar);
-    }
+        $this->writeWrapperValue("channel_id", $var);
+        return $this;}
 
 }
 

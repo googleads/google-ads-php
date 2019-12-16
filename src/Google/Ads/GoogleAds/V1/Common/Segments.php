@@ -20,31 +20,31 @@ class Segments extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdNetworkTypeEnum.AdNetworkType ad_network_type = 3;</code>
      */
-    private $ad_network_type = 0;
+    protected $ad_network_type = 0;
     /**
      * Click type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ClickTypeEnum.ClickType click_type = 26;</code>
      */
-    private $click_type = 0;
+    protected $click_type = 0;
     /**
      * Resource name of the conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 52;</code>
      */
-    private $conversion_action = null;
+    protected $conversion_action = null;
     /**
      * Conversion action category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ConversionActionCategoryEnum.ConversionActionCategory conversion_action_category = 53;</code>
      */
-    private $conversion_action_category = 0;
+    protected $conversion_action_category = 0;
     /**
      * Conversion action name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action_name = 54;</code>
      */
-    private $conversion_action_name = null;
+    protected $conversion_action_name = null;
     /**
      * This segments your conversion columns by the original conversion and
      * conversion value vs. the delta if conversions were adjusted. False row has
@@ -54,191 +54,191 @@ class Segments extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue conversion_adjustment = 27;</code>
      */
-    private $conversion_adjustment = null;
+    protected $conversion_adjustment = null;
     /**
      * Conversion attribution event type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ConversionAttributionEventTypeEnum.ConversionAttributionEventType conversion_attribution_event_type = 2;</code>
      */
-    private $conversion_attribution_event_type = 0;
+    protected $conversion_attribution_event_type = 0;
     /**
      * An enum value representing the number of days between the impression and
      * the conversion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ConversionLagBucketEnum.ConversionLagBucket conversion_lag_bucket = 50;</code>
      */
-    private $conversion_lag_bucket = 0;
+    protected $conversion_lag_bucket = 0;
     /**
      * An enum value representing the number of days between the impression and
      * the conversion or between the impression and adjustments to the conversion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ConversionOrAdjustmentLagBucketEnum.ConversionOrAdjustmentLagBucket conversion_or_adjustment_lag_bucket = 51;</code>
      */
-    private $conversion_or_adjustment_lag_bucket = 0;
+    protected $conversion_or_adjustment_lag_bucket = 0;
     /**
      * Date to which metrics apply.
      * yyyy-MM-dd format, e.g., 2018-04-17.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue date = 4;</code>
      */
-    private $date = null;
+    protected $date = null;
     /**
      * Day of the week, e.g., MONDAY.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.DayOfWeekEnum.DayOfWeek day_of_week = 5;</code>
      */
-    private $day_of_week = 0;
+    protected $day_of_week = 0;
     /**
      * Device to which metrics apply.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.DeviceEnum.Device device = 1;</code>
      */
-    private $device = 0;
+    protected $device = 0;
     /**
      * External conversion source.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ExternalConversionSourceEnum.ExternalConversionSource external_conversion_source = 55;</code>
      */
-    private $external_conversion_source = 0;
+    protected $external_conversion_source = 0;
     /**
      * Resource name of the geo target constant that represents an airport.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_airport = 65;</code>
      */
-    private $geo_target_airport = null;
+    protected $geo_target_airport = null;
     /**
      * Resource name of the geo target constant that represents a city.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_city = 62;</code>
      */
-    private $geo_target_city = null;
+    protected $geo_target_city = null;
     /**
      * Resource name of the geo target constant that represents a county.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_county = 68;</code>
      */
-    private $geo_target_county = null;
+    protected $geo_target_county = null;
     /**
      * Resource name of the geo target constant that represents a district.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_district = 69;</code>
      */
-    private $geo_target_district = null;
+    protected $geo_target_district = null;
     /**
      * Resource name of the geo target constant that represents a metro.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_metro = 63;</code>
      */
-    private $geo_target_metro = null;
+    protected $geo_target_metro = null;
     /**
      * Resource name of the geo target constant that represents the most
      * specific location.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_most_specific_location = 72;</code>
      */
-    private $geo_target_most_specific_location = null;
+    protected $geo_target_most_specific_location = null;
     /**
      * Resource name of the geo target constant that represents a postal code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_postal_code = 71;</code>
      */
-    private $geo_target_postal_code = null;
+    protected $geo_target_postal_code = null;
     /**
      * Resource name of the geo target constant that represents a province.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_province = 75;</code>
      */
-    private $geo_target_province = null;
+    protected $geo_target_province = null;
     /**
      * Resource name of the geo target constant that represents a region.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_region = 64;</code>
      */
-    private $geo_target_region = null;
+    protected $geo_target_region = null;
     /**
      * Resource name of the geo target constant that represents a state.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_state = 67;</code>
      */
-    private $geo_target_state = null;
+    protected $geo_target_state = null;
     /**
      * Hotel booking window in days.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_booking_window_days = 6;</code>
      */
-    private $hotel_booking_window_days = null;
+    protected $hotel_booking_window_days = null;
     /**
      * Hotel center ID.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 7;</code>
      */
-    private $hotel_center_id = null;
+    protected $hotel_center_id = null;
     /**
      * Hotel check-in date. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_check_in_date = 8;</code>
      */
-    private $hotel_check_in_date = null;
+    protected $hotel_check_in_date = null;
     /**
      * Hotel check-in day of week.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.DayOfWeekEnum.DayOfWeek hotel_check_in_day_of_week = 9;</code>
      */
-    private $hotel_check_in_day_of_week = 0;
+    protected $hotel_check_in_day_of_week = 0;
     /**
      * Hotel city.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_city = 10;</code>
      */
-    private $hotel_city = null;
+    protected $hotel_city = null;
     /**
      * Hotel class.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_class = 11;</code>
      */
-    private $hotel_class = null;
+    protected $hotel_class = null;
     /**
      * Hotel country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_country = 12;</code>
      */
-    private $hotel_country = null;
+    protected $hotel_country = null;
     /**
      * Hotel date selection type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType hotel_date_selection_type = 13;</code>
      */
-    private $hotel_date_selection_type = 0;
+    protected $hotel_date_selection_type = 0;
     /**
      * Hotel length of stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_length_of_stay = 14;</code>
      */
-    private $hotel_length_of_stay = null;
+    protected $hotel_length_of_stay = null;
     /**
      * Hotel rate rule ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_rate_rule_id = 73;</code>
      */
-    private $hotel_rate_rule_id = null;
+    protected $hotel_rate_rule_id = null;
     /**
      * Hotel rate type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.HotelRateTypeEnum.HotelRateType hotel_rate_type = 74;</code>
      */
-    private $hotel_rate_type = 0;
+    protected $hotel_rate_type = 0;
     /**
      * Hotel state.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_state = 15;</code>
      */
-    private $hotel_state = null;
+    protected $hotel_state = null;
     /**
      * Hour of day as a number between 0 and 23, inclusive.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value hour = 16;</code>
      */
-    private $hour = null;
+    protected $hour = null;
     /**
      * Only used with feed item metrics.
      * Indicates whether the interaction metrics occurred on the feed item itself
@@ -246,195 +246,195 @@ class Segments extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue interaction_on_this_extension = 49;</code>
      */
-    private $interaction_on_this_extension = null;
+    protected $interaction_on_this_extension = null;
     /**
      * Keyword criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.Keyword keyword = 61;</code>
      */
-    private $keyword = null;
+    protected $keyword = null;
     /**
      * Month as represented by the date of the first day of a month. Formatted as
      * yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue month = 17;</code>
      */
-    private $month = null;
+    protected $month = null;
     /**
      * Month of the year, e.g., January.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.MonthOfYearEnum.MonthOfYear month_of_year = 18;</code>
      */
-    private $month_of_year = 0;
+    protected $month_of_year = 0;
     /**
      * Partner hotel ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue partner_hotel_id = 19;</code>
      */
-    private $partner_hotel_id = null;
+    protected $partner_hotel_id = null;
     /**
      * Placeholder type. This is only used with feed item metrics.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 20;</code>
      */
-    private $placeholder_type = 0;
+    protected $placeholder_type = 0;
     /**
      * Aggregator ID of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.UInt64Value product_aggregator_id = 28;</code>
      */
-    private $product_aggregator_id = null;
+    protected $product_aggregator_id = null;
     /**
      * Bidding category (level 1) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level1 = 56;</code>
      */
-    private $product_bidding_category_level1 = null;
+    protected $product_bidding_category_level1 = null;
     /**
      * Bidding category (level 2) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level2 = 57;</code>
      */
-    private $product_bidding_category_level2 = null;
+    protected $product_bidding_category_level2 = null;
     /**
      * Bidding category (level 3) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level3 = 58;</code>
      */
-    private $product_bidding_category_level3 = null;
+    protected $product_bidding_category_level3 = null;
     /**
      * Bidding category (level 4) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level4 = 59;</code>
      */
-    private $product_bidding_category_level4 = null;
+    protected $product_bidding_category_level4 = null;
     /**
      * Bidding category (level 5) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level5 = 60;</code>
      */
-    private $product_bidding_category_level5 = null;
+    protected $product_bidding_category_level5 = null;
     /**
      * Brand of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_brand = 29;</code>
      */
-    private $product_brand = null;
+    protected $product_brand = null;
     /**
      * Channel of the product.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductChannelEnum.ProductChannel product_channel = 30;</code>
      */
-    private $product_channel = 0;
+    protected $product_channel = 0;
     /**
      * Channel exclusivity of the product.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity product_channel_exclusivity = 31;</code>
      */
-    private $product_channel_exclusivity = 0;
+    protected $product_channel_exclusivity = 0;
     /**
      * Condition of the product.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductConditionEnum.ProductCondition product_condition = 32;</code>
      */
-    private $product_condition = 0;
+    protected $product_condition = 0;
     /**
      * Resource name of the geo target constant for the country of sale of the
      * product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_country = 33;</code>
      */
-    private $product_country = null;
+    protected $product_country = null;
     /**
      * Custom attribute 0 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute0 = 34;</code>
      */
-    private $product_custom_attribute0 = null;
+    protected $product_custom_attribute0 = null;
     /**
      * Custom attribute 1 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute1 = 35;</code>
      */
-    private $product_custom_attribute1 = null;
+    protected $product_custom_attribute1 = null;
     /**
      * Custom attribute 2 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute2 = 36;</code>
      */
-    private $product_custom_attribute2 = null;
+    protected $product_custom_attribute2 = null;
     /**
      * Custom attribute 3 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute3 = 37;</code>
      */
-    private $product_custom_attribute3 = null;
+    protected $product_custom_attribute3 = null;
     /**
      * Custom attribute 4 of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute4 = 38;</code>
      */
-    private $product_custom_attribute4 = null;
+    protected $product_custom_attribute4 = null;
     /**
      * Item ID of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_item_id = 39;</code>
      */
-    private $product_item_id = null;
+    protected $product_item_id = null;
     /**
      * Resource name of the language constant for the language of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_language = 40;</code>
      */
-    private $product_language = null;
+    protected $product_language = null;
     /**
      * Merchant ID of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.UInt64Value product_merchant_id = 41;</code>
      */
-    private $product_merchant_id = null;
+    protected $product_merchant_id = null;
     /**
      * Store ID of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_store_id = 42;</code>
      */
-    private $product_store_id = null;
+    protected $product_store_id = null;
     /**
      * Title of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_title = 43;</code>
      */
-    private $product_title = null;
+    protected $product_title = null;
     /**
      * Type (level 1) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l1 = 44;</code>
      */
-    private $product_type_l1 = null;
+    protected $product_type_l1 = null;
     /**
      * Type (level 2) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l2 = 45;</code>
      */
-    private $product_type_l2 = null;
+    protected $product_type_l2 = null;
     /**
      * Type (level 3) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l3 = 46;</code>
      */
-    private $product_type_l3 = null;
+    protected $product_type_l3 = null;
     /**
      * Type (level 4) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l4 = 47;</code>
      */
-    private $product_type_l4 = null;
+    protected $product_type_l4 = null;
     /**
      * Type (level 5) of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l5 = 48;</code>
      */
-    private $product_type_l5 = null;
+    protected $product_type_l5 = null;
     /**
      * Quarter as represented by the date of the first day of a quarter.
      * Uses the calendar year for quarters, e.g., the second quarter of 2018
@@ -442,44 +442,44 @@ class Segments extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 21;</code>
      */
-    private $quarter = null;
+    protected $quarter = null;
     /**
      * Type of the search engine results page.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SearchEngineResultsPageTypeEnum.SearchEngineResultsPageType search_engine_results_page_type = 70;</code>
      */
-    private $search_engine_results_page_type = 0;
+    protected $search_engine_results_page_type = 0;
     /**
      * Match type of the keyword that triggered the ad, including variants.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SearchTermMatchTypeEnum.SearchTermMatchType search_term_match_type = 22;</code>
      */
-    private $search_term_match_type = 0;
+    protected $search_term_match_type = 0;
     /**
      * Position of the ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SlotEnum.Slot slot = 23;</code>
      */
-    private $slot = 0;
+    protected $slot = 0;
     /**
      * Resource name of the ad group criterion that represents webpage criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue webpage = 66;</code>
      */
-    private $webpage = null;
+    protected $webpage = null;
     /**
      * Week as defined as Monday through Sunday, and represented by the date of
      * Monday. Formatted as yyyy-MM-dd.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue week = 24;</code>
      */
-    private $week = null;
+    protected $week = null;
     /**
      * Year, formatted as yyyy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value year = 25;</code>
      */
-    private $year = null;
+    protected $year = null;
 
     /**
      * Constructor.
@@ -730,10 +730,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 52;</code>
      * @return string|null
      */
-    public function getConversionActionValue()
+    public function getConversionActionUnwrapped()
     {
-        $wrapper = $this->getConversionAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_action");
     }
 
     /**
@@ -760,11 +759,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionActionValue($var)
+    public function setConversionActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionAction($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_action", $var);
+        return $this;}
 
     /**
      * Conversion action category.
@@ -811,10 +809,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action_name = 54;</code>
      * @return string|null
      */
-    public function getConversionActionNameValue()
+    public function getConversionActionNameUnwrapped()
     {
-        $wrapper = $this->getConversionActionName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_action_name");
     }
 
     /**
@@ -841,11 +838,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionActionNameValue($var)
+    public function setConversionActionNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionActionName($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_action_name", $var);
+        return $this;}
 
     /**
      * This segments your conversion columns by the original conversion and
@@ -874,10 +870,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue conversion_adjustment = 27;</code>
      * @return bool|null
      */
-    public function getConversionAdjustmentValue()
+    public function getConversionAdjustmentUnwrapped()
     {
-        $wrapper = $this->getConversionAdjustment();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_adjustment");
     }
 
     /**
@@ -912,11 +907,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setConversionAdjustmentValue($var)
+    public function setConversionAdjustmentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setConversionAdjustment($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_adjustment", $var);
+        return $this;}
 
     /**
      * Conversion attribution event type.
@@ -1021,10 +1015,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue date = 4;</code>
      * @return string|null
      */
-    public function getDateValue()
+    public function getDateUnwrapped()
     {
-        $wrapper = $this->getDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("date");
     }
 
     /**
@@ -1053,11 +1046,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDateValue($var)
+    public function setDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDate($wrappedVar);
-    }
+        $this->writeWrapperValue("date", $var);
+        return $this;}
 
     /**
      * Day of the week, e.g., MONDAY.
@@ -1156,10 +1148,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_airport = 65;</code>
      * @return string|null
      */
-    public function getGeoTargetAirportValue()
+    public function getGeoTargetAirportUnwrapped()
     {
-        $wrapper = $this->getGeoTargetAirport();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_airport");
     }
 
     /**
@@ -1186,11 +1177,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetAirportValue($var)
+    public function setGeoTargetAirportUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetAirport($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_airport", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents a city.
@@ -1211,10 +1201,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_city = 62;</code>
      * @return string|null
      */
-    public function getGeoTargetCityValue()
+    public function getGeoTargetCityUnwrapped()
     {
-        $wrapper = $this->getGeoTargetCity();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_city");
     }
 
     /**
@@ -1241,11 +1230,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetCityValue($var)
+    public function setGeoTargetCityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetCity($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_city", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents a county.
@@ -1266,10 +1254,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_county = 68;</code>
      * @return string|null
      */
-    public function getGeoTargetCountyValue()
+    public function getGeoTargetCountyUnwrapped()
     {
-        $wrapper = $this->getGeoTargetCounty();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_county");
     }
 
     /**
@@ -1296,11 +1283,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetCountyValue($var)
+    public function setGeoTargetCountyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetCounty($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_county", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents a district.
@@ -1321,10 +1307,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_district = 69;</code>
      * @return string|null
      */
-    public function getGeoTargetDistrictValue()
+    public function getGeoTargetDistrictUnwrapped()
     {
-        $wrapper = $this->getGeoTargetDistrict();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_district");
     }
 
     /**
@@ -1351,11 +1336,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetDistrictValue($var)
+    public function setGeoTargetDistrictUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetDistrict($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_district", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents a metro.
@@ -1376,10 +1360,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_metro = 63;</code>
      * @return string|null
      */
-    public function getGeoTargetMetroValue()
+    public function getGeoTargetMetroUnwrapped()
     {
-        $wrapper = $this->getGeoTargetMetro();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_metro");
     }
 
     /**
@@ -1406,11 +1389,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetMetroValue($var)
+    public function setGeoTargetMetroUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetMetro($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_metro", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents the most
@@ -1433,10 +1415,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_most_specific_location = 72;</code>
      * @return string|null
      */
-    public function getGeoTargetMostSpecificLocationValue()
+    public function getGeoTargetMostSpecificLocationUnwrapped()
     {
-        $wrapper = $this->getGeoTargetMostSpecificLocation();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_most_specific_location");
     }
 
     /**
@@ -1465,11 +1446,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetMostSpecificLocationValue($var)
+    public function setGeoTargetMostSpecificLocationUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetMostSpecificLocation($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_most_specific_location", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents a postal code.
@@ -1490,10 +1470,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_postal_code = 71;</code>
      * @return string|null
      */
-    public function getGeoTargetPostalCodeValue()
+    public function getGeoTargetPostalCodeUnwrapped()
     {
-        $wrapper = $this->getGeoTargetPostalCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_postal_code");
     }
 
     /**
@@ -1520,11 +1499,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetPostalCodeValue($var)
+    public function setGeoTargetPostalCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetPostalCode($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_postal_code", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents a province.
@@ -1545,10 +1523,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_province = 75;</code>
      * @return string|null
      */
-    public function getGeoTargetProvinceValue()
+    public function getGeoTargetProvinceUnwrapped()
     {
-        $wrapper = $this->getGeoTargetProvince();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_province");
     }
 
     /**
@@ -1575,11 +1552,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetProvinceValue($var)
+    public function setGeoTargetProvinceUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetProvince($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_province", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents a region.
@@ -1600,10 +1576,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_region = 64;</code>
      * @return string|null
      */
-    public function getGeoTargetRegionValue()
+    public function getGeoTargetRegionUnwrapped()
     {
-        $wrapper = $this->getGeoTargetRegion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_region");
     }
 
     /**
@@ -1630,11 +1605,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetRegionValue($var)
+    public function setGeoTargetRegionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetRegion($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_region", $var);
+        return $this;}
 
     /**
      * Resource name of the geo target constant that represents a state.
@@ -1655,10 +1629,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_state = 67;</code>
      * @return string|null
      */
-    public function getGeoTargetStateValue()
+    public function getGeoTargetStateUnwrapped()
     {
-        $wrapper = $this->getGeoTargetState();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_state");
     }
 
     /**
@@ -1685,11 +1658,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetStateValue($var)
+    public function setGeoTargetStateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetState($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_state", $var);
+        return $this;}
 
     /**
      * Hotel booking window in days.
@@ -1710,10 +1682,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_booking_window_days = 6;</code>
      * @return int|string|null
      */
-    public function getHotelBookingWindowDaysValue()
+    public function getHotelBookingWindowDaysUnwrapped()
     {
-        $wrapper = $this->getHotelBookingWindowDays();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_booking_window_days");
     }
 
     /**
@@ -1740,11 +1711,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setHotelBookingWindowDaysValue($var)
+    public function setHotelBookingWindowDaysUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setHotelBookingWindowDays($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_booking_window_days", $var);
+        return $this;}
 
     /**
      * Hotel center ID.
@@ -1765,10 +1735,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 7;</code>
      * @return int|string|null
      */
-    public function getHotelCenterIdValue()
+    public function getHotelCenterIdUnwrapped()
     {
-        $wrapper = $this->getHotelCenterId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_center_id");
     }
 
     /**
@@ -1795,11 +1764,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setHotelCenterIdValue($var)
+    public function setHotelCenterIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setHotelCenterId($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_center_id", $var);
+        return $this;}
 
     /**
      * Hotel check-in date. Formatted as yyyy-MM-dd.
@@ -1820,10 +1788,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_check_in_date = 8;</code>
      * @return string|null
      */
-    public function getHotelCheckInDateValue()
+    public function getHotelCheckInDateUnwrapped()
     {
-        $wrapper = $this->getHotelCheckInDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_check_in_date");
     }
 
     /**
@@ -1850,11 +1817,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHotelCheckInDateValue($var)
+    public function setHotelCheckInDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHotelCheckInDate($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_check_in_date", $var);
+        return $this;}
 
     /**
      * Hotel check-in day of week.
@@ -1901,10 +1867,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_city = 10;</code>
      * @return string|null
      */
-    public function getHotelCityValue()
+    public function getHotelCityUnwrapped()
     {
-        $wrapper = $this->getHotelCity();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_city");
     }
 
     /**
@@ -1931,11 +1896,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHotelCityValue($var)
+    public function setHotelCityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHotelCity($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_city", $var);
+        return $this;}
 
     /**
      * Hotel class.
@@ -1956,10 +1920,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_class = 11;</code>
      * @return int|null
      */
-    public function getHotelClassValue()
+    public function getHotelClassUnwrapped()
     {
-        $wrapper = $this->getHotelClass();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_class");
     }
 
     /**
@@ -1986,11 +1949,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setHotelClassValue($var)
+    public function setHotelClassUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setHotelClass($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_class", $var);
+        return $this;}
 
     /**
      * Hotel country.
@@ -2011,10 +1973,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_country = 12;</code>
      * @return string|null
      */
-    public function getHotelCountryValue()
+    public function getHotelCountryUnwrapped()
     {
-        $wrapper = $this->getHotelCountry();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_country");
     }
 
     /**
@@ -2041,11 +2002,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHotelCountryValue($var)
+    public function setHotelCountryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHotelCountry($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_country", $var);
+        return $this;}
 
     /**
      * Hotel date selection type.
@@ -2092,10 +2052,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value hotel_length_of_stay = 14;</code>
      * @return int|null
      */
-    public function getHotelLengthOfStayValue()
+    public function getHotelLengthOfStayUnwrapped()
     {
-        $wrapper = $this->getHotelLengthOfStay();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_length_of_stay");
     }
 
     /**
@@ -2122,11 +2081,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setHotelLengthOfStayValue($var)
+    public function setHotelLengthOfStayUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setHotelLengthOfStay($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_length_of_stay", $var);
+        return $this;}
 
     /**
      * Hotel rate rule ID.
@@ -2147,10 +2105,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_rate_rule_id = 73;</code>
      * @return string|null
      */
-    public function getHotelRateRuleIdValue()
+    public function getHotelRateRuleIdUnwrapped()
     {
-        $wrapper = $this->getHotelRateRuleId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_rate_rule_id");
     }
 
     /**
@@ -2177,11 +2134,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHotelRateRuleIdValue($var)
+    public function setHotelRateRuleIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHotelRateRuleId($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_rate_rule_id", $var);
+        return $this;}
 
     /**
      * Hotel rate type.
@@ -2228,10 +2184,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue hotel_state = 15;</code>
      * @return string|null
      */
-    public function getHotelStateValue()
+    public function getHotelStateUnwrapped()
     {
-        $wrapper = $this->getHotelState();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hotel_state");
     }
 
     /**
@@ -2258,11 +2213,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHotelStateValue($var)
+    public function setHotelStateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHotelState($wrappedVar);
-    }
+        $this->writeWrapperValue("hotel_state", $var);
+        return $this;}
 
     /**
      * Hour of day as a number between 0 and 23, inclusive.
@@ -2283,10 +2237,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value hour = 16;</code>
      * @return int|null
      */
-    public function getHourValue()
+    public function getHourUnwrapped()
     {
-        $wrapper = $this->getHour();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hour");
     }
 
     /**
@@ -2313,11 +2266,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setHourValue($var)
+    public function setHourUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setHour($wrappedVar);
-    }
+        $this->writeWrapperValue("hour", $var);
+        return $this;}
 
     /**
      * Only used with feed item metrics.
@@ -2342,10 +2294,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue interaction_on_this_extension = 49;</code>
      * @return bool|null
      */
-    public function getInteractionOnThisExtensionValue()
+    public function getInteractionOnThisExtensionUnwrapped()
     {
-        $wrapper = $this->getInteractionOnThisExtension();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("interaction_on_this_extension");
     }
 
     /**
@@ -2376,11 +2327,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setInteractionOnThisExtensionValue($var)
+    public function setInteractionOnThisExtensionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setInteractionOnThisExtension($wrappedVar);
-    }
+        $this->writeWrapperValue("interaction_on_this_extension", $var);
+        return $this;}
 
     /**
      * Keyword criterion.
@@ -2429,10 +2379,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue month = 17;</code>
      * @return string|null
      */
-    public function getMonthValue()
+    public function getMonthUnwrapped()
     {
-        $wrapper = $this->getMonth();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("month");
     }
 
     /**
@@ -2461,11 +2410,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setMonthValue($var)
+    public function setMonthUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMonth($wrappedVar);
-    }
+        $this->writeWrapperValue("month", $var);
+        return $this;}
 
     /**
      * Month of the year, e.g., January.
@@ -2512,10 +2460,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue partner_hotel_id = 19;</code>
      * @return string|null
      */
-    public function getPartnerHotelIdValue()
+    public function getPartnerHotelIdUnwrapped()
     {
-        $wrapper = $this->getPartnerHotelId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("partner_hotel_id");
     }
 
     /**
@@ -2542,11 +2489,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPartnerHotelIdValue($var)
+    public function setPartnerHotelIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPartnerHotelId($wrappedVar);
-    }
+        $this->writeWrapperValue("partner_hotel_id", $var);
+        return $this;}
 
     /**
      * Placeholder type. This is only used with feed item metrics.
@@ -2593,10 +2539,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.UInt64Value product_aggregator_id = 28;</code>
      * @return int|string|null
      */
-    public function getProductAggregatorIdValue()
+    public function getProductAggregatorIdUnwrapped()
     {
-        $wrapper = $this->getProductAggregatorId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_aggregator_id");
     }
 
     /**
@@ -2623,11 +2568,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setProductAggregatorIdValue($var)
+    public function setProductAggregatorIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\UInt64Value(['value' => $var]);
-        return $this->setProductAggregatorId($wrappedVar);
-    }
+        $this->writeWrapperValue("product_aggregator_id", $var);
+        return $this;}
 
     /**
      * Bidding category (level 1) of the product.
@@ -2648,10 +2592,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level1 = 56;</code>
      * @return string|null
      */
-    public function getProductBiddingCategoryLevel1Value()
+    public function getProductBiddingCategoryLevel1Unwrapped()
     {
-        $wrapper = $this->getProductBiddingCategoryLevel1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_bidding_category_level1");
     }
 
     /**
@@ -2678,11 +2621,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductBiddingCategoryLevel1Value($var)
+    public function setProductBiddingCategoryLevel1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductBiddingCategoryLevel1($wrappedVar);
-    }
+        $this->writeWrapperValue("product_bidding_category_level1", $var);
+        return $this;}
 
     /**
      * Bidding category (level 2) of the product.
@@ -2703,10 +2645,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level2 = 57;</code>
      * @return string|null
      */
-    public function getProductBiddingCategoryLevel2Value()
+    public function getProductBiddingCategoryLevel2Unwrapped()
     {
-        $wrapper = $this->getProductBiddingCategoryLevel2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_bidding_category_level2");
     }
 
     /**
@@ -2733,11 +2674,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductBiddingCategoryLevel2Value($var)
+    public function setProductBiddingCategoryLevel2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductBiddingCategoryLevel2($wrappedVar);
-    }
+        $this->writeWrapperValue("product_bidding_category_level2", $var);
+        return $this;}
 
     /**
      * Bidding category (level 3) of the product.
@@ -2758,10 +2698,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level3 = 58;</code>
      * @return string|null
      */
-    public function getProductBiddingCategoryLevel3Value()
+    public function getProductBiddingCategoryLevel3Unwrapped()
     {
-        $wrapper = $this->getProductBiddingCategoryLevel3();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_bidding_category_level3");
     }
 
     /**
@@ -2788,11 +2727,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductBiddingCategoryLevel3Value($var)
+    public function setProductBiddingCategoryLevel3Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductBiddingCategoryLevel3($wrappedVar);
-    }
+        $this->writeWrapperValue("product_bidding_category_level3", $var);
+        return $this;}
 
     /**
      * Bidding category (level 4) of the product.
@@ -2813,10 +2751,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level4 = 59;</code>
      * @return string|null
      */
-    public function getProductBiddingCategoryLevel4Value()
+    public function getProductBiddingCategoryLevel4Unwrapped()
     {
-        $wrapper = $this->getProductBiddingCategoryLevel4();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_bidding_category_level4");
     }
 
     /**
@@ -2843,11 +2780,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductBiddingCategoryLevel4Value($var)
+    public function setProductBiddingCategoryLevel4Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductBiddingCategoryLevel4($wrappedVar);
-    }
+        $this->writeWrapperValue("product_bidding_category_level4", $var);
+        return $this;}
 
     /**
      * Bidding category (level 5) of the product.
@@ -2868,10 +2804,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_level5 = 60;</code>
      * @return string|null
      */
-    public function getProductBiddingCategoryLevel5Value()
+    public function getProductBiddingCategoryLevel5Unwrapped()
     {
-        $wrapper = $this->getProductBiddingCategoryLevel5();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_bidding_category_level5");
     }
 
     /**
@@ -2898,11 +2833,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductBiddingCategoryLevel5Value($var)
+    public function setProductBiddingCategoryLevel5Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductBiddingCategoryLevel5($wrappedVar);
-    }
+        $this->writeWrapperValue("product_bidding_category_level5", $var);
+        return $this;}
 
     /**
      * Brand of the product.
@@ -2923,10 +2857,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_brand = 29;</code>
      * @return string|null
      */
-    public function getProductBrandValue()
+    public function getProductBrandUnwrapped()
     {
-        $wrapper = $this->getProductBrand();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_brand");
     }
 
     /**
@@ -2953,11 +2886,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductBrandValue($var)
+    public function setProductBrandUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductBrand($wrappedVar);
-    }
+        $this->writeWrapperValue("product_brand", $var);
+        return $this;}
 
     /**
      * Channel of the product.
@@ -3058,10 +2990,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_country = 33;</code>
      * @return string|null
      */
-    public function getProductCountryValue()
+    public function getProductCountryUnwrapped()
     {
-        $wrapper = $this->getProductCountry();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_country");
     }
 
     /**
@@ -3090,11 +3021,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductCountryValue($var)
+    public function setProductCountryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductCountry($wrappedVar);
-    }
+        $this->writeWrapperValue("product_country", $var);
+        return $this;}
 
     /**
      * Custom attribute 0 of the product.
@@ -3115,10 +3045,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute0 = 34;</code>
      * @return string|null
      */
-    public function getProductCustomAttribute0Value()
+    public function getProductCustomAttribute0Unwrapped()
     {
-        $wrapper = $this->getProductCustomAttribute0();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_custom_attribute0");
     }
 
     /**
@@ -3145,11 +3074,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductCustomAttribute0Value($var)
+    public function setProductCustomAttribute0Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductCustomAttribute0($wrappedVar);
-    }
+        $this->writeWrapperValue("product_custom_attribute0", $var);
+        return $this;}
 
     /**
      * Custom attribute 1 of the product.
@@ -3170,10 +3098,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute1 = 35;</code>
      * @return string|null
      */
-    public function getProductCustomAttribute1Value()
+    public function getProductCustomAttribute1Unwrapped()
     {
-        $wrapper = $this->getProductCustomAttribute1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_custom_attribute1");
     }
 
     /**
@@ -3200,11 +3127,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductCustomAttribute1Value($var)
+    public function setProductCustomAttribute1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductCustomAttribute1($wrappedVar);
-    }
+        $this->writeWrapperValue("product_custom_attribute1", $var);
+        return $this;}
 
     /**
      * Custom attribute 2 of the product.
@@ -3225,10 +3151,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute2 = 36;</code>
      * @return string|null
      */
-    public function getProductCustomAttribute2Value()
+    public function getProductCustomAttribute2Unwrapped()
     {
-        $wrapper = $this->getProductCustomAttribute2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_custom_attribute2");
     }
 
     /**
@@ -3255,11 +3180,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductCustomAttribute2Value($var)
+    public function setProductCustomAttribute2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductCustomAttribute2($wrappedVar);
-    }
+        $this->writeWrapperValue("product_custom_attribute2", $var);
+        return $this;}
 
     /**
      * Custom attribute 3 of the product.
@@ -3280,10 +3204,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute3 = 37;</code>
      * @return string|null
      */
-    public function getProductCustomAttribute3Value()
+    public function getProductCustomAttribute3Unwrapped()
     {
-        $wrapper = $this->getProductCustomAttribute3();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_custom_attribute3");
     }
 
     /**
@@ -3310,11 +3233,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductCustomAttribute3Value($var)
+    public function setProductCustomAttribute3Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductCustomAttribute3($wrappedVar);
-    }
+        $this->writeWrapperValue("product_custom_attribute3", $var);
+        return $this;}
 
     /**
      * Custom attribute 4 of the product.
@@ -3335,10 +3257,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_custom_attribute4 = 38;</code>
      * @return string|null
      */
-    public function getProductCustomAttribute4Value()
+    public function getProductCustomAttribute4Unwrapped()
     {
-        $wrapper = $this->getProductCustomAttribute4();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_custom_attribute4");
     }
 
     /**
@@ -3365,11 +3286,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductCustomAttribute4Value($var)
+    public function setProductCustomAttribute4Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductCustomAttribute4($wrappedVar);
-    }
+        $this->writeWrapperValue("product_custom_attribute4", $var);
+        return $this;}
 
     /**
      * Item ID of the product.
@@ -3390,10 +3310,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_item_id = 39;</code>
      * @return string|null
      */
-    public function getProductItemIdValue()
+    public function getProductItemIdUnwrapped()
     {
-        $wrapper = $this->getProductItemId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_item_id");
     }
 
     /**
@@ -3420,11 +3339,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductItemIdValue($var)
+    public function setProductItemIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductItemId($wrappedVar);
-    }
+        $this->writeWrapperValue("product_item_id", $var);
+        return $this;}
 
     /**
      * Resource name of the language constant for the language of the product.
@@ -3445,10 +3363,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_language = 40;</code>
      * @return string|null
      */
-    public function getProductLanguageValue()
+    public function getProductLanguageUnwrapped()
     {
-        $wrapper = $this->getProductLanguage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_language");
     }
 
     /**
@@ -3475,11 +3392,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductLanguageValue($var)
+    public function setProductLanguageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductLanguage($wrappedVar);
-    }
+        $this->writeWrapperValue("product_language", $var);
+        return $this;}
 
     /**
      * Merchant ID of the product.
@@ -3500,10 +3416,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.UInt64Value product_merchant_id = 41;</code>
      * @return int|string|null
      */
-    public function getProductMerchantIdValue()
+    public function getProductMerchantIdUnwrapped()
     {
-        $wrapper = $this->getProductMerchantId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_merchant_id");
     }
 
     /**
@@ -3530,11 +3445,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setProductMerchantIdValue($var)
+    public function setProductMerchantIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\UInt64Value(['value' => $var]);
-        return $this->setProductMerchantId($wrappedVar);
-    }
+        $this->writeWrapperValue("product_merchant_id", $var);
+        return $this;}
 
     /**
      * Store ID of the product.
@@ -3555,10 +3469,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_store_id = 42;</code>
      * @return string|null
      */
-    public function getProductStoreIdValue()
+    public function getProductStoreIdUnwrapped()
     {
-        $wrapper = $this->getProductStoreId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_store_id");
     }
 
     /**
@@ -3585,11 +3498,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductStoreIdValue($var)
+    public function setProductStoreIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductStoreId($wrappedVar);
-    }
+        $this->writeWrapperValue("product_store_id", $var);
+        return $this;}
 
     /**
      * Title of the product.
@@ -3610,10 +3522,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_title = 43;</code>
      * @return string|null
      */
-    public function getProductTitleValue()
+    public function getProductTitleUnwrapped()
     {
-        $wrapper = $this->getProductTitle();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_title");
     }
 
     /**
@@ -3640,11 +3551,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductTitleValue($var)
+    public function setProductTitleUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductTitle($wrappedVar);
-    }
+        $this->writeWrapperValue("product_title", $var);
+        return $this;}
 
     /**
      * Type (level 1) of the product.
@@ -3665,10 +3575,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l1 = 44;</code>
      * @return string|null
      */
-    public function getProductTypeL1Value()
+    public function getProductTypeL1Unwrapped()
     {
-        $wrapper = $this->getProductTypeL1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_type_l1");
     }
 
     /**
@@ -3695,11 +3604,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductTypeL1Value($var)
+    public function setProductTypeL1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductTypeL1($wrappedVar);
-    }
+        $this->writeWrapperValue("product_type_l1", $var);
+        return $this;}
 
     /**
      * Type (level 2) of the product.
@@ -3720,10 +3628,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l2 = 45;</code>
      * @return string|null
      */
-    public function getProductTypeL2Value()
+    public function getProductTypeL2Unwrapped()
     {
-        $wrapper = $this->getProductTypeL2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_type_l2");
     }
 
     /**
@@ -3750,11 +3657,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductTypeL2Value($var)
+    public function setProductTypeL2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductTypeL2($wrappedVar);
-    }
+        $this->writeWrapperValue("product_type_l2", $var);
+        return $this;}
 
     /**
      * Type (level 3) of the product.
@@ -3775,10 +3681,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l3 = 46;</code>
      * @return string|null
      */
-    public function getProductTypeL3Value()
+    public function getProductTypeL3Unwrapped()
     {
-        $wrapper = $this->getProductTypeL3();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_type_l3");
     }
 
     /**
@@ -3805,11 +3710,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductTypeL3Value($var)
+    public function setProductTypeL3Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductTypeL3($wrappedVar);
-    }
+        $this->writeWrapperValue("product_type_l3", $var);
+        return $this;}
 
     /**
      * Type (level 4) of the product.
@@ -3830,10 +3734,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l4 = 47;</code>
      * @return string|null
      */
-    public function getProductTypeL4Value()
+    public function getProductTypeL4Unwrapped()
     {
-        $wrapper = $this->getProductTypeL4();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_type_l4");
     }
 
     /**
@@ -3860,11 +3763,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductTypeL4Value($var)
+    public function setProductTypeL4Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductTypeL4($wrappedVar);
-    }
+        $this->writeWrapperValue("product_type_l4", $var);
+        return $this;}
 
     /**
      * Type (level 5) of the product.
@@ -3885,10 +3787,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue product_type_l5 = 48;</code>
      * @return string|null
      */
-    public function getProductTypeL5Value()
+    public function getProductTypeL5Unwrapped()
     {
-        $wrapper = $this->getProductTypeL5();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_type_l5");
     }
 
     /**
@@ -3915,11 +3816,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProductTypeL5Value($var)
+    public function setProductTypeL5Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductTypeL5($wrappedVar);
-    }
+        $this->writeWrapperValue("product_type_l5", $var);
+        return $this;}
 
     /**
      * Quarter as represented by the date of the first day of a quarter.
@@ -3944,10 +3844,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue quarter = 21;</code>
      * @return string|null
      */
-    public function getQuarterValue()
+    public function getQuarterUnwrapped()
     {
-        $wrapper = $this->getQuarter();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("quarter");
     }
 
     /**
@@ -3978,11 +3877,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setQuarterValue($var)
+    public function setQuarterUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setQuarter($wrappedVar);
-    }
+        $this->writeWrapperValue("quarter", $var);
+        return $this;}
 
     /**
      * Type of the search engine results page.
@@ -4081,10 +3979,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue webpage = 66;</code>
      * @return string|null
      */
-    public function getWebpageValue()
+    public function getWebpageUnwrapped()
     {
-        $wrapper = $this->getWebpage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("webpage");
     }
 
     /**
@@ -4111,11 +4008,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setWebpageValue($var)
+    public function setWebpageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setWebpage($wrappedVar);
-    }
+        $this->writeWrapperValue("webpage", $var);
+        return $this;}
 
     /**
      * Week as defined as Monday through Sunday, and represented by the date of
@@ -4138,10 +4034,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue week = 24;</code>
      * @return string|null
      */
-    public function getWeekValue()
+    public function getWeekUnwrapped()
     {
-        $wrapper = $this->getWeek();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("week");
     }
 
     /**
@@ -4170,11 +4065,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setWeekValue($var)
+    public function setWeekUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setWeek($wrappedVar);
-    }
+        $this->writeWrapperValue("week", $var);
+        return $this;}
 
     /**
      * Year, formatted as yyyy.
@@ -4195,10 +4089,9 @@ class Segments extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value year = 25;</code>
      * @return int|null
      */
-    public function getYearValue()
+    public function getYearUnwrapped()
     {
-        $wrapper = $this->getYear();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("year");
     }
 
     /**
@@ -4225,11 +4118,10 @@ class Segments extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setYearValue($var)
+    public function setYearUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setYear($wrappedVar);
-    }
+        $this->writeWrapperValue("year", $var);
+        return $this;}
 
 }
 

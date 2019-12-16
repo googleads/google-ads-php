@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.HotelCityInfo</code>
  */
-final class HotelCityInfo extends \Google\Protobuf\Internal\Message
+class HotelCityInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The Geo Target Constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city_criterion = 1;</code>
      */
-    private $city_criterion = null;
+    protected $city_criterion = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class HotelCityInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCityCriterionUnwrapped()
     {
-        $wrapper = $this->getCityCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("city_criterion");
     }
 
     /**
@@ -88,9 +87,8 @@ final class HotelCityInfo extends \Google\Protobuf\Internal\Message
      */
     public function setCityCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCityCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("city_criterion", $var);
+        return $this;}
 
 }
 

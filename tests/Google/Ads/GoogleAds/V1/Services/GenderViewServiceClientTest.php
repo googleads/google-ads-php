@@ -33,7 +33,7 @@ use Google\Rpc\Code;
 use stdClass;
 
 /**
- * @group googleads
+ * @group services
  * @group gapic
  */
 class GenderViewServiceClientTest extends GeneratedTest
@@ -47,14 +47,22 @@ class GenderViewServiceClientTest extends GeneratedTest
     }
 
     /**
+     * @return CredentialsWrapper
+     */
+    private function createCredentials()
+    {
+        return $this->getMockBuilder(CredentialsWrapper::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
      * @return GenderViewServiceClient
      */
     private function createClient(array $options = [])
     {
         $options += [
-            'credentials' => $this->getMockBuilder(CredentialsWrapper::class)
-                ->disableOriginalConstructor()
-                ->getMock(),
+            'credentials' => $this->createCredentials(),
         ];
 
         return new GenderViewServiceClient($options);

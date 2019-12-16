@@ -22,14 +22,14 @@ class TextLabel extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue background_color = 1;</code>
      */
-    private $background_color = null;
+    protected $background_color = null;
     /**
      * A short description of the label. The length must be no more than 200
      * characters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
      */
-    private $description = null;
+    protected $description = null;
 
     /**
      * Constructor.
@@ -74,10 +74,9 @@ class TextLabel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue background_color = 1;</code>
      * @return string|null
      */
-    public function getBackgroundColorValue()
+    public function getBackgroundColorUnwrapped()
     {
-        $wrapper = $this->getBackgroundColor();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("background_color");
     }
 
     /**
@@ -108,11 +107,10 @@ class TextLabel extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setBackgroundColorValue($var)
+    public function setBackgroundColorUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBackgroundColor($wrappedVar);
-    }
+        $this->writeWrapperValue("background_color", $var);
+        return $this;}
 
     /**
      * A short description of the label. The length must be no more than 200
@@ -135,10 +133,9 @@ class TextLabel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
      * @return string|null
      */
-    public function getDescriptionValue()
+    public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -167,11 +164,10 @@ class TextLabel extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDescriptionValue($var)
+    public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
 }
 

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum</code>
  */
-final class PolicyTopicEvidenceDestinationMismatchUrlTypeEnum extends \Google\Protobuf\Internal\Message
+class PolicyTopicEvidenceDestinationMismatchUrlTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

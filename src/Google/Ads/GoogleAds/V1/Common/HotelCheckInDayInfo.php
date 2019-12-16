@@ -20,7 +20,7 @@ class HotelCheckInDayInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.DayOfWeekEnum.DayOfWeek day_of_week = 1;</code>
      */
-    private $day_of_week = 0;
+    protected $day_of_week = 0;
 
     /**
      * Constructor.

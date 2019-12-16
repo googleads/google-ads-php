@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.CustomAffinityInfo</code>
  */
-final class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
+class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The CustomInterest resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_affinity = 1;</code>
      */
-    private $custom_affinity = null;
+    protected $custom_affinity = null;
 
     /**
      * Constructor.
@@ -59,8 +59,7 @@ final class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCustomAffinityUnwrapped()
     {
-        $wrapper = $this->getCustomAffinity();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("custom_affinity");
     }
 
     /**
@@ -89,9 +88,8 @@ final class CustomAffinityInfo extends \Google\Protobuf\Internal\Message
      */
     public function setCustomAffinityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCustomAffinity($wrappedVar);
-    }
+        $this->writeWrapperValue("custom_affinity", $var);
+        return $this;}
 
 }
 

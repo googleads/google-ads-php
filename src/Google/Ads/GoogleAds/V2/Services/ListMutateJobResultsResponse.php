@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListMutateJobResultsResponse</code>
  */
-final class ListMutateJobResultsResponse extends \Google\Protobuf\Internal\Message
+class ListMutateJobResultsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of rows that matched the query.
@@ -29,7 +29,7 @@ final class ListMutateJobResultsResponse extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

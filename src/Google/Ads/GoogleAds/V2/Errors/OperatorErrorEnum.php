@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.OperatorErrorEnum</code>
  */
-final class OperatorErrorEnum extends \Google\Protobuf\Internal\Message
+class OperatorErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.WebpageInfo</code>
  */
-final class WebpageInfo extends \Google\Protobuf\Internal\Message
+class WebpageInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the criterion that is defined by this parameter. The name value
@@ -24,7 +24,7 @@ final class WebpageInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue criterion_name = 1;</code>
      */
-    private $criterion_name = null;
+    protected $criterion_name = null;
     /**
      * Conditions, or logical expressions, for webpage targeting. The list of
      * webpage targeting conditions are and-ed together when evaluated
@@ -90,8 +90,7 @@ final class WebpageInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCriterionNameUnwrapped()
     {
-        $wrapper = $this->getCriterionName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_name");
     }
 
     /**
@@ -128,9 +127,8 @@ final class WebpageInfo extends \Google\Protobuf\Internal\Message
      */
     public function setCriterionNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCriterionName($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_name", $var);
+        return $this;}
 
     /**
      * Conditions, or logical expressions, for webpage targeting. The list of

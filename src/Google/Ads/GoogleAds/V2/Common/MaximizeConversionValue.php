@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.MaximizeConversionValue</code>
  */
-final class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
+class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
 {
     /**
      * The target return on ad spend (ROAS) option. If set, the bid strategy will
@@ -25,7 +25,7 @@ final class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 1;</code>
      */
-    private $target_roas = null;
+    protected $target_roas = null;
 
     /**
      * Constructor.
@@ -75,8 +75,7 @@ final class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
      */
     public function getTargetRoasUnwrapped()
     {
-        $wrapper = $this->getTargetRoas();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_roas");
     }
 
     /**
@@ -113,9 +112,8 @@ final class MaximizeConversionValue extends \Google\Protobuf\Internal\Message
      */
     public function setTargetRoasUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setTargetRoas($wrappedVar);
-    }
+        $this->writeWrapperValue("target_roas", $var);
+        return $this;}
 
 }
 

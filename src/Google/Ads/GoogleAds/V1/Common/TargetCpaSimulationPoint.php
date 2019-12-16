@@ -20,44 +20,44 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      */
-    private $target_cpa_micros = null;
+    protected $target_cpa_micros = null;
     /**
      * Projected number of biddable conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
      */
-    private $biddable_conversions = null;
+    protected $biddable_conversions = null;
     /**
      * Projected total value of biddable conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
      */
-    private $biddable_conversions_value = null;
+    protected $biddable_conversions_value = null;
     /**
      * Projected number of clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 4;</code>
      */
-    private $clicks = null;
+    protected $clicks = null;
     /**
      * Projected cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 5;</code>
      */
-    private $cost_micros = null;
+    protected $cost_micros = null;
     /**
      * Projected number of impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 6;</code>
      */
-    private $impressions = null;
+    protected $impressions = null;
     /**
      * Projected number of top slot impressions.
-     * Display network does not support this field at the ad group level.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      */
-    private $top_slot_impressions = null;
+    protected $top_slot_impressions = null;
 
     /**
      * Constructor.
@@ -79,7 +79,7 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      *           Projected number of impressions.
      *     @type \Google\Protobuf\Int64Value $top_slot_impressions
      *           Projected number of top slot impressions.
-     *           Display network does not support this field at the ad group level.
+     *           Only search advertising channel type supports this field.
      * }
      */
     public function __construct($data = NULL) {
@@ -106,10 +106,9 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      * @return int|string|null
      */
-    public function getTargetCpaMicrosValue()
+    public function getTargetCpaMicrosUnwrapped()
     {
-        $wrapper = $this->getTargetCpaMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_cpa_micros");
     }
 
     /**
@@ -136,11 +135,10 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setTargetCpaMicrosValue($var)
+    public function setTargetCpaMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTargetCpaMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("target_cpa_micros", $var);
+        return $this;}
 
     /**
      * Projected number of biddable conversions.
@@ -161,10 +159,9 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
      * @return float|null
      */
-    public function getBiddableConversionsValue()
+    public function getBiddableConversionsUnwrapped()
     {
-        $wrapper = $this->getBiddableConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("biddable_conversions");
     }
 
     /**
@@ -191,10 +188,20 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBiddableConversionsValue($var)
+    public function setBiddableConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBiddableConversions($wrappedVar);
+        $this->writeWrapperValue("biddable_conversions", $var);
+        return $this;}
+
+    /**
+     * Projected total value of biddable conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getBiddableConversionsValue()
+    {
+        return $this->biddable_conversions_value;
     }
 
     /**
@@ -205,10 +212,24 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
      * @return float|null
      */
-    public function getBiddableConversionsValueValue()
+    public function getBiddableConversionsValueUnwrapped()
     {
-        $wrapper = $this->getBiddableConversionsValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("biddable_conversions_value");
+    }
+
+    /**
+     * Projected total value of biddable conversions.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setBiddableConversionsValue($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->biddable_conversions_value = $var;
+
+        return $this;
     }
 
     /**
@@ -220,11 +241,10 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBiddableConversionsValueValue($var)
+    public function setBiddableConversionsValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBiddableConversionsValue($wrappedVar);
-    }
+        $this->writeWrapperValue("biddable_conversions_value", $var);
+        return $this;}
 
     /**
      * Projected number of clicks.
@@ -245,10 +265,9 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 4;</code>
      * @return int|string|null
      */
-    public function getClicksValue()
+    public function getClicksUnwrapped()
     {
-        $wrapper = $this->getClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("clicks");
     }
 
     /**
@@ -275,11 +294,10 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setClicksValue($var)
+    public function setClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("clicks", $var);
+        return $this;}
 
     /**
      * Projected cost in micros.
@@ -300,10 +318,9 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 5;</code>
      * @return int|string|null
      */
-    public function getCostMicrosValue()
+    public function getCostMicrosUnwrapped()
     {
-        $wrapper = $this->getCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_micros");
     }
 
     /**
@@ -330,11 +347,10 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCostMicrosValue($var)
+    public function setCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_micros", $var);
+        return $this;}
 
     /**
      * Projected number of impressions.
@@ -355,10 +371,9 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 6;</code>
      * @return int|string|null
      */
-    public function getImpressionsValue()
+    public function getImpressionsUnwrapped()
     {
-        $wrapper = $this->getImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impressions");
     }
 
     /**
@@ -385,15 +400,14 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setImpressionsValue($var)
+    public function setImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("impressions", $var);
+        return $this;}
 
     /**
      * Projected number of top slot impressions.
-     * Display network does not support this field at the ad group level.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      * @return \Google\Protobuf\Int64Value
@@ -407,20 +421,19 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getTopSlotImpressions()</code>
 
      * Projected number of top slot impressions.
-     * Display network does not support this field at the ad group level.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      * @return int|string|null
      */
-    public function getTopSlotImpressionsValue()
+    public function getTopSlotImpressionsUnwrapped()
     {
-        $wrapper = $this->getTopSlotImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("top_slot_impressions");
     }
 
     /**
      * Projected number of top slot impressions.
-     * Display network does not support this field at the ad group level.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      * @param \Google\Protobuf\Int64Value $var
@@ -438,17 +451,16 @@ class TargetCpaSimulationPoint extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
      * Projected number of top slot impressions.
-     * Display network does not support this field at the ad group level.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      * @param int|string|null $var
      * @return $this
      */
-    public function setTopSlotImpressionsValue($var)
+    public function setTopSlotImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTopSlotImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("top_slot_impressions", $var);
+        return $this;}
 
 }
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.GeoTargetingRestrictionEnum</code>
  */
-final class GeoTargetingRestrictionEnum extends \Google\Protobuf\Internal\Message
+class GeoTargetingRestrictionEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

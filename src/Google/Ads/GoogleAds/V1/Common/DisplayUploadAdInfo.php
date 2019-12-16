@@ -22,7 +22,7 @@ class DisplayUploadAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.DisplayUploadProductTypeEnum.DisplayUploadProductType display_upload_product_type = 1;</code>
      */
-    private $display_upload_product_type = 0;
+    protected $display_upload_product_type = 0;
     protected $media_asset;
 
     /**

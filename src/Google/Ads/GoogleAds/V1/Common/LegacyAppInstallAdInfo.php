@@ -20,31 +20,31 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 1;</code>
      */
-    private $app_id = null;
+    protected $app_id = null;
     /**
      * The app store the mobile app is available in.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore app_store = 2;</code>
      */
-    private $app_store = 0;
+    protected $app_store = 0;
     /**
      * The headline of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
      */
-    private $headline = null;
+    protected $headline = null;
     /**
      * The first description line of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 4;</code>
      */
-    private $description1 = null;
+    protected $description1 = null;
     /**
      * The second description line of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 5;</code>
      */
-    private $description2 = null;
+    protected $description2 = null;
 
     /**
      * Constructor.
@@ -88,10 +88,9 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 1;</code>
      * @return string|null
      */
-    public function getAppIdValue()
+    public function getAppIdUnwrapped()
     {
-        $wrapper = $this->getAppId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("app_id");
     }
 
     /**
@@ -118,11 +117,10 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAppIdValue($var)
+    public function setAppIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAppId($wrappedVar);
-    }
+        $this->writeWrapperValue("app_id", $var);
+        return $this;}
 
     /**
      * The app store the mobile app is available in.
@@ -169,10 +167,9 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
      * @return string|null
      */
-    public function getHeadlineValue()
+    public function getHeadlineUnwrapped()
     {
-        $wrapper = $this->getHeadline();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("headline");
     }
 
     /**
@@ -199,11 +196,10 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHeadlineValue($var)
+    public function setHeadlineUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeadline($wrappedVar);
-    }
+        $this->writeWrapperValue("headline", $var);
+        return $this;}
 
     /**
      * The first description line of the ad.
@@ -224,10 +220,9 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue description1 = 4;</code>
      * @return string|null
      */
-    public function getDescription1Value()
+    public function getDescription1Unwrapped()
     {
-        $wrapper = $this->getDescription1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description1");
     }
 
     /**
@@ -254,11 +249,10 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDescription1Value($var)
+    public function setDescription1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription1($wrappedVar);
-    }
+        $this->writeWrapperValue("description1", $var);
+        return $this;}
 
     /**
      * The second description line of the ad.
@@ -279,10 +273,9 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 5;</code>
      * @return string|null
      */
-    public function getDescription2Value()
+    public function getDescription2Unwrapped()
     {
-        $wrapper = $this->getDescription2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description2");
     }
 
     /**
@@ -309,11 +302,10 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDescription2Value($var)
+    public function setDescription2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription2($wrappedVar);
-    }
+        $this->writeWrapperValue("description2", $var);
+        return $this;}
 
 }
 

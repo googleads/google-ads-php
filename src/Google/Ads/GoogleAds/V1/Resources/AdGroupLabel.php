@@ -22,19 +22,19 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ad group to which the label is attached.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * The label assigned to the ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
      */
-    private $label = null;
+    protected $label = null;
 
     /**
      * Constructor.
@@ -106,10 +106,9 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
      * @return string|null
      */
-    public function getAdGroupValue()
+    public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -136,11 +135,10 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupValue($var)
+    public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * The label assigned to the ad group.
@@ -161,10 +159,9 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
      * @return string|null
      */
-    public function getLabelValue()
+    public function getLabelUnwrapped()
     {
-        $wrapper = $this->getLabel();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("label");
     }
 
     /**
@@ -191,11 +188,10 @@ class AdGroupLabel extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLabelValue($var)
+    public function setLabelUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLabel($wrappedVar);
-    }
+        $this->writeWrapperValue("label", $var);
+        return $this;}
 
 }
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AdGroupCriterion.PositionEstimates</code>
  */
-final class PositionEstimates extends \Google\Protobuf\Internal\Message
+class PositionEstimates extends \Google\Protobuf\Internal\Message
 {
     /**
      * The estimate of the CPC bid required for ad to be shown on first
@@ -21,35 +21,35 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value first_page_cpc_micros = 1;</code>
      */
-    private $first_page_cpc_micros = null;
+    protected $first_page_cpc_micros = null;
     /**
      * The estimate of the CPC bid required for ad to be displayed in first
      * position, at the top of the first page of search results.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value first_position_cpc_micros = 2;</code>
      */
-    private $first_position_cpc_micros = null;
+    protected $first_position_cpc_micros = null;
     /**
      * The estimate of the CPC bid required for ad to be displayed at the top
      * of the first page of search results.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_of_page_cpc_micros = 3;</code>
      */
-    private $top_of_page_cpc_micros = null;
+    protected $top_of_page_cpc_micros = null;
     /**
      * Estimate of how many clicks per week you might get by changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_clicks_at_first_position_cpc = 4;</code>
      */
-    private $estimated_add_clicks_at_first_position_cpc = null;
+    protected $estimated_add_clicks_at_first_position_cpc = null;
     /**
      * Estimate of how your cost per week might change when changing your
      * keyword bid to the value in first_position_cpc_micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value estimated_add_cost_at_first_position_cpc = 5;</code>
      */
-    private $estimated_add_cost_at_first_position_cpc = null;
+    protected $estimated_add_cost_at_first_position_cpc = null;
 
     /**
      * Constructor.
@@ -102,8 +102,7 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function getFirstPageCpcMicrosUnwrapped()
     {
-        $wrapper = $this->getFirstPageCpcMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("first_page_cpc_micros");
     }
 
     /**
@@ -134,9 +133,8 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function setFirstPageCpcMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFirstPageCpcMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("first_page_cpc_micros", $var);
+        return $this;}
 
     /**
      * The estimate of the CPC bid required for ad to be displayed in first
@@ -161,8 +159,7 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function getFirstPositionCpcMicrosUnwrapped()
     {
-        $wrapper = $this->getFirstPositionCpcMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("first_position_cpc_micros");
     }
 
     /**
@@ -193,9 +190,8 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function setFirstPositionCpcMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFirstPositionCpcMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("first_position_cpc_micros", $var);
+        return $this;}
 
     /**
      * The estimate of the CPC bid required for ad to be displayed at the top
@@ -220,8 +216,7 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function getTopOfPageCpcMicrosUnwrapped()
     {
-        $wrapper = $this->getTopOfPageCpcMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("top_of_page_cpc_micros");
     }
 
     /**
@@ -252,9 +247,8 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function setTopOfPageCpcMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTopOfPageCpcMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("top_of_page_cpc_micros", $var);
+        return $this;}
 
     /**
      * Estimate of how many clicks per week you might get by changing your
@@ -279,8 +273,7 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function getEstimatedAddClicksAtFirstPositionCpcUnwrapped()
     {
-        $wrapper = $this->getEstimatedAddClicksAtFirstPositionCpc();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("estimated_add_clicks_at_first_position_cpc");
     }
 
     /**
@@ -311,9 +304,8 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function setEstimatedAddClicksAtFirstPositionCpcUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setEstimatedAddClicksAtFirstPositionCpc($wrappedVar);
-    }
+        $this->writeWrapperValue("estimated_add_clicks_at_first_position_cpc", $var);
+        return $this;}
 
     /**
      * Estimate of how your cost per week might change when changing your
@@ -338,8 +330,7 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function getEstimatedAddCostAtFirstPositionCpcUnwrapped()
     {
-        $wrapper = $this->getEstimatedAddCostAtFirstPositionCpc();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("estimated_add_cost_at_first_position_cpc");
     }
 
     /**
@@ -370,9 +361,8 @@ final class PositionEstimates extends \Google\Protobuf\Internal\Message
      */
     public function setEstimatedAddCostAtFirstPositionCpcUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setEstimatedAddCostAtFirstPositionCpc($wrappedVar);
-    }
+        $this->writeWrapperValue("estimated_add_cost_at_first_position_cpc", $var);
+        return $this;}
 
 }
 

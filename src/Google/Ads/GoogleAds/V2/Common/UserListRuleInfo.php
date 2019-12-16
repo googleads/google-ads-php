@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListRuleInfo</code>
  */
-final class UserListRuleInfo extends \Google\Protobuf\Internal\Message
+class UserListRuleInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Rule type is used to determine how to group rule items.
@@ -26,7 +26,7 @@ final class UserListRuleInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListRuleTypeEnum.UserListRuleType rule_type = 1;</code>
      */
-    private $rule_type = 0;
+    protected $rule_type = 0;
     /**
      * List of rule item groups that defines this rule.
      * Rule item groups are grouped together based on rule_type.

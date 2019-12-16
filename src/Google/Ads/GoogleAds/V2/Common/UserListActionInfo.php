@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListActionInfo</code>
  */
-final class UserListActionInfo extends \Google\Protobuf\Internal\Message
+class UserListActionInfo extends \Google\Protobuf\Internal\Message
 {
     protected $user_list_action;
 
@@ -55,8 +55,7 @@ final class UserListActionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getConversionActionUnwrapped()
     {
-        $wrapper = $this->getConversionAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_action");
     }
 
     /**
@@ -85,9 +84,8 @@ final class UserListActionInfo extends \Google\Protobuf\Internal\Message
      */
     public function setConversionActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionAction($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_action", $var);
+        return $this;}
 
     /**
      * A remarketing action.
@@ -110,8 +108,7 @@ final class UserListActionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getRemarketingActionUnwrapped()
     {
-        $wrapper = $this->getRemarketingAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("remarketing_action");
     }
 
     /**
@@ -140,9 +137,8 @@ final class UserListActionInfo extends \Google\Protobuf\Internal\Message
      */
     public function setRemarketingActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setRemarketingAction($wrappedVar);
-    }
+        $this->writeWrapperValue("remarketing_action", $var);
+        return $this;}
 
     /**
      * @return string

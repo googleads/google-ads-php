@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.RangeErrorEnum</code>
  */
-final class RangeErrorEnum extends \Google\Protobuf\Internal\Message
+class RangeErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

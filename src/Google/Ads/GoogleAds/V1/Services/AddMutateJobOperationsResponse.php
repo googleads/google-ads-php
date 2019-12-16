@@ -20,7 +20,7 @@ class AddMutateJobOperationsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 total_operations = 1;</code>
      */
-    private $total_operations = 0;
+    protected $total_operations = 0;
     /**
      * The sequence token to be used when calling AddMutateJobOperations again if
      * more operations need to be added. The next AddMutateJobOperations request
@@ -28,7 +28,7 @@ class AddMutateJobOperationsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_sequence_token = 2;</code>
      */
-    private $next_sequence_token = '';
+    protected $next_sequence_token = '';
 
     /**
      * Constructor.

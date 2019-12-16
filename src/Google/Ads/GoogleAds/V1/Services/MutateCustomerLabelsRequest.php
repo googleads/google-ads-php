@@ -20,7 +20,7 @@ class MutateCustomerLabelsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The list of operations to perform on customer-label relationships.
      *
@@ -35,14 +35,14 @@ class MutateCustomerLabelsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool partial_failure = 3;</code>
      */
-    private $partial_failure = false;
+    protected $partial_failure = false;
     /**
      * If true, the request is validated but not executed. Only errors are
      * returned, not results.
      *
      * Generated from protobuf field <code>bool validate_only = 4;</code>
      */
-    private $validate_only = false;
+    protected $validate_only = false;
 
     /**
      * Constructor.

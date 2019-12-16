@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo</code>
  */
-final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
+class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * A 16 digit id used to identify the payments account associated with the
@@ -22,7 +22,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 1;</code>
      */
-    private $payments_account_id = null;
+    protected $payments_account_id = null;
     /**
      * The name of the payments account associated with the billing setup.
      * This enables the user to specify a meaningful name for a payments account
@@ -31,7 +31,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_name = 2;</code>
      */
-    private $payments_account_name = null;
+    protected $payments_account_name = null;
     /**
      * A 12 digit id used to identify the payments profile associated with the
      * billing setup.
@@ -39,20 +39,20 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 3;</code>
      */
-    private $payments_profile_id = null;
+    protected $payments_profile_id = null;
     /**
      * The name of the payments profile associated with the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_name = 4;</code>
      */
-    private $payments_profile_name = null;
+    protected $payments_profile_name = null;
     /**
      * A secondary payments profile id present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 5;</code>
      */
-    private $secondary_payments_profile_id = null;
+    protected $secondary_payments_profile_id = null;
 
     /**
      * Constructor.
@@ -110,8 +110,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function getPaymentsAccountIdUnwrapped()
     {
-        $wrapper = $this->getPaymentsAccountId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("payments_account_id");
     }
 
     /**
@@ -144,9 +143,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function setPaymentsAccountIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPaymentsAccountId($wrappedVar);
-    }
+        $this->writeWrapperValue("payments_account_id", $var);
+        return $this;}
 
     /**
      * The name of the payments account associated with the billing setup.
@@ -175,8 +173,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function getPaymentsAccountNameUnwrapped()
     {
-        $wrapper = $this->getPaymentsAccountName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("payments_account_name");
     }
 
     /**
@@ -211,9 +208,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function setPaymentsAccountNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPaymentsAccountName($wrappedVar);
-    }
+        $this->writeWrapperValue("payments_account_name", $var);
+        return $this;}
 
     /**
      * A 12 digit id used to identify the payments profile associated with the
@@ -240,8 +236,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function getPaymentsProfileIdUnwrapped()
     {
-        $wrapper = $this->getPaymentsProfileId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("payments_profile_id");
     }
 
     /**
@@ -274,9 +269,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function setPaymentsProfileIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPaymentsProfileId($wrappedVar);
-    }
+        $this->writeWrapperValue("payments_profile_id", $var);
+        return $this;}
 
     /**
      * The name of the payments profile associated with the billing setup.
@@ -299,8 +293,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function getPaymentsProfileNameUnwrapped()
     {
-        $wrapper = $this->getPaymentsProfileName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("payments_profile_name");
     }
 
     /**
@@ -329,9 +322,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function setPaymentsProfileNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPaymentsProfileName($wrappedVar);
-    }
+        $this->writeWrapperValue("payments_profile_name", $var);
+        return $this;}
 
     /**
      * A secondary payments profile id present in uncommon situations, e.g.
@@ -356,8 +348,7 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function getSecondaryPaymentsProfileIdUnwrapped()
     {
-        $wrapper = $this->getSecondaryPaymentsProfileId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("secondary_payments_profile_id");
     }
 
     /**
@@ -388,9 +379,8 @@ final class PaymentsAccountInfo extends \Google\Protobuf\Internal\Message
      */
     public function setSecondaryPaymentsProfileIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSecondaryPaymentsProfileId($wrappedVar);
-    }
+        $this->writeWrapperValue("secondary_payments_profile_id", $var);
+        return $this;}
 
 }
 

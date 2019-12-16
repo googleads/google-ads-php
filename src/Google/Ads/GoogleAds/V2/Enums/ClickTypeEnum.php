@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.ClickTypeEnum</code>
  */
-final class ClickTypeEnum extends \Google\Protobuf\Internal\Message
+class ClickTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

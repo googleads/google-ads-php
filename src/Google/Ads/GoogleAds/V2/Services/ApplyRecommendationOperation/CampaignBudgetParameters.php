@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ApplyRecommendationOperation.CampaignBudgetParameters</code>
  */
-final class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
+class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
 {
     /**
      * New budget amount to set for target budget resource. This is a required
@@ -21,7 +21,7 @@ final class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
      */
-    private $new_budget_amount_micros = null;
+    protected $new_budget_amount_micros = null;
 
     /**
      * Constructor.
@@ -62,8 +62,7 @@ final class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      */
     public function getNewBudgetAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getNewBudgetAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("new_budget_amount_micros");
     }
 
     /**
@@ -94,9 +93,8 @@ final class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      */
     public function setNewBudgetAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setNewBudgetAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("new_budget_amount_micros", $var);
+        return $this;}
 
 }
 

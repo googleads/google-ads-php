@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.PlaceholderTypeEnum</code>
  */
-final class PlaceholderTypeEnum extends \Google\Protobuf\Internal\Message
+class PlaceholderTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

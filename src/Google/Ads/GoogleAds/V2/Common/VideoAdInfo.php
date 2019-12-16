@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.VideoAdInfo</code>
  */
-final class VideoAdInfo extends \Google\Protobuf\Internal\Message
+class VideoAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The MediaFile resource to use for the video.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
      */
-    private $media_file = null;
+    protected $media_file = null;
     protected $format;
 
     /**
@@ -67,8 +67,7 @@ final class VideoAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMediaFileUnwrapped()
     {
-        $wrapper = $this->getMediaFile();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("media_file");
     }
 
     /**
@@ -97,9 +96,8 @@ final class VideoAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setMediaFileUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMediaFile($wrappedVar);
-    }
+        $this->writeWrapperValue("media_file", $var);
+        return $this;}
 
     /**
      * Video TrueView in-stream ad format.

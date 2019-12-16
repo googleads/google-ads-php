@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.FeedItemTargetOperation</code>
  */
-final class FeedItemTargetOperation extends \Google\Protobuf\Internal\Message
+class FeedItemTargetOperation extends \Google\Protobuf\Internal\Message
 {
     protected $operation;
 

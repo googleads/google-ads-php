@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CampaignFeed</code>
  */
-final class CampaignFeed extends \Google\Protobuf\Internal\Message
+class CampaignFeed extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the campaign feed.
@@ -22,19 +22,19 @@ final class CampaignFeed extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The feed to which the CampaignFeed belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
      */
-    private $feed = null;
+    protected $feed = null;
     /**
      * The campaign to which the CampaignFeed belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * Indicates which placeholder types the feed may populate under the connected
      * campaign. Required.
@@ -49,14 +49,14 @@ final class CampaignFeed extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.MatchingFunction matching_function = 5;</code>
      */
-    private $matching_function = null;
+    protected $matching_function = null;
     /**
      * Status of the campaign feed.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedLinkStatusEnum.FeedLinkStatus status = 6;</code>
      */
-    private $status = 0;
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -140,8 +140,7 @@ final class CampaignFeed extends \Google\Protobuf\Internal\Message
      */
     public function getFeedUnwrapped()
     {
-        $wrapper = $this->getFeed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed");
     }
 
     /**
@@ -170,9 +169,8 @@ final class CampaignFeed extends \Google\Protobuf\Internal\Message
      */
     public function setFeedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeed($wrappedVar);
-    }
+        $this->writeWrapperValue("feed", $var);
+        return $this;}
 
     /**
      * The campaign to which the CampaignFeed belongs.
@@ -195,8 +193,7 @@ final class CampaignFeed extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -225,9 +222,8 @@ final class CampaignFeed extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * Indicates which placeholder types the feed may populate under the connected

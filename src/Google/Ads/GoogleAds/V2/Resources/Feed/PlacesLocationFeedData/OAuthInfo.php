@@ -13,26 +13,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo</code>
  */
-final class OAuthInfo extends \Google\Protobuf\Internal\Message
+class OAuthInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The HTTP method used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_method = 1;</code>
      */
-    private $http_method = null;
+    protected $http_method = null;
     /**
      * The HTTP request URL used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_request_url = 2;</code>
      */
-    private $http_request_url = null;
+    protected $http_request_url = null;
     /**
      * The HTTP authorization header used to obtain authorization.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue http_authorization_header = 3;</code>
      */
-    private $http_authorization_header = null;
+    protected $http_authorization_header = null;
 
     /**
      * Constructor.
@@ -74,8 +74,7 @@ final class OAuthInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHttpMethodUnwrapped()
     {
-        $wrapper = $this->getHttpMethod();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("http_method");
     }
 
     /**
@@ -104,9 +103,8 @@ final class OAuthInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHttpMethodUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHttpMethod($wrappedVar);
-    }
+        $this->writeWrapperValue("http_method", $var);
+        return $this;}
 
     /**
      * The HTTP request URL used to obtain authorization.
@@ -129,8 +127,7 @@ final class OAuthInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHttpRequestUrlUnwrapped()
     {
-        $wrapper = $this->getHttpRequestUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("http_request_url");
     }
 
     /**
@@ -159,9 +156,8 @@ final class OAuthInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHttpRequestUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHttpRequestUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("http_request_url", $var);
+        return $this;}
 
     /**
      * The HTTP authorization header used to obtain authorization.
@@ -184,8 +180,7 @@ final class OAuthInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHttpAuthorizationHeaderUnwrapped()
     {
-        $wrapper = $this->getHttpAuthorizationHeader();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("http_authorization_header");
     }
 
     /**
@@ -214,9 +209,8 @@ final class OAuthInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHttpAuthorizationHeaderUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHttpAuthorizationHeader($wrappedVar);
-    }
+        $this->writeWrapperValue("http_authorization_header", $var);
+        return $this;}
 
 }
 

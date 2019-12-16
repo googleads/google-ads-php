@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.ConversionAction</code>
  */
-final class ConversionAction extends \Google\Protobuf\Internal\Message
+class ConversionAction extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the conversion action.
@@ -22,13 +22,13 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the conversion action.
      * This field is required and should not be empty when creating new
@@ -36,72 +36,72 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The status of this conversion action for conversion event accrual.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionStatusEnum.ConversionActionStatus status = 4;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The type of this conversion action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionTypeEnum.ConversionActionType type = 5;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The category of conversions reported for this conversion action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionCategoryEnum.ConversionActionCategory category = 6;</code>
      */
-    private $category = 0;
+    protected $category = 0;
     /**
      * The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7;</code>
      */
-    private $owner_customer = null;
+    protected $owner_customer = null;
     /**
      * Whether this conversion action should be included in the "conversions"
      * metric.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue include_in_conversions_metric = 8;</code>
      */
-    private $include_in_conversions_metric = null;
+    protected $include_in_conversions_metric = null;
     /**
      * The maximum number of days that may elapse between an interaction
      * (e.g., a click) and a conversion event.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value click_through_lookback_window_days = 9;</code>
      */
-    private $click_through_lookback_window_days = null;
+    protected $click_through_lookback_window_days = null;
     /**
      * The maximum number of days which may elapse between an impression and a
      * conversion without an interaction.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value view_through_lookback_window_days = 10;</code>
      */
-    private $view_through_lookback_window_days = null;
+    protected $view_through_lookback_window_days = null;
     /**
      * Settings related to the value for conversion events associated with this
      * conversion action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionAction.ValueSettings value_settings = 11;</code>
      */
-    private $value_settings = null;
+    protected $value_settings = null;
     /**
      * How to count conversion events for the conversion action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionCountingTypeEnum.ConversionActionCountingType counting_type = 12;</code>
      */
-    private $counting_type = 0;
+    protected $counting_type = 0;
     /**
      * Settings related to this conversion action's attribution model.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionAction.AttributionModelSettings attribution_model_settings = 13;</code>
      */
-    private $attribution_model_settings = null;
+    protected $attribution_model_settings = null;
     /**
      * The snippets used for tracking conversions.
      *
@@ -115,13 +115,13 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value phone_call_duration_seconds = 15;</code>
      */
-    private $phone_call_duration_seconds = null;
+    protected $phone_call_duration_seconds = null;
     /**
      * App ID for an app conversion action.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 16;</code>
      */
-    private $app_id = null;
+    protected $app_id = null;
 
     /**
      * Constructor.
@@ -230,8 +230,7 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -260,9 +259,8 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the conversion action.
@@ -289,8 +287,7 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -323,9 +320,8 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The status of this conversion action for conversion event accrual.
@@ -428,8 +424,7 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getOwnerCustomerUnwrapped()
     {
-        $wrapper = $this->getOwnerCustomer();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("owner_customer");
     }
 
     /**
@@ -460,9 +455,8 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function setOwnerCustomerUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setOwnerCustomer($wrappedVar);
-    }
+        $this->writeWrapperValue("owner_customer", $var);
+        return $this;}
 
     /**
      * Whether this conversion action should be included in the "conversions"
@@ -487,8 +481,7 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getIncludeInConversionsMetricUnwrapped()
     {
-        $wrapper = $this->getIncludeInConversionsMetric();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("include_in_conversions_metric");
     }
 
     /**
@@ -519,9 +512,8 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function setIncludeInConversionsMetricUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setIncludeInConversionsMetric($wrappedVar);
-    }
+        $this->writeWrapperValue("include_in_conversions_metric", $var);
+        return $this;}
 
     /**
      * The maximum number of days that may elapse between an interaction
@@ -546,8 +538,7 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getClickThroughLookbackWindowDaysUnwrapped()
     {
-        $wrapper = $this->getClickThroughLookbackWindowDays();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("click_through_lookback_window_days");
     }
 
     /**
@@ -578,9 +569,8 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function setClickThroughLookbackWindowDaysUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setClickThroughLookbackWindowDays($wrappedVar);
-    }
+        $this->writeWrapperValue("click_through_lookback_window_days", $var);
+        return $this;}
 
     /**
      * The maximum number of days which may elapse between an impression and a
@@ -605,8 +595,7 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getViewThroughLookbackWindowDaysUnwrapped()
     {
-        $wrapper = $this->getViewThroughLookbackWindowDays();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("view_through_lookback_window_days");
     }
 
     /**
@@ -637,9 +626,8 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function setViewThroughLookbackWindowDaysUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setViewThroughLookbackWindowDays($wrappedVar);
-    }
+        $this->writeWrapperValue("view_through_lookback_window_days", $var);
+        return $this;}
 
     /**
      * Settings related to the value for conversion events associated with this
@@ -772,8 +760,7 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getPhoneCallDurationSecondsUnwrapped()
     {
-        $wrapper = $this->getPhoneCallDurationSeconds();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("phone_call_duration_seconds");
     }
 
     /**
@@ -806,9 +793,8 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function setPhoneCallDurationSecondsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPhoneCallDurationSeconds($wrappedVar);
-    }
+        $this->writeWrapperValue("phone_call_duration_seconds", $var);
+        return $this;}
 
     /**
      * App ID for an app conversion action.
@@ -831,8 +817,7 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function getAppIdUnwrapped()
     {
-        $wrapper = $this->getAppId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("app_id");
     }
 
     /**
@@ -861,9 +846,8 @@ final class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     public function setAppIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAppId($wrappedVar);
-    }
+        $this->writeWrapperValue("app_id", $var);
+        return $this;}
 
 }
 

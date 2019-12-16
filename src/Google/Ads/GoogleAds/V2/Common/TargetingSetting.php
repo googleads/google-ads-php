@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TargetingSetting</code>
  */
-final class TargetingSetting extends \Google\Protobuf\Internal\Message
+class TargetingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * The per-targeting-dimension setting to restrict the reach of your campaign

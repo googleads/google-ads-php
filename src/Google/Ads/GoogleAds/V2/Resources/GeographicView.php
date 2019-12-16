@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.GeographicView</code>
  */
-final class GeographicView extends \Google\Protobuf\Internal\Message
+class GeographicView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the geographic view.
@@ -26,19 +26,19 @@ final class GeographicView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Type of the geo targeting of the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GeoTargetingTypeEnum.GeoTargetingType location_type = 3;</code>
      */
-    private $location_type = 0;
+    protected $location_type = 0;
     /**
      * Criterion Id for the country.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4;</code>
      */
-    private $country_criterion_id = null;
+    protected $country_criterion_id = null;
 
     /**
      * Constructor.
@@ -138,8 +138,7 @@ final class GeographicView extends \Google\Protobuf\Internal\Message
      */
     public function getCountryCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCountryCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_criterion_id");
     }
 
     /**
@@ -168,9 +167,8 @@ final class GeographicView extends \Google\Protobuf\Internal\Message
      */
     public function setCountryCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCountryCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("country_criterion_id", $var);
+        return $this;}
 
 }
 

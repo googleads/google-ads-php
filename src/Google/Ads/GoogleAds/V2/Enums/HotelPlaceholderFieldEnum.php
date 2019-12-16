@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.HotelPlaceholderFieldEnum</code>
  */
-final class HotelPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
+class HotelPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

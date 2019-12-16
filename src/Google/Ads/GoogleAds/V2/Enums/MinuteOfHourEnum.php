@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.MinuteOfHourEnum</code>
  */
-final class MinuteOfHourEnum extends \Google\Protobuf\Internal\Message
+class MinuteOfHourEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

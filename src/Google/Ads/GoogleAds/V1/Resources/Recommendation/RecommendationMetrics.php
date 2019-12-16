@@ -21,31 +21,31 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
      */
-    private $impressions = null;
+    protected $impressions = null;
     /**
      * Number of ad clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
      */
-    private $clicks = null;
+    protected $clicks = null;
     /**
      * Cost (in micros) for advertising, in the local currency for the account.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
      */
-    private $cost_micros = null;
+    protected $cost_micros = null;
     /**
      * Number of conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
      */
-    private $conversions = null;
+    protected $conversions = null;
     /**
      * Number of video views for a video ad campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
      */
-    private $video_views = null;
+    protected $video_views = null;
 
     /**
      * Constructor.
@@ -89,10 +89,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
      * @return float|null
      */
-    public function getImpressionsValue()
+    public function getImpressionsUnwrapped()
     {
-        $wrapper = $this->getImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impressions");
     }
 
     /**
@@ -119,11 +118,10 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setImpressionsValue($var)
+    public function setImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("impressions", $var);
+        return $this;}
 
     /**
      * Number of ad clicks.
@@ -144,10 +142,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
      * @return float|null
      */
-    public function getClicksValue()
+    public function getClicksUnwrapped()
     {
-        $wrapper = $this->getClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("clicks");
     }
 
     /**
@@ -174,11 +171,10 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setClicksValue($var)
+    public function setClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("clicks", $var);
+        return $this;}
 
     /**
      * Cost (in micros) for advertising, in the local currency for the account.
@@ -199,10 +195,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
      * @return int|string|null
      */
-    public function getCostMicrosValue()
+    public function getCostMicrosUnwrapped()
     {
-        $wrapper = $this->getCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_micros");
     }
 
     /**
@@ -229,11 +224,10 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCostMicrosValue($var)
+    public function setCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_micros", $var);
+        return $this;}
 
     /**
      * Number of conversions.
@@ -254,10 +248,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
      * @return float|null
      */
-    public function getConversionsValue()
+    public function getConversionsUnwrapped()
     {
-        $wrapper = $this->getConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversions");
     }
 
     /**
@@ -284,11 +277,10 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setConversionsValue($var)
+    public function setConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setConversions($wrappedVar);
-    }
+        $this->writeWrapperValue("conversions", $var);
+        return $this;}
 
     /**
      * Number of video views for a video ad campaign.
@@ -309,10 +301,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
      * @return float|null
      */
-    public function getVideoViewsValue()
+    public function getVideoViewsUnwrapped()
     {
-        $wrapper = $this->getVideoViews();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_views");
     }
 
     /**
@@ -339,11 +330,10 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setVideoViewsValue($var)
+    public function setVideoViewsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setVideoViews($wrappedVar);
-    }
+        $this->writeWrapperValue("video_views", $var);
+        return $this;}
 
 }
 

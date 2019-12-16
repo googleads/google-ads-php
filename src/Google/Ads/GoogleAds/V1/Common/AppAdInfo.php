@@ -21,7 +21,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.AdTextAsset mandatory_ad_text = 1;</code>
      */
-    private $mandatory_ad_text = null;
+    protected $mandatory_ad_text = null;
     /**
      * List of text assets for headlines. When the ad serves the headlines will
      * be selected from this list.

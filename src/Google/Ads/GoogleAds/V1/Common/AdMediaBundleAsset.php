@@ -20,7 +20,7 @@ class AdMediaBundleAsset extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue asset = 1;</code>
      */
-    private $asset = null;
+    protected $asset = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class AdMediaBundleAsset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue asset = 1;</code>
      * @return string|null
      */
-    public function getAssetValue()
+    public function getAssetUnwrapped()
     {
-        $wrapper = $this->getAsset();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("asset");
     }
 
     /**
@@ -86,11 +85,10 @@ class AdMediaBundleAsset extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAssetValue($var)
+    public function setAssetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAsset($wrappedVar);
-    }
+        $this->writeWrapperValue("asset", $var);
+        return $this;}
 
 }
 

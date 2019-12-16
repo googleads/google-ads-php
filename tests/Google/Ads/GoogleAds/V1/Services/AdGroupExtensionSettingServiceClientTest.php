@@ -34,7 +34,7 @@ use Google\Rpc\Code;
 use stdClass;
 
 /**
- * @group googleads
+ * @group services
  * @group gapic
  */
 class AdGroupExtensionSettingServiceClientTest extends GeneratedTest
@@ -48,14 +48,22 @@ class AdGroupExtensionSettingServiceClientTest extends GeneratedTest
     }
 
     /**
+     * @return CredentialsWrapper
+     */
+    private function createCredentials()
+    {
+        return $this->getMockBuilder(CredentialsWrapper::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
      * @return AdGroupExtensionSettingServiceClient
      */
     private function createClient(array $options = [])
     {
         $options += [
-            'credentials' => $this->getMockBuilder(CredentialsWrapper::class)
-                ->disableOriginalConstructor()
-                ->getMock(),
+            'credentials' => $this->createCredentials(),
         ];
 
         return new AdGroupExtensionSettingServiceClient($options);

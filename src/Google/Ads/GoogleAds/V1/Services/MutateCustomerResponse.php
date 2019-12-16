@@ -20,7 +20,7 @@ class MutateCustomerResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateCustomerResult result = 2;</code>
      */
-    private $result = null;
+    protected $result = null;
 
     /**
      * Constructor.

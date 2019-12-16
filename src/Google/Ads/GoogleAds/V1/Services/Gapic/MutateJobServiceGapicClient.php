@@ -27,6 +27,7 @@
 namespace Google\Ads\GoogleAds\V1\Services\Gapic;
 
 use Google\Ads\GoogleAds\V1\Resources\MutateJob;
+use Google\Ads\GoogleAds\V1\Resources\MutateJob\MutateJobMetadata;
 use Google\Ads\GoogleAds\V1\Services\AddMutateJobOperationsRequest;
 use Google\Ads\GoogleAds\V1\Services\AddMutateJobOperationsResponse;
 use Google\Ads\GoogleAds\V1\Services\CreateMutateJobRequest;

@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateMerchantCenterLinkRequest</code>
  */
-final class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
+class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer being modified.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The operation to perform on the link
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.MerchantCenterLinkOperation operation = 2;</code>
      */
-    private $operation = null;
+    protected $operation = null;
 
     /**
      * Constructor.

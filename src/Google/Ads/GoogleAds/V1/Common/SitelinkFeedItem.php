@@ -21,7 +21,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      */
-    private $link_text = null;
+    protected $link_text = null;
     /**
      * First line of the description for the sitelink.
      * If this value is set, line2 must also be set.
@@ -29,7 +29,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue line1 = 2;</code>
      */
-    private $line1 = null;
+    protected $line1 = null;
     /**
      * Second line of the description for the sitelink.
      * If this value is set, line1 must also be set.
@@ -37,7 +37,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue line2 = 3;</code>
      */
-    private $line2 = null;
+    protected $line2 = null;
     /**
      * A list of possible final URLs after all cross domain redirects.
      *
@@ -55,7 +55,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * A list of mappings to be used for substituting URL custom parameter tags in
      * the tracking_url_template, final_urls, and/or final_mobile_urls.
@@ -69,7 +69,7 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
      */
-    private $final_url_suffix = null;
+    protected $final_url_suffix = null;
 
     /**
      * Constructor.
@@ -128,10 +128,9 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      * @return string|null
      */
-    public function getLinkTextValue()
+    public function getLinkTextUnwrapped()
     {
-        $wrapper = $this->getLinkText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("link_text");
     }
 
     /**
@@ -160,11 +159,10 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLinkTextValue($var)
+    public function setLinkTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLinkText($wrappedVar);
-    }
+        $this->writeWrapperValue("link_text", $var);
+        return $this;}
 
     /**
      * First line of the description for the sitelink.
@@ -189,10 +187,9 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue line1 = 2;</code>
      * @return string|null
      */
-    public function getLine1Value()
+    public function getLine1Unwrapped()
     {
-        $wrapper = $this->getLine1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("line1");
     }
 
     /**
@@ -223,11 +220,10 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLine1Value($var)
+    public function setLine1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLine1($wrappedVar);
-    }
+        $this->writeWrapperValue("line1", $var);
+        return $this;}
 
     /**
      * Second line of the description for the sitelink.
@@ -252,10 +248,9 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue line2 = 3;</code>
      * @return string|null
      */
-    public function getLine2Value()
+    public function getLine2Unwrapped()
     {
-        $wrapper = $this->getLine2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("line2");
     }
 
     /**
@@ -286,11 +281,10 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLine2Value($var)
+    public function setLine2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLine2($wrappedVar);
-    }
+        $this->writeWrapperValue("line2", $var);
+        return $this;}
 
     /**
      * A list of possible final URLs after all cross domain redirects.
@@ -363,10 +357,9 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
      * @return string|null
      */
-    public function getTrackingUrlTemplateValue()
+    public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -393,11 +386,10 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTrackingUrlTemplateValue($var)
+    public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * A list of mappings to be used for substituting URL custom parameter tags in
@@ -448,10 +440,9 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
      * @return string|null
      */
-    public function getFinalUrlSuffixValue()
+    public function getFinalUrlSuffixUnwrapped()
     {
-        $wrapper = $this->getFinalUrlSuffix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("final_url_suffix");
     }
 
     /**
@@ -480,11 +471,10 @@ class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFinalUrlSuffixValue($var)
+    public function setFinalUrlSuffixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFinalUrlSuffix($wrappedVar);
-    }
+        $this->writeWrapperValue("final_url_suffix", $var);
+        return $this;}
 
 }
 

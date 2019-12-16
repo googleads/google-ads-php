@@ -20,7 +20,7 @@ class AdGroupCriterionOperation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
     /**
      * The list of policy violation keys that should not cause a
      * PolicyViolationError to be reported. Not all policy violations are

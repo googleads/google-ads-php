@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListPlannableLocationsResponse</code>
  */
-final class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
+class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of locations available for planning (Countries, DMAs,

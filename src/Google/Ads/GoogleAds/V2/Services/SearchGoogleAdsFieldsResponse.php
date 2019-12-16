@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.SearchGoogleAdsFieldsResponse</code>
  */
-final class SearchGoogleAdsFieldsResponse extends \Google\Protobuf\Internal\Message
+class SearchGoogleAdsFieldsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of fields that matched the query.
@@ -28,13 +28,13 @@ final class SearchGoogleAdsFieldsResponse extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
     /**
      * Total number of results that match the query ignoring the LIMIT clause.
      *
      * Generated from protobuf field <code>int64 total_results_count = 3;</code>
      */
-    private $total_results_count = 0;
+    protected $total_results_count = 0;
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListPlannableProductsRequest</code>
  */
-final class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
+class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the selected location for planning. To list the available
@@ -21,7 +21,7 @@ final class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1;</code>
      */
-    private $plannable_location_id = null;
+    protected $plannable_location_id = null;
 
     /**
      * Constructor.
@@ -62,8 +62,7 @@ final class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Messa
      */
     public function getPlannableLocationIdUnwrapped()
     {
-        $wrapper = $this->getPlannableLocationId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("plannable_location_id");
     }
 
     /**
@@ -94,9 +93,8 @@ final class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Messa
      */
     public function setPlannableLocationIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPlannableLocationId($wrappedVar);
-    }
+        $this->writeWrapperValue("plannable_location_id", $var);
+        return $this;}
 
 }
 

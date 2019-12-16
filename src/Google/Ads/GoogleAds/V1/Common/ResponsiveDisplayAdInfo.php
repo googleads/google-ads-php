@@ -61,7 +61,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.AdTextAsset long_headline = 6;</code>
      */
-    private $long_headline = null;
+    protected $long_headline = null;
     /**
      * Descriptive texts for the ad. The maximum length is 90 characters. At
      * least 1 and max 5 headlines can be specified.
@@ -80,7 +80,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 9;</code>
      */
-    private $business_name = null;
+    protected $business_name = null;
     /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
      * If one of main_color and accent_color is set, the other is required as
@@ -88,7 +88,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue main_color = 10;</code>
      */
-    private $main_color = null;
+    protected $main_color = null;
     /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
      * If one of main_color and accent_color is set, the other is required as
@@ -96,7 +96,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue accent_color = 11;</code>
      */
-    private $accent_color = null;
+    protected $accent_color = null;
     /**
      * Advertiser's consent to allow flexible color. When true, the ad may be
      * served with different color if necessary. When false, the ad will be served
@@ -106,32 +106,32 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue allow_flexible_color = 12;</code>
      */
-    private $allow_flexible_color = null;
+    protected $allow_flexible_color = null;
     /**
      * The call-to-action text for the ad. Maximum display width is 30.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_to_action_text = 13;</code>
      */
-    private $call_to_action_text = null;
+    protected $call_to_action_text = null;
     /**
      * Prefix before price. E.g. 'as low as'.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue price_prefix = 14;</code>
      */
-    private $price_prefix = null;
+    protected $price_prefix = null;
     /**
      * Promotion text used for dyanmic formats of responsive ads. For example
      * 'Free two-day shipping'.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promo_text = 15;</code>
      */
-    private $promo_text = null;
+    protected $promo_text = null;
     /**
      * Specifies which format the ad will be served in. Default is ALL_FORMATS.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.DisplayAdFormatSettingEnum.DisplayAdFormatSetting format_setting = 16;</code>
      */
-    private $format_setting = 0;
+    protected $format_setting = 0;
 
     /**
      * Constructor.
@@ -450,10 +450,9 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 9;</code>
      * @return string|null
      */
-    public function getBusinessNameValue()
+    public function getBusinessNameUnwrapped()
     {
-        $wrapper = $this->getBusinessName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("business_name");
     }
 
     /**
@@ -480,11 +479,10 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setBusinessNameValue($var)
+    public function setBusinessNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBusinessName($wrappedVar);
-    }
+        $this->writeWrapperValue("business_name", $var);
+        return $this;}
 
     /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
@@ -509,10 +507,9 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue main_color = 10;</code>
      * @return string|null
      */
-    public function getMainColorValue()
+    public function getMainColorUnwrapped()
     {
-        $wrapper = $this->getMainColor();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("main_color");
     }
 
     /**
@@ -543,11 +540,10 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setMainColorValue($var)
+    public function setMainColorUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMainColor($wrappedVar);
-    }
+        $this->writeWrapperValue("main_color", $var);
+        return $this;}
 
     /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
@@ -572,10 +568,9 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue accent_color = 11;</code>
      * @return string|null
      */
-    public function getAccentColorValue()
+    public function getAccentColorUnwrapped()
     {
-        $wrapper = $this->getAccentColor();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("accent_color");
     }
 
     /**
@@ -606,11 +601,10 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAccentColorValue($var)
+    public function setAccentColorUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAccentColor($wrappedVar);
-    }
+        $this->writeWrapperValue("accent_color", $var);
+        return $this;}
 
     /**
      * Advertiser's consent to allow flexible color. When true, the ad may be
@@ -639,10 +633,9 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue allow_flexible_color = 12;</code>
      * @return bool|null
      */
-    public function getAllowFlexibleColorValue()
+    public function getAllowFlexibleColorUnwrapped()
     {
-        $wrapper = $this->getAllowFlexibleColor();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("allow_flexible_color");
     }
 
     /**
@@ -677,11 +670,10 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setAllowFlexibleColorValue($var)
+    public function setAllowFlexibleColorUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setAllowFlexibleColor($wrappedVar);
-    }
+        $this->writeWrapperValue("allow_flexible_color", $var);
+        return $this;}
 
     /**
      * The call-to-action text for the ad. Maximum display width is 30.
@@ -702,10 +694,9 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue call_to_action_text = 13;</code>
      * @return string|null
      */
-    public function getCallToActionTextValue()
+    public function getCallToActionTextUnwrapped()
     {
-        $wrapper = $this->getCallToActionText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("call_to_action_text");
     }
 
     /**
@@ -732,11 +723,10 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCallToActionTextValue($var)
+    public function setCallToActionTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCallToActionText($wrappedVar);
-    }
+        $this->writeWrapperValue("call_to_action_text", $var);
+        return $this;}
 
     /**
      * Prefix before price. E.g. 'as low as'.
@@ -757,10 +747,9 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue price_prefix = 14;</code>
      * @return string|null
      */
-    public function getPricePrefixValue()
+    public function getPricePrefixUnwrapped()
     {
-        $wrapper = $this->getPricePrefix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("price_prefix");
     }
 
     /**
@@ -787,11 +776,10 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPricePrefixValue($var)
+    public function setPricePrefixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPricePrefix($wrappedVar);
-    }
+        $this->writeWrapperValue("price_prefix", $var);
+        return $this;}
 
     /**
      * Promotion text used for dyanmic formats of responsive ads. For example
@@ -814,10 +802,9 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue promo_text = 15;</code>
      * @return string|null
      */
-    public function getPromoTextValue()
+    public function getPromoTextUnwrapped()
     {
-        $wrapper = $this->getPromoText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("promo_text");
     }
 
     /**
@@ -846,11 +833,10 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPromoTextValue($var)
+    public function setPromoTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPromoText($wrappedVar);
-    }
+        $this->writeWrapperValue("promo_text", $var);
+        return $this;}
 
     /**
      * Specifies which format the ad will be served in. Default is ALL_FORMATS.

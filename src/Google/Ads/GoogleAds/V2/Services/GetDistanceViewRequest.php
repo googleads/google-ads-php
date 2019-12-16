@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetDistanceViewRequest</code>
  */
-final class GetDistanceViewRequest extends \Google\Protobuf\Internal\Message
+class GetDistanceViewRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the distance view to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Invoice.AccountBudgetSummary</code>
  */
-final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
+class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the customer associated with this account budget.
@@ -24,14 +24,14 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1;</code>
      */
-    private $customer = null;
+    protected $customer = null;
     /**
      * The descriptive name of the account budget’s customer. It appears on the
      * invoice PDF as "Account".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2;</code>
      */
-    private $customer_descriptive_name = null;
+    protected $customer_descriptive_name = null;
     /**
      * The resource name of the account budget associated with this summarized
      * billable cost.
@@ -40,35 +40,35 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
      */
-    private $account_budget = null;
+    protected $account_budget = null;
     /**
      * The name of the account budget. It appears on the invoice PDF as "Account
      * budget".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4;</code>
      */
-    private $account_budget_name = null;
+    protected $account_budget_name = null;
     /**
      * The purchase order number of the account budget. It appears on the
      * invoice PDF as "Purchase order".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5;</code>
      */
-    private $purchase_order_number = null;
+    protected $purchase_order_number = null;
     /**
      * The pretax subtotal amount attributable to this budget during the service
      * period, in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6;</code>
      */
-    private $subtotal_amount_micros = null;
+    protected $subtotal_amount_micros = null;
     /**
      * The tax amount attributable to this budget during the service period, in
      * micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7;</code>
      */
-    private $tax_amount_micros = null;
+    protected $tax_amount_micros = null;
     /**
      * The total amount attributable to this budget during the service period,
      * in micros. This equals the sum of the account budget subtotal amount and
@@ -76,7 +76,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8;</code>
      */
-    private $total_amount_micros = null;
+    protected $total_amount_micros = null;
     /**
      * The billable activity date range of the account budget, within the
      * service date range of this invoice. The end date is inclusive. This can
@@ -84,7 +84,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.DateRange billable_activity_date_range = 9;</code>
      */
-    private $billable_activity_date_range = null;
+    protected $billable_activity_date_range = null;
 
     /**
      * Constructor.
@@ -162,8 +162,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerUnwrapped()
     {
-        $wrapper = $this->getCustomer();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("customer");
     }
 
     /**
@@ -200,9 +199,8 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function setCustomerUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCustomer($wrappedVar);
-    }
+        $this->writeWrapperValue("customer", $var);
+        return $this;}
 
     /**
      * The descriptive name of the account budget’s customer. It appears on the
@@ -227,8 +225,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function getCustomerDescriptiveNameUnwrapped()
     {
-        $wrapper = $this->getCustomerDescriptiveName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("customer_descriptive_name");
     }
 
     /**
@@ -259,9 +256,8 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function setCustomerDescriptiveNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCustomerDescriptiveName($wrappedVar);
-    }
+        $this->writeWrapperValue("customer_descriptive_name", $var);
+        return $this;}
 
     /**
      * The resource name of the account budget associated with this summarized
@@ -290,8 +286,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function getAccountBudgetUnwrapped()
     {
-        $wrapper = $this->getAccountBudget();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("account_budget");
     }
 
     /**
@@ -326,9 +321,8 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function setAccountBudgetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAccountBudget($wrappedVar);
-    }
+        $this->writeWrapperValue("account_budget", $var);
+        return $this;}
 
     /**
      * The name of the account budget. It appears on the invoice PDF as "Account
@@ -353,8 +347,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function getAccountBudgetNameUnwrapped()
     {
-        $wrapper = $this->getAccountBudgetName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("account_budget_name");
     }
 
     /**
@@ -385,9 +378,8 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function setAccountBudgetNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAccountBudgetName($wrappedVar);
-    }
+        $this->writeWrapperValue("account_budget_name", $var);
+        return $this;}
 
     /**
      * The purchase order number of the account budget. It appears on the
@@ -412,8 +404,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function getPurchaseOrderNumberUnwrapped()
     {
-        $wrapper = $this->getPurchaseOrderNumber();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("purchase_order_number");
     }
 
     /**
@@ -444,9 +435,8 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function setPurchaseOrderNumberUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPurchaseOrderNumber($wrappedVar);
-    }
+        $this->writeWrapperValue("purchase_order_number", $var);
+        return $this;}
 
     /**
      * The pretax subtotal amount attributable to this budget during the service
@@ -471,8 +461,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function getSubtotalAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getSubtotalAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("subtotal_amount_micros");
     }
 
     /**
@@ -503,9 +492,8 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function setSubtotalAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setSubtotalAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("subtotal_amount_micros", $var);
+        return $this;}
 
     /**
      * The tax amount attributable to this budget during the service period, in
@@ -530,8 +518,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function getTaxAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getTaxAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tax_amount_micros");
     }
 
     /**
@@ -562,9 +549,8 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function setTaxAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTaxAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("tax_amount_micros", $var);
+        return $this;}
 
     /**
      * The total amount attributable to this budget during the service period,
@@ -591,8 +577,7 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function getTotalAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getTotalAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("total_amount_micros");
     }
 
     /**
@@ -625,9 +610,8 @@ final class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      */
     public function setTotalAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTotalAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("total_amount_micros", $var);
+        return $this;}
 
     /**
      * The billable activity date range of the account budget, within the

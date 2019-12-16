@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListInvoicesResponse</code>
  */
-final class ListInvoicesResponse extends \Google\Protobuf\Internal\Message
+class ListInvoicesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of invoices that match the billing setup and time period.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ApplyRecommendationOperation.TargetCpaOptInParameters</code>
  */
-final class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
+class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
 {
     /**
      * Average CPA to use for Target CPA bidding strategy. This is a required
@@ -21,13 +21,13 @@ final class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      */
-    private $target_cpa_micros = null;
+    protected $target_cpa_micros = null;
     /**
      * Optional, budget amount to set for the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value new_campaign_budget_amount_micros = 2;</code>
      */
-    private $new_campaign_budget_amount_micros = null;
+    protected $new_campaign_budget_amount_micros = null;
 
     /**
      * Constructor.
@@ -70,8 +70,7 @@ final class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      */
     public function getTargetCpaMicrosUnwrapped()
     {
-        $wrapper = $this->getTargetCpaMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_cpa_micros");
     }
 
     /**
@@ -102,9 +101,8 @@ final class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      */
     public function setTargetCpaMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTargetCpaMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("target_cpa_micros", $var);
+        return $this;}
 
     /**
      * Optional, budget amount to set for the campaign.
@@ -127,8 +125,7 @@ final class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      */
     public function getNewCampaignBudgetAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getNewCampaignBudgetAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("new_campaign_budget_amount_micros");
     }
 
     /**
@@ -157,9 +154,8 @@ final class TargetCpaOptInParameters extends \Google\Protobuf\Internal\Message
      */
     public function setNewCampaignBudgetAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setNewCampaignBudgetAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("new_campaign_budget_amount_micros", $var);
+        return $this;}
 
 }
 

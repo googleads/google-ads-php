@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.AdGroupFeedErrorEnum</code>
  */
-final class AdGroupFeedErrorEnum extends \Google\Protobuf\Internal\Message
+class AdGroupFeedErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

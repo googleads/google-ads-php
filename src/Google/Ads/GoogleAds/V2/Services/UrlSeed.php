@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.UrlSeed</code>
  */
-final class UrlSeed extends \Google\Protobuf\Internal\Message
+class UrlSeed extends \Google\Protobuf\Internal\Message
 {
     /**
      * The URL to crawl in order to generate keyword ideas.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url = 1;</code>
      */
-    private $url = null;
+    protected $url = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class UrlSeed extends \Google\Protobuf\Internal\Message
      */
     public function getUrlUnwrapped()
     {
-        $wrapper = $this->getUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("url");
     }
 
     /**
@@ -88,9 +87,8 @@ final class UrlSeed extends \Google\Protobuf\Internal\Message
      */
     public function setUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("url", $var);
+        return $this;}
 
 }
 

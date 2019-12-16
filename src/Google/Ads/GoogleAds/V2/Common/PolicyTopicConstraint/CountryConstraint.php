@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicConstraint.CountryConstraint</code>
  */
-final class CountryConstraint extends \Google\Protobuf\Internal\Message
+class CountryConstraint extends \Google\Protobuf\Internal\Message
 {
     /**
      * Geo target constant resource name of the country in which serving is
@@ -22,7 +22,7 @@ final class CountryConstraint extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
      */
-    private $country_criterion = null;
+    protected $country_criterion = null;
 
     /**
      * Constructor.
@@ -63,8 +63,7 @@ final class CountryConstraint extends \Google\Protobuf\Internal\Message
      */
     public function getCountryCriterionUnwrapped()
     {
-        $wrapper = $this->getCountryCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_criterion");
     }
 
     /**
@@ -95,9 +94,8 @@ final class CountryConstraint extends \Google\Protobuf\Internal\Message
      */
     public function setCountryCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("country_criterion", $var);
+        return $this;}
 
 }
 

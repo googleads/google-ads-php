@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicEvidence.DestinationMismatch</code>
  */
-final class DestinationMismatch extends \Google\Protobuf\Internal\Message
+class DestinationMismatch extends \Google\Protobuf\Internal\Message
 {
     /**
      * The set of URLs that did not match each other.

@@ -41,7 +41,7 @@ use Google\Rpc\Code;
 use stdClass;
 
 /**
- * @group googleads
+ * @group services
  * @group gapic
  */
 class MutateJobServiceClientTest extends GeneratedTest
@@ -55,14 +55,22 @@ class MutateJobServiceClientTest extends GeneratedTest
     }
 
     /**
+     * @return CredentialsWrapper
+     */
+    private function createCredentials()
+    {
+        return $this->getMockBuilder(CredentialsWrapper::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
      * @return MutateJobServiceClient
      */
     private function createClient(array $options = [])
     {
         $options += [
-            'credentials' => $this->getMockBuilder(CredentialsWrapper::class)
-                ->disableOriginalConstructor()
-                ->getMock(),
+            'credentials' => $this->createCredentials(),
         ];
 
         return new MutateJobServiceClient($options);
@@ -302,6 +310,7 @@ class MutateJobServiceClientTest extends GeneratedTest
         $operationsClient = new OperationsClient([
             'serviceAddress' => '',
             'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
         ]);
         $transport = $this->createTransport();
         $client = $this->createClient([
@@ -375,6 +384,7 @@ class MutateJobServiceClientTest extends GeneratedTest
         $operationsClient = new OperationsClient([
             'serviceAddress' => '',
             'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
         ]);
         $transport = $this->createTransport();
         $client = $this->createClient([

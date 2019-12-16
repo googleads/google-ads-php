@@ -57,10 +57,9 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 1;</code>
      * @return string|null
      */
-    public function getStringValueValue()
+    public function getStringValueUnwrapped()
     {
-        $wrapper = $this->getStringValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("string_value");
     }
 
     /**
@@ -87,11 +86,10 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setStringValueValue($var)
+    public function setStringValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStringValue($wrappedVar);
-    }
+        $this->writeWrapperValue("string_value", $var);
+        return $this;}
 
     /**
      * Int64 value of the operand if it is a int64 type.
@@ -112,10 +110,9 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value long_value = 2;</code>
      * @return int|string|null
      */
-    public function getLongValueValue()
+    public function getLongValueUnwrapped()
     {
-        $wrapper = $this->getLongValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("long_value");
     }
 
     /**
@@ -142,11 +139,10 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setLongValueValue($var)
+    public function setLongValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setLongValue($wrappedVar);
-    }
+        $this->writeWrapperValue("long_value", $var);
+        return $this;}
 
     /**
      * Boolean value of the operand if it is a boolean type.
@@ -167,10 +163,9 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue boolean_value = 3;</code>
      * @return bool|null
      */
-    public function getBooleanValueValue()
+    public function getBooleanValueUnwrapped()
     {
-        $wrapper = $this->getBooleanValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("boolean_value");
     }
 
     /**
@@ -197,11 +192,10 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setBooleanValueValue($var)
+    public function setBooleanValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setBooleanValue($wrappedVar);
-    }
+        $this->writeWrapperValue("boolean_value", $var);
+        return $this;}
 
     /**
      * Double value of the operand if it is a double type.
@@ -222,10 +216,9 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue double_value = 4;</code>
      * @return float|null
      */
-    public function getDoubleValueValue()
+    public function getDoubleValueUnwrapped()
     {
-        $wrapper = $this->getDoubleValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("double_value");
     }
 
     /**
@@ -252,11 +245,10 @@ class ConstantOperand extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setDoubleValueValue($var)
+    public function setDoubleValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setDoubleValue($wrappedVar);
-    }
+        $this->writeWrapperValue("double_value", $var);
+        return $this;}
 
     /**
      * @return string

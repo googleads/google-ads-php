@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListStringRuleItemInfo</code>
  */
-final class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
+class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * String comparison operator.
@@ -22,7 +22,7 @@ final class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListStringRuleItemOperatorEnum.UserListStringRuleItemOperator operator = 1;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * The right hand side of the string rule item. For URLs or referrer URLs,
      * the value can not contain illegal URL chars such as newlines, quotes,
@@ -31,7 +31,7 @@ final class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * Constructor.
@@ -112,8 +112,7 @@ final class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
      */
     public function getValueUnwrapped()
     {
-        $wrapper = $this->getValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value");
     }
 
     /**
@@ -148,9 +147,8 @@ final class UserListStringRuleItemInfo extends \Google\Protobuf\Internal\Message
      */
     public function setValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setValue($wrappedVar);
-    }
+        $this->writeWrapperValue("value", $var);
+        return $this;}
 
 }
 

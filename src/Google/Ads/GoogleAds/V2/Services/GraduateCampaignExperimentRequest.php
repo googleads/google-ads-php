@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GraduateCampaignExperimentRequest</code>
  */
-final class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
+class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the campaign experiment to graduate.
      *
      * Generated from protobuf field <code>string campaign_experiment = 1;</code>
      */
-    private $campaign_experiment = '';
+    protected $campaign_experiment = '';
     /**
      * Resource name of the budget to attach to the campaign graduated from the
      * experiment.
      *
      * Generated from protobuf field <code>string campaign_budget = 2;</code>
      */
-    private $campaign_budget = '';
+    protected $campaign_budget = '';
 
     /**
      * Constructor.

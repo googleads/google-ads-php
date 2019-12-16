@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicEvidence</code>
  */
-final class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
+class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
 {
     protected $value;
 
@@ -120,8 +120,7 @@ final class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      */
     public function getLanguageCodeUnwrapped()
     {
-        $wrapper = $this->getLanguageCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_code");
     }
 
     /**
@@ -152,9 +151,8 @@ final class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      */
     public function setLanguageCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageCode($wrappedVar);
-    }
+        $this->writeWrapperValue("language_code", $var);
+        return $this;}
 
     /**
      * The text in the destination of the resource that is causing a policy

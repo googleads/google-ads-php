@@ -20,7 +20,7 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue carrier_constant = 1;</code>
      */
-    private $carrier_constant = null;
+    protected $carrier_constant = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue carrier_constant = 1;</code>
      * @return string|null
      */
-    public function getCarrierConstantValue()
+    public function getCarrierConstantUnwrapped()
     {
-        $wrapper = $this->getCarrierConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("carrier_constant");
     }
 
     /**
@@ -86,11 +85,10 @@ class CarrierInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCarrierConstantValue($var)
+    public function setCarrierConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCarrierConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("carrier_constant", $var);
+        return $this;}
 
 }
 

@@ -21,7 +21,7 @@ class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string keyword_plan = 1;</code>
      */
-    private $keyword_plan = '';
+    protected $keyword_plan = '';
 
     /**
      * Constructor.

@@ -21,7 +21,7 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 1;</code>
      */
-    private $feed = null;
+    protected $feed = null;
     /**
      * Geo target constant(s) restricting the scope of the geographic area within
      * the feed. Currently only one geo target constant is allowed.
@@ -35,14 +35,14 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value radius = 3;</code>
      */
-    private $radius = null;
+    protected $radius = null;
     /**
      * Unit of the radius, miles and meters supported currently.
      * This is required and must be set in CREATE operations.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits radius_units = 4;</code>
      */
-    private $radius_units = 0;
+    protected $radius_units = 0;
 
     /**
      * Constructor.
@@ -90,10 +90,9 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 1;</code>
      * @return string|null
      */
-    public function getFeedValue()
+    public function getFeedUnwrapped()
     {
-        $wrapper = $this->getFeed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed");
     }
 
     /**
@@ -122,11 +121,10 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFeedValue($var)
+    public function setFeedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeed($wrappedVar);
-    }
+        $this->writeWrapperValue("feed", $var);
+        return $this;}
 
     /**
      * Geo target constant(s) restricting the scope of the geographic area within
@@ -177,10 +175,9 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value radius = 3;</code>
      * @return int|string|null
      */
-    public function getRadiusValue()
+    public function getRadiusUnwrapped()
     {
-        $wrapper = $this->getRadius();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("radius");
     }
 
     /**
@@ -209,11 +206,10 @@ class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setRadiusValue($var)
+    public function setRadiusUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setRadius($wrappedVar);
-    }
+        $this->writeWrapperValue("radius", $var);
+        return $this;}
 
     /**
      * Unit of the radius, miles and meters supported currently.

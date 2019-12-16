@@ -66,10 +66,9 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value http_code = 2;</code>
      * @return int|null
      */
-    public function getHttpCodeValue()
+    public function getHttpCodeUnwrapped()
     {
-        $wrapper = $this->getHttpCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("http_code");
     }
 
     /**
@@ -96,11 +95,10 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setHttpCodeValue($var)
+    public function setHttpCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setHttpCode($wrappedVar);
-    }
+        $this->writeWrapperValue("http_code", $var);
+        return $this;}
 
     /**
      * List of websites linked with this resource.
@@ -175,10 +173,9 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 5;</code>
      * @return string|null
      */
-    public function getLanguageCodeValue()
+    public function getLanguageCodeUnwrapped()
     {
-        $wrapper = $this->getLanguageCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_code");
     }
 
     /**
@@ -207,11 +204,10 @@ class PolicyTopicEvidence extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLanguageCodeValue($var)
+    public function setLanguageCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageCode($wrappedVar);
-    }
+        $this->writeWrapperValue("language_code", $var);
+        return $this;}
 
     /**
      * The text in the destination of the resource that is causing a policy

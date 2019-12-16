@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ShoppingComparisonListingAdInfo</code>
  */
-final class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Message
+class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Headline of the ad. This field is required. Allowed length is between 25
@@ -21,7 +21,7 @@ final class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Me
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
      */
-    private $headline = null;
+    protected $headline = null;
 
     /**
      * Constructor.
@@ -62,8 +62,7 @@ final class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Me
      */
     public function getHeadlineUnwrapped()
     {
-        $wrapper = $this->getHeadline();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("headline");
     }
 
     /**
@@ -94,9 +93,8 @@ final class ShoppingComparisonListingAdInfo extends \Google\Protobuf\Internal\Me
      */
     public function setHeadlineUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeadline($wrappedVar);
-    }
+        $this->writeWrapperValue("headline", $var);
+        return $this;}
 
 }
 

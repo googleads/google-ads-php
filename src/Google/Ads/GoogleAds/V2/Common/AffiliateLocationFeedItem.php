@@ -13,68 +13,68 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.AffiliateLocationFeedItem</code>
  */
-final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
+class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the business.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 1;</code>
      */
-    private $business_name = null;
+    protected $business_name = null;
     /**
      * Line 1 of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue address_line_1 = 2;</code>
      */
-    private $address_line_1 = null;
+    protected $address_line_1 = null;
     /**
      * Line 2 of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue address_line_2 = 3;</code>
      */
-    private $address_line_2 = null;
+    protected $address_line_2 = null;
     /**
      * City of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city = 4;</code>
      */
-    private $city = null;
+    protected $city = null;
     /**
      * Province of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue province = 5;</code>
      */
-    private $province = null;
+    protected $province = null;
     /**
      * Postal code of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue postal_code = 6;</code>
      */
-    private $postal_code = null;
+    protected $postal_code = null;
     /**
      * Country code of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 7;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     /**
      * Phone number of the business.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 8;</code>
      */
-    private $phone_number = null;
+    protected $phone_number = null;
     /**
      * Id of the retail chain that is advertised as a seller of your product.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value chain_id = 9;</code>
      */
-    private $chain_id = null;
+    protected $chain_id = null;
     /**
      * Name of chain.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue chain_name = 10;</code>
      */
-    private $chain_name = null;
+    protected $chain_name = null;
 
     /**
      * Constructor.
@@ -130,8 +130,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getBusinessNameUnwrapped()
     {
-        $wrapper = $this->getBusinessName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("business_name");
     }
 
     /**
@@ -160,9 +159,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setBusinessNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBusinessName($wrappedVar);
-    }
+        $this->writeWrapperValue("business_name", $var);
+        return $this;}
 
     /**
      * Line 1 of the business address.
@@ -185,8 +183,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getAddressLine1Unwrapped()
     {
-        $wrapper = $this->getAddressLine1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("address_line_1");
     }
 
     /**
@@ -215,9 +212,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setAddressLine1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAddressLine1($wrappedVar);
-    }
+        $this->writeWrapperValue("address_line_1", $var);
+        return $this;}
 
     /**
      * Line 2 of the business address.
@@ -240,8 +236,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getAddressLine2Unwrapped()
     {
-        $wrapper = $this->getAddressLine2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("address_line_2");
     }
 
     /**
@@ -270,9 +265,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setAddressLine2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAddressLine2($wrappedVar);
-    }
+        $this->writeWrapperValue("address_line_2", $var);
+        return $this;}
 
     /**
      * City of the business address.
@@ -295,8 +289,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getCityUnwrapped()
     {
-        $wrapper = $this->getCity();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("city");
     }
 
     /**
@@ -325,9 +318,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setCityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCity($wrappedVar);
-    }
+        $this->writeWrapperValue("city", $var);
+        return $this;}
 
     /**
      * Province of the business address.
@@ -350,8 +342,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getProvinceUnwrapped()
     {
-        $wrapper = $this->getProvince();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("province");
     }
 
     /**
@@ -380,9 +371,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setProvinceUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProvince($wrappedVar);
-    }
+        $this->writeWrapperValue("province", $var);
+        return $this;}
 
     /**
      * Postal code of the business address.
@@ -405,8 +395,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getPostalCodeUnwrapped()
     {
-        $wrapper = $this->getPostalCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("postal_code");
     }
 
     /**
@@ -435,9 +424,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setPostalCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPostalCode($wrappedVar);
-    }
+        $this->writeWrapperValue("postal_code", $var);
+        return $this;}
 
     /**
      * Country code of the business address.
@@ -460,8 +448,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -490,9 +477,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * Phone number of the business.
@@ -515,8 +501,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getPhoneNumberUnwrapped()
     {
-        $wrapper = $this->getPhoneNumber();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("phone_number");
     }
 
     /**
@@ -545,9 +530,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setPhoneNumberUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPhoneNumber($wrappedVar);
-    }
+        $this->writeWrapperValue("phone_number", $var);
+        return $this;}
 
     /**
      * Id of the retail chain that is advertised as a seller of your product.
@@ -570,8 +554,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getChainIdUnwrapped()
     {
-        $wrapper = $this->getChainId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("chain_id");
     }
 
     /**
@@ -600,9 +583,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setChainIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setChainId($wrappedVar);
-    }
+        $this->writeWrapperValue("chain_id", $var);
+        return $this;}
 
     /**
      * Name of chain.
@@ -625,8 +607,7 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getChainNameUnwrapped()
     {
-        $wrapper = $this->getChainName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("chain_name");
     }
 
     /**
@@ -655,9 +636,8 @@ final class AffiliateLocationFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setChainNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setChainName($wrappedVar);
-    }
+        $this->writeWrapperValue("chain_name", $var);
+        return $this;}
 
 }
 

@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.MediaBundle</code>
  */
-final class MediaBundle extends \Google\Protobuf\Internal\Message
+class MediaBundle extends \Google\Protobuf\Internal\Message
 {
     /**
      * Raw zipped data.
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
      */
-    private $data = null;
+    protected $data = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class MediaBundle extends \Google\Protobuf\Internal\Message
      */
     public function getDataUnwrapped()
     {
-        $wrapper = $this->getData();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("data");
     }
 
     /**
@@ -88,9 +87,8 @@ final class MediaBundle extends \Google\Protobuf\Internal\Message
      */
     public function setDataUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BytesValue(['value' => $var]);
-        return $this->setData($wrappedVar);
-    }
+        $this->writeWrapperValue("data", $var);
+        return $this;}
 
 }
 

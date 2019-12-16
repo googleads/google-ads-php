@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.PaidOrganicSearchTermView</code>
  */
-final class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
+class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the search term view.
@@ -24,13 +24,13 @@ final class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The search term.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
      */
-    private $search_term = null;
+    protected $search_term = null;
 
     /**
      * Constructor.
@@ -105,8 +105,7 @@ final class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
      */
     public function getSearchTermUnwrapped()
     {
-        $wrapper = $this->getSearchTerm();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_term");
     }
 
     /**
@@ -135,9 +134,8 @@ final class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
      */
     public function setSearchTermUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSearchTerm($wrappedVar);
-    }
+        $this->writeWrapperValue("search_term", $var);
+        return $this;}
 
 }
 

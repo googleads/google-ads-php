@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TargetOutrankShare</code>
  */
-final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
+class TargetOutrankShare extends \Google\Protobuf\Internal\Message
 {
     /**
      * The target fraction of auctions where the advertiser should outrank the
@@ -27,20 +27,20 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value target_outrank_share_micros = 1;</code>
      */
-    private $target_outrank_share_micros = null;
+    protected $target_outrank_share_micros = null;
     /**
      * Competitor's visible domain URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue competitor_domain = 2;</code>
      */
-    private $competitor_domain = null;
+    protected $competitor_domain = null;
     /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 3;</code>
      */
-    private $cpc_bid_ceiling_micros = null;
+    protected $cpc_bid_ceiling_micros = null;
     /**
      * Whether the strategy should always follow bid estimate changes,
      * or only increase.
@@ -50,14 +50,14 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue only_raise_cpc_bids = 4;</code>
      */
-    private $only_raise_cpc_bids = null;
+    protected $only_raise_cpc_bids = null;
     /**
      * Whether the strategy is allowed to raise bids on keywords with
      * lower-range quality scores.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue raise_cpc_bid_when_quality_score_is_low = 5;</code>
      */
-    private $raise_cpc_bid_when_quality_score_is_low = null;
+    protected $raise_cpc_bid_when_quality_score_is_low = null;
 
     /**
      * Constructor.
@@ -124,8 +124,7 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function getTargetOutrankShareMicrosUnwrapped()
     {
-        $wrapper = $this->getTargetOutrankShareMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_outrank_share_micros");
     }
 
     /**
@@ -164,9 +163,8 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function setTargetOutrankShareMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setTargetOutrankShareMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("target_outrank_share_micros", $var);
+        return $this;}
 
     /**
      * Competitor's visible domain URL.
@@ -189,8 +187,7 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function getCompetitorDomainUnwrapped()
     {
-        $wrapper = $this->getCompetitorDomain();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("competitor_domain");
     }
 
     /**
@@ -219,9 +216,8 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function setCompetitorDomainUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCompetitorDomain($wrappedVar);
-    }
+        $this->writeWrapperValue("competitor_domain", $var);
+        return $this;}
 
     /**
      * Maximum bid limit that can be set by the bid strategy.
@@ -246,8 +242,7 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function getCpcBidCeilingMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidCeilingMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_ceiling_micros");
     }
 
     /**
@@ -278,9 +273,8 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function setCpcBidCeilingMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidCeilingMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_ceiling_micros", $var);
+        return $this;}
 
     /**
      * Whether the strategy should always follow bid estimate changes,
@@ -311,8 +305,7 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function getOnlyRaiseCpcBidsUnwrapped()
     {
-        $wrapper = $this->getOnlyRaiseCpcBids();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("only_raise_cpc_bids");
     }
 
     /**
@@ -349,9 +342,8 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function setOnlyRaiseCpcBidsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setOnlyRaiseCpcBids($wrappedVar);
-    }
+        $this->writeWrapperValue("only_raise_cpc_bids", $var);
+        return $this;}
 
     /**
      * Whether the strategy is allowed to raise bids on keywords with
@@ -376,8 +368,7 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function getRaiseCpcBidWhenQualityScoreIsLowUnwrapped()
     {
-        $wrapper = $this->getRaiseCpcBidWhenQualityScoreIsLow();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("raise_cpc_bid_when_quality_score_is_low");
     }
 
     /**
@@ -408,9 +399,8 @@ final class TargetOutrankShare extends \Google\Protobuf\Internal\Message
      */
     public function setRaiseCpcBidWhenQualityScoreIsLowUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setRaiseCpcBidWhenQualityScoreIsLow($wrappedVar);
-    }
+        $this->writeWrapperValue("raise_cpc_bid_when_quality_score_is_low", $var);
+        return $this;}
 
 }
 

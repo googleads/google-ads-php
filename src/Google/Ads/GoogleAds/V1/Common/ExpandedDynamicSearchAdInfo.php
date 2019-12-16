@@ -20,7 +20,7 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 1;</code>
      */
-    private $description = null;
+    protected $description = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 1;</code>
      * @return string|null
      */
-    public function getDescriptionValue()
+    public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -86,11 +85,10 @@ class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDescriptionValue($var)
+    public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
 }
 

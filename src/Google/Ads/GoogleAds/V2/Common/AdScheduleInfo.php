@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.AdScheduleInfo</code>
  */
-final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
+class AdScheduleInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Minutes after the start hour at which this schedule starts.
@@ -25,7 +25,7 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MinuteOfHourEnum.MinuteOfHour start_minute = 1;</code>
      */
-    private $start_minute = 0;
+    protected $start_minute = 0;
     /**
      * Minutes after the end hour at which this schedule ends. The schedule is
      * exclusive of the end minute.
@@ -34,7 +34,7 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MinuteOfHourEnum.MinuteOfHour end_minute = 2;</code>
      */
-    private $end_minute = 0;
+    protected $end_minute = 0;
     /**
      * Starting hour in 24 hour time.
      * This field must be between 0 and 23, inclusive.
@@ -43,7 +43,7 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value start_hour = 3;</code>
      */
-    private $start_hour = null;
+    protected $start_hour = null;
     /**
      * Ending hour in 24 hour time; 24 signifies end of the day.
      * This field must be between 0 and 24, inclusive.
@@ -52,7 +52,7 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value end_hour = 4;</code>
      */
-    private $end_hour = null;
+    protected $end_hour = null;
     /**
      * Day of the week the schedule applies to.
      * This field is required for CREATE operations and is prohibited on UPDATE
@@ -60,7 +60,7 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DayOfWeekEnum.DayOfWeek day_of_week = 5;</code>
      */
-    private $day_of_week = 0;
+    protected $day_of_week = 0;
 
     /**
      * Constructor.
@@ -187,8 +187,7 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      */
     public function getStartHourUnwrapped()
     {
-        $wrapper = $this->getStartHour();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_hour");
     }
 
     /**
@@ -223,9 +222,8 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      */
     public function setStartHourUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setStartHour($wrappedVar);
-    }
+        $this->writeWrapperValue("start_hour", $var);
+        return $this;}
 
     /**
      * Ending hour in 24 hour time; 24 signifies end of the day.
@@ -254,8 +252,7 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      */
     public function getEndHourUnwrapped()
     {
-        $wrapper = $this->getEndHour();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_hour");
     }
 
     /**
@@ -290,9 +287,8 @@ final class AdScheduleInfo extends \Google\Protobuf\Internal\Message
      */
     public function setEndHourUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setEndHour($wrappedVar);
-    }
+        $this->writeWrapperValue("end_hour", $var);
+        return $this;}
 
     /**
      * Day of the week the schedule applies to.

@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ManualCpc</code>
  */
-final class ManualCpc extends \Google\Protobuf\Internal\Message
+class ManualCpc extends \Google\Protobuf\Internal\Message
 {
     /**
      * Whether bids are to be enhanced based on conversion optimizer data.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 1;</code>
      */
-    private $enhanced_cpc_enabled = null;
+    protected $enhanced_cpc_enabled = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class ManualCpc extends \Google\Protobuf\Internal\Message
      */
     public function getEnhancedCpcEnabledUnwrapped()
     {
-        $wrapper = $this->getEnhancedCpcEnabled();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("enhanced_cpc_enabled");
     }
 
     /**
@@ -88,9 +87,8 @@ final class ManualCpc extends \Google\Protobuf\Internal\Message
      */
     public function setEnhancedCpcEnabledUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setEnhancedCpcEnabled($wrappedVar);
-    }
+        $this->writeWrapperValue("enhanced_cpc_enabled", $var);
+        return $this;}
 
 }
 

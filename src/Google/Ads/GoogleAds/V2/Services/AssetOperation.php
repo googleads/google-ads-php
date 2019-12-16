@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.AssetOperation</code>
  */
-final class AssetOperation extends \Google\Protobuf\Internal\Message
+class AssetOperation extends \Google\Protobuf\Internal\Message
 {
     protected $operation;
 

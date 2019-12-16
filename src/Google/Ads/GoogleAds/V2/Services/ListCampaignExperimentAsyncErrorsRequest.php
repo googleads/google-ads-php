@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListCampaignExperimentAsyncErrorsRequest</code>
  */
-final class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal\Message
+class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of the campaign experiment from which to retrieve the async
@@ -22,7 +22,7 @@ final class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\In
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Token of the page to retrieve. If not specified, the first
      * page of results will be returned. Use the value obtained from
@@ -31,7 +31,7 @@ final class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\In
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * Number of elements to retrieve in a single page.
      * When a page request is too large, the server may decide to
@@ -39,7 +39,7 @@ final class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\In
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
 
     /**
      * Constructor.

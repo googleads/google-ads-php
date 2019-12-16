@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetMobileDeviceConstantRequest</code>
  */
-final class GetMobileDeviceConstantRequest extends \Google\Protobuf\Internal\Message
+class GetMobileDeviceConstantRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of the mobile device to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

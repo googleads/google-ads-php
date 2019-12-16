@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Settings for the
- * <a href="https://support.google.com/google-ads/answer/7365594">
- * targeting related features</a>, at Campaign and AdGroup level.
+ * Settings for the targeting-related features, at the campaign and ad group
+ * levels. For more details about the targeting setting, visit
+ * https://support.google.com/google-ads/answer/7365594
  *
  * Generated from protobuf message <code>google.ads.googleads.v1.common.TargetingSetting</code>
  */

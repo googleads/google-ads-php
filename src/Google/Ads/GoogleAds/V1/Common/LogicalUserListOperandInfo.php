@@ -20,7 +20,7 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_list = 1;</code>
      */
-    private $user_list = null;
+    protected $user_list = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue user_list = 1;</code>
      * @return string|null
      */
-    public function getUserListValue()
+    public function getUserListUnwrapped()
     {
-        $wrapper = $this->getUserList();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("user_list");
     }
 
     /**
@@ -86,11 +85,10 @@ class LogicalUserListOperandInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setUserListValue($var)
+    public function setUserListUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUserList($wrappedVar);
-    }
+        $this->writeWrapperValue("user_list", $var);
+        return $this;}
 
 }
 

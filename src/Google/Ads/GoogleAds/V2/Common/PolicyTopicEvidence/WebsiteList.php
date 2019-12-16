@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicEvidence.WebsiteList</code>
  */
-final class WebsiteList extends \Google\Protobuf\Internal\Message
+class WebsiteList extends \Google\Protobuf\Internal\Message
 {
     /**
      * Websites that caused the policy finding.

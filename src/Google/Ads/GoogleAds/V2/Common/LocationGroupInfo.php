@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.LocationGroupInfo</code>
  */
-final class LocationGroupInfo extends \Google\Protobuf\Internal\Message
+class LocationGroupInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Feed specifying locations for targeting.
@@ -21,7 +21,7 @@ final class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 1;</code>
      */
-    private $feed = null;
+    protected $feed = null;
     /**
      * Geo target constant(s) restricting the scope of the geographic area within
      * the feed. Currently only one geo target constant is allowed.
@@ -35,14 +35,14 @@ final class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value radius = 3;</code>
      */
-    private $radius = null;
+    protected $radius = null;
     /**
      * Unit of the radius, miles and meters supported currently.
      * This is required and must be set in CREATE operations.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits radius_units = 4;</code>
      */
-    private $radius_units = 0;
+    protected $radius_units = 0;
 
     /**
      * Constructor.
@@ -92,8 +92,7 @@ final class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      */
     public function getFeedUnwrapped()
     {
-        $wrapper = $this->getFeed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed");
     }
 
     /**
@@ -124,9 +123,8 @@ final class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      */
     public function setFeedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeed($wrappedVar);
-    }
+        $this->writeWrapperValue("feed", $var);
+        return $this;}
 
     /**
      * Geo target constant(s) restricting the scope of the geographic area within
@@ -179,8 +177,7 @@ final class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      */
     public function getRadiusUnwrapped()
     {
-        $wrapper = $this->getRadius();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("radius");
     }
 
     /**
@@ -211,9 +208,8 @@ final class LocationGroupInfo extends \Google\Protobuf\Internal\Message
      */
     public function setRadiusUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setRadius($wrappedVar);
-    }
+        $this->writeWrapperValue("radius", $var);
+        return $this;}
 
     /**
      * Unit of the radius, miles and meters supported currently.

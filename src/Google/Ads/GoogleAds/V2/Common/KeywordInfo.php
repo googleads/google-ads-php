@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.KeywordInfo</code>
  */
-final class KeywordInfo extends \Google\Protobuf\Internal\Message
+class KeywordInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The text of the keyword (at most 80 characters and 10 words).
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
      */
-    private $text = null;
+    protected $text = null;
     /**
      * The match type of the keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.KeywordMatchTypeEnum.KeywordMatchType match_type = 2;</code>
      */
-    private $match_type = 0;
+    protected $match_type = 0;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class KeywordInfo extends \Google\Protobuf\Internal\Message
      */
     public function getTextUnwrapped()
     {
-        $wrapper = $this->getText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text");
     }
 
     /**
@@ -96,9 +95,8 @@ final class KeywordInfo extends \Google\Protobuf\Internal\Message
      */
     public function setTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setText($wrappedVar);
-    }
+        $this->writeWrapperValue("text", $var);
+        return $this;}
 
     /**
      * The match type of the keyword.

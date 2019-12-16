@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.RemarketingSetting</code>
  */
-final class RemarketingSetting extends \Google\Protobuf\Internal\Message
+class RemarketingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * The Google global site tag.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1;</code>
      */
-    private $google_global_site_tag = null;
+    protected $google_global_site_tag = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class RemarketingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getGoogleGlobalSiteTagUnwrapped()
     {
-        $wrapper = $this->getGoogleGlobalSiteTag();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("google_global_site_tag");
     }
 
     /**
@@ -88,9 +87,8 @@ final class RemarketingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setGoogleGlobalSiteTagUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGoogleGlobalSiteTag($wrappedVar);
-    }
+        $this->writeWrapperValue("google_global_site_tag", $var);
+        return $this;}
 
 }
 

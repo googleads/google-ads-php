@@ -21,13 +21,13 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue expanded_url = 3;</code>
      */
-    private $expanded_url = null;
+    protected $expanded_url = null;
     /**
      * The type of device that failed to load the URL.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice device = 4;</code>
      */
-    private $device = 0;
+    protected $device = 0;
     /**
      * The time the URL was last checked.
      * The format is "YYYY-MM-DD HH:MM:SS".
@@ -35,7 +35,7 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue last_checked_date_time = 5;</code>
      */
-    private $last_checked_date_time = null;
+    protected $last_checked_date_time = null;
 
     /**
      * Constructor.
@@ -77,10 +77,9 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue expanded_url = 3;</code>
      * @return string|null
      */
-    public function getExpandedUrlValue()
+    public function getExpandedUrlUnwrapped()
     {
-        $wrapper = $this->getExpandedUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("expanded_url");
     }
 
     /**
@@ -107,11 +106,10 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setExpandedUrlValue($var)
+    public function setExpandedUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setExpandedUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("expanded_url", $var);
+        return $this;}
 
     /**
      * The type of device that failed to load the URL.
@@ -162,10 +160,9 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue last_checked_date_time = 5;</code>
      * @return string|null
      */
-    public function getLastCheckedDateTimeValue()
+    public function getLastCheckedDateTimeUnwrapped()
     {
-        $wrapper = $this->getLastCheckedDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("last_checked_date_time");
     }
 
     /**
@@ -196,11 +193,10 @@ class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLastCheckedDateTimeValue($var)
+    public function setLastCheckedDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLastCheckedDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("last_checked_date_time", $var);
+        return $this;}
 
 }
 

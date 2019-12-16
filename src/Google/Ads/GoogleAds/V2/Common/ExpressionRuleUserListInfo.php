@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ExpressionRuleUserListInfo</code>
  */
-final class ExpressionRuleUserListInfo extends \Google\Protobuf\Internal\Message
+class ExpressionRuleUserListInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Boolean rule that defines this user list. The rule consists of a list of
@@ -24,7 +24,7 @@ final class ExpressionRuleUserListInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListRuleInfo rule = 1;</code>
      */
-    private $rule = null;
+    protected $rule = null;
 
     /**
      * Constructor.

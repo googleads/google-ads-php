@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.GeoTargetConstant</code>
  */
-final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
+class GeoTargetConstant extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the geo target constant.
@@ -22,44 +22,44 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the geo target constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Geo target constant English name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The ISO-3166-1 alpha-2 country code that is associated with the target.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     /**
      * Geo target constant target type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
      */
-    private $target_type = null;
+    protected $target_type = null;
     /**
      * Geo target constant status.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The fully qualified English name, consisting of the target's name and that
      * of its parent and country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
      */
-    private $canonical_name = null;
+    protected $canonical_name = null;
 
     /**
      * Constructor.
@@ -142,8 +142,7 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -172,9 +171,8 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Geo target constant English name.
@@ -197,8 +195,7 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -227,9 +224,8 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The ISO-3166-1 alpha-2 country code that is associated with the target.
@@ -252,8 +248,7 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -282,9 +277,8 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * Geo target constant target type.
@@ -307,8 +301,7 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function getTargetTypeUnwrapped()
     {
-        $wrapper = $this->getTargetType();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_type");
     }
 
     /**
@@ -337,9 +330,8 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function setTargetTypeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTargetType($wrappedVar);
-    }
+        $this->writeWrapperValue("target_type", $var);
+        return $this;}
 
     /**
      * Geo target constant status.
@@ -390,8 +382,7 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function getCanonicalNameUnwrapped()
     {
-        $wrapper = $this->getCanonicalName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("canonical_name");
     }
 
     /**
@@ -422,9 +413,8 @@ final class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      */
     public function setCanonicalNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCanonicalName($wrappedVar);
-    }
+        $this->writeWrapperValue("canonical_name", $var);
+        return $this;}
 
 }
 

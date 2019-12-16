@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.MediaAudio</code>
  */
-final class MediaAudio extends \Google\Protobuf\Internal\Message
+class MediaAudio extends \Google\Protobuf\Internal\Message
 {
     /**
      * The duration of the Audio in milliseconds.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
      */
-    private $ad_duration_millis = null;
+    protected $ad_duration_millis = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class MediaAudio extends \Google\Protobuf\Internal\Message
      */
     public function getAdDurationMillisUnwrapped()
     {
-        $wrapper = $this->getAdDurationMillis();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_duration_millis");
     }
 
     /**
@@ -88,9 +87,8 @@ final class MediaAudio extends \Google\Protobuf\Internal\Message
      */
     public function setAdDurationMillisUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAdDurationMillis($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_duration_millis", $var);
+        return $this;}
 
 }
 

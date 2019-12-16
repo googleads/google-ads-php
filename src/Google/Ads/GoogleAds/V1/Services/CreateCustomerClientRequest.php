@@ -20,14 +20,14 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The new client customer to create. The resource name on this customer
      * will be ignored.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Customer customer_client = 2;</code>
      */
-    private $customer_client = null;
+    protected $customer_client = null;
 
     /**
      * Constructor.

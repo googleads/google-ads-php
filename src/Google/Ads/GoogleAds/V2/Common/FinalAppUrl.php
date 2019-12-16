@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.FinalAppUrl</code>
  */
-final class FinalAppUrl extends \Google\Protobuf\Internal\Message
+class FinalAppUrl extends \Google\Protobuf\Internal\Message
 {
     /**
      * The operating system targeted by this URL. Required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AppUrlOperatingSystemTypeEnum.AppUrlOperatingSystemType os_type = 1;</code>
      */
-    private $os_type = 0;
+    protected $os_type = 0;
     /**
      * The app deep link URL. Deep links specify a location in an app that
      * corresponds to the content you'd like to show, and should be of the form
@@ -32,7 +32,7 @@ final class FinalAppUrl extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url = 2;</code>
      */
-    private $url = null;
+    protected $url = null;
 
     /**
      * Constructor.
@@ -116,8 +116,7 @@ final class FinalAppUrl extends \Google\Protobuf\Internal\Message
      */
     public function getUrlUnwrapped()
     {
-        $wrapper = $this->getUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("url");
     }
 
     /**
@@ -158,9 +157,8 @@ final class FinalAppUrl extends \Google\Protobuf\Internal\Message
      */
     public function setUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("url", $var);
+        return $this;}
 
 }
 

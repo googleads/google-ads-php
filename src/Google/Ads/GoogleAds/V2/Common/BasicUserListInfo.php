@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.BasicUserListInfo</code>
  */
-final class BasicUserListInfo extends \Google\Protobuf\Internal\Message
+class BasicUserListInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Actions associated with this user list.

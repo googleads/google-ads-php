@@ -28,6 +28,8 @@ class NegativeGeoTargetType
     /**
      * Specifies that a user is excluded from seeing the ad if they
      * are in, or show interest in, advertiser's excluded locations.
+     * DONT_CARE is removed in V2, use PRESENCE_OR_INTEREST
+     * instead.
      *
      * Generated from protobuf enum <code>DONT_CARE = 2;</code>
      */
@@ -35,6 +37,8 @@ class NegativeGeoTargetType
     /**
      * Specifies that a user is excluded from seeing the ad if they
      * are in advertiser's excluded locations.
+     * LOCATION_OF_PRESENCE is removed in V2, use PRESENCE
+     * instead.
      *
      * Generated from protobuf enum <code>LOCATION_OF_PRESENCE = 3;</code>
      */

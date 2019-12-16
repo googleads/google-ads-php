@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.RuleBasedUserListInfo</code>
  */
-final class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
+class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The status of pre-population. The field is default to NONE if not set which
@@ -27,7 +27,7 @@ final class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListPrepopulationStatusEnum.UserListPrepopulationStatus prepopulation_status = 1;</code>
      */
-    private $prepopulation_status = 0;
+    protected $prepopulation_status = 0;
     protected $rule_based_user_list;
 
     /**

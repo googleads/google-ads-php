@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Recommendation.TextAdRecommendation</code>
  */
-final class TextAdRecommendation extends \Google\Protobuf\Internal\Message
+class TextAdRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Recommended ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Ad ad = 1;</code>
      */
-    private $ad = null;
+    protected $ad = null;
     /**
      * Creation date of the recommended ad.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
      */
-    private $creation_date = null;
+    protected $creation_date = null;
     /**
      * Date, if present, is the earliest when the recommendation will be auto
      * applied.
@@ -35,7 +35,7 @@ final class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
      */
-    private $auto_apply_date = null;
+    protected $auto_apply_date = null;
 
     /**
      * Constructor.
@@ -108,8 +108,7 @@ final class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function getCreationDateUnwrapped()
     {
-        $wrapper = $this->getCreationDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("creation_date");
     }
 
     /**
@@ -140,9 +139,8 @@ final class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function setCreationDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCreationDate($wrappedVar);
-    }
+        $this->writeWrapperValue("creation_date", $var);
+        return $this;}
 
     /**
      * Date, if present, is the earliest when the recommendation will be auto
@@ -169,8 +167,7 @@ final class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function getAutoApplyDateUnwrapped()
     {
-        $wrapper = $this->getAutoApplyDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("auto_apply_date");
     }
 
     /**
@@ -203,9 +200,8 @@ final class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function setAutoApplyDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAutoApplyDate($wrappedVar);
-    }
+        $this->writeWrapperValue("auto_apply_date", $var);
+        return $this;}
 
 }
 

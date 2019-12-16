@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Campaign.SelectiveOptimization</code>
  */
-final class SelectiveOptimization extends \Google\Protobuf\Internal\Message
+class SelectiveOptimization extends \Google\Protobuf\Internal\Message
 {
     /**
      * The selected set of conversion actions for optimizing this campaign.

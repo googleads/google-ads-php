@@ -20,7 +20,7 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_category = 1;</code>
      */
-    private $user_interest_category = null;
+    protected $user_interest_category = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_category = 1;</code>
      * @return string|null
      */
-    public function getUserInterestCategoryValue()
+    public function getUserInterestCategoryUnwrapped()
     {
-        $wrapper = $this->getUserInterestCategory();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("user_interest_category");
     }
 
     /**
@@ -86,11 +85,10 @@ class UserInterestInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setUserInterestCategoryValue($var)
+    public function setUserInterestCategoryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUserInterestCategory($wrappedVar);
-    }
+        $this->writeWrapperValue("user_interest_category", $var);
+        return $this;}
 
 }
 

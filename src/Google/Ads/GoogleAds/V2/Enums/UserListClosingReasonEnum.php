@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.UserListClosingReasonEnum</code>
  */
-final class UserListClosingReasonEnum extends \Google\Protobuf\Internal\Message
+class UserListClosingReasonEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

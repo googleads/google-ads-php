@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetOperatingSystemVersionConstantRequest</code>
  */
-final class GetOperatingSystemVersionConstantRequest extends \Google\Protobuf\Internal\Message
+class GetOperatingSystemVersionConstantRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of the OS version to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

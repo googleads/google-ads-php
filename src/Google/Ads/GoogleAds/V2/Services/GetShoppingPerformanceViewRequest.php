@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetShoppingPerformanceViewRequest</code>
  */
-final class GetShoppingPerformanceViewRequest extends \Google\Protobuf\Internal\Message
+class GetShoppingPerformanceViewRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the Shopping performance view to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

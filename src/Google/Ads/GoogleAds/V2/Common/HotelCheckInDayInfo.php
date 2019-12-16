@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.HotelCheckInDayInfo</code>
  */
-final class HotelCheckInDayInfo extends \Google\Protobuf\Internal\Message
+class HotelCheckInDayInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The day of the week.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DayOfWeekEnum.DayOfWeek day_of_week = 1;</code>
      */
-    private $day_of_week = 0;
+    protected $day_of_week = 0;
 
     /**
      * Constructor.

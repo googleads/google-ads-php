@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.InteractionTypeInfo</code>
  */
-final class InteractionTypeInfo extends \Google\Protobuf\Internal\Message
+class InteractionTypeInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The interaction type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.InteractionTypeEnum.InteractionType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

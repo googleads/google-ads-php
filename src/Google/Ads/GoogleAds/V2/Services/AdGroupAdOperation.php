@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.AdGroupAdOperation</code>
  */
-final class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
+class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
 {
     /**
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
     /**
      * Configuration for how policies are validated.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.PolicyValidationParameter policy_validation_parameter = 5;</code>
      */
-    private $policy_validation_parameter = null;
+    protected $policy_validation_parameter = null;
     protected $operation;
 
     /**

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.KeywordView</code>
  */
-final class KeywordView extends \Google\Protobuf\Internal\Message
+class KeywordView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the keyword view.
@@ -22,7 +22,7 @@ final class KeywordView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

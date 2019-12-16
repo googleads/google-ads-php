@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateCustomInterestsResponse</code>
  */
-final class MutateCustomInterestsResponse extends \Google\Protobuf\Internal\Message
+class MutateCustomInterestsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * All results for the mutate.

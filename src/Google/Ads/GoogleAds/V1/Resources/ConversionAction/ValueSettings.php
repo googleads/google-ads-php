@@ -23,7 +23,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue default_value = 1;</code>
      */
-    private $default_value = null;
+    protected $default_value = null;
     /**
      * The currency code to use when conversion events for this conversion
      * action are sent with an invalid or missing currency code, or when this
@@ -31,7 +31,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue default_currency_code = 2;</code>
      */
-    private $default_currency_code = null;
+    protected $default_currency_code = null;
     /**
      * Controls whether the default value and default currency code are used in
      * place of the value and currency code specified in conversion events for
@@ -39,7 +39,7 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue always_use_default_value = 3;</code>
      */
-    private $always_use_default_value = null;
+    protected $always_use_default_value = null;
 
     /**
      * Constructor.
@@ -89,10 +89,9 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue default_value = 1;</code>
      * @return float|null
      */
-    public function getDefaultValueValue()
+    public function getDefaultValueUnwrapped()
     {
-        $wrapper = $this->getDefaultValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("default_value");
     }
 
     /**
@@ -123,11 +122,10 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setDefaultValueValue($var)
+    public function setDefaultValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setDefaultValue($wrappedVar);
-    }
+        $this->writeWrapperValue("default_value", $var);
+        return $this;}
 
     /**
      * The currency code to use when conversion events for this conversion
@@ -152,10 +150,9 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue default_currency_code = 2;</code>
      * @return string|null
      */
-    public function getDefaultCurrencyCodeValue()
+    public function getDefaultCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getDefaultCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("default_currency_code");
     }
 
     /**
@@ -186,11 +183,10 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDefaultCurrencyCodeValue($var)
+    public function setDefaultCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDefaultCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("default_currency_code", $var);
+        return $this;}
 
     /**
      * Controls whether the default value and default currency code are used in
@@ -215,10 +211,9 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue always_use_default_value = 3;</code>
      * @return bool|null
      */
-    public function getAlwaysUseDefaultValueValue()
+    public function getAlwaysUseDefaultValueUnwrapped()
     {
-        $wrapper = $this->getAlwaysUseDefaultValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("always_use_default_value");
     }
 
     /**
@@ -249,11 +244,10 @@ class ValueSettings extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setAlwaysUseDefaultValueValue($var)
+    public function setAlwaysUseDefaultValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setAlwaysUseDefaultValue($wrappedVar);
-    }
+        $this->writeWrapperValue("always_use_default_value", $var);
+        return $this;}
 
 }
 

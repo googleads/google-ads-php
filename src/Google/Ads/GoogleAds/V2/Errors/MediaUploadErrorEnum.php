@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.MediaUploadErrorEnum</code>
  */
-final class MediaUploadErrorEnum extends \Google\Protobuf\Internal\Message
+class MediaUploadErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.MatchingFunctionContextTypeEnum</code>
  */
-final class MatchingFunctionContextTypeEnum extends \Google\Protobuf\Internal\Message
+class MatchingFunctionContextTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

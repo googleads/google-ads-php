@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ParentalStatusInfo</code>
  */
-final class ParentalStatusInfo extends \Google\Protobuf\Internal\Message
+class ParentalStatusInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the parental status.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ParentalStatusTypeEnum.ParentalStatusType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

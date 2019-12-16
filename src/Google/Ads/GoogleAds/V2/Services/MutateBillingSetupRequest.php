@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateBillingSetupRequest</code>
  */
-final class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
+class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Id of the customer to apply the billing setup mutate operation to.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The operation to perform.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.BillingSetupOperation operation = 2;</code>
      */
-    private $operation = null;
+    protected $operation = null;
 
     /**
      * Constructor.

@@ -23,19 +23,19 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the attribute. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * Data type for feed attribute. Required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedAttributeTypeEnum.FeedAttributeType type = 3;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * Indicates that data corresponding to this attribute is part of a
      * FeedItem's unique key. It defaults to false if it is unspecified. Note
@@ -44,7 +44,7 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_part_of_key = 4;</code>
      */
-    private $is_part_of_key = null;
+    protected $is_part_of_key = null;
 
     /**
      * Constructor.
@@ -89,10 +89,9 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -119,11 +118,10 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the attribute. Required.
@@ -144,10 +142,9 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -174,11 +171,10 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * Data type for feed attribute. Required.
@@ -231,10 +227,9 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_part_of_key = 4;</code>
      * @return bool|null
      */
-    public function getIsPartOfKeyValue()
+    public function getIsPartOfKeyUnwrapped()
     {
-        $wrapper = $this->getIsPartOfKey();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("is_part_of_key");
     }
 
     /**
@@ -267,11 +262,10 @@ class FeedAttribute extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setIsPartOfKeyValue($var)
+    public function setIsPartOfKeyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setIsPartOfKey($wrappedVar);
-    }
+        $this->writeWrapperValue("is_part_of_key", $var);
+        return $this;}
 
 }
 

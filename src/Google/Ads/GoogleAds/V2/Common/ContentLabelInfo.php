@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ContentLabelInfo</code>
  */
-final class ContentLabelInfo extends \Google\Protobuf\Internal\Message
+class ContentLabelInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Content label type, required for CREATE operations.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ContentLabelTypeEnum.ContentLabelType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

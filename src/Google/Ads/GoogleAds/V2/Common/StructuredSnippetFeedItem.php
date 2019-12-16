@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.StructuredSnippetFeedItem</code>
  */
-final class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
+class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The header of the snippet.
@@ -21,7 +21,7 @@ final class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
      */
-    private $header = null;
+    protected $header = null;
     /**
      * The values in the snippet.
      * The maximum size of this collection is 10.
@@ -72,8 +72,7 @@ final class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getHeaderUnwrapped()
     {
-        $wrapper = $this->getHeader();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("header");
     }
 
     /**
@@ -104,9 +103,8 @@ final class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setHeaderUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeader($wrappedVar);
-    }
+        $this->writeWrapperValue("header", $var);
+        return $this;}
 
     /**
      * The values in the snippet.

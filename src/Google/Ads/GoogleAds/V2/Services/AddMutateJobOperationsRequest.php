@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.AddMutateJobOperationsRequest</code>
  */
-final class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
+class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the MutateJob.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * A token used to enforce sequencing.
      * The first AddMutateJobOperations request for a MutateJob should not set
@@ -30,7 +30,7 @@ final class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>string sequence_token = 2;</code>
      */
-    private $sequence_token = '';
+    protected $sequence_token = '';
     /**
      * The list of mutates being added.
      * Operations can use negative integers as temp ids to signify dependencies

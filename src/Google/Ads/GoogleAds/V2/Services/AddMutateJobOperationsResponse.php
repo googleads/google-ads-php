@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.AddMutateJobOperationsResponse</code>
  */
-final class AddMutateJobOperationsResponse extends \Google\Protobuf\Internal\Message
+class AddMutateJobOperationsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The total number of operations added so far for this job.
      *
      * Generated from protobuf field <code>int64 total_operations = 1;</code>
      */
-    private $total_operations = 0;
+    protected $total_operations = 0;
     /**
      * The sequence token to be used when calling AddMutateJobOperations again if
      * more operations need to be added. The next AddMutateJobOperations request
@@ -28,7 +28,7 @@ final class AddMutateJobOperationsResponse extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>string next_sequence_token = 2;</code>
      */
-    private $next_sequence_token = '';
+    protected $next_sequence_token = '';
 
     /**
      * Constructor.

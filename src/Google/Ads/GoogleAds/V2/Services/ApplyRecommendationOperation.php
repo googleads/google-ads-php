@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ApplyRecommendationOperation</code>
  */
-final class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
+class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the recommendation to apply.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     protected $apply_parameters;
 
     /**

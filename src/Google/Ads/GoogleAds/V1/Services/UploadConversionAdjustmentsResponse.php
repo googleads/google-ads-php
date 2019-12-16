@@ -24,7 +24,7 @@ class UploadConversionAdjustmentsResponse extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
      */
-    private $partial_failure_error = null;
+    protected $partial_failure_error = null;
     /**
      * Returned for successfully processed conversion adjustments. Proto will be
      * empty for rows that received an error. Results are not returned when

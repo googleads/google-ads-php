@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.MobileDeviceInfo</code>
  */
-final class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
+class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The mobile device constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue mobile_device_constant = 1;</code>
      */
-    private $mobile_device_constant = null;
+    protected $mobile_device_constant = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMobileDeviceConstantUnwrapped()
     {
-        $wrapper = $this->getMobileDeviceConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("mobile_device_constant");
     }
 
     /**
@@ -88,9 +87,8 @@ final class MobileDeviceInfo extends \Google\Protobuf\Internal\Message
      */
     public function setMobileDeviceConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMobileDeviceConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("mobile_device_constant", $var);
+        return $this;}
 
 }
 

@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.DistanceView</code>
  */
-final class DistanceView extends \Google\Protobuf\Internal\Message
+class DistanceView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the distance view.
@@ -26,19 +26,19 @@ final class DistanceView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Grouping of user distance from location extensions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DistanceBucketEnum.DistanceBucket distance_bucket = 2;</code>
      */
-    private $distance_bucket = 0;
+    protected $distance_bucket = 0;
     /**
      * True if the DistanceBucket is using the metric system, false otherwise.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3;</code>
      */
-    private $metric_system = null;
+    protected $metric_system = null;
 
     /**
      * Constructor.
@@ -138,8 +138,7 @@ final class DistanceView extends \Google\Protobuf\Internal\Message
      */
     public function getMetricSystemUnwrapped()
     {
-        $wrapper = $this->getMetricSystem();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("metric_system");
     }
 
     /**
@@ -168,9 +167,8 @@ final class DistanceView extends \Google\Protobuf\Internal\Message
      */
     public function setMetricSystemUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setMetricSystem($wrappedVar);
-    }
+        $this->writeWrapperValue("metric_system", $var);
+        return $this;}
 
 }
 

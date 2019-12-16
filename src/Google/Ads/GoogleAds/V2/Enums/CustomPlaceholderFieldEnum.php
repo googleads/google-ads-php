@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.CustomPlaceholderFieldEnum</code>
  */
-final class CustomPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
+class CustomPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

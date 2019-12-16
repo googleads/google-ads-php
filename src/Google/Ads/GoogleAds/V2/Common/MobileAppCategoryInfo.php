@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.MobileAppCategoryInfo</code>
  */
-final class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
+class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The mobile app category constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue mobile_app_category_constant = 1;</code>
      */
-    private $mobile_app_category_constant = null;
+    protected $mobile_app_category_constant = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMobileAppCategoryConstantUnwrapped()
     {
-        $wrapper = $this->getMobileAppCategoryConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("mobile_app_category_constant");
     }
 
     /**
@@ -88,9 +87,8 @@ final class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
      */
     public function setMobileAppCategoryConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMobileAppCategoryConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("mobile_app_category_constant", $var);
+        return $this;}
 
 }
 

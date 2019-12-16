@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetLanguageConstantRequest</code>
  */
-final class GetLanguageConstantRequest extends \Google\Protobuf\Internal\Message
+class GetLanguageConstantRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of the language constant to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

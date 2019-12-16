@@ -20,7 +20,7 @@ class MutateAccountBudgetProposalResponse extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateAccountBudgetProposalResult result = 2;</code>
      */
-    private $result = null;
+    protected $result = null;
 
     /**
      * Constructor.

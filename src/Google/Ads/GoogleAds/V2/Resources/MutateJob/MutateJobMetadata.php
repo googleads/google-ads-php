@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.MutateJob.MutateJobMetadata</code>
  */
-final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
+class MutateJobMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
      * The time when this mutate job was created.
@@ -22,34 +22,34 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 1;</code>
      */
-    private $creation_date_time = null;
+    protected $creation_date_time = null;
     /**
      * The time when this mutate job was completed.
      * Formatted as yyyy-MM-dd HH:mm:ss. Example: "2018-03-05 09:16:00"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue completion_date_time = 2;</code>
      */
-    private $completion_date_time = null;
+    protected $completion_date_time = null;
     /**
      * The fraction (between 0.0 and 1.0) of mutates that have been processed.
      * This is empty if the job hasn't started running yet.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue estimated_completion_ratio = 3;</code>
      */
-    private $estimated_completion_ratio = null;
+    protected $estimated_completion_ratio = null;
     /**
      * The number of mutate operations in the mutate job.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value operation_count = 4;</code>
      */
-    private $operation_count = null;
+    protected $operation_count = null;
     /**
      * The number of mutate operations executed by the mutate job.
      * Present only if the job has started running.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value executed_operation_count = 5;</code>
      */
-    private $executed_operation_count = null;
+    protected $executed_operation_count = null;
 
     /**
      * Constructor.
@@ -101,8 +101,7 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getCreationDateTimeUnwrapped()
     {
-        $wrapper = $this->getCreationDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("creation_date_time");
     }
 
     /**
@@ -133,9 +132,8 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function setCreationDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCreationDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("creation_date_time", $var);
+        return $this;}
 
     /**
      * The time when this mutate job was completed.
@@ -160,8 +158,7 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getCompletionDateTimeUnwrapped()
     {
-        $wrapper = $this->getCompletionDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("completion_date_time");
     }
 
     /**
@@ -192,9 +189,8 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function setCompletionDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCompletionDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("completion_date_time", $var);
+        return $this;}
 
     /**
      * The fraction (between 0.0 and 1.0) of mutates that have been processed.
@@ -219,8 +215,7 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getEstimatedCompletionRatioUnwrapped()
     {
-        $wrapper = $this->getEstimatedCompletionRatio();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("estimated_completion_ratio");
     }
 
     /**
@@ -251,9 +246,8 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function setEstimatedCompletionRatioUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setEstimatedCompletionRatio($wrappedVar);
-    }
+        $this->writeWrapperValue("estimated_completion_ratio", $var);
+        return $this;}
 
     /**
      * The number of mutate operations in the mutate job.
@@ -276,8 +270,7 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getOperationCountUnwrapped()
     {
-        $wrapper = $this->getOperationCount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("operation_count");
     }
 
     /**
@@ -306,9 +299,8 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function setOperationCountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setOperationCount($wrappedVar);
-    }
+        $this->writeWrapperValue("operation_count", $var);
+        return $this;}
 
     /**
      * The number of mutate operations executed by the mutate job.
@@ -333,8 +325,7 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function getExecutedOperationCountUnwrapped()
     {
-        $wrapper = $this->getExecutedOperationCount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("executed_operation_count");
     }
 
     /**
@@ -365,9 +356,8 @@ final class MutateJobMetadata extends \Google\Protobuf\Internal\Message
      */
     public function setExecutedOperationCountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setExecutedOperationCount($wrappedVar);
-    }
+        $this->writeWrapperValue("executed_operation_count", $var);
+        return $this;}
 
 }
 

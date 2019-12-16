@@ -20,7 +20,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
      */
-    private $media_file = null;
+    protected $media_file = null;
     protected $format;
 
     /**
@@ -65,10 +65,9 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
      * @return string|null
      */
-    public function getMediaFileValue()
+    public function getMediaFileUnwrapped()
     {
-        $wrapper = $this->getMediaFile();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("media_file");
     }
 
     /**
@@ -95,11 +94,10 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setMediaFileValue($var)
+    public function setMediaFileUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMediaFile($wrappedVar);
-    }
+        $this->writeWrapperValue("media_file", $var);
+        return $this;}
 
     /**
      * Video TrueView in-stream ad format.

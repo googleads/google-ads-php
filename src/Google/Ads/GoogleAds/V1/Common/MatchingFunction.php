@@ -20,14 +20,13 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
     /**
      * String representation of the Function.
      * Examples:
-     * 1) IDENTITY(true) or IDENTITY(false). All or none feed items serve.
-     * 2) EQUALS(CONTEXT.DEVICE,"Mobile")
-     * 3) IN(FEED_ITEM_ID,{1000001,1000002,1000003})
-     * 4) CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
-     * 5) AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
-     * See
-     * https:
-     * //developers.google.com/adwords/api/docs/guides/feed-matching-functions
+     * 1. IDENTITY(true) or IDENTITY(false). All or no feed items served.
+     * 2. EQUALS(CONTEXT.DEVICE,"Mobile")
+     * 3. IN(FEED_ITEM_ID,{1000001,1000002,1000003})
+     * 4. CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
+     * 5. AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
+     * For more details, visit
+     * https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
      * Note that because multiple strings may represent the same underlying
      * function (whitespace and single versus double quotation marks, for
      * example), the value returned may not be identical to the string sent in a
@@ -35,13 +34,13 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue function_string = 1;</code>
      */
-    private $function_string = null;
+    protected $function_string = null;
     /**
      * Operator for a function.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.MatchingFunctionOperatorEnum.MatchingFunctionOperator operator = 4;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * The operands on the left hand side of the equation. This is also the
      * operand to be used for single operand expressions such as NOT.
@@ -65,14 +64,13 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $function_string
      *           String representation of the Function.
      *           Examples:
-     *           1) IDENTITY(true) or IDENTITY(false). All or none feed items serve.
-     *           2) EQUALS(CONTEXT.DEVICE,"Mobile")
-     *           3) IN(FEED_ITEM_ID,{1000001,1000002,1000003})
-     *           4) CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
-     *           5) AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
-     *           See
-     *           https:
-     *           //developers.google.com/adwords/api/docs/guides/feed-matching-functions
+     *           1. IDENTITY(true) or IDENTITY(false). All or no feed items served.
+     *           2. EQUALS(CONTEXT.DEVICE,"Mobile")
+     *           3. IN(FEED_ITEM_ID,{1000001,1000002,1000003})
+     *           4. CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
+     *           5. AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
+     *           For more details, visit
+     *           https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
      *           Note that because multiple strings may represent the same underlying
      *           function (whitespace and single versus double quotation marks, for
      *           example), the value returned may not be identical to the string sent in a
@@ -94,14 +92,13 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
     /**
      * String representation of the Function.
      * Examples:
-     * 1) IDENTITY(true) or IDENTITY(false). All or none feed items serve.
-     * 2) EQUALS(CONTEXT.DEVICE,"Mobile")
-     * 3) IN(FEED_ITEM_ID,{1000001,1000002,1000003})
-     * 4) CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
-     * 5) AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
-     * See
-     * https:
-     * //developers.google.com/adwords/api/docs/guides/feed-matching-functions
+     * 1. IDENTITY(true) or IDENTITY(false). All or no feed items served.
+     * 2. EQUALS(CONTEXT.DEVICE,"Mobile")
+     * 3. IN(FEED_ITEM_ID,{1000001,1000002,1000003})
+     * 4. CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
+     * 5. AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
+     * For more details, visit
+     * https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
      * Note that because multiple strings may represent the same underlying
      * function (whitespace and single versus double quotation marks, for
      * example), the value returned may not be identical to the string sent in a
@@ -120,14 +117,13 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
 
      * String representation of the Function.
      * Examples:
-     * 1) IDENTITY(true) or IDENTITY(false). All or none feed items serve.
-     * 2) EQUALS(CONTEXT.DEVICE,"Mobile")
-     * 3) IN(FEED_ITEM_ID,{1000001,1000002,1000003})
-     * 4) CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
-     * 5) AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
-     * See
-     * https:
-     * //developers.google.com/adwords/api/docs/guides/feed-matching-functions
+     * 1. IDENTITY(true) or IDENTITY(false). All or no feed items served.
+     * 2. EQUALS(CONTEXT.DEVICE,"Mobile")
+     * 3. IN(FEED_ITEM_ID,{1000001,1000002,1000003})
+     * 4. CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
+     * 5. AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
+     * For more details, visit
+     * https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
      * Note that because multiple strings may represent the same underlying
      * function (whitespace and single versus double quotation marks, for
      * example), the value returned may not be identical to the string sent in a
@@ -136,23 +132,21 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue function_string = 1;</code>
      * @return string|null
      */
-    public function getFunctionStringValue()
+    public function getFunctionStringUnwrapped()
     {
-        $wrapper = $this->getFunctionString();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("function_string");
     }
 
     /**
      * String representation of the Function.
      * Examples:
-     * 1) IDENTITY(true) or IDENTITY(false). All or none feed items serve.
-     * 2) EQUALS(CONTEXT.DEVICE,"Mobile")
-     * 3) IN(FEED_ITEM_ID,{1000001,1000002,1000003})
-     * 4) CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
-     * 5) AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
-     * See
-     * https:
-     * //developers.google.com/adwords/api/docs/guides/feed-matching-functions
+     * 1. IDENTITY(true) or IDENTITY(false). All or no feed items served.
+     * 2. EQUALS(CONTEXT.DEVICE,"Mobile")
+     * 3. IN(FEED_ITEM_ID,{1000001,1000002,1000003})
+     * 4. CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
+     * 5. AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
+     * For more details, visit
+     * https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
      * Note that because multiple strings may represent the same underlying
      * function (whitespace and single versus double quotation marks, for
      * example), the value returned may not be identical to the string sent in a
@@ -175,14 +169,13 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
 
      * String representation of the Function.
      * Examples:
-     * 1) IDENTITY(true) or IDENTITY(false). All or none feed items serve.
-     * 2) EQUALS(CONTEXT.DEVICE,"Mobile")
-     * 3) IN(FEED_ITEM_ID,{1000001,1000002,1000003})
-     * 4) CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
-     * 5) AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
-     * See
-     * https:
-     * //developers.google.com/adwords/api/docs/guides/feed-matching-functions
+     * 1. IDENTITY(true) or IDENTITY(false). All or no feed items served.
+     * 2. EQUALS(CONTEXT.DEVICE,"Mobile")
+     * 3. IN(FEED_ITEM_ID,{1000001,1000002,1000003})
+     * 4. CONTAINS_ANY(FeedAttribute[12345678,0],{"Mars cruise","Venus cruise"})
+     * 5. AND(IN(FEED_ITEM_ID,{10001,10002}),EQUALS(CONTEXT.DEVICE,"Mobile"))
+     * For more details, visit
+     * https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
      * Note that because multiple strings may represent the same underlying
      * function (whitespace and single versus double quotation marks, for
      * example), the value returned may not be identical to the string sent in a
@@ -192,11 +185,10 @@ class MatchingFunction extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFunctionStringValue($var)
+    public function setFunctionStringUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFunctionString($wrappedVar);
-    }
+        $this->writeWrapperValue("function_string", $var);
+        return $this;}
 
     /**
      * Operator for a function.

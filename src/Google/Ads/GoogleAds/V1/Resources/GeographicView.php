@@ -26,19 +26,19 @@ class GeographicView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * CriterionId for the geo target for a country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_geo_target_constant = 2;</code>
      */
-    private $country_geo_target_constant = null;
+    protected $country_geo_target_constant = null;
     /**
      * Type of the geo targeting of the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.GeoTargetingTypeEnum.GeoTargetingType location_type = 3;</code>
      */
-    private $location_type = 0;
+    protected $location_type = 0;
 
     /**
      * Constructor.
@@ -110,10 +110,9 @@ class GeographicView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue country_geo_target_constant = 2;</code>
      * @return string|null
      */
-    public function getCountryGeoTargetConstantValue()
+    public function getCountryGeoTargetConstantUnwrapped()
     {
-        $wrapper = $this->getCountryGeoTargetConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_geo_target_constant");
     }
 
     /**
@@ -140,11 +139,10 @@ class GeographicView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCountryGeoTargetConstantValue($var)
+    public function setCountryGeoTargetConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryGeoTargetConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("country_geo_target_constant", $var);
+        return $this;}
 
     /**
      * Type of the geo targeting of the campaign.

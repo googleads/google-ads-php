@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.StringFormatErrorEnum</code>
  */
-final class StringFormatErrorEnum extends \Google\Protobuf\Internal\Message
+class StringFormatErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

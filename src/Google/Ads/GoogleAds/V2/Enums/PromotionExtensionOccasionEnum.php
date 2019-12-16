@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.PromotionExtensionOccasionEnum</code>
  */
-final class PromotionExtensionOccasionEnum extends \Google\Protobuf\Internal\Message
+class PromotionExtensionOccasionEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

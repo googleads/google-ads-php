@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.GoogleAdsField</code>
  */
-final class GoogleAdsField extends \Google\Protobuf\Internal\Message
+class GoogleAdsField extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the artifact.
@@ -22,40 +22,40 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The name of the artifact.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The category of the artifact.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory category = 3;</code>
      */
-    private $category = 0;
+    protected $category = 0;
     /**
      * Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4;</code>
      */
-    private $selectable = null;
+    protected $selectable = null;
     /**
      * Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5;</code>
      */
-    private $filterable = null;
+    protected $filterable = null;
     /**
      * Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6;</code>
      */
-    private $sortable = null;
+    protected $sortable = null;
     /**
      * The names of all resources, segments, and metrics that are selectable with
      * the described artifact.
@@ -109,19 +109,19 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType data_type = 12;</code>
      */
-    private $data_type = 0;
+    protected $data_type = 0;
     /**
      * The URL of proto describing the artifact's data type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
      */
-    private $type_url = null;
+    protected $type_url = null;
     /**
      * Whether the field artifact is repeated.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
      */
-    private $is_repeated = null;
+    protected $is_repeated = null;
 
     /**
      * Constructor.
@@ -238,8 +238,7 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -268,9 +267,8 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The category of the artifact.
@@ -321,8 +319,7 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function getSelectableUnwrapped()
     {
-        $wrapper = $this->getSelectable();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("selectable");
     }
 
     /**
@@ -353,9 +350,8 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function setSelectableUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setSelectable($wrappedVar);
-    }
+        $this->writeWrapperValue("selectable", $var);
+        return $this;}
 
     /**
      * Whether the artifact can be used in a WHERE clause in search
@@ -380,8 +376,7 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function getFilterableUnwrapped()
     {
-        $wrapper = $this->getFilterable();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("filterable");
     }
 
     /**
@@ -412,9 +407,8 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function setFilterableUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setFilterable($wrappedVar);
-    }
+        $this->writeWrapperValue("filterable", $var);
+        return $this;}
 
     /**
      * Whether the artifact can be used in a ORDER BY clause in search
@@ -439,8 +433,7 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function getSortableUnwrapped()
     {
-        $wrapper = $this->getSortable();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("sortable");
     }
 
     /**
@@ -471,9 +464,8 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function setSortableUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setSortable($wrappedVar);
-    }
+        $this->writeWrapperValue("sortable", $var);
+        return $this;}
 
     /**
      * The names of all resources, segments, and metrics that are selectable with
@@ -688,8 +680,7 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function getTypeUrlUnwrapped()
     {
-        $wrapper = $this->getTypeUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("type_url");
     }
 
     /**
@@ -718,9 +709,8 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function setTypeUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTypeUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("type_url", $var);
+        return $this;}
 
     /**
      * Whether the field artifact is repeated.
@@ -743,8 +733,7 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function getIsRepeatedUnwrapped()
     {
-        $wrapper = $this->getIsRepeated();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("is_repeated");
     }
 
     /**
@@ -773,9 +762,8 @@ final class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     public function setIsRepeatedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setIsRepeated($wrappedVar);
-    }
+        $this->writeWrapperValue("is_repeated", $var);
+        return $this;}
 
 }
 

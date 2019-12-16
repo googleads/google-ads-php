@@ -24,7 +24,7 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ip_address = 1;</code>
      */
-    private $ip_address = null;
+    protected $ip_address = null;
 
     /**
      * Constructor.
@@ -60,10 +60,9 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ip_address = 1;</code>
      * @return string|null
      */
-    public function getIpAddressValue()
+    public function getIpAddressUnwrapped()
     {
-        $wrapper = $this->getIpAddress();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ip_address");
     }
 
     /**
@@ -90,11 +89,10 @@ class IpBlockInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setIpAddressValue($var)
+    public function setIpAddressUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setIpAddress($wrappedVar);
-    }
+        $this->writeWrapperValue("ip_address", $var);
+        return $this;}
 
 }
 

@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.KeywordPlanHistoricalMetrics</code>
  */
-final class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
+class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
      * Average monthly searches for the past 12 months.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value avg_monthly_searches = 1;</code>
      */
-    private $avg_monthly_searches = null;
+    protected $avg_monthly_searches = null;
     /**
      * The competition level for the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel competition = 2;</code>
      */
-    private $competition = 0;
+    protected $competition = 0;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Messa
      */
     public function getAvgMonthlySearchesUnwrapped()
     {
-        $wrapper = $this->getAvgMonthlySearches();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("avg_monthly_searches");
     }
 
     /**
@@ -96,9 +95,8 @@ final class KeywordPlanHistoricalMetrics extends \Google\Protobuf\Internal\Messa
      */
     public function setAvgMonthlySearchesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAvgMonthlySearches($wrappedVar);
-    }
+        $this->writeWrapperValue("avg_monthly_searches", $var);
+        return $this;}
 
     /**
      * The competition level for the query.

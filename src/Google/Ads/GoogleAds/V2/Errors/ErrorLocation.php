@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.ErrorLocation</code>
  */
-final class ErrorLocation extends \Google\Protobuf\Internal\Message
+class ErrorLocation extends \Google\Protobuf\Internal\Message
 {
     /**
      * A field path that indicates which field was invalid in the request.

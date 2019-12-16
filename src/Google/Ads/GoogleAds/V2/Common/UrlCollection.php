@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UrlCollection</code>
  */
-final class UrlCollection extends \Google\Protobuf\Internal\Message
+class UrlCollection extends \Google\Protobuf\Internal\Message
 {
     /**
      * Unique identifier for this UrlCollection instance.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url_collection_id = 1;</code>
      */
-    private $url_collection_id = null;
+    protected $url_collection_id = null;
     /**
      * A list of possible final URLs.
      *
@@ -38,7 +38,7 @@ final class UrlCollection extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 4;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
 
     /**
      * Constructor.
@@ -82,8 +82,7 @@ final class UrlCollection extends \Google\Protobuf\Internal\Message
      */
     public function getUrlCollectionIdUnwrapped()
     {
-        $wrapper = $this->getUrlCollectionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("url_collection_id");
     }
 
     /**
@@ -112,9 +111,8 @@ final class UrlCollection extends \Google\Protobuf\Internal\Message
      */
     public function setUrlCollectionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUrlCollectionId($wrappedVar);
-    }
+        $this->writeWrapperValue("url_collection_id", $var);
+        return $this;}
 
     /**
      * A list of possible final URLs.
@@ -189,8 +187,7 @@ final class UrlCollection extends \Google\Protobuf\Internal\Message
      */
     public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -219,9 +216,8 @@ final class UrlCollection extends \Google\Protobuf\Internal\Message
      */
     public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
 }
 

@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicConstraint.CountryConstraintList</code>
  */
-final class CountryConstraintList extends \Google\Protobuf\Internal\Message
+class CountryConstraintList extends \Google\Protobuf\Internal\Message
 {
     /**
      * Total number of countries targeted by the resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
      */
-    private $total_targeted_countries = null;
+    protected $total_targeted_countries = null;
     /**
      * Countries in which serving is restricted.
      *
@@ -66,8 +66,7 @@ final class CountryConstraintList extends \Google\Protobuf\Internal\Message
      */
     public function getTotalTargetedCountriesUnwrapped()
     {
-        $wrapper = $this->getTotalTargetedCountries();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("total_targeted_countries");
     }
 
     /**
@@ -96,9 +95,8 @@ final class CountryConstraintList extends \Google\Protobuf\Internal\Message
      */
     public function setTotalTargetedCountriesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setTotalTargetedCountries($wrappedVar);
-    }
+        $this->writeWrapperValue("total_targeted_countries", $var);
+        return $this;}
 
     /**
      * Countries in which serving is restricted.

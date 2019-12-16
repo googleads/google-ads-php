@@ -23,13 +23,13 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 2;</code>
      */
-    private $text = null;
+    protected $text = null;
     /**
      * The historical metrics for the keyword
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.KeywordPlanHistoricalMetrics keyword_idea_metrics = 3;</code>
      */
-    private $keyword_idea_metrics = null;
+    protected $keyword_idea_metrics = null;
 
     /**
      * Constructor.
@@ -76,10 +76,9 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 2;</code>
      * @return string|null
      */
-    public function getTextValue()
+    public function getTextUnwrapped()
     {
-        $wrapper = $this->getText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text");
     }
 
     /**
@@ -112,11 +111,10 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTextValue($var)
+    public function setTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setText($wrappedVar);
-    }
+        $this->writeWrapperValue("text", $var);
+        return $this;}
 
     /**
      * The historical metrics for the keyword

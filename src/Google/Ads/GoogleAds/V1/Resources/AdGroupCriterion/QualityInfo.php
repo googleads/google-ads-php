@@ -22,25 +22,25 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
      */
-    private $quality_score = null;
+    protected $quality_score = null;
     /**
      * The performance of the ad compared to other advertisers.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.QualityScoreBucketEnum.QualityScoreBucket creative_quality_score = 2;</code>
      */
-    private $creative_quality_score = 0;
+    protected $creative_quality_score = 0;
     /**
      * The quality score of the landing page.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.QualityScoreBucketEnum.QualityScoreBucket post_click_quality_score = 3;</code>
      */
-    private $post_click_quality_score = 0;
+    protected $post_click_quality_score = 0;
     /**
      * The click-through rate compared to that of other advertisers.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.QualityScoreBucketEnum.QualityScoreBucket search_predicted_ctr = 4;</code>
      */
-    private $search_predicted_ctr = 0;
+    protected $search_predicted_ctr = 0;
 
     /**
      * Constructor.
@@ -88,10 +88,9 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
      * @return int|null
      */
-    public function getQualityScoreValue()
+    public function getQualityScoreUnwrapped()
     {
-        $wrapper = $this->getQualityScore();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("quality_score");
     }
 
     /**
@@ -122,11 +121,10 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setQualityScoreValue($var)
+    public function setQualityScoreUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setQualityScore($wrappedVar);
-    }
+        $this->writeWrapperValue("quality_score", $var);
+        return $this;}
 
     /**
      * The performance of the ad compared to other advertisers.

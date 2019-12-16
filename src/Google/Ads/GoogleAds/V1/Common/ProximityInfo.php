@@ -26,25 +26,25 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.GeoPointInfo geo_point = 1;</code>
      */
-    private $geo_point = null;
+    protected $geo_point = null;
     /**
      * The radius of the proximity.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue radius = 2;</code>
      */
-    private $radius = null;
+    protected $radius = null;
     /**
      * The unit of measurement of the radius. Default is KILOMETERS.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProximityRadiusUnitsEnum.ProximityRadiusUnits radius_units = 3;</code>
      */
-    private $radius_units = 0;
+    protected $radius_units = 0;
     /**
      * Full address.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.AddressInfo address = 4;</code>
      */
-    private $address = null;
+    protected $address = null;
 
     /**
      * Constructor.
@@ -112,10 +112,9 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue radius = 2;</code>
      * @return float|null
      */
-    public function getRadiusValue()
+    public function getRadiusUnwrapped()
     {
-        $wrapper = $this->getRadius();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("radius");
     }
 
     /**
@@ -142,11 +141,10 @@ class ProximityInfo extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setRadiusValue($var)
+    public function setRadiusUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setRadius($wrappedVar);
-    }
+        $this->writeWrapperValue("radius", $var);
+        return $this;}
 
     /**
      * The unit of measurement of the radius. Default is KILOMETERS.

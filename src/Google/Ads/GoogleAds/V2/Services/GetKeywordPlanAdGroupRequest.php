@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetKeywordPlanAdGroupRequest</code>
  */
-final class GetKeywordPlanAdGroupRequest extends \Google\Protobuf\Internal\Message
+class GetKeywordPlanAdGroupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the Keyword Plan ad group to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

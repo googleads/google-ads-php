@@ -20,7 +20,7 @@ class ProductConditionInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductConditionEnum.ProductCondition condition = 1;</code>
      */
-    private $condition = 0;
+    protected $condition = 0;
 
     /**
      * Constructor.

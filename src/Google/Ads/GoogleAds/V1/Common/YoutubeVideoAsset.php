@@ -21,7 +21,7 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 1;</code>
      */
-    private $youtube_video_id = null;
+    protected $youtube_video_id = null;
 
     /**
      * Constructor.
@@ -60,10 +60,9 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 1;</code>
      * @return string|null
      */
-    public function getYoutubeVideoIdValue()
+    public function getYoutubeVideoIdUnwrapped()
     {
-        $wrapper = $this->getYoutubeVideoId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("youtube_video_id");
     }
 
     /**
@@ -92,11 +91,10 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setYoutubeVideoIdValue($var)
+    public function setYoutubeVideoIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setYoutubeVideoId($wrappedVar);
-    }
+        $this->writeWrapperValue("youtube_video_id", $var);
+        return $this;}
 
 }
 

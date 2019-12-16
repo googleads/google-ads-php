@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.CreateMutateJobRequest</code>
  */
-final class CreateMutateJobRequest extends \Google\Protobuf\Internal\Message
+class CreateMutateJobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer for which to create a mutate job.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
 
     /**
      * Constructor.

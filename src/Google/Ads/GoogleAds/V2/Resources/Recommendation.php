@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Recommendation</code>
  */
-final class Recommendation extends \Google\Protobuf\Internal\Message
+class Recommendation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the recommendation.
@@ -21,20 +21,20 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The type of recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.RecommendationTypeEnum.RecommendationType type = 2;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The impact on account performance as a result of applying the
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationImpact impact = 3;</code>
      */
-    private $impact = null;
+    protected $impact = null;
     /**
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
@@ -43,7 +43,7 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 5;</code>
      */
-    private $campaign_budget = null;
+    protected $campaign_budget = null;
     /**
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
@@ -55,7 +55,7 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
@@ -64,13 +64,13 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 7;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * Whether the recommendation is dismissed or not.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue dismissed = 13;</code>
      */
-    private $dismissed = null;
+    protected $dismissed = null;
     protected $recommendation;
 
     /**
@@ -251,8 +251,7 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignBudgetUnwrapped()
     {
-        $wrapper = $this->getCampaignBudget();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_budget");
     }
 
     /**
@@ -287,9 +286,8 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignBudgetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaignBudget($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_budget", $var);
+        return $this;}
 
     /**
      * The campaign targeted by this recommendation. This will be set only when
@@ -324,8 +322,7 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -366,9 +363,8 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The ad group targeted by this recommendation. This will be set only when
@@ -397,8 +393,7 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -433,9 +428,8 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * Whether the recommendation is dismissed or not.
@@ -458,8 +452,7 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function getDismissedUnwrapped()
     {
-        $wrapper = $this->getDismissed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("dismissed");
     }
 
     /**
@@ -488,9 +481,8 @@ final class Recommendation extends \Google\Protobuf\Internal\Message
      */
     public function setDismissedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setDismissed($wrappedVar);
-    }
+        $this->writeWrapperValue("dismissed", $var);
+        return $this;}
 
     /**
      * The campaign budget recommendation.

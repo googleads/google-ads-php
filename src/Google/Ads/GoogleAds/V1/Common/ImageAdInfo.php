@@ -20,50 +20,50 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value pixel_width = 4;</code>
      */
-    private $pixel_width = null;
+    protected $pixel_width = null;
     /**
      * Height in pixels of the full size image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value pixel_height = 5;</code>
      */
-    private $pixel_height = null;
+    protected $pixel_height = null;
     /**
      * URL of the full size image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue image_url = 6;</code>
      */
-    private $image_url = null;
+    protected $image_url = null;
     /**
      * Width in pixels of the preview size image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value preview_pixel_width = 7;</code>
      */
-    private $preview_pixel_width = null;
+    protected $preview_pixel_width = null;
     /**
      * Height in pixels of the preview size image.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value preview_pixel_height = 8;</code>
      */
-    private $preview_pixel_height = null;
+    protected $preview_pixel_height = null;
     /**
      * URL of the preview size image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue preview_image_url = 9;</code>
      */
-    private $preview_image_url = null;
+    protected $preview_image_url = null;
     /**
      * The mime type of the image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.MimeTypeEnum.MimeType mime_type = 10;</code>
      */
-    private $mime_type = 0;
+    protected $mime_type = 0;
     /**
      * The name of the image. If the image was created from a MediaFile, this is
      * the MediaFile's name. If the image was created from bytes, this is empty.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 11;</code>
      */
-    private $name = null;
+    protected $name = null;
     protected $image;
 
     /**
@@ -121,10 +121,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value pixel_width = 4;</code>
      * @return int|string|null
      */
-    public function getPixelWidthValue()
+    public function getPixelWidthUnwrapped()
     {
-        $wrapper = $this->getPixelWidth();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("pixel_width");
     }
 
     /**
@@ -151,11 +150,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setPixelWidthValue($var)
+    public function setPixelWidthUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPixelWidth($wrappedVar);
-    }
+        $this->writeWrapperValue("pixel_width", $var);
+        return $this;}
 
     /**
      * Height in pixels of the full size image.
@@ -176,10 +174,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value pixel_height = 5;</code>
      * @return int|string|null
      */
-    public function getPixelHeightValue()
+    public function getPixelHeightUnwrapped()
     {
-        $wrapper = $this->getPixelHeight();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("pixel_height");
     }
 
     /**
@@ -206,11 +203,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setPixelHeightValue($var)
+    public function setPixelHeightUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPixelHeight($wrappedVar);
-    }
+        $this->writeWrapperValue("pixel_height", $var);
+        return $this;}
 
     /**
      * URL of the full size image.
@@ -231,10 +227,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue image_url = 6;</code>
      * @return string|null
      */
-    public function getImageUrlValue()
+    public function getImageUrlUnwrapped()
     {
-        $wrapper = $this->getImageUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("image_url");
     }
 
     /**
@@ -261,11 +256,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setImageUrlValue($var)
+    public function setImageUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setImageUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("image_url", $var);
+        return $this;}
 
     /**
      * Width in pixels of the preview size image.
@@ -286,10 +280,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value preview_pixel_width = 7;</code>
      * @return int|string|null
      */
-    public function getPreviewPixelWidthValue()
+    public function getPreviewPixelWidthUnwrapped()
     {
-        $wrapper = $this->getPreviewPixelWidth();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("preview_pixel_width");
     }
 
     /**
@@ -316,11 +309,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setPreviewPixelWidthValue($var)
+    public function setPreviewPixelWidthUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPreviewPixelWidth($wrappedVar);
-    }
+        $this->writeWrapperValue("preview_pixel_width", $var);
+        return $this;}
 
     /**
      * Height in pixels of the preview size image.
@@ -341,10 +333,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value preview_pixel_height = 8;</code>
      * @return int|string|null
      */
-    public function getPreviewPixelHeightValue()
+    public function getPreviewPixelHeightUnwrapped()
     {
-        $wrapper = $this->getPreviewPixelHeight();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("preview_pixel_height");
     }
 
     /**
@@ -371,11 +362,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setPreviewPixelHeightValue($var)
+    public function setPreviewPixelHeightUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPreviewPixelHeight($wrappedVar);
-    }
+        $this->writeWrapperValue("preview_pixel_height", $var);
+        return $this;}
 
     /**
      * URL of the preview size image.
@@ -396,10 +386,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue preview_image_url = 9;</code>
      * @return string|null
      */
-    public function getPreviewImageUrlValue()
+    public function getPreviewImageUrlUnwrapped()
     {
-        $wrapper = $this->getPreviewImageUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("preview_image_url");
     }
 
     /**
@@ -426,11 +415,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPreviewImageUrlValue($var)
+    public function setPreviewImageUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPreviewImageUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("preview_image_url", $var);
+        return $this;}
 
     /**
      * The mime type of the image.
@@ -479,10 +467,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 11;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -511,11 +498,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The MediaFile resource to use for the image.
@@ -536,10 +522,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue media_file = 1;</code>
      * @return string|null
      */
-    public function getMediaFileValue()
+    public function getMediaFileUnwrapped()
     {
-        $wrapper = $this->getMediaFile();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("media_file");
     }
 
     /**
@@ -566,11 +551,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setMediaFileValue($var)
+    public function setMediaFileUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMediaFile($wrappedVar);
-    }
+        $this->writeWrapperValue("media_file", $var);
+        return $this;}
 
     /**
      * Raw image data as bytes.
@@ -591,10 +575,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 2;</code>
      * @return string|null
      */
-    public function getDataValue()
+    public function getDataUnwrapped()
     {
-        $wrapper = $this->getData();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("data");
     }
 
     /**
@@ -621,11 +604,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDataValue($var)
+    public function setDataUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BytesValue(['value' => $var]);
-        return $this->setData($wrappedVar);
-    }
+        $this->writeWrapperValue("data", $var);
+        return $this;}
 
     /**
      * An ad ID to copy the image from.
@@ -646,10 +628,9 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_id_to_copy_image_from = 3;</code>
      * @return int|string|null
      */
-    public function getAdIdToCopyImageFromValue()
+    public function getAdIdToCopyImageFromUnwrapped()
     {
-        $wrapper = $this->getAdIdToCopyImageFrom();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_id_to_copy_image_from");
     }
 
     /**
@@ -676,11 +657,10 @@ class ImageAdInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setAdIdToCopyImageFromValue($var)
+    public function setAdIdToCopyImageFromUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAdIdToCopyImageFrom($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_id_to_copy_image_from", $var);
+        return $this;}
 
     /**
      * @return string

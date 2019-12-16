@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.CpvBidSimulationPointList</code>
  */
-final class CpvBidSimulationPointList extends \Google\Protobuf\Internal\Message
+class CpvBidSimulationPointList extends \Google\Protobuf\Internal\Message
 {
     /**
      * Projected metrics for a series of CPV bid amounts.

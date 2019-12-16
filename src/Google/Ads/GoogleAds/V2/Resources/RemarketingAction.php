@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.RemarketingAction</code>
  */
-final class RemarketingAction extends \Google\Protobuf\Internal\Message
+class RemarketingAction extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the remarketing action.
@@ -24,13 +24,13 @@ final class RemarketingAction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Id of the remarketing action.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the remarketing action.
      * This field is required and should not be empty when creating new
@@ -38,7 +38,7 @@ final class RemarketingAction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The snippets used for tracking remarketing actions.
      *
@@ -122,8 +122,7 @@ final class RemarketingAction extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -152,9 +151,8 @@ final class RemarketingAction extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the remarketing action.
@@ -181,8 +179,7 @@ final class RemarketingAction extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -215,9 +212,8 @@ final class RemarketingAction extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The snippets used for tracking remarketing actions.

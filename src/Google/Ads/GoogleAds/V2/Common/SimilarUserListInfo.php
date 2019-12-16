@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.SimilarUserListInfo</code>
  */
-final class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
+class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Seed UserList from which this list is derived.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue seed_user_list = 1;</code>
      */
-    private $seed_user_list = null;
+    protected $seed_user_list = null;
 
     /**
      * Constructor.
@@ -59,8 +59,7 @@ final class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
      */
     public function getSeedUserListUnwrapped()
     {
-        $wrapper = $this->getSeedUserList();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("seed_user_list");
     }
 
     /**
@@ -89,9 +88,8 @@ final class SimilarUserListInfo extends \Google\Protobuf\Internal\Message
      */
     public function setSeedUserListUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSeedUserList($wrappedVar);
-    }
+        $this->writeWrapperValue("seed_user_list", $var);
+        return $this;}
 
 }
 

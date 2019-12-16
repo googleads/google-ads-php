@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.AssetTypeEnum</code>
  */
-final class AssetTypeEnum extends \Google\Protobuf\Internal\Message
+class AssetTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

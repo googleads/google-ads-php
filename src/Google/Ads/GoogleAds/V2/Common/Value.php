@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.Value</code>
  */
-final class Value extends \Google\Protobuf\Internal\Message
+class Value extends \Google\Protobuf\Internal\Message
 {
     protected $value;
 

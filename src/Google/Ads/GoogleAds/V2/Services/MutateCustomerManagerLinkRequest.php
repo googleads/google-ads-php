@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateCustomerManagerLinkRequest</code>
  */
-final class MutateCustomerManagerLinkRequest extends \Google\Protobuf\Internal\Message
+class MutateCustomerManagerLinkRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer whose customer manager links are being modified.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The list of operations to perform on individual customer manager links.
      *

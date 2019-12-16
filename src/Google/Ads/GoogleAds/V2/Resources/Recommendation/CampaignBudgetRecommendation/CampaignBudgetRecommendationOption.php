@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Recommendation.CampaignBudgetRecommendation.CampaignBudgetRecommendationOption</code>
  */
-final class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Message
+class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Message
 {
     /**
      * The budget amount for this option.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
      */
-    private $budget_amount_micros = null;
+    protected $budget_amount_micros = null;
     /**
      * The impact estimate if budget is changed to amount specified in this
      * option.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationImpact impact = 2;</code>
      */
-    private $impact = null;
+    protected $impact = null;
 
     /**
      * Constructor.
@@ -68,8 +68,7 @@ final class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal
      */
     public function getBudgetAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getBudgetAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("budget_amount_micros");
     }
 
     /**
@@ -98,9 +97,8 @@ final class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal
      */
     public function setBudgetAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setBudgetAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("budget_amount_micros", $var);
+        return $this;}
 
     /**
      * The impact estimate if budget is changed to amount specified in this

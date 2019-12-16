@@ -23,13 +23,13 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue locale = 3;</code>
      */
-    private $locale = null;
+    protected $locale = null;
     /**
      * Returned geo targets are restricted to this country code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     protected $query;
 
     /**
@@ -78,10 +78,9 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue locale = 3;</code>
      * @return string|null
      */
-    public function getLocaleValue()
+    public function getLocaleUnwrapped()
     {
-        $wrapper = $this->getLocale();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("locale");
     }
 
     /**
@@ -112,11 +111,10 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLocaleValue($var)
+    public function setLocaleUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLocale($wrappedVar);
-    }
+        $this->writeWrapperValue("locale", $var);
+        return $this;}
 
     /**
      * Returned geo targets are restricted to this country code.
@@ -137,10 +135,9 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
      * @return string|null
      */
-    public function getCountryCodeValue()
+    public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -167,11 +164,10 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCountryCodeValue($var)
+    public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * The location names to search by. At most 25 names can be set.

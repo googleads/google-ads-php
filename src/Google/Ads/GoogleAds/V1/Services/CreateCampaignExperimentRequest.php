@@ -20,20 +20,20 @@ class CreateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The campaign experiment to be created.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.CampaignExperiment campaign_experiment = 2;</code>
      */
-    private $campaign_experiment = null;
+    protected $campaign_experiment = null;
     /**
      * If true, the request is validated but not executed. Only errors are
      * returned, not results.
      *
      * Generated from protobuf field <code>bool validate_only = 3;</code>
      */
-    private $validate_only = false;
+    protected $validate_only = false;
 
     /**
      * Constructor.

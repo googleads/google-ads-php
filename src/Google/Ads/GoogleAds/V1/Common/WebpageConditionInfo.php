@@ -20,19 +20,19 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.WebpageConditionOperandEnum.WebpageConditionOperand operand = 1;</code>
      */
-    private $operand = 0;
+    protected $operand = 0;
     /**
      * Operator of webpage targeting condition.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.WebpageConditionOperatorEnum.WebpageConditionOperator operator = 2;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * Argument of webpage targeting condition.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue argument = 3;</code>
      */
-    private $argument = null;
+    protected $argument = null;
 
     /**
      * Constructor.
@@ -124,10 +124,9 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue argument = 3;</code>
      * @return string|null
      */
-    public function getArgumentValue()
+    public function getArgumentUnwrapped()
     {
-        $wrapper = $this->getArgument();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("argument");
     }
 
     /**
@@ -154,11 +153,10 @@ class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setArgumentValue($var)
+    public function setArgumentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setArgument($wrappedVar);
-    }
+        $this->writeWrapperValue("argument", $var);
+        return $this;}
 
 }
 

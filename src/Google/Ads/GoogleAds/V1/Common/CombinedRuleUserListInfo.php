@@ -24,7 +24,7 @@ class CombinedRuleUserListInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.UserListRuleInfo left_operand = 1;</code>
      */
-    private $left_operand = null;
+    protected $left_operand = null;
     /**
      * Right operand of the combined rule.
      * This field is required and must be populated when creating new combined
@@ -32,14 +32,14 @@ class CombinedRuleUserListInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.UserListRuleInfo right_operand = 2;</code>
      */
-    private $right_operand = null;
+    protected $right_operand = null;
     /**
      * Operator to connect the two operands.
      * Required for creating a combined rule user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.UserListCombinedRuleOperatorEnum.UserListCombinedRuleOperator rule_operator = 3;</code>
      */
-    private $rule_operator = 0;
+    protected $rule_operator = 0;
 
     /**
      * Constructor.

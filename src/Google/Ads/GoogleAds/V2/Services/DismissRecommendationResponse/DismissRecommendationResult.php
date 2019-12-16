@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.DismissRecommendationResponse.DismissRecommendationResult</code>
  */
-final class DismissRecommendationResult extends \Google\Protobuf\Internal\Message
+class DismissRecommendationResult extends \Google\Protobuf\Internal\Message
 {
     /**
      * Returned for successful dismissals.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CallReportingSetting</code>
  */
-final class CallReportingSetting extends \Google\Protobuf\Internal\Message
+class CallReportingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * Enable reporting of phone call events by redirecting them via Google
@@ -21,13 +21,13 @@ final class CallReportingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue call_reporting_enabled = 1;</code>
      */
-    private $call_reporting_enabled = null;
+    protected $call_reporting_enabled = null;
     /**
      * Whether to enable call conversion reporting.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue call_conversion_reporting_enabled = 2;</code>
      */
-    private $call_conversion_reporting_enabled = null;
+    protected $call_conversion_reporting_enabled = null;
     /**
      * Customer-level call conversion action to attribute a call conversion to.
      * If not set a default conversion action is used. Only in effect when
@@ -35,7 +35,7 @@ final class CallReportingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9;</code>
      */
-    private $call_conversion_action = null;
+    protected $call_conversion_action = null;
 
     /**
      * Constructor.
@@ -82,8 +82,7 @@ final class CallReportingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getCallReportingEnabledUnwrapped()
     {
-        $wrapper = $this->getCallReportingEnabled();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("call_reporting_enabled");
     }
 
     /**
@@ -114,9 +113,8 @@ final class CallReportingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setCallReportingEnabledUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setCallReportingEnabled($wrappedVar);
-    }
+        $this->writeWrapperValue("call_reporting_enabled", $var);
+        return $this;}
 
     /**
      * Whether to enable call conversion reporting.
@@ -139,8 +137,7 @@ final class CallReportingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getCallConversionReportingEnabledUnwrapped()
     {
-        $wrapper = $this->getCallConversionReportingEnabled();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("call_conversion_reporting_enabled");
     }
 
     /**
@@ -169,9 +166,8 @@ final class CallReportingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setCallConversionReportingEnabledUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setCallConversionReportingEnabled($wrappedVar);
-    }
+        $this->writeWrapperValue("call_conversion_reporting_enabled", $var);
+        return $this;}
 
     /**
      * Customer-level call conversion action to attribute a call conversion to.
@@ -198,8 +194,7 @@ final class CallReportingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getCallConversionActionUnwrapped()
     {
-        $wrapper = $this->getCallConversionAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("call_conversion_action");
     }
 
     /**
@@ -232,9 +227,8 @@ final class CallReportingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setCallConversionActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCallConversionAction($wrappedVar);
-    }
+        $this->writeWrapperValue("call_conversion_action", $var);
+        return $this;}
 
 }
 

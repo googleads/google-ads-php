@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ProductTypeInfo</code>
  */
-final class ProductTypeInfo extends \Google\Protobuf\Internal\Message
+class ProductTypeInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Value of the type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
      */
-    private $value = null;
+    protected $value = null;
     /**
      * Level of the type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductTypeLevelEnum.ProductTypeLevel level = 2;</code>
      */
-    private $level = 0;
+    protected $level = 0;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class ProductTypeInfo extends \Google\Protobuf\Internal\Message
      */
     public function getValueUnwrapped()
     {
-        $wrapper = $this->getValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value");
     }
 
     /**
@@ -96,9 +95,8 @@ final class ProductTypeInfo extends \Google\Protobuf\Internal\Message
      */
     public function setValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setValue($wrappedVar);
-    }
+        $this->writeWrapperValue("value", $var);
+        return $this;}
 
     /**
      * Level of the type.

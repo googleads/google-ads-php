@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ProductImage</code>
  */
-final class ProductImage extends \Google\Protobuf\Internal\Message
+class ProductImage extends \Google\Protobuf\Internal\Message
 {
     /**
      * The MediaFile resource name of the product image. Valid image types are
@@ -22,19 +22,19 @@ final class ProductImage extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue product_image = 1;</code>
      */
-    private $product_image = null;
+    protected $product_image = null;
     /**
      * Description of the product.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
      */
-    private $description = null;
+    protected $description = null;
     /**
      * Display-call-to-action of the product image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.DisplayCallToAction display_call_to_action = 3;</code>
      */
-    private $display_call_to_action = null;
+    protected $display_call_to_action = null;
 
     /**
      * Constructor.
@@ -82,8 +82,7 @@ final class ProductImage extends \Google\Protobuf\Internal\Message
      */
     public function getProductImageUnwrapped()
     {
-        $wrapper = $this->getProductImage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("product_image");
     }
 
     /**
@@ -116,9 +115,8 @@ final class ProductImage extends \Google\Protobuf\Internal\Message
      */
     public function setProductImageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProductImage($wrappedVar);
-    }
+        $this->writeWrapperValue("product_image", $var);
+        return $this;}
 
     /**
      * Description of the product.
@@ -141,8 +139,7 @@ final class ProductImage extends \Google\Protobuf\Internal\Message
      */
     public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -171,9 +168,8 @@ final class ProductImage extends \Google\Protobuf\Internal\Message
      */
     public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
     /**
      * Display-call-to-action of the product image.

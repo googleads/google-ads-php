@@ -21,7 +21,7 @@ class CreateCampaignExperimentMetadata extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string campaign_experiment = 1;</code>
      */
-    private $campaign_experiment = '';
+    protected $campaign_experiment = '';
 
     /**
      * Constructor.

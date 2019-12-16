@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TargetRestriction</code>
  */
-final class TargetRestriction extends \Google\Protobuf\Internal\Message
+class TargetRestriction extends \Google\Protobuf\Internal\Message
 {
     /**
      * The targeting dimension that these settings apply to.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TargetingDimensionEnum.TargetingDimension targeting_dimension = 1;</code>
      */
-    private $targeting_dimension = 0;
+    protected $targeting_dimension = 0;
     /**
      * Indicates whether to restrict your ads to show only for the criteria you
      * have selected for this targeting_dimension, or to target all values for
@@ -32,7 +32,7 @@ final class TargetRestriction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue bid_only = 2;</code>
      */
-    private $bid_only = null;
+    protected $bid_only = null;
 
     /**
      * Constructor.
@@ -116,8 +116,7 @@ final class TargetRestriction extends \Google\Protobuf\Internal\Message
      */
     public function getBidOnlyUnwrapped()
     {
-        $wrapper = $this->getBidOnly();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_only");
     }
 
     /**
@@ -158,9 +157,8 @@ final class TargetRestriction extends \Google\Protobuf\Internal\Message
      */
     public function setBidOnlyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setBidOnly($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_only", $var);
+        return $this;}
 
 }
 

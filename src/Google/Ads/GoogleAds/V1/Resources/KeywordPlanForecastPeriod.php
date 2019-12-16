@@ -29,6 +29,7 @@ class KeywordPlanForecastPeriod extends \Google\Protobuf\Internal\Message
      *           The custom date range used for forecasting.
      *           The start and end dates must be in the future. Otherwise, an error will
      *           be returned when the forecasting action is performed.
+     *           The start and end dates are inclusive.
      * }
      */
     public function __construct($data = NULL) {
@@ -66,6 +67,7 @@ class KeywordPlanForecastPeriod extends \Google\Protobuf\Internal\Message
      * The custom date range used for forecasting.
      * The start and end dates must be in the future. Otherwise, an error will
      * be returned when the forecasting action is performed.
+     * The start and end dates are inclusive.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.DateRange date_range = 2;</code>
      * @return \Google\Ads\GoogleAds\V1\Common\DateRange
@@ -79,6 +81,7 @@ class KeywordPlanForecastPeriod extends \Google\Protobuf\Internal\Message
      * The custom date range used for forecasting.
      * The start and end dates must be in the future. Otherwise, an error will
      * be returned when the forecasting action is performed.
+     * The start and end dates are inclusive.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.DateRange date_range = 2;</code>
      * @param \Google\Ads\GoogleAds\V1\Common\DateRange $var

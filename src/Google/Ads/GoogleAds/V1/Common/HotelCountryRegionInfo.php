@@ -20,7 +20,7 @@ class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_region_criterion = 1;</code>
      */
-    private $country_region_criterion = null;
+    protected $country_region_criterion = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue country_region_criterion = 1;</code>
      * @return string|null
      */
-    public function getCountryRegionCriterionValue()
+    public function getCountryRegionCriterionUnwrapped()
     {
-        $wrapper = $this->getCountryRegionCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_region_criterion");
     }
 
     /**
@@ -86,11 +85,10 @@ class HotelCountryRegionInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCountryRegionCriterionValue($var)
+    public function setCountryRegionCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryRegionCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("country_region_criterion", $var);
+        return $this;}
 
 }
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.SlotEnum</code>
  */
-final class SlotEnum extends \Google\Protobuf\Internal\Message
+class SlotEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

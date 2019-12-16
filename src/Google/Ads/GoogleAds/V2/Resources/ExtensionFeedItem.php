@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.ExtensionFeedItem</code>
  */
-final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
+class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the extension feed item.
@@ -22,20 +22,20 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of this feed item. Read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The extension type of the extension feed item.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;</code>
      */
-    private $extension_type = 0;
+    protected $extension_type = 0;
     /**
      * Start time in which this feed item is effective and can begin serving. The
      * time is in the customer's time zone.
@@ -44,7 +44,7 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 5;</code>
      */
-    private $start_date_time = null;
+    protected $start_date_time = null;
     /**
      * End time in which this feed item is no longer effective and will stop
      * serving. The time is in the customer's time zone.
@@ -53,7 +53,7 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 6;</code>
      */
-    private $end_date_time = null;
+    protected $end_date_time = null;
     /**
      * List of non-overlapping schedules specifying all time intervals
      * for which the feed item may serve. There can be a maximum of 6 schedules
@@ -67,26 +67,26 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 17;</code>
      */
-    private $device = 0;
+    protected $device = 0;
     /**
      * The targeted geo target constant.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
      */
-    private $targeted_geo_target_constant = null;
+    protected $targeted_geo_target_constant = null;
     /**
      * The targeted keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo targeted_keyword = 22;</code>
      */
-    private $targeted_keyword = null;
+    protected $targeted_keyword = null;
     /**
      * Status of the feed item.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemStatusEnum.FeedItemStatus status = 4;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     protected $extension;
     protected $serving_resource_targeting;
 
@@ -215,8 +215,7 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -245,9 +244,8 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The extension type of the extension feed item.
@@ -304,8 +302,7 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date_time");
     }
 
     /**
@@ -340,9 +337,8 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date_time", $var);
+        return $this;}
 
     /**
      * End time in which this feed item is no longer effective and will stop
@@ -371,8 +367,7 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getEndDateTimeUnwrapped()
     {
-        $wrapper = $this->getEndDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date_time");
     }
 
     /**
@@ -407,9 +402,8 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setEndDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date_time", $var);
+        return $this;}
 
     /**
      * List of non-overlapping schedules specifying all time intervals
@@ -488,8 +482,7 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTargetedGeoTargetConstantUnwrapped()
     {
-        $wrapper = $this->getTargetedGeoTargetConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("targeted_geo_target_constant");
     }
 
     /**
@@ -518,9 +511,8 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setTargetedGeoTargetConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTargetedGeoTargetConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("targeted_geo_target_constant", $var);
+        return $this;}
 
     /**
      * The targeted keyword.
@@ -889,8 +881,7 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTargetedCampaignUnwrapped()
     {
-        $wrapper = $this->getTargetedCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("targeted_campaign");
     }
 
     /**
@@ -919,9 +910,8 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setTargetedCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTargetedCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("targeted_campaign", $var);
+        return $this;}
 
     /**
      * The targeted ad group.
@@ -944,8 +934,7 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTargetedAdGroupUnwrapped()
     {
-        $wrapper = $this->getTargetedAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("targeted_ad_group");
     }
 
     /**
@@ -974,9 +963,8 @@ final class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setTargetedAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTargetedAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("targeted_ad_group", $var);
+        return $this;}
 
     /**
      * @return string

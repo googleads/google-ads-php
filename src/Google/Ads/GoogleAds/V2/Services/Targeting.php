@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.Targeting</code>
  */
-final class Targeting extends \Google\Protobuf\Internal\Message
+class Targeting extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The ID of the selected location.
@@ -21,14 +21,14 @@ final class Targeting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1;</code>
      */
-    private $plannable_location_id = null;
+    protected $plannable_location_id = null;
     /**
      * Required
      * Selected age range to be planned on.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
      */
-    private $age_range = 0;
+    protected $age_range = 0;
     /**
      * Targetable genders for the ad product.
      *
@@ -88,8 +88,7 @@ final class Targeting extends \Google\Protobuf\Internal\Message
      */
     public function getPlannableLocationIdUnwrapped()
     {
-        $wrapper = $this->getPlannableLocationId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("plannable_location_id");
     }
 
     /**
@@ -120,9 +119,8 @@ final class Targeting extends \Google\Protobuf\Internal\Message
      */
     public function setPlannableLocationIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPlannableLocationId($wrappedVar);
-    }
+        $this->writeWrapperValue("plannable_location_id", $var);
+        return $this;}
 
     /**
      * Required

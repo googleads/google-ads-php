@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GraduateCampaignExperimentResponse</code>
  */
-final class GraduateCampaignExperimentResponse extends \Google\Protobuf\Internal\Message
+class GraduateCampaignExperimentResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the campaign from the graduated experiment.
@@ -21,7 +21,7 @@ final class GraduateCampaignExperimentResponse extends \Google\Protobuf\Internal
      *
      * Generated from protobuf field <code>string graduated_campaign = 1;</code>
      */
-    private $graduated_campaign = '';
+    protected $graduated_campaign = '';
 
     /**
      * Constructor.

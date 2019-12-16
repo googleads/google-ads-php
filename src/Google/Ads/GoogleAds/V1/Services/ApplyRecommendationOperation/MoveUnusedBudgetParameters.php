@@ -21,7 +21,7 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros_to_move = 1;</code>
      */
-    private $budget_micros_to_move = null;
+    protected $budget_micros_to_move = null;
 
     /**
      * Constructor.
@@ -60,10 +60,9 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros_to_move = 1;</code>
      * @return int|string|null
      */
-    public function getBudgetMicrosToMoveValue()
+    public function getBudgetMicrosToMoveUnwrapped()
     {
-        $wrapper = $this->getBudgetMicrosToMove();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("budget_micros_to_move");
     }
 
     /**
@@ -92,11 +91,10 @@ class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setBudgetMicrosToMoveValue($var)
+    public function setBudgetMicrosToMoveUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setBudgetMicrosToMove($wrappedVar);
-    }
+        $this->writeWrapperValue("budget_micros_to_move", $var);
+        return $this;}
 
 }
 

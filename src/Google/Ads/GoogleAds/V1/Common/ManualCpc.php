@@ -20,7 +20,7 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 1;</code>
      */
-    private $enhanced_cpc_enabled = null;
+    protected $enhanced_cpc_enabled = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 1;</code>
      * @return bool|null
      */
-    public function getEnhancedCpcEnabledValue()
+    public function getEnhancedCpcEnabledUnwrapped()
     {
-        $wrapper = $this->getEnhancedCpcEnabled();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("enhanced_cpc_enabled");
     }
 
     /**
@@ -86,11 +85,10 @@ class ManualCpc extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setEnhancedCpcEnabledValue($var)
+    public function setEnhancedCpcEnabledUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setEnhancedCpcEnabled($wrappedVar);
-    }
+        $this->writeWrapperValue("enhanced_cpc_enabled", $var);
+        return $this;}
 
 }
 

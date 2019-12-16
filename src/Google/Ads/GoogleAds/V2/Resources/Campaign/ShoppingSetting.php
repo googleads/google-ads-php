@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Campaign.ShoppingSetting</code>
  */
-final class ShoppingSetting extends \Google\Protobuf\Internal\Message
+class ShoppingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * ID of the Merchant Center account.
@@ -24,7 +24,7 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1;</code>
      */
-    private $merchant_id = null;
+    protected $merchant_id = null;
     /**
      * Sales country of products to include in the campaign.
      * This field is required for Shopping campaigns. This field is immutable.
@@ -33,7 +33,7 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2;</code>
      */
-    private $sales_country = null;
+    protected $sales_country = null;
     /**
      * Priority of the campaign. Campaigns with numerically higher priorities
      * take precedence over those with lower priorities.
@@ -44,13 +44,13 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value campaign_priority = 3;</code>
      */
-    private $campaign_priority = null;
+    protected $campaign_priority = null;
     /**
      * Whether to include local products.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enable_local = 4;</code>
      */
-    private $enable_local = null;
+    protected $enable_local = null;
 
     /**
      * Constructor.
@@ -108,8 +108,7 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getMerchantIdUnwrapped()
     {
-        $wrapper = $this->getMerchantId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("merchant_id");
     }
 
     /**
@@ -142,9 +141,8 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setMerchantIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setMerchantId($wrappedVar);
-    }
+        $this->writeWrapperValue("merchant_id", $var);
+        return $this;}
 
     /**
      * Sales country of products to include in the campaign.
@@ -173,8 +171,7 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getSalesCountryUnwrapped()
     {
-        $wrapper = $this->getSalesCountry();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("sales_country");
     }
 
     /**
@@ -209,9 +206,8 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setSalesCountryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSalesCountry($wrappedVar);
-    }
+        $this->writeWrapperValue("sales_country", $var);
+        return $this;}
 
     /**
      * Priority of the campaign. Campaigns with numerically higher priorities
@@ -244,8 +240,7 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignPriorityUnwrapped()
     {
-        $wrapper = $this->getCampaignPriority();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_priority");
     }
 
     /**
@@ -284,9 +279,8 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignPriorityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setCampaignPriority($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_priority", $var);
+        return $this;}
 
     /**
      * Whether to include local products.
@@ -309,8 +303,7 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getEnableLocalUnwrapped()
     {
-        $wrapper = $this->getEnableLocal();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("enable_local");
     }
 
     /**
@@ -339,9 +332,8 @@ final class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setEnableLocalUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setEnableLocal($wrappedVar);
-    }
+        $this->writeWrapperValue("enable_local", $var);
+        return $this;}
 
 }
 

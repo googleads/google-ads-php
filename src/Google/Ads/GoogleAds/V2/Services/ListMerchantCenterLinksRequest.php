@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListMerchantCenterLinksRequest</code>
  */
-final class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Message
+class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer onto which to apply the Merchant Center link list
@@ -21,7 +21,7 @@ final class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
 
     /**
      * Constructor.

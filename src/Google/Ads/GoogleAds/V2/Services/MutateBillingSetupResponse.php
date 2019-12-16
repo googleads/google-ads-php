@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateBillingSetupResponse</code>
  */
-final class MutateBillingSetupResponse extends \Google\Protobuf\Internal\Message
+class MutateBillingSetupResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A result that identifies the resource affected by the mutate request.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.MutateBillingSetupResult result = 1;</code>
      */
-    private $result = null;
+    protected $result = null;
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AdGroupAd</code>
  */
-final class AdGroupAd extends \Google\Protobuf\Internal\Message
+class AdGroupAd extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the ad.
@@ -22,37 +22,37 @@ final class AdGroupAd extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The status of the ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdGroupAdStatusEnum.AdGroupAdStatus status = 3;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The ad group to which the ad belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * The ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Ad ad = 5;</code>
      */
-    private $ad = null;
+    protected $ad = null;
     /**
      * Policy information for the ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupAdPolicySummary policy_summary = 6;</code>
      */
-    private $policy_summary = null;
+    protected $policy_summary = null;
     /**
      * Overall ad strength for this ad group ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdStrengthEnum.AdStrength ad_strength = 7;</code>
      */
-    private $ad_strength = 0;
+    protected $ad_strength = 0;
 
     /**
      * Constructor.
@@ -158,8 +158,7 @@ final class AdGroupAd extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -188,9 +187,8 @@ final class AdGroupAd extends \Google\Protobuf\Internal\Message
      */
     public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * The ad.

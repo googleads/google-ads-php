@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CampaignCriterion</code>
  */
-final class CampaignCriterion extends \Google\Protobuf\Internal\Message
+class CampaignCriterion extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the campaign criterion.
@@ -22,20 +22,20 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The campaign to which the criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The ID of the criterion.
      * This field is ignored during mutate.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
      */
-    private $criterion_id = null;
+    protected $criterion_id = null;
     /**
      * The modifier for the bids when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
@@ -43,25 +43,25 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FloatValue bid_modifier = 14;</code>
      */
-    private $bid_modifier = null;
+    protected $bid_modifier = null;
     /**
      * Whether to target (`false`) or exclude (`true`) the criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
      */
-    private $negative = null;
+    protected $negative = null;
     /**
      * The type of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionTypeEnum.CriterionType type = 6;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The status of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus status = 35;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     protected $criterion;
 
     /**
@@ -201,8 +201,7 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -231,9 +230,8 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The ID of the criterion.
@@ -258,8 +256,7 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     public function getCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_id");
     }
 
     /**
@@ -290,9 +287,8 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     public function setCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_id", $var);
+        return $this;}
 
     /**
      * The modifier for the bids when the criterion matches. The modifier must be
@@ -319,8 +315,7 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     public function getBidModifierUnwrapped()
     {
-        $wrapper = $this->getBidModifier();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_modifier");
     }
 
     /**
@@ -353,9 +348,8 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     public function setBidModifierUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\FloatValue(['value' => $var]);
-        return $this->setBidModifier($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_modifier", $var);
+        return $this;}
 
     /**
      * Whether to target (`false`) or exclude (`true`) the criterion.
@@ -378,8 +372,7 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     public function getNegativeUnwrapped()
     {
-        $wrapper = $this->getNegative();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("negative");
     }
 
     /**
@@ -408,9 +401,8 @@ final class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     public function setNegativeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setNegative($wrappedVar);
-    }
+        $this->writeWrapperValue("negative", $var);
+        return $this;}
 
     /**
      * The type of the criterion.

@@ -20,25 +20,25 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
      */
-    private $header = null;
+    protected $header = null;
     /**
      * Description text of this offer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
      */
-    private $description = null;
+    protected $description = null;
     /**
      * Price value of this offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.Money price = 3;</code>
      */
-    private $price = null;
+    protected $price = null;
     /**
      * Price unit for this offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PriceExtensionPriceUnitEnum.PriceExtensionPriceUnit unit = 4;</code>
      */
-    private $unit = 0;
+    protected $unit = 0;
     /**
      * A list of possible final URLs after all cross domain redirects.
      *
@@ -96,10 +96,9 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
      * @return string|null
      */
-    public function getHeaderValue()
+    public function getHeaderUnwrapped()
     {
-        $wrapper = $this->getHeader();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("header");
     }
 
     /**
@@ -126,11 +125,10 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHeaderValue($var)
+    public function setHeaderUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeader($wrappedVar);
-    }
+        $this->writeWrapperValue("header", $var);
+        return $this;}
 
     /**
      * Description text of this offer.
@@ -151,10 +149,9 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
      * @return string|null
      */
-    public function getDescriptionValue()
+    public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -181,11 +178,10 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDescriptionValue($var)
+    public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
     /**
      * Price value of this offer.

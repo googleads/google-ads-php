@@ -15,33 +15,33 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.PolicyViolationDetails</code>
  */
-final class PolicyViolationDetails extends \Google\Protobuf\Internal\Message
+class PolicyViolationDetails extends \Google\Protobuf\Internal\Message
 {
     /**
      * Human readable description of policy violation.
      *
      * Generated from protobuf field <code>string external_policy_description = 2;</code>
      */
-    private $external_policy_description = '';
+    protected $external_policy_description = '';
     /**
      * Unique identifier for this violation.
      * If policy is exemptible, this key may be used to request exemption.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.PolicyViolationKey key = 4;</code>
      */
-    private $key = null;
+    protected $key = null;
     /**
      * Human readable name of the policy.
      *
      * Generated from protobuf field <code>string external_policy_name = 5;</code>
      */
-    private $external_policy_name = '';
+    protected $external_policy_name = '';
     /**
      * Whether user can file an exemption request for this violation.
      *
      * Generated from protobuf field <code>bool is_exemptible = 6;</code>
      */
-    private $is_exemptible = false;
+    protected $is_exemptible = false;
 
     /**
      * Constructor.

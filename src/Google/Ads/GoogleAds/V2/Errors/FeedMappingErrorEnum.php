@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.FeedMappingErrorEnum</code>
  */
-final class FeedMappingErrorEnum extends \Google\Protobuf\Internal\Message
+class FeedMappingErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

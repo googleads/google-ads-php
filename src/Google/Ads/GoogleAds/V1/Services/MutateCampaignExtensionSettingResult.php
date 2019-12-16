@@ -20,7 +20,7 @@ class MutateCampaignExtensionSettingResult extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

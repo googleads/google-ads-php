@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListMerchantCenterLinksResponse</code>
  */
-final class ListMerchantCenterLinksResponse extends \Google\Protobuf\Internal\Message
+class ListMerchantCenterLinksResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Merchant Center links available for the requested customer

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.CampaignLabelOperation</code>
  */
-final class CampaignLabelOperation extends \Google\Protobuf\Internal\Message
+class CampaignLabelOperation extends \Google\Protobuf\Internal\Message
 {
     protected $operation;
 

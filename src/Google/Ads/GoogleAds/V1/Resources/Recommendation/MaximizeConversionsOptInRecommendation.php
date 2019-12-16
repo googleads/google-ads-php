@@ -20,7 +20,7 @@ class MaximizeConversionsOptInRecommendation extends \Google\Protobuf\Internal\M
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1;</code>
      */
-    private $recommended_budget_amount_micros = null;
+    protected $recommended_budget_amount_micros = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class MaximizeConversionsOptInRecommendation extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1;</code>
      * @return int|string|null
      */
-    public function getRecommendedBudgetAmountMicrosValue()
+    public function getRecommendedBudgetAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getRecommendedBudgetAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("recommended_budget_amount_micros");
     }
 
     /**
@@ -86,11 +85,10 @@ class MaximizeConversionsOptInRecommendation extends \Google\Protobuf\Internal\M
      * @param int|string|null $var
      * @return $this
      */
-    public function setRecommendedBudgetAmountMicrosValue($var)
+    public function setRecommendedBudgetAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setRecommendedBudgetAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("recommended_budget_amount_micros", $var);
+        return $this;}
 
 }
 

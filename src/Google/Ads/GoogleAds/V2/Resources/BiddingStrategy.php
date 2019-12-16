@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.BiddingStrategy</code>
  */
-final class BiddingStrategy extends \Google\Protobuf\Internal\Message
+class BiddingStrategy extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the bidding strategy.
@@ -22,13 +22,13 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the bidding strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the bidding strategy.
      * All bidding strategies within an account must be named distinctly.
@@ -37,14 +37,14 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The status of the bidding strategy.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The type of the bidding strategy.
      * Create a bidding strategy by setting the bidding scheme.
@@ -52,21 +52,21 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType type = 5;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
      */
-    private $campaign_count = null;
+    protected $campaign_count = null;
     /**
      * The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
      */
-    private $non_removed_campaign_count = null;
+    protected $non_removed_campaign_count = null;
     protected $scheme;
 
     /**
@@ -187,8 +187,7 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -217,9 +216,8 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the bidding strategy.
@@ -248,8 +246,7 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -284,9 +281,8 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The status of the bidding strategy.
@@ -369,8 +365,7 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignCountUnwrapped()
     {
-        $wrapper = $this->getCampaignCount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_count");
     }
 
     /**
@@ -401,9 +396,8 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignCountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCampaignCount($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_count", $var);
+        return $this;}
 
     /**
      * The number of non-removed campaigns attached to this bidding strategy.
@@ -428,8 +422,7 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function getNonRemovedCampaignCountUnwrapped()
     {
-        $wrapper = $this->getNonRemovedCampaignCount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("non_removed_campaign_count");
     }
 
     /**
@@ -460,9 +453,8 @@ final class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     public function setNonRemovedCampaignCountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setNonRemovedCampaignCount($wrappedVar);
-    }
+        $this->writeWrapperValue("non_removed_campaign_count", $var);
+        return $this;}
 
     /**
      * A bidding strategy that raises bids for clicks that seem more likely to

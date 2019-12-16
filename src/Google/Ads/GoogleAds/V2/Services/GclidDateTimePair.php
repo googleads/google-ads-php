@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GclidDateTimePair</code>
  */
-final class GclidDateTimePair extends \Google\Protobuf\Internal\Message
+class GclidDateTimePair extends \Google\Protobuf\Internal\Message
 {
     /**
      * Google click ID (gclid) associated with the original conversion for this
@@ -22,7 +22,7 @@ final class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
      */
-    private $gclid = null;
+    protected $gclid = null;
     /**
      * The date time at which the original conversion for this adjustment
      * occurred. The timezone must be specified. The format is "yyyy-mm-dd
@@ -30,7 +30,7 @@ final class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 2;</code>
      */
-    private $conversion_date_time = null;
+    protected $conversion_date_time = null;
 
     /**
      * Constructor.
@@ -75,8 +75,7 @@ final class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      */
     public function getGclidUnwrapped()
     {
-        $wrapper = $this->getGclid();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("gclid");
     }
 
     /**
@@ -107,9 +106,8 @@ final class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      */
     public function setGclidUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGclid($wrappedVar);
-    }
+        $this->writeWrapperValue("gclid", $var);
+        return $this;}
 
     /**
      * The date time at which the original conversion for this adjustment
@@ -136,8 +134,7 @@ final class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      */
     public function getConversionDateTimeUnwrapped()
     {
-        $wrapper = $this->getConversionDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_date_time");
     }
 
     /**
@@ -170,9 +167,8 @@ final class GclidDateTimePair extends \Google\Protobuf\Internal\Message
      */
     public function setConversionDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_date_time", $var);
+        return $this;}
 
 }
 

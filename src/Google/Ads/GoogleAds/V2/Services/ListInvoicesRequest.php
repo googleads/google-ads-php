@@ -14,34 +14,34 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListInvoicesRequest</code>
  */
-final class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
+class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer to fetch invoices for.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * Required. The billing setup resource name of the requested invoices.
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
      * Generated from protobuf field <code>string billing_setup = 2;</code>
      */
-    private $billing_setup = '';
+    protected $billing_setup = '';
     /**
      * Required. The issue year to retrieve invoices, in yyyy format. Only
      * invoices issued in 2019 or later can be retrieved.
      *
      * Generated from protobuf field <code>string issue_year = 3;</code>
      */
-    private $issue_year = '';
+    protected $issue_year = '';
     /**
      * Required. The issue month to retrieve invoices.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MonthOfYearEnum.MonthOfYear issue_month = 4;</code>
      */
-    private $issue_month = 0;
+    protected $issue_month = 0;
 
     /**
      * Constructor.

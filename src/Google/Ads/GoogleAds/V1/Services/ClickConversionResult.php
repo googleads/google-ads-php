@@ -20,20 +20,20 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
      */
-    private $gclid = null;
+    protected $gclid = null;
     /**
      * Resource name of the conversion action associated with this conversion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 2;</code>
      */
-    private $conversion_action = null;
+    protected $conversion_action = null;
     /**
      * The date time at which the conversion occurred. The format is
      * "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 3;</code>
      */
-    private $conversion_date_time = null;
+    protected $conversion_date_time = null;
 
     /**
      * Constructor.
@@ -74,10 +74,9 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 1;</code>
      * @return string|null
      */
-    public function getGclidValue()
+    public function getGclidUnwrapped()
     {
-        $wrapper = $this->getGclid();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("gclid");
     }
 
     /**
@@ -104,11 +103,10 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGclidValue($var)
+    public function setGclidUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGclid($wrappedVar);
-    }
+        $this->writeWrapperValue("gclid", $var);
+        return $this;}
 
     /**
      * Resource name of the conversion action associated with this conversion.
@@ -129,10 +127,9 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 2;</code>
      * @return string|null
      */
-    public function getConversionActionValue()
+    public function getConversionActionUnwrapped()
     {
-        $wrapper = $this->getConversionAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_action");
     }
 
     /**
@@ -159,11 +156,10 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionActionValue($var)
+    public function setConversionActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionAction($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_action", $var);
+        return $this;}
 
     /**
      * The date time at which the conversion occurred. The format is
@@ -186,10 +182,9 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_date_time = 3;</code>
      * @return string|null
      */
-    public function getConversionDateTimeValue()
+    public function getConversionDateTimeUnwrapped()
     {
-        $wrapper = $this->getConversionDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_date_time");
     }
 
     /**
@@ -218,11 +213,10 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionDateTimeValue($var)
+    public function setConversionDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_date_time", $var);
+        return $this;}
 
 }
 

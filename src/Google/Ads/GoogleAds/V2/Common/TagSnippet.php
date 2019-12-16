@@ -13,35 +13,35 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TagSnippet</code>
  */
-final class TagSnippet extends \Google\Protobuf\Internal\Message
+class TagSnippet extends \Google\Protobuf\Internal\Message
 {
     /**
      * The type of the generated tag snippets for tracking conversions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TrackingCodeTypeEnum.TrackingCodeType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The format of the web page where the tracking tag and snippet will be
      * installed, e.g. HTML.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TrackingCodePageFormatEnum.TrackingCodePageFormat page_format = 2;</code>
      */
-    private $page_format = 0;
+    protected $page_format = 0;
     /**
      * The site tag that adds visitors to your basic remarketing lists and sets
      * new cookies on your domain.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue global_site_tag = 3;</code>
      */
-    private $global_site_tag = null;
+    protected $global_site_tag = null;
     /**
      * The event snippet that works with the site tag to track actions that
      * should be counted as conversions.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue event_snippet = 4;</code>
      */
-    private $event_snippet = null;
+    protected $event_snippet = null;
 
     /**
      * Constructor.
@@ -144,8 +144,7 @@ final class TagSnippet extends \Google\Protobuf\Internal\Message
      */
     public function getGlobalSiteTagUnwrapped()
     {
-        $wrapper = $this->getGlobalSiteTag();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("global_site_tag");
     }
 
     /**
@@ -176,9 +175,8 @@ final class TagSnippet extends \Google\Protobuf\Internal\Message
      */
     public function setGlobalSiteTagUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGlobalSiteTag($wrappedVar);
-    }
+        $this->writeWrapperValue("global_site_tag", $var);
+        return $this;}
 
     /**
      * The event snippet that works with the site tag to track actions that
@@ -203,8 +201,7 @@ final class TagSnippet extends \Google\Protobuf\Internal\Message
      */
     public function getEventSnippetUnwrapped()
     {
-        $wrapper = $this->getEventSnippet();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("event_snippet");
     }
 
     /**
@@ -235,9 +232,8 @@ final class TagSnippet extends \Google\Protobuf\Internal\Message
      */
     public function setEventSnippetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEventSnippet($wrappedVar);
-    }
+        $this->writeWrapperValue("event_snippet", $var);
+        return $this;}
 
 }
 

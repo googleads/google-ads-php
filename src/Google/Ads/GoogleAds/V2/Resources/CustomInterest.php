@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CustomInterest</code>
  */
-final class CustomInterest extends \Google\Protobuf\Internal\Message
+class CustomInterest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the custom interest.
@@ -22,20 +22,20 @@ final class CustomInterest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Id of the custom interest.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Status of this custom interest. Indicates whether the custom interest is
      * enabled or removed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CustomInterestStatusEnum.CustomInterestStatus status = 3;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * Name of the custom interest. It should be unique across the same custom
      * affinity audience.
@@ -43,20 +43,20 @@ final class CustomInterest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * Type of the custom interest, CUSTOM_AFFINITY or CUSTOM_INTENT.
      * By default the type is set to CUSTOM_AFFINITY.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CustomInterestTypeEnum.CustomInterestType type = 5;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * Description of this custom interest audience.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 6;</code>
      */
-    private $description = null;
+    protected $description = null;
     /**
      * List of custom interest members that this custom interest is composed of.
      * Members can be added during CustomInterest creation. If members are
@@ -152,8 +152,7 @@ final class CustomInterest extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -182,9 +181,8 @@ final class CustomInterest extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Status of this custom interest. Indicates whether the custom interest is
@@ -239,8 +237,7 @@ final class CustomInterest extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -273,9 +270,8 @@ final class CustomInterest extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * Type of the custom interest, CUSTOM_AFFINITY or CUSTOM_INTENT.
@@ -326,8 +322,7 @@ final class CustomInterest extends \Google\Protobuf\Internal\Message
      */
     public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -356,9 +351,8 @@ final class CustomInterest extends \Google\Protobuf\Internal\Message
      */
     public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
     /**
      * List of custom interest members that this custom interest is composed of.

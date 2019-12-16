@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Customer</code>
  */
-final class Customer extends \Google\Protobuf\Internal\Message
+class Customer extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the customer.
@@ -22,19 +22,19 @@ final class Customer extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Optional, non-unique descriptive name of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 4;</code>
      */
-    private $descriptive_name = null;
+    protected $descriptive_name = null;
     /**
      * The currency in which the account operates.
      * A subset of the currency codes from the ISO 4217 standard is
@@ -42,31 +42,31 @@ final class Customer extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
     /**
      * The local timezone ID of the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
      */
-    private $time_zone = null;
+    protected $time_zone = null;
     /**
      * The URL template for constructing a tracking URL out of parameters.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 7;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * The URL template for appending params to the final URL
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 11;</code>
      */
-    private $final_url_suffix = null;
+    protected $final_url_suffix = null;
     /**
      * Whether auto-tagging is enabled for the customer.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue auto_tagging_enabled = 8;</code>
      */
-    private $auto_tagging_enabled = null;
+    protected $auto_tagging_enabled = null;
     /**
      * Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
@@ -74,37 +74,37 @@ final class Customer extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
      */
-    private $has_partners_badge = null;
+    protected $has_partners_badge = null;
     /**
      * Whether the customer is a manager.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
      */
-    private $manager = null;
+    protected $manager = null;
     /**
      * Whether the customer is a test account.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
      */
-    private $test_account = null;
+    protected $test_account = null;
     /**
      * Call reporting setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CallReportingSetting call_reporting_setting = 10;</code>
      */
-    private $call_reporting_setting = null;
+    protected $call_reporting_setting = null;
     /**
      * Conversion tracking setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionTrackingSetting conversion_tracking_setting = 14;</code>
      */
-    private $conversion_tracking_setting = null;
+    protected $conversion_tracking_setting = null;
     /**
      * Remarketing setting for a customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.RemarketingSetting remarketing_setting = 15;</code>
      */
-    private $remarketing_setting = null;
+    protected $remarketing_setting = null;
     /**
      * Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
      * the list is empty, the customer is eligible. This field is read-only.
@@ -214,8 +214,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -244,9 +243,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Optional, non-unique descriptive name of the customer.
@@ -269,8 +267,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getDescriptiveNameUnwrapped()
     {
-        $wrapper = $this->getDescriptiveName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("descriptive_name");
     }
 
     /**
@@ -299,9 +296,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setDescriptiveNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescriptiveName($wrappedVar);
-    }
+        $this->writeWrapperValue("descriptive_name", $var);
+        return $this;}
 
     /**
      * The currency in which the account operates.
@@ -328,8 +324,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -362,9 +357,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
     /**
      * The local timezone ID of the customer.
@@ -387,8 +381,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getTimeZoneUnwrapped()
     {
-        $wrapper = $this->getTimeZone();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("time_zone");
     }
 
     /**
@@ -417,9 +410,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setTimeZoneUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTimeZone($wrappedVar);
-    }
+        $this->writeWrapperValue("time_zone", $var);
+        return $this;}
 
     /**
      * The URL template for constructing a tracking URL out of parameters.
@@ -442,8 +434,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -472,9 +463,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * The URL template for appending params to the final URL
@@ -497,8 +487,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getFinalUrlSuffixUnwrapped()
     {
-        $wrapper = $this->getFinalUrlSuffix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("final_url_suffix");
     }
 
     /**
@@ -527,9 +516,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setFinalUrlSuffixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFinalUrlSuffix($wrappedVar);
-    }
+        $this->writeWrapperValue("final_url_suffix", $var);
+        return $this;}
 
     /**
      * Whether auto-tagging is enabled for the customer.
@@ -552,8 +540,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getAutoTaggingEnabledUnwrapped()
     {
-        $wrapper = $this->getAutoTaggingEnabled();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("auto_tagging_enabled");
     }
 
     /**
@@ -582,9 +569,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setAutoTaggingEnabledUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setAutoTaggingEnabled($wrappedVar);
-    }
+        $this->writeWrapperValue("auto_tagging_enabled", $var);
+        return $this;}
 
     /**
      * Whether the Customer has a Partners program badge. If the Customer is not
@@ -611,8 +597,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getHasPartnersBadgeUnwrapped()
     {
-        $wrapper = $this->getHasPartnersBadge();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("has_partners_badge");
     }
 
     /**
@@ -645,9 +630,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setHasPartnersBadgeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setHasPartnersBadge($wrappedVar);
-    }
+        $this->writeWrapperValue("has_partners_badge", $var);
+        return $this;}
 
     /**
      * Whether the customer is a manager.
@@ -670,8 +654,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getManagerUnwrapped()
     {
-        $wrapper = $this->getManager();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("manager");
     }
 
     /**
@@ -700,9 +683,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setManagerUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setManager($wrappedVar);
-    }
+        $this->writeWrapperValue("manager", $var);
+        return $this;}
 
     /**
      * Whether the customer is a test account.
@@ -725,8 +707,7 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function getTestAccountUnwrapped()
     {
-        $wrapper = $this->getTestAccount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("test_account");
     }
 
     /**
@@ -755,9 +736,8 @@ final class Customer extends \Google\Protobuf\Internal\Message
      */
     public function setTestAccountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTestAccount($wrappedVar);
-    }
+        $this->writeWrapperValue("test_account", $var);
+        return $this;}
 
     /**
      * Call reporting setting for a customer.

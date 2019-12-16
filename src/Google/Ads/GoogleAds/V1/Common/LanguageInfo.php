@@ -20,7 +20,7 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_constant = 1;</code>
      */
-    private $language_constant = null;
+    protected $language_constant = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue language_constant = 1;</code>
      * @return string|null
      */
-    public function getLanguageConstantValue()
+    public function getLanguageConstantUnwrapped()
     {
-        $wrapper = $this->getLanguageConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_constant");
     }
 
     /**
@@ -86,11 +85,10 @@ class LanguageInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLanguageConstantValue($var)
+    public function setLanguageConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("language_constant", $var);
+        return $this;}
 
 }
 

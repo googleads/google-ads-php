@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.Preferences</code>
  */
-final class Preferences extends \Google\Protobuf\Internal\Message
+class Preferences extends \Google\Protobuf\Internal\Message
 {
     /**
      * True if ad skippable.
@@ -21,28 +21,28 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_skippable = 1;</code>
      */
-    private $is_skippable = null;
+    protected $is_skippable = null;
     /**
      * True if ad start with sound.
      * If not set, default is any value.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue starts_with_sound = 2;</code>
      */
-    private $starts_with_sound = null;
+    protected $starts_with_sound = null;
     /**
      * The length of the ad.
      * If not set, default is any value.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ReachPlanAdLengthEnum.ReachPlanAdLength ad_length = 3;</code>
      */
-    private $ad_length = 0;
+    protected $ad_length = 0;
     /**
      * True if ad will only show on the top content.
      * If not set, default is false.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue top_content_only = 4;</code>
      */
-    private $top_content_only = null;
+    protected $top_content_only = null;
     /**
      * True if the price guaranteed. The cost of serving the ad is agreed upfront
      * and not subject to an auction.
@@ -50,7 +50,7 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_guaranteed_price = 5;</code>
      */
-    private $has_guaranteed_price = null;
+    protected $has_guaranteed_price = null;
 
     /**
      * Constructor.
@@ -104,8 +104,7 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      */
     public function getIsSkippableUnwrapped()
     {
-        $wrapper = $this->getIsSkippable();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("is_skippable");
     }
 
     /**
@@ -136,9 +135,8 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      */
     public function setIsSkippableUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setIsSkippable($wrappedVar);
-    }
+        $this->writeWrapperValue("is_skippable", $var);
+        return $this;}
 
     /**
      * True if ad start with sound.
@@ -163,8 +161,7 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      */
     public function getStartsWithSoundUnwrapped()
     {
-        $wrapper = $this->getStartsWithSound();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("starts_with_sound");
     }
 
     /**
@@ -195,9 +192,8 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      */
     public function setStartsWithSoundUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setStartsWithSound($wrappedVar);
-    }
+        $this->writeWrapperValue("starts_with_sound", $var);
+        return $this;}
 
     /**
      * The length of the ad.
@@ -250,8 +246,7 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      */
     public function getTopContentOnlyUnwrapped()
     {
-        $wrapper = $this->getTopContentOnly();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("top_content_only");
     }
 
     /**
@@ -282,9 +277,8 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      */
     public function setTopContentOnlyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTopContentOnly($wrappedVar);
-    }
+        $this->writeWrapperValue("top_content_only", $var);
+        return $this;}
 
     /**
      * True if the price guaranteed. The cost of serving the ad is agreed upfront
@@ -311,8 +305,7 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      */
     public function getHasGuaranteedPriceUnwrapped()
     {
-        $wrapper = $this->getHasGuaranteedPrice();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("has_guaranteed_price");
     }
 
     /**
@@ -345,9 +338,8 @@ final class Preferences extends \Google\Protobuf\Internal\Message
      */
     public function setHasGuaranteedPriceUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setHasGuaranteedPrice($wrappedVar);
-    }
+        $this->writeWrapperValue("has_guaranteed_price", $var);
+        return $this;}
 
 }
 

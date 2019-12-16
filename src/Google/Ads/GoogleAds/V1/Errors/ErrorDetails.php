@@ -21,19 +21,19 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string unpublished_error_code = 1;</code>
      */
-    private $unpublished_error_code = '';
+    protected $unpublished_error_code = '';
     /**
      * Describes an ad policy violation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.PolicyViolationDetails policy_violation_details = 2;</code>
      */
-    private $policy_violation_details = null;
+    protected $policy_violation_details = null;
     /**
      * Describes policy violation findings.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.PolicyFindingDetails policy_finding_details = 3;</code>
      */
-    private $policy_finding_details = null;
+    protected $policy_finding_details = null;
 
     /**
      * Constructor.

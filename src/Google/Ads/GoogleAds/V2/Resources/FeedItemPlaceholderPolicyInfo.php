@@ -14,33 +14,33 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.FeedItemPlaceholderPolicyInfo</code>
  */
-final class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
+class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The placeholder type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type_enum = 10;</code>
      */
-    private $placeholder_type_enum = 0;
+    protected $placeholder_type_enum = 0;
     /**
      * The FeedMapping that contains the placeholder type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_mapping_resource_name = 2;</code>
      */
-    private $feed_mapping_resource_name = null;
+    protected $feed_mapping_resource_name = null;
     /**
      * Where the placeholder type is in the review process.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 3;</code>
      */
-    private $review_status = 0;
+    protected $review_status = 0;
     /**
      * The overall approval status of the placeholder type, calculated based on
      * the status of its individual policy topic entries.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 4;</code>
      */
-    private $approval_status = 0;
+    protected $approval_status = 0;
     /**
      * The list of policy findings for the placeholder type.
      *
@@ -52,7 +52,7 @@ final class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemValidationStatusEnum.FeedItemValidationStatus validation_status = 6;</code>
      */
-    private $validation_status = 0;
+    protected $validation_status = 0;
     /**
      * List of placeholder type validation errors.
      *
@@ -64,7 +64,7 @@ final class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemQualityApprovalStatusEnum.FeedItemQualityApprovalStatus quality_approval_status = 8;</code>
      */
-    private $quality_approval_status = 0;
+    protected $quality_approval_status = 0;
     /**
      * List of placeholder type quality evaluation disapproval reasons.
      *
@@ -151,8 +151,7 @@ final class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Mess
      */
     public function getFeedMappingResourceNameUnwrapped()
     {
-        $wrapper = $this->getFeedMappingResourceName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed_mapping_resource_name");
     }
 
     /**
@@ -181,9 +180,8 @@ final class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Mess
      */
     public function setFeedMappingResourceNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeedMappingResourceName($wrappedVar);
-    }
+        $this->writeWrapperValue("feed_mapping_resource_name", $var);
+        return $this;}
 
     /**
      * Where the placeholder type is in the review process.

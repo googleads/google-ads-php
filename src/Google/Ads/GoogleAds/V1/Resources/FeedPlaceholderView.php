@@ -22,13 +22,13 @@ class FeedPlaceholderView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The placeholder type of the feed placeholder view.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 2;</code>
      */
-    private $placeholder_type = 0;
+    protected $placeholder_type = 0;
 
     /**
      * Constructor.

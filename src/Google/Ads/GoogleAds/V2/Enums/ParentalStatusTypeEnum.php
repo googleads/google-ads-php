@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.ParentalStatusTypeEnum</code>
  */
-final class ParentalStatusTypeEnum extends \Google\Protobuf\Internal\Message
+class ParentalStatusTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

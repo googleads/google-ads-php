@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ShoppingProductAdInfo</code>
  */
-final class ShoppingProductAdInfo extends \Google\Protobuf\Internal\Message
+class ShoppingProductAdInfo extends \Google\Protobuf\Internal\Message
 {
 
     /**

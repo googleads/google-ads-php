@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.SearchGoogleAdsResponse</code>
  */
-final class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
+class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of rows that matched the query.
@@ -29,20 +29,20 @@ final class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
     /**
      * Total number of results that match the query ignoring the LIMIT
      * clause.
      *
      * Generated from protobuf field <code>int64 total_results_count = 3;</code>
      */
-    private $total_results_count = 0;
+    protected $total_results_count = 0;
     /**
      * FieldMask that represents what fields were requested by the user.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 5;</code>
      */
-    private $field_mask = null;
+    protected $field_mask = null;
     /**
      * Summary row that contains summary of metrics in results.
      * Summary of metrics means aggregation of metrics across all results,
@@ -50,7 +50,7 @@ final class SearchGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.GoogleAdsRow summary_row = 6;</code>
      */
-    private $summary_row = null;
+    protected $summary_row = null;
 
     /**
      * Constructor.
