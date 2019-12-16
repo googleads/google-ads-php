@@ -219,14 +219,10 @@ class UploadOfflineConversion
                     $operationIndex,
                     $response->getPartialFailureError()
                 );
-                printf(
-                    "Operation %d failed%s",
-                    $operationIndex,
-                    PHP_EOL
-                );
                 foreach ($errors as $error) {
                     printf(
-                        " - %s%s",
+                        "Operation %d failed with error: %s%s",
+                        $operationIndex,
                         $error->getMessage(),
                         PHP_EOL
                     );
