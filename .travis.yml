@@ -5,6 +5,10 @@ php:
   - 7.3
   - 7.4
 
+matrix:
+  allow_failures:
+    - php: 7.4
+
 branches:
   only:
   - /.*/
