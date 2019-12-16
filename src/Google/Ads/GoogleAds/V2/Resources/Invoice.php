@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Invoice</code>
  */
-final class Invoice extends \Google\Protobuf\Internal\Message
+class Invoice extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the invoice. Multiple customers can share a given
@@ -25,26 +25,26 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the invoice. It appears on the invoice PDF as "Invoice number".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The type of invoice.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.InvoiceTypeEnum.InvoiceType type = 3;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The resource name of this invoice’s billing setup.
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 4;</code>
      */
-    private $billing_setup = null;
+    protected $billing_setup = null;
     /**
      * A 16 digit ID used to identify the payments account associated with the
      * billing setup, e.g. "1234-5678-9012-3456". It appears on the invoice PDF as
@@ -52,7 +52,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 5;</code>
      */
-    private $payments_account_id = null;
+    protected $payments_account_id = null;
     /**
      * A 12 digit ID used to identify the payments profile associated with the
      * billing setup, e.g. "1234-5678-9012". It appears on the invoice PDF as
@@ -60,47 +60,47 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 6;</code>
      */
-    private $payments_profile_id = null;
+    protected $payments_profile_id = null;
     /**
      * The issue date in yyyy-mm-dd format. It appears on the invoice PDF as
      * either "Issue date" or "Invoice date".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue issue_date = 7;</code>
      */
-    private $issue_date = null;
+    protected $issue_date = null;
     /**
      * The due date in yyyy-mm-dd format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue due_date = 8;</code>
      */
-    private $due_date = null;
+    protected $due_date = null;
     /**
      * The service period date range of this invoice. The end date is inclusive.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.DateRange service_date_range = 9;</code>
      */
-    private $service_date_range = null;
+    protected $service_date_range = null;
     /**
      * The currency code. All costs are returned in this currency. A subset of the
      * currency codes derived from the ISO 4217 standard is supported.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
     /**
      * The total amount of invoice level adjustments. These adjustments are made
      * on the invoice, not on a specific account budget.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value invoice_level_adjustments_micros = 11;</code>
      */
-    private $invoice_level_adjustments_micros = null;
+    protected $invoice_level_adjustments_micros = null;
     /**
      * The pretax subtotal amount, in micros. This equals the sum of the
      * AccountBudgetSummary subtotal amounts, plus the invoice level adjustments.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 12;</code>
      */
-    private $subtotal_amount_micros = null;
+    protected $subtotal_amount_micros = null;
     /**
      * The sum of all taxes on the invoice, in micros. This equals the sum of the
      * AccountBudgetSummary tax amounts, plus taxes not associated with a specific
@@ -108,14 +108,14 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 13;</code>
      */
-    private $tax_amount_micros = null;
+    protected $tax_amount_micros = null;
     /**
      * The total amount, in micros. This equals the sum of the invoice subtotal
      * amount and the invoice tax amount.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 14;</code>
      */
-    private $total_amount_micros = null;
+    protected $total_amount_micros = null;
     /**
      * The resource name of the original invoice corrected, wrote off, or canceled
      * by this invoice, if applicable. If `corrected_invoice` is set,
@@ -125,7 +125,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue corrected_invoice = 15;</code>
      */
-    private $corrected_invoice = null;
+    protected $corrected_invoice = null;
     /**
      * The resource name of the original invoice(s) being rebilled or replaced by
      * this invoice, if applicable. There might be multiple replaced invoices due
@@ -144,7 +144,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue pdf_url = 17;</code>
      */
-    private $pdf_url = null;
+    protected $pdf_url = null;
     /**
      * The list of summarized account budget information associated with this
      * invoice.
@@ -282,8 +282,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -312,9 +311,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The type of invoice.
@@ -365,8 +363,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getBillingSetupUnwrapped()
     {
-        $wrapper = $this->getBillingSetup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("billing_setup");
     }
 
     /**
@@ -397,9 +394,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setBillingSetupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBillingSetup($wrappedVar);
-    }
+        $this->writeWrapperValue("billing_setup", $var);
+        return $this;}
 
     /**
      * A 16 digit ID used to identify the payments account associated with the
@@ -426,8 +422,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getPaymentsAccountIdUnwrapped()
     {
-        $wrapper = $this->getPaymentsAccountId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("payments_account_id");
     }
 
     /**
@@ -460,9 +455,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setPaymentsAccountIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPaymentsAccountId($wrappedVar);
-    }
+        $this->writeWrapperValue("payments_account_id", $var);
+        return $this;}
 
     /**
      * A 12 digit ID used to identify the payments profile associated with the
@@ -489,8 +483,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getPaymentsProfileIdUnwrapped()
     {
-        $wrapper = $this->getPaymentsProfileId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("payments_profile_id");
     }
 
     /**
@@ -523,9 +516,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setPaymentsProfileIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPaymentsProfileId($wrappedVar);
-    }
+        $this->writeWrapperValue("payments_profile_id", $var);
+        return $this;}
 
     /**
      * The issue date in yyyy-mm-dd format. It appears on the invoice PDF as
@@ -550,8 +542,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getIssueDateUnwrapped()
     {
-        $wrapper = $this->getIssueDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("issue_date");
     }
 
     /**
@@ -582,9 +573,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setIssueDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setIssueDate($wrappedVar);
-    }
+        $this->writeWrapperValue("issue_date", $var);
+        return $this;}
 
     /**
      * The due date in yyyy-mm-dd format.
@@ -607,8 +597,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getDueDateUnwrapped()
     {
-        $wrapper = $this->getDueDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("due_date");
     }
 
     /**
@@ -637,9 +626,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setDueDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDueDate($wrappedVar);
-    }
+        $this->writeWrapperValue("due_date", $var);
+        return $this;}
 
     /**
      * The service period date range of this invoice. The end date is inclusive.
@@ -690,8 +678,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -722,9 +709,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
     /**
      * The total amount of invoice level adjustments. These adjustments are made
@@ -749,8 +735,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getInvoiceLevelAdjustmentsMicrosUnwrapped()
     {
-        $wrapper = $this->getInvoiceLevelAdjustmentsMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("invoice_level_adjustments_micros");
     }
 
     /**
@@ -781,9 +766,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setInvoiceLevelAdjustmentsMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setInvoiceLevelAdjustmentsMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("invoice_level_adjustments_micros", $var);
+        return $this;}
 
     /**
      * The pretax subtotal amount, in micros. This equals the sum of the
@@ -808,8 +792,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getSubtotalAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getSubtotalAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("subtotal_amount_micros");
     }
 
     /**
@@ -840,9 +823,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setSubtotalAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setSubtotalAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("subtotal_amount_micros", $var);
+        return $this;}
 
     /**
      * The sum of all taxes on the invoice, in micros. This equals the sum of the
@@ -869,8 +851,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getTaxAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getTaxAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tax_amount_micros");
     }
 
     /**
@@ -903,9 +884,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setTaxAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTaxAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("tax_amount_micros", $var);
+        return $this;}
 
     /**
      * The total amount, in micros. This equals the sum of the invoice subtotal
@@ -930,8 +910,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getTotalAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getTotalAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("total_amount_micros");
     }
 
     /**
@@ -962,9 +941,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setTotalAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTotalAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("total_amount_micros", $var);
+        return $this;}
 
     /**
      * The resource name of the original invoice corrected, wrote off, or canceled
@@ -995,8 +973,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getCorrectedInvoiceUnwrapped()
     {
-        $wrapper = $this->getCorrectedInvoice();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("corrected_invoice");
     }
 
     /**
@@ -1033,9 +1010,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setCorrectedInvoiceUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCorrectedInvoice($wrappedVar);
-    }
+        $this->writeWrapperValue("corrected_invoice", $var);
+        return $this;}
 
     /**
      * The resource name of the original invoice(s) being rebilled or replaced by
@@ -1098,8 +1074,7 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function getPdfUrlUnwrapped()
     {
-        $wrapper = $this->getPdfUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("pdf_url");
     }
 
     /**
@@ -1130,9 +1105,8 @@ final class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setPdfUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPdfUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("pdf_url", $var);
+        return $this;}
 
     /**
      * The list of summarized account budget information associated with this

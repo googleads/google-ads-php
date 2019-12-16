@@ -22,13 +22,13 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Time at which the most recent change has occurred on this resource.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
      */
-    private $last_change_date_time = null;
+    protected $last_change_date_time = null;
     /**
      * Represents the type of the changed resource. This dictates what fields
      * will be set. For example, for AD_GROUP, campaign and ad_group fields will
@@ -36,73 +36,73 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4;</code>
      */
-    private $resource_type = 0;
+    protected $resource_type = 0;
     /**
      * The Campaign affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The AdGroup affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * Represents the status of the changed resource.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ChangeStatusOperationEnum.ChangeStatusOperation resource_status = 8;</code>
      */
-    private $resource_status = 0;
+    protected $resource_status = 0;
     /**
      * The AdGroupAd affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
      */
-    private $ad_group_ad = null;
+    protected $ad_group_ad = null;
     /**
      * The AdGroupCriterion affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
      */
-    private $ad_group_criterion = null;
+    protected $ad_group_criterion = null;
     /**
      * The CampaignCriterion affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
      */
-    private $campaign_criterion = null;
+    protected $campaign_criterion = null;
     /**
      * The Feed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
      */
-    private $feed = null;
+    protected $feed = null;
     /**
      * The FeedItem affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
      */
-    private $feed_item = null;
+    protected $feed_item = null;
     /**
      * The AdGroupFeed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
      */
-    private $ad_group_feed = null;
+    protected $ad_group_feed = null;
     /**
      * The CampaignFeed affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
      */
-    private $campaign_feed = null;
+    protected $campaign_feed = null;
     /**
      * The AdGroupBidModifier affected by this change.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
      */
-    private $ad_group_bid_modifier = null;
+    protected $ad_group_bid_modifier = null;
 
     /**
      * Constructor.
@@ -198,10 +198,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
      * @return string|null
      */
-    public function getLastChangeDateTimeValue()
+    public function getLastChangeDateTimeUnwrapped()
     {
-        $wrapper = $this->getLastChangeDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("last_change_date_time");
     }
 
     /**
@@ -228,11 +227,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLastChangeDateTimeValue($var)
+    public function setLastChangeDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLastChangeDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("last_change_date_time", $var);
+        return $this;}
 
     /**
      * Represents the type of the changed resource. This dictates what fields
@@ -283,10 +281,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
      * @return string|null
      */
-    public function getCampaignValue()
+    public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -313,11 +310,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignValue($var)
+    public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The AdGroup affected by this change.
@@ -338,10 +334,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
      * @return string|null
      */
-    public function getAdGroupValue()
+    public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -368,11 +363,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupValue($var)
+    public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * Represents the status of the changed resource.
@@ -419,10 +413,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
      * @return string|null
      */
-    public function getAdGroupAdValue()
+    public function getAdGroupAdUnwrapped()
     {
-        $wrapper = $this->getAdGroupAd();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_ad");
     }
 
     /**
@@ -449,11 +442,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupAdValue($var)
+    public function setAdGroupAdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupAd($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_ad", $var);
+        return $this;}
 
     /**
      * The AdGroupCriterion affected by this change.
@@ -474,10 +466,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
      * @return string|null
      */
-    public function getAdGroupCriterionValue()
+    public function getAdGroupCriterionUnwrapped()
     {
-        $wrapper = $this->getAdGroupCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_criterion");
     }
 
     /**
@@ -504,11 +495,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupCriterionValue($var)
+    public function setAdGroupCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_criterion", $var);
+        return $this;}
 
     /**
      * The CampaignCriterion affected by this change.
@@ -529,10 +519,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
      * @return string|null
      */
-    public function getCampaignCriterionValue()
+    public function getCampaignCriterionUnwrapped()
     {
-        $wrapper = $this->getCampaignCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_criterion");
     }
 
     /**
@@ -559,11 +548,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignCriterionValue($var)
+    public function setCampaignCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaignCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_criterion", $var);
+        return $this;}
 
     /**
      * The Feed affected by this change.
@@ -584,10 +572,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
      * @return string|null
      */
-    public function getFeedValue()
+    public function getFeedUnwrapped()
     {
-        $wrapper = $this->getFeed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed");
     }
 
     /**
@@ -614,11 +601,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFeedValue($var)
+    public function setFeedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeed($wrappedVar);
-    }
+        $this->writeWrapperValue("feed", $var);
+        return $this;}
 
     /**
      * The FeedItem affected by this change.
@@ -639,10 +625,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
      * @return string|null
      */
-    public function getFeedItemValue()
+    public function getFeedItemUnwrapped()
     {
-        $wrapper = $this->getFeedItem();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed_item");
     }
 
     /**
@@ -669,11 +654,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFeedItemValue($var)
+    public function setFeedItemUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeedItem($wrappedVar);
-    }
+        $this->writeWrapperValue("feed_item", $var);
+        return $this;}
 
     /**
      * The AdGroupFeed affected by this change.
@@ -694,10 +678,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
      * @return string|null
      */
-    public function getAdGroupFeedValue()
+    public function getAdGroupFeedUnwrapped()
     {
-        $wrapper = $this->getAdGroupFeed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_feed");
     }
 
     /**
@@ -724,11 +707,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupFeedValue($var)
+    public function setAdGroupFeedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupFeed($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_feed", $var);
+        return $this;}
 
     /**
      * The CampaignFeed affected by this change.
@@ -749,10 +731,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
      * @return string|null
      */
-    public function getCampaignFeedValue()
+    public function getCampaignFeedUnwrapped()
     {
-        $wrapper = $this->getCampaignFeed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_feed");
     }
 
     /**
@@ -779,11 +760,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignFeedValue($var)
+    public function setCampaignFeedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaignFeed($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_feed", $var);
+        return $this;}
 
     /**
      * The AdGroupBidModifier affected by this change.
@@ -804,10 +784,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
      * @return string|null
      */
-    public function getAdGroupBidModifierValue()
+    public function getAdGroupBidModifierUnwrapped()
     {
-        $wrapper = $this->getAdGroupBidModifier();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_bid_modifier");
     }
 
     /**
@@ -834,11 +813,10 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupBidModifierValue($var)
+    public function setAdGroupBidModifierUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupBidModifier($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_bid_modifier", $var);
+        return $this;}
 
 }
 

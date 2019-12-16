@@ -20,7 +20,7 @@ class MutateCustomInterestsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The list of operations to perform on individual custom interests.
      *
@@ -33,7 +33,7 @@ class MutateCustomInterestsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool validate_only = 4;</code>
      */
-    private $validate_only = false;
+    protected $validate_only = false;
 
     /**
      * Constructor.

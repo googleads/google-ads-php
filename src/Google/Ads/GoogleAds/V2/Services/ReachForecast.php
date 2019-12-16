@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ReachForecast</code>
  */
-final class ReachForecast extends \Google\Protobuf\Internal\Message
+class ReachForecast extends \Google\Protobuf\Internal\Message
 {
     /**
      * The cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 1;</code>
      */
-    private $cost_micros = null;
+    protected $cost_micros = null;
     /**
      * Forecasted traffic metrics for this point.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.Forecast forecast = 2;</code>
      */
-    private $forecast = null;
+    protected $forecast = null;
     /**
      * The forecasted allocation. This differs from the input allocation if one
      * or more product cannot fulfill the budget because of limited inventory.
@@ -76,8 +76,7 @@ final class ReachForecast extends \Google\Protobuf\Internal\Message
      */
     public function getCostMicrosUnwrapped()
     {
-        $wrapper = $this->getCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_micros");
     }
 
     /**
@@ -106,9 +105,8 @@ final class ReachForecast extends \Google\Protobuf\Internal\Message
      */
     public function setCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_micros", $var);
+        return $this;}
 
     /**
      * Forecasted traffic metrics for this point.

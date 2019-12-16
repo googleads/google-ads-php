@@ -22,13 +22,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the campaign.
      * This field is required and should not be empty when creating new
@@ -38,26 +38,26 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The status of the campaign.
      * When a new campaign is added, the status defaults to ENABLED.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignStatusEnum.CampaignStatus status = 5;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The ad serving status of the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignServingStatusEnum.CampaignServingStatus serving_status = 21;</code>
      */
-    private $serving_status = 0;
+    protected $serving_status = 0;
     /**
      * The ad serving optimization status of the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdServingOptimizationStatusEnum.AdServingOptimizationStatus ad_serving_optimization_status = 8;</code>
      */
-    private $ad_serving_optimization_status = 0;
+    protected $ad_serving_optimization_status = 0;
     /**
      * The primary serving target for ads within the campaign.
      * The targeting options can be refined in `network_settings`.
@@ -68,7 +68,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 9;</code>
      */
-    private $advertising_channel_type = 0;
+    protected $advertising_channel_type = 0;
     /**
      * Optional refinement to `advertising_channel_type`.
      * Must be a valid sub-type of the parent channel type.
@@ -77,13 +77,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType advertising_channel_sub_type = 10;</code>
      */
-    private $advertising_channel_sub_type = 0;
+    protected $advertising_channel_sub_type = 0;
     /**
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 11;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * The list of mappings used to substitute custom parameter tags in a
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
@@ -97,49 +97,49 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.RealTimeBiddingSetting real_time_bidding_setting = 39;</code>
      */
-    private $real_time_bidding_setting = null;
+    protected $real_time_bidding_setting = null;
     /**
      * The network settings for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.NetworkSettings network_settings = 14;</code>
      */
-    private $network_settings = null;
+    protected $network_settings = null;
     /**
      * The hotel setting for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.HotelSettingInfo hotel_setting = 32;</code>
      */
-    private $hotel_setting = null;
+    protected $hotel_setting = null;
     /**
      * The setting for controlling Dynamic Search Ads (DSA).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.DynamicSearchAdsSetting dynamic_search_ads_setting = 33;</code>
      */
-    private $dynamic_search_ads_setting = null;
+    protected $dynamic_search_ads_setting = null;
     /**
      * The setting for controlling Shopping campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.ShoppingSetting shopping_setting = 36;</code>
      */
-    private $shopping_setting = null;
+    protected $shopping_setting = null;
     /**
      * Setting for targeting related features.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.TargetingSetting targeting_setting = 43;</code>
      */
-    private $targeting_setting = null;
+    protected $targeting_setting = null;
     /**
      * The setting for ads geotargeting.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.GeoTargetTypeSetting geo_target_type_setting = 47;</code>
      */
-    private $geo_target_type_setting = null;
+    protected $geo_target_type_setting = null;
     /**
      * The setting related to App Campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.AppCampaignSetting app_campaign_setting = 51;</code>
      */
-    private $app_campaign_setting = null;
+    protected $app_campaign_setting = null;
     /**
      * The resource names of labels attached to this campaign.
      *
@@ -151,7 +151,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17;</code>
      */
-    private $experiment_type = 0;
+    protected $experiment_type = 0;
     /**
      * The resource name of the base campaign of a draft or experiment campaign.
      * For base campaigns, this is equal to `resource_name`.
@@ -159,13 +159,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
      */
-    private $base_campaign = null;
+    protected $base_campaign = null;
     /**
      * The budget of the campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
      */
-    private $campaign_budget = null;
+    protected $campaign_budget = null;
     /**
      * The type of bidding strategy.
      * A bidding strategy can be created by setting either the bidding scheme to
@@ -175,28 +175,28 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BiddingStrategyTypeEnum.BiddingStrategyType bidding_strategy_type = 22;</code>
      */
-    private $bidding_strategy_type = 0;
+    protected $bidding_strategy_type = 0;
     /**
      * The date when campaign started.
      * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 19;</code>
      */
-    private $start_date = null;
+    protected $start_date = null;
     /**
      * The date when campaign ended.
      * This field must not be used in WHERE clauses.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 20;</code>
      */
-    private $end_date = null;
+    protected $end_date = null;
     /**
      * Suffix used to append query parameters to landing pages that are served
      * with parallel tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
      */
-    private $final_url_suffix = null;
+    protected $final_url_suffix = null;
     /**
      * A list that limits how often each user will see this campaign's ads.
      *
@@ -208,32 +208,32 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42;</code>
      */
-    private $video_brand_safety_suitability = 0;
+    protected $video_brand_safety_suitability = 0;
     /**
      * Describes how unbranded pharma ads will be displayed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.VanityPharma vanity_pharma = 44;</code>
      */
-    private $vanity_pharma = null;
+    protected $vanity_pharma = null;
     /**
      * Selective optimization setting for this campaign, which includes a set of
      * conversion actions to optimize this campaign towards.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.SelectiveOptimization selective_optimization = 45;</code>
      */
-    private $selective_optimization = null;
+    protected $selective_optimization = null;
     /**
      * Campaign level settings for tracking information.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Campaign.TrackingSetting tracking_setting = 46;</code>
      */
-    private $tracking_setting = null;
+    protected $tracking_setting = null;
     /**
      * Payment mode for the campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PaymentModeEnum.PaymentMode payment_mode = 52;</code>
      */
-    private $payment_mode = 0;
+    protected $payment_mode = 0;
     protected $campaign_bidding_strategy;
 
     /**
@@ -428,10 +428,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -458,11 +457,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the campaign.
@@ -491,10 +489,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -529,11 +526,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The status of the campaign.
@@ -702,10 +698,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 11;</code>
      * @return string|null
      */
-    public function getTrackingUrlTemplateValue()
+    public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -732,11 +727,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTrackingUrlTemplateValue($var)
+    public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * The list of mappings used to substitute custom parameter tags in a
@@ -1051,10 +1045,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
      * @return string|null
      */
-    public function getBaseCampaignValue()
+    public function getBaseCampaignUnwrapped()
     {
-        $wrapper = $this->getBaseCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("base_campaign");
     }
 
     /**
@@ -1085,11 +1078,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setBaseCampaignValue($var)
+    public function setBaseCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBaseCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("base_campaign", $var);
+        return $this;}
 
     /**
      * The budget of the campaign.
@@ -1110,10 +1102,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
      * @return string|null
      */
-    public function getCampaignBudgetValue()
+    public function getCampaignBudgetUnwrapped()
     {
-        $wrapper = $this->getCampaignBudget();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_budget");
     }
 
     /**
@@ -1140,11 +1131,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignBudgetValue($var)
+    public function setCampaignBudgetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaignBudget($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_budget", $var);
+        return $this;}
 
     /**
      * The type of bidding strategy.
@@ -1201,10 +1191,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 19;</code>
      * @return string|null
      */
-    public function getStartDateValue()
+    public function getStartDateUnwrapped()
     {
-        $wrapper = $this->getStartDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date");
     }
 
     /**
@@ -1233,11 +1222,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setStartDateValue($var)
+    public function setStartDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDate($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date", $var);
+        return $this;}
 
     /**
      * The date when campaign ended.
@@ -1260,10 +1248,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 20;</code>
      * @return string|null
      */
-    public function getEndDateValue()
+    public function getEndDateUnwrapped()
     {
-        $wrapper = $this->getEndDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date");
     }
 
     /**
@@ -1292,11 +1279,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setEndDateValue($var)
+    public function setEndDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDate($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date", $var);
+        return $this;}
 
     /**
      * Suffix used to append query parameters to landing pages that are served
@@ -1319,10 +1305,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 38;</code>
      * @return string|null
      */
-    public function getFinalUrlSuffixValue()
+    public function getFinalUrlSuffixUnwrapped()
     {
-        $wrapper = $this->getFinalUrlSuffix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("final_url_suffix");
     }
 
     /**
@@ -1351,11 +1336,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFinalUrlSuffixValue($var)
+    public function setFinalUrlSuffixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFinalUrlSuffix($wrappedVar);
-    }
+        $this->writeWrapperValue("final_url_suffix", $var);
+        return $this;}
 
     /**
      * A list that limits how often each user will see this campaign's ads.
@@ -1534,10 +1518,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
      * @return string|null
      */
-    public function getBiddingStrategyValue()
+    public function getBiddingStrategyUnwrapped()
     {
-        $wrapper = $this->getBiddingStrategy();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bidding_strategy");
     }
 
     /**
@@ -1564,11 +1547,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setBiddingStrategyValue($var)
+    public function setBiddingStrategyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBiddingStrategy($wrappedVar);
-    }
+        $this->writeWrapperValue("bidding_strategy", $var);
+        return $this;}
 
     /**
      * Commission is an automatic bidding strategy in which the advertiser pays

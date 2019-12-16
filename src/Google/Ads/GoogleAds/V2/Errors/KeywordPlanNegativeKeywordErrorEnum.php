@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.KeywordPlanNegativeKeywordErrorEnum</code>
  */
-final class KeywordPlanNegativeKeywordErrorEnum extends \Google\Protobuf\Internal\Message
+class KeywordPlanNegativeKeywordErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

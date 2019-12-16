@@ -6,7 +6,7 @@ return [
             'RunMutateJob' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Ads\GoogleAds\V1\Resources\MutateJob_MutateJobMetadata',
+                    'metadataReturnType' => '\Google\Ads\GoogleAds\V1\Resources\MutateJob\MutateJobMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

@@ -21,7 +21,7 @@ class UserListLogicalRuleInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.UserListLogicalRuleOperatorEnum.UserListLogicalRuleOperator operator = 1;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * The list of operands of the rule.
      *

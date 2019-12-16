@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Recommendation.KeywordRecommendation</code>
  */
-final class KeywordRecommendation extends \Google\Protobuf\Internal\Message
+class KeywordRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The recommended keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 1;</code>
      */
-    private $keyword = null;
+    protected $keyword = null;
     /**
      * The recommended CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
      */
-    private $recommended_cpc_bid_micros = null;
+    protected $recommended_cpc_bid_micros = null;
 
     /**
      * Constructor.
@@ -92,8 +92,7 @@ final class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function getRecommendedCpcBidMicrosUnwrapped()
     {
-        $wrapper = $this->getRecommendedCpcBidMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("recommended_cpc_bid_micros");
     }
 
     /**
@@ -122,9 +121,8 @@ final class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      */
     public function setRecommendedCpcBidMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setRecommendedCpcBidMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("recommended_cpc_bid_micros", $var);
+        return $this;}
 
 }
 

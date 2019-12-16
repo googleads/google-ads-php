@@ -22,20 +22,20 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ad group to which this criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
      */
-    private $criterion_id = null;
+    protected $criterion_id = null;
     /**
      * The modifier for the bid when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent.
@@ -43,7 +43,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
      */
-    private $bid_modifier = null;
+    protected $bid_modifier = null;
     /**
      * The base ad group from which this draft/trial adgroup bid modifier was
      * created. If ad_group is a base ad group then this field will be equal to
@@ -53,13 +53,13 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 9;</code>
      */
-    private $base_ad_group = null;
+    protected $base_ad_group = null;
     /**
      * Bid modifier source.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BidModifierSourceEnum.BidModifierSource bid_modifier_source = 10;</code>
      */
-    private $bid_modifier_source = 0;
+    protected $bid_modifier_source = 0;
     protected $criterion;
 
     /**
@@ -157,10 +157,9 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 2;</code>
      * @return string|null
      */
-    public function getAdGroupValue()
+    public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -187,11 +186,10 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupValue($var)
+    public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * The ID of the criterion to bid modify.
@@ -214,10 +212,9 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
      * @return int|string|null
      */
-    public function getCriterionIdValue()
+    public function getCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_id");
     }
 
     /**
@@ -246,11 +243,10 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCriterionIdValue($var)
+    public function setCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_id", $var);
+        return $this;}
 
     /**
      * The modifier for the bid when the criterion matches. The modifier must be
@@ -275,10 +271,9 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 4;</code>
      * @return float|null
      */
-    public function getBidModifierValue()
+    public function getBidModifierUnwrapped()
     {
-        $wrapper = $this->getBidModifier();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_modifier");
     }
 
     /**
@@ -309,11 +304,10 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBidModifierValue($var)
+    public function setBidModifierUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBidModifier($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_modifier", $var);
+        return $this;}
 
     /**
      * The base ad group from which this draft/trial adgroup bid modifier was
@@ -342,10 +336,9 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 9;</code>
      * @return string|null
      */
-    public function getBaseAdGroupValue()
+    public function getBaseAdGroupUnwrapped()
     {
-        $wrapper = $this->getBaseAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("base_ad_group");
     }
 
     /**
@@ -380,11 +373,10 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setBaseAdGroupValue($var)
+    public function setBaseAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBaseAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("base_ad_group", $var);
+        return $this;}
 
     /**
      * Bid modifier source.

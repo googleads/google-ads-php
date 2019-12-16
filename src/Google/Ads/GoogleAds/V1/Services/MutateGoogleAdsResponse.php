@@ -18,12 +18,12 @@ class MutateGoogleAdsResponse extends \Google\Protobuf\Internal\Message
     /**
      * Errors that pertain to operation failures in the partial failure mode.
      * Returned only when partial_failure = true and all errors occur inside the
-     * operations. If any errors occur outside the operations (e.g. auth errors),
+     * operations. If any errors occur outside the operations (e.g., auth errors),
      * we return an RPC level error.
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 3;</code>
      */
-    private $partial_failure_error = null;
+    protected $partial_failure_error = null;
     /**
      * All responses for the mutate.
      *
@@ -40,7 +40,7 @@ class MutateGoogleAdsResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Rpc\Status $partial_failure_error
      *           Errors that pertain to operation failures in the partial failure mode.
      *           Returned only when partial_failure = true and all errors occur inside the
-     *           operations. If any errors occur outside the operations (e.g. auth errors),
+     *           operations. If any errors occur outside the operations (e.g., auth errors),
      *           we return an RPC level error.
      *     @type \Google\Ads\GoogleAds\V1\Services\MutateOperationResponse[]|\Google\Protobuf\Internal\RepeatedField $mutate_operation_responses
      *           All responses for the mutate.
@@ -54,7 +54,7 @@ class MutateGoogleAdsResponse extends \Google\Protobuf\Internal\Message
     /**
      * Errors that pertain to operation failures in the partial failure mode.
      * Returned only when partial_failure = true and all errors occur inside the
-     * operations. If any errors occur outside the operations (e.g. auth errors),
+     * operations. If any errors occur outside the operations (e.g., auth errors),
      * we return an RPC level error.
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 3;</code>
@@ -68,7 +68,7 @@ class MutateGoogleAdsResponse extends \Google\Protobuf\Internal\Message
     /**
      * Errors that pertain to operation failures in the partial failure mode.
      * Returned only when partial_failure = true and all errors occur inside the
-     * operations. If any errors occur outside the operations (e.g. auth errors),
+     * operations. If any errors occur outside the operations (e.g., auth errors),
      * we return an RPC level error.
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 3;</code>

@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetMerchantCenterLinkRequest</code>
  */
-final class GetMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
+class GetMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of the Merchant Center link.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

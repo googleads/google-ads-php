@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListLogicalRuleInfo</code>
  */
-final class UserListLogicalRuleInfo extends \Google\Protobuf\Internal\Message
+class UserListLogicalRuleInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The logical operator of the rule.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListLogicalRuleOperatorEnum.UserListLogicalRuleOperator operator = 1;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * The list of operands of the rule.
      *

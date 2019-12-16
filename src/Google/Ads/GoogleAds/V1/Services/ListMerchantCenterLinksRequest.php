@@ -21,7 +21,7 @@ class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
 
     /**
      * Constructor.

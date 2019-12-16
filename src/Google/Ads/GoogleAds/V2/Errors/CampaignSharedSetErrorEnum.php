@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.CampaignSharedSetErrorEnum</code>
  */
-final class CampaignSharedSetErrorEnum extends \Google\Protobuf\Internal\Message
+class CampaignSharedSetErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

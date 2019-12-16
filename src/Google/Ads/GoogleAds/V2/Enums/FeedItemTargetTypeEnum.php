@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.FeedItemTargetTypeEnum</code>
  */
-final class FeedItemTargetTypeEnum extends \Google\Protobuf\Internal\Message
+class FeedItemTargetTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

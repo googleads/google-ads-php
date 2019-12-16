@@ -20,13 +20,13 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.TargetCpaOptInRecommendationGoalEnum.TargetCpaOptInRecommendationGoal goal = 1;</code>
      */
-    private $goal = 0;
+    protected $goal = 0;
     /**
      * Average CPA target.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 2;</code>
      */
-    private $target_cpa_micros = null;
+    protected $target_cpa_micros = null;
     /**
      * The minimum campaign budget, in local currency for the account,
      * required to achieve the target CPA.
@@ -35,13 +35,13 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value required_campaign_budget_amount_micros = 3;</code>
      */
-    private $required_campaign_budget_amount_micros = null;
+    protected $required_campaign_budget_amount_micros = null;
     /**
      * The impact estimate if this option is selected.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Recommendation.RecommendationImpact impact = 4;</code>
      */
-    private $impact = null;
+    protected $impact = null;
 
     /**
      * Constructor.
@@ -112,10 +112,9 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 2;</code>
      * @return int|string|null
      */
-    public function getTargetCpaMicrosValue()
+    public function getTargetCpaMicrosUnwrapped()
     {
-        $wrapper = $this->getTargetCpaMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_cpa_micros");
     }
 
     /**
@@ -142,11 +141,10 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * @param int|string|null $var
      * @return $this
      */
-    public function setTargetCpaMicrosValue($var)
+    public function setTargetCpaMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTargetCpaMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("target_cpa_micros", $var);
+        return $this;}
 
     /**
      * The minimum campaign budget, in local currency for the account,
@@ -173,10 +171,9 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>.google.protobuf.Int64Value required_campaign_budget_amount_micros = 3;</code>
      * @return int|string|null
      */
-    public function getRequiredCampaignBudgetAmountMicrosValue()
+    public function getRequiredCampaignBudgetAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getRequiredCampaignBudgetAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("required_campaign_budget_amount_micros");
     }
 
     /**
@@ -209,11 +206,10 @@ class TargetCpaOptInRecommendationOption extends \Google\Protobuf\Internal\Messa
      * @param int|string|null $var
      * @return $this
      */
-    public function setRequiredCampaignBudgetAmountMicrosValue($var)
+    public function setRequiredCampaignBudgetAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setRequiredCampaignBudgetAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("required_campaign_budget_amount_micros", $var);
+        return $this;}
 
     /**
      * The impact estimate if this option is selected.

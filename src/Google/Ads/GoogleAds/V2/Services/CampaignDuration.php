@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.CampaignDuration</code>
  */
-final class CampaignDuration extends \Google\Protobuf\Internal\Message
+class CampaignDuration extends \Google\Protobuf\Internal\Message
 {
     /**
      * The duration value in days.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value duration_in_days = 1;</code>
      */
-    private $duration_in_days = null;
+    protected $duration_in_days = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class CampaignDuration extends \Google\Protobuf\Internal\Message
      */
     public function getDurationInDaysUnwrapped()
     {
-        $wrapper = $this->getDurationInDays();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("duration_in_days");
     }
 
     /**
@@ -88,9 +87,8 @@ final class CampaignDuration extends \Google\Protobuf\Internal\Message
      */
     public function setDurationInDaysUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setDurationInDays($wrappedVar);
-    }
+        $this->writeWrapperValue("duration_in_days", $var);
+        return $this;}
 
 }
 

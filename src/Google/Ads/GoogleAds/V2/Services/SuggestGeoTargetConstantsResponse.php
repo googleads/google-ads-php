@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.SuggestGeoTargetConstantsResponse</code>
  */
-final class SuggestGeoTargetConstantsResponse extends \Google\Protobuf\Internal\Message
+class SuggestGeoTargetConstantsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Geo target constant suggestions.

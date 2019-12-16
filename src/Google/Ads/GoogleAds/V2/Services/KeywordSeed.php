@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.KeywordSeed</code>
  */
-final class KeywordSeed extends \Google\Protobuf\Internal\Message
+class KeywordSeed extends \Google\Protobuf\Internal\Message
 {
     /**
      * Requires at least one keyword.

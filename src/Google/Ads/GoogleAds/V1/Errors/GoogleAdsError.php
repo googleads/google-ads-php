@@ -20,32 +20,32 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ErrorCode error_code = 1;</code>
      */
-    private $error_code = null;
+    protected $error_code = null;
     /**
      * A human-readable description of the error.
      *
      * Generated from protobuf field <code>string message = 2;</code>
      */
-    private $message = '';
+    protected $message = '';
     /**
      * The value that triggered the error.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.Value trigger = 3;</code>
      */
-    private $trigger = null;
+    protected $trigger = null;
     /**
      * Describes the part of the request proto that caused the error.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ErrorLocation location = 4;</code>
      */
-    private $location = null;
+    protected $location = null;
     /**
      * Additional error details, which are returned by certain error codes. Most
      * error codes do not include details.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.errors.ErrorDetails details = 5;</code>
      */
-    private $details = null;
+    protected $details = null;
 
     /**
      * Constructor.

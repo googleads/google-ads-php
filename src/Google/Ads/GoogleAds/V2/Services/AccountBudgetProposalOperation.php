@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.AccountBudgetProposalOperation</code>
  */
-final class AccountBudgetProposalOperation extends \Google\Protobuf\Internal\Message
+class AccountBudgetProposalOperation extends \Google\Protobuf\Internal\Message
 {
     /**
      * FieldMask that determines which budget fields are modified.  While budgets
@@ -25,7 +25,7 @@ final class AccountBudgetProposalOperation extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
     protected $operation;
 
     /**

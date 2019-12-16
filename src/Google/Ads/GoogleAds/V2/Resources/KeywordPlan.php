@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.KeywordPlan</code>
  */
-final class KeywordPlan extends \Google\Protobuf\Internal\Message
+class KeywordPlan extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the Keyword Planner plan.
@@ -24,13 +24,13 @@ final class KeywordPlan extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the keyword plan.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the keyword plan.
      * This field is required and should not be empty when creating new keyword
@@ -38,13 +38,13 @@ final class KeywordPlan extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The date period used for forecasting the plan.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.KeywordPlanForecastPeriod forecast_period = 4;</code>
      */
-    private $forecast_period = null;
+    protected $forecast_period = null;
 
     /**
      * Constructor.
@@ -122,8 +122,7 @@ final class KeywordPlan extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -152,9 +151,8 @@ final class KeywordPlan extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the keyword plan.
@@ -181,8 +179,7 @@ final class KeywordPlan extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -215,9 +212,8 @@ final class KeywordPlan extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The date period used for forecasting the plan.

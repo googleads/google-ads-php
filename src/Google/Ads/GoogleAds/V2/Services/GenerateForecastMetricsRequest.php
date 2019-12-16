@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateForecastMetricsRequest</code>
  */
-final class GenerateForecastMetricsRequest extends \Google\Protobuf\Internal\Message
+class GenerateForecastMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the keyword plan to be forecasted.
      *
      * Generated from protobuf field <code>string keyword_plan = 1;</code>
      */
-    private $keyword_plan = '';
+    protected $keyword_plan = '';
 
     /**
      * Constructor.

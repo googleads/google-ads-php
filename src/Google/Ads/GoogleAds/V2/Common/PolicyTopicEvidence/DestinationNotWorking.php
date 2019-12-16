@@ -14,20 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicEvidence.DestinationNotWorking</code>
  */
-final class DestinationNotWorking extends \Google\Protobuf\Internal\Message
+class DestinationNotWorking extends \Google\Protobuf\Internal\Message
 {
     /**
      * The full URL that didn't work.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue expanded_url = 3;</code>
      */
-    private $expanded_url = null;
+    protected $expanded_url = null;
     /**
      * The type of device that failed to load the URL.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice device = 4;</code>
      */
-    private $device = 0;
+    protected $device = 0;
     /**
      * The time the URL was last checked.
      * The format is "YYYY-MM-DD HH:MM:SS".
@@ -35,7 +35,7 @@ final class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue last_checked_date_time = 5;</code>
      */
-    private $last_checked_date_time = null;
+    protected $last_checked_date_time = null;
     protected $reason;
 
     /**
@@ -84,8 +84,7 @@ final class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      */
     public function getExpandedUrlUnwrapped()
     {
-        $wrapper = $this->getExpandedUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("expanded_url");
     }
 
     /**
@@ -114,9 +113,8 @@ final class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      */
     public function setExpandedUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setExpandedUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("expanded_url", $var);
+        return $this;}
 
     /**
      * The type of device that failed to load the URL.
@@ -169,8 +167,7 @@ final class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      */
     public function getLastCheckedDateTimeUnwrapped()
     {
-        $wrapper = $this->getLastCheckedDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("last_checked_date_time");
     }
 
     /**
@@ -203,9 +200,8 @@ final class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      */
     public function setLastCheckedDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLastCheckedDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("last_checked_date_time", $var);
+        return $this;}
 
     /**
      * The type of DNS error.
@@ -254,8 +250,7 @@ final class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      */
     public function getHttpErrorCodeUnwrapped()
     {
-        $wrapper = $this->getHttpErrorCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("http_error_code");
     }
 
     /**
@@ -284,9 +279,8 @@ final class DestinationNotWorking extends \Google\Protobuf\Internal\Message
      */
     public function setHttpErrorCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setHttpErrorCode($wrappedVar);
-    }
+        $this->writeWrapperValue("http_error_code", $var);
+        return $this;}
 
     /**
      * @return string

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AdGroupAdAssetView</code>
  */
-final class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
+class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the ad group ad asset view.
@@ -22,37 +22,37 @@ final class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ad group ad to which the asset is linked.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5;</code>
      */
-    private $ad_group_ad = null;
+    protected $ad_group_ad = null;
     /**
      * The asset which is linked to the ad group ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6;</code>
      */
-    private $asset = null;
+    protected $asset = null;
     /**
      * Role that the asset takes in the ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AssetFieldTypeEnum.AssetFieldType field_type = 2;</code>
      */
-    private $field_type = 0;
+    protected $field_type = 0;
     /**
      * Policy information for the ad group ad asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.AdGroupAdAssetPolicySummary policy_summary = 3;</code>
      */
-    private $policy_summary = null;
+    protected $policy_summary = null;
     /**
      * Performance of an asset linkage.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel performance_label = 4;</code>
      */
-    private $performance_label = 0;
+    protected $performance_label = 0;
 
     /**
      * Constructor.
@@ -132,8 +132,7 @@ final class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAdUnwrapped()
     {
-        $wrapper = $this->getAdGroupAd();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_ad");
     }
 
     /**
@@ -162,9 +161,8 @@ final class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      */
     public function setAdGroupAdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupAd($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_ad", $var);
+        return $this;}
 
     /**
      * The asset which is linked to the ad group ad.
@@ -187,8 +185,7 @@ final class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      */
     public function getAssetUnwrapped()
     {
-        $wrapper = $this->getAsset();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("asset");
     }
 
     /**
@@ -217,9 +214,8 @@ final class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      */
     public function setAssetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAsset($wrappedVar);
-    }
+        $this->writeWrapperValue("asset", $var);
+        return $this;}
 
     /**
      * Role that the asset takes in the ad.

@@ -20,7 +20,7 @@ class RequestContextOperand extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.MatchingFunctionContextTypeEnum.MatchingFunctionContextType context_type = 1;</code>
      */
-    private $context_type = 0;
+    protected $context_type = 0;
 
     /**
      * Constructor.

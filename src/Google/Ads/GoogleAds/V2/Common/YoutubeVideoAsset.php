@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.YoutubeVideoAsset</code>
  */
-final class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
+class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
 {
     /**
      * YouTube video id. This is the 11 character string value used in the
@@ -21,7 +21,7 @@ final class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 1;</code>
      */
-    private $youtube_video_id = null;
+    protected $youtube_video_id = null;
 
     /**
      * Constructor.
@@ -62,8 +62,7 @@ final class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      */
     public function getYoutubeVideoIdUnwrapped()
     {
-        $wrapper = $this->getYoutubeVideoId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("youtube_video_id");
     }
 
     /**
@@ -94,9 +93,8 @@ final class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      */
     public function setYoutubeVideoIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setYoutubeVideoId($wrappedVar);
-    }
+        $this->writeWrapperValue("youtube_video_id", $var);
+        return $this;}
 
 }
 

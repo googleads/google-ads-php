@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateAdGroupAdLabelsRequest</code>
  */
-final class MutateAdGroupAdLabelsRequest extends \Google\Protobuf\Internal\Message
+class MutateAdGroupAdLabelsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * ID of the customer whose ad group ad labels are being modified.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The list of operations to perform on ad group ad labels.
      *
@@ -35,14 +35,14 @@ final class MutateAdGroupAdLabelsRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>bool partial_failure = 3;</code>
      */
-    private $partial_failure = false;
+    protected $partial_failure = false;
     /**
      * If true, the request is validated but not executed. Only errors are
      * returned, not results.
      *
      * Generated from protobuf field <code>bool validate_only = 4;</code>
      */
-    private $validate_only = false;
+    protected $validate_only = false;
 
     /**
      * Constructor.

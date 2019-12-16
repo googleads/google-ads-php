@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GeoTargetConstantSuggestion</code>
  */
-final class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
+class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
 {
     /**
      * The language this GeoTargetConstantSuggestion is currently translated to.
@@ -23,27 +23,27 @@ final class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue locale = 1;</code>
      */
-    private $locale = null;
+    protected $locale = null;
     /**
      * Approximate user population that will be targeted, rounded to the
      * nearest 100.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value reach = 2;</code>
      */
-    private $reach = null;
+    protected $reach = null;
     /**
      * If the request searched by location name, this is the location name that
      * matched the geo target.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 3;</code>
      */
-    private $search_term = null;
+    protected $search_term = null;
     /**
      * The GeoTargetConstant result.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.GeoTargetConstant geo_target_constant = 4;</code>
      */
-    private $geo_target_constant = null;
+    protected $geo_target_constant = null;
     /**
      * The list of parents of the geo target constant.
      *
@@ -106,8 +106,7 @@ final class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Messag
      */
     public function getLocaleUnwrapped()
     {
-        $wrapper = $this->getLocale();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("locale");
     }
 
     /**
@@ -142,9 +141,8 @@ final class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Messag
      */
     public function setLocaleUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLocale($wrappedVar);
-    }
+        $this->writeWrapperValue("locale", $var);
+        return $this;}
 
     /**
      * Approximate user population that will be targeted, rounded to the
@@ -169,8 +167,7 @@ final class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Messag
      */
     public function getReachUnwrapped()
     {
-        $wrapper = $this->getReach();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("reach");
     }
 
     /**
@@ -201,9 +198,8 @@ final class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Messag
      */
     public function setReachUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setReach($wrappedVar);
-    }
+        $this->writeWrapperValue("reach", $var);
+        return $this;}
 
     /**
      * If the request searched by location name, this is the location name that
@@ -228,8 +224,7 @@ final class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Messag
      */
     public function getSearchTermUnwrapped()
     {
-        $wrapper = $this->getSearchTerm();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_term");
     }
 
     /**
@@ -260,9 +255,8 @@ final class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Messag
      */
     public function setSearchTermUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSearchTerm($wrappedVar);
-    }
+        $this->writeWrapperValue("search_term", $var);
+        return $this;}
 
     /**
      * The GeoTargetConstant result.

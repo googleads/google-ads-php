@@ -27,7 +27,7 @@ class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.UserListPrepopulationStatusEnum.UserListPrepopulationStatus prepopulation_status = 1;</code>
      */
-    private $prepopulation_status = 0;
+    protected $prepopulation_status = 0;
     protected $rule_based_user_list;
 
     /**

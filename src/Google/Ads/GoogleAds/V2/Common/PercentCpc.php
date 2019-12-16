@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PercentCpc</code>
  */
-final class PercentCpc extends \Google\Protobuf\Internal\Message
+class PercentCpc extends \Google\Protobuf\Internal\Message
 {
     /**
      * Maximum bid limit that can be set by the bid strategy. This is
@@ -24,7 +24,7 @@ final class PercentCpc extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 1;</code>
      */
-    private $cpc_bid_ceiling_micros = null;
+    protected $cpc_bid_ceiling_micros = null;
     /**
      * Adjusts the bid for each auction upward or downward, depending on the
      * likelihood of a conversion. Individual bids may exceed
@@ -33,7 +33,7 @@ final class PercentCpc extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue enhanced_cpc_enabled = 2;</code>
      */
-    private $enhanced_cpc_enabled = null;
+    protected $enhanced_cpc_enabled = null;
 
     /**
      * Constructor.
@@ -85,8 +85,7 @@ final class PercentCpc extends \Google\Protobuf\Internal\Message
      */
     public function getCpcBidCeilingMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidCeilingMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_ceiling_micros");
     }
 
     /**
@@ -121,9 +120,8 @@ final class PercentCpc extends \Google\Protobuf\Internal\Message
      */
     public function setCpcBidCeilingMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidCeilingMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_ceiling_micros", $var);
+        return $this;}
 
     /**
      * Adjusts the bid for each auction upward or downward, depending on the
@@ -152,8 +150,7 @@ final class PercentCpc extends \Google\Protobuf\Internal\Message
      */
     public function getEnhancedCpcEnabledUnwrapped()
     {
-        $wrapper = $this->getEnhancedCpcEnabled();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("enhanced_cpc_enabled");
     }
 
     /**
@@ -188,9 +185,8 @@ final class PercentCpc extends \Google\Protobuf\Internal\Message
      */
     public function setEnhancedCpcEnabledUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setEnhancedCpcEnabled($wrappedVar);
-    }
+        $this->writeWrapperValue("enhanced_cpc_enabled", $var);
+        return $this;}
 
 }
 

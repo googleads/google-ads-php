@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ApplyRecommendationResponse</code>
  */
-final class ApplyRecommendationResponse extends \Google\Protobuf\Internal\Message
+class ApplyRecommendationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Results of operations to apply recommendations.
@@ -29,7 +29,7 @@ final class ApplyRecommendationResponse extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 2;</code>
      */
-    private $partial_failure_error = null;
+    protected $partial_failure_error = null;
 
     /**
      * Constructor.

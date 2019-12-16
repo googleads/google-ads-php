@@ -20,7 +20,7 @@ class MutateBillingSetupResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.MutateBillingSetupResult result = 1;</code>
      */
-    private $result = null;
+    protected $result = null;
 
     /**
      * Constructor.

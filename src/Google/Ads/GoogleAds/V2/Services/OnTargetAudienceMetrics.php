@@ -17,20 +17,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.OnTargetAudienceMetrics</code>
  */
-final class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
+class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
      * Reference audience size matching the considered targeting for YouTube.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value youtube_audience_size = 1;</code>
      */
-    private $youtube_audience_size = null;
+    protected $youtube_audience_size = null;
     /**
      * Reference audience size matching the considered targeting for Census.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value census_audience_size = 2;</code>
      */
-    private $census_audience_size = null;
+    protected $census_audience_size = null;
 
     /**
      * Constructor.
@@ -70,8 +70,7 @@ final class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
      */
     public function getYoutubeAudienceSizeUnwrapped()
     {
-        $wrapper = $this->getYoutubeAudienceSize();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("youtube_audience_size");
     }
 
     /**
@@ -100,9 +99,8 @@ final class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
      */
     public function setYoutubeAudienceSizeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setYoutubeAudienceSize($wrappedVar);
-    }
+        $this->writeWrapperValue("youtube_audience_size", $var);
+        return $this;}
 
     /**
      * Reference audience size matching the considered targeting for Census.
@@ -125,8 +123,7 @@ final class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
      */
     public function getCensusAudienceSizeUnwrapped()
     {
-        $wrapper = $this->getCensusAudienceSize();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("census_audience_size");
     }
 
     /**
@@ -155,9 +152,8 @@ final class OnTargetAudienceMetrics extends \Google\Protobuf\Internal\Message
      */
     public function setCensusAudienceSizeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCensusAudienceSize($wrappedVar);
-    }
+        $this->writeWrapperValue("census_audience_size", $var);
+        return $this;}
 
 }
 

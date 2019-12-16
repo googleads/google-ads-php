@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.GenderTypeEnum</code>
  */
-final class GenderTypeEnum extends \Google\Protobuf\Internal\Message
+class GenderTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

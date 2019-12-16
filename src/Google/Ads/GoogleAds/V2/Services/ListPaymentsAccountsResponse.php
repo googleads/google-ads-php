@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListPaymentsAccountsResponse</code>
  */
-final class ListPaymentsAccountsResponse extends \Google\Protobuf\Internal\Message
+class ListPaymentsAccountsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of accessible payments accounts.

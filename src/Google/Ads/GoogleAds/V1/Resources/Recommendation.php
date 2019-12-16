@@ -21,40 +21,41 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The type of recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.RecommendationTypeEnum.RecommendationType type = 2;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The impact on account performance as a result of applying the
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Recommendation.RecommendationImpact impact = 3;</code>
      */
-    private $impact = null;
+    protected $impact = null;
     /**
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
      * This field will be set for the following recommendation types:
-     * CAMPAIGN_BUDGET
+     * CAMPAIGN_BUDGET, MOVE_UNUSED_BUDGET
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 5;</code>
      */
-    private $campaign_budget = null;
+    protected $campaign_budget = null;
     /**
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
      * This field will be set for the following recommendation types:
-     * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
-     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
+     * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
+     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
      * TARGET_CPA_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
@@ -63,13 +64,13 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 7;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * Whether the recommendation is dismissed or not.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue dismissed = 13;</code>
      */
-    private $dismissed = null;
+    protected $dismissed = null;
     protected $recommendation;
 
     /**
@@ -90,13 +91,14 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           The budget targeted by this recommendation. This will be set only when
      *           the recommendation affects a single campaign budget.
      *           This field will be set for the following recommendation types:
-     *           CAMPAIGN_BUDGET
+     *           CAMPAIGN_BUDGET, MOVE_UNUSED_BUDGET
      *     @type \Google\Protobuf\StringValue $campaign
      *           The campaign targeted by this recommendation. This will be set only when
      *           the recommendation affects a single campaign.
      *           This field will be set for the following recommendation types:
-     *           ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
-     *           MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     *           CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
+     *           KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
+     *           OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
      *           TARGET_CPA_OPT_IN, TEXT_AD
      *     @type \Google\Protobuf\StringValue $ad_group
      *           The ad group targeted by this recommendation. This will be set only when
@@ -226,7 +228,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
      * This field will be set for the following recommendation types:
-     * CAMPAIGN_BUDGET
+     * CAMPAIGN_BUDGET, MOVE_UNUSED_BUDGET
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 5;</code>
      * @return \Google\Protobuf\StringValue
@@ -242,22 +244,21 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
      * This field will be set for the following recommendation types:
-     * CAMPAIGN_BUDGET
+     * CAMPAIGN_BUDGET, MOVE_UNUSED_BUDGET
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 5;</code>
      * @return string|null
      */
-    public function getCampaignBudgetValue()
+    public function getCampaignBudgetUnwrapped()
     {
-        $wrapper = $this->getCampaignBudget();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_budget");
     }
 
     /**
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
      * This field will be set for the following recommendation types:
-     * CAMPAIGN_BUDGET
+     * CAMPAIGN_BUDGET, MOVE_UNUSED_BUDGET
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 5;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -277,24 +278,24 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * The budget targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign budget.
      * This field will be set for the following recommendation types:
-     * CAMPAIGN_BUDGET
+     * CAMPAIGN_BUDGET, MOVE_UNUSED_BUDGET
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 5;</code>
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignBudgetValue($var)
+    public function setCampaignBudgetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaignBudget($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_budget", $var);
+        return $this;}
 
     /**
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
      * This field will be set for the following recommendation types:
-     * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
-     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
+     * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
+     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
      * TARGET_CPA_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
@@ -311,25 +312,26 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
      * This field will be set for the following recommendation types:
-     * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
-     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
+     * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
+     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
      * TARGET_CPA_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
      * @return string|null
      */
-    public function getCampaignValue()
+    public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
      * This field will be set for the following recommendation types:
-     * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
-     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
+     * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
+     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
      * TARGET_CPA_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
@@ -350,19 +352,19 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * The campaign targeted by this recommendation. This will be set only when
      * the recommendation affects a single campaign.
      * This field will be set for the following recommendation types:
-     * ENHANCED_CPC_OPT_IN, KEYWORD, MAXIMIZE_CLICKS_OPT_IN,
-     * MAXIMIZE_CONVERSIONS_OPT_IN, OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN,
+     * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
+     * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
+     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
      * TARGET_CPA_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 6;</code>
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignValue($var)
+    public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The ad group targeted by this recommendation. This will be set only when
@@ -389,10 +391,9 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 7;</code>
      * @return string|null
      */
-    public function getAdGroupValue()
+    public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -425,11 +426,10 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupValue($var)
+    public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * Whether the recommendation is dismissed or not.
@@ -450,10 +450,9 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue dismissed = 13;</code>
      * @return bool|null
      */
-    public function getDismissedValue()
+    public function getDismissedUnwrapped()
     {
-        $wrapper = $this->getDismissed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("dismissed");
     }
 
     /**
@@ -480,11 +479,10 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setDismissedValue($var)
+    public function setDismissedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setDismissed($wrappedVar);
-    }
+        $this->writeWrapperValue("dismissed", $var);
+        return $this;}
 
     /**
      * The campaign budget recommendation.

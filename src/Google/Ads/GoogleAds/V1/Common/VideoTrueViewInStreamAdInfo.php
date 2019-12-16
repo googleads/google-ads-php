@@ -24,20 +24,20 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue action_button_label = 1;</code>
      */
-    private $action_button_label = null;
+    protected $action_button_label = null;
     /**
      * Additional text displayed with the CTA (call-to-action) button to give
      * context and encourage clicking on the button.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue action_headline = 2;</code>
      */
-    private $action_headline = null;
+    protected $action_headline = null;
     /**
      * The MediaFile resource name of the companion banner used with the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue companion_banner = 3;</code>
      */
-    private $companion_banner = null;
+    protected $companion_banner = null;
 
     /**
      * Constructor.
@@ -84,10 +84,9 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue action_button_label = 1;</code>
      * @return string|null
      */
-    public function getActionButtonLabelValue()
+    public function getActionButtonLabelUnwrapped()
     {
-        $wrapper = $this->getActionButtonLabel();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("action_button_label");
     }
 
     /**
@@ -118,11 +117,10 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setActionButtonLabelValue($var)
+    public function setActionButtonLabelUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setActionButtonLabel($wrappedVar);
-    }
+        $this->writeWrapperValue("action_button_label", $var);
+        return $this;}
 
     /**
      * Additional text displayed with the CTA (call-to-action) button to give
@@ -145,10 +143,9 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue action_headline = 2;</code>
      * @return string|null
      */
-    public function getActionHeadlineValue()
+    public function getActionHeadlineUnwrapped()
     {
-        $wrapper = $this->getActionHeadline();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("action_headline");
     }
 
     /**
@@ -177,11 +174,10 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setActionHeadlineValue($var)
+    public function setActionHeadlineUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setActionHeadline($wrappedVar);
-    }
+        $this->writeWrapperValue("action_headline", $var);
+        return $this;}
 
     /**
      * The MediaFile resource name of the companion banner used with the ad.
@@ -202,10 +198,9 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue companion_banner = 3;</code>
      * @return string|null
      */
-    public function getCompanionBannerValue()
+    public function getCompanionBannerUnwrapped()
     {
-        $wrapper = $this->getCompanionBanner();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("companion_banner");
     }
 
     /**
@@ -232,11 +227,10 @@ class VideoTrueViewInStreamAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCompanionBannerValue($var)
+    public function setCompanionBannerUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCompanionBanner($wrappedVar);
-    }
+        $this->writeWrapperValue("companion_banner", $var);
+        return $this;}
 
 }
 

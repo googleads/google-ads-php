@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.CreateCustomerClientResponse</code>
  */
-final class CreateCustomerClientResponse extends \Google\Protobuf\Internal\Message
+class CreateCustomerClientResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the newly created customer client.
      *
      * Generated from protobuf field <code>string resource_name = 2;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Recommendation.OptimizeAdRotationRecommendation</code>
  */
-final class OptimizeAdRotationRecommendation extends \Google\Protobuf\Internal\Message
+class OptimizeAdRotationRecommendation extends \Google\Protobuf\Internal\Message
 {
 
     /**

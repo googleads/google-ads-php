@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CustomerExtensionSetting</code>
  */
-final class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
+class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the customer extension setting.
@@ -22,13 +22,13 @@ final class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The extension type of the customer extension setting.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionTypeEnum.ExtensionType extension_type = 2;</code>
      */
-    private $extension_type = 0;
+    protected $extension_type = 0;
     /**
      * The resource names of the extension feed items to serve under the customer.
      * ExtensionFeedItem resource names have the form:
@@ -42,7 +42,7 @@ final class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionSettingDeviceEnum.ExtensionSettingDevice device = 4;</code>
      */
-    private $device = 0;
+    protected $device = 0;
 
     /**
      * Constructor.

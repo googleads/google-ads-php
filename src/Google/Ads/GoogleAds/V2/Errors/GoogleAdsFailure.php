@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.GoogleAdsFailure</code>
  */
-final class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
+class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of errors that occurred.

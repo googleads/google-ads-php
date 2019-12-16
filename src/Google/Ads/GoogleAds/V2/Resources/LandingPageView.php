@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.LandingPageView</code>
  */
-final class LandingPageView extends \Google\Protobuf\Internal\Message
+class LandingPageView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the landing page view.
@@ -23,13 +23,13 @@ final class LandingPageView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The advertiser-specified final URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue unexpanded_final_url = 2;</code>
      */
-    private $unexpanded_final_url = null;
+    protected $unexpanded_final_url = null;
 
     /**
      * Constructor.
@@ -101,8 +101,7 @@ final class LandingPageView extends \Google\Protobuf\Internal\Message
      */
     public function getUnexpandedFinalUrlUnwrapped()
     {
-        $wrapper = $this->getUnexpandedFinalUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("unexpanded_final_url");
     }
 
     /**
@@ -131,9 +130,8 @@ final class LandingPageView extends \Google\Protobuf\Internal\Message
      */
     public function setUnexpandedFinalUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUnexpandedFinalUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("unexpanded_final_url", $var);
+        return $this;}
 
 }
 

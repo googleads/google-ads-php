@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.MatchingFunction</code>
  */
-final class MatchingFunction extends \Google\Protobuf\Internal\Message
+class MatchingFunction extends \Google\Protobuf\Internal\Message
 {
     /**
      * String representation of the Function.
@@ -34,13 +34,13 @@ final class MatchingFunction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue function_string = 1;</code>
      */
-    private $function_string = null;
+    protected $function_string = null;
     /**
      * Operator for a function.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MatchingFunctionOperatorEnum.MatchingFunctionOperator operator = 4;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * The operands on the left hand side of the equation. This is also the
      * operand to be used for single operand expressions such as NOT.
@@ -134,8 +134,7 @@ final class MatchingFunction extends \Google\Protobuf\Internal\Message
      */
     public function getFunctionStringUnwrapped()
     {
-        $wrapper = $this->getFunctionString();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("function_string");
     }
 
     /**
@@ -188,9 +187,8 @@ final class MatchingFunction extends \Google\Protobuf\Internal\Message
      */
     public function setFunctionStringUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFunctionString($wrappedVar);
-    }
+        $this->writeWrapperValue("function_string", $var);
+        return $this;}
 
     /**
      * Operator for a function.

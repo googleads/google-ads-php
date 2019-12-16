@@ -42,14 +42,14 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 3;</code>
      */
-    private $path1 = null;
+    protected $path1 = null;
     /**
      * Second part of text that may appear appended to the url displayed in the
      * ad. This field can only be set when path1 is also set.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 4;</code>
      */
-    private $path2 = null;
+    protected $path2 = null;
 
     /**
      * Constructor.
@@ -150,10 +150,9 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 3;</code>
      * @return string|null
      */
-    public function getPath1Value()
+    public function getPath1Unwrapped()
     {
-        $wrapper = $this->getPath1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("path1");
     }
 
     /**
@@ -180,11 +179,10 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPath1Value($var)
+    public function setPath1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPath1($wrappedVar);
-    }
+        $this->writeWrapperValue("path1", $var);
+        return $this;}
 
     /**
      * Second part of text that may appear appended to the url displayed in the
@@ -207,10 +205,9 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 4;</code>
      * @return string|null
      */
-    public function getPath2Value()
+    public function getPath2Unwrapped()
     {
-        $wrapper = $this->getPath2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("path2");
     }
 
     /**
@@ -239,11 +236,10 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPath2Value($var)
+    public function setPath2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPath2($wrappedVar);
-    }
+        $this->writeWrapperValue("path2", $var);
+        return $this;}
 
 }
 

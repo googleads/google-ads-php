@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.FieldMaskErrorEnum</code>
  */
-final class FieldMaskErrorEnum extends \Google\Protobuf\Internal\Message
+class FieldMaskErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

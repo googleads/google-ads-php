@@ -24,13 +24,13 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The search term.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
      */
-    private $search_term = null;
+    protected $search_term = null;
 
     /**
      * Constructor.
@@ -103,10 +103,9 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
      * @return string|null
      */
-    public function getSearchTermValue()
+    public function getSearchTermUnwrapped()
     {
-        $wrapper = $this->getSearchTerm();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_term");
     }
 
     /**
@@ -133,11 +132,10 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setSearchTermValue($var)
+    public function setSearchTermUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSearchTerm($wrappedVar);
-    }
+        $this->writeWrapperValue("search_term", $var);
+        return $this;}
 
 }
 

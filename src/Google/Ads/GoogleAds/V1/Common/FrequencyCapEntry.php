@@ -22,13 +22,13 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.FrequencyCapKey key = 1;</code>
      */
-    private $key = null;
+    protected $key = null;
     /**
      * Maximum number of events allowed during the time range by this cap.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cap = 2;</code>
      */
-    private $cap = null;
+    protected $cap = null;
 
     /**
      * Constructor.
@@ -95,10 +95,9 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value cap = 2;</code>
      * @return int|null
      */
-    public function getCapValue()
+    public function getCapUnwrapped()
     {
-        $wrapper = $this->getCap();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cap");
     }
 
     /**
@@ -125,11 +124,10 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setCapValue($var)
+    public function setCapUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setCap($wrappedVar);
-    }
+        $this->writeWrapperValue("cap", $var);
+        return $this;}
 
 }
 

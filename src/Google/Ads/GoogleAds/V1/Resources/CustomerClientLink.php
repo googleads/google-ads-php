@@ -22,25 +22,25 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The client customer linked to this customer.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      */
-    private $client_customer = null;
+    protected $client_customer = null;
     /**
      * This is uniquely identifies a customer client link. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
      */
-    private $manager_link_id = null;
+    protected $manager_link_id = null;
     /**
      * This is the status of the link between client and manager.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ManagerLinkStatusEnum.ManagerLinkStatus status = 5;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The visibility of the link. Users can choose whether or not to see hidden
      * links in the AdWords UI.
@@ -48,7 +48,7 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 6;</code>
      */
-    private $hidden = null;
+    protected $hidden = null;
 
     /**
      * Constructor.
@@ -126,10 +126,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      * @return string|null
      */
-    public function getClientCustomerValue()
+    public function getClientCustomerUnwrapped()
     {
-        $wrapper = $this->getClientCustomer();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("client_customer");
     }
 
     /**
@@ -156,11 +155,10 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setClientCustomerValue($var)
+    public function setClientCustomerUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setClientCustomer($wrappedVar);
-    }
+        $this->writeWrapperValue("client_customer", $var);
+        return $this;}
 
     /**
      * This is uniquely identifies a customer client link. Read only.
@@ -181,10 +179,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
      * @return int|string|null
      */
-    public function getManagerLinkIdValue()
+    public function getManagerLinkIdUnwrapped()
     {
-        $wrapper = $this->getManagerLinkId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("manager_link_id");
     }
 
     /**
@@ -211,11 +208,10 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setManagerLinkIdValue($var)
+    public function setManagerLinkIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setManagerLinkId($wrappedVar);
-    }
+        $this->writeWrapperValue("manager_link_id", $var);
+        return $this;}
 
     /**
      * This is the status of the link between client and manager.
@@ -266,10 +262,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 6;</code>
      * @return bool|null
      */
-    public function getHiddenValue()
+    public function getHiddenUnwrapped()
     {
-        $wrapper = $this->getHidden();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hidden");
     }
 
     /**
@@ -300,11 +295,10 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setHiddenValue($var)
+    public function setHiddenUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setHidden($wrappedVar);
-    }
+        $this->writeWrapperValue("hidden", $var);
+        return $this;}
 
 }
 

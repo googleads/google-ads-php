@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.PromoteCampaignExperimentRequest</code>
  */
-final class PromoteCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
+class PromoteCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the campaign experiment to promote.
      *
      * Generated from protobuf field <code>string campaign_experiment = 1;</code>
      */
-    private $campaign_experiment = '';
+    protected $campaign_experiment = '';
 
     /**
      * Constructor.

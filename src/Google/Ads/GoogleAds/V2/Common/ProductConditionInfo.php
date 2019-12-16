@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ProductConditionInfo</code>
  */
-final class ProductConditionInfo extends \Google\Protobuf\Internal\Message
+class ProductConditionInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Value of the condition.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductConditionEnum.ProductCondition condition = 1;</code>
      */
-    private $condition = 0;
+    protected $condition = 0;
 
     /**
      * Constructor.

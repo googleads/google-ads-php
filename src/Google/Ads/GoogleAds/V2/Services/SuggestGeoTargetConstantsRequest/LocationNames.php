@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.SuggestGeoTargetConstantsRequest.LocationNames</code>
  */
-final class LocationNames extends \Google\Protobuf\Internal\Message
+class LocationNames extends \Google\Protobuf\Internal\Message
 {
     /**
      * A list of location names.

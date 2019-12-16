@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateProductMixIdeasResponse</code>
  */
-final class GenerateProductMixIdeasResponse extends \Google\Protobuf\Internal\Message
+class GenerateProductMixIdeasResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * A list of products (ad formats) and the associated budget allocation idea.

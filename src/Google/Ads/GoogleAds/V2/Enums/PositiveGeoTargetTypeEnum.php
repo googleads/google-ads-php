@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.PositiveGeoTargetTypeEnum</code>
  */
-final class PositiveGeoTargetTypeEnum extends \Google\Protobuf\Internal\Message
+class PositiveGeoTargetTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

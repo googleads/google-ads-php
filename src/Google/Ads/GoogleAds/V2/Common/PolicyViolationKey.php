@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyViolationKey</code>
  */
-final class PolicyViolationKey extends \Google\Protobuf\Internal\Message
+class PolicyViolationKey extends \Google\Protobuf\Internal\Message
 {
     /**
      * Unique ID of the violated policy.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue policy_name = 1;</code>
      */
-    private $policy_name = null;
+    protected $policy_name = null;
     /**
      * The text that violates the policy if specified.
      * Otherwise, refers to the policy in general
@@ -31,7 +31,7 @@ final class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue violating_text = 2;</code>
      */
-    private $violating_text = null;
+    protected $violating_text = null;
 
     /**
      * Constructor.
@@ -75,8 +75,7 @@ final class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      */
     public function getPolicyNameUnwrapped()
     {
-        $wrapper = $this->getPolicyName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("policy_name");
     }
 
     /**
@@ -105,9 +104,8 @@ final class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      */
     public function setPolicyNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPolicyName($wrappedVar);
-    }
+        $this->writeWrapperValue("policy_name", $var);
+        return $this;}
 
     /**
      * The text that violates the policy if specified.
@@ -138,8 +136,7 @@ final class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      */
     public function getViolatingTextUnwrapped()
     {
-        $wrapper = $this->getViolatingText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("violating_text");
     }
 
     /**
@@ -176,9 +173,8 @@ final class PolicyViolationKey extends \Google\Protobuf\Internal\Message
      */
     public function setViolatingTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setViolatingText($wrappedVar);
-    }
+        $this->writeWrapperValue("violating_text", $var);
+        return $this;}
 
 }
 

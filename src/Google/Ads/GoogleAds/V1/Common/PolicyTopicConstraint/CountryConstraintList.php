@@ -20,7 +20,7 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
      */
-    private $total_targeted_countries = null;
+    protected $total_targeted_countries = null;
     /**
      * Countries in which serving is restricted.
      *
@@ -64,10 +64,9 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value total_targeted_countries = 1;</code>
      * @return int|null
      */
-    public function getTotalTargetedCountriesValue()
+    public function getTotalTargetedCountriesUnwrapped()
     {
-        $wrapper = $this->getTotalTargetedCountries();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("total_targeted_countries");
     }
 
     /**
@@ -94,11 +93,10 @@ class CountryConstraintList extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setTotalTargetedCountriesValue($var)
+    public function setTotalTargetedCountriesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setTotalTargetedCountries($wrappedVar);
-    }
+        $this->writeWrapperValue("total_targeted_countries", $var);
+        return $this;}
 
     /**
      * Countries in which serving is restricted.

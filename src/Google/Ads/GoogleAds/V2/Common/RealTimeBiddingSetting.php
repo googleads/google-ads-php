@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.RealTimeBiddingSetting</code>
  */
-final class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
+class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * Whether the campaign is opted in to real-time bidding.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue opt_in = 1;</code>
      */
-    private $opt_in = null;
+    protected $opt_in = null;
 
     /**
      * Constructor.
@@ -59,8 +59,7 @@ final class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getOptInUnwrapped()
     {
-        $wrapper = $this->getOptIn();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("opt_in");
     }
 
     /**
@@ -89,9 +88,8 @@ final class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setOptInUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setOptIn($wrappedVar);
-    }
+        $this->writeWrapperValue("opt_in", $var);
+        return $this;}
 
 }
 

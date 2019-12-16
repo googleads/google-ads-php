@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.TrackingCodeTypeEnum</code>
  */
-final class TrackingCodeTypeEnum extends \Google\Protobuf\Internal\Message
+class TrackingCodeTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

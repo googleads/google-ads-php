@@ -24,7 +24,7 @@ class ExpressionRuleUserListInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.UserListRuleInfo rule = 1;</code>
      */
-    private $rule = null;
+    protected $rule = null;
 
     /**
      * Constructor.

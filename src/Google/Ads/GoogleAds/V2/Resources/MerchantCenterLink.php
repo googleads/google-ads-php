@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.MerchantCenterLink</code>
  */
-final class MerchantCenterLink extends \Google\Protobuf\Internal\Message
+class MerchantCenterLink extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the merchant center link.
@@ -23,27 +23,27 @@ final class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the Merchant Center account.
      * This field is readonly.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the Merchant Center account.
      * This field is readonly.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4;</code>
      */
-    private $merchant_center_account_name = null;
+    protected $merchant_center_account_name = null;
     /**
      * The status of the link.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MerchantCenterLinkStatusEnum.MerchantCenterLinkStatus status = 5;</code>
      */
-    private $status = 0;
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -123,8 +123,7 @@ final class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -155,9 +154,8 @@ final class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the Merchant Center account.
@@ -182,8 +180,7 @@ final class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      */
     public function getMerchantCenterAccountNameUnwrapped()
     {
-        $wrapper = $this->getMerchantCenterAccountName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("merchant_center_account_name");
     }
 
     /**
@@ -214,9 +211,8 @@ final class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      */
     public function setMerchantCenterAccountNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMerchantCenterAccountName($wrappedVar);
-    }
+        $this->writeWrapperValue("merchant_center_account_name", $var);
+        return $this;}
 
     /**
      * The status of the link.

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListRuleItemGroupInfo</code>
  */
-final class UserListRuleItemGroupInfo extends \Google\Protobuf\Internal\Message
+class UserListRuleItemGroupInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Rule items that will be grouped together based on rule_type.

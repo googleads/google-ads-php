@@ -22,45 +22,45 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the media file.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Type of the media file.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.MediaTypeEnum.MediaType type = 5;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The mime type of the media file.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.MimeTypeEnum.MimeType mime_type = 6;</code>
      */
-    private $mime_type = 0;
+    protected $mime_type = 0;
     /**
      * The URL of where the original media file was downloaded from (or a file
-     * name).
+     * name). Only used for media of type AUDIO and IMAGE.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
      */
-    private $source_url = null;
+    protected $source_url = null;
     /**
      * The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The size of the media file in bytes.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
      */
-    private $file_size = null;
+    protected $file_size = null;
     protected $mediatype;
 
     /**
@@ -81,7 +81,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      *           The mime type of the media file.
      *     @type \Google\Protobuf\StringValue $source_url
      *           The URL of where the original media file was downloaded from (or a file
-     *           name).
+     *           name). Only used for media of type AUDIO and IMAGE.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the media file. The name can be used by clients to help
      *           identify previously uploaded media.
@@ -151,10 +151,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -181,11 +180,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Type of the media file.
@@ -241,7 +239,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
 
     /**
      * The URL of where the original media file was downloaded from (or a file
-     * name).
+     * name). Only used for media of type AUDIO and IMAGE.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
      * @return \Google\Protobuf\StringValue
@@ -255,20 +253,19 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getSourceUrl()</code>
 
      * The URL of where the original media file was downloaded from (or a file
-     * name).
+     * name). Only used for media of type AUDIO and IMAGE.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
      * @return string|null
      */
-    public function getSourceUrlValue()
+    public function getSourceUrlUnwrapped()
     {
-        $wrapper = $this->getSourceUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("source_url");
     }
 
     /**
      * The URL of where the original media file was downloaded from (or a file
-     * name).
+     * name). Only used for media of type AUDIO and IMAGE.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -286,17 +283,16 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
      * The URL of where the original media file was downloaded from (or a file
-     * name).
+     * name). Only used for media of type AUDIO and IMAGE.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
      * @param string|null $var
      * @return $this
      */
-    public function setSourceUrlValue($var)
+    public function setSourceUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSourceUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("source_url", $var);
+        return $this;}
 
     /**
      * The name of the media file. The name can be used by clients to help
@@ -319,10 +315,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -351,11 +346,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The size of the media file in bytes.
@@ -376,10 +370,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
      * @return int|string|null
      */
-    public function getFileSizeValue()
+    public function getFileSizeUnwrapped()
     {
-        $wrapper = $this->getFileSize();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("file_size");
     }
 
     /**
@@ -406,11 +399,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setFileSizeValue($var)
+    public function setFileSizeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFileSize($wrappedVar);
-    }
+        $this->writeWrapperValue("file_size", $var);
+        return $this;}
 
     /**
      * Encapsulates an Image.

@@ -22,20 +22,20 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The campaign to which the criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The ID of the criterion.
      * This field is ignored during mutate.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
      */
-    private $criterion_id = null;
+    protected $criterion_id = null;
     /**
      * The modifier for the bids when the criterion matches. The modifier must be
      * in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
@@ -43,25 +43,25 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.FloatValue bid_modifier = 14;</code>
      */
-    private $bid_modifier = null;
+    protected $bid_modifier = null;
     /**
      * Whether to target (`false`) or exclude (`true`) the criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
      */
-    private $negative = null;
+    protected $negative = null;
     /**
      * The type of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CriterionTypeEnum.CriterionType type = 6;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The status of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignCriterionStatusEnum.CampaignCriterionStatus status = 35;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     protected $criterion;
 
     /**
@@ -197,10 +197,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
      * @return string|null
      */
-    public function getCampaignValue()
+    public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -227,11 +226,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignValue($var)
+    public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The ID of the criterion.
@@ -254,10 +252,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
      * @return int|string|null
      */
-    public function getCriterionIdValue()
+    public function getCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_id");
     }
 
     /**
@@ -286,11 +283,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCriterionIdValue($var)
+    public function setCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_id", $var);
+        return $this;}
 
     /**
      * The modifier for the bids when the criterion matches. The modifier must be
@@ -315,10 +311,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.FloatValue bid_modifier = 14;</code>
      * @return float|null
      */
-    public function getBidModifierValue()
+    public function getBidModifierUnwrapped()
     {
-        $wrapper = $this->getBidModifier();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_modifier");
     }
 
     /**
@@ -349,11 +344,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBidModifierValue($var)
+    public function setBidModifierUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\FloatValue(['value' => $var]);
-        return $this->setBidModifier($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_modifier", $var);
+        return $this;}
 
     /**
      * Whether to target (`false`) or exclude (`true`) the criterion.
@@ -374,10 +368,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
      * @return bool|null
      */
-    public function getNegativeValue()
+    public function getNegativeUnwrapped()
     {
-        $wrapper = $this->getNegative();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("negative");
     }
 
     /**
@@ -404,11 +397,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setNegativeValue($var)
+    public function setNegativeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setNegative($wrappedVar);
-    }
+        $this->writeWrapperValue("negative", $var);
+        return $this;}
 
     /**
      * The type of the criterion.

@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AdGroupCriterionSimulation</code>
  */
-final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
+class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the ad group criterion simulation.
@@ -27,43 +27,43 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * AdGroup ID of the simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2;</code>
      */
-    private $ad_group_id = null;
+    protected $ad_group_id = null;
     /**
      * Criterion ID of the simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
      */
-    private $criterion_id = null;
+    protected $criterion_id = null;
     /**
      * The field that the simulation modifies.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 4;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * How the simulation modifies the field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 5;</code>
      */
-    private $modification_method = 0;
+    protected $modification_method = 0;
     /**
      * First day on which the simulation is based, in YYYY-MM-DD format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6;</code>
      */
-    private $start_date = null;
+    protected $start_date = null;
     /**
      * Last day on which the simulation is based, in YYYY-MM-DD format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7;</code>
      */
-    private $end_date = null;
+    protected $end_date = null;
     protected $point_list;
 
     /**
@@ -148,8 +148,7 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupIdUnwrapped()
     {
-        $wrapper = $this->getAdGroupId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_id");
     }
 
     /**
@@ -178,9 +177,8 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      */
     public function setAdGroupIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAdGroupId($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_id", $var);
+        return $this;}
 
     /**
      * Criterion ID of the simulation.
@@ -203,8 +201,7 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      */
     public function getCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_id");
     }
 
     /**
@@ -233,9 +230,8 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      */
     public function setCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_id", $var);
+        return $this;}
 
     /**
      * The field that the simulation modifies.
@@ -310,8 +306,7 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      */
     public function getStartDateUnwrapped()
     {
-        $wrapper = $this->getStartDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date");
     }
 
     /**
@@ -340,9 +335,8 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      */
     public function setStartDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDate($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date", $var);
+        return $this;}
 
     /**
      * Last day on which the simulation is based, in YYYY-MM-DD format.
@@ -365,8 +359,7 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      */
     public function getEndDateUnwrapped()
     {
-        $wrapper = $this->getEndDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date");
     }
 
     /**
@@ -395,9 +388,8 @@ final class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      */
     public function setEndDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDate($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date", $var);
+        return $this;}
 
     /**
      * Simulation points if the simulation type is CPC_BID.

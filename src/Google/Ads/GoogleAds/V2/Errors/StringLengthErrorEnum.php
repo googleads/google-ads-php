@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.StringLengthErrorEnum</code>
  */
-final class StringLengthErrorEnum extends \Google\Protobuf\Internal\Message
+class StringLengthErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

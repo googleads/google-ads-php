@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CustomerClient</code>
  */
-final class CustomerClient extends \Google\Protobuf\Internal\Message
+class CustomerClient extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the customer client.
@@ -24,14 +24,14 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
      */
-    private $client_customer = null;
+    protected $client_customer = null;
     /**
      * Specifies whether this is a
      * [hidden account](https://support.google.com/google-ads/answer/7519830).
@@ -39,51 +39,51 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
      */
-    private $hidden = null;
+    protected $hidden = null;
     /**
      * Distance between given customer and client. For self link, the level value
      * will be 0. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
      */
-    private $level = null;
+    protected $level = null;
     /**
      * Common Locale Data Repository (CLDR) string representation of the
      * time zone of the client, e.g. America/Los_Angeles. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
      */
-    private $time_zone = null;
+    protected $time_zone = null;
     /**
      * Identifies if the client is a test account. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7;</code>
      */
-    private $test_account = null;
+    protected $test_account = null;
     /**
      * Identifies if the client is a manager. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8;</code>
      */
-    private $manager = null;
+    protected $manager = null;
     /**
      * Descriptive name for the client. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9;</code>
      */
-    private $descriptive_name = null;
+    protected $descriptive_name = null;
     /**
      * Currency code (e.g. 'USD', 'EUR') for the client. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
     /**
      * The ID of the client customer. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11;</code>
      */
-    private $id = null;
+    protected $id = null;
 
     /**
      * Constructor.
@@ -178,8 +178,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getClientCustomerUnwrapped()
     {
-        $wrapper = $this->getClientCustomer();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("client_customer");
     }
 
     /**
@@ -210,9 +209,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setClientCustomerUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setClientCustomer($wrappedVar);
-    }
+        $this->writeWrapperValue("client_customer", $var);
+        return $this;}
 
     /**
      * Specifies whether this is a
@@ -239,8 +237,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getHiddenUnwrapped()
     {
-        $wrapper = $this->getHidden();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("hidden");
     }
 
     /**
@@ -273,9 +270,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setHiddenUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setHidden($wrappedVar);
-    }
+        $this->writeWrapperValue("hidden", $var);
+        return $this;}
 
     /**
      * Distance between given customer and client. For self link, the level value
@@ -300,8 +296,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getLevelUnwrapped()
     {
-        $wrapper = $this->getLevel();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("level");
     }
 
     /**
@@ -332,9 +327,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setLevelUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setLevel($wrappedVar);
-    }
+        $this->writeWrapperValue("level", $var);
+        return $this;}
 
     /**
      * Common Locale Data Repository (CLDR) string representation of the
@@ -359,8 +353,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getTimeZoneUnwrapped()
     {
-        $wrapper = $this->getTimeZone();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("time_zone");
     }
 
     /**
@@ -391,9 +384,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setTimeZoneUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTimeZone($wrappedVar);
-    }
+        $this->writeWrapperValue("time_zone", $var);
+        return $this;}
 
     /**
      * Identifies if the client is a test account. Read only.
@@ -416,8 +408,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getTestAccountUnwrapped()
     {
-        $wrapper = $this->getTestAccount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("test_account");
     }
 
     /**
@@ -446,9 +437,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setTestAccountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTestAccount($wrappedVar);
-    }
+        $this->writeWrapperValue("test_account", $var);
+        return $this;}
 
     /**
      * Identifies if the client is a manager. Read only.
@@ -471,8 +461,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getManagerUnwrapped()
     {
-        $wrapper = $this->getManager();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("manager");
     }
 
     /**
@@ -501,9 +490,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setManagerUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setManager($wrappedVar);
-    }
+        $this->writeWrapperValue("manager", $var);
+        return $this;}
 
     /**
      * Descriptive name for the client. Read only.
@@ -526,8 +514,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getDescriptiveNameUnwrapped()
     {
-        $wrapper = $this->getDescriptiveName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("descriptive_name");
     }
 
     /**
@@ -556,9 +543,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setDescriptiveNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescriptiveName($wrappedVar);
-    }
+        $this->writeWrapperValue("descriptive_name", $var);
+        return $this;}
 
     /**
      * Currency code (e.g. 'USD', 'EUR') for the client. Read only.
@@ -581,8 +567,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -611,9 +596,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
     /**
      * The ID of the client customer. Read only.
@@ -636,8 +620,7 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -666,9 +649,8 @@ final class CustomerClient extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
 }
 

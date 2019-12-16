@@ -22,13 +22,13 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The feed of this feed mapping.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
      */
-    private $feed = null;
+    protected $feed = null;
     /**
      * Feed attributes to field mappings. These mappings are a one-to-many
      * relationship meaning that 1 feed attribute can be used to populate
@@ -45,7 +45,7 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedMappingStatusEnum.FeedMappingStatus status = 6;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     protected $target;
 
     /**
@@ -131,10 +131,9 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
      * @return string|null
      */
-    public function getFeedValue()
+    public function getFeedUnwrapped()
     {
-        $wrapper = $this->getFeed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed");
     }
 
     /**
@@ -161,11 +160,10 @@ class FeedMapping extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFeedValue($var)
+    public function setFeedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeed($wrappedVar);
-    }
+        $this->writeWrapperValue("feed", $var);
+        return $this;}
 
     /**
      * Feed attributes to field mappings. These mappings are a one-to-many

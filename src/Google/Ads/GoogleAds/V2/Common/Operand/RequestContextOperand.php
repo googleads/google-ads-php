@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.Operand.RequestContextOperand</code>
  */
-final class RequestContextOperand extends \Google\Protobuf\Internal\Message
+class RequestContextOperand extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of value to be referred in the request context.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MatchingFunctionContextTypeEnum.MatchingFunctionContextType context_type = 1;</code>
      */
-    private $context_type = 0;
+    protected $context_type = 0;
 
     /**
      * Constructor.

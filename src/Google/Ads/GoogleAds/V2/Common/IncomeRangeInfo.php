@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.IncomeRangeInfo</code>
  */
-final class IncomeRangeInfo extends \Google\Protobuf\Internal\Message
+class IncomeRangeInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the income range.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.IncomeRangeTypeEnum.IncomeRangeType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

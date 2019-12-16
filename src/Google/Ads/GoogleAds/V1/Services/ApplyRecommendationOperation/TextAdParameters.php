@@ -21,7 +21,7 @@ class TextAdParameters extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Ad ad = 1;</code>
      */
-    private $ad = null;
+    protected $ad = null;
 
     /**
      * Constructor.

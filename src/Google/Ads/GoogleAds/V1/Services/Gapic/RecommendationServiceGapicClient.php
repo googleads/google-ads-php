@@ -31,7 +31,7 @@ use Google\Ads\GoogleAds\V1\Services\ApplyRecommendationOperation;
 use Google\Ads\GoogleAds\V1\Services\ApplyRecommendationRequest;
 use Google\Ads\GoogleAds\V1\Services\ApplyRecommendationResponse;
 use Google\Ads\GoogleAds\V1\Services\DismissRecommendationRequest;
-use Google\Ads\GoogleAds\V1\Services\DismissRecommendationRequest_DismissRecommendationOperation;
+use Google\Ads\GoogleAds\V1\Services\DismissRecommendationRequest\DismissRecommendationOperation;
 use Google\Ads\GoogleAds\V1\Services\DismissRecommendationResponse;
 use Google\Ads\GoogleAds\V1\Services\GetRecommendationRequest;
 use Google\ApiCore\ApiException;
@@ -383,12 +383,12 @@ class RecommendationServiceGapicClient
      * }
      * ```
      *
-     * @param string                                                        $customerId   The ID of the customer with the recommendation.
-     * @param DismissRecommendationRequest_DismissRecommendationOperation[] $operations   The list of operations to dismiss recommendations.
-     *                                                                                    If partial_failure=false all recommendations should be of the same type
-     *                                                                                    There is a limit of 100 operations per request.
-     * @param array                                                         $optionalArgs {
-     *                                                                                    Optional.
+     * @param string                           $customerId   The ID of the customer with the recommendation.
+     * @param DismissRecommendationOperation[] $operations   The list of operations to dismiss recommendations.
+     *                                                       If partial_failure=false all recommendations should be of the same type
+     *                                                       There is a limit of 100 operations per request.
+     * @param array                            $optionalArgs {
+     *                                                       Optional.
      *
      *     @type bool $partialFailure
      *          If true, successful operations will be carried out and invalid

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateHistoricalMetricsRequest</code>
  */
-final class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
+class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the keyword plan of which historical metrics are
@@ -21,7 +21,7 @@ final class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\M
      *
      * Generated from protobuf field <code>string keyword_plan = 1;</code>
      */
-    private $keyword_plan = '';
+    protected $keyword_plan = '';
 
     /**
      * Constructor.

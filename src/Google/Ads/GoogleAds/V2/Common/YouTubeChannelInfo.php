@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.YouTubeChannelInfo</code>
  */
-final class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
+class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The YouTube uploader channel id or the channel code of a YouTube channel.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue channel_id = 1;</code>
      */
-    private $channel_id = null;
+    protected $channel_id = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
      */
     public function getChannelIdUnwrapped()
     {
-        $wrapper = $this->getChannelId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("channel_id");
     }
 
     /**
@@ -88,9 +87,8 @@ final class YouTubeChannelInfo extends \Google\Protobuf\Internal\Message
      */
     public function setChannelIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setChannelId($wrappedVar);
-    }
+        $this->writeWrapperValue("channel_id", $var);
+        return $this;}
 
 }
 

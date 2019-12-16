@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.ErrorLocation.FieldPathElement</code>
  */
-final class FieldPathElement extends \Google\Protobuf\Internal\Message
+class FieldPathElement extends \Google\Protobuf\Internal\Message
 {
     /**
      * The name of a field or a oneof
      *
      * Generated from protobuf field <code>string field_name = 1;</code>
      */
-    private $field_name = '';
+    protected $field_name = '';
     /**
      * If field_name is a repeated field, this is the element that failed
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value index = 2;</code>
      */
-    private $index = null;
+    protected $index = null;
 
     /**
      * Constructor.
@@ -92,8 +92,7 @@ final class FieldPathElement extends \Google\Protobuf\Internal\Message
      */
     public function getIndexUnwrapped()
     {
-        $wrapper = $this->getIndex();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("index");
     }
 
     /**
@@ -122,9 +121,8 @@ final class FieldPathElement extends \Google\Protobuf\Internal\Message
      */
     public function setIndexUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setIndex($wrappedVar);
-    }
+        $this->writeWrapperValue("index", $var);
+        return $this;}
 
 }
 

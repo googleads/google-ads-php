@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Label</code>
  */
-final class Label extends \Google\Protobuf\Internal\Message
+class Label extends \Google\Protobuf\Internal\Message
 {
     /**
      * Name of the resource.
@@ -22,13 +22,13 @@ final class Label extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Id of the label. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the label.
      * This field is required and should not be empty when creating a new label.
@@ -36,19 +36,19 @@ final class Label extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * Status of the label. Read only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.LabelStatusEnum.LabelStatus status = 4;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * A type of label displaying text on a colored background.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.TextLabel text_label = 5;</code>
      */
-    private $text_label = null;
+    protected $text_label = null;
 
     /**
      * Constructor.
@@ -128,8 +128,7 @@ final class Label extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -158,9 +157,8 @@ final class Label extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the label.
@@ -187,8 +185,7 @@ final class Label extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -221,9 +218,8 @@ final class Label extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * Status of the label. Read only.

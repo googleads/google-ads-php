@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.SizeLimitErrorEnum</code>
  */
-final class SizeLimitErrorEnum extends \Google\Protobuf\Internal\Message
+class SizeLimitErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

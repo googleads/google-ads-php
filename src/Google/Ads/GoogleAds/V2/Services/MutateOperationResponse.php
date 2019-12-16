@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateOperationResponse</code>
  */
-final class MutateOperationResponse extends \Google\Protobuf\Internal\Message
+class MutateOperationResponse extends \Google\Protobuf\Internal\Message
 {
     protected $response;
 

@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.OperatingSystemVersionConstant</code>
  */
-final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
+class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the operating system version constant.
@@ -24,38 +24,38 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the operating system version.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Name of the operating system.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The OS Major Version number.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
      */
-    private $os_major_version = null;
+    protected $os_major_version = null;
     /**
      * The OS Minor Version number.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
      */
-    private $os_minor_version = null;
+    protected $os_minor_version = null;
     /**
      * Determines whether this constant represents a single version or a range of
      * versions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType operator_type = 6;</code>
      */
-    private $operator_type = 0;
+    protected $operator_type = 0;
 
     /**
      * Constructor.
@@ -136,8 +136,7 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -166,9 +165,8 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Name of the operating system.
@@ -191,8 +189,7 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -221,9 +218,8 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The OS Major Version number.
@@ -246,8 +242,7 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      */
     public function getOsMajorVersionUnwrapped()
     {
-        $wrapper = $this->getOsMajorVersion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("os_major_version");
     }
 
     /**
@@ -276,9 +271,8 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      */
     public function setOsMajorVersionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setOsMajorVersion($wrappedVar);
-    }
+        $this->writeWrapperValue("os_major_version", $var);
+        return $this;}
 
     /**
      * The OS Minor Version number.
@@ -301,8 +295,7 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      */
     public function getOsMinorVersionUnwrapped()
     {
-        $wrapper = $this->getOsMinorVersion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("os_minor_version");
     }
 
     /**
@@ -331,9 +324,8 @@ final class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Mes
      */
     public function setOsMinorVersionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setOsMinorVersion($wrappedVar);
-    }
+        $this->writeWrapperValue("os_minor_version", $var);
+        return $this;}
 
     /**
      * Determines whether this constant represents a single version or a range of

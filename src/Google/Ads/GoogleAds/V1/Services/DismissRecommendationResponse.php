@@ -29,7 +29,7 @@ class DismissRecommendationResponse extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 2;</code>
      */
-    private $partial_failure_error = null;
+    protected $partial_failure_error = null;
 
     /**
      * Constructor.

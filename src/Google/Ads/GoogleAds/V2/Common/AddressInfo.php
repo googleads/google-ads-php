@@ -13,38 +13,38 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.AddressInfo</code>
  */
-final class AddressInfo extends \Google\Protobuf\Internal\Message
+class AddressInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Postal code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue postal_code = 1;</code>
      */
-    private $postal_code = null;
+    protected $postal_code = null;
     /**
      * Province or state code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue province_code = 2;</code>
      */
-    private $province_code = null;
+    protected $province_code = null;
     /**
      * Country code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     /**
      * Province or state name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue province_name = 4;</code>
      */
-    private $province_name = null;
+    protected $province_name = null;
     /**
      * Street address line 1.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue street_address = 5;</code>
      */
-    private $street_address = null;
+    protected $street_address = null;
     /**
      * Street address line 2. This field is write-only. It is only used for
      * calculating the longitude and latitude of an address when geo_point is
@@ -52,13 +52,13 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue street_address2 = 6;</code>
      */
-    private $street_address2 = null;
+    protected $street_address2 = null;
     /**
      * Name of the city.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city_name = 7;</code>
      */
-    private $city_name = null;
+    protected $city_name = null;
 
     /**
      * Constructor.
@@ -110,8 +110,7 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function getPostalCodeUnwrapped()
     {
-        $wrapper = $this->getPostalCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("postal_code");
     }
 
     /**
@@ -140,9 +139,8 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function setPostalCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPostalCode($wrappedVar);
-    }
+        $this->writeWrapperValue("postal_code", $var);
+        return $this;}
 
     /**
      * Province or state code.
@@ -165,8 +163,7 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function getProvinceCodeUnwrapped()
     {
-        $wrapper = $this->getProvinceCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("province_code");
     }
 
     /**
@@ -195,9 +192,8 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function setProvinceCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProvinceCode($wrappedVar);
-    }
+        $this->writeWrapperValue("province_code", $var);
+        return $this;}
 
     /**
      * Country code.
@@ -220,8 +216,7 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -250,9 +245,8 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * Province or state name.
@@ -275,8 +269,7 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function getProvinceNameUnwrapped()
     {
-        $wrapper = $this->getProvinceName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("province_name");
     }
 
     /**
@@ -305,9 +298,8 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function setProvinceNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProvinceName($wrappedVar);
-    }
+        $this->writeWrapperValue("province_name", $var);
+        return $this;}
 
     /**
      * Street address line 1.
@@ -330,8 +322,7 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function getStreetAddressUnwrapped()
     {
-        $wrapper = $this->getStreetAddress();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("street_address");
     }
 
     /**
@@ -360,9 +351,8 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function setStreetAddressUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStreetAddress($wrappedVar);
-    }
+        $this->writeWrapperValue("street_address", $var);
+        return $this;}
 
     /**
      * Street address line 2. This field is write-only. It is only used for
@@ -389,8 +379,7 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function getStreetAddress2Unwrapped()
     {
-        $wrapper = $this->getStreetAddress2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("street_address2");
     }
 
     /**
@@ -423,9 +412,8 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function setStreetAddress2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStreetAddress2($wrappedVar);
-    }
+        $this->writeWrapperValue("street_address2", $var);
+        return $this;}
 
     /**
      * Name of the city.
@@ -448,8 +436,7 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCityNameUnwrapped()
     {
-        $wrapper = $this->getCityName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("city_name");
     }
 
     /**
@@ -478,9 +465,8 @@ final class AddressInfo extends \Google\Protobuf\Internal\Message
      */
     public function setCityNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCityName($wrappedVar);
-    }
+        $this->writeWrapperValue("city_name", $var);
+        return $this;}
 
 }
 

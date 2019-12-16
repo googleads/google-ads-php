@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.AppEngagementAdInfo</code>
  */
-final class AppEngagementAdInfo extends \Google\Protobuf\Internal\Message
+class AppEngagementAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * List of text assets for headlines. When the ad serves the headlines will

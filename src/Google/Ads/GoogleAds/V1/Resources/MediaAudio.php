@@ -20,7 +20,7 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
      */
-    private $ad_duration_millis = null;
+    protected $ad_duration_millis = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
      * @return int|string|null
      */
-    public function getAdDurationMillisValue()
+    public function getAdDurationMillisUnwrapped()
     {
-        $wrapper = $this->getAdDurationMillis();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_duration_millis");
     }
 
     /**
@@ -86,11 +85,10 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setAdDurationMillisValue($var)
+    public function setAdDurationMillisUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAdDurationMillis($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_duration_millis", $var);
+        return $this;}
 
 }
 

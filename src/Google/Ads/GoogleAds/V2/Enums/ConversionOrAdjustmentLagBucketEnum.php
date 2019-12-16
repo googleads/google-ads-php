@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.ConversionOrAdjustmentLagBucketEnum</code>
  */
-final class ConversionOrAdjustmentLagBucketEnum extends \Google\Protobuf\Internal\Message
+class ConversionOrAdjustmentLagBucketEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

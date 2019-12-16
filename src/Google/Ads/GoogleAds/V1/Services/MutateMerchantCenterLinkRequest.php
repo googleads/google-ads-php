@@ -20,13 +20,13 @@ class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The operation to perform on the link
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.services.MerchantCenterLinkOperation operation = 2;</code>
      */
-    private $operation = null;
+    protected $operation = null;
 
     /**
      * Constructor.

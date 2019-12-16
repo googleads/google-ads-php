@@ -20,13 +20,13 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The query string.
      *
      * Generated from protobuf field <code>string query = 2;</code>
      */
-    private $query = '';
+    protected $query = '';
     /**
      * Token of the page to retrieve. If not specified, the first
      * page of results will be returned. Use the value obtained from
@@ -35,7 +35,7 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * Number of elements to retrieve in a single page.
      * When too large a page is requested, the server may decide to
@@ -43,13 +43,13 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 page_size = 4;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
     /**
      * If true, the request is validated but not executed.
      *
      * Generated from protobuf field <code>bool validate_only = 5;</code>
      */
-    private $validate_only = false;
+    protected $validate_only = false;
 
     /**
      * Constructor.

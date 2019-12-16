@@ -21,7 +21,7 @@ class GraduateCampaignExperimentResponse extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>string graduated_campaign = 1;</code>
      */
-    private $graduated_campaign = '';
+    protected $graduated_campaign = '';
 
     /**
      * Constructor.

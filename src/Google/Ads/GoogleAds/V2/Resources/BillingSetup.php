@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.BillingSetup</code>
  */
-final class BillingSetup extends \Google\Protobuf\Internal\Message
+class BillingSetup extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the billing setup.
@@ -23,19 +23,19 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the billing setup.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The status of the billing setup.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BillingSetupStatusEnum.BillingSetupStatus status = 3;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
@@ -47,7 +47,7 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
      */
-    private $payments_account = null;
+    protected $payments_account = null;
     /**
      * The payments account information associated with this billing setup.
      * When setting up billing, this is used to signup with a new payments account
@@ -57,7 +57,7 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12;</code>
      */
-    private $payments_account_info = null;
+    protected $payments_account_info = null;
     protected $start_time;
     protected $end_time;
 
@@ -156,8 +156,7 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -186,9 +185,8 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The status of the billing setup.
@@ -249,8 +247,7 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function getPaymentsAccountUnwrapped()
     {
-        $wrapper = $this->getPaymentsAccount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("payments_account");
     }
 
     /**
@@ -291,9 +288,8 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function setPaymentsAccountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPaymentsAccount($wrappedVar);
-    }
+        $this->writeWrapperValue("payments_account", $var);
+        return $this;}
 
     /**
      * The payments account information associated with this billing setup.
@@ -352,8 +348,7 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function getStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date_time");
     }
 
     /**
@@ -384,9 +379,8 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function setStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date_time", $var);
+        return $this;}
 
     /**
      * The start time as a type. Only NOW is allowed.
@@ -435,8 +429,7 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function getEndDateTimeUnwrapped()
     {
-        $wrapper = $this->getEndDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date_time");
     }
 
     /**
@@ -465,9 +458,8 @@ final class BillingSetup extends \Google\Protobuf\Internal\Message
      */
     public function setEndDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date_time", $var);
+        return $this;}
 
     /**
      * The end time as a type.  The only possible value is FOREVER.

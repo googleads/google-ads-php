@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.Keyword</code>
  */
-final class Keyword extends \Google\Protobuf\Internal\Message
+class Keyword extends \Google\Protobuf\Internal\Message
 {
     /**
      * The AdGroupCriterion resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 1;</code>
      */
-    private $ad_group_criterion = null;
+    protected $ad_group_criterion = null;
     /**
      * Keyword info.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo info = 2;</code>
      */
-    private $info = null;
+    protected $info = null;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class Keyword extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupCriterionUnwrapped()
     {
-        $wrapper = $this->getAdGroupCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_criterion");
     }
 
     /**
@@ -96,9 +95,8 @@ final class Keyword extends \Google\Protobuf\Internal\Message
      */
     public function setAdGroupCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_criterion", $var);
+        return $this;}
 
     /**
      * Keyword info.

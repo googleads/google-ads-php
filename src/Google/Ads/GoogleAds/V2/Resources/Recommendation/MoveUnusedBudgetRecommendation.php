@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Recommendation.MoveUnusedBudgetRecommendation</code>
  */
-final class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
+class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The excess budget's resource_name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
      */
-    private $excess_campaign_budget = null;
+    protected $excess_campaign_budget = null;
     /**
      * The recommendation for the constrained budget to increase.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.CampaignBudgetRecommendation budget_recommendation = 2;</code>
      */
-    private $budget_recommendation = null;
+    protected $budget_recommendation = null;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Mes
      */
     public function getExcessCampaignBudgetUnwrapped()
     {
-        $wrapper = $this->getExcessCampaignBudget();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("excess_campaign_budget");
     }
 
     /**
@@ -96,9 +95,8 @@ final class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Mes
      */
     public function setExcessCampaignBudgetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setExcessCampaignBudget($wrappedVar);
-    }
+        $this->writeWrapperValue("excess_campaign_budget", $var);
+        return $this;}
 
     /**
      * The recommendation for the constrained budget to increase.

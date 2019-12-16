@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.Commission</code>
  */
-final class Commission extends \Google\Protobuf\Internal\Message
+class Commission extends \Google\Protobuf\Internal\Message
 {
     /**
      * Commission rate defines the portion of the conversion value that the
@@ -24,7 +24,7 @@ final class Commission extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value commission_rate_micros = 1;</code>
      */
-    private $commission_rate_micros = null;
+    protected $commission_rate_micros = null;
 
     /**
      * Constructor.
@@ -71,8 +71,7 @@ final class Commission extends \Google\Protobuf\Internal\Message
      */
     public function getCommissionRateMicrosUnwrapped()
     {
-        $wrapper = $this->getCommissionRateMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("commission_rate_micros");
     }
 
     /**
@@ -107,9 +106,8 @@ final class Commission extends \Google\Protobuf\Internal\Message
      */
     public function setCommissionRateMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCommissionRateMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("commission_rate_micros", $var);
+        return $this;}
 
 }
 

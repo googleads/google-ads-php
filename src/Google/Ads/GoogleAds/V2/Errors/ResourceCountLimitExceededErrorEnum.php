@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.ResourceCountLimitExceededErrorEnum</code>
  */
-final class ResourceCountLimitExceededErrorEnum extends \Google\Protobuf\Internal\Message
+class ResourceCountLimitExceededErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

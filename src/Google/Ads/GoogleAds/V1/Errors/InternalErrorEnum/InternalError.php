@@ -32,8 +32,8 @@ class InternalError
      */
     const INTERNAL_ERROR = 2;
     /**
-     * The intended error code doesn't exist in any API version. This will be
-     * fixed by adding a new error code as soon as possible.
+     * The intended error code doesn't exist in specified API version. It will
+     * be released in a future API version.
      *
      * Generated from protobuf enum <code>ERROR_CODE_NOT_PUBLISHED = 3;</code>
      */

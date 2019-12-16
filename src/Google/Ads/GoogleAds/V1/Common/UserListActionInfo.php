@@ -53,10 +53,9 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue conversion_action = 1;</code>
      * @return string|null
      */
-    public function getConversionActionValue()
+    public function getConversionActionUnwrapped()
     {
-        $wrapper = $this->getConversionAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("conversion_action");
     }
 
     /**
@@ -83,11 +82,10 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setConversionActionValue($var)
+    public function setConversionActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setConversionAction($wrappedVar);
-    }
+        $this->writeWrapperValue("conversion_action", $var);
+        return $this;}
 
     /**
      * A remarketing action.
@@ -108,10 +106,9 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue remarketing_action = 2;</code>
      * @return string|null
      */
-    public function getRemarketingActionValue()
+    public function getRemarketingActionUnwrapped()
     {
-        $wrapper = $this->getRemarketingAction();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("remarketing_action");
     }
 
     /**
@@ -138,11 +135,10 @@ class UserListActionInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setRemarketingActionValue($var)
+    public function setRemarketingActionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setRemarketingAction($wrappedVar);
-    }
+        $this->writeWrapperValue("remarketing_action", $var);
+        return $this;}
 
     /**
      * @return string

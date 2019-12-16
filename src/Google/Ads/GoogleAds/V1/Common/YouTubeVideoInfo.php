@@ -20,7 +20,7 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue video_id = 1;</code>
      */
-    private $video_id = null;
+    protected $video_id = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue video_id = 1;</code>
      * @return string|null
      */
-    public function getVideoIdValue()
+    public function getVideoIdUnwrapped()
     {
-        $wrapper = $this->getVideoId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_id");
     }
 
     /**
@@ -86,11 +85,10 @@ class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setVideoIdValue($var)
+    public function setVideoIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setVideoId($wrappedVar);
-    }
+        $this->writeWrapperValue("video_id", $var);
+        return $this;}
 
 }
 

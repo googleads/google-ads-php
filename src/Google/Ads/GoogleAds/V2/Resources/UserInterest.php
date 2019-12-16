@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.UserInterest</code>
  */
-final class UserInterest extends \Google\Protobuf\Internal\Message
+class UserInterest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the user interest.
@@ -22,37 +22,37 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Taxonomy type of the user interest.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType taxonomy_type = 2;</code>
      */
-    private $taxonomy_type = 0;
+    protected $taxonomy_type = 0;
     /**
      * The ID of the user interest.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
      */
-    private $user_interest_id = null;
+    protected $user_interest_id = null;
     /**
      * The name of the user interest.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The parent of the user interest.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
      */
-    private $user_interest_parent = null;
+    protected $user_interest_parent = null;
     /**
      * True if the user interest is launched to all channels and locales.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
      */
-    private $launched_to_all = null;
+    protected $launched_to_all = null;
     /**
      * Availability information of the user interest.
      *
@@ -166,8 +166,7 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      */
     public function getUserInterestIdUnwrapped()
     {
-        $wrapper = $this->getUserInterestId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("user_interest_id");
     }
 
     /**
@@ -196,9 +195,8 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      */
     public function setUserInterestIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setUserInterestId($wrappedVar);
-    }
+        $this->writeWrapperValue("user_interest_id", $var);
+        return $this;}
 
     /**
      * The name of the user interest.
@@ -221,8 +219,7 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -251,9 +248,8 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The parent of the user interest.
@@ -276,8 +272,7 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      */
     public function getUserInterestParentUnwrapped()
     {
-        $wrapper = $this->getUserInterestParent();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("user_interest_parent");
     }
 
     /**
@@ -306,9 +301,8 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      */
     public function setUserInterestParentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUserInterestParent($wrappedVar);
-    }
+        $this->writeWrapperValue("user_interest_parent", $var);
+        return $this;}
 
     /**
      * True if the user interest is launched to all channels and locales.
@@ -331,8 +325,7 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      */
     public function getLaunchedToAllUnwrapped()
     {
-        $wrapper = $this->getLaunchedToAll();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("launched_to_all");
     }
 
     /**
@@ -361,9 +354,8 @@ final class UserInterest extends \Google\Protobuf\Internal\Message
      */
     public function setLaunchedToAllUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setLaunchedToAll($wrappedVar);
-    }
+        $this->writeWrapperValue("launched_to_all", $var);
+        return $this;}
 
     /**
      * Availability information of the user interest.

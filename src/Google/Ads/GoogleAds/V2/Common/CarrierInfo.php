@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.CarrierInfo</code>
  */
-final class CarrierInfo extends \Google\Protobuf\Internal\Message
+class CarrierInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The Carrier constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue carrier_constant = 1;</code>
      */
-    private $carrier_constant = null;
+    protected $carrier_constant = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class CarrierInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCarrierConstantUnwrapped()
     {
-        $wrapper = $this->getCarrierConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("carrier_constant");
     }
 
     /**
@@ -88,9 +87,8 @@ final class CarrierInfo extends \Google\Protobuf\Internal\Message
      */
     public function setCarrierConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCarrierConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("carrier_constant", $var);
+        return $this;}
 
 }
 

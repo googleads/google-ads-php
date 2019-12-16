@@ -20,19 +20,19 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.TargetingDimensionEnum.TargetingDimension targeting_dimension = 1;</code>
      */
-    private $targeting_dimension = 0;
+    protected $targeting_dimension = 0;
     /**
      * Indicates whether to restrict your ads to show only for the criteria you
      * have selected for this targeting_dimension, or to target all values for
      * this targeting_dimension and show ads based on your targeting in other
-     * TargetingDimensions. A value of 'true' means that these criteria will only
-     * apply bid modifiers, and not affect targeting. A value of 'false' means
+     * TargetingDimensions. A value of `true` means that these criteria will only
+     * apply bid modifiers, and not affect targeting. A value of `false` means
      * that these criteria will restrict targeting as well as applying bid
      * modifiers.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue bid_only = 2;</code>
      */
-    private $bid_only = null;
+    protected $bid_only = null;
 
     /**
      * Constructor.
@@ -46,8 +46,8 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      *           Indicates whether to restrict your ads to show only for the criteria you
      *           have selected for this targeting_dimension, or to target all values for
      *           this targeting_dimension and show ads based on your targeting in other
-     *           TargetingDimensions. A value of 'true' means that these criteria will only
-     *           apply bid modifiers, and not affect targeting. A value of 'false' means
+     *           TargetingDimensions. A value of `true` means that these criteria will only
+     *           apply bid modifiers, and not affect targeting. A value of `false` means
      *           that these criteria will restrict targeting as well as applying bid
      *           modifiers.
      * }
@@ -87,8 +87,8 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      * Indicates whether to restrict your ads to show only for the criteria you
      * have selected for this targeting_dimension, or to target all values for
      * this targeting_dimension and show ads based on your targeting in other
-     * TargetingDimensions. A value of 'true' means that these criteria will only
-     * apply bid modifiers, and not affect targeting. A value of 'false' means
+     * TargetingDimensions. A value of `true` means that these criteria will only
+     * apply bid modifiers, and not affect targeting. A value of `false` means
      * that these criteria will restrict targeting as well as applying bid
      * modifiers.
      *
@@ -106,26 +106,25 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      * Indicates whether to restrict your ads to show only for the criteria you
      * have selected for this targeting_dimension, or to target all values for
      * this targeting_dimension and show ads based on your targeting in other
-     * TargetingDimensions. A value of 'true' means that these criteria will only
-     * apply bid modifiers, and not affect targeting. A value of 'false' means
+     * TargetingDimensions. A value of `true` means that these criteria will only
+     * apply bid modifiers, and not affect targeting. A value of `false` means
      * that these criteria will restrict targeting as well as applying bid
      * modifiers.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue bid_only = 2;</code>
      * @return bool|null
      */
-    public function getBidOnlyValue()
+    public function getBidOnlyUnwrapped()
     {
-        $wrapper = $this->getBidOnly();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_only");
     }
 
     /**
      * Indicates whether to restrict your ads to show only for the criteria you
      * have selected for this targeting_dimension, or to target all values for
      * this targeting_dimension and show ads based on your targeting in other
-     * TargetingDimensions. A value of 'true' means that these criteria will only
-     * apply bid modifiers, and not affect targeting. A value of 'false' means
+     * TargetingDimensions. A value of `true` means that these criteria will only
+     * apply bid modifiers, and not affect targeting. A value of `false` means
      * that these criteria will restrict targeting as well as applying bid
      * modifiers.
      *
@@ -147,8 +146,8 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      * Indicates whether to restrict your ads to show only for the criteria you
      * have selected for this targeting_dimension, or to target all values for
      * this targeting_dimension and show ads based on your targeting in other
-     * TargetingDimensions. A value of 'true' means that these criteria will only
-     * apply bid modifiers, and not affect targeting. A value of 'false' means
+     * TargetingDimensions. A value of `true` means that these criteria will only
+     * apply bid modifiers, and not affect targeting. A value of `false` means
      * that these criteria will restrict targeting as well as applying bid
      * modifiers.
      *
@@ -156,11 +155,10 @@ class TargetRestriction extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setBidOnlyValue($var)
+    public function setBidOnlyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setBidOnly($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_only", $var);
+        return $this;}
 
 }
 

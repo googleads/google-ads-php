@@ -21,19 +21,19 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
      */
-    private $headline = null;
+    protected $headline = null;
     /**
      * Description of the teaser.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
      */
-    private $description = null;
+    protected $description = null;
     /**
      * Business name of the advertiser.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 3;</code>
      */
-    private $business_name = null;
+    protected $business_name = null;
     /**
      * The MediaFile resource name of the logo image. Valid image types are GIF,
      * JPEG and PNG. The minimum size is 144x144 pixels and the aspect ratio must
@@ -41,7 +41,7 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue logo_image = 4;</code>
      */
-    private $logo_image = null;
+    protected $logo_image = null;
 
     /**
      * Constructor.
@@ -85,10 +85,9 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue headline = 1;</code>
      * @return string|null
      */
-    public function getHeadlineValue()
+    public function getHeadlineUnwrapped()
     {
-        $wrapper = $this->getHeadline();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("headline");
     }
 
     /**
@@ -115,11 +114,10 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHeadlineValue($var)
+    public function setHeadlineUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeadline($wrappedVar);
-    }
+        $this->writeWrapperValue("headline", $var);
+        return $this;}
 
     /**
      * Description of the teaser.
@@ -140,10 +138,9 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 2;</code>
      * @return string|null
      */
-    public function getDescriptionValue()
+    public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -170,11 +167,10 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDescriptionValue($var)
+    public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
     /**
      * Business name of the advertiser.
@@ -195,10 +191,9 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 3;</code>
      * @return string|null
      */
-    public function getBusinessNameValue()
+    public function getBusinessNameUnwrapped()
     {
-        $wrapper = $this->getBusinessName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("business_name");
     }
 
     /**
@@ -225,11 +220,10 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setBusinessNameValue($var)
+    public function setBusinessNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBusinessName($wrappedVar);
-    }
+        $this->writeWrapperValue("business_name", $var);
+        return $this;}
 
     /**
      * The MediaFile resource name of the logo image. Valid image types are GIF,
@@ -254,10 +248,9 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue logo_image = 4;</code>
      * @return string|null
      */
-    public function getLogoImageValue()
+    public function getLogoImageUnwrapped()
     {
-        $wrapper = $this->getLogoImage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("logo_image");
     }
 
     /**
@@ -288,11 +281,10 @@ class GmailTeaser extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLogoImageValue($var)
+    public function setLogoImageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLogoImage($wrappedVar);
-    }
+        $this->writeWrapperValue("logo_image", $var);
+        return $this;}
 
 }
 

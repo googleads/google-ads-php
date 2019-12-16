@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.KeywordPlanCompetitionLevelEnum</code>
  */
-final class KeywordPlanCompetitionLevelEnum extends \Google\Protobuf\Internal\Message
+class KeywordPlanCompetitionLevelEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

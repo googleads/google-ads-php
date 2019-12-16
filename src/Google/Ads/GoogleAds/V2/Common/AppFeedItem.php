@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.AppFeedItem</code>
  */
-final class AppFeedItem extends \Google\Protobuf\Internal\Message
+class AppFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The visible text displayed when the link is rendered in an ad.
@@ -22,21 +22,21 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      */
-    private $link_text = null;
+    protected $link_text = null;
     /**
      * The store-specific ID for the target application.
      * This string must not be empty.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
      */
-    private $app_id = null;
+    protected $app_id = null;
     /**
      * The application store that the target application belongs to.
      * This field is required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AppStoreEnum.AppStore app_store = 3;</code>
      */
-    private $app_store = 0;
+    protected $app_store = 0;
     /**
      * A list of possible final URLs after all cross domain redirects.
      * This list must not be empty.
@@ -55,7 +55,7 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * A list of mappings to be used for substituting URL custom parameter tags in
      * the tracking_url_template, final_urls, and/or final_mobile_urls.
@@ -69,7 +69,7 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
      */
-    private $final_url_suffix = null;
+    protected $final_url_suffix = null;
 
     /**
      * Constructor.
@@ -132,8 +132,7 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getLinkTextUnwrapped()
     {
-        $wrapper = $this->getLinkText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("link_text");
     }
 
     /**
@@ -166,9 +165,8 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setLinkTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLinkText($wrappedVar);
-    }
+        $this->writeWrapperValue("link_text", $var);
+        return $this;}
 
     /**
      * The store-specific ID for the target application.
@@ -193,8 +191,7 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getAppIdUnwrapped()
     {
-        $wrapper = $this->getAppId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("app_id");
     }
 
     /**
@@ -225,9 +222,8 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setAppIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAppId($wrappedVar);
-    }
+        $this->writeWrapperValue("app_id", $var);
+        return $this;}
 
     /**
      * The application store that the target application belongs to.
@@ -332,8 +328,7 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -362,9 +357,8 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * A list of mappings to be used for substituting URL custom parameter tags in
@@ -417,8 +411,7 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getFinalUrlSuffixUnwrapped()
     {
-        $wrapper = $this->getFinalUrlSuffix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("final_url_suffix");
     }
 
     /**
@@ -449,9 +442,8 @@ final class AppFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setFinalUrlSuffixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFinalUrlSuffix($wrappedVar);
-    }
+        $this->writeWrapperValue("final_url_suffix", $var);
+        return $this;}
 
 }
 

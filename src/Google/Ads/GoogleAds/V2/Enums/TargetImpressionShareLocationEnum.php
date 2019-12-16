@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.TargetImpressionShareLocationEnum</code>
  */
-final class TargetImpressionShareLocationEnum extends \Google\Protobuf\Internal\Message
+class TargetImpressionShareLocationEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

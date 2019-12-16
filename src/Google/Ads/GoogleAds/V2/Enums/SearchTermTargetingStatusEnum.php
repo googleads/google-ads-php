@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.SearchTermTargetingStatusEnum</code>
  */
-final class SearchTermTargetingStatusEnum extends \Google\Protobuf\Internal\Message
+class SearchTermTargetingStatusEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

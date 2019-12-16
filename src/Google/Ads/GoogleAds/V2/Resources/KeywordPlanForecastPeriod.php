@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.KeywordPlanForecastPeriod</code>
  */
-final class KeywordPlanForecastPeriod extends \Google\Protobuf\Internal\Message
+class KeywordPlanForecastPeriod extends \Google\Protobuf\Internal\Message
 {
     protected $interval;
 

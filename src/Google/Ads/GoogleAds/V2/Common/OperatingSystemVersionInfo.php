@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.OperatingSystemVersionInfo</code>
  */
-final class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
+class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The operating system version constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_version_constant = 1;</code>
      */
-    private $operating_system_version_constant = null;
+    protected $operating_system_version_constant = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getOperatingSystemVersionConstantUnwrapped()
     {
-        $wrapper = $this->getOperatingSystemVersionConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("operating_system_version_constant");
     }
 
     /**
@@ -88,9 +87,8 @@ final class OperatingSystemVersionInfo extends \Google\Protobuf\Internal\Message
      */
     public function setOperatingSystemVersionConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setOperatingSystemVersionConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("operating_system_version_constant", $var);
+        return $this;}
 
 }
 

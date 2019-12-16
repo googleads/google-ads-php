@@ -21,7 +21,7 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
      */
-    private $new_budget_amount_micros = null;
+    protected $new_budget_amount_micros = null;
 
     /**
      * Constructor.
@@ -60,10 +60,9 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value new_budget_amount_micros = 1;</code>
      * @return int|string|null
      */
-    public function getNewBudgetAmountMicrosValue()
+    public function getNewBudgetAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getNewBudgetAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("new_budget_amount_micros");
     }
 
     /**
@@ -92,11 +91,10 @@ class CampaignBudgetParameters extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setNewBudgetAmountMicrosValue($var)
+    public function setNewBudgetAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setNewBudgetAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("new_budget_amount_micros", $var);
+        return $this;}
 
 }
 

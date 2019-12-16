@@ -20,13 +20,13 @@ class ListingCustomAttributeInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
      */
-    private $value = null;
+    protected $value = null;
     /**
      * Indicates the index of the custom attribute.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ListingCustomAttributeIndexEnum.ListingCustomAttributeIndex index = 2;</code>
      */
-    private $index = 0;
+    protected $index = 0;
 
     /**
      * Constructor.
@@ -64,10 +64,9 @@ class ListingCustomAttributeInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
      * @return string|null
      */
-    public function getValueValue()
+    public function getValueUnwrapped()
     {
-        $wrapper = $this->getValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value");
     }
 
     /**
@@ -94,11 +93,10 @@ class ListingCustomAttributeInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setValueValue($var)
+    public function setValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setValue($wrappedVar);
-    }
+        $this->writeWrapperValue("value", $var);
+        return $this;}
 
     /**
      * Indicates the index of the custom attribute.

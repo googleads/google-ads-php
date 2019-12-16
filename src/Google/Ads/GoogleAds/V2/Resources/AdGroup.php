@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AdGroup</code>
  */
-final class AdGroup extends \Google\Protobuf\Internal\Message
+class AdGroup extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the ad group.
@@ -22,13 +22,13 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the ad group.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the ad group.
      * This field is required and should not be empty when creating new ad
@@ -39,25 +39,25 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The status of the ad group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdGroupStatusEnum.AdGroupStatus status = 5;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The type of the ad group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdGroupTypeEnum.AdGroupType type = 12;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The ad rotation mode of the ad group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdGroupAdRotationModeEnum.AdGroupAdRotationMode ad_rotation_mode = 22;</code>
      */
-    private $ad_rotation_mode = 0;
+    protected $ad_rotation_mode = 0;
     /**
      * For draft or experiment ad groups, this field is the resource name of the
      * base ad group from which this ad group was created. If a draft or
@@ -67,13 +67,13 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
      */
-    private $base_ad_group = null;
+    protected $base_ad_group = null;
     /**
      * The URL template for constructing a tracking URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 13;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * The list of mappings used to substitute custom parameter tags in a
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
@@ -86,38 +86,38 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The maximum CPC (cost-per-click) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_micros = 14;</code>
      */
-    private $cpc_bid_micros = null;
+    protected $cpc_bid_micros = null;
     /**
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpm_bid_micros = 15;</code>
      */
-    private $cpm_bid_micros = null;
+    protected $cpm_bid_micros = null;
     /**
      * The target CPA (cost-per-acquisition).
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 27;</code>
      */
-    private $target_cpa_micros = null;
+    protected $target_cpa_micros = null;
     /**
      * The CPV (cost-per-view) bid.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17;</code>
      */
-    private $cpv_bid_micros = null;
+    protected $cpv_bid_micros = null;
     /**
      * Average amount in micros that the advertiser is willing to pay for every
      * thousand times the ad is shown.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpm_micros = 26;</code>
      */
-    private $target_cpm_micros = null;
+    protected $target_cpm_micros = null;
     /**
      * The target ROAS (return-on-ad-spend) override. If the ad group's campaign
      * bidding strategy is a standard Target ROAS strategy, then this field
@@ -126,7 +126,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue target_roas = 30;</code>
      */
-    private $target_roas = null;
+    protected $target_roas = null;
     /**
      * The percent cpc bid amount, expressed as a fraction of the advertised price
      * for some good or service. The valid range for the fraction is [0,1) and the
@@ -134,13 +134,13 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value percent_cpc_bid_micros = 20;</code>
      */
-    private $percent_cpc_bid_micros = null;
+    protected $percent_cpc_bid_micros = null;
     /**
      * Settings for the Display Campaign Optimizer, initially termed "Explorer".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.ExplorerAutoOptimizerSetting explorer_auto_optimizer_setting = 21;</code>
      */
-    private $explorer_auto_optimizer_setting = null;
+    protected $explorer_auto_optimizer_setting = null;
     /**
      * Allows advertisers to specify a targeting dimension on which to place
      * absolute bids. This is only applicable for campaigns that target only the
@@ -148,47 +148,47 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TargetingDimensionEnum.TargetingDimension display_custom_bid_dimension = 23;</code>
      */
-    private $display_custom_bid_dimension = 0;
+    protected $display_custom_bid_dimension = 0;
     /**
      * URL template for appending params to Final URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 24;</code>
      */
-    private $final_url_suffix = null;
+    protected $final_url_suffix = null;
     /**
      * Setting for targeting related features.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.TargetingSetting targeting_setting = 25;</code>
      */
-    private $targeting_setting = null;
+    protected $targeting_setting = null;
     /**
      * The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
      */
-    private $effective_target_cpa_micros = null;
+    protected $effective_target_cpa_micros = null;
     /**
      * Source of the effective target CPA.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29;</code>
      */
-    private $effective_target_cpa_source = 0;
+    protected $effective_target_cpa_source = 0;
     /**
      * The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
      */
-    private $effective_target_roas = null;
+    protected $effective_target_roas = null;
     /**
      * Source of the effective target ROAS.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32;</code>
      */
-    private $effective_target_roas_source = 0;
+    protected $effective_target_roas_source = 0;
     /**
      * The resource names of labels attached to this ad group.
      *
@@ -336,8 +336,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -366,9 +365,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the ad group.
@@ -401,8 +399,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -441,9 +438,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The status of the ad group.
@@ -552,8 +548,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getBaseAdGroupUnwrapped()
     {
-        $wrapper = $this->getBaseAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("base_ad_group");
     }
 
     /**
@@ -590,9 +585,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setBaseAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBaseAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("base_ad_group", $var);
+        return $this;}
 
     /**
      * The URL template for constructing a tracking URL.
@@ -615,8 +609,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -645,9 +638,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * The list of mappings used to substitute custom parameter tags in a
@@ -698,8 +690,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -728,9 +719,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The maximum CPC (cost-per-click) bid.
@@ -753,8 +743,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getCpcBidMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_micros");
     }
 
     /**
@@ -783,9 +772,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setCpcBidMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_micros", $var);
+        return $this;}
 
     /**
      * The maximum CPM (cost-per-thousand viewable impressions) bid.
@@ -808,8 +796,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getCpmBidMicrosUnwrapped()
     {
-        $wrapper = $this->getCpmBidMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpm_bid_micros");
     }
 
     /**
@@ -838,9 +825,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setCpmBidMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpmBidMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpm_bid_micros", $var);
+        return $this;}
 
     /**
      * The target CPA (cost-per-acquisition).
@@ -863,8 +849,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getTargetCpaMicrosUnwrapped()
     {
-        $wrapper = $this->getTargetCpaMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_cpa_micros");
     }
 
     /**
@@ -893,9 +878,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setTargetCpaMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTargetCpaMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("target_cpa_micros", $var);
+        return $this;}
 
     /**
      * The CPV (cost-per-view) bid.
@@ -918,8 +902,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getCpvBidMicrosUnwrapped()
     {
-        $wrapper = $this->getCpvBidMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpv_bid_micros");
     }
 
     /**
@@ -948,9 +931,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setCpvBidMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpvBidMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpv_bid_micros", $var);
+        return $this;}
 
     /**
      * Average amount in micros that the advertiser is willing to pay for every
@@ -975,8 +957,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getTargetCpmMicrosUnwrapped()
     {
-        $wrapper = $this->getTargetCpmMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_cpm_micros");
     }
 
     /**
@@ -1007,9 +988,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setTargetCpmMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTargetCpmMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("target_cpm_micros", $var);
+        return $this;}
 
     /**
      * The target ROAS (return-on-ad-spend) override. If the ad group's campaign
@@ -1038,8 +1018,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getTargetRoasUnwrapped()
     {
-        $wrapper = $this->getTargetRoas();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_roas");
     }
 
     /**
@@ -1074,9 +1053,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setTargetRoasUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setTargetRoas($wrappedVar);
-    }
+        $this->writeWrapperValue("target_roas", $var);
+        return $this;}
 
     /**
      * The percent cpc bid amount, expressed as a fraction of the advertised price
@@ -1103,8 +1081,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getPercentCpcBidMicrosUnwrapped()
     {
-        $wrapper = $this->getPercentCpcBidMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("percent_cpc_bid_micros");
     }
 
     /**
@@ -1137,9 +1114,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setPercentCpcBidMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPercentCpcBidMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("percent_cpc_bid_micros", $var);
+        return $this;}
 
     /**
      * Settings for the Display Campaign Optimizer, initially termed "Explorer".
@@ -1218,8 +1194,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getFinalUrlSuffixUnwrapped()
     {
-        $wrapper = $this->getFinalUrlSuffix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("final_url_suffix");
     }
 
     /**
@@ -1248,9 +1223,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setFinalUrlSuffixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFinalUrlSuffix($wrappedVar);
-    }
+        $this->writeWrapperValue("final_url_suffix", $var);
+        return $this;}
 
     /**
      * Setting for targeting related features.
@@ -1301,8 +1275,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getEffectiveTargetCpaMicrosUnwrapped()
     {
-        $wrapper = $this->getEffectiveTargetCpaMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("effective_target_cpa_micros");
     }
 
     /**
@@ -1333,9 +1306,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setEffectiveTargetCpaMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setEffectiveTargetCpaMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("effective_target_cpa_micros", $var);
+        return $this;}
 
     /**
      * Source of the effective target CPA.
@@ -1388,8 +1360,7 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function getEffectiveTargetRoasUnwrapped()
     {
-        $wrapper = $this->getEffectiveTargetRoas();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("effective_target_roas");
     }
 
     /**
@@ -1420,9 +1391,8 @@ final class AdGroup extends \Google\Protobuf\Internal\Message
      */
     public function setEffectiveTargetRoasUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setEffectiveTargetRoas($wrappedVar);
-    }
+        $this->writeWrapperValue("effective_target_roas", $var);
+        return $this;}
 
     /**
      * Source of the effective target ROAS.

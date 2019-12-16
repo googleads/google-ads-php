@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.Operand</code>
  */
-final class Operand extends \Google\Protobuf\Internal\Message
+class Operand extends \Google\Protobuf\Internal\Message
 {
     protected $function_argument_operand;
 

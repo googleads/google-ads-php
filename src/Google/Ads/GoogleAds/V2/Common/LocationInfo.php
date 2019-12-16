@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.LocationInfo</code>
  */
-final class LocationInfo extends \Google\Protobuf\Internal\Message
+class LocationInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The geo target constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 1;</code>
      */
-    private $geo_target_constant = null;
+    protected $geo_target_constant = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class LocationInfo extends \Google\Protobuf\Internal\Message
      */
     public function getGeoTargetConstantUnwrapped()
     {
-        $wrapper = $this->getGeoTargetConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_constant");
     }
 
     /**
@@ -88,9 +87,8 @@ final class LocationInfo extends \Google\Protobuf\Internal\Message
      */
     public function setGeoTargetConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_constant", $var);
+        return $this;}
 
 }
 

@@ -13,27 +13,27 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateCustomerRequest</code>
  */
-final class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
+class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer being modified.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The operation to perform on the customer
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.CustomerOperation operation = 4;</code>
      */
-    private $operation = null;
+    protected $operation = null;
     /**
      * If true, the request is validated but not executed. Only errors are
      * returned, not results.
      *
      * Generated from protobuf field <code>bool validate_only = 5;</code>
      */
-    private $validate_only = false;
+    protected $validate_only = false;
 
     /**
      * Constructor.

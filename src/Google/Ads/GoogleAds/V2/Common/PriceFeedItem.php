@@ -13,32 +13,32 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PriceFeedItem</code>
  */
-final class PriceFeedItem extends \Google\Protobuf\Internal\Message
+class PriceFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * Price extension type of this extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PriceExtensionTypeEnum.PriceExtensionType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * Price qualifier for all offers of this price extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PriceExtensionPriceQualifierEnum.PriceExtensionPriceQualifier price_qualifier = 2;</code>
      */
-    private $price_qualifier = 0;
+    protected $price_qualifier = 0;
     /**
      * Tracking URL template for all offers of this price extension.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 3;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * The code of the language used for this price extension.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 4;</code>
      */
-    private $language_code = null;
+    protected $language_code = null;
     /**
      * The price offerings in this price extension.
      *
@@ -51,7 +51,7 @@ final class PriceFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 6;</code>
      */
-    private $final_url_suffix = null;
+    protected $final_url_suffix = null;
 
     /**
      * Constructor.
@@ -152,8 +152,7 @@ final class PriceFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -182,9 +181,8 @@ final class PriceFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * The code of the language used for this price extension.
@@ -207,8 +205,7 @@ final class PriceFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getLanguageCodeUnwrapped()
     {
-        $wrapper = $this->getLanguageCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_code");
     }
 
     /**
@@ -237,9 +234,8 @@ final class PriceFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setLanguageCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageCode($wrappedVar);
-    }
+        $this->writeWrapperValue("language_code", $var);
+        return $this;}
 
     /**
      * The price offerings in this price extension.
@@ -290,8 +286,7 @@ final class PriceFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getFinalUrlSuffixUnwrapped()
     {
-        $wrapper = $this->getFinalUrlSuffix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("final_url_suffix");
     }
 
     /**
@@ -322,9 +317,8 @@ final class PriceFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setFinalUrlSuffixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFinalUrlSuffix($wrappedVar);
-    }
+        $this->writeWrapperValue("final_url_suffix", $var);
+        return $this;}
 
 }
 

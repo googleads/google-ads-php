@@ -20,49 +20,49 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 1;</code>
      */
-    private $business_name = null;
+    protected $business_name = null;
     /**
      * Line 1 of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue address_line_1 = 2;</code>
      */
-    private $address_line_1 = null;
+    protected $address_line_1 = null;
     /**
      * Line 2 of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue address_line_2 = 3;</code>
      */
-    private $address_line_2 = null;
+    protected $address_line_2 = null;
     /**
      * City of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city = 4;</code>
      */
-    private $city = null;
+    protected $city = null;
     /**
      * Province of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue province = 5;</code>
      */
-    private $province = null;
+    protected $province = null;
     /**
      * Postal code of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue postal_code = 6;</code>
      */
-    private $postal_code = null;
+    protected $postal_code = null;
     /**
      * Country code of the business address.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 7;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     /**
      * Phone number of the business.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 8;</code>
      */
-    private $phone_number = null;
+    protected $phone_number = null;
 
     /**
      * Constructor.
@@ -112,10 +112,9 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 1;</code>
      * @return string|null
      */
-    public function getBusinessNameValue()
+    public function getBusinessNameUnwrapped()
     {
-        $wrapper = $this->getBusinessName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("business_name");
     }
 
     /**
@@ -142,11 +141,10 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setBusinessNameValue($var)
+    public function setBusinessNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBusinessName($wrappedVar);
-    }
+        $this->writeWrapperValue("business_name", $var);
+        return $this;}
 
     /**
      * Line 1 of the business address.
@@ -167,10 +165,9 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue address_line_1 = 2;</code>
      * @return string|null
      */
-    public function getAddressLine1Value()
+    public function getAddressLine1Unwrapped()
     {
-        $wrapper = $this->getAddressLine1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("address_line_1");
     }
 
     /**
@@ -197,11 +194,10 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAddressLine1Value($var)
+    public function setAddressLine1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAddressLine1($wrappedVar);
-    }
+        $this->writeWrapperValue("address_line_1", $var);
+        return $this;}
 
     /**
      * Line 2 of the business address.
@@ -222,10 +218,9 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue address_line_2 = 3;</code>
      * @return string|null
      */
-    public function getAddressLine2Value()
+    public function getAddressLine2Unwrapped()
     {
-        $wrapper = $this->getAddressLine2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("address_line_2");
     }
 
     /**
@@ -252,11 +247,10 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAddressLine2Value($var)
+    public function setAddressLine2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAddressLine2($wrappedVar);
-    }
+        $this->writeWrapperValue("address_line_2", $var);
+        return $this;}
 
     /**
      * City of the business address.
@@ -277,10 +271,9 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue city = 4;</code>
      * @return string|null
      */
-    public function getCityValue()
+    public function getCityUnwrapped()
     {
-        $wrapper = $this->getCity();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("city");
     }
 
     /**
@@ -307,11 +300,10 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCityValue($var)
+    public function setCityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCity($wrappedVar);
-    }
+        $this->writeWrapperValue("city", $var);
+        return $this;}
 
     /**
      * Province of the business address.
@@ -332,10 +324,9 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue province = 5;</code>
      * @return string|null
      */
-    public function getProvinceValue()
+    public function getProvinceUnwrapped()
     {
-        $wrapper = $this->getProvince();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("province");
     }
 
     /**
@@ -362,11 +353,10 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setProvinceValue($var)
+    public function setProvinceUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProvince($wrappedVar);
-    }
+        $this->writeWrapperValue("province", $var);
+        return $this;}
 
     /**
      * Postal code of the business address.
@@ -387,10 +377,9 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue postal_code = 6;</code>
      * @return string|null
      */
-    public function getPostalCodeValue()
+    public function getPostalCodeUnwrapped()
     {
-        $wrapper = $this->getPostalCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("postal_code");
     }
 
     /**
@@ -417,11 +406,10 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPostalCodeValue($var)
+    public function setPostalCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPostalCode($wrappedVar);
-    }
+        $this->writeWrapperValue("postal_code", $var);
+        return $this;}
 
     /**
      * Country code of the business address.
@@ -442,10 +430,9 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 7;</code>
      * @return string|null
      */
-    public function getCountryCodeValue()
+    public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -472,11 +459,10 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCountryCodeValue($var)
+    public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * Phone number of the business.
@@ -497,10 +483,9 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 8;</code>
      * @return string|null
      */
-    public function getPhoneNumberValue()
+    public function getPhoneNumberUnwrapped()
     {
-        $wrapper = $this->getPhoneNumber();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("phone_number");
     }
 
     /**
@@ -527,11 +512,10 @@ class LocationFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPhoneNumberValue($var)
+    public function setPhoneNumberUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPhoneNumber($wrappedVar);
-    }
+        $this->writeWrapperValue("phone_number", $var);
+        return $this;}
 
 }
 

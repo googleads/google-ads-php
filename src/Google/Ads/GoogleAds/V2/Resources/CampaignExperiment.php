@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CampaignExperiment</code>
  */
-final class CampaignExperiment extends \Google\Protobuf\Internal\Message
+class CampaignExperiment extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the campaign experiment.
@@ -23,20 +23,20 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the campaign experiment.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The campaign draft with staged changes to the base campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3;</code>
      */
-    private $campaign_draft = null;
+    protected $campaign_draft = null;
     /**
      * The name of the campaign experiment.
      * This field is required when creating new campaign experiments
@@ -47,13 +47,13 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The description of the experiment.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 5;</code>
      */
-    private $description = null;
+    protected $description = null;
     /**
      * Share of traffic directed to experiment as a percent (must be between 1 and
      * 99 inclusive. Base campaign receives the remainder of the traffic
@@ -61,25 +61,25 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6;</code>
      */
-    private $traffic_split_percent = null;
+    protected $traffic_split_percent = null;
     /**
      * Determines the behavior of the traffic split.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType traffic_split_type = 7;</code>
      */
-    private $traffic_split_type = 0;
+    protected $traffic_split_type = 0;
     /**
      * The experiment campaign, as opposed to the base campaign.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8;</code>
      */
-    private $experiment_campaign = null;
+    protected $experiment_campaign = null;
     /**
      * The status of the campaign experiment. This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentStatusEnum.CampaignExperimentStatus status = 9;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The resource name of the long-running operation that can be used to poll
      * for completion of experiment create or promote. The most recent long
@@ -87,7 +87,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10;</code>
      */
-    private $long_running_operation = null;
+    protected $long_running_operation = null;
     /**
      * Date when the campaign experiment starts. By default, the experiment starts
      * now or on the campaign's start date, whichever is later. If this field is
@@ -98,7 +98,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 11;</code>
      */
-    private $start_date = null;
+    protected $start_date = null;
     /**
      * Date when the campaign experiment ends. By default, the experiment ends on
      * the campaign's end date. If this field is set, then the experiment ends at
@@ -108,7 +108,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 12;</code>
      */
-    private $end_date = null;
+    protected $end_date = null;
 
     /**
      * Constructor.
@@ -221,8 +221,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -253,9 +252,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The campaign draft with staged changes to the base campaign.
@@ -278,8 +276,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignDraftUnwrapped()
     {
-        $wrapper = $this->getCampaignDraft();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_draft");
     }
 
     /**
@@ -308,9 +305,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignDraftUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaignDraft($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_draft", $var);
+        return $this;}
 
     /**
      * The name of the campaign experiment.
@@ -343,8 +339,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -383,9 +378,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The description of the experiment.
@@ -408,8 +402,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -438,9 +431,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
     /**
      * Share of traffic directed to experiment as a percent (must be between 1 and
@@ -467,8 +459,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getTrafficSplitPercentUnwrapped()
     {
-        $wrapper = $this->getTrafficSplitPercent();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("traffic_split_percent");
     }
 
     /**
@@ -501,9 +492,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setTrafficSplitPercentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTrafficSplitPercent($wrappedVar);
-    }
+        $this->writeWrapperValue("traffic_split_percent", $var);
+        return $this;}
 
     /**
      * Determines the behavior of the traffic split.
@@ -552,8 +542,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getExperimentCampaignUnwrapped()
     {
-        $wrapper = $this->getExperimentCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("experiment_campaign");
     }
 
     /**
@@ -582,9 +571,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setExperimentCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setExperimentCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("experiment_campaign", $var);
+        return $this;}
 
     /**
      * The status of the campaign experiment. This field is read-only.
@@ -637,8 +625,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getLongRunningOperationUnwrapped()
     {
-        $wrapper = $this->getLongRunningOperation();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("long_running_operation");
     }
 
     /**
@@ -671,9 +658,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setLongRunningOperationUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLongRunningOperation($wrappedVar);
-    }
+        $this->writeWrapperValue("long_running_operation", $var);
+        return $this;}
 
     /**
      * Date when the campaign experiment starts. By default, the experiment starts
@@ -706,8 +692,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getStartDateUnwrapped()
     {
-        $wrapper = $this->getStartDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date");
     }
 
     /**
@@ -746,9 +731,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setStartDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDate($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date", $var);
+        return $this;}
 
     /**
      * Date when the campaign experiment ends. By default, the experiment ends on
@@ -779,8 +763,7 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function getEndDateUnwrapped()
     {
-        $wrapper = $this->getEndDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date");
     }
 
     /**
@@ -817,9 +800,8 @@ final class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     public function setEndDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDate($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date", $var);
+        return $this;}
 
 }
 

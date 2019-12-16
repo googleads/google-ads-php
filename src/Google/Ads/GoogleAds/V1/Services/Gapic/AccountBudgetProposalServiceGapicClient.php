@@ -48,7 +48,8 @@ use Google\Auth\FetchAuthTokenInterface;
  * existing one.
  *
  * Reads for account-level budgets managed by these proposals will be
- * supported in a future version.  Please use BudgetOrderService until then:
+ * supported in a future version. Until then, please use the
+ * BudgetOrderService from the AdWords API. Learn more at
  * https://developers.google.com/adwords/api/docs/guides/budget-order
  *
  * Mutates:

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListCampaignDraftAsyncErrorsResponse</code>
  */
-final class ListCampaignDraftAsyncErrorsResponse extends \Google\Protobuf\Internal\Message
+class ListCampaignDraftAsyncErrorsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Details of the errors when performing the asynchronous operation.
@@ -29,7 +29,7 @@ final class ListCampaignDraftAsyncErrorsResponse extends \Google\Protobuf\Intern
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
-    private $next_page_token = '';
+    protected $next_page_token = '';
 
     /**
      * Constructor.

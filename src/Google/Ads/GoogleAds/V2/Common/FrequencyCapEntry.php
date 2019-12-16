@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.FrequencyCapEntry</code>
  */
-final class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
+class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
 {
     /**
      * The key of a particular frequency cap. There can be no more
@@ -22,13 +22,13 @@ final class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.FrequencyCapKey key = 1;</code>
      */
-    private $key = null;
+    protected $key = null;
     /**
      * Maximum number of events allowed during the time range by this cap.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cap = 2;</code>
      */
-    private $cap = null;
+    protected $cap = null;
 
     /**
      * Constructor.
@@ -97,8 +97,7 @@ final class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      */
     public function getCapUnwrapped()
     {
-        $wrapper = $this->getCap();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cap");
     }
 
     /**
@@ -127,9 +126,8 @@ final class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      */
     public function setCapUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setCap($wrappedVar);
-    }
+        $this->writeWrapperValue("cap", $var);
+        return $this;}
 
 }
 

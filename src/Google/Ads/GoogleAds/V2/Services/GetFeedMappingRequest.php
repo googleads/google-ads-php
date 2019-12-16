@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetFeedMappingRequest</code>
  */
-final class GetFeedMappingRequest extends \Google\Protobuf\Internal\Message
+class GetFeedMappingRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the feed mapping to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

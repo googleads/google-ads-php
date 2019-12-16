@@ -19,7 +19,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicEntry</code>
  */
-final class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
+class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
 {
     /**
      * Policy topic this finding refers to. For example, "ALCOHOL",
@@ -29,13 +29,13 @@ final class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic = 1;</code>
      */
-    private $topic = null;
+    protected $topic = null;
     /**
      * Describes the negative or positive effect this policy will have on serving.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyTopicEntryTypeEnum.PolicyTopicEntryType type = 2;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * Additional information that explains policy finding
      * (e.g. the brand name for a trademark finding).
@@ -104,8 +104,7 @@ final class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      */
     public function getTopicUnwrapped()
     {
-        $wrapper = $this->getTopic();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("topic");
     }
 
     /**
@@ -140,9 +139,8 @@ final class PolicyTopicEntry extends \Google\Protobuf\Internal\Message
      */
     public function setTopicUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTopic($wrappedVar);
-    }
+        $this->writeWrapperValue("topic", $var);
+        return $this;}
 
     /**
      * Describes the negative or positive effect this policy will have on serving.

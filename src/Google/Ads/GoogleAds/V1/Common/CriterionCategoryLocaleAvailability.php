@@ -23,19 +23,19 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CriterionCategoryLocaleAvailabilityModeEnum.CriterionCategoryLocaleAvailabilityMode availability_mode = 1;</code>
      */
-    private $availability_mode = 0;
+    protected $availability_mode = 0;
     /**
      * Code of the country.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     /**
      * Code of the language.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 3;</code>
      */
-    private $language_code = null;
+    protected $language_code = null;
 
     /**
      * Constructor.
@@ -110,10 +110,9 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
      * @return string|null
      */
-    public function getCountryCodeValue()
+    public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -140,11 +139,10 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      * @param string|null $var
      * @return $this
      */
-    public function setCountryCodeValue($var)
+    public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * Code of the language.
@@ -165,10 +163,9 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 3;</code>
      * @return string|null
      */
-    public function getLanguageCodeValue()
+    public function getLanguageCodeUnwrapped()
     {
-        $wrapper = $this->getLanguageCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_code");
     }
 
     /**
@@ -195,11 +192,10 @@ class CriterionCategoryLocaleAvailability extends \Google\Protobuf\Internal\Mess
      * @param string|null $var
      * @return $this
      */
-    public function setLanguageCodeValue($var)
+    public function setLanguageCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageCode($wrappedVar);
-    }
+        $this->writeWrapperValue("language_code", $var);
+        return $this;}
 
 }
 

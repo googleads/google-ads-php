@@ -23,7 +23,7 @@
 namespace Google\Ads\GoogleAds\V1\Services;
 
 use Google\Ads\GoogleAds\V1\Services\KeywordPlanIdeaServiceClient;
-use Google\Ads\GoogleAds\V1\Enums\KeywordPlanNetworkEnum_KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V1\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
 use Google\Ads\GoogleAds\V1\Services\GenerateKeywordIdeaResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -35,7 +35,7 @@ use Google\Rpc\Code;
 use stdClass;
 
 /**
- * @group googleads
+ * @group services
  * @group gapic
  */
 class KeywordPlanIdeaServiceClientTest extends GeneratedTest
@@ -49,14 +49,22 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
     }
 
     /**
+     * @return CredentialsWrapper
+     */
+    private function createCredentials()
+    {
+        return $this->getMockBuilder(CredentialsWrapper::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
      * @return KeywordPlanIdeaServiceClient
      */
     private function createClient(array $options = [])
     {
         $options += [
-            'credentials' => $this->getMockBuilder(CredentialsWrapper::class)
-                ->disableOriginalConstructor()
-                ->getMock(),
+            'credentials' => $this->createCredentials(),
         ];
 
         return new KeywordPlanIdeaServiceClient($options);
@@ -80,7 +88,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $language = new StringValue();
         $geoTargetConstants = [];
-        $keywordPlanNetwork = KeywordPlanNetworkEnum_KeywordPlanNetwork::UNSPECIFIED;
+        $keywordPlanNetwork = KeywordPlanNetwork::UNSPECIFIED;
 
         $response = $client->generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork);
         $this->assertEquals($expectedResponse, $response);
@@ -132,7 +140,7 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $customerId = 'customerId-1772061412';
         $language = new StringValue();
         $geoTargetConstants = [];
-        $keywordPlanNetwork = KeywordPlanNetworkEnum_KeywordPlanNetwork::UNSPECIFIED;
+        $keywordPlanNetwork = KeywordPlanNetwork::UNSPECIFIED;
 
         try {
             $client->generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork);

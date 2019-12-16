@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum</code>
  */
-final class PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum extends \Google\Protobuf\Internal\Message
+class PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

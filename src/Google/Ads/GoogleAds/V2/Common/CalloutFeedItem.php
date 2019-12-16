@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.CalloutFeedItem</code>
  */
-final class CalloutFeedItem extends \Google\Protobuf\Internal\Message
+class CalloutFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The callout text.
@@ -21,7 +21,7 @@ final class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue callout_text = 1;</code>
      */
-    private $callout_text = null;
+    protected $callout_text = null;
 
     /**
      * Constructor.
@@ -62,8 +62,7 @@ final class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getCalloutTextUnwrapped()
     {
-        $wrapper = $this->getCalloutText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("callout_text");
     }
 
     /**
@@ -94,9 +93,8 @@ final class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setCalloutTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCalloutText($wrappedVar);
-    }
+        $this->writeWrapperValue("callout_text", $var);
+        return $this;}
 
 }
 

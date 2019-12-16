@@ -26,13 +26,13 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CriterionCategoryChannelAvailabilityModeEnum.CriterionCategoryChannelAvailabilityMode availability_mode = 1;</code>
      */
-    private $availability_mode = 0;
+    protected $availability_mode = 0;
     /**
      * Channel type the category is available to.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 2;</code>
      */
-    private $advertising_channel_type = 0;
+    protected $advertising_channel_type = 0;
     /**
      * Channel subtypes under the channel type the category is available to.
      *
@@ -47,7 +47,7 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue include_default_channel_sub_type = 4;</code>
      */
-    private $include_default_channel_sub_type = null;
+    protected $include_default_channel_sub_type = null;
 
     /**
      * Constructor.
@@ -191,10 +191,9 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>.google.protobuf.BoolValue include_default_channel_sub_type = 4;</code>
      * @return bool|null
      */
-    public function getIncludeDefaultChannelSubTypeValue()
+    public function getIncludeDefaultChannelSubTypeUnwrapped()
     {
-        $wrapper = $this->getIncludeDefaultChannelSubType();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("include_default_channel_sub_type");
     }
 
     /**
@@ -227,11 +226,10 @@ class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Mes
      * @param bool|null $var
      * @return $this
      */
-    public function setIncludeDefaultChannelSubTypeValue($var)
+    public function setIncludeDefaultChannelSubTypeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setIncludeDefaultChannelSubType($wrappedVar);
-    }
+        $this->writeWrapperValue("include_default_channel_sub_type", $var);
+        return $this;}
 
 }
 

@@ -21,13 +21,13 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue external_attribution_credit = 1;</code>
      */
-    private $external_attribution_credit = null;
+    protected $external_attribution_credit = null;
     /**
      * Specifies the attribution model name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue external_attribution_model = 2;</code>
      */
-    private $external_attribution_model = null;
+    protected $external_attribution_model = null;
 
     /**
      * Constructor.
@@ -68,10 +68,9 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue external_attribution_credit = 1;</code>
      * @return float|null
      */
-    public function getExternalAttributionCreditValue()
+    public function getExternalAttributionCreditUnwrapped()
     {
-        $wrapper = $this->getExternalAttributionCredit();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("external_attribution_credit");
     }
 
     /**
@@ -100,11 +99,10 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setExternalAttributionCreditValue($var)
+    public function setExternalAttributionCreditUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setExternalAttributionCredit($wrappedVar);
-    }
+        $this->writeWrapperValue("external_attribution_credit", $var);
+        return $this;}
 
     /**
      * Specifies the attribution model name.
@@ -125,10 +123,9 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue external_attribution_model = 2;</code>
      * @return string|null
      */
-    public function getExternalAttributionModelValue()
+    public function getExternalAttributionModelUnwrapped()
     {
-        $wrapper = $this->getExternalAttributionModel();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("external_attribution_model");
     }
 
     /**
@@ -155,11 +152,10 @@ class ExternalAttributionData extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setExternalAttributionModelValue($var)
+    public function setExternalAttributionModelUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setExternalAttributionModel($wrappedVar);
-    }
+        $this->writeWrapperValue("external_attribution_model", $var);
+        return $this;}
 
 }
 

@@ -22,19 +22,19 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ad group criterion to which the label is attached.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
      */
-    private $ad_group_criterion = null;
+    protected $ad_group_criterion = null;
     /**
      * The label assigned to the ad group criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
      */
-    private $label = null;
+    protected $label = null;
 
     /**
      * Constructor.
@@ -106,10 +106,9 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
      * @return string|null
      */
-    public function getAdGroupCriterionValue()
+    public function getAdGroupCriterionUnwrapped()
     {
-        $wrapper = $this->getAdGroupCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_criterion");
     }
 
     /**
@@ -136,11 +135,10 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupCriterionValue($var)
+    public function setAdGroupCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_criterion", $var);
+        return $this;}
 
     /**
      * The label assigned to the ad group criterion.
@@ -161,10 +159,9 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue label = 3;</code>
      * @return string|null
      */
-    public function getLabelValue()
+    public function getLabelUnwrapped()
     {
-        $wrapper = $this->getLabel();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("label");
     }
 
     /**
@@ -191,11 +188,10 @@ class AdGroupCriterionLabel extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLabelValue($var)
+    public function setLabelUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLabel($wrappedVar);
-    }
+        $this->writeWrapperValue("label", $var);
+        return $this;}
 
 }
 

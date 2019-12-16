@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ProductItemIdInfo</code>
  */
-final class ProductItemIdInfo extends \Google\Protobuf\Internal\Message
+class ProductItemIdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Value of the id.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 1;</code>
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class ProductItemIdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getValueUnwrapped()
     {
-        $wrapper = $this->getValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value");
     }
 
     /**
@@ -88,9 +87,8 @@ final class ProductItemIdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setValue($wrappedVar);
-    }
+        $this->writeWrapperValue("value", $var);
+        return $this;}
 
 }
 

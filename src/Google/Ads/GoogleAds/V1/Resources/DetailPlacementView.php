@@ -22,41 +22,41 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The automatic placement string at detail level, e. g. website URL, mobile
      * application ID, or a YouTube video ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue placement = 2;</code>
      */
-    private $placement = null;
+    protected $placement = null;
     /**
      * The display name is URL name for websites, YouTube video name for YouTube
      * videos, and translated mobile app name for mobile apps.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue display_name = 3;</code>
      */
-    private $display_name = null;
+    protected $display_name = null;
     /**
      * URL of the group placement, e.g. domain, link to the mobile application in
      * app store, or a YouTube channel URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue group_placement_target_url = 4;</code>
      */
-    private $group_placement_target_url = null;
+    protected $group_placement_target_url = null;
     /**
      * URL of the placement, e.g. website, link to the mobile application in app
      * store, or a YouTube video URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue target_url = 5;</code>
      */
-    private $target_url = null;
+    protected $target_url = null;
     /**
      * Type of the placement, e.g. Website, YouTube Video, and Mobile Application.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PlacementTypeEnum.PlacementType placement_type = 6;</code>
      */
-    private $placement_type = 0;
+    protected $placement_type = 0;
 
     /**
      * Constructor.
@@ -140,10 +140,9 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue placement = 2;</code>
      * @return string|null
      */
-    public function getPlacementValue()
+    public function getPlacementUnwrapped()
     {
-        $wrapper = $this->getPlacement();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("placement");
     }
 
     /**
@@ -172,11 +171,10 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPlacementValue($var)
+    public function setPlacementUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPlacement($wrappedVar);
-    }
+        $this->writeWrapperValue("placement", $var);
+        return $this;}
 
     /**
      * The display name is URL name for websites, YouTube video name for YouTube
@@ -199,10 +197,9 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue display_name = 3;</code>
      * @return string|null
      */
-    public function getDisplayNameValue()
+    public function getDisplayNameUnwrapped()
     {
-        $wrapper = $this->getDisplayName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("display_name");
     }
 
     /**
@@ -231,11 +228,10 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDisplayNameValue($var)
+    public function setDisplayNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDisplayName($wrappedVar);
-    }
+        $this->writeWrapperValue("display_name", $var);
+        return $this;}
 
     /**
      * URL of the group placement, e.g. domain, link to the mobile application in
@@ -258,10 +254,9 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue group_placement_target_url = 4;</code>
      * @return string|null
      */
-    public function getGroupPlacementTargetUrlValue()
+    public function getGroupPlacementTargetUrlUnwrapped()
     {
-        $wrapper = $this->getGroupPlacementTargetUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("group_placement_target_url");
     }
 
     /**
@@ -290,11 +285,10 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGroupPlacementTargetUrlValue($var)
+    public function setGroupPlacementTargetUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGroupPlacementTargetUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("group_placement_target_url", $var);
+        return $this;}
 
     /**
      * URL of the placement, e.g. website, link to the mobile application in app
@@ -317,10 +311,9 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue target_url = 5;</code>
      * @return string|null
      */
-    public function getTargetUrlValue()
+    public function getTargetUrlUnwrapped()
     {
-        $wrapper = $this->getTargetUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_url");
     }
 
     /**
@@ -349,11 +342,10 @@ class DetailPlacementView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTargetUrlValue($var)
+    public function setTargetUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTargetUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("target_url", $var);
+        return $this;}
 
     /**
      * Type of the placement, e.g. Website, YouTube Video, and Mobile Application.

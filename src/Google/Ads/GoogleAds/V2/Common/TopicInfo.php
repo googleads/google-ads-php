@@ -15,14 +15,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TopicInfo</code>
  */
-final class TopicInfo extends \Google\Protobuf\Internal\Message
+class TopicInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The Topic Constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant = 1;</code>
      */
-    private $topic_constant = null;
+    protected $topic_constant = null;
     /**
      * The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
@@ -74,8 +74,7 @@ final class TopicInfo extends \Google\Protobuf\Internal\Message
      */
     public function getTopicConstantUnwrapped()
     {
-        $wrapper = $this->getTopicConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("topic_constant");
     }
 
     /**
@@ -104,9 +103,8 @@ final class TopicInfo extends \Google\Protobuf\Internal\Message
      */
     public function setTopicConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTopicConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("topic_constant", $var);
+        return $this;}
 
     /**
      * The category to target or exclude. Each subsequent element in the array

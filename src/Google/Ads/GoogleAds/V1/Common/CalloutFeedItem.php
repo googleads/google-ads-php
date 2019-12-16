@@ -21,7 +21,7 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue callout_text = 1;</code>
      */
-    private $callout_text = null;
+    protected $callout_text = null;
 
     /**
      * Constructor.
@@ -60,10 +60,9 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue callout_text = 1;</code>
      * @return string|null
      */
-    public function getCalloutTextValue()
+    public function getCalloutTextUnwrapped()
     {
-        $wrapper = $this->getCalloutText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("callout_text");
     }
 
     /**
@@ -92,11 +91,10 @@ class CalloutFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCalloutTextValue($var)
+    public function setCalloutTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCalloutText($wrappedVar);
-    }
+        $this->writeWrapperValue("callout_text", $var);
+        return $this;}
 
 }
 

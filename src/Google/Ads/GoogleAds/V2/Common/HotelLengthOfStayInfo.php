@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.HotelLengthOfStayInfo</code>
  */
-final class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
+class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Low end of the number of nights in the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value min_nights = 1;</code>
      */
-    private $min_nights = null;
+    protected $min_nights = null;
     /**
      * High end of the number of nights in the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value max_nights = 2;</code>
      */
-    private $max_nights = null;
+    protected $max_nights = null;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMinNightsUnwrapped()
     {
-        $wrapper = $this->getMinNights();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("min_nights");
     }
 
     /**
@@ -96,9 +95,8 @@ final class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
      */
     public function setMinNightsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setMinNights($wrappedVar);
-    }
+        $this->writeWrapperValue("min_nights", $var);
+        return $this;}
 
     /**
      * High end of the number of nights in the stay.
@@ -121,8 +119,7 @@ final class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMaxNightsUnwrapped()
     {
-        $wrapper = $this->getMaxNights();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("max_nights");
     }
 
     /**
@@ -151,9 +148,8 @@ final class HotelLengthOfStayInfo extends \Google\Protobuf\Internal\Message
      */
     public function setMaxNightsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setMaxNights($wrappedVar);
-    }
+        $this->writeWrapperValue("max_nights", $var);
+        return $this;}
 
 }
 

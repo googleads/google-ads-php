@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateKeywordIdeaResponse</code>
  */
-final class GenerateKeywordIdeaResponse extends \Google\Protobuf\Internal\Message
+class GenerateKeywordIdeaResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Results of generating keyword ideas.

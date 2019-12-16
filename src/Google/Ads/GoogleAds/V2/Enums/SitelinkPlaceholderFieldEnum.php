@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.SitelinkPlaceholderFieldEnum</code>
  */
-final class SitelinkPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
+class SitelinkPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

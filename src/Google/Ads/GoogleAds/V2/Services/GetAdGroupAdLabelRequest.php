@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetAdGroupAdLabelRequest</code>
  */
-final class GetAdGroupAdLabelRequest extends \Google\Protobuf\Internal\Message
+class GetAdGroupAdLabelRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the ad group ad label to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

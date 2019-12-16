@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.StructuredSnippetPlaceholderFieldEnum</code>
  */
-final class StructuredSnippetPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
+class StructuredSnippetPlaceholderFieldEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

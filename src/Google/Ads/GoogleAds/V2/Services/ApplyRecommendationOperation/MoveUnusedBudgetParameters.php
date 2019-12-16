@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters</code>
  */
-final class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
+class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
 {
     /**
      * Budget amount to move from excess budget to constrained budget. This is
@@ -21,7 +21,7 @@ final class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros_to_move = 1;</code>
      */
-    private $budget_micros_to_move = null;
+    protected $budget_micros_to_move = null;
 
     /**
      * Constructor.
@@ -62,8 +62,7 @@ final class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      */
     public function getBudgetMicrosToMoveUnwrapped()
     {
-        $wrapper = $this->getBudgetMicrosToMove();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("budget_micros_to_move");
     }
 
     /**
@@ -94,9 +93,8 @@ final class MoveUnusedBudgetParameters extends \Google\Protobuf\Internal\Message
      */
     public function setBudgetMicrosToMoveUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setBudgetMicrosToMove($wrappedVar);
-    }
+        $this->writeWrapperValue("budget_micros_to_move", $var);
+        return $this;}
 
 }
 

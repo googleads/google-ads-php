@@ -22,7 +22,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue adjusted_value = 1;</code>
      */
-    private $adjusted_value = null;
+    protected $adjusted_value = null;
     /**
      * The currency of the restated value. If not provided, then the default
      * currency from the conversion action is used, and if that is not set then
@@ -31,7 +31,7 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
 
     /**
      * Constructor.
@@ -78,10 +78,9 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue adjusted_value = 1;</code>
      * @return float|null
      */
-    public function getAdjustedValueValue()
+    public function getAdjustedValueUnwrapped()
     {
-        $wrapper = $this->getAdjustedValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("adjusted_value");
     }
 
     /**
@@ -112,11 +111,10 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setAdjustedValueValue($var)
+    public function setAdjustedValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setAdjustedValue($wrappedVar);
-    }
+        $this->writeWrapperValue("adjusted_value", $var);
+        return $this;}
 
     /**
      * The currency of the restated value. If not provided, then the default
@@ -143,10 +141,9 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
      * @return string|null
      */
-    public function getCurrencyCodeValue()
+    public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -179,11 +176,10 @@ class RestatementValue extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCurrencyCodeValue($var)
+    public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
 }
 

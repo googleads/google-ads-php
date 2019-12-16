@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.BrandSafetySuitabilityEnum</code>
  */
-final class BrandSafetySuitabilityEnum extends \Google\Protobuf\Internal\Message
+class BrandSafetySuitabilityEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

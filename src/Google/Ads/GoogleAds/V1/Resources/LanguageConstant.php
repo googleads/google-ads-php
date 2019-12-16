@@ -22,32 +22,32 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the language constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue code = 3;</code>
      */
-    private $code = null;
+    protected $code = null;
     /**
      * The full name of the language in English, e.g., "English (US)", "Spanish",
      * etc.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * Whether the language is targetable.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue targetable = 5;</code>
      */
-    private $targetable = null;
+    protected $targetable = null;
 
     /**
      * Constructor.
@@ -124,10 +124,9 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -154,11 +153,10 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The language code, e.g. "en_US", "en_AU", "es", "fr", etc.
@@ -179,10 +177,9 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue code = 3;</code>
      * @return string|null
      */
-    public function getCodeValue()
+    public function getCodeUnwrapped()
     {
-        $wrapper = $this->getCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("code");
     }
 
     /**
@@ -209,11 +206,10 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCodeValue($var)
+    public function setCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCode($wrappedVar);
-    }
+        $this->writeWrapperValue("code", $var);
+        return $this;}
 
     /**
      * The full name of the language in English, e.g., "English (US)", "Spanish",
@@ -236,10 +232,9 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -268,11 +263,10 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * Whether the language is targetable.
@@ -293,10 +287,9 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue targetable = 5;</code>
      * @return bool|null
      */
-    public function getTargetableValue()
+    public function getTargetableUnwrapped()
     {
-        $wrapper = $this->getTargetable();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("targetable");
     }
 
     /**
@@ -323,11 +316,10 @@ class LanguageConstant extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setTargetableValue($var)
+    public function setTargetableUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTargetable($wrappedVar);
-    }
+        $this->writeWrapperValue("targetable", $var);
+        return $this;}
 
 }
 

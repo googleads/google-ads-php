@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.UserListMembershipStatusEnum</code>
  */
-final class UserListMembershipStatusEnum extends \Google\Protobuf\Internal\Message
+class UserListMembershipStatusEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

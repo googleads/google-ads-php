@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.DisplayUploadProductTypeEnum</code>
  */
-final class DisplayUploadProductTypeEnum extends \Google\Protobuf\Internal\Message
+class DisplayUploadProductTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

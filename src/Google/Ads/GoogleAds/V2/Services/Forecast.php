@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.Forecast</code>
  */
-final class Forecast extends \Google\Protobuf\Internal\Message
+class Forecast extends \Google\Protobuf\Internal\Message
 {
     /**
      * Number of unique people reached at least
@@ -22,7 +22,7 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value on_target_reach = 1;</code>
      */
-    private $on_target_reach = null;
+    protected $on_target_reach = null;
     /**
      * Total number of unique people reached at least
      * GenerateReachForecastRequest.min_effective_frequency times. This includes
@@ -30,13 +30,13 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_reach = 2;</code>
      */
-    private $total_reach = null;
+    protected $total_reach = null;
     /**
      * Number of ad impressions that exactly matches the Targeting.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value on_target_impressions = 3;</code>
      */
-    private $on_target_impressions = null;
+    protected $on_target_impressions = null;
     /**
      * Total number of ad impressions. This includes impressions that may fall
      * outside the specified Targeting, due to insufficent information on
@@ -44,7 +44,7 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_impressions = 4;</code>
      */
-    private $total_impressions = null;
+    protected $total_impressions = null;
 
     /**
      * Constructor.
@@ -98,8 +98,7 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      */
     public function getOnTargetReachUnwrapped()
     {
-        $wrapper = $this->getOnTargetReach();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("on_target_reach");
     }
 
     /**
@@ -132,9 +131,8 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      */
     public function setOnTargetReachUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setOnTargetReach($wrappedVar);
-    }
+        $this->writeWrapperValue("on_target_reach", $var);
+        return $this;}
 
     /**
      * Total number of unique people reached at least
@@ -161,8 +159,7 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      */
     public function getTotalReachUnwrapped()
     {
-        $wrapper = $this->getTotalReach();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("total_reach");
     }
 
     /**
@@ -195,9 +192,8 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      */
     public function setTotalReachUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTotalReach($wrappedVar);
-    }
+        $this->writeWrapperValue("total_reach", $var);
+        return $this;}
 
     /**
      * Number of ad impressions that exactly matches the Targeting.
@@ -220,8 +216,7 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      */
     public function getOnTargetImpressionsUnwrapped()
     {
-        $wrapper = $this->getOnTargetImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("on_target_impressions");
     }
 
     /**
@@ -250,9 +245,8 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      */
     public function setOnTargetImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setOnTargetImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("on_target_impressions", $var);
+        return $this;}
 
     /**
      * Total number of ad impressions. This includes impressions that may fall
@@ -279,8 +273,7 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      */
     public function getTotalImpressionsUnwrapped()
     {
-        $wrapper = $this->getTotalImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("total_impressions");
     }
 
     /**
@@ -313,9 +306,8 @@ final class Forecast extends \Google\Protobuf\Internal\Message
      */
     public function setTotalImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTotalImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("total_impressions", $var);
+        return $this;}
 
 }
 

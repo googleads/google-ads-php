@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.BiddingStrategyTypeEnum</code>
  */
-final class BiddingStrategyTypeEnum extends \Google\Protobuf\Internal\Message
+class BiddingStrategyTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

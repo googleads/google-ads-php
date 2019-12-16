@@ -22,13 +22,13 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the bidding strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the bidding strategy.
      * All bidding strategies within an account must be named distinctly.
@@ -37,14 +37,14 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The status of the bidding strategy.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The type of the bidding strategy.
      * Create a bidding strategy by setting the bidding scheme.
@@ -52,21 +52,21 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.BiddingStrategyTypeEnum.BiddingStrategyType type = 5;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
      */
-    private $campaign_count = null;
+    protected $campaign_count = null;
     /**
      * The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
      */
-    private $non_removed_campaign_count = null;
+    protected $non_removed_campaign_count = null;
     protected $scheme;
 
     /**
@@ -106,6 +106,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V1\Common\PageOnePromoted $page_one_promoted
      *           A bidding strategy that sets max CPC bids to target impressions on
      *           page one or page one promoted slots on google.com.
+     *           This field is deprecated. Creating a new bidding strategy with this
+     *           field or attaching bidding strategies with this field to a campaign will
+     *           fail. Mutates to strategies that already have this scheme populated are
+     *           allowed.
      *     @type \Google\Ads\GoogleAds\V1\Common\TargetCpa $target_cpa
      *           A bidding strategy that sets bids to help get as many conversions as
      *           possible at the target cost-per-acquisition (CPA) you set.
@@ -115,6 +119,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V1\Common\TargetOutrankShare $target_outrank_share
      *           A bidding strategy that sets bids based on the target fraction of
      *           auctions where the advertiser should outrank a specific competitor.
+     *           This field is deprecated. Creating a new bidding strategy with this
+     *           field or attaching bidding strategies with this field to a campaign will
+     *           fail. Mutates to strategies that already have this scheme populated are
+     *           allowed.
      *     @type \Google\Ads\GoogleAds\V1\Common\TargetRoas $target_roas
      *           A bidding strategy that helps you maximize revenue while averaging a
      *           specific target Return On Ad Spend (ROAS).
@@ -177,10 +185,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -207,11 +214,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the bidding strategy.
@@ -238,10 +244,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -274,11 +279,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The status of the bidding strategy.
@@ -359,10 +363,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
      * @return int|string|null
      */
-    public function getCampaignCountValue()
+    public function getCampaignCountUnwrapped()
     {
-        $wrapper = $this->getCampaignCount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign_count");
     }
 
     /**
@@ -391,11 +394,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCampaignCountValue($var)
+    public function setCampaignCountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCampaignCount($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign_count", $var);
+        return $this;}
 
     /**
      * The number of non-removed campaigns attached to this bidding strategy.
@@ -418,10 +420,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
      * @return int|string|null
      */
-    public function getNonRemovedCampaignCountValue()
+    public function getNonRemovedCampaignCountUnwrapped()
     {
-        $wrapper = $this->getNonRemovedCampaignCount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("non_removed_campaign_count");
     }
 
     /**
@@ -450,11 +451,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setNonRemovedCampaignCountValue($var)
+    public function setNonRemovedCampaignCountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setNonRemovedCampaignCount($wrappedVar);
-    }
+        $this->writeWrapperValue("non_removed_campaign_count", $var);
+        return $this;}
 
     /**
      * A bidding strategy that raises bids for clicks that seem more likely to
@@ -489,6 +489,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * A bidding strategy that sets max CPC bids to target impressions on
      * page one or page one promoted slots on google.com.
+     * This field is deprecated. Creating a new bidding strategy with this
+     * field or attaching bidding strategies with this field to a campaign will
+     * fail. Mutates to strategies that already have this scheme populated are
+     * allowed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.PageOnePromoted page_one_promoted = 8;</code>
      * @return \Google\Ads\GoogleAds\V1\Common\PageOnePromoted
@@ -501,6 +505,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * A bidding strategy that sets max CPC bids to target impressions on
      * page one or page one promoted slots on google.com.
+     * This field is deprecated. Creating a new bidding strategy with this
+     * field or attaching bidding strategies with this field to a campaign will
+     * fail. Mutates to strategies that already have this scheme populated are
+     * allowed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.PageOnePromoted page_one_promoted = 8;</code>
      * @param \Google\Ads\GoogleAds\V1\Common\PageOnePromoted $var
@@ -573,6 +581,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * A bidding strategy that sets bids based on the target fraction of
      * auctions where the advertiser should outrank a specific competitor.
+     * This field is deprecated. Creating a new bidding strategy with this
+     * field or attaching bidding strategies with this field to a campaign will
+     * fail. Mutates to strategies that already have this scheme populated are
+     * allowed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.TargetOutrankShare target_outrank_share = 10;</code>
      * @return \Google\Ads\GoogleAds\V1\Common\TargetOutrankShare
@@ -585,6 +597,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * A bidding strategy that sets bids based on the target fraction of
      * auctions where the advertiser should outrank a specific competitor.
+     * This field is deprecated. Creating a new bidding strategy with this
+     * field or attaching bidding strategies with this field to a campaign will
+     * fail. Mutates to strategies that already have this scheme populated are
+     * allowed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.TargetOutrankShare target_outrank_share = 10;</code>
      * @param \Google\Ads\GoogleAds\V1\Common\TargetOutrankShare $var

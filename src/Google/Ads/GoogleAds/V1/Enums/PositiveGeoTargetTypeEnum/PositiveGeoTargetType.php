@@ -28,6 +28,8 @@ class PositiveGeoTargetType
     /**
      * Specifies that an ad is triggered if the user is in,
      * or shows interest in, advertiser's targeted locations.
+     * DONT_CARE is removed in V2, use PRESENCE_OR_INTEREST
+     * instead.
      *
      * Generated from protobuf enum <code>DONT_CARE = 2;</code>
      */
@@ -35,6 +37,8 @@ class PositiveGeoTargetType
     /**
      * Specifies that an ad is triggered if the user
      * searches for advertiser's targeted locations.
+     * AREA_OF_INTEREST is removed in V2, use
+     * SEARCH_INTEREST instead.
      *
      * Generated from protobuf enum <code>AREA_OF_INTEREST = 3;</code>
      */
@@ -42,6 +46,8 @@ class PositiveGeoTargetType
     /**
      * Specifies that an ad is triggered if the user is in
      * or regularly in advertiser's targeted locations.
+     * LOCATION_OF_PRESENCE is removed in V2, use PRESENCE
+     * instead.
      *
      * Generated from protobuf enum <code>LOCATION_OF_PRESENCE = 4;</code>
      */

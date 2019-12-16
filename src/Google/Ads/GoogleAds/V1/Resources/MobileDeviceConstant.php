@@ -22,37 +22,37 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the mobile device constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The manufacturer of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue manufacturer_name = 4;</code>
      */
-    private $manufacturer_name = null;
+    protected $manufacturer_name = null;
     /**
      * The operating system of the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_name = 5;</code>
      */
-    private $operating_system_name = null;
+    protected $operating_system_name = null;
     /**
      * The type of mobile device.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.MobileDeviceTypeEnum.MobileDeviceType type = 6;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.
@@ -130,10 +130,9 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -160,11 +159,10 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the mobile device.
@@ -185,10 +183,9 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -215,11 +212,10 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The manufacturer of the mobile device.
@@ -240,10 +236,9 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue manufacturer_name = 4;</code>
      * @return string|null
      */
-    public function getManufacturerNameValue()
+    public function getManufacturerNameUnwrapped()
     {
-        $wrapper = $this->getManufacturerName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("manufacturer_name");
     }
 
     /**
@@ -270,11 +265,10 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setManufacturerNameValue($var)
+    public function setManufacturerNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setManufacturerName($wrappedVar);
-    }
+        $this->writeWrapperValue("manufacturer_name", $var);
+        return $this;}
 
     /**
      * The operating system of the mobile device.
@@ -295,10 +289,9 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue operating_system_name = 5;</code>
      * @return string|null
      */
-    public function getOperatingSystemNameValue()
+    public function getOperatingSystemNameUnwrapped()
     {
-        $wrapper = $this->getOperatingSystemName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("operating_system_name");
     }
 
     /**
@@ -325,11 +318,10 @@ class MobileDeviceConstant extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setOperatingSystemNameValue($var)
+    public function setOperatingSystemNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setOperatingSystemName($wrappedVar);
-    }
+        $this->writeWrapperValue("operating_system_name", $var);
+        return $this;}
 
     /**
      * The type of mobile device.

@@ -22,25 +22,25 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The feed item to which this feed item target belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2;</code>
      */
-    private $feed_item = null;
+    protected $feed_item = null;
     /**
      * The target type of this feed item target. This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedItemTargetTypeEnum.FeedItemTargetType feed_item_target_type = 3;</code>
      */
-    private $feed_item_target_type = 0;
+    protected $feed_item_target_type = 0;
     /**
      * The ID of the targeted resource. This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
      */
-    private $feed_item_target_id = null;
+    protected $feed_item_target_id = null;
     protected $target;
 
     /**
@@ -127,10 +127,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2;</code>
      * @return string|null
      */
-    public function getFeedItemValue()
+    public function getFeedItemUnwrapped()
     {
-        $wrapper = $this->getFeedItem();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed_item");
     }
 
     /**
@@ -157,11 +156,10 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFeedItemValue($var)
+    public function setFeedItemUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeedItem($wrappedVar);
-    }
+        $this->writeWrapperValue("feed_item", $var);
+        return $this;}
 
     /**
      * The target type of this feed item target. This field is read-only.
@@ -208,10 +206,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
      * @return int|string|null
      */
-    public function getFeedItemTargetIdValue()
+    public function getFeedItemTargetIdUnwrapped()
     {
-        $wrapper = $this->getFeedItemTargetId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed_item_target_id");
     }
 
     /**
@@ -238,11 +235,10 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setFeedItemTargetIdValue($var)
+    public function setFeedItemTargetIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFeedItemTargetId($wrappedVar);
-    }
+        $this->writeWrapperValue("feed_item_target_id", $var);
+        return $this;}
 
     /**
      * The targeted campaign.
@@ -263,10 +259,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
      * @return string|null
      */
-    public function getCampaignValue()
+    public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -293,11 +288,10 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCampaignValue($var)
+    public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The targeted ad group.
@@ -318,10 +312,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
      * @return string|null
      */
-    public function getAdGroupValue()
+    public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -348,11 +341,10 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupValue($var)
+    public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * The targeted keyword.
@@ -399,10 +391,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8;</code>
      * @return string|null
      */
-    public function getGeoTargetConstantValue()
+    public function getGeoTargetConstantUnwrapped()
     {
-        $wrapper = $this->getGeoTargetConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("geo_target_constant");
     }
 
     /**
@@ -429,11 +420,10 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setGeoTargetConstantValue($var)
+    public function setGeoTargetConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGeoTargetConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("geo_target_constant", $var);
+        return $this;}
 
     /**
      * The targeted device.

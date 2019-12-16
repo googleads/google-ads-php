@@ -19,7 +19,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AccountBudgetProposal</code>
  */
-final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
+class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the proposal.
@@ -28,78 +28,78 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the proposal.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 14;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The resource name of the billing setup associated with this proposal.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 2;</code>
      */
-    private $billing_setup = null;
+    protected $billing_setup = null;
     /**
      * The resource name of the account-level budget associated with this
      * proposal.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
      */
-    private $account_budget = null;
+    protected $account_budget = null;
     /**
      * The type of this proposal, e.g. END to end the budget associated with this
      * proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccountBudgetProposalTypeEnum.AccountBudgetProposalType proposal_type = 4;</code>
      */
-    private $proposal_type = 0;
+    protected $proposal_type = 0;
     /**
      * The status of this proposal.
      * When a new proposal is created, the status defaults to PENDING.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccountBudgetProposalStatusEnum.AccountBudgetProposalStatus status = 15;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The name to assign to the account-level budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_name = 5;</code>
      */
-    private $proposed_name = null;
+    protected $proposed_name = null;
     /**
      * The approved start date time in yyyy-mm-dd hh:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 20;</code>
      */
-    private $approved_start_date_time = null;
+    protected $approved_start_date_time = null;
     /**
      * A purchase order number is a value that enables the user to help them
      * reference this budget in their monthly invoices.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_purchase_order_number = 12;</code>
      */
-    private $proposed_purchase_order_number = null;
+    protected $proposed_purchase_order_number = null;
     /**
      * Notes associated with this budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue proposed_notes = 13;</code>
      */
-    private $proposed_notes = null;
+    protected $proposed_notes = null;
     /**
      * The date time when this account-level budget proposal was created, which is
      * not the same as its approval date time, if applicable.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 16;</code>
      */
-    private $creation_date_time = null;
+    protected $creation_date_time = null;
     /**
      * The date time when this account-level budget was approved, if applicable.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue approval_date_time = 17;</code>
      */
-    private $approval_date_time = null;
+    protected $approval_date_time = null;
     protected $proposed_start_time;
     protected $proposed_end_time;
     protected $approved_end_time;
@@ -223,8 +223,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -253,9 +252,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The resource name of the billing setup associated with this proposal.
@@ -278,8 +276,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getBillingSetupUnwrapped()
     {
-        $wrapper = $this->getBillingSetup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("billing_setup");
     }
 
     /**
@@ -308,9 +305,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setBillingSetupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBillingSetup($wrappedVar);
-    }
+        $this->writeWrapperValue("billing_setup", $var);
+        return $this;}
 
     /**
      * The resource name of the account-level budget associated with this
@@ -335,8 +331,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getAccountBudgetUnwrapped()
     {
-        $wrapper = $this->getAccountBudget();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("account_budget");
     }
 
     /**
@@ -367,9 +362,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setAccountBudgetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAccountBudget($wrappedVar);
-    }
+        $this->writeWrapperValue("account_budget", $var);
+        return $this;}
 
     /**
      * The type of this proposal, e.g. END to end the budget associated with this
@@ -448,8 +442,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getProposedNameUnwrapped()
     {
-        $wrapper = $this->getProposedName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("proposed_name");
     }
 
     /**
@@ -478,9 +471,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setProposedNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProposedName($wrappedVar);
-    }
+        $this->writeWrapperValue("proposed_name", $var);
+        return $this;}
 
     /**
      * The approved start date time in yyyy-mm-dd hh:mm:ss format.
@@ -503,8 +495,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getApprovedStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getApprovedStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("approved_start_date_time");
     }
 
     /**
@@ -533,9 +524,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setApprovedStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setApprovedStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("approved_start_date_time", $var);
+        return $this;}
 
     /**
      * A purchase order number is a value that enables the user to help them
@@ -560,8 +550,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getProposedPurchaseOrderNumberUnwrapped()
     {
-        $wrapper = $this->getProposedPurchaseOrderNumber();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("proposed_purchase_order_number");
     }
 
     /**
@@ -592,9 +581,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setProposedPurchaseOrderNumberUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProposedPurchaseOrderNumber($wrappedVar);
-    }
+        $this->writeWrapperValue("proposed_purchase_order_number", $var);
+        return $this;}
 
     /**
      * Notes associated with this budget.
@@ -617,8 +605,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getProposedNotesUnwrapped()
     {
-        $wrapper = $this->getProposedNotes();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("proposed_notes");
     }
 
     /**
@@ -647,9 +634,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setProposedNotesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProposedNotes($wrappedVar);
-    }
+        $this->writeWrapperValue("proposed_notes", $var);
+        return $this;}
 
     /**
      * The date time when this account-level budget proposal was created, which is
@@ -674,8 +660,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getCreationDateTimeUnwrapped()
     {
-        $wrapper = $this->getCreationDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("creation_date_time");
     }
 
     /**
@@ -706,9 +691,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setCreationDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCreationDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("creation_date_time", $var);
+        return $this;}
 
     /**
      * The date time when this account-level budget was approved, if applicable.
@@ -731,8 +715,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getApprovalDateTimeUnwrapped()
     {
-        $wrapper = $this->getApprovalDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("approval_date_time");
     }
 
     /**
@@ -761,9 +744,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setApprovalDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setApprovalDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("approval_date_time", $var);
+        return $this;}
 
     /**
      * The proposed start date time in yyyy-mm-dd hh:mm:ss format.
@@ -786,8 +768,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getProposedStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getProposedStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("proposed_start_date_time");
     }
 
     /**
@@ -816,9 +797,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setProposedStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProposedStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("proposed_start_date_time", $var);
+        return $this;}
 
     /**
      * The proposed start date time as a well-defined type, e.g. NOW.
@@ -867,8 +847,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getProposedEndDateTimeUnwrapped()
     {
-        $wrapper = $this->getProposedEndDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("proposed_end_date_time");
     }
 
     /**
@@ -897,9 +876,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setProposedEndDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setProposedEndDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("proposed_end_date_time", $var);
+        return $this;}
 
     /**
      * The proposed end date time as a well-defined type, e.g. FOREVER.
@@ -948,8 +926,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getApprovedEndDateTimeUnwrapped()
     {
-        $wrapper = $this->getApprovedEndDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("approved_end_date_time");
     }
 
     /**
@@ -978,9 +955,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setApprovedEndDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setApprovedEndDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("approved_end_date_time", $var);
+        return $this;}
 
     /**
      * The approved end date time as a well-defined type, e.g. FOREVER.
@@ -1031,8 +1007,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getProposedSpendingLimitMicrosUnwrapped()
     {
-        $wrapper = $this->getProposedSpendingLimitMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("proposed_spending_limit_micros");
     }
 
     /**
@@ -1063,9 +1038,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setProposedSpendingLimitMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setProposedSpendingLimitMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("proposed_spending_limit_micros", $var);
+        return $this;}
 
     /**
      * The proposed spending limit as a well-defined type, e.g. INFINITE.
@@ -1116,8 +1090,7 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function getApprovedSpendingLimitMicrosUnwrapped()
     {
-        $wrapper = $this->getApprovedSpendingLimitMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("approved_spending_limit_micros");
     }
 
     /**
@@ -1148,9 +1121,8 @@ final class AccountBudgetProposal extends \Google\Protobuf\Internal\Message
      */
     public function setApprovedSpendingLimitMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setApprovedSpendingLimitMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("approved_spending_limit_micros", $var);
+        return $this;}
 
     /**
      * The approved spending limit as a well-defined type, e.g. INFINITE.

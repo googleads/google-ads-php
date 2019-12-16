@@ -21,19 +21,19 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue domain_name = 1;</code>
      */
-    private $domain_name = null;
+    protected $domain_name = null;
     /**
      * The language code specifying the language of the domain, e.g., "en".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 2;</code>
      */
-    private $language_code = null;
+    protected $language_code = null;
     /**
      * Whether the campaign uses advertiser supplied URLs exclusively.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue use_supplied_urls_only = 3;</code>
      */
-    private $use_supplied_urls_only = null;
+    protected $use_supplied_urls_only = null;
     /**
      * The list of page feeds associated with the campaign.
      *
@@ -84,10 +84,9 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue domain_name = 1;</code>
      * @return string|null
      */
-    public function getDomainNameValue()
+    public function getDomainNameUnwrapped()
     {
-        $wrapper = $this->getDomainName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("domain_name");
     }
 
     /**
@@ -116,11 +115,10 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDomainNameValue($var)
+    public function setDomainNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDomainName($wrappedVar);
-    }
+        $this->writeWrapperValue("domain_name", $var);
+        return $this;}
 
     /**
      * The language code specifying the language of the domain, e.g., "en".
@@ -141,10 +139,9 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 2;</code>
      * @return string|null
      */
-    public function getLanguageCodeValue()
+    public function getLanguageCodeUnwrapped()
     {
-        $wrapper = $this->getLanguageCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_code");
     }
 
     /**
@@ -171,11 +168,10 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLanguageCodeValue($var)
+    public function setLanguageCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageCode($wrappedVar);
-    }
+        $this->writeWrapperValue("language_code", $var);
+        return $this;}
 
     /**
      * Whether the campaign uses advertiser supplied URLs exclusively.
@@ -196,10 +192,9 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue use_supplied_urls_only = 3;</code>
      * @return bool|null
      */
-    public function getUseSuppliedUrlsOnlyValue()
+    public function getUseSuppliedUrlsOnlyUnwrapped()
     {
-        $wrapper = $this->getUseSuppliedUrlsOnly();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("use_supplied_urls_only");
     }
 
     /**
@@ -226,11 +221,10 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setUseSuppliedUrlsOnlyValue($var)
+    public function setUseSuppliedUrlsOnlyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setUseSuppliedUrlsOnly($wrappedVar);
-    }
+        $this->writeWrapperValue("use_supplied_urls_only", $var);
+        return $this;}
 
     /**
      * The list of page feeds associated with the campaign.

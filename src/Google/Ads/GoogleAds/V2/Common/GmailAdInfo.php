@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.GmailAdInfo</code>
  */
-final class GmailAdInfo extends \Google\Protobuf\Internal\Message
+class GmailAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The Gmail teaser.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.GmailTeaser teaser = 1;</code>
      */
-    private $teaser = null;
+    protected $teaser = null;
     /**
      * The MediaFile resource name of the header image. Valid image types are GIF,
      * JPEG and PNG. The minimum size is 300x100 pixels and the aspect ratio must
@@ -28,7 +28,7 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue header_image = 2;</code>
      */
-    private $header_image = null;
+    protected $header_image = null;
     /**
      * The MediaFile resource name of the marketing image. Valid image types are
      * GIF, JPEG and PNG. The image must either be landscape with a minimum size
@@ -37,25 +37,25 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image = 3;</code>
      */
-    private $marketing_image = null;
+    protected $marketing_image = null;
     /**
      * Headline of the marketing image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_headline = 4;</code>
      */
-    private $marketing_image_headline = null;
+    protected $marketing_image_headline = null;
     /**
      * Description of the marketing image.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue marketing_image_description = 5;</code>
      */
-    private $marketing_image_description = null;
+    protected $marketing_image_description = null;
     /**
      * Display-call-to-action of the marketing image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.DisplayCallToAction marketing_image_display_call_to_action = 6;</code>
      */
-    private $marketing_image_display_call_to_action = null;
+    protected $marketing_image_display_call_to_action = null;
     /**
      * Product images. Up to 15 images are supported.
      *
@@ -156,8 +156,7 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHeaderImageUnwrapped()
     {
-        $wrapper = $this->getHeaderImage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("header_image");
     }
 
     /**
@@ -190,9 +189,8 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHeaderImageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeaderImage($wrappedVar);
-    }
+        $this->writeWrapperValue("header_image", $var);
+        return $this;}
 
     /**
      * The MediaFile resource name of the marketing image. Valid image types are
@@ -221,8 +219,7 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMarketingImageUnwrapped()
     {
-        $wrapper = $this->getMarketingImage();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("marketing_image");
     }
 
     /**
@@ -257,9 +254,8 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setMarketingImageUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMarketingImage($wrappedVar);
-    }
+        $this->writeWrapperValue("marketing_image", $var);
+        return $this;}
 
     /**
      * Headline of the marketing image.
@@ -282,8 +278,7 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMarketingImageHeadlineUnwrapped()
     {
-        $wrapper = $this->getMarketingImageHeadline();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("marketing_image_headline");
     }
 
     /**
@@ -312,9 +307,8 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setMarketingImageHeadlineUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMarketingImageHeadline($wrappedVar);
-    }
+        $this->writeWrapperValue("marketing_image_headline", $var);
+        return $this;}
 
     /**
      * Description of the marketing image.
@@ -337,8 +331,7 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getMarketingImageDescriptionUnwrapped()
     {
-        $wrapper = $this->getMarketingImageDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("marketing_image_description");
     }
 
     /**
@@ -367,9 +360,8 @@ final class GmailAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setMarketingImageDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMarketingImageDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("marketing_image_description", $var);
+        return $this;}
 
     /**
      * Display-call-to-action of the marketing image.

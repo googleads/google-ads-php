@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.TopicConstant</code>
  */
-final class TopicConstant extends \Google\Protobuf\Internal\Message
+class TopicConstant extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the topic constant.
@@ -24,19 +24,19 @@ final class TopicConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the topic.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Resource name of parent of the topic constant.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
      */
-    private $topic_constant_parent = null;
+    protected $topic_constant_parent = null;
     /**
      * The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
@@ -126,8 +126,7 @@ final class TopicConstant extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -156,9 +155,8 @@ final class TopicConstant extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Resource name of parent of the topic constant.
@@ -181,8 +179,7 @@ final class TopicConstant extends \Google\Protobuf\Internal\Message
      */
     public function getTopicConstantParentUnwrapped()
     {
-        $wrapper = $this->getTopicConstantParent();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("topic_constant_parent");
     }
 
     /**
@@ -211,9 +208,8 @@ final class TopicConstant extends \Google\Protobuf\Internal\Message
      */
     public function setTopicConstantParentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTopicConstantParent($wrappedVar);
-    }
+        $this->writeWrapperValue("topic_constant_parent", $var);
+        return $this;}
 
     /**
      * The category to target or exclude. Each subsequent element in the array

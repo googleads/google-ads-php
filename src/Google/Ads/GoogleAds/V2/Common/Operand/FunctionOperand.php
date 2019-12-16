@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.Operand.FunctionOperand</code>
  */
-final class FunctionOperand extends \Google\Protobuf\Internal\Message
+class FunctionOperand extends \Google\Protobuf\Internal\Message
 {
     /**
      * The matching function held in this operand.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.MatchingFunction matching_function = 1;</code>
      */
-    private $matching_function = null;
+    protected $matching_function = null;
 
     /**
      * Constructor.

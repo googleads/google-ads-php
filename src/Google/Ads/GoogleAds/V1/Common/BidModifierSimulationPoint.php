@@ -20,79 +20,85 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 1;</code>
      */
-    private $bid_modifier = null;
+    protected $bid_modifier = null;
     /**
      * Projected number of biddable conversions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
      */
-    private $biddable_conversions = null;
+    protected $biddable_conversions = null;
     /**
      * Projected total value of biddable conversions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
      */
-    private $biddable_conversions_value = null;
+    protected $biddable_conversions_value = null;
     /**
      * Projected number of clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 4;</code>
      */
-    private $clicks = null;
+    protected $clicks = null;
     /**
      * Projected cost in micros.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 5;</code>
      */
-    private $cost_micros = null;
+    protected $cost_micros = null;
     /**
      * Projected number of impressions.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 6;</code>
      */
-    private $impressions = null;
+    protected $impressions = null;
     /**
      * Projected number of top slot impressions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      */
-    private $top_slot_impressions = null;
+    protected $top_slot_impressions = null;
     /**
      * Projected number of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
      */
-    private $parent_biddable_conversions = null;
+    protected $parent_biddable_conversions = null;
     /**
      * Projected total value of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
      */
-    private $parent_biddable_conversions_value = null;
+    protected $parent_biddable_conversions_value = null;
     /**
      * Projected number of clicks for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
      */
-    private $parent_clicks = null;
+    protected $parent_clicks = null;
     /**
      * Projected cost in micros for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
      */
-    private $parent_cost_micros = null;
+    protected $parent_cost_micros = null;
     /**
      * Projected number of impressions for the parent resource.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
      */
-    private $parent_impressions = null;
+    protected $parent_impressions = null;
     /**
      * Projected number of top slot impressions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
      */
-    private $parent_top_slot_impressions = null;
+    protected $parent_top_slot_impressions = null;
 
     /**
      * Constructor.
@@ -104,8 +110,10 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      *           The simulated bid modifier upon which projected metrics are based.
      *     @type \Google\Protobuf\DoubleValue $biddable_conversions
      *           Projected number of biddable conversions.
+     *           Only search advertising channel type supports this field.
      *     @type \Google\Protobuf\DoubleValue $biddable_conversions_value
      *           Projected total value of biddable conversions.
+     *           Only search advertising channel type supports this field.
      *     @type \Google\Protobuf\Int64Value $clicks
      *           Projected number of clicks.
      *     @type \Google\Protobuf\Int64Value $cost_micros
@@ -114,10 +122,13 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      *           Projected number of impressions.
      *     @type \Google\Protobuf\Int64Value $top_slot_impressions
      *           Projected number of top slot impressions.
+     *           Only search advertising channel type supports this field.
      *     @type \Google\Protobuf\DoubleValue $parent_biddable_conversions
      *           Projected number of biddable conversions for the parent resource.
+     *           Only search advertising channel type supports this field.
      *     @type \Google\Protobuf\DoubleValue $parent_biddable_conversions_value
      *           Projected total value of biddable conversions for the parent resource.
+     *           Only search advertising channel type supports this field.
      *     @type \Google\Protobuf\Int64Value $parent_clicks
      *           Projected number of clicks for the parent resource.
      *     @type \Google\Protobuf\Int64Value $parent_cost_micros
@@ -126,6 +137,7 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      *           Projected number of impressions for the parent resource.
      *     @type \Google\Protobuf\Int64Value $parent_top_slot_impressions
      *           Projected number of top slot impressions for the parent resource.
+     *           Only search advertising channel type supports this field.
      * }
      */
     public function __construct($data = NULL) {
@@ -152,10 +164,9 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bid_modifier = 1;</code>
      * @return float|null
      */
-    public function getBidModifierValue()
+    public function getBidModifierUnwrapped()
     {
-        $wrapper = $this->getBidModifier();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("bid_modifier");
     }
 
     /**
@@ -182,14 +193,14 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setBidModifierValue($var)
+    public function setBidModifierUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBidModifier($wrappedVar);
-    }
+        $this->writeWrapperValue("bid_modifier", $var);
+        return $this;}
 
     /**
      * Projected number of biddable conversions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -203,18 +214,19 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getBiddableConversions()</code>
 
      * Projected number of biddable conversions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
      * @return float|null
      */
-    public function getBiddableConversionsValue()
+    public function getBiddableConversionsUnwrapped()
     {
-        $wrapper = $this->getBiddableConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("biddable_conversions");
     }
 
     /**
      * Projected number of biddable conversions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -232,45 +244,73 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
      * Projected number of biddable conversions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions = 2;</code>
      * @param float|null $var
      * @return $this
      */
-    public function setBiddableConversionsValue($var)
+    public function setBiddableConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBiddableConversions($wrappedVar);
+        $this->writeWrapperValue("biddable_conversions", $var);
+        return $this;}
+
+    /**
+     * Projected total value of biddable conversions.
+     * Only search advertising channel type supports this field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getBiddableConversionsValue()
+    {
+        return $this->biddable_conversions_value;
     }
 
     /**
      * Returns the unboxed value from <code>getBiddableConversionsValue()</code>
 
      * Projected total value of biddable conversions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
      * @return float|null
      */
-    public function getBiddableConversionsValueValue()
+    public function getBiddableConversionsValueUnwrapped()
     {
-        $wrapper = $this->getBiddableConversionsValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("biddable_conversions_value");
+    }
+
+    /**
+     * Projected total value of biddable conversions.
+     * Only search advertising channel type supports this field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setBiddableConversionsValue($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->biddable_conversions_value = $var;
+
+        return $this;
     }
 
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
      * Projected total value of biddable conversions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue biddable_conversions_value = 3;</code>
      * @param float|null $var
      * @return $this
      */
-    public function setBiddableConversionsValueValue($var)
+    public function setBiddableConversionsValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setBiddableConversionsValue($wrappedVar);
-    }
+        $this->writeWrapperValue("biddable_conversions_value", $var);
+        return $this;}
 
     /**
      * Projected number of clicks.
@@ -291,10 +331,9 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value clicks = 4;</code>
      * @return int|string|null
      */
-    public function getClicksValue()
+    public function getClicksUnwrapped()
     {
-        $wrapper = $this->getClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("clicks");
     }
 
     /**
@@ -321,11 +360,10 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setClicksValue($var)
+    public function setClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("clicks", $var);
+        return $this;}
 
     /**
      * Projected cost in micros.
@@ -346,10 +384,9 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 5;</code>
      * @return int|string|null
      */
-    public function getCostMicrosValue()
+    public function getCostMicrosUnwrapped()
     {
-        $wrapper = $this->getCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_micros");
     }
 
     /**
@@ -376,11 +413,10 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCostMicrosValue($var)
+    public function setCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_micros", $var);
+        return $this;}
 
     /**
      * Projected number of impressions.
@@ -401,10 +437,9 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value impressions = 6;</code>
      * @return int|string|null
      */
-    public function getImpressionsValue()
+    public function getImpressionsUnwrapped()
     {
-        $wrapper = $this->getImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impressions");
     }
 
     /**
@@ -431,14 +466,14 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setImpressionsValue($var)
+    public function setImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("impressions", $var);
+        return $this;}
 
     /**
      * Projected number of top slot impressions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      * @return \Google\Protobuf\Int64Value
@@ -452,18 +487,19 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getTopSlotImpressions()</code>
 
      * Projected number of top slot impressions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      * @return int|string|null
      */
-    public function getTopSlotImpressionsValue()
+    public function getTopSlotImpressionsUnwrapped()
     {
-        $wrapper = $this->getTopSlotImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("top_slot_impressions");
     }
 
     /**
      * Projected number of top slot impressions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      * @param \Google\Protobuf\Int64Value $var
@@ -481,19 +517,20 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
      * Projected number of top slot impressions.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value top_slot_impressions = 7;</code>
      * @param int|string|null $var
      * @return $this
      */
-    public function setTopSlotImpressionsValue($var)
+    public function setTopSlotImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTopSlotImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("top_slot_impressions", $var);
+        return $this;}
 
     /**
      * Projected number of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -507,18 +544,19 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getParentBiddableConversions()</code>
 
      * Projected number of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
      * @return float|null
      */
-    public function getParentBiddableConversionsValue()
+    public function getParentBiddableConversionsUnwrapped()
     {
-        $wrapper = $this->getParentBiddableConversions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_biddable_conversions");
     }
 
     /**
      * Projected number of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -536,45 +574,73 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
      * Projected number of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions = 8;</code>
      * @param float|null $var
      * @return $this
      */
-    public function setParentBiddableConversionsValue($var)
+    public function setParentBiddableConversionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setParentBiddableConversions($wrappedVar);
+        $this->writeWrapperValue("parent_biddable_conversions", $var);
+        return $this;}
+
+    /**
+     * Projected total value of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
+     * @return \Google\Protobuf\DoubleValue
+     */
+    public function getParentBiddableConversionsValue()
+    {
+        return $this->parent_biddable_conversions_value;
     }
 
     /**
      * Returns the unboxed value from <code>getParentBiddableConversionsValue()</code>
 
      * Projected total value of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
      * @return float|null
      */
-    public function getParentBiddableConversionsValueValue()
+    public function getParentBiddableConversionsValueUnwrapped()
     {
-        $wrapper = $this->getParentBiddableConversionsValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_biddable_conversions_value");
+    }
+
+    /**
+     * Projected total value of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
+     *
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
+     * @param \Google\Protobuf\DoubleValue $var
+     * @return $this
+     */
+    public function setParentBiddableConversionsValue($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
+        $this->parent_biddable_conversions_value = $var;
+
+        return $this;
     }
 
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
      * Projected total value of biddable conversions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue parent_biddable_conversions_value = 9;</code>
      * @param float|null $var
      * @return $this
      */
-    public function setParentBiddableConversionsValueValue($var)
+    public function setParentBiddableConversionsValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setParentBiddableConversionsValue($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_biddable_conversions_value", $var);
+        return $this;}
 
     /**
      * Projected number of clicks for the parent resource.
@@ -595,10 +661,9 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_clicks = 10;</code>
      * @return int|string|null
      */
-    public function getParentClicksValue()
+    public function getParentClicksUnwrapped()
     {
-        $wrapper = $this->getParentClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_clicks");
     }
 
     /**
@@ -625,11 +690,10 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setParentClicksValue($var)
+    public function setParentClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_clicks", $var);
+        return $this;}
 
     /**
      * Projected cost in micros for the parent resource.
@@ -650,10 +714,9 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_cost_micros = 11;</code>
      * @return int|string|null
      */
-    public function getParentCostMicrosValue()
+    public function getParentCostMicrosUnwrapped()
     {
-        $wrapper = $this->getParentCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_cost_micros");
     }
 
     /**
@@ -680,11 +743,10 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setParentCostMicrosValue($var)
+    public function setParentCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_cost_micros", $var);
+        return $this;}
 
     /**
      * Projected number of impressions for the parent resource.
@@ -705,10 +767,9 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_impressions = 12;</code>
      * @return int|string|null
      */
-    public function getParentImpressionsValue()
+    public function getParentImpressionsUnwrapped()
     {
-        $wrapper = $this->getParentImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_impressions");
     }
 
     /**
@@ -735,14 +796,14 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setParentImpressionsValue($var)
+    public function setParentImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_impressions", $var);
+        return $this;}
 
     /**
      * Projected number of top slot impressions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
      * @return \Google\Protobuf\Int64Value
@@ -756,18 +817,19 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getParentTopSlotImpressions()</code>
 
      * Projected number of top slot impressions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
      * @return int|string|null
      */
-    public function getParentTopSlotImpressionsValue()
+    public function getParentTopSlotImpressionsUnwrapped()
     {
-        $wrapper = $this->getParentTopSlotImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_top_slot_impressions");
     }
 
     /**
      * Projected number of top slot impressions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
      * @param \Google\Protobuf\Int64Value $var
@@ -785,16 +847,16 @@ class BidModifierSimulationPoint extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
      * Projected number of top slot impressions for the parent resource.
+     * Only search advertising channel type supports this field.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parent_top_slot_impressions = 13;</code>
      * @param int|string|null $var
      * @return $this
      */
-    public function setParentTopSlotImpressionsValue($var)
+    public function setParentTopSlotImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParentTopSlotImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_top_slot_impressions", $var);
+        return $this;}
 
 }
 

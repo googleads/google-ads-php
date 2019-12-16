@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.FeedAttributeOperation</code>
  */
-final class FeedAttributeOperation extends \Google\Protobuf\Internal\Message
+class FeedAttributeOperation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of list operation to perform.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.FeedAttributeOperation.Operator operator = 1;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * The feed attribute being added to the list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.FeedAttribute value = 2;</code>
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * Constructor.

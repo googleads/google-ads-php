@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MediaFileOperation</code>
  */
-final class MediaFileOperation extends \Google\Protobuf\Internal\Message
+class MediaFileOperation extends \Google\Protobuf\Internal\Message
 {
     protected $operation;
 

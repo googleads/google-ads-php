@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.NewResourceCreationErrorEnum</code>
  */
-final class NewResourceCreationErrorEnum extends \Google\Protobuf\Internal\Message
+class NewResourceCreationErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

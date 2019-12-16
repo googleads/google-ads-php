@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Recommendation.CalloutExtensionRecommendation</code>
  */
-final class CalloutExtensionRecommendation extends \Google\Protobuf\Internal\Message
+class CalloutExtensionRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Callout extensions recommended to be added.

@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.CriterionCategoryAvailability</code>
  */
-final class CriterionCategoryAvailability extends \Google\Protobuf\Internal\Message
+class CriterionCategoryAvailability extends \Google\Protobuf\Internal\Message
 {
     /**
      * Channel types and subtypes that are available to the category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.CriterionCategoryChannelAvailability channel = 1;</code>
      */
-    private $channel = null;
+    protected $channel = null;
     /**
      * Locales that are available to the category for the channel.
      *

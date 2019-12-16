@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Recommendation.SitelinkExtensionRecommendation</code>
  */
-final class SitelinkExtensionRecommendation extends \Google\Protobuf\Internal\Message
+class SitelinkExtensionRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Sitelink extensions recommended to be added.

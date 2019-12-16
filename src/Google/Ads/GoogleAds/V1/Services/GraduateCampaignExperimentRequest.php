@@ -20,14 +20,14 @@ class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Messag
      *
      * Generated from protobuf field <code>string campaign_experiment = 1;</code>
      */
-    private $campaign_experiment = '';
+    protected $campaign_experiment = '';
     /**
      * Resource name of the budget to attach to the campaign graduated from the
      * experiment.
      *
      * Generated from protobuf field <code>string campaign_budget = 2;</code>
      */
-    private $campaign_budget = '';
+    protected $campaign_budget = '';
 
     /**
      * Constructor.

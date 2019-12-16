@@ -20,7 +20,7 @@ class PreferredContentInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PreferredContentTypeEnum.PreferredContentType type = 2;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

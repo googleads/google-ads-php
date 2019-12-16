@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.DismissRecommendationRequest</code>
  */
-final class DismissRecommendationRequest extends \Google\Protobuf\Internal\Message
+class DismissRecommendationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer with the recommendation.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The list of operations to dismiss recommendations.
      * If partial_failure=false all recommendations should be of the same type
@@ -37,7 +37,7 @@ final class DismissRecommendationRequest extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>bool partial_failure = 2;</code>
      */
-    private $partial_failure = false;
+    protected $partial_failure = false;
 
     /**
      * Constructor.

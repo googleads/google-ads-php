@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicConstraint.ResellerConstraint</code>
  */
-final class ResellerConstraint extends \Google\Protobuf\Internal\Message
+class ResellerConstraint extends \Google\Protobuf\Internal\Message
 {
 
     /**

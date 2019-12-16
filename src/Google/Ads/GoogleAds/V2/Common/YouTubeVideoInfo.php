@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.YouTubeVideoInfo</code>
  */
-final class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
+class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * YouTube video id as it appears on the YouTube watch page.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue video_id = 1;</code>
      */
-    private $video_id = null;
+    protected $video_id = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
      */
     public function getVideoIdUnwrapped()
     {
-        $wrapper = $this->getVideoId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("video_id");
     }
 
     /**
@@ -88,9 +87,8 @@ final class YouTubeVideoInfo extends \Google\Protobuf\Internal\Message
      */
     public function setVideoIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setVideoId($wrappedVar);
-    }
+        $this->writeWrapperValue("video_id", $var);
+        return $this;}
 
 }
 

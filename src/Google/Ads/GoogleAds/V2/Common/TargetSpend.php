@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TargetSpend</code>
  */
-final class TargetSpend extends \Google\Protobuf\Internal\Message
+class TargetSpend extends \Google\Protobuf\Internal\Message
 {
     /**
      * The spend target under which to maximize clicks.
@@ -24,14 +24,14 @@ final class TargetSpend extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_spend_micros = 1;</code>
      */
-    private $target_spend_micros = null;
+    protected $target_spend_micros = null;
     /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
      */
-    private $cpc_bid_ceiling_micros = null;
+    protected $cpc_bid_ceiling_micros = null;
 
     /**
      * Constructor.
@@ -81,8 +81,7 @@ final class TargetSpend extends \Google\Protobuf\Internal\Message
      */
     public function getTargetSpendMicrosUnwrapped()
     {
-        $wrapper = $this->getTargetSpendMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_spend_micros");
     }
 
     /**
@@ -117,9 +116,8 @@ final class TargetSpend extends \Google\Protobuf\Internal\Message
      */
     public function setTargetSpendMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTargetSpendMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("target_spend_micros", $var);
+        return $this;}
 
     /**
      * Maximum bid limit that can be set by the bid strategy.
@@ -144,8 +142,7 @@ final class TargetSpend extends \Google\Protobuf\Internal\Message
      */
     public function getCpcBidCeilingMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidCeilingMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_ceiling_micros");
     }
 
     /**
@@ -176,9 +173,8 @@ final class TargetSpend extends \Google\Protobuf\Internal\Message
      */
     public function setCpcBidCeilingMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidCeilingMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_ceiling_micros", $var);
+        return $this;}
 
 }
 

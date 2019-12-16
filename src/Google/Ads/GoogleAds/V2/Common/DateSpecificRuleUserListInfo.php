@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.DateSpecificRuleUserListInfo</code>
  */
-final class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
+class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Boolean rule that defines visitor of a page.
@@ -21,7 +21,7 @@ final class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListRuleInfo rule = 1;</code>
      */
-    private $rule = null;
+    protected $rule = null;
     /**
      * Start date of users visit. If set to 2000-01-01, then the list includes all
      * users before end_date. The date's format should be YYYY-MM-DD.
@@ -29,7 +29,7 @@ final class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 2;</code>
      */
-    private $start_date = null;
+    protected $start_date = null;
     /**
      * End date of users visit. If set to 2037-12-30, then the list includes all
      * users after start_date. The date's format should be YYYY-MM-DD.
@@ -37,7 +37,7 @@ final class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 3;</code>
      */
-    private $end_date = null;
+    protected $end_date = null;
 
     /**
      * Constructor.
@@ -116,8 +116,7 @@ final class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Messa
      */
     public function getStartDateUnwrapped()
     {
-        $wrapper = $this->getStartDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date");
     }
 
     /**
@@ -150,9 +149,8 @@ final class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Messa
      */
     public function setStartDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDate($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date", $var);
+        return $this;}
 
     /**
      * End date of users visit. If set to 2037-12-30, then the list includes all
@@ -179,8 +177,7 @@ final class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Messa
      */
     public function getEndDateUnwrapped()
     {
-        $wrapper = $this->getEndDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date");
     }
 
     /**
@@ -213,9 +210,8 @@ final class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Messa
      */
     public function setEndDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDate($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date", $var);
+        return $this;}
 
 }
 

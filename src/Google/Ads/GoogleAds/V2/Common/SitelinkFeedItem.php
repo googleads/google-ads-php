@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.SitelinkFeedItem</code>
  */
-final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
+class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * URL display text for the sitelink.
@@ -21,7 +21,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue link_text = 1;</code>
      */
-    private $link_text = null;
+    protected $link_text = null;
     /**
      * First line of the description for the sitelink.
      * If this value is set, line2 must also be set.
@@ -29,7 +29,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue line1 = 2;</code>
      */
-    private $line1 = null;
+    protected $line1 = null;
     /**
      * Second line of the description for the sitelink.
      * If this value is set, line1 must also be set.
@@ -37,7 +37,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue line2 = 3;</code>
      */
-    private $line2 = null;
+    protected $line2 = null;
     /**
      * A list of possible final URLs after all cross domain redirects.
      *
@@ -55,7 +55,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 6;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * A list of mappings to be used for substituting URL custom parameter tags in
      * the tracking_url_template, final_urls, and/or final_mobile_urls.
@@ -69,7 +69,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 8;</code>
      */
-    private $final_url_suffix = null;
+    protected $final_url_suffix = null;
 
     /**
      * Constructor.
@@ -130,8 +130,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getLinkTextUnwrapped()
     {
-        $wrapper = $this->getLinkText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("link_text");
     }
 
     /**
@@ -162,9 +161,8 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setLinkTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLinkText($wrappedVar);
-    }
+        $this->writeWrapperValue("link_text", $var);
+        return $this;}
 
     /**
      * First line of the description for the sitelink.
@@ -191,8 +189,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getLine1Unwrapped()
     {
-        $wrapper = $this->getLine1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("line1");
     }
 
     /**
@@ -225,9 +222,8 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setLine1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLine1($wrappedVar);
-    }
+        $this->writeWrapperValue("line1", $var);
+        return $this;}
 
     /**
      * Second line of the description for the sitelink.
@@ -254,8 +250,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getLine2Unwrapped()
     {
-        $wrapper = $this->getLine2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("line2");
     }
 
     /**
@@ -288,9 +283,8 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setLine2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLine2($wrappedVar);
-    }
+        $this->writeWrapperValue("line2", $var);
+        return $this;}
 
     /**
      * A list of possible final URLs after all cross domain redirects.
@@ -365,8 +359,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -395,9 +388,8 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * A list of mappings to be used for substituting URL custom parameter tags in
@@ -450,8 +442,7 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getFinalUrlSuffixUnwrapped()
     {
-        $wrapper = $this->getFinalUrlSuffix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("final_url_suffix");
     }
 
     /**
@@ -482,9 +473,8 @@ final class SitelinkFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setFinalUrlSuffixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFinalUrlSuffix($wrappedVar);
-    }
+        $this->writeWrapperValue("final_url_suffix", $var);
+        return $this;}
 
 }
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListAccessibleCustomersResponse</code>
  */
-final class ListAccessibleCustomersResponse extends \Google\Protobuf\Internal\Message
+class ListAccessibleCustomersResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of customers directly accessible by the

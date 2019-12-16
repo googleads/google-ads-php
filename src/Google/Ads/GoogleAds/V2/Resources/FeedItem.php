@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.FeedItem</code>
  */
-final class FeedItem extends \Google\Protobuf\Internal\Message
+class FeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the feed item.
@@ -22,19 +22,19 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The feed to which this feed item belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
      */
-    private $feed = null;
+    protected $feed = null;
     /**
      * The ID of this feed item.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Start time in which this feed item is effective and can begin serving. The
      * time is in the customer's time zone.
@@ -43,7 +43,7 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 4;</code>
      */
-    private $start_date_time = null;
+    protected $start_date_time = null;
     /**
      * End time in which this feed item is no longer effective and will stop
      * serving. The time is in the customer's time zone.
@@ -52,7 +52,7 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 5;</code>
      */
-    private $end_date_time = null;
+    protected $end_date_time = null;
     /**
      * The feed item's attribute values.
      *
@@ -65,7 +65,7 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GeoTargetingRestrictionEnum.GeoTargetingRestriction geo_targeting_restriction = 7;</code>
      */
-    private $geo_targeting_restriction = 0;
+    protected $geo_targeting_restriction = 0;
     /**
      * The list of mappings used to substitute custom parameter tags in a
      * `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
@@ -79,7 +79,7 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemStatusEnum.FeedItemStatus status = 9;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * List of info about a feed item's validation and approval state for active
      * feed mappings. There will be an entry in the list for each type of feed
@@ -192,8 +192,7 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getFeedUnwrapped()
     {
-        $wrapper = $this->getFeed();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed");
     }
 
     /**
@@ -222,9 +221,8 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setFeedUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeed($wrappedVar);
-    }
+        $this->writeWrapperValue("feed", $var);
+        return $this;}
 
     /**
      * The ID of this feed item.
@@ -247,8 +245,7 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -277,9 +274,8 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Start time in which this feed item is effective and can begin serving. The
@@ -308,8 +304,7 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date_time");
     }
 
     /**
@@ -344,9 +339,8 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date_time", $var);
+        return $this;}
 
     /**
      * End time in which this feed item is no longer effective and will stop
@@ -375,8 +369,7 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getEndDateTimeUnwrapped()
     {
-        $wrapper = $this->getEndDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date_time");
     }
 
     /**
@@ -411,9 +404,8 @@ final class FeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setEndDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date_time", $var);
+        return $this;}
 
     /**
      * The feed item's attribute values.

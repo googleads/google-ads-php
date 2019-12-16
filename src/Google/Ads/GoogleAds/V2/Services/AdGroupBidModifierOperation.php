@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.AdGroupBidModifierOperation</code>
  */
-final class AdGroupBidModifierOperation extends \Google\Protobuf\Internal\Message
+class AdGroupBidModifierOperation extends \Google\Protobuf\Internal\Message
 {
     /**
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
-    private $update_mask = null;
+    protected $update_mask = null;
     protected $operation;
 
     /**

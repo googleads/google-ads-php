@@ -20,7 +20,7 @@ class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue mobile_app_category_constant = 1;</code>
      */
-    private $mobile_app_category_constant = null;
+    protected $mobile_app_category_constant = null;
 
     /**
      * Constructor.
@@ -56,10 +56,9 @@ class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue mobile_app_category_constant = 1;</code>
      * @return string|null
      */
-    public function getMobileAppCategoryConstantValue()
+    public function getMobileAppCategoryConstantUnwrapped()
     {
-        $wrapper = $this->getMobileAppCategoryConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("mobile_app_category_constant");
     }
 
     /**
@@ -86,11 +85,10 @@ class MobileAppCategoryInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setMobileAppCategoryConstantValue($var)
+    public function setMobileAppCategoryConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMobileAppCategoryConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("mobile_app_category_constant", $var);
+        return $this;}
 
 }
 

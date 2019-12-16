@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.ConversionAdjustmentTypeEnum</code>
  */
-final class ConversionAdjustmentTypeEnum extends \Google\Protobuf\Internal\Message
+class ConversionAdjustmentTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

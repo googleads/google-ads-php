@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.HotelDateSelectionTypeInfo</code>
  */
-final class HotelDateSelectionTypeInfo extends \Google\Protobuf\Internal\Message
+class HotelDateSelectionTypeInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the hotel date selection
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.HotelDateSelectionTypeEnum.HotelDateSelectionType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

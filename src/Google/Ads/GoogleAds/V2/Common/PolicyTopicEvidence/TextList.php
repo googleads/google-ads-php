@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyTopicEvidence.TextList</code>
  */
-final class TextList extends \Google\Protobuf\Internal\Message
+class TextList extends \Google\Protobuf\Internal\Message
 {
     /**
      * The fragments of text from the resource that caused the policy finding.

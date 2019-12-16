@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListInfo</code>
  */
-final class UserListInfo extends \Google\Protobuf\Internal\Message
+class UserListInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The User List resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_list = 1;</code>
      */
-    private $user_list = null;
+    protected $user_list = null;
 
     /**
      * Constructor.
@@ -59,8 +59,7 @@ final class UserListInfo extends \Google\Protobuf\Internal\Message
      */
     public function getUserListUnwrapped()
     {
-        $wrapper = $this->getUserList();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("user_list");
     }
 
     /**
@@ -89,9 +88,8 @@ final class UserListInfo extends \Google\Protobuf\Internal\Message
      */
     public function setUserListUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUserList($wrappedVar);
-    }
+        $this->writeWrapperValue("user_list", $var);
+        return $this;}
 
 }
 

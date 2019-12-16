@@ -14,20 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.CustomParameter</code>
  */
-final class CustomParameter extends \Google\Protobuf\Internal\Message
+class CustomParameter extends \Google\Protobuf\Internal\Message
 {
     /**
      * The key matching the parameter tag name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue key = 1;</code>
      */
-    private $key = null;
+    protected $key = null;
     /**
      * The value to be substituted.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * Constructor.
@@ -67,8 +67,7 @@ final class CustomParameter extends \Google\Protobuf\Internal\Message
      */
     public function getKeyUnwrapped()
     {
-        $wrapper = $this->getKey();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("key");
     }
 
     /**
@@ -97,9 +96,8 @@ final class CustomParameter extends \Google\Protobuf\Internal\Message
      */
     public function setKeyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setKey($wrappedVar);
-    }
+        $this->writeWrapperValue("key", $var);
+        return $this;}
 
     /**
      * The value to be substituted.
@@ -122,8 +120,7 @@ final class CustomParameter extends \Google\Protobuf\Internal\Message
      */
     public function getValueUnwrapped()
     {
-        $wrapper = $this->getValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value");
     }
 
     /**
@@ -152,9 +149,8 @@ final class CustomParameter extends \Google\Protobuf\Internal\Message
      */
     public function setValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setValue($wrappedVar);
-    }
+        $this->writeWrapperValue("value", $var);
+        return $this;}
 
 }
 

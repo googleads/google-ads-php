@@ -21,13 +21,13 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_id = 1;</code>
      */
-    private $feed_id = null;
+    protected $feed_id = null;
     /**
      * Id of the referenced feed attribute. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 2;</code>
      */
-    private $feed_attribute_id = null;
+    protected $feed_attribute_id = null;
 
     /**
      * Constructor.
@@ -65,10 +65,9 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_id = 1;</code>
      * @return int|string|null
      */
-    public function getFeedIdValue()
+    public function getFeedIdUnwrapped()
     {
-        $wrapper = $this->getFeedId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed_id");
     }
 
     /**
@@ -95,11 +94,10 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setFeedIdValue($var)
+    public function setFeedIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFeedId($wrappedVar);
-    }
+        $this->writeWrapperValue("feed_id", $var);
+        return $this;}
 
     /**
      * Id of the referenced feed attribute. Required.
@@ -120,10 +118,9 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 2;</code>
      * @return int|string|null
      */
-    public function getFeedAttributeIdValue()
+    public function getFeedAttributeIdUnwrapped()
     {
-        $wrapper = $this->getFeedAttributeId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed_attribute_id");
     }
 
     /**
@@ -150,11 +147,10 @@ class FeedAttributeOperand extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setFeedAttributeIdValue($var)
+    public function setFeedAttributeIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFeedAttributeId($wrappedVar);
-    }
+        $this->writeWrapperValue("feed_attribute_id", $var);
+        return $this;}
 
 }
 

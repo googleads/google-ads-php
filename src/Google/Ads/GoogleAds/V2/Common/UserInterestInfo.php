@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserInterestInfo</code>
  */
-final class UserInterestInfo extends \Google\Protobuf\Internal\Message
+class UserInterestInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The UserInterest resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_category = 1;</code>
      */
-    private $user_interest_category = null;
+    protected $user_interest_category = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class UserInterestInfo extends \Google\Protobuf\Internal\Message
      */
     public function getUserInterestCategoryUnwrapped()
     {
-        $wrapper = $this->getUserInterestCategory();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("user_interest_category");
     }
 
     /**
@@ -88,9 +87,8 @@ final class UserInterestInfo extends \Google\Protobuf\Internal\Message
      */
     public function setUserInterestCategoryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUserInterestCategory($wrappedVar);
-    }
+        $this->writeWrapperValue("user_interest_category", $var);
+        return $this;}
 
 }
 

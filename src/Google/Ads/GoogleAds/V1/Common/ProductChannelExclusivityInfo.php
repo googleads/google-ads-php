@@ -20,7 +20,7 @@ class ProductChannelExclusivityInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductChannelExclusivityEnum.ProductChannelExclusivity channel_exclusivity = 1;</code>
      */
-    private $channel_exclusivity = 0;
+    protected $channel_exclusivity = 0;
 
     /**
      * Constructor.

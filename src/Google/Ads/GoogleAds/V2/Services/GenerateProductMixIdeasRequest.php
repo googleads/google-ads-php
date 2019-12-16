@@ -13,35 +13,35 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateProductMixIdeasRequest</code>
  */
-final class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
+class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * Required. The ID of the location, this is one of the ids returned by
      * ListPlannableLocations.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2;</code>
      */
-    private $plannable_location_id = null;
+    protected $plannable_location_id = null;
     /**
      * Required. Currency code.
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
     /**
      * Required. Total budget.
      * Amount in micros. One million is equivalent to one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4;</code>
      */
-    private $budget_micros = null;
+    protected $budget_micros = null;
     /**
      * The preferences of the suggested product mix.
      * An unset preference is interpreted as all possible values are allowed,
@@ -49,7 +49,7 @@ final class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Mes
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.Preferences preferences = 5;</code>
      */
-    private $preferences = null;
+    protected $preferences = null;
 
     /**
      * Constructor.
@@ -128,8 +128,7 @@ final class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Mes
      */
     public function getPlannableLocationIdUnwrapped()
     {
-        $wrapper = $this->getPlannableLocationId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("plannable_location_id");
     }
 
     /**
@@ -160,9 +159,8 @@ final class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Mes
      */
     public function setPlannableLocationIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPlannableLocationId($wrappedVar);
-    }
+        $this->writeWrapperValue("plannable_location_id", $var);
+        return $this;}
 
     /**
      * Required. Currency code.
@@ -187,8 +185,7 @@ final class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Mes
      */
     public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -219,9 +216,8 @@ final class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Mes
      */
     public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
     /**
      * Required. Total budget.
@@ -246,8 +242,7 @@ final class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Mes
      */
     public function getBudgetMicrosUnwrapped()
     {
-        $wrapper = $this->getBudgetMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("budget_micros");
     }
 
     /**
@@ -278,9 +273,8 @@ final class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Mes
      */
     public function setBudgetMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setBudgetMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("budget_micros", $var);
+        return $this;}
 
     /**
      * The preferences of the suggested product mix.

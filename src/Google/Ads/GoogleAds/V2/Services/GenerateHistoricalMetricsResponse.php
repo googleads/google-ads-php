@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateHistoricalMetricsResponse</code>
  */
-final class GenerateHistoricalMetricsResponse extends \Google\Protobuf\Internal\Message
+class GenerateHistoricalMetricsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * List of keyword historical metrics.

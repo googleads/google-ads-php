@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PreferredContentInfo</code>
  */
-final class PreferredContentInfo extends \Google\Protobuf\Internal\Message
+class PreferredContentInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the preferred content.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PreferredContentTypeEnum.PreferredContentType type = 2;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

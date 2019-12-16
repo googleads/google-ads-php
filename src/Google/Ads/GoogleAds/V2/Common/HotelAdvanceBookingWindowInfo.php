@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.HotelAdvanceBookingWindowInfo</code>
  */
-final class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
+class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Low end of the number of days prior to the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value min_days = 1;</code>
      */
-    private $min_days = null;
+    protected $min_days = null;
     /**
      * High end of the number of days prior to the stay.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value max_days = 2;</code>
      */
-    private $max_days = null;
+    protected $max_days = null;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Mess
      */
     public function getMinDaysUnwrapped()
     {
-        $wrapper = $this->getMinDays();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("min_days");
     }
 
     /**
@@ -96,9 +95,8 @@ final class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Mess
      */
     public function setMinDaysUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setMinDays($wrappedVar);
-    }
+        $this->writeWrapperValue("min_days", $var);
+        return $this;}
 
     /**
      * High end of the number of days prior to the stay.
@@ -121,8 +119,7 @@ final class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Mess
      */
     public function getMaxDaysUnwrapped()
     {
-        $wrapper = $this->getMaxDays();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("max_days");
     }
 
     /**
@@ -151,9 +148,8 @@ final class HotelAdvanceBookingWindowInfo extends \Google\Protobuf\Internal\Mess
      */
     public function setMaxDaysUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setMaxDays($wrappedVar);
-    }
+        $this->writeWrapperValue("max_days", $var);
+        return $this;}
 
 }
 

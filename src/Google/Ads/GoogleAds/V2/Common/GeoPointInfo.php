@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.GeoPointInfo</code>
  */
-final class GeoPointInfo extends \Google\Protobuf\Internal\Message
+class GeoPointInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Micro degrees for the longitude.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value longitude_in_micro_degrees = 1;</code>
      */
-    private $longitude_in_micro_degrees = null;
+    protected $longitude_in_micro_degrees = null;
     /**
      * Micro degrees for the latitude.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value latitude_in_micro_degrees = 2;</code>
      */
-    private $latitude_in_micro_degrees = null;
+    protected $latitude_in_micro_degrees = null;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class GeoPointInfo extends \Google\Protobuf\Internal\Message
      */
     public function getLongitudeInMicroDegreesUnwrapped()
     {
-        $wrapper = $this->getLongitudeInMicroDegrees();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("longitude_in_micro_degrees");
     }
 
     /**
@@ -96,9 +95,8 @@ final class GeoPointInfo extends \Google\Protobuf\Internal\Message
      */
     public function setLongitudeInMicroDegreesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setLongitudeInMicroDegrees($wrappedVar);
-    }
+        $this->writeWrapperValue("longitude_in_micro_degrees", $var);
+        return $this;}
 
     /**
      * Micro degrees for the latitude.
@@ -121,8 +119,7 @@ final class GeoPointInfo extends \Google\Protobuf\Internal\Message
      */
     public function getLatitudeInMicroDegreesUnwrapped()
     {
-        $wrapper = $this->getLatitudeInMicroDegrees();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("latitude_in_micro_degrees");
     }
 
     /**
@@ -151,9 +148,8 @@ final class GeoPointInfo extends \Google\Protobuf\Internal\Message
      */
     public function setLatitudeInMicroDegreesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setLatitudeInMicroDegrees($wrappedVar);
-    }
+        $this->writeWrapperValue("latitude_in_micro_degrees", $var);
+        return $this;}
 
 }
 

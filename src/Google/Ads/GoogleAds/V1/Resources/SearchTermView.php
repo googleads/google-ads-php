@@ -19,31 +19,30 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the search term view.
      * Search term view resource names have the form:
-     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~
-     * {URL-base64 search term}`
+     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The search term.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
      */
-    private $search_term = null;
+    protected $search_term = null;
     /**
      * The ad group the search term served in.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
      */
-    private $ad_group = null;
+    protected $ad_group = null;
     /**
      * Indicates whether the search term is currently one of your
      * targeted or excluded keywords.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SearchTermTargetingStatusEnum.SearchTermTargetingStatus status = 4;</code>
      */
-    private $status = 0;
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -54,8 +53,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           The resource name of the search term view.
      *           Search term view resource names have the form:
-     *           `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~
-     *           {URL-base64 search term}`
+     *           `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}`
      *     @type \Google\Protobuf\StringValue $search_term
      *           The search term.
      *     @type \Google\Protobuf\StringValue $ad_group
@@ -73,8 +71,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the search term view.
      * Search term view resource names have the form:
-     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~
-     * {URL-base64 search term}`
+     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @return string
@@ -87,8 +84,7 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * The resource name of the search term view.
      * Search term view resource names have the form:
-     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~
-     * {URL-base64 search term}`
+     * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}`
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      * @param string $var
@@ -121,10 +117,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
      * @return string|null
      */
-    public function getSearchTermValue()
+    public function getSearchTermUnwrapped()
     {
-        $wrapper = $this->getSearchTerm();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("search_term");
     }
 
     /**
@@ -151,11 +146,10 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setSearchTermValue($var)
+    public function setSearchTermUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSearchTerm($wrappedVar);
-    }
+        $this->writeWrapperValue("search_term", $var);
+        return $this;}
 
     /**
      * The ad group the search term served in.
@@ -176,10 +170,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
      * @return string|null
      */
-    public function getAdGroupValue()
+    public function getAdGroupUnwrapped()
     {
-        $wrapper = $this->getAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group");
     }
 
     /**
@@ -206,11 +199,10 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setAdGroupValue($var)
+    public function setAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group", $var);
+        return $this;}
 
     /**
      * Indicates whether the search term is currently one of your

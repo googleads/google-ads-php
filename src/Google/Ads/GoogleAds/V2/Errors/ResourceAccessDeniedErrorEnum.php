@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.ResourceAccessDeniedErrorEnum</code>
  */
-final class ResourceAccessDeniedErrorEnum extends \Google\Protobuf\Internal\Message
+class ResourceAccessDeniedErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

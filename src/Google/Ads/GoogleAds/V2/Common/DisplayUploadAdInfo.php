@@ -15,14 +15,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.DisplayUploadAdInfo</code>
  */
-final class DisplayUploadAdInfo extends \Google\Protobuf\Internal\Message
+class DisplayUploadAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The product type of this ad. See comments on the enum for details.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DisplayUploadProductTypeEnum.DisplayUploadProductType display_upload_product_type = 1;</code>
      */
-    private $display_upload_product_type = 0;
+    protected $display_upload_product_type = 0;
     protected $media_asset;
 
     /**

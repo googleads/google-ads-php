@@ -22,21 +22,21 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
      */
-    private $text = null;
+    protected $text = null;
     /**
      * Text color for the display-call-to-action in hexadecimal, e.g. #ffffff for
      * white.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text_color = 2;</code>
      */
-    private $text_color = null;
+    protected $text_color = null;
     /**
      * Identifies the url collection in the ad.url_collections field. If not set
      * the url defaults to final_url.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue url_collection_id = 3;</code>
      */
-    private $url_collection_id = null;
+    protected $url_collection_id = null;
 
     /**
      * Constructor.
@@ -78,10 +78,9 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
      * @return string|null
      */
-    public function getTextValue()
+    public function getTextUnwrapped()
     {
-        $wrapper = $this->getText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text");
     }
 
     /**
@@ -108,11 +107,10 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTextValue($var)
+    public function setTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setText($wrappedVar);
-    }
+        $this->writeWrapperValue("text", $var);
+        return $this;}
 
     /**
      * Text color for the display-call-to-action in hexadecimal, e.g. #ffffff for
@@ -135,10 +133,9 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue text_color = 2;</code>
      * @return string|null
      */
-    public function getTextColorValue()
+    public function getTextColorUnwrapped()
     {
-        $wrapper = $this->getTextColor();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text_color");
     }
 
     /**
@@ -167,11 +164,10 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTextColorValue($var)
+    public function setTextColorUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTextColor($wrappedVar);
-    }
+        $this->writeWrapperValue("text_color", $var);
+        return $this;}
 
     /**
      * Identifies the url collection in the ad.url_collections field. If not set
@@ -194,10 +190,9 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue url_collection_id = 3;</code>
      * @return string|null
      */
-    public function getUrlCollectionIdValue()
+    public function getUrlCollectionIdUnwrapped()
     {
-        $wrapper = $this->getUrlCollectionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("url_collection_id");
     }
 
     /**
@@ -226,11 +221,10 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setUrlCollectionIdValue($var)
+    public function setUrlCollectionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUrlCollectionId($wrappedVar);
-    }
+        $this->writeWrapperValue("url_collection_id", $var);
+        return $this;}
 
 }
 

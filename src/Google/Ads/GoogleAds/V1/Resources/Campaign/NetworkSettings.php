@@ -20,28 +20,28 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_google_search = 1;</code>
      */
-    private $target_google_search = null;
+    protected $target_google_search = null;
     /**
      * Whether ads will be served on partner sites in the Google Search Network
      * (requires `target_google_search` to also be `true`).
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_search_network = 2;</code>
      */
-    private $target_search_network = null;
+    protected $target_search_network = null;
     /**
      * Whether ads will be served on specified placements in the Google Display
      * Network. Placements are specified using the Placement criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_content_network = 3;</code>
      */
-    private $target_content_network = null;
+    protected $target_content_network = null;
     /**
      * Whether ads will be served on the Google Partner Network.
      * This is available only to some select Google partner accounts.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_partner_search_network = 4;</code>
      */
-    private $target_partner_search_network = null;
+    protected $target_partner_search_network = null;
 
     /**
      * Constructor.
@@ -86,10 +86,9 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_google_search = 1;</code>
      * @return bool|null
      */
-    public function getTargetGoogleSearchValue()
+    public function getTargetGoogleSearchUnwrapped()
     {
-        $wrapper = $this->getTargetGoogleSearch();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_google_search");
     }
 
     /**
@@ -116,11 +115,10 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setTargetGoogleSearchValue($var)
+    public function setTargetGoogleSearchUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTargetGoogleSearch($wrappedVar);
-    }
+        $this->writeWrapperValue("target_google_search", $var);
+        return $this;}
 
     /**
      * Whether ads will be served on partner sites in the Google Search Network
@@ -143,10 +141,9 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_search_network = 2;</code>
      * @return bool|null
      */
-    public function getTargetSearchNetworkValue()
+    public function getTargetSearchNetworkUnwrapped()
     {
-        $wrapper = $this->getTargetSearchNetwork();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_search_network");
     }
 
     /**
@@ -175,11 +172,10 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setTargetSearchNetworkValue($var)
+    public function setTargetSearchNetworkUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTargetSearchNetwork($wrappedVar);
-    }
+        $this->writeWrapperValue("target_search_network", $var);
+        return $this;}
 
     /**
      * Whether ads will be served on specified placements in the Google Display
@@ -202,10 +198,9 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_content_network = 3;</code>
      * @return bool|null
      */
-    public function getTargetContentNetworkValue()
+    public function getTargetContentNetworkUnwrapped()
     {
-        $wrapper = $this->getTargetContentNetwork();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_content_network");
     }
 
     /**
@@ -234,11 +229,10 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setTargetContentNetworkValue($var)
+    public function setTargetContentNetworkUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTargetContentNetwork($wrappedVar);
-    }
+        $this->writeWrapperValue("target_content_network", $var);
+        return $this;}
 
     /**
      * Whether ads will be served on the Google Partner Network.
@@ -261,10 +255,9 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue target_partner_search_network = 4;</code>
      * @return bool|null
      */
-    public function getTargetPartnerSearchNetworkValue()
+    public function getTargetPartnerSearchNetworkUnwrapped()
     {
-        $wrapper = $this->getTargetPartnerSearchNetwork();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_partner_search_network");
     }
 
     /**
@@ -293,11 +286,10 @@ class NetworkSettings extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setTargetPartnerSearchNetworkValue($var)
+    public function setTargetPartnerSearchNetworkUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setTargetPartnerSearchNetwork($wrappedVar);
-    }
+        $this->writeWrapperValue("target_partner_search_network", $var);
+        return $this;}
 
 }
 

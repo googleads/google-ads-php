@@ -16,21 +16,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TargetImpressionShare</code>
  */
-final class TargetImpressionShare extends \Google\Protobuf\Internal\Message
+class TargetImpressionShare extends \Google\Protobuf\Internal\Message
 {
     /**
      * The targeted location on the search results page.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation location = 1;</code>
      */
-    private $location = 0;
+    protected $location = 0;
     /**
      * The desired fraction of ads to be shown in the targeted location in micros.
      * E.g. 1% equals 10,000.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value location_fraction_micros = 2;</code>
      */
-    private $location_fraction_micros = null;
+    protected $location_fraction_micros = null;
     /**
      * The highest CPC bid the automated bidding system is permitted to specify.
      * This is a required field entered by the advertiser that sets the ceiling
@@ -38,7 +38,7 @@ final class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 3;</code>
      */
-    private $cpc_bid_ceiling_micros = null;
+    protected $cpc_bid_ceiling_micros = null;
 
     /**
      * Constructor.
@@ -111,8 +111,7 @@ final class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      */
     public function getLocationFractionMicrosUnwrapped()
     {
-        $wrapper = $this->getLocationFractionMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("location_fraction_micros");
     }
 
     /**
@@ -143,9 +142,8 @@ final class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      */
     public function setLocationFractionMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setLocationFractionMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("location_fraction_micros", $var);
+        return $this;}
 
     /**
      * The highest CPC bid the automated bidding system is permitted to specify.
@@ -172,8 +170,7 @@ final class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      */
     public function getCpcBidCeilingMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidCeilingMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_ceiling_micros");
     }
 
     /**
@@ -206,9 +203,8 @@ final class TargetImpressionShare extends \Google\Protobuf\Internal\Message
      */
     public function setCpcBidCeilingMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidCeilingMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_ceiling_micros", $var);
+        return $this;}
 
 }
 

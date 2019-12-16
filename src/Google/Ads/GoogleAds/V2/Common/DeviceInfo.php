@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.DeviceInfo</code>
  */
-final class DeviceInfo extends \Google\Protobuf\Internal\Message
+class DeviceInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Type of the device.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DeviceEnum.Device type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
 
     /**
      * Constructor.

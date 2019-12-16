@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.KeywordPlanNegativeKeyword</code>
  */
-final class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
+class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the Keyword Plan negative keyword.
@@ -23,31 +23,31 @@ final class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The Keyword Plan campaign to which this negative keyword belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 2;</code>
      */
-    private $keyword_plan_campaign = null;
+    protected $keyword_plan_campaign = null;
     /**
      * The ID of the Keyword Plan negative keyword.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The keyword text.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
      */
-    private $text = null;
+    protected $text = null;
     /**
      * The keyword match type.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.KeywordMatchTypeEnum.KeywordMatchType match_type = 5;</code>
      */
-    private $match_type = 0;
+    protected $match_type = 0;
 
     /**
      * Constructor.
@@ -125,8 +125,7 @@ final class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordPlanCampaignUnwrapped()
     {
-        $wrapper = $this->getKeywordPlanCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("keyword_plan_campaign");
     }
 
     /**
@@ -155,9 +154,8 @@ final class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
      */
     public function setKeywordPlanCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setKeywordPlanCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("keyword_plan_campaign", $var);
+        return $this;}
 
     /**
      * The ID of the Keyword Plan negative keyword.
@@ -180,8 +178,7 @@ final class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -210,9 +207,8 @@ final class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The keyword text.
@@ -235,8 +231,7 @@ final class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
      */
     public function getTextUnwrapped()
     {
-        $wrapper = $this->getText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text");
     }
 
     /**
@@ -265,9 +260,8 @@ final class KeywordPlanNegativeKeyword extends \Google\Protobuf\Internal\Message
      */
     public function setTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setText($wrappedVar);
-    }
+        $this->writeWrapperValue("text", $var);
+        return $this;}
 
     /**
      * The keyword match type.

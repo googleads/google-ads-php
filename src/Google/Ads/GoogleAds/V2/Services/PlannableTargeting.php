@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.PlannableTargeting</code>
  */
-final class PlannableTargeting extends \Google\Protobuf\Internal\Message
+class PlannableTargeting extends \Google\Protobuf\Internal\Message
 {
     /**
      * Allowed plannable age ranges for the product for which metrics will be

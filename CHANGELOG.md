@@ -1,3 +1,13 @@
+## 3.0.0
+*   Removed support of PHP 7.1.
+*   Remove the preemptive initialization of "GoogleAdsFailures" when not running with gRPC
+    transport.
+*   Added code examples: RemoveFlightsFeedItemStringAttributeValue,
+    UpdateFlightsFeedItemStringAttributeValue, RemoveFeedItems, HandleRateExceededError,
+    GetProductBiddingCategoryConstant, AddDemographicTargetingCriteria, AddRemarketingAction and
+    UploadOfflineConversion.
+*   Fixed code examples: AddHotelAd and GetAccountHierarchy.
+
 ## 2.2.0
 *   Added support for v2_2 of Google Ads API.
 *   Added examples for feeds (ad customizer, real estate, flights, Google My Business), negative

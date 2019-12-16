@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData</code>
  */
-final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
+class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required authentication token (from OAuth API) for the email.
@@ -23,14 +23,14 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1;</code>
      */
-    private $oauth_info = null;
+    protected $oauth_info = null;
     /**
      * Email address of a Google My Business account or email address of a
      * manager of the Google My Business account. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue email_address = 2;</code>
      */
-    private $email_address = null;
+    protected $email_address = null;
     /**
      * Plus page ID of the managed business whose locations should be used. If
      * this field is not set, then all businesses accessible by the user
@@ -39,7 +39,7 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_account_id = 10;</code>
      */
-    private $business_account_id = null;
+    protected $business_account_id = null;
     /**
      * Used to filter Google My Business listings by business name. If
      * business_name_filter is set, only listings with a matching business name
@@ -47,7 +47,7 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name_filter = 4;</code>
      */
-    private $business_name_filter = null;
+    protected $business_name_filter = null;
     /**
      * Used to filter Google My Business listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
@@ -159,8 +159,7 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     public function getEmailAddressUnwrapped()
     {
-        $wrapper = $this->getEmailAddress();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("email_address");
     }
 
     /**
@@ -191,9 +190,8 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     public function setEmailAddressUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEmailAddress($wrappedVar);
-    }
+        $this->writeWrapperValue("email_address", $var);
+        return $this;}
 
     /**
      * Plus page ID of the managed business whose locations should be used. If
@@ -222,8 +220,7 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     public function getBusinessAccountIdUnwrapped()
     {
-        $wrapper = $this->getBusinessAccountId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("business_account_id");
     }
 
     /**
@@ -258,9 +255,8 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     public function setBusinessAccountIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBusinessAccountId($wrappedVar);
-    }
+        $this->writeWrapperValue("business_account_id", $var);
+        return $this;}
 
     /**
      * Used to filter Google My Business listings by business name. If
@@ -287,8 +283,7 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     public function getBusinessNameFilterUnwrapped()
     {
-        $wrapper = $this->getBusinessNameFilter();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("business_name_filter");
     }
 
     /**
@@ -321,9 +316,8 @@ final class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     public function setBusinessNameFilterUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBusinessNameFilter($wrappedVar);
-    }
+        $this->writeWrapperValue("business_name_filter", $var);
+        return $this;}
 
     /**
      * Used to filter Google My Business listings by categories. If entries

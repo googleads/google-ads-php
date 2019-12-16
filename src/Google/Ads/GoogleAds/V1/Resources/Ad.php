@@ -20,7 +20,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The list of possible final URLs after all cross-domain redirects for the
      * ad.
@@ -47,7 +47,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * The list of mappings that can be used to substitute custom parameter tags
      * in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
@@ -60,13 +60,13 @@ class Ad extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue display_url = 4;</code>
      */
-    private $display_url = null;
+    protected $display_url = null;
     /**
      * The type of ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.AdTypeEnum.AdType type = 5;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * Indicates if this ad was automatically added by Google Ads and not by a
      * user. For example, this could happen when ads are automatically created as
@@ -75,7 +75,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
      */
-    private $added_by_google_ads = null;
+    protected $added_by_google_ads = null;
     /**
      * The device preference for the ad. You can only specify a preference for
      * mobile devices. When this preference is set the ad will be preferred over
@@ -86,7 +86,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.DeviceEnum.Device device_preference = 20;</code>
      */
-    private $device_preference = 0;
+    protected $device_preference = 0;
     /**
      * Additional URLs for the ad that are tagged with a unique identifier that
      * can be referenced from other fields in the ad.
@@ -100,14 +100,14 @@ class Ad extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * If this ad is system managed, then this field will indicate the source.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27;</code>
      */
-    private $system_managed_resource_source = 0;
+    protected $system_managed_resource_source = 0;
     protected $ad_data;
 
     /**
@@ -223,10 +223,9 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -253,11 +252,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The list of possible final URLs after all cross-domain redirects for the
@@ -362,10 +360,9 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
      * @return string|null
      */
-    public function getTrackingUrlTemplateValue()
+    public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -392,11 +389,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTrackingUrlTemplateValue($var)
+    public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * The list of mappings that can be used to substitute custom parameter tags
@@ -445,10 +441,9 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue display_url = 4;</code>
      * @return string|null
      */
-    public function getDisplayUrlValue()
+    public function getDisplayUrlUnwrapped()
     {
-        $wrapper = $this->getDisplayUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("display_url");
     }
 
     /**
@@ -475,11 +470,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDisplayUrlValue($var)
+    public function setDisplayUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDisplayUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("display_url", $var);
+        return $this;}
 
     /**
      * The type of ad.
@@ -532,10 +526,9 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
      * @return bool|null
      */
-    public function getAddedByGoogleAdsValue()
+    public function getAddedByGoogleAdsUnwrapped()
     {
-        $wrapper = $this->getAddedByGoogleAds();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("added_by_google_ads");
     }
 
     /**
@@ -568,11 +561,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setAddedByGoogleAdsValue($var)
+    public function setAddedByGoogleAdsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setAddedByGoogleAds($wrappedVar);
-    }
+        $this->writeWrapperValue("added_by_google_ads", $var);
+        return $this;}
 
     /**
      * The device preference for the ad. You can only specify a preference for
@@ -659,10 +651,9 @@ class Ad extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -691,11 +682,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * If this ad is system managed, then this field will indicate the source.

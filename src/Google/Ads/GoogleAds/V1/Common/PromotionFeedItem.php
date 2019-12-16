@@ -21,25 +21,25 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_target = 1;</code>
      */
-    private $promotion_target = null;
+    protected $promotion_target = null;
     /**
      * Enum that modifies the qualification of the discount.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PromotionExtensionDiscountModifierEnum.PromotionExtensionDiscountModifier discount_modifier = 2;</code>
      */
-    private $discount_modifier = 0;
+    protected $discount_modifier = 0;
     /**
      * Start date of when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_start_date = 7;</code>
      */
-    private $promotion_start_date = null;
+    protected $promotion_start_date = null;
     /**
      * End date of when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_end_date = 8;</code>
      */
-    private $promotion_end_date = null;
+    protected $promotion_end_date = null;
     /**
      * The occasion the promotion was intended for.
      * If an occasion is set, the redemption window will need to fall within
@@ -47,7 +47,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PromotionExtensionOccasionEnum.PromotionExtensionOccasion occasion = 9;</code>
      */
-    private $occasion = 0;
+    protected $occasion = 0;
     /**
      * A list of possible final URLs after all cross domain redirects.
      * This field is required.
@@ -66,7 +66,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
      */
-    private $tracking_url_template = null;
+    protected $tracking_url_template = null;
     /**
      * A list of mappings to be used for substituting URL custom parameter tags in
      * the tracking_url_template, final_urls, and/or final_mobile_urls.
@@ -80,14 +80,14 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 14;</code>
      */
-    private $final_url_suffix = null;
+    protected $final_url_suffix = null;
     /**
      * The language of the promotion.
      * Represented as BCP 47 language tag.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 15;</code>
      */
-    private $language_code = null;
+    protected $language_code = null;
     protected $discount_type;
     protected $promotion_trigger;
 
@@ -166,10 +166,9 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_target = 1;</code>
      * @return string|null
      */
-    public function getPromotionTargetValue()
+    public function getPromotionTargetUnwrapped()
     {
-        $wrapper = $this->getPromotionTarget();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("promotion_target");
     }
 
     /**
@@ -198,11 +197,10 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPromotionTargetValue($var)
+    public function setPromotionTargetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPromotionTarget($wrappedVar);
-    }
+        $this->writeWrapperValue("promotion_target", $var);
+        return $this;}
 
     /**
      * Enum that modifies the qualification of the discount.
@@ -249,10 +247,9 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_start_date = 7;</code>
      * @return string|null
      */
-    public function getPromotionStartDateValue()
+    public function getPromotionStartDateUnwrapped()
     {
-        $wrapper = $this->getPromotionStartDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("promotion_start_date");
     }
 
     /**
@@ -279,11 +276,10 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPromotionStartDateValue($var)
+    public function setPromotionStartDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPromotionStartDate($wrappedVar);
-    }
+        $this->writeWrapperValue("promotion_start_date", $var);
+        return $this;}
 
     /**
      * End date of when the promotion is eligible to be redeemed.
@@ -304,10 +300,9 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_end_date = 8;</code>
      * @return string|null
      */
-    public function getPromotionEndDateValue()
+    public function getPromotionEndDateUnwrapped()
     {
-        $wrapper = $this->getPromotionEndDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("promotion_end_date");
     }
 
     /**
@@ -334,11 +329,10 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPromotionEndDateValue($var)
+    public function setPromotionEndDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPromotionEndDate($wrappedVar);
-    }
+        $this->writeWrapperValue("promotion_end_date", $var);
+        return $this;}
 
     /**
      * The occasion the promotion was intended for.
@@ -443,10 +437,9 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url_template = 12;</code>
      * @return string|null
      */
-    public function getTrackingUrlTemplateValue()
+    public function getTrackingUrlTemplateUnwrapped()
     {
-        $wrapper = $this->getTrackingUrlTemplate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url_template");
     }
 
     /**
@@ -473,11 +466,10 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTrackingUrlTemplateValue($var)
+    public function setTrackingUrlTemplateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrlTemplate($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url_template", $var);
+        return $this;}
 
     /**
      * A list of mappings to be used for substituting URL custom parameter tags in
@@ -528,10 +520,9 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue final_url_suffix = 14;</code>
      * @return string|null
      */
-    public function getFinalUrlSuffixValue()
+    public function getFinalUrlSuffixUnwrapped()
     {
-        $wrapper = $this->getFinalUrlSuffix();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("final_url_suffix");
     }
 
     /**
@@ -560,11 +551,10 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFinalUrlSuffixValue($var)
+    public function setFinalUrlSuffixUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFinalUrlSuffix($wrappedVar);
-    }
+        $this->writeWrapperValue("final_url_suffix", $var);
+        return $this;}
 
     /**
      * The language of the promotion.
@@ -587,10 +577,9 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 15;</code>
      * @return string|null
      */
-    public function getLanguageCodeValue()
+    public function getLanguageCodeUnwrapped()
     {
-        $wrapper = $this->getLanguageCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_code");
     }
 
     /**
@@ -619,11 +608,10 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLanguageCodeValue($var)
+    public function setLanguageCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageCode($wrappedVar);
-    }
+        $this->writeWrapperValue("language_code", $var);
+        return $this;}
 
     /**
      * Percentage off discount in the promotion in micros.
@@ -648,10 +636,9 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value percent_off = 3;</code>
      * @return int|string|null
      */
-    public function getPercentOffValue()
+    public function getPercentOffUnwrapped()
     {
-        $wrapper = $this->getPercentOff();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("percent_off");
     }
 
     /**
@@ -682,11 +669,10 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setPercentOffValue($var)
+    public function setPercentOffUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPercentOff($wrappedVar);
-    }
+        $this->writeWrapperValue("percent_off", $var);
+        return $this;}
 
     /**
      * Money amount off for discount in the promotion.
@@ -735,10 +721,9 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue promotion_code = 5;</code>
      * @return string|null
      */
-    public function getPromotionCodeValue()
+    public function getPromotionCodeUnwrapped()
     {
-        $wrapper = $this->getPromotionCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("promotion_code");
     }
 
     /**
@@ -765,11 +750,10 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setPromotionCodeValue($var)
+    public function setPromotionCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPromotionCode($wrappedVar);
-    }
+        $this->writeWrapperValue("promotion_code", $var);
+        return $this;}
 
     /**
      * The amount the total order needs to be for the user to be eligible for

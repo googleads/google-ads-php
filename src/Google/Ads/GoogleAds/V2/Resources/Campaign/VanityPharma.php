@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Campaign.VanityPharma</code>
  */
-final class VanityPharma extends \Google\Protobuf\Internal\Message
+class VanityPharma extends \Google\Protobuf\Internal\Message
 {
     /**
      * The display mode for vanity pharma URLs.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode vanity_pharma_display_url_mode = 1;</code>
      */
-    private $vanity_pharma_display_url_mode = 0;
+    protected $vanity_pharma_display_url_mode = 0;
     /**
      * The text that will be displayed in display URL of the text ad when
      * website description is the selected display mode for vanity pharma URLs.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.VanityPharmaTextEnum.VanityPharmaText vanity_pharma_text = 2;</code>
      */
-    private $vanity_pharma_text = 0;
+    protected $vanity_pharma_text = 0;
 
     /**
      * Constructor.

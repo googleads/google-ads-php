@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AccountBudget.PendingAccountBudgetProposal</code>
  */
-final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
+class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the proposal.
@@ -23,46 +23,46 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_proposal = 1;</code>
      */
-    private $account_budget_proposal = null;
+    protected $account_budget_proposal = null;
     /**
      * The type of this proposal, e.g. END to end the budget associated
      * with this proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccountBudgetProposalTypeEnum.AccountBudgetProposalType proposal_type = 2;</code>
      */
-    private $proposal_type = 0;
+    protected $proposal_type = 0;
     /**
      * The name to assign to the account-level budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The start time in yyyy-MM-dd HH:mm:ss format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 4;</code>
      */
-    private $start_date_time = null;
+    protected $start_date_time = null;
     /**
      * A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 9;</code>
      */
-    private $purchase_order_number = null;
+    protected $purchase_order_number = null;
     /**
      * Notes associated with this budget.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue notes = 10;</code>
      */
-    private $notes = null;
+    protected $notes = null;
     /**
      * The time when this account-level budget proposal was created.
      * Formatted as yyyy-MM-dd HH:mm:ss.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue creation_date_time = 11;</code>
      */
-    private $creation_date_time = null;
+    protected $creation_date_time = null;
     protected $end_time;
     protected $spending_limit;
 
@@ -132,8 +132,7 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function getAccountBudgetProposalUnwrapped()
     {
-        $wrapper = $this->getAccountBudgetProposal();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("account_budget_proposal");
     }
 
     /**
@@ -166,9 +165,8 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function setAccountBudgetProposalUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAccountBudgetProposal($wrappedVar);
-    }
+        $this->writeWrapperValue("account_budget_proposal", $var);
+        return $this;}
 
     /**
      * The type of this proposal, e.g. END to end the budget associated
@@ -219,8 +217,7 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -249,9 +246,8 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The start time in yyyy-MM-dd HH:mm:ss format.
@@ -274,8 +270,7 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function getStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date_time");
     }
 
     /**
@@ -304,9 +299,8 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function setStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date_time", $var);
+        return $this;}
 
     /**
      * A purchase order number is a value that helps users reference this budget
@@ -331,8 +325,7 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function getPurchaseOrderNumberUnwrapped()
     {
-        $wrapper = $this->getPurchaseOrderNumber();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("purchase_order_number");
     }
 
     /**
@@ -363,9 +356,8 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function setPurchaseOrderNumberUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPurchaseOrderNumber($wrappedVar);
-    }
+        $this->writeWrapperValue("purchase_order_number", $var);
+        return $this;}
 
     /**
      * Notes associated with this budget.
@@ -388,8 +380,7 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function getNotesUnwrapped()
     {
-        $wrapper = $this->getNotes();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("notes");
     }
 
     /**
@@ -418,9 +409,8 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function setNotesUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setNotes($wrappedVar);
-    }
+        $this->writeWrapperValue("notes", $var);
+        return $this;}
 
     /**
      * The time when this account-level budget proposal was created.
@@ -445,8 +435,7 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function getCreationDateTimeUnwrapped()
     {
-        $wrapper = $this->getCreationDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("creation_date_time");
     }
 
     /**
@@ -477,9 +466,8 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function setCreationDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCreationDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("creation_date_time", $var);
+        return $this;}
 
     /**
      * The end time in yyyy-MM-dd HH:mm:ss format.
@@ -502,8 +490,7 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function getEndDateTimeUnwrapped()
     {
-        $wrapper = $this->getEndDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date_time");
     }
 
     /**
@@ -532,9 +519,8 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function setEndDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date_time", $var);
+        return $this;}
 
     /**
      * The end time as a well-defined type, e.g. FOREVER.
@@ -585,8 +571,7 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function getSpendingLimitMicrosUnwrapped()
     {
-        $wrapper = $this->getSpendingLimitMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("spending_limit_micros");
     }
 
     /**
@@ -617,9 +602,8 @@ final class PendingAccountBudgetProposal extends \Google\Protobuf\Internal\Messa
      */
     public function setSpendingLimitMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setSpendingLimitMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("spending_limit_micros", $var);
+        return $this;}
 
     /**
      * The spending limit as a well-defined type, e.g. INFINITE.

@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.CreateCampaignExperimentMetadata</code>
  */
-final class CreateCampaignExperimentMetadata extends \Google\Protobuf\Internal\Message
+class CreateCampaignExperimentMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of campaign experiment created.
      *
      * Generated from protobuf field <code>string campaign_experiment = 1;</code>
      */
-    private $campaign_experiment = '';
+    protected $campaign_experiment = '';
 
     /**
      * Constructor.

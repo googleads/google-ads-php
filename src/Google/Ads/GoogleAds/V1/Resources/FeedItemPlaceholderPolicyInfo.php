@@ -21,26 +21,26 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value placeholder_type = 1;</code>
      */
-    private $placeholder_type = null;
+    protected $placeholder_type = null;
     /**
      * The FeedMapping that contains the placeholder type.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_mapping_resource_name = 2;</code>
      */
-    private $feed_mapping_resource_name = null;
+    protected $feed_mapping_resource_name = null;
     /**
      * Where the placeholder type is in the review process.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 3;</code>
      */
-    private $review_status = 0;
+    protected $review_status = 0;
     /**
      * The overall approval status of the placeholder type, calculated based on
      * the status of its individual policy topic entries.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 4;</code>
      */
-    private $approval_status = 0;
+    protected $approval_status = 0;
     /**
      * The list of policy findings for the placeholder type.
      *
@@ -52,7 +52,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedItemValidationStatusEnum.FeedItemValidationStatus validation_status = 6;</code>
      */
-    private $validation_status = 0;
+    protected $validation_status = 0;
     /**
      * List of placeholder type validation errors.
      *
@@ -64,7 +64,7 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedItemQualityApprovalStatusEnum.FeedItemQualityApprovalStatus quality_approval_status = 8;</code>
      */
-    private $quality_approval_status = 0;
+    protected $quality_approval_status = 0;
     /**
      * List of placeholder type quality evaluation disapproval reasons.
      *
@@ -123,10 +123,9 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int32Value placeholder_type = 1;</code>
      * @return int|null
      */
-    public function getPlaceholderTypeValue()
+    public function getPlaceholderTypeUnwrapped()
     {
-        $wrapper = $this->getPlaceholderType();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("placeholder_type");
     }
 
     /**
@@ -153,11 +152,10 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      * @param int|null $var
      * @return $this
      */
-    public function setPlaceholderTypeValue($var)
+    public function setPlaceholderTypeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setPlaceholderType($wrappedVar);
-    }
+        $this->writeWrapperValue("placeholder_type", $var);
+        return $this;}
 
     /**
      * The FeedMapping that contains the placeholder type.
@@ -178,10 +176,9 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue feed_mapping_resource_name = 2;</code>
      * @return string|null
      */
-    public function getFeedMappingResourceNameValue()
+    public function getFeedMappingResourceNameUnwrapped()
     {
-        $wrapper = $this->getFeedMappingResourceName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed_mapping_resource_name");
     }
 
     /**
@@ -208,11 +205,10 @@ class FeedItemPlaceholderPolicyInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setFeedMappingResourceNameValue($var)
+    public function setFeedMappingResourceNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setFeedMappingResourceName($wrappedVar);
-    }
+        $this->writeWrapperValue("feed_mapping_resource_name", $var);
+        return $this;}
 
     /**
      * Where the placeholder type is in the review process.

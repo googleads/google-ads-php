@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ListingScopeInfo</code>
  */
-final class ListingScopeInfo extends \Google\Protobuf\Internal\Message
+class ListingScopeInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Scope of the campaign criterion.

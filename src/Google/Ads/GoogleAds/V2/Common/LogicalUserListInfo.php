@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.LogicalUserListInfo</code>
  */
-final class LogicalUserListInfo extends \Google\Protobuf\Internal\Message
+class LogicalUserListInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Logical list rules that define this user list. The rules are defined as a

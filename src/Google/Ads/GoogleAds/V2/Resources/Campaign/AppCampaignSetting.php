@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Campaign.AppCampaignSetting</code>
  */
-final class AppCampaignSetting extends \Google\Protobuf\Internal\Message
+class AppCampaignSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * Represents the goal which the bidding strategy of this app campaign
@@ -21,19 +21,19 @@ final class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType bidding_strategy_goal_type = 1;</code>
      */
-    private $bidding_strategy_goal_type = 0;
+    protected $bidding_strategy_goal_type = 0;
     /**
      * A string that uniquely identifies a mobile application.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
      */
-    private $app_id = null;
+    protected $app_id = null;
     /**
      * The application store that distributes this specific app.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3;</code>
      */
-    private $app_store = 0;
+    protected $app_store = 0;
 
     /**
      * Constructor.
@@ -104,8 +104,7 @@ final class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      */
     public function getAppIdUnwrapped()
     {
-        $wrapper = $this->getAppId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("app_id");
     }
 
     /**
@@ -134,9 +133,8 @@ final class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      */
     public function setAppIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAppId($wrappedVar);
-    }
+        $this->writeWrapperValue("app_id", $var);
+        return $this;}
 
     /**
      * The application store that distributes this specific app.

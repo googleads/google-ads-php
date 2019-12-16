@@ -20,7 +20,7 @@ class SearchGoogleAdsFieldsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string query = 1;</code>
      */
-    private $query = '';
+    protected $query = '';
     /**
      * Token of the page to retrieve. If not specified, the first page of
      * results will be returned. Use the value obtained from `next_page_token`
@@ -28,7 +28,7 @@ class SearchGoogleAdsFieldsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string page_token = 2;</code>
      */
-    private $page_token = '';
+    protected $page_token = '';
     /**
      * Number of elements to retrieve in a single page.
      * When too large a page is requested, the server may decide to further
@@ -36,7 +36,7 @@ class SearchGoogleAdsFieldsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 page_size = 3;</code>
      */
-    private $page_size = 0;
+    protected $page_size = 0;
 
     /**
      * Constructor.

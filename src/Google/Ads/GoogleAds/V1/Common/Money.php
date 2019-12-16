@@ -20,13 +20,13 @@ class Money extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 1;</code>
      */
-    private $currency_code = null;
+    protected $currency_code = null;
     /**
      * Amount in micros. One million is equivalent to one unit.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 2;</code>
      */
-    private $amount_micros = null;
+    protected $amount_micros = null;
 
     /**
      * Constructor.
@@ -64,10 +64,9 @@ class Money extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 1;</code>
      * @return string|null
      */
-    public function getCurrencyCodeValue()
+    public function getCurrencyCodeUnwrapped()
     {
-        $wrapper = $this->getCurrencyCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("currency_code");
     }
 
     /**
@@ -94,11 +93,10 @@ class Money extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCurrencyCodeValue($var)
+    public function setCurrencyCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCurrencyCode($wrappedVar);
-    }
+        $this->writeWrapperValue("currency_code", $var);
+        return $this;}
 
     /**
      * Amount in micros. One million is equivalent to one unit.
@@ -119,10 +117,9 @@ class Money extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value amount_micros = 2;</code>
      * @return int|string|null
      */
-    public function getAmountMicrosValue()
+    public function getAmountMicrosUnwrapped()
     {
-        $wrapper = $this->getAmountMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("amount_micros");
     }
 
     /**
@@ -149,11 +146,10 @@ class Money extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setAmountMicrosValue($var)
+    public function setAmountMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAmountMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("amount_micros", $var);
+        return $this;}
 
 }
 

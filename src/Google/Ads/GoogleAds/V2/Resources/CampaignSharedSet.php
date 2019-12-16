@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CampaignSharedSet</code>
  */
-final class CampaignSharedSet extends \Google\Protobuf\Internal\Message
+class CampaignSharedSet extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the campaign shared set.
@@ -23,13 +23,13 @@ final class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The campaign to which the campaign shared set belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
      */
-    private $campaign = null;
+    protected $campaign = null;
     /**
      * The shared set associated with the campaign. This may be a negative keyword
      * shared set of another customer. This customer should be a manager of the
@@ -40,13 +40,13 @@ final class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4;</code>
      */
-    private $shared_set = null;
+    protected $shared_set = null;
     /**
      * The status of this campaign shared set. Read only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignSharedSetStatusEnum.CampaignSharedSetStatus status = 2;</code>
      */
-    private $status = 0;
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -127,8 +127,7 @@ final class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      */
     public function getCampaignUnwrapped()
     {
-        $wrapper = $this->getCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("campaign");
     }
 
     /**
@@ -157,9 +156,8 @@ final class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      */
     public function setCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("campaign", $var);
+        return $this;}
 
     /**
      * The shared set associated with the campaign. This may be a negative keyword
@@ -192,8 +190,7 @@ final class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      */
     public function getSharedSetUnwrapped()
     {
-        $wrapper = $this->getSharedSet();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("shared_set");
     }
 
     /**
@@ -232,9 +229,8 @@ final class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      */
     public function setSharedSetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSharedSet($wrappedVar);
-    }
+        $this->writeWrapperValue("shared_set", $var);
+        return $this;}
 
     /**
      * The status of this campaign shared set. Read only.

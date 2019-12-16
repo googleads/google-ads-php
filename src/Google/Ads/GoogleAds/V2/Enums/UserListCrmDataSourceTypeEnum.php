@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.UserListCrmDataSourceTypeEnum</code>
  */
-final class UserListCrmDataSourceTypeEnum extends \Google\Protobuf\Internal\Message
+class UserListCrmDataSourceTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

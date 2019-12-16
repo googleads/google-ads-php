@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateForecastMetricsResponse</code>
  */
-final class GenerateForecastMetricsResponse extends \Google\Protobuf\Internal\Message
+class GenerateForecastMetricsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * List of campaign forecasts.

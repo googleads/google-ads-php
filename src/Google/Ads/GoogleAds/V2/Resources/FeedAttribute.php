@@ -16,26 +16,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.FeedAttribute</code>
  */
-final class FeedAttribute extends \Google\Protobuf\Internal\Message
+class FeedAttribute extends \Google\Protobuf\Internal\Message
 {
     /**
      * ID of the attribute.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The name of the attribute. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * Data type for feed attribute. Required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedAttributeTypeEnum.FeedAttributeType type = 3;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * Indicates that data corresponding to this attribute is part of a
      * FeedItem's unique key. It defaults to false if it is unspecified. Note
@@ -44,7 +44,7 @@ final class FeedAttribute extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_part_of_key = 4;</code>
      */
-    private $is_part_of_key = null;
+    protected $is_part_of_key = null;
 
     /**
      * Constructor.
@@ -91,8 +91,7 @@ final class FeedAttribute extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -121,9 +120,8 @@ final class FeedAttribute extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The name of the attribute. Required.
@@ -146,8 +144,7 @@ final class FeedAttribute extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -176,9 +173,8 @@ final class FeedAttribute extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * Data type for feed attribute. Required.
@@ -233,8 +229,7 @@ final class FeedAttribute extends \Google\Protobuf\Internal\Message
      */
     public function getIsPartOfKeyUnwrapped()
     {
-        $wrapper = $this->getIsPartOfKey();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("is_part_of_key");
     }
 
     /**
@@ -269,9 +264,8 @@ final class FeedAttribute extends \Google\Protobuf\Internal\Message
      */
     public function setIsPartOfKeyUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setIsPartOfKey($wrappedVar);
-    }
+        $this->writeWrapperValue("is_part_of_key", $var);
+        return $this;}
 
 }
 

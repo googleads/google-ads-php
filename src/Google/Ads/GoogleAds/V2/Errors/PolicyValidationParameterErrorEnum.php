@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.PolicyValidationParameterErrorEnum</code>
  */
-final class PolicyValidationParameterErrorEnum extends \Google\Protobuf\Internal\Message
+class PolicyValidationParameterErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

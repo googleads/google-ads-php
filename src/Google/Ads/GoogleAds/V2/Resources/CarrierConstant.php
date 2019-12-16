@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CarrierConstant</code>
  */
-final class CarrierConstant extends \Google\Protobuf\Internal\Message
+class CarrierConstant extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the carrier criterion.
@@ -22,26 +22,26 @@ final class CarrierConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the carrier criterion.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The full name of the carrier in English.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
 
     /**
      * Constructor.
@@ -118,8 +118,7 @@ final class CarrierConstant extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -148,9 +147,8 @@ final class CarrierConstant extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The full name of the carrier in English.
@@ -173,8 +171,7 @@ final class CarrierConstant extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -203,9 +200,8 @@ final class CarrierConstant extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The country code of the country where the carrier is located, e.g., "AR",
@@ -230,8 +226,7 @@ final class CarrierConstant extends \Google\Protobuf\Internal\Message
      */
     public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -262,9 +257,8 @@ final class CarrierConstant extends \Google\Protobuf\Internal\Message
      */
     public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
 }
 

@@ -13,50 +13,50 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ExpandedTextAdInfo</code>
  */
-final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
+class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The first part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part1 = 1;</code>
      */
-    private $headline_part1 = null;
+    protected $headline_part1 = null;
     /**
      * The second part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part2 = 2;</code>
      */
-    private $headline_part2 = null;
+    protected $headline_part2 = null;
     /**
      * The third part of the ad's headline.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue headline_part3 = 6;</code>
      */
-    private $headline_part3 = null;
+    protected $headline_part3 = null;
     /**
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 3;</code>
      */
-    private $description = null;
+    protected $description = null;
     /**
      * The second description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 7;</code>
      */
-    private $description2 = null;
+    protected $description2 = null;
     /**
      * The text that can appear alongside the ad's displayed URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path1 = 4;</code>
      */
-    private $path1 = null;
+    protected $path1 = null;
     /**
      * Additional text that can appear alongside the ad's displayed URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue path2 = 5;</code>
      */
-    private $path2 = null;
+    protected $path2 = null;
 
     /**
      * Constructor.
@@ -106,8 +106,7 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHeadlinePart1Unwrapped()
     {
-        $wrapper = $this->getHeadlinePart1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("headline_part1");
     }
 
     /**
@@ -136,9 +135,8 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHeadlinePart1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeadlinePart1($wrappedVar);
-    }
+        $this->writeWrapperValue("headline_part1", $var);
+        return $this;}
 
     /**
      * The second part of the ad's headline.
@@ -161,8 +159,7 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHeadlinePart2Unwrapped()
     {
-        $wrapper = $this->getHeadlinePart2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("headline_part2");
     }
 
     /**
@@ -191,9 +188,8 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHeadlinePart2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeadlinePart2($wrappedVar);
-    }
+        $this->writeWrapperValue("headline_part2", $var);
+        return $this;}
 
     /**
      * The third part of the ad's headline.
@@ -216,8 +212,7 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getHeadlinePart3Unwrapped()
     {
-        $wrapper = $this->getHeadlinePart3();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("headline_part3");
     }
 
     /**
@@ -246,9 +241,8 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setHeadlinePart3Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeadlinePart3($wrappedVar);
-    }
+        $this->writeWrapperValue("headline_part3", $var);
+        return $this;}
 
     /**
      * The description of the ad.
@@ -271,8 +265,7 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -301,9 +294,8 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
     /**
      * The second description of the ad.
@@ -326,8 +318,7 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getDescription2Unwrapped()
     {
-        $wrapper = $this->getDescription2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description2");
     }
 
     /**
@@ -356,9 +347,8 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setDescription2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription2($wrappedVar);
-    }
+        $this->writeWrapperValue("description2", $var);
+        return $this;}
 
     /**
      * The text that can appear alongside the ad's displayed URL.
@@ -381,8 +371,7 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getPath1Unwrapped()
     {
-        $wrapper = $this->getPath1();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("path1");
     }
 
     /**
@@ -411,9 +400,8 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setPath1Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPath1($wrappedVar);
-    }
+        $this->writeWrapperValue("path1", $var);
+        return $this;}
 
     /**
      * Additional text that can appear alongside the ad's displayed URL.
@@ -436,8 +424,7 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function getPath2Unwrapped()
     {
-        $wrapper = $this->getPath2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("path2");
     }
 
     /**
@@ -466,9 +453,8 @@ final class ExpandedTextAdInfo extends \Google\Protobuf\Internal\Message
      */
     public function setPath2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPath2($wrappedVar);
-    }
+        $this->writeWrapperValue("path2", $var);
+        return $this;}
 
 }
 

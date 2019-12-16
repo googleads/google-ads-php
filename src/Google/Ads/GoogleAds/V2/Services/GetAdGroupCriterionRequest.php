@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GetAdGroupCriterionRequest</code>
  */
-final class GetAdGroupCriterionRequest extends \Google\Protobuf\Internal\Message
+class GetAdGroupCriterionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the criterion to fetch.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

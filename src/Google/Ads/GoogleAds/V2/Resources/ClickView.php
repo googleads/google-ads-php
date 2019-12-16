@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.ClickView</code>
  */
-final class ClickView extends \Google\Protobuf\Internal\Message
+class ClickView extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the click view.
@@ -24,39 +24,39 @@ final class ClickView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The Google Click ID.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
      */
-    private $gclid = null;
+    protected $gclid = null;
     /**
      * The location criteria matching the area of interest associated with the
      * impression.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation area_of_interest = 3;</code>
      */
-    private $area_of_interest = null;
+    protected $area_of_interest = null;
     /**
      * The location criteria matching the location of presence associated with the
      * impression.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation location_of_presence = 4;</code>
      */
-    private $location_of_presence = null;
+    protected $location_of_presence = null;
     /**
      * Page number in search results where the ad was shown.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
      */
-    private $page_number = null;
+    protected $page_number = null;
     /**
      * The associated ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7;</code>
      */
-    private $ad_group_ad = null;
+    protected $ad_group_ad = null;
 
     /**
      * Constructor.
@@ -138,8 +138,7 @@ final class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function getGclidUnwrapped()
     {
-        $wrapper = $this->getGclid();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("gclid");
     }
 
     /**
@@ -168,9 +167,8 @@ final class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function setGclidUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setGclid($wrappedVar);
-    }
+        $this->writeWrapperValue("gclid", $var);
+        return $this;}
 
     /**
      * The location criteria matching the area of interest associated with the
@@ -249,8 +247,7 @@ final class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function getPageNumberUnwrapped()
     {
-        $wrapper = $this->getPageNumber();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("page_number");
     }
 
     /**
@@ -279,9 +276,8 @@ final class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function setPageNumberUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setPageNumber($wrappedVar);
-    }
+        $this->writeWrapperValue("page_number", $var);
+        return $this;}
 
     /**
      * The associated ad.
@@ -304,8 +300,7 @@ final class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupAdUnwrapped()
     {
-        $wrapper = $this->getAdGroupAd();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_ad");
     }
 
     /**
@@ -334,9 +329,8 @@ final class ClickView extends \Google\Protobuf\Internal\Message
      */
     public function setAdGroupAdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupAd($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_ad", $var);
+        return $this;}
 
 }
 

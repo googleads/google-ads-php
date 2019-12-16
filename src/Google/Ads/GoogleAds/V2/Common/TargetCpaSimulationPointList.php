@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TargetCpaSimulationPointList</code>
  */
-final class TargetCpaSimulationPointList extends \Google\Protobuf\Internal\Message
+class TargetCpaSimulationPointList extends \Google\Protobuf\Internal\Message
 {
     /**
      * Projected metrics for a series of target CPA amounts.

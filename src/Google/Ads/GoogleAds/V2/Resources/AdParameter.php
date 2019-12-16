@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AdParameter</code>
  */
-final class AdParameter extends \Google\Protobuf\Internal\Message
+class AdParameter extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the ad parameter.
@@ -27,19 +27,19 @@ final class AdParameter extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ad group criterion that this ad parameter belongs to.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
      */
-    private $ad_group_criterion = null;
+    protected $ad_group_criterion = null;
     /**
      * The unique index of this ad parameter. Must be either 1 or 2.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
      */
-    private $parameter_index = null;
+    protected $parameter_index = null;
     /**
      * Numeric value to insert into the ad text. The following restrictions
      *  apply:
@@ -57,7 +57,7 @@ final class AdParameter extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue insertion_text = 4;</code>
      */
-    private $insertion_text = null;
+    protected $insertion_text = null;
 
     /**
      * Constructor.
@@ -145,8 +145,7 @@ final class AdParameter extends \Google\Protobuf\Internal\Message
      */
     public function getAdGroupCriterionUnwrapped()
     {
-        $wrapper = $this->getAdGroupCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_criterion");
     }
 
     /**
@@ -175,9 +174,8 @@ final class AdParameter extends \Google\Protobuf\Internal\Message
      */
     public function setAdGroupCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setAdGroupCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_criterion", $var);
+        return $this;}
 
     /**
      * The unique index of this ad parameter. Must be either 1 or 2.
@@ -200,8 +198,7 @@ final class AdParameter extends \Google\Protobuf\Internal\Message
      */
     public function getParameterIndexUnwrapped()
     {
-        $wrapper = $this->getParameterIndex();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parameter_index");
     }
 
     /**
@@ -230,9 +227,8 @@ final class AdParameter extends \Google\Protobuf\Internal\Message
      */
     public function setParameterIndexUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setParameterIndex($wrappedVar);
-    }
+        $this->writeWrapperValue("parameter_index", $var);
+        return $this;}
 
     /**
      * Numeric value to insert into the ad text. The following restrictions
@@ -279,8 +275,7 @@ final class AdParameter extends \Google\Protobuf\Internal\Message
      */
     public function getInsertionTextUnwrapped()
     {
-        $wrapper = $this->getInsertionText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("insertion_text");
     }
 
     /**
@@ -333,9 +328,8 @@ final class AdParameter extends \Google\Protobuf\Internal\Message
      */
     public function setInsertionTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setInsertionText($wrappedVar);
-    }
+        $this->writeWrapperValue("insertion_text", $var);
+        return $this;}
 
 }
 

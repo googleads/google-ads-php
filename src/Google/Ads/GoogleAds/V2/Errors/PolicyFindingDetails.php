@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.PolicyFindingDetails</code>
  */
-final class PolicyFindingDetails extends \Google\Protobuf\Internal\Message
+class PolicyFindingDetails extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of policy topics for the resource. Contains the PROHIBITED or

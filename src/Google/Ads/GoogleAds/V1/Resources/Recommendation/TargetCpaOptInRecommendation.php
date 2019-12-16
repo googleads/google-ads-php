@@ -27,7 +27,7 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
      */
-    private $recommended_target_cpa_micros = null;
+    protected $recommended_target_cpa_micros = null;
 
     /**
      * Constructor.
@@ -94,10 +94,9 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
      * @return int|string|null
      */
-    public function getRecommendedTargetCpaMicrosValue()
+    public function getRecommendedTargetCpaMicrosUnwrapped()
     {
-        $wrapper = $this->getRecommendedTargetCpaMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("recommended_target_cpa_micros");
     }
 
     /**
@@ -126,11 +125,10 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setRecommendedTargetCpaMicrosValue($var)
+    public function setRecommendedTargetCpaMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setRecommendedTargetCpaMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("recommended_target_cpa_micros", $var);
+        return $this;}
 
 }
 

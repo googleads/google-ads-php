@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.ReachPlanAdLengthEnum</code>
  */
-final class ReachPlanAdLengthEnum extends \Google\Protobuf\Internal\Message
+class ReachPlanAdLengthEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

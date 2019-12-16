@@ -22,7 +22,7 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.UserListNumberRuleItemOperatorEnum.UserListNumberRuleItemOperator operator = 1;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * Number value to be compared with the variable.
      * This field is required and must be populated when creating a new number
@@ -30,7 +30,7 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value = 2;</code>
      */
-    private $value = null;
+    protected $value = null;
 
     /**
      * Constructor.
@@ -106,10 +106,9 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue value = 2;</code>
      * @return float|null
      */
-    public function getValueValue()
+    public function getValueUnwrapped()
     {
-        $wrapper = $this->getValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value");
     }
 
     /**
@@ -140,11 +139,10 @@ class UserListNumberRuleItemInfo extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setValueValue($var)
+    public function setValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setValue($wrappedVar);
-    }
+        $this->writeWrapperValue("value", $var);
+        return $this;}
 
 }
 

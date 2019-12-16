@@ -22,20 +22,20 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the draft.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value draft_id = 2;</code>
      */
-    private $draft_id = null;
+    protected $draft_id = null;
     /**
      * The base campaign to which the draft belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 3;</code>
      */
-    private $base_campaign = null;
+    protected $base_campaign = null;
     /**
      * The name of the campaign draft.
      * This field is required and should not be empty when creating new
@@ -45,7 +45,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * Resource name of the Campaign that results from overlaying the draft
      * changes onto the base campaign.
@@ -53,20 +53,20 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue draft_campaign = 5;</code>
      */
-    private $draft_campaign = null;
+    protected $draft_campaign = null;
     /**
      * The status of the campaign draft. This field is read-only.
      * When a new campaign draft is added, the status defaults to PROPOSED.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.CampaignDraftStatusEnum.CampaignDraftStatus status = 6;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * Whether there is an experiment based on this draft currently serving.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_experiment_running = 7;</code>
      */
-    private $has_experiment_running = null;
+    protected $has_experiment_running = null;
     /**
      * The resource name of the long-running operation that can be used to poll
      * for completion of draft promotion. This is only set if the draft promotion
@@ -74,7 +74,7 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 8;</code>
      */
-    private $long_running_operation = null;
+    protected $long_running_operation = null;
 
     /**
      * Constructor.
@@ -168,10 +168,9 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value draft_id = 2;</code>
      * @return int|string|null
      */
-    public function getDraftIdValue()
+    public function getDraftIdUnwrapped()
     {
-        $wrapper = $this->getDraftId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("draft_id");
     }
 
     /**
@@ -200,11 +199,10 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setDraftIdValue($var)
+    public function setDraftIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setDraftId($wrappedVar);
-    }
+        $this->writeWrapperValue("draft_id", $var);
+        return $this;}
 
     /**
      * The base campaign to which the draft belongs.
@@ -225,10 +223,9 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 3;</code>
      * @return string|null
      */
-    public function getBaseCampaignValue()
+    public function getBaseCampaignUnwrapped()
     {
-        $wrapper = $this->getBaseCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("base_campaign");
     }
 
     /**
@@ -255,11 +252,10 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setBaseCampaignValue($var)
+    public function setBaseCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBaseCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("base_campaign", $var);
+        return $this;}
 
     /**
      * The name of the campaign draft.
@@ -288,10 +284,9 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      * @return string|null
      */
-    public function getNameValue()
+    public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -326,11 +321,10 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setNameValue($var)
+    public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * Resource name of the Campaign that results from overlaying the draft
@@ -355,10 +349,9 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue draft_campaign = 5;</code>
      * @return string|null
      */
-    public function getDraftCampaignValue()
+    public function getDraftCampaignUnwrapped()
     {
-        $wrapper = $this->getDraftCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("draft_campaign");
     }
 
     /**
@@ -389,11 +382,10 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setDraftCampaignValue($var)
+    public function setDraftCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDraftCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("draft_campaign", $var);
+        return $this;}
 
     /**
      * The status of the campaign draft. This field is read-only.
@@ -442,10 +434,9 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue has_experiment_running = 7;</code>
      * @return bool|null
      */
-    public function getHasExperimentRunningValue()
+    public function getHasExperimentRunningUnwrapped()
     {
-        $wrapper = $this->getHasExperimentRunning();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("has_experiment_running");
     }
 
     /**
@@ -472,11 +463,10 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setHasExperimentRunningValue($var)
+    public function setHasExperimentRunningUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setHasExperimentRunning($wrappedVar);
-    }
+        $this->writeWrapperValue("has_experiment_running", $var);
+        return $this;}
 
     /**
      * The resource name of the long-running operation that can be used to poll
@@ -501,10 +491,9 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 8;</code>
      * @return string|null
      */
-    public function getLongRunningOperationValue()
+    public function getLongRunningOperationUnwrapped()
     {
-        $wrapper = $this->getLongRunningOperation();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("long_running_operation");
     }
 
     /**
@@ -535,11 +524,10 @@ class CampaignDraft extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setLongRunningOperationValue($var)
+    public function setLongRunningOperationUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLongRunningOperation($wrappedVar);
-    }
+        $this->writeWrapperValue("long_running_operation", $var);
+        return $this;}
 
 }
 

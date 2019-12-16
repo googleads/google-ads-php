@@ -20,13 +20,13 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
      */
-    private $text = null;
+    protected $text = null;
     /**
      * The match type of the keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.KeywordMatchTypeEnum.KeywordMatchType match_type = 2;</code>
      */
-    private $match_type = 0;
+    protected $match_type = 0;
 
     /**
      * Constructor.
@@ -64,10 +64,9 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
      * @return string|null
      */
-    public function getTextValue()
+    public function getTextUnwrapped()
     {
-        $wrapper = $this->getText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text");
     }
 
     /**
@@ -94,11 +93,10 @@ class KeywordInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTextValue($var)
+    public function setTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setText($wrappedVar);
-    }
+        $this->writeWrapperValue("text", $var);
+        return $this;}
 
     /**
      * The match type of the keyword.

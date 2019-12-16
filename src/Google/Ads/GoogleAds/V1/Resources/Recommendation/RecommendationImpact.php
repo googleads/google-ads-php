@@ -21,13 +21,13 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Recommendation.RecommendationMetrics base_metrics = 1;</code>
      */
-    private $base_metrics = null;
+    protected $base_metrics = null;
     /**
      * Estimated metrics if the recommendation is applied.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.resources.Recommendation.RecommendationMetrics potential_metrics = 2;</code>
      */
-    private $potential_metrics = null;
+    protected $potential_metrics = null;
 
     /**
      * Constructor.

@@ -22,31 +22,32 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The extension type of the extension feed item.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;</code>
      */
-    private $extension_type = 0;
+    protected $extension_type = 0;
     /**
-     * Start time in which this feed item is effective and can begin serving.
+     * Start time in which this feed item is effective and can begin serving. The
+     * time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 5;</code>
      */
-    private $start_date_time = null;
+    protected $start_date_time = null;
     /**
      * End time in which this feed item is no longer effective and will stop
-     * serving.
+     * serving. The time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 6;</code>
      */
-    private $end_date_time = null;
+    protected $end_date_time = null;
     /**
      * List of non-overlapping schedules specifying all time intervals
      * for which the feed item may serve. There can be a maximum of 6 schedules
@@ -60,20 +61,20 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 17;</code>
      */
-    private $device = 0;
+    protected $device = 0;
     /**
      * The targeted geo target constant.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
      */
-    private $targeted_geo_target_constant = null;
+    protected $targeted_geo_target_constant = null;
     /**
      * Status of the feed item.
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.FeedItemStatusEnum.FeedItemStatus status = 4;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     protected $extension;
     protected $serving_resource_targeting;
 
@@ -91,12 +92,13 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *           The extension type of the extension feed item.
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $start_date_time
-     *           Start time in which this feed item is effective and can begin serving.
+     *           Start time in which this feed item is effective and can begin serving. The
+     *           time is in the customer's time zone.
      *           The format is "YYYY-MM-DD HH:MM:SS".
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *     @type \Google\Protobuf\StringValue $end_date_time
      *           End time in which this feed item is no longer effective and will stop
-     *           serving.
+     *           serving. The time is in the customer's time zone.
      *           The format is "YYYY-MM-DD HH:MM:SS".
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *     @type \Google\Ads\GoogleAds\V1\Common\AdScheduleInfo[]|\Google\Protobuf\Internal\RepeatedField $ad_schedules
@@ -203,7 +205,8 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Start time in which this feed item is effective and can begin serving.
+     * Start time in which this feed item is effective and can begin serving. The
+     * time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -218,21 +221,22 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getStartDateTime()</code>
 
-     * Start time in which this feed item is effective and can begin serving.
+     * Start time in which this feed item is effective and can begin serving. The
+     * time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 5;</code>
      * @return string|null
      */
-    public function getStartDateTimeValue()
+    public function getStartDateTimeUnwrapped()
     {
-        $wrapper = $this->getStartDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date_time");
     }
 
     /**
-     * Start time in which this feed item is effective and can begin serving.
+     * Start time in which this feed item is effective and can begin serving. The
+     * time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -251,7 +255,8 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Start time in which this feed item is effective and can begin serving.
+     * Start time in which this feed item is effective and can begin serving. The
+     * time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -259,15 +264,14 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setStartDateTimeValue($var)
+    public function setStartDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date_time", $var);
+        return $this;}
 
     /**
      * End time in which this feed item is no longer effective and will stop
-     * serving.
+     * serving. The time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -283,22 +287,21 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getEndDateTime()</code>
 
      * End time in which this feed item is no longer effective and will stop
-     * serving.
+     * serving. The time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 6;</code>
      * @return string|null
      */
-    public function getEndDateTimeValue()
+    public function getEndDateTimeUnwrapped()
     {
-        $wrapper = $this->getEndDateTime();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date_time");
     }
 
     /**
      * End time in which this feed item is no longer effective and will stop
-     * serving.
+     * serving. The time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -318,7 +321,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
      * End time in which this feed item is no longer effective and will stop
-     * serving.
+     * serving. The time is in the customer's time zone.
      * The format is "YYYY-MM-DD HH:MM:SS".
      * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
      *
@@ -326,11 +329,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setEndDateTimeValue($var)
+    public function setEndDateTimeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDateTime($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date_time", $var);
+        return $this;}
 
     /**
      * List of non-overlapping schedules specifying all time intervals
@@ -407,10 +409,9 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
      * @return string|null
      */
-    public function getTargetedGeoTargetConstantValue()
+    public function getTargetedGeoTargetConstantUnwrapped()
     {
-        $wrapper = $this->getTargetedGeoTargetConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("targeted_geo_target_constant");
     }
 
     /**
@@ -437,11 +438,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTargetedGeoTargetConstantValue($var)
+    public function setTargetedGeoTargetConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTargetedGeoTargetConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("targeted_geo_target_constant", $var);
+        return $this;}
 
     /**
      * Status of the feed item.
@@ -756,10 +756,9 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
      * @return string|null
      */
-    public function getTargetedCampaignValue()
+    public function getTargetedCampaignUnwrapped()
     {
-        $wrapper = $this->getTargetedCampaign();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("targeted_campaign");
     }
 
     /**
@@ -786,11 +785,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTargetedCampaignValue($var)
+    public function setTargetedCampaignUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTargetedCampaign($wrappedVar);
-    }
+        $this->writeWrapperValue("targeted_campaign", $var);
+        return $this;}
 
     /**
      * The targeted ad group.
@@ -811,10 +809,9 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
      * @return string|null
      */
-    public function getTargetedAdGroupValue()
+    public function getTargetedAdGroupUnwrapped()
     {
-        $wrapper = $this->getTargetedAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("targeted_ad_group");
     }
 
     /**
@@ -841,11 +838,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTargetedAdGroupValue($var)
+    public function setTargetedAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTargetedAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("targeted_ad_group", $var);
+        return $this;}
 
     /**
      * @return string

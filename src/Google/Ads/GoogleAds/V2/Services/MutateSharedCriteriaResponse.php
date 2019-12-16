@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateSharedCriteriaResponse</code>
  */
-final class MutateSharedCriteriaResponse extends \Google\Protobuf\Internal\Message
+class MutateSharedCriteriaResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Errors that pertain to operation failures in the partial failure mode.
@@ -23,7 +23,7 @@ final class MutateSharedCriteriaResponse extends \Google\Protobuf\Internal\Messa
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 3;</code>
      */
-    private $partial_failure_error = null;
+    protected $partial_failure_error = null;
     /**
      * All results for the mutate.
      *

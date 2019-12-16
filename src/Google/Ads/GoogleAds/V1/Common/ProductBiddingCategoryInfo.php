@@ -22,20 +22,20 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Two-letter upper-case country code of the product bidding category. It must
      * match the campaign.shopping_setting.sales_country field.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     /**
      * Level of the product bidding category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel level = 3;</code>
      */
-    private $level = 0;
+    protected $level = 0;
 
     /**
      * Constructor.
@@ -82,10 +82,9 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      * @return int|string|null
      */
-    public function getIdValue()
+    public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -116,11 +115,10 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setIdValue($var)
+    public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Two-letter upper-case country code of the product bidding category. It must
@@ -143,10 +141,9 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
      * @return string|null
      */
-    public function getCountryCodeValue()
+    public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -175,11 +172,10 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCountryCodeValue($var)
+    public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * Level of the product bidding category.

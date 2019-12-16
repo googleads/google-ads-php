@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Campaign.TrackingSetting</code>
  */
-final class TrackingSetting extends \Google\Protobuf\Internal\Message
+class TrackingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
      * The url used for dynamic tracking.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
      */
-    private $tracking_url = null;
+    protected $tracking_url = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class TrackingSetting extends \Google\Protobuf\Internal\Message
      */
     public function getTrackingUrlUnwrapped()
     {
-        $wrapper = $this->getTrackingUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("tracking_url");
     }
 
     /**
@@ -88,9 +87,8 @@ final class TrackingSetting extends \Google\Protobuf\Internal\Message
      */
     public function setTrackingUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTrackingUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("tracking_url", $var);
+        return $this;}
 
 }
 

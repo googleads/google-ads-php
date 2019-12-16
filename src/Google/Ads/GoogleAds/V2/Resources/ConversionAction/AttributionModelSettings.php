@@ -13,21 +13,21 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.ConversionAction.AttributionModelSettings</code>
  */
-final class AttributionModelSettings extends \Google\Protobuf\Internal\Message
+class AttributionModelSettings extends \Google\Protobuf\Internal\Message
 {
     /**
      * The attribution model type of this conversion action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AttributionModelEnum.AttributionModel attribution_model = 1;</code>
      */
-    private $attribution_model = 0;
+    protected $attribution_model = 0;
     /**
      * The status of the data-driven attribution model for the conversion
      * action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DataDrivenModelStatusEnum.DataDrivenModelStatus data_driven_model_status = 2;</code>
      */
-    private $data_driven_model_status = 0;
+    protected $data_driven_model_status = 0;
 
     /**
      * Constructor.

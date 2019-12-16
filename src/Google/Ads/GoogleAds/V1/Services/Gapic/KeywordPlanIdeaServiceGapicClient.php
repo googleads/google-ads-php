@@ -26,7 +26,7 @@
 
 namespace Google\Ads\GoogleAds\V1\Services\Gapic;
 
-use Google\Ads\GoogleAds\V1\Enums\KeywordPlanNetworkEnum_KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V1\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
 use Google\Ads\GoogleAds\V1\Services\GenerateKeywordIdeaResponse;
 use Google\Ads\GoogleAds\V1\Services\GenerateKeywordIdeasRequest;
 use Google\Ads\GoogleAds\V1\Services\KeywordAndUrlSeed;
@@ -54,7 +54,7 @@ use Google\Protobuf\StringValue;
  *     $customerId = '';
  *     $language = new StringValue();
  *     $geoTargetConstants = [];
- *     $keywordPlanNetwork = KeywordPlanNetworkEnum_KeywordPlanNetwork::UNSPECIFIED;
+ *     $keywordPlanNetwork = KeywordPlanNetwork::UNSPECIFIED;
  *     $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork);
  * } finally {
  *     $keywordPlanIdeaServiceClient->close();
@@ -180,7 +180,7 @@ class KeywordPlanIdeaServiceGapicClient
      *     $customerId = '';
      *     $language = new StringValue();
      *     $geoTargetConstants = [];
-     *     $keywordPlanNetwork = KeywordPlanNetworkEnum_KeywordPlanNetwork::UNSPECIFIED;
+     *     $keywordPlanNetwork = KeywordPlanNetwork::UNSPECIFIED;
      *     $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork);
      * } finally {
      *     $keywordPlanIdeaServiceClient->close();
@@ -193,7 +193,7 @@ class KeywordPlanIdeaServiceGapicClient
      * @param StringValue[] $geoTargetConstants The resource names of the location to target.
      *                                          Max 10
      * @param int           $keywordPlanNetwork Targeting network.
-     *                                          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V1\Enums\KeywordPlanNetworkEnum_KeywordPlanNetwork}
+     *                                          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V1\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork}
      * @param array         $optionalArgs       {
      *                                          Optional.
      *

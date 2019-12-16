@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.HotelCalloutFeedItem</code>
  */
-final class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
+class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The callout text.
@@ -21,14 +21,14 @@ final class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 1;</code>
      */
-    private $text = null;
+    protected $text = null;
     /**
      * The language of the hotel callout text.
      * IETF BCP 47 compliant language code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 2;</code>
      */
-    private $language_code = null;
+    protected $language_code = null;
 
     /**
      * Constructor.
@@ -72,8 +72,7 @@ final class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTextUnwrapped()
     {
-        $wrapper = $this->getText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text");
     }
 
     /**
@@ -104,9 +103,8 @@ final class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setText($wrappedVar);
-    }
+        $this->writeWrapperValue("text", $var);
+        return $this;}
 
     /**
      * The language of the hotel callout text.
@@ -131,8 +129,7 @@ final class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getLanguageCodeUnwrapped()
     {
-        $wrapper = $this->getLanguageCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("language_code");
     }
 
     /**
@@ -163,9 +160,8 @@ final class HotelCalloutFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setLanguageCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setLanguageCode($wrappedVar);
-    }
+        $this->writeWrapperValue("language_code", $var);
+        return $this;}
 
 }
 

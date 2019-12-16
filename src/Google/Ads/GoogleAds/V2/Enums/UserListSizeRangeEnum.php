@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.UserListSizeRangeEnum</code>
  */
-final class UserListSizeRangeEnum extends \Google\Protobuf\Internal\Message
+class UserListSizeRangeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

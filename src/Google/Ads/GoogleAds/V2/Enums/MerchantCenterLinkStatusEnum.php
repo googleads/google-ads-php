@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.MerchantCenterLinkStatusEnum</code>
  */
-final class MerchantCenterLinkStatusEnum extends \Google\Protobuf\Internal\Message
+class MerchantCenterLinkStatusEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

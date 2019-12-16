@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.CampaignSharedSetOperation</code>
  */
-final class CampaignSharedSetOperation extends \Google\Protobuf\Internal\Message
+class CampaignSharedSetOperation extends \Google\Protobuf\Internal\Message
 {
     protected $operation;
 

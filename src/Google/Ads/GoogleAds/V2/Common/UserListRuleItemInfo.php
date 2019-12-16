@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListRuleItemInfo</code>
  */
-final class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
+class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Rule variable name. It should match the corresponding key name fired
@@ -27,7 +27,7 @@ final class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 1;</code>
      */
-    private $name = null;
+    protected $name = null;
     protected $rule_item;
 
     /**
@@ -93,8 +93,7 @@ final class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -137,9 +136,8 @@ final class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * An atomic rule fragment composed of a number operation.

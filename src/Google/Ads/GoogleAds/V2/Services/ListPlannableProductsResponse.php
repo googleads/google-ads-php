@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ListPlannableProductsResponse</code>
  */
-final class ListPlannableProductsResponse extends \Google\Protobuf\Internal\Message
+class ListPlannableProductsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of products available for planning and related targeting metadata.

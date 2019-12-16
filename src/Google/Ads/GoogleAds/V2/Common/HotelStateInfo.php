@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.HotelStateInfo</code>
  */
-final class HotelStateInfo extends \Google\Protobuf\Internal\Message
+class HotelStateInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The Geo Target Constant resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue state_criterion = 1;</code>
      */
-    private $state_criterion = null;
+    protected $state_criterion = null;
 
     /**
      * Constructor.
@@ -58,8 +58,7 @@ final class HotelStateInfo extends \Google\Protobuf\Internal\Message
      */
     public function getStateCriterionUnwrapped()
     {
-        $wrapper = $this->getStateCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("state_criterion");
     }
 
     /**
@@ -88,9 +87,8 @@ final class HotelStateInfo extends \Google\Protobuf\Internal\Message
      */
     public function setStateCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStateCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("state_criterion", $var);
+        return $this;}
 
 }
 

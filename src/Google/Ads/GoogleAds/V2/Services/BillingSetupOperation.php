@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.BillingSetupOperation</code>
  */
-final class BillingSetupOperation extends \Google\Protobuf\Internal\Message
+class BillingSetupOperation extends \Google\Protobuf\Internal\Message
 {
     protected $operation;
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.ReachCurve</code>
  */
-final class ReachCurve extends \Google\Protobuf\Internal\Message
+class ReachCurve extends \Google\Protobuf\Internal\Message
 {
     /**
      * All points on the reach curve.

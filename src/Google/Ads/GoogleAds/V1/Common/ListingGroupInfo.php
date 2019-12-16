@@ -20,21 +20,21 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.ListingGroupTypeEnum.ListingGroupType type = 1;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * Dimension value with which this listing group is refining its parent.
      * Undefined for the root group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.ListingDimensionInfo case_value = 2;</code>
      */
-    private $case_value = null;
+    protected $case_value = null;
     /**
      * Resource name of ad group criterion which is the parent listing group
      * subdivision. Null for the root group.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue parent_ad_group_criterion = 3;</code>
      */
-    private $parent_ad_group_criterion = null;
+    protected $parent_ad_group_criterion = null;
 
     /**
      * Constructor.
@@ -132,10 +132,9 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue parent_ad_group_criterion = 3;</code>
      * @return string|null
      */
-    public function getParentAdGroupCriterionValue()
+    public function getParentAdGroupCriterionUnwrapped()
     {
-        $wrapper = $this->getParentAdGroupCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("parent_ad_group_criterion");
     }
 
     /**
@@ -164,11 +163,10 @@ class ListingGroupInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setParentAdGroupCriterionValue($var)
+    public function setParentAdGroupCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setParentAdGroupCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("parent_ad_group_criterion", $var);
+        return $this;}
 
 }
 

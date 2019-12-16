@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.CriterionCategoryChannelAvailability</code>
  */
-final class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Message
+class CriterionCategoryChannelAvailability extends \Google\Protobuf\Internal\Message
 {
     /**
      * Format of the channel availability. Can be ALL_CHANNELS (the rest of the
@@ -26,13 +26,13 @@ final class CriterionCategoryChannelAvailability extends \Google\Protobuf\Intern
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionCategoryChannelAvailabilityModeEnum.CriterionCategoryChannelAvailabilityMode availability_mode = 1;</code>
      */
-    private $availability_mode = 0;
+    protected $availability_mode = 0;
     /**
      * Channel type the category is available to.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 2;</code>
      */
-    private $advertising_channel_type = 0;
+    protected $advertising_channel_type = 0;
     /**
      * Channel subtypes under the channel type the category is available to.
      *
@@ -47,7 +47,7 @@ final class CriterionCategoryChannelAvailability extends \Google\Protobuf\Intern
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue include_default_channel_sub_type = 4;</code>
      */
-    private $include_default_channel_sub_type = null;
+    protected $include_default_channel_sub_type = null;
 
     /**
      * Constructor.
@@ -193,8 +193,7 @@ final class CriterionCategoryChannelAvailability extends \Google\Protobuf\Intern
      */
     public function getIncludeDefaultChannelSubTypeUnwrapped()
     {
-        $wrapper = $this->getIncludeDefaultChannelSubType();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("include_default_channel_sub_type");
     }
 
     /**
@@ -229,9 +228,8 @@ final class CriterionCategoryChannelAvailability extends \Google\Protobuf\Intern
      */
     public function setIncludeDefaultChannelSubTypeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setIncludeDefaultChannelSubType($wrappedVar);
-    }
+        $this->writeWrapperValue("include_default_channel_sub_type", $var);
+        return $this;}
 
 }
 

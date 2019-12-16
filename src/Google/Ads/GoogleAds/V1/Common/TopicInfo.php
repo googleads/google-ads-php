@@ -22,7 +22,7 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant = 1;</code>
      */
-    private $topic_constant = null;
+    protected $topic_constant = null;
     /**
      * The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
@@ -72,10 +72,9 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant = 1;</code>
      * @return string|null
      */
-    public function getTopicConstantValue()
+    public function getTopicConstantUnwrapped()
     {
-        $wrapper = $this->getTopicConstant();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("topic_constant");
     }
 
     /**
@@ -102,11 +101,10 @@ class TopicInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setTopicConstantValue($var)
+    public function setTopicConstantUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setTopicConstant($wrappedVar);
-    }
+        $this->writeWrapperValue("topic_constant", $var);
+        return $this;}
 
     /**
      * The category to target or exclude. Each subsequent element in the array

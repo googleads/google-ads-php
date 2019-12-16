@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.errors.ConversionAdjustmentUploadErrorEnum</code>
  */
-final class ConversionAdjustmentUploadErrorEnum extends \Google\Protobuf\Internal\Message
+class ConversionAdjustmentUploadErrorEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

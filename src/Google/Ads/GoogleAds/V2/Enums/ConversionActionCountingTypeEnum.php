@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.ConversionActionCountingTypeEnum</code>
  */
-final class ConversionActionCountingTypeEnum extends \Google\Protobuf\Internal\Message
+class ConversionActionCountingTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

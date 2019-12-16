@@ -22,7 +22,7 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
      */
-    private $country_criterion = null;
+    protected $country_criterion = null;
 
     /**
      * Constructor.
@@ -61,10 +61,9 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue country_criterion = 1;</code>
      * @return string|null
      */
-    public function getCountryCriterionValue()
+    public function getCountryCriterionUnwrapped()
     {
-        $wrapper = $this->getCountryCriterion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_criterion");
     }
 
     /**
@@ -93,11 +92,10 @@ class CountryConstraint extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCountryCriterionValue($var)
+    public function setCountryCriterionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCriterion($wrappedVar);
-    }
+        $this->writeWrapperValue("country_criterion", $var);
+        return $this;}
 
 }
 

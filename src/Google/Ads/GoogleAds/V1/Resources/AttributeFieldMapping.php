@@ -20,7 +20,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
      */
-    private $feed_attribute_id = null;
+    protected $feed_attribute_id = null;
     /**
      * The placeholder field ID. If a placeholder field enum is not published in
      * the current API version, then this field will be populated and the field
@@ -29,7 +29,7 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
      */
-    private $field_id = null;
+    protected $field_id = null;
     protected $field;
 
     /**
@@ -113,10 +113,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
      * @return int|string|null
      */
-    public function getFeedAttributeIdValue()
+    public function getFeedAttributeIdUnwrapped()
     {
-        $wrapper = $this->getFeedAttributeId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("feed_attribute_id");
     }
 
     /**
@@ -143,11 +142,10 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setFeedAttributeIdValue($var)
+    public function setFeedAttributeIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFeedAttributeId($wrappedVar);
-    }
+        $this->writeWrapperValue("feed_attribute_id", $var);
+        return $this;}
 
     /**
      * The placeholder field ID. If a placeholder field enum is not published in
@@ -174,10 +172,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
      * @return int|string|null
      */
-    public function getFieldIdValue()
+    public function getFieldIdUnwrapped()
     {
-        $wrapper = $this->getFieldId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("field_id");
     }
 
     /**
@@ -210,11 +207,10 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setFieldIdValue($var)
+    public function setFieldIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFieldId($wrappedVar);
-    }
+        $this->writeWrapperValue("field_id", $var);
+        return $this;}
 
     /**
      * Sitelink Placeholder Fields.

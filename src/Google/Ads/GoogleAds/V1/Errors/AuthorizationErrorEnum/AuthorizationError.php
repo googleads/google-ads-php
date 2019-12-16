@@ -27,10 +27,9 @@ class AuthorizationError
     const UNKNOWN = 1;
     /**
      * User doesn't have permission to access customer. Note: If you're
-     * accessing a client customer, the manager's customer id must be set in the
-     * 'login-customer-id' header. See
-     * https://developers.google.com/google-ads/api/docs/concepts/
-     * call-structure#login-customer-id
+     * accessing a client customer, the manager's customer ID must be set in the
+     * `login-customer-id` header. Learn more at
+     * https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid
      *
      * Generated from protobuf enum <code>USER_PERMISSION_DENIED = 2;</code>
      */

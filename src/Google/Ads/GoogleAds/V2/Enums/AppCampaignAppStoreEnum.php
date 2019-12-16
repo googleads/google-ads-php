@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.AppCampaignAppStoreEnum</code>
  */
-final class AppCampaignAppStoreEnum extends \Google\Protobuf\Internal\Message
+class AppCampaignAppStoreEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

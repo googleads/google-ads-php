@@ -22,7 +22,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.UserListDateRuleItemOperatorEnum.UserListDateRuleItemOperator operator = 1;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * String representing date value to be compared with the rule variable.
      * Supported date format is YYYY-MM-DD.
@@ -30,7 +30,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
      */
-    private $value = null;
+    protected $value = null;
     /**
      * The relative date value of the right hand side denoted by number of days
      * offset from now. The value field will override this field when both are
@@ -38,7 +38,7 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset_in_days = 3;</code>
      */
-    private $offset_in_days = null;
+    protected $offset_in_days = null;
 
     /**
      * Constructor.
@@ -118,10 +118,9 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue value = 2;</code>
      * @return string|null
      */
-    public function getValueValue()
+    public function getValueUnwrapped()
     {
-        $wrapper = $this->getValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("value");
     }
 
     /**
@@ -152,11 +151,10 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setValueValue($var)
+    public function setValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setValue($wrappedVar);
-    }
+        $this->writeWrapperValue("value", $var);
+        return $this;}
 
     /**
      * The relative date value of the right hand side denoted by number of days
@@ -181,10 +179,9 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value offset_in_days = 3;</code>
      * @return int|string|null
      */
-    public function getOffsetInDaysValue()
+    public function getOffsetInDaysUnwrapped()
     {
-        $wrapper = $this->getOffsetInDays();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("offset_in_days");
     }
 
     /**
@@ -215,11 +212,10 @@ class UserListDateRuleItemInfo extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setOffsetInDaysValue($var)
+    public function setOffsetInDaysUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setOffsetInDays($wrappedVar);
-    }
+        $this->writeWrapperValue("offset_in_days", $var);
+        return $this;}
 
 }
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.SharedCriterion</code>
  */
-final class SharedCriterion extends \Google\Protobuf\Internal\Message
+class SharedCriterion extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the shared criterion.
@@ -22,26 +22,26 @@ final class SharedCriterion extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The shared set to which the shared criterion belongs.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
      */
-    private $shared_set = null;
+    protected $shared_set = null;
     /**
      * The ID of the criterion.
      * This field is ignored for mutates.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
      */
-    private $criterion_id = null;
+    protected $criterion_id = null;
     /**
      * The type of the criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionTypeEnum.CriterionType type = 4;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     protected $criterion;
 
     /**
@@ -131,8 +131,7 @@ final class SharedCriterion extends \Google\Protobuf\Internal\Message
      */
     public function getSharedSetUnwrapped()
     {
-        $wrapper = $this->getSharedSet();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("shared_set");
     }
 
     /**
@@ -161,9 +160,8 @@ final class SharedCriterion extends \Google\Protobuf\Internal\Message
      */
     public function setSharedSetUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setSharedSet($wrappedVar);
-    }
+        $this->writeWrapperValue("shared_set", $var);
+        return $this;}
 
     /**
      * The ID of the criterion.
@@ -188,8 +186,7 @@ final class SharedCriterion extends \Google\Protobuf\Internal\Message
      */
     public function getCriterionIdUnwrapped()
     {
-        $wrapper = $this->getCriterionId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_id");
     }
 
     /**
@@ -220,9 +217,8 @@ final class SharedCriterion extends \Google\Protobuf\Internal\Message
      */
     public function setCriterionIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCriterionId($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_id", $var);
+        return $this;}
 
     /**
      * The type of the criterion.

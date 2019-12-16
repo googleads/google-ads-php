@@ -32,37 +32,37 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * Ad group id of the simulation.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2;</code>
      */
-    private $ad_group_id = null;
+    protected $ad_group_id = null;
     /**
      * The field that the simulation modifies.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SimulationTypeEnum.SimulationType type = 3;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * How the simulation modifies the field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 4;</code>
      */
-    private $modification_method = 0;
+    protected $modification_method = 0;
     /**
      * First day on which the simulation is based, in YYYY-MM-DD format.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5;</code>
      */
-    private $start_date = null;
+    protected $start_date = null;
     /**
      * Last day on which the simulation is based, in YYYY-MM-DD format
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6;</code>
      */
-    private $end_date = null;
+    protected $end_date = null;
     protected $point_list;
 
     /**
@@ -147,10 +147,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2;</code>
      * @return int|string|null
      */
-    public function getAdGroupIdValue()
+    public function getAdGroupIdUnwrapped()
     {
-        $wrapper = $this->getAdGroupId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ad_group_id");
     }
 
     /**
@@ -177,11 +176,10 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setAdGroupIdValue($var)
+    public function setAdGroupIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAdGroupId($wrappedVar);
-    }
+        $this->writeWrapperValue("ad_group_id", $var);
+        return $this;}
 
     /**
      * The field that the simulation modifies.
@@ -254,10 +252,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5;</code>
      * @return string|null
      */
-    public function getStartDateValue()
+    public function getStartDateUnwrapped()
     {
-        $wrapper = $this->getStartDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("start_date");
     }
 
     /**
@@ -284,11 +281,10 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setStartDateValue($var)
+    public function setStartDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStartDate($wrappedVar);
-    }
+        $this->writeWrapperValue("start_date", $var);
+        return $this;}
 
     /**
      * Last day on which the simulation is based, in YYYY-MM-DD format
@@ -309,10 +305,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6;</code>
      * @return string|null
      */
-    public function getEndDateValue()
+    public function getEndDateUnwrapped()
     {
-        $wrapper = $this->getEndDate();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("end_date");
     }
 
     /**
@@ -339,11 +334,10 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setEndDateValue($var)
+    public function setEndDateUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setEndDate($wrappedVar);
-    }
+        $this->writeWrapperValue("end_date", $var);
+        return $this;}
 
     /**
      * Simulation points if the simulation type is CPC_BID.

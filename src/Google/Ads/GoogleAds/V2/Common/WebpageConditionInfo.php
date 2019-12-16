@@ -13,26 +13,26 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.WebpageConditionInfo</code>
  */
-final class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
+class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * Operand of webpage targeting condition.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.WebpageConditionOperandEnum.WebpageConditionOperand operand = 1;</code>
      */
-    private $operand = 0;
+    protected $operand = 0;
     /**
      * Operator of webpage targeting condition.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.WebpageConditionOperatorEnum.WebpageConditionOperator operator = 2;</code>
      */
-    private $operator = 0;
+    protected $operator = 0;
     /**
      * Argument of webpage targeting condition.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue argument = 3;</code>
      */
-    private $argument = null;
+    protected $argument = null;
 
     /**
      * Constructor.
@@ -126,8 +126,7 @@ final class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getArgumentUnwrapped()
     {
-        $wrapper = $this->getArgument();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("argument");
     }
 
     /**
@@ -156,9 +155,8 @@ final class WebpageConditionInfo extends \Google\Protobuf\Internal\Message
      */
     public function setArgumentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setArgument($wrappedVar);
-    }
+        $this->writeWrapperValue("argument", $var);
+        return $this;}
 
 }
 

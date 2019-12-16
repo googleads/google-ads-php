@@ -20,7 +20,7 @@ class PromoteCampaignDraftRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string campaign_draft = 1;</code>
      */
-    private $campaign_draft = '';
+    protected $campaign_draft = '';
 
     /**
      * Constructor.

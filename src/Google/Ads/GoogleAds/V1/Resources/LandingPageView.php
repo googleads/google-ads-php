@@ -23,13 +23,13 @@ class LandingPageView extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The advertiser-specified final URL.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue unexpanded_final_url = 2;</code>
      */
-    private $unexpanded_final_url = null;
+    protected $unexpanded_final_url = null;
 
     /**
      * Constructor.
@@ -99,10 +99,9 @@ class LandingPageView extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue unexpanded_final_url = 2;</code>
      * @return string|null
      */
-    public function getUnexpandedFinalUrlValue()
+    public function getUnexpandedFinalUrlUnwrapped()
     {
-        $wrapper = $this->getUnexpandedFinalUrl();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("unexpanded_final_url");
     }
 
     /**
@@ -129,11 +128,10 @@ class LandingPageView extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setUnexpandedFinalUrlValue($var)
+    public function setUnexpandedFinalUrlUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setUnexpandedFinalUrl($wrappedVar);
-    }
+        $this->writeWrapperValue("unexpanded_final_url", $var);
+        return $this;}
 
 }
 

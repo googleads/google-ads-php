@@ -21,7 +21,7 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
      */
-    private $header = null;
+    protected $header = null;
     /**
      * The values in the snippet.
      * The maximum size of this collection is 10.
@@ -70,10 +70,9 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue header = 1;</code>
      * @return string|null
      */
-    public function getHeaderValue()
+    public function getHeaderUnwrapped()
     {
-        $wrapper = $this->getHeader();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("header");
     }
 
     /**
@@ -102,11 +101,10 @@ class StructuredSnippetFeedItem extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setHeaderValue($var)
+    public function setHeaderUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setHeader($wrappedVar);
-    }
+        $this->writeWrapperValue("header", $var);
+        return $this;}
 
     /**
      * The values in the snippet.

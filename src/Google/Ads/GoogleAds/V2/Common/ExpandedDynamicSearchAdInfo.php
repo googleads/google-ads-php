@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ExpandedDynamicSearchAdInfo</code>
  */
-final class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
+class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description = 1;</code>
      */
-    private $description = null;
+    protected $description = null;
     /**
      * The second description of the ad.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue description2 = 2;</code>
      */
-    private $description2 = null;
+    protected $description2 = null;
 
     /**
      * Constructor.
@@ -66,8 +66,7 @@ final class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Messag
      */
     public function getDescriptionUnwrapped()
     {
-        $wrapper = $this->getDescription();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description");
     }
 
     /**
@@ -96,9 +95,8 @@ final class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Messag
      */
     public function setDescriptionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription($wrappedVar);
-    }
+        $this->writeWrapperValue("description", $var);
+        return $this;}
 
     /**
      * The second description of the ad.
@@ -121,8 +119,7 @@ final class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Messag
      */
     public function getDescription2Unwrapped()
     {
-        $wrapper = $this->getDescription2();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("description2");
     }
 
     /**
@@ -151,9 +148,8 @@ final class ExpandedDynamicSearchAdInfo extends \Google\Protobuf\Internal\Messag
      */
     public function setDescription2Unwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setDescription2($wrappedVar);
-    }
+        $this->writeWrapperValue("description2", $var);
+        return $this;}
 
 }
 

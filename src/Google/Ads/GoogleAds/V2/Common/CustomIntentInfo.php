@@ -14,14 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.CustomIntentInfo</code>
  */
-final class CustomIntentInfo extends \Google\Protobuf\Internal\Message
+class CustomIntentInfo extends \Google\Protobuf\Internal\Message
 {
     /**
      * The CustomInterest resource name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue custom_intent = 1;</code>
      */
-    private $custom_intent = null;
+    protected $custom_intent = null;
 
     /**
      * Constructor.
@@ -59,8 +59,7 @@ final class CustomIntentInfo extends \Google\Protobuf\Internal\Message
      */
     public function getCustomIntentUnwrapped()
     {
-        $wrapper = $this->getCustomIntent();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("custom_intent");
     }
 
     /**
@@ -89,9 +88,8 @@ final class CustomIntentInfo extends \Google\Protobuf\Internal\Message
      */
     public function setCustomIntentUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCustomIntent($wrappedVar);
-    }
+        $this->writeWrapperValue("custom_intent", $var);
+        return $this;}
 
 }
 

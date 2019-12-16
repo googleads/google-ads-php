@@ -21,7 +21,7 @@ class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue opt_in = 1;</code>
      */
-    private $opt_in = null;
+    protected $opt_in = null;
 
     /**
      * Constructor.
@@ -57,10 +57,9 @@ class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue opt_in = 1;</code>
      * @return bool|null
      */
-    public function getOptInValue()
+    public function getOptInUnwrapped()
     {
-        $wrapper = $this->getOptIn();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("opt_in");
     }
 
     /**
@@ -87,11 +86,10 @@ class RealTimeBiddingSetting extends \Google\Protobuf\Internal\Message
      * @param bool|null $var
      * @return $this
      */
-    public function setOptInValue($var)
+    public function setOptInUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setOptIn($wrappedVar);
-    }
+        $this->writeWrapperValue("opt_in", $var);
+        return $this;}
 
 }
 

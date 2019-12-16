@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TextMessageFeedItem</code>
  */
-final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
+class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
      * The business name to prepend to the message text.
@@ -22,33 +22,33 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue business_name = 1;</code>
      */
-    private $business_name = null;
+    protected $business_name = null;
     /**
      * Uppercase two-letter country code of the advertiser's phone number.
      * This field is required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 2;</code>
      */
-    private $country_code = null;
+    protected $country_code = null;
     /**
      * The advertiser's phone number the message will be sent to. Required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue phone_number = 3;</code>
      */
-    private $phone_number = null;
+    protected $phone_number = null;
     /**
      * The text to show in the ad.
      * This field is required.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue text = 4;</code>
      */
-    private $text = null;
+    protected $text = null;
     /**
      * The message text populated in the messaging app.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue extension_text = 5;</code>
      */
-    private $extension_text = null;
+    protected $extension_text = null;
 
     /**
      * Constructor.
@@ -99,8 +99,7 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getBusinessNameUnwrapped()
     {
-        $wrapper = $this->getBusinessName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("business_name");
     }
 
     /**
@@ -131,9 +130,8 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setBusinessNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setBusinessName($wrappedVar);
-    }
+        $this->writeWrapperValue("business_name", $var);
+        return $this;}
 
     /**
      * Uppercase two-letter country code of the advertiser's phone number.
@@ -158,8 +156,7 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getCountryCodeUnwrapped()
     {
-        $wrapper = $this->getCountryCode();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country_code");
     }
 
     /**
@@ -190,9 +187,8 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setCountryCodeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountryCode($wrappedVar);
-    }
+        $this->writeWrapperValue("country_code", $var);
+        return $this;}
 
     /**
      * The advertiser's phone number the message will be sent to. Required.
@@ -215,8 +211,7 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getPhoneNumberUnwrapped()
     {
-        $wrapper = $this->getPhoneNumber();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("phone_number");
     }
 
     /**
@@ -245,9 +240,8 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setPhoneNumberUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setPhoneNumber($wrappedVar);
-    }
+        $this->writeWrapperValue("phone_number", $var);
+        return $this;}
 
     /**
      * The text to show in the ad.
@@ -272,8 +266,7 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getTextUnwrapped()
     {
-        $wrapper = $this->getText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("text");
     }
 
     /**
@@ -304,9 +297,8 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setText($wrappedVar);
-    }
+        $this->writeWrapperValue("text", $var);
+        return $this;}
 
     /**
      * The message text populated in the messaging app.
@@ -329,8 +321,7 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function getExtensionTextUnwrapped()
     {
-        $wrapper = $this->getExtensionText();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("extension_text");
     }
 
     /**
@@ -359,9 +350,8 @@ final class TextMessageFeedItem extends \Google\Protobuf\Internal\Message
      */
     public function setExtensionTextUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setExtensionText($wrappedVar);
-    }
+        $this->writeWrapperValue("extension_text", $var);
+        return $this;}
 
 }
 

@@ -14,27 +14,27 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateAccountBudgetProposalRequest</code>
  */
-final class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Message
+class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The ID of the customer.
      *
      * Generated from protobuf field <code>string customer_id = 1;</code>
      */
-    private $customer_id = '';
+    protected $customer_id = '';
     /**
      * The operation to perform on an individual account-level budget proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.AccountBudgetProposalOperation operation = 2;</code>
      */
-    private $operation = null;
+    protected $operation = null;
     /**
      * If true, the request is validated but not executed. Only errors are
      * returned, not results.
      *
      * Generated from protobuf field <code>bool validate_only = 3;</code>
      */
-    private $validate_only = false;
+    protected $validate_only = false;
 
     /**
      * Constructor.

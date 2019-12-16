@@ -21,7 +21,7 @@ class FunctionOperand extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v1.common.MatchingFunction matching_function = 1;</code>
      */
-    private $matching_function = null;
+    protected $matching_function = null;
 
     /**
      * Constructor.

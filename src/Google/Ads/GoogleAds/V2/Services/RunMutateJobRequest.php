@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.RunMutateJobRequest</code>
  */
-final class RunMutateJobRequest extends \Google\Protobuf\Internal\Message
+class RunMutateJobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the MutateJob to run.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

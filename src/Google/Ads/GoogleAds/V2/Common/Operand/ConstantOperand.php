@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.Operand.ConstantOperand</code>
  */
-final class ConstantOperand extends \Google\Protobuf\Internal\Message
+class ConstantOperand extends \Google\Protobuf\Internal\Message
 {
     protected $constant_operand_value;
 
@@ -59,8 +59,7 @@ final class ConstantOperand extends \Google\Protobuf\Internal\Message
      */
     public function getStringValueUnwrapped()
     {
-        $wrapper = $this->getStringValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("string_value");
     }
 
     /**
@@ -89,9 +88,8 @@ final class ConstantOperand extends \Google\Protobuf\Internal\Message
      */
     public function setStringValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setStringValue($wrappedVar);
-    }
+        $this->writeWrapperValue("string_value", $var);
+        return $this;}
 
     /**
      * Int64 value of the operand if it is a int64 type.
@@ -114,8 +112,7 @@ final class ConstantOperand extends \Google\Protobuf\Internal\Message
      */
     public function getLongValueUnwrapped()
     {
-        $wrapper = $this->getLongValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("long_value");
     }
 
     /**
@@ -144,9 +141,8 @@ final class ConstantOperand extends \Google\Protobuf\Internal\Message
      */
     public function setLongValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setLongValue($wrappedVar);
-    }
+        $this->writeWrapperValue("long_value", $var);
+        return $this;}
 
     /**
      * Boolean value of the operand if it is a boolean type.
@@ -169,8 +165,7 @@ final class ConstantOperand extends \Google\Protobuf\Internal\Message
      */
     public function getBooleanValueUnwrapped()
     {
-        $wrapper = $this->getBooleanValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("boolean_value");
     }
 
     /**
@@ -199,9 +194,8 @@ final class ConstantOperand extends \Google\Protobuf\Internal\Message
      */
     public function setBooleanValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BoolValue(['value' => $var]);
-        return $this->setBooleanValue($wrappedVar);
-    }
+        $this->writeWrapperValue("boolean_value", $var);
+        return $this;}
 
     /**
      * Double value of the operand if it is a double type.
@@ -224,8 +218,7 @@ final class ConstantOperand extends \Google\Protobuf\Internal\Message
      */
     public function getDoubleValueUnwrapped()
     {
-        $wrapper = $this->getDoubleValue();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("double_value");
     }
 
     /**
@@ -254,9 +247,8 @@ final class ConstantOperand extends \Google\Protobuf\Internal\Message
      */
     public function setDoubleValueUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setDoubleValue($wrappedVar);
-    }
+        $this->writeWrapperValue("double_value", $var);
+        return $this;}
 
     /**
      * @return string

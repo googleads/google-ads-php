@@ -13,38 +13,38 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ClickLocation</code>
  */
-final class ClickLocation extends \Google\Protobuf\Internal\Message
+class ClickLocation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The city location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue city = 1;</code>
      */
-    private $city = null;
+    protected $city = null;
     /**
      * The country location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue country = 2;</code>
      */
-    private $country = null;
+    protected $country = null;
     /**
      * The metro location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue metro = 3;</code>
      */
-    private $metro = null;
+    protected $metro = null;
     /**
      * The most specific location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue most_specific = 4;</code>
      */
-    private $most_specific = null;
+    protected $most_specific = null;
     /**
      * The region location criterion associated with the impression.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue region = 5;</code>
      */
-    private $region = null;
+    protected $region = null;
 
     /**
      * Constructor.
@@ -90,8 +90,7 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function getCityUnwrapped()
     {
-        $wrapper = $this->getCity();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("city");
     }
 
     /**
@@ -120,9 +119,8 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function setCityUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCity($wrappedVar);
-    }
+        $this->writeWrapperValue("city", $var);
+        return $this;}
 
     /**
      * The country location criterion associated with the impression.
@@ -145,8 +143,7 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function getCountryUnwrapped()
     {
-        $wrapper = $this->getCountry();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("country");
     }
 
     /**
@@ -175,9 +172,8 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function setCountryUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCountry($wrappedVar);
-    }
+        $this->writeWrapperValue("country", $var);
+        return $this;}
 
     /**
      * The metro location criterion associated with the impression.
@@ -200,8 +196,7 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function getMetroUnwrapped()
     {
-        $wrapper = $this->getMetro();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("metro");
     }
 
     /**
@@ -230,9 +225,8 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function setMetroUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMetro($wrappedVar);
-    }
+        $this->writeWrapperValue("metro", $var);
+        return $this;}
 
     /**
      * The most specific location criterion associated with the impression.
@@ -255,8 +249,7 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function getMostSpecificUnwrapped()
     {
-        $wrapper = $this->getMostSpecific();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("most_specific");
     }
 
     /**
@@ -285,9 +278,8 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function setMostSpecificUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setMostSpecific($wrappedVar);
-    }
+        $this->writeWrapperValue("most_specific", $var);
+        return $this;}
 
     /**
      * The region location criterion associated with the impression.
@@ -310,8 +302,7 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function getRegionUnwrapped()
     {
-        $wrapper = $this->getRegion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("region");
     }
 
     /**
@@ -340,9 +331,8 @@ final class ClickLocation extends \Google\Protobuf\Internal\Message
      */
     public function setRegionUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setRegion($wrappedVar);
-    }
+        $this->writeWrapperValue("region", $var);
+        return $this;}
 
 }
 

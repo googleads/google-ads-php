@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.MobileAppCategoryConstant</code>
  */
-final class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
+class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the mobile app category constant.
@@ -22,19 +22,19 @@ final class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of the mobile app category constant.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * Mobile app category name.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
      */
-    private $name = null;
+    protected $name = null;
 
     /**
      * Constructor.
@@ -108,8 +108,7 @@ final class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -138,9 +137,8 @@ final class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * Mobile app category name.
@@ -163,8 +161,7 @@ final class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -193,9 +190,8 @@ final class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
 }
 

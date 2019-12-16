@@ -13,32 +13,32 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.ImageAsset</code>
  */
-final class ImageAsset extends \Google\Protobuf\Internal\Message
+class ImageAsset extends \Google\Protobuf\Internal\Message
 {
     /**
      * The raw bytes data of an image. This field is mutate only.
      *
      * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
      */
-    private $data = null;
+    protected $data = null;
     /**
      * File size of the image asset in bytes.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 2;</code>
      */
-    private $file_size = null;
+    protected $file_size = null;
     /**
      * MIME type of the image asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MimeTypeEnum.MimeType mime_type = 3;</code>
      */
-    private $mime_type = 0;
+    protected $mime_type = 0;
     /**
      * Metadata for this image at its original size.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.ImageDimension full_size = 4;</code>
      */
-    private $full_size = null;
+    protected $full_size = null;
 
     /**
      * Constructor.
@@ -82,8 +82,7 @@ final class ImageAsset extends \Google\Protobuf\Internal\Message
      */
     public function getDataUnwrapped()
     {
-        $wrapper = $this->getData();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("data");
     }
 
     /**
@@ -112,9 +111,8 @@ final class ImageAsset extends \Google\Protobuf\Internal\Message
      */
     public function setDataUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\BytesValue(['value' => $var]);
-        return $this->setData($wrappedVar);
-    }
+        $this->writeWrapperValue("data", $var);
+        return $this;}
 
     /**
      * File size of the image asset in bytes.
@@ -137,8 +135,7 @@ final class ImageAsset extends \Google\Protobuf\Internal\Message
      */
     public function getFileSizeUnwrapped()
     {
-        $wrapper = $this->getFileSize();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("file_size");
     }
 
     /**
@@ -167,9 +164,8 @@ final class ImageAsset extends \Google\Protobuf\Internal\Message
      */
     public function setFileSizeUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setFileSize($wrappedVar);
-    }
+        $this->writeWrapperValue("file_size", $var);
+        return $this;}
 
     /**
      * MIME type of the image asset.

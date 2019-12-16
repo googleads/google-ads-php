@@ -24,7 +24,7 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue criterion_name = 1;</code>
      */
-    private $criterion_name = null;
+    protected $criterion_name = null;
     /**
      * Conditions, or logical expressions, for webpage targeting. The list of
      * webpage targeting conditions are and-ed together when evaluated
@@ -88,10 +88,9 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.StringValue criterion_name = 1;</code>
      * @return string|null
      */
-    public function getCriterionNameValue()
+    public function getCriterionNameUnwrapped()
     {
-        $wrapper = $this->getCriterionName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("criterion_name");
     }
 
     /**
@@ -126,11 +125,10 @@ class WebpageInfo extends \Google\Protobuf\Internal\Message
      * @param string|null $var
      * @return $this
      */
-    public function setCriterionNameValue($var)
+    public function setCriterionNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setCriterionName($wrappedVar);
-    }
+        $this->writeWrapperValue("criterion_name", $var);
+        return $this;}
 
     /**
      * Conditions, or logical expressions, for webpage targeting. The list of

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.IncomeRangeTypeEnum</code>
  */
-final class IncomeRangeTypeEnum extends \Google\Protobuf\Internal\Message
+class IncomeRangeTypeEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

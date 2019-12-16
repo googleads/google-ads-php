@@ -54,7 +54,7 @@ class ConversionUploadError
     const EXPIRED_GCLID = 5;
     /**
      * The click associated with the given gclid occurred too recently. Please
-     * try uploading again after 24 hours have passed since the click occurred.
+     * try uploading again after 6 hours have passed since the click occurred.
      *
      * Generated from protobuf enum <code>TOO_RECENT_GCLID = 6;</code>
      */
@@ -134,7 +134,7 @@ class ConversionUploadError
      */
     const DUPLICATE_ORDER_ID = 16;
     /**
-     * The call occurred too recently. Please try uploading again after 24 hours
+     * The call occurred too recently. Please try uploading again after 6 hours
      * have passed since the call occurred.
      *
      * Generated from protobuf enum <code>TOO_RECENT_CALL = 17;</code>

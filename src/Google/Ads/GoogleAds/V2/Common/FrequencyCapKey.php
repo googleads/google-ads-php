@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.FrequencyCapKey</code>
  */
-final class FrequencyCapKey extends \Google\Protobuf\Internal\Message
+class FrequencyCapKey extends \Google\Protobuf\Internal\Message
 {
     /**
      * The level on which the cap is to be applied (e.g. ad group ad, ad group).
@@ -22,25 +22,25 @@ final class FrequencyCapKey extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FrequencyCapLevelEnum.FrequencyCapLevel level = 1;</code>
      */
-    private $level = 0;
+    protected $level = 0;
     /**
      * The type of event that the cap applies to (e.g. impression).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FrequencyCapEventTypeEnum.FrequencyCapEventType event_type = 3;</code>
      */
-    private $event_type = 0;
+    protected $event_type = 0;
     /**
      * Unit of time the cap is defined at (e.g. day, week).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FrequencyCapTimeUnitEnum.FrequencyCapTimeUnit time_unit = 2;</code>
      */
-    private $time_unit = 0;
+    protected $time_unit = 0;
     /**
      * Number of time units the cap lasts.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value time_length = 4;</code>
      */
-    private $time_length = null;
+    protected $time_length = null;
 
     /**
      * Constructor.
@@ -165,8 +165,7 @@ final class FrequencyCapKey extends \Google\Protobuf\Internal\Message
      */
     public function getTimeLengthUnwrapped()
     {
-        $wrapper = $this->getTimeLength();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("time_length");
     }
 
     /**
@@ -195,9 +194,8 @@ final class FrequencyCapKey extends \Google\Protobuf\Internal\Message
      */
     public function setTimeLengthUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int32Value(['value' => $var]);
-        return $this->setTimeLength($wrappedVar);
-    }
+        $this->writeWrapperValue("time_length", $var);
+        return $this;}
 
 }
 

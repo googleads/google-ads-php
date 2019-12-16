@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.AttributionModelEnum</code>
  */
-final class AttributionModelEnum extends \Google\Protobuf\Internal\Message
+class AttributionModelEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.PolicyValidationParameter</code>
  */
-final class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
+class PolicyValidationParameter extends \Google\Protobuf\Internal\Message
 {
     /**
      * The list of policy topics that should not cause a PolicyFindingError to

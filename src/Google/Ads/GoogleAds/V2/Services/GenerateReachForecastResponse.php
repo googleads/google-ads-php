@@ -13,20 +13,20 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.GenerateReachForecastResponse</code>
  */
-final class GenerateReachForecastResponse extends \Google\Protobuf\Internal\Message
+class GenerateReachForecastResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Reference on target audiences for this curve.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.OnTargetAudienceMetrics on_target_audience_metrics = 1;</code>
      */
-    private $on_target_audience_metrics = null;
+    protected $on_target_audience_metrics = null;
     /**
      * The generated reach curve for the planned product mix.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.ReachCurve reach_curve = 2;</code>
      */
-    private $reach_curve = null;
+    protected $reach_curve = null;
 
     /**
      * Constructor.

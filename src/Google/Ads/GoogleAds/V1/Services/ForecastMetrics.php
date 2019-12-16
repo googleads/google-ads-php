@@ -20,31 +20,31 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
      */
-    private $impressions = null;
+    protected $impressions = null;
     /**
      * Ctr
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 2;</code>
      */
-    private $ctr = null;
+    protected $ctr = null;
     /**
      * AVG cpc
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value average_cpc = 3;</code>
      */
-    private $average_cpc = null;
+    protected $average_cpc = null;
     /**
      * Clicks
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 5;</code>
      */
-    private $clicks = null;
+    protected $clicks = null;
     /**
      * Cost
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 6;</code>
      */
-    private $cost_micros = null;
+    protected $cost_micros = null;
 
     /**
      * Constructor.
@@ -88,10 +88,9 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
      * @return float|null
      */
-    public function getImpressionsValue()
+    public function getImpressionsUnwrapped()
     {
-        $wrapper = $this->getImpressions();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("impressions");
     }
 
     /**
@@ -118,11 +117,10 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setImpressionsValue($var)
+    public function setImpressionsUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setImpressions($wrappedVar);
-    }
+        $this->writeWrapperValue("impressions", $var);
+        return $this;}
 
     /**
      * Ctr
@@ -143,10 +141,9 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue ctr = 2;</code>
      * @return float|null
      */
-    public function getCtrValue()
+    public function getCtrUnwrapped()
     {
-        $wrapper = $this->getCtr();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("ctr");
     }
 
     /**
@@ -173,11 +170,10 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setCtrValue($var)
+    public function setCtrUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setCtr($wrappedVar);
-    }
+        $this->writeWrapperValue("ctr", $var);
+        return $this;}
 
     /**
      * AVG cpc
@@ -198,10 +194,9 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value average_cpc = 3;</code>
      * @return int|string|null
      */
-    public function getAverageCpcValue()
+    public function getAverageCpcUnwrapped()
     {
-        $wrapper = $this->getAverageCpc();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("average_cpc");
     }
 
     /**
@@ -228,11 +223,10 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setAverageCpcValue($var)
+    public function setAverageCpcUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setAverageCpc($wrappedVar);
-    }
+        $this->writeWrapperValue("average_cpc", $var);
+        return $this;}
 
     /**
      * Clicks
@@ -253,10 +247,9 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 5;</code>
      * @return float|null
      */
-    public function getClicksValue()
+    public function getClicksUnwrapped()
     {
-        $wrapper = $this->getClicks();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("clicks");
     }
 
     /**
@@ -283,11 +276,10 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * @param float|null $var
      * @return $this
      */
-    public function setClicksValue($var)
+    public function setClicksUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\DoubleValue(['value' => $var]);
-        return $this->setClicks($wrappedVar);
-    }
+        $this->writeWrapperValue("clicks", $var);
+        return $this;}
 
     /**
      * Cost
@@ -308,10 +300,9 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 6;</code>
      * @return int|string|null
      */
-    public function getCostMicrosValue()
+    public function getCostMicrosUnwrapped()
     {
-        $wrapper = $this->getCostMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cost_micros");
     }
 
     /**
@@ -338,11 +329,10 @@ class ForecastMetrics extends \Google\Protobuf\Internal\Message
      * @param int|string|null $var
      * @return $this
      */
-    public function setCostMicrosValue($var)
+    public function setCostMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCostMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cost_micros", $var);
+        return $this;}
 
 }
 

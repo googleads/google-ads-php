@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.KeywordPlanAdGroupForecast</code>
  */
-final class KeywordPlanAdGroupForecast extends \Google\Protobuf\Internal\Message
+class KeywordPlanAdGroupForecast extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the Keyword Plan ad group related to the forecast.
@@ -21,13 +21,13 @@ final class KeywordPlanAdGroupForecast extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 1;</code>
      */
-    private $keyword_plan_ad_group = null;
+    protected $keyword_plan_ad_group = null;
     /**
      * The forecast for the Keyword Plan ad group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.services.ForecastMetrics ad_group_forecast = 2;</code>
      */
-    private $ad_group_forecast = null;
+    protected $ad_group_forecast = null;
 
     /**
      * Constructor.
@@ -70,8 +70,7 @@ final class KeywordPlanAdGroupForecast extends \Google\Protobuf\Internal\Message
      */
     public function getKeywordPlanAdGroupUnwrapped()
     {
-        $wrapper = $this->getKeywordPlanAdGroup();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("keyword_plan_ad_group");
     }
 
     /**
@@ -102,9 +101,8 @@ final class KeywordPlanAdGroupForecast extends \Google\Protobuf\Internal\Message
      */
     public function setKeywordPlanAdGroupUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setKeywordPlanAdGroup($wrappedVar);
-    }
+        $this->writeWrapperValue("keyword_plan_ad_group", $var);
+        return $this;}
 
     /**
      * The forecast for the Keyword Plan ad group.

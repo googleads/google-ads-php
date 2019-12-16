@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.GoogleAdsFieldCategoryEnum</code>
  */
-final class GoogleAdsFieldCategoryEnum extends \Google\Protobuf\Internal\Message
+class GoogleAdsFieldCategoryEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**

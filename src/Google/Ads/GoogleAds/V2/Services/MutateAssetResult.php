@@ -13,14 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.services.MutateAssetResult</code>
  */
-final class MutateAssetResult extends \Google\Protobuf\Internal\Message
+class MutateAssetResult extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name returned for successful operations.
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
 
     /**
      * Constructor.

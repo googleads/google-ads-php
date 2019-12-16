@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.TargetCpa</code>
  */
-final class TargetCpa extends \Google\Protobuf\Internal\Message
+class TargetCpa extends \Google\Protobuf\Internal\Message
 {
     /**
      * Average CPA target.
@@ -23,21 +23,21 @@ final class TargetCpa extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value target_cpa_micros = 1;</code>
      */
-    private $target_cpa_micros = null;
+    protected $target_cpa_micros = null;
     /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_ceiling_micros = 2;</code>
      */
-    private $cpc_bid_ceiling_micros = null;
+    protected $cpc_bid_ceiling_micros = null;
     /**
      * Minimum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value cpc_bid_floor_micros = 3;</code>
      */
-    private $cpc_bid_floor_micros = null;
+    protected $cpc_bid_floor_micros = null;
 
     /**
      * Constructor.
@@ -87,8 +87,7 @@ final class TargetCpa extends \Google\Protobuf\Internal\Message
      */
     public function getTargetCpaMicrosUnwrapped()
     {
-        $wrapper = $this->getTargetCpaMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("target_cpa_micros");
     }
 
     /**
@@ -121,9 +120,8 @@ final class TargetCpa extends \Google\Protobuf\Internal\Message
      */
     public function setTargetCpaMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setTargetCpaMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("target_cpa_micros", $var);
+        return $this;}
 
     /**
      * Maximum bid limit that can be set by the bid strategy.
@@ -148,8 +146,7 @@ final class TargetCpa extends \Google\Protobuf\Internal\Message
      */
     public function getCpcBidCeilingMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidCeilingMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_ceiling_micros");
     }
 
     /**
@@ -180,9 +177,8 @@ final class TargetCpa extends \Google\Protobuf\Internal\Message
      */
     public function setCpcBidCeilingMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidCeilingMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_ceiling_micros", $var);
+        return $this;}
 
     /**
      * Minimum bid limit that can be set by the bid strategy.
@@ -207,8 +203,7 @@ final class TargetCpa extends \Google\Protobuf\Internal\Message
      */
     public function getCpcBidFloorMicrosUnwrapped()
     {
-        $wrapper = $this->getCpcBidFloorMicros();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("cpc_bid_floor_micros");
     }
 
     /**
@@ -239,9 +234,8 @@ final class TargetCpa extends \Google\Protobuf\Internal\Message
      */
     public function setCpcBidFloorMicrosUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setCpcBidFloorMicros($wrappedVar);
-    }
+        $this->writeWrapperValue("cpc_bid_floor_micros", $var);
+        return $this;}
 
 }
 

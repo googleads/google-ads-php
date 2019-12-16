@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.SharedSet</code>
  */
-final class SharedSet extends \Google\Protobuf\Internal\Message
+class SharedSet extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the shared set.
@@ -23,20 +23,20 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
-    private $resource_name = '';
+    protected $resource_name = '';
     /**
      * The ID of this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
      */
-    private $id = null;
+    protected $id = null;
     /**
      * The type of this shared set: each shared set holds only a single kind
      * of resource. Required. Immutable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SharedSetTypeEnum.SharedSetType type = 3;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The name of this shared set. Required.
      * Shared Sets must have names that are unique among active shared sets of
@@ -46,25 +46,25 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
      */
-    private $name = null;
+    protected $name = null;
     /**
      * The status of this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SharedSetStatusEnum.SharedSetStatus status = 5;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The number of shared criteria within this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
      */
-    private $member_count = null;
+    protected $member_count = null;
     /**
      * The number of campaigns associated with this shared set. Read only.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
      */
-    private $reference_count = null;
+    protected $reference_count = null;
 
     /**
      * Constructor.
@@ -151,8 +151,7 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      */
     public function getIdUnwrapped()
     {
-        $wrapper = $this->getId();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("id");
     }
 
     /**
@@ -181,9 +180,8 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      */
     public function setIdUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setId($wrappedVar);
-    }
+        $this->writeWrapperValue("id", $var);
+        return $this;}
 
     /**
      * The type of this shared set: each shared set holds only a single kind
@@ -242,8 +240,7 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      */
     public function getNameUnwrapped()
     {
-        $wrapper = $this->getName();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("name");
     }
 
     /**
@@ -280,9 +277,8 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      */
     public function setNameUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\StringValue(['value' => $var]);
-        return $this->setName($wrappedVar);
-    }
+        $this->writeWrapperValue("name", $var);
+        return $this;}
 
     /**
      * The status of this shared set. Read only.
@@ -331,8 +327,7 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      */
     public function getMemberCountUnwrapped()
     {
-        $wrapper = $this->getMemberCount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("member_count");
     }
 
     /**
@@ -361,9 +356,8 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      */
     public function setMemberCountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setMemberCount($wrappedVar);
-    }
+        $this->writeWrapperValue("member_count", $var);
+        return $this;}
 
     /**
      * The number of campaigns associated with this shared set. Read only.
@@ -386,8 +380,7 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      */
     public function getReferenceCountUnwrapped()
     {
-        $wrapper = $this->getReferenceCount();
-        return is_null($wrapper) ? null : $wrapper->getValue();
+        return $this->readWrapperValue("reference_count");
     }
 
     /**
@@ -416,9 +409,8 @@ final class SharedSet extends \Google\Protobuf\Internal\Message
      */
     public function setReferenceCountUnwrapped($var)
     {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\Int64Value(['value' => $var]);
-        return $this->setReferenceCount($wrappedVar);
-    }
+        $this->writeWrapperValue("reference_count", $var);
+        return $this;}
 
 }
 

@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.enums.AssetPerformanceLabelEnum</code>
  */
-final class AssetPerformanceLabelEnum extends \Google\Protobuf\Internal\Message
+class AssetPerformanceLabelEnum extends \Google\Protobuf\Internal\Message
 {
 
     /**
