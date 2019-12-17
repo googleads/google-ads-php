@@ -328,6 +328,9 @@ class AddHotelAds
         // Creates a new ad group ad and sets the hotel ad to it.
         $adGroupAd = new AdGroupAd([
             'ad' => $ad,
+            // Set the ad group ad to enabled.  Setting this to paused will cause an error
+            // for hotel campaigns.  For hotels pausing should happen at either the ad group or
+            // campaign level.
             'status' => AdGroupAdStatus::ENABLED,
             // Sets the ad group.
             'ad_group' => new StringValue(['value' => $adGroupResourceName])
