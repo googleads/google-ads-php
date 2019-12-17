@@ -141,7 +141,7 @@ class UploadOfflineConversion
     }
 
     /**
-     * Upload click conversion by enabling partial failure mode.
+     * Uploads click conversion by enabling partial failure mode.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
@@ -184,7 +184,7 @@ class UploadOfflineConversion
     }
 
     /**
-     * Check if there exists partial failure error in the given upload click conversions response.
+     * Checks if there exists partial failure error in the given upload click conversions response.
      *
      * @param UploadClickConversionsResponse $response the upload click conversions response
      */
@@ -202,7 +202,7 @@ class UploadOfflineConversion
     }
 
     /**
-     * Print results of the given upload click conversions response. For those that are partial
+     * Prints results of the given upload click conversions response. For those that are partial
      * failure, print all their errors with corresponding operation indices. For those that
      * succeeded, print their related information.
      *
