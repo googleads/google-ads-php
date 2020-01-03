@@ -42,7 +42,7 @@ use Google\Protobuf\StringValue;
 /** This example uploads an image asset. To get image assets, run GetAllImageAssets.php. */
 class UploadImageAsset
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    const CUSTOMER_ID = '7556834180';
     const IMAGE_URL = 'https://goo.gl/3b9Wfh';
 
     public static function main()
@@ -133,19 +133,23 @@ class UploadImageAsset
 
         // Issues a mutate request to add the asset.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets(
+        $result = $assetServiceClient->mutateAssets(
             $customerId,
             [$assetOperation]
-        );
+        )->getResults();
 
-        // Prints the resource name of the added image asset.
-        /** @var MutateAssetResult $addedImageAsset */
-        $addedImageAsset = $response->getResults()[0];
-        printf(
-            "Image asset with resource name: '%s' is created.%s",
-            $addedImageAsset->getResourceName(),
-            PHP_EOL
-        );
+        if (!empty($result)) {
+            // Prints the resource name of the added image asset.
+            /** @var MutateAssetResult $addedImageAsset */
+            $addedImageAsset = $result[0];
+            printf(
+                "Image asset with resource name: '%s' is created.%s",
+                $addedImageAsset->getResourceName(),
+                PHP_EOL
+            );
+        } else {
+            print 'No image asset was created.' . PHP_EOL;
+        }
     }
 }
 
