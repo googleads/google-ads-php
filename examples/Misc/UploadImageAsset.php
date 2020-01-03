@@ -133,15 +133,15 @@ class UploadImageAsset
 
         // Issues a mutate request to add the asset.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $result = $assetServiceClient->mutateAssets(
+        $response = $assetServiceClient->mutateAssets(
             $customerId,
             [$assetOperation]
-        )->getResults();
+        );
 
-        if (!empty($result)) {
+        if (!empty($response->getResults())) {
             // Prints the resource name of the added image asset.
             /** @var MutateAssetResult $addedImageAsset */
-            $addedImageAsset = $result[0];
+            $addedImageAsset = $response->getResults()[0];
             printf(
                 "Image asset with resource name: '%s' is created.%s",
                 $addedImageAsset->getResourceName(),
