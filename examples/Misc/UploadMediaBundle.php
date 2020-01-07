@@ -118,16 +118,11 @@ class UploadMediaBundle
             [$mediaFileOperation]
         );
 
-        printf("Added %d media bundles:%s", $response->getResults()->count(), PHP_EOL);
-
-        foreach ($response->getResults() as $addedMediaFile) {
-            /** @var MediaFile $addedMediaFile */
-            printf(
-                "New media bundle added with resource name: '%s'%s",
-                $addedMediaFile->getResourceName(),
-                PHP_EOL
-            );
-        }
+        printf(
+            "The media bundle with resource name '%s' was added.%s",
+            $response->getResults()[0]->getResourceName(),
+            PHP_EOL
+        );
     }
 }
 
