@@ -103,7 +103,6 @@ class UploadMediaBundle
         $mediaFile = new MediaFile([
             'name' => new StringValue(['value' => 'Ad Media Bundle']),
             'type' => MediaType::MEDIA_BUNDLE,
-            'source_url' => new StringValue(['value' => self::BUNDLE_URL]),
             'media_bundle' => new MediaBundle(['data' => $bundleContent])
         ]);
 
