@@ -48,7 +48,7 @@ class UploadOfflineConversion
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
     const GCLID = 'INSERT_GCLID_HERE';
-    const CONVERSION_TIME = 'INSERT_CONVERSION_TIME_HERE';
+    const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
     const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
 
     public static function main()
@@ -59,7 +59,7 @@ class UploadOfflineConversion
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::GCLID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CONVERSION_TIME => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT
         ]);
 
@@ -79,7 +79,7 @@ class UploadOfflineConversion
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CONVERSION_ACTION_ID] ?: self::CONVERSION_ACTION_ID,
                 $options[ArgumentNames::GCLID] ?: self::GCLID,
-                $options[ArgumentNames::CONVERSION_TIME] ?: self::CONVERSION_TIME,
+                $options[ArgumentNames::CONVERSION_DATE_TIME] ?: self::CONVERSION_DATE_TIME,
                 $options[ArgumentNames::CONVERSION_VALUE] ?: self::CONVERSION_VALUE
             );
         } catch (GoogleAdsException $googleAdsException) {
@@ -115,7 +115,7 @@ class UploadOfflineConversion
      * @param int $conversionActionId the ID of the conversion action to upload to
      * @param string $gclid the GCLID for the conversion (should be newer than the number of days
      *      set on the conversion window of the conversion action)
-     * @param string $conversionTime the date and time of the conversion (should be after the
+     * @param string $conversionDateTime the date and time of the conversion (should be after the
      *      click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
      *      “2019-01-01 12:32:45-08:00”
      * @param float $conversionValue the value of the conversion
@@ -125,7 +125,7 @@ class UploadOfflineConversion
         int $customerId,
         int $conversionActionId,
         string $gclid,
-        string $conversionTime,
+        string $conversionDateTime,
         float $conversionValue
     ) {
         $response = self::uploadClickConversion(
@@ -133,7 +133,7 @@ class UploadOfflineConversion
             $customerId,
             $conversionActionId,
             $gclid,
-            $conversionTime,
+            $conversionDateTime,
             $conversionValue
         );
         self::checkIfPartialFailureErrorExists($response);
@@ -148,7 +148,7 @@ class UploadOfflineConversion
      * @param int $conversionActionId the ID of the conversion action to upload to
      * @param string $gclid the GCLID for the conversion (should be newer than the number of days
      *      set on the conversion window of the conversion action)
-     * @param string $conversionTime the date and time of the conversion (should be after the
+     * @param string $conversionDateTime the date and time of the conversion (should be after the
      *      click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
      *      “2019-01-01 12:32:45-08:00”
      * @param float $conversionValue the value of the conversion
@@ -159,7 +159,7 @@ class UploadOfflineConversion
         int $customerId,
         int $conversionActionId,
         string $gclid,
-        string $conversionTime,
+        string $conversionDateTime,
         float $conversionValue
     ) {
         // Creates a click conversion by specifying currency as USD.
@@ -169,7 +169,7 @@ class UploadOfflineConversion
             ]),
             'gclid' => new StringValue(['value' => $gclid]),
             'conversion_value' => new DoubleValue(['value' => $conversionValue]),
-            'conversion_date_time' => new StringValue(['value' => $conversionTime]),
+            'conversion_date_time' => new StringValue(['value' => $conversionDateTime]),
             'currency_code' => new StringValue(['value' => 'USD']),
         ]);
 
