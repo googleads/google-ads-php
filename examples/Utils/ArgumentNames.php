@@ -37,7 +37,7 @@ final class ArgumentNames
     const CAMPAIGN_IDS = 'campaignIds';
     const CHECK_IN_DAY_CRITERION_ID = 'checkInDayCriterionId';
     const CONVERSION_ACTION_ID = 'conversionActionId';
-    const CONVERSION_TIME = 'conversionTime';
+    const CONVERSION_DATE_TIME = 'conversionDateTime';
     const CONVERSION_VALUE = 'conversionValue';
     const COUNTRY_CODE = 'countryCode';
     const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
@@ -86,7 +86,7 @@ final class ArgumentNames
         self::CAMPAIGN_IDS => 'The campaign IDs',
         self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
         self::CONVERSION_ACTION_ID => 'The conversion action ID',
-        self::CONVERSION_TIME => 'The conversion time',
+        self::CONVERSION_DATE_TIME => 'The conversion date time',
         self::CONVERSION_VALUE => 'The conversion value',
         self::COUNTRY_CODE => 'The country code',
         self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
