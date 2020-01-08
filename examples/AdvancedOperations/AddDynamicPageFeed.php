@@ -293,7 +293,7 @@ class AddDynamicPageFeed
         // Creates a label attribute.
         $labelAttributeValue = new FeedItemAttributeValue([
             'feed_attribute_id' => $feedDetails['Label'],
-            'string_value' => new StringValue(['value' => $dsaPageUrlLabel])
+            'string_values' => [new StringValue(['value' => $dsaPageUrlLabel])]
         ]);
 
         // Creates one operation per URL.
@@ -302,7 +302,7 @@ class AddDynamicPageFeed
             // Creates a url attribute.
             $urlAttributeValue = new FeedItemAttributeValue([
                 'feed_attribute_id' => $feedDetails['Page URL'],
-                'string_value' => new StringValue(['value' => $url])
+                'string_values' => [new StringValue(['value' => $url])]
             ]);
      
             // Creates a feed item.
