@@ -229,6 +229,10 @@ See the [Logging guide](https://developers.google.com/google-ads/api/docs/client
 
 See the [Proxy guide](https://developers.google.com/google-ads/api/docs/client-libs/php/proxy).
 
+## Performance
+
+See the [Performance guide](https://developers.google.com/google-ads/api/docs/client-libs/php/performance).
+
 ## Miscellaneous
 
 ### Wiki
