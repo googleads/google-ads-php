@@ -104,18 +104,6 @@ class UploadImageAsset
         // Creates an image content.
         $imageContent = file_get_contents(self::IMAGE_URL);
 
-        // Creates an image asset.
-        $imageAsset = new ImageAsset([
-            'data' => new BytesValue(['value' => $imageContent]),
-            'file_size' => new Int64Value(['value' => strlen($imageContent)]),
-            'mime_type' => MimeType::IMAGE_JPEG,
-            'full_size' => new ImageDimension([
-                'height_pixels' => new Int64Value(['value' => 315]),
-                'width_pixels' => new Int64Value(['value' => 600]),
-                'url' => new StringValue(['value' => self::IMAGE_URL]),
-            ])
-        ]);
-
         // Creates an asset.
         $asset = new Asset([
             // Optional: Provide a unique friendly name to identify your asset.
@@ -124,7 +112,9 @@ class UploadImageAsset
             // customer account.
             // 'name' => new StringValue(['value' => 'Jupiter Trip #' . uniqid()]),
             'type' => AssetType::IMAGE,
-            'image_asset' => $imageAsset
+            'image_asset' => new ImageAsset([
+                'data' => new BytesValue(['value' => $imageContent]),
+            ])
         ]);
 
         // Creates an asset operation.
@@ -143,7 +133,7 @@ class UploadImageAsset
             /** @var MutateAssetResult $addedImageAsset */
             $addedImageAsset = $response->getResults()[0];
             printf(
-                "Image asset with resource name: '%s' is created.%s",
+                "The image asset with resource name '%s' was created.%s",
                 $addedImageAsset->getResourceName(),
                 PHP_EOL
             );
