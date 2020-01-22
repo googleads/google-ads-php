@@ -183,7 +183,7 @@ class ValidateTextAd
                             " was found.%s",
                             $count,
                             $details->getExternalPolicyName(),
-                            var_export($details->getIsExemptible(), true),
+                            $details->getIsExemptible() ? 'true' : 'false',
                             PHP_EOL
                         );
                     }
