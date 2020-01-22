@@ -22,8 +22,8 @@ namespace Google\Ads\GoogleAds\Examples\Utils;
  */
 final class ArgumentNames
 {
-    const ADJUSTMENT_TYPE = 'adjustmentType';
     const ADJUSTMENT_DATE_TIME = 'adjustmentDateTime';
+    const ADJUSTMENT_TYPE = 'adjustmentType';
     const AD_ID = 'adId';
     const AD_GROUP_ID = 'adGroupId';
     const AD_GROUP_IDS = 'adGroupIds';
@@ -74,8 +74,8 @@ final class ArgumentNames
     const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'squareMarketingImageAssetResourceName';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
-        self::ADJUSTMENT_TYPE => 'The adjustement type',
         self::ADJUSTMENT_DATE_TIME => 'The adjustement date time',
+        self::ADJUSTMENT_TYPE => 'The adjustement type',
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
