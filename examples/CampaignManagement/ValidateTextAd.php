@@ -155,14 +155,14 @@ class ValidateTextAd
 
             $count = 1;
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $googleAdsError) {
+                // Note: Depending on the ad type, you may get back policy violation errors as
+                // either PolicyFindingError or PolicyViolationError. ExpandedTextAds return
+                // errors as PolicyFindingError, so only this case is illustrated here. See
+                // https://developers.google.com/google-ads/api/docs/policy-exemption/overview
+                // for additional details.
                 /** @var GoogleAdsError $googleAdsError */
                 if ($googleAdsError->getErrorCode()->getPolicyFindingError() ==
-                    PolicyFindingError::POLICY_FINDING
-                    || $googleAdsError->getErrorCode()->getPolicyViolationError() ==
-                    PolicyViolationError::POLICY_ERROR) {
-                    // Only one of PolicyFindingDetails or PolicyViolationDetails will be
-                    // populated. PolicyViolationDetails is used by some ad formats, and
-                    // PolicyFindingDetails by others.
+                    PolicyFindingError::POLICY_FINDING) {
                     if ($googleAdsError->getDetails()->getPolicyFindingDetails()) {
                         $details = $googleAdsError->getDetails()->getPolicyFindingDetails();
                         foreach ($details->getPolicyTopicEntries() as $entry) {
@@ -176,16 +176,6 @@ class ValidateTextAd
                                 PHP_EOL
                             );
                         }
-                    } else if ($googleAdsError->getDetails()->getPolicyViolationDetails()) {
-                        $details = $googleAdsError->getDetails()->getPolicyViolationDetails();
-                        printf(
-                            "%d) Policy violation with name '%s' and isExemptable %s" .
-                            " was found.%s",
-                            $count,
-                            $details->getExternalPolicyName(),
-                            $details->getIsExemptible() ? 'true' : 'false',
-                            PHP_EOL
-                        );
                     }
                     $count++;
                 }
