@@ -137,8 +137,8 @@ class UploadConversionAdjustment
         string $adjustmentDateTime,
         float $restatementValue
     ) {
-        /** @var ConversionAdjustmentType $adjustmentTypeValue */
-        $adjustmentTypeValue = ConversionAdjustmentType::value($adjustmentType);
+        /** @var ConversionAdjustmentType $conversionAdjustmentType */
+        $conversionAdjustmentType = ConversionAdjustmentType::value($adjustmentType);
 
         // Associates conversion adjustments with the existing conversion action.
         // The GCLID should have been uploaded before with a conversion.
@@ -146,7 +146,7 @@ class UploadConversionAdjustment
             'conversion_action' => new StringValue([
                 'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
             ]),
-            'adjustment_type' => $adjustmentTypeValue,
+            'adjustment_type' => $conversionAdjustmentType,
             'gclid_date_time_pair' => new GclidDateTimePair([
                 'gclid' => new StringValue(['value' => $gclid]),
                 'conversion_date_time' => new StringValue(['value' => $conversionDateTime])
@@ -156,7 +156,7 @@ class UploadConversionAdjustment
 
         // Sets adjusted value for adjustment type RESTATEMENT.
         if ($restatementValue != null
-            && $adjustmentTypeValue == ConversionAdjustmentType::RESTATEMENT) {
+            && $conversionAdjustmentType == ConversionAdjustmentType::RESTATEMENT) {
             $conversionAdjustment->setRestatementValue(new RestatementValue([
                 'adjusted_value' => new DoubleValue(['value' => $restatementValue])
             ]));
