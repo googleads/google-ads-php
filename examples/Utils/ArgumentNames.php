@@ -22,6 +22,8 @@ namespace Google\Ads\GoogleAds\Examples\Utils;
  */
 final class ArgumentNames
 {
+    const ADJUSTMENT_TYPE = 'adjustmentType';
+    const ADJUSTMENT_DATE_TIME = 'adjustmentDateTime';
     const AD_ID = 'adId';
     const AD_GROUP_ID = 'adGroupId';
     const AD_GROUP_IDS = 'adGroupIds';
@@ -66,11 +68,14 @@ final class ArgumentNames
     const PAGE_URL = 'pageUrl';
     const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     const RECOMMENDATION_ID = 'recommendationId';
+    const RESTATEMENT_VALUE = 'restatementValue';
     const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
     const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
     const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'squareMarketingImageAssetResourceName';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
+        self::ADJUSTMENT_TYPE => 'The adjustement type',
+        self::ADJUSTMENT_DATE_TIME => 'The adjustement date time',
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
@@ -116,6 +121,7 @@ final class ArgumentNames
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
             'The CPC bid micro amount for the Percent CPC bidding strategy',
         self::RECOMMENDATION_ID => 'The recommendation ID',
+        self::RESTATEMENT_VALUE => 'The restatement value',
         self::SHOULD_CREATE_DEFAULT_LISTING_GROUP =>
             'Whether it should create a default listing group',
         self::SHOULD_REPLACE_EXISTING_TREE =>
