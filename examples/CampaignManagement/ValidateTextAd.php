@@ -156,10 +156,10 @@ class ValidateTextAd
             $count = 1;
             foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $googleAdsError) {
                 /** @var GoogleAdsError $googleAdsError */
-                if ($googleAdsError->getErrorCode()->getPolicyFindingError()
-                    == PolicyFindingError::POLICY_FINDING
-                    || $googleAdsError->getErrorCode()->getPolicyViolationError()
-                    == PolicyViolationError::POLICY_ERROR) {
+                if ($googleAdsError->getErrorCode()->getPolicyFindingError() ==
+                    PolicyFindingError::POLICY_FINDING
+                    || $googleAdsError->getErrorCode()->getPolicyViolationError() ==
+                    PolicyViolationError::POLICY_ERROR) {
                     // Only one of PolicyFindingDetails or PolicyViolationDetails will be
                     // populated. PolicyViolationDetails is used by some ad formats, and
                     // PolicyFindingDetails by others.
