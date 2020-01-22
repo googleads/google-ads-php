@@ -74,8 +74,8 @@ final class ArgumentNames
     const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'squareMarketingImageAssetResourceName';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
-        self::ADJUSTMENT_DATE_TIME => 'The adjustement date time',
-        self::ADJUSTMENT_TYPE => 'The adjustement type',
+        self::ADJUSTMENT_DATE_TIME => 'The adjustment date time',
+        self::ADJUSTMENT_TYPE => 'The adjustment type',
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',

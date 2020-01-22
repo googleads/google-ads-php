@@ -49,8 +49,8 @@ class UploadConversionAdjustment
     const ADJUSTMENT_TYPE = "INSERT_ADJUSTMENT_TYPE_HERE";
     const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
     const ADJUSTMENT_DATE_TIME = "INSERT_ADJUSTMENT_DATE_TIME_HERE";
-    # Optional: Specify an adjusted value below for adjustment type RESTATEMENT.
-    # This value will be ignored if you specify RETRACTION as adjustment type.
+    // Optional: Specify an adjusted value below for adjustment type RESTATEMENT.
+    // This value will be ignored if you specify RETRACTION as adjustment type.
     const RESTATEMENT_VALUE = null;
 
     public static function main()
@@ -118,7 +118,7 @@ class UploadConversionAdjustment
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $conversionActionId the ID of the conversion action to upload to
+     * @param int $conversionActionId the ID of the conversion action to upload adjustment to
      * @param string $gclid the GCLID for the conversion
      * @param string $adjustmentType the type of adjustment, e.g. RETRACTION, RESTATEMENT
      * @param string $conversionDateTime the date and time of the conversion.
@@ -137,7 +137,6 @@ class UploadConversionAdjustment
         string $adjustmentDateTime,
         float $restatementValue
     ) {
-        /** @var ConversionAdjustmentType $conversionAdjustmentType */
         $conversionAdjustmentType = ConversionAdjustmentType::value($adjustmentType);
 
         // Associates conversion adjustments with the existing conversion action.
@@ -155,8 +154,8 @@ class UploadConversionAdjustment
         ]);
 
         // Sets adjusted value for adjustment type RESTATEMENT.
-        if ($restatementValue != null
-            && $conversionAdjustmentType == ConversionAdjustmentType::RESTATEMENT) {
+        if ($restatementValue !== null
+            && $conversionAdjustmentType === ConversionAdjustmentType::RESTATEMENT) {
             $conversionAdjustment->setRestatementValue(new RestatementValue([
                 'adjusted_value' => new DoubleValue(['value' => $restatementValue])
             ]));
