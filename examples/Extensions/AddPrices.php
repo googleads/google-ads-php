@@ -127,7 +127,7 @@ class AddPrices
             'extension_type' => ExtensionType::PRICE,
             'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
         ]);
-        // Creates a extension setting operation.
+        // Creates a customer extension setting operation.
         $customerExtensionSettingOperation = new CustomerExtensionSettingOperation();
         $customerExtensionSettingOperation->setCreate($customerExtensionSetting);
 
@@ -277,11 +277,12 @@ class AddPrices
         if (!is_null($finalMobileUrl)) {
             $priceOffer->setFinalMobileUrls([new StringValue(['value' => $finalMobileUrl])]);
         }
+
         return $priceOffer;
     }
 
     /**
-     * Creates a new ad schedule info with the specified attributes.
+     * Creates a new ad schedule info with the specified parameters.
      *
      * @param int $dayOfWeek the enum value of day of the schedule
      * @param int $startHour the start hour of the schedule
