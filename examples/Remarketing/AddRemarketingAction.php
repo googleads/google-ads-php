@@ -26,28 +26,14 @@ use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V2\Common\BasicUserListInfo;
 use Google\Ads\GoogleAds\V2\Common\TagSnippet;
-use Google\Ads\GoogleAds\V2\Common\UserListActionInfo;
-use Google\Ads\GoogleAds\V2\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V2\Enums\ConversionActionStatusEnum\ConversionActionStatus;
-use Google\Ads\GoogleAds\V2\Enums\ConversionActionTypeEnum\ConversionActionType;
 use Google\Ads\GoogleAds\V2\Enums\TrackingCodePageFormatEnum\TrackingCodePageFormat;
 use Google\Ads\GoogleAds\V2\Enums\TrackingCodeTypeEnum\TrackingCodeType;
-use Google\Ads\GoogleAds\V2\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V2\Resources\ConversionAction;
-use Google\Ads\GoogleAds\V2\Resources\ConversionAction\ValueSettings;
 use Google\Ads\GoogleAds\V2\Resources\RemarketingAction;
-use Google\Ads\GoogleAds\V2\Resources\UserList;
-use Google\Ads\GoogleAds\V2\Services\ConversionActionOperation;
 use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V2\Services\RemarketingActionOperation;
-use Google\Ads\GoogleAds\V2\Services\UserListOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 
 /**
