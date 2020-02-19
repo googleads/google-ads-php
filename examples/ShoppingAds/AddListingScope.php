@@ -125,7 +125,7 @@ class AddListingScope
         // A listing scope allows you to filter the products that will be included in a given
         // campaign. You can specify multiple dimensions with conditions that must be met for a
         // product to be included in a campaign.
-        // A typical ListingScope might only have a few dimensions. This example demonstrates a
+        // A typical listing scope might only have a few dimensions. This example demonstrates a
         // range of different dimensions you could use.
         $listingScopeInfo = new ListingScopeInfo([
             'dimensions' => [
@@ -164,12 +164,15 @@ class AddListingScope
                 new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]),
             'listing_scope' => $listingScopeInfo
         ]);
+        // Creates a campaign criterion operation.
+        $campaignCriterionOperation = new CampaignCriterionOperation();
+        $campaignCriterionOperation->setCreate($campaignCriterion);
 
         // Issues a mutate request to create a campaign criterion on the server and print its info.
         $campaignCriterionServiceClient = $googleAdsClient->getCampaignCriterionServiceClient();
         $response = $campaignCriterionServiceClient->mutateCampaignCriteria(
             $customerId,
-            [new CampaignCriterionOperation(['create' => $campaignCriterion])]
+            [$campaignCriterionOperation]
         );
         /** @var CampaignCriterion $addedCampaignCriterion */
         $addedCampaignCriterion = $response->getResults()[0];
