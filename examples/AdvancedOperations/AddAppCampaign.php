@@ -403,12 +403,20 @@ class AddAppCampaign
                 // text_ad, gmail_ad, etc.
                 'app_ad' => new AppAdInfo([
                     'headlines' => [
-                        self::createAdTextAsset('A cool puzzle game'),
-                        self::createAdTextAsset('Remove connected blocks')
+                        new AdTextAsset([
+                            'text' => new StringValue(['value' => 'A cool puzzle game'])
+                        ]),
+                        new AdTextAsset([
+                            'text' => new StringValue(['value' => 'Remove connected blocks'])
+                        ])
                     ],
                     'descriptions' => [
-                        self::createAdTextAsset('3 difficulty levels'),
-                        self::createAdTextAsset('4 colorful fun skins')
+                        new AdTextAsset([
+                            'text' => new StringValue(['value' => '3 difficulty levels'])
+                        ]),
+                        new AdTextAsset([
+                            'text' => new StringValue(['value' => '4 colorful fun skins'])
+                        ])
                     ]
                     // Optional: You can set up to 20 image assets for your campaign.
                     // 'images' => [INSERT_AD_IMAGE_ASSET_ID(s)_HERE]
@@ -430,20 +438,6 @@ class AddAppCampaign
             $createdAdGroupAdResourceName,
             PHP_EOL
         );
-    }
-
-    /**
-     * Creates an ad text asset for a given text.
-     *
-     * @param string $text the text to create the ad asset for
-     * @return string the created ad text asset
-     */
-    private static function createAdTextAsset(string $text)
-    {
-        // Creates and returns an ad text asset.
-        return new AdTextAsset([
-            'text' => new StringValue(['value' => $text])
-        ]);
     }
 }
 
