@@ -103,7 +103,7 @@ class UpdateCampaignCriterionBidModifier
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $campaignId the ID of the campaign where the bid modifier will be updated
+     * @param int $campaignId the ID of the campaign for which the bid modifier will be updated
      * @param int $criterionId the ID of the criterion to update
      * @param float $bidModifierValue the bid modifier value to set
      */
