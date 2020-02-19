@@ -190,13 +190,13 @@ class AddAppCampaign
     }
 
     /**
-     * Creates an app campaign under the given customer ID.
+     * Creates an App campaign under the given customer ID.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string $budgetResourceName the resource name of the budget to associate with the
      *      campaign
-     * @return string the resource name of the newly created app campaign
+     * @return string the resource name of the newly created App campaign
      */
     private static function createCampaign(
         GoogleAdsClient $googleAdsClient,
@@ -343,7 +343,7 @@ class AddAppCampaign
         );
 
         printf(
-            "Created %d Campaign Criteria with resource names:%s",
+            "Created %d campaign criteria with resource names:%s",
             $response->getResults()->count(),
             PHP_EOL
         );
