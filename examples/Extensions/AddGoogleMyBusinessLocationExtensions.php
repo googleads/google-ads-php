@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2019 Google LLC
  *
@@ -271,8 +272,10 @@ class AddGoogleMyBusinessLocationExtensions
                 $sleepSeconds = self::POLL_FREQUENCY_SECONDS * pow(2, $numberOfAttempts);
                 // Exits the loop early if $sleepSeconds grows too large in the event that
                 // MAX_CUSTOMER_FEED_ADD_ATTEMPTS is set too high.
-                if ($sleepSeconds > self::POLL_FREQUENCY_SECONDS
-                    * pow(2, self::MAX_CUSTOMER_FEED_ADD_ATTEMPTS)) {
+                if (
+                    $sleepSeconds > self::POLL_FREQUENCY_SECONDS
+                    * pow(2, self::MAX_CUSTOMER_FEED_ADD_ATTEMPTS)
+                ) {
                     break;
                 }
                 printf(
@@ -284,8 +287,10 @@ class AddGoogleMyBusinessLocationExtensions
                 );
                 sleep($sleepSeconds);
             }
-        } while ($numberOfAttempts < self::MAX_CUSTOMER_FEED_ADD_ATTEMPTS
-            && is_null($addedCustomerFeed));
+        } while (
+            $numberOfAttempts < self::MAX_CUSTOMER_FEED_ADD_ATTEMPTS
+            && is_null($addedCustomerFeed)
+        );
 
         if (is_null($addedCustomerFeed)) {
             throw new \RuntimeException(

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2018 Google LLC
  *
@@ -84,8 +85,10 @@ class ArgumentParser
             $normalizedOptions[$optionName] = $optionValue;
         }
         // Don't allow the case when optional arguments are passed, but required arguments are not.
-        if (count($getOpt->getOptions()) > 0
-            && $numPassedRequiredArguments !== $numRequiredArguments) {
+        if (
+            count($getOpt->getOptions()) > 0
+            && $numPassedRequiredArguments !== $numRequiredArguments
+        ) {
             echo PHP_EOL . $getOpt->getHelpText();
             throw new InvalidArgumentException(
                 'All required arguments must be specified.' . PHP_EOL

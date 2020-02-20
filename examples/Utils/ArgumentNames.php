@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2018 Google LLC
  *
@@ -109,7 +110,7 @@ final class ArgumentNames
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
-        self::LABEL_ID =>'The label ID',
+        self::LABEL_ID => 'The label ID',
         self::LANGUAGE_ID => 'The language ID',
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',

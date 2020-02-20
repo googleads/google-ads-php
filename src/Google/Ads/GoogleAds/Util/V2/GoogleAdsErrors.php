@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2019 Google LLC
  *
@@ -17,7 +18,7 @@
 
 namespace Google\Ads\GoogleAds\Util\V2;
 
-use \Google\Rpc\Status;
+use Google\Rpc\Status;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsFailure;
 use Google\Ads\GoogleAds\V2\Errors\ErrorLocation\FieldPathElement;
@@ -108,8 +109,10 @@ final class GoogleAdsErrors
                 $element = $pathElements[0];
                 $fieldName = $element->getFieldName();
                 $index = $element->getIndex();
-                if (($fieldName === "operations" || $fieldName === "mutate_operations"
-                    || $fieldName === "conversions") && $index->getValue() == $operationIndex) {
+                if (
+                    ($fieldName === "operations" || $fieldName === "mutate_operations"
+                    || $fieldName === "conversions") && $index->getValue() == $operationIndex
+                ) {
                     $result[] = $error;
                 }
             }
