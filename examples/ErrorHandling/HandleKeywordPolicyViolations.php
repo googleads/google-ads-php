@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2019 Google LLC
  *
@@ -158,8 +159,10 @@ class HandleKeywordPolicyViolations
 
         // Try sending exemption requests for creating a keyword. However, if your keyword contains
         // many policy violations, but not all of them are exemptible, the request will not be sent.
-        if (count($exemptPolicyViolationKeys)
-            === count($googleAdsException->getGoogleAdsFailure()->getErrors())) {
+        if (
+            count($exemptPolicyViolationKeys)
+            === count($googleAdsException->getGoogleAdsFailure()->getErrors())
+        ) {
             self::requestExemption(
                 $customerId,
                 $adGroupCriterionServiceClient,
@@ -193,8 +196,10 @@ class HandleKeywordPolicyViolations
                 $error->getMessage(),
                 PHP_EOL
             );
-            if (!is_null($error->getDetails())
-                && !is_null($error->getDetails()->getPolicyViolationDetails())) {
+            if (
+                !is_null($error->getDetails())
+                && !is_null($error->getDetails()->getPolicyViolationDetails())
+            ) {
                 $policyViolationDetails = $error->getDetails()->getPolicyViolationDetails();
                 printf("\tPolicy violation details:%s", PHP_EOL);
                 printf(
@@ -213,8 +218,10 @@ class HandleKeywordPolicyViolations
                     PHP_EOL
                 );
 
-                if ($policyViolationDetails->getIsExemptible() &&
-                    !is_null($policyViolationDetails->getKey())) {
+                if (
+                    $policyViolationDetails->getIsExemptible() &&
+                    !is_null($policyViolationDetails->getKey())
+                ) {
                     $policyViolationDetailsKey = $policyViolationDetails->getKey();
                     $exemptPolicyViolationKeys[] = $policyViolationDetailsKey;
                     printf("\t\tPolicy violation key:%s", PHP_EOL);

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2018 Google LLC
  *
@@ -50,9 +51,11 @@ trait GoogleAdsGapicClientTrait
 
         // Ensure that this isn't already an OperationsClient nor GoogleAdsOperationClient to avoid
         // recursion.
-        if (!isset($options['operationsClient'])
+        if (
+            !isset($options['operationsClient'])
             && get_class($this) != OperationsClient::class
-            && get_class($this) != GoogleAdsOperationClient::class) {
+            && get_class($this) != GoogleAdsOperationClient::class
+        ) {
             $operationOptions = $options;
             // Use all the options except for those related to this service instance.
             $this->pluckArray([

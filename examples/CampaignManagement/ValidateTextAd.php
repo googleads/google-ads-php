@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2020 Google LLC
  *
@@ -162,8 +163,10 @@ class ValidateTextAd
                 // https://developers.google.com/google-ads/api/docs/policy-exemption/overview
                 // for additional details.
                 /** @var GoogleAdsError $googleAdsError */
-                if ($googleAdsError->getErrorCode()->getPolicyFindingError() ==
-                    PolicyFindingError::POLICY_FINDING) {
+                if (
+                    $googleAdsError->getErrorCode()->getPolicyFindingError() ==
+                    PolicyFindingError::POLICY_FINDING
+                ) {
                     if ($googleAdsError->getDetails()->getPolicyFindingDetails()) {
                         $details = $googleAdsError->getDetails()->getPolicyFindingDetails();
                         foreach ($details->getPolicyTopicEntries() as $entry) {

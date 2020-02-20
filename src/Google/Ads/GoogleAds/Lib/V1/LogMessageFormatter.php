@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2018 Google LLC
  *
@@ -109,8 +110,10 @@ final class LogMessageFormatter
         // ListMutateJobResults can return objects that contain GoogleAdsFailure. We need to
         // initialize an unused GoogleAdsFailure object, as the pool needs to be aware of this
         // class, in order to serialize the response correctly.
-        if (!isset(self::$unusedGoogleAdsFailure)
-            && strpos($method, 'ListMutateJobResults')) {
+        if (
+            !isset(self::$unusedGoogleAdsFailure)
+            && strpos($method, 'ListMutateJobResults')
+        ) {
             self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
         }
         $logMessageTokens[] = "Request: " . $argument->serializeToJsonString();
@@ -126,9 +129,11 @@ final class LogMessageFormatter
             // Initialize unused GoogleAdsFailure object when there are partial failures returned.
             // This is necessary, as the pool needs to be aware of this class, in order to serialize
             // the response correctly.
-            if (!isset(self::$unusedGoogleAdsFailure)
+            if (
+                !isset(self::$unusedGoogleAdsFailure)
                 && method_exists($response, 'getPartialFailureError')
-                && !is_null($response->getPartialFailureError())) {
+                && !is_null($response->getPartialFailureError())
+            ) {
                 self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
             }
             $logMessageTokens[] = "Response: {$response->serializeToJsonString()}";

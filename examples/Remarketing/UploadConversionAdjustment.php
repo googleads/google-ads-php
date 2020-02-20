@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2020 Google LLC
  *
@@ -154,8 +155,10 @@ class UploadConversionAdjustment
         ]);
 
         // Sets adjusted value for adjustment type RESTATEMENT.
-        if ($restatementValue !== null
-            && $conversionAdjustmentType === ConversionAdjustmentType::RESTATEMENT) {
+        if (
+            $restatementValue !== null
+            && $conversionAdjustmentType === ConversionAdjustmentType::RESTATEMENT
+        ) {
             $conversionAdjustment->setRestatementValue(new RestatementValue([
                 'adjusted_value' => new DoubleValue(['value' => $restatementValue])
             ]));

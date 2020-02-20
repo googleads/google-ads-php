@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2019 Google LLC
  *
@@ -94,7 +95,7 @@ class GetAllImageAssets
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that will retrieve all image assets.
-        $query = "SELECT asset.name, ".
+        $query = "SELECT asset.name, " .
             "asset.image_asset.file_size, " .
             "asset.image_asset.full_size.width_pixels, " .
             "asset.image_asset.full_size.height_pixels, " .
@@ -109,7 +110,7 @@ class GetAllImageAssets
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
-                "Image with name '%s', file size %d bytes, width %dpx, height %dpx, ".
+                "Image with name '%s', file size %d bytes, width %dpx, height %dpx, " .
                     "and URL '%s' was found.%s",
                 $googleAdsRow->getAsset()->getNameUnwrapped(),
                 $googleAdsRow->getAsset()->getImageAsset()->getFileSizeUnwrapped(),

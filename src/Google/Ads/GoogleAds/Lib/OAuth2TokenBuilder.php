@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2018 Google LLC
  *
@@ -127,7 +128,7 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
      * @param string $jsonKeyFilePath
      * @return OAuth2TokenBuilder this builder
      */
-    public function withJsonKeyFilePath(string $jsonKeyFilePath) : self
+    public function withJsonKeyFilePath(string $jsonKeyFilePath): self
     {
         $this->jsonKeyFilePath = $jsonKeyFilePath;
         return $this;
@@ -140,7 +141,7 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
      * @param string $scopes a space-delimited list of scopes
      * @return OAuth2TokenBuilder this builder
      */
-    public function withScopes($scopes) : self
+    public function withScopes($scopes): self
     {
         $this->scopes = $scopes;
         return $this;
@@ -153,7 +154,7 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
      * @param string|null $impersonatedEmail
      * @return OAuth2TokenBuilder this builder
      */
-    public function withImpersonatedEmail(?string $impersonatedEmail) : self
+    public function withImpersonatedEmail(?string $impersonatedEmail): self
     {
         $this->impersonatedEmail = $impersonatedEmail;
         return $this;
@@ -197,9 +198,11 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
      */
     public function validate()
     {
-        if ((!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
+        if (
+            (!is_null($this->jsonKeyFilePath) || !is_null($this->scopes))
             && (!is_null($this->clientId) || !is_null($this->clientSecret)
-                || !is_null($this->refreshToken))) {
+                || !is_null($this->refreshToken))
+        ) {
             throw new InvalidArgumentException(
                 'Cannot have both service account '
                 . 'flow and installed/web application flow credential values set.'
@@ -212,9 +215,11 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
                     . "'scopes' must be set when using service account flow."
                 );
             }
-        } elseif (is_null($this->clientId)
+        } elseif (
+            is_null($this->clientId)
             || is_null($this->clientSecret)
-            || is_null($this->refreshToken)) {
+            || is_null($this->refreshToken)
+        ) {
             throw new UnexpectedValueException(
                 "All of 'clientId', 'clientSecret', and 'refreshToken' must be set when using "
                 . "installed/web application flow."
