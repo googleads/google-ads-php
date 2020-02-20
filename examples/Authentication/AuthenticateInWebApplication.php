@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2018 Google LLC
  *
@@ -100,8 +101,10 @@ class AuthenticateInWebApplication
                 }
 
                 // Check if the requested path is the one set as the redirect URI.
-                if ($request->getUri()->getPath()
-                    !== parse_url($oauth2->getRedirectUri(), PHP_URL_PATH)) {
+                if (
+                    $request->getUri()->getPath()
+                    !== parse_url($oauth2->getRedirectUri(), PHP_URL_PATH)
+                ) {
                     return new Response(
                         404,
                         ['Content-Type' => 'text/plain'],

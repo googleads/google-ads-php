@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2019 Google LLC
  *
@@ -37,7 +38,7 @@ use Google\Ads\GoogleAds\V2\Services\AdGroupCriterionOperation;
 use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
-use \Exception;
+use Exception;
 
 /**
  * Handles RateExceededError in an application. This code example runs 5 requests sequentially,
@@ -141,14 +142,18 @@ class HandleRateExceededError
                         break;
                     } catch (GoogleAdsException $googleAdsException) {
                         $hasRateExceededError = false;
-                        foreach ($googleAdsException->getGoogleAdsFailure()
-                                     ->getErrors() as $googleAdsError) {
+                        foreach (
+                            $googleAdsException->getGoogleAdsFailure()
+                                ->getErrors() as $googleAdsError
+                        ) {
                             // Checks if any of the errors are QuotaError.RESOURCE_EXHAUSTED or
                             // QuotaError.RESOURCE_TEMPORARILY_EXHAUSTED.
-                            if ($googleAdsError->getErrorCode()->getQuotaError()
-                                == QuotaError::RESOURCE_EXHAUSTED
+                            if (
+                                $googleAdsError->getErrorCode()->getQuotaError()
+                                    == QuotaError::RESOURCE_EXHAUSTED
                                 || $googleAdsError->getErrorCode()->getQuotaError()
-                                == QuotaError::RESOURCE_TEMPORARILY_EXHAUSTED) {
+                                    == QuotaError::RESOURCE_TEMPORARILY_EXHAUSTED
+                            ) {
                                 printf(
                                     'Received rate exceeded error, retry after %d seconds.%s',
                                     $retrySeconds,

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2020 Google LLC
  *
@@ -115,6 +116,7 @@ class ValidateTextAd
         $expandedTextAdInfo = new ExpandedTextAdInfo([
             'description' => new StringValue(['value' => 'Luxury Cruise to Mars']),
             'headline_part1' => new StringValue(['value' => 'Visit the Red Planet in style.']),
+            // Adds a headline that will trigger a policy violation to demonstrate error handling.
             'headline_part2' => new StringValue(['value' => 'Low-gravity fun for everyone!!'])
         ]);
 
@@ -161,8 +163,10 @@ class ValidateTextAd
                 // https://developers.google.com/google-ads/api/docs/policy-exemption/overview
                 // for additional details.
                 /** @var GoogleAdsError $googleAdsError */
-                if ($googleAdsError->getErrorCode()->getPolicyFindingError() ==
-                    PolicyFindingError::POLICY_FINDING) {
+                if (
+                    $googleAdsError->getErrorCode()->getPolicyFindingError() ==
+                    PolicyFindingError::POLICY_FINDING
+                ) {
                     if ($googleAdsError->getDetails()->getPolicyFindingDetails()) {
                         $details = $googleAdsError->getDetails()->getPolicyFindingDetails();
                         foreach ($details->getPolicyTopicEntries() as $entry) {

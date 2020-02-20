@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2018 Google LLC
  *
@@ -70,7 +71,7 @@ class AddShoppingProductListingGroupTree
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::AD_GROUP_ID=> GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::SHOULD_REPLACE_EXISTING_TREE => GetOpt::REQUIRED_ARGUMENT
         ]);
 

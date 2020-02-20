@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2019 Google LLC
  *
@@ -79,8 +80,10 @@ final class Feeds
             /** @var FeedItemAttributeValue $feedItemAttributeValue */
             $attributeIndex++;
             // Checks if the current feedItemAttributeValue is the one we are updating
-            if ($feedItemAttributeValue->getFeedAttributeIdUnwrapped()
-                === $targetFeedItemAttributeValue->getFeedAttributeIdUnwrapped()) {
+            if (
+                $feedItemAttributeValue->getFeedAttributeIdUnwrapped()
+                === $targetFeedItemAttributeValue->getFeedAttributeIdUnwrapped()
+            ) {
                 break;
             }
         }

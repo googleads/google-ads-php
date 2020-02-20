@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2018 Google LLC
  *
@@ -99,7 +100,7 @@ class FieldMasks
     public static function allSetFieldsOf(Message $message)
     {
         $messageClass = get_class($message);
-        $defaultMessage = new $messageClass;
+        $defaultMessage = new $messageClass();
 
         return self::compare($defaultMessage, $message);
     }
@@ -242,8 +243,10 @@ class FieldMasks
                 $fieldName = self::getFieldName($currentField, $fieldDescriptor);
                 // For single message fields, recurse if there's a value;
                 // otherwise just add the field name.
-                if (!self::isFieldRepeated($fieldDescriptor)
-                    && $fieldDescriptor->getType() === GPBType::MESSAGE) {
+                if (
+                    !self::isFieldRepeated($fieldDescriptor)
+                    && $fieldDescriptor->getType() === GPBType::MESSAGE
+                ) {
                     $getter = Serializer::getGetter($fieldDescriptor->getName());
                     $messageValue = $message->$getter();
                     if (!is_null($messageValue)) {

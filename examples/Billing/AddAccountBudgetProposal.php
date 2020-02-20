@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2018 Google LLC
  *
@@ -51,7 +52,7 @@ class AddAccountBudgetProposal
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::BILLING_SETUP_ID=> GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::BILLING_SETUP_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.

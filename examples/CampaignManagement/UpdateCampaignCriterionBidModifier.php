@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,28 +23,28 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\V2\ResourceNames;
-use Google\Ads\GoogleAds\V2\Common\InteractionTypeInfo;
-use Google\Ads\GoogleAds\V2\Enums\InteractionTypeEnum;
 use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V2\Resources\CampaignBidModifier;
-use Google\Ads\GoogleAds\V2\Services\CampaignBidModifierOperation;
+use Google\Ads\GoogleAds\V2\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V2\Services\CampaignCriterionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\StringValue;
+use Google\Protobuf\FloatValue;
 
 /**
- * This example demonstrates how to add a campaign-level bid modifier for call interactions.
+ * This example updates a campaign criterion with a new bid modifier value.
  */
-class AddCampaignBidModifier
+class UpdateCampaignCriterionBidModifier
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
-    const BID_MODIFIER_VALUE = 'INSERT_BID_MODIFIER_VALUE_HERE';
+    const CRITERION_ID = 'INSERT_CRITERION_ID_HERE';
+    // Specify the bid modifier value here or the default specified below will be used.
+    const BID_MODIFIER_VALUE = 1.5;
 
     public static function main()
     {
@@ -53,7 +53,8 @@ class AddCampaignBidModifier
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::BID_MODIFIER_VALUE => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CRITERION_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::BID_MODIFIER_VALUE => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -70,6 +71,7 @@ class AddCampaignBidModifier
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID,
+                $options[ArgumentNames::CRITERION_ID] ?: self::CRITERION_ID,
                 $options[ArgumentNames::BID_MODIFIER_VALUE] ?: self::BID_MODIFIER_VALUE
             );
         } catch (GoogleAdsException $googleAdsException) {
@@ -102,46 +104,49 @@ class AddCampaignBidModifier
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $campaignId the ID of the campaign where the bid modifier will be added
-     * @param float $bidModifierValue the value of the bid modifier to add
+     * @param int $campaignId the ID of the campaign for which the bid modifier will be updated
+     * @param int $criterionId the ID of the criterion to update
+     * @param float $bidModifierValue the bid modifier value to set
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $campaignId,
+        int $criterionId,
         float $bidModifierValue
     ) {
-        // Creates a campaign bid modifier.
-        $campaignBidModifier = new CampaignBidModifier([
-            'campaign' => new StringValue(
-                ['value' => ResourceNames::forCampaign($customerId, $campaignId)]
+        // Creates a campaign criterion with the specified resource name and updated bid modifier
+        // value.
+        $campaignCriterion = new CampaignCriterion([
+            'resource_name' => ResourceNames::forCampaignCriterion(
+                $customerId,
+                $campaignId,
+                $criterionId
             ),
-            // Use the specified bid modifier value.
-            'bid_modifier' => new DoubleValue(['value' => $bidModifierValue]),
-            // Make the bid modifier apply to call interactions.
-            'interaction_type' => new InteractionTypeInfo(
-                ['type' => InteractionTypeEnum\InteractionType::CALLS]
-            )
+            'bid_modifier' => new FloatValue(['value' => $bidModifierValue])
         ]);
 
-        // Creates a campaign bid modifier operation for creating a campaign bid modifier.
-        $campaignBidModifierOperation = new CampaignBidModifierOperation();
-        $campaignBidModifierOperation->setCreate($campaignBidModifier);
+        // Creates the campaign criterion operation.
+        $campaignCriterionOperation = new CampaignCriterionOperation();
+        $campaignCriterionOperation->setUpdate($campaignCriterion);
+        $campaignCriterionOperation->setUpdateMask(FieldMasks::allSetFieldsOf($campaignCriterion));
 
-        // Issues a mutate request to add the campaign bid modifier.
-        $campaignBidModifierServiceClient = $googleAdsClient->getCampaignBidModifierServiceClient();
-        $response = $campaignBidModifierServiceClient->mutateCampaignBidModifiers(
+        // Issues a mutate request to update the bid modifier of campaign criterion.
+        $campaignCriterionServiceClient = $googleAdsClient->getCampaignCriterionServiceClient();
+        $response = $campaignCriterionServiceClient->mutateCampaignCriteria(
             $customerId,
-            [$campaignBidModifierOperation]
+            [$campaignCriterionOperation]
         );
 
-        printf("Added %d campaign bid modifier:%s", $response->getResults()->count(), PHP_EOL);
-
-        foreach ($response->getResults() as $addedCampaignBidModifier) {
-            /** @var CampaignBidModifier $addedCampaignBidModifier */
-            print $addedCampaignBidModifier->getResourceName() . PHP_EOL;
-        }
+        // Prints the resource name of the updated campaign criterion.
+        /** @var CampaignCriterion $updatedCampaignCriterion */
+        $updatedCampaignCriterion = $response->getResults()[0];
+        printf(
+            "Campaign criterion with resource name '%s' was modified.%s",
+            $updatedCampaignCriterion->getResourceName(),
+            PHP_EOL
+        );
     }
 }
 
-AddCampaignBidModifier::main();
+UpdateCampaignCriterionBidModifier::main();

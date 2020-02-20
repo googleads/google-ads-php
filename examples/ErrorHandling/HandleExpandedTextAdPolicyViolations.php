@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2019 Google LLC
  *
@@ -186,8 +187,10 @@ class HandleExpandedTextAdPolicyViolations
                 $error->getMessage(),
                 PHP_EOL
             );
-            if (!is_null($error->getDetails())
-                && !is_null($error->getDetails()->getPolicyFindingDetails())) {
+            if (
+                !is_null($error->getDetails())
+                && !is_null($error->getDetails()->getPolicyFindingDetails())
+            ) {
                 $policyFindingDetails = $error->getDetails()->getPolicyFindingDetails();
                 printf("\tPolicy finding details:%s", PHP_EOL);
 

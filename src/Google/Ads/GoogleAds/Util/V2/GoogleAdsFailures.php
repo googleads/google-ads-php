@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2019 Google LLC
  *
@@ -63,9 +64,11 @@ final class GoogleAdsFailures
     {
         // This initialization is needed to populate the descriptor pool with the GoogleAdsFailure
         // class and prevent exceptions from being thrown.
-        if (is_null(
-            DescriptorPool::getGeneratedPool()->getDescriptorByClassName(GoogleAdsFailure::class)
-        )) {
+        if (
+            is_null(
+                DescriptorPool::getGeneratedPool()->getDescriptorByClassName(GoogleAdsFailure::class)
+            )
+        ) {
             new GoogleAdsFailure();
         }
     }

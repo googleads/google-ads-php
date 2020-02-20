@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="google-ads-php-psr2">
+<ruleset name="google-ads-php-psr12">
     <rule ref="PSR12"/>
     <exclude-pattern>metadata</exclude-pattern>
     <exclude-pattern>src/Google/Ads/GoogleAds/V[0-9]+</exclude-pattern>
