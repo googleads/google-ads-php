@@ -28,7 +28,7 @@ Please provide a code snippet or steps to consistently reproduce the experienced
 
 **Actual result**
 
-Make sure you include information that can help us debug (full error message, exception listing, stack trace, logs).
+Make sure you include information that can help us debug (full error message, exception listing, stack trace, [logs](https://developers.google.com/google-ads/api/docs/client-libs/php/logging)).
 See [troubleshooting](https://developers.google.com/google-ads/api/docs/best-practices/troubleshooting) for how to diagnose problems better.
  
 **Anything else we should know about your project / environment**
