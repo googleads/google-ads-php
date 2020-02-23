@@ -143,8 +143,15 @@ class AddAppCampaign
         // Sets campaign targeting.
         self::setCampaignTargetingCriteria($googleAdsClient, $customerId, $campaignResourceName);
 
-        // Creates an ad group and an App ad.
-        self::createAppAd($googleAdsClient, $customerId, $campaignResourceName);
+        // Creates an ad group.
+        $adGroupResourceName = self::createAdGroup(
+            $googleAdsClient,
+            $customerId,
+            $campaignResourceName
+        );
+
+        // Creates an App ad.
+        self::createAppAd($googleAdsClient, $customerId, $adGroupResourceName);
     }
 
     /**
@@ -355,14 +362,14 @@ class AddAppCampaign
     }
 
     /**
-     * Creates an ad group and associated App ad for a given campaign.
+     * Creates an ad group for a given campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param string $campaignResourceName the resource name of the campaign to add ad group and
-     *      App ad to
+     * @param string $campaignResourceName the resource name of the campaign to add the ad group to
+     * @return string the resource name of the newly created ad group
      */
-    private static function createAppAd(
+    private static function createAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $campaignResourceName
@@ -393,10 +400,25 @@ class AddAppCampaign
             PHP_EOL
         );
 
+        return $createdAdGroupResourceName;
+    }
+
+    /**
+     * Creates an App ad for a given ad group.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
+     * @param string $adGroupResourceName the resource name of the ad group to add the App ad to
+     */
+    private static function createAppAd(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        string $adGroupResourceName
+    ) {
         // Creates an ad group ad.
         $adGroupAd = new AdGroupAd([
             'status' => AdGroupAdStatus::ENABLED,
-            'ad_group' => new StringValue(['value' => $createdAdGroupResourceName]),
+            'ad_group' => new StringValue(['value' => $adGroupResourceName]),
             'ad' => new Ad([
                 // ad_data is a 'oneof' message so setting app_ad
                 // is mutually exclusive with ad data fields such as
