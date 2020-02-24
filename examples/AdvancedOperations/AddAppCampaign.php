@@ -441,7 +441,7 @@ class AddAppCampaign
                         ])
                     ]
                     // Optional: You can set up to 20 image assets for your campaign.
-                    // 'images' => [INSERT_AD_IMAGE_ASSET_ID(s)_HERE]
+                    // 'images' => [INSERT_AD_IMAGE_RESOURCE_NAME(s)_HERE]
                 ])
             ])
         ]);
