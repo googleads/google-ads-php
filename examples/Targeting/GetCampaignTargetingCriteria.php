@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V2\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V2\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V3\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V3\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**

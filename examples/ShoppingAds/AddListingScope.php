@@ -24,20 +24,20 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V2\ResourceNames;
-use Google\Ads\GoogleAds\V2\Common\ListingBrandInfo;
-use Google\Ads\GoogleAds\V2\Common\ListingCustomAttributeInfo;
-use Google\Ads\GoogleAds\V2\Common\ListingDimensionInfo;
-use Google\Ads\GoogleAds\V2\Common\ListingScopeInfo;
-use Google\Ads\GoogleAds\V2\Common\ProductTypeInfo;
-use Google\Ads\GoogleAds\V2\Enums\ListingCustomAttributeIndexEnum\ListingCustomAttributeIndex;
-use Google\Ads\GoogleAds\V2\Enums\ProductTypeLevelEnum\ProductTypeLevel;
-use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V2\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V2\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V3\ResourceNames;
+use Google\Ads\GoogleAds\V3\Common\ListingDimensionInfo;
+use Google\Ads\GoogleAds\V3\Common\ListingScopeInfo;
+use Google\Ads\GoogleAds\V3\Common\ProductBrandInfo;
+use Google\Ads\GoogleAds\V3\Common\ProductCustomAttributeInfo;
+use Google\Ads\GoogleAds\V3\Common\ProductTypeInfo;
+use Google\Ads\GoogleAds\V3\Enums\ProductCustomAttributeIndexEnum\ProductCustomAttributeIndex;
+use Google\Ads\GoogleAds\V3\Enums\ProductTypeLevelEnum\ProductTypeLevel;
+use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V3\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V3\Services\CampaignCriterionOperation;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -130,15 +130,16 @@ class AddListingScope
         // range of different dimensions you could use.
         $listingScopeInfo = new ListingScopeInfo([
             'dimensions' => [
-                // Creates a listing brand info set to "google".
+                // Creates a product brand info set to "google".
                 new ListingDimensionInfo([
-                    'listing_brand'
-                    => new ListingBrandInfo(['value' => new StringValue(['value' => 'google'])])
+                    'product_brand' => new ProductBrandInfo([
+                        'value' => new StringValue(['value' => 'google'])
+                    ])
                 ]),
-                // Creates a listing custom attribute info for INDEX0 set to "top_selling_products".
+                // Creates a product custom attribute info for INDEX0 set to "top_selling_products".
                 new ListingDimensionInfo([
-                    'listing_custom_attribute' => new ListingCustomAttributeInfo([
-                        'index' => ListingCustomAttributeIndex::INDEX0,
+                    'product_custom_attribute' => new ProductCustomAttributeInfo([
+                        'index' => ProductCustomAttributeIndex::INDEX0,
                         'value' => new StringValue(['value' => 'top_selling_products'])
                     ])
                 ]),

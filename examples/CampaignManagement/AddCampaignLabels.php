@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V2\ResourceNames;
-use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V2\Resources\CampaignLabel;
-use Google\Ads\GoogleAds\V2\Services\CampaignLabelOperation;
+use Google\Ads\GoogleAds\Util\V3\ResourceNames;
+use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V3\Resources\CampaignLabel;
+use Google\Ads\GoogleAds\V3\Services\CampaignLabelOperation;
 use Google\ApiCore\ApiException;
 
 /** This example adds a campaign label to a list of campaigns. */

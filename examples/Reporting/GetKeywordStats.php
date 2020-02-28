@@ -23,13 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsServerStreamDecorator;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V2\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V3\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V3\Services\SearchGoogleAdsStreamResponse;
 use Google\ApiCore\ApiException;
 
 /**
@@ -39,7 +41,6 @@ use Google\ApiCore\ApiException;
 class GetKeywordStats
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const PAGE_SIZE = 50;
 
     public static function main()
     {
@@ -118,42 +119,46 @@ class GetKeywordStats
             . "ORDER BY metrics.impressions DESC "
             . "LIMIT 50";
 
-        // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        // Issues a search stream request.
+        /** @var GoogleAdsServerStreamDecorator $stream */
+        $stream =
+            $googleAdsServiceClient->searchStream($customerId, $query);
 
-        // Iterates over all rows in all pages and prints the requested field values for
+        // Iterates over all rows in all messages and prints the requested field values for
         // the keyword in each row.
-        foreach ($response->iterateAllElements() as $googleAdsRow) {
-            /** @var GoogleAdsRow $googleAdsRow */
-            $campaign = $googleAdsRow->getCampaign();
-            $adGroup = $googleAdsRow->getAdGroup();
-            $adGroupCriterion = $googleAdsRow->getAdGroupCriterion();
-            $metrics = $googleAdsRow->getMetrics();
-            printf(
-                "Keyword text '%s' with "
-                . "match type %s "
-                . "and ID %d "
-                . "in ad group '%s' "
-                . "with ID %d "
-                . "in campaign '%s' "
-                . "with ID %d "
-                . "had %d impression(s), "
-                . "%d click(s), "
-                . "and %d cost (in micros) "
-                . "during the last 7 days.%s",
-                $adGroupCriterion->getKeyword()->getTextUnwrapped(),
-                KeywordMatchType::name($adGroupCriterion->getKeyword()->getMatchType()),
-                $adGroupCriterion->getCriterionIdUnwrapped(),
-                $adGroup->getNameUnwrapped(),
-                $adGroup->getIdUnwrapped(),
-                $campaign->getNameUnwrapped(),
-                $campaign->getIdUnwrapped(),
-                $metrics->getImpressionsUnwrapped(),
-                $metrics->getClicksUnwrapped(),
-                $metrics->getCostMicrosUnwrapped(),
-                PHP_EOL
-            );
+        foreach ($stream->readAll() as $response) {
+            /** @var SearchGoogleAdsStreamResponse $response */
+            foreach ($response->getResults() as $googleAdsRow) {
+                /** @var GoogleAdsRow $googleAdsRow */
+                $campaign = $googleAdsRow->getCampaign();
+                $adGroup = $googleAdsRow->getAdGroup();
+                $adGroupCriterion = $googleAdsRow->getAdGroupCriterion();
+                $metrics = $googleAdsRow->getMetrics();
+                printf(
+                    "Keyword text '%s' with "
+                    . "match type %s "
+                    . "and ID %d "
+                    . "in ad group '%s' "
+                    . "with ID %d "
+                    . "in campaign '%s' "
+                    . "with ID %d "
+                    . "had %d impression(s), "
+                    . "%d click(s), "
+                    . "and %d cost (in micros) "
+                    . "during the last 7 days.%s",
+                    $adGroupCriterion->getKeyword()->getTextUnwrapped(),
+                    KeywordMatchType::name($adGroupCriterion->getKeyword()->getMatchType()),
+                    $adGroupCriterion->getCriterionIdUnwrapped(),
+                    $adGroup->getNameUnwrapped(),
+                    $adGroup->getIdUnwrapped(),
+                    $campaign->getNameUnwrapped(),
+                    $campaign->getIdUnwrapped(),
+                    $metrics->getImpressionsUnwrapped(),
+                    $metrics->getClicksUnwrapped(),
+                    $metrics->getCostMicrosUnwrapped(),
+                    PHP_EOL
+                );
+            }
         }
     }
 }
