@@ -1,3 +1,14 @@
+## 3.1.0
+*   Added support for v3_0 of Google Ads API.
+*   Added support for conversion-typed API errors.
+*   Added code examples: AddSiteLinks, UploadMediaBundle, UploadImageAsset,
+    UploadConversionAdjustment, ValidateTextAd, AddPrices, AddListingScope,
+    UpdateCampaignCriterionBidModifier, AddAppCampaign.
+*   Fixed code examples: AddDynamicPageFeed.
+*   Improved code examples: UploadOfflineConversion, GetArtifactMetadata, AddRemarketingAction.
+*   Upgraded the Coding Style from PSR-2 to PSR-12 and made the code compliant.
+*   Upgraded dependencies: `squizlabs/php_codesniffer` (^3.5), `google/protobuf` (^3.11.4).
+
 ## 3.0.0
 *   Removed support of PHP 7.1.
 *   Remove the preemptive initialization of "GoogleAdsFailures" when not running with gRPC

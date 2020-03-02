@@ -23,22 +23,22 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V2\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V2\ResourceNames;
-use Google\Ads\GoogleAds\V2\Common\ListingBrandInfo;
-use Google\Ads\GoogleAds\V2\Common\ListingDimensionInfo;
-use Google\Ads\GoogleAds\V2\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V2\Common\ProductConditionInfo;
-use Google\Ads\GoogleAds\V2\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V2\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V2\Enums\ProductConditionEnum\ProductCondition;
-use Google\Ads\GoogleAds\V2\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V2\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V2\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V2\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Util\V3\ResourceNames;
+use Google\Ads\GoogleAds\V3\Common\ProductBrandInfo;
+use Google\Ads\GoogleAds\V3\Common\ListingDimensionInfo;
+use Google\Ads\GoogleAds\V3\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V3\Common\ProductConditionInfo;
+use Google\Ads\GoogleAds\V3\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V3\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V3\Enums\ProductConditionEnum\ProductCondition;
+use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V3\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -218,7 +218,7 @@ class AddShoppingProductListingGroupTree
             $adGroupId,
             $adGroupCriterionResourceNameConditionOther,
             new ListingDimensionInfo([
-                'listing_brand' => new ListingBrandInfo(
+                'product_brand' => new ProductBrandInfo(
                     ['value' => new StringValue(['value' => 'CoolBrand'])]
                 )
             ]),
@@ -235,7 +235,7 @@ class AddShoppingProductListingGroupTree
             $adGroupId,
             $adGroupCriterionResourceNameConditionOther,
             new ListingDimensionInfo([
-                'listing_brand' => new ListingBrandInfo(
+                'product_brand' => new ProductBrandInfo(
                     ['value' => new StringValue(['value' => 'CheapBrand'])]
                 )
             ]),
@@ -251,7 +251,7 @@ class AddShoppingProductListingGroupTree
             $adGroupId,
             $adGroupCriterionResourceNameConditionOther,
             new ListingDimensionInfo([
-                'listing_brand' => new ListingBrandInfo()
+                'product_brand' => new ProductBrandInfo()
             ]),
             50000
         );
