@@ -54,6 +54,7 @@ use Google\Ads\GoogleAds\V3\Services\CarrierConstantServiceClient;
 use Google\Ads\GoogleAds\V3\Services\ChangeStatusServiceClient;
 use Google\Ads\GoogleAds\V3\Services\ClickViewServiceClient;
 use Google\Ads\GoogleAds\V3\Services\ConversionActionServiceClient;
+use Google\Ads\GoogleAds\V3\Services\CurrencyConstantServiceClient;
 use Google\Ads\GoogleAds\V3\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V3\Services\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V3\Services\CustomerClientServiceClient;
@@ -684,6 +685,17 @@ final class ResourceNames
             $customerId,
             $conversionActionId
         );
+    }
+
+    /**
+     * Generates resource name for a currency constant.
+     *
+     * @param string $currencyConstantId the currency constant ID
+     * @return string the currency constant resource name
+     */
+    public static function forCurrencyConstant($currencyConstantId)
+    {
+        return CurrencyConstantServiceClient::currencyConstantName($currencyConstantId);
     }
 
     /**

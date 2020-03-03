@@ -54,6 +54,7 @@ use Google\Ads\GoogleAds\V3\Services\CarrierConstantServiceClient;
 use Google\Ads\GoogleAds\V3\Services\ChangeStatusServiceClient;
 use Google\Ads\GoogleAds\V3\Services\ClickViewServiceClient;
 use Google\Ads\GoogleAds\V3\Services\ConversionActionServiceClient;
+use Google\Ads\GoogleAds\V3\Services\CurrencyConstantServiceClient;
 use Google\Ads\GoogleAds\V3\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V3\Services\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V3\Services\CustomerClientServiceClient;
@@ -979,6 +980,22 @@ class ResourceNamesTest extends TestCase
         $names = ConversionActionServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
         $this->assertEquals($conversionActionId, $names['conversion_action']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V3\ResourceNames::forCurrencyConstant()
+     */
+    public function testGetNameForCurrencyConstant()
+    {
+        $usdCurrencyConstantId = 'USD';
+        $expectedResourceName = sprintf('currencyConstants/%s', $usdCurrencyConstantId);
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCurrencyConstant($usdCurrencyConstantId)
+        );
+
+        $names = CurrencyConstantServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($usdCurrencyConstantId, $names['currency_constant']);
     }
 
     /**
