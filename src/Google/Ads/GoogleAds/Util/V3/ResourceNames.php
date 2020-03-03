@@ -690,7 +690,7 @@ final class ResourceNames
     /**
      * Generates resource name for a currency constant.
      *
-     * @param int $currencyConstantId the currency constant ID
+     * @param string $currencyConstantId the currency constant ID
      * @return string the currency constant resource name
      */
     public static function forCurrencyConstant($currencyConstantId)
