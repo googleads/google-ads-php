@@ -111,6 +111,7 @@ class GetResponsiveSearchAds
         ?int $adGroupId
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+
         // Creates a query that retrieves responsive search ads.
         $query =
             'SELECT ad_group.id, '
@@ -131,8 +132,10 @@ class GetResponsiveSearchAds
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the responsive search ad in each row.
+        $isEmptyResult = true;
         foreach ($response->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
+            $isEmptyResult = false;
             $ad = $googleAdsRow->getAdGroupAd()->getAd();
             printf(
                 "Responsive search ad with resource name '%s' and status '%s' was found.%s",
@@ -147,6 +150,9 @@ class GetResponsiveSearchAds
                 self::convertAdTextAssetsToString($responsiveSearchAdInfo->getHeadlines()),
                 self::convertAdTextAssetsToString($responsiveSearchAdInfo->getDescriptions())
             );
+        }
+        if ($isEmptyResult) {
+            print 'No responsive search ads were found.' . PHP_EOL;
         }
     }
 
