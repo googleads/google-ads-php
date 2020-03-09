@@ -177,7 +177,7 @@ class UploadConversionAdjustment
         /** @var ConversionAdjustmentResult $uploadedConversionAdjustment */
         $uploadedConversionAdjustment = $response->getResults()[0];
         printf(
-            "Uploaded conversion adjustment value of '%s' for Google Click ID '%s'.%s",
+            "Uploaded conversion adjustment of '%s' for Google Click ID '%s'.%s",
             $uploadedConversionAdjustment->getConversionActionUnwrapped(),
             $uploadedConversionAdjustment->getGclidDateTimePair()->getGclidUnwrapped(),
             PHP_EOL
