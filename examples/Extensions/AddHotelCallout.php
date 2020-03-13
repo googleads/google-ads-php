@@ -200,6 +200,42 @@ class AddHotelCallout
     }
 
     /**
+     * Adds the extension feed item to the customer account.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the client customer ID
+     * @param string $extensionFeedItemResourceName the extension feed item resource name
+     */
+    private static function addExtensionToAccount(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        string $extensionFeedItemResourceName
+    ): void {
+        // Creates a customer extension setting, sets its type to HOTEL_CALLOUT, and attaches the
+        // feed item.
+        $customerExtensionSetting = new CustomerExtensionSetting([
+            'extension_type' => ExtensionType::HOTEL_CALLOUT,
+            'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
+        ]);
+        // Creates a customer extension setting operation.
+        $customerExtensionSettingOperation = new CustomerExtensionSettingOperation();
+        $customerExtensionSettingOperation->setCreate($customerExtensionSetting);
+
+        // Issues a mutate request to add the customer extension setting and print its information.
+        $customerExtensionSettingServiceClient =
+            $googleAdsClient->getCustomerExtensionSettingServiceClient();
+        $response = $customerExtensionSettingServiceClient->mutateCustomerExtensionSettings(
+            $customerId,
+            [$customerExtensionSettingOperation]
+        );
+        printf(
+            "Created a customer extension setting with resource name: '%s'.%s",
+            $response->getResults()[0]->getResourceName(),
+            PHP_EOL
+        );
+    }
+
+    /**
      * Adds the extension feed item to the specified campaign.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
@@ -276,42 +312,6 @@ class AddHotelCallout
         );
         printf(
             "Created an ad group extension setting with resource name: '%s'.%s",
-            $response->getResults()[0]->getResourceName(),
-            PHP_EOL
-        );
-    }
-
-    /**
-     * Adds the extension feed item to the customer account.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param string $extensionFeedItemResourceName the extension feed item resource name
-     */
-    private static function addExtensionToAccount(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        string $extensionFeedItemResourceName
-    ): void {
-        // Creates a customer extension setting, sets its type to HOTEL_CALLOUT, and attaches the
-        // feed item.
-        $customerExtensionSetting = new CustomerExtensionSetting([
-            'extension_type' => ExtensionType::HOTEL_CALLOUT,
-            'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
-        ]);
-        // Creates a customer extension setting operation.
-        $customerExtensionSettingOperation = new CustomerExtensionSettingOperation();
-        $customerExtensionSettingOperation->setCreate($customerExtensionSetting);
-
-        // Issues a mutate request to add the customer extension setting and print its information.
-        $customerExtensionSettingServiceClient =
-            $googleAdsClient->getCustomerExtensionSettingServiceClient();
-        $response = $customerExtensionSettingServiceClient->mutateCustomerExtensionSettings(
-            $customerId,
-            [$customerExtensionSettingOperation]
-        );
-        printf(
-            "Created a customer extension setting with resource name: '%s'.%s",
             $response->getResults()[0]->getResourceName(),
             PHP_EOL
         );
