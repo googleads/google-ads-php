@@ -34,6 +34,7 @@ final class ArgumentNames
     const BID_MODIFIER_VALUE = 'bidModifierValue';
     const BILLING_SETUP_ID = 'billingSetupId';
     const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
+    const CALLOUT_TEXT = 'calloutText';
     const CAMPAIGN_BUDGET_ID = 'campaignBudgetId';
     const CAMPAIGN_EXPERIMENT_ID = 'campaignExperimentId';
     const CAMPAIGN_ID = 'campaignId';
@@ -59,6 +60,7 @@ final class ArgumentNames
     const KEYWORD_PLAN_ID = 'keywordPlanId';
     const KEYWORD_TEXT = 'keywordText';
     const LABEL_ID = "labelId";
+    const LANGUAGE_CODE = 'languageCode';
     const LANGUAGE_ID = 'languageId';
     const LOCALE = 'locale';
     const LOCATION_ID = 'locationId';
@@ -86,6 +88,7 @@ final class ArgumentNames
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
         self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the GMB account',
+        self::CALLOUT_TEXT => 'The callout text',
         self::CAMPAIGN_BUDGET_ID => 'The campaign budget ID',
         self::CAMPAIGN_EXPERIMENT_ID => 'The campaign experiment ID',
         self::CAMPAIGN_ID => 'The campaign ID',
@@ -111,6 +114,7 @@ final class ArgumentNames
         self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
         self::LABEL_ID => 'The label ID',
+        self::LANGUAGE_CODE => 'The language code',
         self::LANGUAGE_ID => 'The language ID',
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',
