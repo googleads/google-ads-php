@@ -299,7 +299,7 @@ class AddHotelCallout
             'extension_type' => ExtensionType::HOTEL_CALLOUT,
             'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
         ]);
-        // Creates a ad group extension setting operation.
+        // Creates an ad group extension setting operation.
         $adGroupExtensionSettingOperation = new AdGroupExtensionSettingOperation();
         $adGroupExtensionSettingOperation->setCreate($adGroupExtensionSetting);
 
