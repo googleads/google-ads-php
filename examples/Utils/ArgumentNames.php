@@ -74,6 +74,7 @@ final class ArgumentNames
     const RESTATEMENT_VALUE = 'restatementValue';
     const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
     const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
+    const SITELINK_TEXT = 'sitelinkText';
     const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'squareMarketingImageAssetResourceName';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
@@ -131,6 +132,7 @@ final class ArgumentNames
             'Whether it should create a default listing group',
         self::SHOULD_REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group',
+        self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =>
             'The resource name of square marketing image asset'
     ];
