@@ -217,11 +217,12 @@ class AddHotelCallout
             'extension_type' => ExtensionType::HOTEL_CALLOUT,
             'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
         ]);
+
         // Creates a customer extension setting operation.
         $customerExtensionSettingOperation = new CustomerExtensionSettingOperation();
         $customerExtensionSettingOperation->setCreate($customerExtensionSetting);
 
-        // Issues a mutate request to add the customer extension setting and print its information.
+        // Issues a mutate request to add the customer extension setting and prints its information.
         $customerExtensionSettingServiceClient =
             $googleAdsClient->getCustomerExtensionSettingServiceClient();
         $response = $customerExtensionSettingServiceClient->mutateCustomerExtensionSettings(
@@ -252,17 +253,18 @@ class AddHotelCallout
         // Creates a campaign extension setting, sets its type to HOTEL_CALLOUT, and attaches the
         // feed item.
         $campaignExtensionSetting = new CampaignExtensionSetting([
-            'campaign' => new StringValue(
-                ['value' => ResourceNames::forCampaign($customerId, $campaignId)]
-            ),
+            'campaign' => new StringValue([
+                'value' => ResourceNames::forCampaign($customerId, $campaignId)
+            ]),
             'extension_type' => ExtensionType::HOTEL_CALLOUT,
             'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
         ]);
+
         // Creates a campaign extension setting operation.
         $campaignExtensionSettingOperation = new CampaignExtensionSettingOperation();
         $campaignExtensionSettingOperation->setCreate($campaignExtensionSetting);
 
-        // Issues a mutate request to add the campaign extension setting and print its information.
+        // Issues a mutate request to add the campaign extension setting and prints its information.
         $campaignExtensionSettingServiceClient =
             $googleAdsClient->getCampaignExtensionSettingServiceClient();
         $response = $campaignExtensionSettingServiceClient->mutateCampaignExtensionSettings(
@@ -293,17 +295,18 @@ class AddHotelCallout
         // Creates an ad group extension setting, sets its type to HOTEL_CALLOUT, and attaches the
         // feed item.
         $adGroupExtensionSetting = new AdGroupExtensionSetting([
-            'ad_group' => new StringValue(
-                ['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]
-            ),
+            'ad_group' => new StringValue([
+                'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
+            ]),
             'extension_type' => ExtensionType::HOTEL_CALLOUT,
             'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
         ]);
+
         // Creates an ad group extension setting operation.
         $adGroupExtensionSettingOperation = new AdGroupExtensionSettingOperation();
         $adGroupExtensionSettingOperation->setCreate($adGroupExtensionSetting);
 
-        // Issues a mutate request to add the ad group extension setting and print its information.
+        // Issues a mutate request to add the ad group extension setting and prints its information.
         $adGroupExtensionSettingServiceClient =
             $googleAdsClient->getAdGroupExtensionSettingServiceClient();
         $response = $adGroupExtensionSettingServiceClient->mutateAdGroupExtensionSettings(
