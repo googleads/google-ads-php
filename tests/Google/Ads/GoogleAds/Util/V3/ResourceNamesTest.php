@@ -34,6 +34,7 @@ use Google\Ads\GoogleAds\V3\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AdGroupSimulationServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AdParameterServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AdScheduleViewServiceClient;
+use Google\Ads\GoogleAds\V3\Services\AdServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AssetServiceClient;
 use Google\Ads\GoogleAds\V3\Services\BiddingStrategyServiceClient;
@@ -162,6 +163,24 @@ class ResourceNamesTest extends TestCase
         $names = AccountBudgetServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
         $this->assertEquals($accountBudgetId, $names['account_budget']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V3\ResourceNames::forAd()
+     */
+    public function testGetNameForAd()
+    {
+        $adId = 22222;
+        $expectedResourceName =
+            sprintf('customers/%s/ads/%s', self::CUSTOMER_ID, $adId);
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forAd(self::CUSTOMER_ID, $adId)
+        );
+
+        $names = AdServiceClient::parseName($expectedResourceName);
+        $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
+        $this->assertEquals($adId, $names['ad']);
     }
 
     /**
