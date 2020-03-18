@@ -59,7 +59,7 @@
         "num": 1
       }
     },
-    "expected_mask": "foo.num,foo.bar,foo.bars"
+    "expected_mask": "foo.num"
   }, {
     "description": "Modify submessage",
     "original_resource": {
@@ -107,6 +107,6 @@
         }
       }
     },
-    "expected_mask": "foo.num,foo.bar.num,foo.bar.nested_wrapper,foo.bars"
+    "expected_mask": "foo.bar.nested_wrapper"
   }
 ]}

@@ -32,6 +32,7 @@ use Google\Protobuf\FloatValue;
 use Google\Protobuf\Int32Value;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\Internal\Message;
+use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\StringValue;
 use Google\Protobuf\UInt32Value;
 use Google\Protobuf\UInt64Value;
@@ -106,30 +107,48 @@ class FieldMasks
     }
 
     /**
+     * Returns true if the provided repeated field is null or doesn't have any members.
+     *
+     * @param RepeatedField|null $field the repeated field to check
+     * @return bool true if the field is empty
+     */
+    private static function isEmpty(?RepeatedField $field): bool
+    {
+        return is_null($field) || count($field) === 0;
+    }
+
+    /**
      * Builds the paths to the fields that are different between original and modified message.
      *
      * @param array $paths the resulting paths from the computation
      * @param string $currentField the current field name
-     * @param Message $original the original message
-     * @param Message $modified the modified message
+     * @param Message|null $original the original message
+     * @param Message|null $modified the modified message
      */
     private static function buildPaths(
         array &$paths,
         $currentField,
-        Message $original,
-        Message $modified
+        ?Message $original,
+        ?Message $modified
     ) {
-        $descriptor = self::getDescriptorForMessage($original);
+        $descriptor = is_null($original)
+            ? self::getDescriptorForMessage($modified) : self::getDescriptorForMessage($original);
         for ($i = 0; $i < $descriptor->getFieldCount(); $i++) {
             $fieldDescriptor = $descriptor->getField($i);
             $fieldName = self::getFieldName($currentField, $fieldDescriptor);
 
             $getter = Serializer::getGetter($fieldDescriptor->getName());
-            $originalValue = $original->$getter();
+            $originalValue = is_null($original) ? null : $original->$getter();
             $modifiedValue = $modified->$getter();
 
             if (self::isFieldRepeated($fieldDescriptor)) {
-                if ($originalValue != $modifiedValue) {
+                // For protobuf objects, the repeated fields that have no members are semantically
+                // the same as the ones that are null. If both are empty because of any cases, we
+                // will not add their field name to the path, because nothing has changed.
+                if (
+                    !self::isEmpty($originalValue) && !self::isEmpty($modifiedValue)
+                    && $originalValue != $modifiedValue
+                ) {
                     $paths[] = $fieldName;
                 }
             } else {
@@ -139,10 +158,6 @@ class FieldMasks
                             if (self::isWrapperType($fieldDescriptor->getMessageType())) {
                                 // For wrapper types, just emit the field name.
                                 $paths[] = $fieldName;
-                            } elseif (is_null($originalValue)) {
-                                // If this is a new value, emit the field names for all known
-                                // fields in the message, recursing for nested messages.
-                                self::addNewFields($paths, $fieldName, $modifiedValue);
                             } elseif (is_null($modifiedValue)) {
                                 // Just emit the deleted field name.
                                 $paths[] = $fieldName;
@@ -219,46 +234,6 @@ class FieldMasks
     private static function isFieldRepeated(FieldDescriptor $fieldDescriptor)
     {
         return $fieldDescriptor->getLabel() === GPBLabel::REPEATED;
-    }
-
-    /**
-     * Recursively add field names for a new message. Repeated fields, primitive fields and
-     * unpopulated single message fields are included just by name; populated single message fields
-     * are processed recursively, only including leaf nodes.  For wrapper types, the 'value' leaf
-     * node is excluded.
-     *
-     * @param array $paths
-     * @param $currentField
-     * @param $message
-     */
-    private static function addNewFields(array &$paths, $currentField, $message)
-    {
-        $descriptor = self::getDescriptorForMessage($message);
-        if (self::isWrapperType($descriptor)) {
-            // For wrapper types, don't recurse over the fields of the message.
-            $paths[] = $currentField;
-        } else {
-            for ($i = 0; $i < $descriptor->getFieldCount(); $i++) {
-                $fieldDescriptor = $descriptor->getField($i);
-                $fieldName = self::getFieldName($currentField, $fieldDescriptor);
-                // For single message fields, recurse if there's a value;
-                // otherwise just add the field name.
-                if (
-                    !self::isFieldRepeated($fieldDescriptor)
-                    && $fieldDescriptor->getType() === GPBType::MESSAGE
-                ) {
-                    $getter = Serializer::getGetter($fieldDescriptor->getName());
-                    $messageValue = $message->$getter();
-                    if (!is_null($messageValue)) {
-                        self::addNewFields($paths, $fieldName, $messageValue);
-                    } else {
-                        $paths[] = $fieldName;
-                    }
-                } else {
-                    $paths[] = $fieldName;
-                }
-            }
-        }
     }
 
     /**
