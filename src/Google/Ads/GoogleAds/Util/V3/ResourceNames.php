@@ -18,6 +18,7 @@
 
 namespace Google\Ads\GoogleAds\Util\V3;
 
+use Google\Ads\GoogleAds\V3\Enums\ExtensionTypeEnum\ExtensionType;
 use Google\Ads\GoogleAds\V3\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AccountBudgetServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AdGroupAdLabelServiceClient;
@@ -588,7 +589,7 @@ final class ResourceNames
     {
         return CampaignExtensionSettingServiceClient::campaignExtensionSettingName(
             $customerId,
-            "{$campaignId}~{$extensionType}"
+            sprintf("%s~%s", $campaignId, ExtensionType::name($extensionType))
         );
     }
 

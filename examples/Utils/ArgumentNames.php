@@ -49,6 +49,7 @@ final class ArgumentNames
     const CRITERION_ID = 'criterionId';
     const CUSTOMER_ID = 'customerId';
     const DRAFT_ID = 'draftId';
+    const EXTENSION_FEED_ITEM_RESOURCE_NAMES = 'extensionFeedItemResourceNames';
     const FEED_ID = 'feedId';
     const FEED_ITEM_ID = 'feedItemId';
     const FEED_ITEM_IDS = 'feedItemIds';
@@ -104,6 +105,7 @@ final class ArgumentNames
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::DRAFT_ID => 'The draft ID',
+        self::EXTENSION_FEED_ITEM_RESOURCE_NAMES => 'The extension feed item resource names',
         self::FEED_ID => 'The feed ID',
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
