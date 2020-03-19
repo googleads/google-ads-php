@@ -149,8 +149,8 @@ class FieldMasks
                 // the same as the ones that are null. If both are empty because of any cases, we
                 // will not add their field name to the path, because nothing has changed.
                 if (
-                    !self::isEmpty($originalValue) && !self::isEmpty($modifiedValue)
-                    && $originalValue != $modifiedValue
+                    !((self::isEmpty($originalValue) && self::isEmpty($modifiedValue))
+                        || $originalValue == $modifiedValue)
                 ) {
                     $paths[] = $fieldName;
                 }
