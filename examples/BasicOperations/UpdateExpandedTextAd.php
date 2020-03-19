@@ -127,7 +127,7 @@ class UpdateExpandedTextAd
         $adServiceClient = $googleAdsClient->getAdServiceClient();
         $response = $adServiceClient->mutateAds($customerId, [$adOperation]);
 
-        // Prints the resource name of the updated ad group criterion.
+        // Prints the resource name of the updated ad.
         /** @var Ad $updatedAd */
         $updatedAd = $response->getResults()[0];
         printf(
