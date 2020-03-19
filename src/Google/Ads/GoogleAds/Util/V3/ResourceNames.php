@@ -34,6 +34,7 @@ use Google\Ads\GoogleAds\V3\Services\AdGroupServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AdGroupSimulationServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AdParameterServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AdScheduleViewServiceClient;
+use Google\Ads\GoogleAds\V3\Services\AdServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V3\Services\AssetServiceClient;
 use Google\Ads\GoogleAds\V3\Services\BiddingStrategyServiceClient;
@@ -144,6 +145,18 @@ final class ResourceNames
     public static function forAccountBudget($customerId, $accountBudgetId)
     {
         return AccountBudgetServiceClient::accountBudgetName($customerId, $accountBudgetId);
+    }
+
+    /**
+     * Generates resource name for an ad.
+     *
+     * @param int $customerId the customer ID
+     * @param int $adId the ad ID
+     * @return string the ad resource name
+     */
+    public static function forAd($customerId, $adId)
+    {
+        return AdServiceClient::adName($customerId, $adId);
     }
 
     /**
