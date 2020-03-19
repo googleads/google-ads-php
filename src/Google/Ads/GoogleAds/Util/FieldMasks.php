@@ -131,6 +131,9 @@ class FieldMasks
         ?Message $original,
         ?Message $modified
     ) {
+        if (is_null($original) && is_null($modified)) {
+            return;
+        }
         $descriptor = is_null($original)
             ? self::getDescriptorForMessage($modified) : self::getDescriptorForMessage($original);
         for ($i = 0; $i < $descriptor->getFieldCount(); $i++) {
