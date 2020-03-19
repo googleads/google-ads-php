@@ -110,7 +110,8 @@ class UpdateExpandedTextAd
             'resource_name' => ResourceNames::forAd($customerId, $adId),
             'expanded_text_ad' => new ExpandedTextAdInfo([
                 'headline_part1' => new StringValue(['value' => 'Cruise to Pluto #' . uniqid()]),
-                'headline_part2' => new StringValue(['value' => 'Tickets on sale now'])
+                'headline_part2' => new StringValue(['value' => 'Tickets on sale now']),
+                'description' => new StringValue(['value' => 'Best space cruise ever'])
             ]),
             'final_urls' => [new StringValue(['value' => 'http://www.example.com'])],
             'final_mobile_urls' => [new StringValue(['value' => 'http://www.example.com/mobile'])]
