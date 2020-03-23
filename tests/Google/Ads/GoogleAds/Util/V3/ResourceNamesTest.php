@@ -382,12 +382,12 @@ class ResourceNamesTest extends TestCase
     public function testGetNameForAdGroupExtensionSetting()
     {
         $adGroupId = 111111;
-        $extensionType = 3333333;
+        $extensionType = ExtensionType::SITELINK;
         $expectedResourceName = sprintf(
             'customers/%s/adGroupExtensionSettings/%s~%s',
             self::CUSTOMER_ID,
             $adGroupId,
-            $extensionType
+            'SITELINK'
         );
         $this->assertEquals(
             $expectedResourceName,
@@ -400,7 +400,10 @@ class ResourceNamesTest extends TestCase
 
         $names = AdGroupExtensionSettingServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
-        $this->assertEquals("{$adGroupId}~{$extensionType}", $names['ad_group_extension_setting']);
+        $this->assertEquals(
+            sprintf('%s~%s', $adGroupId, ExtensionType::name($extensionType)),
+            $names['ad_group_extension_setting']
+        );
     }
 
     /**
@@ -1089,11 +1092,11 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerExtensionSetting()
     {
-        $extensionType = 66666666;
+        $extensionType = ExtensionType::SITELINK;
         $expectedResourceName = sprintf(
             'customers/%s/customerExtensionSettings/%s',
             self::CUSTOMER_ID,
-            $extensionType
+            'SITELINK'
         );
         $this->assertEquals(
             $expectedResourceName,
@@ -1102,7 +1105,10 @@ class ResourceNamesTest extends TestCase
 
         $names = CustomerExtensionSettingServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
-        $this->assertEquals($extensionType, $names['customer_extension_setting']);
+        $this->assertEquals(
+            ExtensionType::name($extensionType),
+            $names['customer_extension_setting']
+        );
     }
 
     /**

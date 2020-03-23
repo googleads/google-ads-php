@@ -298,7 +298,7 @@ final class ResourceNames
     {
         return AdGroupExtensionSettingServiceClient::adGroupExtensionSettingName(
             $customerId,
-            "{$adGroupId}~{$extensionType}"
+            sprintf("%s~%s", $adGroupId, ExtensionType::name($extensionType))
         );
     }
 
@@ -763,7 +763,7 @@ final class ResourceNames
     {
         return CustomerExtensionSettingServiceClient::customerExtensionSettingName(
             $customerId,
-            $extensionType
+            ExtensionType::name($extensionType)
         );
     }
 
