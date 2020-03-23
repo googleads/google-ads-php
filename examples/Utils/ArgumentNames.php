@@ -49,6 +49,7 @@ final class ArgumentNames
     const CRITERION_ID = 'criterionId';
     const CUSTOMER_ID = 'customerId';
     const DRAFT_ID = 'draftId';
+    const EXTENSION_FEED_ITEM_RESOURCE_NAMES = 'extensionFeedItemResourceNames';
     const FEED_ID = 'feedId';
     const FEED_ITEM_ID = 'feedItemId';
     const FEED_ITEM_IDS = 'feedItemIds';
@@ -74,6 +75,7 @@ final class ArgumentNames
     const RESTATEMENT_VALUE = 'restatementValue';
     const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
     const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
+    const SITELINK_TEXT = 'sitelinkText';
     const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'squareMarketingImageAssetResourceName';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
@@ -103,6 +105,7 @@ final class ArgumentNames
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::DRAFT_ID => 'The draft ID',
+        self::EXTENSION_FEED_ITEM_RESOURCE_NAMES => 'The extension feed item resource names',
         self::FEED_ID => 'The feed ID',
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
@@ -131,6 +134,7 @@ final class ArgumentNames
             'Whether it should create a default listing group',
         self::SHOULD_REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group',
+        self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =>
             'The resource name of square marketing image asset'
     ];
