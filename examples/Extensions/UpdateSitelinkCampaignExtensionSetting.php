@@ -39,7 +39,8 @@ use Google\Protobuf\StringValue;
 /**
  * Updates the sitelink campaign extension setting to replace its extension feed items.
  * Note that this doesn't completely remove your old extension feed items.
- * See https://developers.google.com/google-ads/api/docs/extensions/extension-settings for details.
+ * See https://developers.google.com/google-ads/api/docs/extensions/extension-settings/overview
+ * for details.
  */
 class UpdateSitelinkCampaignExtensionSetting
 {
@@ -49,7 +50,6 @@ class UpdateSitelinkCampaignExtensionSetting
         = 'INSERT_EXTENSION_FEED_ITEM_RESOURCE_NAME1_HERE';
     private const EXTENSION_FEED_ITEM_RESOURCE_NAME2
         = 'INSERT_EXTENSION_FEED_ITEM_RESOURCE_NAME2_HERE';
-
 
     public static function main()
     {
@@ -159,7 +159,7 @@ class UpdateSitelinkCampaignExtensionSetting
         /** @var CampaignExtensionSetting $updatedCampaignExtensionSetting */
         $updatedCampaignExtensionSetting = $response->getResults()[0];
         printf(
-            "Updated a campaign extension setting with resource name: '%s'%s",
+            "Updated a campaign extension setting with resource name: '%s'.%s",
             $updatedCampaignExtensionSetting->getResourceName(),
             PHP_EOL
         );

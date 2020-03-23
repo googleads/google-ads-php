@@ -104,7 +104,7 @@ class UpdateSitelink
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
      * @param int $feedItemId the feed item ID
-     * @param string $sitelinkText the new sitelink text to update
+     * @param string $sitelinkText the new sitelink text to update to
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -127,7 +127,7 @@ class UpdateSitelink
         $extensionFeedItemOperation->setUpdate($extensionFeedItem);
         $extensionFeedItemOperation->setUpdateMask(FieldMasks::allSetFieldsOf($extensionFeedItem));
 
-        // Issues a mutate request to update the extension feed items.
+        // Issues a mutate request to update the extension feed item.
         $extensionFeedItemServiceClient = $googleAdsClient->getExtensionFeedItemServiceClient();
         $response = $extensionFeedItemServiceClient->mutateExtensionFeedItems(
             $customerId,
