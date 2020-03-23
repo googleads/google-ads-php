@@ -37,11 +37,11 @@ use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
 /**
- * Updates the campaign extension setting to replace its extension feed items.
+ * Updates the sitelink campaign extension setting to replace its extension feed items.
  * Note that this doesn't completely remove your old extension feed items.
  * See https://developers.google.com/google-ads/api/docs/extensions/extension-settings for details.
  */
-class UpdateCampaignExtensionSetting
+class UpdateSitelinkCampaignExtensionSetting
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
@@ -166,4 +166,4 @@ class UpdateCampaignExtensionSetting
     }
 }
 
-UpdateCampaignExtensionSetting::main();
+UpdateSitelinkCampaignExtensionSetting::main();
