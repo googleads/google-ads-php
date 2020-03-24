@@ -150,11 +150,11 @@ class ForecastReach
     {
         $response = $googleAdsClient->getReachPlanServiceClient()->listPlannableLocations();
 
-        printf('Plannable Locations:%1$sName,\tId,\t,ParentCountryId%1$s', PHP_EOL);
+        printf("Plannable Locations:%sName,\tId,\tParentCountryId%s", PHP_EOL, PHP_EOL);
         foreach ($response->getPlannableLocations() as $location) {
             /** @var PlannableLocation $location */
             printf(
-                '"%s\",\t%s,%s%s',
+                "\"%s\",\t%s,\t%s%s",
                 $location->getNameUnwrapped(),
                 $location->getIdUnwrapped(),
                 $location->getParentCountryIdUnwrapped(),
@@ -251,8 +251,9 @@ class ForecastReach
         );
 
         printf(
-            'Reach curve output:%1$sCurrency,\tCost Micros,\tOn-Target Reach,\tOn-Target Imprs,'.
-                '\tTotal Reach,\tTotal Imprs,\tProducts%1$s',
+            "Reach curve output:%sCurrency,\tCost Micros,\tOn-Target Reach,\tOn-Target Imprs,".
+                "\tTotal Reach,\tTotal Imprs,\tProducts%s",
+            PHP_EOL,
             PHP_EOL
         );
         foreach ($response->getReachCurve()->getReachForecasts() as $point) {
@@ -267,7 +268,7 @@ class ForecastReach
                 );
             }
             printf(
-              '%s,\t%d,\t%d,\t%d,\t%d,\t%d,\t%s%s',
+              "%s,\t%d,\t%d,\t%d,\t%d,\t%d,\t%s%s",
                 $currencyCode,
                 $point->getCostMicrosUnwrapped(),
                 $point->getForecast()->getOnTargetReachUnwrapped(),
