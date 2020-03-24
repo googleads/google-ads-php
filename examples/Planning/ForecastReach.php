@@ -179,7 +179,7 @@ class ForecastReach
             new StringValue(['value' => $locationId])
         );
 
-        printf('Plannable Products for Location ID %s:%s',$locationId , PHP_EOL);
+        printf('Plannable Products for Location ID %s:%s', $locationId, PHP_EOL);
         foreach ($response->getProductMetadata() as $product) {
             /** @var ProductMetadata $product */
             printf("%s:%s", $product->getPlannableProductCodeUnwrapped(), PHP_EOL);
@@ -251,7 +251,7 @@ class ForecastReach
         );
 
         printf(
-            "Reach curve output:%sCurrency,\tCost Micros,\tOn-Target Reach,\tOn-Target Imprs,".
+            "Reach curve output:%sCurrency,\tCost Micros,\tOn-Target Reach,\tOn-Target Imprs," .
                 "\tTotal Reach,\tTotal Imprs,\tProducts%s",
             PHP_EOL,
             PHP_EOL
@@ -268,7 +268,7 @@ class ForecastReach
                 );
             }
             printf(
-              "%s,\t%d,\t%d,\t%d,\t%d,\t%d,\t%s%s",
+                "%s,\t%d,\t%d,\t%d,\t%d,\t%d,\t%s%s",
                 $currencyCode,
                 $point->getCostMicrosUnwrapped(),
                 $point->getForecast()->getOnTargetReachUnwrapped(),
