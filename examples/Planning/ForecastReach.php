@@ -55,14 +55,9 @@ use Google\Protobuf\StringValue;
 class ForecastReach
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-
-    // US
-    const LOCATION_ID = '2840';
-
-    // 500,000
-    const BUDGET_MICROS = 500000000000;
-
     const CURRENCY_CODE = 'USD';
+    const LOCATION_ID = '2840'; // US
+    const BUDGET_MICROS = 500000000000; // 500,000
 
     public static function main()
     {
@@ -154,7 +149,7 @@ class ForecastReach
         foreach ($response->getPlannableLocations() as $location) {
             /** @var PlannableLocation $location */
             printf(
-                "\"%s\",\t%s,\t%s%s",
+                "'%s',\t%s,\t%s%s",
                 $location->getNameUnwrapped(),
                 $location->getIdUnwrapped(),
                 $location->getParentCountryIdUnwrapped(),
@@ -179,21 +174,21 @@ class ForecastReach
             new StringValue(['value' => $locationId])
         );
 
-        printf('Plannable Products for Location ID %s:%s', $locationId, PHP_EOL);
+        print 'Plannable Products for Location ID ' . $locationId . ':' . PHP_EOL;
         foreach ($response->getProductMetadata() as $product) {
             /** @var ProductMetadata $product */
-            printf("%s:%s", $product->getPlannableProductCodeUnwrapped(), PHP_EOL);
-            print "Age Ranges:" . PHP_EOL;
+            printf('%s:%s', $product->getPlannableProductCodeUnwrapped(), PHP_EOL);
+            print 'Age Ranges:' . PHP_EOL;
             foreach ($product->getPlannableTargeting()->getAgeRanges() as $ageRange) {
                 /** @var ReachPlanAgeRange $ageRange */
                 printf("\t- %s%s", ReachPlanAgeRange::name($ageRange), PHP_EOL);
             }
-            print "Genders:" . PHP_EOL;
+            print 'Genders:' . PHP_EOL;
             foreach ($product->getPlannableTargeting()->getGenders() as $gender) {
                 /** @var GenderInfo $gender */
                 printf("\t- %s%s", GenderType::name($gender->getType()), PHP_EOL);
             }
-            print "Devices:" . PHP_EOL;
+            print 'Devices:' . PHP_EOL;
             foreach ($product->getPlannableTargeting()->getDevices() as $device) {
                 /** @var DeviceInfo $device */
                 printf("\t- %s%s", Device::name($device->getType()), PHP_EOL);
