@@ -37,7 +37,7 @@ use Google\Protobuf\StringValue;
 /**
  * This code example gets geo target constants by given location names.
  */
-class GetGeoTargetConstantByNames
+class GetGeoTargetConstantsByNames
 {
     // Locale is using ISO 639-1 format. If an invalid locale is given, 'en' will be used by
     // default.
@@ -151,4 +151,4 @@ class GetGeoTargetConstantByNames
     }
 }
 
-GetGeoTargetConstantByNames::main();
+GetGeoTargetConstantsByNames::main();
