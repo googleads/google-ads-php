@@ -301,7 +301,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
             ])],
             'business_name' => new StringValue(['value' => 'Interplanetary Cruises']),
             // Optional: Call to action text.
-            // Valid texts: https://support.google.com/adwords/answer/7005917
+            // Valid texts: https://support.google.com/google-ads/answer/7005917
             'call_to_action_text' => new StringValue(['value' => 'Apply Now']),
             // Optional: Sets the ad colors.
             'main_color' => new StringValue(['value' => '#0000ff']),
