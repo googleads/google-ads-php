@@ -54,10 +54,13 @@ use Google\Protobuf\StringValue;
  */
 class ForecastReach
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CURRENCY_CODE = 'USD';
-    const LOCATION_ID = '2840'; // US
-    const BUDGET_MICROS = 500000000000; // 500,000
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CURRENCY_CODE = 'USD';
+    // You can get a valid location ID from
+    // https://developers.google.com/adwords/api/docs/appendix/geotargeting or by calling
+    // ListPlannableLocations on the ReachPlanService.
+    private const LOCATION_ID = '2840'; // US
+    private const BUDGET_MICROS = 500000000000; // 500,000
 
     public static function main()
     {
@@ -117,23 +120,11 @@ class ForecastReach
     {
         self::showPlannableLocations($googleAdsClient);
 
-        self::showPlannableProducts($googleAdsClient, self::LOCATION_ID);
+        self::showPlannableProducts($googleAdsClient);
 
-        self::forecastManualMix(
-            $googleAdsClient,
-            $customerId,
-            self::LOCATION_ID,
-            self::CURRENCY_CODE,
-            self::BUDGET_MICROS
-        );
+        self::forecastManualMix($googleAdsClient, $customerId);
 
-        self::forecastSuggestedMix(
-            $googleAdsClient,
-            $customerId,
-            self::LOCATION_ID,
-            self::CURRENCY_CODE,
-            self::BUDGET_MICROS
-        );
+        self::forecastSuggestedMix($googleAdsClient, $customerId);
     }
 
     /**
@@ -162,22 +153,17 @@ class ForecastReach
      * Lists plannable products for a given location.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $locationId the location ID to plan for. You can get a valid location ID from
-     *     https://developers.google.com/adwords/api/docs/appendix/geotargeting or
-     *     by calling ListPlannableLocations on the ReachPlanService.
      */
-    private static function showPlannableProducts(
-        GoogleAdsClient $googleAdsClient,
-        string $locationId
-    ) {
+    private static function showPlannableProducts(GoogleAdsClient $googleAdsClient)
+    {
         $response = $googleAdsClient->getReachPlanServiceClient()->listPlannableProducts(
-            new StringValue(['value' => $locationId])
+            new StringValue(['value' => self::LOCATION_ID])
         );
 
-        print 'Plannable Products for Location ID ' . $locationId . ':' . PHP_EOL;
+        print 'Plannable Products for Location ID ' . self::LOCATION_ID . ':' . PHP_EOL;
         foreach ($response->getProductMetadata() as $product) {
             /** @var ProductMetadata $product */
-            printf('%s:%s', $product->getPlannableProductCodeUnwrapped(), PHP_EOL);
+            print $product->getPlannableProductCodeUnwrapped() . ':' . PHP_EOL;
             print 'Age Ranges:' . PHP_EOL;
             foreach ($product->getPlannableTargeting()->getAgeRanges() as $ageRange) {
                 /** @var ReachPlanAgeRange $ageRange */
@@ -281,19 +267,9 @@ class ForecastReach
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param string $locationId the location ID to plan for. You can get a valid location ID from
-     *     https://developers.google.com/adwords/api/docs/appendix/geotargeting or
-     *     by calling ListPlannableLocations on the ReachPlanService.
-     * @param string $currencyCode three-character ISO 4217 currency code
-     * @param float $budget_micros budget to allocate to the plan
      */
-    private static function forecastManualMix(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        string $locationId,
-        string $currencyCode,
-        float $budget_micros
-    ) {
+    private static function forecastManualMix(GoogleAdsClient $googleAdsClient, int $customerId)
+    {
         // Set up a ratio to split the budget between two products.
         $trueviewAllocation = floatval(0.15);
         $bumperAllocation = floatval(1 - $trueviewAllocation);
@@ -305,13 +281,13 @@ class ForecastReach
             new PlannedProduct([
                 'plannable_product_code' => new StringValue(['value' => 'TRUEVIEW_IN_STREAM']),
                 'budget_micros' => new Int64Value([
-                    'value' => $budget_micros * $trueviewAllocation
+                    'value' => self::BUDGET_MICROS * $trueviewAllocation
                 ])
             ]),
             new PlannedProduct([
                 'plannable_product_code' => new StringValue(['value' => 'BUMPER']),
                 'budget_micros' => new Int64Value([
-                    'value' => $budget_micros * $bumperAllocation
+                    'value' => self::BUDGET_MICROS * $bumperAllocation
                 ])
             ])
         ];
@@ -320,8 +296,8 @@ class ForecastReach
             $googleAdsClient,
             $customerId,
             $productMix,
-            $locationId,
-            $currencyCode
+            self::LOCATION_ID,
+            self::CURRENCY_CODE
         );
     }
 
@@ -330,19 +306,9 @@ class ForecastReach
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param string $locationId the location ID to plan for. You can get a valid location ID from
-     *     https://developers.google.com/adwords/api/docs/appendix/geotargeting or
-     *     by calling ListPlannableLocations on the ReachPlanService.
-     * @param string $currencyCode three-character ISO 4217 currency code
-     * @param float $budget_micros budget to allocate to the plan
      */
-    private static function forecastSuggestedMix(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        string $locationId,
-        string $currencyCode,
-        float $budget_micros
-    ) {
+    private static function forecastSuggestedMix(GoogleAdsClient $googleAdsClient, int $customerId)
+    {
         $trueValue = new BoolValue(['value' => true]);
         $falseValue = new BoolValue(['value' => false]);
 
@@ -356,9 +322,9 @@ class ForecastReach
 
         $mixResponse = $googleAdsClient->getReachPlanServiceClient()->generateProductMixIdeas(
             $customerId,
-            new StringValue(['value' => $locationId]),
-            new StringValue(['value' => $currencyCode]),
-            new Int64Value(['value' => $budget_micros]),
+            new StringValue(['value' => self::LOCATION_ID]),
+            new StringValue(['value' => self::CURRENCY_CODE]),
+            new Int64Value(['value' => self::BUDGET_MICROS]),
             $preferences
         );
 
@@ -375,8 +341,8 @@ class ForecastReach
             $googleAdsClient,
             $customerId,
             $productMix,
-            $locationId,
-            $currencyCode
+            self::LOCATION_ID,
+            self::CURRENCY_CODE
         );
     }
 }
