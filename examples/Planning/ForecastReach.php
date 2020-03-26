@@ -119,11 +119,8 @@ class ForecastReach
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         self::showPlannableLocations($googleAdsClient);
-
         self::showPlannableProducts($googleAdsClient);
-
         self::forecastManualMix($googleAdsClient, $customerId);
-
         self::forecastSuggestedMix($googleAdsClient, $customerId);
     }
 
