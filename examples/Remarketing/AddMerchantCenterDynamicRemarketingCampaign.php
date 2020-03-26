@@ -66,10 +66,10 @@ use Google\Protobuf\StringValue;
  */
 class AddMerchantCenterDynamicRemarketingCampaign
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const MERCHANT_CENTER_ACCOUNT_ID = 'INSERT_MERCHANT_CENTER_ACCOUNT_ID_HERE';
-    const CAMPAIGN_BUDGET_ID = 'INSERT_CAMPAIGN_BUDGET_ID_HERE';
-    const USER_LIST_ID = 'INSERT_USER_LIST_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const MERCHANT_CENTER_ACCOUNT_ID = 'INSERT_MERCHANT_CENTER_ACCOUNT_ID_HERE';
+    private const CAMPAIGN_BUDGET_ID = 'INSERT_CAMPAIGN_BUDGET_ID_HERE';
+    private const USER_LIST_ID = 'INSERT_USER_LIST_ID_HERE';
 
     public static function main()
     {
