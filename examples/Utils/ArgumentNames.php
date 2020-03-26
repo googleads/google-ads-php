@@ -77,6 +77,7 @@ final class ArgumentNames
     const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
     const SITELINK_TEXT = 'sitelinkText';
     const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'squareMarketingImageAssetResourceName';
+    const USER_LIST_ID = 'userListId';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::ADJUSTMENT_DATE_TIME => 'The adjustment date time',
@@ -136,6 +137,7 @@ final class ArgumentNames
             'Whether it should replace the existing listing group tree on an ad group',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =>
-            'The resource name of square marketing image asset'
+            'The resource name of square marketing image asset',
+        self::USER_LIST_ID => 'The user list ID'
     ];
 }
