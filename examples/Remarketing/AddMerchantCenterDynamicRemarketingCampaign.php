@@ -38,6 +38,7 @@ use Google\Ads\GoogleAds\V3\Enums\AdGroupStatusEnum\AdGroupStatus;
 use Google\Ads\GoogleAds\V3\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
 use Google\Ads\GoogleAds\V3\Enums\AssetTypeEnum\AssetType;
 use Google\Ads\GoogleAds\V3\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V3\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Resources\Ad;
 use Google\Ads\GoogleAds\V3\Resources\AdGroup;
@@ -175,7 +176,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         int $customerId,
         int $merchantCenterAccountId,
         int $campaignBudgetId
-    ) {
+    ): string {
         $budgetResourceName = ResourceNames::forCampaignBudget($customerId, $campaignBudgetId);
 
         // Configures the settings for the shopping campaign.
@@ -231,7 +232,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $campaignResourceName
-    ) {
+    ): string {
         // Creates the ad group.
         $adGroup = new AdGroup([
             'name' => new StringValue(['value' => 'Dynamic remarketing ad group']),
@@ -274,62 +275,51 @@ class AddMerchantCenterDynamicRemarketingCampaign
             'https://goo.gl/3b9Wfh',
             'Marketing Image'
         );
-        $logoImageResourceName = self::uploadAsset(
+        $squareMarketingImageResourceName = self::uploadAsset(
             $googleAdsClient,
             $customerId,
             'https://goo.gl/mtt54n',
-            'Logo Image'
+            'Square Marketing Image'
         );
 
         // Creates the responsive display ad info object.
         $responsiveDisplayAdInfo = new ResponsiveDisplayAdInfo([
-            'marketing_images' => [
-                new AdImageAsset([
-                    'asset' => new StringValue(['value' => $marketingImageResourceName])
-                ])
-            ],
-            'square_marketing_images' => [
-                new AdImageAsset([
-                    'asset' => new StringValue(['value' => $logoImageResourceName])
-                ])
-            ],
-            'headlines' => [
-                new AdTextAsset([
-                    'text' => new StringValue(['value' => 'Travel'])
-                ])
-            ],
+            'marketing_images' => [new AdImageAsset([
+                'asset' => new StringValue(['value' => $marketingImageResourceName])
+            ])],
+            'square_marketing_images' => [new AdImageAsset([
+                'asset' => new StringValue(['value' => $squareMarketingImageResourceName])
+            ])],
+            'headlines' => [new AdTextAsset([
+                'text' => new StringValue(['value' => 'Travel'])
+            ])],
             'long_headline' => new AdTextAsset([
                 'text' => new StringValue(['value' => 'Travel the World'])
             ]),
-            'descriptions' => [
-                new AdTextAsset([
-                    'text' => new StringValue(['value' => 'Take to the air!'])
-                ])
-            ],
+            'descriptions' => [new AdTextAsset([
+                'text' => new StringValue(['value' => 'Take to the air!'])
+            ])],
             'business_name' => new StringValue(['value' => 'Interplanetary Cruises']),
             // Optional: Call to action text.
             // Valid texts: https://support.google.com/adwords/answer/7005917
             'call_to_action_text' => new StringValue(['value' => 'Apply Now']),
+            // Optional: Sets the ad colors.
+            'main_color' => new StringValue(['value' => '#0000ff']),
+            'accent_color' => new StringValue(['value' => '#ffff00']),
+            // Optional: Sets to false to strictly render the ad using the colors.
+            'allow_flexible_color' => new BoolValue(['value' => false]),
+            // Optional: Sets the format setting that the ad will be served in.
+            'format_setting' => DisplayAdFormatSetting::NON_NATIVE
             // Optional: Creates a logo image and set it to the ad.
-            'logo_images' => [
-                new AdImageAsset([
-                    'asset' => new StringValue(['value' => $logoImageResourceName])
-                ])
-            ],
+            // 'logo_images' => [new AdImageAsset([
+            //     'asset' => new StringValue(['value' => INSERT_LOGO_IMAGE_RESOURCE_NAME_HERE])
+            // ])],
             // Optional: Creates a square logo image and set it to the ad.
-            'square_logo_images' => [
-                new AdImageAsset([
-                    'asset' => new StringValue(['value' => $logoImageResourceName])
-                ])
-            ]
-            // Whitelisted accounts only: Sets color settings using hexadecimal values.
-            // Sets allowFlexibleColor to false if you want your ads to render by always
-            // using your colors strictly.
-            // 'main_color' => new StringValue(['value' => '#0000ff']),
-            // 'accent_color' => new StringValue(['value' => '#ffff00']),
-            // 'allow_flexible_color' => new BoolValue(['value' => false]),
-            // Whitelisted accounts only: Sets the format setting that the ad will be served in.
-            // 'format_setting' => DisplayAdFormatSetting::NON_NATIVE
+            // 'square_logo_images' => [new AdImageAsset([
+            //     'asset' => new StringValue([
+            //         'value' => INSERT_SQUARE_LOGO_IMAGE_RESOURCE_NAME_HERE
+            //     ])
+            // ])]
         ]);
 
         // Creates a new ad group ad.
@@ -365,22 +355,20 @@ class AddMerchantCenterDynamicRemarketingCampaign
      * @param int $customerId the customer ID
      * @param string $imageUrl the image URL
      * @param string $assetName the asset name
+     * @return string the resource name of the newly added asset
      */
     private static function uploadAsset(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $imageUrl,
         string $assetName
-    ) {
-        // Creates an image content.
-        $imageContent = file_get_contents($imageUrl);
-
+    ): string {
         // Creates an asset.
         $asset = new Asset([
             'name' => new StringValue(['value' =>  $assetName]),
             'type' => AssetType::IMAGE,
             'image_asset' => new ImageAsset([
-                'data' => new BytesValue(['value' => $imageContent]),
+                'data' => new BytesValue(['value' => file_get_contents($imageUrl)]),
             ])
         ]);
 
@@ -411,7 +399,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string $adGroupResourceName the resource name of the ad group that
-     *     the new listing group will belong to
+     *     the user list will be attached to
      * @param int $userListId the user list ID
      */
     private static function attachUserList(
