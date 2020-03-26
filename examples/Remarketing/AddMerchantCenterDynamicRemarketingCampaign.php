@@ -312,12 +312,12 @@ class AddMerchantCenterDynamicRemarketingCampaign
             'format_setting' => DisplayAdFormatSetting::NON_NATIVE
             // Optional: Creates a logo image and set it to the ad.
             // 'logo_images' => [new AdImageAsset([
-            //     'asset' => new StringValue(['value' => INSERT_LOGO_IMAGE_RESOURCE_NAME_HERE])
+            //     'asset' => new StringValue(['value' => 'INSERT_LOGO_IMAGE_RESOURCE_NAME_HERE'])
             // ])],
             // Optional: Creates a square logo image and set it to the ad.
             // 'square_logo_images' => [new AdImageAsset([
             //     'asset' => new StringValue([
-            //         'value' => INSERT_SQUARE_LOGO_IMAGE_RESOURCE_NAME_HERE
+            //         'value' => 'INSERT_SQUARE_LOGO_IMAGE_RESOURCE_NAME_HERE'
             //     ])
             // ])]
         ]);
