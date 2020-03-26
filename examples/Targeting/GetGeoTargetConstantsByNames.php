@@ -48,8 +48,6 @@ class GetGeoTargetConstantsByNames
     // The location names to get suggested geo target constants.
     private static $LOCATION_NAMES = ['Paris', 'Quebec', 'Spain', 'Deutschland'];
 
-    const PAGE_SIZE = 1000;
-
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
