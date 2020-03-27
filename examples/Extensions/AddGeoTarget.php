@@ -29,12 +29,9 @@ use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Common\SitelinkFeedItem;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Resources\ExtensionFeedItem;
 use Google\Ads\GoogleAds\V3\Services\ExtensionFeedItemOperation;
-use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V3\Services\SearchGoogleAdsStreamResponse;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -48,7 +45,7 @@ class AddGeoTarget
 
     // A list of country codes can be referenced here:
     // https://developers.google.com/adwords/api/docs/appendix/geotargeting
-    private const GEO_TARGET_CONSTANT_ID = 2840; // 2840
+    private const GEO_TARGET_CONSTANT_ID = 2840; // US
 
     public static function main()
     {
