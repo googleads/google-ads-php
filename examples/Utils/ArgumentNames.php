@@ -57,6 +57,7 @@ final class ArgumentNames
     const GCLID = 'gclid';
     const GMB_ACCESS_TOKEN = 'gmbAccessToken';
     const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
+    const GEO_TARGET_CONSTANT_ID = 'geoTargetConstantId';
     const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     const KEYWORD_PLAN_ID = 'keywordPlanId';
     const KEYWORD_TEXT = 'keywordText';
@@ -113,6 +114,7 @@ final class ArgumentNames
         self::GCLID => 'The Google Click ID',
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
         self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
+        self::GEO_TARGET_CONSTANT_ID => 'The geo target constant ID',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
