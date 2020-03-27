@@ -41,8 +41,17 @@ use Google\Protobuf\StringValue;
 /**
  * Updates a feed item attribute value in a flights feed. To create a flights feed,
  * run the AddFlightsFeed example. This example is specific to feeds of type DYNAMIC_FLIGHT.
- * The attribute you are updating must be present on the feed. This example is
- * specifically for updating the StringValue of an attribute.
+ * The attribute you are updating must be present on the feed.
+ *
+ * This example is specifically for updating the StringValue of an attribute of a flights feed item,
+ * but it can also be changed to work with other data types of an attribute and feed types.
+ *
+ * To make this work with other data types, replace `string_value` with the type of an attribute
+ * you wish to update, when creating a FeedItemAttributeValue instance in this example.
+ * To make this work with other feed types, replace the FlightPlaceholderField enum with the
+ * equivalent one of your feed type, and replace Feeds::flightPlaceholderFieldsMapFor() with the
+ * method that can return a similar value for your feed type. Check the
+ * flightPlaceholderFieldsMapFor() method for details.
  */
 class UpdateFlightsFeedItemStringAttributeValue
 {
