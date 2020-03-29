@@ -41,8 +41,16 @@ use Google\Protobuf\Int64Value;
  * Removes a feed item attribute value of a feed item in a flights feed. To create a flights feed,
  * run the AddFlightsFeed example. This example is specific to feeds of type DYNAMIC_FLIGHT.
  * The attribute you are removing must be present on the feed.
+ *
+ * This example is specifically for removing an attribute of a flights feed item,
+ * but it can also be changed to work with other feed types.
+ *
+ * To make this work with other feed types, replace the FlightPlaceholderField enum with the
+ * equivalent one of your feed type, and replace Feeds::flightPlaceholderFieldsMapFor() with the
+ * method that can return a similar value for your feed type. Check the
+ * flightPlaceholderFieldsMapFor() method for details.
  */
-class RemoveFlightsFeedItemStringAttributeValue
+class RemoveFlightsFeedItemAttributeValue
 {
     const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     const FEED_ID = 'INSERT_FEED_ID_HERE';
@@ -173,4 +181,4 @@ class RemoveFlightsFeedItemStringAttributeValue
     }
 }
 
-RemoveFlightsFeedItemStringAttributeValue::main();
+RemoveFlightsFeedItemAttributeValue::main();
