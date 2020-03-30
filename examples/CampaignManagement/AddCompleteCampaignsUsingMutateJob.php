@@ -71,7 +71,7 @@ class AddCompleteCampaignsUsingMutateJob
 
     const NUMBER_OF_CAMPAIGNS_TO_ADD = 2;
     const NUMBER_OF_AD_GROUPS_TO_ADD = 2;
-    const NUMBER_OF_KEYWORDS_TO_ADD = 5;
+    const NUMBER_OF_KEYWORDS_TO_ADD = 4;
     const POLL_FREQUENCY_SECONDS = 1;
     const MAX_TOTAL_POLL_INTERVAL_SECONDS = 60;
 
