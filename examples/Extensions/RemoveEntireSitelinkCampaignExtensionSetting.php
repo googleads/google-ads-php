@@ -31,19 +31,23 @@ use Google\Ads\GoogleAds\Lib\V3\GoogleAdsServerStreamDecorator;
 use Google\Ads\GoogleAds\Util\V3\ResourceNames;
 use Google\Ads\GoogleAds\V3\Enums\ExtensionTypeEnum\ExtensionType;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V3\Resources\ExtensionFeedItem;
 use Google\Ads\GoogleAds\V3\Services\CampaignExtensionSettingOperation;
 use Google\Ads\GoogleAds\V3\Services\ExtensionFeedItemOperation;
 use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V3\Services\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\V3\Services\MutateOperation;
 use Google\Ads\GoogleAds\V3\Services\SearchGoogleAdsStreamResponse;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
 /**
- * Removes the entire campaign extension setting by removing both the specified campaign extension
- * setting itself and its associated extension feed items. This requires two steps, since removing
- * the campaign extension setting doesn't automatically remove its extension feed items.
+ * Removes the entire sitelink campaign extension setting by removing both the sitelink campaign
+ * extension setting itself and its associated sitelink extension feed items. This requires two
+ * steps, since removing the campaign extension setting doesn't automatically remove its extension
+ * feed items.
+ *
+ * To make this example work with other types of extensions, find `ExtensionType::SITELINK` and
+ * replace it with the extension type you wish to remove.
  */
 class RemoveEntireSitelinkCampaignExtensionSetting
 {
@@ -111,11 +115,63 @@ class RemoveEntireSitelinkCampaignExtensionSetting
         int $customerId,
         int $campaignId
     ) {
-        $extensionFeedItemResourceNames =
-            self::getAllSitelinkExtensionFeedItems($googleAdsClient, $customerId, $campaignId);
+        $mutateOperations = [];
+        // Creates a mutate operation that contains the campaign extension setting operation
+        // to remove the specified sitelink campaign extension setting.
+        $mutateOperations[] =
+            self::createSitelinkCampaignExtensionSettingMutateOperation($customerId, $campaignId);
 
-        // 1) Removes the campaign extension setting.
+        // Gets all sitelink extension feed items of the specified campaign.
+        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
+        $extensionFeedItemResourceNames = self::getAllSitelinkExtensionFeedItems(
+            $googleAdsServiceClient,
+            $customerId,
+            $campaignId
+        );
 
+        // Creates mutate operations, each of which contains an extension feed item operation
+        // to remove the specified extension feed items.
+        $mutateOperations = array_merge(
+            $mutateOperations,
+            self::createExtensionFeedItemMutateOperations($extensionFeedItemResourceNames)
+        );
+
+        // Issues a mutate request to remove the campaign extension setting and its extension
+        // feed items.
+        $response = $googleAdsServiceClient->mutate($customerId, $mutateOperations);
+        $mutateOperationResponses = $response->getMutateOperationResponses();
+
+        // Prints the information on the removed campaign extension setting and its extension feed
+        // items.
+        // Each mutate operation response is returned in the same order as we passed its
+        // corresponding operation. Therefore, the first belongs to the campaign setting operation,
+        // and the rest belong to the extension feed item operations.
+        printf(
+            "Removed a campaign extension setting with resource name: '%s'.%s",
+            $mutateOperationResponses[0]->getCampaignExtensionSettingResult()->getResourceName(),
+            PHP_EOL
+        );
+        for ($i = 1; $i < count($mutateOperationResponses); $i++) {
+            printf(
+                "Removed an extension feed item with resource name: '%s'.%s",
+                $mutateOperationResponses[$i]->getExtensionFeedItemResult()->getResourceName(),
+                PHP_EOL
+            );
+        }
+    }
+
+    /**
+     * Creates a mutate operation for the sitelink campaign extension setting that will be removed.
+     *
+     * @param int $customerId the client customer ID
+     * @param int $campaignId the campaign ID
+     * @return MutateOperation the created mutate operation for the sitelink campaign extension
+     *     setting
+     */
+    private static function createSitelinkCampaignExtensionSettingMutateOperation(
+        int $customerId,
+        int $campaignId
+    ): MutateOperation {
         // Creates the resource name of a campaign extension setting to remove.
         $campaignExtensionSettingResourceName = ResourceNames::forCampaignExtensionSetting(
             $customerId,
@@ -124,87 +180,44 @@ class RemoveEntireSitelinkCampaignExtensionSetting
         );
 
         // Creates a campaign extension setting operation.
-        $extensionFeedItemOperation = new CampaignExtensionSettingOperation();
-        $extensionFeedItemOperation->setRemove($campaignExtensionSettingResourceName);
+        $campaignExtensionSettingOperation = new CampaignExtensionSettingOperation();
+        $campaignExtensionSettingOperation->setRemove($campaignExtensionSettingResourceName);
 
-        // Issues a mutate request to remove the campaign extension setting.
-        $extensionFeedItemServiceClient =
-            $googleAdsClient->getCampaignExtensionSettingServiceClient();
-        $response = $extensionFeedItemServiceClient->mutateCampaignExtensionSettings(
-            $customerId,
-            [$extensionFeedItemOperation]
-        );
-
-        // Prints the resource name of the removed campaign extension setting.
-        /** @var CampaignExtensionSetting $removedCampaignExtensionSetting */
-        $removedCampaignExtensionSetting = $response->getResults()[0];
-        printf(
-            "Removed a campaign extension setting with resource name: '%s'.%s",
-            $removedCampaignExtensionSetting->getResourceName(),
-            PHP_EOL
-        );
-
-        // 2) Removes all the extension feed items of the previously removed campaign extension
-        // setting.
-
-        foreach ($extensionFeedItemResourceNames as $extensionFeedItemResourceName) {
-            // Creates an operation to remove the extension feed item.
-            $extensionFeedItemOperation = new ExtensionFeedItemOperation();
-            $extensionFeedItemOperation->setRemove($extensionFeedItemResourceName);
-
-            // Issues a mutate request to remove the extension feed item.
-            $extensionFeedItemServiceClient =
-                $googleAdsClient->getExtensionFeedItemServiceClient();
-            $response = $extensionFeedItemServiceClient->mutateExtensionFeedItems(
-                $customerId,
-                [$extensionFeedItemOperation]
-            );
-
-            // Prints the resource name of the removed extension feed item.
-            /** @var ExtensionFeedItem $removedExtensionFeedItem */
-            $removedExtensionFeedItem = $response->getResults()[0];
-            printf(
-                "Removed an extension feed item with resource name: '%s'.%s",
-                $removedExtensionFeedItem->getResourceName(),
-                PHP_EOL
-            );
-        }
+        // Creates a mutate operation for the campaign extension setting operation.
+        return new MutateOperation([
+            'campaign_extension_setting_operation' => $campaignExtensionSettingOperation]);
     }
 
     /**
-     * Returns all sitelink extension feed items associated the specified campaign extension
+     * Returns all sitelink extension feed items associated to the specified campaign extension
      * setting.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param GoogleAdsServiceClient $googleAdsServiceClient the Google Ads API service client
      * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID to get its all sitelink extension feed items
+     * @param int $campaignId the campaign ID to get the sitelink extension feed items from
      * @return string[] the array of resource names of extension feed items
      */
     private static function getAllSitelinkExtensionFeedItems(
-        GoogleAdsClient $googleAdsClient,
+        GoogleAdsServiceClient $googleAdsServiceClient,
         int $customerId,
         int $campaignId
     ): array {
-        $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves all campaigns.
         $query = sprintf(
-            "SELECT campaign_extension_setting.campaign,"
-            . " campaign_extension_setting.extension_type,"
-            . " campaign_extension_setting.extension_feed_items"
-            . " FROM campaign_extension_setting"
-            . " WHERE campaign_extension_setting.campaign = '%s'"
-            . " AND campaign_extension_setting.extension_type = %s",
+            "SELECT campaign_extension_setting.campaign, "
+            . "campaign_extension_setting.extension_type, "
+            . "campaign_extension_setting.extension_feed_items "
+            . "FROM campaign_extension_setting "
+            . "WHERE campaign_extension_setting.campaign = '%s' "
+            . "AND campaign_extension_setting.extension_type = %s",
             ResourceNames::forCampaign($customerId, $campaignId),
             ExtensionType::name(ExtensionType::SITELINK)
         );
 
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream =
-            $googleAdsServiceClient->searchStream($customerId, $query);
+        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
 
-        print 'Found the following extension feed items of the sitelink campaign extension setting:'
-            . PHP_EOL;
         $extensionFeedItemResourceNames = [];
         // Iterates over all rows in all messages and prints the requested field values for
         // the campaign extension setting in each row.
@@ -226,7 +239,35 @@ class RemoveEntireSitelinkCampaignExtensionSetting
                 }
             }
         }
+        if (empty($extensionFeedItemResourceNames)) {
+            throw new \InvalidArgumentException(
+                'The specified campaign does not contain a sitelink campaign extension setting.'
+            );
+        }
         return $extensionFeedItemResourceNames;
+    }
+
+    /**
+     * Creates mutate operations for the sitelink extension feed items that will be removed.
+     *
+     * @param string[] $extensionFeedItemResourceNames the extension feed item resource names
+     * @return MutateOperation[] the array of created mutate operations for the extension feed items
+     */
+    private static function createExtensionFeedItemMutateOperations(
+        array $extensionFeedItemResourceNames
+    ): array {
+        $mutateOperations = [];
+        foreach ($extensionFeedItemResourceNames as $extensionFeedItemResourceName) {
+            // Creates an operation to remove the extension feed item.
+            $extensionFeedItemOperation = new ExtensionFeedItemOperation();
+            $extensionFeedItemOperation->setRemove($extensionFeedItemResourceName);
+
+            // Creates a mutate operation for each extension feed item operation.
+            $mutateOperations [] = new MutateOperation([
+                'extension_feed_item_operation' => $extensionFeedItemOperation
+            ]);
+        }
+        return $mutateOperations;
     }
 }
 

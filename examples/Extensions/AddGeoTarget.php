@@ -110,7 +110,7 @@ class AddGeoTarget
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $feedItemId,
-        string $geoTargetConstantId
+        int $geoTargetConstantId
     ) {
         // Creates an extension feed item using the specified feed item ID and geo target constant
         // ID for targeting.
