@@ -18,6 +18,8 @@
 
 namespace Google\Ads\GoogleAds\Lib\V3;
 
+use Generator;
+use Google\ApiCore\ApiException;
 use Google\ApiCore\ServerStream;
 
 /**
@@ -51,5 +53,27 @@ class GoogleAdsServerStreamDecorator extends ServerStream
     public function getServerStreamingCall()
     {
         return $this->serverStream->getServerStreamingCall();
+    }
+
+    /**
+     *
+     * Returns an iterator over the full list of elements of the stream.
+     *
+     * @experimental: This is specific to SearchGoogleAdsStreamResponse but works just fine because
+     * GoogleAdsService.SearchStream is the only Server Stream typed call that can be made in the
+     * Google Ads API. To make this right, modifications in Gapic, Gax and PHP post
+     * processing script would be required: add a middleware or interceptor using an extended
+     * version of the GoogleAdsGapicClientTrait.
+     *
+     * @return Generator
+     * @throws ApiException
+     */
+    public function iterateAllElements()
+    {
+        foreach ($this->readAll() as $response) {
+            foreach ($response->getResults() as $element) {
+                yield $element;
+            }
+        }
     }
 }

@@ -30,7 +30,6 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsServerStreamDecorator;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V3\Services\SearchGoogleAdsStreamResponse;
 use Google\ApiCore\ApiException;
 
 /** This example gets all campaigns. To add campaigns, run AddCampaigns.php. */
@@ -104,17 +103,14 @@ class GetCampaigns
 
         // Iterates over all rows in all messages and prints the requested field values for
         // the campaign in each row.
-        foreach ($stream->readAll() as $response) {
-            /** @var SearchGoogleAdsStreamResponse $response */
-            foreach ($response->getResults() as $googleAdsRow) {
-                /** @var GoogleAdsRow $googleAdsRow */
-                printf(
-                    "Campaign with ID %d and name '%s' was found.%s",
-                    $googleAdsRow->getCampaign()->getId()->getValue(),
-                    $googleAdsRow->getCampaign()->getName()->getValue(),
-                    PHP_EOL
-                );
-            }
+        foreach ($stream->iterateAllElements() as $googleAdsRow) {
+            /** @var GoogleAdsRow $googleAdsRow */
+            printf(
+                "Campaign with ID %d and name '%s' was found.%s",
+                $googleAdsRow->getCampaign()->getId()->getValue(),
+                $googleAdsRow->getCampaign()->getName()->getValue(),
+                PHP_EOL
+            );
         }
     }
 }

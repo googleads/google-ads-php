@@ -36,7 +36,6 @@ use Google\Ads\GoogleAds\V3\Services\ExtensionFeedItemOperation;
 use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V3\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V3\Services\MutateOperation;
-use Google\Ads\GoogleAds\V3\Services\SearchGoogleAdsStreamResponse;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -221,22 +220,19 @@ class RemoveEntireSitelinkCampaignExtensionSetting
         $extensionFeedItemResourceNames = [];
         // Iterates over all rows in all messages and prints the requested field values for
         // the campaign extension setting in each row.
-        foreach ($stream->readAll() as $response) {
-            /** @var SearchGoogleAdsStreamResponse $response */
-            foreach ($response->getResults() as $googleAdsRow) {
-                /** @var GoogleAdsRow $googleAdsRow */
-                $extensionFeedItems =
-                    $googleAdsRow->getCampaignExtensionSetting()->getExtensionFeedItems();
-                foreach ($extensionFeedItems as $extensionFeedItem) {
-                    /** @var StringValue $extensionFeedItem */
-                    $extensionFeedItemResourceName = $extensionFeedItem->getValue();
-                    $extensionFeedItemResourceNames[] = $extensionFeedItemResourceName;
-                    printf(
-                        "Extension feed item with resource name '%s' was found.%s",
-                        $extensionFeedItemResourceName,
-                        PHP_EOL
-                    );
-                }
+        foreach ($stream->iterateAllElements() as $googleAdsRow) {
+            /** @var GoogleAdsRow $googleAdsRow */
+            $extensionFeedItems =
+                $googleAdsRow->getCampaignExtensionSetting()->getExtensionFeedItems();
+            foreach ($extensionFeedItems as $extensionFeedItem) {
+                /** @var StringValue $extensionFeedItem */
+                $extensionFeedItemResourceName = $extensionFeedItem->getValue();
+                $extensionFeedItemResourceNames[] = $extensionFeedItemResourceName;
+                printf(
+                    "Extension feed item with resource name '%s' was found.%s",
+                    $extensionFeedItemResourceName,
+                    PHP_EOL
+                );
             }
         }
         if (empty($extensionFeedItemResourceNames)) {

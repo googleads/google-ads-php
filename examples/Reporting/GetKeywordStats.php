@@ -31,7 +31,6 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V3\Enums\KeywordMatchTypeEnum\KeywordMatchType;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V3\Services\SearchGoogleAdsStreamResponse;
 use Google\ApiCore\ApiException;
 
 /**
@@ -126,39 +125,36 @@ class GetKeywordStats
 
         // Iterates over all rows in all messages and prints the requested field values for
         // the keyword in each row.
-        foreach ($stream->readAll() as $response) {
-            /** @var SearchGoogleAdsStreamResponse $response */
-            foreach ($response->getResults() as $googleAdsRow) {
-                /** @var GoogleAdsRow $googleAdsRow */
-                $campaign = $googleAdsRow->getCampaign();
-                $adGroup = $googleAdsRow->getAdGroup();
-                $adGroupCriterion = $googleAdsRow->getAdGroupCriterion();
-                $metrics = $googleAdsRow->getMetrics();
-                printf(
-                    "Keyword text '%s' with "
-                    . "match type %s "
-                    . "and ID %d "
-                    . "in ad group '%s' "
-                    . "with ID %d "
-                    . "in campaign '%s' "
-                    . "with ID %d "
-                    . "had %d impression(s), "
-                    . "%d click(s), "
-                    . "and %d cost (in micros) "
-                    . "during the last 7 days.%s",
-                    $adGroupCriterion->getKeyword()->getTextUnwrapped(),
-                    KeywordMatchType::name($adGroupCriterion->getKeyword()->getMatchType()),
-                    $adGroupCriterion->getCriterionIdUnwrapped(),
-                    $adGroup->getNameUnwrapped(),
-                    $adGroup->getIdUnwrapped(),
-                    $campaign->getNameUnwrapped(),
-                    $campaign->getIdUnwrapped(),
-                    $metrics->getImpressionsUnwrapped(),
-                    $metrics->getClicksUnwrapped(),
-                    $metrics->getCostMicrosUnwrapped(),
-                    PHP_EOL
-                );
-            }
+        foreach ($stream->iterateAllElements() as $googleAdsRow) {
+            /** @var GoogleAdsRow $googleAdsRow */
+            $campaign = $googleAdsRow->getCampaign();
+            $adGroup = $googleAdsRow->getAdGroup();
+            $adGroupCriterion = $googleAdsRow->getAdGroupCriterion();
+            $metrics = $googleAdsRow->getMetrics();
+            printf(
+                "Keyword text '%s' with "
+                . "match type %s "
+                . "and ID %d "
+                . "in ad group '%s' "
+                . "with ID %d "
+                . "in campaign '%s' "
+                . "with ID %d "
+                . "had %d impression(s), "
+                . "%d click(s), "
+                . "and %d cost (in micros) "
+                . "during the last 7 days.%s",
+                $adGroupCriterion->getKeyword()->getTextUnwrapped(),
+                KeywordMatchType::name($adGroupCriterion->getKeyword()->getMatchType()),
+                $adGroupCriterion->getCriterionIdUnwrapped(),
+                $adGroup->getNameUnwrapped(),
+                $adGroup->getIdUnwrapped(),
+                $campaign->getNameUnwrapped(),
+                $campaign->getIdUnwrapped(),
+                $metrics->getImpressionsUnwrapped(),
+                $metrics->getClicksUnwrapped(),
+                $metrics->getCostMicrosUnwrapped(),
+                PHP_EOL
+            );
         }
     }
 }
