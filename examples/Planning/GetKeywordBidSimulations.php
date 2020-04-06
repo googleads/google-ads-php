@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Examples\Optimization;
+namespace Google\Ads\GoogleAds\Examples\Planning;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
