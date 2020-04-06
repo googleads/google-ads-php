@@ -97,7 +97,7 @@ class GetCampaignCriterionBidModifierSimulations
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID to get the criterion bid modifier simulations for
+     * @param int $campaignId the campaign ID to get the criterion bid modifier simulations
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
