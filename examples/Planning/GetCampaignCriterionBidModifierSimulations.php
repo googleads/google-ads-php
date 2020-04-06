@@ -120,8 +120,7 @@ class GetCampaignCriterionBidModifierSimulations
 
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream =
-            $googleAdsServiceClient->searchStream($customerId, $query);
+        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
 
         // Iterates over all rows in all messages and prints the requested field values for
         // the campaign criterion bid modifier simulation in each row.
