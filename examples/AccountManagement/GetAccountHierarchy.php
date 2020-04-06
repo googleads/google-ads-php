@@ -165,7 +165,7 @@ class GetAccountHierarchy
                     $customerIdsToChildAccounts[$customerId][] = $customerClient;
                     if ($customerClient->getManagerUnwrapped()) {
                         // A customer can be managed by multiple managers, so to prevent visiting
-                        // the same customer many times, we need to check if it's already in the
+                        // the same customer multiple times, we need to check if it's already in the
                         // map.
                         $alreadyVisited = array_key_exists(
                             $customerClient->getIdUnwrapped(),
@@ -190,7 +190,7 @@ class GetAccountHierarchy
                 self::printAccountHierarchy($rootCustomerClient, $customerIdsToChildAccounts, 0);
                 print PHP_EOL;
             } else {
-                print "Customer ID $customerId is likely a test account, so its customer client "
+                print "Customer ID $seedCustomerId is likely a test account, so its customer client "
                     . " information cannot be retrieved." . PHP_EOL;
             }
         }
