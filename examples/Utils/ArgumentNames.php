@@ -39,6 +39,7 @@ final class ArgumentNames
     const CAMPAIGN_EXPERIMENT_ID = 'campaignExperimentId';
     const CAMPAIGN_ID = 'campaignId';
     const CAMPAIGN_IDS = 'campaignIds';
+    const CARRIER_COUNTRY_CODE = 'carrierCountryCode';
     const CHECK_IN_DAY_CRITERION_ID = 'checkInDayCriterionId';
     const CONVERSION_ACTION_ID = 'conversionActionId';
     const CONVERSION_DATE_TIME = 'conversionDateTime';
@@ -64,6 +65,7 @@ final class ArgumentNames
     const LABEL_ID = "labelId";
     const LANGUAGE_CODE = 'languageCode';
     const LANGUAGE_ID = 'languageId';
+    const LANGUAGE_NAME_KEYWORD = 'languageNameKeyword';
     const LOCALE = 'locale';
     const LOCATION_ID = 'locationId';
     const LOCATION_NAMES = 'locationNames';
@@ -97,6 +99,7 @@ final class ArgumentNames
         self::CAMPAIGN_EXPERIMENT_ID => 'The campaign experiment ID',
         self::CAMPAIGN_ID => 'The campaign ID',
         self::CAMPAIGN_IDS => 'The campaign IDs',
+        self::CARRIER_COUNTRY_CODE => 'The carrier country code',
         self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
         self::CONVERSION_ACTION_ID => 'The conversion action ID',
         self::CONVERSION_DATE_TIME => 'The conversion date time',
@@ -122,6 +125,7 @@ final class ArgumentNames
         self::LABEL_ID => 'The label ID',
         self::LANGUAGE_CODE => 'The language code',
         self::LANGUAGE_ID => 'The language ID',
+        self::LANGUAGE_NAME_KEYWORD => 'The language name keyword',
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',
         self::LOCATION_NAMES => 'The list of location names',
