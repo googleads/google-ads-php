@@ -34,7 +34,7 @@ use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
- * This example gets all available CPC bid simulations for a given ad group.
+ * This example gets all available ad group criterion CPC bid simulations for a given ad group.
  * To get ad groups, run GetAdGroups.php.
  */
 class GetAdGroupCriterionCpcBidSimulations
@@ -97,7 +97,7 @@ class GetAdGroupCriterionCpcBidSimulations
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to get the CPC bid simulations for
+     * @param int $adGroupId the ad group ID to get the ad group criterion CPC bid simulations for
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -106,7 +106,7 @@ class GetAdGroupCriterionCpcBidSimulations
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
 
-        // Creates a query that retrieves the CPC bid simulations.
+        // Creates a query that retrieves the ad group criterion CPC bid simulations.
         $query = sprintf(
             'SELECT ad_group_criterion_simulation.ad_group_id, ' .
             'ad_group_criterion_simulation.criterion_id, ' .
@@ -124,12 +124,12 @@ class GetAdGroupCriterionCpcBidSimulations
         $stream = $googleAdsServiceClient->searchStream($customerId, $query);
 
         // Iterates over all rows in all messages and prints the requested field values for
-        // the CPC bid simulation in each row.
+        // the ad group criterion CPC bid simulation in each row.
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             $simulation = $googleAdsRow->getAdGroupCriterionSimulation();
             printf(
-                'Found CPC bid simulation for ad group ID %d, ' .
+                'Found ad group criterion CPC bid simulation for ad group ID %d, ' .
                 'criterion ID %d, start date "%s", end date "%s", and points:%s',
                 $simulation->getAdGroupIdUnwrapped(),
                 $simulation->getCriterionIdUnwrapped(),
