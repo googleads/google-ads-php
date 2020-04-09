@@ -116,7 +116,7 @@ class UploadCallConversion
      * @param string $callStartDateTime the date and time at which the call occurred. The format is
      *     "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
      * @param string $conversionDateTime the date and time of the conversion (should be after the
-     *     click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
+     *     call time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
      *     “2019-01-01 12:32:45-08:00”
      * @param float $conversionValue the value of the conversion
      */
