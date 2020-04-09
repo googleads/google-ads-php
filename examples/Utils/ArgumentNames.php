@@ -34,6 +34,8 @@ final class ArgumentNames
     const BID_MODIFIER_VALUE = 'bidModifierValue';
     const BILLING_SETUP_ID = 'billingSetupId';
     const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
+    const CALL_START_DATE_TIME = 'callStartDateTime';
+    const CALLER_ID = 'callerId';
     const CALLOUT_TEXT = 'calloutText';
     const CAMPAIGN_BUDGET_ID = 'campaignBudgetId';
     const CAMPAIGN_EXPERIMENT_ID = 'campaignExperimentId';
@@ -92,6 +94,8 @@ final class ArgumentNames
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
         self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the GMB account',
+        self::CALL_START_DATE_TIME => 'The call start date time',
+        self::CALLER_ID => 'The caller ID',
         self::CALLOUT_TEXT => 'The callout text',
         self::CAMPAIGN_BUDGET_ID => 'The campaign budget ID',
         self::CAMPAIGN_EXPERIMENT_ID => 'The campaign experiment ID',
