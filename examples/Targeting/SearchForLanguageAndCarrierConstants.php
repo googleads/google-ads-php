@@ -30,17 +30,18 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsServerStreamDecorator;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V3\Services\GoogleAdsServiceClient;
 use Google\ApiCore\ApiException;
 
 /**
- * This example illustrates how to search for language constants by name that includes the
- * specified keyword. Then it searches for all the available mobile carrier constants with a
- * given country code.
+ * This example illustrates how to:
+ * 1. Search for language constants where the name includes a given string.
+ * 2. Search for all the available mobile carrier constants with a given country code.
  */
 class SearchForLanguageAndCarrierConstants
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const LANGUAGE_NAME_KEYWORD = 'eng';
+    private const LANGUAGE_NAME = 'eng';
     // A list of country codes can be referenced here:
     // https://developers.google.com/adwords/api/docs/appendix/geotargeting.
     private const CARRIER_COUNTRY_CODE = 'US';
@@ -51,7 +52,7 @@ class SearchForLanguageAndCarrierConstants
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::LANGUAGE_NAME_KEYWORD => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::LANGUAGE_NAME => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::CARRIER_COUNTRY_CODE => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
@@ -69,7 +70,7 @@ class SearchForLanguageAndCarrierConstants
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::LANGUAGE_NAME_KEYWORD] ?: self::LANGUAGE_NAME_KEYWORD,
+                $options[ArgumentNames::LANGUAGE_NAME] ?: self::LANGUAGE_NAME,
                 $options[ArgumentNames::CARRIER_COUNTRY_CODE] ?: self::CARRIER_COUNTRY_CODE
             );
         } catch (GoogleAdsException $googleAdsException) {
@@ -102,26 +103,42 @@ class SearchForLanguageAndCarrierConstants
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param string $languageNameKeyword the keyword included in the language name to search for
+     * @param string $languageName the string included in the language name to search for
      * @param string $carrierCountryCode the code of the country where the mobile carriers are
      *      located, e.g. "US", "ES", etc.
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $languageNameKeyword,
+        string $languageName,
         string $carrierCountryCode
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
 
-        // Creates a query that retrieves the language constants by the keyword included in the
-        // name.
+        self::searchForLanguageConstants($googleAdsServiceClient, $customerId, $languageName);
+        self::searchForCarrierConstants($googleAdsServiceClient, $customerId, $carrierCountryCode);
+    }
+
+    /**
+     * Searches for language constants where the name includes a given string.
+     *
+     * @param GoogleAdsServiceClient $googleAdsServiceClient the Google Ads Service API client
+     * @param int $customerId the customer ID
+     * @param string $languageName the string included in the language name to search for
+     */
+    public static function searchForLanguageConstants(
+        GoogleAdsServiceClient $googleAdsServiceClient,
+        int $customerId,
+        string $languageName
+    ) {
+        // Creates a query that retrieves the language constants where the name includes a given
+        // string.
         $query = sprintf(
             'SELECT language_constant.id, language_constant.code, ' .
             'language_constant.name, language_constant.targetable ' .
             'FROM language_constant ' .
             'WHERE language_constant.name LIKE "%%%s%%"',
-            $languageNameKeyword
+            $languageName
         );
 
         // Issues a search stream request.
@@ -141,7 +158,21 @@ class SearchForLanguageAndCarrierConstants
                 PHP_EOL
             );
         }
+    }
 
+    /**
+     * Searches for all the available mobile carrier constants with a given country code.
+     *
+     * @param GoogleAdsServiceClient $googleAdsServiceClient the Google Ads Service API client
+     * @param int $customerId the customer ID
+     * @param string $carrierCountryCode the code of the country where the mobile carriers are
+     *      located, e.g. "US", "ES", etc.
+     */
+    public static function searchForCarrierConstants(
+        GoogleAdsServiceClient $googleAdsServiceClient,
+        int $customerId,
+        string $carrierCountryCode
+    ) {
         // Creates a query that retrieves the targetable carrier constants by country code.
         $query = sprintf(
             'SELECT carrier_constant.id, carrier_constant.name, carrier_constant.country_code ' .

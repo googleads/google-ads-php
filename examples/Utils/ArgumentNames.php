@@ -65,7 +65,7 @@ final class ArgumentNames
     const LABEL_ID = "labelId";
     const LANGUAGE_CODE = 'languageCode';
     const LANGUAGE_ID = 'languageId';
-    const LANGUAGE_NAME_KEYWORD = 'languageNameKeyword';
+    const LANGUAGE_NAME = 'languageName';
     const LOCALE = 'locale';
     const LOCATION_ID = 'locationId';
     const LOCATION_NAMES = 'locationNames';
@@ -125,7 +125,7 @@ final class ArgumentNames
         self::LABEL_ID => 'The label ID',
         self::LANGUAGE_CODE => 'The language code',
         self::LANGUAGE_ID => 'The language ID',
-        self::LANGUAGE_NAME_KEYWORD => 'The language name keyword',
+        self::LANGUAGE_NAME => 'The language name',
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',
         self::LOCATION_NAMES => 'The list of location names',
