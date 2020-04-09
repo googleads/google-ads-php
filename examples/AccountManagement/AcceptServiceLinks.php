@@ -38,7 +38,7 @@ use Google\ApiCore\ApiException;
  * This code example accepts all pending invitations from Google Merchant Center accounts
  * to your Google Ads account.
  */
-class AcceptServiceLink
+class AcceptServiceLinks
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
@@ -136,4 +136,4 @@ class AcceptServiceLink
     }
 }
 
-AcceptServiceLink::main();
+AcceptServiceLinks::main();
