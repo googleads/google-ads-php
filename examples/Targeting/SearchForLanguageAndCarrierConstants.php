@@ -176,7 +176,7 @@ class SearchForLanguageAndCarrierConstants
         // Creates a query that retrieves the targetable carrier constants by country code.
         $query = sprintf(
             'SELECT carrier_constant.id, carrier_constant.name, carrier_constant.country_code ' .
-            ' FROM carrier_constant ' .
+            'FROM carrier_constant ' .
             'WHERE carrier_constant.country_code = "%s"',
             $carrierCountryCode
         );
