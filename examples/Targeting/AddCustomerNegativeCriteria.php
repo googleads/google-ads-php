@@ -42,7 +42,7 @@ use Google\Protobuf\StringValue;
  */
 class AddCustomerNegativeCriteria
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
     public static function main()
     {

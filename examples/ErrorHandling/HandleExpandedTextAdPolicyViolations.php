@@ -49,8 +49,8 @@ use GPBMetadata\Google\Ads\GoogleAds\V3\Errors\PolicyFindingError;
  */
 class HandleExpandedTextAdPolicyViolations
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
 
     public static function main()
     {

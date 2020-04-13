@@ -40,25 +40,25 @@ use Google\Protobuf\StringValue;
 /** This example generates keyword ideas from a list of seed keywords or a seed page URL. */
 class GenerateKeywordIdeas
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Location criteria IDs. For example, specify 21167 for New York. For more information
     // on determining this value, see
     // https://developers.google.com/adwords/api/docs/appendix/geotargeting.
-    const LOCATION_ID_1 = 'INSERT_LOCATION_ID_1_HERE';
-    const LOCATION_ID_2 = 'INSERT_LOCATION_ID_2_HERE';
+    private const LOCATION_ID_1 = 'INSERT_LOCATION_ID_1_HERE';
+    private const LOCATION_ID_2 = 'INSERT_LOCATION_ID_2_HERE';
 
     // A language criterion ID. For example, specify 1000 for English. For more information
     // on determining this value, see
     // https://developers.google.com/adwords/api/docs/appendix/codes-formats#languages.
-    const LANGUAGE_ID = 'INSERT_LANGUAGE_ID_HERE';
+    private const LANGUAGE_ID = 'INSERT_LANGUAGE_ID_HERE';
 
-    const KEYWORD_TEXT_1 = 'INSERT_KEYWORD_TEXT_1_HERE';
-    const KEYWORD_TEXT_2 = 'INSERT_KEYWORD_TEXT_2_HERE';
+    private const KEYWORD_TEXT_1 = 'INSERT_KEYWORD_TEXT_1_HERE';
+    private const KEYWORD_TEXT_2 = 'INSERT_KEYWORD_TEXT_2_HERE';
 
     // Optional: Specify a URL string related to your business to generate ideas.
-    const PAGE_URL = null;
+    private const PAGE_URL = null;
 
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

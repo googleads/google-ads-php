@@ -50,17 +50,17 @@ use Google\Protobuf\StringValue;
  */
 class AddGoogleMyBusinessLocationExtensions
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const GMB_EMAIL_ADDRESS = 'INSERT_GMB_EMAIL_ADDRESS_HERE';
-    const GMB_ACCESS_TOKEN = 'INSERT_GMB_ACCESS_TOKEN_HERE';
-    const BUSINESS_ACCOUNT_IDENTIFIER = 'INSERT_BUSINESS_ACCOUNT_IDENTIFIER_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const GMB_EMAIL_ADDRESS = 'INSERT_GMB_EMAIL_ADDRESS_HERE';
+    private const GMB_ACCESS_TOKEN = 'INSERT_GMB_ACCESS_TOKEN_HERE';
+    private const BUSINESS_ACCOUNT_IDENTIFIER = 'INSERT_BUSINESS_ACCOUNT_IDENTIFIER_HERE';
 
     // The required scope for setting the OAuth info.
-    const GOOGLE_ADS_SCOPE = 'https://www.googleapis.com/auth/adwords';
+    private const GOOGLE_ADS_SCOPE = 'https://www.googleapis.com/auth/adwords';
     // The maximum number of customer feed ADD operation attempts to make before throwing an
     // exception.
-    const MAX_CUSTOMER_FEED_ADD_ATTEMPTS = 10;
-    const POLL_FREQUENCY_SECONDS = 5;
+    private const MAX_CUSTOMER_FEED_ADD_ATTEMPTS = 10;
+    private const POLL_FREQUENCY_SECONDS = 5;
 
     public static function main()
     {

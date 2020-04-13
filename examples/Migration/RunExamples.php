@@ -37,16 +37,16 @@ use Monolog\Handler\StreamHandler;
 /** This class creates the API client objects and runs the migration examples. */
 class RunExamples
 {
-    const DEVELOPER_TOKEN = 'INSERT_YOUR_DEVELOPER_TOKEN_HERE';
-    const CLIENT_ID = 'INSERT_YOUR_OAUTH2_CLIENT_ID_HERE';
-    const CLIENT_SECRET = 'INSERT_YOUR_OAUTH2_CLIENT_SECRET_HERE';
-    const REFRESH_TOKEN = 'INSERT_YOUR_OAUTH2_REFRESH_TOKEN_HERE';
+    private const DEVELOPER_TOKEN = 'INSERT_YOUR_DEVELOPER_TOKEN_HERE';
+    private const CLIENT_ID = 'INSERT_YOUR_OAUTH2_CLIENT_ID_HERE';
+    private const CLIENT_SECRET = 'INSERT_YOUR_OAUTH2_CLIENT_SECRET_HERE';
+    private const REFRESH_TOKEN = 'INSERT_YOUR_OAUTH2_REFRESH_TOKEN_HERE';
     // Replace the below string with your (client) customer ID as "an integer". Although the AdWords
     // API library can handle a client customer ID as a string with hyphens included, this variable
     // is also shared with the Google Ads API client library, which accepts only customer ID as an
     // integer.
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const PAGE_SIZE = 1000;
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const PAGE_SIZE = 1000;
 
     // Login Customer ID is a new configuration setting required in Google Ads API. This
     // is the customer ID of the authorized customer to use in the request, without
@@ -54,7 +54,7 @@ class RunExamples
     // this parameter is required and must be set to the customer ID of the manager account.
     // See https://developers.google.com/google-ads/api/docs/concepts/call-structure#login-customer-id
     // to learn more about this setting.
-    const LOGIN_CUSTOMER_ID = 'INSERT_LOGIN_CUSTOMER_ID_HERE';
+    private const LOGIN_CUSTOMER_ID = 'INSERT_LOGIN_CUSTOMER_ID_HERE';
 
     public static function main()
     {

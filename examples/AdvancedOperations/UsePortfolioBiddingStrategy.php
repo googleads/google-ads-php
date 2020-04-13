@@ -50,10 +50,10 @@ use Google\Protobuf\StringValue;
  */
 class UsePortfolioBiddingStrategy
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Optional: Specify a campaign budget ID below to be used to create a campaign. If none is
     // specified, this example will create a new campaign budget.
-    const CAMPAIGN_BUDGET_ID = null;
+    private const CAMPAIGN_BUDGET_ID = null;
 
     public static function main()
     {

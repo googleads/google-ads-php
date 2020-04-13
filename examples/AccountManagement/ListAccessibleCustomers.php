@@ -38,7 +38,7 @@ use Google\ApiCore\ApiException;
  */
 class ListAccessibleCustomers
 {
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

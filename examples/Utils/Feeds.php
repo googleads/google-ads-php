@@ -31,7 +31,7 @@ use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
  */
 final class Feeds
 {
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
     /**
      * Retrieves a feed item and its attribute values given a resource name.

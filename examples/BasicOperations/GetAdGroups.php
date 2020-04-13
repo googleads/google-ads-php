@@ -34,11 +34,11 @@ use Google\ApiCore\ApiException;
 /** This example retrieves ad groups. */
 class GetAdGroups
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Optional: Specify a campaign ID below to restrict search to only a given campaign.
-    const CAMPAIGN_ID = null;
+    private const CAMPAIGN_ID = null;
 
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

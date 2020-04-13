@@ -48,8 +48,8 @@ use Google\Protobuf\StringValue;
 /** Adds a real estate feed, creates the feed mapping, and adds items to the feed. */
 class AddRealEstateFeed
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const PAGE_SIZE = 1000;
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

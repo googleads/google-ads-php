@@ -67,15 +67,15 @@ use Google\Protobuf\StringValue;
  */
 class AddCompleteCampaignsUsingMutateJob
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
-    const NUMBER_OF_CAMPAIGNS_TO_ADD = 2;
-    const NUMBER_OF_AD_GROUPS_TO_ADD = 2;
-    const NUMBER_OF_KEYWORDS_TO_ADD = 4;
-    const POLL_FREQUENCY_SECONDS = 1;
-    const MAX_TOTAL_POLL_INTERVAL_SECONDS = 60;
+    private const NUMBER_OF_CAMPAIGNS_TO_ADD = 2;
+    private const NUMBER_OF_AD_GROUPS_TO_ADD = 2;
+    private const NUMBER_OF_KEYWORDS_TO_ADD = 4;
+    private const POLL_FREQUENCY_SECONDS = 1;
+    private const MAX_TOTAL_POLL_INTERVAL_SECONDS = 60;
 
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
     /** @var int the negative temporary ID used in mutate job operations. */
     private static $temporaryId = -1;

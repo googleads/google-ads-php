@@ -50,8 +50,8 @@ use Google\Protobuf\StringValue;
  */
 class AddSitelinks
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
 
     public static function main()
     {

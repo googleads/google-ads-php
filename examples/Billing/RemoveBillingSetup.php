@@ -39,8 +39,8 @@ use Google\ApiCore\ApiException;
  */
 class RemoveBillingSetup
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const BILLING_SETUP_ID = 'INSERT_BILLING_SETUP_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const BILLING_SETUP_ID = 'INSERT_BILLING_SETUP_ID_HERE';
 
     public static function main()
     {

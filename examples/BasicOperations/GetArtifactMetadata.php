@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2018 Google LLC
  *
@@ -42,8 +43,8 @@ use Google\Protobuf\StringValue;
  */
 class GetArtifactMetadata
 {
-    const ARTIFACT_NAME = 'INSERT_ARTIFACT_NAME_HERE';
-    const PAGE_SIZE = 1000;
+    private const ARTIFACT_NAME = 'INSERT_ARTIFACT_NAME_HERE';
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

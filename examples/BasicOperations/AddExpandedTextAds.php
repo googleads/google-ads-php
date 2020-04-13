@@ -40,10 +40,10 @@ use Google\Protobuf\StringValue;
 /** This example demonstrates how to add expanded text ads to a given ad group. */
 class AddExpandedTextAds
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
     // Specify the number of ads to be added in this example.
-    const NUMBER_OF_ADS_TO_ADD = 2;
+    private const NUMBER_OF_ADS_TO_ADD = 2;
 
     public static function main()
     {

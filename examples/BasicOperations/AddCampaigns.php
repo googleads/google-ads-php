@@ -45,8 +45,8 @@ use Google\Protobuf\StringValue;
 /** This example adds new campaigns to an account. */
 class AddCampaigns
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const NUMBER_OF_CAMPAIGNS_TO_ADD = 2;
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const NUMBER_OF_CAMPAIGNS_TO_ADD = 2;
 
     public static function main()
     {

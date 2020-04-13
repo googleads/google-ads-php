@@ -36,10 +36,10 @@ use Google\ApiCore\ApiException;
 /** This example adds a campaign label to a list of campaigns. */
 class AddCampaignLabels
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CAMPAIGN_ID_1 = 'INSERT_CAMPAIGN_ID_1_HERE';
-    const CAMPAIGN_ID_2 = 'INSERT_CAMPAIGN_ID_2_HERE';
-    const LABEL_ID = 'INSERT_LABEL_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CAMPAIGN_ID_1 = 'INSERT_CAMPAIGN_ID_1_HERE';
+    private const CAMPAIGN_ID_2 = 'INSERT_CAMPAIGN_ID_2_HERE';
+    private const LABEL_ID = 'INSERT_LABEL_ID_HERE';
 
     public static function main()
     {

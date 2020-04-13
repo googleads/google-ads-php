@@ -61,15 +61,15 @@ use Google\Protobuf\StringValue;
  */
 class AddHotelAds
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Specify your Hotels account ID below. You can see how to find the account ID in the Hotel
     // Ads Center at: https://support.google.com/hotelprices/answer/6399770.
     // This ID is the same account ID that you use in API requests to the Travel Partner APIs
     // (https://developers.google.com/hotels/hotel-ads/api-reference/).
-    const HOTEL_CENTER_ACCOUNT_ID = 'INSERT_HOTEL_CENTER_ACCOUNT_ID_HERE';
+    private const HOTEL_CENTER_ACCOUNT_ID = 'INSERT_HOTEL_CENTER_ACCOUNT_ID_HERE';
     // Specify maximum bid limit that can be set when creating a campaign using the Percent CPC
     // bidding strategy.
-    const CPC_BID_CEILING_MICRO_AMOUNT = 20000000;
+    private const CPC_BID_CEILING_MICRO_AMOUNT = 20000000;
 
     public static function main()
     {

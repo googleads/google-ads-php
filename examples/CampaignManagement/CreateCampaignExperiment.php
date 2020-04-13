@@ -41,9 +41,9 @@ use Google\Protobuf\StringValue;
  */
 class CreateCampaignExperiment
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const BASE_CAMPAIGN_ID = 'INSERT_BASE_CAMPAIGN_ID_HERE';
-    const DRAFT_ID = 'INSERT_DRAFT_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const BASE_CAMPAIGN_ID = 'INSERT_BASE_CAMPAIGN_ID_HERE';
+    private const DRAFT_ID = 'INSERT_DRAFT_ID_HERE';
 
     public static function main()
     {

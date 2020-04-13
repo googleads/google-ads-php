@@ -74,12 +74,12 @@ use Google\Protobuf\StringValue;
  */
 class AddSmartDisplayAd
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // See the descriptions of the 'marketing_images' and 'square_marketing_images' fields in
     // ResponsiveDisplayAdInfo.php for specifications of marketing and square marketing images.
     // They can be used to create an image asset for your customer account only once.
-    const MARKETING_IMAGE_URL = 'https://goo.gl/3b9Wfh';
-    const SQUARE_MARKETING_IMAGE_URL = 'https://goo.gl/mtt54n';
+    private const MARKETING_IMAGE_URL = 'https://goo.gl/3b9Wfh';
+    private const SQUARE_MARKETING_IMAGE_URL = 'https://goo.gl/mtt54n';
 
     public static function main()
     {

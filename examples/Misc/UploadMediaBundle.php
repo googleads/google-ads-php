@@ -38,8 +38,8 @@ use Google\Protobuf\StringValue;
 /** This example uploads an HTML5 zip file as a media bundle. */
 class UploadMediaBundle
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const BUNDLE_URL = 'https://goo.gl/9Y7qI2';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const BUNDLE_URL = 'https://goo.gl/9Y7qI2';
 
     public static function main()
     {

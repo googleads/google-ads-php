@@ -40,10 +40,10 @@ use Google\Protobuf\StringValue;
 /** This example demonstrates how to add a keyword to an ad group. */
 class AddKeywords
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
     // Specify the keyword text here or the default specified below will be used.
-    const KEYWORD_TEXT = 'mars cruise';
+    private const KEYWORD_TEXT = 'mars cruise';
 
     public static function main()
     {

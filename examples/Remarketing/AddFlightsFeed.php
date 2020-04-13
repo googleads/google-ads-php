@@ -48,8 +48,8 @@ use Google\Protobuf\StringValue;
 /** Adds a flights feed, creates the associated feed mapping, and adds a feed item. */
 class AddFlightsFeed
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const PAGE_SIZE = 1000;
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

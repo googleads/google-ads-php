@@ -48,14 +48,14 @@ use Google\Protobuf\StringValue;
  */
 class AddCampaignTargetingCriteria
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
     // Specify the keyword text to be created as a negative campaign criterion.
-    const KEYWORD_TEXT = 'INSERT_KEYWORD_TEXT_HERE';
+    private const KEYWORD_TEXT = 'INSERT_KEYWORD_TEXT_HERE';
     // Specify the location ID below.
     // For more information on determining LOCATION_ID value, see:
     // https://developers.google.com/adwords/api/docs/appendix/geotargeting.
-    const LOCATION_ID = 21167; // New York
+    private const LOCATION_ID = 21167; // New York
 
     public static function main()
     {

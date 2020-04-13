@@ -41,7 +41,7 @@ use Google\Protobuf\StringValue;
  */
 class CreateCustomer
 {
-    const MANAGER_CUSTOMER_ID = 'INSERT_MANAGER_CUSTOMER_ID_HERE';
+    private const MANAGER_CUSTOMER_ID = 'INSERT_MANAGER_CUSTOMER_ID_HERE';
 
     public static function main()
     {

@@ -39,10 +39,10 @@ use Google\ApiCore\ApiException;
  */
 class GetCampaignTargetingCriteria
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
 
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

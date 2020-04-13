@@ -44,9 +44,9 @@ use Google\Protobuf\StringValue;
  */
 class LinkManagerToClient
 {
-    const MANAGER_CUSTOMER_ID = 'INSERT_MANAGER_CUSTOMER_ID_HERE';
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const PAGE_SIZE = 50;
+    private const MANAGER_CUSTOMER_ID = 'INSERT_MANAGER_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const PAGE_SIZE = 50;
 
     public static function main()
     {

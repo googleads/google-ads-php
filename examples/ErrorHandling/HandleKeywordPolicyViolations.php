@@ -52,10 +52,10 @@ use Google\Protobuf\StringValue;
  */
 class HandleKeywordPolicyViolations
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
     // Specify the keyword text here or the default specified below will be used.
-    const KEYWORD_TEXT = 'abortion';
+    private const KEYWORD_TEXT = 'abortion';
 
     public static function main()
     {
