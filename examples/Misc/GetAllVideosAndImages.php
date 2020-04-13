@@ -35,8 +35,8 @@ use Google\ApiCore\ApiException;
 /** This example gets information about all video and image files. */
 class GetAllVideosAndImages
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const PAGE_SIZE = 1000;
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

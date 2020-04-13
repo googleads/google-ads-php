@@ -46,11 +46,11 @@ use Google\Protobuf\StringValue;
  */
 class UploadOfflineConversion
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
-    const GCLID = 'INSERT_GCLID_HERE';
-    const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
-    const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
+    private const GCLID = 'INSERT_GCLID_HERE';
+    private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
+    private const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
 
     public static function main()
     {

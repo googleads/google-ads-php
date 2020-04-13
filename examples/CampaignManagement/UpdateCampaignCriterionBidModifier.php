@@ -40,11 +40,11 @@ use Google\Protobuf\FloatValue;
  */
 class UpdateCampaignCriterionBidModifier
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
-    const CRITERION_ID = 'INSERT_CRITERION_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
+    private const CRITERION_ID = 'INSERT_CRITERION_ID_HERE';
     // Specify the bid modifier value here or the default specified below will be used.
-    const BID_MODIFIER_VALUE = 1.5;
+    private const BID_MODIFIER_VALUE = 1.5;
 
     public static function main()
     {

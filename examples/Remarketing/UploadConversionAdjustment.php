@@ -44,15 +44,15 @@ use Google\Protobuf\StringValue;
  */
 class UploadConversionAdjustment
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
-    const GCLID = 'INSERT_GCLID_HERE';
-    const ADJUSTMENT_TYPE = "INSERT_ADJUSTMENT_TYPE_HERE";
-    const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
-    const ADJUSTMENT_DATE_TIME = "INSERT_ADJUSTMENT_DATE_TIME_HERE";
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
+    private const GCLID = 'INSERT_GCLID_HERE';
+    private const ADJUSTMENT_TYPE = "INSERT_ADJUSTMENT_TYPE_HERE";
+    private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
+    private const ADJUSTMENT_DATE_TIME = "INSERT_ADJUSTMENT_DATE_TIME_HERE";
     // Optional: Specify an adjusted value below for adjustment type RESTATEMENT.
     // This value will be ignored if you specify RETRACTION as adjustment type.
-    const RESTATEMENT_VALUE = null;
+    private const RESTATEMENT_VALUE = null;
 
     public static function main()
     {

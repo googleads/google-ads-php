@@ -50,10 +50,10 @@ use Google\Protobuf\StringValue;
  */
 class AddGmailAd
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
-    const LOGO_IMAGE_URL = 'https://goo.gl/mtt54n';
-    const MARKETING_IMAGE_URL = 'https://goo.gl/3b9Wfh';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const LOGO_IMAGE_URL = 'https://goo.gl/mtt54n';
+    private const MARKETING_IMAGE_URL = 'https://goo.gl/3b9Wfh';
 
     public static function main()
     {

@@ -39,12 +39,12 @@ use Google\ApiCore\ApiException;
  */
 class ApplyRecommendation
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Recommendation ID is the last alphanumeric portion of the value from
     // ResourceNames::forRecommendation(), which has the format of
     // `customers/<customer_id>/recommendations/<recommendation_id>`.
     // Its example can be retrieved from GetTextAdRecommendations.php
-    const RECOMMENDATION_ID = 'INSERT_RECOMMENDATION_ID_HERE';
+    private const RECOMMENDATION_ID = 'INSERT_RECOMMENDATION_ID_HERE';
 
     public static function main()
     {

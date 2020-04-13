@@ -38,9 +38,9 @@ use Google\Protobuf\Int64Value;
 /** This example sets ad parameters for an ad group criterion. */
 class SetAdParameters
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
-    const CRITERION_ID = 'INSERT_CRITERION_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const CRITERION_ID = 'INSERT_CRITERION_ID_HERE';
 
     public static function main()
     {

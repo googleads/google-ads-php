@@ -59,11 +59,11 @@ use Google\Protobuf\StringValue;
  */
 class AddShoppingProductListingGroupTree
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
-    const SHOULD_REPLACE_EXISTING_TREE = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const SHOULD_REPLACE_EXISTING_TREE = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
 
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

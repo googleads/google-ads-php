@@ -52,10 +52,10 @@ use Google\Protobuf\Int64Value;
  */
 class RemoveFlightsFeedItemAttributeValue
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const FEED_ID = 'INSERT_FEED_ID_HERE';
-    const FEED_ITEM_ID = 'INSERT_FEED_ITEM_ID_HERE';
-    const FLIGHT_PLACEHOLDER_FIELD_NAME = 'INSERT_FLIGHT_PLACEHOLDER_FIELD_NAME_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const FEED_ID = 'INSERT_FEED_ID_HERE';
+    private const FEED_ITEM_ID = 'INSERT_FEED_ITEM_ID_HERE';
+    private const FLIGHT_PLACEHOLDER_FIELD_NAME = 'INSERT_FLIGHT_PLACEHOLDER_FIELD_NAME_HERE';
 
     public static function main()
     {

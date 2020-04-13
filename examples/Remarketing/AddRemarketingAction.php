@@ -43,9 +43,9 @@ use Google\Protobuf\StringValue;
  */
 class AddRemarketingAction
 {
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
     public static function main()
     {

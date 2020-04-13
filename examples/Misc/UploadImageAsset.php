@@ -43,8 +43,8 @@ use Google\Protobuf\StringValue;
 /** This example uploads an image asset. To get image assets, run GetAllImageAssets.php. */
 class UploadImageAsset
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const IMAGE_URL = 'https://goo.gl/3b9Wfh';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const IMAGE_URL = 'https://goo.gl/3b9Wfh';
 
     public static function main()
     {

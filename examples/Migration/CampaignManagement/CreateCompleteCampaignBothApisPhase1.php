@@ -83,7 +83,7 @@ class CreateCompleteCampaignBothApisPhase1
     ];
 
     // The default page size for search queries.
-    const PAGE_SIZE = 1000;
+    private const PAGE_SIZE = 1000;
 
     /**
      * Runs the CreateCompleteCampaignBothApisPhase1 example.

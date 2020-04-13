@@ -44,8 +44,8 @@ use Google\ApiCore\ApiException;
 class GetAccountHierarchy
 {
     // Optional: Inserts the manager customer ID below.
-    const MANAGER_CUSTOMER_ID = null;
-    const PAGE_SIZE = 1000;
+    private const MANAGER_CUSTOMER_ID = null;
+    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

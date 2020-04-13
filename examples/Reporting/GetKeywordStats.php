@@ -39,7 +39,7 @@ use Google\ApiCore\ApiException;
  */
 class GetKeywordStats
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
     public static function main()
     {

@@ -40,8 +40,8 @@ use Google\ApiCore\ApiException;
  */
 class GenerateForecastMetrics
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const KEYWORD_PLAN_ID = 'INSERT_KEYWORD_PLAN_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const KEYWORD_PLAN_ID = 'INSERT_KEYWORD_PLAN_ID_HERE';
 
     public static function main()
     {

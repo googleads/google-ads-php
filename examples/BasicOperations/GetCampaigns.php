@@ -35,7 +35,7 @@ use Google\ApiCore\ApiException;
 /** This example gets all campaigns. To add campaigns, run AddCampaigns.php. */
 class GetCampaigns
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
     public static function main()
     {

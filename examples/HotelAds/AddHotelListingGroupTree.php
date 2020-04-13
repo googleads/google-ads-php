@@ -56,13 +56,13 @@ use Google\Protobuf\StringValue;
  */
 class AddHotelListingGroupTree
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
 
     // Specify the CPC bid micro amount to be set on a created ad group criterion.
     // For simplicity, each ad group criterion will use the below amount equally. In practice, you
     // probably want to use different values for each ad group criterion.
-    const PERCENT_CPC_BID_MICRO_AMOUNT = 1000000;
+    private const PERCENT_CPC_BID_MICRO_AMOUNT = 1000000;
 
     /**
      * @var int $nextTempId

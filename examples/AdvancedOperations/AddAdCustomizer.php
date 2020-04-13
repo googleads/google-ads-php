@@ -57,15 +57,15 @@ use Google\ApiCore\ApiException;
  */
 class AddAdCustomizer
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID_1 = 'INSERT_AD_GROUP_ID_1_HERE';
-    const AD_GROUP_ID_2 = 'INSERT_AD_GROUP_ID_2_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID_1 = 'INSERT_AD_GROUP_ID_1_HERE';
+    private const AD_GROUP_ID_2 = 'INSERT_AD_GROUP_ID_2_HERE';
 
     // We're creating two different ad groups to be dynamically populated by the same feed.
-    const NUMBER_OF_AD_GROUPS = 2;
+    private const NUMBER_OF_AD_GROUPS = 2;
 
     // We're doing only searches by resource_name in this example, we can set page size = 1.
-    const PAGE_SIZE = 1;
+    private const PAGE_SIZE = 1;
 
     public static function main()
     {

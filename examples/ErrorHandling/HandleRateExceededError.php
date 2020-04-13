@@ -50,17 +50,17 @@ use Exception;
  */
 class HandleRateExceededError
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
 
     // Number of requests to be run.
-    const NUM_REQUESTS = 5;
+    private const NUM_REQUESTS = 5;
     // Number of keywords to be validated in each API call.
-    const NUM_KEYWORDS = 100;
+    private const NUM_KEYWORDS = 100;
     // Number of retries to be run in case of a RateExceededError.
-    const NUM_RETRIES = 3;
+    private const NUM_RETRIES = 3;
     // Minimum number of seconds to wait before a retry.
-    const RETRY_SECONDS = 10;
+    private const RETRY_SECONDS = 10;
 
     public static function main()
     {

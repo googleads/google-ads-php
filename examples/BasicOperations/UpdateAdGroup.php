@@ -42,9 +42,9 @@ use Google\Protobuf\Int64Value;
  */
 class UpdateAdGroup
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
-    const CPC_BID_MICRO_AMOUNT = 'INSERT_CPC_BID_MICRO_AMOUNT_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
+    private const CPC_BID_MICRO_AMOUNT = 'INSERT_CPC_BID_MICRO_AMOUNT_HERE';
 
     public static function main()
     {

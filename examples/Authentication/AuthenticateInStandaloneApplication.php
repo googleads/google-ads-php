@@ -39,19 +39,19 @@ class AuthenticateInStandaloneApplication
      * @var string the OAuth2 scope for the Google Ads API
      * @see https://developers.google.com/google-ads/api/docs/oauth/internals#scope
      */
-    const SCOPE = 'https://www.googleapis.com/auth/adwords';
+    private const SCOPE = 'https://www.googleapis.com/auth/adwords';
 
     /**
      * @var string the Google OAuth2 authorization URI for OAuth2 requests
      * @see https://developers.google.com/identity/protocols/OAuth2InstalledApp#step-2-send-a-request-to-googles-oauth-20-server
      */
-    const AUTHORIZATION_URI = 'https://accounts.google.com/o/oauth2/v2/auth';
+    private const AUTHORIZATION_URI = 'https://accounts.google.com/o/oauth2/v2/auth';
 
     /**
      * @var string the redirect URI for OAuth2 installed application flows
      * @see https://developers.google.com/identity/protocols/OAuth2InstalledApp#request-parameter-redirect_uri
      */
-    const REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob';
+    private const REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob';
 
     public static function main()
     {

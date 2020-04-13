@@ -42,9 +42,9 @@ use Google\Protobuf\StringValue;
  */
 class AddCampaignBidModifier
 {
-    const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
-    const BID_MODIFIER_VALUE = 'INSERT_BID_MODIFIER_VALUE_HERE';
+    private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
+    private const BID_MODIFIER_VALUE = 'INSERT_BID_MODIFIER_VALUE_HERE';
 
     public static function main()
     {
