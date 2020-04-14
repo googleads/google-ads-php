@@ -187,7 +187,7 @@ class AddCompleteCampaignsUsingMutateJob
     ) {
         $response = $mutateJobServiceClient->addMutateJobOperations(
             $mutateJobResourceName,
-            null,
+            '',
             self::buildAllOperations($customerId)
         );
         printf(
