@@ -31,7 +31,6 @@ use Google\Ads\GoogleAds\Util\V3\ResourceNames;
 use Google\Ads\GoogleAds\V3\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Services\ConversionAdjustment;
-use Google\Ads\GoogleAds\V3\Services\ConversionAdjustmentResult;
 use Google\Ads\GoogleAds\V3\Services\GclidDateTimePair;
 use Google\Ads\GoogleAds\V3\Services\RestatementValue;
 use Google\ApiCore\ApiException;
@@ -173,15 +172,24 @@ class UploadConversionAdjustment
             ['partialFailure' => true]
         );
 
-        // Prints the result.
-        /** @var ConversionAdjustmentResult $uploadedConversionAdjustment */
-        $uploadedConversionAdjustment = $response->getResults()[0];
-        printf(
-            "Uploaded conversion adjustment of '%s' for Google Click ID '%s'.%s",
-            $uploadedConversionAdjustment->getConversionActionUnwrapped(),
-            $uploadedConversionAdjustment->getGclidDateTimePair()->getGclidUnwrapped(),
-            PHP_EOL
-        );
+        // Prints any partial errors returned.
+        if (!is_null($response->getPartialFailureError())) {
+            printf(
+                "Partial failures occurred: '%s'.%s",
+                $response->getPartialFailureError()->getMessage(),
+                PHP_EOL
+            );
+        } else {
+            // Prints the result if exists.
+            /** @var ConversionAdjustment $uploadedConversionAdjustment */
+            $uploadedConversionAdjustment = $response->getResults()[0];
+            printf(
+                "Uploaded conversion adjustment of '%s' for Google Click ID '%s'.%s",
+                $uploadedConversionAdjustment->getConversionActionUnwrapped(),
+                $uploadedConversionAdjustment->getGclidDateTimePair()->getGclidUnwrapped(),
+                PHP_EOL
+            );
+        }
     }
 }
 
