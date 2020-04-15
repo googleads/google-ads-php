@@ -27,12 +27,9 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V3\GoogleAdsErrors;
-use Google\Ads\GoogleAds\Util\V3\PartialFailures;
 use Google\Ads\GoogleAds\Util\V3\ResourceNames;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Services\ClickConversion;
-use Google\Ads\GoogleAds\V3\Services\ClickConversionResult;
 use Google\Ads\GoogleAds\V3\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\DoubleValue;
@@ -129,40 +126,6 @@ class UploadOfflineConversion
         string $conversionDateTime,
         float $conversionValue
     ) {
-        $response = self::uploadClickConversion(
-            $googleAdsClient,
-            $customerId,
-            $conversionActionId,
-            $gclid,
-            $conversionDateTime,
-            $conversionValue
-        );
-        self::checkIfPartialFailureErrorExists($response);
-        self::printResults($response);
-    }
-
-    /**
-     * Uploads click conversion by enabling partial failure mode.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the customer ID
-     * @param int $conversionActionId the ID of the conversion action to upload to
-     * @param string $gclid the GCLID for the conversion (should be newer than the number of days
-     *      set on the conversion window of the conversion action)
-     * @param string $conversionDateTime the date and time of the conversion (should be after the
-     *      click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
-     *      “2019-01-01 12:32:45-08:00”
-     * @param float $conversionValue the value of the conversion
-     * @return UploadClickConversionsResponse
-     */
-    private static function uploadClickConversion(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        int $conversionActionId,
-        string $gclid,
-        string $conversionDateTime,
-        float $conversionValue
-    ) {
         // Creates a click conversion by specifying currency as USD.
         $clickConversion = new ClickConversion([
             'conversion_action' => new StringValue([
@@ -177,68 +140,33 @@ class UploadOfflineConversion
         // Issues a request to upload the click conversion.
         $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
         /** @var UploadClickConversionsResponse $response */
-        return $conversionUploadServiceClient->uploadClickConversions(
+        $response = $conversionUploadServiceClient->uploadClickConversions(
             $customerId,
             [$clickConversion],
             ['partialFailure' => true]
         );
-    }
 
-    /**
-     * Checks if there exists partial failure error in the given upload click conversions response.
-     *
-     * @param UploadClickConversionsResponse $response the upload click conversions response
-     */
-    private static function checkIfPartialFailureErrorExists(
-        UploadClickConversionsResponse $response
-    ) {
+        // Prints the status message if any partial failure error is returned.
+        // Note: The details of each partial failure error are not printed here, you can refer to
+        // the example HandlePartialFailure.php to learn more.
         if (!is_null($response->getPartialFailureError())) {
-            printf("Partial failures occurred. Details will be shown below.%s", PHP_EOL);
-        } else {
             printf(
-                "All operations completed successfully. No partial failures to show.%s",
+                "Partial failures occurred: '%s'.%s",
+                $response->getPartialFailureError()->getMessage(),
                 PHP_EOL
             );
-        }
-    }
-
-    /**
-     * Prints results of the given upload click conversions response. For those that are partial
-     * failure, print all their errors with corresponding operation indices. For those that
-     * succeeded, print their related information.
-     *
-     * @param UploadClickConversionsResponse $response the upload click conversions response
-     */
-    private static function printResults(UploadClickConversionsResponse $response)
-    {
-        // Finds the failed operations by looping through the results.
-        $operationIndex = 0;
-        foreach ($response->getResults() as $result) {
-            /** @var ClickConversionResult $result */
-            if (PartialFailures::isPartialFailure($result)) {
-                $errors = GoogleAdsErrors::fromStatus(
-                    $operationIndex,
-                    $response->getPartialFailureError()
-                );
-                foreach ($errors as $error) {
-                    printf(
-                        "Operation %d failed with error: %s%s",
-                        $operationIndex,
-                        $error->getMessage(),
-                        PHP_EOL
-                    );
-                }
-            } else {
-                printf(
-                    "Uploaded conversion that occurred at '%s' from Google Click ID '%s' " .
-                    "to '%s'.%s",
-                    $result->getConversionDateTimeUnwrapped(),
-                    $result->getGclidUnwrapped(),
-                    $result->getConversionActionUnwrapped(),
-                    PHP_EOL
-                );
-            }
-            $operationIndex++;
+        } else {
+            // Prints the result if exists.
+            /** @var ClickConversion $uploadedClickConversion */
+            $uploadedClickConversion = $response->getResults()[0];
+            printf(
+                "Uploaded click conversion that occurred at '%s' from Google Click ID '%s' " .
+                "to '%s'.%s",
+                $uploadedClickConversion->getConversionDateTimeUnwrapped(),
+                $uploadedClickConversion->getGclidUnwrapped(),
+                $uploadedClickConversion->getConversionActionUnwrapped(),
+                PHP_EOL
+            );
         }
     }
 }
