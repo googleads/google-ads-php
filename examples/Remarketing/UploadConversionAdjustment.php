@@ -172,7 +172,9 @@ class UploadConversionAdjustment
             ['partialFailure' => true]
         );
 
-        // Prints any partial errors returned.
+        // Prints the status message if any partial failure error is returned.
+        // Note: The details of each partial failure error are not printed here, you can refer to
+        // the example HandlePartialFailure.php to learn more.
         if (!is_null($response->getPartialFailureError())) {
             printf(
                 "Partial failures occurred: '%s'.%s",
