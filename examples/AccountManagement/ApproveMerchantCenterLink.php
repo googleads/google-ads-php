@@ -128,7 +128,7 @@ class ApproveMerchantCenterLink
                 PHP_EOL
             );
             // Approves a pending link request for a Google Ads account with the specified customer
-            // ID from a Merchant Center account with the specified merchant center account ID.
+            // ID from a Merchant Center account with the specified Merchant Center account ID.
             if (
                 $merchantCenterLink->getIdUnwrapped() === $merchantCenterAccountId
                 && $merchantCenterLink->getStatus() === MerchantCenterLinkStatus::PENDING
@@ -148,13 +148,13 @@ class ApproveMerchantCenterLink
     }
 
     /**
-     * Updates the status of a Merchant Center link with a specified merchant center link status.
+     * Updates the status of a Merchant Center link with a specified Merchant Center link status.
      *
      * @param MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient the Merchant Center
      *     link service client
      * @param int $customerId the customer ID
      * @param MerchantCenterLink $merchantCenterLink the Merchant Center link to update
-     * @param int $merchantCenterLinkStatusToUpdate the  status to be updated to
+     * @param int $merchantCenterLinkStatusToUpdate the status to be updated to
      */
     private static function updateMerchantCenterLinkStatus(
         MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient,
@@ -169,16 +169,16 @@ class ApproveMerchantCenterLink
             'status' => $merchantCenterLinkStatusToUpdate
         ]);
 
-        // Constructs an operation that will update the merchant center link,
+        // Constructs an operation that will update the Merchant Center link,
         // using the FieldMasks utility to derive the update mask. This mask tells the
-        // Google Ads API which attributes of the merchant center link you want to change.
+        // Google Ads API which attributes of the Merchant Center link you want to change.
         $merchantCenterLinkOperation = new MerchantCenterLinkOperation();
         $merchantCenterLinkOperation->setUpdate($merchantCenterLinkToUpdate);
         $merchantCenterLinkOperation->setUpdateMask(
             FieldMasks::allSetFieldsOf($merchantCenterLinkToUpdate)
         );
 
-        // Issues a mutate request to update the merchant center link and prints some
+        // Issues a mutate request to update the Merchant Center link and prints some
         // information.
         $response = $merchantCenterLinkServiceClient->mutateMerchantCenterLink(
             $customerId,
