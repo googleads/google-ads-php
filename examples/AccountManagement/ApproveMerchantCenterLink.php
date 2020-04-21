@@ -43,6 +43,7 @@ use Google\ApiCore\ApiException;
  *
  * <p>To run this example, you must use the Merchant Center UI or the Content API for Shopping to
  * send a link request between your Merchant Center and Google Ads accounts.
+ * See https://support.google.com/merchants/answer/6159060 for details.
  */
 class ApproveMerchantCenterLink
 {
@@ -154,19 +155,19 @@ class ApproveMerchantCenterLink
      *     link service client
      * @param int $customerId the customer ID
      * @param MerchantCenterLink $merchantCenterLink the Merchant Center link to update
-     * @param int $merchantCenterLinkStatusToUpdate the status to be updated to
+     * @param int $newMerchantCenterLinkStatus the status to be updated to
      */
     private static function updateMerchantCenterLinkStatus(
         MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient,
         int $customerId,
         MerchantCenterLink $merchantCenterLink,
-        int $merchantCenterLinkStatusToUpdate
+        int $newMerchantCenterLinkStatus
     ) {
         // Creates an updated MerchantCenterLink object derived from the original, but with the
         // specified status.
         $merchantCenterLinkToUpdate = new MerchantCenterLink([
             'resource_name' => $merchantCenterLink->getResourceName(),
-            'status' => $merchantCenterLinkStatusToUpdate
+            'status' => $newMerchantCenterLinkStatus
         ]);
 
         // Constructs an operation that will update the Merchant Center link,
