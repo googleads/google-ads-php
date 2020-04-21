@@ -32,22 +32,31 @@ use Google\Ads\GoogleAds\V3\Enums\MerchantCenterLinkStatusEnum\MerchantCenterLin
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Resources\MerchantCenterLink;
 use Google\Ads\GoogleAds\V3\Services\MerchantCenterLinkOperation;
+use Google\Ads\GoogleAds\V3\Services\MerchantCenterLinkServiceClient;
 use Google\ApiCore\ApiException;
 
 /**
- * This code example accepts all pending invitations from Google Merchant Center accounts
- * to your Google Ads account.
+ * Demonstrates how to approve a Merchant Center link request.
+ *
+ * <p>Prerequisite: You need to have access to a Merchant Center account. You can find instructions
+ * to create a Merchant Center account here: https://support.google.com/merchants/answer/188924.
+ *
+ * <p>To run this example, you must use the Merchant Center UI or the Content API for Shopping to
+ * send a link request between your Merchant Center and Google Ads accounts.
  */
-class AcceptServiceLinks
+class ApproveMerchantCenterLink
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    private const MERCHANT_CENTER_ACCOUNT_ID = 'INSERT_MERCHANT_CENTER_ACCOUNT_ID_HERE';
 
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT
+
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -62,7 +71,8 @@ class AcceptServiceLinks
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID
+                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
+                $options[ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID] ?: self::MERCHANT_CENTER_ACCOUNT_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -94,46 +104,94 @@ class AcceptServiceLinks
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
+     * @param int $merchantCenterAccountId the Merchant Center account ID
      */
-    public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
-    {
+    public static function runExample(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        int $merchantCenterAccountId
+    ) {
         // Lists all merchant links of the specified customer ID.
         $merchantCenterLinkServiceClient = $googleAdsClient->getMerchantCenterLinkServiceClient();
         $response = $merchantCenterLinkServiceClient->listMerchantCenterLinks($customerId);
+        printf(
+            "%d Merchant Center link(s) found with the following details:%s",
+            $response->getMerchantCenterLinks()->count(),
+            PHP_EOL
+        );
         foreach ($response->getMerchantCenterLinks() as $merchantCenterLink) {
             /** @var MerchantCenterLink $merchantCenterLink */
-            if ($merchantCenterLink->getStatus() === MerchantCenterLinkStatus::PENDING) {
-                // Enables the pending link.
-                $merchantCenterLinkToUpdate = new MerchantCenterLink([
-                    'resource_name' => $merchantCenterLink->getResourceName(),
-                    'status' => MerchantCenterLinkStatus::ENABLED
-                ]);
-
-                // Constructs an operation that will update the merchant center link,
-                // using the FieldMasks utility to derive the update mask. This mask tells the
-                // Google Ads API which attributes of the merchant center link you want to change.
-                $merchantCenterLinkOperation = new MerchantCenterLinkOperation();
-                $merchantCenterLinkOperation->setUpdate($merchantCenterLinkToUpdate);
-                $merchantCenterLinkOperation->setUpdateMask(
-                    FieldMasks::allSetFieldsOf($merchantCenterLinkToUpdate)
-                );
-
-                // Issues a mutate request to update the merchant center link and prints some
-                // information.
-                $response = $merchantCenterLinkServiceClient->mutateMerchantCenterLink(
+            printf(
+                "Link '%s' has status '%s'.%s",
+                $merchantCenterLink->getResourceName(),
+                MerchantCenterLinkStatus::name($merchantCenterLink->getStatus()),
+                PHP_EOL
+            );
+            // Approves a pending link request for a Google Ads account with the specified customer
+            // ID from a Merchant Center account with the specified merchant center account ID.
+            if (
+                $merchantCenterLink->getIdUnwrapped() === $merchantCenterAccountId
+                && $merchantCenterLink->getStatus() === MerchantCenterLinkStatus::PENDING
+            ) {
+                // Updates the status of Merchant Center link to 'ENABLED' to approve the link.
+                self::updateMerchantCenterLinkStatus(
+                    $merchantCenterLinkServiceClient,
                     $customerId,
-                    $merchantCenterLinkOperation
+                    $merchantCenterLink,
+                    MerchantCenterLinkStatus::ENABLED
                 );
-                printf(
-                    "Enabled a Merchant Center Link with resource name '%s' to the Google Ads "
-                    . "account '%s'.%s",
-                    $response->getResult()->getResourceName(),
-                    $customerId,
-                    PHP_EOL
-                );
+                // There is only one MerchantCenterLink object for a given Google Ads account and
+                // Merchant Center account, so we can break early.
+                break;
             }
         }
     }
+
+    /**
+     * Updates the status of a Merchant Center link with a specified merchant center link status.
+     *
+     * @param MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient the Merchant Center
+     *     link service client
+     * @param int $customerId the customer ID
+     * @param MerchantCenterLink $merchantCenterLink the Merchant Center link to update
+     * @param int $merchantCenterLinkStatusToUpdate the  status to be updated to
+     */
+    private static function updateMerchantCenterLinkStatus(
+        MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient,
+        int $customerId,
+        MerchantCenterLink $merchantCenterLink,
+        int $merchantCenterLinkStatusToUpdate
+    ) {
+        // Creates an updated MerchantCenterLink object derived from the original, but with the
+        // specified status.
+        $merchantCenterLinkToUpdate = new MerchantCenterLink([
+            'resource_name' => $merchantCenterLink->getResourceName(),
+            'status' => $merchantCenterLinkStatusToUpdate
+        ]);
+
+        // Constructs an operation that will update the merchant center link,
+        // using the FieldMasks utility to derive the update mask. This mask tells the
+        // Google Ads API which attributes of the merchant center link you want to change.
+        $merchantCenterLinkOperation = new MerchantCenterLinkOperation();
+        $merchantCenterLinkOperation->setUpdate($merchantCenterLinkToUpdate);
+        $merchantCenterLinkOperation->setUpdateMask(
+            FieldMasks::allSetFieldsOf($merchantCenterLinkToUpdate)
+        );
+
+        // Issues a mutate request to update the merchant center link and prints some
+        // information.
+        $response = $merchantCenterLinkServiceClient->mutateMerchantCenterLink(
+            $customerId,
+            $merchantCenterLinkOperation
+        );
+        printf(
+            "Approved a Merchant Center Link with resource name '%s' to the Google Ads "
+            . "account '%s'.%s",
+            $response->getResult()->getResourceName(),
+            $customerId,
+            PHP_EOL
+        );
+    }
 }
 
-AcceptServiceLinks::main();
+ApproveMerchantCenterLink::main();
