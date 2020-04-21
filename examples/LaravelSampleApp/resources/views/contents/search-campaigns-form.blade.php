@@ -24,7 +24,7 @@
                 <label for="clientCustomerId" class="col-sm-2 col-form-label">Client customer ID</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="clientCustomerId" name="clientCustomerId"
-                           aria-describedby="clientCustomerIdHelp"
+                           aria-describedby="clientCustomerIdHelp" value="7556834180"
                            placeholder="Enter your client customer ID" required>
                     <small id="clientCustomerIdHelp" class="form-text text-muted">The client customer ID that
                         will be used to search all campaigns, e.g., 1234567890 or 123-456-7890.

@@ -17,5 +17,6 @@
 @section('content')
     @include('contents.instructions')
     @include('contents.search-campaigns-form')
+    @include('contents.show-report-form')
 @endsection
 

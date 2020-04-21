@@ -26,3 +26,8 @@ Route::match(
     'search-campaigns',
     'GoogleAdsApiController@searchCampaignsAction'
 );
+Route::match(
+    ['get', 'post'],
+    'show-report',
+    'GoogleAdsApiController@showReportAction'
+);

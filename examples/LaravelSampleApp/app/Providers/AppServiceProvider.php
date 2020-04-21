@@ -30,23 +30,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Bind some classes related to the Google Ads API client library for
-        $this->app->bind(
-            'Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder',
-            function () {
-                return new GoogleAdsClientBuilder();
-            }
-        );
-        $this->app->bind(
-            'Google\Auth\FetchAuthTokenInterface',
-            function () {
-                // Generate a refreshable OAuth2 credential for authentication
-                // from the config file.
-                return (new OAuth2TokenBuilder())->fromFile(
-                    config('app.google_ads_php_path')
-                )->build();
-            }
-        );
+        // Bind the Google Ads API client
+        $this->app->singleton('Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient', function () {
+            // Construct a Google Ads client configured from a properties file.
+            return (new GoogleAdsClientBuilder())
+                ->fromFile(config('app.google_ads_php_path'))
+                ->withOAuth2Credential((new OAuth2TokenBuilder())
+                    ->fromFile(config('app.google_ads_php_path'))
+                    ->build())
+                ->build();
+        });
     }
 
     /**
