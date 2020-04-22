@@ -49,7 +49,7 @@
                 <div class="col-sm-4">
                     <select class="form-control" id="reportType" name="reportType">
                         <option selected>campaign</option>
-                        <option>ad_group</option>
+                        <option>customer</option>
                     </select>
                     <small id="reportTypeExplanation" class="form-text text-muted">Some fields
                         specific to the specified type will also be selected. For example,
@@ -69,8 +69,7 @@
                     </legend>
                     <div class="col-sm-4">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="impressions" name="impressions"
-                                   value="metrics.impressions"
+                            <input type="checkbox" class="form-check-input" id="impressions" name="impressions" value="metrics.impressions"
                                    checked>
                             <label class="form-check-label" for="impressions"><code>metrics.impressions</code></label>
                         </div>
@@ -80,9 +79,7 @@
                             <label class="form-check-label" for="clicks"><code>metrics.clicks</code></label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="ctr"
-                                   name="ctr"
-                                   value="metrics.ctr"
+                            <input type="checkbox" class="form-check-input" id="ctr" name="ctr" value="metrics.ctr"
                                    checked>
                             <label class="form-check-label" for="ctr"><code>metrics.ctr</code></label>
                         </div>
@@ -107,7 +104,6 @@
                         <option selected>20</option>
                         <option>50</option>
                         <option>100</option>
-                        <option>200</option>
                     </select>
                 </div>
             </div>
@@ -119,4 +115,3 @@
         </form>
     </div>
 </div>
-

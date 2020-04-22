@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace App\Providers;
 
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
@@ -30,9 +31,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Bind the Google Ads API client
+        // Binds the Google Ads API client.
         $this->app->singleton('Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient', function () {
-            // Construct a Google Ads client configured from a properties file.
+            // Constructs a Google Ads API client configured from the properties file.
             return (new GoogleAdsClientBuilder())
                 ->fromFile(config('app.google_ads_php_path'))
                 ->withOAuth2Credential((new OAuth2TokenBuilder())

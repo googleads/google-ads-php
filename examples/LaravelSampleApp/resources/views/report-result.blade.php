@@ -47,4 +47,3 @@
     {{ $paginatedResults->links() }}
     @include('includes.result-back')
 @stop
-

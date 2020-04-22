@@ -23,7 +23,7 @@
         target="_blank">these instructions</a> to get them.
     </li>
     <li>
-        Copy your <a href="https://github.com/googleads/google-ads-php/blob/master/examples/Authentication/google_ads_php.ini"
+        Copy your configured <a href="https://github.com/googleads/google-ads-php/blob/master/examples/Authentication/google_ads_php.ini"
         target="_blank"><code>google_ads_php.ini</code></a>, needed for the Google Ads API client library for PHP, to the
         root directory of this sample app.
     </li>

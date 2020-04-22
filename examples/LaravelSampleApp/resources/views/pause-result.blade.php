@@ -32,8 +32,7 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Campaign Status</label>
             <div class="col-sm-4">
-                <input readonly type="text" class="form-control"
-                       value="{{ $campaign['status'] }}">
+                <input readonly type="text" class="form-control" value="{{ $campaign['status'] }}">
             </div>
         </div>
     </form>
