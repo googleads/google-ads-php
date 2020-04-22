@@ -13,7 +13,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<h2>Steps:</h2>
+<h2>Steps</h2>
 <ol>
     <li>
         Make sure you have an <a href="https://developers.google.com/google-ads/api/docs/first-call/oauth-cloud-project"
@@ -28,9 +28,6 @@
         root directory of this sample app.
     </li>
     <li>
-        That's it! You can start using this sample app to
-        <a href="https://developers.google.com/google-ads/api/docs/samples/get-campaigns">
-            <strong>search all campaigns using the GoogleAdsService</strong>
-        </a>.
+        That's it!
     </li>
 </ol>

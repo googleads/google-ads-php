@@ -33,8 +33,8 @@
                     <input type="text" class="form-control" id="clientCustomerId" name="clientCustomerId"
                            aria-describedby="clientCustomerIdHelp"
                            placeholder="Enter your client customer ID" required>
-                    <small id="clientCustomerIdHelp" class="form-text text-muted">This is a client customer ID that
-                        will be used to show the report.
+                    <small id="clientCustomerIdHelp" class="form-text text-muted">The ID of the
+                        customer account to show the report for, e.g., 1234567890.
                     </small>
                 </div>
             </div>

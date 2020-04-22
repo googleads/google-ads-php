@@ -15,7 +15,8 @@
 -->
 @extends('layouts.default')
 @section('content')
-    @include('includes.results-back')
+    <h2>Result</h2>
+    @include('includes.result-back')
     <div class="container-fluid mt-2">
         <table class="table">
             <thead>
@@ -31,7 +32,8 @@
                 <tr>
                     <th scope="row">{{ $index + 1 }}</th>
                     @foreach ($selectedFields as $field)
-                        <td>{{ $row[explode(".", $field)[0]][explode(".", $field)[1]] }}</td>
+                        <td>{{
+                            $row[explode(".", $field)[0]][explode(".",$field)[1]] ?? 'N/A' }}</td>
                     @endforeach
                 </tr>
             @empty
@@ -43,6 +45,6 @@
     </div>
 
     {{ $paginatedResults->links() }}
-    @include('includes.results-back')
+    @include('includes.result-back')
 @stop
 

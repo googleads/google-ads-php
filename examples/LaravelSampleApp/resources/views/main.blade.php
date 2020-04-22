@@ -16,7 +16,7 @@
 @extends('layouts.default')
 @section('content')
     @include('contents.instructions')
-    @include('contents.search-campaigns-form')
+    @include('contents.pause-campaign-form')
     @include('contents.show-report-form')
 @endsection
 

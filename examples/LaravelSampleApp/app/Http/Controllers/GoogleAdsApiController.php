@@ -20,6 +20,11 @@ namespace App\Http\Controllers;
 
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\FieldMasks;
+use Google\Ads\GoogleAds\Util\V3\ResourceNames;
+use Google\Ads\GoogleAds\V3\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V3\Resources\Campaign;
+use Google\Ads\GoogleAds\V3\Services\CampaignOperation;
 use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V3\Services\SearchGoogleAdsStreamResponse;
 use Illuminate\Http\Request;
@@ -77,7 +82,7 @@ class GoogleAdsApiController extends Controller
 
             // Build the query
             $query = sprintf(
-                "SELECT %s FROM %s WHERE metrics.impressions > 0 AND segments.date  DURING  %s LIMIT 100",
+                "SELECT %s FROM %s WHERE metrics.impressions > 0 AND segments.date  DURING %s LIMIT 100",
                 join(", ", $selectedFields),
                 $reportType,
                 $reportRange
@@ -123,84 +128,75 @@ class GoogleAdsApiController extends Controller
             $collection->count(),
             $entriesPerPage,
             $pageNo,
-            ['path' => url('get-report')]
+            ['path' => url('show-report')]
         );
 
         return view(
-            'report-results',
+            'report-result',
             compact('paginatedResults', 'selectedFields')
         );
     }
 
+    /**
+     * Controls a POST request that is submitted from the "Pause Campaign" form.
+     *
+     * @param Request $request
+     * @param GoogleAdsClient $googleAdsClient
+     * @return View
+     */
+    public function pauseCampaignAction(
+        Request $request,
+        GoogleAdsClient $googleAdsClient
+    ) {
+        if ($request->method() === 'POST') {
+            $clientCustomerId = $request->input('clientCustomerId');
+            $campaignId = $request->input('campaignId');
 
-//        if ($request->method() === 'POST') {
-//            // Always select at least the "id" field.
-//            $selectedFields = array_values(
-//                ['id' => 'id'] + $request->except(
-//                    ['_token', 'clientCustomerId', 'entriesPerPage']
-//                )
-//            );
-//            $clientCustomerId = $request->input('clientCustomerId');
-//            $entriesPerPage = $request->input('entriesPerPage');
-//
-//            // Request the API
-//            $query = sprintf(
-//                "SELECT %s FROM campaign ORDER BY campaign.name",
-//                join(
-//                    ", ",
-//                    collect($selectedFields)->map(function ($fieldName) {
-//                        return "campaign." . $fieldName;
-//                    })->all()
-//                )
-//            );
-//            $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
-//                $clientCustomerId,
-//                $query,
-//                [
-//                    'pageSize' => $entriesPerPage,
-//                    'returnTotalResultsCount' => true
-//                ]
-//            );
-//            $currentPage = $response->getPage();
-//            $cacheKey = uniqid();
-//
-//            $request->session()->put('selectedFields', $selectedFields);
-//            $request->session()->put('entriesPerPage', $entriesPerPage);
-//            $request->session()->put('totalNumEntries', $currentPage->getResponseObject()->getTotalResultsCount());
-////            $request->session()->put('currentPage', $currentPage);
-//            $request->session()->put('cacheKey', $cacheKey);
-//        } else {
-//            $selectedFields = $request->session()->get('selectedFields');
-//            $entriesPerPage = $request->session()->get('entriesPerPage');
-////            $currentPage = $request->session()->get('currentPage');
-//            $cacheKey = $request->session()->get('cacheKey');
-//        }
-//
-//        $pageNo = $request->input('page') ?: 1;
-//        $cacheKeyFull = md5($cacheKey . $pageNo);
-//        $results = Cache::remember($cacheKeyFull, 10, function() use ($currentPage) {
-//            $items = [];
-//            foreach ($currentPage as $googleAdsRow) {
-//                /** GoogleAdsRow $googleAdsRow */
-//                $items[] = json_decode($googleAdsRow->getCampaign()->serializeToJsonString(), true);
-//            }
-////            if($currentPage->hasNextPage()) {
-////                $request->session()->put('currentPage', $currentPage->getNextPage());
-////            } else {
-////                $request->session()->remove('currentPage');
-////            }
-//            return $items;
-//        });
-//
-//        // Create a length aware paginator to supply campaigns for the view,
-//        // based on the specified number of entries per page.
-//        $campaigns = new LengthAwarePaginator(
-//            collect($results),
-//            $request->session()->get('totalNumEntries'),
-//            $entriesPerPage,
-//            $pageNo,
-//            ['path' => url('search-campaigns')]
-//        );
-//
-//        return view('campaigns', compact('campaigns', 'selectedFields'));
+            $request->session()->put('clientCustomerId', $clientCustomerId);
+            $request->session()->put('campaignId', $campaignId);
+
+            // Creates campaign resource name.
+            $campaignResourceName = ResourceNames::forCampaign($clientCustomerId, $campaignId);
+
+            // Creates a campaign and sets its status to PAUSED.
+            $campaign = new Campaign();
+            $campaign->setResourceName($campaignResourceName);
+            $campaign->setStatus(CampaignStatus::PAUSED);
+
+            // Constructs an operation that will pause the campaign with the specified resource
+            // name, using the FieldMasks utility to derive the update mask. This mask tells the
+            // Google Ads API which attributes of the campaign you want to change.
+            $campaignOperation = new CampaignOperation();
+            $campaignOperation->setUpdate($campaign);
+            $campaignOperation->setUpdateMask(FieldMasks::allSetFieldsOf($campaign));
+
+            // Issues a mutate request to pause the campaign.
+            $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
+            $response = $googleAdsClient->getCampaignServiceClient()->mutateCampaigns(
+                $clientCustomerId,
+                [$campaignOperation]
+            );
+
+            /** @var Campaign $pausedCampaign */
+            $pausedCampaign = $response->getResults()[0];
+
+            // Request the API
+            $query = sprintf(
+                "SELECT campaign.id, campaign.name, campaign.status FROM campaign WHERE campaign.resource_name = '%s' LIMIT 1",
+                $pausedCampaign->getResourceName()
+            );
+            $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
+                $clientCustomerId,
+                $query,
+                ['pageSize' => 1, 'returnTotalResultsCount' => true]
+            );
+            /** @var GoogleAdsRow $googleAdsRow */
+            $campaign = json_decode($response->getIterator()->current()->getCampaign()->serializeToJsonString(), true);
+        }
+
+        return view(
+            'pause-result',
+            compact('clientCustomerId', 'campaign')
+        );
+    }
 }

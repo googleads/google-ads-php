@@ -21,10 +21,9 @@ Route::get(
         return view('main');
     }
 );
-Route::match(
-    ['get', 'post'],
-    'search-campaigns',
-    'GoogleAdsApiController@searchCampaignsAction'
+Route::post(
+    'pause-campaign',
+    'GoogleAdsApiController@pauseCampaignAction'
 );
 Route::match(
     ['get', 'post'],
