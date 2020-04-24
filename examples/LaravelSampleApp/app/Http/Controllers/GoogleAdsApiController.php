@@ -39,7 +39,7 @@ class GoogleAdsApiController extends Controller
     ];
 
     /**
-     * Controls a POST or GET request submitted in the contect of the "Show Report" form.
+     * Controls a POST or GET request submitted in the context of the "Show Report" form.
      *
      * @param Request $request the HTTP request
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
@@ -97,7 +97,7 @@ class GoogleAdsApiController extends Controller
                 /** @var SearchGoogleAdsStreamResponse $response */
                 foreach ($response->getResults() as $googleAdsRow) {
                     /** @var GoogleAdsRow $googleAdsRow */
-                    // Converts each result as a POPO using JSON.
+                    // Converts each result as a Plain Old PHP Object (POPO) using JSON.
                     $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
                 }
             }
@@ -107,7 +107,7 @@ class GoogleAdsApiController extends Controller
             // following GET requests (report result pages).
             $request->session()->put('selectedFields', $selectedFields);
             $request->session()->put('entriesPerPage', $entriesPerPage);
-            $request->session()->put('collection', collect($collection));
+            $request->session()->put('collection', $collection);
         } else {
             // Loads from the session all the information that is necessary to process the GET
             // request (report result page).
