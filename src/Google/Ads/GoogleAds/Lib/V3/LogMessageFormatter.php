@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds\Lib\V3;
 
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsFailure;
 use Google\ApiCore\ArrayTrait;
+use Google\Protobuf\Internal\Message;
 
 /**
  * Formats information about a single gRPC / REST call for logging.
@@ -38,6 +39,26 @@ final class LogMessageFormatter
     public function __construct($statusMetadataExtractor = null)
     {
         $this->statusMetadataExtractor = $statusMetadataExtractor ?: new StatusMetadataExtractor();
+    }
+
+    /**
+     * Returns the customer ID information of the provided request.
+     *
+     * @param Message $request the request to get its customer ID
+     * @return string the customer ID information
+     */
+    private static function getCustomerIdInfo(Message $request): string
+    {
+        if (method_exists($request, 'getCustomerId')) {
+            return $request->getCustomerId();
+        } elseif (method_exists($request, 'getResourceName')) {
+            $resourceName = $request->getResourceName();
+            $segments = explode('/', $resourceName);
+            if ($segments[0] === 'customers') {
+                return $segments[1];
+            }
+        }
+        return '"No customer ID found in the request"';
     }
 
     /**
@@ -64,12 +85,11 @@ final class LogMessageFormatter
         }
 
         return sprintf(
-            'Request made: Host: "%s", Method: "%s", ClientCustomerId: %d, RequestId: "%s", '
+            'Request made: Host: "%s", Method: "%s", CustomerId: %s, RequestId: "%s", '
             . 'IsFault: %b, FaultMessage: "%s"',
             $endpoint,
             $method,
-            method_exists($argument, 'getCustomerId')
-                ? $argument->getCustomerId() : '"No client customer ID used"',
+            self::getCustomerIdInfo($argument),
             $this->getFirstHeaderValue(self::$REQUEST_ID_HEADER_KEY, $status->metadata),
             $status->code !== 0,
             !empty($errorMessageList) ? json_encode($errorMessageList) : 'None'

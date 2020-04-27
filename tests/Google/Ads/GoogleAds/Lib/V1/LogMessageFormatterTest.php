@@ -22,8 +22,10 @@ use Google\Ads\GoogleAds\V1\Errors\ErrorCode;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V1\Errors\GoogleAdsFailure;
 use Google\Ads\GoogleAds\V1\Resources\Campaign;
+use Google\Ads\GoogleAds\V1\Resources\Customer;
 use Google\Ads\GoogleAds\V1\Resources\GeoTargetConstant;
 use Google\Ads\GoogleAds\V1\Services\GeoTargetConstantSuggestion;
+use Google\Ads\GoogleAds\V1\Services\GetCustomerRequest;
 use Google\Ads\GoogleAds\V1\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V1\Services\SearchGoogleAdsRequest;
 use Google\Ads\GoogleAds\V1\Services\SearchGoogleAdsResponse;
@@ -51,21 +53,15 @@ class LogMessageFormatterTest extends TestCase
     private $failureResponse;
     private $noCustomerIdRequest;
     private $noCustomerIdResponse;
-
-    /**
-     * @see \PHPUnit\Framework\TestCase::setUp
-     */
-    protected function setUp()
-    {
-        $this->createSuccessRequestResponse();
-        $this->createFailureRequestResponse();
-    }
+    private $resourceNameAvailableRequest;
+    private $resourceNameAvailableResponse;
 
     /**
      * @covers \Google\Ads\GoogleAds\Lib\V1\LogMessageFormatter::formatSummary()
      */
     public function testFormatSummary()
     {
+        $this->createSuccessRequestResponse();
         $logMessageFormatter = new LogMessageFormatter();
 
         $actualOutput = $logMessageFormatter->formatSummary(
@@ -76,7 +72,7 @@ class LogMessageFormatterTest extends TestCase
 
         $this->assertContains('RequestId: "AbCdEfGh"', $actualOutput);
         $this->assertContains('Method: "GoogleAdsService/Search"', $actualOutput);
-        $this->assertContains('ClientCustomerId: 1234567890', $actualOutput);
+        $this->assertContains('CustomerId: 1234567890', $actualOutput);
         $this->assertContains('Host: "googleads.api.com"', $actualOutput);
         $this->assertContains('IsFault: 0', $actualOutput);
     }
@@ -86,6 +82,7 @@ class LogMessageFormatterTest extends TestCase
      */
     public function testFormatSummaryWithFailureRequest()
     {
+        $this->createFailureRequestResponse();
         $mockStatusMetadataExtractor = $this->getMockBuilder(StatusMetadataExtractor::class)
             ->disableOriginalConstructor()
             ->disableOriginalClone()
@@ -104,7 +101,7 @@ class LogMessageFormatterTest extends TestCase
 
         $this->assertContains('RequestId: "AbCdEfGhIJk"', $actualOutput);
         $this->assertContains('Method: "GoogleAdsService/Search"', $actualOutput);
-        $this->assertContains('ClientCustomerId: 1234567890', $actualOutput);
+        $this->assertContains('CustomerId: 1234567890', $actualOutput);
         $this->assertContains('Host: "googleads.api.com"', $actualOutput);
         $this->assertContains('IsFault: 1', $actualOutput);
     }
@@ -128,6 +125,31 @@ class LogMessageFormatterTest extends TestCase
             'Method: "GeoTargetConstantService/SuggestGeoTargetConstants"',
             $actualOutput
         );
+        $this->assertContains('CustomerId: "No customer ID found in the request"', $actualOutput);
+        $this->assertContains('Host: "googleads.api.com"', $actualOutput);
+        $this->assertContains('IsFault: 0', $actualOutput);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\V1\LogMessageFormatter::formatSummary()
+     */
+    public function testFormatSummaryWithResourceNameInRequest()
+    {
+        $this->createRequestWithResourceName();
+        $logMessageFormatter = new LogMessageFormatter();
+
+        $actualOutput = $logMessageFormatter->formatSummary(
+            $this->resourceNameAvailableRequest,
+            $this->resourceNameAvailableResponse,
+            'googleads.api.com'
+        );
+
+        $this->assertContains('RequestId: "AbCdEfGh"', $actualOutput);
+        $this->assertContains(
+            'Method: "CustomerService/GetCustomer"',
+            $actualOutput
+        );
+        $this->assertContains('CustomerId: 1234567890', $actualOutput);
         $this->assertContains('Host: "googleads.api.com"', $actualOutput);
         $this->assertContains('IsFault: 0', $actualOutput);
     }
@@ -137,6 +159,7 @@ class LogMessageFormatterTest extends TestCase
      */
     public function testFormatDetail()
     {
+        $this->createSuccessRequestResponse();
         $logMessageFormatter = new LogMessageFormatter();
 
         $actualOutput = $logMessageFormatter->formatDetail(
@@ -165,6 +188,7 @@ class LogMessageFormatterTest extends TestCase
      */
     public function testFormatDetailWithFailureRequest()
     {
+        $this->createFailureRequestResponse();
         $mockStatusMetadataExtractor = $this->getMockBuilder(StatusMetadataExtractor::class)
             ->disableOriginalConstructor()
             ->disableOriginalClone()
@@ -233,17 +257,48 @@ class LogMessageFormatterTest extends TestCase
         ];
         $response = new SearchGoogleAdsResponse(['results' => $googleAdsRows]);
 
-        $unaryCall = $this->getMockBuilder(UnaryCall::class)
+        $call = $this->getMockBuilder(UnaryCall::class)
             ->disableOriginalConstructor()
             ->disableOriginalClone()
             ->disableArgumentCloning()
             ->getMock();
-        $unaryCall->method('getMetadata')->willReturn(
+        $call->method('getMetadata')->willReturn(
             ['request-id' => ['AbCdEfGh'], 'x-google-session-info' => ['1234abcd']]
         );
 
         $this->successRequest = compact('method', 'argument', 'metadata');
-        $this->successResponse = compact('status', 'response', 'unaryCall');
+        $this->successResponse = compact('status', 'response', 'call');
+    }
+
+    private function createRequestWithResourceName()
+    {
+        $method = 'CustomerService/GetCustomer';
+        $argument = new GetCustomerRequest([
+            'resource_name' => 'customers/1234567890'
+        ]);
+        $metadata = ['developer-token' => ['a1b2c3']];
+
+        $status = new stdClass();
+        $status->code = 0;
+        $status->metadata = [
+            'request-id' => ['AbCdEfGh']
+        ];
+
+        $response = new Customer(
+            ['resource_name' => 'customers/123456789']
+        );
+
+        $call = $this->getMockBuilder(UnaryCall::class)
+            ->disableOriginalConstructor()
+            ->disableOriginalClone()
+            ->disableArgumentCloning()
+            ->getMock();
+        $call->method('getMetadata')->willReturn(
+            ['request-id' => ['AbCdEfGh'], 'x-google-session-info' => ['1234abcd']]
+        );
+
+        $this->resourceNameAvailableRequest = compact('method', 'argument', 'metadata');
+        $this->resourceNameAvailableResponse = compact('status', 'response', 'call');
     }
 
     private function createRequestWithNoCustomerId()
@@ -276,17 +331,17 @@ class LogMessageFormatterTest extends TestCase
             ['geo_target_constant_suggestions' => $geoTargetConstantSuggestions]
         );
 
-        $unaryCall = $this->getMockBuilder(UnaryCall::class)
+        $call = $this->getMockBuilder(UnaryCall::class)
             ->disableOriginalConstructor()
             ->disableOriginalClone()
             ->disableArgumentCloning()
             ->getMock();
-        $unaryCall->method('getMetadata')->willReturn(
+        $call->method('getMetadata')->willReturn(
             ['request-id' => ['AbCdEfGh'], 'x-google-session-info' => ['1234abcd']]
         );
 
         $this->noCustomerIdRequest = compact('method', 'argument', 'metadata');
-        $this->noCustomerIdResponse = compact('status', 'response', 'unaryCall');
+        $this->noCustomerIdResponse = compact('status', 'response', 'call');
     }
 
     private function createFailureRequestResponse()
@@ -308,16 +363,16 @@ class LogMessageFormatterTest extends TestCase
 
         $response = new SearchGoogleAdsResponse(['results' => []]);
 
-        $unaryCall = $this->getMockBuilder(UnaryCall::class)
+        $call = $this->getMockBuilder(UnaryCall::class)
             ->disableOriginalConstructor()
             ->disableOriginalClone()
             ->disableArgumentCloning()
             ->getMock();
-        $unaryCall->method('getMetadata')->willReturn(
+        $call->method('getMetadata')->willReturn(
             ['request-id' => ['AbCdEfGhIJk'], 'x-google-session-info' => ['1234abcd']]
         );
 
         $this->failureRequest = compact('method', 'argument', 'metadata');
-        $this->failureResponse = compact('status', 'response', 'unaryCall');
+        $this->failureResponse = compact('status', 'response', 'call');
     }
 }
