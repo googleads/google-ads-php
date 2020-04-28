@@ -42,23 +42,27 @@ final class LogMessageFormatter
     }
 
     /**
-     * Returns the customer ID information of the provided request.
+     * Extracts the customer ID, if present, from the provided request.
      *
      * @param Message $request the request to get its customer ID
-     * @return string the customer ID information
+     * @return string the customer ID if present or the message saying that the customer ID is not
+     *     available
      */
-    private static function getCustomerIdInfo(Message $request): string
+    private static function extractCustomerId(Message $request): string
     {
+        // Most requests contain customer ID in the request, so we aim to extract that.
         if (method_exists($request, 'getCustomerId')) {
             return $request->getCustomerId();
         } elseif (method_exists($request, 'getResourceName')) {
+            // In some cases, customer ID is available in the form of resource name, such as many
+            // Get requests.
             $resourceName = $request->getResourceName();
             $segments = explode('/', $resourceName);
             if ($segments[0] === 'customers') {
                 return $segments[1];
             }
         }
-        return '"No customer ID found in the request"';
+        return '"No customer ID could be extracted from the request"';
     }
 
     /**
@@ -89,7 +93,7 @@ final class LogMessageFormatter
             . 'IsFault: %b, FaultMessage: "%s"',
             $endpoint,
             $method,
-            self::getCustomerIdInfo($argument),
+            self::extractCustomerId($argument),
             $this->getFirstHeaderValue(self::$REQUEST_ID_HEADER_KEY, $status->metadata),
             $status->code !== 0,
             !empty($errorMessageList) ? json_encode($errorMessageList) : 'None'

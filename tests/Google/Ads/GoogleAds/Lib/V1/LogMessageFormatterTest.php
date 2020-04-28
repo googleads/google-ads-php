@@ -125,7 +125,10 @@ class LogMessageFormatterTest extends TestCase
             'Method: "GeoTargetConstantService/SuggestGeoTargetConstants"',
             $actualOutput
         );
-        $this->assertContains('CustomerId: "No customer ID found in the request"', $actualOutput);
+        $this->assertContains(
+            'CustomerId: "No customer ID could be extracted from the request"',
+            $actualOutput
+        );
         $this->assertContains('Host: "googleads.api.com"', $actualOutput);
         $this->assertContains('IsFault: 0', $actualOutput);
     }
