@@ -58,7 +58,10 @@ use RuntimeException;
 class AddAffiliateLocationExtensions
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+    // The retail chain ID. For a complete list of valid retail chain IDs, see
+    // https://developers.google.com/adwords/api/docs/appendix/codes-formats#chain-ids.
     private const CHAIN_ID = 'INSERT_CHAIN_ID_HERE';
+    // The campaign ID for which the affiliate location extensions are added.
     private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
     // Optional: Delete all existing location extension feeds. This is required for this code
     // example to run correctly more than once.
@@ -66,6 +69,9 @@ class AddAffiliateLocationExtensions
     // 2. A Google Ads account cannot have a location extension feed and an affiliate location
     // extension feed at the same time.
     private const SHOULD_DELETE_EXISTING_FEEDS = false;
+
+    // The maximum number of attempts to make to retrieve the feed mapping before throwing an
+    // exception.
     private const MAX_FEED_MAPPING_RETRIEVAL_ATTEMPTS = 10;
 
     public static function main()
@@ -131,8 +137,7 @@ class AddAffiliateLocationExtensions
      * @param int $chainId the retail chain ID
      * @param int $campaignId the campaign ID for which the affiliate location extensions are added
      * @param bool $shouldDeleteExistingFeeds true if it should delete the existing feeds. The
-     *     example will throw a 'LISTING_GROUP_ALREADY_EXISTS' error if feeds already exist and
-     *     this option is not set to true
+     *     example will throw an error if feeds already exist and this option is not set to true
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -150,8 +155,8 @@ class AddAffiliateLocationExtensions
             $chainId
         );
         // After the completion of the feed creation operation above the added feed will not
-        // be available for usage in a campaign feed until the feed mappings are created.
-        // We will wait with an exponential back-off policy until the feed mappings have
+        // be available for usage in a campaign feed until the feed mapping is created.
+        // We will wait with an exponential back-off policy until the feed mapping has
         // been created.
         $feedMapping = self::waitForFeedToBeReady(
             $googleAdsClient,
@@ -179,8 +184,7 @@ class AddAffiliateLocationExtensions
         int $customerId
     ) {
         // To delete a location extension feed, you need to
-        // 1. Delete the CustomerFeed so that the location extensions from the feed stop
-        // serving.
+        // 1. Delete the customer feed so that the location extensions from the feed stop serving.
         // 2. Delete the feed so that Google Ads will no longer sync from the GMB account.
         $customerFeeds = self::getLocationExtensionCustomerFeeds($googleAdsClient, $customerId);
         if (!empty($customerFeeds)) {
@@ -210,15 +214,14 @@ class AddAffiliateLocationExtensions
         // Creates the query. A location extension customer feed can be identified by filtering
         // for placeholder_types as LOCATION (location extension feeds) or
         // placeholder_types as AFFILIATE_LOCATION (affiliate location extension feeds).
-        $query = 'SELECT customer_feed.resource_name, customer_feed.feed, ' .
-            'customer_feed.status, customer_feed.matching_function.function_string ' .
+        $query = 'SELECT customer_feed.resource_name ' .
             'FROM customer_feed ' .
             'WHERE customer_feed.placeholder_types CONTAINS ANY(LOCATION, AFFILIATE_LOCATION) ' .
-            'AND customer_feed.status=ENABLED';
+            'AND customer_feed.status = ENABLED';
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
         $stream = $googleAdsServiceClient->searchStream($customerId, $query);
-        // Iterates over all rows in all messages and collects the results.
+        // Iterates over all rows in all messages to collect the results.
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             $customerFeeds[] = $googleAdsRow->getCustomerFeed();
@@ -269,15 +272,14 @@ class AddAffiliateLocationExtensions
 
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates the query.
-        $query = 'SELECT feed.resource_name, feed.status, ' .
-            'feed.places_location_feed_data.email_address, ' .
-            'feed.affiliate_location_feed_data.chain_ids ' .
+        $query = 'SELECT feed.resource_name ' .
             'FROM feed ' .
-            'WHERE feed.status = ENABLED';
+            'WHERE feed.status = ENABLED ' .
+            'AND feed.origin = USER';
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
         $stream = $googleAdsServiceClient->searchStream($customerId, $query);
-        // Iterates over all rows in all messages and collects the results.
+        // Iterates over all rows in all messages to collect the results.
         foreach ($stream->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             $feeds[] = $googleAdsRow->getFeed();
@@ -327,8 +329,8 @@ class AddAffiliateLocationExtensions
         int $chainId
     ): string {
         // Creates a feed that will sync to retail addresses for a given retail chain ID.
-        // Do not add FeedAttributes to this object as Google Ads will add them automatically
-        // because this will be a system generated feed.
+        // Do not add feed attributes, Google Ads will add them automatically because this will
+        // be a system generated feed.
         $feed = new Feed([
             'name' => new StringValue([
                 'value' => 'Affiliate Location Extension feed #' . uniqid()
@@ -392,18 +394,24 @@ class AddAffiliateLocationExtensions
                 $numAttempts++;
                 $sleepSeconds = intval(5 * pow(2, $numAttempts));
                 printf(
-                    "Checked: %d time(s). Feed is not ready yet. ' .
-                    'Waiting %d seconds before trying again.%s",
+                    'Checked: %d time(s). Feed is not ready yet. ' .
+                    'Waiting %d seconds before trying again.%s',
                     $numAttempts,
                     $sleepSeconds,
                     PHP_EOL
                 );
                 sleep($sleepSeconds);
             } else {
-                printf("Feed %s is now ready.%s", $feedResourceName, PHP_EOL);
+                printf("Feed '%s' is now ready.%s", $feedResourceName, PHP_EOL);
                 return $feedMapping;
             }
         }
+
+        throw new RuntimeException(sprintf(
+            "The affiliate location feed mapping is still not ready after %d attempt(s).%s",
+            self::MAX_FEED_MAPPING_RETRIEVAL_ATTEMPTS,
+            PHP_EOL
+        ));
     }
 
     /**
@@ -412,13 +420,13 @@ class AddAffiliateLocationExtensions
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string $feedResourceName the feed resource name
-     * @return FeedMapping the feed mapping if it exists otherwise null
+     * @return FeedMapping|null the feed mapping if it exists otherwise null
      */
     private static function getAffiliateLocationExtensionFeedMapping(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $feedResourceName
-    ): FeedMapping {
+    ): ?FeedMapping {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves the feed mapping.
         $query = sprintf(
@@ -465,18 +473,18 @@ class AddAffiliateLocationExtensions
     ) {
         $matchingFunction = sprintf(
             'IN(FeedAttribute[%s, %s], %d)',
-            FeedServiceClient::parseName($feedResourceName)['feed_id'],
+            FeedServiceClient::parseName($feedResourceName)['feed'],
             self::getAttributeIdForChainId($feedMapping),
             $chainId
         );
 
-        // Adds a CampaignFeed that associates the feed with this campaign for the
+        // Adds a campaign feed that associates the feed with this campaign for the
         // AFFILIATE_LOCATION placeholder type.
         $campaignFeed = new CampaignFeed([
             'feed' => new StringValue(['value' => $feedResourceName]),
             'placeholder_types' => [PlaceholderType::AFFILIATE_LOCATION],
             'matching_function' => new MatchingFunction([
-                'function_string' => $matchingFunction
+                'function_string' => new StringValue(['value' => $matchingFunction])
             ]),
             'campaign' => ResourceNames::forCampaign($customerId, $campaignId)
         ]);
@@ -499,9 +507,9 @@ class AddAffiliateLocationExtensions
      * Gets the feed attribute ID for the retail chain ID.
      *
      * @param FeedMapping $feedMapping the feed mapping
-     * @@return int the feeed attribute ID
+     * @@return int the feed attribute ID
      */
-    private static function getAttributeIdForChainId(FeedMapping $feedMapping)
+    private static function getAttributeIdForChainId(FeedMapping $feedMapping): int
     {
         /** @var AttributeFieldMapping $fieldMapping */
         foreach ($feedMapping->getAttributeFieldMappings() as $fieldMapping) {
