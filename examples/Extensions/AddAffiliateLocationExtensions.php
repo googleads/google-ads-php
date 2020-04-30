@@ -308,7 +308,7 @@ class AddAffiliateLocationExtensions
             ]);
         }
 
-        // Issues a mutate request to remove the customer feeds.
+        // Issues a mutate request to remove the feeds.
         $googleAdsClient->getFeedServiceClient()->mutateFeeds(
             $customerId,
             $operations
