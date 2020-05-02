@@ -44,6 +44,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     private $logger;
     private $logLevel;
     private $proxy;
+    private $transport;
 
     private $configurationLoader;
 
@@ -91,6 +92,7 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
             $this->logLevel
         );
         $this->proxy = $configuration->getConfiguration('proxy', 'CONNECTION');
+        $this->transport = $configuration->getConfiguration('transport', 'CONNECTION');
 
         return $this;
     }
@@ -187,6 +189,18 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     }
 
     /**
+     * Sets the transport for Google Ads API requests.
+     *
+     * @param string $transport the transport type to use, supported values are `grpc` and `rest`
+     * @return self this builder
+     */
+    public function withTransport(string $transport)
+    {
+        $this->transport = $transport;
+        return $this;
+    }
+
+    /**
      * @see GoogleAdsBuilder::build()
      *
      * @return GoogleAdsClient the created Google Ads client
@@ -237,6 +251,14 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
         if ($this->oAuth2Credential === null) {
             throw new InvalidArgumentException(
                 'OAuth2 authentication credentials must not be null.'
+            );
+        }
+
+        if (
+            !empty($this->transport) && $this->transport !== 'grpc' && $this->transport !== 'rest'
+        ) {
+            throw new InvalidArgumentException(
+                'Transport can only be set as "grpc" or "rest".'
             );
         }
 
@@ -315,5 +337,15 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     public function getProxy()
     {
         return $this->proxy;
+    }
+
+    /**
+     * Gets the transport.
+     *
+     * @return string the transport
+     */
+    public function getTransport()
+    {
+        return $this->transport;
     }
 }

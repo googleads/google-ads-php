@@ -208,11 +208,39 @@ $googleAdsClient = (new GoogleAdsClientBuilder())
 Once you have an instance of `GoogleAdsClient`, you can obtain a service client
 for a particular service using one of the `get...ServiceClient()` methods.
 
+## Transport
+
+There are different types of transport that can be used. The library automatically determines which
+one is best to use by default:
+
++ **Preferred**: [gRPC](https://grpc.io/about/). It requires the installation of the dedicated C
+extension `grpc` and it is based on HTTP/2.
++ Alternative used when gRPC is not available: REST. It does not require any C extension 
+installation and it is based on HTTP/1.1.
+
+If you need to specify the exact transport to be used instead of relying on the default rules, you
+can set the `transport` property in the `CONNECTION` section of your `google_ads_php.ini` file:
+
+```
+[CONNECTION]
+; Optional transport settings.
+; By default, "grpc" is used if available otherwise "rest".
+transport = "grpc"
+```
+
+Alternatively, you can configure the transport setting programmatically like every other ones:
+
+```php
+$googleAdsClient = (new GoogleAdsClientBuilder())
+    ...
+    ->withTransport('grpc')
+    ->build();
+```
+
 ## Protobuf
 
-[Protobuf](https://developers.google.com/protocol-buffers/docs/overview) is used by
-[gRPC](https://grpc.io/about/), a core dependency of the Google Ads API for request and
-response transport.
+[Protobuf](https://developers.google.com/protocol-buffers/docs/overview) is used regardless of the
+transport used to request the Google Ads API.
 
 See the [Protobuf guide](https://developers.google.com/google-ads/api/docs/client-libs/php/protobuf)
 for more information.

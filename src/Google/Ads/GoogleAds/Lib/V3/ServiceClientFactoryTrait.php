@@ -136,6 +136,7 @@ trait ServiceClientFactoryTrait
     private static $LOGIN_CUSTOMER_ID_KEY = 'login-customer-id';
     private static $SERVICE_ADDRESS_KEY = 'serviceAddress';
     private static $DEFAULT_SERVICE_ADDRESS = 'googleads.googleapis.com';
+    private static $TRANSPORT_KEY = 'transport';
 
     /**
      * Gets the Google Ads client options for making API calls.
@@ -154,7 +155,6 @@ trait ServiceClientFactoryTrait
         if (!empty($this->getEndpoint())) {
             $clientOptions += [self::$SERVICE_ADDRESS_KEY => $this->getEndpoint()];
         }
-
         $clientOptions['transportConfig'] = [
             'grpc' => [
                 'stubOpts' => [
@@ -179,9 +179,11 @@ trait ServiceClientFactoryTrait
                 'interceptors' => [$googleAdsLoggingInterceptor]
             ];
         }
-
         if (!empty($this->getProxy())) {
             putenv('http_proxy=' . $this->getProxy());
+        }
+        if (!empty($this->getTransport())) {
+            $clientOptions += [self::$TRANSPORT_KEY => $this->getTransport()];
         }
 
         return $clientOptions;

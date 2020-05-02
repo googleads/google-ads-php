@@ -35,11 +35,14 @@ class GoogleAdsClientTest extends TestCase
     private static $CREDENTIALS_LOADER_KEY = 'credentials';
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
     private static $LOGIN_CUSTOMER_ID_KEY = 'login-customer-id';
+    private static $TRANSPORT_KEY = 'transport';
 
     private static $DEVELOPER_TOKEN = 'ABcdeFGH93KL-NOPQ_STUv';
     private static $LOGIN_CUSTOMER_ID = '1234567890';
 
     private static $PROXY = 'http://localhost:8080';
+
+    private static $TRANSPORT = 'grpc';
 
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder*/
     private $googleAdsClientBuilder;
@@ -70,6 +73,7 @@ class GoogleAdsClientTest extends TestCase
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withLogger(new Logger('', [new NullHandler()]))
             ->withProxy(self::$PROXY)
+            ->withTransport(self::$TRANSPORT)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
@@ -92,6 +96,10 @@ class GoogleAdsClientTest extends TestCase
         $this->assertSame(
             getenv('http_proxy'),
             self::$PROXY
+        );
+        $this->assertSame(
+            self::$TRANSPORT,
+            $clientOptions[self::$TRANSPORT_KEY]
         );
     }
 
