@@ -17,17 +17,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class Asset extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the asset.
+     * Immutable. The resource name of the asset.
      * Asset resource names have the form:
      * `customers/{customer_id}/assets/{asset_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the asset.
+     * Output only. The ID of the asset.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -37,9 +37,9 @@ class Asset extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * Type of the asset.
+     * Output only. Type of the asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetTypeEnum.AssetType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetTypeEnum.AssetType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     protected $asset_data;
@@ -51,23 +51,23 @@ class Asset extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the asset.
+     *           Immutable. The resource name of the asset.
      *           Asset resource names have the form:
      *           `customers/{customer_id}/assets/{asset_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the asset.
+     *           Output only. The ID of the asset.
      *     @type \Google\Protobuf\StringValue $name
      *           Optional name of the asset.
      *     @type int $type
-     *           Type of the asset.
+     *           Output only. Type of the asset.
      *     @type \Google\Ads\GoogleAds\V3\Common\YoutubeVideoAsset $youtube_video_asset
-     *           A YouTube video asset.
+     *           Immutable. A YouTube video asset.
      *     @type \Google\Ads\GoogleAds\V3\Common\MediaBundleAsset $media_bundle_asset
-     *           A media bundle asset.
+     *           Immutable. A media bundle asset.
      *     @type \Google\Ads\GoogleAds\V3\Common\ImageAsset $image_asset
-     *           An image asset.
+     *           Output only. An image asset.
      *     @type \Google\Ads\GoogleAds\V3\Common\TextAsset $text_asset
-     *           A text asset.
+     *           Output only. A text asset.
      * }
      */
     public function __construct($data = NULL) {
@@ -76,11 +76,11 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the asset.
+     * Immutable. The resource name of the asset.
      * Asset resource names have the form:
      * `customers/{customer_id}/assets/{asset_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -89,11 +89,11 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the asset.
+     * Immutable. The resource name of the asset.
      * Asset resource names have the form:
      * `customers/{customer_id}/assets/{asset_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -106,9 +106,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the asset.
+     * Output only. The ID of the asset.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -119,9 +119,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the asset.
+     * Output only. The ID of the asset.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -130,9 +130,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the asset.
+     * Output only. The ID of the asset.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -147,9 +147,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the asset.
+     * Output only. The ID of the asset.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -212,9 +212,9 @@ class Asset extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Type of the asset.
+     * Output only. Type of the asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetTypeEnum.AssetType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetTypeEnum.AssetType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -223,9 +223,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the asset.
+     * Output only. Type of the asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetTypeEnum.AssetType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetTypeEnum.AssetType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -238,9 +238,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A YouTube video asset.
+     * Immutable. A YouTube video asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YoutubeVideoAsset youtube_video_asset = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YoutubeVideoAsset youtube_video_asset = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\YoutubeVideoAsset
      */
     public function getYoutubeVideoAsset()
@@ -249,9 +249,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A YouTube video asset.
+     * Immutable. A YouTube video asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YoutubeVideoAsset youtube_video_asset = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YoutubeVideoAsset youtube_video_asset = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\YoutubeVideoAsset $var
      * @return $this
      */
@@ -264,9 +264,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A media bundle asset.
+     * Immutable. A media bundle asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MediaBundleAsset media_bundle_asset = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MediaBundleAsset media_bundle_asset = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\MediaBundleAsset
      */
     public function getMediaBundleAsset()
@@ -275,9 +275,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A media bundle asset.
+     * Immutable. A media bundle asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MediaBundleAsset media_bundle_asset = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MediaBundleAsset media_bundle_asset = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\MediaBundleAsset $var
      * @return $this
      */
@@ -290,9 +290,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An image asset.
+     * Output only. An image asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ImageAsset image_asset = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ImageAsset image_asset = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\ImageAsset
      */
     public function getImageAsset()
@@ -301,9 +301,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An image asset.
+     * Output only. An image asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ImageAsset image_asset = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ImageAsset image_asset = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\ImageAsset $var
      * @return $this
      */
@@ -316,9 +316,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A text asset.
+     * Output only. A text asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.TextAsset text_asset = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.TextAsset text_asset = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\TextAsset
      */
     public function getTextAsset()
@@ -327,9 +327,9 @@ class Asset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A text asset.
+     * Output only. A text asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.TextAsset text_asset = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.TextAsset text_asset = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\TextAsset $var
      * @return $this
      */

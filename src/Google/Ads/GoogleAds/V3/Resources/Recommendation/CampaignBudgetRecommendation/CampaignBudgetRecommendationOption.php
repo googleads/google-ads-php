@@ -16,16 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The budget amount for this option.
+     * Output only. The budget amount for this option.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $budget_amount_micros = null;
     /**
-     * The impact estimate if budget is changed to amount specified in this
+     * Output only. The impact estimate if budget is changed to amount specified in this
      * option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.RecommendationImpact impact = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.RecommendationImpact impact = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $impact = null;
 
@@ -36,9 +36,9 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $budget_amount_micros
-     *           The budget amount for this option.
+     *           Output only. The budget amount for this option.
      *     @type \Google\Ads\GoogleAds\V3\Resources\Recommendation\RecommendationImpact $impact
-     *           The impact estimate if budget is changed to amount specified in this
+     *           Output only. The impact estimate if budget is changed to amount specified in this
      *           option.
      * }
      */
@@ -48,9 +48,9 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The budget amount for this option.
+     * Output only. The budget amount for this option.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getBudgetAmountMicros()
@@ -61,9 +61,9 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     /**
      * Returns the unboxed value from <code>getBudgetAmountMicros()</code>
 
-     * The budget amount for this option.
+     * Output only. The budget amount for this option.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getBudgetAmountMicrosUnwrapped()
@@ -72,9 +72,9 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The budget amount for this option.
+     * Output only. The budget amount for this option.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -89,9 +89,9 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The budget amount for this option.
+     * Output only. The budget amount for this option.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -101,10 +101,10 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
         return $this;}
 
     /**
-     * The impact estimate if budget is changed to amount specified in this
+     * Output only. The impact estimate if budget is changed to amount specified in this
      * option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.RecommendationImpact impact = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.RecommendationImpact impact = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\Recommendation\RecommendationImpact
      */
     public function getImpact()
@@ -113,10 +113,10 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The impact estimate if budget is changed to amount specified in this
+     * Output only. The impact estimate if budget is changed to amount specified in this
      * option.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.RecommendationImpact impact = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.RecommendationImpact impact = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\Recommendation\RecommendationImpact $var
      * @return $this
      */

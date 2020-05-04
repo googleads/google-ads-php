@@ -16,29 +16,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class QualityInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The quality score.
+     * Output only. The quality score.
      * This field may not be populated if Google does not have enough
      * information to determine a value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $quality_score = null;
     /**
-     * The performance of the ad compared to other advertisers.
+     * Output only. The performance of the ad compared to other advertisers.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket creative_quality_score = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket creative_quality_score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $creative_quality_score = 0;
     /**
-     * The quality score of the landing page.
+     * Output only. The quality score of the landing page.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket post_click_quality_score = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket post_click_quality_score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $post_click_quality_score = 0;
     /**
-     * The click-through rate compared to that of other advertisers.
+     * Output only. The click-through rate compared to that of other advertisers.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket search_predicted_ctr = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket search_predicted_ctr = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $search_predicted_ctr = 0;
 
@@ -49,15 +49,15 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int32Value $quality_score
-     *           The quality score.
+     *           Output only. The quality score.
      *           This field may not be populated if Google does not have enough
      *           information to determine a value.
      *     @type int $creative_quality_score
-     *           The performance of the ad compared to other advertisers.
+     *           Output only. The performance of the ad compared to other advertisers.
      *     @type int $post_click_quality_score
-     *           The quality score of the landing page.
+     *           Output only. The quality score of the landing page.
      *     @type int $search_predicted_ctr
-     *           The click-through rate compared to that of other advertisers.
+     *           Output only. The click-through rate compared to that of other advertisers.
      * }
      */
     public function __construct($data = NULL) {
@@ -66,11 +66,11 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The quality score.
+     * Output only. The quality score.
      * This field may not be populated if Google does not have enough
      * information to determine a value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int32Value
      */
     public function getQualityScore()
@@ -81,11 +81,11 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getQualityScore()</code>
 
-     * The quality score.
+     * Output only. The quality score.
      * This field may not be populated if Google does not have enough
      * information to determine a value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|null
      */
     public function getQualityScoreUnwrapped()
@@ -94,11 +94,11 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The quality score.
+     * Output only. The quality score.
      * This field may not be populated if Google does not have enough
      * information to determine a value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
@@ -113,11 +113,11 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * The quality score.
+     * Output only. The quality score.
      * This field may not be populated if Google does not have enough
      * information to determine a value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value quality_score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|null $var
      * @return $this
      */
@@ -127,9 +127,9 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The performance of the ad compared to other advertisers.
+     * Output only. The performance of the ad compared to other advertisers.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket creative_quality_score = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket creative_quality_score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getCreativeQualityScore()
@@ -138,9 +138,9 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The performance of the ad compared to other advertisers.
+     * Output only. The performance of the ad compared to other advertisers.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket creative_quality_score = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket creative_quality_score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -153,9 +153,9 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The quality score of the landing page.
+     * Output only. The quality score of the landing page.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket post_click_quality_score = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket post_click_quality_score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getPostClickQualityScore()
@@ -164,9 +164,9 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The quality score of the landing page.
+     * Output only. The quality score of the landing page.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket post_click_quality_score = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket post_click_quality_score = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -179,9 +179,9 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The click-through rate compared to that of other advertisers.
+     * Output only. The click-through rate compared to that of other advertisers.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket search_predicted_ctr = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket search_predicted_ctr = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getSearchPredictedCtr()
@@ -190,9 +190,9 @@ class QualityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The click-through rate compared to that of other advertisers.
+     * Output only. The click-through rate compared to that of other advertisers.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket search_predicted_ctr = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.QualityScoreBucketEnum.QualityScoreBucket search_predicted_ctr = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

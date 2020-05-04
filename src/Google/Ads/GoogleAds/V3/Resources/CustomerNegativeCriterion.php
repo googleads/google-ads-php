@@ -16,23 +16,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the customer negative criterion.
+     * Immutable. The resource name of the customer negative criterion.
      * Customer negative criterion resource names have the form:
      * `customers/{customer_id}/customerNegativeCriteria/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     protected $criterion;
@@ -44,25 +44,25 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the customer negative criterion.
+     *           Immutable. The resource name of the customer negative criterion.
      *           Customer negative criterion resource names have the form:
      *           `customers/{customer_id}/customerNegativeCriteria/{criterion_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the criterion.
+     *           Output only. The ID of the criterion.
      *     @type int $type
-     *           The type of the criterion.
+     *           Output only. The type of the criterion.
      *     @type \Google\Ads\GoogleAds\V3\Common\ContentLabelInfo $content_label
-     *           ContentLabel.
+     *           Immutable. ContentLabel.
      *     @type \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo $mobile_application
-     *           MobileApplication.
+     *           Immutable. MobileApplication.
      *     @type \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo $mobile_app_category
-     *           MobileAppCategory.
+     *           Immutable. MobileAppCategory.
      *     @type \Google\Ads\GoogleAds\V3\Common\PlacementInfo $placement
-     *           Placement.
+     *           Immutable. Placement.
      *     @type \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo $youtube_video
-     *           YouTube Video.
+     *           Immutable. YouTube Video.
      *     @type \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo $youtube_channel
-     *           YouTube Channel.
+     *           Immutable. YouTube Channel.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,11 +71,11 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer negative criterion.
+     * Immutable. The resource name of the customer negative criterion.
      * Customer negative criterion resource names have the form:
      * `customers/{customer_id}/customerNegativeCriteria/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -84,11 +84,11 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer negative criterion.
+     * Immutable. The resource name of the customer negative criterion.
      * Customer negative criterion resource names have the form:
      * `customers/{customer_id}/customerNegativeCriteria/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -101,9 +101,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -114,9 +114,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -125,9 +125,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -142,9 +142,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -154,9 +154,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -165,9 +165,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -180,9 +180,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ContentLabel.
+     * Immutable. ContentLabel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ContentLabelInfo content_label = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ContentLabelInfo content_label = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\ContentLabelInfo
      */
     public function getContentLabel()
@@ -191,9 +191,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ContentLabel.
+     * Immutable. ContentLabel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ContentLabelInfo content_label = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ContentLabelInfo content_label = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\ContentLabelInfo $var
      * @return $this
      */
@@ -206,9 +206,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * MobileApplication.
+     * Immutable. MobileApplication.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo
      */
     public function getMobileApplication()
@@ -217,9 +217,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * MobileApplication.
+     * Immutable. MobileApplication.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo $var
      * @return $this
      */
@@ -232,9 +232,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * MobileAppCategory.
+     * Immutable. MobileAppCategory.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo
      */
     public function getMobileAppCategory()
@@ -243,9 +243,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * MobileAppCategory.
+     * Immutable. MobileAppCategory.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo $var
      * @return $this
      */
@@ -258,9 +258,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Placement.
+     * Immutable. Placement.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\PlacementInfo
      */
     public function getPlacement()
@@ -269,9 +269,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Placement.
+     * Immutable. Placement.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\PlacementInfo $var
      * @return $this
      */
@@ -284,9 +284,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Video.
+     * Immutable. YouTube Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo
      */
     public function getYoutubeVideo()
@@ -295,9 +295,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Video.
+     * Immutable. YouTube Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo $var
      * @return $this
      */
@@ -310,9 +310,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel.
+     * Immutable. YouTube Channel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo
      */
     public function getYoutubeChannel()
@@ -321,9 +321,9 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel.
+     * Immutable. YouTube Channel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo $var
      * @return $this
      */

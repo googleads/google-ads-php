@@ -29,12 +29,12 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
      */
     private $conversion_adjustments;
     /**
-     * If true, successful operations will be carried out and invalid
+     * Required. If true, successful operations will be carried out and invalid
      * operations will return errors. If false, all operations will be carried out
      * in one transaction if and only if they are all valid. This should always be
      * set to true.
      *
-     * Generated from protobuf field <code>bool partial_failure = 3;</code>
+     * Generated from protobuf field <code>bool partial_failure = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $partial_failure = false;
     /**
@@ -56,7 +56,7 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
      *     @type \Google\Ads\GoogleAds\V3\Services\ConversionAdjustment[]|\Google\Protobuf\Internal\RepeatedField $conversion_adjustments
      *           Required. The conversion adjustments that are being uploaded.
      *     @type bool $partial_failure
-     *           If true, successful operations will be carried out and invalid
+     *           Required. If true, successful operations will be carried out and invalid
      *           operations will return errors. If false, all operations will be carried out
      *           in one transaction if and only if they are all valid. This should always be
      *           set to true.
@@ -123,12 +123,12 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * If true, successful operations will be carried out and invalid
+     * Required. If true, successful operations will be carried out and invalid
      * operations will return errors. If false, all operations will be carried out
      * in one transaction if and only if they are all valid. This should always be
      * set to true.
      *
-     * Generated from protobuf field <code>bool partial_failure = 3;</code>
+     * Generated from protobuf field <code>bool partial_failure = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return bool
      */
     public function getPartialFailure()
@@ -137,12 +137,12 @@ class UploadConversionAdjustmentsRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * If true, successful operations will be carried out and invalid
+     * Required. If true, successful operations will be carried out and invalid
      * operations will return errors. If false, all operations will be carried out
      * in one transaction if and only if they are all valid. This should always be
      * set to true.
      *
-     * Generated from protobuf field <code>bool partial_failure = 3;</code>
+     * Generated from protobuf field <code>bool partial_failure = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param bool $var
      * @return $this
      */

@@ -29,88 +29,88 @@ use Google\Protobuf\Internal\GPBUtil;
 class AccountBudget extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the account-level budget.
+     * Output only. The resource name of the account-level budget.
      * AccountBudget resource names have the form:
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the account-level budget.
+     * Output only. The ID of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The resource name of the billing setup associated with this account-level
+     * Output only. The resource name of the billing setup associated with this account-level
      * budget.  BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $billing_setup = null;
     /**
-     * The status of this account-level budget.
+     * Output only. The status of this account-level budget.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AccountBudgetStatusEnum.AccountBudgetStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AccountBudgetStatusEnum.AccountBudgetStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * The name of the account-level budget.
+     * Output only. The name of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
-     * The proposed start time of the account-level budget in
+     * Output only. The proposed start time of the account-level budget in
      * yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      * this is the time of request.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $proposed_start_date_time = null;
     /**
-     * The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
+     * Output only. The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
      * format.
      * For example, if a new budget is approved after the proposed start time,
      * the approved start time is the time of approval.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $approved_start_date_time = null;
     /**
-     * The total adjustments amount.
+     * Output only. The total adjustments amount.
      * An example of an adjustment is courtesy credits.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $total_adjustments_micros = null;
     /**
-     * The value of Ads that have been served, in micros.
+     * Output only. The value of Ads that have been served, in micros.
      * This includes overdelivery costs, in which case a credit might be
      * automatically applied to the budget (see total_adjustments_micros).
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $amount_served_micros = null;
     /**
-     * A purchase order number is a value that helps users reference this budget
+     * Output only. A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $purchase_order_number = null;
     /**
-     * Notes associated with the budget.
+     * Output only. Notes associated with the budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $notes = null;
     /**
-     * The pending proposal to modify this budget, if applicable.
+     * Output only. The pending proposal to modify this budget, if applicable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AccountBudget.PendingAccountBudgetProposal pending_proposal = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AccountBudget.PendingAccountBudgetProposal pending_proposal = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $pending_proposal = null;
     protected $proposed_end_time;
@@ -126,65 +126,65 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the account-level budget.
+     *           Output only. The resource name of the account-level budget.
      *           AccountBudget resource names have the form:
      *           `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the account-level budget.
+     *           Output only. The ID of the account-level budget.
      *     @type \Google\Protobuf\StringValue $billing_setup
-     *           The resource name of the billing setup associated with this account-level
+     *           Output only. The resource name of the billing setup associated with this account-level
      *           budget.  BillingSetup resource names have the form:
      *           `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *     @type int $status
-     *           The status of this account-level budget.
+     *           Output only. The status of this account-level budget.
      *     @type \Google\Protobuf\StringValue $name
-     *           The name of the account-level budget.
+     *           Output only. The name of the account-level budget.
      *     @type \Google\Protobuf\StringValue $proposed_start_date_time
-     *           The proposed start time of the account-level budget in
+     *           Output only. The proposed start time of the account-level budget in
      *           yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      *           this is the time of request.
      *     @type \Google\Protobuf\StringValue $approved_start_date_time
-     *           The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
+     *           Output only. The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
      *           format.
      *           For example, if a new budget is approved after the proposed start time,
      *           the approved start time is the time of approval.
      *     @type \Google\Protobuf\Int64Value $total_adjustments_micros
-     *           The total adjustments amount.
+     *           Output only. The total adjustments amount.
      *           An example of an adjustment is courtesy credits.
      *     @type \Google\Protobuf\Int64Value $amount_served_micros
-     *           The value of Ads that have been served, in micros.
+     *           Output only. The value of Ads that have been served, in micros.
      *           This includes overdelivery costs, in which case a credit might be
      *           automatically applied to the budget (see total_adjustments_micros).
      *     @type \Google\Protobuf\StringValue $purchase_order_number
-     *           A purchase order number is a value that helps users reference this budget
+     *           Output only. A purchase order number is a value that helps users reference this budget
      *           in their monthly invoices.
      *     @type \Google\Protobuf\StringValue $notes
-     *           Notes associated with the budget.
+     *           Output only. Notes associated with the budget.
      *     @type \Google\Ads\GoogleAds\V3\Resources\AccountBudget\PendingAccountBudgetProposal $pending_proposal
-     *           The pending proposal to modify this budget, if applicable.
+     *           Output only. The pending proposal to modify this budget, if applicable.
      *     @type \Google\Protobuf\StringValue $proposed_end_date_time
-     *           The proposed end time in yyyy-MM-dd HH:mm:ss format.
+     *           Output only. The proposed end time in yyyy-MM-dd HH:mm:ss format.
      *     @type int $proposed_end_time_type
-     *           The proposed end time as a well-defined type, e.g. FOREVER.
+     *           Output only. The proposed end time as a well-defined type, e.g. FOREVER.
      *     @type \Google\Protobuf\StringValue $approved_end_date_time
-     *           The approved end time in yyyy-MM-dd HH:mm:ss format.
+     *           Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
      *     @type int $approved_end_time_type
-     *           The approved end time as a well-defined type, e.g. FOREVER.
+     *           Output only. The approved end time as a well-defined type, e.g. FOREVER.
      *     @type \Google\Protobuf\Int64Value $proposed_spending_limit_micros
-     *           The proposed spending limit in micros.  One million is equivalent to
+     *           Output only. The proposed spending limit in micros.  One million is equivalent to
      *           one unit.
      *     @type int $proposed_spending_limit_type
-     *           The proposed spending limit as a well-defined type, e.g. INFINITE.
+     *           Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
      *     @type \Google\Protobuf\Int64Value $approved_spending_limit_micros
-     *           The approved spending limit in micros.  One million is equivalent to
+     *           Output only. The approved spending limit in micros.  One million is equivalent to
      *           one unit.  This will only be populated if the proposed spending limit
      *           is finite, and will always be greater than or equal to the
      *           proposed spending limit.
      *     @type int $approved_spending_limit_type
-     *           The approved spending limit as a well-defined type, e.g. INFINITE.  This
+     *           Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
      *           will only be populated if the approved spending limit is INFINITE.
      *     @type \Google\Protobuf\Int64Value $adjusted_spending_limit_micros
-     *           The adjusted spending limit in micros.  One million is equivalent to
+     *           Output only. The adjusted spending limit in micros.  One million is equivalent to
      *           one unit.
      *           If the approved spending limit is finite, the adjusted
      *           spending limit may vary depending on the types of adjustments applied
@@ -194,7 +194,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      *           For example, a debit adjustment reduces how much the account is
      *           allowed to spend.
      *     @type int $adjusted_spending_limit_type
-     *           The adjusted spending limit as a well-defined type, e.g. INFINITE.
+     *           Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
      *           This will only be populated if the adjusted spending limit is INFINITE,
      *           which is guaranteed to be true if the approved spending limit is
      *           INFINITE.
@@ -206,11 +206,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the account-level budget.
+     * Output only. The resource name of the account-level budget.
      * AccountBudget resource names have the form:
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -219,11 +219,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the account-level budget.
+     * Output only. The resource name of the account-level budget.
      * AccountBudget resource names have the form:
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -236,9 +236,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the account-level budget.
+     * Output only. The ID of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -249,9 +249,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the account-level budget.
+     * Output only. The ID of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -260,9 +260,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the account-level budget.
+     * Output only. The ID of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -277,9 +277,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the account-level budget.
+     * Output only. The ID of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -289,11 +289,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The resource name of the billing setup associated with this account-level
+     * Output only. The resource name of the billing setup associated with this account-level
      * budget.  BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getBillingSetup()
@@ -304,11 +304,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getBillingSetup()</code>
 
-     * The resource name of the billing setup associated with this account-level
+     * Output only. The resource name of the billing setup associated with this account-level
      * budget.  BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getBillingSetupUnwrapped()
@@ -317,11 +317,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the billing setup associated with this account-level
+     * Output only. The resource name of the billing setup associated with this account-level
      * budget.  BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -336,11 +336,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the billing setup associated with this account-level
+     * Output only. The resource name of the billing setup associated with this account-level
      * budget.  BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue billing_setup = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -350,9 +350,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The status of this account-level budget.
+     * Output only. The status of this account-level budget.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AccountBudgetStatusEnum.AccountBudgetStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AccountBudgetStatusEnum.AccountBudgetStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -361,9 +361,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of this account-level budget.
+     * Output only. The status of this account-level budget.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AccountBudgetStatusEnum.AccountBudgetStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AccountBudgetStatusEnum.AccountBudgetStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -376,9 +376,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the account-level budget.
+     * Output only. The name of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -389,9 +389,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * The name of the account-level budget.
+     * Output only. The name of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -400,9 +400,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the account-level budget.
+     * Output only. The name of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -417,9 +417,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the account-level budget.
+     * Output only. The name of the account-level budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -429,11 +429,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The proposed start time of the account-level budget in
+     * Output only. The proposed start time of the account-level budget in
      * yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      * this is the time of request.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getProposedStartDateTime()
@@ -444,11 +444,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getProposedStartDateTime()</code>
 
-     * The proposed start time of the account-level budget in
+     * Output only. The proposed start time of the account-level budget in
      * yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      * this is the time of request.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getProposedStartDateTimeUnwrapped()
@@ -457,11 +457,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed start time of the account-level budget in
+     * Output only. The proposed start time of the account-level budget in
      * yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      * this is the time of request.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -476,11 +476,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The proposed start time of the account-level budget in
+     * Output only. The proposed start time of the account-level budget in
      * yyyy-MM-dd HH:mm:ss format.  If a start time type of NOW was proposed,
      * this is the time of request.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_start_date_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -490,12 +490,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
+     * Output only. The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
      * format.
      * For example, if a new budget is approved after the proposed start time,
      * the approved start time is the time of approval.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getApprovedStartDateTime()
@@ -506,12 +506,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getApprovedStartDateTime()</code>
 
-     * The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
+     * Output only. The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
      * format.
      * For example, if a new budget is approved after the proposed start time,
      * the approved start time is the time of approval.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getApprovedStartDateTimeUnwrapped()
@@ -520,12 +520,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
+     * Output only. The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
      * format.
      * For example, if a new budget is approved after the proposed start time,
      * the approved start time is the time of approval.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -540,12 +540,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
+     * Output only. The approved start time of the account-level budget in yyyy-MM-dd HH:mm:ss
      * format.
      * For example, if a new budget is approved after the proposed start time,
      * the approved start time is the time of approval.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_start_date_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -555,10 +555,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The total adjustments amount.
+     * Output only. The total adjustments amount.
      * An example of an adjustment is courtesy credits.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getTotalAdjustmentsMicros()
@@ -569,10 +569,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTotalAdjustmentsMicros()</code>
 
-     * The total adjustments amount.
+     * Output only. The total adjustments amount.
      * An example of an adjustment is courtesy credits.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getTotalAdjustmentsMicrosUnwrapped()
@@ -581,10 +581,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total adjustments amount.
+     * Output only. The total adjustments amount.
      * An example of an adjustment is courtesy credits.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -599,10 +599,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The total adjustments amount.
+     * Output only. The total adjustments amount.
      * An example of an adjustment is courtesy credits.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_adjustments_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -612,11 +612,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The value of Ads that have been served, in micros.
+     * Output only. The value of Ads that have been served, in micros.
      * This includes overdelivery costs, in which case a credit might be
      * automatically applied to the budget (see total_adjustments_micros).
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getAmountServedMicros()
@@ -627,11 +627,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAmountServedMicros()</code>
 
-     * The value of Ads that have been served, in micros.
+     * Output only. The value of Ads that have been served, in micros.
      * This includes overdelivery costs, in which case a credit might be
      * automatically applied to the budget (see total_adjustments_micros).
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getAmountServedMicrosUnwrapped()
@@ -640,11 +640,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The value of Ads that have been served, in micros.
+     * Output only. The value of Ads that have been served, in micros.
      * This includes overdelivery costs, in which case a credit might be
      * automatically applied to the budget (see total_adjustments_micros).
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -659,11 +659,11 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The value of Ads that have been served, in micros.
+     * Output only. The value of Ads that have been served, in micros.
      * This includes overdelivery costs, in which case a credit might be
      * automatically applied to the budget (see total_adjustments_micros).
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value amount_served_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -673,10 +673,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * A purchase order number is a value that helps users reference this budget
+     * Output only. A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPurchaseOrderNumber()
@@ -687,10 +687,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPurchaseOrderNumber()</code>
 
-     * A purchase order number is a value that helps users reference this budget
+     * Output only. A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getPurchaseOrderNumberUnwrapped()
@@ -699,10 +699,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A purchase order number is a value that helps users reference this budget
+     * Output only. A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -717,10 +717,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * A purchase order number is a value that helps users reference this budget
+     * Output only. A purchase order number is a value that helps users reference this budget
      * in their monthly invoices.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -730,9 +730,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Notes associated with the budget.
+     * Output only. Notes associated with the budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getNotes()
@@ -743,9 +743,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getNotes()</code>
 
-     * Notes associated with the budget.
+     * Output only. Notes associated with the budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNotesUnwrapped()
@@ -754,9 +754,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Notes associated with the budget.
+     * Output only. Notes associated with the budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -771,9 +771,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Notes associated with the budget.
+     * Output only. Notes associated with the budget.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue notes = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -783,9 +783,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The pending proposal to modify this budget, if applicable.
+     * Output only. The pending proposal to modify this budget, if applicable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AccountBudget.PendingAccountBudgetProposal pending_proposal = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AccountBudget.PendingAccountBudgetProposal pending_proposal = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\AccountBudget\PendingAccountBudgetProposal
      */
     public function getPendingProposal()
@@ -794,9 +794,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The pending proposal to modify this budget, if applicable.
+     * Output only. The pending proposal to modify this budget, if applicable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AccountBudget.PendingAccountBudgetProposal pending_proposal = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AccountBudget.PendingAccountBudgetProposal pending_proposal = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\AccountBudget\PendingAccountBudgetProposal $var
      * @return $this
      */
@@ -809,9 +809,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed end time in yyyy-MM-dd HH:mm:ss format.
+     * Output only. The proposed end time in yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getProposedEndDateTime()
@@ -822,9 +822,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getProposedEndDateTime()</code>
 
-     * The proposed end time in yyyy-MM-dd HH:mm:ss format.
+     * Output only. The proposed end time in yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getProposedEndDateTimeUnwrapped()
@@ -833,9 +833,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed end time in yyyy-MM-dd HH:mm:ss format.
+     * Output only. The proposed end time in yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -850,9 +850,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The proposed end time in yyyy-MM-dd HH:mm:ss format.
+     * Output only. The proposed end time in yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue proposed_end_date_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -862,9 +862,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The proposed end time as a well-defined type, e.g. FOREVER.
+     * Output only. The proposed end time as a well-defined type, e.g. FOREVER.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getProposedEndTimeType()
@@ -873,9 +873,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed end time as a well-defined type, e.g. FOREVER.
+     * Output only. The proposed end time as a well-defined type, e.g. FOREVER.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TimeTypeEnum.TimeType proposed_end_time_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -888,9 +888,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved end time in yyyy-MM-dd HH:mm:ss format.
+     * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getApprovedEndDateTime()
@@ -901,9 +901,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getApprovedEndDateTime()</code>
 
-     * The approved end time in yyyy-MM-dd HH:mm:ss format.
+     * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getApprovedEndDateTimeUnwrapped()
@@ -912,9 +912,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved end time in yyyy-MM-dd HH:mm:ss format.
+     * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -929,9 +929,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The approved end time in yyyy-MM-dd HH:mm:ss format.
+     * Output only. The approved end time in yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue approved_end_date_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -941,9 +941,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The approved end time as a well-defined type, e.g. FOREVER.
+     * Output only. The approved end time as a well-defined type, e.g. FOREVER.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TimeTypeEnum.TimeType approved_end_time_type = 11;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getApprovedEndTimeType()
@@ -952,9 +952,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved end time as a well-defined type, e.g. FOREVER.
+     * Output only. The approved end time as a well-defined type, e.g. FOREVER.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TimeTypeEnum.TimeType approved_end_time_type = 11;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TimeTypeEnum.TimeType approved_end_time_type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -967,10 +967,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed spending limit in micros.  One million is equivalent to
+     * Output only. The proposed spending limit in micros.  One million is equivalent to
      * one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getProposedSpendingLimitMicros()
@@ -981,10 +981,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getProposedSpendingLimitMicros()</code>
 
-     * The proposed spending limit in micros.  One million is equivalent to
+     * Output only. The proposed spending limit in micros.  One million is equivalent to
      * one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getProposedSpendingLimitMicrosUnwrapped()
@@ -993,10 +993,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed spending limit in micros.  One million is equivalent to
+     * Output only. The proposed spending limit in micros.  One million is equivalent to
      * one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1011,10 +1011,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The proposed spending limit in micros.  One million is equivalent to
+     * Output only. The proposed spending limit in micros.  One million is equivalent to
      * one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value proposed_spending_limit_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1024,9 +1024,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The proposed spending limit as a well-defined type, e.g. INFINITE.
+     * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getProposedSpendingLimitType()
@@ -1035,9 +1035,9 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The proposed spending limit as a well-defined type, e.g. INFINITE.
+     * Output only. The proposed spending limit as a well-defined type, e.g. INFINITE.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType proposed_spending_limit_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1050,12 +1050,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved spending limit in micros.  One million is equivalent to
+     * Output only. The approved spending limit in micros.  One million is equivalent to
      * one unit.  This will only be populated if the proposed spending limit
      * is finite, and will always be greater than or equal to the
      * proposed spending limit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getApprovedSpendingLimitMicros()
@@ -1066,12 +1066,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getApprovedSpendingLimitMicros()</code>
 
-     * The approved spending limit in micros.  One million is equivalent to
+     * Output only. The approved spending limit in micros.  One million is equivalent to
      * one unit.  This will only be populated if the proposed spending limit
      * is finite, and will always be greater than or equal to the
      * proposed spending limit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getApprovedSpendingLimitMicrosUnwrapped()
@@ -1080,12 +1080,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved spending limit in micros.  One million is equivalent to
+     * Output only. The approved spending limit in micros.  One million is equivalent to
      * one unit.  This will only be populated if the proposed spending limit
      * is finite, and will always be greater than or equal to the
      * proposed spending limit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1100,12 +1100,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The approved spending limit in micros.  One million is equivalent to
+     * Output only. The approved spending limit in micros.  One million is equivalent to
      * one unit.  This will only be populated if the proposed spending limit
      * is finite, and will always be greater than or equal to the
      * proposed spending limit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value approved_spending_limit_micros = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1115,10 +1115,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The approved spending limit as a well-defined type, e.g. INFINITE.  This
+     * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
      * will only be populated if the approved spending limit is INFINITE.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getApprovedSpendingLimitType()
@@ -1127,10 +1127,10 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The approved spending limit as a well-defined type, e.g. INFINITE.  This
+     * Output only. The approved spending limit as a well-defined type, e.g. INFINITE.  This
      * will only be populated if the approved spending limit is INFINITE.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType approved_spending_limit_type = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1143,7 +1143,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The adjusted spending limit in micros.  One million is equivalent to
+     * Output only. The adjusted spending limit in micros.  One million is equivalent to
      * one unit.
      * If the approved spending limit is finite, the adjusted
      * spending limit may vary depending on the types of adjustments applied
@@ -1153,7 +1153,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * For example, a debit adjustment reduces how much the account is
      * allowed to spend.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getAdjustedSpendingLimitMicros()
@@ -1164,7 +1164,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdjustedSpendingLimitMicros()</code>
 
-     * The adjusted spending limit in micros.  One million is equivalent to
+     * Output only. The adjusted spending limit in micros.  One million is equivalent to
      * one unit.
      * If the approved spending limit is finite, the adjusted
      * spending limit may vary depending on the types of adjustments applied
@@ -1174,7 +1174,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * For example, a debit adjustment reduces how much the account is
      * allowed to spend.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getAdjustedSpendingLimitMicrosUnwrapped()
@@ -1183,7 +1183,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The adjusted spending limit in micros.  One million is equivalent to
+     * Output only. The adjusted spending limit in micros.  One million is equivalent to
      * one unit.
      * If the approved spending limit is finite, the adjusted
      * spending limit may vary depending on the types of adjustments applied
@@ -1193,7 +1193,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * For example, a debit adjustment reduces how much the account is
      * allowed to spend.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1208,7 +1208,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The adjusted spending limit in micros.  One million is equivalent to
+     * Output only. The adjusted spending limit in micros.  One million is equivalent to
      * one unit.
      * If the approved spending limit is finite, the adjusted
      * spending limit may vary depending on the types of adjustments applied
@@ -1218,7 +1218,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * For example, a debit adjustment reduces how much the account is
      * allowed to spend.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value adjusted_spending_limit_micros = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1228,12 +1228,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The adjusted spending limit as a well-defined type, e.g. INFINITE.
+     * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
      * This will only be populated if the adjusted spending limit is INFINITE,
      * which is guaranteed to be true if the approved spending limit is
      * INFINITE.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getAdjustedSpendingLimitType()
@@ -1242,12 +1242,12 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The adjusted spending limit as a well-defined type, e.g. INFINITE.
+     * Output only. The adjusted spending limit as a well-defined type, e.g. INFINITE.
      * This will only be populated if the adjusted spending limit is INFINITE,
      * which is guaranteed to be true if the approved spending limit is
      * INFINITE.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SpendingLimitTypeEnum.SpendingLimitType adjusted_spending_limit_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

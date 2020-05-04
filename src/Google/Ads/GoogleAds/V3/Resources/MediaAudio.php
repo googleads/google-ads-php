@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class MediaAudio extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The duration of the Audio in milliseconds.
+     * Output only. The duration of the Audio in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_duration_millis = null;
 
@@ -29,7 +29,7 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $ad_duration_millis
-     *           The duration of the Audio in milliseconds.
+     *           Output only. The duration of the Audio in milliseconds.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The duration of the Audio in milliseconds.
+     * Output only. The duration of the Audio in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getAdDurationMillis()
@@ -51,9 +51,9 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdDurationMillis()</code>
 
-     * The duration of the Audio in milliseconds.
+     * Output only. The duration of the Audio in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getAdDurationMillisUnwrapped()
@@ -62,9 +62,9 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The duration of the Audio in milliseconds.
+     * Output only. The duration of the Audio in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -79,9 +79,9 @@ class MediaAudio extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The duration of the Audio in milliseconds.
+     * Output only. The duration of the Audio in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

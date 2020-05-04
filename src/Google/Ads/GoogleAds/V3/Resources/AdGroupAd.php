@@ -16,11 +16,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroupAd extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad.
+     * Immutable. The resource name of the ad.
      * Ad group ad resource names have the form:
      * `customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
@@ -30,27 +30,27 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * The ad group to which the ad belongs.
+     * Immutable. The ad group to which the ad belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
-     * The ad.
+     * Immutable. The ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $ad = null;
     /**
-     * Policy information for the ad.
+     * Output only. Policy information for the ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdPolicySummary policy_summary = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdPolicySummary policy_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $policy_summary = null;
     /**
-     * Overall ad strength for this ad group ad.
+     * Output only. Overall ad strength for this ad group ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdStrengthEnum.AdStrength ad_strength = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdStrengthEnum.AdStrength ad_strength = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_strength = 0;
 
@@ -61,19 +61,19 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad.
+     *           Immutable. The resource name of the ad.
      *           Ad group ad resource names have the form:
      *           `customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}`
      *     @type int $status
      *           The status of the ad.
      *     @type \Google\Protobuf\StringValue $ad_group
-     *           The ad group to which the ad belongs.
+     *           Immutable. The ad group to which the ad belongs.
      *     @type \Google\Ads\GoogleAds\V3\Resources\Ad $ad
-     *           The ad.
+     *           Immutable. The ad.
      *     @type \Google\Ads\GoogleAds\V3\Resources\AdGroupAdPolicySummary $policy_summary
-     *           Policy information for the ad.
+     *           Output only. Policy information for the ad.
      *     @type int $ad_strength
-     *           Overall ad strength for this ad group ad.
+     *           Output only. Overall ad strength for this ad group ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -82,11 +82,11 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad.
+     * Immutable. The resource name of the ad.
      * Ad group ad resource names have the form:
      * `customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -95,11 +95,11 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad.
+     * Immutable. The resource name of the ad.
      * Ad group ad resource names have the form:
      * `customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -138,9 +138,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group to which the ad belongs.
+     * Immutable. The ad group to which the ad belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroup()
@@ -151,9 +151,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroup()</code>
 
-     * The ad group to which the ad belongs.
+     * Immutable. The ad group to which the ad belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupUnwrapped()
@@ -162,9 +162,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group to which the ad belongs.
+     * Immutable. The ad group to which the ad belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -179,9 +179,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The ad group to which the ad belongs.
+     * Immutable. The ad group to which the ad belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -191,9 +191,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ad.
+     * Immutable. The ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\Ad
      */
     public function getAd()
@@ -202,9 +202,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad.
+     * Immutable. The ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\Ad $var
      * @return $this
      */
@@ -217,9 +217,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Policy information for the ad.
+     * Output only. Policy information for the ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdPolicySummary policy_summary = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdPolicySummary policy_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupAdPolicySummary
      */
     public function getPolicySummary()
@@ -228,9 +228,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Policy information for the ad.
+     * Output only. Policy information for the ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdPolicySummary policy_summary = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdPolicySummary policy_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\AdGroupAdPolicySummary $var
      * @return $this
      */
@@ -243,9 +243,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Overall ad strength for this ad group ad.
+     * Output only. Overall ad strength for this ad group ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdStrengthEnum.AdStrength ad_strength = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdStrengthEnum.AdStrength ad_strength = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getAdStrength()
@@ -254,9 +254,9 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Overall ad strength for this ad group ad.
+     * Output only. Overall ad strength for this ad group ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdStrengthEnum.AdStrength ad_strength = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdStrengthEnum.AdStrength ad_strength = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

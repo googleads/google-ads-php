@@ -16,23 +16,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class CustomerClientLink extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Name of the resource.
+     * Immutable. Name of the resource.
      * CustomerClientLink resource names have the form:
      * `customers/{customer_id}/customerClientLinks/{client_customer_id}~{manager_link_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The client customer linked to this customer.
+     * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $client_customer = null;
     /**
-     * This is uniquely identifies a customer client link. Read only.
+     * Output only. This is uniquely identifies a customer client link. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $manager_link_id = null;
     /**
@@ -57,13 +57,13 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           Name of the resource.
+     *           Immutable. Name of the resource.
      *           CustomerClientLink resource names have the form:
      *           `customers/{customer_id}/customerClientLinks/{client_customer_id}~{manager_link_id}`
      *     @type \Google\Protobuf\StringValue $client_customer
-     *           The client customer linked to this customer.
+     *           Immutable. The client customer linked to this customer.
      *     @type \Google\Protobuf\Int64Value $manager_link_id
-     *           This is uniquely identifies a customer client link. Read only.
+     *           Output only. This is uniquely identifies a customer client link. Read only.
      *     @type int $status
      *           This is the status of the link between client and manager.
      *     @type \Google\Protobuf\BoolValue $hidden
@@ -78,11 +78,11 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the resource.
+     * Immutable. Name of the resource.
      * CustomerClientLink resource names have the form:
      * `customers/{customer_id}/customerClientLinks/{client_customer_id}~{manager_link_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -91,11 +91,11 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the resource.
+     * Immutable. Name of the resource.
      * CustomerClientLink resource names have the form:
      * `customers/{customer_id}/customerClientLinks/{client_customer_id}~{manager_link_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -108,9 +108,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The client customer linked to this customer.
+     * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getClientCustomer()
@@ -121,9 +121,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getClientCustomer()</code>
 
-     * The client customer linked to this customer.
+     * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getClientCustomerUnwrapped()
@@ -132,9 +132,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The client customer linked to this customer.
+     * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -149,9 +149,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The client customer linked to this customer.
+     * Immutable. The client customer linked to this customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -161,9 +161,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * This is uniquely identifies a customer client link. Read only.
+     * Output only. This is uniquely identifies a customer client link. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getManagerLinkId()
@@ -174,9 +174,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getManagerLinkId()</code>
 
-     * This is uniquely identifies a customer client link. Read only.
+     * Output only. This is uniquely identifies a customer client link. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getManagerLinkIdUnwrapped()
@@ -185,9 +185,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This is uniquely identifies a customer client link. Read only.
+     * Output only. This is uniquely identifies a customer client link. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -202,9 +202,9 @@ class CustomerClientLink extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * This is uniquely identifies a customer client link. Read only.
+     * Output only. This is uniquely identifies a customer client link. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value manager_link_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

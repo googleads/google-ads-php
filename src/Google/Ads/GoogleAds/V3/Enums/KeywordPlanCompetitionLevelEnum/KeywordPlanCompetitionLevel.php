@@ -26,19 +26,19 @@ class KeywordPlanCompetitionLevel
      */
     const UNKNOWN = 1;
     /**
-     * Low competition.
+     * Low competition. The Competition Index range for this is [0, 33].
      *
      * Generated from protobuf enum <code>LOW = 2;</code>
      */
     const LOW = 2;
     /**
-     * Medium competition.
+     * Medium competition. The Competition Index range for this is [34, 66].
      *
      * Generated from protobuf enum <code>MEDIUM = 3;</code>
      */
     const MEDIUM = 3;
     /**
-     * High competition.
+     * High competition. The Competition Index range for this is [67, 100].
      *
      * Generated from protobuf enum <code>HIGH = 4;</code>
      */

@@ -16,24 +16,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class TextAdRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Recommended ad.
+     * Output only. Recommended ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad = null;
     /**
-     * Creation date of the recommended ad.
+     * Output only. Creation date of the recommended ad.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $creation_date = null;
     /**
-     * Date, if present, is the earliest when the recommendation will be auto
+     * Output only. Date, if present, is the earliest when the recommendation will be auto
      * applied.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $auto_apply_date = null;
 
@@ -44,12 +44,12 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V3\Resources\Ad $ad
-     *           Recommended ad.
+     *           Output only. Recommended ad.
      *     @type \Google\Protobuf\StringValue $creation_date
-     *           Creation date of the recommended ad.
+     *           Output only. Creation date of the recommended ad.
      *           YYYY-MM-DD format, e.g., 2018-04-17.
      *     @type \Google\Protobuf\StringValue $auto_apply_date
-     *           Date, if present, is the earliest when the recommendation will be auto
+     *           Output only. Date, if present, is the earliest when the recommendation will be auto
      *           applied.
      *           YYYY-MM-DD format, e.g., 2018-04-17.
      * }
@@ -60,9 +60,9 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Recommended ad.
+     * Output only. Recommended ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\Ad
      */
     public function getAd()
@@ -71,9 +71,9 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Recommended ad.
+     * Output only. Recommended ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\Ad $var
      * @return $this
      */
@@ -86,10 +86,10 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Creation date of the recommended ad.
+     * Output only. Creation date of the recommended ad.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCreationDate()
@@ -100,10 +100,10 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCreationDate()</code>
 
-     * Creation date of the recommended ad.
+     * Output only. Creation date of the recommended ad.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCreationDateUnwrapped()
@@ -112,10 +112,10 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Creation date of the recommended ad.
+     * Output only. Creation date of the recommended ad.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -130,10 +130,10 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Creation date of the recommended ad.
+     * Output only. Creation date of the recommended ad.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue creation_date = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -143,11 +143,11 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Date, if present, is the earliest when the recommendation will be auto
+     * Output only. Date, if present, is the earliest when the recommendation will be auto
      * applied.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAutoApplyDate()
@@ -158,11 +158,11 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAutoApplyDate()</code>
 
-     * Date, if present, is the earliest when the recommendation will be auto
+     * Output only. Date, if present, is the earliest when the recommendation will be auto
      * applied.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getAutoApplyDateUnwrapped()
@@ -171,11 +171,11 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Date, if present, is the earliest when the recommendation will be auto
+     * Output only. Date, if present, is the earliest when the recommendation will be auto
      * applied.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -190,11 +190,11 @@ class TextAdRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Date, if present, is the earliest when the recommendation will be auto
+     * Output only. Date, if present, is the earliest when the recommendation will be auto
      * applied.
      * YYYY-MM-DD format, e.g., 2018-04-17.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue auto_apply_date = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

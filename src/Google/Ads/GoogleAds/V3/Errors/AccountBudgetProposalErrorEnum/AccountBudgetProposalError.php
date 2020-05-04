@@ -161,6 +161,13 @@ class AccountBudgetProposalError
      * Generated from protobuf enum <code>INVALID_BILLING_SETUP = 23;</code>
      */
     const INVALID_BILLING_SETUP = 23;
+    /**
+     * Budget creation failed as it overlaps with an pending budget proposal
+     * or an approved budget.
+     *
+     * Generated from protobuf enum <code>OVERLAPS_EXISTING_BUDGET = 24;</code>
+     */
+    const OVERLAPS_EXISTING_BUDGET = 24;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -187,6 +194,7 @@ class AccountBudgetProposalError
         self::BUDGET_DATE_RANGE_INCOMPATIBLE_WITH_BILLING_SETUP => 'BUDGET_DATE_RANGE_INCOMPATIBLE_WITH_BILLING_SETUP',
         self::NOT_AUTHORIZED => 'NOT_AUTHORIZED',
         self::INVALID_BILLING_SETUP => 'INVALID_BILLING_SETUP',
+        self::OVERLAPS_EXISTING_BUDGET => 'OVERLAPS_EXISTING_BUDGET',
     ];
 
     public static function name($value)

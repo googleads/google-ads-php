@@ -35,9 +35,9 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      */
     protected $use_supplied_urls_only = null;
     /**
-     * The list of page feeds associated with the campaign.
+     * Output only. The list of page feeds associated with the campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue feeds = 5;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue feeds = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     private $feeds;
 
@@ -55,7 +55,7 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\BoolValue $use_supplied_urls_only
      *           Whether the campaign uses advertiser supplied URLs exclusively.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $feeds
-     *           The list of page feeds associated with the campaign.
+     *           Output only. The list of page feeds associated with the campaign.
      * }
      */
     public function __construct($data = NULL) {
@@ -227,9 +227,9 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The list of page feeds associated with the campaign.
+     * Output only. The list of page feeds associated with the campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue feeds = 5;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue feeds = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFeeds()
@@ -238,9 +238,9 @@ class DynamicSearchAdsSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of page feeds associated with the campaign.
+     * Output only. The list of page feeds associated with the campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue feeds = 5;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue feeds = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

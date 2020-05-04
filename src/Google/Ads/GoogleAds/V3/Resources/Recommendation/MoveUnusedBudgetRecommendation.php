@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The excess budget's resource_name.
+     * Output only. The excess budget's resource_name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $excess_campaign_budget = null;
     /**
-     * The recommendation for the constrained budget to increase.
+     * Output only. The recommendation for the constrained budget to increase.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.CampaignBudgetRecommendation budget_recommendation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.CampaignBudgetRecommendation budget_recommendation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $budget_recommendation = null;
 
@@ -35,9 +35,9 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\StringValue $excess_campaign_budget
-     *           The excess budget's resource_name.
+     *           Output only. The excess budget's resource_name.
      *     @type \Google\Ads\GoogleAds\V3\Resources\Recommendation\CampaignBudgetRecommendation $budget_recommendation
-     *           The recommendation for the constrained budget to increase.
+     *           Output only. The recommendation for the constrained budget to increase.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,9 +46,9 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The excess budget's resource_name.
+     * Output only. The excess budget's resource_name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getExcessCampaignBudget()
@@ -59,9 +59,9 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getExcessCampaignBudget()</code>
 
-     * The excess budget's resource_name.
+     * Output only. The excess budget's resource_name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getExcessCampaignBudgetUnwrapped()
@@ -70,9 +70,9 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The excess budget's resource_name.
+     * Output only. The excess budget's resource_name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -87,9 +87,9 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The excess budget's resource_name.
+     * Output only. The excess budget's resource_name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue excess_campaign_budget = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -99,9 +99,9 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The recommendation for the constrained budget to increase.
+     * Output only. The recommendation for the constrained budget to increase.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.CampaignBudgetRecommendation budget_recommendation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.CampaignBudgetRecommendation budget_recommendation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\Recommendation\CampaignBudgetRecommendation
      */
     public function getBudgetRecommendation()
@@ -110,9 +110,9 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommendation for the constrained budget to increase.
+     * Output only. The recommendation for the constrained budget to increase.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.CampaignBudgetRecommendation budget_recommendation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.Recommendation.CampaignBudgetRecommendation budget_recommendation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\Recommendation\CampaignBudgetRecommendation $var
      * @return $this
      */

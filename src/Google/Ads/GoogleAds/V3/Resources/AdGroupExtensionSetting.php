@@ -16,26 +16,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad group extension setting.
+     * Immutable. The resource name of the ad group extension setting.
      * AdGroupExtensionSetting resource names have the form:
      * `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The extension type of the ad group extension setting.
+     * Immutable. The extension type of the ad group extension setting.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $extension_type = 0;
     /**
-     * The resource name of the ad group. The linked extension feed items will
+     * Immutable. The resource name of the ad group. The linked extension feed items will
      * serve under this ad group.
      * AdGroup resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
@@ -43,7 +43,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * ExtensionFeedItem resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 4;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 4 [(.google.api.resource_reference) = {</code>
      */
     private $extension_feed_items;
     /**
@@ -60,13 +60,13 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad group extension setting.
+     *           Immutable. The resource name of the ad group extension setting.
      *           AdGroupExtensionSetting resource names have the form:
      *           `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
      *     @type int $extension_type
-     *           The extension type of the ad group extension setting.
+     *           Immutable. The extension type of the ad group extension setting.
      *     @type \Google\Protobuf\StringValue $ad_group
-     *           The resource name of the ad group. The linked extension feed items will
+     *           Immutable. The resource name of the ad group. The linked extension feed items will
      *           serve under this ad group.
      *           AdGroup resource names have the form:
      *           `customers/{customer_id}/adGroups/{ad_group_id}`
@@ -84,11 +84,11 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group extension setting.
+     * Immutable. The resource name of the ad group extension setting.
      * AdGroupExtensionSetting resource names have the form:
      * `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -97,11 +97,11 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group extension setting.
+     * Immutable. The resource name of the ad group extension setting.
      * AdGroupExtensionSetting resource names have the form:
      * `customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -114,9 +114,9 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The extension type of the ad group extension setting.
+     * Immutable. The extension type of the ad group extension setting.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getExtensionType()
@@ -125,9 +125,9 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The extension type of the ad group extension setting.
+     * Immutable. The extension type of the ad group extension setting.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -140,12 +140,12 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group. The linked extension feed items will
+     * Immutable. The resource name of the ad group. The linked extension feed items will
      * serve under this ad group.
      * AdGroup resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroup()
@@ -156,12 +156,12 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroup()</code>
 
-     * The resource name of the ad group. The linked extension feed items will
+     * Immutable. The resource name of the ad group. The linked extension feed items will
      * serve under this ad group.
      * AdGroup resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupUnwrapped()
@@ -170,12 +170,12 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group. The linked extension feed items will
+     * Immutable. The resource name of the ad group. The linked extension feed items will
      * serve under this ad group.
      * AdGroup resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -190,12 +190,12 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the ad group. The linked extension feed items will
+     * Immutable. The resource name of the ad group. The linked extension feed items will
      * serve under this ad group.
      * AdGroup resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -209,7 +209,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * ExtensionFeedItem resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 4;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 4 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtensionFeedItems()
@@ -222,7 +222,7 @@ class AdGroupExtensionSetting extends \Google\Protobuf\Internal\Message
      * ExtensionFeedItem resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 4;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 4 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

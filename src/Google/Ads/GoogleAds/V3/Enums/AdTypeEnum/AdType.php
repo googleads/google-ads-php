@@ -141,6 +141,12 @@ class AdType
      * Generated from protobuf enum <code>SHOPPING_COMPARISON_LISTING_AD = 24;</code>
      */
     const SHOPPING_COMPARISON_LISTING_AD = 24;
+    /**
+     * Video responsive ad.
+     *
+     * Generated from protobuf enum <code>VIDEO_RESPONSIVE_AD = 30;</code>
+     */
+    const VIDEO_RESPONSIVE_AD = 30;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -164,6 +170,7 @@ class AdType
         self::DYNAMIC_HTML5_AD => 'DYNAMIC_HTML5_AD',
         self::APP_ENGAGEMENT_AD => 'APP_ENGAGEMENT_AD',
         self::SHOPPING_COMPARISON_LISTING_AD => 'SHOPPING_COMPARISON_LISTING_AD',
+        self::VIDEO_RESPONSIVE_AD => 'VIDEO_RESPONSIVE_AD',
     ];
 
     public static function name($value)

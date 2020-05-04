@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CalloutExtensionRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Callout extensions recommended to be added.
+     * Output only. Callout extensions recommended to be added.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CalloutFeedItem recommended_extensions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CalloutFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $recommended_extensions;
 
@@ -29,7 +29,7 @@ class CalloutExtensionRecommendation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V3\Common\CalloutFeedItem[]|\Google\Protobuf\Internal\RepeatedField $recommended_extensions
-     *           Callout extensions recommended to be added.
+     *           Output only. Callout extensions recommended to be added.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class CalloutExtensionRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Callout extensions recommended to be added.
+     * Output only. Callout extensions recommended to be added.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CalloutFeedItem recommended_extensions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CalloutFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRecommendedExtensions()
@@ -49,9 +49,9 @@ class CalloutExtensionRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Callout extensions recommended to be added.
+     * Output only. Callout extensions recommended to be added.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CalloutFeedItem recommended_extensions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CalloutFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\CalloutFeedItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

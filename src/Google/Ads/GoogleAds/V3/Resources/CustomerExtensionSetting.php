@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the customer extension setting.
+     * Immutable. The resource name of the customer extension setting.
      * CustomerExtensionSetting resource names have the form:
      * `customers/{customer_id}/customerExtensionSettings/{extension_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The extension type of the customer extension setting.
+     * Immutable. The extension type of the customer extension setting.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $extension_type = 0;
     /**
@@ -34,7 +34,7 @@ class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
      * ExtensionFeedItem resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 3;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 3 [(.google.api.resource_reference) = {</code>
      */
     private $extension_feed_items;
     /**
@@ -51,11 +51,11 @@ class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the customer extension setting.
+     *           Immutable. The resource name of the customer extension setting.
      *           CustomerExtensionSetting resource names have the form:
      *           `customers/{customer_id}/customerExtensionSettings/{extension_type}`
      *     @type int $extension_type
-     *           The extension type of the customer extension setting.
+     *           Immutable. The extension type of the customer extension setting.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $extension_feed_items
      *           The resource names of the extension feed items to serve under the customer.
      *           ExtensionFeedItem resource names have the form:
@@ -70,11 +70,11 @@ class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer extension setting.
+     * Immutable. The resource name of the customer extension setting.
      * CustomerExtensionSetting resource names have the form:
      * `customers/{customer_id}/customerExtensionSettings/{extension_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -83,11 +83,11 @@ class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer extension setting.
+     * Immutable. The resource name of the customer extension setting.
      * CustomerExtensionSetting resource names have the form:
      * `customers/{customer_id}/customerExtensionSettings/{extension_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -100,9 +100,9 @@ class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The extension type of the customer extension setting.
+     * Immutable. The extension type of the customer extension setting.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getExtensionType()
@@ -111,9 +111,9 @@ class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The extension type of the customer extension setting.
+     * Immutable. The extension type of the customer extension setting.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ExtensionTypeEnum.ExtensionType extension_type = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -130,7 +130,7 @@ class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
      * ExtensionFeedItem resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 3;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 3 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtensionFeedItems()
@@ -143,7 +143,7 @@ class CustomerExtensionSetting extends \Google\Protobuf\Internal\Message
      * ExtensionFeedItem resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 3;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue extension_feed_items = 3 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

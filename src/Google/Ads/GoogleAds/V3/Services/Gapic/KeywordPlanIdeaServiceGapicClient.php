@@ -188,7 +188,7 @@ class KeywordPlanIdeaServiceGapicClient
      * ```
      *
      * @param string        $customerId         The ID of the customer with the recommendation.
-     * @param StringValue   $language           The resource name of the language to target.
+     * @param StringValue   $language           Required. The resource name of the language to target.
      *                                          Required
      * @param StringValue[] $geoTargetConstants The resource names of the location to target.
      *                                          Max 10

@@ -117,6 +117,18 @@ class ManagerLinkError
      * Generated from protobuf enum <code>CLIENT_OUTSIDE_TREE = 16;</code>
      */
     const CLIENT_OUTSIDE_TREE = 16;
+    /**
+     * The changed status for mutate link is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_STATUS_CHANGE = 17;</code>
+     */
+    const INVALID_STATUS_CHANGE = 17;
+    /**
+     * The change for mutate link is invalid.
+     *
+     * Generated from protobuf enum <code>INVALID_CHANGE = 18;</code>
+     */
+    const INVALID_CHANGE = 18;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -136,6 +148,8 @@ class ManagerLinkError
         self::NON_OWNER_USER_CANNOT_MODIFY_LINK => 'NON_OWNER_USER_CANNOT_MODIFY_LINK',
         self::SUSPENDED_ACCOUNT_CANNOT_ADD_CLIENTS => 'SUSPENDED_ACCOUNT_CANNOT_ADD_CLIENTS',
         self::CLIENT_OUTSIDE_TREE => 'CLIENT_OUTSIDE_TREE',
+        self::INVALID_STATUS_CHANGE => 'INVALID_STATUS_CHANGE',
+        self::INVALID_CHANGE => 'INVALID_CHANGE',
     ];
 
     public static function name($value)

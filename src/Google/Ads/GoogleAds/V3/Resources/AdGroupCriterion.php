@@ -16,18 +16,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroupCriterion extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad group criterion.
+     * Immutable. The resource name of the ad group criterion.
      * Ad group criterion resource names have the form:
      * `customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
@@ -37,41 +37,41 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Information regarding the quality of the criterion.
+     * Output only. Information regarding the quality of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.QualityInfo quality_info = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.QualityInfo quality_info = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $quality_info = null;
     /**
-     * The ad group to which the criterion belongs.
+     * Immutable. The ad group to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 25;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     /**
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $negative = null;
     /**
-     * Serving status of the criterion.
+     * Output only. Serving status of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionSystemServingStatusEnum.CriterionSystemServingStatus system_serving_status = 52;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionSystemServingStatusEnum.CriterionSystemServingStatus system_serving_status = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $system_serving_status = 0;
     /**
-     * Approval status of the criterion.
+     * Output only. Approval status of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $approval_status = 0;
     /**
@@ -108,57 +108,57 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      */
     protected $percent_cpc_bid_micros = null;
     /**
-     * The effective CPC (cost-per-click) bid.
+     * Output only. The effective CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpc_bid_micros = null;
     /**
-     * The effective CPM (cost-per-thousand viewable impressions) bid.
+     * Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpm_bid_micros = null;
     /**
-     * The effective CPV (cost-per-view) bid.
+     * Output only. The effective CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpv_bid_micros = null;
     /**
-     * The effective Percent CPC bid amount.
+     * Output only. The effective Percent CPC bid amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_percent_cpc_bid_micros = null;
     /**
-     * Source of the effective CPC bid.
+     * Output only. Source of the effective CPC bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpc_bid_source = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpc_bid_source = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpc_bid_source = 0;
     /**
-     * Source of the effective CPM bid.
+     * Output only. Source of the effective CPM bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpm_bid_source = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpm_bid_source = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpm_bid_source = 0;
     /**
-     * Source of the effective CPV bid.
+     * Output only. Source of the effective CPV bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpv_bid_source = 23;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpv_bid_source = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_cpv_bid_source = 0;
     /**
-     * Source of the effective Percent CPC bid.
+     * Output only. Source of the effective Percent CPC bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_percent_cpc_bid_source = 0;
     /**
-     * Estimates for criterion bids at various positions.
+     * Output only. Estimates for criterion bids at various positions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.PositionEstimates position_estimates = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.PositionEstimates position_estimates = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $position_estimates = null;
     /**
@@ -202,28 +202,28 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad group criterion.
+     *           Immutable. The resource name of the ad group criterion.
      *           Ad group criterion resource names have the form:
      *           `customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}`
      *     @type \Google\Protobuf\Int64Value $criterion_id
-     *           The ID of the criterion.
+     *           Output only. The ID of the criterion.
      *           This field is ignored for mutates.
      *     @type int $status
      *           The status of the criterion.
      *     @type \Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion\QualityInfo $quality_info
-     *           Information regarding the quality of the criterion.
+     *           Output only. Information regarding the quality of the criterion.
      *     @type \Google\Protobuf\StringValue $ad_group
-     *           The ad group to which the criterion belongs.
+     *           Immutable. The ad group to which the criterion belongs.
      *     @type int $type
-     *           The type of the criterion.
+     *           Output only. The type of the criterion.
      *     @type \Google\Protobuf\BoolValue $negative
-     *           Whether to target (`false`) or exclude (`true`) the criterion.
+     *           Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *           This field is immutable. To switch a criterion from positive to negative,
      *           remove then re-add it.
      *     @type int $system_serving_status
-     *           Serving status of the criterion.
+     *           Output only. Serving status of the criterion.
      *     @type int $approval_status
-     *           Approval status of the criterion.
+     *           Output only. Approval status of the criterion.
      *     @type \Google\Protobuf\DoubleValue $bid_modifier
      *           The modifier for the bid when the criterion matches. The modifier must be
      *           in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
@@ -238,23 +238,23 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           for some good or service. The valid range for the fraction is [0,1) and the
      *           value stored here is 1,000,000 * [fraction].
      *     @type \Google\Protobuf\Int64Value $effective_cpc_bid_micros
-     *           The effective CPC (cost-per-click) bid.
+     *           Output only. The effective CPC (cost-per-click) bid.
      *     @type \Google\Protobuf\Int64Value $effective_cpm_bid_micros
-     *           The effective CPM (cost-per-thousand viewable impressions) bid.
+     *           Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *     @type \Google\Protobuf\Int64Value $effective_cpv_bid_micros
-     *           The effective CPV (cost-per-view) bid.
+     *           Output only. The effective CPV (cost-per-view) bid.
      *     @type \Google\Protobuf\Int64Value $effective_percent_cpc_bid_micros
-     *           The effective Percent CPC bid amount.
+     *           Output only. The effective Percent CPC bid amount.
      *     @type int $effective_cpc_bid_source
-     *           Source of the effective CPC bid.
+     *           Output only. Source of the effective CPC bid.
      *     @type int $effective_cpm_bid_source
-     *           Source of the effective CPM bid.
+     *           Output only. Source of the effective CPM bid.
      *     @type int $effective_cpv_bid_source
-     *           Source of the effective CPV bid.
+     *           Output only. Source of the effective CPV bid.
      *     @type int $effective_percent_cpc_bid_source
-     *           Source of the effective Percent CPC bid.
+     *           Output only. Source of the effective Percent CPC bid.
      *     @type \Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion\PositionEstimates $position_estimates
-     *           Estimates for criterion bids at various positions.
+     *           Output only. Estimates for criterion bids at various positions.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           The list of possible final URLs after all cross-domain redirects for the
      *           ad.
@@ -268,41 +268,41 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type \Google\Ads\GoogleAds\V3\Common\KeywordInfo $keyword
-     *           Keyword.
+     *           Immutable. Keyword.
      *     @type \Google\Ads\GoogleAds\V3\Common\PlacementInfo $placement
-     *           Placement.
+     *           Immutable. Placement.
      *     @type \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo $mobile_app_category
-     *           Mobile app category.
+     *           Immutable. Mobile app category.
      *     @type \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo $mobile_application
-     *           Mobile application.
+     *           Immutable. Mobile application.
      *     @type \Google\Ads\GoogleAds\V3\Common\ListingGroupInfo $listing_group
-     *           Listing group.
+     *           Immutable. Listing group.
      *     @type \Google\Ads\GoogleAds\V3\Common\AgeRangeInfo $age_range
-     *           Age range.
+     *           Immutable. Age range.
      *     @type \Google\Ads\GoogleAds\V3\Common\GenderInfo $gender
-     *           Gender.
+     *           Immutable. Gender.
      *     @type \Google\Ads\GoogleAds\V3\Common\IncomeRangeInfo $income_range
-     *           Income range.
+     *           Immutable. Income range.
      *     @type \Google\Ads\GoogleAds\V3\Common\ParentalStatusInfo $parental_status
-     *           Parental status.
+     *           Immutable. Parental status.
      *     @type \Google\Ads\GoogleAds\V3\Common\UserListInfo $user_list
-     *           User List.
+     *           Immutable. User List.
      *     @type \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo $youtube_video
-     *           YouTube Video.
+     *           Immutable. YouTube Video.
      *     @type \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo $youtube_channel
-     *           YouTube Channel.
+     *           Immutable. YouTube Channel.
      *     @type \Google\Ads\GoogleAds\V3\Common\TopicInfo $topic
-     *           Topic.
+     *           Immutable. Topic.
      *     @type \Google\Ads\GoogleAds\V3\Common\UserInterestInfo $user_interest
-     *           User Interest.
+     *           Immutable. User Interest.
      *     @type \Google\Ads\GoogleAds\V3\Common\WebpageInfo $webpage
-     *           Webpage
+     *           Immutable. Webpage
      *     @type \Google\Ads\GoogleAds\V3\Common\AppPaymentModelInfo $app_payment_model
-     *           App Payment Model.
+     *           Immutable. App Payment Model.
      *     @type \Google\Ads\GoogleAds\V3\Common\CustomAffinityInfo $custom_affinity
-     *           Custom Affinity.
+     *           Immutable. Custom Affinity.
      *     @type \Google\Ads\GoogleAds\V3\Common\CustomIntentInfo $custom_intent
-     *           Custom Intent.
+     *           Immutable. Custom Intent.
      * }
      */
     public function __construct($data = NULL) {
@@ -311,11 +311,11 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group criterion.
+     * Immutable. The resource name of the ad group criterion.
      * Ad group criterion resource names have the form:
      * `customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -324,11 +324,11 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group criterion.
+     * Immutable. The resource name of the ad group criterion.
      * Ad group criterion resource names have the form:
      * `customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -341,10 +341,10 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCriterionId()
@@ -355,10 +355,10 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCriterionId()</code>
 
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCriterionIdUnwrapped()
@@ -367,10 +367,10 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -385,10 +385,10 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -424,9 +424,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Information regarding the quality of the criterion.
+     * Output only. Information regarding the quality of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.QualityInfo quality_info = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.QualityInfo quality_info = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion\QualityInfo
      */
     public function getQualityInfo()
@@ -435,9 +435,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Information regarding the quality of the criterion.
+     * Output only. Information regarding the quality of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.QualityInfo quality_info = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.QualityInfo quality_info = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion\QualityInfo $var
      * @return $this
      */
@@ -450,9 +450,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group to which the criterion belongs.
+     * Immutable. The ad group to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroup()
@@ -463,9 +463,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroup()</code>
 
-     * The ad group to which the criterion belongs.
+     * Immutable. The ad group to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupUnwrapped()
@@ -474,9 +474,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group to which the criterion belongs.
+     * Immutable. The ad group to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -491,9 +491,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The ad group to which the criterion belongs.
+     * Immutable. The ad group to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -503,9 +503,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 25;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -514,9 +514,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 25;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -529,11 +529,11 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getNegative()
@@ -544,11 +544,11 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getNegative()</code>
 
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return bool|null
      */
     public function getNegativeUnwrapped()
@@ -557,11 +557,11 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -576,11 +576,11 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      * This field is immutable. To switch a criterion from positive to negative,
      * remove then re-add it.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -590,9 +590,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Serving status of the criterion.
+     * Output only. Serving status of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionSystemServingStatusEnum.CriterionSystemServingStatus system_serving_status = 52;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionSystemServingStatusEnum.CriterionSystemServingStatus system_serving_status = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getSystemServingStatus()
@@ -601,9 +601,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Serving status of the criterion.
+     * Output only. Serving status of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionSystemServingStatusEnum.CriterionSystemServingStatus system_serving_status = 52;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionSystemServingStatusEnum.CriterionSystemServingStatus system_serving_status = 52 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -616,9 +616,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Approval status of the criterion.
+     * Output only. Approval status of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getApprovalStatus()
@@ -627,9 +627,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Approval status of the criterion.
+     * Output only. Approval status of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus approval_status = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -919,9 +919,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The effective CPC (cost-per-click) bid.
+     * Output only. The effective CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getEffectiveCpcBidMicros()
@@ -932,9 +932,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEffectiveCpcBidMicros()</code>
 
-     * The effective CPC (cost-per-click) bid.
+     * Output only. The effective CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getEffectiveCpcBidMicrosUnwrapped()
@@ -943,9 +943,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The effective CPC (cost-per-click) bid.
+     * Output only. The effective CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -960,9 +960,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The effective CPC (cost-per-click) bid.
+     * Output only. The effective CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpc_bid_micros = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -972,9 +972,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The effective CPM (cost-per-thousand viewable impressions) bid.
+     * Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getEffectiveCpmBidMicros()
@@ -985,9 +985,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEffectiveCpmBidMicros()</code>
 
-     * The effective CPM (cost-per-thousand viewable impressions) bid.
+     * Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getEffectiveCpmBidMicrosUnwrapped()
@@ -996,9 +996,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The effective CPM (cost-per-thousand viewable impressions) bid.
+     * Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1013,9 +1013,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The effective CPM (cost-per-thousand viewable impressions) bid.
+     * Output only. The effective CPM (cost-per-thousand viewable impressions) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpm_bid_micros = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1025,9 +1025,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The effective CPV (cost-per-view) bid.
+     * Output only. The effective CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getEffectiveCpvBidMicros()
@@ -1038,9 +1038,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEffectiveCpvBidMicros()</code>
 
-     * The effective CPV (cost-per-view) bid.
+     * Output only. The effective CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getEffectiveCpvBidMicrosUnwrapped()
@@ -1049,9 +1049,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The effective CPV (cost-per-view) bid.
+     * Output only. The effective CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1066,9 +1066,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The effective CPV (cost-per-view) bid.
+     * Output only. The effective CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_cpv_bid_micros = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1078,9 +1078,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The effective Percent CPC bid amount.
+     * Output only. The effective Percent CPC bid amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getEffectivePercentCpcBidMicros()
@@ -1091,9 +1091,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEffectivePercentCpcBidMicros()</code>
 
-     * The effective Percent CPC bid amount.
+     * Output only. The effective Percent CPC bid amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getEffectivePercentCpcBidMicrosUnwrapped()
@@ -1102,9 +1102,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The effective Percent CPC bid amount.
+     * Output only. The effective Percent CPC bid amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1119,9 +1119,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The effective Percent CPC bid amount.
+     * Output only. The effective Percent CPC bid amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_percent_cpc_bid_micros = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1131,9 +1131,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Source of the effective CPC bid.
+     * Output only. Source of the effective CPC bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpc_bid_source = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpc_bid_source = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getEffectiveCpcBidSource()
@@ -1142,9 +1142,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective CPC bid.
+     * Output only. Source of the effective CPC bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpc_bid_source = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpc_bid_source = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1157,9 +1157,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective CPM bid.
+     * Output only. Source of the effective CPM bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpm_bid_source = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpm_bid_source = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getEffectiveCpmBidSource()
@@ -1168,9 +1168,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective CPM bid.
+     * Output only. Source of the effective CPM bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpm_bid_source = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpm_bid_source = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1183,9 +1183,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective CPV bid.
+     * Output only. Source of the effective CPV bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpv_bid_source = 23;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpv_bid_source = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getEffectiveCpvBidSource()
@@ -1194,9 +1194,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective CPV bid.
+     * Output only. Source of the effective CPV bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpv_bid_source = 23;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_cpv_bid_source = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1209,9 +1209,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective Percent CPC bid.
+     * Output only. Source of the effective Percent CPC bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getEffectivePercentCpcBidSource()
@@ -1220,9 +1220,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective Percent CPC bid.
+     * Output only. Source of the effective Percent CPC bid.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_percent_cpc_bid_source = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1235,9 +1235,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimates for criterion bids at various positions.
+     * Output only. Estimates for criterion bids at various positions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.PositionEstimates position_estimates = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.PositionEstimates position_estimates = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion\PositionEstimates
      */
     public function getPositionEstimates()
@@ -1246,9 +1246,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimates for criterion bids at various positions.
+     * Output only. Estimates for criterion bids at various positions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.PositionEstimates position_estimates = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupCriterion.PositionEstimates position_estimates = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion\PositionEstimates $var
      * @return $this
      */
@@ -1449,9 +1449,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Keyword.
+     * Immutable. Keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 27 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\KeywordInfo
      */
     public function getKeyword()
@@ -1460,9 +1460,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Keyword.
+     * Immutable. Keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 27 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\KeywordInfo $var
      * @return $this
      */
@@ -1475,9 +1475,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Placement.
+     * Immutable. Placement.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 28;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 28 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\PlacementInfo
      */
     public function getPlacement()
@@ -1486,9 +1486,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Placement.
+     * Immutable. Placement.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 28;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 28 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\PlacementInfo $var
      * @return $this
      */
@@ -1501,9 +1501,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile app category.
+     * Immutable. Mobile app category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 29;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 29 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo
      */
     public function getMobileAppCategory()
@@ -1512,9 +1512,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile app category.
+     * Immutable. Mobile app category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 29;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 29 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo $var
      * @return $this
      */
@@ -1527,9 +1527,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile application.
+     * Immutable. Mobile application.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 30;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo
      */
     public function getMobileApplication()
@@ -1538,9 +1538,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile application.
+     * Immutable. Mobile application.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 30;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo $var
      * @return $this
      */
@@ -1553,9 +1553,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Listing group.
+     * Immutable. Listing group.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ListingGroupInfo listing_group = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ListingGroupInfo listing_group = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\ListingGroupInfo
      */
     public function getListingGroup()
@@ -1564,9 +1564,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Listing group.
+     * Immutable. Listing group.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ListingGroupInfo listing_group = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ListingGroupInfo listing_group = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\ListingGroupInfo $var
      * @return $this
      */
@@ -1579,9 +1579,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Age range.
+     * Immutable. Age range.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.AgeRangeInfo age_range = 36;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.AgeRangeInfo age_range = 36 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\AgeRangeInfo
      */
     public function getAgeRange()
@@ -1590,9 +1590,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Age range.
+     * Immutable. Age range.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.AgeRangeInfo age_range = 36;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.AgeRangeInfo age_range = 36 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\AgeRangeInfo $var
      * @return $this
      */
@@ -1605,9 +1605,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Gender.
+     * Immutable. Gender.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.GenderInfo gender = 37;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.GenderInfo gender = 37 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\GenderInfo
      */
     public function getGender()
@@ -1616,9 +1616,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Gender.
+     * Immutable. Gender.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.GenderInfo gender = 37;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.GenderInfo gender = 37 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\GenderInfo $var
      * @return $this
      */
@@ -1631,9 +1631,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Income range.
+     * Immutable. Income range.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.IncomeRangeInfo income_range = 38;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.IncomeRangeInfo income_range = 38 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\IncomeRangeInfo
      */
     public function getIncomeRange()
@@ -1642,9 +1642,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Income range.
+     * Immutable. Income range.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.IncomeRangeInfo income_range = 38;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.IncomeRangeInfo income_range = 38 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\IncomeRangeInfo $var
      * @return $this
      */
@@ -1657,9 +1657,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Parental status.
+     * Immutable. Parental status.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ParentalStatusInfo parental_status = 39;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ParentalStatusInfo parental_status = 39 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\ParentalStatusInfo
      */
     public function getParentalStatus()
@@ -1668,9 +1668,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Parental status.
+     * Immutable. Parental status.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ParentalStatusInfo parental_status = 39;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.ParentalStatusInfo parental_status = 39 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\ParentalStatusInfo $var
      * @return $this
      */
@@ -1683,9 +1683,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User List.
+     * Immutable. User List.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.UserListInfo user_list = 42;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.UserListInfo user_list = 42 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\UserListInfo
      */
     public function getUserList()
@@ -1694,9 +1694,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User List.
+     * Immutable. User List.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.UserListInfo user_list = 42;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.UserListInfo user_list = 42 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\UserListInfo $var
      * @return $this
      */
@@ -1709,9 +1709,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Video.
+     * Immutable. YouTube Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 40;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo
      */
     public function getYoutubeVideo()
@@ -1720,9 +1720,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Video.
+     * Immutable. YouTube Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 40;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 40 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo $var
      * @return $this
      */
@@ -1735,9 +1735,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel.
+     * Immutable. YouTube Channel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 41;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 41 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo
      */
     public function getYoutubeChannel()
@@ -1746,9 +1746,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel.
+     * Immutable. YouTube Channel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 41;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 41 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo $var
      * @return $this
      */
@@ -1761,9 +1761,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Topic.
+     * Immutable. Topic.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.TopicInfo topic = 43;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.TopicInfo topic = 43 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\TopicInfo
      */
     public function getTopic()
@@ -1772,9 +1772,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Topic.
+     * Immutable. Topic.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.TopicInfo topic = 43;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.TopicInfo topic = 43 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\TopicInfo $var
      * @return $this
      */
@@ -1787,9 +1787,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User Interest.
+     * Immutable. User Interest.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.UserInterestInfo user_interest = 45;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.UserInterestInfo user_interest = 45 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\UserInterestInfo
      */
     public function getUserInterest()
@@ -1798,9 +1798,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User Interest.
+     * Immutable. User Interest.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.UserInterestInfo user_interest = 45;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.UserInterestInfo user_interest = 45 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\UserInterestInfo $var
      * @return $this
      */
@@ -1813,9 +1813,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Webpage
+     * Immutable. Webpage
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.WebpageInfo webpage = 46;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.WebpageInfo webpage = 46 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\WebpageInfo
      */
     public function getWebpage()
@@ -1824,9 +1824,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Webpage
+     * Immutable. Webpage
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.WebpageInfo webpage = 46;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.WebpageInfo webpage = 46 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\WebpageInfo $var
      * @return $this
      */
@@ -1839,9 +1839,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * App Payment Model.
+     * Immutable. App Payment Model.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.AppPaymentModelInfo app_payment_model = 47;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.AppPaymentModelInfo app_payment_model = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\AppPaymentModelInfo
      */
     public function getAppPaymentModel()
@@ -1850,9 +1850,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * App Payment Model.
+     * Immutable. App Payment Model.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.AppPaymentModelInfo app_payment_model = 47;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.AppPaymentModelInfo app_payment_model = 47 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\AppPaymentModelInfo $var
      * @return $this
      */
@@ -1865,9 +1865,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom Affinity.
+     * Immutable. Custom Affinity.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.CustomAffinityInfo custom_affinity = 48;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.CustomAffinityInfo custom_affinity = 48 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\CustomAffinityInfo
      */
     public function getCustomAffinity()
@@ -1876,9 +1876,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom Affinity.
+     * Immutable. Custom Affinity.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.CustomAffinityInfo custom_affinity = 48;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.CustomAffinityInfo custom_affinity = 48 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\CustomAffinityInfo $var
      * @return $this
      */
@@ -1891,9 +1891,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom Intent.
+     * Immutable. Custom Intent.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.CustomIntentInfo custom_intent = 49;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.CustomIntentInfo custom_intent = 49 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\CustomIntentInfo
      */
     public function getCustomIntent()
@@ -1902,9 +1902,9 @@ class AdGroupCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom Intent.
+     * Immutable. Custom Intent.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.CustomIntentInfo custom_intent = 49;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.CustomIntentInfo custom_intent = 49 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\CustomIntentInfo $var
      * @return $this
      */

@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroup extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad group.
+     * Immutable. The resource name of the ad group.
      * Ad group resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the ad group.
+     * Output only. The ID of the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -47,9 +47,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * The type of the ad group.
+     * Immutable. The type of the ad group.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupTypeEnum.AdGroupType type = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupTypeEnum.AdGroupType type = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $type = 0;
     /**
@@ -59,13 +59,13 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     protected $ad_rotation_mode = 0;
     /**
-     * For draft or experiment ad groups, this field is the resource name of the
+     * Output only. For draft or experiment ad groups, this field is the resource name of the
      * base ad group from which this ad group was created. If a draft or
      * experiment ad group does not have a base ad group, then this field is null.
      * For base ad groups, this field equals the ad group resource name.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $base_ad_group = null;
     /**
@@ -82,9 +82,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     private $url_custom_parameters;
     /**
-     * The campaign to which the ad group belongs.
+     * Immutable. The campaign to which the ad group belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
@@ -106,9 +106,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     protected $target_cpa_micros = null;
     /**
-     * The CPV (cost-per-view) bid.
+     * Output only. The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $cpv_bid_micros = null;
     /**
@@ -162,37 +162,37 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     protected $targeting_setting = null;
     /**
-     * The effective target CPA (cost-per-acquisition).
+     * Output only. The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_target_cpa_micros = null;
     /**
-     * Source of the effective target CPA.
+     * Output only. Source of the effective target CPA.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_target_cpa_source = 0;
     /**
-     * The effective target ROAS (return-on-ad-spend).
+     * Output only. The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_target_roas = null;
     /**
-     * Source of the effective target ROAS.
+     * Output only. Source of the effective target ROAS.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $effective_target_roas_source = 0;
     /**
-     * The resource names of labels attached to this ad group.
+     * Output only. The resource names of labels attached to this ad group.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 33;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     private $labels;
 
@@ -203,11 +203,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad group.
+     *           Immutable. The resource name of the ad group.
      *           Ad group resource names have the form:
      *           `customers/{customer_id}/adGroups/{ad_group_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the ad group.
+     *           Output only. The ID of the ad group.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the ad group.
      *           This field is required and should not be empty when creating new ad
@@ -218,11 +218,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *           The status of the ad group.
      *     @type int $type
-     *           The type of the ad group.
+     *           Immutable. The type of the ad group.
      *     @type int $ad_rotation_mode
      *           The ad rotation mode of the ad group.
      *     @type \Google\Protobuf\StringValue $base_ad_group
-     *           For draft or experiment ad groups, this field is the resource name of the
+     *           Output only. For draft or experiment ad groups, this field is the resource name of the
      *           base ad group from which this ad group was created. If a draft or
      *           experiment ad group does not have a base ad group, then this field is null.
      *           For base ad groups, this field equals the ad group resource name.
@@ -233,7 +233,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type \Google\Protobuf\StringValue $campaign
-     *           The campaign to which the ad group belongs.
+     *           Immutable. The campaign to which the ad group belongs.
      *     @type \Google\Protobuf\Int64Value $cpc_bid_micros
      *           The maximum CPC (cost-per-click) bid.
      *     @type \Google\Protobuf\Int64Value $cpm_bid_micros
@@ -241,7 +241,7 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int64Value $target_cpa_micros
      *           The target CPA (cost-per-acquisition).
      *     @type \Google\Protobuf\Int64Value $cpv_bid_micros
-     *           The CPV (cost-per-view) bid.
+     *           Output only. The CPV (cost-per-view) bid.
      *     @type \Google\Protobuf\Int64Value $target_cpm_micros
      *           Average amount in micros that the advertiser is willing to pay for every
      *           thousand times the ad is shown.
@@ -265,19 +265,19 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V3\Common\TargetingSetting $targeting_setting
      *           Setting for targeting related features.
      *     @type \Google\Protobuf\Int64Value $effective_target_cpa_micros
-     *           The effective target CPA (cost-per-acquisition).
+     *           Output only. The effective target CPA (cost-per-acquisition).
      *           This field is read-only.
      *     @type int $effective_target_cpa_source
-     *           Source of the effective target CPA.
+     *           Output only. Source of the effective target CPA.
      *           This field is read-only.
      *     @type \Google\Protobuf\DoubleValue $effective_target_roas
-     *           The effective target ROAS (return-on-ad-spend).
+     *           Output only. The effective target ROAS (return-on-ad-spend).
      *           This field is read-only.
      *     @type int $effective_target_roas_source
-     *           Source of the effective target ROAS.
+     *           Output only. Source of the effective target ROAS.
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $labels
-     *           The resource names of labels attached to this ad group.
+     *           Output only. The resource names of labels attached to this ad group.
      * }
      */
     public function __construct($data = NULL) {
@@ -286,11 +286,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group.
+     * Immutable. The resource name of the ad group.
      * Ad group resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -299,11 +299,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group.
+     * Immutable. The resource name of the ad group.
      * Ad group resource names have the form:
      * `customers/{customer_id}/adGroups/{ad_group_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -316,9 +316,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the ad group.
+     * Output only. The ID of the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -329,9 +329,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the ad group.
+     * Output only. The ID of the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -340,9 +340,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the ad group.
+     * Output only. The ID of the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -357,9 +357,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the ad group.
+     * Output only. The ID of the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -468,9 +468,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the ad group.
+     * Immutable. The type of the ad group.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupTypeEnum.AdGroupType type = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupTypeEnum.AdGroupType type = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getType()
@@ -479,9 +479,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the ad group.
+     * Immutable. The type of the ad group.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupTypeEnum.AdGroupType type = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdGroupTypeEnum.AdGroupType type = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -520,13 +520,13 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * For draft or experiment ad groups, this field is the resource name of the
+     * Output only. For draft or experiment ad groups, this field is the resource name of the
      * base ad group from which this ad group was created. If a draft or
      * experiment ad group does not have a base ad group, then this field is null.
      * For base ad groups, this field equals the ad group resource name.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getBaseAdGroup()
@@ -537,13 +537,13 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getBaseAdGroup()</code>
 
-     * For draft or experiment ad groups, this field is the resource name of the
+     * Output only. For draft or experiment ad groups, this field is the resource name of the
      * base ad group from which this ad group was created. If a draft or
      * experiment ad group does not have a base ad group, then this field is null.
      * For base ad groups, this field equals the ad group resource name.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getBaseAdGroupUnwrapped()
@@ -552,13 +552,13 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * For draft or experiment ad groups, this field is the resource name of the
+     * Output only. For draft or experiment ad groups, this field is the resource name of the
      * base ad group from which this ad group was created. If a draft or
      * experiment ad group does not have a base ad group, then this field is null.
      * For base ad groups, this field equals the ad group resource name.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -573,13 +573,13 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * For draft or experiment ad groups, this field is the resource name of the
+     * Output only. For draft or experiment ad groups, this field is the resource name of the
      * base ad group from which this ad group was created. If a draft or
      * experiment ad group does not have a base ad group, then this field is null.
      * For base ad groups, this field equals the ad group resource name.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_ad_group = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -670,9 +670,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign to which the ad group belongs.
+     * Immutable. The campaign to which the ad group belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaign()
@@ -683,9 +683,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaign()</code>
 
-     * The campaign to which the ad group belongs.
+     * Immutable. The campaign to which the ad group belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignUnwrapped()
@@ -694,9 +694,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign to which the ad group belongs.
+     * Immutable. The campaign to which the ad group belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -711,9 +711,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The campaign to which the ad group belongs.
+     * Immutable. The campaign to which the ad group belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -882,9 +882,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The CPV (cost-per-view) bid.
+     * Output only. The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCpvBidMicros()
@@ -895,9 +895,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCpvBidMicros()</code>
 
-     * The CPV (cost-per-view) bid.
+     * Output only. The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCpvBidMicrosUnwrapped()
@@ -906,9 +906,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The CPV (cost-per-view) bid.
+     * Output only. The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -923,9 +923,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The CPV (cost-per-view) bid.
+     * Output only. The CPV (cost-per-view) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cpv_bid_micros = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1253,10 +1253,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The effective target CPA (cost-per-acquisition).
+     * Output only. The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getEffectiveTargetCpaMicros()
@@ -1267,10 +1267,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEffectiveTargetCpaMicros()</code>
 
-     * The effective target CPA (cost-per-acquisition).
+     * Output only. The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getEffectiveTargetCpaMicrosUnwrapped()
@@ -1279,10 +1279,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The effective target CPA (cost-per-acquisition).
+     * Output only. The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1297,10 +1297,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The effective target CPA (cost-per-acquisition).
+     * Output only. The effective target CPA (cost-per-acquisition).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value effective_target_cpa_micros = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1310,10 +1310,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Source of the effective target CPA.
+     * Output only. Source of the effective target CPA.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getEffectiveTargetCpaSource()
@@ -1322,10 +1322,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective target CPA.
+     * Output only. Source of the effective target CPA.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_cpa_source = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1338,10 +1338,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The effective target ROAS (return-on-ad-spend).
+     * Output only. The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\DoubleValue
      */
     public function getEffectiveTargetRoas()
@@ -1352,10 +1352,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEffectiveTargetRoas()</code>
 
-     * The effective target ROAS (return-on-ad-spend).
+     * Output only. The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float|null
      */
     public function getEffectiveTargetRoasUnwrapped()
@@ -1364,10 +1364,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The effective target ROAS (return-on-ad-spend).
+     * Output only. The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
@@ -1382,10 +1382,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * The effective target ROAS (return-on-ad-spend).
+     * Output only. The effective target ROAS (return-on-ad-spend).
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue effective_target_roas = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float|null $var
      * @return $this
      */
@@ -1395,10 +1395,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Source of the effective target ROAS.
+     * Output only. Source of the effective target ROAS.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getEffectiveTargetRoasSource()
@@ -1407,10 +1407,10 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the effective target ROAS.
+     * Output only. Source of the effective target ROAS.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.BiddingSourceEnum.BiddingSource effective_target_roas_source = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1423,9 +1423,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource names of labels attached to this ad group.
+     * Output only. The resource names of labels attached to this ad group.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 33;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLabels()
@@ -1434,9 +1434,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource names of labels attached to this ad group.
+     * Output only. The resource names of labels attached to this ad group.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 33;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

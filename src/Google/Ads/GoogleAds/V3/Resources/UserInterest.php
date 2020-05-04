@@ -16,47 +16,47 @@ use Google\Protobuf\Internal\GPBUtil;
 class UserInterest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the user interest.
+     * Output only. The resource name of the user interest.
      * User interest resource names have the form:
      * `customers/{customer_id}/userInterests/{user_interest_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Taxonomy type of the user interest.
+     * Output only. Taxonomy type of the user interest.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType taxonomy_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType taxonomy_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $taxonomy_type = 0;
     /**
-     * The ID of the user interest.
+     * Output only. The ID of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $user_interest_id = null;
     /**
-     * The name of the user interest.
+     * Output only. The name of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
-     * The parent of the user interest.
+     * Output only. The parent of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $user_interest_parent = null;
     /**
-     * True if the user interest is launched to all channels and locales.
+     * Output only. True if the user interest is launched to all channels and locales.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $launched_to_all = null;
     /**
-     * Availability information of the user interest.
+     * Output only. Availability information of the user interest.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CriterionCategoryAvailability availabilities = 7;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $availabilities;
 
@@ -67,21 +67,21 @@ class UserInterest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the user interest.
+     *           Output only. The resource name of the user interest.
      *           User interest resource names have the form:
      *           `customers/{customer_id}/userInterests/{user_interest_id}`
      *     @type int $taxonomy_type
-     *           Taxonomy type of the user interest.
+     *           Output only. Taxonomy type of the user interest.
      *     @type \Google\Protobuf\Int64Value $user_interest_id
-     *           The ID of the user interest.
+     *           Output only. The ID of the user interest.
      *     @type \Google\Protobuf\StringValue $name
-     *           The name of the user interest.
+     *           Output only. The name of the user interest.
      *     @type \Google\Protobuf\StringValue $user_interest_parent
-     *           The parent of the user interest.
+     *           Output only. The parent of the user interest.
      *     @type \Google\Protobuf\BoolValue $launched_to_all
-     *           True if the user interest is launched to all channels and locales.
+     *           Output only. True if the user interest is launched to all channels and locales.
      *     @type \Google\Ads\GoogleAds\V3\Common\CriterionCategoryAvailability[]|\Google\Protobuf\Internal\RepeatedField $availabilities
-     *           Availability information of the user interest.
+     *           Output only. Availability information of the user interest.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,11 +90,11 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the user interest.
+     * Output only. The resource name of the user interest.
      * User interest resource names have the form:
      * `customers/{customer_id}/userInterests/{user_interest_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -103,11 +103,11 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the user interest.
+     * Output only. The resource name of the user interest.
      * User interest resource names have the form:
      * `customers/{customer_id}/userInterests/{user_interest_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -120,9 +120,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Taxonomy type of the user interest.
+     * Output only. Taxonomy type of the user interest.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType taxonomy_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType taxonomy_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getTaxonomyType()
@@ -131,9 +131,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Taxonomy type of the user interest.
+     * Output only. Taxonomy type of the user interest.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType taxonomy_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType taxonomy_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -146,9 +146,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the user interest.
+     * Output only. The ID of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getUserInterestId()
@@ -159,9 +159,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getUserInterestId()</code>
 
-     * The ID of the user interest.
+     * Output only. The ID of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getUserInterestIdUnwrapped()
@@ -170,9 +170,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the user interest.
+     * Output only. The ID of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -187,9 +187,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the user interest.
+     * Output only. The ID of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value user_interest_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -199,9 +199,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The name of the user interest.
+     * Output only. The name of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -212,9 +212,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * The name of the user interest.
+     * Output only. The name of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -223,9 +223,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the user interest.
+     * Output only. The name of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -240,9 +240,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the user interest.
+     * Output only. The name of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -252,9 +252,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The parent of the user interest.
+     * Output only. The parent of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getUserInterestParent()
@@ -265,9 +265,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getUserInterestParent()</code>
 
-     * The parent of the user interest.
+     * Output only. The parent of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getUserInterestParentUnwrapped()
@@ -276,9 +276,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The parent of the user interest.
+     * Output only. The parent of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -293,9 +293,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The parent of the user interest.
+     * Output only. The parent of the user interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue user_interest_parent = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -305,9 +305,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * True if the user interest is launched to all channels and locales.
+     * Output only. True if the user interest is launched to all channels and locales.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getLaunchedToAll()
@@ -318,9 +318,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLaunchedToAll()</code>
 
-     * True if the user interest is launched to all channels and locales.
+     * Output only. True if the user interest is launched to all channels and locales.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getLaunchedToAllUnwrapped()
@@ -329,9 +329,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if the user interest is launched to all channels and locales.
+     * Output only. True if the user interest is launched to all channels and locales.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -346,9 +346,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * True if the user interest is launched to all channels and locales.
+     * Output only. True if the user interest is launched to all channels and locales.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue launched_to_all = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -358,9 +358,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Availability information of the user interest.
+     * Output only. Availability information of the user interest.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CriterionCategoryAvailability availabilities = 7;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAvailabilities()
@@ -369,9 +369,9 @@ class UserInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Availability information of the user interest.
+     * Output only. Availability information of the user interest.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CriterionCategoryAvailability availabilities = 7;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.common.CriterionCategoryAvailability availabilities = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\CriterionCategoryAvailability[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -16,48 +16,48 @@ use Google\Protobuf\Internal\GPBUtil;
 class GeoTargetConstant extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the geo target constant.
+     * Output only. The resource name of the geo target constant.
      * Geo target constant resource names have the form:
      * `geoTargetConstants/{geo_target_constant_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the geo target constant.
+     * Output only. The ID of the geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * Geo target constant English name.
+     * Output only. Geo target constant English name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
-     * The ISO-3166-1 alpha-2 country code that is associated with the target.
+     * Output only. The ISO-3166-1 alpha-2 country code that is associated with the target.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_code = null;
     /**
-     * Geo target constant target type.
+     * Output only. Geo target constant target type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $target_type = null;
     /**
-     * Geo target constant status.
+     * Output only. Geo target constant status.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * The fully qualified English name, consisting of the target's name and that
+     * Output only. The fully qualified English name, consisting of the target's name and that
      * of its parent and country.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $canonical_name = null;
 
@@ -68,21 +68,21 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the geo target constant.
+     *           Output only. The resource name of the geo target constant.
      *           Geo target constant resource names have the form:
      *           `geoTargetConstants/{geo_target_constant_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the geo target constant.
+     *           Output only. The ID of the geo target constant.
      *     @type \Google\Protobuf\StringValue $name
-     *           Geo target constant English name.
+     *           Output only. Geo target constant English name.
      *     @type \Google\Protobuf\StringValue $country_code
-     *           The ISO-3166-1 alpha-2 country code that is associated with the target.
+     *           Output only. The ISO-3166-1 alpha-2 country code that is associated with the target.
      *     @type \Google\Protobuf\StringValue $target_type
-     *           Geo target constant target type.
+     *           Output only. Geo target constant target type.
      *     @type int $status
-     *           Geo target constant status.
+     *           Output only. Geo target constant status.
      *     @type \Google\Protobuf\StringValue $canonical_name
-     *           The fully qualified English name, consisting of the target's name and that
+     *           Output only. The fully qualified English name, consisting of the target's name and that
      *           of its parent and country.
      * }
      */
@@ -92,11 +92,11 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the geo target constant.
+     * Output only. The resource name of the geo target constant.
      * Geo target constant resource names have the form:
      * `geoTargetConstants/{geo_target_constant_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -105,11 +105,11 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the geo target constant.
+     * Output only. The resource name of the geo target constant.
      * Geo target constant resource names have the form:
      * `geoTargetConstants/{geo_target_constant_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -122,9 +122,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the geo target constant.
+     * Output only. The ID of the geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -135,9 +135,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the geo target constant.
+     * Output only. The ID of the geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -146,9 +146,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the geo target constant.
+     * Output only. The ID of the geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -163,9 +163,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the geo target constant.
+     * Output only. The ID of the geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -175,9 +175,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Geo target constant English name.
+     * Output only. Geo target constant English name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -188,9 +188,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * Geo target constant English name.
+     * Output only. Geo target constant English name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -199,9 +199,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Geo target constant English name.
+     * Output only. Geo target constant English name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -216,9 +216,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Geo target constant English name.
+     * Output only. Geo target constant English name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -228,9 +228,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ISO-3166-1 alpha-2 country code that is associated with the target.
+     * Output only. The ISO-3166-1 alpha-2 country code that is associated with the target.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCountryCode()
@@ -241,9 +241,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCountryCode()</code>
 
-     * The ISO-3166-1 alpha-2 country code that is associated with the target.
+     * Output only. The ISO-3166-1 alpha-2 country code that is associated with the target.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCountryCodeUnwrapped()
@@ -252,9 +252,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ISO-3166-1 alpha-2 country code that is associated with the target.
+     * Output only. The ISO-3166-1 alpha-2 country code that is associated with the target.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -269,9 +269,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The ISO-3166-1 alpha-2 country code that is associated with the target.
+     * Output only. The ISO-3166-1 alpha-2 country code that is associated with the target.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -281,9 +281,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Geo target constant target type.
+     * Output only. Geo target constant target type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTargetType()
@@ -294,9 +294,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTargetType()</code>
 
-     * Geo target constant target type.
+     * Output only. Geo target constant target type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getTargetTypeUnwrapped()
@@ -305,9 +305,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Geo target constant target type.
+     * Output only. Geo target constant target type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -322,9 +322,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Geo target constant target type.
+     * Output only. Geo target constant target type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue target_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -334,9 +334,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Geo target constant status.
+     * Output only. Geo target constant status.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -345,9 +345,9 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Geo target constant status.
+     * Output only. Geo target constant status.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetConstantStatusEnum.GeoTargetConstantStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -360,10 +360,10 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The fully qualified English name, consisting of the target's name and that
+     * Output only. The fully qualified English name, consisting of the target's name and that
      * of its parent and country.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCanonicalName()
@@ -374,10 +374,10 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCanonicalName()</code>
 
-     * The fully qualified English name, consisting of the target's name and that
+     * Output only. The fully qualified English name, consisting of the target's name and that
      * of its parent and country.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCanonicalNameUnwrapped()
@@ -386,10 +386,10 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The fully qualified English name, consisting of the target's name and that
+     * Output only. The fully qualified English name, consisting of the target's name and that
      * of its parent and country.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -404,10 +404,10 @@ class GeoTargetConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The fully qualified English name, consisting of the target's name and that
+     * Output only. The fully qualified English name, consisting of the target's name and that
      * of its parent and country.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue canonical_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

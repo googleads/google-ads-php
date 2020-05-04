@@ -21,23 +21,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdParameter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad parameter.
+     * Immutable. The resource name of the ad parameter.
      * Ad parameter resource names have the form:
      * `customers/{customer_id}/adParameters/{ad_group_id}~{criterion_id}~{parameter_index}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ad group criterion that this ad parameter belongs to.
+     * Immutable. The ad group criterion that this ad parameter belongs to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_criterion = null;
     /**
-     * The unique index of this ad parameter. Must be either 1 or 2.
+     * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $parameter_index = null;
     /**
@@ -66,13 +66,13 @@ class AdParameter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad parameter.
+     *           Immutable. The resource name of the ad parameter.
      *           Ad parameter resource names have the form:
      *           `customers/{customer_id}/adParameters/{ad_group_id}~{criterion_id}~{parameter_index}`
      *     @type \Google\Protobuf\StringValue $ad_group_criterion
-     *           The ad group criterion that this ad parameter belongs to.
+     *           Immutable. The ad group criterion that this ad parameter belongs to.
      *     @type \Google\Protobuf\Int64Value $parameter_index
-     *           The unique index of this ad parameter. Must be either 1 or 2.
+     *           Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *     @type \Google\Protobuf\StringValue $insertion_text
      *           Numeric value to insert into the ad text. The following restrictions
      *            apply:
@@ -95,11 +95,11 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad parameter.
+     * Immutable. The resource name of the ad parameter.
      * Ad parameter resource names have the form:
      * `customers/{customer_id}/adParameters/{ad_group_id}~{criterion_id}~{parameter_index}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -108,11 +108,11 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad parameter.
+     * Immutable. The resource name of the ad parameter.
      * Ad parameter resource names have the form:
      * `customers/{customer_id}/adParameters/{ad_group_id}~{criterion_id}~{parameter_index}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -125,9 +125,9 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group criterion that this ad parameter belongs to.
+     * Immutable. The ad group criterion that this ad parameter belongs to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroupCriterion()
@@ -138,9 +138,9 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroupCriterion()</code>
 
-     * The ad group criterion that this ad parameter belongs to.
+     * Immutable. The ad group criterion that this ad parameter belongs to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupCriterionUnwrapped()
@@ -149,9 +149,9 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group criterion that this ad parameter belongs to.
+     * Immutable. The ad group criterion that this ad parameter belongs to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -166,9 +166,9 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The ad group criterion that this ad parameter belongs to.
+     * Immutable. The ad group criterion that this ad parameter belongs to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -178,9 +178,9 @@ class AdParameter extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The unique index of this ad parameter. Must be either 1 or 2.
+     * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getParameterIndex()
@@ -191,9 +191,9 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getParameterIndex()</code>
 
-     * The unique index of this ad parameter. Must be either 1 or 2.
+     * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string|null
      */
     public function getParameterIndexUnwrapped()
@@ -202,9 +202,9 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique index of this ad parameter. Must be either 1 or 2.
+     * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -219,9 +219,9 @@ class AdParameter extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The unique index of this ad parameter. Must be either 1 or 2.
+     * Immutable. The unique index of this ad parameter. Must be either 1 or 2.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value parameter_index = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string|null $var
      * @return $this
      */
