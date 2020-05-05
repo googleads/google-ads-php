@@ -20,23 +20,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class GeographicView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the geographic view.
+     * Output only. The resource name of the geographic view.
      * Geographic view resource names have the form:
      * `customers/{customer_id}/geographicViews/{country_criterion_id}~{location_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Type of the geo targeting of the campaign.
+     * Output only. Type of the geo targeting of the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetingTypeEnum.GeoTargetingType location_type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetingTypeEnum.GeoTargetingType location_type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $location_type = 0;
     /**
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_criterion_id = null;
 
@@ -47,13 +47,13 @@ class GeographicView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the geographic view.
+     *           Output only. The resource name of the geographic view.
      *           Geographic view resource names have the form:
      *           `customers/{customer_id}/geographicViews/{country_criterion_id}~{location_type}`
      *     @type int $location_type
-     *           Type of the geo targeting of the campaign.
+     *           Output only. Type of the geo targeting of the campaign.
      *     @type \Google\Protobuf\Int64Value $country_criterion_id
-     *           Criterion Id for the country.
+     *           Output only. Criterion Id for the country.
      * }
      */
     public function __construct($data = NULL) {
@@ -62,11 +62,11 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the geographic view.
+     * Output only. The resource name of the geographic view.
      * Geographic view resource names have the form:
      * `customers/{customer_id}/geographicViews/{country_criterion_id}~{location_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -75,11 +75,11 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the geographic view.
+     * Output only. The resource name of the geographic view.
      * Geographic view resource names have the form:
      * `customers/{customer_id}/geographicViews/{country_criterion_id}~{location_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -92,9 +92,9 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the geo targeting of the campaign.
+     * Output only. Type of the geo targeting of the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetingTypeEnum.GeoTargetingType location_type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetingTypeEnum.GeoTargetingType location_type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getLocationType()
@@ -103,9 +103,9 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the geo targeting of the campaign.
+     * Output only. Type of the geo targeting of the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetingTypeEnum.GeoTargetingType location_type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.GeoTargetingTypeEnum.GeoTargetingType location_type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -118,9 +118,9 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCountryCriterionId()
@@ -131,9 +131,9 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCountryCriterionId()</code>
 
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCountryCriterionIdUnwrapped()
@@ -142,9 +142,9 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -159,9 +159,9 @@ class GeographicView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

@@ -16,18 +16,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Feed attribute from which to map.
+     * Immutable. Feed attribute from which to map.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $feed_attribute_id = null;
     /**
-     * The placeholder field ID. If a placeholder field enum is not published in
+     * Output only. The placeholder field ID. If a placeholder field enum is not published in
      * the current API version, then this field will be populated and the field
      * oneof will be empty.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $field_id = null;
     protected $field;
@@ -39,54 +39,54 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $feed_attribute_id
-     *           Feed attribute from which to map.
+     *           Immutable. Feed attribute from which to map.
      *     @type \Google\Protobuf\Int64Value $field_id
-     *           The placeholder field ID. If a placeholder field enum is not published in
+     *           Output only. The placeholder field ID. If a placeholder field enum is not published in
      *           the current API version, then this field will be populated and the field
      *           oneof will be empty.
      *           This field is read-only.
      *     @type int $sitelink_field
-     *           Sitelink Placeholder Fields.
+     *           Immutable. Sitelink Placeholder Fields.
      *     @type int $call_field
-     *           Call Placeholder Fields.
+     *           Immutable. Call Placeholder Fields.
      *     @type int $app_field
-     *           App Placeholder Fields.
+     *           Immutable. App Placeholder Fields.
      *     @type int $location_field
-     *           Location Placeholder Fields. This field is read-only.
+     *           Output only. Location Placeholder Fields. This field is read-only.
      *     @type int $affiliate_location_field
-     *           Affiliate Location Placeholder Fields. This field is read-only.
+     *           Output only. Affiliate Location Placeholder Fields. This field is read-only.
      *     @type int $callout_field
-     *           Callout Placeholder Fields.
+     *           Immutable. Callout Placeholder Fields.
      *     @type int $structured_snippet_field
-     *           Structured Snippet Placeholder Fields.
+     *           Immutable. Structured Snippet Placeholder Fields.
      *     @type int $message_field
-     *           Message Placeholder Fields.
+     *           Immutable. Message Placeholder Fields.
      *     @type int $price_field
-     *           Price Placeholder Fields.
+     *           Immutable. Price Placeholder Fields.
      *     @type int $promotion_field
-     *           Promotion Placeholder Fields.
+     *           Immutable. Promotion Placeholder Fields.
      *     @type int $ad_customizer_field
-     *           Ad Customizer Placeholder Fields
+     *           Immutable. Ad Customizer Placeholder Fields
      *     @type int $dsa_page_feed_field
-     *           Dynamic Search Ad Page Feed Fields.
+     *           Immutable. Dynamic Search Ad Page Feed Fields.
      *     @type int $location_extension_targeting_field
-     *           Location Target Fields.
+     *           Immutable. Location Target Fields.
      *     @type int $education_field
-     *           Education Placeholder Fields
+     *           Immutable. Education Placeholder Fields
      *     @type int $flight_field
-     *           Flight Placeholder Fields
+     *           Immutable. Flight Placeholder Fields
      *     @type int $custom_field
-     *           Custom Placeholder Fields
+     *           Immutable. Custom Placeholder Fields
      *     @type int $hotel_field
-     *           Hotel Placeholder Fields
+     *           Immutable. Hotel Placeholder Fields
      *     @type int $real_estate_field
-     *           Real Estate Placeholder Fields
+     *           Immutable. Real Estate Placeholder Fields
      *     @type int $travel_field
-     *           Travel Placeholder Fields
+     *           Immutable. Travel Placeholder Fields
      *     @type int $local_field
-     *           Local Placeholder Fields
+     *           Immutable. Local Placeholder Fields
      *     @type int $job_field
-     *           Job Placeholder Fields
+     *           Immutable. Job Placeholder Fields
      * }
      */
     public function __construct($data = NULL) {
@@ -95,9 +95,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Feed attribute from which to map.
+     * Immutable. Feed attribute from which to map.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getFeedAttributeId()
@@ -108,9 +108,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFeedAttributeId()</code>
 
-     * Feed attribute from which to map.
+     * Immutable. Feed attribute from which to map.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string|null
      */
     public function getFeedAttributeIdUnwrapped()
@@ -119,9 +119,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Feed attribute from which to map.
+     * Immutable. Feed attribute from which to map.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -136,9 +136,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Feed attribute from which to map.
+     * Immutable. Feed attribute from which to map.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_attribute_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -148,12 +148,12 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The placeholder field ID. If a placeholder field enum is not published in
+     * Output only. The placeholder field ID. If a placeholder field enum is not published in
      * the current API version, then this field will be populated and the field
      * oneof will be empty.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getFieldId()
@@ -164,12 +164,12 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFieldId()</code>
 
-     * The placeholder field ID. If a placeholder field enum is not published in
+     * Output only. The placeholder field ID. If a placeholder field enum is not published in
      * the current API version, then this field will be populated and the field
      * oneof will be empty.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getFieldIdUnwrapped()
@@ -178,12 +178,12 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The placeholder field ID. If a placeholder field enum is not published in
+     * Output only. The placeholder field ID. If a placeholder field enum is not published in
      * the current API version, then this field will be populated and the field
      * oneof will be empty.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -198,12 +198,12 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The placeholder field ID. If a placeholder field enum is not published in
+     * Output only. The placeholder field ID. If a placeholder field enum is not published in
      * the current API version, then this field will be populated and the field
      * oneof will be empty.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -213,9 +213,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Sitelink Placeholder Fields.
+     * Immutable. Sitelink Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField sitelink_field = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField sitelink_field = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getSitelinkField()
@@ -224,9 +224,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sitelink Placeholder Fields.
+     * Immutable. Sitelink Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField sitelink_field = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SitelinkPlaceholderFieldEnum.SitelinkPlaceholderField sitelink_field = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -239,9 +239,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Call Placeholder Fields.
+     * Immutable. Call Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CallPlaceholderFieldEnum.CallPlaceholderField call_field = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CallPlaceholderFieldEnum.CallPlaceholderField call_field = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getCallField()
@@ -250,9 +250,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Call Placeholder Fields.
+     * Immutable. Call Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CallPlaceholderFieldEnum.CallPlaceholderField call_field = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CallPlaceholderFieldEnum.CallPlaceholderField call_field = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -265,9 +265,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * App Placeholder Fields.
+     * Immutable. App Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppPlaceholderFieldEnum.AppPlaceholderField app_field = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppPlaceholderFieldEnum.AppPlaceholderField app_field = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getAppField()
@@ -276,9 +276,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * App Placeholder Fields.
+     * Immutable. App Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppPlaceholderFieldEnum.AppPlaceholderField app_field = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppPlaceholderFieldEnum.AppPlaceholderField app_field = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -291,9 +291,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location Placeholder Fields. This field is read-only.
+     * Output only. Location Placeholder Fields. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocationPlaceholderFieldEnum.LocationPlaceholderField location_field = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocationPlaceholderFieldEnum.LocationPlaceholderField location_field = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getLocationField()
@@ -302,9 +302,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location Placeholder Fields. This field is read-only.
+     * Output only. Location Placeholder Fields. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocationPlaceholderFieldEnum.LocationPlaceholderField location_field = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocationPlaceholderFieldEnum.LocationPlaceholderField location_field = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -317,9 +317,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Affiliate Location Placeholder Fields. This field is read-only.
+     * Output only. Affiliate Location Placeholder Fields. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField affiliate_location_field = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField affiliate_location_field = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getAffiliateLocationField()
@@ -328,9 +328,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Affiliate Location Placeholder Fields. This field is read-only.
+     * Output only. Affiliate Location Placeholder Fields. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField affiliate_location_field = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AffiliateLocationPlaceholderFieldEnum.AffiliateLocationPlaceholderField affiliate_location_field = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -343,9 +343,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Callout Placeholder Fields.
+     * Immutable. Callout Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CalloutPlaceholderFieldEnum.CalloutPlaceholderField callout_field = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CalloutPlaceholderFieldEnum.CalloutPlaceholderField callout_field = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getCalloutField()
@@ -354,9 +354,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Callout Placeholder Fields.
+     * Immutable. Callout Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CalloutPlaceholderFieldEnum.CalloutPlaceholderField callout_field = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CalloutPlaceholderFieldEnum.CalloutPlaceholderField callout_field = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -369,9 +369,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Structured Snippet Placeholder Fields.
+     * Immutable. Structured Snippet Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField structured_snippet_field = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField structured_snippet_field = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getStructuredSnippetField()
@@ -380,9 +380,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Structured Snippet Placeholder Fields.
+     * Immutable. Structured Snippet Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField structured_snippet_field = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.StructuredSnippetPlaceholderFieldEnum.StructuredSnippetPlaceholderField structured_snippet_field = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -395,9 +395,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Message Placeholder Fields.
+     * Immutable. Message Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MessagePlaceholderFieldEnum.MessagePlaceholderField message_field = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MessagePlaceholderFieldEnum.MessagePlaceholderField message_field = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getMessageField()
@@ -406,9 +406,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Message Placeholder Fields.
+     * Immutable. Message Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MessagePlaceholderFieldEnum.MessagePlaceholderField message_field = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MessagePlaceholderFieldEnum.MessagePlaceholderField message_field = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -421,9 +421,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Price Placeholder Fields.
+     * Immutable. Price Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PricePlaceholderFieldEnum.PricePlaceholderField price_field = 11;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PricePlaceholderFieldEnum.PricePlaceholderField price_field = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getPriceField()
@@ -432,9 +432,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Price Placeholder Fields.
+     * Immutable. Price Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PricePlaceholderFieldEnum.PricePlaceholderField price_field = 11;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PricePlaceholderFieldEnum.PricePlaceholderField price_field = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -447,9 +447,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Promotion Placeholder Fields.
+     * Immutable. Promotion Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PromotionPlaceholderFieldEnum.PromotionPlaceholderField promotion_field = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PromotionPlaceholderFieldEnum.PromotionPlaceholderField promotion_field = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getPromotionField()
@@ -458,9 +458,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Promotion Placeholder Fields.
+     * Immutable. Promotion Placeholder Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PromotionPlaceholderFieldEnum.PromotionPlaceholderField promotion_field = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PromotionPlaceholderFieldEnum.PromotionPlaceholderField promotion_field = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -473,9 +473,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Ad Customizer Placeholder Fields
+     * Immutable. Ad Customizer Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField ad_customizer_field = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField ad_customizer_field = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getAdCustomizerField()
@@ -484,9 +484,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Ad Customizer Placeholder Fields
+     * Immutable. Ad Customizer Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField ad_customizer_field = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AdCustomizerPlaceholderFieldEnum.AdCustomizerPlaceholderField ad_customizer_field = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -499,9 +499,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Dynamic Search Ad Page Feed Fields.
+     * Immutable. Dynamic Search Ad Page Feed Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DsaPageFeedCriterionFieldEnum.DsaPageFeedCriterionField dsa_page_feed_field = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DsaPageFeedCriterionFieldEnum.DsaPageFeedCriterionField dsa_page_feed_field = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getDsaPageFeedField()
@@ -510,9 +510,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Dynamic Search Ad Page Feed Fields.
+     * Immutable. Dynamic Search Ad Page Feed Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DsaPageFeedCriterionFieldEnum.DsaPageFeedCriterionField dsa_page_feed_field = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DsaPageFeedCriterionFieldEnum.DsaPageFeedCriterionField dsa_page_feed_field = 14 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -525,9 +525,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location Target Fields.
+     * Immutable. Location Target Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField location_extension_targeting_field = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField location_extension_targeting_field = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getLocationExtensionTargetingField()
@@ -536,9 +536,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location Target Fields.
+     * Immutable. Location Target Fields.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField location_extension_targeting_field = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocationExtensionTargetingCriterionFieldEnum.LocationExtensionTargetingCriterionField location_extension_targeting_field = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -551,9 +551,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Education Placeholder Fields
+     * Immutable. Education Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.EducationPlaceholderFieldEnum.EducationPlaceholderField education_field = 16;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.EducationPlaceholderFieldEnum.EducationPlaceholderField education_field = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getEducationField()
@@ -562,9 +562,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Education Placeholder Fields
+     * Immutable. Education Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.EducationPlaceholderFieldEnum.EducationPlaceholderField education_field = 16;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.EducationPlaceholderFieldEnum.EducationPlaceholderField education_field = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -577,9 +577,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Flight Placeholder Fields
+     * Immutable. Flight Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FlightPlaceholderFieldEnum.FlightPlaceholderField flight_field = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FlightPlaceholderFieldEnum.FlightPlaceholderField flight_field = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getFlightField()
@@ -588,9 +588,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Flight Placeholder Fields
+     * Immutable. Flight Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FlightPlaceholderFieldEnum.FlightPlaceholderField flight_field = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FlightPlaceholderFieldEnum.FlightPlaceholderField flight_field = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -603,9 +603,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom Placeholder Fields
+     * Immutable. Custom Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CustomPlaceholderFieldEnum.CustomPlaceholderField custom_field = 18;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CustomPlaceholderFieldEnum.CustomPlaceholderField custom_field = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getCustomField()
@@ -614,9 +614,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom Placeholder Fields
+     * Immutable. Custom Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CustomPlaceholderFieldEnum.CustomPlaceholderField custom_field = 18;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CustomPlaceholderFieldEnum.CustomPlaceholderField custom_field = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -629,9 +629,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Hotel Placeholder Fields
+     * Immutable. Hotel Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.HotelPlaceholderFieldEnum.HotelPlaceholderField hotel_field = 19;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.HotelPlaceholderFieldEnum.HotelPlaceholderField hotel_field = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getHotelField()
@@ -640,9 +640,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Hotel Placeholder Fields
+     * Immutable. Hotel Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.HotelPlaceholderFieldEnum.HotelPlaceholderField hotel_field = 19;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.HotelPlaceholderFieldEnum.HotelPlaceholderField hotel_field = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -655,9 +655,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Real Estate Placeholder Fields
+     * Immutable. Real Estate Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.RealEstatePlaceholderFieldEnum.RealEstatePlaceholderField real_estate_field = 20;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.RealEstatePlaceholderFieldEnum.RealEstatePlaceholderField real_estate_field = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getRealEstateField()
@@ -666,9 +666,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Real Estate Placeholder Fields
+     * Immutable. Real Estate Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.RealEstatePlaceholderFieldEnum.RealEstatePlaceholderField real_estate_field = 20;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.RealEstatePlaceholderFieldEnum.RealEstatePlaceholderField real_estate_field = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -681,9 +681,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Travel Placeholder Fields
+     * Immutable. Travel Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TravelPlaceholderFieldEnum.TravelPlaceholderField travel_field = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TravelPlaceholderFieldEnum.TravelPlaceholderField travel_field = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getTravelField()
@@ -692,9 +692,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Travel Placeholder Fields
+     * Immutable. Travel Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TravelPlaceholderFieldEnum.TravelPlaceholderField travel_field = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.TravelPlaceholderFieldEnum.TravelPlaceholderField travel_field = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -707,9 +707,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Local Placeholder Fields
+     * Immutable. Local Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocalPlaceholderFieldEnum.LocalPlaceholderField local_field = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocalPlaceholderFieldEnum.LocalPlaceholderField local_field = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getLocalField()
@@ -718,9 +718,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Local Placeholder Fields
+     * Immutable. Local Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocalPlaceholderFieldEnum.LocalPlaceholderField local_field = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LocalPlaceholderFieldEnum.LocalPlaceholderField local_field = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -733,9 +733,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Job Placeholder Fields
+     * Immutable. Job Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.JobPlaceholderFieldEnum.JobPlaceholderField job_field = 23;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.JobPlaceholderFieldEnum.JobPlaceholderField job_field = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getJobField()
@@ -744,9 +744,9 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Job Placeholder Fields
+     * Immutable. Job Placeholder Fields
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.JobPlaceholderFieldEnum.JobPlaceholderField job_field = 23;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.JobPlaceholderFieldEnum.JobPlaceholderField job_field = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */

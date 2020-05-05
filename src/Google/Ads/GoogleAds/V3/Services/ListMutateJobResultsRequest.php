@@ -18,7 +18,7 @@ class ListMutateJobResultsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the MutateJob whose results are being listed.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
@@ -66,7 +66,7 @@ class ListMutateJobResultsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the MutateJob whose results are being listed.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -77,7 +77,7 @@ class ListMutateJobResultsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the MutateJob whose results are being listed.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

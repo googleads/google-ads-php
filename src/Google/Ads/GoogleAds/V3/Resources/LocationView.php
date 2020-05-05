@@ -17,11 +17,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class LocationView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the location view.
+     * Output only. The resource name of the location view.
      * Location view resource names have the form:
      * `customers/{customer_id}/locationViews/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
 
@@ -32,7 +32,7 @@ class LocationView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the location view.
+     *           Output only. The resource name of the location view.
      *           Location view resource names have the form:
      *           `customers/{customer_id}/locationViews/{campaign_id}~{criterion_id}`
      * }
@@ -43,11 +43,11 @@ class LocationView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the location view.
+     * Output only. The resource name of the location view.
      * Location view resource names have the form:
      * `customers/{customer_id}/locationViews/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -56,11 +56,11 @@ class LocationView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the location view.
+     * Output only. The resource name of the location view.
      * Location view resource names have the form:
      * `customers/{customer_id}/locationViews/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

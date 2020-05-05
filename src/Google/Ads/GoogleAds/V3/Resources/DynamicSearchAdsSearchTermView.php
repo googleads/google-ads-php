@@ -16,60 +16,60 @@ use Google\Protobuf\Internal\GPBUtil;
 class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the dynamic search ads search term view.
+     * Output only. The resource name of the dynamic search ads search term view.
      * Dynamic search ads search term view resource names have the form:
      * `customers/{customer_id}/dynamicSearchAdsSearchTermViews/{ad_group_id}~{search_term_fp}~{headline_fp}~{landing_page_fp}~{page_url_fp}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Search term
+     * Output only. Search term
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $search_term = null;
     /**
-     * The dynamically generated headline of the Dynamic Search Ad.
+     * Output only. The dynamically generated headline of the Dynamic Search Ad.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $headline = null;
     /**
-     * The dynamically selected landing page URL of the impression.
+     * Output only. The dynamically selected landing page URL of the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $landing_page = null;
     /**
-     * The URL of page feed item served for the impression.
+     * Output only. The URL of page feed item served for the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $page_url = null;
     /**
-     * True if query matches a negative keyword.
+     * Output only. True if query matches a negative keyword.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $has_negative_keyword = null;
     /**
-     * True if query is added to targeted keywords.
+     * Output only. True if query is added to targeted keywords.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $has_matching_keyword = null;
     /**
-     * True if query matches a negative url.
+     * Output only. True if query matches a negative url.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $has_negative_url = null;
 
@@ -80,29 +80,29 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the dynamic search ads search term view.
+     *           Output only. The resource name of the dynamic search ads search term view.
      *           Dynamic search ads search term view resource names have the form:
      *           `customers/{customer_id}/dynamicSearchAdsSearchTermViews/{ad_group_id}~{search_term_fp}~{headline_fp}~{landing_page_fp}~{page_url_fp}`
      *     @type \Google\Protobuf\StringValue $search_term
-     *           Search term
+     *           Output only. Search term
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $headline
-     *           The dynamically generated headline of the Dynamic Search Ad.
+     *           Output only. The dynamically generated headline of the Dynamic Search Ad.
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $landing_page
-     *           The dynamically selected landing page URL of the impression.
+     *           Output only. The dynamically selected landing page URL of the impression.
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $page_url
-     *           The URL of page feed item served for the impression.
+     *           Output only. The URL of page feed item served for the impression.
      *           This field is read-only.
      *     @type \Google\Protobuf\BoolValue $has_negative_keyword
-     *           True if query matches a negative keyword.
+     *           Output only. True if query matches a negative keyword.
      *           This field is read-only.
      *     @type \Google\Protobuf\BoolValue $has_matching_keyword
-     *           True if query is added to targeted keywords.
+     *           Output only. True if query is added to targeted keywords.
      *           This field is read-only.
      *     @type \Google\Protobuf\BoolValue $has_negative_url
-     *           True if query matches a negative url.
+     *           Output only. True if query matches a negative url.
      *           This field is read-only.
      * }
      */
@@ -112,11 +112,11 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the dynamic search ads search term view.
+     * Output only. The resource name of the dynamic search ads search term view.
      * Dynamic search ads search term view resource names have the form:
      * `customers/{customer_id}/dynamicSearchAdsSearchTermViews/{ad_group_id}~{search_term_fp}~{headline_fp}~{landing_page_fp}~{page_url_fp}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -125,11 +125,11 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the dynamic search ads search term view.
+     * Output only. The resource name of the dynamic search ads search term view.
      * Dynamic search ads search term view resource names have the form:
      * `customers/{customer_id}/dynamicSearchAdsSearchTermViews/{ad_group_id}~{search_term_fp}~{headline_fp}~{landing_page_fp}~{page_url_fp}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -142,10 +142,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Search term
+     * Output only. Search term
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getSearchTerm()
@@ -156,10 +156,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSearchTerm()</code>
 
-     * Search term
+     * Output only. Search term
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getSearchTermUnwrapped()
@@ -168,10 +168,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Search term
+     * Output only. Search term
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -186,10 +186,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Search term
+     * Output only. Search term
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -199,10 +199,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The dynamically generated headline of the Dynamic Search Ad.
+     * Output only. The dynamically generated headline of the Dynamic Search Ad.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getHeadline()
@@ -213,10 +213,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHeadline()</code>
 
-     * The dynamically generated headline of the Dynamic Search Ad.
+     * Output only. The dynamically generated headline of the Dynamic Search Ad.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getHeadlineUnwrapped()
@@ -225,10 +225,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The dynamically generated headline of the Dynamic Search Ad.
+     * Output only. The dynamically generated headline of the Dynamic Search Ad.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -243,10 +243,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The dynamically generated headline of the Dynamic Search Ad.
+     * Output only. The dynamically generated headline of the Dynamic Search Ad.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue headline = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -256,10 +256,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The dynamically selected landing page URL of the impression.
+     * Output only. The dynamically selected landing page URL of the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getLandingPage()
@@ -270,10 +270,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLandingPage()</code>
 
-     * The dynamically selected landing page URL of the impression.
+     * Output only. The dynamically selected landing page URL of the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getLandingPageUnwrapped()
@@ -282,10 +282,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The dynamically selected landing page URL of the impression.
+     * Output only. The dynamically selected landing page URL of the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -300,10 +300,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The dynamically selected landing page URL of the impression.
+     * Output only. The dynamically selected landing page URL of the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue landing_page = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -313,10 +313,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The URL of page feed item served for the impression.
+     * Output only. The URL of page feed item served for the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPageUrl()
@@ -327,10 +327,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPageUrl()</code>
 
-     * The URL of page feed item served for the impression.
+     * Output only. The URL of page feed item served for the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getPageUrlUnwrapped()
@@ -339,10 +339,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL of page feed item served for the impression.
+     * Output only. The URL of page feed item served for the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -357,10 +357,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The URL of page feed item served for the impression.
+     * Output only. The URL of page feed item served for the impression.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue page_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -370,10 +370,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * True if query matches a negative keyword.
+     * Output only. True if query matches a negative keyword.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getHasNegativeKeyword()
@@ -384,10 +384,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHasNegativeKeyword()</code>
 
-     * True if query matches a negative keyword.
+     * Output only. True if query matches a negative keyword.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getHasNegativeKeywordUnwrapped()
@@ -396,10 +396,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if query matches a negative keyword.
+     * Output only. True if query matches a negative keyword.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -414,10 +414,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * True if query matches a negative keyword.
+     * Output only. True if query matches a negative keyword.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_keyword = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -427,10 +427,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * True if query is added to targeted keywords.
+     * Output only. True if query is added to targeted keywords.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getHasMatchingKeyword()
@@ -441,10 +441,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHasMatchingKeyword()</code>
 
-     * True if query is added to targeted keywords.
+     * Output only. True if query is added to targeted keywords.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getHasMatchingKeywordUnwrapped()
@@ -453,10 +453,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if query is added to targeted keywords.
+     * Output only. True if query is added to targeted keywords.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -471,10 +471,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * True if query is added to targeted keywords.
+     * Output only. True if query is added to targeted keywords.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_matching_keyword = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -484,10 +484,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * True if query matches a negative url.
+     * Output only. True if query matches a negative url.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getHasNegativeUrl()
@@ -498,10 +498,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHasNegativeUrl()</code>
 
-     * True if query matches a negative url.
+     * Output only. True if query matches a negative url.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getHasNegativeUrlUnwrapped()
@@ -510,10 +510,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if query matches a negative url.
+     * Output only. True if query matches a negative url.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -528,10 +528,10 @@ class DynamicSearchAdsSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * True if query matches a negative url.
+     * Output only. True if query matches a negative url.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_negative_url = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */

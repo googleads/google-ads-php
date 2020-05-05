@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class FeedPlaceholderView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the feed placeholder view.
+     * Output only. The resource name of the feed placeholder view.
      * Feed placeholder view resource names have the form:
      * `customers/{customer_id}/feedPlaceholderViews/{placeholder_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The placeholder type of the feed placeholder view.
+     * Output only. The placeholder type of the feed placeholder view.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $placeholder_type = 0;
 
@@ -37,11 +37,11 @@ class FeedPlaceholderView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the feed placeholder view.
+     *           Output only. The resource name of the feed placeholder view.
      *           Feed placeholder view resource names have the form:
      *           `customers/{customer_id}/feedPlaceholderViews/{placeholder_type}`
      *     @type int $placeholder_type
-     *           The placeholder type of the feed placeholder view.
+     *           Output only. The placeholder type of the feed placeholder view.
      * }
      */
     public function __construct($data = NULL) {
@@ -50,11 +50,11 @@ class FeedPlaceholderView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the feed placeholder view.
+     * Output only. The resource name of the feed placeholder view.
      * Feed placeholder view resource names have the form:
      * `customers/{customer_id}/feedPlaceholderViews/{placeholder_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -63,11 +63,11 @@ class FeedPlaceholderView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the feed placeholder view.
+     * Output only. The resource name of the feed placeholder view.
      * Feed placeholder view resource names have the form:
      * `customers/{customer_id}/feedPlaceholderViews/{placeholder_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -80,9 +80,9 @@ class FeedPlaceholderView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The placeholder type of the feed placeholder view.
+     * Output only. The placeholder type of the feed placeholder view.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getPlaceholderType()
@@ -91,9 +91,9 @@ class FeedPlaceholderView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The placeholder type of the feed placeholder view.
+     * Output only. The placeholder type of the feed placeholder view.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.PlaceholderTypeEnum.PlaceholderType placeholder_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

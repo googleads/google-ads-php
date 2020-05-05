@@ -105,6 +105,7 @@ use Google\Ads\GoogleAds\V3\Services\MerchantCenterLinkServiceClient;
 use Google\Ads\GoogleAds\V3\Services\MobileAppCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V3\Services\MobileDeviceConstantServiceClient;
 use Google\Ads\GoogleAds\V3\Services\MutateJobServiceClient;
+use Google\Ads\GoogleAds\V3\Services\OfflineUserDataJobServiceClient;
 use Google\Ads\GoogleAds\V3\Services\OperatingSystemVersionConstantServiceClient;
 use Google\Ads\GoogleAds\V3\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V3\Services\ParentalStatusViewServiceClient;
@@ -120,6 +121,7 @@ use Google\Ads\GoogleAds\V3\Services\SharedSetServiceClient;
 use Google\Ads\GoogleAds\V3\Services\ShoppingPerformanceViewServiceClient;
 use Google\Ads\GoogleAds\V3\Services\TopicConstantServiceClient;
 use Google\Ads\GoogleAds\V3\Services\TopicViewServiceClient;
+use Google\Ads\GoogleAds\V3\Services\UserDataServiceClient;
 use Google\Ads\GoogleAds\V3\Services\UserInterestServiceClient;
 use Google\Ads\GoogleAds\V3\Services\UserListServiceClient;
 use Google\Ads\GoogleAds\V3\Services\VideoServiceClient;
@@ -876,6 +878,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return OfflineUserDataJobServiceClient
+     */
+    public function getOfflineUserDataJobServiceClient()
+    {
+        return new OfflineUserDataJobServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return OperatingSystemVersionConstantServiceClient
      */
     public function getOperatingSystemVersionConstantServiceClient()
@@ -993,6 +1003,14 @@ trait ServiceClientFactoryTrait
     public function getTopicConstantServiceClient()
     {
         return new TopicConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return UserDataServiceClient
+     */
+    public function getUserDataServiceClient()
+    {
+        return new UserDataServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

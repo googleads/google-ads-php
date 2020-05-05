@@ -17,34 +17,34 @@ use Google\Protobuf\Internal\GPBUtil;
 class CampaignSharedSet extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign shared set.
+     * Immutable. The resource name of the campaign shared set.
      * Campaign shared set resource names have the form:
      * `customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The campaign to which the campaign shared set belongs.
+     * Immutable. The campaign to which the campaign shared set belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
-     * The shared set associated with the campaign. This may be a negative keyword
+     * Immutable. The shared set associated with the campaign. This may be a negative keyword
      * shared set of another customer. This customer should be a manager of the
      * other customer, otherwise the campaign shared set will exist but have no
      * serving effect. Only negative keyword shared sets can be associated with
      * Shopping campaigns. Only negative placement shared sets can be associated
      * with Display mobile app campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $shared_set = null;
     /**
-     * The status of this campaign shared set. Read only.
+     * Output only. The status of this campaign shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CampaignSharedSetStatusEnum.CampaignSharedSetStatus status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CampaignSharedSetStatusEnum.CampaignSharedSetStatus status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
 
@@ -55,20 +55,20 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the campaign shared set.
+     *           Immutable. The resource name of the campaign shared set.
      *           Campaign shared set resource names have the form:
      *           `customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}`
      *     @type \Google\Protobuf\StringValue $campaign
-     *           The campaign to which the campaign shared set belongs.
+     *           Immutable. The campaign to which the campaign shared set belongs.
      *     @type \Google\Protobuf\StringValue $shared_set
-     *           The shared set associated with the campaign. This may be a negative keyword
+     *           Immutable. The shared set associated with the campaign. This may be a negative keyword
      *           shared set of another customer. This customer should be a manager of the
      *           other customer, otherwise the campaign shared set will exist but have no
      *           serving effect. Only negative keyword shared sets can be associated with
      *           Shopping campaigns. Only negative placement shared sets can be associated
      *           with Display mobile app campaigns.
      *     @type int $status
-     *           The status of this campaign shared set. Read only.
+     *           Output only. The status of this campaign shared set. Read only.
      * }
      */
     public function __construct($data = NULL) {
@@ -77,11 +77,11 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign shared set.
+     * Immutable. The resource name of the campaign shared set.
      * Campaign shared set resource names have the form:
      * `customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -90,11 +90,11 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign shared set.
+     * Immutable. The resource name of the campaign shared set.
      * Campaign shared set resource names have the form:
      * `customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -107,9 +107,9 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign to which the campaign shared set belongs.
+     * Immutable. The campaign to which the campaign shared set belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaign()
@@ -120,9 +120,9 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaign()</code>
 
-     * The campaign to which the campaign shared set belongs.
+     * Immutable. The campaign to which the campaign shared set belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignUnwrapped()
@@ -131,9 +131,9 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign to which the campaign shared set belongs.
+     * Immutable. The campaign to which the campaign shared set belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -148,9 +148,9 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The campaign to which the campaign shared set belongs.
+     * Immutable. The campaign to which the campaign shared set belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -160,14 +160,14 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The shared set associated with the campaign. This may be a negative keyword
+     * Immutable. The shared set associated with the campaign. This may be a negative keyword
      * shared set of another customer. This customer should be a manager of the
      * other customer, otherwise the campaign shared set will exist but have no
      * serving effect. Only negative keyword shared sets can be associated with
      * Shopping campaigns. Only negative placement shared sets can be associated
      * with Display mobile app campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getSharedSet()
@@ -178,14 +178,14 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSharedSet()</code>
 
-     * The shared set associated with the campaign. This may be a negative keyword
+     * Immutable. The shared set associated with the campaign. This may be a negative keyword
      * shared set of another customer. This customer should be a manager of the
      * other customer, otherwise the campaign shared set will exist but have no
      * serving effect. Only negative keyword shared sets can be associated with
      * Shopping campaigns. Only negative placement shared sets can be associated
      * with Display mobile app campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getSharedSetUnwrapped()
@@ -194,14 +194,14 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The shared set associated with the campaign. This may be a negative keyword
+     * Immutable. The shared set associated with the campaign. This may be a negative keyword
      * shared set of another customer. This customer should be a manager of the
      * other customer, otherwise the campaign shared set will exist but have no
      * serving effect. Only negative keyword shared sets can be associated with
      * Shopping campaigns. Only negative placement shared sets can be associated
      * with Display mobile app campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -216,14 +216,14 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The shared set associated with the campaign. This may be a negative keyword
+     * Immutable. The shared set associated with the campaign. This may be a negative keyword
      * shared set of another customer. This customer should be a manager of the
      * other customer, otherwise the campaign shared set will exist but have no
      * serving effect. Only negative keyword shared sets can be associated with
      * Shopping campaigns. Only negative placement shared sets can be associated
      * with Display mobile app campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -233,9 +233,9 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The status of this campaign shared set. Read only.
+     * Output only. The status of this campaign shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CampaignSharedSetStatusEnum.CampaignSharedSetStatus status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CampaignSharedSetStatusEnum.CampaignSharedSetStatus status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -244,9 +244,9 @@ class CampaignSharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of this campaign shared set. Read only.
+     * Output only. The status of this campaign shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CampaignSharedSetStatusEnum.CampaignSharedSetStatus status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CampaignSharedSetStatusEnum.CampaignSharedSetStatus status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

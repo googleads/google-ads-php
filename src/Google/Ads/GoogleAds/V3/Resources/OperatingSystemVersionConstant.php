@@ -18,42 +18,42 @@ use Google\Protobuf\Internal\GPBUtil;
 class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the operating system version constant.
+     * Output only. The resource name of the operating system version constant.
      * Operating system version constant resource names have the form:
      * `operatingSystemVersionConstants/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the operating system version.
+     * Output only. The ID of the operating system version.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * Name of the operating system.
+     * Output only. Name of the operating system.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
-     * The OS Major Version number.
+     * Output only. The OS Major Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $os_major_version = null;
     /**
-     * The OS Minor Version number.
+     * Output only. The OS Minor Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $os_minor_version = null;
     /**
-     * Determines whether this constant represents a single version or a range of
+     * Output only. Determines whether this constant represents a single version or a range of
      * versions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType operator_type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType operator_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $operator_type = 0;
 
@@ -64,19 +64,19 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the operating system version constant.
+     *           Output only. The resource name of the operating system version constant.
      *           Operating system version constant resource names have the form:
      *           `operatingSystemVersionConstants/{criterion_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the operating system version.
+     *           Output only. The ID of the operating system version.
      *     @type \Google\Protobuf\StringValue $name
-     *           Name of the operating system.
+     *           Output only. Name of the operating system.
      *     @type \Google\Protobuf\Int32Value $os_major_version
-     *           The OS Major Version number.
+     *           Output only. The OS Major Version number.
      *     @type \Google\Protobuf\Int32Value $os_minor_version
-     *           The OS Minor Version number.
+     *           Output only. The OS Minor Version number.
      *     @type int $operator_type
-     *           Determines whether this constant represents a single version or a range of
+     *           Output only. Determines whether this constant represents a single version or a range of
      *           versions.
      * }
      */
@@ -86,11 +86,11 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the operating system version constant.
+     * Output only. The resource name of the operating system version constant.
      * Operating system version constant resource names have the form:
      * `operatingSystemVersionConstants/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -99,11 +99,11 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the operating system version constant.
+     * Output only. The resource name of the operating system version constant.
      * Operating system version constant resource names have the form:
      * `operatingSystemVersionConstants/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -116,9 +116,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the operating system version.
+     * Output only. The ID of the operating system version.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -129,9 +129,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the operating system version.
+     * Output only. The ID of the operating system version.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -140,9 +140,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the operating system version.
+     * Output only. The ID of the operating system version.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -157,9 +157,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the operating system version.
+     * Output only. The ID of the operating system version.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -169,9 +169,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Name of the operating system.
+     * Output only. Name of the operating system.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -182,9 +182,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * Name of the operating system.
+     * Output only. Name of the operating system.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -193,9 +193,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the operating system.
+     * Output only. Name of the operating system.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -210,9 +210,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Name of the operating system.
+     * Output only. Name of the operating system.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -222,9 +222,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The OS Major Version number.
+     * Output only. The OS Major Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int32Value
      */
     public function getOsMajorVersion()
@@ -235,9 +235,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getOsMajorVersion()</code>
 
-     * The OS Major Version number.
+     * Output only. The OS Major Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|null
      */
     public function getOsMajorVersionUnwrapped()
@@ -246,9 +246,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The OS Major Version number.
+     * Output only. The OS Major Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
@@ -263,9 +263,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * The OS Major Version number.
+     * Output only. The OS Major Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_major_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|null $var
      * @return $this
      */
@@ -275,9 +275,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The OS Minor Version number.
+     * Output only. The OS Minor Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int32Value
      */
     public function getOsMinorVersion()
@@ -288,9 +288,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getOsMinorVersion()</code>
 
-     * The OS Minor Version number.
+     * Output only. The OS Minor Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|null
      */
     public function getOsMinorVersionUnwrapped()
@@ -299,9 +299,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The OS Minor Version number.
+     * Output only. The OS Minor Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
@@ -316,9 +316,9 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * The OS Minor Version number.
+     * Output only. The OS Minor Version number.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value os_minor_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|null $var
      * @return $this
      */
@@ -328,10 +328,10 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Determines whether this constant represents a single version or a range of
+     * Output only. Determines whether this constant represents a single version or a range of
      * versions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType operator_type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType operator_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getOperatorType()
@@ -340,10 +340,10 @@ class OperatingSystemVersionConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Determines whether this constant represents a single version or a range of
+     * Output only. Determines whether this constant represents a single version or a range of
      * versions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType operator_type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType operator_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

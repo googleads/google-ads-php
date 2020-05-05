@@ -16,23 +16,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroupFeed extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad group feed.
+     * Immutable. The resource name of the ad group feed.
      * Ad group feed resource names have the form:
      * `customers/{customer_id}/adGroupFeeds/{ad_group_id}~{feed_id}
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The feed being linked to the ad group.
+     * Immutable. The feed being linked to the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $feed = null;
     /**
-     * The ad group being linked to the feed.
+     * Immutable. The ad group being linked to the feed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
@@ -51,10 +51,10 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
      */
     protected $matching_function = null;
     /**
-     * Status of the ad group feed.
+     * Output only. Status of the ad group feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
 
@@ -65,13 +65,13 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad group feed.
+     *           Immutable. The resource name of the ad group feed.
      *           Ad group feed resource names have the form:
      *           `customers/{customer_id}/adGroupFeeds/{ad_group_id}~{feed_id}
      *     @type \Google\Protobuf\StringValue $feed
-     *           The feed being linked to the ad group.
+     *           Immutable. The feed being linked to the ad group.
      *     @type \Google\Protobuf\StringValue $ad_group
-     *           The ad group being linked to the feed.
+     *           Immutable. The ad group being linked to the feed.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $placeholder_types
      *           Indicates which placeholder types the feed may populate under the connected
      *           ad group. Required.
@@ -80,7 +80,7 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
      *           The matching function is used to filter the set of feed items selected.
      *           Required.
      *     @type int $status
-     *           Status of the ad group feed.
+     *           Output only. Status of the ad group feed.
      *           This field is read-only.
      * }
      */
@@ -90,11 +90,11 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group feed.
+     * Immutable. The resource name of the ad group feed.
      * Ad group feed resource names have the form:
      * `customers/{customer_id}/adGroupFeeds/{ad_group_id}~{feed_id}
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -103,11 +103,11 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group feed.
+     * Immutable. The resource name of the ad group feed.
      * Ad group feed resource names have the form:
      * `customers/{customer_id}/adGroupFeeds/{ad_group_id}~{feed_id}
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -120,9 +120,9 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The feed being linked to the ad group.
+     * Immutable. The feed being linked to the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getFeed()
@@ -133,9 +133,9 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFeed()</code>
 
-     * The feed being linked to the ad group.
+     * Immutable. The feed being linked to the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getFeedUnwrapped()
@@ -144,9 +144,9 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The feed being linked to the ad group.
+     * Immutable. The feed being linked to the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -161,9 +161,9 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The feed being linked to the ad group.
+     * Immutable. The feed being linked to the ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -173,9 +173,9 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ad group being linked to the feed.
+     * Immutable. The ad group being linked to the feed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroup()
@@ -186,9 +186,9 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroup()</code>
 
-     * The ad group being linked to the feed.
+     * Immutable. The ad group being linked to the feed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupUnwrapped()
@@ -197,9 +197,9 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group being linked to the feed.
+     * Immutable. The ad group being linked to the feed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -214,9 +214,9 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The ad group being linked to the feed.
+     * Immutable. The ad group being linked to the feed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -284,10 +284,10 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the ad group feed.
+     * Output only. Status of the ad group feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -296,10 +296,10 @@ class AdGroupFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the ad group feed.
+     * Output only. Status of the ad group feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

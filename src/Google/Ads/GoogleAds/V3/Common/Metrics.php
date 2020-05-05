@@ -443,7 +443,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $engagements = null;
     /**
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      */
@@ -1052,7 +1052,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           An engagement occurs when a viewer expands your Lightbox ad. Also, in the
      *           future, other ad types may support engagement metrics.
      *     @type \Google\Protobuf\DoubleValue $hotel_average_lead_value_micros
-     *           Average lead value of hotel.
+     *           Average lead value based on clicks.
      *     @type \Google\Protobuf\DoubleValue $hotel_price_difference_percentage
      *           The average price difference between the price offered by reporting hotel
      *           advertiser and the cheapest price offered by the competing advertiser.
@@ -4607,7 +4607,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -4620,7 +4620,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHotelAverageLeadValueMicros()</code>
 
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @return float|null
@@ -4631,7 +4631,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -4648,7 +4648,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @param float|null $var

@@ -104,6 +104,12 @@ class AdGroupType
      * Generated from protobuf enum <code>PROMOTED_HOTEL_ADS = 15;</code>
      */
     const PROMOTED_HOTEL_ADS = 15;
+    /**
+     * Video responsive ad groups.
+     *
+     * Generated from protobuf enum <code>VIDEO_RESPONSIVE = 16;</code>
+     */
+    const VIDEO_RESPONSIVE = 16;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -121,6 +127,7 @@ class AdGroupType
         self::SEARCH_DYNAMIC_ADS => 'SEARCH_DYNAMIC_ADS',
         self::SHOPPING_COMPARISON_LISTING_ADS => 'SHOPPING_COMPARISON_LISTING_ADS',
         self::PROMOTED_HOTEL_ADS => 'PROMOTED_HOTEL_ADS',
+        self::VIDEO_RESPONSIVE => 'VIDEO_RESPONSIVE',
     ];
 
     public static function name($value)

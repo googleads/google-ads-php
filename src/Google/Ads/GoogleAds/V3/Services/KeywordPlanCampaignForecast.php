@@ -17,7 +17,7 @@ class KeywordPlanCampaignForecast extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the Keyword Plan campaign related to the forecast.
-     * `customers/{customer_id}/keywordPlanCampaigns/{keyword+plan_campaign_id}`
+     * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 1;</code>
      */
@@ -37,7 +37,7 @@ class KeywordPlanCampaignForecast extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\StringValue $keyword_plan_campaign
      *           The resource name of the Keyword Plan campaign related to the forecast.
-     *           `customers/{customer_id}/keywordPlanCampaigns/{keyword+plan_campaign_id}`
+     *           `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *     @type \Google\Ads\GoogleAds\V3\Services\ForecastMetrics $campaign_forecast
      *           The forecast for the Keyword Plan campaign.
      * }
@@ -49,7 +49,7 @@ class KeywordPlanCampaignForecast extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the Keyword Plan campaign related to the forecast.
-     * `customers/{customer_id}/keywordPlanCampaigns/{keyword+plan_campaign_id}`
+     * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 1;</code>
      * @return \Google\Protobuf\StringValue
@@ -63,7 +63,7 @@ class KeywordPlanCampaignForecast extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getKeywordPlanCampaign()</code>
 
      * The resource name of the Keyword Plan campaign related to the forecast.
-     * `customers/{customer_id}/keywordPlanCampaigns/{keyword+plan_campaign_id}`
+     * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 1;</code>
      * @return string|null
@@ -75,7 +75,7 @@ class KeywordPlanCampaignForecast extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the Keyword Plan campaign related to the forecast.
-     * `customers/{customer_id}/keywordPlanCampaigns/{keyword+plan_campaign_id}`
+     * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 1;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -93,7 +93,7 @@ class KeywordPlanCampaignForecast extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
      * The resource name of the Keyword Plan campaign related to the forecast.
-     * `customers/{customer_id}/keywordPlanCampaigns/{keyword+plan_campaign_id}`
+     * `customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}`
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_campaign = 1;</code>
      * @param string|null $var

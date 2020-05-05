@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for [GoogleAdsService.SearchStream][google.ads.googleads.v3.services.GoogleAdsService.SearchStream].
- * Next tag: 5
  *
  * Generated from protobuf message <code>google.ads.googleads.v3.services.SearchGoogleAdsStreamRequest</code>
  */

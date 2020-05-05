@@ -223,6 +223,8 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the policy validation parameter error
      *     @type int $size_limit_error
      *           The reasons for the size limit error
+     *     @type int $offline_user_data_job_error
+     *           The reasons for the offline user data job error.
      *     @type int $not_whitelisted_error
      *           The reasons for the not whitelisted error
      *     @type int $manager_link_error
@@ -239,6 +241,10 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for errors in payments accounts service
      *     @type int $time_zone_error
      *           The reasons for the time zone error
+     *     @type int $asset_link_error
+     *           The reasons for the asset link error
+     *     @type int $user_data_error
+     *           The reasons for the user data error.
      * }
      */
     public function __construct($data = NULL) {
@@ -2847,6 +2853,32 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The reasons for the offline user data job error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.errors.OfflineUserDataJobErrorEnum.OfflineUserDataJobError offline_user_data_job_error = 119;</code>
+     * @return int
+     */
+    public function getOfflineUserDataJobError()
+    {
+        return $this->readOneof(119);
+    }
+
+    /**
+     * The reasons for the offline user data job error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.errors.OfflineUserDataJobErrorEnum.OfflineUserDataJobError offline_user_data_job_error = 119;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOfflineUserDataJobError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V3\Errors\OfflineUserDataJobErrorEnum_OfflineUserDataJobError::class);
+        $this->writeOneof(119, $var);
+
+        return $this;
+    }
+
+    /**
      * The reasons for the not whitelisted error
      *
      * Generated from protobuf field <code>.google.ads.googleads.v3.errors.NotWhitelistedErrorEnum.NotWhitelistedError not_whitelisted_error = 120;</code>
@@ -3050,6 +3082,58 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V3\Errors\TimeZoneErrorEnum_TimeZoneError::class);
         $this->writeOneof(128, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the asset link error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.errors.AssetLinkErrorEnum.AssetLinkError asset_link_error = 129;</code>
+     * @return int
+     */
+    public function getAssetLinkError()
+    {
+        return $this->readOneof(129);
+    }
+
+    /**
+     * The reasons for the asset link error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.errors.AssetLinkErrorEnum.AssetLinkError asset_link_error = 129;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAssetLinkError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V3\Errors\AssetLinkErrorEnum_AssetLinkError::class);
+        $this->writeOneof(129, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the user data error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.errors.UserDataErrorEnum.UserDataError user_data_error = 130;</code>
+     * @return int
+     */
+    public function getUserDataError()
+    {
+        return $this->readOneof(130);
+    }
+
+    /**
+     * The reasons for the user data error.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.errors.UserDataErrorEnum.UserDataError user_data_error = 130;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUserDataError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V3\Errors\UserDataErrorEnum_UserDataError::class);
+        $this->writeOneof(130, $var);
 
         return $this;
     }

@@ -16,30 +16,30 @@ use Google\Protobuf\Internal\GPBUtil;
 class MediaVideo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The duration of the Video in milliseconds.
+     * Output only. The duration of the Video in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_duration_millis = null;
     /**
-     * The YouTube video ID (as seen in YouTube URLs).
+     * Immutable. The YouTube video ID (as seen in YouTube URLs).
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $youtube_video_id = null;
     /**
-     * The Advertising Digital Identification code for this video, as defined by
+     * Output only. The Advertising Digital Identification code for this video, as defined by
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $advertising_id_code = null;
     /**
-     * The Industry Standard Commercial Identifier code for this video, used
+     * Output only. The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $isci_code = null;
 
@@ -50,15 +50,15 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $ad_duration_millis
-     *           The duration of the Video in milliseconds.
+     *           Output only. The duration of the Video in milliseconds.
      *     @type \Google\Protobuf\StringValue $youtube_video_id
-     *           The YouTube video ID (as seen in YouTube URLs).
+     *           Immutable. The YouTube video ID (as seen in YouTube URLs).
      *     @type \Google\Protobuf\StringValue $advertising_id_code
-     *           The Advertising Digital Identification code for this video, as defined by
+     *           Output only. The Advertising Digital Identification code for this video, as defined by
      *           the American Association of Advertising Agencies, used mainly for
      *           television commercials.
      *     @type \Google\Protobuf\StringValue $isci_code
-     *           The Industry Standard Commercial Identifier code for this video, used
+     *           Output only. The Industry Standard Commercial Identifier code for this video, used
      *           mainly for television commercials.
      * }
      */
@@ -68,9 +68,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The duration of the Video in milliseconds.
+     * Output only. The duration of the Video in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getAdDurationMillis()
@@ -81,9 +81,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdDurationMillis()</code>
 
-     * The duration of the Video in milliseconds.
+     * Output only. The duration of the Video in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getAdDurationMillisUnwrapped()
@@ -92,9 +92,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The duration of the Video in milliseconds.
+     * Output only. The duration of the Video in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -109,9 +109,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The duration of the Video in milliseconds.
+     * Output only. The duration of the Video in milliseconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_duration_millis = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -121,9 +121,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The YouTube video ID (as seen in YouTube URLs).
+     * Immutable. The YouTube video ID (as seen in YouTube URLs).
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getYoutubeVideoId()
@@ -134,9 +134,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getYoutubeVideoId()</code>
 
-     * The YouTube video ID (as seen in YouTube URLs).
+     * Immutable. The YouTube video ID (as seen in YouTube URLs).
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getYoutubeVideoIdUnwrapped()
@@ -145,9 +145,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The YouTube video ID (as seen in YouTube URLs).
+     * Immutable. The YouTube video ID (as seen in YouTube URLs).
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -162,9 +162,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The YouTube video ID (as seen in YouTube URLs).
+     * Immutable. The YouTube video ID (as seen in YouTube URLs).
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue youtube_video_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -174,11 +174,11 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The Advertising Digital Identification code for this video, as defined by
+     * Output only. The Advertising Digital Identification code for this video, as defined by
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdvertisingIdCode()
@@ -189,11 +189,11 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdvertisingIdCode()</code>
 
-     * The Advertising Digital Identification code for this video, as defined by
+     * Output only. The Advertising Digital Identification code for this video, as defined by
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getAdvertisingIdCodeUnwrapped()
@@ -202,11 +202,11 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Advertising Digital Identification code for this video, as defined by
+     * Output only. The Advertising Digital Identification code for this video, as defined by
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -221,11 +221,11 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The Advertising Digital Identification code for this video, as defined by
+     * Output only. The Advertising Digital Identification code for this video, as defined by
      * the American Association of Advertising Agencies, used mainly for
      * television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue advertising_id_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -235,10 +235,10 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The Industry Standard Commercial Identifier code for this video, used
+     * Output only. The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getIsciCode()
@@ -249,10 +249,10 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getIsciCode()</code>
 
-     * The Industry Standard Commercial Identifier code for this video, used
+     * Output only. The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getIsciCodeUnwrapped()
@@ -261,10 +261,10 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Industry Standard Commercial Identifier code for this video, used
+     * Output only. The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -279,10 +279,10 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The Industry Standard Commercial Identifier code for this video, used
+     * Output only. The Industry Standard Commercial Identifier code for this video, used
      * mainly for television commercials.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue isci_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

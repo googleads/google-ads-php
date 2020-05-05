@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class HotelSettingInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The linked Hotel Center account.
+     * Immutable. The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $hotel_center_id = null;
 
@@ -29,7 +29,7 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $hotel_center_id
-     *           The linked Hotel Center account.
+     *           Immutable. The linked Hotel Center account.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The linked Hotel Center account.
+     * Immutable. The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getHotelCenterId()
@@ -51,9 +51,9 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHotelCenterId()</code>
 
-     * The linked Hotel Center account.
+     * Immutable. The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string|null
      */
     public function getHotelCenterIdUnwrapped()
@@ -62,9 +62,9 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The linked Hotel Center account.
+     * Immutable. The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -79,9 +79,9 @@ class HotelSettingInfo extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The linked Hotel Center account.
+     * Immutable. The linked Hotel Center account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value hotel_center_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string|null $var
      * @return $this
      */

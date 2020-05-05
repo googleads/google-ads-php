@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class CustomInterest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the custom interest.
+     * Immutable. The resource name of the custom interest.
      * Custom interest resource names have the form:
      * `customers/{customer_id}/customInterests/{custom_interest_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Id of the custom interest.
+     * Output only. Id of the custom interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -73,11 +73,11 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the custom interest.
+     *           Immutable. The resource name of the custom interest.
      *           Custom interest resource names have the form:
      *           `customers/{customer_id}/customInterests/{custom_interest_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           Id of the custom interest.
+     *           Output only. Id of the custom interest.
      *     @type int $status
      *           Status of this custom interest. Indicates whether the custom interest is
      *           enabled or removed.
@@ -102,11 +102,11 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the custom interest.
+     * Immutable. The resource name of the custom interest.
      * Custom interest resource names have the form:
      * `customers/{customer_id}/customInterests/{custom_interest_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -115,11 +115,11 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the custom interest.
+     * Immutable. The resource name of the custom interest.
      * Custom interest resource names have the form:
      * `customers/{customer_id}/customInterests/{custom_interest_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -132,9 +132,9 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the custom interest.
+     * Output only. Id of the custom interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -145,9 +145,9 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * Id of the custom interest.
+     * Output only. Id of the custom interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -156,9 +156,9 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the custom interest.
+     * Output only. Id of the custom interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -173,9 +173,9 @@ class CustomInterest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Id of the custom interest.
+     * Output only. Id of the custom interest.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

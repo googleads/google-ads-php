@@ -16,41 +16,41 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad group ad asset view.
+     * Output only. The resource name of the ad group ad asset view.
      * Ad group ad asset view resource names have the form:
      * `customers/{customer_id}/adGroupAdAssets/{AdGroupAdAsset.ad_group_id}~{AdGroupAdAsset.ad.ad_id}~{AdGroupAdAsset.asset_id}~{AdGroupAdAsset.asset_field_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ad group ad to which the asset is linked.
+     * Output only. The ad group ad to which the asset is linked.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_ad = null;
     /**
-     * The asset which is linked to the ad group ad.
+     * Output only. The asset which is linked to the ad group ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $asset = null;
     /**
-     * Role that the asset takes in the ad.
+     * Output only. Role that the asset takes in the ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetFieldTypeEnum.AssetFieldType field_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetFieldTypeEnum.AssetFieldType field_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $field_type = 0;
     /**
-     * Policy information for the ad group ad asset.
+     * Output only. Policy information for the ad group ad asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdAssetPolicySummary policy_summary = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdAssetPolicySummary policy_summary = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $policy_summary = null;
     /**
-     * Performance of an asset linkage.
+     * Output only. Performance of an asset linkage.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel performance_label = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel performance_label = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $performance_label = 0;
 
@@ -61,19 +61,19 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad group ad asset view.
+     *           Output only. The resource name of the ad group ad asset view.
      *           Ad group ad asset view resource names have the form:
      *           `customers/{customer_id}/adGroupAdAssets/{AdGroupAdAsset.ad_group_id}~{AdGroupAdAsset.ad.ad_id}~{AdGroupAdAsset.asset_id}~{AdGroupAdAsset.asset_field_type}`
      *     @type \Google\Protobuf\StringValue $ad_group_ad
-     *           The ad group ad to which the asset is linked.
+     *           Output only. The ad group ad to which the asset is linked.
      *     @type \Google\Protobuf\StringValue $asset
-     *           The asset which is linked to the ad group ad.
+     *           Output only. The asset which is linked to the ad group ad.
      *     @type int $field_type
-     *           Role that the asset takes in the ad.
+     *           Output only. Role that the asset takes in the ad.
      *     @type \Google\Ads\GoogleAds\V3\Resources\AdGroupAdAssetPolicySummary $policy_summary
-     *           Policy information for the ad group ad asset.
+     *           Output only. Policy information for the ad group ad asset.
      *     @type int $performance_label
-     *           Performance of an asset linkage.
+     *           Output only. Performance of an asset linkage.
      * }
      */
     public function __construct($data = NULL) {
@@ -82,11 +82,11 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group ad asset view.
+     * Output only. The resource name of the ad group ad asset view.
      * Ad group ad asset view resource names have the form:
      * `customers/{customer_id}/adGroupAdAssets/{AdGroupAdAsset.ad_group_id}~{AdGroupAdAsset.ad.ad_id}~{AdGroupAdAsset.asset_id}~{AdGroupAdAsset.asset_field_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -95,11 +95,11 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group ad asset view.
+     * Output only. The resource name of the ad group ad asset view.
      * Ad group ad asset view resource names have the form:
      * `customers/{customer_id}/adGroupAdAssets/{AdGroupAdAsset.ad_group_id}~{AdGroupAdAsset.ad.ad_id}~{AdGroupAdAsset.asset_id}~{AdGroupAdAsset.asset_field_type}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -112,9 +112,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group ad to which the asset is linked.
+     * Output only. The ad group ad to which the asset is linked.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroupAd()
@@ -125,9 +125,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroupAd()</code>
 
-     * The ad group ad to which the asset is linked.
+     * Output only. The ad group ad to which the asset is linked.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupAdUnwrapped()
@@ -136,9 +136,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group ad to which the asset is linked.
+     * Output only. The ad group ad to which the asset is linked.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -153,9 +153,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The ad group ad to which the asset is linked.
+     * Output only. The ad group ad to which the asset is linked.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -165,9 +165,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The asset which is linked to the ad group ad.
+     * Output only. The asset which is linked to the ad group ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAsset()
@@ -178,9 +178,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAsset()</code>
 
-     * The asset which is linked to the ad group ad.
+     * Output only. The asset which is linked to the ad group ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAssetUnwrapped()
@@ -189,9 +189,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The asset which is linked to the ad group ad.
+     * Output only. The asset which is linked to the ad group ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -206,9 +206,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The asset which is linked to the ad group ad.
+     * Output only. The asset which is linked to the ad group ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue asset = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -218,9 +218,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Role that the asset takes in the ad.
+     * Output only. Role that the asset takes in the ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetFieldTypeEnum.AssetFieldType field_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetFieldTypeEnum.AssetFieldType field_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getFieldType()
@@ -229,9 +229,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Role that the asset takes in the ad.
+     * Output only. Role that the asset takes in the ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetFieldTypeEnum.AssetFieldType field_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetFieldTypeEnum.AssetFieldType field_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -244,9 +244,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Policy information for the ad group ad asset.
+     * Output only. Policy information for the ad group ad asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdAssetPolicySummary policy_summary = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdAssetPolicySummary policy_summary = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupAdAssetPolicySummary
      */
     public function getPolicySummary()
@@ -255,9 +255,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Policy information for the ad group ad asset.
+     * Output only. Policy information for the ad group ad asset.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdAssetPolicySummary policy_summary = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.AdGroupAdAssetPolicySummary policy_summary = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\AdGroupAdAssetPolicySummary $var
      * @return $this
      */
@@ -270,9 +270,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Performance of an asset linkage.
+     * Output only. Performance of an asset linkage.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel performance_label = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel performance_label = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getPerformanceLabel()
@@ -281,9 +281,9 @@ class AdGroupAdAssetView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Performance of an asset linkage.
+     * Output only. Performance of an asset linkage.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel performance_label = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AssetPerformanceLabelEnum.AssetPerformanceLabel performance_label = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

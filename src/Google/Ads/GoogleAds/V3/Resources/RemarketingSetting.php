@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class RemarketingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The Google global site tag.
+     * Output only. The Google global site tag.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $google_global_site_tag = null;
 
@@ -29,7 +29,7 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\StringValue $google_global_site_tag
-     *           The Google global site tag.
+     *           Output only. The Google global site tag.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google global site tag.
+     * Output only. The Google global site tag.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getGoogleGlobalSiteTag()
@@ -51,9 +51,9 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getGoogleGlobalSiteTag()</code>
 
-     * The Google global site tag.
+     * Output only. The Google global site tag.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getGoogleGlobalSiteTagUnwrapped()
@@ -62,9 +62,9 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google global site tag.
+     * Output only. The Google global site tag.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -79,9 +79,9 @@ class RemarketingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The Google global site tag.
+     * Output only. The Google global site tag.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue google_global_site_tag = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

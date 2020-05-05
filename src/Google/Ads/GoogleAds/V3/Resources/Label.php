@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class Label extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Name of the resource.
+     * Immutable. Name of the resource.
      * Label resource names have the form:
      * `customers/{customer_id}/labels/{label_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Id of the label. Read only.
+     * Output only. Id of the label. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -38,9 +38,9 @@ class Label extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * Status of the label. Read only.
+     * Output only. Status of the label. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LabelStatusEnum.LabelStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LabelStatusEnum.LabelStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
@@ -57,17 +57,17 @@ class Label extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           Name of the resource.
+     *           Immutable. Name of the resource.
      *           Label resource names have the form:
      *           `customers/{customer_id}/labels/{label_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           Id of the label. Read only.
+     *           Output only. Id of the label. Read only.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the label.
      *           This field is required and should not be empty when creating a new label.
      *           The length of this string should be between 1 and 80, inclusive.
      *     @type int $status
-     *           Status of the label. Read only.
+     *           Output only. Status of the label. Read only.
      *     @type \Google\Ads\GoogleAds\V3\Common\TextLabel $text_label
      *           A type of label displaying text on a colored background.
      * }
@@ -78,11 +78,11 @@ class Label extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the resource.
+     * Immutable. Name of the resource.
      * Label resource names have the form:
      * `customers/{customer_id}/labels/{label_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -91,11 +91,11 @@ class Label extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the resource.
+     * Immutable. Name of the resource.
      * Label resource names have the form:
      * `customers/{customer_id}/labels/{label_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -108,9 +108,9 @@ class Label extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the label. Read only.
+     * Output only. Id of the label. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -121,9 +121,9 @@ class Label extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * Id of the label. Read only.
+     * Output only. Id of the label. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -132,9 +132,9 @@ class Label extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the label. Read only.
+     * Output only. Id of the label. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -149,9 +149,9 @@ class Label extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Id of the label. Read only.
+     * Output only. Id of the label. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -222,9 +222,9 @@ class Label extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Status of the label. Read only.
+     * Output only. Status of the label. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LabelStatusEnum.LabelStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LabelStatusEnum.LabelStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -233,9 +233,9 @@ class Label extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the label. Read only.
+     * Output only. Status of the label. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LabelStatusEnum.LabelStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.LabelStatusEnum.LabelStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

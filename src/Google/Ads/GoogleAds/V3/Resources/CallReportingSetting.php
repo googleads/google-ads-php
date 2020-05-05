@@ -33,7 +33,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9 [(.google.api.resource_reference) = {</code>
      */
     protected $call_conversion_action = null;
 
@@ -174,7 +174,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCallConversionAction()
@@ -189,7 +189,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9 [(.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCallConversionActionUnwrapped()
@@ -202,7 +202,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -221,7 +221,7 @@ class CallReportingSetting extends \Google\Protobuf\Internal\Message
      * If not set a default conversion action is used. Only in effect when
      * call_conversion_reporting_enabled is set to true.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue call_conversion_action = 9 [(.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

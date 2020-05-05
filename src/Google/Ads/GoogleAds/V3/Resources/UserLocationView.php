@@ -20,23 +20,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class UserLocationView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the user location view.
+     * Output only. The resource name of the user location view.
      * UserLocation view resource names have the form:
      * `customers/{customer_id}/userLocationViews/{country_criterion_id}~{targeting_location}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_criterion_id = null;
     /**
-     * Indicates whether location was targeted or not.
+     * Output only. Indicates whether location was targeted or not.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $targeting_location = null;
 
@@ -47,13 +47,13 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the user location view.
+     *           Output only. The resource name of the user location view.
      *           UserLocation view resource names have the form:
      *           `customers/{customer_id}/userLocationViews/{country_criterion_id}~{targeting_location}`
      *     @type \Google\Protobuf\Int64Value $country_criterion_id
-     *           Criterion Id for the country.
+     *           Output only. Criterion Id for the country.
      *     @type \Google\Protobuf\BoolValue $targeting_location
-     *           Indicates whether location was targeted or not.
+     *           Output only. Indicates whether location was targeted or not.
      * }
      */
     public function __construct($data = NULL) {
@@ -62,11 +62,11 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the user location view.
+     * Output only. The resource name of the user location view.
      * UserLocation view resource names have the form:
      * `customers/{customer_id}/userLocationViews/{country_criterion_id}~{targeting_location}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -75,11 +75,11 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the user location view.
+     * Output only. The resource name of the user location view.
      * UserLocation view resource names have the form:
      * `customers/{customer_id}/userLocationViews/{country_criterion_id}~{targeting_location}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -92,9 +92,9 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCountryCriterionId()
@@ -105,9 +105,9 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCountryCriterionId()</code>
 
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCountryCriterionIdUnwrapped()
@@ -116,9 +116,9 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -133,9 +133,9 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Criterion Id for the country.
+     * Output only. Criterion Id for the country.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value country_criterion_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -145,9 +145,9 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Indicates whether location was targeted or not.
+     * Output only. Indicates whether location was targeted or not.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getTargetingLocation()
@@ -158,9 +158,9 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTargetingLocation()</code>
 
-     * Indicates whether location was targeted or not.
+     * Output only. Indicates whether location was targeted or not.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getTargetingLocationUnwrapped()
@@ -169,9 +169,9 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates whether location was targeted or not.
+     * Output only. Indicates whether location was targeted or not.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -186,9 +186,9 @@ class UserLocationView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Indicates whether location was targeted or not.
+     * Output only. Indicates whether location was targeted or not.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue targeting_location = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */

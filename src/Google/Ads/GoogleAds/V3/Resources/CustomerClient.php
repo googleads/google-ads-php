@@ -18,70 +18,70 @@ use Google\Protobuf\Internal\GPBUtil;
 class CustomerClient extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the customer client.
+     * Output only. The resource name of the customer client.
      * CustomerClient resource names have the form:
      * `customers/{customer_id}/customerClients/{client_customer_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The resource name of the client-customer which is linked to
+     * Output only. The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $client_customer = null;
     /**
-     * Specifies whether this is a
+     * Output only. Specifies whether this is a
      * [hidden account](https://support.google.com/google-ads/answer/7519830).
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $hidden = null;
     /**
-     * Distance between given customer and client. For self link, the level value
+     * Output only. Distance between given customer and client. For self link, the level value
      * will be 0. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $level = null;
     /**
-     * Common Locale Data Repository (CLDR) string representation of the
+     * Output only. Common Locale Data Repository (CLDR) string representation of the
      * time zone of the client, e.g. America/Los_Angeles. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $time_zone = null;
     /**
-     * Identifies if the client is a test account. Read only.
+     * Output only. Identifies if the client is a test account. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $test_account = null;
     /**
-     * Identifies if the client is a manager. Read only.
+     * Output only. Identifies if the client is a manager. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $manager = null;
     /**
-     * Descriptive name for the client. Read only.
+     * Output only. Descriptive name for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $descriptive_name = null;
     /**
-     * Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $currency_code = null;
     /**
-     * The ID of the client customer. Read only.
+     * Output only. The ID of the client customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
 
@@ -92,32 +92,32 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the customer client.
+     *           Output only. The resource name of the customer client.
      *           CustomerClient resource names have the form:
      *           `customers/{customer_id}/customerClients/{client_customer_id}`
      *     @type \Google\Protobuf\StringValue $client_customer
-     *           The resource name of the client-customer which is linked to
+     *           Output only. The resource name of the client-customer which is linked to
      *           the given customer. Read only.
      *     @type \Google\Protobuf\BoolValue $hidden
-     *           Specifies whether this is a
+     *           Output only. Specifies whether this is a
      *           [hidden account](https://support.google.com/google-ads/answer/7519830).
      *           Read only.
      *     @type \Google\Protobuf\Int64Value $level
-     *           Distance between given customer and client. For self link, the level value
+     *           Output only. Distance between given customer and client. For self link, the level value
      *           will be 0. Read only.
      *     @type \Google\Protobuf\StringValue $time_zone
-     *           Common Locale Data Repository (CLDR) string representation of the
+     *           Output only. Common Locale Data Repository (CLDR) string representation of the
      *           time zone of the client, e.g. America/Los_Angeles. Read only.
      *     @type \Google\Protobuf\BoolValue $test_account
-     *           Identifies if the client is a test account. Read only.
+     *           Output only. Identifies if the client is a test account. Read only.
      *     @type \Google\Protobuf\BoolValue $manager
-     *           Identifies if the client is a manager. Read only.
+     *           Output only. Identifies if the client is a manager. Read only.
      *     @type \Google\Protobuf\StringValue $descriptive_name
-     *           Descriptive name for the client. Read only.
+     *           Output only. Descriptive name for the client. Read only.
      *     @type \Google\Protobuf\StringValue $currency_code
-     *           Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     *           Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the client customer. Read only.
+     *           Output only. The ID of the client customer. Read only.
      * }
      */
     public function __construct($data = NULL) {
@@ -126,11 +126,11 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer client.
+     * Output only. The resource name of the customer client.
      * CustomerClient resource names have the form:
      * `customers/{customer_id}/customerClients/{client_customer_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -139,11 +139,11 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer client.
+     * Output only. The resource name of the customer client.
      * CustomerClient resource names have the form:
      * `customers/{customer_id}/customerClients/{client_customer_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -156,10 +156,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the client-customer which is linked to
+     * Output only. The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getClientCustomer()
@@ -170,10 +170,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getClientCustomer()</code>
 
-     * The resource name of the client-customer which is linked to
+     * Output only. The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getClientCustomerUnwrapped()
@@ -182,10 +182,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the client-customer which is linked to
+     * Output only. The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -200,10 +200,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the client-customer which is linked to
+     * Output only. The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue client_customer = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -213,11 +213,11 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Specifies whether this is a
+     * Output only. Specifies whether this is a
      * [hidden account](https://support.google.com/google-ads/answer/7519830).
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getHidden()
@@ -228,11 +228,11 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHidden()</code>
 
-     * Specifies whether this is a
+     * Output only. Specifies whether this is a
      * [hidden account](https://support.google.com/google-ads/answer/7519830).
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getHiddenUnwrapped()
@@ -241,11 +241,11 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies whether this is a
+     * Output only. Specifies whether this is a
      * [hidden account](https://support.google.com/google-ads/answer/7519830).
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -260,11 +260,11 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Specifies whether this is a
+     * Output only. Specifies whether this is a
      * [hidden account](https://support.google.com/google-ads/answer/7519830).
      * Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue hidden = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -274,10 +274,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Distance between given customer and client. For self link, the level value
+     * Output only. Distance between given customer and client. For self link, the level value
      * will be 0. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getLevel()
@@ -288,10 +288,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLevel()</code>
 
-     * Distance between given customer and client. For self link, the level value
+     * Output only. Distance between given customer and client. For self link, the level value
      * will be 0. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getLevelUnwrapped()
@@ -300,10 +300,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Distance between given customer and client. For self link, the level value
+     * Output only. Distance between given customer and client. For self link, the level value
      * will be 0. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -318,10 +318,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Distance between given customer and client. For self link, the level value
+     * Output only. Distance between given customer and client. For self link, the level value
      * will be 0. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -331,10 +331,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Common Locale Data Repository (CLDR) string representation of the
+     * Output only. Common Locale Data Repository (CLDR) string representation of the
      * time zone of the client, e.g. America/Los_Angeles. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTimeZone()
@@ -345,10 +345,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTimeZone()</code>
 
-     * Common Locale Data Repository (CLDR) string representation of the
+     * Output only. Common Locale Data Repository (CLDR) string representation of the
      * time zone of the client, e.g. America/Los_Angeles. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getTimeZoneUnwrapped()
@@ -357,10 +357,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Common Locale Data Repository (CLDR) string representation of the
+     * Output only. Common Locale Data Repository (CLDR) string representation of the
      * time zone of the client, e.g. America/Los_Angeles. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -375,10 +375,10 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Common Locale Data Repository (CLDR) string representation of the
+     * Output only. Common Locale Data Repository (CLDR) string representation of the
      * time zone of the client, e.g. America/Los_Angeles. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -388,9 +388,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Identifies if the client is a test account. Read only.
+     * Output only. Identifies if the client is a test account. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getTestAccount()
@@ -401,9 +401,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTestAccount()</code>
 
-     * Identifies if the client is a test account. Read only.
+     * Output only. Identifies if the client is a test account. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getTestAccountUnwrapped()
@@ -412,9 +412,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Identifies if the client is a test account. Read only.
+     * Output only. Identifies if the client is a test account. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -429,9 +429,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Identifies if the client is a test account. Read only.
+     * Output only. Identifies if the client is a test account. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -441,9 +441,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Identifies if the client is a manager. Read only.
+     * Output only. Identifies if the client is a manager. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getManager()
@@ -454,9 +454,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getManager()</code>
 
-     * Identifies if the client is a manager. Read only.
+     * Output only. Identifies if the client is a manager. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getManagerUnwrapped()
@@ -465,9 +465,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Identifies if the client is a manager. Read only.
+     * Output only. Identifies if the client is a manager. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -482,9 +482,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Identifies if the client is a manager. Read only.
+     * Output only. Identifies if the client is a manager. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -494,9 +494,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Descriptive name for the client. Read only.
+     * Output only. Descriptive name for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getDescriptiveName()
@@ -507,9 +507,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getDescriptiveName()</code>
 
-     * Descriptive name for the client. Read only.
+     * Output only. Descriptive name for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getDescriptiveNameUnwrapped()
@@ -518,9 +518,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Descriptive name for the client. Read only.
+     * Output only. Descriptive name for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -535,9 +535,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Descriptive name for the client. Read only.
+     * Output only. Descriptive name for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue descriptive_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -547,9 +547,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCurrencyCode()
@@ -560,9 +560,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCurrencyCode()</code>
 
-     * Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCurrencyCodeUnwrapped()
@@ -571,9 +571,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -588,9 +588,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Currency code (e.g. 'USD', 'EUR') for the client. Read only.
+     * Output only. Currency code (e.g. 'USD', 'EUR') for the client. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -600,9 +600,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ID of the client customer. Read only.
+     * Output only. The ID of the client customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -613,9 +613,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the client customer. Read only.
+     * Output only. The ID of the client customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -624,9 +624,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the client customer. Read only.
+     * Output only. The ID of the client customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -641,9 +641,9 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the client customer. Read only.
+     * Output only. The ID of the client customer. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

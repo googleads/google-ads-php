@@ -18,43 +18,43 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateJob extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the mutate job.
+     * Immutable. The resource name of the mutate job.
      * Mutate job resource names have the form:
      * `customers/{customer_id}/mutateJobs/{mutate_job_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * ID of this mutate job.
+     * Output only. ID of this mutate job.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The next sequence token to use when adding operations. Only set when the
+     * Output only. The next sequence token to use when adding operations. Only set when the
      * mutate job status is PENDING.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $next_add_sequence_token = null;
     /**
-     * Contains additional information about this mutate job.
+     * Output only. Contains additional information about this mutate job.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.MutateJob.MutateJobMetadata metadata = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.MutateJob.MutateJobMetadata metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $metadata = null;
     /**
-     * Status of this mutate job.
+     * Output only. Status of this mutate job.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MutateJobStatusEnum.MutateJobStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MutateJobStatusEnum.MutateJobStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the mutate job status is RUNNING or DONE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $long_running_operation = null;
 
@@ -65,20 +65,20 @@ class MutateJob extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the mutate job.
+     *           Immutable. The resource name of the mutate job.
      *           Mutate job resource names have the form:
      *           `customers/{customer_id}/mutateJobs/{mutate_job_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           ID of this mutate job.
+     *           Output only. ID of this mutate job.
      *     @type \Google\Protobuf\StringValue $next_add_sequence_token
-     *           The next sequence token to use when adding operations. Only set when the
+     *           Output only. The next sequence token to use when adding operations. Only set when the
      *           mutate job status is PENDING.
      *     @type \Google\Ads\GoogleAds\V3\Resources\MutateJob\MutateJobMetadata $metadata
-     *           Contains additional information about this mutate job.
+     *           Output only. Contains additional information about this mutate job.
      *     @type int $status
-     *           Status of this mutate job.
+     *           Output only. Status of this mutate job.
      *     @type \Google\Protobuf\StringValue $long_running_operation
-     *           The resource name of the long-running operation that can be used to poll
+     *           Output only. The resource name of the long-running operation that can be used to poll
      *           for completion. Only set when the mutate job status is RUNNING or DONE.
      * }
      */
@@ -88,11 +88,11 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the mutate job.
+     * Immutable. The resource name of the mutate job.
      * Mutate job resource names have the form:
      * `customers/{customer_id}/mutateJobs/{mutate_job_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -101,11 +101,11 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the mutate job.
+     * Immutable. The resource name of the mutate job.
      * Mutate job resource names have the form:
      * `customers/{customer_id}/mutateJobs/{mutate_job_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -118,9 +118,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of this mutate job.
+     * Output only. ID of this mutate job.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -131,9 +131,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * ID of this mutate job.
+     * Output only. ID of this mutate job.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -142,9 +142,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of this mutate job.
+     * Output only. ID of this mutate job.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -159,9 +159,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * ID of this mutate job.
+     * Output only. ID of this mutate job.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -171,10 +171,10 @@ class MutateJob extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The next sequence token to use when adding operations. Only set when the
+     * Output only. The next sequence token to use when adding operations. Only set when the
      * mutate job status is PENDING.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getNextAddSequenceToken()
@@ -185,10 +185,10 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getNextAddSequenceToken()</code>
 
-     * The next sequence token to use when adding operations. Only set when the
+     * Output only. The next sequence token to use when adding operations. Only set when the
      * mutate job status is PENDING.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNextAddSequenceTokenUnwrapped()
@@ -197,10 +197,10 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The next sequence token to use when adding operations. Only set when the
+     * Output only. The next sequence token to use when adding operations. Only set when the
      * mutate job status is PENDING.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -215,10 +215,10 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The next sequence token to use when adding operations. Only set when the
+     * Output only. The next sequence token to use when adding operations. Only set when the
      * mutate job status is PENDING.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue next_add_sequence_token = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -228,9 +228,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Contains additional information about this mutate job.
+     * Output only. Contains additional information about this mutate job.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.MutateJob.MutateJobMetadata metadata = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.MutateJob.MutateJobMetadata metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Resources\MutateJob\MutateJobMetadata
      */
     public function getMetadata()
@@ -239,9 +239,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contains additional information about this mutate job.
+     * Output only. Contains additional information about this mutate job.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.MutateJob.MutateJobMetadata metadata = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.MutateJob.MutateJobMetadata metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\MutateJob\MutateJobMetadata $var
      * @return $this
      */
@@ -254,9 +254,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of this mutate job.
+     * Output only. Status of this mutate job.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MutateJobStatusEnum.MutateJobStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MutateJobStatusEnum.MutateJobStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -265,9 +265,9 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of this mutate job.
+     * Output only. Status of this mutate job.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MutateJobStatusEnum.MutateJobStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.MutateJobStatusEnum.MutateJobStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -280,10 +280,10 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the mutate job status is RUNNING or DONE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getLongRunningOperation()
@@ -294,10 +294,10 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLongRunningOperation()</code>
 
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the mutate job status is RUNNING or DONE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getLongRunningOperationUnwrapped()
@@ -306,10 +306,10 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the mutate job status is RUNNING or DONE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -324,10 +324,10 @@ class MutateJob extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion. Only set when the mutate job status is RUNNING or DONE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

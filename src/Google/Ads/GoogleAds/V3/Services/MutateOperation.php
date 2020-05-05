@@ -41,6 +41,8 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *           An ad group label mutate operation.
      *     @type \Google\Ads\GoogleAds\V3\Services\AdGroupOperation $ad_group_operation
      *           An ad group mutate operation.
+     *     @type \Google\Ads\GoogleAds\V3\Services\AdOperation $ad_operation
+     *           An ad mutate operation.
      *     @type \Google\Ads\GoogleAds\V3\Services\AdParameterOperation $ad_parameter_operation
      *           An ad parameter mutate operation.
      *     @type \Google\Ads\GoogleAds\V3\Services\AssetOperation $asset_operation
@@ -338,6 +340,32 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V3\Services\AdGroupOperation::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * An ad mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.services.AdOperation ad_operation = 49;</code>
+     * @return \Google\Ads\GoogleAds\V3\Services\AdOperation
+     */
+    public function getAdOperation()
+    {
+        return $this->readOneof(49);
+    }
+
+    /**
+     * An ad mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.services.AdOperation ad_operation = 49;</code>
+     * @param \Google\Ads\GoogleAds\V3\Services\AdOperation $var
+     * @return $this
+     */
+    public function setAdOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V3\Services\AdOperation::class);
+        $this->writeOneof(49, $var);
 
         return $this;
     }
