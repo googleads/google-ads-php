@@ -100,17 +100,22 @@ class GetAccountChanges
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves all change statuses.
         $query = 'SELECT change_status.resource_name, '
-           . 'change_status.last_change_date_time, '
-           . 'change_status.resource_type, '
-           . 'change_status.campaign, '
-           . 'change_status.ad_group, '
-           . 'change_status.resource_status, '
-           . 'change_status.ad_group_ad, '
-           . 'change_status.ad_group_criterion, '
-           . 'change_status.campaign_criterion '
-           . 'FROM change_status '
-           . 'WHERE change_status.last_change_date_time DURING LAST_7_DAYS '
-           . 'ORDER BY change_status.last_change_date_time';
+            . 'change_status.last_change_date_time, '
+            . 'change_status.resource_status, '
+            . 'change_status.resource_type, '
+            . 'change_status.ad_group, '
+            . 'change_status.ad_group_ad, '
+            . 'change_status.ad_group_bid_modifier, '
+            . 'change_status.ad_group_criterion, '
+            . 'change_status.ad_group_feed, '
+            . 'change_status.campaign, '
+            . 'change_status.campaign_criterion, '
+            . 'change_status.campaign_feed, '
+            . 'change_status.feed, '
+            . 'change_status.feed_item '
+            . 'FROM change_status '
+            . 'WHERE change_status.last_change_date_time DURING LAST_7_DAYS '
+            . 'ORDER BY change_status.last_change_date_time';
 
         // Issues a search request by specifying page size.
         $response =
@@ -156,14 +161,29 @@ class GetAccountChanges
             case ChangeStatusResourceType::AD_GROUP_AD:
                 $resourceName = $changeStatus->getAdGroupAdUnwrapped();
                 break;
+            case ChangeStatusResourceType::AD_GROUP_BID_MODIFIER:
+                $resourceName = $changeStatus->getAdGroupBidModifierUnwrapped();
+                break;
             case ChangeStatusResourceType::AD_GROUP_CRITERION:
                 $resourceName = $changeStatus->getAdGroupCriterionUnwrapped();
+                break;
+            case ChangeStatusResourceType::AD_GROUP_FEED:
+                $resourceName = $changeStatus->getAdGroupFeedUnwrapped();
                 break;
             case ChangeStatusResourceType::CAMPAIGN:
                 $resourceName = $changeStatus->getCampaignUnwrapped();
                 break;
             case ChangeStatusResourceType::CAMPAIGN_CRITERION:
                 $resourceName = $changeStatus->getCampaignCriterionUnwrapped();
+                break;
+            case ChangeStatusResourceType::CAMPAIGN_FEED:
+                $resourceName = $changeStatus->getCampaignFeedUnwrapped();
+                break;
+            case ChangeStatusResourceType::FEED:
+                $resourceName = $changeStatus->getFeedUnwrapped();
+                break;
+            case ChangeStatusResourceType::FEED_ITEM:
+                $resourceName = $changeStatus->getFeedItemUnwrapped();
                 break;
         }
 
