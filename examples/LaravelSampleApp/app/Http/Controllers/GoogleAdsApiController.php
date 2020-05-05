@@ -93,13 +93,10 @@ class GoogleAdsApiController extends Controller
 
             // Fetches all the results.
             $results = [];
-            foreach ($stream->readAll() as $response) {
-                /** @var SearchGoogleAdsStreamResponse $response */
-                foreach ($response->getResults() as $googleAdsRow) {
-                    /** @var GoogleAdsRow $googleAdsRow */
-                    // Converts each result as a Plain Old PHP Object (POPO) using JSON.
-                    $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
-                }
+            foreach ($stream->iterateAllElements() as $googleAdsRow) {
+                /** @var GoogleAdsRow $googleAdsRow */
+                // Converts each result as a Plain Old PHP Object (POPO) using JSON.
+                $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
             }
             $collection = collect($results);
 
