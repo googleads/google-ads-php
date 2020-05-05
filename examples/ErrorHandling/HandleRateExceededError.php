@@ -102,12 +102,14 @@ class HandleRateExceededError
                     PHP_EOL
                 );
             }
+            exit(1);
         } catch (ApiException $apiException) {
             printf(
                 "ApiException was thrown with message '%s'.%s",
                 $apiException->getMessage(),
                 PHP_EOL
             );
+            exit(1);
         }
     }
 
@@ -183,13 +185,13 @@ class HandleRateExceededError
                     }
                 }
             } catch (Exception $exception) {
-                // Catches and prints any unhandled exception.
+                // Prints any unhandled exception and bubbles up.
                 printf(
                     'Failed to validate keywords.%n%s',
                     $exception->getMessage(),
                     PHP_EOL
                 );
-                return;
+                throw $exception;
             }
         }
     }

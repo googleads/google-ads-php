@@ -81,12 +81,14 @@ class GetAccountBudgetProposals
                     PHP_EOL
                 );
             }
+            exit(1);
         } catch (ApiException $apiException) {
             printf(
                 "ApiException was thrown with message '%s'.%s",
                 $apiException->getMessage(),
                 PHP_EOL
             );
+            exit(1);
         }
     }
 
