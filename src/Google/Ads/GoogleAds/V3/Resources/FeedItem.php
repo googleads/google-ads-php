@@ -16,23 +16,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class FeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the feed item.
+     * Immutable. The resource name of the feed item.
      * Feed item resource names have the form:
      * `customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The feed to which this feed item belongs.
+     * Immutable. The feed to which this feed item belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $feed = null;
     /**
-     * The ID of this feed item.
+     * Output only. The ID of this feed item.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -74,21 +74,21 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      */
     private $url_custom_parameters;
     /**
-     * Status of the feed item.
+     * Output only. Status of the feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedItemStatusEnum.FeedItemStatus status = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedItemStatusEnum.FeedItemStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * List of info about a feed item's validation and approval state for active
+     * Output only. List of info about a feed item's validation and approval state for active
      * feed mappings. There will be an entry in the list for each type of feed
      * mapping associated with the feed, e.g. a feed with a sitelink and a call
      * feed mapping would cause every feed item associated with that feed to have
      * an entry in this list for both sitelink and call.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $policy_infos;
 
@@ -99,13 +99,13 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the feed item.
+     *           Immutable. The resource name of the feed item.
      *           Feed item resource names have the form:
      *           `customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}`
      *     @type \Google\Protobuf\StringValue $feed
-     *           The feed to which this feed item belongs.
+     *           Immutable. The feed to which this feed item belongs.
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of this feed item.
+     *           Output only. The ID of this feed item.
      *     @type \Google\Protobuf\StringValue $start_date_time
      *           Start time in which this feed item is effective and can begin serving. The
      *           time is in the customer's time zone.
@@ -125,10 +125,10 @@ class FeedItem extends \Google\Protobuf\Internal\Message
      *           The list of mappings used to substitute custom parameter tags in a
      *           `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
      *     @type int $status
-     *           Status of the feed item.
+     *           Output only. Status of the feed item.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V3\Resources\FeedItemPlaceholderPolicyInfo[]|\Google\Protobuf\Internal\RepeatedField $policy_infos
-     *           List of info about a feed item's validation and approval state for active
+     *           Output only. List of info about a feed item's validation and approval state for active
      *           feed mappings. There will be an entry in the list for each type of feed
      *           mapping associated with the feed, e.g. a feed with a sitelink and a call
      *           feed mapping would cause every feed item associated with that feed to have
@@ -142,11 +142,11 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the feed item.
+     * Immutable. The resource name of the feed item.
      * Feed item resource names have the form:
      * `customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -155,11 +155,11 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the feed item.
+     * Immutable. The resource name of the feed item.
      * Feed item resource names have the form:
      * `customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -172,9 +172,9 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The feed to which this feed item belongs.
+     * Immutable. The feed to which this feed item belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getFeed()
@@ -185,9 +185,9 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFeed()</code>
 
-     * The feed to which this feed item belongs.
+     * Immutable. The feed to which this feed item belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getFeedUnwrapped()
@@ -196,9 +196,9 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The feed to which this feed item belongs.
+     * Immutable. The feed to which this feed item belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -213,9 +213,9 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The feed to which this feed item belongs.
+     * Immutable. The feed to which this feed item belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -225,9 +225,9 @@ class FeedItem extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ID of this feed item.
+     * Output only. The ID of this feed item.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -238,9 +238,9 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of this feed item.
+     * Output only. The ID of this feed item.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -249,9 +249,9 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of this feed item.
+     * Output only. The ID of this feed item.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -266,9 +266,9 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of this feed item.
+     * Output only. The ID of this feed item.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -490,10 +490,10 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the feed item.
+     * Output only. Status of the feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedItemStatusEnum.FeedItemStatus status = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedItemStatusEnum.FeedItemStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -502,10 +502,10 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the feed item.
+     * Output only. Status of the feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedItemStatusEnum.FeedItemStatus status = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedItemStatusEnum.FeedItemStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -518,14 +518,14 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of info about a feed item's validation and approval state for active
+     * Output only. List of info about a feed item's validation and approval state for active
      * feed mappings. There will be an entry in the list for each type of feed
      * mapping associated with the feed, e.g. a feed with a sitelink and a call
      * feed mapping would cause every feed item associated with that feed to have
      * an entry in this list for both sitelink and call.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPolicyInfos()
@@ -534,14 +534,14 @@ class FeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of info about a feed item's validation and approval state for active
+     * Output only. List of info about a feed item's validation and approval state for active
      * feed mappings. There will be an entry in the list for each type of feed
      * mapping associated with the feed, e.g. a feed with a sitelink and a call
      * feed mapping would cause every feed item associated with that feed to have
      * an entry in this list for both sitelink and call.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v3.resources.FeedItemPlaceholderPolicyInfo policy_infos = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Resources\FeedItemPlaceholderPolicyInfo[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

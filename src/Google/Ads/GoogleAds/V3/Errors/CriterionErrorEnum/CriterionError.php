@@ -647,6 +647,42 @@ class CriterionError
      * Generated from protobuf enum <code>CANNOT_TARGET_USER_LIST_FOR_SMART_DISPLAY_CAMPAIGNS = 99;</code>
      */
     const CANNOT_TARGET_USER_LIST_FOR_SMART_DISPLAY_CAMPAIGNS = 99;
+    /**
+     * Listing scope contains too many dimension types.
+     *
+     * Generated from protobuf enum <code>LISTING_SCOPE_TOO_MANY_DIMENSION_TYPES = 100;</code>
+     */
+    const LISTING_SCOPE_TOO_MANY_DIMENSION_TYPES = 100;
+    /**
+     * Listing scope has too many IN operators.
+     *
+     * Generated from protobuf enum <code>LISTING_SCOPE_TOO_MANY_IN_OPERATORS = 101;</code>
+     */
+    const LISTING_SCOPE_TOO_MANY_IN_OPERATORS = 101;
+    /**
+     * Listing scope contains IN operator on an unsupported dimension type.
+     *
+     * Generated from protobuf enum <code>LISTING_SCOPE_IN_OPERATOR_NOT_SUPPORTED = 102;</code>
+     */
+    const LISTING_SCOPE_IN_OPERATOR_NOT_SUPPORTED = 102;
+    /**
+     * There are dimensions with duplicate dimension type.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_LISTING_DIMENSION_TYPE = 103;</code>
+     */
+    const DUPLICATE_LISTING_DIMENSION_TYPE = 103;
+    /**
+     * There are dimensions with duplicate dimension value.
+     *
+     * Generated from protobuf enum <code>DUPLICATE_LISTING_DIMENSION_VALUE = 104;</code>
+     */
+    const DUPLICATE_LISTING_DIMENSION_VALUE = 104;
+    /**
+     * Listing group SUBDIVISION nodes cannot have bids.
+     *
+     * Generated from protobuf enum <code>CANNOT_SET_BIDS_ON_LISTING_GROUP_SUBDIVISION = 105;</code>
+     */
+    const CANNOT_SET_BIDS_ON_LISTING_GROUP_SUBDIVISION = 105;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -749,6 +785,12 @@ class CriterionError
         self::WEBPAGE_CRITERION_URL_EQUALS_CAN_HAVE_ONLY_ONE_CONDITION => 'WEBPAGE_CRITERION_URL_EQUALS_CAN_HAVE_ONLY_ONE_CONDITION',
         self::WEBPAGE_CRITERION_NOT_SUPPORTED_ON_NON_DSA_AD_GROUP => 'WEBPAGE_CRITERION_NOT_SUPPORTED_ON_NON_DSA_AD_GROUP',
         self::CANNOT_TARGET_USER_LIST_FOR_SMART_DISPLAY_CAMPAIGNS => 'CANNOT_TARGET_USER_LIST_FOR_SMART_DISPLAY_CAMPAIGNS',
+        self::LISTING_SCOPE_TOO_MANY_DIMENSION_TYPES => 'LISTING_SCOPE_TOO_MANY_DIMENSION_TYPES',
+        self::LISTING_SCOPE_TOO_MANY_IN_OPERATORS => 'LISTING_SCOPE_TOO_MANY_IN_OPERATORS',
+        self::LISTING_SCOPE_IN_OPERATOR_NOT_SUPPORTED => 'LISTING_SCOPE_IN_OPERATOR_NOT_SUPPORTED',
+        self::DUPLICATE_LISTING_DIMENSION_TYPE => 'DUPLICATE_LISTING_DIMENSION_TYPE',
+        self::DUPLICATE_LISTING_DIMENSION_VALUE => 'DUPLICATE_LISTING_DIMENSION_VALUE',
+        self::CANNOT_SET_BIDS_ON_LISTING_GROUP_SUBDIVISION => 'CANNOT_SET_BIDS_ON_LISTING_GROUP_SUBDIVISION',
     ];
 
     public static function name($value)

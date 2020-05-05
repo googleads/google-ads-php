@@ -360,7 +360,7 @@ class ReachPlanServiceGapicClient
      *                                                This is equivalent to the frequency cap exposed in Google Ads when creating
      *                                                a campaign, it represents the maximum number of times an ad can be shown to
      *                                                the same user.
-     *                                                If not specified no cap is applied.
+     *                                                If not specified, no cap is applied.
      * @param Int32Value       $minEffectiveFrequency Desired minimum effective frequency (the number of times a person was
      *                                                exposed to the ad) for the reported reach metrics [1-10].
      *                                                This won't affect the targeting, but just the reporting.
@@ -370,14 +370,12 @@ class ReachPlanServiceGapicClient
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      *
-     * If no targeting dimensions are specified, then campaigns will target
-     * everywhere and everyone.
-     *
      * See specific metrics for details on how targeting affects them.
      *
      * In some cases, targeting may be overridden using the
      * PlannedProduct.advanced_product_targeting field.
-     * @param PlannedProduct[] $plannedProducts Required. The product to be planned.
+     * @param PlannedProduct[] $plannedProducts Required. The products to be forecast.
+     *                                          The max number of allowed planned products is 15.
      * @param array            $optionalArgs    {
      *                                          Optional.
      *

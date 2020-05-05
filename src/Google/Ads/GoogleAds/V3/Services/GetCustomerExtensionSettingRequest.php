@@ -19,7 +19,7 @@ class GetCustomerExtensionSettingRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The resource name of the customer extension setting to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
 
@@ -41,7 +41,7 @@ class GetCustomerExtensionSettingRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The resource name of the customer extension setting to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -52,7 +52,7 @@ class GetCustomerExtensionSettingRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Required. The resource name of the customer extension setting to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

@@ -185,7 +185,7 @@ class ConversionAdjustmentUploadServiceGapicClient
      *                                                      Optional.
      *
      *     @type bool $partialFailure
-     *          If true, successful operations will be carried out and invalid
+     *          Required. If true, successful operations will be carried out and invalid
      *          operations will return errors. If false, all operations will be carried out
      *          in one transaction if and only if they are all valid. This should always be
      *          set to true.

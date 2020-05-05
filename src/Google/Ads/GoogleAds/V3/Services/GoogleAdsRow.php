@@ -496,6 +496,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $mutate_job = null;
     /**
+     * The offline user data job referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.OfflineUserDataJob offline_user_data_job = 137;</code>
+     */
+    protected $offline_user_data_job = null;
+    /**
      * The operating system version constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v3.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;</code>
@@ -776,6 +782,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The mobile device constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V3\Resources\MutateJob $mutate_job
      *           The mutate job referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V3\Resources\OfflineUserDataJob $offline_user_data_job
+     *           The offline user data job referenced in the query.
      *     @type \Google\Ads\GoogleAds\V3\Resources\OperatingSystemVersionConstant $operating_system_version_constant
      *           The operating system version constant referenced in the query.
      *     @type \Google\Ads\GoogleAds\V3\Resources\PaidOrganicSearchTermView $paid_organic_search_term_view
@@ -2897,6 +2905,32 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V3\Resources\MutateJob::class);
         $this->mutate_job = $var;
+
+        return $this;
+    }
+
+    /**
+     * The offline user data job referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.OfflineUserDataJob offline_user_data_job = 137;</code>
+     * @return \Google\Ads\GoogleAds\V3\Resources\OfflineUserDataJob
+     */
+    public function getOfflineUserDataJob()
+    {
+        return $this->offline_user_data_job;
+    }
+
+    /**
+     * The offline user data job referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.resources.OfflineUserDataJob offline_user_data_job = 137;</code>
+     * @param \Google\Ads\GoogleAds\V3\Resources\OfflineUserDataJob $var
+     * @return $this
+     */
+    public function setOfflineUserDataJob($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V3\Resources\OfflineUserDataJob::class);
+        $this->offline_user_data_job = $var;
 
         return $this;
     }

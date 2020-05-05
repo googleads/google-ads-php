@@ -23,11 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\Lib\V3\GoogleAdsServerStreamDecorator;
 use Google\Ads\GoogleAds\V3\Enums\AccountBudgetStatusEnum\AccountBudgetStatus;
+use Google\Ads\GoogleAds\V3\Enums\SpendingLimitTypeEnum\SpendingLimitType;
+use Google\Ads\GoogleAds\V3\Enums\TimeTypeEnum\TimeType;
 use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
@@ -36,7 +39,6 @@ use Google\ApiCore\ApiException;
 class GetAccountBudgets
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -102,6 +104,8 @@ class GetAccountBudgets
             . 'account_budget.approved_spending_limit_type, '
             . 'account_budget.proposed_spending_limit_micros, '
             . 'account_budget.proposed_spending_limit_type, '
+            . 'account_budget.adjusted_spending_limit_micros, '
+            . 'account_budget.adjusted_spending_limit_type, '
             . 'account_budget.approved_start_date_time, '
             . 'account_budget.proposed_start_date_time, '
             . 'account_budget.approved_end_date_time, '
@@ -111,18 +115,18 @@ class GetAccountBudgets
             . 'FROM account_budget';
 
         // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $stream = $googleAdsServiceClient->searchStream($customerId, $query);
+        /** @var GoogleAdsServerStreamDecorator $stream */
 
         // Iterates over all rows in all pages and prints the requested field values for
         // the account budget in each row.
-        foreach ($response->iterateAllElements() as $googleAdsRow) {
+        foreach ($stream->iterateAllElements() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             $accountBudget = $googleAdsRow->getAccountBudget();
             printf(
                 'Found the account budget \'%s\' with status \'%s\', billing setup '
                 . '\'%s\', amount served %.2f, total adjustments %.2f,%s'
-                . '  approved spending limit \'%s\' (proposed \'%s\'),%s'
+                . '  approved spending limit \'%s\' (proposed \'%s\', adjusted \'%s\'),%s'
                 . '  approved start time \'%s\' (proposed \'%s\'),%s'
                 . '  approved end time \'%s\' (proposed \'%s\').%s',
                 $accountBudget->getResourceName(),
@@ -140,12 +144,17 @@ class GetAccountBudgets
                     ? sprintf(
                         '%.2f',
                         $accountBudget->getApprovedSpendingLimitMicrosUnwrapped() / 1000000.0
-                    ) : $accountBudget->getApprovedSpendingLimitType(),
+                    ) : SpendingLimitType::name($accountBudget->getApprovedSpendingLimitType()),
                 $accountBudget->getProposedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
                         $accountBudget->getProposedSpendingLimitMicrosUnwrapped() / 1000000.0
-                    ) : $accountBudget->getProposedSpendingLimitType(),
+                    ) : SpendingLimitType::name($accountBudget->getProposedSpendingLimitType()),
+                $accountBudget->getAdjustedSpendingLimitMicros()
+                    ? sprintf(
+                        '%.2f',
+                        $accountBudget->getAdjustedSpendingLimitMicrosUnwrapped() / 1000000.0
+                    ) : SpendingLimitType::name($accountBudget->getAdjustedSpendingLimitType()),
                 PHP_EOL,
                 $accountBudget->getApprovedStartDateTime()
                     ? $accountBudget->getApprovedStartDateTimeUnwrapped()
@@ -156,10 +165,10 @@ class GetAccountBudgets
                 PHP_EOL,
                 $accountBudget->getApprovedEndDateTime()
                     ? $accountBudget->getApprovedEndDateTimeUnwrapped()
-                    : $accountBudget->getApprovedEndTimeType(),
+                    : TimeType::name($accountBudget->getApprovedEndTimeType()),
                 $accountBudget->getProposedEndDateTime()
                     ? $accountBudget->getProposedEndDateTimeUnwrapped()
-                    : $accountBudget->getProposedEndTimeType(),
+                    : TimeType::name($accountBudget->getProposedEndTimeType()),
                 PHP_EOL
             );
         }

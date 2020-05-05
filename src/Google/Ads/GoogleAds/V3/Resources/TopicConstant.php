@@ -18,33 +18,33 @@ use Google\Protobuf\Internal\GPBUtil;
 class TopicConstant extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the topic constant.
+     * Output only. The resource name of the topic constant.
      * topic constant resource names have the form:
      * `topicConstants/{topic_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the topic.
+     * Output only. The ID of the topic.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * Resource name of parent of the topic constant.
+     * Output only. Resource name of parent of the topic constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $topic_constant_parent = null;
     /**
-     * The category to target or exclude. Each subsequent element in the array
+     * Output only. The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
      * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
      * https://developers.google.com/adwords/api/docs/appendix/verticals
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $path;
 
@@ -55,15 +55,15 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the topic constant.
+     *           Output only. The resource name of the topic constant.
      *           topic constant resource names have the form:
      *           `topicConstants/{topic_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the topic.
+     *           Output only. The ID of the topic.
      *     @type \Google\Protobuf\StringValue $topic_constant_parent
-     *           Resource name of parent of the topic constant.
+     *           Output only. Resource name of parent of the topic constant.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $path
-     *           The category to target or exclude. Each subsequent element in the array
+     *           Output only. The category to target or exclude. Each subsequent element in the array
      *           describes a more specific sub-category. For example,
      *           {"Pets & Animals", "Pets", "Dogs"} represents the
      *           "Pets & Animals/Pets/Dogs" category. List of available topic categories at
@@ -76,11 +76,11 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the topic constant.
+     * Output only. The resource name of the topic constant.
      * topic constant resource names have the form:
      * `topicConstants/{topic_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -89,11 +89,11 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the topic constant.
+     * Output only. The resource name of the topic constant.
      * topic constant resource names have the form:
      * `topicConstants/{topic_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -106,9 +106,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the topic.
+     * Output only. The ID of the topic.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -119,9 +119,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the topic.
+     * Output only. The ID of the topic.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -130,9 +130,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the topic.
+     * Output only. The ID of the topic.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -147,9 +147,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the topic.
+     * Output only. The ID of the topic.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -159,9 +159,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Resource name of parent of the topic constant.
+     * Output only. Resource name of parent of the topic constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTopicConstantParent()
@@ -172,9 +172,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTopicConstantParent()</code>
 
-     * Resource name of parent of the topic constant.
+     * Output only. Resource name of parent of the topic constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getTopicConstantParentUnwrapped()
@@ -183,9 +183,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of parent of the topic constant.
+     * Output only. Resource name of parent of the topic constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -200,9 +200,9 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Resource name of parent of the topic constant.
+     * Output only. Resource name of parent of the topic constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue topic_constant_parent = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -212,13 +212,13 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The category to target or exclude. Each subsequent element in the array
+     * Output only. The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
      * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
      * https://developers.google.com/adwords/api/docs/appendix/verticals
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPath()
@@ -227,13 +227,13 @@ class TopicConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The category to target or exclude. Each subsequent element in the array
+     * Output only. The category to target or exclude. Each subsequent element in the array
      * describes a more specific sub-category. For example,
      * {"Pets & Animals", "Pets", "Dogs"} represents the
      * "Pets & Animals/Pets/Dogs" category. List of available topic categories at
      * https://developers.google.com/adwords/api/docs/appendix/verticals
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue path = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

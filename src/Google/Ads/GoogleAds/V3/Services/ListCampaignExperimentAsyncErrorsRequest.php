@@ -20,7 +20,7 @@ class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal
      * Required. The name of the campaign experiment from which to retrieve the async
      * errors.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
@@ -70,7 +70,7 @@ class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal
      * Required. The name of the campaign experiment from which to retrieve the async
      * errors.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -82,7 +82,7 @@ class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal
      * Required. The name of the campaign experiment from which to retrieve the async
      * errors.
      *
-     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

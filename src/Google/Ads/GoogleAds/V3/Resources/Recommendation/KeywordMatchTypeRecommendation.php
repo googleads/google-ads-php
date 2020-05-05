@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The existing keyword where the match type should be more broad.
+     * Output only. The existing keyword where the match type should be more broad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $keyword = null;
     /**
-     * The recommended new match type.
+     * Output only. The recommended new match type.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_match_type = 0;
 
@@ -35,9 +35,9 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V3\Common\KeywordInfo $keyword
-     *           The existing keyword where the match type should be more broad.
+     *           Output only. The existing keyword where the match type should be more broad.
      *     @type int $recommended_match_type
-     *           The recommended new match type.
+     *           Output only. The recommended new match type.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,9 +46,9 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The existing keyword where the match type should be more broad.
+     * Output only. The existing keyword where the match type should be more broad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\KeywordInfo
      */
     public function getKeyword()
@@ -57,9 +57,9 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The existing keyword where the match type should be more broad.
+     * Output only. The existing keyword where the match type should be more broad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\KeywordInfo $var
      * @return $this
      */
@@ -72,9 +72,9 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended new match type.
+     * Output only. The recommended new match type.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getRecommendedMatchType()
@@ -83,9 +83,9 @@ class KeywordMatchTypeRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended new match type.
+     * Output only. The recommended new match type.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.KeywordMatchTypeEnum.KeywordMatchType recommended_match_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

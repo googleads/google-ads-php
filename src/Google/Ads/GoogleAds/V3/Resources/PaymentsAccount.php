@@ -16,47 +16,53 @@ use Google\Protobuf\Internal\GPBUtil;
 class PaymentsAccount extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the payments account.
+     * Output only. The resource name of the payments account.
      * PaymentsAccount resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * A 16 digit ID used to identify a payments account.
+     * Output only. A 16 digit ID used to identify a payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $payments_account_id = null;
     /**
-     * The name of the payments account.
+     * Output only. The name of the payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
-     * The currency code of the payments account.
+     * Output only. The currency code of the payments account.
      * A subset of the currency codes derived from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $currency_code = null;
     /**
-     * A 12 digit ID used to identify the payments profile associated with the
+     * Output only. A 12 digit ID used to identify the payments profile associated with the
      * payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $payments_profile_id = null;
     /**
-     * A secondary payments profile ID present in uncommon situations, e.g.
+     * Output only. A secondary payments profile ID present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $secondary_payments_profile_id = null;
+    /**
+     * Output only. Paying manager of this payment account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $paying_manager_customer = null;
 
     /**
      * Constructor.
@@ -65,23 +71,25 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the payments account.
+     *           Output only. The resource name of the payments account.
      *           PaymentsAccount resource names have the form:
      *           `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *     @type \Google\Protobuf\StringValue $payments_account_id
-     *           A 16 digit ID used to identify a payments account.
+     *           Output only. A 16 digit ID used to identify a payments account.
      *     @type \Google\Protobuf\StringValue $name
-     *           The name of the payments account.
+     *           Output only. The name of the payments account.
      *     @type \Google\Protobuf\StringValue $currency_code
-     *           The currency code of the payments account.
+     *           Output only. The currency code of the payments account.
      *           A subset of the currency codes derived from the ISO 4217 standard is
      *           supported.
      *     @type \Google\Protobuf\StringValue $payments_profile_id
-     *           A 12 digit ID used to identify the payments profile associated with the
+     *           Output only. A 12 digit ID used to identify the payments profile associated with the
      *           payments account.
      *     @type \Google\Protobuf\StringValue $secondary_payments_profile_id
-     *           A secondary payments profile ID present in uncommon situations, e.g.
+     *           Output only. A secondary payments profile ID present in uncommon situations, e.g.
      *           when a sequential liability agreement has been arranged.
+     *     @type \Google\Protobuf\StringValue $paying_manager_customer
+     *           Output only. Paying manager of this payment account.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,11 +98,11 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the payments account.
+     * Output only. The resource name of the payments account.
      * PaymentsAccount resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -103,11 +111,11 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the payments account.
+     * Output only. The resource name of the payments account.
      * PaymentsAccount resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -120,9 +128,9 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 16 digit ID used to identify a payments account.
+     * Output only. A 16 digit ID used to identify a payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPaymentsAccountId()
@@ -133,9 +141,9 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPaymentsAccountId()</code>
 
-     * A 16 digit ID used to identify a payments account.
+     * Output only. A 16 digit ID used to identify a payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getPaymentsAccountIdUnwrapped()
@@ -144,9 +152,9 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 16 digit ID used to identify a payments account.
+     * Output only. A 16 digit ID used to identify a payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -161,9 +169,9 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * A 16 digit ID used to identify a payments account.
+     * Output only. A 16 digit ID used to identify a payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -173,9 +181,9 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The name of the payments account.
+     * Output only. The name of the payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -186,9 +194,9 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * The name of the payments account.
+     * Output only. The name of the payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -197,9 +205,9 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the payments account.
+     * Output only. The name of the payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -214,9 +222,9 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the payments account.
+     * Output only. The name of the payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -226,11 +234,11 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The currency code of the payments account.
+     * Output only. The currency code of the payments account.
      * A subset of the currency codes derived from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCurrencyCode()
@@ -241,11 +249,11 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCurrencyCode()</code>
 
-     * The currency code of the payments account.
+     * Output only. The currency code of the payments account.
      * A subset of the currency codes derived from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCurrencyCodeUnwrapped()
@@ -254,11 +262,11 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The currency code of the payments account.
+     * Output only. The currency code of the payments account.
      * A subset of the currency codes derived from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -273,11 +281,11 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The currency code of the payments account.
+     * Output only. The currency code of the payments account.
      * A subset of the currency codes derived from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -287,10 +295,10 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * A 12 digit ID used to identify the payments profile associated with the
+     * Output only. A 12 digit ID used to identify the payments profile associated with the
      * payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPaymentsProfileId()
@@ -301,10 +309,10 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPaymentsProfileId()</code>
 
-     * A 12 digit ID used to identify the payments profile associated with the
+     * Output only. A 12 digit ID used to identify the payments profile associated with the
      * payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getPaymentsProfileIdUnwrapped()
@@ -313,10 +321,10 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A 12 digit ID used to identify the payments profile associated with the
+     * Output only. A 12 digit ID used to identify the payments profile associated with the
      * payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -331,10 +339,10 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * A 12 digit ID used to identify the payments profile associated with the
+     * Output only. A 12 digit ID used to identify the payments profile associated with the
      * payments account.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_profile_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -344,10 +352,10 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * A secondary payments profile ID present in uncommon situations, e.g.
+     * Output only. A secondary payments profile ID present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getSecondaryPaymentsProfileId()
@@ -358,10 +366,10 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSecondaryPaymentsProfileId()</code>
 
-     * A secondary payments profile ID present in uncommon situations, e.g.
+     * Output only. A secondary payments profile ID present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getSecondaryPaymentsProfileIdUnwrapped()
@@ -370,10 +378,10 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A secondary payments profile ID present in uncommon situations, e.g.
+     * Output only. A secondary payments profile ID present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -388,16 +396,69 @@ class PaymentsAccount extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * A secondary payments profile ID present in uncommon situations, e.g.
+     * Output only. A secondary payments profile ID present in uncommon situations, e.g.
      * when a sequential liability agreement has been arranged.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue secondary_payments_profile_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
     public function setSecondaryPaymentsProfileIdUnwrapped($var)
     {
         $this->writeWrapperValue("secondary_payments_profile_id", $var);
+        return $this;}
+
+    /**
+     * Output only. Paying manager of this payment account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\StringValue
+     */
+    public function getPayingManagerCustomer()
+    {
+        return $this->paying_manager_customer;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getPayingManagerCustomer()</code>
+
+     * Output only. Paying manager of this payment account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string|null
+     */
+    public function getPayingManagerCustomerUnwrapped()
+    {
+        return $this->readWrapperValue("paying_manager_customer");
+    }
+
+    /**
+     * Output only. Paying manager of this payment account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Protobuf\StringValue $var
+     * @return $this
+     */
+    public function setPayingManagerCustomer($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
+        $this->paying_manager_customer = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Output only. Paying manager of this payment account.
+     *
+     * Generated from protobuf field <code>.google.protobuf.StringValue paying_manager_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setPayingManagerCustomerUnwrapped($var)
+    {
+        $this->writeWrapperValue("paying_manager_customer", $var);
         return $this;}
 
 }

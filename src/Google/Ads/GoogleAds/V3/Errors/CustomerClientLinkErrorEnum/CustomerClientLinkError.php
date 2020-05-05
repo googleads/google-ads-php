@@ -67,6 +67,12 @@ class CustomerClientLinkError
      * Generated from protobuf enum <code>CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER = 8;</code>
      */
     const CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER = 8;
+    /**
+     * Client has too many managers.
+     *
+     * Generated from protobuf enum <code>CLIENT_HAS_TOO_MANY_MANAGERS = 9;</code>
+     */
+    const CLIENT_HAS_TOO_MANY_MANAGERS = 9;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -78,6 +84,7 @@ class CustomerClientLinkError
         self::CLIENT_HAS_TOO_MANY_INVITATIONS => 'CLIENT_HAS_TOO_MANY_INVITATIONS',
         self::CANNOT_HIDE_OR_UNHIDE_MANAGER_ACCOUNTS => 'CANNOT_HIDE_OR_UNHIDE_MANAGER_ACCOUNTS',
         self::CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER => 'CUSTOMER_HAS_TOO_MANY_ACCOUNTS_AT_MANAGER',
+        self::CLIENT_HAS_TOO_MANY_MANAGERS => 'CLIENT_HAS_TOO_MANY_MANAGERS',
     ];
 
     public static function name($value)

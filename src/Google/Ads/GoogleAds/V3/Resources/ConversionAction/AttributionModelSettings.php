@@ -22,10 +22,10 @@ class AttributionModelSettings extends \Google\Protobuf\Internal\Message
      */
     protected $attribution_model = 0;
     /**
-     * The status of the data-driven attribution model for the conversion
+     * Output only. The status of the data-driven attribution model for the conversion
      * action.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DataDrivenModelStatusEnum.DataDrivenModelStatus data_driven_model_status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DataDrivenModelStatusEnum.DataDrivenModelStatus data_driven_model_status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $data_driven_model_status = 0;
 
@@ -38,7 +38,7 @@ class AttributionModelSettings extends \Google\Protobuf\Internal\Message
      *     @type int $attribution_model
      *           The attribution model type of this conversion action.
      *     @type int $data_driven_model_status
-     *           The status of the data-driven attribution model for the conversion
+     *           Output only. The status of the data-driven attribution model for the conversion
      *           action.
      * }
      */
@@ -74,10 +74,10 @@ class AttributionModelSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of the data-driven attribution model for the conversion
+     * Output only. The status of the data-driven attribution model for the conversion
      * action.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DataDrivenModelStatusEnum.DataDrivenModelStatus data_driven_model_status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DataDrivenModelStatusEnum.DataDrivenModelStatus data_driven_model_status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getDataDrivenModelStatus()
@@ -86,10 +86,10 @@ class AttributionModelSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of the data-driven attribution model for the conversion
+     * Output only. The status of the data-driven attribution model for the conversion
      * action.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DataDrivenModelStatusEnum.DataDrivenModelStatus data_driven_model_status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.DataDrivenModelStatusEnum.DataDrivenModelStatus data_driven_model_status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

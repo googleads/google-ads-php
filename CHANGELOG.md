@@ -1,3 +1,31 @@
+## 3.2.0
+*   Added support for v3_1 of Google Ads API.
+*   Fixed the field masks to work properly with repeated fields in a message.
+*   Extended `GoogleAdsService.searchStream` with an experimental iterator.
+*   Refreshed `ResourceNames` with some types: `CurrencyConstant`, `Ad`, `AdGroupExtensionSetting`,
+    `CustomerExtensionSetting`, `CampaignExtensionSetting`.
+*   Added code examples
+    * AddResponsiveSearchAd
+    * GetResponsiveSearchAds
+    * AddHotelCallout
+    * UpdateExpandedTextAd
+    * UpdateSitelink
+    * UpdateSitelinkCampaignExtensionSetting
+    * AddMerchantCenterDynamicRemarketingCampaign
+    * ForecastReach
+    * AddGeoTarget
+    * RemoveEntireSitelinkCampaignExtensionSetting
+    * GetAdGroupCriterionCpcBidSimulations
+    * UploadCallConversion
+    * ApproveMerchantCenterLink
+    * SearchForLanguageAndCarrierConstants
+    * GetCampaignCriterionBidModifierSimulations
+    * AddCustomerMatchUserList
+*   Improved code examples
+    * GetAccountHierarchy
+    * AddCompleteCampaignsUsingMutateJob
+    * GetAccountBudgets
+
 ## 3.1.0
 *   Added support for v3_0 of Google Ads API.
 *   Added support for conversion-typed API errors.

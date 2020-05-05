@@ -43,6 +43,8 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      *           The result for the ad group mutate.
      *     @type \Google\Ads\GoogleAds\V3\Services\MutateAdParameterResult $ad_parameter_result
      *           The result for the ad parameter mutate.
+     *     @type \Google\Ads\GoogleAds\V3\Services\MutateAdResult $ad_result
+     *           The result for the ad mutate.
      *     @type \Google\Ads\GoogleAds\V3\Services\MutateAssetResult $asset_result
      *           The result for the asset mutate.
      *     @type \Google\Ads\GoogleAds\V3\Services\MutateBiddingStrategyResult $bidding_strategy_result
@@ -364,6 +366,32 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V3\Services\MutateAdParameterResult::class);
         $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * The result for the ad mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.services.MutateAdResult ad_result = 49;</code>
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateAdResult
+     */
+    public function getAdResult()
+    {
+        return $this->readOneof(49);
+    }
+
+    /**
+     * The result for the ad mutate.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v3.services.MutateAdResult ad_result = 49;</code>
+     * @param \Google\Ads\GoogleAds\V3\Services\MutateAdResult $var
+     * @return $this
+     */
+    public function setAdResult($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V3\Services\MutateAdResult::class);
+        $this->writeOneof(49, $var);
 
         return $this;
     }

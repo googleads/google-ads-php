@@ -18,20 +18,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class ShoppingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * ID of the Merchant Center account.
+     * Immutable. ID of the Merchant Center account.
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $merchant_id = null;
     /**
-     * Sales country of products to include in the campaign.
+     * Immutable. Sales country of products to include in the campaign.
      * This field is required for Shopping campaigns. This field is immutable.
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $sales_country = null;
     /**
@@ -59,11 +59,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $merchant_id
-     *           ID of the Merchant Center account.
+     *           Immutable. ID of the Merchant Center account.
      *           This field is required for create operations. This field is immutable for
      *           Shopping campaigns.
      *     @type \Google\Protobuf\StringValue $sales_country
-     *           Sales country of products to include in the campaign.
+     *           Immutable. Sales country of products to include in the campaign.
      *           This field is required for Shopping campaigns. This field is immutable.
      *           This field is optional for non-Shopping campaigns, but it must be equal
      *           to 'ZZ' if set.
@@ -84,11 +84,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the Merchant Center account.
+     * Immutable. ID of the Merchant Center account.
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getMerchantId()
@@ -99,11 +99,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getMerchantId()</code>
 
-     * ID of the Merchant Center account.
+     * Immutable. ID of the Merchant Center account.
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string|null
      */
     public function getMerchantIdUnwrapped()
@@ -112,11 +112,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the Merchant Center account.
+     * Immutable. ID of the Merchant Center account.
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -131,11 +131,11 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * ID of the Merchant Center account.
+     * Immutable. ID of the Merchant Center account.
      * This field is required for create operations. This field is immutable for
      * Shopping campaigns.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value merchant_id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -145,12 +145,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Sales country of products to include in the campaign.
+     * Immutable. Sales country of products to include in the campaign.
      * This field is required for Shopping campaigns. This field is immutable.
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getSalesCountry()
@@ -161,12 +161,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSalesCountry()</code>
 
-     * Sales country of products to include in the campaign.
+     * Immutable. Sales country of products to include in the campaign.
      * This field is required for Shopping campaigns. This field is immutable.
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getSalesCountryUnwrapped()
@@ -175,12 +175,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sales country of products to include in the campaign.
+     * Immutable. Sales country of products to include in the campaign.
      * This field is required for Shopping campaigns. This field is immutable.
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -195,12 +195,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Sales country of products to include in the campaign.
+     * Immutable. Sales country of products to include in the campaign.
      * This field is required for Shopping campaigns. This field is immutable.
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue sales_country = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */

@@ -71,6 +71,7 @@ final class ArgumentNames
     public const LOCALE = 'locale';
     public const LOCATION_ID = 'locationId';
     public const LOCATION_NAMES = 'locationNames';
+    public const LOGIN_CUSTOMER_ID = 'loginCustomerId';
     public const MANAGER_CUSTOMER_ID = 'managerCustomerId';
     public const MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'marketingImageAssetResourceName';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
@@ -134,6 +135,7 @@ final class ArgumentNames
         self::LOCALE => 'The locale',
         self::LOCATION_ID => 'The location ID',
         self::LOCATION_NAMES => 'The list of location names',
+        self::LOGIN_CUSTOMER_ID => 'The login customer ID',
         self::MANAGER_CUSTOMER_ID => 'The manager customer ID',
         self::MARKETING_IMAGE_ASSET_RESOURCE_NAME => 'The resource name of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',

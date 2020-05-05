@@ -23,15 +23,15 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      */
     protected $bidding_strategy_goal_type = 0;
     /**
-     * A string that uniquely identifies a mobile application.
+     * Immutable. A string that uniquely identifies a mobile application.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $app_id = null;
     /**
-     * The application store that distributes this specific app.
+     * Immutable. The application store that distributes this specific app.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $app_store = 0;
 
@@ -45,9 +45,9 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
      *           Represents the goal which the bidding strategy of this app campaign
      *           should optimize towards.
      *     @type \Google\Protobuf\StringValue $app_id
-     *           A string that uniquely identifies a mobile application.
+     *           Immutable. A string that uniquely identifies a mobile application.
      *     @type int $app_store
-     *           The application store that distributes this specific app.
+     *           Immutable. The application store that distributes this specific app.
      * }
      */
     public function __construct($data = NULL) {
@@ -84,9 +84,9 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A string that uniquely identifies a mobile application.
+     * Immutable. A string that uniquely identifies a mobile application.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAppId()
@@ -97,9 +97,9 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAppId()</code>
 
-     * A string that uniquely identifies a mobile application.
+     * Immutable. A string that uniquely identifies a mobile application.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getAppIdUnwrapped()
@@ -108,9 +108,9 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A string that uniquely identifies a mobile application.
+     * Immutable. A string that uniquely identifies a mobile application.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -125,9 +125,9 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * A string that uniquely identifies a mobile application.
+     * Immutable. A string that uniquely identifies a mobile application.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue app_id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -137,9 +137,9 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The application store that distributes this specific app.
+     * Immutable. The application store that distributes this specific app.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getAppStore()
@@ -148,9 +148,9 @@ class AppCampaignSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The application store that distributes this specific app.
+     * Immutable. The application store that distributes this specific app.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.AppCampaignAppStoreEnum.AppCampaignAppStore app_store = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */

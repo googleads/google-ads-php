@@ -16,91 +16,91 @@ use Google\Protobuf\Internal\GPBUtil;
 class ChangeStatus extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the change status.
+     * Output only. The resource name of the change status.
      * Change status resource names have the form:
      * `customers/{customer_id}/changeStatus/{change_status_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Time at which the most recent change has occurred on this resource.
+     * Output only. Time at which the most recent change has occurred on this resource.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $last_change_date_time = null;
     /**
-     * Represents the type of the changed resource. This dictates what fields
+     * Output only. Represents the type of the changed resource. This dictates what fields
      * will be set. For example, for AD_GROUP, campaign and ad_group fields will
      * be set.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $resource_type = 0;
     /**
-     * The Campaign affected by this change.
+     * Output only. The Campaign affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
-     * The AdGroup affected by this change.
+     * Output only. The AdGroup affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
-     * Represents the status of the changed resource.
+     * Output only. Represents the status of the changed resource.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusOperationEnum.ChangeStatusOperation resource_status = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusOperationEnum.ChangeStatusOperation resource_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $resource_status = 0;
     /**
-     * The AdGroupAd affected by this change.
+     * Output only. The AdGroupAd affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_ad = null;
     /**
-     * The AdGroupCriterion affected by this change.
+     * Output only. The AdGroupCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_criterion = null;
     /**
-     * The CampaignCriterion affected by this change.
+     * Output only. The CampaignCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign_criterion = null;
     /**
-     * The Feed affected by this change.
+     * Output only. The Feed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $feed = null;
     /**
-     * The FeedItem affected by this change.
+     * Output only. The FeedItem affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $feed_item = null;
     /**
-     * The AdGroupFeed affected by this change.
+     * Output only. The AdGroupFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_feed = null;
     /**
-     * The CampaignFeed affected by this change.
+     * Output only. The CampaignFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign_feed = null;
     /**
-     * The AdGroupBidModifier affected by this change.
+     * Output only. The AdGroupBidModifier affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_bid_modifier = null;
 
@@ -111,37 +111,37 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the change status.
+     *           Output only. The resource name of the change status.
      *           Change status resource names have the form:
      *           `customers/{customer_id}/changeStatus/{change_status_id}`
      *     @type \Google\Protobuf\StringValue $last_change_date_time
-     *           Time at which the most recent change has occurred on this resource.
+     *           Output only. Time at which the most recent change has occurred on this resource.
      *     @type int $resource_type
-     *           Represents the type of the changed resource. This dictates what fields
+     *           Output only. Represents the type of the changed resource. This dictates what fields
      *           will be set. For example, for AD_GROUP, campaign and ad_group fields will
      *           be set.
      *     @type \Google\Protobuf\StringValue $campaign
-     *           The Campaign affected by this change.
+     *           Output only. The Campaign affected by this change.
      *     @type \Google\Protobuf\StringValue $ad_group
-     *           The AdGroup affected by this change.
+     *           Output only. The AdGroup affected by this change.
      *     @type int $resource_status
-     *           Represents the status of the changed resource.
+     *           Output only. Represents the status of the changed resource.
      *     @type \Google\Protobuf\StringValue $ad_group_ad
-     *           The AdGroupAd affected by this change.
+     *           Output only. The AdGroupAd affected by this change.
      *     @type \Google\Protobuf\StringValue $ad_group_criterion
-     *           The AdGroupCriterion affected by this change.
+     *           Output only. The AdGroupCriterion affected by this change.
      *     @type \Google\Protobuf\StringValue $campaign_criterion
-     *           The CampaignCriterion affected by this change.
+     *           Output only. The CampaignCriterion affected by this change.
      *     @type \Google\Protobuf\StringValue $feed
-     *           The Feed affected by this change.
+     *           Output only. The Feed affected by this change.
      *     @type \Google\Protobuf\StringValue $feed_item
-     *           The FeedItem affected by this change.
+     *           Output only. The FeedItem affected by this change.
      *     @type \Google\Protobuf\StringValue $ad_group_feed
-     *           The AdGroupFeed affected by this change.
+     *           Output only. The AdGroupFeed affected by this change.
      *     @type \Google\Protobuf\StringValue $campaign_feed
-     *           The CampaignFeed affected by this change.
+     *           Output only. The CampaignFeed affected by this change.
      *     @type \Google\Protobuf\StringValue $ad_group_bid_modifier
-     *           The AdGroupBidModifier affected by this change.
+     *           Output only. The AdGroupBidModifier affected by this change.
      * }
      */
     public function __construct($data = NULL) {
@@ -150,11 +150,11 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the change status.
+     * Output only. The resource name of the change status.
      * Change status resource names have the form:
      * `customers/{customer_id}/changeStatus/{change_status_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -163,11 +163,11 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the change status.
+     * Output only. The resource name of the change status.
      * Change status resource names have the form:
      * `customers/{customer_id}/changeStatus/{change_status_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -180,9 +180,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time at which the most recent change has occurred on this resource.
+     * Output only. Time at which the most recent change has occurred on this resource.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getLastChangeDateTime()
@@ -193,9 +193,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLastChangeDateTime()</code>
 
-     * Time at which the most recent change has occurred on this resource.
+     * Output only. Time at which the most recent change has occurred on this resource.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getLastChangeDateTimeUnwrapped()
@@ -204,9 +204,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time at which the most recent change has occurred on this resource.
+     * Output only. Time at which the most recent change has occurred on this resource.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -221,9 +221,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Time at which the most recent change has occurred on this resource.
+     * Output only. Time at which the most recent change has occurred on this resource.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue last_change_date_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -233,11 +233,11 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Represents the type of the changed resource. This dictates what fields
+     * Output only. Represents the type of the changed resource. This dictates what fields
      * will be set. For example, for AD_GROUP, campaign and ad_group fields will
      * be set.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getResourceType()
@@ -246,11 +246,11 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Represents the type of the changed resource. This dictates what fields
+     * Output only. Represents the type of the changed resource. This dictates what fields
      * will be set. For example, for AD_GROUP, campaign and ad_group fields will
      * be set.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusResourceTypeEnum.ChangeStatusResourceType resource_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -263,9 +263,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Campaign affected by this change.
+     * Output only. The Campaign affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaign()
@@ -276,9 +276,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaign()</code>
 
-     * The Campaign affected by this change.
+     * Output only. The Campaign affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignUnwrapped()
@@ -287,9 +287,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Campaign affected by this change.
+     * Output only. The Campaign affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -304,9 +304,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The Campaign affected by this change.
+     * Output only. The Campaign affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -316,9 +316,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The AdGroup affected by this change.
+     * Output only. The AdGroup affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroup()
@@ -329,9 +329,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroup()</code>
 
-     * The AdGroup affected by this change.
+     * Output only. The AdGroup affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupUnwrapped()
@@ -340,9 +340,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The AdGroup affected by this change.
+     * Output only. The AdGroup affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -357,9 +357,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The AdGroup affected by this change.
+     * Output only. The AdGroup affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -369,9 +369,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Represents the status of the changed resource.
+     * Output only. Represents the status of the changed resource.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusOperationEnum.ChangeStatusOperation resource_status = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusOperationEnum.ChangeStatusOperation resource_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getResourceStatus()
@@ -380,9 +380,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Represents the status of the changed resource.
+     * Output only. Represents the status of the changed resource.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusOperationEnum.ChangeStatusOperation resource_status = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.ChangeStatusOperationEnum.ChangeStatusOperation resource_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -395,9 +395,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The AdGroupAd affected by this change.
+     * Output only. The AdGroupAd affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroupAd()
@@ -408,9 +408,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroupAd()</code>
 
-     * The AdGroupAd affected by this change.
+     * Output only. The AdGroupAd affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupAdUnwrapped()
@@ -419,9 +419,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The AdGroupAd affected by this change.
+     * Output only. The AdGroupAd affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -436,9 +436,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The AdGroupAd affected by this change.
+     * Output only. The AdGroupAd affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -448,9 +448,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The AdGroupCriterion affected by this change.
+     * Output only. The AdGroupCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroupCriterion()
@@ -461,9 +461,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroupCriterion()</code>
 
-     * The AdGroupCriterion affected by this change.
+     * Output only. The AdGroupCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupCriterionUnwrapped()
@@ -472,9 +472,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The AdGroupCriterion affected by this change.
+     * Output only. The AdGroupCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -489,9 +489,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The AdGroupCriterion affected by this change.
+     * Output only. The AdGroupCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_criterion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -501,9 +501,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The CampaignCriterion affected by this change.
+     * Output only. The CampaignCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaignCriterion()
@@ -514,9 +514,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaignCriterion()</code>
 
-     * The CampaignCriterion affected by this change.
+     * Output only. The CampaignCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignCriterionUnwrapped()
@@ -525,9 +525,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The CampaignCriterion affected by this change.
+     * Output only. The CampaignCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -542,9 +542,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The CampaignCriterion affected by this change.
+     * Output only. The CampaignCriterion affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_criterion = 11 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -554,9 +554,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The Feed affected by this change.
+     * Output only. The Feed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getFeed()
@@ -567,9 +567,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFeed()</code>
 
-     * The Feed affected by this change.
+     * Output only. The Feed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getFeedUnwrapped()
@@ -578,9 +578,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Feed affected by this change.
+     * Output only. The Feed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -595,9 +595,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The Feed affected by this change.
+     * Output only. The Feed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -607,9 +607,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The FeedItem affected by this change.
+     * Output only. The FeedItem affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getFeedItem()
@@ -620,9 +620,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFeedItem()</code>
 
-     * The FeedItem affected by this change.
+     * Output only. The FeedItem affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getFeedItemUnwrapped()
@@ -631,9 +631,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The FeedItem affected by this change.
+     * Output only. The FeedItem affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -648,9 +648,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The FeedItem affected by this change.
+     * Output only. The FeedItem affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -660,9 +660,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The AdGroupFeed affected by this change.
+     * Output only. The AdGroupFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroupFeed()
@@ -673,9 +673,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroupFeed()</code>
 
-     * The AdGroupFeed affected by this change.
+     * Output only. The AdGroupFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupFeedUnwrapped()
@@ -684,9 +684,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The AdGroupFeed affected by this change.
+     * Output only. The AdGroupFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -701,9 +701,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The AdGroupFeed affected by this change.
+     * Output only. The AdGroupFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_feed = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -713,9 +713,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The CampaignFeed affected by this change.
+     * Output only. The CampaignFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaignFeed()
@@ -726,9 +726,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaignFeed()</code>
 
-     * The CampaignFeed affected by this change.
+     * Output only. The CampaignFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignFeedUnwrapped()
@@ -737,9 +737,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The CampaignFeed affected by this change.
+     * Output only. The CampaignFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -754,9 +754,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The CampaignFeed affected by this change.
+     * Output only. The CampaignFeed affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_feed = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -766,9 +766,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The AdGroupBidModifier affected by this change.
+     * Output only. The AdGroupBidModifier affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroupBidModifier()
@@ -779,9 +779,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroupBidModifier()</code>
 
-     * The AdGroupBidModifier affected by this change.
+     * Output only. The AdGroupBidModifier affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupBidModifierUnwrapped()
@@ -790,9 +790,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The AdGroupBidModifier affected by this change.
+     * Output only. The AdGroupBidModifier affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -807,9 +807,9 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The AdGroupBidModifier affected by this change.
+     * Output only. The AdGroupBidModifier affected by this change.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_bid_modifier = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

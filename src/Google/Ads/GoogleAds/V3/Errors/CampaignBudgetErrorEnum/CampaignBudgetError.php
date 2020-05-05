@@ -120,6 +120,12 @@ class CampaignBudgetError
      * Generated from protobuf enum <code>NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT = 16;</code>
      */
     const NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT = 16;
+    /**
+     * Total budget amount must be unset when BudgetPeriod is DAILY.
+     *
+     * Generated from protobuf enum <code>TOTAL_BUDGET_AMOUNT_MUST_BE_UNSET_FOR_BUDGET_PERIOD_DAILY = 18;</code>
+     */
+    const TOTAL_BUDGET_AMOUNT_MUST_BE_UNSET_FOR_BUDGET_PERIOD_DAILY = 18;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -139,6 +145,7 @@ class CampaignBudgetError
         self::MONEY_AMOUNT_TOO_LARGE => 'MONEY_AMOUNT_TOO_LARGE',
         self::NEGATIVE_MONEY_AMOUNT => 'NEGATIVE_MONEY_AMOUNT',
         self::NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT => 'NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT',
+        self::TOTAL_BUDGET_AMOUNT_MUST_BE_UNSET_FOR_BUDGET_PERIOD_DAILY => 'TOTAL_BUDGET_AMOUNT_MUST_BE_UNSET_FOR_BUDGET_PERIOD_DAILY',
     ];
 
     public static function name($value)

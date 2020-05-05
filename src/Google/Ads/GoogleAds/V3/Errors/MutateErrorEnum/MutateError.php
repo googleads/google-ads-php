@@ -62,6 +62,18 @@ class MutateError
      * Generated from protobuf enum <code>RESOURCE_ALREADY_EXISTS = 11;</code>
      */
     const RESOURCE_ALREADY_EXISTS = 11;
+    /**
+     * This resource cannot be used with "validate_only".
+     *
+     * Generated from protobuf enum <code>RESOURCE_DOES_NOT_SUPPORT_VALIDATE_ONLY = 12;</code>
+     */
+    const RESOURCE_DOES_NOT_SUPPORT_VALIDATE_ONLY = 12;
+    /**
+     * Attempt to write to read-only fields.
+     *
+     * Generated from protobuf enum <code>RESOURCE_READ_ONLY = 13;</code>
+     */
+    const RESOURCE_READ_ONLY = 13;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -72,6 +84,8 @@ class MutateError
         self::MUTATE_NOT_ALLOWED => 'MUTATE_NOT_ALLOWED',
         self::RESOURCE_NOT_IN_GOOGLE_ADS => 'RESOURCE_NOT_IN_GOOGLE_ADS',
         self::RESOURCE_ALREADY_EXISTS => 'RESOURCE_ALREADY_EXISTS',
+        self::RESOURCE_DOES_NOT_SUPPORT_VALIDATE_ONLY => 'RESOURCE_DOES_NOT_SUPPORT_VALIDATE_ONLY',
+        self::RESOURCE_READ_ONLY => 'RESOURCE_READ_ONLY',
     ];
 
     public static function name($value)

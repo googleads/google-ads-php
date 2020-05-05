@@ -61,6 +61,93 @@ class ConversionActionCategory
      * Generated from protobuf enum <code>DOWNLOAD = 7;</code>
      */
     const DOWNLOAD = 7;
+    /**
+     * The addition of items to a shopping cart or bag on an advertiser site.
+     *
+     * Generated from protobuf enum <code>ADD_TO_CART = 8;</code>
+     */
+    const ADD_TO_CART = 8;
+    /**
+     * When someone enters the checkout flow on an advertiser site.
+     *
+     * Generated from protobuf enum <code>BEGIN_CHECKOUT = 9;</code>
+     */
+    const BEGIN_CHECKOUT = 9;
+    /**
+     * The start of a paid subscription for a product or service.
+     *
+     * Generated from protobuf enum <code>SUBSCRIBE_PAID = 10;</code>
+     */
+    const SUBSCRIBE_PAID = 10;
+    /**
+     * A call to indicate interest in an advertiser's offering.
+     *
+     * Generated from protobuf enum <code>PHONE_CALL_LEAD = 11;</code>
+     */
+    const PHONE_CALL_LEAD = 11;
+    /**
+     * A lead conversion imported from an external source into Google Ads.
+     *
+     * Generated from protobuf enum <code>IMPORTED_LEAD = 12;</code>
+     */
+    const IMPORTED_LEAD = 12;
+    /**
+     * A submission of a form on an advertiser site indicating business
+     * interest.
+     *
+     * Generated from protobuf enum <code>SUBMIT_LEAD_FORM = 13;</code>
+     */
+    const SUBMIT_LEAD_FORM = 13;
+    /**
+     * A booking of an appointment with an advertiser's business.
+     *
+     * Generated from protobuf enum <code>BOOK_APPOINTMENT = 14;</code>
+     */
+    const BOOK_APPOINTMENT = 14;
+    /**
+     * A quote or price estimate request.
+     *
+     * Generated from protobuf enum <code>REQUEST_QUOTE = 15;</code>
+     */
+    const REQUEST_QUOTE = 15;
+    /**
+     * A search for an advertiser's business location with intention to visit.
+     *
+     * Generated from protobuf enum <code>GET_DIRECTIONS = 16;</code>
+     */
+    const GET_DIRECTIONS = 16;
+    /**
+     * A click to an advertiser's partner's site.
+     *
+     * Generated from protobuf enum <code>OUTBOUND_CLICK = 17;</code>
+     */
+    const OUTBOUND_CLICK = 17;
+    /**
+     * A call, SMS, email, chat or other type of contact to an advertiser.
+     *
+     * Generated from protobuf enum <code>CONTACT = 18;</code>
+     */
+    const CONTACT = 18;
+    /**
+     * A website engagement event such as long site time or a Google Analytics
+     * (GA) Smart Goal. Intended to be used for GA, Firebase, GA Gold goal
+     * imports.
+     *
+     * Generated from protobuf enum <code>ENGAGEMENT = 19;</code>
+     */
+    const ENGAGEMENT = 19;
+    /**
+     * A visit to a physical store location.
+     *
+     * Generated from protobuf enum <code>STORE_VISIT = 20;</code>
+     */
+    const STORE_VISIT = 20;
+    /**
+     * A sale occurring in a physical store.
+     *
+     * Generated from protobuf enum <code>STORE_SALE = 21;</code>
+     */
+    const STORE_SALE = 21;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -71,6 +158,20 @@ class ConversionActionCategory
         self::SIGNUP => 'SIGNUP',
         self::LEAD => 'LEAD',
         self::DOWNLOAD => 'DOWNLOAD',
+        self::ADD_TO_CART => 'ADD_TO_CART',
+        self::BEGIN_CHECKOUT => 'BEGIN_CHECKOUT',
+        self::SUBSCRIBE_PAID => 'SUBSCRIBE_PAID',
+        self::PHONE_CALL_LEAD => 'PHONE_CALL_LEAD',
+        self::IMPORTED_LEAD => 'IMPORTED_LEAD',
+        self::SUBMIT_LEAD_FORM => 'SUBMIT_LEAD_FORM',
+        self::BOOK_APPOINTMENT => 'BOOK_APPOINTMENT',
+        self::REQUEST_QUOTE => 'REQUEST_QUOTE',
+        self::GET_DIRECTIONS => 'GET_DIRECTIONS',
+        self::OUTBOUND_CLICK => 'OUTBOUND_CLICK',
+        self::CONTACT => 'CONTACT',
+        self::ENGAGEMENT => 'ENGAGEMENT',
+        self::STORE_VISIT => 'STORE_VISIT',
+        self::STORE_SALE => 'STORE_SALE',
     ];
 
     public static function name($value)

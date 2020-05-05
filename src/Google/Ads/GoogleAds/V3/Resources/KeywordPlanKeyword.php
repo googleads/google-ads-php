@@ -17,23 +17,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the Keyword Plan ad group keyword.
+     * Immutable. The resource name of the Keyword Plan ad group keyword.
      * KeywordPlanKeyword resource names have the form:
      * `customers/{customer_id}/keywordPlanKeywords/{kp_ad_group_keyword_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
      * The Keyword Plan ad group to which this keyword belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2 [(.google.api.resource_reference) = {</code>
      */
     protected $keyword_plan_ad_group = null;
     /**
-     * The ID of the Keyword Plan keyword.
+     * Output only. The ID of the Keyword Plan keyword.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -63,13 +63,13 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the Keyword Plan ad group keyword.
+     *           Immutable. The resource name of the Keyword Plan ad group keyword.
      *           KeywordPlanKeyword resource names have the form:
      *           `customers/{customer_id}/keywordPlanKeywords/{kp_ad_group_keyword_id}`
      *     @type \Google\Protobuf\StringValue $keyword_plan_ad_group
      *           The Keyword Plan ad group to which this keyword belongs.
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the Keyword Plan keyword.
+     *           Output only. The ID of the Keyword Plan keyword.
      *     @type \Google\Protobuf\StringValue $text
      *           The keyword text.
      *     @type int $match_type
@@ -85,11 +85,11 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the Keyword Plan ad group keyword.
+     * Immutable. The resource name of the Keyword Plan ad group keyword.
      * KeywordPlanKeyword resource names have the form:
      * `customers/{customer_id}/keywordPlanKeywords/{kp_ad_group_keyword_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -98,11 +98,11 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the Keyword Plan ad group keyword.
+     * Immutable. The resource name of the Keyword Plan ad group keyword.
      * KeywordPlanKeyword resource names have the form:
      * `customers/{customer_id}/keywordPlanKeywords/{kp_ad_group_keyword_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -117,7 +117,7 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
     /**
      * The Keyword Plan ad group to which this keyword belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getKeywordPlanAdGroup()
@@ -130,7 +130,7 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
 
      * The Keyword Plan ad group to which this keyword belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2 [(.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getKeywordPlanAdGroupUnwrapped()
@@ -141,7 +141,7 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
     /**
      * The Keyword Plan ad group to which this keyword belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -158,7 +158,7 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
 
      * The Keyword Plan ad group to which this keyword belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue keyword_plan_ad_group = 2 [(.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -168,9 +168,9 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ID of the Keyword Plan keyword.
+     * Output only. The ID of the Keyword Plan keyword.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -181,9 +181,9 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the Keyword Plan keyword.
+     * Output only. The ID of the Keyword Plan keyword.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -192,9 +192,9 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the Keyword Plan keyword.
+     * Output only. The ID of the Keyword Plan keyword.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -209,9 +209,9 @@ class KeywordPlanKeyword extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the Keyword Plan keyword.
+     * Output only. The ID of the Keyword Plan keyword.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

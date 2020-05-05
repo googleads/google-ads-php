@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class CustomerFeed extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the customer feed.
+     * Immutable. The resource name of the customer feed.
      * Customer feed resource names have the form:
      * `customers/{customer_id}/customerFeeds/{feed_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The feed being linked to the customer.
+     * Immutable. The feed being linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $feed = null;
     /**
@@ -45,10 +45,10 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
      */
     protected $matching_function = null;
     /**
-     * Status of the customer feed.
+     * Output only. Status of the customer feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
 
@@ -59,11 +59,11 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the customer feed.
+     *           Immutable. The resource name of the customer feed.
      *           Customer feed resource names have the form:
      *           `customers/{customer_id}/customerFeeds/{feed_id}`
      *     @type \Google\Protobuf\StringValue $feed
-     *           The feed being linked to the customer.
+     *           Immutable. The feed being linked to the customer.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $placeholder_types
      *           Indicates which placeholder types the feed may populate under the connected
      *           customer. Required.
@@ -72,7 +72,7 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
      *           The matching function is used to filter the set of feed items selected.
      *           Required.
      *     @type int $status
-     *           Status of the customer feed.
+     *           Output only. Status of the customer feed.
      *           This field is read-only.
      * }
      */
@@ -82,11 +82,11 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer feed.
+     * Immutable. The resource name of the customer feed.
      * Customer feed resource names have the form:
      * `customers/{customer_id}/customerFeeds/{feed_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -95,11 +95,11 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer feed.
+     * Immutable. The resource name of the customer feed.
      * Customer feed resource names have the form:
      * `customers/{customer_id}/customerFeeds/{feed_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -112,9 +112,9 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The feed being linked to the customer.
+     * Immutable. The feed being linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getFeed()
@@ -125,9 +125,9 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFeed()</code>
 
-     * The feed being linked to the customer.
+     * Immutable. The feed being linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getFeedUnwrapped()
@@ -136,9 +136,9 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The feed being linked to the customer.
+     * Immutable. The feed being linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -153,9 +153,9 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The feed being linked to the customer.
+     * Immutable. The feed being linked to the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -223,10 +223,10 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the customer feed.
+     * Output only. Status of the customer feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -235,10 +235,10 @@ class CustomerFeed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the customer feed.
+     * Output only. Status of the customer feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.FeedLinkStatusEnum.FeedLinkStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

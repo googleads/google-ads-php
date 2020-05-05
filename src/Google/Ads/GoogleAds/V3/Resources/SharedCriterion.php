@@ -16,30 +16,30 @@ use Google\Protobuf\Internal\GPBUtil;
 class SharedCriterion extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the shared criterion.
+     * Immutable. The resource name of the shared criterion.
      * Shared set resource names have the form:
      * `customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The shared set to which the shared criterion belongs.
+     * Immutable. The shared set to which the shared criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $shared_set = null;
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     protected $criterion;
@@ -51,28 +51,28 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the shared criterion.
+     *           Immutable. The resource name of the shared criterion.
      *           Shared set resource names have the form:
      *           `customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}`
      *     @type \Google\Protobuf\StringValue $shared_set
-     *           The shared set to which the shared criterion belongs.
+     *           Immutable. The shared set to which the shared criterion belongs.
      *     @type \Google\Protobuf\Int64Value $criterion_id
-     *           The ID of the criterion.
+     *           Output only. The ID of the criterion.
      *           This field is ignored for mutates.
      *     @type int $type
-     *           The type of the criterion.
+     *           Output only. The type of the criterion.
      *     @type \Google\Ads\GoogleAds\V3\Common\KeywordInfo $keyword
-     *           Keyword.
+     *           Immutable. Keyword.
      *     @type \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo $youtube_video
-     *           YouTube Video.
+     *           Immutable. YouTube Video.
      *     @type \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo $youtube_channel
-     *           YouTube Channel.
+     *           Immutable. YouTube Channel.
      *     @type \Google\Ads\GoogleAds\V3\Common\PlacementInfo $placement
-     *           Placement.
+     *           Immutable. Placement.
      *     @type \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo $mobile_app_category
-     *           Mobile App Category.
+     *           Immutable. Mobile App Category.
      *     @type \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo $mobile_application
-     *           Mobile application.
+     *           Immutable. Mobile application.
      * }
      */
     public function __construct($data = NULL) {
@@ -81,11 +81,11 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the shared criterion.
+     * Immutable. The resource name of the shared criterion.
      * Shared set resource names have the form:
      * `customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -94,11 +94,11 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the shared criterion.
+     * Immutable. The resource name of the shared criterion.
      * Shared set resource names have the form:
      * `customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -111,9 +111,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The shared set to which the shared criterion belongs.
+     * Immutable. The shared set to which the shared criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getSharedSet()
@@ -124,9 +124,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSharedSet()</code>
 
-     * The shared set to which the shared criterion belongs.
+     * Immutable. The shared set to which the shared criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getSharedSetUnwrapped()
@@ -135,9 +135,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The shared set to which the shared criterion belongs.
+     * Immutable. The shared set to which the shared criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -152,9 +152,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The shared set to which the shared criterion belongs.
+     * Immutable. The shared set to which the shared criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue shared_set = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -164,10 +164,10 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCriterionId()
@@ -178,10 +178,10 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCriterionId()</code>
 
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCriterionIdUnwrapped()
@@ -190,10 +190,10 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -208,10 +208,10 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -221,9 +221,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -232,9 +232,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.CriterionTypeEnum.CriterionType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -247,9 +247,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Keyword.
+     * Immutable. Keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\KeywordInfo
      */
     public function getKeyword()
@@ -258,9 +258,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Keyword.
+     * Immutable. Keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.KeywordInfo keyword = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\KeywordInfo $var
      * @return $this
      */
@@ -273,9 +273,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Video.
+     * Immutable. YouTube Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo
      */
     public function getYoutubeVideo()
@@ -284,9 +284,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Video.
+     * Immutable. YouTube Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeVideoInfo youtube_video = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\YouTubeVideoInfo $var
      * @return $this
      */
@@ -299,9 +299,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel.
+     * Immutable. YouTube Channel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo
      */
     public function getYoutubeChannel()
@@ -310,9 +310,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel.
+     * Immutable. YouTube Channel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.YouTubeChannelInfo youtube_channel = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\YouTubeChannelInfo $var
      * @return $this
      */
@@ -325,9 +325,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Placement.
+     * Immutable. Placement.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\PlacementInfo
      */
     public function getPlacement()
@@ -336,9 +336,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Placement.
+     * Immutable. Placement.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.PlacementInfo placement = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\PlacementInfo $var
      * @return $this
      */
@@ -351,9 +351,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile App Category.
+     * Immutable. Mobile App Category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo
      */
     public function getMobileAppCategory()
@@ -362,9 +362,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile App Category.
+     * Immutable. Mobile App Category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileAppCategoryInfo mobile_app_category = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\MobileAppCategoryInfo $var
      * @return $this
      */
@@ -377,9 +377,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile application.
+     * Immutable. Mobile application.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo
      */
     public function getMobileApplication()
@@ -388,9 +388,9 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile application.
+     * Immutable. Mobile application.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.MobileApplicationInfo mobile_application = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\MobileApplicationInfo $var
      * @return $this
      */

@@ -16,73 +16,73 @@ use Google\Protobuf\Internal\GPBUtil;
 class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the customer associated with this account budget.
+     * Output only. The resource name of the customer associated with this account budget.
      * This contains the customer ID, which appears on the invoice PDF as
      * "Account ID".
      * Customer resource names have the form:
      * `customers/{customer_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $customer = null;
     /**
-     * The descriptive name of the account budget’s customer. It appears on the
+     * Output only. The descriptive name of the account budget’s customer. It appears on the
      * invoice PDF as "Account".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $customer_descriptive_name = null;
     /**
-     * The resource name of the account budget associated with this summarized
+     * Output only. The resource name of the account budget associated with this summarized
      * billable cost.
      * AccountBudget resource names have the form:
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $account_budget = null;
     /**
-     * The name of the account budget. It appears on the invoice PDF as "Account
+     * Output only. The name of the account budget. It appears on the invoice PDF as "Account
      * budget".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $account_budget_name = null;
     /**
-     * The purchase order number of the account budget. It appears on the
+     * Output only. The purchase order number of the account budget. It appears on the
      * invoice PDF as "Purchase order".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $purchase_order_number = null;
     /**
-     * The pretax subtotal amount attributable to this budget during the service
+     * Output only. The pretax subtotal amount attributable to this budget during the service
      * period, in micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $subtotal_amount_micros = null;
     /**
-     * The tax amount attributable to this budget during the service period, in
+     * Output only. The tax amount attributable to this budget during the service period, in
      * micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $tax_amount_micros = null;
     /**
-     * The total amount attributable to this budget during the service period,
+     * Output only. The total amount attributable to this budget during the service period,
      * in micros. This equals the sum of the account budget subtotal amount and
      * the account budget tax amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $total_amount_micros = null;
     /**
-     * The billable activity date range of the account budget, within the
+     * Output only. The billable activity date range of the account budget, within the
      * service date range of this invoice. The end date is inclusive. This can
      * be different from the account budget's start and end time.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.DateRange billable_activity_date_range = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.DateRange billable_activity_date_range = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $billable_activity_date_range = null;
 
@@ -93,37 +93,37 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\StringValue $customer
-     *           The resource name of the customer associated with this account budget.
+     *           Output only. The resource name of the customer associated with this account budget.
      *           This contains the customer ID, which appears on the invoice PDF as
      *           "Account ID".
      *           Customer resource names have the form:
      *           `customers/{customer_id}`
      *     @type \Google\Protobuf\StringValue $customer_descriptive_name
-     *           The descriptive name of the account budget’s customer. It appears on the
+     *           Output only. The descriptive name of the account budget’s customer. It appears on the
      *           invoice PDF as "Account".
      *     @type \Google\Protobuf\StringValue $account_budget
-     *           The resource name of the account budget associated with this summarized
+     *           Output only. The resource name of the account budget associated with this summarized
      *           billable cost.
      *           AccountBudget resource names have the form:
      *           `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *     @type \Google\Protobuf\StringValue $account_budget_name
-     *           The name of the account budget. It appears on the invoice PDF as "Account
+     *           Output only. The name of the account budget. It appears on the invoice PDF as "Account
      *           budget".
      *     @type \Google\Protobuf\StringValue $purchase_order_number
-     *           The purchase order number of the account budget. It appears on the
+     *           Output only. The purchase order number of the account budget. It appears on the
      *           invoice PDF as "Purchase order".
      *     @type \Google\Protobuf\Int64Value $subtotal_amount_micros
-     *           The pretax subtotal amount attributable to this budget during the service
+     *           Output only. The pretax subtotal amount attributable to this budget during the service
      *           period, in micros.
      *     @type \Google\Protobuf\Int64Value $tax_amount_micros
-     *           The tax amount attributable to this budget during the service period, in
+     *           Output only. The tax amount attributable to this budget during the service period, in
      *           micros.
      *     @type \Google\Protobuf\Int64Value $total_amount_micros
-     *           The total amount attributable to this budget during the service period,
+     *           Output only. The total amount attributable to this budget during the service period,
      *           in micros. This equals the sum of the account budget subtotal amount and
      *           the account budget tax amount.
      *     @type \Google\Ads\GoogleAds\V3\Common\DateRange $billable_activity_date_range
-     *           The billable activity date range of the account budget, within the
+     *           Output only. The billable activity date range of the account budget, within the
      *           service date range of this invoice. The end date is inclusive. This can
      *           be different from the account budget's start and end time.
      * }
@@ -134,13 +134,13 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer associated with this account budget.
+     * Output only. The resource name of the customer associated with this account budget.
      * This contains the customer ID, which appears on the invoice PDF as
      * "Account ID".
      * Customer resource names have the form:
      * `customers/{customer_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCustomer()
@@ -151,13 +151,13 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCustomer()</code>
 
-     * The resource name of the customer associated with this account budget.
+     * Output only. The resource name of the customer associated with this account budget.
      * This contains the customer ID, which appears on the invoice PDF as
      * "Account ID".
      * Customer resource names have the form:
      * `customers/{customer_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCustomerUnwrapped()
@@ -166,13 +166,13 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer associated with this account budget.
+     * Output only. The resource name of the customer associated with this account budget.
      * This contains the customer ID, which appears on the invoice PDF as
      * "Account ID".
      * Customer resource names have the form:
      * `customers/{customer_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -187,13 +187,13 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the customer associated with this account budget.
+     * Output only. The resource name of the customer associated with this account budget.
      * This contains the customer ID, which appears on the invoice PDF as
      * "Account ID".
      * Customer resource names have the form:
      * `customers/{customer_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -203,10 +203,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The descriptive name of the account budget’s customer. It appears on the
+     * Output only. The descriptive name of the account budget’s customer. It appears on the
      * invoice PDF as "Account".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCustomerDescriptiveName()
@@ -217,10 +217,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCustomerDescriptiveName()</code>
 
-     * The descriptive name of the account budget’s customer. It appears on the
+     * Output only. The descriptive name of the account budget’s customer. It appears on the
      * invoice PDF as "Account".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCustomerDescriptiveNameUnwrapped()
@@ -229,10 +229,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The descriptive name of the account budget’s customer. It appears on the
+     * Output only. The descriptive name of the account budget’s customer. It appears on the
      * invoice PDF as "Account".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -247,10 +247,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The descriptive name of the account budget’s customer. It appears on the
+     * Output only. The descriptive name of the account budget’s customer. It appears on the
      * invoice PDF as "Account".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue customer_descriptive_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -260,12 +260,12 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The resource name of the account budget associated with this summarized
+     * Output only. The resource name of the account budget associated with this summarized
      * billable cost.
      * AccountBudget resource names have the form:
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAccountBudget()
@@ -276,12 +276,12 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAccountBudget()</code>
 
-     * The resource name of the account budget associated with this summarized
+     * Output only. The resource name of the account budget associated with this summarized
      * billable cost.
      * AccountBudget resource names have the form:
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getAccountBudgetUnwrapped()
@@ -290,12 +290,12 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the account budget associated with this summarized
+     * Output only. The resource name of the account budget associated with this summarized
      * billable cost.
      * AccountBudget resource names have the form:
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -310,12 +310,12 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the account budget associated with this summarized
+     * Output only. The resource name of the account budget associated with this summarized
      * billable cost.
      * AccountBudget resource names have the form:
      * `customers/{customer_id}/accountBudgets/{account_budget_id}`
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -325,10 +325,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The name of the account budget. It appears on the invoice PDF as "Account
+     * Output only. The name of the account budget. It appears on the invoice PDF as "Account
      * budget".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAccountBudgetName()
@@ -339,10 +339,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAccountBudgetName()</code>
 
-     * The name of the account budget. It appears on the invoice PDF as "Account
+     * Output only. The name of the account budget. It appears on the invoice PDF as "Account
      * budget".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getAccountBudgetNameUnwrapped()
@@ -351,10 +351,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the account budget. It appears on the invoice PDF as "Account
+     * Output only. The name of the account budget. It appears on the invoice PDF as "Account
      * budget".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -369,10 +369,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the account budget. It appears on the invoice PDF as "Account
+     * Output only. The name of the account budget. It appears on the invoice PDF as "Account
      * budget".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue account_budget_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -382,10 +382,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The purchase order number of the account budget. It appears on the
+     * Output only. The purchase order number of the account budget. It appears on the
      * invoice PDF as "Purchase order".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPurchaseOrderNumber()
@@ -396,10 +396,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPurchaseOrderNumber()</code>
 
-     * The purchase order number of the account budget. It appears on the
+     * Output only. The purchase order number of the account budget. It appears on the
      * invoice PDF as "Purchase order".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getPurchaseOrderNumberUnwrapped()
@@ -408,10 +408,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The purchase order number of the account budget. It appears on the
+     * Output only. The purchase order number of the account budget. It appears on the
      * invoice PDF as "Purchase order".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -426,10 +426,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The purchase order number of the account budget. It appears on the
+     * Output only. The purchase order number of the account budget. It appears on the
      * invoice PDF as "Purchase order".
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue purchase_order_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -439,10 +439,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The pretax subtotal amount attributable to this budget during the service
+     * Output only. The pretax subtotal amount attributable to this budget during the service
      * period, in micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getSubtotalAmountMicros()
@@ -453,10 +453,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSubtotalAmountMicros()</code>
 
-     * The pretax subtotal amount attributable to this budget during the service
+     * Output only. The pretax subtotal amount attributable to this budget during the service
      * period, in micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getSubtotalAmountMicrosUnwrapped()
@@ -465,10 +465,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The pretax subtotal amount attributable to this budget during the service
+     * Output only. The pretax subtotal amount attributable to this budget during the service
      * period, in micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -483,10 +483,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The pretax subtotal amount attributable to this budget during the service
+     * Output only. The pretax subtotal amount attributable to this budget during the service
      * period, in micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value subtotal_amount_micros = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -496,10 +496,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The tax amount attributable to this budget during the service period, in
+     * Output only. The tax amount attributable to this budget during the service period, in
      * micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getTaxAmountMicros()
@@ -510,10 +510,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTaxAmountMicros()</code>
 
-     * The tax amount attributable to this budget during the service period, in
+     * Output only. The tax amount attributable to this budget during the service period, in
      * micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getTaxAmountMicrosUnwrapped()
@@ -522,10 +522,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The tax amount attributable to this budget during the service period, in
+     * Output only. The tax amount attributable to this budget during the service period, in
      * micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -540,10 +540,10 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The tax amount attributable to this budget during the service period, in
+     * Output only. The tax amount attributable to this budget during the service period, in
      * micros.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value tax_amount_micros = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -553,11 +553,11 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The total amount attributable to this budget during the service period,
+     * Output only. The total amount attributable to this budget during the service period,
      * in micros. This equals the sum of the account budget subtotal amount and
      * the account budget tax amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getTotalAmountMicros()
@@ -568,11 +568,11 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTotalAmountMicros()</code>
 
-     * The total amount attributable to this budget during the service period,
+     * Output only. The total amount attributable to this budget during the service period,
      * in micros. This equals the sum of the account budget subtotal amount and
      * the account budget tax amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getTotalAmountMicrosUnwrapped()
@@ -581,11 +581,11 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The total amount attributable to this budget during the service period,
+     * Output only. The total amount attributable to this budget during the service period,
      * in micros. This equals the sum of the account budget subtotal amount and
      * the account budget tax amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -600,11 +600,11 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The total amount attributable to this budget during the service period,
+     * Output only. The total amount attributable to this budget during the service period,
      * in micros. This equals the sum of the account budget subtotal amount and
      * the account budget tax amount.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value total_amount_micros = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -614,11 +614,11 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The billable activity date range of the account budget, within the
+     * Output only. The billable activity date range of the account budget, within the
      * service date range of this invoice. The end date is inclusive. This can
      * be different from the account budget's start and end time.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.DateRange billable_activity_date_range = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.DateRange billable_activity_date_range = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V3\Common\DateRange
      */
     public function getBillableActivityDateRange()
@@ -627,11 +627,11 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The billable activity date range of the account budget, within the
+     * Output only. The billable activity date range of the account budget, within the
      * service date range of this invoice. The end date is inclusive. This can
      * be different from the account budget's start and end time.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.common.DateRange billable_activity_date_range = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.common.DateRange billable_activity_date_range = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V3\Common\DateRange $var
      * @return $this
      */

@@ -17,24 +17,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class SharedSet extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the shared set.
+     * Immutable. The resource name of the shared set.
      * Shared set resource names have the form:
      * `customers/{customer_id}/sharedSets/{shared_set_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of this shared set. Read only.
+     * Output only. The ID of this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The type of this shared set: each shared set holds only a single kind
+     * Immutable. The type of this shared set: each shared set holds only a single kind
      * of resource. Required. Immutable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetTypeEnum.SharedSetType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetTypeEnum.SharedSetType type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $type = 0;
     /**
@@ -48,21 +48,21 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * The status of this shared set. Read only.
+     * Output only. The status of this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetStatusEnum.SharedSetStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetStatusEnum.SharedSetStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * The number of shared criteria within this shared set. Read only.
+     * Output only. The number of shared criteria within this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $member_count = null;
     /**
-     * The number of campaigns associated with this shared set. Read only.
+     * Output only. The number of campaigns associated with this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $reference_count = null;
 
@@ -73,13 +73,13 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the shared set.
+     *           Immutable. The resource name of the shared set.
      *           Shared set resource names have the form:
      *           `customers/{customer_id}/sharedSets/{shared_set_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of this shared set. Read only.
+     *           Output only. The ID of this shared set. Read only.
      *     @type int $type
-     *           The type of this shared set: each shared set holds only a single kind
+     *           Immutable. The type of this shared set: each shared set holds only a single kind
      *           of resource. Required. Immutable.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of this shared set. Required.
@@ -88,11 +88,11 @@ class SharedSet extends \Google\Protobuf\Internal\Message
      *           The length of this string should be between 1 and 255 UTF-8 bytes,
      *           inclusive.
      *     @type int $status
-     *           The status of this shared set. Read only.
+     *           Output only. The status of this shared set. Read only.
      *     @type \Google\Protobuf\Int64Value $member_count
-     *           The number of shared criteria within this shared set. Read only.
+     *           Output only. The number of shared criteria within this shared set. Read only.
      *     @type \Google\Protobuf\Int64Value $reference_count
-     *           The number of campaigns associated with this shared set. Read only.
+     *           Output only. The number of campaigns associated with this shared set. Read only.
      * }
      */
     public function __construct($data = NULL) {
@@ -101,11 +101,11 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the shared set.
+     * Immutable. The resource name of the shared set.
      * Shared set resource names have the form:
      * `customers/{customer_id}/sharedSets/{shared_set_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -114,11 +114,11 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the shared set.
+     * Immutable. The resource name of the shared set.
      * Shared set resource names have the form:
      * `customers/{customer_id}/sharedSets/{shared_set_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -131,9 +131,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of this shared set. Read only.
+     * Output only. The ID of this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -144,9 +144,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of this shared set. Read only.
+     * Output only. The ID of this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -155,9 +155,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of this shared set. Read only.
+     * Output only. The ID of this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -172,9 +172,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of this shared set. Read only.
+     * Output only. The ID of this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -184,10 +184,10 @@ class SharedSet extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The type of this shared set: each shared set holds only a single kind
+     * Immutable. The type of this shared set: each shared set holds only a single kind
      * of resource. Required. Immutable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetTypeEnum.SharedSetType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetTypeEnum.SharedSetType type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getType()
@@ -196,10 +196,10 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of this shared set: each shared set holds only a single kind
+     * Immutable. The type of this shared set: each shared set holds only a single kind
      * of resource. Required. Immutable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetTypeEnum.SharedSetType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetTypeEnum.SharedSetType type = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -281,9 +281,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The status of this shared set. Read only.
+     * Output only. The status of this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetStatusEnum.SharedSetStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetStatusEnum.SharedSetStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -292,9 +292,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of this shared set. Read only.
+     * Output only. The status of this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetStatusEnum.SharedSetStatus status = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v3.enums.SharedSetStatusEnum.SharedSetStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -307,9 +307,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of shared criteria within this shared set. Read only.
+     * Output only. The number of shared criteria within this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getMemberCount()
@@ -320,9 +320,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getMemberCount()</code>
 
-     * The number of shared criteria within this shared set. Read only.
+     * Output only. The number of shared criteria within this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getMemberCountUnwrapped()
@@ -331,9 +331,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of shared criteria within this shared set. Read only.
+     * Output only. The number of shared criteria within this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -348,9 +348,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The number of shared criteria within this shared set. Read only.
+     * Output only. The number of shared criteria within this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value member_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -360,9 +360,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The number of campaigns associated with this shared set. Read only.
+     * Output only. The number of campaigns associated with this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getReferenceCount()
@@ -373,9 +373,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getReferenceCount()</code>
 
-     * The number of campaigns associated with this shared set. Read only.
+     * Output only. The number of campaigns associated with this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getReferenceCountUnwrapped()
@@ -384,9 +384,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of campaigns associated with this shared set. Read only.
+     * Output only. The number of campaigns associated with this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -401,9 +401,9 @@ class SharedSet extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The number of campaigns associated with this shared set. Read only.
+     * Output only. The number of campaigns associated with this shared set. Read only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
