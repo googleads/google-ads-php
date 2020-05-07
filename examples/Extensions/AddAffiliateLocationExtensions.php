@@ -101,8 +101,11 @@ class AddAffiliateLocationExtensions
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CHAIN_ID] ?: self::CHAIN_ID,
                 $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID,
-                $options[ArgumentNames::SHOULD_DELETE_EXISTING_FEEDS]
-                    ?: self::SHOULD_DELETE_EXISTING_FEEDS
+                filter_var(
+                    $options[ArgumentNames::SHOULD_DELETE_EXISTING_FEEDS]
+                        ?: self::SHOULD_DELETE_EXISTING_FEEDS,
+                    FILTER_VALIDATE_BOOLEAN
+                )
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -156,8 +159,7 @@ class AddAffiliateLocationExtensions
         );
         // After the completion of the feed creation operation above the added feed will not
         // be available for usage in a campaign feed until the feed mapping is created.
-        // We will wait with an exponential back-off policy until the feed mapping has
-        // been created.
+        // We then need to wait for the feed mapping to be created.
         $feedMapping = self::waitForFeedToBeReady(
             $googleAdsClient,
             $customerId,
@@ -202,7 +204,7 @@ class AddAffiliateLocationExtensions
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @return array the list of location extension customer feeds
+     * @return CustomerFeed[] the list of location extension customer feeds
      */
     private static function getLocationExtensionCustomerFeeds(
         GoogleAdsClient $googleAdsClient,
@@ -235,7 +237,7 @@ class AddAffiliateLocationExtensions
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @@param array $customerFeeds the list of customer feeds to remove
+     * @param CustomerFeed[] $customerFeeds the list of customer feeds to remove
      */
     private static function removeCustomerFeeds(
         GoogleAdsClient $googleAdsClient,
@@ -243,8 +245,8 @@ class AddAffiliateLocationExtensions
         array $customerFeeds
     ) {
         $operations = [];
-        /** @var CustomerFeed $customerFeed */
         foreach ($customerFeeds as $customerFeed) {
+            /** @var CustomerFeed $customerFeed */
             $operations[] = new CustomerFeedOperation([
                 'remove' => $customerFeed->getResourceName()
             ]);
@@ -262,7 +264,7 @@ class AddAffiliateLocationExtensions
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @return array the list of location extension feeds
+     * @return Feed[] the list of location extension feeds
      */
     private static function getLocationExtensionFeeds(
         GoogleAdsClient $googleAdsClient,
@@ -293,7 +295,7 @@ class AddAffiliateLocationExtensions
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @@param array $feeds the list of feeds to remove
+     * @param Feed[] $feeds the list of feeds to remove
      */
     private static function removeFeeds(
         GoogleAdsClient $googleAdsClient,
@@ -301,8 +303,8 @@ class AddAffiliateLocationExtensions
         array $feeds
     ) {
         $operations = [];
-        /** @var Feed $feed */
         foreach ($feeds as $feed) {
+            /** @var Feed $feed */
             $operations[] = new FeedOperation([
                 'remove' => $feed->getResourceName()
             ]);
@@ -364,11 +366,14 @@ class AddAffiliateLocationExtensions
     }
 
     /**
-     * Waits for the affiliate location extension feed to be ready.
+     * Waits for the affiliate location extension feed to be ready. An exponential back-off
+     * policy with a maximum number of attempts is used to poll the server.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string $feedResourceName the feed resource name
+     * @throws RuntimeException if the feed mapping is still not ready and the maximum number of
+     *     attempts has been reached
      * @return FeedMapping the newly created feed mapping
      */
     private static function waitForFeedToBeReady(
@@ -472,7 +477,7 @@ class AddAffiliateLocationExtensions
         int $chainId
     ) {
         $matchingFunction = sprintf(
-            'IN(FeedAttribute[%s, %s], %d)',
+            'IN(FeedAttribute[%d, %d], %d)',
             FeedServiceClient::parseName($feedResourceName)['feed'],
             self::getAttributeIdForChainId($feedMapping),
             $chainId
@@ -511,8 +516,8 @@ class AddAffiliateLocationExtensions
      */
     private static function getAttributeIdForChainId(FeedMapping $feedMapping): int
     {
-        /** @var AttributeFieldMapping $fieldMapping */
         foreach ($feedMapping->getAttributeFieldMappings() as $fieldMapping) {
+            /** @var AttributeFieldMapping $fieldMapping */
             if (
                 $fieldMapping->getAffiliateLocationField()
                 === AffiliateLocationPlaceholderField::CHAIN_ID
