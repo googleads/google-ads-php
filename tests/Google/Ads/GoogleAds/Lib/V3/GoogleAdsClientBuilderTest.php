@@ -64,7 +64,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['loginCustomerId', 'GOOGLE_ADS', self::$LOGIN_CUSTOMER_ID],
             ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443'],
             ['proxy', 'CONNECTION', 'https://localhost:8080'],
-            ['transport', 'CONNECTION', self::provideValidTransports()[0][0]]
+            ['transport', 'CONNECTION', 'grpc']
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
@@ -82,15 +82,7 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
         $this->assertSame('https://localhost:8080', $googleAdsClient->getProxy());
-        $this->assertSame(self::provideValidTransports()[0][0], $googleAdsClient->getTransport());
-    }
-
-    public function provideValidTransports()
-    {
-        return [
-            ['grpc'],
-            ['rest']
-        ];
+        $this->assertSame('grpc', $googleAdsClient->getTransport());
     }
 
     /**
@@ -307,6 +299,14 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
 
         $this->assertSame($transport, $googleAdsClient->getTransport());
+    }
+
+    static public function provideValidTransports()
+    {
+        return [
+            ['grpc'],
+            ['rest']
+        ];
     }
 
     /**
