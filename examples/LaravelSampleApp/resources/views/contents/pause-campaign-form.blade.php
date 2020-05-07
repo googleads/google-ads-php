@@ -15,18 +15,18 @@
 -->
 <div class="card">
     <div class="card-header">
-        Pause a campaign of the specified client customer ID
+        Pause a campaign of the specified customer ID
     </div>
     <div class="card-body">
         <form action="{{ url('pause-campaign') }}" method="POST">
             {{ csrf_field() }}
             <div class="form-group row">
-                <label for="clientCustomerId" class="col-sm-2 col-form-label">Client customer ID</label>
+                <label for="customerId" class="col-sm-2 col-form-label">Customer ID</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="clientCustomerId" name="clientCustomerId"
-                           aria-describedby="clientCustomerIdHelp"
-                           placeholder="Enter your client customer ID" required>
-                    <small id="clientCustomerIdHelp" class="form-text text-muted">The ID of the
+                    <input type="text" class="form-control" id="customerId" name="customerId"
+                           aria-describedby="customerIdHelp"
+                           placeholder="Enter your customer ID" required>
+                    <small id="customerIdHelp" class="form-text text-muted">The ID of the
                         customer account to pause the campaign from, e.g., 1234567890.
                     </small>
                 </div>

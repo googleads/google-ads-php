@@ -51,7 +51,7 @@ class GoogleAdsApiController extends Controller
     ): View {
         if ($request->method() === 'POST') {
             // Retrieves the form inputs.
-            $clientCustomerId = $request->input('clientCustomerId');
+            $customerId = $request->input('customerId');
             $reportType = $request->input('reportType');
             $reportRange = $request->input('reportRange');
             $entriesPerPage = $request->input('entriesPerPage');
@@ -61,7 +61,7 @@ class GoogleAdsApiController extends Controller
                 $request->except(
                     [
                         '_token',
-                        'clientCustomerId',
+                        'customerId',
                         'reportType',
                         'reportRange',
                         'entriesPerPage'
@@ -87,7 +87,7 @@ class GoogleAdsApiController extends Controller
             // Searches the results using streaming.
             /** @var GoogleAdsServerStreamDecorator $stream */
             $stream = $googleAdsClient->getGoogleAdsServiceClient()->searchStream(
-                $clientCustomerId,
+                $customerId,
                 $query
             );
 
@@ -133,7 +133,7 @@ class GoogleAdsApiController extends Controller
     }
 
     /**
-     * Controls a POST request submitted in the contect of the "Pause Campaign" form.
+     * Controls a POST request submitted in the context of the "Pause Campaign" form.
      *
      * @param Request $request the HTTP request
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
@@ -144,11 +144,11 @@ class GoogleAdsApiController extends Controller
         GoogleAdsClient $googleAdsClient
     ): View {
         // Retrieves the form inputs.
-        $clientCustomerId = $request->input('clientCustomerId');
+        $customerId = $request->input('customerId');
         $campaignId = $request->input('campaignId');
 
         // Deducts the campaign resource name from the given IDs.
-        $campaignResourceName = ResourceNames::forCampaign($clientCustomerId, $campaignId);
+        $campaignResourceName = ResourceNames::forCampaign($customerId, $campaignId);
 
         // Creates a campaign object and sets its status to PAUSED.
         $campaign = new Campaign();
@@ -164,7 +164,7 @@ class GoogleAdsApiController extends Controller
 
         // Issues a mutate request to pause the campaign.
         $googleAdsClient->getCampaignServiceClient()->mutateCampaigns(
-            $clientCustomerId,
+            $customerId,
             [$campaignOperation]
         );
 
@@ -177,7 +177,7 @@ class GoogleAdsApiController extends Controller
 
         // Searches the result using pagination.
         $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
-            $clientCustomerId,
+            $customerId,
             $query
         );
 
@@ -190,7 +190,7 @@ class GoogleAdsApiController extends Controller
 
         return view(
             'pause-result',
-            compact('clientCustomerId', 'campaign')
+            compact('customerId', 'campaign')
         );
     }
 }
