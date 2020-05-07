@@ -175,16 +175,16 @@ class GoogleAdsApiController extends Controller
             $campaignResourceName
         );
 
-        // Searches the result using pagination.
-        $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
+        // Searches the result using streaming.
+        /** @var GoogleAdsServerStreamDecorator $stream */
+        $stream = $googleAdsClient->getGoogleAdsServiceClient()->searchStream(
             $customerId,
             $query
         );
 
         // Fetches and converts the result as a POPO using JSON.
-        /** @var GoogleAdsRow $googleAdsRow */
         $campaign = json_decode(
-            $response->getIterator()->current()->getCampaign()->serializeToJsonString(),
+            $stream->iterateAllElements()->current()->getCampaign()->serializeToJsonString(),
             true
         );
 
