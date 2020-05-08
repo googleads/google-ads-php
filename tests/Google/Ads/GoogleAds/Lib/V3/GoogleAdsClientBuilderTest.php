@@ -34,6 +34,7 @@ class GoogleAdsClientBuilderTest extends TestCase
 
     private static $DEVELOPER_TOKEN = 'ABcdeFGH93KL-NOPQ_STUv';
     private static $LOGIN_CUSTOMER_ID = '1234567890';
+    private static $INVALID_TRANSPORT = '1234567890';
 
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder*/
     private $googleAdsClientBuilder;
@@ -62,7 +63,8 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN],
             ['loginCustomerId', 'GOOGLE_ADS', self::$LOGIN_CUSTOMER_ID],
             ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443'],
-            ['proxy', 'CONNECTION', 'https://localhost:8080']
+            ['proxy', 'CONNECTION', 'https://localhost:8080'],
+            ['transport', 'CONNECTION', 'grpc']
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
@@ -80,6 +82,7 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
         $this->assertSame('https://localhost:8080', $googleAdsClient->getProxy());
+        $this->assertSame('grpc', $googleAdsClient->getTransport());
     }
 
     /**
@@ -157,7 +160,6 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-
     public function provideInvalidProxyURIs()
     {
         return [
@@ -166,6 +168,19 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['foo.com'],
             ['http://.com']
         ];
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
+     * @expectedException \InvalidArgumentException
+     */
+    public function testBuildFailsWithInvalidTransport()
+    {
+        $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withTransport(self::$INVALID_TRANSPORT)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
     }
 
     /**
@@ -268,6 +283,29 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['http://user:pass@localhost:8080'],
             ['https://localhost:8080'],
             ['https://user:pass@localhost:8080']
+        ];
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
+     * @dataProvider provideValidTransports
+     */
+    public function testBuildWithValidTransports(string $transport)
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withTransport($transport)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($transport, $googleAdsClient->getTransport());
+    }
+
+    public static function provideValidTransports()
+    {
+        return [
+            ['grpc'],
+            ['rest']
         ];
     }
 

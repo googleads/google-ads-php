@@ -208,11 +208,16 @@ $googleAdsClient = (new GoogleAdsClientBuilder())
 Once you have an instance of `GoogleAdsClient`, you can obtain a service client
 for a particular service using one of the `get...ServiceClient()` methods.
 
+## Transport
+
+There are different types of transport that can be used. See the
+[Transport guide](https://developers.google.com/google-ads/api/docs/client-libs/php/transport)
+for more information.
+
 ## Protobuf
 
-[Protobuf](https://developers.google.com/protocol-buffers/docs/overview) is used by
-[gRPC](https://grpc.io/about/), a core dependency of the Google Ads API for request and
-response transport.
+[Protobuf](https://developers.google.com/protocol-buffers/docs/overview) is used regardless of the
+transport used to request the Google Ads API.
 
 See the [Protobuf guide](https://developers.google.com/google-ads/api/docs/client-libs/php/protobuf)
 for more information.

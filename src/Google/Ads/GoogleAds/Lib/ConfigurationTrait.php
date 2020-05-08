@@ -33,6 +33,7 @@ trait ConfigurationTrait
     private $logger;
     private $logLevel;
     private $proxy;
+    private $transport;
 
     /**
      * Gets the developer token.
@@ -102,5 +103,15 @@ trait ConfigurationTrait
     public function getProxy()
     {
         return $this->proxy;
+    }
+
+    /**
+     * Gets the transport.
+     *
+     * @return string the transport
+     */
+    public function getTransport()
+    {
+        return $this->transport;
     }
 }
