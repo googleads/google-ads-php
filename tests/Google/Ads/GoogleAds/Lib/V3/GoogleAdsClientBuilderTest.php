@@ -301,7 +301,7 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame($transport, $googleAdsClient->getTransport());
     }
 
-    static public function provideValidTransports()
+    public static function provideValidTransports()
     {
         return [
             ['grpc'],
