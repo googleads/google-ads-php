@@ -11,6 +11,10 @@ to satisfy all Laravel usage requirements. See
 instructions. If you're not using Homestead, make sure your web server has a document root set
 to the location of this sample application.
 
+Please make sure that your system fulfils all the
+[requirements](https://github.com/googleads/google-ads-php/blob/master/README.md#requirements) of
+the Google Ads API Client Library for PHP including the **gRPC PHP extension**.
+
 ## Instructions
 
 1.  Run `git clone https://github.com/googleads/google-ads-php.git` at the
