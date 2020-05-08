@@ -42,6 +42,7 @@ final class ArgumentNames
     public const CAMPAIGN_ID = 'campaignId';
     public const CAMPAIGN_IDS = 'campaignIds';
     public const CARRIER_COUNTRY_CODE = 'carrierCountryCode';
+    public const CHAIN_ID = 'chainId';
     public const CHECK_IN_DAY_CRITERION_ID = 'checkInDayCriterionId';
     public const CONVERSION_ACTION_ID = 'conversionActionId';
     public const CONVERSION_DATE_TIME = 'conversionDateTime';
@@ -80,6 +81,7 @@ final class ArgumentNames
     public const RECOMMENDATION_ID = 'recommendationId';
     public const RESTATEMENT_VALUE = 'restatementValue';
     public const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
+    public const SHOULD_DELETE_EXISTING_FEEDS = 'shouldDeleteExistingFeeds';
     public const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =
@@ -106,6 +108,7 @@ final class ArgumentNames
         self::CAMPAIGN_ID => 'The campaign ID',
         self::CAMPAIGN_IDS => 'The campaign IDs',
         self::CARRIER_COUNTRY_CODE => 'The carrier country code',
+        self::CHAIN_ID => 'The retail chain ID',
         self::CHECK_IN_DAY_CRITERION_ID => 'The hotel check-in day criterion ID',
         self::CONVERSION_ACTION_ID => 'The conversion action ID',
         self::CONVERSION_DATE_TIME => 'The conversion date time',
@@ -146,6 +149,8 @@ final class ArgumentNames
         self::RESTATEMENT_VALUE => 'The restatement value',
         self::SHOULD_CREATE_DEFAULT_LISTING_GROUP =>
             'Whether it should create a default listing group',
+        self::SHOULD_DELETE_EXISTING_FEEDS =>
+            'Whether it should delete the existing feeds',
         self::SHOULD_REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group',
         self::SITELINK_TEXT => 'The sitelink text',
