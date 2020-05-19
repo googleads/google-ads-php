@@ -58,8 +58,6 @@ class GenerateKeywordIdeas
     // Optional: Specify a URL string related to your business to generate ideas.
     private const PAGE_URL = null;
 
-    private const PAGE_SIZE = 1000;
-
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
