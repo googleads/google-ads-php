@@ -167,7 +167,7 @@ class HandleExpandedTextAdPolicyViolations
     /**
      * Collects all ignorable policy topics that will be sent for exemption request later.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param GoogleAdsException $googleAdsException the Google Ads exception
      * @return StringValue[] the ignorable policy topics
      */
     private static function fetchIgnorablePolicyTopics(GoogleAdsException $googleAdsException)
