@@ -182,7 +182,7 @@ class HandleKeywordPolicyViolations
      * Collects all policy violation keys that can be exempted for sending a exemption request
      * later.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param GoogleAdsException $googleAdsException the Google Ads exception
      * @return PolicyViolationKey[] the exemptible policy violation keys
      */
     private static function fetchExemptPolicyViolationKeys(GoogleAdsException $googleAdsException)
