@@ -228,10 +228,14 @@ class HandleKeywordPolicyViolations
                         PHP_EOL
                     );
                 } else {
-                    print "No exemption request is sent because your keyword contained some"
-                        . " non-exemptible policy violations." . PHP_EOL;
+                    print "No exemption request is sent because your keyword contained some "
+                        . "non-exemptible policy violations." . PHP_EOL;
                     throw $googleAdsException;
                 }
+            } else {
+                print "No exemption request is sent because there are other non-policy related "
+                    . "errors thrown." . PHP_EOL;
+                throw $googleAdsException;
             }
         }
         return $exemptPolicyViolationKeys;
@@ -241,8 +245,8 @@ class HandleKeywordPolicyViolations
      * Sends exemption requests for creating a keyword.
      *
      * @param int $customerId the customer ID
-     * @param AdGroupCriterionServiceClient $adGroupCriterionServiceClient the Ad Group Criterion
-     *      Service API client
+     * @param AdGroupCriterionServiceClient $adGroupCriterionServiceClient the ad group criterion
+     *      service API client
      * @param AdGroupCriterionOperation $adGroupCriterionOperation the ad group criterion operation
      *      to request exemption for
      * @param PolicyViolationKey[] $exemptPolicyViolationKeys the exemptible policy violation keys
