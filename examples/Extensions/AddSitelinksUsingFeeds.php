@@ -129,21 +129,21 @@ class AddSitelinksUsingFeeds
         int $campaignId,
         ?int $adGroupId
     ) {
-        // Create a feed, which acts as a table to store data.
+        // Creates a feed, which acts as a table to store data.
         $feedData = self::createFeed($googleAdsClient, $customerId);
 
-        // Create feed items, which fill out the feed table with data.
+        // Creates feed items, which fill out the feed table with data.
         $feedData = self::createFeedItems($googleAdsClient, $customerId, $feedData);
 
-        // Create a feed mapping, which tells Google Ads how to interpret this data to
+        // Creates a feed mapping, which tells Google Ads how to interpret this data to
         // display additional sitelink information on ads.
         self::createFeedMapping($googleAdsClient, $customerId, $feedData);
 
-        // Create a campaign feed, which tells Google Ads which campaigns to use the
+        // Creates a campaign feed, which tells Google Ads which campaigns to use the
         // provided data with.
         self::createCampaignFeed($googleAdsClient, $customerId, $campaignId, $feedData);
 
-        // If an ad group is specified, limit targeting only to the given ad group.
+        // If an ad group is specified, limits targeting only to the given ad group.
         if (!is_null($adGroupId)) {
             self::createAdGroupTargeting($googleAdsClient, $customerId, $adGroupId, $feedData);
         }
@@ -163,7 +163,7 @@ class AddSitelinksUsingFeeds
         $feed = new Feed([
             'name' => new StringValue(['value' => 'Sitelinks Feed #' . uniqid()]),
             'origin' => FeedOrigin::USER,
-            // Specify the column name and data type. This is just raw data at this point,
+            // Specifies the column name and data type. This is just raw data at this point,
             // and not yet linked to any particular purpose. The names are used to help us
             // remember what they are intended for later.
             'attributes' => [
