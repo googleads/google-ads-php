@@ -157,10 +157,8 @@ class AddSitelinksUsingFeeds
      * @return array the feed data containing the created feed resource name and the feed attribute
      *     IDs
      */
-    private static function createFeed(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId
-    ) {
+    private static function createFeed(GoogleAdsClient $googleAdsClient, int $customerId)
+    {
         // Creates a feed.
         $feed = new Feed([
             'name' => new StringValue(['value' => 'Sitelinks Feed #' . uniqid()]),
@@ -303,7 +301,7 @@ class AddSitelinksUsingFeeds
         foreach ($response->getResults() as $addedFeedItem) {
             /** @var ExtensionFeedItem $addedFeedItem */
             $addedFeedItemResourceName = $addedFeedItem->getResourceName();
-            print $addedFeedItemResourceName . PHP_EOL;
+            print "\t" . $addedFeedItemResourceName . PHP_EOL;
             $addedFeedItemsResourceNames[] = $addedFeedItemResourceName;
         }
 
