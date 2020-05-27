@@ -154,27 +154,17 @@ class HandleKeywordPolicyViolations
                 $response->getResults()[0]->getResourceName(),
                 PHP_EOL
             );
-            return;
         } catch (GoogleAdsException $googleAdsException) {
+            // Try sending exemption requests for creating a keyword. However, if your keyword
+            // contains many policy violations, but not all of them are exemptible, the request
+            // will not be sent.
             $exemptPolicyViolationKeys = self::fetchExemptPolicyViolationKeys($googleAdsException);
-        }
-
-        // Try sending exemption requests for creating a keyword. However, if your keyword contains
-        // many policy violations, but not all of them are exemptible, the request will not be sent.
-        if (
-            count($exemptPolicyViolationKeys)
-            === count($googleAdsException->getGoogleAdsFailure()->getErrors())
-        ) {
             self::requestExemption(
                 $customerId,
                 $adGroupCriterionServiceClient,
                 $adGroupCriterionOperation,
                 $exemptPolicyViolationKeys
             );
-        } else {
-            print "No exemption request is sent because 1) your keyword contained some"
-                . " non-exemptible policy violations or 2) there are other non-policy related"
-                . " errors thrown." . PHP_EOL;
         }
     }
 
@@ -237,7 +227,15 @@ class HandleKeywordPolicyViolations
                         $policyViolationDetailsKey->getViolatingTextUnwrapped(),
                         PHP_EOL
                     );
+                } else {
+                    print "No exemption request is sent because your keyword contained some "
+                        . "non-exemptible policy violations." . PHP_EOL;
+                    throw $googleAdsException;
                 }
+            } else {
+                print "No exemption request is sent because there are other non-policy related "
+                    . "errors thrown." . PHP_EOL;
+                throw $googleAdsException;
             }
         }
         return $exemptPolicyViolationKeys;
@@ -246,10 +244,12 @@ class HandleKeywordPolicyViolations
     /**
      * Sends exemption requests for creating a keyword.
      *
-     * @param int $customerId
-     * @param AdGroupCriterionServiceClient $adGroupCriterionServiceClient
-     * @param AdGroupCriterionOperation $adGroupCriterionOperation
-     * @param PolicyViolationKey[] $exemptPolicyViolationKeys
+     * @param int $customerId the customer ID
+     * @param AdGroupCriterionServiceClient $adGroupCriterionServiceClient the ad group criterion
+     *      service API client
+     * @param AdGroupCriterionOperation $adGroupCriterionOperation the ad group criterion operation
+     *      to request exemption for
+     * @param PolicyViolationKey[] $exemptPolicyViolationKeys the exemptible policy violation keys
      */
     private static function requestExemption(
         int $customerId,
