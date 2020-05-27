@@ -16,15 +16,25 @@ class Bar extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 num = 1;</code>
      */
-    private $num = 0;
+    protected $num = 0;
     /**
      * Generated from protobuf field <code>.google.protobuf.BoolValue nested_wrapper = 2;</code>
      */
-    private $nested_wrapper = null;
+    protected $nested_wrapper = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int|string $num
+     *     @type \Google\Protobuf\BoolValue $nested_wrapper
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\Util\Testing\Tester::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -59,6 +69,17 @@ class Bar extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getNestedWrapper()</code>
+
+     * Generated from protobuf field <code>.google.protobuf.BoolValue nested_wrapper = 2;</code>
+     * @return bool|null
+     */
+    public function getNestedWrapperUnwrapped()
+    {
+        return $this->readWrapperValue("nested_wrapper");
+    }
+
+    /**
      * Generated from protobuf field <code>.google.protobuf.BoolValue nested_wrapper = 2;</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
@@ -70,6 +91,18 @@ class Bar extends \Google\Protobuf\Internal\Message
 
         return $this;
     }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Generated from protobuf field <code>.google.protobuf.BoolValue nested_wrapper = 2;</code>
+     * @param bool|null $var
+     * @return $this
+     */
+    public function setNestedWrapperUnwrapped($var)
+    {
+        $this->writeWrapperValue("nested_wrapper", $var);
+        return $this;}
 
 }
 

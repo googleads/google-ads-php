@@ -16,19 +16,30 @@ class Foo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>int64 num = 1;</code>
      */
-    private $num = 0;
+    protected $num = 0;
     /**
      * Generated from protobuf field <code>.google.ads.googleads.util.testing.Bar bar = 2;</code>
      */
-    private $bar = null;
+    protected $bar = null;
     /**
      * Generated from protobuf field <code>repeated .google.ads.googleads.util.testing.Bar bars = 3;</code>
      */
     private $bars;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int|string $num
+     *     @type \Google\Ads\GoogleAds\Util\Testing\Bar $bar
+     *     @type \Google\Ads\GoogleAds\Util\Testing\Bar[]|\Google\Protobuf\Internal\RepeatedField $bars
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\Util\Testing\Tester::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
