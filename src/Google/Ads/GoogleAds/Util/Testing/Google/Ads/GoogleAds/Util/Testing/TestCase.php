@@ -16,23 +16,35 @@ class TestCase extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string description = 1;</code>
      */
-    private $description = '';
+    protected $description = '';
     /**
      * Generated from protobuf field <code>.google.ads.googleads.util.testing.Resource original_resource = 2;</code>
      */
-    private $original_resource = null;
+    protected $original_resource = null;
     /**
      * Generated from protobuf field <code>.google.ads.googleads.util.testing.Resource modified_resource = 3;</code>
      */
-    private $modified_resource = null;
+    protected $modified_resource = null;
     /**
      * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask = 4;</code>
      */
-    private $expected_mask = null;
+    protected $expected_mask = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $description
+     *     @type \Google\Ads\GoogleAds\Util\Testing\Resource $original_resource
+     *     @type \Google\Ads\GoogleAds\Util\Testing\Resource $modified_resource
+     *     @type \Google\Protobuf\FieldMask $expected_mask
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\Util\Testing\Tester::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

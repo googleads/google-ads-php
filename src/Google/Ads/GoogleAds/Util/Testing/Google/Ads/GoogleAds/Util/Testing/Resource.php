@@ -16,19 +16,30 @@ class Resource extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.google.protobuf.StringValue wrapper = 1;</code>
      */
-    private $wrapper = null;
+    protected $wrapper = null;
     /**
      * Generated from protobuf field <code>.google.ads.googleads.util.testing.Foo foo = 2;</code>
      */
-    private $foo = null;
+    protected $foo = null;
     /**
      * Generated from protobuf field <code>repeated .google.ads.googleads.util.testing.Foo foos = 3;</code>
      */
     private $foos;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Google\Protobuf\StringValue $wrapper
+     *     @type \Google\Ads\GoogleAds\Util\Testing\Foo $foo
+     *     @type \Google\Ads\GoogleAds\Util\Testing\Foo[]|\Google\Protobuf\Internal\RepeatedField $foos
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\Google\Ads\GoogleAds\Util\Testing\Tester::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -38,6 +49,17 @@ class Resource extends \Google\Protobuf\Internal\Message
     public function getWrapper()
     {
         return $this->wrapper;
+    }
+
+    /**
+     * Returns the unboxed value from <code>getWrapper()</code>
+
+     * Generated from protobuf field <code>.google.protobuf.StringValue wrapper = 1;</code>
+     * @return string|null
+     */
+    public function getWrapperUnwrapped()
+    {
+        return $this->readWrapperValue("wrapper");
     }
 
     /**
@@ -52,6 +74,18 @@ class Resource extends \Google\Protobuf\Internal\Message
 
         return $this;
     }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
+
+     * Generated from protobuf field <code>.google.protobuf.StringValue wrapper = 1;</code>
+     * @param string|null $var
+     * @return $this
+     */
+    public function setWrapperUnwrapped($var)
+    {
+        $this->writeWrapperValue("wrapper", $var);
+        return $this;}
 
     /**
      * Generated from protobuf field <code>.google.ads.googleads.util.testing.Foo foo = 2;</code>
