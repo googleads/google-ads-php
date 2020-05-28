@@ -21,6 +21,7 @@ namespace Google\Ads\GoogleAds\Util;
 use Google\Ads\GoogleAds\Util\Testing\FieldMasksTestDataProvider;
 use Google\Ads\GoogleAds\Util\Testing\Resource;
 use Google\Ads\GoogleAds\Util\Testing\TestSuite;
+use Google\Protobuf\FieldMask;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -50,10 +51,16 @@ class FieldMasksTest extends TestCase
     /**
      * @dataProvider fieldMaskCompareData
      */
-    public function testFieldMaskCompare($originalResource, $modifiedResource, $expectedFieldMask)
-    {
+    public function testFieldMaskCompare(
+        $originalResource,
+        $modifiedResource,
+        FieldMask $expectedFieldMask
+    ) {
         $actualFieldMask = FieldMasks::compare($originalResource, $modifiedResource);
-        $this->assertEquals($expectedFieldMask, $actualFieldMask);
+        $this->assertEquals(
+            $expectedFieldMask->serializeToJsonString(),
+            $actualFieldMask->serializeToJsonString()
+        );
     }
 
     public function fieldMaskCompareData()
@@ -72,10 +79,13 @@ class FieldMasksTest extends TestCase
     /**
      * @dataProvider fieldMaskAllSetFieldsOfData
      */
-    public function testFieldMaskAllSetFieldsOf($resource, $expectedFieldMask)
+    public function testFieldMaskAllSetFieldsOf($resource, FieldMask $expectedFieldMask)
     {
         $actualFieldMask = FieldMasks::allSetFieldsOf($resource);
-        $this->assertEquals($expectedFieldMask, $actualFieldMask);
+        $this->assertEquals(
+            $expectedFieldMask->serializeToJsonString(),
+            $actualFieldMask->serializeToJsonString()
+        );
     }
 
     public function fieldMaskAllSetFieldsOfData()
