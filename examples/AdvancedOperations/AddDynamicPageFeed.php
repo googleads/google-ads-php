@@ -146,7 +146,7 @@ class AddDynamicPageFeed
         // Optional: Targets web pages matching the feed's label in the ad group.
         self::addDsaTarget($googleAdsClient, $customerId, $adGroupId, $dsaPageUrlLabel);
 
-        printf("Dynamic page feed setup is complete for campaign ID %d.%s", campaignId, PHP_EOL);
+        printf("Dynamic page feed setup is complete for campaign ID %d.%s", $campaignId, PHP_EOL);
     }
 
    /**
@@ -409,8 +409,11 @@ class AddDynamicPageFeed
         "FROM campaign where campaign.id = $campaignId";
 
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = $googleAdsServiceClient->search(
+            $customerId,
+            $query,
+            ['pageSize' => self::PAGE_SIZE, 'returnTotalResultsCount' => true]
+        );
 
         // Throws an exception if a campaign with the provided ID does not exist.
         if ($response->getPage()->getResponseObject()->getTotalResultsCount() === 0) {
