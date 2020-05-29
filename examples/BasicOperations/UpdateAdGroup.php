@@ -44,7 +44,7 @@ class UpdateAdGroup
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
-    private const CPC_BID_MICRO_AMOUNT = 'INSERT_CPC_BID_MICRO_AMOUNT_HERE';
+    private const BID_MICRO_AMOUNT = 'INSERT_BID_MICRO_AMOUNT_HERE';
 
     public static function main()
     {
@@ -53,7 +53,7 @@ class UpdateAdGroup
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CPC_BID_MICRO_AMOUNT => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::BID_MICRO_AMOUNT => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -70,7 +70,7 @@ class UpdateAdGroup
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID,
-                $options[ArgumentNames::CPC_BID_MICRO_AMOUNT] ?: self::CPC_BID_MICRO_AMOUNT
+                $options[ArgumentNames::BID_MICRO_AMOUNT] ?: self::BID_MICRO_AMOUNT
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -105,18 +105,18 @@ class UpdateAdGroup
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $adGroupId the ID of ad group to update
-     * @param int $cpcBidMicroAmount the bid amount in micros to use for the ad group bid
+     * @param int $bidMicroAmount the bid amount in micros to use for the ad group bid
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $adGroupId,
-        $cpcBidMicroAmount
+        $bidMicroAmount
     ) {
         // Creates an ad group object with the specified resource name and other changes.
         $adGroup = new AdGroup([
             'resource_name' => ResourceNames::forAdGroup($customerId, $adGroupId),
-            'cpc_bid_micros' => new Int64Value(['value' => $cpcBidMicroAmount]),
+            'cpc_bid_micros' => new Int64Value(['value' => $bidMicroAmount]),
             'status' => AdGroupStatus::PAUSED
         ]);
 
