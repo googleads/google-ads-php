@@ -113,12 +113,12 @@ class UsePortfolioBiddingStrategy
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $campaignBudgetId the campaign budget ID
+     * @param int|null $campaignBudgetId the ID of the campaign budget to use if any
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        int $campaignBudgetId
+        ?int $campaignBudgetId
     ) {
         $biddingStrategyResourceName = self::createBiddingStrategy($googleAdsClient, $customerId);
         if (is_null($campaignBudgetId)) {
