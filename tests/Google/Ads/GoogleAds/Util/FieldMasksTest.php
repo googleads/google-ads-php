@@ -54,9 +54,25 @@ class FieldMasksTest extends TestCase
     public function testFieldMaskCompare(
         $originalResource,
         $modifiedResource,
-        FieldMask $expectedFieldMask
+        FieldMask $expectedFieldMask,
+        string $description
     ) {
         $actualFieldMask = FieldMasks::compare($originalResource, $modifiedResource);
+        print "============ TEST '" . $description . "'" .  PHP_EOL;
+        print "- expected: ";
+        foreach ($expectedFieldMask->getPaths() as $path) {
+            print $path . " ";
+        };
+        print PHP_EOL . "- actual: ";
+        foreach ($actualFieldMask->getPaths() as $path) {
+            print $path . " ";
+        };
+        print PHP_EOL . "Testing with FieldMask instances...";
+        $this->assertEquals(
+            $expectedFieldMask,
+            $actualFieldMask
+        );
+        print PHP_EOL . "Testing with FieldMask JSON string...";
         $this->assertEquals(
             $expectedFieldMask->serializeToJsonString(),
             $actualFieldMask->serializeToJsonString()
@@ -70,7 +86,8 @@ class FieldMasksTest extends TestCase
             $testData[] = [
                 $testCase->getOriginalResource(),
                 $testCase->getModifiedResource(),
-                $testCase->getExpectedMask()
+                $testCase->getExpectedMask(),
+                $testCase->getDescription()
             ];
         }
         return $testData;
@@ -79,9 +96,27 @@ class FieldMasksTest extends TestCase
     /**
      * @dataProvider fieldMaskAllSetFieldsOfData
      */
-    public function testFieldMaskAllSetFieldsOf($resource, FieldMask $expectedFieldMask)
-    {
+    public function testFieldMaskAllSetFieldsOf(
+        $resource,
+        FieldMask $expectedFieldMask,
+        string $description
+    ) {
         $actualFieldMask = FieldMasks::allSetFieldsOf($resource);
+        print "============ TEST '" . $description . "'" .  PHP_EOL;
+        print "- expected: ";
+        foreach ($expectedFieldMask->getPaths() as $path) {
+            print $path . " ";
+        };
+        print PHP_EOL . "- actual: ";
+        foreach ($actualFieldMask->getPaths() as $path) {
+            print $path . " ";
+        };
+        print PHP_EOL . "Testing with FieldMask instances...";
+        $this->assertEquals(
+            $expectedFieldMask,
+            $actualFieldMask
+        );
+        print PHP_EOL . "Testing with FieldMask JSON string...";
         $this->assertEquals(
             $expectedFieldMask->serializeToJsonString(),
             $actualFieldMask->serializeToJsonString()
@@ -94,7 +129,11 @@ class FieldMasksTest extends TestCase
         $emptyResource = new Resource();
         foreach (self::loadTestCases() as $testCase) {
             $resource = $testCase->getModifiedResource();
-            $testData[] = [$resource, FieldMasks::compare($emptyResource, $resource)];
+            $testData[] = [
+                $resource,
+                FieldMasks::compare($emptyResource, $resource),
+                $testCase->getDescription(),
+            ];
         }
         return $testData;
     }
