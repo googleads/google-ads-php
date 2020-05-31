@@ -1,112 +1,112 @@
 {
-  "test_cases": [{
+  "testCases": [{
     "description": "Modify scalar in a wrapper proto",
-    "original_resource": {
+    "originalResource": {
       "wrapper": "a"
     },
-    "modified_resource": {
+    "modifiedResource": {
       "wrapper": "b"
     },
-    "expected_mask": "wrapper"
+    "expectedMask": "wrapper"
   }, {
     "description": "Create wrapper proto",
-    "original_resource": {
+    "originalResource": {
     },
-    "modified_resource": {
+    "modifiedResource": {
       "wrapper": "a"
     },
-    "expected_mask": "wrapper"
+    "expectedMask": "wrapper"
   }, {
     "description": "Modify element in a repeated field",
-    "original_resource": {
+    "originalResource": {
       "foos": [{
         "num": 1
       }, {
         "num": 2
       }]
     },
-    "modified_resource": {
+    "modifiedResource": {
       "foos": [{
         "num": 1
       }, {
         "num": 3
       }]
     },
-    "expected_mask": "foos"
+    "expectedMask": "foos"
   }, {
     "description": "Modify element in a nested repeated field",
-    "original_resource": {
+    "originalResource": {
       "foos": [{
         "bars": [{
           "num": 1
         }]
       }]
     },
-    "modified_resource": {
+    "modifiedResource": {
       "foos": [{
         "bars": [{
           "num": 2
         }]
       }]
     },
-    "expected_mask": "foos"
+    "expectedMask": "foos"
   }, {
     "description": "Create submessage",
-    "original_resource": {
+    "originalResource": {
     },
-    "modified_resource": {
+    "modifiedResource": {
       "foo": {
         "num": 1
       }
     },
-    "expected_mask": "foo.num"
+    "expectedMask": "foo.num"
   }, {
     "description": "Modify submessage",
-    "original_resource": {
+    "originalResource": {
       "foo": {
       }
     },
-    "modified_resource": {
+    "modifiedResource": {
       "foo": {
         "num": 1
       }
     },
-    "expected_mask": "foo.num"
+    "expectedMask": "foo.num"
   }, {
     "description": "Clear submessage",
-    "original_resource": {
+    "originalResource": {
       "foo": {
       }
     },
-    "modified_resource": {
+    "modifiedResource": {
     },
-    "expected_mask": "foo"
+    "expectedMask": "foo"
   }, {
     "description": "No change",
-    "original_resource": {
+    "originalResource": {
       "wrapper": "a",
       "foos": [{
         "num": 1
       }]
     },
-    "modified_resource": {
+    "modifiedResource": {
       "wrapper": "a",
       "foos": [{
         "num": 1
       }]
     },
-    "expected_mask": {}
+    "expectedMask": ""
   }, {
     "description": "Create message with nested wrapper",
-    "original_resource": {
+    "originalResource": {
     },
-    "modified_resource": {
+    "modifiedResource": {
       "foo": {
         "bar": {
-          "nested_wrapper": true
+          "nestedWrapper": true
         }
       }
     },
-    "expected_mask": "foo.bar.nested_wrapper"
+    "expectedMask": "foo.bar.nestedWrapper"
   }
 ]}
