@@ -64,9 +64,9 @@ class GenerateKeywordIdeas
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::LOCATION_ID => GetOpt::MULTIPLE_ARGUMENT,
+            ArgumentNames::LOCATION_IDS => GetOpt::MULTIPLE_ARGUMENT,
             ArgumentNames::LANGUAGE_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::KEYWORD_TEXT => GetOpt::MULTIPLE_ARGUMENT,
+            ArgumentNames::KEYWORD_TEXTS => GetOpt::MULTIPLE_ARGUMENT,
             ArgumentNames::PAGE_URL => GetOpt::OPTIONAL_ARGUMENT,
         ]);
 
@@ -83,10 +83,10 @@ class GenerateKeywordIdeas
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::LOCATION_ID] ?:
+                $options[ArgumentNames::LOCATION_IDS] ?:
                     [self::LOCATION_ID_1, self::LOCATION_ID_2],
                 $options[ArgumentNames::LANGUAGE_ID] ?: self::LANGUAGE_ID,
-                $options[ArgumentNames::KEYWORD_TEXT] ?:
+                $options[ArgumentNames::KEYWORD_TEXTS] ?:
                     [self::KEYWORD_TEXT_1, self::KEYWORD_TEXT_2],
                 $options[ArgumentNames::PAGE_URL] ?: self::PAGE_URL
             );
@@ -125,7 +125,7 @@ class GenerateKeywordIdeas
      * @param int[] $locationIds the location IDs
      * @param int $languageId the language ID
      * @param string[] $keywords the list of keywords to use as a seed for ideas
-     * @param string $pageUrl optional URL related to your business to use as a seed for ideas
+     * @param string|null $pageUrl optional URL related to your business to use as a seed for ideas
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -133,7 +133,7 @@ class GenerateKeywordIdeas
         array $locationIds,
         int $languageId,
         array $keywords,
-        string $pageUrl
+        ?string $pageUrl
     ) {
         $keywordPlanIdeaServiceClient = $googleAdsClient->getKeywordPlanIdeaServiceClient();
 
