@@ -38,7 +38,7 @@ class OAuth2TokenBuilderTest extends TestCase
     private $jsonKeyFilePath;
 
     /**
-     * @see \PHPUnit\Framework\TestCase::setUp
+     * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
@@ -47,7 +47,10 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientId()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientSecret()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withRefreshToken()
      */
     public function testBuildWithWebOrInstalledAppFlow()
     {
@@ -60,7 +63,9 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientId()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientSecret()
      * @expectedException \UnexpectedValueException
      * @expectedExceptionMessageRegExp /clientId.+clientSecret.+refreshToken.+must be set/
      */
@@ -73,7 +78,7 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::from
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::from()
      */
     public function testBuildFromWithServiceAccountFlow()
     {
@@ -101,7 +106,7 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::from
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::from()
      */
     public function testBuildFromWithServiceAccountFlowUsingImpersonation()
     {
@@ -133,7 +138,12 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withJsonKeyFilePath()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withScopes()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientId()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientSecret()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withRefreshToken()
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessageRegExp /both service account.+installed.+web.+flow.+set/
      */
@@ -149,7 +159,9 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withJsonKeyFilePath()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withScopes()
      */
     public function testBuildWithServiceAccountFlow()
     {
@@ -161,7 +173,10 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withJsonKeyFilePath()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withScopes()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withImpersonatedEmail()
      */
     public function testBuildWithServiceAccountFlowUsingImpersonation()
     {
@@ -174,7 +189,8 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
+     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withJsonKeyFilePath()
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessageRegExp /jsonKeyFilePath.+scopes.+must be set/
      */

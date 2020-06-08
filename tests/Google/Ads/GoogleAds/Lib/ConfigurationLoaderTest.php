@@ -21,6 +21,7 @@ namespace Google\Ads\GoogleAds\Lib;
 use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use PHPUnit\Framework\TestCase;
+use UnexpectedValueException;
 
 /**
  * Unit tests for `ConfigurationLoader`.
@@ -60,6 +61,7 @@ class ConfigurationLoaderTest extends TestCase
         $this->assertNotNull($config);
         $this->assertInstanceOf(Configuration::class, $config);
     }
+
     /**
      * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
      */
@@ -69,6 +71,7 @@ class ConfigurationLoaderTest extends TestCase
         $this->assertNotNull($config);
         $this->assertInstanceOf(Configuration::class, $config);
     }
+
     /**
      * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
      * @expectedException \InvalidArgumentException
@@ -77,6 +80,23 @@ class ConfigurationLoaderTest extends TestCase
     {
         $this->configurationLoader->fromFile('asdf.ini');
     }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
+     * @expectedException \InvalidArgumentException
+     */
+    public function testFromFileFileHomeDirDoesNotExist()
+    {
+        $environmentalVariablesMock = $this
+            ->getMockBuilder(EnvironmentalVariables::class)
+            ->getMock();
+        $environmentalVariablesMock
+            ->method('getHome')
+            ->willThrowException(new UnexpectedValueException());
+        $configurationLoader = new ConfigurationLoader($environmentalVariablesMock);
+        $configurationLoader->fromFile('home_google_ads_php.ini');
+    }
+
     /**
      * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromString
      */
