@@ -27,7 +27,7 @@ use Psr\Log\LogLevel;
 /**
  * Unit tests for `ConfigurationTrait`.
  *
- * @see ConfigurationTrait
+ * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait
  * @small
  */
 class ConfigurationTraitTest extends TestCase
@@ -36,11 +36,14 @@ class ConfigurationTraitTest extends TestCase
     /** @var ConfigurationTraitInserted $configurationTraitInserted */
     private $configurationTraitInserted;
 
+    /** @var LoggerInterface $loggerMock */
     private $loggerMock;
+
+    /** @var FetchAuthTokenInterface $fetchAuthTokenInterfaceMock */
     private $fetchAuthTokenInterfaceMock;
 
     /**
-     * @see \PHPUnit\Framework\TestCase::setUp
+     * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
@@ -61,33 +64,21 @@ class ConfigurationTraitTest extends TestCase
         );
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait::getDeveloperToken()
-     */
     public function testGetDeveloperToken()
     {
         $this->assertEquals('AbCdEf', $this->configurationTraitInserted->getDeveloperToken());
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait::getLoginCustomerId()
-     */
     public function testGetLoginCustomerId()
     {
         $this->assertEquals(12345, $this->configurationTraitInserted->getLoginCustomerId());
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait::getEndpoint()
-     */
     public function testGetEndpoint()
     {
         $this->assertEquals('ads.google.com', $this->configurationTraitInserted->getEndpoint());
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait::getOAuth2Credential()
-     */
     public function testGetOAuth2Credential()
     {
         $this->assertSame(
@@ -96,33 +87,21 @@ class ConfigurationTraitTest extends TestCase
         );
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait::getLogger()
-     */
     public function testGetLogger()
     {
         $this->assertSame($this->loggerMock, $this->configurationTraitInserted->getLogger());
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait::getLogLevel()
-     */
     public function testGetLogLevel()
     {
         $this->assertEquals(LogLevel::INFO, $this->configurationTraitInserted->getLogLevel());
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait::getProxy()
-     */
     public function testGetProxy()
     {
         $this->assertEquals('localhost', $this->configurationTraitInserted->getProxy());
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationTrait::getTransport()
-     */
     public function testGetTransport()
     {
         $this->assertEquals('grpc', $this->configurationTraitInserted->getTransport());

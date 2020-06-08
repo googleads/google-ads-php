@@ -23,13 +23,13 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `Configuration`.
  *
- * @see Configuration
+ * @covers \Google\Ads\GoogleAds\Lib\Configuration
  * @small
  */
 class ConfigurationTest extends TestCase
 {
 
-    /** @var Configuration $configuration*/
+    /** @var Configuration $configuration */
     private $configuration;
 
     /**
@@ -37,29 +37,20 @@ class ConfigurationTest extends TestCase
      */
     protected function setUp()
     {
-        $this->configuration =
-            new Configuration(['DEFAULT' => ['a' => 'value'], 'b' => 'value2']);
+        $this->configuration = new Configuration(['DEFAULT' => ['a' => 'value'], 'b' => 'value2']);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\Configuration::getConfiguration()
-     */
     public function testGetConfigurationWithSection()
     {
+        $this->configuration = new Configuration(['DEFAULT' => ['a' => 'value'], 'b' => 'value2']);
         $this->assertEquals('value', $this->configuration->getConfiguration('a', 'DEFAULT'));
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\Configuration::getConfiguration()
-     */
     public function testGetConfigurationWithNoSection()
     {
         $this->assertEquals('value2', $this->configuration->getConfiguration('b'));
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\Configuration::getConfiguration()
-     */
     public function testGetConfigurationNotFound()
     {
         $this->assertNull($this->configuration->getConfiguration('c'));

@@ -18,7 +18,9 @@
 
 namespace Google\Ads\GoogleAds\Lib;
 
+use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Lib\Testing\OAuth2TokenBuilderTestProvider;
+use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
 use PHPUnit\Framework\TestCase;
@@ -26,7 +28,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `OAuth2TokenBuilder`.
  *
- * @see OAuth2TokenBuilder
+ * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder
  * @small
  */
 class OAuth2TokenBuilderTest extends TestCase
@@ -46,12 +48,6 @@ class OAuth2TokenBuilderTest extends TestCase
         $this->jsonKeyFilePath = OAuth2TokenBuilderTestProvider::getFakeJsonKeyFilePath();
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientId()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientSecret()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withRefreshToken()
-     */
     public function testBuildWithWebOrInstalledAppFlow()
     {
         $tokenFetcher = $this->oAuth2TokenBuilder
@@ -60,12 +56,36 @@ class OAuth2TokenBuilderTest extends TestCase
             ->withRefreshToken('1/AbC-xY123Za-bc')
             ->build();
         $this->assertInstanceOf(UserRefreshCredentials::class, $tokenFetcher);
+        $this->assertEquals(
+            'abcxyz-123.apps.googleusercontent.com',
+            $this->oAuth2TokenBuilder->getClientId()
+        );
+        $this->assertEquals('ABcXyZ-123abc', $this->oAuth2TokenBuilder->getClientSecret());
+        $this->assertEquals('1/AbC-xY123Za-bc', $this->oAuth2TokenBuilder->getRefreshToken());
+    }
+
+    public function testBuildWithWebOrInstalledAppFlowFromFile()
+    {
+        $environmentalVariablesMock = $this
+            ->getMockBuilder(EnvironmentalVariables::class)
+            ->getMock();
+        $environmentalVariablesMock
+            ->method('getHome')
+            ->willReturn(ConfigurationLoaderTestProvider::getFilePathToFakeHome());
+        $configurationLoader = new ConfigurationLoader($environmentalVariablesMock);
+
+        $oAuth2TokenBuilder = new OAuth2TokenBuilder($configurationLoader);
+        $tokenFetcher = $oAuth2TokenBuilder
+            ->fromFile('home_google_ads_php.ini')
+            ->build();
+
+        $this->assertInstanceOf(UserRefreshCredentials::class, $tokenFetcher);
+        $this->assertEquals('test-id', $oAuth2TokenBuilder->getClientId());
+        $this->assertEquals('test-secret', $oAuth2TokenBuilder->getClientSecret());
+        $this->assertEquals('test-refresh-token', $oAuth2TokenBuilder->getRefreshToken());
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientId()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientSecret()
      * @expectedException \UnexpectedValueException
      * @expectedExceptionMessageRegExp /clientId.+clientSecret.+refreshToken.+must be set/
      */
@@ -77,9 +97,6 @@ class OAuth2TokenBuilderTest extends TestCase
             ->build();
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::from()
-     */
     public function testBuildFromWithServiceAccountFlow()
     {
         $valueMap = [
@@ -105,9 +122,6 @@ class OAuth2TokenBuilderTest extends TestCase
         $this->assertInstanceOf(ServiceAccountCredentials::class, $tokenFetcher);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::from()
-     */
     public function testBuildFromWithServiceAccountFlowUsingImpersonation()
     {
         $valueMap = [
@@ -135,15 +149,21 @@ class OAuth2TokenBuilderTest extends TestCase
             ->from($configurationMock)
             ->build();
         $this->assertInstanceOf(ServiceAccountCredentials::class, $tokenFetcher);
+        $this->assertEquals(
+            $this->jsonKeyFilePath,
+            $this->oAuth2TokenBuilder->getJsonKeyFilePath()
+        );
+        $this->assertEquals(
+            'https://www.googleapis.com/auth/adwords',
+            $this->oAuth2TokenBuilder->getScopes()
+        );
+        $this->assertEquals(
+            'noreply@example.com',
+            $this->oAuth2TokenBuilder->getImpersonatedEmail()
+        );
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withJsonKeyFilePath()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withScopes()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientId()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withClientSecret()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withRefreshToken()
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessageRegExp /both service account.+installed.+web.+flow.+set/
      */
@@ -158,11 +178,6 @@ class OAuth2TokenBuilderTest extends TestCase
             ->build();
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withJsonKeyFilePath()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withScopes()
-     */
     public function testBuildWithServiceAccountFlow()
     {
         $tokenFetcher = $this->oAuth2TokenBuilder
@@ -172,12 +187,6 @@ class OAuth2TokenBuilderTest extends TestCase
         $this->assertInstanceOf(ServiceAccountCredentials::class, $tokenFetcher);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withJsonKeyFilePath()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withScopes()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withImpersonatedEmail()
-     */
     public function testBuildWithServiceAccountFlowUsingImpersonation()
     {
         $tokenFetcher = $this->oAuth2TokenBuilder
@@ -189,8 +198,6 @@ class OAuth2TokenBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::build()
-     * @covers \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder::withJsonKeyFilePath()
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessageRegExp /jsonKeyFilePath.+scopes.+must be set/
      */

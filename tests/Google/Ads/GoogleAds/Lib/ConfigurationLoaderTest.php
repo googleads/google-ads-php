@@ -26,17 +26,17 @@ use UnexpectedValueException;
 /**
  * Unit tests for `ConfigurationLoader`.
  *
- * @see ConfigurationLoader
+ * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader
  * @small
  */
 class ConfigurationLoaderTest extends TestCase
 {
 
-    /** @var ConfigurationLoader $configurationLoader*/
+    /** @var ConfigurationLoader $configurationLoader */
     private $configurationLoader;
 
     /**
-     * @see \PHPUnit\Framework\TestCase::setUp
+     * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
@@ -50,9 +50,6 @@ class ConfigurationLoaderTest extends TestCase
             new ConfigurationLoader($environmentalVariablesMock);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
-     */
     public function testFromFileFileExists()
     {
         $config = $this->configurationLoader->fromFile(
@@ -62,9 +59,6 @@ class ConfigurationLoaderTest extends TestCase
         $this->assertInstanceOf(Configuration::class, $config);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
-     */
     public function testFromFileFileExistsInHome()
     {
         $config = $this->configurationLoader->fromFile('home_google_ads_php.ini');
@@ -73,7 +67,6 @@ class ConfigurationLoaderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
      * @expectedException \InvalidArgumentException
      */
     public function testFromFileFileDoesNotExistAnywhere()
@@ -82,7 +75,6 @@ class ConfigurationLoaderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
      * @expectedException \InvalidArgumentException
      */
     public function testFromFileFileHomeDirDoesNotExist()
@@ -97,9 +89,6 @@ class ConfigurationLoaderTest extends TestCase
         $configurationLoader->fromFile('home_google_ads_php.ini');
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromString
-     */
     public function testFromString()
     {
         $iniString = file_get_contents(

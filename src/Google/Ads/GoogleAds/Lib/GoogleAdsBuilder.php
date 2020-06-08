@@ -30,7 +30,7 @@ interface GoogleAdsBuilder
      * @var string the default filename for the configuration file for this
      *     library
      */
-    const DEFAULT_CONFIGURATION_FILENAME = 'google_ads_php.ini';
+    public const DEFAULT_CONFIGURATION_FILENAME = 'google_ads_php.ini';
 
     /**
      * Populates this builder from the specified configuration object.
