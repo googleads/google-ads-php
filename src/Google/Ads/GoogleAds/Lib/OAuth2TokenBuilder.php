@@ -42,9 +42,9 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
     private $clientSecret;
     private $refreshToken;
 
-    public function __construct()
+    public function __construct(ConfigurationLoader $configurationLoader = null)
     {
-        $this->configurationLoader = new ConfigurationLoader();
+        $this->configurationLoader = $configurationLoader ?? new ConfigurationLoader();
     }
 
     /**

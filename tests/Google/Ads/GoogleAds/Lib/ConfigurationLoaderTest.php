@@ -21,21 +21,22 @@ namespace Google\Ads\GoogleAds\Lib;
 use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use PHPUnit\Framework\TestCase;
+use UnexpectedValueException;
 
 /**
  * Unit tests for `ConfigurationLoader`.
  *
- * @see ConfigurationLoader
+ * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader
  * @small
  */
 class ConfigurationLoaderTest extends TestCase
 {
 
-    /** @var ConfigurationLoader $configurationLoader*/
+    /** @var ConfigurationLoader $configurationLoader */
     private $configurationLoader;
 
     /**
-     * @see \PHPUnit\Framework\TestCase::setUp
+     * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
@@ -49,9 +50,6 @@ class ConfigurationLoaderTest extends TestCase
             new ConfigurationLoader($environmentalVariablesMock);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
-     */
     public function testFromFileFileExists()
     {
         $config = $this->configurationLoader->fromFile(
@@ -60,26 +58,37 @@ class ConfigurationLoaderTest extends TestCase
         $this->assertNotNull($config);
         $this->assertInstanceOf(Configuration::class, $config);
     }
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
-     */
+
     public function testFromFileFileExistsInHome()
     {
         $config = $this->configurationLoader->fromFile('home_google_ads_php.ini');
         $this->assertNotNull($config);
         $this->assertInstanceOf(Configuration::class, $config);
     }
+
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromFile
      * @expectedException \InvalidArgumentException
      */
     public function testFromFileFileDoesNotExistAnywhere()
     {
         $this->configurationLoader->fromFile('asdf.ini');
     }
+
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\ConfigurationLoader::fromString
+     * @expectedException \InvalidArgumentException
      */
+    public function testFromFileFileHomeDirDoesNotExist()
+    {
+        $environmentalVariablesMock = $this
+            ->getMockBuilder(EnvironmentalVariables::class)
+            ->getMock();
+        $environmentalVariablesMock
+            ->method('getHome')
+            ->willThrowException(new UnexpectedValueException());
+        $configurationLoader = new ConfigurationLoader($environmentalVariablesMock);
+        $configurationLoader->fromFile('home_google_ads_php.ini');
+    }
+
     public function testFromString()
     {
         $iniString = file_get_contents(
