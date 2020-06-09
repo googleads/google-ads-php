@@ -22,7 +22,7 @@ use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit tests for `LoggerFactoryTest`.
+ * Unit tests for `LoggerFactory`.
  *
  * @covers \Google\Ads\GoogleAds\Lib\V3\LoggerFactory
  * @small
