@@ -33,7 +33,7 @@ class ConfigurationTest extends TestCase
     private $configuration;
 
     /**
-     * @see \PHPUnit\Framework\TestCase::setUp
+     * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
@@ -42,7 +42,6 @@ class ConfigurationTest extends TestCase
 
     public function testGetConfigurationWithSection()
     {
-        $this->configuration = new Configuration(['DEFAULT' => ['a' => 'value'], 'b' => 'value2']);
         $this->assertEquals('value', $this->configuration->getConfiguration('a', 'DEFAULT'));
     }
 
