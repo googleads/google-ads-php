@@ -67,7 +67,6 @@ class GoogleAdsClientTest extends TestCase
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
-            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withLogger(new Logger('', [new NullHandler()]))
             ->withProxy(self::$PROXY)
             ->build();

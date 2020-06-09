@@ -110,6 +110,7 @@ use Google\Ads\GoogleAds\V2\Services\ParentalStatusViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ProductBiddingCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ProductGroupViewServiceClient;
+use Google\Ads\GoogleAds\V2\Services\ReachPlanServiceClient;
 use Google\Ads\GoogleAds\V2\Services\RecommendationServiceClient;
 use Google\Ads\GoogleAds\V2\Services\RemarketingActionServiceClient;
 use Google\Ads\GoogleAds\V2\Services\SearchTermViewServiceClient;
