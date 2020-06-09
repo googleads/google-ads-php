@@ -41,7 +41,7 @@ use stdClass;
 /**
  * Unit tests for `LogMessageFormatter`.
  *
- * @see LogMessageFormatter
+ * @covers \Google\Ads\GoogleAds\Lib\V3\LogMessageFormatter
  * @small
  */
 class LogMessageFormatterTest extends TestCase
@@ -56,9 +56,6 @@ class LogMessageFormatterTest extends TestCase
     private $resourceNameAvailableRequest;
     private $resourceNameAvailableResponse;
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\LogMessageFormatter::formatSummary()
-     */
     public function testFormatSummary()
     {
         $this->createSuccessRequestResponse();
@@ -77,9 +74,6 @@ class LogMessageFormatterTest extends TestCase
         $this->assertContains('IsFault: 0', $actualOutput);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\LogMessageFormatter::formatSummary()
-     */
     public function testFormatSummaryWithFailureRequest()
     {
         $this->createFailureRequestResponse();
@@ -106,9 +100,6 @@ class LogMessageFormatterTest extends TestCase
         $this->assertContains('IsFault: 1', $actualOutput);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\LogMessageFormatter::formatSummary()
-     */
     public function testFormatSummaryWithNoCustomerIdInRequest()
     {
         $this->createRequestWithNoCustomerId();
@@ -133,9 +124,6 @@ class LogMessageFormatterTest extends TestCase
         $this->assertContains('IsFault: 0', $actualOutput);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\LogMessageFormatter::formatSummary()
-     */
     public function testFormatSummaryWithResourceNameInRequest()
     {
         $this->createRequestWithResourceName();
@@ -157,9 +145,6 @@ class LogMessageFormatterTest extends TestCase
         $this->assertContains('IsFault: 0', $actualOutput);
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\LogMessageFormatter::formatDetail()
-     */
     public function testFormatDetail()
     {
         $this->createSuccessRequestResponse();
@@ -186,9 +171,6 @@ class LogMessageFormatterTest extends TestCase
         );
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\LogMessageFormatter::formatDetail()
-     */
     public function testFormatDetailWithFailureRequest()
     {
         $this->createFailureRequestResponse();
