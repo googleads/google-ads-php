@@ -37,8 +37,8 @@ class StatusMetadataExtractor
      */
     public function extractGoogleAdsFailure(
         array $statusMetadata,
-        $headerKey = null
-    ) {
+        ?string $headerKey = null
+    ): GoogleAdsFailure {
         $googleAdsFailure = new GoogleAdsFailure();
 
         $header = $this->getFirstHeaderValue(
@@ -61,9 +61,9 @@ class StatusMetadataExtractor
      * @return array the error message list
      */
     public function extractErrorMessageList(
-        $statusMetadata,
-        $headerKey = null
-    ) {
+        array $statusMetadata,
+        ?string $headerKey = null
+    ): array {
         $googleAdsFailure = $this->extractGoogleAdsFailure($statusMetadata, $headerKey);
         $errorMessageList = [];
         foreach ($googleAdsFailure->getErrors() as $error) {
