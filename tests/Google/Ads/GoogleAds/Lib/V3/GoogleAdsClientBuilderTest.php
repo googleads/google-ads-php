@@ -19,14 +19,18 @@
 namespace Google\Ads\GoogleAds\Lib\V3;
 
 use Google\Ads\GoogleAds\Lib\Configuration;
+use Google\Ads\GoogleAds\Lib\ConfigurationLoader;
+use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
+use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
 /**
  * Unit tests for `GoogleAdsClientBuilder`.
  *
- * @see GoogleAdsClientBuilder
+ * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder
  * @small
  */
 class GoogleAdsClientBuilderTest extends TestCase
@@ -36,12 +40,15 @@ class GoogleAdsClientBuilderTest extends TestCase
     private static $LOGIN_CUSTOMER_ID = '1234567890';
     private static $INVALID_TRANSPORT = '1234567890';
 
-    /** @var GoogleAdsClientBuilder $googleAdsClientBuilder*/
+    /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
     private $googleAdsClientBuilder;
+    /** @var FetchAuthTokenInterface $fetchAuthTokenInterfaceMock */
     private $fetchAuthTokenInterfaceMock;
+    /** @var LoggerInterface $loggerMock */
+    private $loggerMock;
 
     /**
-     * @see \PHPUnit\Framework\TestCase::setUp
+     * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
@@ -50,14 +57,13 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->getMockBuilder(FetchAuthTokenInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
+        $this->loggerMock =
+            $this->getMockBuilder(LoggerInterface::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::from
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
-     */
     public function testBuildClientFromConfiguration()
     {
+
         $valueMap = [
             /* Config name, section, value */
             ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN],
@@ -76,6 +82,7 @@ class GoogleAdsClientBuilderTest extends TestCase
         $googleAdsClient = $this->googleAdsClientBuilder
             ->from($configurationMock)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->withLogger($this->loggerMock)
             ->build();
 
         $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
@@ -83,11 +90,9 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
         $this->assertSame('https://localhost:8080', $googleAdsClient->getProxy());
         $this->assertSame('grpc', $googleAdsClient->getTransport());
+        $this->assertSame($this->loggerMock, $googleAdsClient->getLogger());
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::from
-     */
     public function testBuildFromDefaults()
     {
         $valueMap = [
@@ -105,14 +110,30 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
-        $this->assertSame(
-            self::$DEVELOPER_TOKEN,
-            $googleAdsClient->getDeveloperToken()
-        );
+        $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
+    }
+
+    public function testBuildFromFile()
+    {
+        $environmentalVariablesMock = $this
+            ->getMockBuilder(EnvironmentalVariables::class)
+            ->getMock();
+        $environmentalVariablesMock
+            ->method('getHome')
+            ->willReturn(ConfigurationLoaderTestProvider::getFilePathToFakeHome());
+        $configurationLoader = new ConfigurationLoader($environmentalVariablesMock);
+
+        $googleAdsClientBuilder = new GoogleAdsClientBuilder($configurationLoader);
+        $googleAdsClient = $googleAdsClientBuilder
+            ->fromFile('home_google_ads_php.ini')
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->build();
+
+        $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildFailsWithoutDeveloperToken()
@@ -123,7 +144,6 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildFailsWithInvalidEndpointUrl()
@@ -136,7 +156,6 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildFailsWithoutOAuth2Credential()
@@ -147,7 +166,6 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @dataProvider provideInvalidProxyURIs
      * @expectedException \InvalidArgumentException
      */
@@ -171,7 +189,6 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildFailsWithInvalidTransport()
@@ -183,9 +200,6 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
-     */
     public function testBuild()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
@@ -221,9 +235,6 @@ class GoogleAdsClientBuilderTest extends TestCase
         );
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
-     */
     public function testBuildWithLoginCustomerId()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
@@ -235,9 +246,6 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
-     */
     public function testBuildWithNullLoginCustomerId()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
@@ -249,7 +257,6 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildWithNegativeLoginCustomerId()
@@ -262,7 +269,6 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @dataProvider provideValidProxyURIs
      */
     public function testBuildWithValidProxyURIs(string $proxy)
@@ -287,7 +293,6 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @dataProvider provideValidTransports
      */
     public function testBuildWithValidTransports(string $transport)
@@ -309,9 +314,6 @@ class GoogleAdsClientBuilderTest extends TestCase
         ];
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
-     */
     public function testBuildWithoutLogLevelSetsDefault()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
@@ -323,12 +325,11 @@ class GoogleAdsClientBuilderTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
      * @expectedException \InvalidArgumentException
      */
     public function testBuildWithInvalidLogLevelThrowsException()
     {
-        $googleAdsClient = $this->googleAdsClientBuilder
+        $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withLogLevel("banana")

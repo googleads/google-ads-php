@@ -48,9 +48,9 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
 
     private $configurationLoader;
 
-    public function __construct()
+    public function __construct(ConfigurationLoader $configurationLoader = null)
     {
-        $this->configurationLoader = new ConfigurationLoader();
+        $this->configurationLoader = $configurationLoader ?? new ConfigurationLoader();
         $this->loggerFactory = new LoggerFactory();
     }
 
