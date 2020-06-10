@@ -1,28 +1,44 @@
 version: '3'
 services:
   google-ads-php_dev-env:
+    # Set current host user.
+    # Make sure to run `export UGID="$(id -u):$(id -g)"` before using this.
+    #user: $UGID
+
     build:
+      # This uses the Dockerfile that is sitting in the same directory.
+      # Tip: refer to its content for more detail, e.g., how to use the arguments.
       context: .
       args:
         # PHP
         PHP_IMAGE: php:7.4-cli
+
         # Working directory
         WORK_DIR: /google-ads-php
+
         # Make flags
         MAKEFLAGS: -j8
+
         # Protobuf PHP extension
         PROTOBUF_USE_PHP_EXTENSION: "true"
-        PROTOBUF_VERSION:
-        PROTOBUF_SRC_REPO: https://github.com/protocolbuffers/protobuf
-        PROTOBUF_SRC_BRANCH:
+        #PROTOBUF_VERSION: 3.12.2
+        #PROTOBUF_SRC_REPO: https://github.com/protocolbuffers/protobuf
+        #PROTOBUF_SRC_BRANCH: v3.12.2
+
         # gRPC PHP extension
         GRPC_USE_PHP_EXTENSION: "true"
-        GRPC_VERSION:
-        GRPC_SRC_REPO: https://github.com/grpc/grpc
-        GRPC_SRC_BRANCH:
+        #GRPC_VERSION: 1.29.1
+        #GRPC_SRC_REPO: https://github.com/grpc/grpc
+        #GRPC_SRC_BRANCH: v1.29.1
+
         # google-ads-php sources
-        SRC_REPO: https://github.com/googleads/google-ads-php
-        SRC_BRANCH:
+        #SRC_REPO: https://github.com/googleads/google-ads-php
+        #SRC_BRANCH:
     volumes:
-    - ./:/google-ads-php
-    - ~/google_ads_php.ini:/root/google_ads_php.ini
+      # The location of the project under development (it assumes that it is the current folder).
+      - ./:/google-ads-php
+
+      # Default location of the conf file (it assumes that root will be the user of the container).
+      # This may need to be changed depending on the container user used, e.g.:
+      #- ~/google_ads_php.ini:/google_ads_php.ini
+      - ~/google_ads_php.ini:/root/google_ads_php.ini

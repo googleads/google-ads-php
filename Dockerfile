@@ -1,4 +1,6 @@
+# The php image to extend from: see https://hub.docker.com/_/php for complete listings.
 ARG PHP_IMAGE="php:7.4-cli"
+
 FROM ${PHP_IMAGE}
 
 # Working directory
