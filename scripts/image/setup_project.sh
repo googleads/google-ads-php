@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+# This script is used at Docker image build time.
+
 set -exou pipefail;
 
 # Upgrade the system.
 
-apt-get update && apt-get install -y libxml2-dev zlib1g-dev git unzip
+apt-get -qq install -y libxml2-dev zlib1g-dev git unzip
 
 # Initialize variables
 WORK_DIR=${WORK_DIR:-}

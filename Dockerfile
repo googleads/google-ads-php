@@ -6,10 +6,11 @@ FROM ${PHP_IMAGE}
 # Working directory
 
 ARG WORK_DIR="/google-ads-php"
+ENV WORK_DIR=$WORK_DIR
 
 # Update the system.
 
-RUN apt-get update && apt-get install -y libxml2 zlib1g-dev git unzip
+RUN apt-get -qq update && apt-get -qq install -y libxml2 zlib1g-dev git unzip
 
 # Install PHP extension(s) required for development.
 RUN docker-php-ext-install bcmath
@@ -71,13 +72,15 @@ ARG SRC_REPO="https://github.com/googleads/google-ads-php"
 # The Git repository branch to use, e.g., master or v3.2.0.
 ARG SRC_BRANCH
 
-# Build, install and configure the protobuf and gRPC PHP extensions.
-ADD scripts/install_php_extensions.sh /scripts/install_php_extensions.sh
-RUN bash /scripts/install_php_extensions.sh "$@"
+# Copy the scripts.
+COPY scripts /scripts
+RUN chmod -R 755 /scripts
 
-# Setup the google-ads-php project.
-ADD scripts/setup_project.sh /scripts/setup_project.sh
-RUN bash /scripts/setup_project.sh "$@"
+# Build, install and configure the protobuf and gRPC PHP extensions.
+RUN bash /scripts/image/install_php_extensions.sh "$@"
+
+# Setup the project.
+RUN bash /scripts/image/setup_project.sh "$@"
 
 WORKDIR "$WORK_DIR"
 
