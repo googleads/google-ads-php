@@ -1,8 +1,28 @@
-version: '2'
+version: '3'
 services:
-  web:
-    build: .
+  google-ads-php_dev-env:
+    build:
+      context: .
+      args:
+        # PHP
+        PHP_IMAGE: php:7.4-cli
+        # Working directory
+        WORK_DIR: /google-ads-php
+        # Make flags
+        MAKEFLAGS: -j8
+        # Protobuf PHP extension
+        PROTOBUF_USE_PHP_EXTENSION: "true"
+        PROTOBUF_VERSION:
+        PROTOBUF_SRC_REPO: https://github.com/protocolbuffers/protobuf
+        PROTOBUF_SRC_BRANCH:
+        # gRPC PHP extension
+        GRPC_USE_PHP_EXTENSION: "true"
+        GRPC_VERSION:
+        GRPC_SRC_REPO: https://github.com/grpc/grpc
+        GRPC_SRC_BRANCH:
+        # google-ads-php sources
+        SRC_REPO: https://github.com/googleads/google-ads-php
+        SRC_BRANCH:
     volumes:
     - ./:/google-ads-php
-    - ~/:/root
-      
+    - ~/google_ads_php.ini:/root/google_ads_php.ini
