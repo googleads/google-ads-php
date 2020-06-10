@@ -26,7 +26,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `GoogleAdsClient`.
  *
- * @see GoogleAdsClient
+ * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient
  * @small
  */
 class GoogleAdsClientTest extends TestCase
@@ -41,12 +41,12 @@ class GoogleAdsClientTest extends TestCase
 
     private static $PROXY = 'http://localhost:8080';
 
-    /** @var GoogleAdsClientBuilder $googleAdsClientBuilder*/
+    /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
     private $googleAdsClientBuilder;
     private $fetchAuthTokenInterfaceMock;
 
     /**
-     * @see \PHPUnit\Framework\TestCase::setUp
+     * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
@@ -57,10 +57,6 @@ class GoogleAdsClientTest extends TestCase
             ->getMock();
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
-     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient::getGoogleAdsClientOptions
-     */
     public function testGetClientOptions()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
@@ -95,10 +91,6 @@ class GoogleAdsClientTest extends TestCase
         );
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClientBuilder::build
-     * @covers \Google\Ads\GoogleAds\Lib\V2\GoogleAdsClient::getGoogleAdsClientOptions
-     */
     public function testNullLoginCustomerIdNotAppearInClientOptions()
     {
         $googleAdsClient =

@@ -63,7 +63,6 @@ class GoogleAdsClientBuilderTest extends TestCase
 
     public function testBuildClientFromConfiguration()
     {
-
         $valueMap = [
             /* Config name, section, value */
             ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN],
@@ -218,9 +217,6 @@ class GoogleAdsClientBuilderTest extends TestCase
         );
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder::build
-     */
     public function testBuildDefaults()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
