@@ -11,10 +11,6 @@ RUN apt-get update && apt-get install -y libxml2 zlib1g-dev git unzip
 
 # Install PHP extension(s) required for development.
 RUN docker-php-ext-install bcmath
-# TODO(pierrick): need more work (additional arguments to make it optional)
-#RUN pecl install xdebug
-#RUN docker-php-ext-enable xdebug
-#RUN docker-php-ext-install opcache
 
 # Install and configure Composer.
 RUN curl -sS https://getcomposer.org/installer | php
