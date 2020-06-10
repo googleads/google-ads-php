@@ -20,8 +20,8 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # Create empty credentials for the unit tests.
-RUN echo '{"type": "authorized_user","client_id": "","client_secret": "","refresh_token": ""}' >> /root/emptycredentials.json
-ENV GOOGLE_APPLICATION_CREDENTIALS /root/emptycredentials.json
+RUN echo '{"type": "authorized_user","client_id": "","client_secret": "","refresh_token": ""}' >> /emptycredentials.json
+ENV GOOGLE_APPLICATION_CREDENTIALS /emptycredentials.json
 
 # Protobuf
 
