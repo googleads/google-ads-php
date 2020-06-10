@@ -1,5 +1,7 @@
 version: '3'
 services:
+  # This service is a basic development environment for the google-ads-php project.
+  # It can be extended with more features, e.g., logs, debugging.
   google-ads-php_dev-env:
     # Set current host user.
     # Make sure to run `export UGID="$(id -u):$(id -g)"` before using this.
