@@ -26,7 +26,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Unit tests for `GoogleAdsClient`.
  *
- * @see GoogleAdsClient
+ * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient
  * @small
  */
 class GoogleAdsClientTest extends TestCase
@@ -41,12 +41,12 @@ class GoogleAdsClientTest extends TestCase
     
     private static $PROXY = 'http://localhost:8080';
 
-    /** @var GoogleAdsClientBuilder $googleAdsClientBuilder*/
+    /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
     private $googleAdsClientBuilder;
     private $fetchAuthTokenInterfaceMock;
 
     /**
-     * @see \PHPUnit\Framework\TestCase::setUp
+     * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
@@ -57,17 +57,12 @@ class GoogleAdsClientTest extends TestCase
             ->getMock();
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder::build
-     * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient::getGoogleAdsClientOptions
-     */
     public function testGetClientOptions()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
-            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withLogger(new Logger('', [new NullHandler()]))
             ->withProxy(self::$PROXY)
             ->build();
@@ -95,10 +90,6 @@ class GoogleAdsClientTest extends TestCase
         );
     }
 
-    /**
-     * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClientBuilder::build
-     * @covers \Google\Ads\GoogleAds\Lib\V1\GoogleAdsClient::getGoogleAdsClientOptions
-     */
     public function testNullLoginCustomerIdNotAppearInClientOptions()
     {
         $googleAdsClient =
