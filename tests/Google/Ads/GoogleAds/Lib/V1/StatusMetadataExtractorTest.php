@@ -36,18 +36,17 @@ class StatusMetadataExtractorTest extends TestCase
     /** @var StatusMetadataExtractor $statusMetadataExtractor */
     private $statusMetadataExtractor;
 
+    /** @var array $defaultStatusMetadata */
+    private $defaultStatusMetadata;
+
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
         $this->statusMetadataExtractor = new StatusMetadataExtractor();
-    }
-
-    public function testExtractGoogleAdsFailure()
-    {
-        $expected = new GoogleAdsFailure();
-        $expected->setErrors([
+        $defaultGoogleAdsFailure = new GoogleAdsFailure();
+        $defaultGoogleAdsFailure->setErrors([
             new GoogleAdsError([
                 'message' => 'failure 1',
                 'error_code' => new ErrorCode([
@@ -61,15 +60,18 @@ class StatusMetadataExtractorTest extends TestCase
                 ])
             ])
         ]);
-        $statusMetadata = [
-            'google.ads.googleads.V1.errors.googleadsfailure-bin' => [
-                $expected->serializeToString()
+        $this->defaultStatusMetadata = [
+            'google.ads.googleads.v1.errors.googleadsfailure-bin' => [
+                $defaultGoogleAdsFailure->serializeToString()
             ]
         ];
+    }
 
+    public function testExtractGoogleAdsFailure()
+    {
         $actual = $this->statusMetadataExtractor->extractGoogleAdsFailure(
-            $statusMetadata,
-            'google.ads.googleads.V1.errors.googleadsfailure-bin'
+            $this->defaultStatusMetadata,
+            'google.ads.googleads.v1.errors.googleadsfailure-bin'
         );
 
         $this->assertEquals('failure 1', $actual->getErrors()[0]->getMessage());
@@ -89,37 +91,16 @@ class StatusMetadataExtractorTest extends TestCase
         $statusMetadata = ['dummy-key' => ['dummy-value']];
         $actual = $this->statusMetadataExtractor->extractGoogleAdsFailure(
             $statusMetadata,
-            'google.ads.googleads.V1.errors.googleadsfailure-bin'
+            'google.ads.googleads.v1.errors.googleadsfailure-bin'
         );
         $this->assertEquals(new GoogleAdsFailure(), $actual);
     }
 
     public function testExtractErrorMessageList()
     {
-        $expected = new GoogleAdsFailure();
-        $expected->setErrors([
-            new GoogleAdsError([
-                'message' => 'failure 1',
-                'error_code' => new ErrorCode([
-                    'campaign_error' => CampaignError::BUDGET_CANNOT_BE_SHARED
-                ])
-            ]),
-            new GoogleAdsError([
-                'message' => 'failure 2',
-                'error_code' => new ErrorCode([
-                    'ad_group_error' => AdGroupError::BID_TOO_BIG
-                ])
-            ])
-        ]);
-        $statusMetadata = [
-            'google.ads.googleads.V1.errors.googleadsfailure-bin' => [
-                $expected->serializeToString()
-            ]
-        ];
-
         $actual = $this->statusMetadataExtractor->extractErrorMessageList(
-            $statusMetadata,
-            'google.ads.googleads.V1.errors.googleadsfailure-bin'
+            $this->defaultStatusMetadata,
+            'google.ads.googleads.v1.errors.googleadsfailure-bin'
         );
 
         $this->assertEquals(['failure 1', 'failure 2'], $actual);
@@ -141,14 +122,14 @@ class StatusMetadataExtractorTest extends TestCase
             ])
         ]);
         $statusMetadata = [
-            'google.ads.googleads.V1.errors.googleadsfailure-bin' => [
+            'google.ads.googleads.v1.errors.googleadsfailure-bin' => [
                 $expected->serializeToString()
             ]
         ];
 
         $actual = $this->statusMetadataExtractor->extractErrorMessageList(
             $statusMetadata,
-            'google.ads.googleads.V1.errors.googleadsfailure-bin'
+            'google.ads.googleads.v1.errors.googleadsfailure-bin'
         );
 
         $this->assertEquals(['', ''], $actual);
@@ -159,7 +140,7 @@ class StatusMetadataExtractorTest extends TestCase
         $statusMetadata = ['dummy-key' => ['dummy-value']];
         $actual = $this->statusMetadataExtractor->extractErrorMessageList(
             $statusMetadata,
-            'google.ads.googleads.V1.errors.googleadsfailure-bin'
+            'google.ads.googleads.v1.errors.googleadsfailure-bin'
         );
         $this->assertEquals([], $actual);
     }

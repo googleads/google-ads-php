@@ -36,18 +36,17 @@ class StatusMetadataExtractorTest extends TestCase
     /** @var StatusMetadataExtractor $statusMetadataExtractor */
     private $statusMetadataExtractor;
 
+    /** @var array $defaultStatusMetadata */
+    private $defaultStatusMetadata;
+
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
     protected function setUp()
     {
         $this->statusMetadataExtractor = new StatusMetadataExtractor();
-    }
-
-    public function testExtractGoogleAdsFailure()
-    {
-        $expected = new GoogleAdsFailure();
-        $expected->setErrors([
+        $defaultGoogleAdsFailure = new GoogleAdsFailure();
+        $defaultGoogleAdsFailure->setErrors([
             new GoogleAdsError([
                 'message' => 'failure 1',
                 'error_code' => new ErrorCode([
@@ -61,14 +60,17 @@ class StatusMetadataExtractorTest extends TestCase
                 ])
             ])
         ]);
-        $statusMetadata = [
+        $this->defaultStatusMetadata = [
             'google.ads.googleads.v3.errors.googleadsfailure-bin' => [
-                $expected->serializeToString()
+                $defaultGoogleAdsFailure->serializeToString()
             ]
         ];
+    }
 
+    public function testExtractGoogleAdsFailure()
+    {
         $actual = $this->statusMetadataExtractor->extractGoogleAdsFailure(
-            $statusMetadata,
+            $this->defaultStatusMetadata,
             'google.ads.googleads.v3.errors.googleadsfailure-bin'
         );
 
@@ -96,29 +98,8 @@ class StatusMetadataExtractorTest extends TestCase
 
     public function testExtractErrorMessageList()
     {
-        $expected = new GoogleAdsFailure();
-        $expected->setErrors([
-            new GoogleAdsError([
-                'message' => 'failure 1',
-                'error_code' => new ErrorCode([
-                    'campaign_error' => CampaignError::BUDGET_CANNOT_BE_SHARED
-                ])
-            ]),
-            new GoogleAdsError([
-                'message' => 'failure 2',
-                'error_code' => new ErrorCode([
-                    'ad_group_error' => AdGroupError::BID_TOO_BIG
-                ])
-            ])
-        ]);
-        $statusMetadata = [
-            'google.ads.googleads.v3.errors.googleadsfailure-bin' => [
-                $expected->serializeToString()
-            ]
-        ];
-
         $actual = $this->statusMetadataExtractor->extractErrorMessageList(
-            $statusMetadata,
+            $this->defaultStatusMetadata,
             'google.ads.googleads.v3.errors.googleadsfailure-bin'
         );
 
