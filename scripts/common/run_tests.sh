@@ -17,6 +17,12 @@ popd
 # Tests
 
 pushd "$WORK_DIR"
+# Create empty credentials for the unit tests and set the environment variable.
+if [ ! -f ./emptycredentials.json ]; then
+    echo '{"type": "authorized_user","client_id": "","client_secret": "","refresh_token": ""}' >> ./emptycredentials.json
+    GOOGLE_APPLICATION_CREDENTIALS=./emptycredentials.json
+fi;
+
 # Run unit tests.
 ./vendor/bin/phpunit -d memory_limit=-1 tests/
 echo "Finished running unit tests."

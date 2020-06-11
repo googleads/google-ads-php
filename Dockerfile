@@ -7,6 +7,7 @@ FROM ${PHP_IMAGE}
 
 ARG WORK_DIR="/google-ads-php"
 ENV WORK_DIR=$WORK_DIR
+WORKDIR "$WORK_DIR"
 
 # Update the system.
 
@@ -20,8 +21,8 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # Create empty credentials for the unit tests.
-RUN echo '{"type": "authorized_user","client_id": "","client_secret": "","refresh_token": ""}' >> /emptycredentials.json
-ENV GOOGLE_APPLICATION_CREDENTIALS /emptycredentials.json
+RUN echo '{"type": "authorized_user","client_id": "","client_secret": "","refresh_token": ""}' >> "$WORK_DIR/emptycredentials.json"
+ENV GOOGLE_APPLICATION_CREDENTIALS "$WORK_DIR/emptycredentials.json"
 
 # Protobuf
 
@@ -81,7 +82,5 @@ RUN bash /scripts/image/install_php_extensions.sh "$@"
 
 # Setup the project.
 RUN bash /scripts/image/setup_project.sh "$@"
-
-WORKDIR "$WORK_DIR"
 
 CMD sleep infinity
