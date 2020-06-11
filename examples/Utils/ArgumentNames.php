@@ -57,7 +57,7 @@ final class ArgumentNames
     public const FEED_ID = 'feedId';
     public const FEED_ITEM_ID = 'feedItemId';
     public const FEED_ITEM_IDS = 'feedItemIds';
-    public const FEED_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
+    public const FLIGHT_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
     public const GCLID = 'gclid';
     public const GEO_TARGET_CONSTANT_ID = 'geoTargetConstantId';
     public const GMB_ACCESS_TOKEN = 'gmbAccessToken';
@@ -125,7 +125,7 @@ final class ArgumentNames
         self::FEED_ID => 'The feed ID',
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
-        self::FEED_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
+        self::FLIGHT_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
         self::GCLID => 'The Google Click ID',
         self::GEO_TARGET_CONSTANT_ID => 'The geo target constant ID',
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',

@@ -65,7 +65,7 @@ class RemoveFlightsFeedItemAttributeValue
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::FEED_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::FEED_ITEM_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::FEED_PLACEHOLDER_FIELD_NAME => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::FLIGHT_PLACEHOLDER_FIELD_NAME => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -84,7 +84,7 @@ class RemoveFlightsFeedItemAttributeValue
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::FEED_ID] ?: self::FEED_ID,
                 $options[ArgumentNames::FEED_ITEM_ID] ?: self::FEED_ITEM_ID,
-                $options[ArgumentNames::FEED_PLACEHOLDER_FIELD_NAME]
+                $options[ArgumentNames::FLIGHT_PLACEHOLDER_FIELD_NAME]
                     ?: self::FLIGHT_PLACEHOLDER_FIELD_NAME
             );
         } catch (GoogleAdsException $googleAdsException) {
