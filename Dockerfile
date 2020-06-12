@@ -20,6 +20,17 @@ RUN docker-php-ext-install bcmath
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
+# Configure Composer
+
+ARG COMPOSER_MIRROR_PATH_REPOS
+ENV COMPOSER_MIRROR_PATH_REPOS=$COMPOSER_MIRROR_PATH_REPOS
+
+ARG COMPOSER_NO_INTERACTION
+ENV COMPOSER_NO_INTERACTION=$COMPOSER_NO_INTERACTION
+
+ARG COMPOSER_INSTALL_UPDATE_ARGS
+ENV COMPOSER_INSTALL_UPDATE_ARGS=$COMPOSER_INSTALL_UPDATE_ARGS
+
 # Create empty credentials for the unit tests.
 RUN echo '{"type": "authorized_user","client_id": "","client_secret": "","refresh_token": ""}' >> "$WORK_DIR/emptycredentials.json"
 ENV GOOGLE_APPLICATION_CREDENTIALS "$WORK_DIR/emptycredentials.json"
