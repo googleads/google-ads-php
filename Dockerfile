@@ -89,9 +89,7 @@ COPY scripts /scripts
 RUN chmod -R 755 /scripts
 
 # Build, install and configure the protobuf and gRPC PHP extensions.
-RUN bash /scripts/image/install_php_extensions.sh "$@"
+RUN bash /scripts/docker/install_php_extensions.sh "$@"
 
 # Setup the project.
-RUN bash /scripts/image/setup_project.sh "$@"
-
-CMD sleep infinity
+RUN bash /scripts/docker/setup_project.sh "$@"

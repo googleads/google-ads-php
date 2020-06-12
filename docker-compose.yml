@@ -30,3 +30,4 @@ services:
     volumes:
       - ${SRC_DIR}:${WORK_DIR}
       - ${HOST_GAAPI_CONFIG_FILE}:${CONTAINER_GAAPI_CONFIG_FILE_DIR}/google_ads_php.ini
+    command: ${COMMAND}
