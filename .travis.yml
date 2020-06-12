@@ -1,30 +1,23 @@
 language: php
 
+sudo: required
+
+services:
+  - docker
+
 php:
   - 7.2
   - 7.3
   - 7.4
 
-matrix:
-  allow_failures:
-    - php: 7.4
-
 branches:
   only:
   - /.*/
 
-env:
-  - GOOGLE_APPLICATION_CREDENTIALS=~/emptycredentials.json
+before_script: PHP_IMAGE="php:${TRAVIS_PHP_VERSION}-cli" docker-composer up -d
 
-before_script:
-  - composer install -o -vvv --no-interaction
-  - pecl install grpc
-  - pecl install protobuf
-  - "sudo echo '{\"type\": \"authorized_user\",\"client_id\": \"\",\"client_secret\": \"\",\"refresh_token\": \"\"}' >> $GOOGLE_APPLICATION_CREDENTIALS"
+script: ./scripts/common/run-tests.sh
 
-script:
-  - vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover=coverage.xml
-  - vendor/bin/phpcs --standard=phpcs_ruleset.xml -np
+after_script: docker-composer down
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+after_success: bash <(curl -s https://codecov.io/bash)
