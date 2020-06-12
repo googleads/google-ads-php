@@ -2,7 +2,7 @@ version: '3'
 services:
   # This service is a basic development environment for the google-ads-php project.
   # It can be extended with more features, e.g., logs, debugging.
-  google-ads-php_dev-env:
+  google-ads-php:
     # Set the user to be used in the container.
     user: ${USER_GROUP_ID}
 
