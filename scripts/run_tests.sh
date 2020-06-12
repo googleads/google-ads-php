@@ -6,7 +6,7 @@ set -exou pipefail;
 
 # Initialize variables
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-WORK_DIR=${WORK_DIR:-$(dirname $(dirname $DIR))}
+WORK_DIR=${WORK_DIR:-$(dirname $DIR)}
 
 # Rebuild
 
