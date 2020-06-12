@@ -29,9 +29,8 @@ final class ArgumentNames
     public const AD_GROUP_ID = 'adGroupId';
     public const AD_GROUP_IDS = 'adGroupIds';
     public const ARTIFACT_NAME = 'artifactName';
-    public const FEED_ITEM_ATTRIBUTE_VALUE = 'feedItemAttributeValue';
+    public const ATTRIBUTE_VALUE = 'attributeValue';
     public const BASE_CAMPAIGN_ID = 'baseCampaignId';
-    public const BID_MICRO_AMOUNT = 'bidMicroAmount';
     public const BID_MODIFIER_VALUE = 'bidModifierValue';
     public const BILLING_SETUP_ID = 'billingSetupId';
     public const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
@@ -50,6 +49,7 @@ final class ArgumentNames
     public const CONVERSION_VALUE = 'conversionValue';
     public const COUNTRY_CODE = 'countryCode';
     public const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
+    public const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
     public const CRITERION_ID = 'criterionId';
     public const CUSTOMER_ID = 'customerId';
     public const DRAFT_ID = 'draftId';
@@ -97,9 +97,8 @@ final class ArgumentNames
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
         self::ARTIFACT_NAME => 'The artifact name',
-        self::FEED_ITEM_ATTRIBUTE_VALUE => 'The attribute value of the feed item',
+        self::ATTRIBUTE_VALUE => 'The attribute value',
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
-        self::BID_MICRO_AMOUNT => 'The bid micro amount',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
         self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the GMB account',
@@ -118,6 +117,7 @@ final class ArgumentNames
         self::CONVERSION_VALUE => 'The conversion value',
         self::COUNTRY_CODE => 'The country code',
         self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
+        self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::DRAFT_ID => 'The draft ID',
