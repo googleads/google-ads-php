@@ -29,5 +29,4 @@ services:
         COMPOSER_INSTALL_UPDATE_ARGS: ${COMPOSER_INSTALL_UPDATE_ARGS}
     volumes:
       - ${SRC_DIR}:${WORK_DIR}
-      - ${HOST_GAAPI_CONFIG_FILE}:${CONTAINER_GAAPI_CONFIG_FILE_DIR}/google_ads_php.ini
     command: ${COMMAND}
