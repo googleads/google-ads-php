@@ -29,7 +29,7 @@ final class ArgumentNames
     public const AD_GROUP_ID = 'adGroupId';
     public const AD_GROUP_IDS = 'adGroupIds';
     public const ARTIFACT_NAME = 'artifactName';
-    public const FEED_ITEM_ATTRIBUTE_VALUE = 'feedItemAttributeValue';
+    public const ATTRIBUTE_VALUE = 'attributeValue';
     public const BASE_CAMPAIGN_ID = 'baseCampaignId';
     public const BID_MICRO_AMOUNT = 'bidMicroAmount';
     public const BID_MODIFIER_VALUE = 'bidModifierValue';
@@ -97,7 +97,7 @@ final class ArgumentNames
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
         self::ARTIFACT_NAME => 'The artifact name',
-        self::FEED_ITEM_ATTRIBUTE_VALUE => 'The attribute value of the feed item',
+        self::ATTRIBUTE_VALUE => 'The attribute value',
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MICRO_AMOUNT => 'The bid micro amount',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
