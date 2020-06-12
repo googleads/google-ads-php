@@ -1,5 +1,5 @@
 version: '3'
 services:
-  google-ads-php_dev-env:
+  google-ads-php:
     volumes:
       - ${HOST_GAAPI_CONFIG_FILE}:${CONTAINER_GAAPI_CONFIG_FILE_DIR}/google_ads_php.ini
