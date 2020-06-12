@@ -14,10 +14,10 @@ branches:
   only:
   - /.*/
 
-before_script: PHP_IMAGE="php:${TRAVIS_PHP_VERSION}-cli" docker-composer up -d
+before_script: PHP_IMAGE="php:${TRAVIS_PHP_VERSION}-cli" docker-compose up -d
 
 script: ./scripts/common/run-tests.sh
 
-after_script: docker-composer down
+after_script: docker-compose down
 
 after_success: bash <(curl -s https://codecov.io/bash)
