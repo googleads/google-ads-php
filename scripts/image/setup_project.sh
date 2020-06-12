@@ -19,7 +19,8 @@ SRC_BRANCH=${SRC_BRANCH:-}
 if [ ! -z "$SRC_REPO" -a ! -z "$SRC_BRANCH" ]; then
     echo "Building and installing the project from sources";
     git clone -b "$SRC_BRANCH" "$SRC_REPO" "$WORK_DIR"
-    pushd "$WORK_DIR";
-    composer install
-    popd;
 fi;
+
+pushd "$WORK_DIR";
+composer install
+popd;
