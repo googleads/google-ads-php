@@ -16,7 +16,9 @@ branches:
 
 before_script: PHP_IMAGE="php:${TRAVIS_PHP_VERSION}-cli" docker-compose up -d
 
-script: docker-compose exec google-ads-php_dev-env ./scripts/common/run-tests.sh
+script:
+  - pwd
+  - docker-compose exec google-ads-php_dev-env bash ./scripts/common/run-tests.sh
 
 after_script: docker-compose down
 
