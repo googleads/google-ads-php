@@ -27,7 +27,7 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V1\ResourceNames;
+use Google\Ads\GoogleAds\Util\V3\ResourceNames;
 use Google\Ads\GoogleAds\V3\Common\AdMediaBundleAsset;
 use Google\Ads\GoogleAds\V3\Common\DisplayUploadAdInfo;
 use Google\Ads\GoogleAds\V3\Common\MediaBundleAsset;
@@ -59,12 +59,10 @@ class AddDisplayUploadAd
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
-        $options = (new ArgumentParser())->parseCommandArguments(
-            [
-                ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-                ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
-            ]
-        );
+        $options = (new ArgumentParser())->parseCommandArguments([
+            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT
+        ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
         $oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
@@ -154,16 +152,12 @@ class AddDisplayUploadAd
         $html5Zip = file_get_contents('https://goo.gl/9Y7qI2');
 
         // Creates the media bundle asset.
-        $asset = new Asset(
-            [
-                'type' => AssetType::MEDIA_BUNDLE,
-                'media_bundle_asset' => new MediaBundleAsset(
-                    [
-                        'data' => new BytesValue(['value' => $html5Zip]),
-                    ]
-                )
-            ]
-        );
+        $asset = new Asset([
+            'type' => AssetType::MEDIA_BUNDLE,
+            'media_bundle_asset' => new MediaBundleAsset([
+                'data' => new BytesValue(['value' => $html5Zip])
+            ])
+        ]);
 
         // Creates an asset operation.
         $assetOperation = new AssetOperation();
@@ -171,21 +165,17 @@ class AddDisplayUploadAd
 
         // Issues a mutate request to add the asset.
         $assetServiceClient = $googleAdsClient->getAssetServiceClient();
-        $response = $assetServiceClient->mutateAssets(
-            $customerId,
-            [$assetOperation]
-        );
+        $response = $assetServiceClient->mutateAssets($customerId, [$assetOperation]);
 
         // Prints the resource name of the added media bundle asset.
-        /** @var MutateAssetResult $addedMediaBundleAsset */
-        $addedMediaBundleAsset = $response->getResults()[0];
+        $addedMediaBundleAssetResourceName = $response->getResults()[0]->getResourceName();
         printf(
             "Uploaded media bundle asset with resource name: '%s'.%s",
-            $addedMediaBundleAsset->getResourceName(),
+            $addedMediaBundleAssetResourceName,
             PHP_EOL
         );
 
-        return $addedMediaBundleAsset->getResourceName();
+        return $addedMediaBundleAssetResourceName;
     }
 
     /**
@@ -226,7 +216,7 @@ class AddDisplayUploadAd
         $adGroupAdOperation = new AdGroupAdOperation();
         $adGroupAdOperation->setCreate($adGroupAd);
 
-        // Issues a mutate request to add the ad group ads.
+        // Issues a mutate request to add the ad group ad.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
         /** @var MutateAdGroupAdsResponse $adGroupAdResponse */
         $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds(
