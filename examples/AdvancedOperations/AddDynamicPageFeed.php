@@ -359,10 +359,9 @@ class AddDynamicPageFeed
         $dsaSetting->setFeeds([new StringValue(['value' => $feedResourceName])]);
 
         // Creates the campaign object to be updated.
-        $campaign = new Campaign([
-            'resource_name' => ResourceNames::forCampaign($customerId, $campaignId),
-            'dynamic_search_ads_setting' => $dsaSetting
-        ]);
+        $campaign = new Campaign();
+        $campaign->setResourceName(ResourceNames::forCampaign($customerId, $campaignId));
+        $campaign->setDynamicSearchAdsSetting($dsaSetting);
 
         // Creates the update operation and sets the update mask.
         $campaignOperation = new CampaignOperation();
