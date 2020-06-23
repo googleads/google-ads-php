@@ -1,6 +1,6 @@
 # Google Ads API Client Library for PHP
 
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg)](https://www.php.net/supported-versions.php)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg)](https://www.php.net/supported-versions.php)
 [![Latest Stable
 Version](https://img.shields.io/packagist/v/googleads/google-ads-php.svg)](https://packagist.org/packages/googleads/google-ads-php)
 [![Total Downloads](https://poser.pugx.org/googleads/google-ads-php/downloads.svg)](https://packagist.org/packages/googleads/google-ads-php)
@@ -34,19 +34,17 @@ API](https://developers.google.com/google-ads/api/docs/start).
     installed Composer is available on the command line as `composer`.
 *   System requirements and dependencies can be found in
     [composer.json](composer.json) of this library.
-    *   The minimum required PHP version of this library is the minimum PHP version for which the PHP development team still provide security fixes. Whenever such a version is sunset, we'll update the composer file accordingly. Currently, the update frequency is around once a year based on the [official schedule](https://www.php.net/supported-versions.php).
-    *   To install the gRPC PHP extension, follow the section
-        **Install the gRPC PHP extension**
-        of [this page](https://grpc.io/docs/quickstart/php.html).
+    *   **PHP**: You can find the required minimum PHP version in `"php"` under the [**`require`**](https://getcomposer.org/doc/01-basic-usage.md#the-require-key) key of [`composer.json`](composer.json). We usually set it to the minimum PHP version for which the PHP development team still provide security fixes. Whenever such a version is sunset, we'll update the composer file accordingly. Currently, the update frequency is around once a year based on the [official schedule](https://www.php.net/supported-versions.php).
+    Visit [this page](https://www.php.net/manual/en/getting-started.php) for introduction to PHP.
+    *   **gRPC**: To install the gRPC PHP extension, visit the
+        [**Install the gRPC PHP extension**](https://grpc.io/docs/languages/php/quickstart/#install-the-grpc-php-extension) section. It takes some time to install. To learn more about this requirement, please check the [Transport](https://developers.google.com/google-ads/api/docs/client-libs/php/transport) guide.
         1.  Install the extension using the command `sudo pecl install grpc`.
         1.  Add a line `extension=grpc.so` to the `php.ini` file.
         1.  Run `php -i | grep grpc` in a terminal: it is well installed
             and configured if it returns something
-    *   To install the Protobuf PHP extension, follow the section **C implementation** under
-        **Protobuf Runtime library** of [this
-        page](https://grpc.io/docs/quickstart/php.html). If you encounter any error
-        you can skip this step and the PHP implementation will be used instead. More details
-        can be found in the [Protobuf section](#protobuf). 
+    *   **Protobuf**: To install the Protobuf PHP extension, visit the [**C implementation**](https://grpc.io/docs/languages/php/quickstart/#c-implementation-for-better-performance) section.
+        It takes some time to install. If you encounter any error, you can skip this step and the PHP
+        implementation will be used instead. More details can be found in the [Protobuf implementations](https://developers.google.com/google-ads/api/docs/client-libs/php/protobuf) guide.
         1.  Install the extension using the command `sudo pecl install protobuf`.
         1.  Add a line `extension=protobuf.so` to the `php.ini` file.
         1.  Run `php -i | grep protobuf` in a terminal: it is well installed
