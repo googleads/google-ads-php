@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds;
 
 use PHPUnit\Framework\TestCase;
 use Google\ApiCore\ValidationException;
+use GuzzleHttp\Exception\ConnectException;
 
 class InstantiateClassesTest extends TestCase
 {
@@ -55,6 +56,9 @@ class InstantiateClassesTest extends TestCase
             //Disregard
             return;
         } catch (ValidationException $exception) {
+            //Disregard
+            return;
+        } catch (ConnectException $exception) {
             //Disregard
             return;
         }
