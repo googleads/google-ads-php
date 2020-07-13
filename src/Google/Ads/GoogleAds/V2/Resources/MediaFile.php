@@ -16,49 +16,49 @@ use Google\Protobuf\Internal\GPBUtil;
 class MediaFile extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the media file.
+     * Immutable. The resource name of the media file.
      * Media file resource names have the form:
      * `customers/{customer_id}/mediaFiles/{media_file_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the media file.
+     * Output only. The ID of the media file.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * Type of the media file.
+     * Immutable. Type of the media file.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MediaTypeEnum.MediaType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MediaTypeEnum.MediaType type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $type = 0;
     /**
-     * The mime type of the media file.
+     * Output only. The mime type of the media file.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MimeTypeEnum.MimeType mime_type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MimeTypeEnum.MimeType mime_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $mime_type = 0;
     /**
-     * The URL of where the original media file was downloaded from (or a file
+     * Immutable. The URL of where the original media file was downloaded from (or a file
      * name). Only used for media of type AUDIO and IMAGE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $source_url = null;
     /**
-     * The name of the media file. The name can be used by clients to help
+     * Immutable. The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $name = null;
     /**
-     * The size of the media file in bytes.
+     * Output only. The size of the media file in bytes.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $file_size = null;
     protected $mediatype;
@@ -70,31 +70,31 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the media file.
+     *           Immutable. The resource name of the media file.
      *           Media file resource names have the form:
      *           `customers/{customer_id}/mediaFiles/{media_file_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the media file.
+     *           Output only. The ID of the media file.
      *     @type int $type
-     *           Type of the media file.
+     *           Immutable. Type of the media file.
      *     @type int $mime_type
-     *           The mime type of the media file.
+     *           Output only. The mime type of the media file.
      *     @type \Google\Protobuf\StringValue $source_url
-     *           The URL of where the original media file was downloaded from (or a file
+     *           Immutable. The URL of where the original media file was downloaded from (or a file
      *           name). Only used for media of type AUDIO and IMAGE.
      *     @type \Google\Protobuf\StringValue $name
-     *           The name of the media file. The name can be used by clients to help
+     *           Immutable. The name of the media file. The name can be used by clients to help
      *           identify previously uploaded media.
      *     @type \Google\Protobuf\Int64Value $file_size
-     *           The size of the media file in bytes.
+     *           Output only. The size of the media file in bytes.
      *     @type \Google\Ads\GoogleAds\V2\Resources\MediaImage $image
-     *           Encapsulates an Image.
+     *           Immutable. Encapsulates an Image.
      *     @type \Google\Ads\GoogleAds\V2\Resources\MediaBundle $media_bundle
-     *           A ZIP archive media the content of which contains HTML5 assets.
+     *           Immutable. A ZIP archive media the content of which contains HTML5 assets.
      *     @type \Google\Ads\GoogleAds\V2\Resources\MediaAudio $audio
-     *           Encapsulates an Audio.
+     *           Output only. Encapsulates an Audio.
      *     @type \Google\Ads\GoogleAds\V2\Resources\MediaVideo $video
-     *           Encapsulates a Video.
+     *           Immutable. Encapsulates a Video.
      * }
      */
     public function __construct($data = NULL) {
@@ -103,11 +103,11 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the media file.
+     * Immutable. The resource name of the media file.
      * Media file resource names have the form:
      * `customers/{customer_id}/mediaFiles/{media_file_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -116,11 +116,11 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the media file.
+     * Immutable. The resource name of the media file.
      * Media file resource names have the form:
      * `customers/{customer_id}/mediaFiles/{media_file_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -133,9 +133,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the media file.
+     * Output only. The ID of the media file.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -146,9 +146,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the media file.
+     * Output only. The ID of the media file.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -157,9 +157,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the media file.
+     * Output only. The ID of the media file.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -174,9 +174,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the media file.
+     * Output only. The ID of the media file.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -186,9 +186,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Type of the media file.
+     * Immutable. Type of the media file.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MediaTypeEnum.MediaType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MediaTypeEnum.MediaType type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getType()
@@ -197,9 +197,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the media file.
+     * Immutable. Type of the media file.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MediaTypeEnum.MediaType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MediaTypeEnum.MediaType type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -212,9 +212,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The mime type of the media file.
+     * Output only. The mime type of the media file.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MimeTypeEnum.MimeType mime_type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MimeTypeEnum.MimeType mime_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getMimeType()
@@ -223,9 +223,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The mime type of the media file.
+     * Output only. The mime type of the media file.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MimeTypeEnum.MimeType mime_type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MimeTypeEnum.MimeType mime_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -238,10 +238,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL of where the original media file was downloaded from (or a file
+     * Immutable. The URL of where the original media file was downloaded from (or a file
      * name). Only used for media of type AUDIO and IMAGE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getSourceUrl()
@@ -252,10 +252,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSourceUrl()</code>
 
-     * The URL of where the original media file was downloaded from (or a file
+     * Immutable. The URL of where the original media file was downloaded from (or a file
      * name). Only used for media of type AUDIO and IMAGE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getSourceUrlUnwrapped()
@@ -264,10 +264,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL of where the original media file was downloaded from (or a file
+     * Immutable. The URL of where the original media file was downloaded from (or a file
      * name). Only used for media of type AUDIO and IMAGE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -282,10 +282,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The URL of where the original media file was downloaded from (or a file
+     * Immutable. The URL of where the original media file was downloaded from (or a file
      * name). Only used for media of type AUDIO and IMAGE.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue source_url = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -295,10 +295,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The name of the media file. The name can be used by clients to help
+     * Immutable. The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -309,10 +309,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * The name of the media file. The name can be used by clients to help
+     * Immutable. The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -321,10 +321,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the media file. The name can be used by clients to help
+     * Immutable. The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -339,10 +339,10 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the media file. The name can be used by clients to help
+     * Immutable. The name of the media file. The name can be used by clients to help
      * identify previously uploaded media.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -352,9 +352,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The size of the media file in bytes.
+     * Output only. The size of the media file in bytes.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getFileSize()
@@ -365,9 +365,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFileSize()</code>
 
-     * The size of the media file in bytes.
+     * Output only. The size of the media file in bytes.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getFileSizeUnwrapped()
@@ -376,9 +376,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The size of the media file in bytes.
+     * Output only. The size of the media file in bytes.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -393,9 +393,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The size of the media file in bytes.
+     * Output only. The size of the media file in bytes.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value file_size = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -405,9 +405,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Encapsulates an Image.
+     * Immutable. Encapsulates an Image.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaImage image = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaImage image = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\MediaImage
      */
     public function getImage()
@@ -416,9 +416,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Encapsulates an Image.
+     * Immutable. Encapsulates an Image.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaImage image = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaImage image = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\MediaImage $var
      * @return $this
      */
@@ -431,9 +431,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A ZIP archive media the content of which contains HTML5 assets.
+     * Immutable. A ZIP archive media the content of which contains HTML5 assets.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaBundle media_bundle = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaBundle media_bundle = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\MediaBundle
      */
     public function getMediaBundle()
@@ -442,9 +442,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A ZIP archive media the content of which contains HTML5 assets.
+     * Immutable. A ZIP archive media the content of which contains HTML5 assets.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaBundle media_bundle = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaBundle media_bundle = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\MediaBundle $var
      * @return $this
      */
@@ -457,9 +457,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Encapsulates an Audio.
+     * Output only. Encapsulates an Audio.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaAudio audio = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaAudio audio = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\MediaAudio
      */
     public function getAudio()
@@ -468,9 +468,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Encapsulates an Audio.
+     * Output only. Encapsulates an Audio.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaAudio audio = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaAudio audio = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\MediaAudio $var
      * @return $this
      */
@@ -483,9 +483,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Encapsulates a Video.
+     * Immutable. Encapsulates a Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaVideo video = 11;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaVideo video = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\MediaVideo
      */
     public function getVideo()
@@ -494,9 +494,9 @@ class MediaFile extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Encapsulates a Video.
+     * Immutable. Encapsulates a Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaVideo video = 11;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.MediaVideo video = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\MediaVideo $var
      * @return $this
      */

@@ -23,25 +23,25 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\V3\Common\DeviceInfo;
-use Google\Ads\GoogleAds\V3\Common\GenderInfo;
-use Google\Ads\GoogleAds\V3\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V3\Enums\GenderTypeEnum\GenderType;
-use Google\Ads\GoogleAds\V3\Enums\ReachPlanAdLengthEnum\ReachPlanAdLength;
-use Google\Ads\GoogleAds\V3\Enums\ReachPlanAgeRangeEnum\ReachPlanAgeRange;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Services\CampaignDuration;
-use Google\Ads\GoogleAds\V3\Services\PlannableLocation;
-use Google\Ads\GoogleAds\V3\Services\PlannedProduct;
-use Google\Ads\GoogleAds\V3\Services\Preferences;
-use Google\Ads\GoogleAds\V3\Services\ProductAllocation;
-use Google\Ads\GoogleAds\V3\Services\ProductMetadata;
-use Google\Ads\GoogleAds\V3\Services\ReachForecast;
-use Google\Ads\GoogleAds\V3\Services\Targeting;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\V4\Common\DeviceInfo;
+use Google\Ads\GoogleAds\V4\Common\GenderInfo;
+use Google\Ads\GoogleAds\V4\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V4\Enums\GenderTypeEnum\GenderType;
+use Google\Ads\GoogleAds\V4\Enums\ReachPlanAdLengthEnum\ReachPlanAdLength;
+use Google\Ads\GoogleAds\V4\Enums\ReachPlanAgeRangeEnum\ReachPlanAgeRange;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Services\CampaignDuration;
+use Google\Ads\GoogleAds\V4\Services\PlannableLocation;
+use Google\Ads\GoogleAds\V4\Services\PlannedProduct;
+use Google\Ads\GoogleAds\V4\Services\Preferences;
+use Google\Ads\GoogleAds\V4\Services\ProductAllocation;
+use Google\Ads\GoogleAds\V4\Services\ProductMetadata;
+use Google\Ads\GoogleAds\V4\Services\ReachForecast;
+use Google\Ads\GoogleAds\V4\Services\Targeting;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\BoolValue;
 use Google\Protobuf\Int32Value;
@@ -219,15 +219,15 @@ class ForecastReach
         ]);
 
         // See the docs for defaults and valid ranges:
-        // https://developers.google.com/google-ads/api/reference/rpc/Google.Ads.GoogleAds.V3.services#Google.Ads.GoogleAds.V3.services.GenerateReachForecastRequest
+        // https://developers.google.com/google-ads/api/reference/rpc/v4/GenerateReachForecastRequest
         $response = $googleAdsClient->getReachPlanServiceClient()->generateReachForecast(
             $customerId,
-            new StringValue(['value' => $currencyCode]),
             $duration,
-            new Int32Value(['value' => 0]),
-            new Int32Value(['value' => 1]),
-            $targeting,
-            $productMix
+            $productMix,
+            [
+                'currencyCode' => new StringValue(['value' => $currencyCode]),
+                'targeting' => $targeting
+            ]
         );
 
         printf(
@@ -275,7 +275,7 @@ class ForecastReach
 
         // See listPlannableProducts on ReachPlanService to retrieve a list
         // of valid PlannableProductCode's for a given location:
-        // https://developers.google.com/google-ads/api/reference/rpc/Google.Ads.GoogleAds.V3.services#reachplanservice
+        // https://developers.google.com/google-ads/api/reference/rpc/Google.Ads.GoogleAds.V4.services#reachplanservice
         $productMix = [
             new PlannedProduct([
                 'plannable_product_code' => new StringValue(['value' => 'TRUEVIEW_IN_STREAM']),
@@ -324,7 +324,7 @@ class ForecastReach
             new StringValue(['value' => self::LOCATION_ID]),
             new StringValue(['value' => self::CURRENCY_CODE]),
             new Int64Value(['value' => self::BUDGET_MICROS]),
-            $preferences
+            ['preferences' => $preferences]
         );
 
         $productMix = [];

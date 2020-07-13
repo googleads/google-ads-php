@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class PromoteCampaignDraftRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign draft to promote.
+     * Required. The resource name of the campaign draft to promote.
      *
-     * Generated from protobuf field <code>string campaign_draft = 1;</code>
+     * Generated from protobuf field <code>string campaign_draft = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $campaign_draft = '';
 
@@ -29,7 +29,7 @@ class PromoteCampaignDraftRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $campaign_draft
-     *           The resource name of the campaign draft to promote.
+     *           Required. The resource name of the campaign draft to promote.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class PromoteCampaignDraftRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign draft to promote.
+     * Required. The resource name of the campaign draft to promote.
      *
-     * Generated from protobuf field <code>string campaign_draft = 1;</code>
+     * Generated from protobuf field <code>string campaign_draft = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCampaignDraft()
@@ -49,9 +49,9 @@ class PromoteCampaignDraftRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign draft to promote.
+     * Required. The resource name of the campaign draft to promote.
      *
-     * Generated from protobuf field <code>string campaign_draft = 1;</code>
+     * Generated from protobuf field <code>string campaign_draft = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

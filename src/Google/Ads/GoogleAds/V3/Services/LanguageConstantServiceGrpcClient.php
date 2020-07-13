@@ -39,6 +39,7 @@ class LanguageConstantServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetLanguageConstantRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\LanguageConstant
      */
     public function GetLanguageConstant(\Google\Ads\GoogleAds\V3\Services\GetLanguageConstantRequest $argument,
       $metadata = [], $options = []) {

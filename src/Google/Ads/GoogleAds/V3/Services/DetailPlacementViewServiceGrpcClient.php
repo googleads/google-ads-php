@@ -39,6 +39,7 @@ class DetailPlacementViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetDetailPlacementViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\DetailPlacementView
      */
     public function GetDetailPlacementView(\Google\Ads\GoogleAds\V3\Services\GetDetailPlacementViewRequest $argument,
       $metadata = [], $options = []) {

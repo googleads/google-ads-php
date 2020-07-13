@@ -30,7 +30,6 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Protobuf\Any;
-use Google\Protobuf\StringValue;
 use Google\Rpc\Code;
 use stdClass;
 
@@ -157,24 +156,13 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
         $expectedResponse = new SuggestGeoTargetConstantsResponse();
         $transport->addResponse($expectedResponse);
 
-        // Mock request
-        $locale = new StringValue();
-        $countryCode = new StringValue();
-
-        $response = $client->suggestGeoTargetConstants($locale, $countryCode);
+        $response = $client->suggestGeoTargetConstants();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v3.services.GeoTargetConstantService/SuggestGeoTargetConstants', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getLocale();
-
-        $this->assertProtobufEquals($locale, $actualValue);
-        $actualValue = $actualRequestObject->getCountryCode();
-
-        $this->assertProtobufEquals($countryCode, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -201,12 +189,8 @@ class GeoTargetConstantServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
 
-        // Mock request
-        $locale = new StringValue();
-        $countryCode = new StringValue();
-
         try {
-            $client->suggestGeoTargetConstants($locale, $countryCode);
+            $client->suggestGeoTargetConstants();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

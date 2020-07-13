@@ -39,6 +39,7 @@ class KeywordPlanAdGroupServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetKeywordPlanAdGroupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\KeywordPlanAdGroup
      */
     public function GetKeywordPlanAdGroup(\Google\Ads\GoogleAds\V3\Services\GetKeywordPlanAdGroupRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class KeywordPlanAdGroupServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateKeywordPlanAdGroupsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateKeywordPlanAdGroupsResponse
      */
     public function MutateKeywordPlanAdGroups(\Google\Ads\GoogleAds\V3\Services\MutateKeywordPlanAdGroupsRequest $argument,
       $metadata = [], $options = []) {

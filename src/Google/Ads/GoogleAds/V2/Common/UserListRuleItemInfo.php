@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * An atomic rule fragment.
+ * An atomic rule item.
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListRuleItemInfo</code>
  */
@@ -46,11 +46,11 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      *           referrer URL (name = 'ref_url__').
      *           This field must be populated when creating a new rule item.
      *     @type \Google\Ads\GoogleAds\V2\Common\UserListNumberRuleItemInfo $number_rule_item
-     *           An atomic rule fragment composed of a number operation.
+     *           An atomic rule item composed of a number operation.
      *     @type \Google\Ads\GoogleAds\V2\Common\UserListStringRuleItemInfo $string_rule_item
-     *           An atomic rule fragment composed of a string operation.
+     *           An atomic rule item composed of a string operation.
      *     @type \Google\Ads\GoogleAds\V2\Common\UserListDateRuleItemInfo $date_rule_item
-     *           An atomic rule fragment composed of a date operation.
+     *           An atomic rule item composed of a date operation.
      * }
      */
     public function __construct($data = NULL) {
@@ -140,7 +140,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * An atomic rule fragment composed of a number operation.
+     * An atomic rule item composed of a number operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListNumberRuleItemInfo number_rule_item = 2;</code>
      * @return \Google\Ads\GoogleAds\V2\Common\UserListNumberRuleItemInfo
@@ -151,7 +151,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An atomic rule fragment composed of a number operation.
+     * An atomic rule item composed of a number operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListNumberRuleItemInfo number_rule_item = 2;</code>
      * @param \Google\Ads\GoogleAds\V2\Common\UserListNumberRuleItemInfo $var
@@ -166,7 +166,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An atomic rule fragment composed of a string operation.
+     * An atomic rule item composed of a string operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListStringRuleItemInfo string_rule_item = 3;</code>
      * @return \Google\Ads\GoogleAds\V2\Common\UserListStringRuleItemInfo
@@ -177,7 +177,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An atomic rule fragment composed of a string operation.
+     * An atomic rule item composed of a string operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListStringRuleItemInfo string_rule_item = 3;</code>
      * @param \Google\Ads\GoogleAds\V2\Common\UserListStringRuleItemInfo $var
@@ -192,7 +192,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An atomic rule fragment composed of a date operation.
+     * An atomic rule item composed of a date operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListDateRuleItemInfo date_rule_item = 4;</code>
      * @return \Google\Ads\GoogleAds\V2\Common\UserListDateRuleItemInfo
@@ -203,7 +203,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An atomic rule fragment composed of a date operation.
+     * An atomic rule item composed of a date operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListDateRuleItemInfo date_rule_item = 4;</code>
      * @param \Google\Ads\GoogleAds\V2\Common\UserListDateRuleItemInfo $var

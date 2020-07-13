@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2019 Google LLC.
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
 //
 namespace Google\Ads\GoogleAds\V2\Services;
 
@@ -40,6 +39,7 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GetCustomerRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Resources\Customer
      */
     public function GetCustomer(\Google\Ads\GoogleAds\V2\Services\GetCustomerRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +54,7 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\MutateCustomerRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\MutateCustomerResponse
      */
     public function MutateCustomer(\Google\Ads\GoogleAds\V2\Services\MutateCustomerRequest $argument,
       $metadata = [], $options = []) {
@@ -69,6 +70,7 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\ListAccessibleCustomersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\ListAccessibleCustomersResponse
      */
     public function ListAccessibleCustomers(\Google\Ads\GoogleAds\V2\Services\ListAccessibleCustomersRequest $argument,
       $metadata = [], $options = []) {
@@ -83,6 +85,7 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\CreateCustomerClientRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\CreateCustomerClientResponse
      */
     public function CreateCustomerClient(\Google\Ads\GoogleAds\V2\Services\CreateCustomerClientRequest $argument,
       $metadata = [], $options = []) {

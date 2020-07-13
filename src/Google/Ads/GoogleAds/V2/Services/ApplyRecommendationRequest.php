@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer with the recommendation.
+     * Required. The ID of the customer with the recommendation.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The list of operations to apply recommendations.
+     * Required. The list of operations to apply recommendations.
      * If partial_failure=false all recommendations should be of the same type
      * There is a limit of 100 operations per request.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.ApplyRecommendationOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.ApplyRecommendationOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $operations;
     /**
@@ -46,9 +46,9 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer with the recommendation.
+     *           Required. The ID of the customer with the recommendation.
      *     @type \Google\Ads\GoogleAds\V2\Services\ApplyRecommendationOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
-     *           The list of operations to apply recommendations.
+     *           Required. The list of operations to apply recommendations.
      *           If partial_failure=false all recommendations should be of the same type
      *           There is a limit of 100 operations per request.
      *     @type bool $partial_failure
@@ -64,9 +64,9 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer with the recommendation.
+     * Required. The ID of the customer with the recommendation.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -75,9 +75,9 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer with the recommendation.
+     * Required. The ID of the customer with the recommendation.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -90,11 +90,11 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of operations to apply recommendations.
+     * Required. The list of operations to apply recommendations.
      * If partial_failure=false all recommendations should be of the same type
      * There is a limit of 100 operations per request.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.ApplyRecommendationOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.ApplyRecommendationOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getOperations()
@@ -103,11 +103,11 @@ class ApplyRecommendationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of operations to apply recommendations.
+     * Required. The list of operations to apply recommendations.
      * If partial_failure=false all recommendations should be of the same type
      * There is a limit of 100 operations per request.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.ApplyRecommendationOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.ApplyRecommendationOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\ApplyRecommendationOperation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GenerateForecastMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the keyword plan to be forecasted.
+     * Required. The resource name of the keyword plan to be forecasted.
      *
-     * Generated from protobuf field <code>string keyword_plan = 1;</code>
+     * Generated from protobuf field <code>string keyword_plan = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $keyword_plan = '';
 
@@ -29,7 +29,7 @@ class GenerateForecastMetricsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $keyword_plan
-     *           The resource name of the keyword plan to be forecasted.
+     *           Required. The resource name of the keyword plan to be forecasted.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class GenerateForecastMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the keyword plan to be forecasted.
+     * Required. The resource name of the keyword plan to be forecasted.
      *
-     * Generated from protobuf field <code>string keyword_plan = 1;</code>
+     * Generated from protobuf field <code>string keyword_plan = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getKeywordPlan()
@@ -49,9 +49,9 @@ class GenerateForecastMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the keyword plan to be forecasted.
+     * Required. The resource name of the keyword plan to be forecasted.
      *
-     * Generated from protobuf field <code>string keyword_plan = 1;</code>
+     * Generated from protobuf field <code>string keyword_plan = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

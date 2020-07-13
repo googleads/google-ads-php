@@ -43,6 +43,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ListPlannableLocationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ListPlannableLocationsResponse
      */
     public function ListPlannableLocations(\Google\Ads\GoogleAds\V3\Services\ListPlannableLocationsRequest $argument,
       $metadata = [], $options = []) {
@@ -58,6 +59,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ListPlannableProductsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ListPlannableProductsResponse
      */
     public function ListPlannableProducts(\Google\Ads\GoogleAds\V3\Services\ListPlannableProductsRequest $argument,
       $metadata = [], $options = []) {
@@ -74,6 +76,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GenerateProductMixIdeasRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\GenerateProductMixIdeasResponse
      */
     public function GenerateProductMixIdeas(\Google\Ads\GoogleAds\V3\Services\GenerateProductMixIdeasRequest $argument,
       $metadata = [], $options = []) {
@@ -88,6 +91,7 @@ class ReachPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GenerateReachForecastRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\GenerateReachForecastResponse
      */
     public function GenerateReachForecast(\Google\Ads\GoogleAds\V3\Services\GenerateReachForecastRequest $argument,
       $metadata = [], $options = []) {

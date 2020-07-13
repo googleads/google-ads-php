@@ -16,23 +16,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the mobile app category constant.
+     * Output only. The resource name of the mobile app category constant.
      * Mobile app category constant resource names have the form:
      * `mobileAppCategoryConstants/{mobile_app_category_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the mobile app category constant.
+     * Output only. The ID of the mobile app category constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * Mobile app category name.
+     * Output only. Mobile app category name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
 
@@ -43,13 +43,13 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the mobile app category constant.
+     *           Output only. The resource name of the mobile app category constant.
      *           Mobile app category constant resource names have the form:
      *           `mobileAppCategoryConstants/{mobile_app_category_id}`
      *     @type \Google\Protobuf\Int32Value $id
-     *           The ID of the mobile app category constant.
+     *           Output only. The ID of the mobile app category constant.
      *     @type \Google\Protobuf\StringValue $name
-     *           Mobile app category name.
+     *           Output only. Mobile app category name.
      * }
      */
     public function __construct($data = NULL) {
@@ -58,11 +58,11 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the mobile app category constant.
+     * Output only. The resource name of the mobile app category constant.
      * Mobile app category constant resource names have the form:
      * `mobileAppCategoryConstants/{mobile_app_category_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -71,11 +71,11 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the mobile app category constant.
+     * Output only. The resource name of the mobile app category constant.
      * Mobile app category constant resource names have the form:
      * `mobileAppCategoryConstants/{mobile_app_category_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -88,9 +88,9 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the mobile app category constant.
+     * Output only. The ID of the mobile app category constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int32Value
      */
     public function getId()
@@ -101,9 +101,9 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the mobile app category constant.
+     * Output only. The ID of the mobile app category constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|null
      */
     public function getIdUnwrapped()
@@ -112,9 +112,9 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the mobile app category constant.
+     * Output only. The ID of the mobile app category constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
@@ -129,9 +129,9 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * The ID of the mobile app category constant.
+     * Output only. The ID of the mobile app category constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|null $var
      * @return $this
      */
@@ -141,9 +141,9 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Mobile app category name.
+     * Output only. Mobile app category name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -154,9 +154,9 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * Mobile app category name.
+     * Output only. Mobile app category name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -165,9 +165,9 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile app category name.
+     * Output only. Mobile app category name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -182,9 +182,9 @@ class MobileAppCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Mobile app category name.
+     * Output only. Mobile app category name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

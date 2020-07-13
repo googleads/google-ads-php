@@ -17,33 +17,33 @@ use Google\Protobuf\Internal\GPBUtil;
 class RecommendationMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Number of ad impressions.
+     * Output only. Number of ad impressions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $impressions = null;
     /**
-     * Number of ad clicks.
+     * Output only. Number of ad clicks.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $clicks = null;
     /**
-     * Cost (in micros) for advertising, in the local currency for the account.
+     * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $cost_micros = null;
     /**
-     * Number of conversions.
+     * Output only. Number of conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $conversions = null;
     /**
-     * Number of video views for a video ad campaign.
+     * Output only. Number of video views for a video ad campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $video_views = null;
 
@@ -54,15 +54,15 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\DoubleValue $impressions
-     *           Number of ad impressions.
+     *           Output only. Number of ad impressions.
      *     @type \Google\Protobuf\DoubleValue $clicks
-     *           Number of ad clicks.
+     *           Output only. Number of ad clicks.
      *     @type \Google\Protobuf\Int64Value $cost_micros
-     *           Cost (in micros) for advertising, in the local currency for the account.
+     *           Output only. Cost (in micros) for advertising, in the local currency for the account.
      *     @type \Google\Protobuf\DoubleValue $conversions
-     *           Number of conversions.
+     *           Output only. Number of conversions.
      *     @type \Google\Protobuf\DoubleValue $video_views
-     *           Number of video views for a video ad campaign.
+     *           Output only. Number of video views for a video ad campaign.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,9 +71,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of ad impressions.
+     * Output only. Number of ad impressions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\DoubleValue
      */
     public function getImpressions()
@@ -84,9 +84,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getImpressions()</code>
 
-     * Number of ad impressions.
+     * Output only. Number of ad impressions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float|null
      */
     public function getImpressionsUnwrapped()
@@ -95,9 +95,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of ad impressions.
+     * Output only. Number of ad impressions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
@@ -112,9 +112,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Number of ad impressions.
+     * Output only. Number of ad impressions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue impressions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float|null $var
      * @return $this
      */
@@ -124,9 +124,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Number of ad clicks.
+     * Output only. Number of ad clicks.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\DoubleValue
      */
     public function getClicks()
@@ -137,9 +137,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getClicks()</code>
 
-     * Number of ad clicks.
+     * Output only. Number of ad clicks.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float|null
      */
     public function getClicksUnwrapped()
@@ -148,9 +148,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of ad clicks.
+     * Output only. Number of ad clicks.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
@@ -165,9 +165,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Number of ad clicks.
+     * Output only. Number of ad clicks.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue clicks = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float|null $var
      * @return $this
      */
@@ -177,9 +177,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Cost (in micros) for advertising, in the local currency for the account.
+     * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCostMicros()
@@ -190,9 +190,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCostMicros()</code>
 
-     * Cost (in micros) for advertising, in the local currency for the account.
+     * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCostMicrosUnwrapped()
@@ -201,9 +201,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Cost (in micros) for advertising, in the local currency for the account.
+     * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -218,9 +218,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Cost (in micros) for advertising, in the local currency for the account.
+     * Output only. Cost (in micros) for advertising, in the local currency for the account.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cost_micros = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -230,9 +230,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Number of conversions.
+     * Output only. Number of conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\DoubleValue
      */
     public function getConversions()
@@ -243,9 +243,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getConversions()</code>
 
-     * Number of conversions.
+     * Output only. Number of conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float|null
      */
     public function getConversionsUnwrapped()
@@ -254,9 +254,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of conversions.
+     * Output only. Number of conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
@@ -271,9 +271,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Number of conversions.
+     * Output only. Number of conversions.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue conversions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float|null $var
      * @return $this
      */
@@ -283,9 +283,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Number of video views for a video ad campaign.
+     * Output only. Number of video views for a video ad campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\DoubleValue
      */
     public function getVideoViews()
@@ -296,9 +296,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getVideoViews()</code>
 
-     * Number of video views for a video ad campaign.
+     * Output only. Number of video views for a video ad campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return float|null
      */
     public function getVideoViewsUnwrapped()
@@ -307,9 +307,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of video views for a video ad campaign.
+     * Output only. Number of video views for a video ad campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
@@ -324,9 +324,9 @@ class RecommendationMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Number of video views for a video ad campaign.
+     * Output only. Number of video views for a video ad campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.DoubleValue video_views = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param float|null $var
      * @return $this
      */

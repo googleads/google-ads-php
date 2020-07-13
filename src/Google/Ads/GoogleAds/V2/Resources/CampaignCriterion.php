@@ -16,24 +16,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class CampaignCriterion extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign criterion.
+     * Immutable. The resource name of the campaign criterion.
      * Campaign criterion resource names have the form:
      * `customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The campaign to which the criterion belongs.
+     * Immutable. The campaign to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored during mutate.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
@@ -45,15 +45,15 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      */
     protected $bid_modifier = null;
     /**
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $negative = null;
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionTypeEnum.CriterionType type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionTypeEnum.CriterionType type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     /**
@@ -71,78 +71,78 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the campaign criterion.
+     *           Immutable. The resource name of the campaign criterion.
      *           Campaign criterion resource names have the form:
      *           `customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}`
      *     @type \Google\Protobuf\StringValue $campaign
-     *           The campaign to which the criterion belongs.
+     *           Immutable. The campaign to which the criterion belongs.
      *     @type \Google\Protobuf\Int64Value $criterion_id
-     *           The ID of the criterion.
+     *           Output only. The ID of the criterion.
      *           This field is ignored during mutate.
      *     @type \Google\Protobuf\FloatValue $bid_modifier
      *           The modifier for the bids when the criterion matches. The modifier must be
      *           in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
      *           Use 0 to opt out of a Device type.
      *     @type \Google\Protobuf\BoolValue $negative
-     *           Whether to target (`false`) or exclude (`true`) the criterion.
+     *           Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *     @type int $type
-     *           The type of the criterion.
+     *           Output only. The type of the criterion.
      *     @type int $status
      *           The status of the criterion.
      *     @type \Google\Ads\GoogleAds\V2\Common\KeywordInfo $keyword
-     *           Keyword.
+     *           Immutable. Keyword.
      *     @type \Google\Ads\GoogleAds\V2\Common\PlacementInfo $placement
-     *           Placement.
+     *           Immutable. Placement.
      *     @type \Google\Ads\GoogleAds\V2\Common\MobileAppCategoryInfo $mobile_app_category
-     *           Mobile app category.
+     *           Immutable. Mobile app category.
      *     @type \Google\Ads\GoogleAds\V2\Common\MobileApplicationInfo $mobile_application
-     *           Mobile application.
+     *           Immutable. Mobile application.
      *     @type \Google\Ads\GoogleAds\V2\Common\LocationInfo $location
-     *           Location.
+     *           Immutable. Location.
      *     @type \Google\Ads\GoogleAds\V2\Common\DeviceInfo $device
-     *           Device.
+     *           Immutable. Device.
      *     @type \Google\Ads\GoogleAds\V2\Common\AdScheduleInfo $ad_schedule
-     *           Ad Schedule.
+     *           Immutable. Ad Schedule.
      *     @type \Google\Ads\GoogleAds\V2\Common\AgeRangeInfo $age_range
-     *           Age range.
+     *           Immutable. Age range.
      *     @type \Google\Ads\GoogleAds\V2\Common\GenderInfo $gender
-     *           Gender.
+     *           Immutable. Gender.
      *     @type \Google\Ads\GoogleAds\V2\Common\IncomeRangeInfo $income_range
-     *           Income range.
+     *           Immutable. Income range.
      *     @type \Google\Ads\GoogleAds\V2\Common\ParentalStatusInfo $parental_status
-     *           Parental status.
+     *           Immutable. Parental status.
      *     @type \Google\Ads\GoogleAds\V2\Common\UserListInfo $user_list
-     *           User List.
+     *           Immutable. User List.
      *     @type \Google\Ads\GoogleAds\V2\Common\YouTubeVideoInfo $youtube_video
-     *           YouTube Video.
+     *           Immutable. YouTube Video.
      *     @type \Google\Ads\GoogleAds\V2\Common\YouTubeChannelInfo $youtube_channel
-     *           YouTube Channel.
+     *           Immutable. YouTube Channel.
      *     @type \Google\Ads\GoogleAds\V2\Common\ProximityInfo $proximity
-     *           Proximity.
+     *           Immutable. Proximity.
      *     @type \Google\Ads\GoogleAds\V2\Common\TopicInfo $topic
-     *           Topic.
+     *           Immutable. Topic.
      *     @type \Google\Ads\GoogleAds\V2\Common\ListingScopeInfo $listing_scope
-     *           Listing scope.
+     *           Immutable. Listing scope.
      *     @type \Google\Ads\GoogleAds\V2\Common\LanguageInfo $language
-     *           Language.
+     *           Immutable. Language.
      *     @type \Google\Ads\GoogleAds\V2\Common\IpBlockInfo $ip_block
-     *           IpBlock.
+     *           Immutable. IpBlock.
      *     @type \Google\Ads\GoogleAds\V2\Common\ContentLabelInfo $content_label
-     *           ContentLabel.
+     *           Immutable. ContentLabel.
      *     @type \Google\Ads\GoogleAds\V2\Common\CarrierInfo $carrier
-     *           Carrier.
+     *           Immutable. Carrier.
      *     @type \Google\Ads\GoogleAds\V2\Common\UserInterestInfo $user_interest
-     *           User Interest.
+     *           Immutable. User Interest.
      *     @type \Google\Ads\GoogleAds\V2\Common\WebpageInfo $webpage
-     *           Webpage.
+     *           Immutable. Webpage.
      *     @type \Google\Ads\GoogleAds\V2\Common\OperatingSystemVersionInfo $operating_system_version
-     *           Operating system version.
+     *           Immutable. Operating system version.
      *     @type \Google\Ads\GoogleAds\V2\Common\MobileDeviceInfo $mobile_device
-     *           Mobile Device.
+     *           Immutable. Mobile Device.
      *     @type \Google\Ads\GoogleAds\V2\Common\LocationGroupInfo $location_group
-     *           Location Group
+     *           Immutable. Location Group
      *     @type \Google\Ads\GoogleAds\V2\Common\CustomAffinityInfo $custom_affinity
-     *           Custom Affinity.
+     *           Immutable. Custom Affinity.
      * }
      */
     public function __construct($data = NULL) {
@@ -151,11 +151,11 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign criterion.
+     * Immutable. The resource name of the campaign criterion.
      * Campaign criterion resource names have the form:
      * `customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -164,11 +164,11 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign criterion.
+     * Immutable. The resource name of the campaign criterion.
      * Campaign criterion resource names have the form:
      * `customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -181,9 +181,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign to which the criterion belongs.
+     * Immutable. The campaign to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaign()
@@ -194,9 +194,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaign()</code>
 
-     * The campaign to which the criterion belongs.
+     * Immutable. The campaign to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignUnwrapped()
@@ -205,9 +205,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign to which the criterion belongs.
+     * Immutable. The campaign to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -222,9 +222,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The campaign to which the criterion belongs.
+     * Immutable. The campaign to which the criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -234,10 +234,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored during mutate.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCriterionId()
@@ -248,10 +248,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCriterionId()</code>
 
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored during mutate.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCriterionIdUnwrapped()
@@ -260,10 +260,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored during mutate.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -278,10 +278,10 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the criterion.
+     * Output only. The ID of the criterion.
      * This field is ignored during mutate.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -352,9 +352,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getNegative()
@@ -365,9 +365,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getNegative()</code>
 
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return bool|null
      */
     public function getNegativeUnwrapped()
@@ -376,9 +376,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -393,9 +393,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether to target (`false`) or exclude (`true`) the criterion.
+     * Immutable. Whether to target (`false`) or exclude (`true`) the criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue negative = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -405,9 +405,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionTypeEnum.CriterionType type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionTypeEnum.CriterionType type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -416,9 +416,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the criterion.
+     * Output only. The type of the criterion.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionTypeEnum.CriterionType type = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CriterionTypeEnum.CriterionType type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -457,9 +457,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Keyword.
+     * Immutable. Keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\KeywordInfo
      */
     public function getKeyword()
@@ -468,9 +468,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Keyword.
+     * Immutable. Keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\KeywordInfo $var
      * @return $this
      */
@@ -483,9 +483,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Placement.
+     * Immutable. Placement.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.PlacementInfo placement = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.PlacementInfo placement = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\PlacementInfo
      */
     public function getPlacement()
@@ -494,9 +494,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Placement.
+     * Immutable. Placement.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.PlacementInfo placement = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.PlacementInfo placement = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\PlacementInfo $var
      * @return $this
      */
@@ -509,9 +509,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile app category.
+     * Immutable. Mobile app category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileAppCategoryInfo mobile_app_category = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileAppCategoryInfo mobile_app_category = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\MobileAppCategoryInfo
      */
     public function getMobileAppCategory()
@@ -520,9 +520,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile app category.
+     * Immutable. Mobile app category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileAppCategoryInfo mobile_app_category = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileAppCategoryInfo mobile_app_category = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\MobileAppCategoryInfo $var
      * @return $this
      */
@@ -535,9 +535,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile application.
+     * Immutable. Mobile application.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileApplicationInfo mobile_application = 11;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileApplicationInfo mobile_application = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\MobileApplicationInfo
      */
     public function getMobileApplication()
@@ -546,9 +546,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile application.
+     * Immutable. Mobile application.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileApplicationInfo mobile_application = 11;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileApplicationInfo mobile_application = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\MobileApplicationInfo $var
      * @return $this
      */
@@ -561,9 +561,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location.
+     * Immutable. Location.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationInfo location = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationInfo location = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\LocationInfo
      */
     public function getLocation()
@@ -572,9 +572,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location.
+     * Immutable. Location.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationInfo location = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationInfo location = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\LocationInfo $var
      * @return $this
      */
@@ -587,9 +587,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Device.
+     * Immutable. Device.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.DeviceInfo device = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.DeviceInfo device = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\DeviceInfo
      */
     public function getDevice()
@@ -598,9 +598,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Device.
+     * Immutable. Device.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.DeviceInfo device = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.DeviceInfo device = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\DeviceInfo $var
      * @return $this
      */
@@ -613,9 +613,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Ad Schedule.
+     * Immutable. Ad Schedule.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AdScheduleInfo ad_schedule = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AdScheduleInfo ad_schedule = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\AdScheduleInfo
      */
     public function getAdSchedule()
@@ -624,9 +624,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Ad Schedule.
+     * Immutable. Ad Schedule.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AdScheduleInfo ad_schedule = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AdScheduleInfo ad_schedule = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\AdScheduleInfo $var
      * @return $this
      */
@@ -639,9 +639,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Age range.
+     * Immutable. Age range.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AgeRangeInfo age_range = 16;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AgeRangeInfo age_range = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\AgeRangeInfo
      */
     public function getAgeRange()
@@ -650,9 +650,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Age range.
+     * Immutable. Age range.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AgeRangeInfo age_range = 16;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AgeRangeInfo age_range = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\AgeRangeInfo $var
      * @return $this
      */
@@ -665,9 +665,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Gender.
+     * Immutable. Gender.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.GenderInfo gender = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.GenderInfo gender = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\GenderInfo
      */
     public function getGender()
@@ -676,9 +676,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Gender.
+     * Immutable. Gender.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.GenderInfo gender = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.GenderInfo gender = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\GenderInfo $var
      * @return $this
      */
@@ -691,9 +691,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Income range.
+     * Immutable. Income range.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.IncomeRangeInfo income_range = 18;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.IncomeRangeInfo income_range = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\IncomeRangeInfo
      */
     public function getIncomeRange()
@@ -702,9 +702,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Income range.
+     * Immutable. Income range.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.IncomeRangeInfo income_range = 18;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.IncomeRangeInfo income_range = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\IncomeRangeInfo $var
      * @return $this
      */
@@ -717,9 +717,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Parental status.
+     * Immutable. Parental status.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ParentalStatusInfo parental_status = 19;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ParentalStatusInfo parental_status = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\ParentalStatusInfo
      */
     public function getParentalStatus()
@@ -728,9 +728,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Parental status.
+     * Immutable. Parental status.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ParentalStatusInfo parental_status = 19;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ParentalStatusInfo parental_status = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\ParentalStatusInfo $var
      * @return $this
      */
@@ -743,9 +743,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User List.
+     * Immutable. User List.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListInfo user_list = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListInfo user_list = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\UserListInfo
      */
     public function getUserList()
@@ -754,9 +754,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User List.
+     * Immutable. User List.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListInfo user_list = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserListInfo user_list = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\UserListInfo $var
      * @return $this
      */
@@ -769,9 +769,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Video.
+     * Immutable. YouTube Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.YouTubeVideoInfo youtube_video = 20;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.YouTubeVideoInfo youtube_video = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\YouTubeVideoInfo
      */
     public function getYoutubeVideo()
@@ -780,9 +780,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Video.
+     * Immutable. YouTube Video.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.YouTubeVideoInfo youtube_video = 20;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.YouTubeVideoInfo youtube_video = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\YouTubeVideoInfo $var
      * @return $this
      */
@@ -795,9 +795,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel.
+     * Immutable. YouTube Channel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.YouTubeChannelInfo youtube_channel = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.YouTubeChannelInfo youtube_channel = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\YouTubeChannelInfo
      */
     public function getYoutubeChannel()
@@ -806,9 +806,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * YouTube Channel.
+     * Immutable. YouTube Channel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.YouTubeChannelInfo youtube_channel = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.YouTubeChannelInfo youtube_channel = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\YouTubeChannelInfo $var
      * @return $this
      */
@@ -821,9 +821,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Proximity.
+     * Immutable. Proximity.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ProximityInfo proximity = 23;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ProximityInfo proximity = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\ProximityInfo
      */
     public function getProximity()
@@ -832,9 +832,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Proximity.
+     * Immutable. Proximity.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ProximityInfo proximity = 23;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ProximityInfo proximity = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\ProximityInfo $var
      * @return $this
      */
@@ -847,9 +847,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Topic.
+     * Immutable. Topic.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.TopicInfo topic = 24;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.TopicInfo topic = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\TopicInfo
      */
     public function getTopic()
@@ -858,9 +858,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Topic.
+     * Immutable. Topic.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.TopicInfo topic = 24;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.TopicInfo topic = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\TopicInfo $var
      * @return $this
      */
@@ -873,9 +873,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Listing scope.
+     * Immutable. Listing scope.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ListingScopeInfo listing_scope = 25;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ListingScopeInfo listing_scope = 25 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\ListingScopeInfo
      */
     public function getListingScope()
@@ -884,9 +884,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Listing scope.
+     * Immutable. Listing scope.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ListingScopeInfo listing_scope = 25;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ListingScopeInfo listing_scope = 25 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\ListingScopeInfo $var
      * @return $this
      */
@@ -899,9 +899,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Language.
+     * Immutable. Language.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LanguageInfo language = 26;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LanguageInfo language = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\LanguageInfo
      */
     public function getLanguage()
@@ -910,9 +910,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Language.
+     * Immutable. Language.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LanguageInfo language = 26;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LanguageInfo language = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\LanguageInfo $var
      * @return $this
      */
@@ -925,9 +925,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * IpBlock.
+     * Immutable. IpBlock.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.IpBlockInfo ip_block = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.IpBlockInfo ip_block = 27 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\IpBlockInfo
      */
     public function getIpBlock()
@@ -936,9 +936,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * IpBlock.
+     * Immutable. IpBlock.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.IpBlockInfo ip_block = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.IpBlockInfo ip_block = 27 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\IpBlockInfo $var
      * @return $this
      */
@@ -951,9 +951,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ContentLabel.
+     * Immutable. ContentLabel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ContentLabelInfo content_label = 28;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ContentLabelInfo content_label = 28 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\ContentLabelInfo
      */
     public function getContentLabel()
@@ -962,9 +962,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ContentLabel.
+     * Immutable. ContentLabel.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ContentLabelInfo content_label = 28;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ContentLabelInfo content_label = 28 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\ContentLabelInfo $var
      * @return $this
      */
@@ -977,9 +977,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Carrier.
+     * Immutable. Carrier.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CarrierInfo carrier = 29;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CarrierInfo carrier = 29 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\CarrierInfo
      */
     public function getCarrier()
@@ -988,9 +988,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Carrier.
+     * Immutable. Carrier.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CarrierInfo carrier = 29;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CarrierInfo carrier = 29 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\CarrierInfo $var
      * @return $this
      */
@@ -1003,9 +1003,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User Interest.
+     * Immutable. User Interest.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserInterestInfo user_interest = 30;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserInterestInfo user_interest = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\UserInterestInfo
      */
     public function getUserInterest()
@@ -1014,9 +1014,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User Interest.
+     * Immutable. User Interest.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserInterestInfo user_interest = 30;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.UserInterestInfo user_interest = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\UserInterestInfo $var
      * @return $this
      */
@@ -1029,9 +1029,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Webpage.
+     * Immutable. Webpage.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.WebpageInfo webpage = 31;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.WebpageInfo webpage = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\WebpageInfo
      */
     public function getWebpage()
@@ -1040,9 +1040,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Webpage.
+     * Immutable. Webpage.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.WebpageInfo webpage = 31;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.WebpageInfo webpage = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\WebpageInfo $var
      * @return $this
      */
@@ -1055,9 +1055,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Operating system version.
+     * Immutable. Operating system version.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.OperatingSystemVersionInfo operating_system_version = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.OperatingSystemVersionInfo operating_system_version = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\OperatingSystemVersionInfo
      */
     public function getOperatingSystemVersion()
@@ -1066,9 +1066,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Operating system version.
+     * Immutable. Operating system version.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.OperatingSystemVersionInfo operating_system_version = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.OperatingSystemVersionInfo operating_system_version = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\OperatingSystemVersionInfo $var
      * @return $this
      */
@@ -1081,9 +1081,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile Device.
+     * Immutable. Mobile Device.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileDeviceInfo mobile_device = 33;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileDeviceInfo mobile_device = 33 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\MobileDeviceInfo
      */
     public function getMobileDevice()
@@ -1092,9 +1092,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile Device.
+     * Immutable. Mobile Device.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileDeviceInfo mobile_device = 33;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.MobileDeviceInfo mobile_device = 33 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\MobileDeviceInfo $var
      * @return $this
      */
@@ -1107,9 +1107,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location Group
+     * Immutable. Location Group
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationGroupInfo location_group = 34;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationGroupInfo location_group = 34 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\LocationGroupInfo
      */
     public function getLocationGroup()
@@ -1118,9 +1118,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location Group
+     * Immutable. Location Group
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationGroupInfo location_group = 34;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationGroupInfo location_group = 34 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\LocationGroupInfo $var
      * @return $this
      */
@@ -1133,9 +1133,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom Affinity.
+     * Immutable. Custom Affinity.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CustomAffinityInfo custom_affinity = 36;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CustomAffinityInfo custom_affinity = 36 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\CustomAffinityInfo
      */
     public function getCustomAffinity()
@@ -1144,9 +1144,9 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom Affinity.
+     * Immutable. Custom Affinity.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CustomAffinityInfo custom_affinity = 36;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CustomAffinityInfo custom_affinity = 36 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\CustomAffinityInfo $var
      * @return $this
      */

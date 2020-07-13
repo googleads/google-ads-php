@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class PromoteCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign experiment to promote.
+     * Required. The resource name of the campaign experiment to promote.
      *
-     * Generated from protobuf field <code>string campaign_experiment = 1;</code>
+     * Generated from protobuf field <code>string campaign_experiment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $campaign_experiment = '';
 
@@ -29,7 +29,7 @@ class PromoteCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $campaign_experiment
-     *           The resource name of the campaign experiment to promote.
+     *           Required. The resource name of the campaign experiment to promote.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class PromoteCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign experiment to promote.
+     * Required. The resource name of the campaign experiment to promote.
      *
-     * Generated from protobuf field <code>string campaign_experiment = 1;</code>
+     * Generated from protobuf field <code>string campaign_experiment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCampaignExperiment()
@@ -49,9 +49,9 @@ class PromoteCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign experiment to promote.
+     * Required. The resource name of the campaign experiment to promote.
      *
-     * Generated from protobuf field <code>string campaign_experiment = 1;</code>
+     * Generated from protobuf field <code>string campaign_experiment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

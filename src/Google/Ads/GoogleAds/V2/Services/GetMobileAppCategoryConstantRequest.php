@@ -17,9 +17,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetMobileAppCategoryConstantRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Resource name of the mobile app category constant to fetch.
+     * Required. Resource name of the mobile app category constant to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
 
@@ -30,7 +30,7 @@ class GetMobileAppCategoryConstantRequest extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           Resource name of the mobile app category constant to fetch.
+     *           Required. Resource name of the mobile app category constant to fetch.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,9 +39,9 @@ class GetMobileAppCategoryConstantRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Resource name of the mobile app category constant to fetch.
+     * Required. Resource name of the mobile app category constant to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -50,9 +50,9 @@ class GetMobileAppCategoryConstantRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Resource name of the mobile app category constant to fetch.
+     * Required. Resource name of the mobile app category constant to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

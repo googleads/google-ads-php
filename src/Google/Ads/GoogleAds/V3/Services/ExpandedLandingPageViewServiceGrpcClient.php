@@ -39,6 +39,7 @@ class ExpandedLandingPageViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetExpandedLandingPageViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ExpandedLandingPageView
      */
     public function GetExpandedLandingPageView(\Google\Ads\GoogleAds\V3\Services\GetExpandedLandingPageViewRequest $argument,
       $metadata = [], $options = []) {

@@ -41,6 +41,7 @@ class AssetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAssetRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\Asset
      */
     public function GetAsset(\Google\Ads\GoogleAds\V3\Services\GetAssetRequest $argument,
       $metadata = [], $options = []) {
@@ -55,6 +56,7 @@ class AssetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateAssetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateAssetsResponse
      */
     public function MutateAssets(\Google\Ads\GoogleAds\V3\Services\MutateAssetsRequest $argument,
       $metadata = [], $options = []) {

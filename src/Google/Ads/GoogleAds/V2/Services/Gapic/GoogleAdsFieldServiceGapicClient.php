@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -263,7 +263,7 @@ class GoogleAdsFieldServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the field to get.
+     * @param string $resourceName Required. The resource name of the field to get.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -328,7 +328,7 @@ class GoogleAdsFieldServiceGapicClient
      * }
      * ```
      *
-     * @param string $query        The query string.
+     * @param string $query        Required. The query string.
      * @param array  $optionalArgs {
      *                             Optional.
      *

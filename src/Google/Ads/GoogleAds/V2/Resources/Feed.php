@@ -16,24 +16,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class Feed extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the feed.
+     * Immutable. The resource name of the feed.
      * Feed resource names have the form:
      * `customers/{customer_id}/feeds/{feed_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the feed.
+     * Output only. The ID of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * Name of the feed. Required.
+     * Immutable. Name of the feed. Required.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $name = null;
     /**
@@ -53,16 +53,16 @@ class Feed extends \Google\Protobuf\Internal\Message
      */
     private $attribute_operations;
     /**
-     * Specifies who manages the FeedAttributes for the Feed.
+     * Immutable. Specifies who manages the FeedAttributes for the Feed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedOriginEnum.FeedOrigin origin = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedOriginEnum.FeedOrigin origin = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $origin = 0;
     /**
-     * Status of the feed.
+     * Output only. Status of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedStatusEnum.FeedStatus status = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedStatusEnum.FeedStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     protected $system_feed_generation_data;
@@ -74,14 +74,14 @@ class Feed extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the feed.
+     *           Immutable. The resource name of the feed.
      *           Feed resource names have the form:
      *           `customers/{customer_id}/feeds/{feed_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the feed.
+     *           Output only. The ID of the feed.
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $name
-     *           Name of the feed. Required.
+     *           Immutable. Name of the feed. Required.
      *     @type \Google\Ads\GoogleAds\V2\Resources\FeedAttribute[]|\Google\Protobuf\Internal\RepeatedField $attributes
      *           The Feed's attributes. Required on CREATE, unless
      *           system_feed_generation_data is provided, in which case Google Ads will
@@ -91,9 +91,9 @@ class Feed extends \Google\Protobuf\Internal\Message
      *           The list of operations changing the feed attributes. Attributes can only
      *           be added, not removed.
      *     @type int $origin
-     *           Specifies who manages the FeedAttributes for the Feed.
+     *           Immutable. Specifies who manages the FeedAttributes for the Feed.
      *     @type int $status
-     *           Status of the feed.
+     *           Output only. Status of the feed.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V2\Resources\Feed\PlacesLocationFeedData $places_location_feed_data
      *           Data used to configure a location feed populated from Google My Business
@@ -109,11 +109,11 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the feed.
+     * Immutable. The resource name of the feed.
      * Feed resource names have the form:
      * `customers/{customer_id}/feeds/{feed_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -122,11 +122,11 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the feed.
+     * Immutable. The resource name of the feed.
      * Feed resource names have the form:
      * `customers/{customer_id}/feeds/{feed_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -139,10 +139,10 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the feed.
+     * Output only. The ID of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -153,10 +153,10 @@ class Feed extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the feed.
+     * Output only. The ID of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -165,10 +165,10 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the feed.
+     * Output only. The ID of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -183,10 +183,10 @@ class Feed extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the feed.
+     * Output only. The ID of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -196,9 +196,9 @@ class Feed extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Name of the feed. Required.
+     * Immutable. Name of the feed. Required.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -209,9 +209,9 @@ class Feed extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * Name of the feed. Required.
+     * Immutable. Name of the feed. Required.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -220,9 +220,9 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the feed. Required.
+     * Immutable. Name of the feed. Required.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -237,9 +237,9 @@ class Feed extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Name of the feed. Required.
+     * Immutable. Name of the feed. Required.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -309,9 +309,9 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies who manages the FeedAttributes for the Feed.
+     * Immutable. Specifies who manages the FeedAttributes for the Feed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedOriginEnum.FeedOrigin origin = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedOriginEnum.FeedOrigin origin = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getOrigin()
@@ -320,9 +320,9 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies who manages the FeedAttributes for the Feed.
+     * Immutable. Specifies who manages the FeedAttributes for the Feed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedOriginEnum.FeedOrigin origin = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedOriginEnum.FeedOrigin origin = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -335,10 +335,10 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the feed.
+     * Output only. Status of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedStatusEnum.FeedStatus status = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedStatusEnum.FeedStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -347,10 +347,10 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the feed.
+     * Output only. Status of the feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedStatusEnum.FeedStatus status = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedStatusEnum.FeedStatus status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V3\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
-use Google\Ads\GoogleAds\V3\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\GoogleAdsField;
+use Google\Ads\GoogleAds\V4\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
+use Google\Ads\GoogleAds\V4\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\GoogleAdsField;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\BoolValue;
 use Google\Protobuf\StringValue;
@@ -44,7 +44,6 @@ use Google\Protobuf\StringValue;
 class GetArtifactMetadata
 {
     private const ARTIFACT_NAME = 'INSERT_ARTIFACT_NAME_HERE';
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {
@@ -99,7 +98,7 @@ class GetArtifactMetadata
      * Runs the example.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $artifactName the name of artifact to get its metadata
+     * @param string $artifactName the name of artifact to get its metadata
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, string $artifactName)
     {
@@ -145,6 +144,7 @@ class GetArtifactMetadata
      * Returns 'is' when the provided boolean value is true or 'is not' when it's false.
      *
      * @param BoolValue $boolValue the boolean value
+     * @return string the string 'is' or 'is not' depending on the passed value
      */
     private static function getIsOrIsNot(BoolValue $boolValue)
     {

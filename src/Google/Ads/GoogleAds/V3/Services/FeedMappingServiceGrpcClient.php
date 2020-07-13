@@ -39,6 +39,7 @@ class FeedMappingServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetFeedMappingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\FeedMapping
      */
     public function GetFeedMapping(\Google\Ads\GoogleAds\V3\Services\GetFeedMappingRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class FeedMappingServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateFeedMappingsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateFeedMappingsResponse
      */
     public function MutateFeedMappings(\Google\Ads\GoogleAds\V3\Services\MutateFeedMappingsRequest $argument,
       $metadata = [], $options = []) {

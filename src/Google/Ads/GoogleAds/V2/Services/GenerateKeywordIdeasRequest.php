@@ -22,10 +22,10 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      */
     protected $customer_id = '';
     /**
-     * The resource name of the language to target.
+     * Required. The resource name of the language to target.
      * Required
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $language = null;
     /**
@@ -52,7 +52,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      *     @type string $customer_id
      *           The ID of the customer with the recommendation.
      *     @type \Google\Protobuf\StringValue $language
-     *           The resource name of the language to target.
+     *           Required. The resource name of the language to target.
      *           Required
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $geo_target_constants
      *           The resource names of the location to target.
@@ -100,10 +100,10 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the language to target.
+     * Required. The resource name of the language to target.
      * Required
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getLanguage()
@@ -114,10 +114,10 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLanguage()</code>
 
-     * The resource name of the language to target.
+     * Required. The resource name of the language to target.
      * Required
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string|null
      */
     public function getLanguageUnwrapped()
@@ -126,10 +126,10 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the language to target.
+     * Required. The resource name of the language to target.
      * Required
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -144,10 +144,10 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the language to target.
+     * Required. The resource name of the language to target.
      * Required
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string|null $var
      * @return $this
      */

@@ -39,6 +39,7 @@ class KeywordPlanIdeaServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GenerateKeywordIdeasRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\GenerateKeywordIdeaResponse
      */
     public function GenerateKeywordIdeas(\Google\Ads\GoogleAds\V3\Services\GenerateKeywordIdeasRequest $argument,
       $metadata = [], $options = []) {

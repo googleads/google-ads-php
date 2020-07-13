@@ -39,6 +39,7 @@ class CustomerLabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCustomerLabelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CustomerLabel
      */
     public function GetCustomerLabel(\Google\Ads\GoogleAds\V3\Services\GetCustomerLabelRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class CustomerLabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCustomerLabelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCustomerLabelsResponse
      */
     public function MutateCustomerLabels(\Google\Ads\GoogleAds\V3\Services\MutateCustomerLabelsRequest $argument,
       $metadata = [], $options = []) {

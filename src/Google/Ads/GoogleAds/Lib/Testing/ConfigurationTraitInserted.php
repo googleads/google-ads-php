@@ -40,6 +40,7 @@ class ConfigurationTraitInserted
      *
      * @param string $developerToken
      * @param int $loginCustomerId
+     * @param int $linkedCustomerId
      * @param string $endpoint
      * @param FetchAuthTokenInterface $oAuth2Credential
      * @param LoggerInterface $logger
@@ -50,6 +51,7 @@ class ConfigurationTraitInserted
     public function __construct(
         string $developerToken,
         int $loginCustomerId,
+        int $linkedCustomerId,
         string $endpoint,
         FetchAuthTokenInterface $oAuth2Credential,
         LoggerInterface $logger,
@@ -59,6 +61,7 @@ class ConfigurationTraitInserted
     ) {
         $this->developerToken = $developerToken;
         $this->loginCustomerId = $loginCustomerId;
+        $this->linkedCustomerId = $linkedCustomerId;
         $this->endpoint = $endpoint;
         $this->oAuth2Credential = $oAuth2Credential;
         $this->logger = $logger;

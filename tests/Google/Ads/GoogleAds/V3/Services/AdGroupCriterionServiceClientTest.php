@@ -86,7 +86,7 @@ class AdGroupCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedResourceName = $client->adGroupCriteriaName('[CUSTOMER]', '[AD_GROUP_CRITERIA]');
+        $formattedResourceName = $client->adGroupCriterionName('[CUSTOMER]', '[AD_GROUP_CRITERION]');
 
         $response = $client->getAdGroupCriterion($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
@@ -126,7 +126,7 @@ class AdGroupCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedResourceName = $client->adGroupCriteriaName('[CUSTOMER]', '[AD_GROUP_CRITERIA]');
+        $formattedResourceName = $client->adGroupCriterionName('[CUSTOMER]', '[AD_GROUP_CRITERION]');
 
         try {
             $client->getAdGroupCriterion($formattedResourceName);

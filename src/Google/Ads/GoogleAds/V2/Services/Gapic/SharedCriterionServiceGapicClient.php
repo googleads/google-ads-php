@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $sharedCriterionServiceClient = new SharedCriterionServiceClient();
  * try {
- *     $formattedResourceName = $sharedCriterionServiceClient->sharedCriteriaName('[CUSTOMER]', '[SHARED_CRITERIA]');
+ *     $formattedResourceName = $sharedCriterionServiceClient->sharedCriterionName('[CUSTOMER]', '[SHARED_CRITERION]');
  *     $response = $sharedCriterionServiceClient->getSharedCriterion($formattedResourceName);
  * } finally {
  *     $sharedCriterionServiceClient->close();
@@ -93,7 +93,7 @@ class SharedCriterionServiceGapicClient
      */
     public static $serviceScopes = [
     ];
-    private static $sharedCriteriaNameTemplate;
+    private static $sharedCriterionNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -115,20 +115,20 @@ class SharedCriterionServiceGapicClient
         ];
     }
 
-    private static function getSharedCriteriaNameTemplate()
+    private static function getSharedCriterionNameTemplate()
     {
-        if (null == self::$sharedCriteriaNameTemplate) {
-            self::$sharedCriteriaNameTemplate = new PathTemplate('customers/{customer}/sharedCriteria/{shared_criteria}');
+        if (null == self::$sharedCriterionNameTemplate) {
+            self::$sharedCriterionNameTemplate = new PathTemplate('customers/{customer}/sharedCriteria/{shared_criterion}');
         }
 
-        return self::$sharedCriteriaNameTemplate;
+        return self::$sharedCriterionNameTemplate;
     }
 
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
-                'sharedCriteria' => self::getSharedCriteriaNameTemplate(),
+                'sharedCriterion' => self::getSharedCriterionNameTemplate(),
             ];
         }
 
@@ -137,19 +137,19 @@ class SharedCriterionServiceGapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a shared_criteria resource.
+     * a shared_criterion resource.
      *
      * @param string $customer
-     * @param string $sharedCriteria
+     * @param string $sharedCriterion
      *
-     * @return string The formatted shared_criteria resource.
+     * @return string The formatted shared_criterion resource.
      * @experimental
      */
-    public static function sharedCriteriaName($customer, $sharedCriteria)
+    public static function sharedCriterionName($customer, $sharedCriterion)
     {
-        return self::getSharedCriteriaNameTemplate()->render([
+        return self::getSharedCriterionNameTemplate()->render([
             'customer' => $customer,
-            'shared_criteria' => $sharedCriteria,
+            'shared_criterion' => $sharedCriterion,
         ]);
     }
 
@@ -157,7 +157,7 @@ class SharedCriterionServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - sharedCriteria: customers/{customer}/sharedCriteria/{shared_criteria}.
+     * - sharedCriterion: customers/{customer}/sharedCriteria/{shared_criterion}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -259,14 +259,14 @@ class SharedCriterionServiceGapicClient
      * ```
      * $sharedCriterionServiceClient = new SharedCriterionServiceClient();
      * try {
-     *     $formattedResourceName = $sharedCriterionServiceClient->sharedCriteriaName('[CUSTOMER]', '[SHARED_CRITERIA]');
+     *     $formattedResourceName = $sharedCriterionServiceClient->sharedCriterionName('[CUSTOMER]', '[SHARED_CRITERION]');
      *     $response = $sharedCriterionServiceClient->getSharedCriterion($formattedResourceName);
      * } finally {
      *     $sharedCriterionServiceClient->close();
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the shared criterion to fetch.
+     * @param string $resourceName Required. The resource name of the shared criterion to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -317,8 +317,8 @@ class SharedCriterionServiceGapicClient
      * }
      * ```
      *
-     * @param string                     $customerId   The ID of the customer whose shared criteria are being modified.
-     * @param SharedCriterionOperation[] $operations   The list of operations to perform on individual shared criteria.
+     * @param string                     $customerId   Required. The ID of the customer whose shared criteria are being modified.
+     * @param SharedCriterionOperation[] $operations   Required. The list of operations to perform on individual shared criteria.
      * @param array                      $optionalArgs {
      *                                                 Optional.
      *

@@ -23,36 +23,36 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Common\AdImageAsset;
-use Google\Ads\GoogleAds\V3\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V3\Common\ImageAsset;
-use Google\Ads\GoogleAds\V3\Common\ManualCpc;
-use Google\Ads\GoogleAds\V3\Common\ResponsiveDisplayAdInfo;
-use Google\Ads\GoogleAds\V3\Common\UserListInfo;
-use Google\Ads\GoogleAds\V3\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V3\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V3\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V3\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V3\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\Ad;
-use Google\Ads\GoogleAds\V3\Resources\AdGroup;
-use Google\Ads\GoogleAds\V3\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V3\Resources\Asset;
-use Google\Ads\GoogleAds\V3\Resources\Campaign;
-use Google\Ads\GoogleAds\V3\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V3\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V3\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V3\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V3\Services\AssetOperation;
-use Google\Ads\GoogleAds\V3\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V3\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Common\AdImageAsset;
+use Google\Ads\GoogleAds\V4\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V4\Common\ImageAsset;
+use Google\Ads\GoogleAds\V4\Common\ManualCpc;
+use Google\Ads\GoogleAds\V4\Common\ResponsiveDisplayAdInfo;
+use Google\Ads\GoogleAds\V4\Common\UserListInfo;
+use Google\Ads\GoogleAds\V4\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V4\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V4\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V4\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\Ad;
+use Google\Ads\GoogleAds\V4\Resources\AdGroup;
+use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V4\Resources\Asset;
+use Google\Ads\GoogleAds\V4\Resources\Campaign;
+use Google\Ads\GoogleAds\V4\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V4\Services\AssetOperation;
+use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V4\Services\MutateAssetResult;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\BoolValue;
 use Google\Protobuf\BytesValue;
@@ -100,7 +100,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
                 $options[ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID]
                     ?: self::MERCHANT_CENTER_ACCOUNT_ID,
                 $options[ArgumentNames::CAMPAIGN_BUDGET_ID] ?: self::CAMPAIGN_BUDGET_ID,
-                $options[ArgumentNames::USER_LIST_ID] ?: self::USER_LIST_ID,
+                $options[ArgumentNames::USER_LIST_ID] ?: self::USER_LIST_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(

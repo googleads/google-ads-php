@@ -55,6 +55,7 @@ class ConfigurationTraitTest extends TestCase
         $this->configurationTraitInserted = new ConfigurationTraitInserted(
             'AbCdEf',
             12345,
+            67890,
             'ads.google.com',
             $this->fetchAuthTokenInterfaceMock,
             $this->loggerMock,
@@ -72,6 +73,11 @@ class ConfigurationTraitTest extends TestCase
     public function testGetLoginCustomerId()
     {
         $this->assertEquals(12345, $this->configurationTraitInserted->getLoginCustomerId());
+    }
+
+    public function testGetLinkedCustomerId()
+    {
+        $this->assertEquals(67890, $this->configurationTraitInserted->getLinkedCustomerId());
     }
 
     public function testGetEndpoint()

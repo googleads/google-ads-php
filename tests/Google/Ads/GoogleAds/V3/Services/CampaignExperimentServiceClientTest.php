@@ -387,10 +387,10 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
+        $campaignExperiment = 'campaignExperiment1027532428';
         $campaignBudget = 'campaignBudget1992382804';
 
-        $response = $client->graduateCampaignExperiment($formattedCampaignExperiment, $campaignBudget);
+        $response = $client->graduateCampaignExperiment($campaignExperiment, $campaignBudget);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -400,7 +400,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getCampaignExperiment();
 
-        $this->assertProtobufEquals($formattedCampaignExperiment, $actualValue);
+        $this->assertProtobufEquals($campaignExperiment, $actualValue);
         $actualValue = $actualRequestObject->getCampaignBudget();
 
         $this->assertProtobufEquals($campaignBudget, $actualValue);
@@ -431,11 +431,11 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
+        $campaignExperiment = 'campaignExperiment1027532428';
         $campaignBudget = 'campaignBudget1992382804';
 
         try {
-            $client->graduateCampaignExperiment($formattedCampaignExperiment, $campaignBudget);
+            $client->graduateCampaignExperiment($campaignExperiment, $campaignBudget);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -483,9 +483,9 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
 
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
+        $campaignExperiment = 'campaignExperiment1027532428';
 
-        $response = $client->promoteCampaignExperiment($formattedCampaignExperiment);
+        $response = $client->promoteCampaignExperiment($campaignExperiment);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $apiRequests = $transport->popReceivedCalls();
@@ -498,7 +498,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $this->assertSame('/google.ads.googleads.v3.services.CampaignExperimentService/PromoteCampaignExperiment', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getCampaignExperiment();
 
-        $this->assertProtobufEquals($formattedCampaignExperiment, $actualValue);
+        $this->assertProtobufEquals($campaignExperiment, $actualValue);
 
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/promoteCampaignExperimentTest');
@@ -561,9 +561,9 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
 
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
+        $campaignExperiment = 'campaignExperiment1027532428';
 
-        $response = $client->promoteCampaignExperiment($formattedCampaignExperiment);
+        $response = $client->promoteCampaignExperiment($campaignExperiment);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
 
@@ -603,9 +603,9 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
+        $campaignExperiment = 'campaignExperiment1027532428';
 
-        $client->endCampaignExperiment($formattedCampaignExperiment);
+        $client->endCampaignExperiment($campaignExperiment);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
@@ -614,7 +614,7 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getCampaignExperiment();
 
-        $this->assertProtobufEquals($formattedCampaignExperiment, $actualValue);
+        $this->assertProtobufEquals($campaignExperiment, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -642,10 +642,10 @@ class CampaignExperimentServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedCampaignExperiment = $client->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
+        $campaignExperiment = 'campaignExperiment1027532428';
 
         try {
-            $client->endCampaignExperiment($formattedCampaignExperiment);
+            $client->endCampaignExperiment($campaignExperiment);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

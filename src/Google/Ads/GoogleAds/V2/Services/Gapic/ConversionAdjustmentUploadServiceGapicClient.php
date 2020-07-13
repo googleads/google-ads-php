@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,8 @@ use Google\Auth\FetchAuthTokenInterface;
  * try {
  *     $customerId = '';
  *     $conversionAdjustments = [];
- *     $response = $conversionAdjustmentUploadServiceClient->uploadConversionAdjustments($customerId, $conversionAdjustments);
+ *     $partialFailure = false;
+ *     $response = $conversionAdjustmentUploadServiceClient->uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure);
  * } finally {
  *     $conversionAdjustmentUploadServiceClient->close();
  * }
@@ -173,22 +174,22 @@ class ConversionAdjustmentUploadServiceGapicClient
      * try {
      *     $customerId = '';
      *     $conversionAdjustments = [];
-     *     $response = $conversionAdjustmentUploadServiceClient->uploadConversionAdjustments($customerId, $conversionAdjustments);
+     *     $partialFailure = false;
+     *     $response = $conversionAdjustmentUploadServiceClient->uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure);
      * } finally {
      *     $conversionAdjustmentUploadServiceClient->close();
      * }
      * ```
      *
-     * @param string                 $customerId            The ID of the customer performing the upload.
-     * @param ConversionAdjustment[] $conversionAdjustments The conversion adjustments that are being uploaded.
+     * @param string                 $customerId            Required. The ID of the customer performing the upload.
+     * @param ConversionAdjustment[] $conversionAdjustments Required. The conversion adjustments that are being uploaded.
+     * @param bool                   $partialFailure        Required. If true, successful operations will be carried out and invalid
+     *                                                      operations will return errors. If false, all operations will be carried out
+     *                                                      in one transaction if and only if they are all valid. This should always be
+     *                                                      set to true.
      * @param array                  $optionalArgs          {
      *                                                      Optional.
      *
-     *     @type bool $partialFailure
-     *          If true, successful operations will be carried out and invalid
-     *          operations will return errors. If false, all operations will be carried out
-     *          in one transaction if and only if they are all valid. This should always be
-     *          set to true.
      *     @type bool $validateOnly
      *          If true, the request is validated but not executed. Only errors are
      *          returned, not results.
@@ -204,14 +205,12 @@ class ConversionAdjustmentUploadServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function uploadConversionAdjustments($customerId, $conversionAdjustments, array $optionalArgs = [])
+    public function uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure, array $optionalArgs = [])
     {
         $request = new UploadConversionAdjustmentsRequest();
         $request->setCustomerId($customerId);
         $request->setConversionAdjustments($conversionAdjustments);
-        if (isset($optionalArgs['partialFailure'])) {
-            $request->setPartialFailure($optionalArgs['partialFailure']);
-        }
+        $request->setPartialFailure($partialFailure);
         if (isset($optionalArgs['validateOnly'])) {
             $request->setValidateOnly($optionalArgs['validateOnly']);
         }

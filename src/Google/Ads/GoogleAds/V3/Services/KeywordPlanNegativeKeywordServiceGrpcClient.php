@@ -39,6 +39,7 @@ class KeywordPlanNegativeKeywordServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetKeywordPlanNegativeKeywordRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\KeywordPlanNegativeKeyword
      */
     public function GetKeywordPlanNegativeKeyword(\Google\Ads\GoogleAds\V3\Services\GetKeywordPlanNegativeKeywordRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class KeywordPlanNegativeKeywordServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateKeywordPlanNegativeKeywordsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateKeywordPlanNegativeKeywordsResponse
      */
     public function MutateKeywordPlanNegativeKeywords(\Google\Ads\GoogleAds\V3\Services\MutateKeywordPlanNegativeKeywordsRequest $argument,
       $metadata = [], $options = []) {

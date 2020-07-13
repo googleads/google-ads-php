@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,8 +86,9 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $conversions = [];
+        $partialFailure = true;
 
-        $response = $client->uploadClickConversions($customerId, $conversions);
+        $response = $client->uploadClickConversions($customerId, $conversions, $partialFailure);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -101,6 +102,9 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getConversions();
 
         $this->assertProtobufEquals($conversions, $actualValue);
+        $actualValue = $actualRequestObject->getPartialFailure();
+
+        $this->assertProtobufEquals($partialFailure, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -130,9 +134,10 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $conversions = [];
+        $partialFailure = true;
 
         try {
-            $client->uploadClickConversions($customerId, $conversions);
+            $client->uploadClickConversions($customerId, $conversions, $partialFailure);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -162,8 +167,9 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $conversions = [];
+        $partialFailure = true;
 
-        $response = $client->uploadCallConversions($customerId, $conversions);
+        $response = $client->uploadCallConversions($customerId, $conversions, $partialFailure);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -177,6 +183,9 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getConversions();
 
         $this->assertProtobufEquals($conversions, $actualValue);
+        $actualValue = $actualRequestObject->getPartialFailure();
+
+        $this->assertProtobufEquals($partialFailure, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -206,9 +215,10 @@ class ConversionUploadServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $conversions = [];
+        $partialFailure = true;
 
         try {
-            $client->uploadCallConversions($customerId, $conversions);
+            $client->uploadCallConversions($customerId, $conversions, $partialFailure);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -47,6 +47,7 @@ class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetBillingSetupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\BillingSetup
      */
     public function GetBillingSetup(\Google\Ads\GoogleAds\V3\Services\GetBillingSetupRequest $argument,
       $metadata = [], $options = []) {
@@ -61,6 +62,7 @@ class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateBillingSetupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateBillingSetupResponse
      */
     public function MutateBillingSetup(\Google\Ads\GoogleAds\V3\Services\MutateBillingSetupRequest $argument,
       $metadata = [], $options = []) {

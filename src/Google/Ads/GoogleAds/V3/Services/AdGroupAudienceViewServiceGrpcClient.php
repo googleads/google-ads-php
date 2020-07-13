@@ -39,6 +39,7 @@ class AdGroupAudienceViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdGroupAudienceViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupAudienceView
      */
     public function GetAdGroupAudienceView(\Google\Ads\GoogleAds\V3\Services\GetAdGroupAudienceViewRequest $argument,
       $metadata = [], $options = []) {

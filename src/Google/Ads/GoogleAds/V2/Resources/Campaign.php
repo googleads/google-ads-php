@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class Campaign extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign.
+     * Immutable. The resource name of the campaign.
      * Campaign resource names have the form:
      * `customers/{customer_id}/campaigns/{campaign_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the campaign.
+     * Output only. The ID of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -47,9 +47,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * The ad serving status of the campaign.
+     * Output only. The ad serving status of the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignServingStatusEnum.CampaignServingStatus serving_status = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignServingStatusEnum.CampaignServingStatus serving_status = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $serving_status = 0;
     /**
@@ -59,23 +59,23 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $ad_serving_optimization_status = 0;
     /**
-     * The primary serving target for ads within the campaign.
+     * Immutable. The primary serving target for ads within the campaign.
      * The targeting options can be refined in `network_settings`.
      * This field is required and should not be empty when creating new
      * campaigns.
      * Can be set only when creating campaigns.
      * After the campaign is created, the field can not be changed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $advertising_channel_type = 0;
     /**
-     * Optional refinement to `advertising_channel_type`.
+     * Immutable. Optional refinement to `advertising_channel_type`.
      * Must be a valid sub-type of the parent channel type.
      * Can be set only when creating campaigns.
      * After campaign is created, the field can not be changed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType advertising_channel_sub_type = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType advertising_channel_sub_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $advertising_channel_sub_type = 0;
     /**
@@ -105,9 +105,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $network_settings = null;
     /**
-     * The hotel setting for the campaign.
+     * Immutable. The hotel setting for the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.HotelSettingInfo hotel_setting = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.HotelSettingInfo hotel_setting = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $hotel_setting = null;
     /**
@@ -141,39 +141,39 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $app_campaign_setting = null;
     /**
-     * The resource names of labels attached to this campaign.
+     * Output only. The resource names of labels attached to this campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     private $labels;
     /**
-     * The type of campaign: normal, draft, or experiment.
+     * Output only. The type of campaign: normal, draft, or experiment.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $experiment_type = 0;
     /**
-     * The resource name of the base campaign of a draft or experiment campaign.
+     * Output only. The resource name of the base campaign of a draft or experiment campaign.
      * For base campaigns, this is equal to `resource_name`.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $base_campaign = null;
     /**
      * The budget of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6 [(.google.api.resource_reference) = {</code>
      */
     protected $campaign_budget = null;
     /**
-     * The type of bidding strategy.
+     * Output only. The type of bidding strategy.
      * A bidding strategy can be created by setting either the bidding scheme to
      * create a standard bidding strategy or the `bidding_strategy` field to
      * create a portfolio bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType bidding_strategy_type = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType bidding_strategy_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $bidding_strategy_type = 0;
     /**
@@ -204,9 +204,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     private $frequency_caps;
     /**
-     * 3-Tier Brand Safety setting for the campaign.
+     * Output only. 3-Tier Brand Safety setting for the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $video_brand_safety_suitability = 0;
     /**
@@ -223,9 +223,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $selective_optimization = null;
     /**
-     * Campaign level settings for tracking information.
+     * Output only. Campaign-level settings for tracking information.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.TrackingSetting tracking_setting = 46;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.TrackingSetting tracking_setting = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $tracking_setting = null;
     /**
@@ -243,11 +243,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the campaign.
+     *           Immutable. The resource name of the campaign.
      *           Campaign resource names have the form:
      *           `customers/{customer_id}/campaigns/{campaign_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the campaign.
+     *           Output only. The ID of the campaign.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the campaign.
      *           This field is required and should not be empty when creating new
@@ -258,18 +258,18 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           The status of the campaign.
      *           When a new campaign is added, the status defaults to ENABLED.
      *     @type int $serving_status
-     *           The ad serving status of the campaign.
+     *           Output only. The ad serving status of the campaign.
      *     @type int $ad_serving_optimization_status
      *           The ad serving optimization status of the campaign.
      *     @type int $advertising_channel_type
-     *           The primary serving target for ads within the campaign.
+     *           Immutable. The primary serving target for ads within the campaign.
      *           The targeting options can be refined in `network_settings`.
      *           This field is required and should not be empty when creating new
      *           campaigns.
      *           Can be set only when creating campaigns.
      *           After the campaign is created, the field can not be changed.
      *     @type int $advertising_channel_sub_type
-     *           Optional refinement to `advertising_channel_type`.
+     *           Immutable. Optional refinement to `advertising_channel_type`.
      *           Must be a valid sub-type of the parent channel type.
      *           Can be set only when creating campaigns.
      *           After campaign is created, the field can not be changed.
@@ -284,7 +284,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V2\Resources\Campaign\NetworkSettings $network_settings
      *           The network settings for the campaign.
      *     @type \Google\Ads\GoogleAds\V2\Resources\Campaign\HotelSettingInfo $hotel_setting
-     *           The hotel setting for the campaign.
+     *           Immutable. The hotel setting for the campaign.
      *     @type \Google\Ads\GoogleAds\V2\Resources\Campaign\DynamicSearchAdsSetting $dynamic_search_ads_setting
      *           The setting for controlling Dynamic Search Ads (DSA).
      *     @type \Google\Ads\GoogleAds\V2\Resources\Campaign\ShoppingSetting $shopping_setting
@@ -296,17 +296,17 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V2\Resources\Campaign\AppCampaignSetting $app_campaign_setting
      *           The setting related to App Campaign.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $labels
-     *           The resource names of labels attached to this campaign.
+     *           Output only. The resource names of labels attached to this campaign.
      *     @type int $experiment_type
-     *           The type of campaign: normal, draft, or experiment.
+     *           Output only. The type of campaign: normal, draft, or experiment.
      *     @type \Google\Protobuf\StringValue $base_campaign
-     *           The resource name of the base campaign of a draft or experiment campaign.
+     *           Output only. The resource name of the base campaign of a draft or experiment campaign.
      *           For base campaigns, this is equal to `resource_name`.
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $campaign_budget
      *           The budget of the campaign.
      *     @type int $bidding_strategy_type
-     *           The type of bidding strategy.
+     *           Output only. The type of bidding strategy.
      *           A bidding strategy can be created by setting either the bidding scheme to
      *           create a standard bidding strategy or the `bidding_strategy` field to
      *           create a portfolio bidding strategy.
@@ -323,14 +323,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V2\Common\FrequencyCapEntry[]|\Google\Protobuf\Internal\RepeatedField $frequency_caps
      *           A list that limits how often each user will see this campaign's ads.
      *     @type int $video_brand_safety_suitability
-     *           3-Tier Brand Safety setting for the campaign.
+     *           Output only. 3-Tier Brand Safety setting for the campaign.
      *     @type \Google\Ads\GoogleAds\V2\Resources\Campaign\VanityPharma $vanity_pharma
      *           Describes how unbranded pharma ads will be displayed.
      *     @type \Google\Ads\GoogleAds\V2\Resources\Campaign\SelectiveOptimization $selective_optimization
      *           Selective optimization setting for this campaign, which includes a set of
      *           conversion actions to optimize this campaign towards.
      *     @type \Google\Ads\GoogleAds\V2\Resources\Campaign\TrackingSetting $tracking_setting
-     *           Campaign level settings for tracking information.
+     *           Output only. Campaign-level settings for tracking information.
      *     @type int $payment_mode
      *           Payment mode for the campaign.
      *     @type \Google\Protobuf\StringValue $bidding_strategy
@@ -346,7 +346,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *           Manual impression-based bidding where user pays per thousand
      *           impressions.
      *     @type \Google\Ads\GoogleAds\V2\Common\ManualCpv $manual_cpv
-     *           A bidding strategy that pays a configurable amount per video view.
+     *           Output only. A bidding strategy that pays a configurable amount per video view.
      *     @type \Google\Ads\GoogleAds\V2\Common\MaximizeConversions $maximize_conversions
      *           Standard Maximize Conversions bidding strategy that automatically
      *           maximizes number of conversions given a daily budget.
@@ -380,11 +380,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign.
+     * Immutable. The resource name of the campaign.
      * Campaign resource names have the form:
      * `customers/{customer_id}/campaigns/{campaign_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -393,11 +393,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign.
+     * Immutable. The resource name of the campaign.
      * Campaign resource names have the form:
      * `customers/{customer_id}/campaigns/{campaign_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -410,9 +410,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the campaign.
+     * Output only. The ID of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -423,9 +423,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the campaign.
+     * Output only. The ID of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -434,9 +434,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the campaign.
+     * Output only. The ID of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -451,9 +451,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the campaign.
+     * Output only. The ID of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -560,9 +560,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad serving status of the campaign.
+     * Output only. The ad serving status of the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignServingStatusEnum.CampaignServingStatus serving_status = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignServingStatusEnum.CampaignServingStatus serving_status = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getServingStatus()
@@ -571,9 +571,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad serving status of the campaign.
+     * Output only. The ad serving status of the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignServingStatusEnum.CampaignServingStatus serving_status = 21;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignServingStatusEnum.CampaignServingStatus serving_status = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -612,14 +612,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The primary serving target for ads within the campaign.
+     * Immutable. The primary serving target for ads within the campaign.
      * The targeting options can be refined in `network_settings`.
      * This field is required and should not be empty when creating new
      * campaigns.
      * Can be set only when creating campaigns.
      * After the campaign is created, the field can not be changed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getAdvertisingChannelType()
@@ -628,14 +628,14 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The primary serving target for ads within the campaign.
+     * Immutable. The primary serving target for ads within the campaign.
      * The targeting options can be refined in `network_settings`.
      * This field is required and should not be empty when creating new
      * campaigns.
      * Can be set only when creating campaigns.
      * After the campaign is created, the field can not be changed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelTypeEnum.AdvertisingChannelType advertising_channel_type = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -648,12 +648,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional refinement to `advertising_channel_type`.
+     * Immutable. Optional refinement to `advertising_channel_type`.
      * Must be a valid sub-type of the parent channel type.
      * Can be set only when creating campaigns.
      * After campaign is created, the field can not be changed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType advertising_channel_sub_type = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType advertising_channel_sub_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getAdvertisingChannelSubType()
@@ -662,12 +662,12 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional refinement to `advertising_channel_type`.
+     * Immutable. Optional refinement to `advertising_channel_type`.
      * Must be a valid sub-type of the parent channel type.
      * Can be set only when creating campaigns.
      * After campaign is created, the field can not be changed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType advertising_channel_sub_type = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType advertising_channel_sub_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -815,9 +815,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The hotel setting for the campaign.
+     * Immutable. The hotel setting for the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.HotelSettingInfo hotel_setting = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.HotelSettingInfo hotel_setting = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\Campaign\HotelSettingInfo
      */
     public function getHotelSetting()
@@ -826,9 +826,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The hotel setting for the campaign.
+     * Immutable. The hotel setting for the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.HotelSettingInfo hotel_setting = 32;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.HotelSettingInfo hotel_setting = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\Campaign\HotelSettingInfo $var
      * @return $this
      */
@@ -971,9 +971,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource names of labels attached to this campaign.
+     * Output only. The resource names of labels attached to this campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLabels()
@@ -982,9 +982,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource names of labels attached to this campaign.
+     * Output only. The resource names of labels attached to this campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue labels = 53 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -997,9 +997,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of campaign: normal, draft, or experiment.
+     * Output only. The type of campaign: normal, draft, or experiment.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getExperimentType()
@@ -1008,9 +1008,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of campaign: normal, draft, or experiment.
+     * Output only. The type of campaign: normal, draft, or experiment.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTypeEnum.CampaignExperimentType experiment_type = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1023,11 +1023,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the base campaign of a draft or experiment campaign.
+     * Output only. The resource name of the base campaign of a draft or experiment campaign.
      * For base campaigns, this is equal to `resource_name`.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getBaseCampaign()
@@ -1038,11 +1038,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getBaseCampaign()</code>
 
-     * The resource name of the base campaign of a draft or experiment campaign.
+     * Output only. The resource name of the base campaign of a draft or experiment campaign.
      * For base campaigns, this is equal to `resource_name`.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getBaseCampaignUnwrapped()
@@ -1051,11 +1051,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the base campaign of a draft or experiment campaign.
+     * Output only. The resource name of the base campaign of a draft or experiment campaign.
      * For base campaigns, this is equal to `resource_name`.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -1070,11 +1070,11 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the base campaign of a draft or experiment campaign.
+     * Output only. The resource name of the base campaign of a draft or experiment campaign.
      * For base campaigns, this is equal to `resource_name`.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue base_campaign = 28 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -1086,7 +1086,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The budget of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaignBudget()
@@ -1099,7 +1099,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
      * The budget of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6 [(.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignBudgetUnwrapped()
@@ -1110,7 +1110,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * The budget of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -1127,7 +1127,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
      * The budget of the campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_budget = 6 [(.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -1137,13 +1137,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The type of bidding strategy.
+     * Output only. The type of bidding strategy.
      * A bidding strategy can be created by setting either the bidding scheme to
      * create a standard bidding strategy or the `bidding_strategy` field to
      * create a portfolio bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType bidding_strategy_type = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType bidding_strategy_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getBiddingStrategyType()
@@ -1152,13 +1152,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of bidding strategy.
+     * Output only. The type of bidding strategy.
      * A bidding strategy can be created by setting either the bidding scheme to
      * create a standard bidding strategy or the `bidding_strategy` field to
      * create a portfolio bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType bidding_strategy_type = 22;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType bidding_strategy_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1368,9 +1368,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 3-Tier Brand Safety setting for the campaign.
+     * Output only. 3-Tier Brand Safety setting for the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getVideoBrandSafetySuitability()
@@ -1379,9 +1379,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 3-Tier Brand Safety setting for the campaign.
+     * Output only. 3-Tier Brand Safety setting for the campaign.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BrandSafetySuitabilityEnum.BrandSafetySuitability video_brand_safety_suitability = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1448,9 +1448,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Campaign level settings for tracking information.
+     * Output only. Campaign-level settings for tracking information.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.TrackingSetting tracking_setting = 46;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.TrackingSetting tracking_setting = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\Campaign\TrackingSetting
      */
     public function getTrackingSetting()
@@ -1459,9 +1459,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Campaign level settings for tracking information.
+     * Output only. Campaign-level settings for tracking information.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.TrackingSetting tracking_setting = 46;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Campaign.TrackingSetting tracking_setting = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\Campaign\TrackingSetting $var
      * @return $this
      */
@@ -1502,7 +1502,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Portfolio bidding strategy used by campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getBiddingStrategy()
@@ -1515,7 +1515,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
      * Portfolio bidding strategy used by campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23 [(.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getBiddingStrategyUnwrapped()
@@ -1526,7 +1526,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     /**
      * Portfolio bidding strategy used by campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -1543,7 +1543,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
 
      * Portfolio bidding strategy used by campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue bidding_strategy = 23 [(.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -1639,9 +1639,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A bidding strategy that pays a configurable amount per video view.
+     * Output only. A bidding strategy that pays a configurable amount per video view.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ManualCpv manual_cpv = 37;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ManualCpv manual_cpv = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\ManualCpv
      */
     public function getManualCpv()
@@ -1650,9 +1650,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A bidding strategy that pays a configurable amount per video view.
+     * Output only. A bidding strategy that pays a configurable amount per video view.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ManualCpv manual_cpv = 37;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ManualCpv manual_cpv = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\ManualCpv $var
      * @return $this
      */

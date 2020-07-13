@@ -39,6 +39,7 @@ class ExtensionFeedItemServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetExtensionFeedItemRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ExtensionFeedItem
      */
     public function GetExtensionFeedItem(\Google\Ads\GoogleAds\V3\Services\GetExtensionFeedItemRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class ExtensionFeedItemServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateExtensionFeedItemsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateExtensionFeedItemsResponse
      */
     public function MutateExtensionFeedItems(\Google\Ads\GoogleAds\V3\Services\MutateExtensionFeedItemsRequest $argument,
       $metadata = [], $options = []) {

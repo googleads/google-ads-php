@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2019 Google LLC.
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
 //
 namespace Google\Ads\GoogleAds\V2\Services;
 
@@ -49,6 +48,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GetCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Resources\CampaignExperiment
      */
     public function GetCampaignExperiment(\Google\Ads\GoogleAds\V2\Services\GetCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -72,6 +72,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\CreateCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\LongRunning\Operation
      */
     public function CreateCampaignExperiment(\Google\Ads\GoogleAds\V2\Services\CreateCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -86,6 +87,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\MutateCampaignExperimentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\MutateCampaignExperimentsResponse
      */
     public function MutateCampaignExperiments(\Google\Ads\GoogleAds\V2\Services\MutateCampaignExperimentsRequest $argument,
       $metadata = [], $options = []) {
@@ -101,6 +103,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GraduateCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\GraduateCampaignExperimentResponse
      */
     public function GraduateCampaignExperiment(\Google\Ads\GoogleAds\V2\Services\GraduateCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -120,6 +123,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\PromoteCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\LongRunning\Operation
      */
     public function PromoteCampaignExperiment(\Google\Ads\GoogleAds\V2\Services\PromoteCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -136,6 +140,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\EndCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Protobuf\GPBEmpty
      */
     public function EndCampaignExperiment(\Google\Ads\GoogleAds\V2\Services\EndCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -152,6 +157,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\ListCampaignExperimentAsyncErrorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\ListCampaignExperimentAsyncErrorsResponse
      */
     public function ListCampaignExperimentAsyncErrors(\Google\Ads\GoogleAds\V2\Services\ListCampaignExperimentAsyncErrorsRequest $argument,
       $metadata = [], $options = []) {

@@ -39,6 +39,7 @@ class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\CreateOfflineUserDataJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\CreateOfflineUserDataJobResponse
      */
     public function CreateOfflineUserDataJob(\Google\Ads\GoogleAds\V3\Services\CreateOfflineUserDataJobRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetOfflineUserDataJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\OfflineUserDataJob
      */
     public function GetOfflineUserDataJob(\Google\Ads\GoogleAds\V3\Services\GetOfflineUserDataJobRequest $argument,
       $metadata = [], $options = []) {
@@ -67,6 +69,7 @@ class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\AddOfflineUserDataJobOperationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\AddOfflineUserDataJobOperationsResponse
      */
     public function AddOfflineUserDataJobOperations(\Google\Ads\GoogleAds\V3\Services\AddOfflineUserDataJobOperationsRequest $argument,
       $metadata = [], $options = []) {
@@ -84,6 +87,7 @@ class OfflineUserDataJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\RunOfflineUserDataJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\LongRunning\Operation
      */
     public function RunOfflineUserDataJob(\Google\Ads\GoogleAds\V3\Services\RunOfflineUserDataJobRequest $argument,
       $metadata = [], $options = []) {

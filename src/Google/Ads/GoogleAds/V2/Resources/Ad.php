@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class Ad extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad.
+     * Immutable. The resource name of the ad.
      * Ad resource names have the form:
      * `customers/{customer_id}/ads/{ad_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 37;</code>
+     * Generated from protobuf field <code>string resource_name = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the ad.
+     * Output only. The ID of the ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -65,6 +65,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The list of mappings that can be used to substitute custom parameter tags
      * in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     * For mutates, please use url custom parameter operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.CustomParameter url_custom_parameters = 10;</code>
      */
@@ -76,18 +77,18 @@ class Ad extends \Google\Protobuf\Internal\Message
      */
     protected $display_url = null;
     /**
-     * The type of ad.
+     * Output only. The type of ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdTypeEnum.AdType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdTypeEnum.AdType type = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     /**
-     * Indicates if this ad was automatically added by Google Ads and not by a
+     * Output only. Indicates if this ad was automatically added by Google Ads and not by a
      * user. For example, this could happen when ads are automatically created as
      * suggestions for new ads based on knowledge of how existing ads are
      * performing.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $added_by_google_ads = null;
     /**
@@ -109,17 +110,17 @@ class Ad extends \Google\Protobuf\Internal\Message
      */
     private $url_collections;
     /**
-     * The name of the ad. This is only used to be able to identify the ad. It
+     * Immutable. The name of the ad. This is only used to be able to identify the ad. It
      * does not need to be unique and does not affect the served ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $name = null;
     /**
-     * If this ad is system managed, then this field will indicate the source.
+     * Output only. If this ad is system managed, then this field will indicate the source.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $system_managed_resource_source = 0;
     protected $ad_data;
@@ -131,11 +132,11 @@ class Ad extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad.
+     *           Immutable. The resource name of the ad.
      *           Ad resource names have the form:
      *           `customers/{customer_id}/ads/{ad_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the ad.
+     *           Output only. The ID of the ad.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $final_urls
      *           The list of possible final URLs after all cross-domain redirects for the
      *           ad.
@@ -152,12 +153,13 @@ class Ad extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V2\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $url_custom_parameters
      *           The list of mappings that can be used to substitute custom parameter tags
      *           in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     *           For mutates, please use url custom parameter operations.
      *     @type \Google\Protobuf\StringValue $display_url
      *           The URL that appears in the ad description for some ad formats.
      *     @type int $type
-     *           The type of ad.
+     *           Output only. The type of ad.
      *     @type \Google\Protobuf\BoolValue $added_by_google_ads
-     *           Indicates if this ad was automatically added by Google Ads and not by a
+     *           Output only. Indicates if this ad was automatically added by Google Ads and not by a
      *           user. For example, this could happen when ads are automatically created as
      *           suggestions for new ads based on knowledge of how existing ads are
      *           performing.
@@ -172,10 +174,10 @@ class Ad extends \Google\Protobuf\Internal\Message
      *           Additional URLs for the ad that are tagged with a unique identifier that
      *           can be referenced from other fields in the ad.
      *     @type \Google\Protobuf\StringValue $name
-     *           The name of the ad. This is only used to be able to identify the ad. It
+     *           Immutable. The name of the ad. This is only used to be able to identify the ad. It
      *           does not need to be unique and does not affect the served ad.
      *     @type int $system_managed_resource_source
-     *           If this ad is system managed, then this field will indicate the source.
+     *           Output only. If this ad is system managed, then this field will indicate the source.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V2\Common\TextAdInfo $text_ad
      *           Details pertaining to a text ad.
@@ -208,7 +210,7 @@ class Ad extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V2\Common\AppAdInfo $app_ad
      *           Details pertaining to an app ad.
      *     @type \Google\Ads\GoogleAds\V2\Common\LegacyAppInstallAdInfo $legacy_app_install_ad
-     *           Details pertaining to a legacy app install ad.
+     *           Immutable. Details pertaining to a legacy app install ad.
      *     @type \Google\Ads\GoogleAds\V2\Common\ResponsiveDisplayAdInfo $responsive_display_ad
      *           Details pertaining to a responsive display ad.
      *     @type \Google\Ads\GoogleAds\V2\Common\DisplayUploadAdInfo $display_upload_ad
@@ -225,11 +227,11 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad.
+     * Immutable. The resource name of the ad.
      * Ad resource names have the form:
      * `customers/{customer_id}/ads/{ad_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 37;</code>
+     * Generated from protobuf field <code>string resource_name = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -238,11 +240,11 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad.
+     * Immutable. The resource name of the ad.
      * Ad resource names have the form:
      * `customers/{customer_id}/ads/{ad_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 37;</code>
+     * Generated from protobuf field <code>string resource_name = 37 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -255,9 +257,9 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the ad.
+     * Output only. The ID of the ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -268,9 +270,9 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the ad.
+     * Output only. The ID of the ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -279,9 +281,9 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the ad.
+     * Output only. The ID of the ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -296,9 +298,9 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the ad.
+     * Output only. The ID of the ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -500,6 +502,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The list of mappings that can be used to substitute custom parameter tags
      * in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     * For mutates, please use url custom parameter operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.CustomParameter url_custom_parameters = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -512,6 +515,7 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * The list of mappings that can be used to substitute custom parameter tags
      * in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+     * For mutates, please use url custom parameter operations.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.CustomParameter url_custom_parameters = 10;</code>
      * @param \Google\Ads\GoogleAds\V2\Common\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -579,9 +583,9 @@ class Ad extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The type of ad.
+     * Output only. The type of ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdTypeEnum.AdType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdTypeEnum.AdType type = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -590,9 +594,9 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of ad.
+     * Output only. The type of ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdTypeEnum.AdType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AdTypeEnum.AdType type = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -605,12 +609,12 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates if this ad was automatically added by Google Ads and not by a
+     * Output only. Indicates if this ad was automatically added by Google Ads and not by a
      * user. For example, this could happen when ads are automatically created as
      * suggestions for new ads based on knowledge of how existing ads are
      * performing.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getAddedByGoogleAds()
@@ -621,12 +625,12 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAddedByGoogleAds()</code>
 
-     * Indicates if this ad was automatically added by Google Ads and not by a
+     * Output only. Indicates if this ad was automatically added by Google Ads and not by a
      * user. For example, this could happen when ads are automatically created as
      * suggestions for new ads based on knowledge of how existing ads are
      * performing.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getAddedByGoogleAdsUnwrapped()
@@ -635,12 +639,12 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates if this ad was automatically added by Google Ads and not by a
+     * Output only. Indicates if this ad was automatically added by Google Ads and not by a
      * user. For example, this could happen when ads are automatically created as
      * suggestions for new ads based on knowledge of how existing ads are
      * performing.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -655,12 +659,12 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Indicates if this ad was automatically added by Google Ads and not by a
+     * Output only. Indicates if this ad was automatically added by Google Ads and not by a
      * user. For example, this could happen when ads are automatically created as
      * suggestions for new ads based on knowledge of how existing ads are
      * performing.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue added_by_google_ads = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -734,10 +738,10 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the ad. This is only used to be able to identify the ad. It
+     * Immutable. The name of the ad. This is only used to be able to identify the ad. It
      * does not need to be unique and does not affect the served ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -748,10 +752,10 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * The name of the ad. This is only used to be able to identify the ad. It
+     * Immutable. The name of the ad. This is only used to be able to identify the ad. It
      * does not need to be unique and does not affect the served ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -760,10 +764,10 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the ad. This is only used to be able to identify the ad. It
+     * Immutable. The name of the ad. This is only used to be able to identify the ad. It
      * does not need to be unique and does not affect the served ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -778,10 +782,10 @@ class Ad extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the ad. This is only used to be able to identify the ad. It
+     * Immutable. The name of the ad. This is only used to be able to identify the ad. It
      * does not need to be unique and does not affect the served ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -791,10 +795,10 @@ class Ad extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * If this ad is system managed, then this field will indicate the source.
+     * Output only. If this ad is system managed, then this field will indicate the source.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getSystemManagedResourceSource()
@@ -803,10 +807,10 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If this ad is system managed, then this field will indicate the source.
+     * Output only. If this ad is system managed, then this field will indicate the source.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SystemManagedResourceSourceEnum.SystemManagedResourceSource system_managed_resource_source = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1165,9 +1169,9 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Details pertaining to a legacy app install ad.
+     * Immutable. Details pertaining to a legacy app install ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LegacyAppInstallAdInfo legacy_app_install_ad = 30;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LegacyAppInstallAdInfo legacy_app_install_ad = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\LegacyAppInstallAdInfo
      */
     public function getLegacyAppInstallAd()
@@ -1176,9 +1180,9 @@ class Ad extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Details pertaining to a legacy app install ad.
+     * Immutable. Details pertaining to a legacy app install ad.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LegacyAppInstallAdInfo legacy_app_install_ad = 30;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LegacyAppInstallAdInfo legacy_app_install_ad = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\LegacyAppInstallAdInfo $var
      * @return $this
      */

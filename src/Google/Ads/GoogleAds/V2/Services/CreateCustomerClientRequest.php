@@ -16,16 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the Manager under whom client customer is being created.
+     * Required. The ID of the Manager under whom client customer is being created.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The new client customer to create. The resource name on this customer
+     * Required. The new client customer to create. The resource name on this customer
      * will be ignored.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Customer customer_client = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Customer customer_client = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_client = null;
     /**
@@ -50,9 +50,9 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the Manager under whom client customer is being created.
+     *           Required. The ID of the Manager under whom client customer is being created.
      *     @type \Google\Ads\GoogleAds\V2\Resources\Customer $customer_client
-     *           The new client customer to create. The resource name on this customer
+     *           Required. The new client customer to create. The resource name on this customer
      *           will be ignored.
      *     @type \Google\Protobuf\StringValue $email_address
      *           Email address of the user who should be invited on the created client
@@ -68,9 +68,9 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the Manager under whom client customer is being created.
+     * Required. The ID of the Manager under whom client customer is being created.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -79,9 +79,9 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the Manager under whom client customer is being created.
+     * Required. The ID of the Manager under whom client customer is being created.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -94,10 +94,10 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The new client customer to create. The resource name on this customer
+     * Required. The new client customer to create. The resource name on this customer
      * will be ignored.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Customer customer_client = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Customer customer_client = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\Customer
      */
     public function getCustomerClient()
@@ -106,10 +106,10 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The new client customer to create. The resource name on this customer
+     * Required. The new client customer to create. The resource name on this customer
      * will be ignored.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Customer customer_client = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Customer customer_client = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\Customer $var
      * @return $this
      */

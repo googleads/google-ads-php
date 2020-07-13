@@ -39,6 +39,7 @@ class VideoServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetVideoRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\Video
      */
     public function GetVideo(\Google\Ads\GoogleAds\V3\Services\GetVideoRequest $argument,
       $metadata = [], $options = []) {

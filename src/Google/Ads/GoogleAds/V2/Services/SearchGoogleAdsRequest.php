@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer being queried.
+     * Required. The ID of the customer being queried.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The query string.
+     * Required. The query string.
      *
-     * Generated from protobuf field <code>string query = 2;</code>
+     * Generated from protobuf field <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $query = '';
     /**
@@ -65,9 +65,9 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer being queried.
+     *           Required. The ID of the customer being queried.
      *     @type string $query
-     *           The query string.
+     *           Required. The query string.
      *     @type string $page_token
      *           Token of the page to retrieve. If not specified, the first
      *           page of results will be returned. Use the value obtained from
@@ -90,9 +90,9 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer being queried.
+     * Required. The ID of the customer being queried.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -101,9 +101,9 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer being queried.
+     * Required. The ID of the customer being queried.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -116,9 +116,9 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The query string.
+     * Required. The query string.
      *
-     * Generated from protobuf field <code>string query = 2;</code>
+     * Generated from protobuf field <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getQuery()
@@ -127,9 +127,9 @@ class SearchGoogleAdsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The query string.
+     * Required. The query string.
      *
-     * Generated from protobuf field <code>string query = 2;</code>
+     * Generated from protobuf field <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

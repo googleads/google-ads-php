@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -259,9 +259,9 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
 
         // Mock request
-        $formattedCampaignDraft = $client->campaignDraftName('[CUSTOMER]', '[CAMPAIGN_DRAFT]');
+        $campaignDraft = 'campaignDraft-1319448142';
 
-        $response = $client->promoteCampaignDraft($formattedCampaignDraft);
+        $response = $client->promoteCampaignDraft($campaignDraft);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $apiRequests = $transport->popReceivedCalls();
@@ -274,7 +274,7 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertSame('/google.ads.googleads.v2.services.CampaignDraftService/PromoteCampaignDraft', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getCampaignDraft();
 
-        $this->assertProtobufEquals($formattedCampaignDraft, $actualValue);
+        $this->assertProtobufEquals($campaignDraft, $actualValue);
 
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/promoteCampaignDraftTest');
@@ -337,9 +337,9 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
 
         // Mock request
-        $formattedCampaignDraft = $client->campaignDraftName('[CUSTOMER]', '[CAMPAIGN_DRAFT]');
+        $campaignDraft = 'campaignDraft-1319448142';
 
-        $response = $client->promoteCampaignDraft($formattedCampaignDraft);
+        $response = $client->promoteCampaignDraft($campaignDraft);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
 

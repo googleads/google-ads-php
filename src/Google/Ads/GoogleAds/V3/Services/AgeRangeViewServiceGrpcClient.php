@@ -39,6 +39,7 @@ class AgeRangeViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAgeRangeViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AgeRangeView
      */
     public function GetAgeRangeView(\Google\Ads\GoogleAds\V3\Services\GetAgeRangeViewRequest $argument,
       $metadata = [], $options = []) {

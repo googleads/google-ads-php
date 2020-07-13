@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Id of the customer to apply the billing setup mutate operation to.
+     * Required. Id of the customer to apply the billing setup mutate operation to.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The operation to perform.
+     * Required. The operation to perform.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.BillingSetupOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.BillingSetupOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $operation = null;
 
@@ -35,9 +35,9 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           Id of the customer to apply the billing setup mutate operation to.
+     *           Required. Id of the customer to apply the billing setup mutate operation to.
      *     @type \Google\Ads\GoogleAds\V2\Services\BillingSetupOperation $operation
-     *           The operation to perform.
+     *           Required. The operation to perform.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,9 +46,9 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the customer to apply the billing setup mutate operation to.
+     * Required. Id of the customer to apply the billing setup mutate operation to.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -57,9 +57,9 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the customer to apply the billing setup mutate operation to.
+     * Required. Id of the customer to apply the billing setup mutate operation to.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -72,9 +72,9 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The operation to perform.
+     * Required. The operation to perform.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.BillingSetupOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.BillingSetupOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Ads\GoogleAds\V2\Services\BillingSetupOperation
      */
     public function getOperation()
@@ -83,9 +83,9 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The operation to perform.
+     * Required. The operation to perform.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.BillingSetupOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.BillingSetupOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\BillingSetupOperation $var
      * @return $this
      */

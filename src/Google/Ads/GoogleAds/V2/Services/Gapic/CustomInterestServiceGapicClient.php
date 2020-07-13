@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class CustomInterestServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the custom interest to fetch.
+     * @param string $resourceName Required. The resource name of the custom interest to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -317,8 +317,8 @@ class CustomInterestServiceGapicClient
      * }
      * ```
      *
-     * @param string                    $customerId   The ID of the customer whose custom interests are being modified.
-     * @param CustomInterestOperation[] $operations   The list of operations to perform on individual custom interests.
+     * @param string                    $customerId   Required. The ID of the customer whose custom interests are being modified.
+     * @param CustomInterestOperation[] $operations   Required. The list of operations to perform on individual custom interests.
      * @param array                     $optionalArgs {
      *                                                Optional.
      *

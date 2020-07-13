@@ -16,24 +16,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the extension feed item.
+     * Immutable. The resource name of the extension feed item.
      * Extension feed item resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of this feed item. Read-only.
+     * Output only. The ID of this feed item. Read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The extension type of the extension feed item.
+     * Output only. The extension type of the extension feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionTypeEnum.ExtensionType extension_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $extension_type = 0;
     /**
@@ -71,7 +71,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20 [(.google.api.resource_reference) = {</code>
      */
     protected $targeted_geo_target_constant = null;
     /**
@@ -81,10 +81,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      */
     protected $targeted_keyword = null;
     /**
-     * Status of the feed item.
+     * Output only. Status of the feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemStatusEnum.FeedItemStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemStatusEnum.FeedItemStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     protected $extension;
@@ -97,13 +97,13 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the extension feed item.
+     *           Immutable. The resource name of the extension feed item.
      *           Extension feed item resource names have the form:
      *           `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of this feed item. Read-only.
+     *           Output only. The ID of this feed item. Read-only.
      *     @type int $extension_type
-     *           The extension type of the extension feed item.
+     *           Output only. The extension type of the extension feed item.
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $start_date_time
      *           Start time in which this feed item is effective and can begin serving. The
@@ -126,7 +126,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V2\Common\KeywordInfo $targeted_keyword
      *           The targeted keyword.
      *     @type int $status
-     *           Status of the feed item.
+     *           Output only. Status of the feed item.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V2\Common\SitelinkFeedItem $sitelink_feed_item
      *           Sitelink extension.
@@ -145,10 +145,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V2\Common\PromotionFeedItem $promotion_feed_item
      *           Promotion extension.
      *     @type \Google\Ads\GoogleAds\V2\Common\LocationFeedItem $location_feed_item
-     *           Location extension. Locations are synced from a GMB account into a feed.
+     *           Output only. Location extension. Locations are synced from a GMB account into a feed.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V2\Common\AffiliateLocationFeedItem $affiliate_location_feed_item
-     *           Affiliate location extension. Feed locations are populated by Google Ads
+     *           Output only. Affiliate location extension. Feed locations are populated by Google Ads
      *           based on a chain ID.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V2\Common\HotelCalloutFeedItem $hotel_callout_feed_item
@@ -165,11 +165,11 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the extension feed item.
+     * Immutable. The resource name of the extension feed item.
      * Extension feed item resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -178,11 +178,11 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the extension feed item.
+     * Immutable. The resource name of the extension feed item.
      * Extension feed item resource names have the form:
      * `customers/{customer_id}/extensionFeedItems/{feed_item_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -195,9 +195,9 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of this feed item. Read-only.
+     * Output only. The ID of this feed item. Read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -208,9 +208,9 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of this feed item. Read-only.
+     * Output only. The ID of this feed item. Read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -219,9 +219,9 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of this feed item. Read-only.
+     * Output only. The ID of this feed item. Read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -236,9 +236,9 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of this feed item. Read-only.
+     * Output only. The ID of this feed item. Read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -248,10 +248,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The extension type of the extension feed item.
+     * Output only. The extension type of the extension feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionTypeEnum.ExtensionType extension_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getExtensionType()
@@ -260,10 +260,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The extension type of the extension feed item.
+     * Output only. The extension type of the extension feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionTypeEnum.ExtensionType extension_type = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ExtensionTypeEnum.ExtensionType extension_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -464,7 +464,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTargetedGeoTargetConstant()
@@ -477,7 +477,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
 
      * The targeted geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20 [(.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getTargetedGeoTargetConstantUnwrapped()
@@ -488,7 +488,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -505,7 +505,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
 
      * The targeted geo target constant.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_geo_target_constant = 20 [(.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -541,10 +541,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the feed item.
+     * Output only. Status of the feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemStatusEnum.FeedItemStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemStatusEnum.FeedItemStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -553,10 +553,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the feed item.
+     * Output only. Status of the feed item.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemStatusEnum.FeedItemStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemStatusEnum.FeedItemStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -777,10 +777,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location extension. Locations are synced from a GMB account into a feed.
+     * Output only. Location extension. Locations are synced from a GMB account into a feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationFeedItem location_feed_item = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\LocationFeedItem
      */
     public function getLocationFeedItem()
@@ -789,10 +789,10 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Location extension. Locations are synced from a GMB account into a feed.
+     * Output only. Location extension. Locations are synced from a GMB account into a feed.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationFeedItem location_feed_item = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\LocationFeedItem $var
      * @return $this
      */
@@ -805,11 +805,11 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Affiliate location extension. Feed locations are populated by Google Ads
+     * Output only. Affiliate location extension. Feed locations are populated by Google Ads
      * based on a chain ID.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\AffiliateLocationFeedItem
      */
     public function getAffiliateLocationFeedItem()
@@ -818,11 +818,11 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Affiliate location extension. Feed locations are populated by Google Ads
+     * Output only. Affiliate location extension. Feed locations are populated by Google Ads
      * based on a chain ID.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\AffiliateLocationFeedItem $var
      * @return $this
      */
@@ -863,7 +863,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTargetedCampaign()
@@ -876,7 +876,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
 
      * The targeted campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18 [(.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getTargetedCampaignUnwrapped()
@@ -887,7 +887,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -904,7 +904,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
 
      * The targeted campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_campaign = 18 [(.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -916,7 +916,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTargetedAdGroup()
@@ -929,7 +929,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
 
      * The targeted ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19 [(.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getTargetedAdGroupUnwrapped()
@@ -940,7 +940,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     /**
      * The targeted ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -957,7 +957,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
 
      * The targeted ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue targeted_ad_group = 19 [(.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

@@ -17,30 +17,30 @@ use Google\Protobuf\Internal\GPBUtil;
 class SearchTermView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the search term view.
+     * Output only. The resource name of the search term view.
      * Search term view resource names have the form:
      * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $search_term = null;
     /**
-     * The ad group the search term served in.
+     * Output only. The ad group the search term served in.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = null;
     /**
-     * Indicates whether the search term is currently one of your
+     * Output only. Indicates whether the search term is currently one of your
      * targeted or excluded keywords.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SearchTermTargetingStatusEnum.SearchTermTargetingStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SearchTermTargetingStatusEnum.SearchTermTargetingStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
 
@@ -51,15 +51,15 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the search term view.
+     *           Output only. The resource name of the search term view.
      *           Search term view resource names have the form:
      *           `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}`
      *     @type \Google\Protobuf\StringValue $search_term
-     *           The search term.
+     *           Output only. The search term.
      *     @type \Google\Protobuf\StringValue $ad_group
-     *           The ad group the search term served in.
+     *           Output only. The ad group the search term served in.
      *     @type int $status
-     *           Indicates whether the search term is currently one of your
+     *           Output only. Indicates whether the search term is currently one of your
      *           targeted or excluded keywords.
      * }
      */
@@ -69,11 +69,11 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the search term view.
+     * Output only. The resource name of the search term view.
      * Search term view resource names have the form:
      * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -82,11 +82,11 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the search term view.
+     * Output only. The resource name of the search term view.
      * Search term view resource names have the form:
      * `customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -99,9 +99,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getSearchTerm()
@@ -112,9 +112,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSearchTerm()</code>
 
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getSearchTermUnwrapped()
@@ -123,9 +123,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -140,9 +140,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -152,9 +152,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ad group the search term served in.
+     * Output only. The ad group the search term served in.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroup()
@@ -165,9 +165,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroup()</code>
 
-     * The ad group the search term served in.
+     * Output only. The ad group the search term served in.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupUnwrapped()
@@ -176,9 +176,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ad group the search term served in.
+     * Output only. The ad group the search term served in.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -193,9 +193,9 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The ad group the search term served in.
+     * Output only. The ad group the search term served in.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -205,10 +205,10 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Indicates whether the search term is currently one of your
+     * Output only. Indicates whether the search term is currently one of your
      * targeted or excluded keywords.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SearchTermTargetingStatusEnum.SearchTermTargetingStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SearchTermTargetingStatusEnum.SearchTermTargetingStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -217,10 +217,10 @@ class SearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates whether the search term is currently one of your
+     * Output only. Indicates whether the search term is currently one of your
      * targeted or excluded keywords.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SearchTermTargetingStatusEnum.SearchTermTargetingStatus status = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SearchTermTargetingStatusEnum.SearchTermTargetingStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

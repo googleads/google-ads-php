@@ -16,22 +16,22 @@ use Google\Protobuf\Internal\GPBUtil;
 class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * Required. The currency code.
+     * The currency code.
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
      */
     protected $currency_code = null;
     /**
-     * Campaign duration.
+     * Required. Campaign duration.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CampaignDuration campaign_duration = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CampaignDuration campaign_duration = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $campaign_duration = null;
     /**
@@ -39,7 +39,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
-     * If not specified no cap is applied.
+     * If not specified, no cap is applied.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cookie_frequency_cap = 4;</code>
      */
@@ -57,8 +57,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The targeting to be applied to all products selected in the product mix.
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
-     * If no targeting dimensions are specified, then campaigns will target
-     * everywhere and everyone.
      * See specific metrics for details on how targeting affects them.
      * In some cases, targeting may be overridden using the
      * PlannedProduct.advanced_product_targeting field.
@@ -67,9 +65,10 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      */
     protected $targeting = null;
     /**
-     * The product to be planned.
+     * Required. The products to be forecast.
+     * The max number of allowed planned products is 15.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.PlannedProduct planned_products = 7;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.PlannedProduct planned_products = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $planned_products;
 
@@ -80,18 +79,18 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer.
+     *           Required. The ID of the customer.
      *     @type \Google\Protobuf\StringValue $currency_code
-     *           Required. The currency code.
+     *           The currency code.
      *           Three-character ISO 4217 currency code.
      *     @type \Google\Ads\GoogleAds\V2\Services\CampaignDuration $campaign_duration
-     *           Campaign duration.
+     *           Required. Campaign duration.
      *     @type \Google\Protobuf\Int32Value $cookie_frequency_cap
      *           Desired cookie frequency cap that will be applied to each planned product.
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user.
-     *           If not specified no cap is applied.
+     *           If not specified, no cap is applied.
      *     @type \Google\Protobuf\Int32Value $min_effective_frequency
      *           Desired minimum effective frequency (the number of times a person was
      *           exposed to the ad) for the reported reach metrics [1-10].
@@ -101,13 +100,12 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *           The targeting to be applied to all products selected in the product mix.
      *           This is planned targeting: execution details might vary based on the
      *           advertising product, please consult an implementation specialist.
-     *           If no targeting dimensions are specified, then campaigns will target
-     *           everywhere and everyone.
      *           See specific metrics for details on how targeting affects them.
      *           In some cases, targeting may be overridden using the
      *           PlannedProduct.advanced_product_targeting field.
      *     @type \Google\Ads\GoogleAds\V2\Services\PlannedProduct[]|\Google\Protobuf\Internal\RepeatedField $planned_products
-     *           The product to be planned.
+     *           Required. The products to be forecast.
+     *           The max number of allowed planned products is 15.
      * }
      */
     public function __construct($data = NULL) {
@@ -116,9 +114,9 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -127,9 +125,9 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -142,7 +140,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The currency code.
+     * The currency code.
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
@@ -156,7 +154,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCurrencyCode()</code>
 
-     * Required. The currency code.
+     * The currency code.
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
@@ -168,7 +166,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The currency code.
+     * The currency code.
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
@@ -186,7 +184,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Required. The currency code.
+     * The currency code.
      * Three-character ISO 4217 currency code.
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 2;</code>
@@ -199,9 +197,9 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Campaign duration.
+     * Required. Campaign duration.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CampaignDuration campaign_duration = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CampaignDuration campaign_duration = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Ads\GoogleAds\V2\Services\CampaignDuration
      */
     public function getCampaignDuration()
@@ -210,9 +208,9 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Campaign duration.
+     * Required. Campaign duration.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CampaignDuration campaign_duration = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CampaignDuration campaign_duration = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\CampaignDuration $var
      * @return $this
      */
@@ -229,7 +227,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
-     * If not specified no cap is applied.
+     * If not specified, no cap is applied.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cookie_frequency_cap = 4;</code>
      * @return \Google\Protobuf\Int32Value
@@ -246,7 +244,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
-     * If not specified no cap is applied.
+     * If not specified, no cap is applied.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cookie_frequency_cap = 4;</code>
      * @return int|null
@@ -261,7 +259,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
-     * If not specified no cap is applied.
+     * If not specified, no cap is applied.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cookie_frequency_cap = 4;</code>
      * @param \Google\Protobuf\Int32Value $var
@@ -282,7 +280,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user.
-     * If not specified no cap is applied.
+     * If not specified, no cap is applied.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value cookie_frequency_cap = 4;</code>
      * @param int|null $var
@@ -362,8 +360,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The targeting to be applied to all products selected in the product mix.
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
-     * If no targeting dimensions are specified, then campaigns will target
-     * everywhere and everyone.
      * See specific metrics for details on how targeting affects them.
      * In some cases, targeting may be overridden using the
      * PlannedProduct.advanced_product_targeting field.
@@ -380,8 +376,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * The targeting to be applied to all products selected in the product mix.
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
-     * If no targeting dimensions are specified, then campaigns will target
-     * everywhere and everyone.
      * See specific metrics for details on how targeting affects them.
      * In some cases, targeting may be overridden using the
      * PlannedProduct.advanced_product_targeting field.
@@ -399,9 +393,10 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The product to be planned.
+     * Required. The products to be forecast.
+     * The max number of allowed planned products is 15.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.PlannedProduct planned_products = 7;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.PlannedProduct planned_products = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPlannedProducts()
@@ -410,9 +405,10 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The product to be planned.
+     * Required. The products to be forecast.
+     * The max number of allowed planned products is 15.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.PlannedProduct planned_products = 7;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.PlannedProduct planned_products = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\PlannedProduct[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

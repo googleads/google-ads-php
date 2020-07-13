@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -270,7 +270,7 @@ class CustomerServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the customer to fetch.
+     * @param string $resourceName Required. The resource name of the customer to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -321,8 +321,8 @@ class CustomerServiceGapicClient
      * }
      * ```
      *
-     * @param string            $customerId   The ID of the customer being modified.
-     * @param CustomerOperation $operation    The operation to perform on the customer
+     * @param string            $customerId   Required. The ID of the customer being modified.
+     * @param CustomerOperation $operation    Required. The operation to perform on the customer
      * @param array             $optionalArgs {
      *                                        Optional.
      *
@@ -421,8 +421,8 @@ class CustomerServiceGapicClient
      * }
      * ```
      *
-     * @param string   $customerId     The ID of the Manager under whom client customer is being created.
-     * @param Customer $customerClient The new client customer to create. The resource name on this customer
+     * @param string   $customerId     Required. The ID of the Manager under whom client customer is being created.
+     * @param Customer $customerClient Required. The new client customer to create. The resource name on this customer
      *                                 will be ignored.
      * @param array    $optionalArgs   {
      *                                 Optional.

@@ -86,7 +86,7 @@ class SharedCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedResourceName = $client->sharedCriteriaName('[CUSTOMER]', '[SHARED_CRITERIA]');
+        $formattedResourceName = $client->sharedCriterionName('[CUSTOMER]', '[SHARED_CRITERION]');
 
         $response = $client->getSharedCriterion($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
@@ -126,7 +126,7 @@ class SharedCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedResourceName = $client->sharedCriteriaName('[CUSTOMER]', '[SHARED_CRITERIA]');
+        $formattedResourceName = $client->sharedCriterionName('[CUSTOMER]', '[SHARED_CRITERION]');
 
         try {
             $client->getSharedCriterion($formattedResourceName);

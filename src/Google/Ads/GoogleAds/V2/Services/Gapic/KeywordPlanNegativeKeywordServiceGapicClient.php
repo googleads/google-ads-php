@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class KeywordPlanNegativeKeywordServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the plan to fetch.
+     * @param string $resourceName Required. The resource name of the plan to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -318,8 +318,8 @@ class KeywordPlanNegativeKeywordServiceGapicClient
      * }
      * ```
      *
-     * @param string                                $customerId   The ID of the customer whose negative keywords are being modified.
-     * @param KeywordPlanNegativeKeywordOperation[] $operations   The list of operations to perform on individual Keyword Plan negative
+     * @param string                                $customerId   Required. The ID of the customer whose negative keywords are being modified.
+     * @param KeywordPlanNegativeKeywordOperation[] $operations   Required. The list of operations to perform on individual Keyword Plan negative
      *                                                            keywords.
      * @param array                                 $optionalArgs {
      *                                                            Optional.

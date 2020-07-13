@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer being modified.
+     * Required. The ID of the customer being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The operation to perform on the link
+     * Required. The operation to perform on the link
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.MerchantCenterLinkOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.MerchantCenterLinkOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $operation = null;
 
@@ -35,9 +35,9 @@ class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer being modified.
+     *           Required. The ID of the customer being modified.
      *     @type \Google\Ads\GoogleAds\V2\Services\MerchantCenterLinkOperation $operation
-     *           The operation to perform on the link
+     *           Required. The operation to perform on the link
      * }
      */
     public function __construct($data = NULL) {
@@ -46,9 +46,9 @@ class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer being modified.
+     * Required. The ID of the customer being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -57,9 +57,9 @@ class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer being modified.
+     * Required. The ID of the customer being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -72,9 +72,9 @@ class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The operation to perform on the link
+     * Required. The operation to perform on the link
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.MerchantCenterLinkOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.MerchantCenterLinkOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Ads\GoogleAds\V2\Services\MerchantCenterLinkOperation
      */
     public function getOperation()
@@ -83,9 +83,9 @@ class MutateMerchantCenterLinkRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The operation to perform on the link
+     * Required. The operation to perform on the link
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.MerchantCenterLinkOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.MerchantCenterLinkOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\MerchantCenterLinkOperation $var
      * @return $this
      */

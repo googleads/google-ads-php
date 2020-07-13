@@ -24,22 +24,22 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\V3\Common\MatchingFunction;
-use Google\Ads\GoogleAds\V3\Common\Operand;
-use Google\Ads\GoogleAds\V3\Common\Operand\ConstantOperand;
-use Google\Ads\GoogleAds\V3\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V3\Enums\MatchingFunctionOperatorEnum\MatchingFunctionOperator;
-use Google\Ads\GoogleAds\V3\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\CustomerFeed;
-use Google\Ads\GoogleAds\V3\Resources\Feed;
-use Google\Ads\GoogleAds\V3\Resources\Feed\PlacesLocationFeedData;
-use Google\Ads\GoogleAds\V3\Resources\Feed\PlacesLocationFeedData\OAuthInfo;
-use Google\Ads\GoogleAds\V3\Services\CustomerFeedOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedOperation;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\V4\Common\MatchingFunction;
+use Google\Ads\GoogleAds\V4\Common\Operand;
+use Google\Ads\GoogleAds\V4\Common\Operand\ConstantOperand;
+use Google\Ads\GoogleAds\V4\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V4\Enums\MatchingFunctionOperatorEnum\MatchingFunctionOperator;
+use Google\Ads\GoogleAds\V4\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\CustomerFeed;
+use Google\Ads\GoogleAds\V4\Resources\Feed;
+use Google\Ads\GoogleAds\V4\Resources\Feed\PlacesLocationFeedData;
+use Google\Ads\GoogleAds\V4\Resources\Feed\PlacesLocationFeedData\OAuthInfo;
+use Google\Ads\GoogleAds\V4\Services\CustomerFeedOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedOperation;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\BoolValue;
 use Google\Protobuf\StringValue;
@@ -126,7 +126,7 @@ class AddGoogleMyBusinessLocationExtensions
      * @param string $gmbEmailAddress the email address associated with the GMB account
      * @param string $gmbAccessToken the access token created using the 'AdWords' scope and the
      *     client ID and client secret of with the Cloud project associated with the GMB account
-     * @param int $businessAccountIdentifier the account number of the GMB account
+     * @param string $businessAccountIdentifier the account number of the GMB account
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -161,7 +161,7 @@ class AddGoogleMyBusinessLocationExtensions
      * @param string $gmbEmailAddress the email address associated with the GMB account
      * @param string $gmbAccessToken the access token created using the 'AdWords' scope and the
      *     client ID and client secret of with the Cloud project associated with the GMB account
-     * @param int $businessAccountIdentifier the account number of the GMB account
+     * @param string $businessAccountIdentifier the account number of the GMB account
      * @return string the feed's resource name
      */
     private static function createFeed(

@@ -39,6 +39,7 @@ class AdGroupCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdGroupCriterionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion
      */
     public function GetAdGroupCriterion(\Google\Ads\GoogleAds\V3\Services\GetAdGroupCriterionRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class AdGroupCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateAdGroupCriteriaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateAdGroupCriteriaResponse
      */
     public function MutateAdGroupCriteria(\Google\Ads\GoogleAds\V3\Services\MutateAdGroupCriteriaRequest $argument,
       $metadata = [], $options = []) {

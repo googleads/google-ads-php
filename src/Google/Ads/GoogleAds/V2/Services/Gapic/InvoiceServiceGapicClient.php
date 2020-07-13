@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,7 +183,7 @@ class InvoiceServiceGapicClient
      * }
      * ```
      *
-     * @param string $customerId   The ID of the customer to fetch invoices for.
+     * @param string $customerId   Required. The ID of the customer to fetch invoices for.
      * @param string $billingSetup Required. The billing setup resource name of the requested invoices.
      *
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`

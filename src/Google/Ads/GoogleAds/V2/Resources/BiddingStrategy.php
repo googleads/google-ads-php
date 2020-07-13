@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class BiddingStrategy extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the bidding strategy.
+     * Immutable. The resource name of the bidding strategy.
      * Bidding strategy resource names have the form:
      * `customers/{customer_id}/biddingStrategies/{bidding_strategy_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the bidding strategy.
+     * Output only. The ID of the bidding strategy.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -39,32 +39,32 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * The status of the bidding strategy.
+     * Output only. The status of the bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * The type of the bidding strategy.
+     * Output only. The type of the bidding strategy.
      * Create a bidding strategy by setting the bidding scheme.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType type = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     /**
-     * The number of campaigns attached to this bidding strategy.
+     * Output only. The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $campaign_count = null;
     /**
-     * The number of non-removed campaigns attached to this bidding strategy.
+     * Output only. The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $non_removed_campaign_count = null;
     protected $scheme;
@@ -76,28 +76,28 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the bidding strategy.
+     *           Immutable. The resource name of the bidding strategy.
      *           Bidding strategy resource names have the form:
      *           `customers/{customer_id}/biddingStrategies/{bidding_strategy_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the bidding strategy.
+     *           Output only. The ID of the bidding strategy.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the bidding strategy.
      *           All bidding strategies within an account must be named distinctly.
      *           The length of this string should be between 1 and 255, inclusive,
      *           in UTF-8 bytes, (trimmed).
      *     @type int $status
-     *           The status of the bidding strategy.
+     *           Output only. The status of the bidding strategy.
      *           This field is read-only.
      *     @type int $type
-     *           The type of the bidding strategy.
+     *           Output only. The type of the bidding strategy.
      *           Create a bidding strategy by setting the bidding scheme.
      *           This field is read-only.
      *     @type \Google\Protobuf\Int64Value $campaign_count
-     *           The number of campaigns attached to this bidding strategy.
+     *           Output only. The number of campaigns attached to this bidding strategy.
      *           This field is read-only.
      *     @type \Google\Protobuf\Int64Value $non_removed_campaign_count
-     *           The number of non-removed campaigns attached to this bidding strategy.
+     *           Output only. The number of non-removed campaigns attached to this bidding strategy.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V2\Common\EnhancedCpc $enhanced_cpc
      *           A bidding strategy that raises bids for clicks that seem more likely to
@@ -137,11 +137,11 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the bidding strategy.
+     * Immutable. The resource name of the bidding strategy.
      * Bidding strategy resource names have the form:
      * `customers/{customer_id}/biddingStrategies/{bidding_strategy_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -150,11 +150,11 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the bidding strategy.
+     * Immutable. The resource name of the bidding strategy.
      * Bidding strategy resource names have the form:
      * `customers/{customer_id}/biddingStrategies/{bidding_strategy_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -167,9 +167,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the bidding strategy.
+     * Output only. The ID of the bidding strategy.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -180,9 +180,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the bidding strategy.
+     * Output only. The ID of the bidding strategy.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -191,9 +191,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the bidding strategy.
+     * Output only. The ID of the bidding strategy.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -208,9 +208,9 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the bidding strategy.
+     * Output only. The ID of the bidding strategy.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -285,10 +285,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The status of the bidding strategy.
+     * Output only. The status of the bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -297,10 +297,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of the bidding strategy.
+     * Output only. The status of the bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyStatusEnum.BiddingStrategyStatus status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -313,11 +313,11 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the bidding strategy.
+     * Output only. The type of the bidding strategy.
      * Create a bidding strategy by setting the bidding scheme.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType type = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -326,11 +326,11 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the bidding strategy.
+     * Output only. The type of the bidding strategy.
      * Create a bidding strategy by setting the bidding scheme.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BiddingStrategyTypeEnum.BiddingStrategyType type = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -343,10 +343,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of campaigns attached to this bidding strategy.
+     * Output only. The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCampaignCount()
@@ -357,10 +357,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaignCount()</code>
 
-     * The number of campaigns attached to this bidding strategy.
+     * Output only. The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCampaignCountUnwrapped()
@@ -369,10 +369,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of campaigns attached to this bidding strategy.
+     * Output only. The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -387,10 +387,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The number of campaigns attached to this bidding strategy.
+     * Output only. The number of campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -400,10 +400,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The number of non-removed campaigns attached to this bidding strategy.
+     * Output only. The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getNonRemovedCampaignCount()
@@ -414,10 +414,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getNonRemovedCampaignCount()</code>
 
-     * The number of non-removed campaigns attached to this bidding strategy.
+     * Output only. The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getNonRemovedCampaignCountUnwrapped()
@@ -426,10 +426,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of non-removed campaigns attached to this bidding strategy.
+     * Output only. The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -444,10 +444,10 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The number of non-removed campaigns attached to this bidding strategy.
+     * Output only. The number of non-removed campaigns attached to this bidding strategy.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value non_removed_campaign_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

@@ -39,8 +39,8 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * String value. Should be set if feed_attribute_id refers to a feed attribute
      * of type STRING, URL or DATE_TIME.
      * For STRING the maximum length is 1500 characters. For URL the maximum
-     * length is 2076 characters. For DATE_TIME the format of the string must
-     * be the same as start and end time for the feed item.
+     * length is 2076 characters. For DATE_TIME the string must be in the format
+     * "YYYYMMDD HHMMSS".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 4;</code>
      */
@@ -112,8 +112,8 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      *           String value. Should be set if feed_attribute_id refers to a feed attribute
      *           of type STRING, URL or DATE_TIME.
      *           For STRING the maximum length is 1500 characters. For URL the maximum
-     *           length is 2076 characters. For DATE_TIME the format of the string must
-     *           be the same as start and end time for the feed item.
+     *           length is 2076 characters. For DATE_TIME the string must be in the format
+     *           "YYYYMMDD HHMMSS".
      *     @type \Google\Protobuf\DoubleValue $double_value
      *           Double value. Should be set if feed_attribute_id refers to a feed attribute
      *           of type DOUBLE.
@@ -316,8 +316,8 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * String value. Should be set if feed_attribute_id refers to a feed attribute
      * of type STRING, URL or DATE_TIME.
      * For STRING the maximum length is 1500 characters. For URL the maximum
-     * length is 2076 characters. For DATE_TIME the format of the string must
-     * be the same as start and end time for the feed item.
+     * length is 2076 characters. For DATE_TIME the string must be in the format
+     * "YYYYMMDD HHMMSS".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 4;</code>
      * @return \Google\Protobuf\StringValue
@@ -333,8 +333,8 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * String value. Should be set if feed_attribute_id refers to a feed attribute
      * of type STRING, URL or DATE_TIME.
      * For STRING the maximum length is 1500 characters. For URL the maximum
-     * length is 2076 characters. For DATE_TIME the format of the string must
-     * be the same as start and end time for the feed item.
+     * length is 2076 characters. For DATE_TIME the string must be in the format
+     * "YYYYMMDD HHMMSS".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 4;</code>
      * @return string|null
@@ -348,8 +348,8 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * String value. Should be set if feed_attribute_id refers to a feed attribute
      * of type STRING, URL or DATE_TIME.
      * For STRING the maximum length is 1500 characters. For URL the maximum
-     * length is 2076 characters. For DATE_TIME the format of the string must
-     * be the same as start and end time for the feed item.
+     * length is 2076 characters. For DATE_TIME the string must be in the format
+     * "YYYYMMDD HHMMSS".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 4;</code>
      * @param \Google\Protobuf\StringValue $var
@@ -369,8 +369,8 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * String value. Should be set if feed_attribute_id refers to a feed attribute
      * of type STRING, URL or DATE_TIME.
      * For STRING the maximum length is 1500 characters. For URL the maximum
-     * length is 2076 characters. For DATE_TIME the format of the string must
-     * be the same as start and end time for the feed item.
+     * length is 2076 characters. For DATE_TIME the string must be in the format
+     * "YYYYMMDD HHMMSS".
      *
      * Generated from protobuf field <code>.google.protobuf.StringValue string_value = 4;</code>
      * @param string|null $var

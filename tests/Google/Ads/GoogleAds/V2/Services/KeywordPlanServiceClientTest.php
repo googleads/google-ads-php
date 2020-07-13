@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,9 +235,9 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER]', '[KEYWORD_PLAN]');
+        $keywordPlan = 'keywordPlan-1589809217';
 
-        $response = $client->generateForecastMetrics($formattedKeywordPlan);
+        $response = $client->generateForecastMetrics($keywordPlan);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -247,7 +247,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getKeywordPlan();
 
-        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
+        $this->assertProtobufEquals($keywordPlan, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -275,10 +275,10 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER]', '[KEYWORD_PLAN]');
+        $keywordPlan = 'keywordPlan-1589809217';
 
         try {
-            $client->generateForecastMetrics($formattedKeywordPlan);
+            $client->generateForecastMetrics($keywordPlan);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -306,9 +306,9 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER]', '[KEYWORD_PLAN]');
+        $keywordPlan = 'keywordPlan-1589809217';
 
-        $response = $client->generateHistoricalMetrics($formattedKeywordPlan);
+        $response = $client->generateHistoricalMetrics($keywordPlan);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -318,7 +318,7 @@ class KeywordPlanServiceClientTest extends GeneratedTest
 
         $actualValue = $actualRequestObject->getKeywordPlan();
 
-        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
+        $this->assertProtobufEquals($keywordPlan, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -346,10 +346,10 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER]', '[KEYWORD_PLAN]');
+        $keywordPlan = 'keywordPlan-1589809217';
 
         try {
-            $client->generateHistoricalMetrics($formattedKeywordPlan);
+            $client->generateHistoricalMetrics($keywordPlan);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -17,17 +17,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateAdGroupExtensionSettingsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer whose ad group extension settings are being
+     * Required. The ID of the customer whose ad group extension settings are being
      * modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The list of operations to perform on individual ad group extension
+     * Required. The list of operations to perform on individual ad group extension
      * settings.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupExtensionSettingOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupExtensionSettingOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $operations;
     /**
@@ -54,10 +54,10 @@ class MutateAdGroupExtensionSettingsRequest extends \Google\Protobuf\Internal\Me
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer whose ad group extension settings are being
+     *           Required. The ID of the customer whose ad group extension settings are being
      *           modified.
      *     @type \Google\Ads\GoogleAds\V2\Services\AdGroupExtensionSettingOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
-     *           The list of operations to perform on individual ad group extension
+     *           Required. The list of operations to perform on individual ad group extension
      *           settings.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
@@ -75,10 +75,10 @@ class MutateAdGroupExtensionSettingsRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * The ID of the customer whose ad group extension settings are being
+     * Required. The ID of the customer whose ad group extension settings are being
      * modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -87,10 +87,10 @@ class MutateAdGroupExtensionSettingsRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * The ID of the customer whose ad group extension settings are being
+     * Required. The ID of the customer whose ad group extension settings are being
      * modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -103,10 +103,10 @@ class MutateAdGroupExtensionSettingsRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * The list of operations to perform on individual ad group extension
+     * Required. The list of operations to perform on individual ad group extension
      * settings.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupExtensionSettingOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupExtensionSettingOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getOperations()
@@ -115,10 +115,10 @@ class MutateAdGroupExtensionSettingsRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * The list of operations to perform on individual ad group extension
+     * Required. The list of operations to perform on individual ad group extension
      * settings.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupExtensionSettingOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupExtensionSettingOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\AdGroupExtensionSettingOperation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

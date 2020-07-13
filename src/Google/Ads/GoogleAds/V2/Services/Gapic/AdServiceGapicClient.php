@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class AdServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the ad to fetch.
+     * @param string $resourceName Required. The resource name of the ad to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -317,8 +317,8 @@ class AdServiceGapicClient
      * }
      * ```
      *
-     * @param string        $customerId   The ID of the customer whose ads are being modified.
-     * @param AdOperation[] $operations   The list of operations to perform on individual ads.
+     * @param string        $customerId   Required. The ID of the customer whose ads are being modified.
+     * @param AdOperation[] $operations   Required. The list of operations to perform on individual ads.
      * @param array         $optionalArgs {
      *                                    Optional.
      *

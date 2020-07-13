@@ -39,6 +39,7 @@ class ShoppingPerformanceViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetShoppingPerformanceViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ShoppingPerformanceView
      */
     public function GetShoppingPerformanceView(\Google\Ads\GoogleAds\V3\Services\GetShoppingPerformanceViewRequest $argument,
       $metadata = [], $options = []) {

@@ -50,7 +50,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $campaignCriterionServiceClient = new CampaignCriterionServiceClient();
  * try {
- *     $formattedResourceName = $campaignCriterionServiceClient->campaignCriteriaName('[CUSTOMER]', '[CAMPAIGN_CRITERIA]');
+ *     $formattedResourceName = $campaignCriterionServiceClient->campaignCriterionName('[CUSTOMER]', '[CAMPAIGN_CRITERION]');
  *     $response = $campaignCriterionServiceClient->getCampaignCriterion($formattedResourceName);
  * } finally {
  *     $campaignCriterionServiceClient->close();
@@ -93,7 +93,7 @@ class CampaignCriterionServiceGapicClient
      */
     public static $serviceScopes = [
     ];
-    private static $campaignCriteriaNameTemplate;
+    private static $campaignCriterionNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -115,20 +115,20 @@ class CampaignCriterionServiceGapicClient
         ];
     }
 
-    private static function getCampaignCriteriaNameTemplate()
+    private static function getCampaignCriterionNameTemplate()
     {
-        if (null == self::$campaignCriteriaNameTemplate) {
-            self::$campaignCriteriaNameTemplate = new PathTemplate('customers/{customer}/campaignCriteria/{campaign_criteria}');
+        if (null == self::$campaignCriterionNameTemplate) {
+            self::$campaignCriterionNameTemplate = new PathTemplate('customers/{customer}/campaignCriteria/{campaign_criterion}');
         }
 
-        return self::$campaignCriteriaNameTemplate;
+        return self::$campaignCriterionNameTemplate;
     }
 
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
-                'campaignCriteria' => self::getCampaignCriteriaNameTemplate(),
+                'campaignCriterion' => self::getCampaignCriterionNameTemplate(),
             ];
         }
 
@@ -137,19 +137,19 @@ class CampaignCriterionServiceGapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a campaign_criteria resource.
+     * a campaign_criterion resource.
      *
      * @param string $customer
-     * @param string $campaignCriteria
+     * @param string $campaignCriterion
      *
-     * @return string The formatted campaign_criteria resource.
+     * @return string The formatted campaign_criterion resource.
      * @experimental
      */
-    public static function campaignCriteriaName($customer, $campaignCriteria)
+    public static function campaignCriterionName($customer, $campaignCriterion)
     {
-        return self::getCampaignCriteriaNameTemplate()->render([
+        return self::getCampaignCriterionNameTemplate()->render([
             'customer' => $customer,
-            'campaign_criteria' => $campaignCriteria,
+            'campaign_criterion' => $campaignCriterion,
         ]);
     }
 
@@ -157,7 +157,7 @@ class CampaignCriterionServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - campaignCriteria: customers/{customer}/campaignCriteria/{campaign_criteria}.
+     * - campaignCriterion: customers/{customer}/campaignCriteria/{campaign_criterion}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -259,7 +259,7 @@ class CampaignCriterionServiceGapicClient
      * ```
      * $campaignCriterionServiceClient = new CampaignCriterionServiceClient();
      * try {
-     *     $formattedResourceName = $campaignCriterionServiceClient->campaignCriteriaName('[CUSTOMER]', '[CAMPAIGN_CRITERIA]');
+     *     $formattedResourceName = $campaignCriterionServiceClient->campaignCriterionName('[CUSTOMER]', '[CAMPAIGN_CRITERION]');
      *     $response = $campaignCriterionServiceClient->getCampaignCriterion($formattedResourceName);
      * } finally {
      *     $campaignCriterionServiceClient->close();

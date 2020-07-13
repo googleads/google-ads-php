@@ -39,6 +39,7 @@ class UserInterestServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetUserInterestRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\UserInterest
      */
     public function GetUserInterest(\Google\Ads\GoogleAds\V3\Services\GetUserInterestRequest $argument,
       $metadata = [], $options = []) {

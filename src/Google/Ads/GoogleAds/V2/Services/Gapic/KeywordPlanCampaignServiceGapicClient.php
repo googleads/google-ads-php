@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class KeywordPlanCampaignServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the Keyword Plan campaign to fetch.
+     * @param string $resourceName Required. The resource name of the Keyword Plan campaign to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -318,8 +318,8 @@ class KeywordPlanCampaignServiceGapicClient
      * }
      * ```
      *
-     * @param string                         $customerId   The ID of the customer whose Keyword Plan campaigns are being modified.
-     * @param KeywordPlanCampaignOperation[] $operations   The list of operations to perform on individual Keyword Plan campaigns.
+     * @param string                         $customerId   Required. The ID of the customer whose Keyword Plan campaigns are being modified.
+     * @param KeywordPlanCampaignOperation[] $operations   Required. The list of operations to perform on individual Keyword Plan campaigns.
      * @param array                          $optionalArgs {
      *                                                     Optional.
      *

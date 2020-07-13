@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,14 +28,11 @@ use Google\Ads\GoogleAds\V2\Services\GenerateProductMixIdeasResponse;
 use Google\Ads\GoogleAds\V2\Services\GenerateReachForecastResponse;
 use Google\Ads\GoogleAds\V2\Services\ListPlannableLocationsResponse;
 use Google\Ads\GoogleAds\V2\Services\ListPlannableProductsResponse;
-use Google\Ads\GoogleAds\V2\Services\Preferences;
-use Google\Ads\GoogleAds\V2\Services\Targeting;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Protobuf\Any;
-use Google\Protobuf\Int32Value;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 use Google\Rpc\Code;
@@ -228,9 +225,8 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $plannableLocationId = new StringValue();
         $currencyCode = new StringValue();
         $budgetMicros = new Int64Value();
-        $preferences = new Preferences();
 
-        $response = $client->generateProductMixIdeas($customerId, $plannableLocationId, $currencyCode, $budgetMicros, $preferences);
+        $response = $client->generateProductMixIdeas($customerId, $plannableLocationId, $currencyCode, $budgetMicros);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -250,9 +246,6 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getBudgetMicros();
 
         $this->assertProtobufEquals($budgetMicros, $actualValue);
-        $actualValue = $actualRequestObject->getPreferences();
-
-        $this->assertProtobufEquals($preferences, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -284,10 +277,9 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $plannableLocationId = new StringValue();
         $currencyCode = new StringValue();
         $budgetMicros = new Int64Value();
-        $preferences = new Preferences();
 
         try {
-            $client->generateProductMixIdeas($customerId, $plannableLocationId, $currencyCode, $budgetMicros, $preferences);
+            $client->generateProductMixIdeas($customerId, $plannableLocationId, $currencyCode, $budgetMicros);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -316,14 +308,10 @@ class ReachPlanServiceClientTest extends GeneratedTest
 
         // Mock request
         $customerId = 'customerId-1772061412';
-        $currencyCode = new StringValue();
         $campaignDuration = new CampaignDuration();
-        $cookieFrequencyCap = new Int32Value();
-        $minEffectiveFrequency = new Int32Value();
-        $targeting = new Targeting();
         $plannedProducts = [];
 
-        $response = $client->generateReachForecast($customerId, $currencyCode, $campaignDuration, $cookieFrequencyCap, $minEffectiveFrequency, $targeting, $plannedProducts);
+        $response = $client->generateReachForecast($customerId, $campaignDuration, $plannedProducts);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -334,21 +322,9 @@ class ReachPlanServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getCustomerId();
 
         $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getCurrencyCode();
-
-        $this->assertProtobufEquals($currencyCode, $actualValue);
         $actualValue = $actualRequestObject->getCampaignDuration();
 
         $this->assertProtobufEquals($campaignDuration, $actualValue);
-        $actualValue = $actualRequestObject->getCookieFrequencyCap();
-
-        $this->assertProtobufEquals($cookieFrequencyCap, $actualValue);
-        $actualValue = $actualRequestObject->getMinEffectiveFrequency();
-
-        $this->assertProtobufEquals($minEffectiveFrequency, $actualValue);
-        $actualValue = $actualRequestObject->getTargeting();
-
-        $this->assertProtobufEquals($targeting, $actualValue);
         $actualValue = $actualRequestObject->getPlannedProducts();
 
         $this->assertProtobufEquals($plannedProducts, $actualValue);
@@ -380,15 +356,11 @@ class ReachPlanServiceClientTest extends GeneratedTest
 
         // Mock request
         $customerId = 'customerId-1772061412';
-        $currencyCode = new StringValue();
         $campaignDuration = new CampaignDuration();
-        $cookieFrequencyCap = new Int32Value();
-        $minEffectiveFrequency = new Int32Value();
-        $targeting = new Targeting();
         $plannedProducts = [];
 
         try {
-            $client->generateReachForecast($customerId, $currencyCode, $campaignDuration, $cookieFrequencyCap, $minEffectiveFrequency, $targeting, $plannedProducts);
+            $client->generateReachForecast($customerId, $campaignDuration, $plannedProducts);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -39,6 +39,7 @@ class SharedSetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetSharedSetRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\SharedSet
      */
     public function GetSharedSet(\Google\Ads\GoogleAds\V3\Services\GetSharedSetRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class SharedSetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateSharedSetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateSharedSetsResponse
      */
     public function MutateSharedSets(\Google\Ads\GoogleAds\V3\Services\MutateSharedSetsRequest $argument,
       $metadata = [], $options = []) {

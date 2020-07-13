@@ -16,56 +16,56 @@ use Google\Protobuf\Internal\GPBUtil;
 class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the product bidding category.
+     * Output only. The resource name of the product bidding category.
      * Product bidding category resource names have the form:
      * `productBiddingCategoryConstants/{country_code}~{level}~{id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * ID of the product bidding category.
+     * Output only. ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * Two-letter upper-case country code of the product bidding category.
+     * Output only. Two-letter upper-case country code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_code = null;
     /**
-     * Resource name of the parent product bidding category.
+     * Output only. Resource name of the parent product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $product_bidding_category_constant_parent = null;
     /**
-     * Level of the product bidding category.
+     * Output only. Level of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel level = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $level = 0;
     /**
-     * Status of the product bidding category.
+     * Output only. Status of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * Language code of the product bidding category.
+     * Output only. Language code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $language_code = null;
     /**
-     * Display value of the product bidding category localized according to
+     * Output only. Display value of the product bidding category localized according to
      * language_code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $localized_name = null;
 
@@ -76,25 +76,25 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the product bidding category.
+     *           Output only. The resource name of the product bidding category.
      *           Product bidding category resource names have the form:
      *           `productBiddingCategoryConstants/{country_code}~{level}~{id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           ID of the product bidding category.
+     *           Output only. ID of the product bidding category.
      *           This ID is equivalent to the google_product_category ID as described in
      *           this article: https://support.google.com/merchants/answer/6324436.
      *     @type \Google\Protobuf\StringValue $country_code
-     *           Two-letter upper-case country code of the product bidding category.
+     *           Output only. Two-letter upper-case country code of the product bidding category.
      *     @type \Google\Protobuf\StringValue $product_bidding_category_constant_parent
-     *           Resource name of the parent product bidding category.
+     *           Output only. Resource name of the parent product bidding category.
      *     @type int $level
-     *           Level of the product bidding category.
+     *           Output only. Level of the product bidding category.
      *     @type int $status
-     *           Status of the product bidding category.
+     *           Output only. Status of the product bidding category.
      *     @type \Google\Protobuf\StringValue $language_code
-     *           Language code of the product bidding category.
+     *           Output only. Language code of the product bidding category.
      *     @type \Google\Protobuf\StringValue $localized_name
-     *           Display value of the product bidding category localized according to
+     *           Output only. Display value of the product bidding category localized according to
      *           language_code.
      * }
      */
@@ -104,11 +104,11 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the product bidding category.
+     * Output only. The resource name of the product bidding category.
      * Product bidding category resource names have the form:
      * `productBiddingCategoryConstants/{country_code}~{level}~{id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -117,11 +117,11 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the product bidding category.
+     * Output only. The resource name of the product bidding category.
      * Product bidding category resource names have the form:
      * `productBiddingCategoryConstants/{country_code}~{level}~{id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -134,11 +134,11 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the product bidding category.
+     * Output only. ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -149,11 +149,11 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * ID of the product bidding category.
+     * Output only. ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -162,11 +162,11 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ID of the product bidding category.
+     * Output only. ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -181,11 +181,11 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * ID of the product bidding category.
+     * Output only. ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
      * this article: https://support.google.com/merchants/answer/6324436.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -195,9 +195,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Two-letter upper-case country code of the product bidding category.
+     * Output only. Two-letter upper-case country code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCountryCode()
@@ -208,9 +208,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCountryCode()</code>
 
-     * Two-letter upper-case country code of the product bidding category.
+     * Output only. Two-letter upper-case country code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCountryCodeUnwrapped()
@@ -219,9 +219,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Two-letter upper-case country code of the product bidding category.
+     * Output only. Two-letter upper-case country code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -236,9 +236,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Two-letter upper-case country code of the product bidding category.
+     * Output only. Two-letter upper-case country code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -248,9 +248,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Resource name of the parent product bidding category.
+     * Output only. Resource name of the parent product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getProductBiddingCategoryConstantParent()
@@ -261,9 +261,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getProductBiddingCategoryConstantParent()</code>
 
-     * Resource name of the parent product bidding category.
+     * Output only. Resource name of the parent product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getProductBiddingCategoryConstantParentUnwrapped()
@@ -272,9 +272,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Resource name of the parent product bidding category.
+     * Output only. Resource name of the parent product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -289,9 +289,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Resource name of the parent product bidding category.
+     * Output only. Resource name of the parent product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue product_bidding_category_constant_parent = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -301,9 +301,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Level of the product bidding category.
+     * Output only. Level of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel level = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getLevel()
@@ -312,9 +312,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Level of the product bidding category.
+     * Output only. Level of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel level = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel level = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -327,9 +327,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the product bidding category.
+     * Output only. Status of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -338,9 +338,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Status of the product bidding category.
+     * Output only. Status of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -353,9 +353,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Language code of the product bidding category.
+     * Output only. Language code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getLanguageCode()
@@ -366,9 +366,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLanguageCode()</code>
 
-     * Language code of the product bidding category.
+     * Output only. Language code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getLanguageCodeUnwrapped()
@@ -377,9 +377,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Language code of the product bidding category.
+     * Output only. Language code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -394,9 +394,9 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Language code of the product bidding category.
+     * Output only. Language code of the product bidding category.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue language_code = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -406,10 +406,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Display value of the product bidding category localized according to
+     * Output only. Display value of the product bidding category localized according to
      * language_code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getLocalizedName()
@@ -420,10 +420,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLocalizedName()</code>
 
-     * Display value of the product bidding category localized according to
+     * Output only. Display value of the product bidding category localized according to
      * language_code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getLocalizedNameUnwrapped()
@@ -432,10 +432,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Display value of the product bidding category localized according to
+     * Output only. Display value of the product bidding category localized according to
      * language_code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -450,10 +450,10 @@ class ProductBiddingCategoryConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Display value of the product bidding category localized according to
+     * Output only. Display value of the product bidding category localized according to
      * language_code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue localized_name = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V3\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\CampaignExtensionSetting;
+use Google\Ads\GoogleAds\V4\Services\CampaignExtensionSettingOperation;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -114,7 +114,7 @@ class UpdateSitelinkCampaignExtensionSetting
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
      * @param int $campaignId the campaign ID
-     * @param string $extensionFeedItemResourceNames the extension feed item resource names to
+     * @param string[] $extensionFeedItemResourceNames the extension feed item resource names to
      *     replace
      */
     public static function runExample(

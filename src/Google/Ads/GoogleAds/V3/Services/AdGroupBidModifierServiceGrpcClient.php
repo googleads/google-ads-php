@@ -39,6 +39,7 @@ class AdGroupBidModifierServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdGroupBidModifierRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupBidModifier
      */
     public function GetAdGroupBidModifier(\Google\Ads\GoogleAds\V3\Services\GetAdGroupBidModifierRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class AdGroupBidModifierServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateAdGroupBidModifiersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateAdGroupBidModifiersResponse
      */
     public function MutateAdGroupBidModifiers(\Google\Ads\GoogleAds\V3\Services\MutateAdGroupBidModifiersRequest $argument,
       $metadata = [], $options = []) {

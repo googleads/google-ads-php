@@ -16,10 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The recommended new budget amount.
+     * Output only. The recommended new budget amount.
      * Only set if the current budget is too high.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_amount_micros = null;
 
@@ -30,7 +30,7 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $recommended_budget_amount_micros
-     *           The recommended new budget amount.
+     *           Output only. The recommended new budget amount.
      *           Only set if the current budget is too high.
      * }
      */
@@ -40,10 +40,10 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * The recommended new budget amount.
+     * Output only. The recommended new budget amount.
      * Only set if the current budget is too high.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getRecommendedBudgetAmountMicros()
@@ -54,10 +54,10 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
     /**
      * Returns the unboxed value from <code>getRecommendedBudgetAmountMicros()</code>
 
-     * The recommended new budget amount.
+     * Output only. The recommended new budget amount.
      * Only set if the current budget is too high.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getRecommendedBudgetAmountMicrosUnwrapped()
@@ -66,10 +66,10 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * The recommended new budget amount.
+     * Output only. The recommended new budget amount.
      * Only set if the current budget is too high.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -84,10 +84,10 @@ class MaximizeClicksOptInRecommendation extends \Google\Protobuf\Internal\Messag
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The recommended new budget amount.
+     * Output only. The recommended new budget amount.
      * Only set if the current budget is too high.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

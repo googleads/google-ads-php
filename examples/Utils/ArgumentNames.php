@@ -25,6 +25,7 @@ final class ArgumentNames
 {
     public const ADJUSTMENT_DATE_TIME = 'adjustmentDateTime';
     public const ADJUSTMENT_TYPE = 'adjustmentType';
+    public const ADVERTISER_UPLOAD_DATE_TIME = 'advertiserUploadDateTime';
     public const AD_ID = 'adId';
     public const AD_GROUP_ID = 'adGroupId';
     public const AD_GROUP_IDS = 'adGroupIds';
@@ -33,6 +34,7 @@ final class ArgumentNames
     public const BASE_CAMPAIGN_ID = 'baseCampaignId';
     public const BID_MODIFIER_VALUE = 'bidModifierValue';
     public const BILLING_SETUP_ID = 'billingSetupId';
+    public const BRIDGE_MAP_VERSION_ID = 'bridgeMapVersionId';
     public const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
     public const CALL_START_DATE_TIME = 'callStartDateTime';
     public const CALLER_ID = 'callerId';
@@ -54,6 +56,7 @@ final class ArgumentNames
     public const CUSTOMER_ID = 'customerId';
     public const DRAFT_ID = 'draftId';
     public const EXTENSION_FEED_ITEM_RESOURCE_NAMES = 'extensionFeedItemResourceNames';
+    public const EXTERNAL_ID = 'externalId';
     public const FEED_ID = 'feedId';
     public const FEED_ITEM_ID = 'feedItemId';
     public const FEED_ITEM_IDS = 'feedItemIds';
@@ -78,7 +81,9 @@ final class ArgumentNames
     public const MANAGER_CUSTOMER_ID = 'managerCustomerId';
     public const MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'marketingImageAssetResourceName';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
+    public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
     public const PAGE_URL = 'pageUrl';
+    public const PARTNER_ID = 'partnerId';
     public const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     public const RECOMMENDATION_ID = 'recommendationId';
     public const RESTATEMENT_VALUE = 'restatementValue';
@@ -93,6 +98,7 @@ final class ArgumentNames
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::ADJUSTMENT_DATE_TIME => 'The adjustment date time',
         self::ADJUSTMENT_TYPE => 'The adjustment type',
+        self::ADVERTISER_UPLOAD_DATE_TIME => 'The advertiser upload date time',
         self::AD_ID => 'The ad ID',
         self::AD_GROUP_ID => 'The ad group ID',
         self::AD_GROUP_IDS => 'The ad group IDs',
@@ -101,6 +107,8 @@ final class ArgumentNames
         self::BASE_CAMPAIGN_ID => 'The base campaign ID',
         self::BID_MODIFIER_VALUE => 'The bid modifier value',
         self::BILLING_SETUP_ID => 'The billing setup ID',
+        self::BRIDGE_MAP_VERSION_ID
+            => 'The version of partner IDs to be used for store-sale uploads',
         self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the GMB account',
         self::CALL_START_DATE_TIME => 'The call start date time',
         self::CALLER_ID => 'The caller ID',
@@ -122,6 +130,7 @@ final class ArgumentNames
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::DRAFT_ID => 'The draft ID',
         self::EXTENSION_FEED_ITEM_RESOURCE_NAMES => 'The extension feed item resource names',
+        self::EXTERNAL_ID => 'The external ID',
         self::FEED_ID => 'The feed ID',
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
@@ -146,7 +155,9 @@ final class ArgumentNames
         self::MANAGER_CUSTOMER_ID => 'The manager customer ID',
         self::MARKETING_IMAGE_ASSET_RESOURCE_NAME => 'The resource name of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
+        self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
         self::PAGE_URL => 'The page URL',
+        self::PARTNER_ID => 'The partner ID',
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
             'The CPC bid micro amount for the Percent CPC bidding strategy',
         self::RECOMMENDATION_ID => 'The recommendation ID',

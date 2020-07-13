@@ -113,6 +113,8 @@ class CampaignExperimentServiceGapicClient
      */
     public static $serviceScopes = [
     ];
+    private static $campaignNameTemplate;
+    private static $campaignDraftNameTemplate;
     private static $campaignExperimentNameTemplate;
     private static $pathTemplateMap;
 
@@ -137,6 +139,24 @@ class CampaignExperimentServiceGapicClient
         ];
     }
 
+    private static function getCampaignNameTemplate()
+    {
+        if (null == self::$campaignNameTemplate) {
+            self::$campaignNameTemplate = new PathTemplate('customers/{customer}/campaigns/{campaign}');
+        }
+
+        return self::$campaignNameTemplate;
+    }
+
+    private static function getCampaignDraftNameTemplate()
+    {
+        if (null == self::$campaignDraftNameTemplate) {
+            self::$campaignDraftNameTemplate = new PathTemplate('customers/{customer}/campaignDrafts/{campaign_draft}');
+        }
+
+        return self::$campaignDraftNameTemplate;
+    }
+
     private static function getCampaignExperimentNameTemplate()
     {
         if (null == self::$campaignExperimentNameTemplate) {
@@ -150,11 +170,49 @@ class CampaignExperimentServiceGapicClient
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
+                'campaign' => self::getCampaignNameTemplate(),
+                'campaignDraft' => self::getCampaignDraftNameTemplate(),
                 'campaignExperiment' => self::getCampaignExperimentNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a campaign resource.
+     *
+     * @param string $customer
+     * @param string $campaign
+     *
+     * @return string The formatted campaign resource.
+     * @experimental
+     */
+    public static function campaignName($customer, $campaign)
+    {
+        return self::getCampaignNameTemplate()->render([
+            'customer' => $customer,
+            'campaign' => $campaign,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a campaign_draft resource.
+     *
+     * @param string $customer
+     * @param string $campaignDraft
+     *
+     * @return string The formatted campaign_draft resource.
+     * @experimental
+     */
+    public static function campaignDraftName($customer, $campaignDraft)
+    {
+        return self::getCampaignDraftNameTemplate()->render([
+            'customer' => $customer,
+            'campaign_draft' => $campaignDraft,
+        ]);
     }
 
     /**
@@ -179,6 +237,8 @@ class CampaignExperimentServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - campaign: customers/{customer}/campaigns/{campaign}
+     * - campaignDraft: customers/{customer}/campaignDrafts/{campaign_draft}
      * - campaignExperiment: customers/{customer}/campaignExperiments/{campaign_experiment}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
@@ -529,9 +589,9 @@ class CampaignExperimentServiceGapicClient
      * ```
      * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
      * try {
-     *     $formattedCampaignExperiment = $campaignExperimentServiceClient->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
+     *     $campaignExperiment = '';
      *     $campaignBudget = '';
-     *     $response = $campaignExperimentServiceClient->graduateCampaignExperiment($formattedCampaignExperiment, $campaignBudget);
+     *     $response = $campaignExperimentServiceClient->graduateCampaignExperiment($campaignExperiment, $campaignBudget);
      * } finally {
      *     $campaignExperimentServiceClient->close();
      * }
@@ -588,8 +648,8 @@ class CampaignExperimentServiceGapicClient
      * ```
      * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
      * try {
-     *     $formattedCampaignExperiment = $campaignExperimentServiceClient->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
-     *     $operationResponse = $campaignExperimentServiceClient->promoteCampaignExperiment($formattedCampaignExperiment);
+     *     $campaignExperiment = '';
+     *     $operationResponse = $campaignExperimentServiceClient->promoteCampaignExperiment($campaignExperiment);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         // operation succeeded and returns no value
@@ -602,7 +662,7 @@ class CampaignExperimentServiceGapicClient
      *     // Alternatively:
      *
      *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $campaignExperimentServiceClient->promoteCampaignExperiment($formattedCampaignExperiment);
+     *     $operationResponse = $campaignExperimentServiceClient->promoteCampaignExperiment($campaignExperiment);
      *     $operationName = $operationResponse->getName();
      *     // ... do other work
      *     $newOperationResponse = $campaignExperimentServiceClient->resumeOperation($operationName, 'promoteCampaignExperiment');
@@ -666,8 +726,8 @@ class CampaignExperimentServiceGapicClient
      * ```
      * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
      * try {
-     *     $formattedCampaignExperiment = $campaignExperimentServiceClient->campaignExperimentName('[CUSTOMER]', '[CAMPAIGN_EXPERIMENT]');
-     *     $campaignExperimentServiceClient->endCampaignExperiment($formattedCampaignExperiment);
+     *     $campaignExperiment = '';
+     *     $campaignExperimentServiceClient->endCampaignExperiment($campaignExperiment);
      * } finally {
      *     $campaignExperimentServiceClient->close();
      * }

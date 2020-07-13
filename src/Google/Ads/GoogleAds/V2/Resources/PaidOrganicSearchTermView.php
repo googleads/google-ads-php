@@ -17,18 +17,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the search term view.
+     * Output only. The resource name of the search term view.
      * Search term view resource names have the form:
      * `customers/{customer_id}/paidOrganicSearchTermViews/{campaign_id}~
      * {ad_group_id}~{URL-base64 search term}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $search_term = null;
 
@@ -39,12 +39,12 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the search term view.
+     *           Output only. The resource name of the search term view.
      *           Search term view resource names have the form:
      *           `customers/{customer_id}/paidOrganicSearchTermViews/{campaign_id}~
      *           {ad_group_id}~{URL-base64 search term}`
      *     @type \Google\Protobuf\StringValue $search_term
-     *           The search term.
+     *           Output only. The search term.
      * }
      */
     public function __construct($data = NULL) {
@@ -53,12 +53,12 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the search term view.
+     * Output only. The resource name of the search term view.
      * Search term view resource names have the form:
      * `customers/{customer_id}/paidOrganicSearchTermViews/{campaign_id}~
      * {ad_group_id}~{URL-base64 search term}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -67,12 +67,12 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the search term view.
+     * Output only. The resource name of the search term view.
      * Search term view resource names have the form:
      * `customers/{customer_id}/paidOrganicSearchTermViews/{campaign_id}~
      * {ad_group_id}~{URL-base64 search term}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -85,9 +85,9 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getSearchTerm()
@@ -98,9 +98,9 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSearchTerm()</code>
 
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getSearchTermUnwrapped()
@@ -109,9 +109,9 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -126,9 +126,9 @@ class PaidOrganicSearchTermView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The search term.
+     * Output only. The search term.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue search_term = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

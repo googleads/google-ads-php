@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,7 +86,7 @@ class SharedCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedResourceName = $client->sharedCriteriaName('[CUSTOMER]', '[SHARED_CRITERIA]');
+        $formattedResourceName = $client->sharedCriterionName('[CUSTOMER]', '[SHARED_CRITERION]');
 
         $response = $client->getSharedCriterion($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
@@ -126,7 +126,7 @@ class SharedCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedResourceName = $client->sharedCriteriaName('[CUSTOMER]', '[SHARED_CRITERIA]');
+        $formattedResourceName = $client->sharedCriterionName('[CUSTOMER]', '[SHARED_CRITERION]');
 
         try {
             $client->getSharedCriterion($formattedResourceName);

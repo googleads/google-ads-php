@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class CampaignLabelServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the campaign-label relationship to fetch.
+     * @param string $resourceName Required. The resource name of the campaign-label relationship to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -318,8 +318,8 @@ class CampaignLabelServiceGapicClient
      * }
      * ```
      *
-     * @param string                   $customerId   ID of the customer whose campaign-label relationships are being modified.
-     * @param CampaignLabelOperation[] $operations   The list of operations to perform on campaign-label relationships.
+     * @param string                   $customerId   Required. ID of the customer whose campaign-label relationships are being modified.
+     * @param CampaignLabelOperation[] $operations   Required. The list of operations to perform on campaign-label relationships.
      * @param array                    $optionalArgs {
      *                                               Optional.
      *

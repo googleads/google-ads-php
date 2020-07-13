@@ -26,7 +26,7 @@ use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCam
 use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignBothApisPhase3;
 use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignBothApisPhase4;
 use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignGoogleAdsApiOnly;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSessionBuilder;
@@ -46,7 +46,6 @@ class RunExamples
     // is also shared with the Google Ads API client library, which accepts only customer ID as an
     // integer.
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const PAGE_SIZE = 1000;
 
     // Login Customer ID is a new configuration setting required in Google Ads API. This
     // is the customer ID of the authorized customer to use in the request, without

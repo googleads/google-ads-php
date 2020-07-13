@@ -16,22 +16,22 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The list of policy findings for this ad.
+     * Output only. The list of policy findings for this ad.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.PolicyTopicEntry policy_topic_entries = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.PolicyTopicEntry policy_topic_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $policy_topic_entries;
     /**
-     * Where in the review process this ad is.
+     * Output only. Where in the review process this ad is.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $review_status = 0;
     /**
-     * The overall approval status of this ad, calculated based on the status of
+     * Output only. The overall approval status of this ad, calculated based on the status of
      * its individual policy topic entries.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $approval_status = 0;
 
@@ -42,11 +42,11 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V2\Common\PolicyTopicEntry[]|\Google\Protobuf\Internal\RepeatedField $policy_topic_entries
-     *           The list of policy findings for this ad.
+     *           Output only. The list of policy findings for this ad.
      *     @type int $review_status
-     *           Where in the review process this ad is.
+     *           Output only. Where in the review process this ad is.
      *     @type int $approval_status
-     *           The overall approval status of this ad, calculated based on the status of
+     *           Output only. The overall approval status of this ad, calculated based on the status of
      *           its individual policy topic entries.
      * }
      */
@@ -56,9 +56,9 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of policy findings for this ad.
+     * Output only. The list of policy findings for this ad.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.PolicyTopicEntry policy_topic_entries = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.PolicyTopicEntry policy_topic_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPolicyTopicEntries()
@@ -67,9 +67,9 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of policy findings for this ad.
+     * Output only. The list of policy findings for this ad.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.PolicyTopicEntry policy_topic_entries = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.PolicyTopicEntry policy_topic_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\PolicyTopicEntry[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -82,9 +82,9 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Where in the review process this ad is.
+     * Output only. Where in the review process this ad is.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getReviewStatus()
@@ -93,9 +93,9 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Where in the review process this ad is.
+     * Output only. Where in the review process this ad is.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyReviewStatusEnum.PolicyReviewStatus review_status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -108,10 +108,10 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The overall approval status of this ad, calculated based on the status of
+     * Output only. The overall approval status of this ad, calculated based on the status of
      * its individual policy topic entries.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getApprovalStatus()
@@ -120,10 +120,10 @@ class AdGroupAdPolicySummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The overall approval status of this ad, calculated based on the status of
+     * Output only. The overall approval status of this ad, calculated based on the status of
      * its individual policy topic entries.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.PolicyApprovalStatusEnum.PolicyApprovalStatus approval_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

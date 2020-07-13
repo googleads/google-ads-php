@@ -39,6 +39,7 @@ class CampaignAudienceViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCampaignAudienceViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CampaignAudienceView
      */
     public function GetCampaignAudienceView(\Google\Ads\GoogleAds\V3\Services\GetCampaignAudienceViewRequest $argument,
       $metadata = [], $options = []) {

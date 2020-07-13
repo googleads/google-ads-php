@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class AdGroupCriterionLabelServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the ad group criterion label to fetch.
+     * @param string $resourceName Required. The resource name of the ad group criterion label to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -318,8 +318,8 @@ class AdGroupCriterionLabelServiceGapicClient
      * }
      * ```
      *
-     * @param string                           $customerId   ID of the customer whose ad group criterion labels are being modified.
-     * @param AdGroupCriterionLabelOperation[] $operations   The list of operations to perform on ad group criterion labels.
+     * @param string                           $customerId   Required. ID of the customer whose ad group criterion labels are being modified.
+     * @param AdGroupCriterionLabelOperation[] $operations   Required. The list of operations to perform on ad group criterion labels.
      * @param array                            $optionalArgs {
      *                                                       Optional.
      *

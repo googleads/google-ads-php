@@ -17,29 +17,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer to fetch invoices for.
+     * Required. The ID of the customer to fetch invoices for.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
      * Required. The billing setup resource name of the requested invoices.
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 2;</code>
+     * Generated from protobuf field <code>string billing_setup = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $billing_setup = '';
     /**
      * Required. The issue year to retrieve invoices, in yyyy format. Only
      * invoices issued in 2019 or later can be retrieved.
      *
-     * Generated from protobuf field <code>string issue_year = 3;</code>
+     * Generated from protobuf field <code>string issue_year = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $issue_year = '';
     /**
      * Required. The issue month to retrieve invoices.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MonthOfYearEnum.MonthOfYear issue_month = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MonthOfYearEnum.MonthOfYear issue_month = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $issue_month = 0;
 
@@ -50,7 +50,7 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer to fetch invoices for.
+     *           Required. The ID of the customer to fetch invoices for.
      *     @type string $billing_setup
      *           Required. The billing setup resource name of the requested invoices.
      *           `customers/{customer_id}/billingSetups/{billing_setup_id}`
@@ -67,9 +67,9 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer to fetch invoices for.
+     * Required. The ID of the customer to fetch invoices for.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -78,9 +78,9 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer to fetch invoices for.
+     * Required. The ID of the customer to fetch invoices for.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -96,7 +96,7 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
      * Required. The billing setup resource name of the requested invoices.
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 2;</code>
+     * Generated from protobuf field <code>string billing_setup = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getBillingSetup()
@@ -108,7 +108,7 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
      * Required. The billing setup resource name of the requested invoices.
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string billing_setup = 2;</code>
+     * Generated from protobuf field <code>string billing_setup = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -124,7 +124,7 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
      * Required. The issue year to retrieve invoices, in yyyy format. Only
      * invoices issued in 2019 or later can be retrieved.
      *
-     * Generated from protobuf field <code>string issue_year = 3;</code>
+     * Generated from protobuf field <code>string issue_year = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getIssueYear()
@@ -136,7 +136,7 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
      * Required. The issue year to retrieve invoices, in yyyy format. Only
      * invoices issued in 2019 or later can be retrieved.
      *
-     * Generated from protobuf field <code>string issue_year = 3;</code>
+     * Generated from protobuf field <code>string issue_year = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The issue month to retrieve invoices.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MonthOfYearEnum.MonthOfYear issue_month = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MonthOfYearEnum.MonthOfYear issue_month = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int
      */
     public function getIssueMonth()
@@ -162,7 +162,7 @@ class ListInvoicesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The issue month to retrieve invoices.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MonthOfYearEnum.MonthOfYear issue_month = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.MonthOfYearEnum.MonthOfYear issue_month = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int $var
      * @return $this
      */

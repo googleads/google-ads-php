@@ -9,10 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A distance view with metrics aggregated by the user’s distance from an
- * advertiser’s location extensions. Each DistanceBucket includes all
+ * A distance view with metrics aggregated by the user's distance from an
+ * advertiser's location extensions. Each DistanceBucket includes all
  * impressions that fall within its distance and a single impression will
- * contribute to the metrics for all DistanceBuckets that include the user’s
+ * contribute to the metrics for all DistanceBuckets that include the user's
  * distance.
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.DistanceView</code>
@@ -20,23 +20,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class DistanceView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the distance view.
+     * Output only. The resource name of the distance view.
      * Distance view resource names have the form:
      * `customers/{customer_id}/distanceViews/1~{distance_bucket}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Grouping of user distance from location extensions.
+     * Output only. Grouping of user distance from location extensions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DistanceBucketEnum.DistanceBucket distance_bucket = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DistanceBucketEnum.DistanceBucket distance_bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $distance_bucket = 0;
     /**
-     * True if the DistanceBucket is using the metric system, false otherwise.
+     * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $metric_system = null;
 
@@ -47,13 +47,13 @@ class DistanceView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the distance view.
+     *           Output only. The resource name of the distance view.
      *           Distance view resource names have the form:
      *           `customers/{customer_id}/distanceViews/1~{distance_bucket}`
      *     @type int $distance_bucket
-     *           Grouping of user distance from location extensions.
+     *           Output only. Grouping of user distance from location extensions.
      *     @type \Google\Protobuf\BoolValue $metric_system
-     *           True if the DistanceBucket is using the metric system, false otherwise.
+     *           Output only. True if the DistanceBucket is using the metric system, false otherwise.
      * }
      */
     public function __construct($data = NULL) {
@@ -62,11 +62,11 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the distance view.
+     * Output only. The resource name of the distance view.
      * Distance view resource names have the form:
      * `customers/{customer_id}/distanceViews/1~{distance_bucket}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -75,11 +75,11 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the distance view.
+     * Output only. The resource name of the distance view.
      * Distance view resource names have the form:
      * `customers/{customer_id}/distanceViews/1~{distance_bucket}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -92,9 +92,9 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Grouping of user distance from location extensions.
+     * Output only. Grouping of user distance from location extensions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DistanceBucketEnum.DistanceBucket distance_bucket = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DistanceBucketEnum.DistanceBucket distance_bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getDistanceBucket()
@@ -103,9 +103,9 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Grouping of user distance from location extensions.
+     * Output only. Grouping of user distance from location extensions.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DistanceBucketEnum.DistanceBucket distance_bucket = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.DistanceBucketEnum.DistanceBucket distance_bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -118,9 +118,9 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if the DistanceBucket is using the metric system, false otherwise.
+     * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getMetricSystem()
@@ -131,9 +131,9 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getMetricSystem()</code>
 
-     * True if the DistanceBucket is using the metric system, false otherwise.
+     * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getMetricSystemUnwrapped()
@@ -142,9 +142,9 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if the DistanceBucket is using the metric system, false otherwise.
+     * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -159,9 +159,9 @@ class DistanceView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * True if the DistanceBucket is using the metric system, false otherwise.
+     * Output only. True if the DistanceBucket is using the metric system, false otherwise.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue metric_system = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */

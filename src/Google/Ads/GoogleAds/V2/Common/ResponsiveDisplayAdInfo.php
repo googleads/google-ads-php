@@ -70,7 +70,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      */
     private $descriptions;
     /**
-     * Optional YouTube vidoes for the ad. A maximum of 5 videos can be specified.
+     * Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.AdVideoAsset youtube_videos = 8;</code>
      */
@@ -166,7 +166,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *           Descriptive texts for the ad. The maximum length is 90 characters. At
      *           least 1 and max 5 headlines can be specified.
      *     @type \Google\Ads\GoogleAds\V2\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $youtube_videos
-     *           Optional YouTube vidoes for the ad. A maximum of 5 videos can be specified.
+     *           Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *     @type \Google\Protobuf\StringValue $business_name
      *           The advertiser/brand name. Maximum display width is 25.
      *     @type \Google\Protobuf\StringValue $main_color
@@ -406,7 +406,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional YouTube vidoes for the ad. A maximum of 5 videos can be specified.
+     * Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.AdVideoAsset youtube_videos = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -417,7 +417,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional YouTube vidoes for the ad. A maximum of 5 videos can be specified.
+     * Optional YouTube videos for the ad. A maximum of 5 videos can be specified.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.AdVideoAsset youtube_videos = 8;</code>
      * @param \Google\Ads\GoogleAds\V2\Common\AdVideoAsset[]|\Google\Protobuf\Internal\RepeatedField $var

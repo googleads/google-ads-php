@@ -16,10 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the keyword plan of which historical metrics are
+     * Required. The resource name of the keyword plan of which historical metrics are
      * requested.
      *
-     * Generated from protobuf field <code>string keyword_plan = 1;</code>
+     * Generated from protobuf field <code>string keyword_plan = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $keyword_plan = '';
 
@@ -30,7 +30,7 @@ class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $keyword_plan
-     *           The resource name of the keyword plan of which historical metrics are
+     *           Required. The resource name of the keyword plan of which historical metrics are
      *           requested.
      * }
      */
@@ -40,10 +40,10 @@ class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the keyword plan of which historical metrics are
+     * Required. The resource name of the keyword plan of which historical metrics are
      * requested.
      *
-     * Generated from protobuf field <code>string keyword_plan = 1;</code>
+     * Generated from protobuf field <code>string keyword_plan = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getKeywordPlan()
@@ -52,10 +52,10 @@ class GenerateHistoricalMetricsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the keyword plan of which historical metrics are
+     * Required. The resource name of the keyword plan of which historical metrics are
      * requested.
      *
-     * Generated from protobuf field <code>string keyword_plan = 1;</code>
+     * Generated from protobuf field <code>string keyword_plan = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

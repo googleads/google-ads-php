@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -269,7 +269,7 @@ class MerchantCenterLinkServiceGapicClient
      * }
      * ```
      *
-     * @param string $customerId   The ID of the customer onto which to apply the Merchant Center link list
+     * @param string $customerId   Required. The ID of the customer onto which to apply the Merchant Center link list
      *                             operation.
      * @param array  $optionalArgs {
      *                             Optional.
@@ -320,7 +320,7 @@ class MerchantCenterLinkServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName Resource name of the Merchant Center link.
+     * @param string $resourceName Required. Resource name of the Merchant Center link.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -371,8 +371,8 @@ class MerchantCenterLinkServiceGapicClient
      * }
      * ```
      *
-     * @param string                      $customerId   The ID of the customer being modified.
-     * @param MerchantCenterLinkOperation $operation    The operation to perform on the link
+     * @param string                      $customerId   Required. The ID of the customer being modified.
+     * @param MerchantCenterLinkOperation $operation    Required. The operation to perform on the link
      * @param array                       $optionalArgs {
      *                                                  Optional.
      *

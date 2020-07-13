@@ -23,27 +23,27 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V3\Enums\KeywordPlanForecastIntervalEnum\KeywordPlanForecastInterval;
-use Google\Ads\GoogleAds\V3\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\KeywordPlan;
-use Google\Ads\GoogleAds\V3\Resources\KeywordPlanAdGroup;
-use Google\Ads\GoogleAds\V3\Resources\KeywordPlanCampaign;
-use Google\Ads\GoogleAds\V3\Resources\KeywordPlanForecastPeriod;
-use Google\Ads\GoogleAds\V3\Resources\KeywordPlanGeoTarget;
-use Google\Ads\GoogleAds\V3\Resources\KeywordPlanKeyword;
-use Google\Ads\GoogleAds\V3\Resources\KeywordPlanNegativeKeyword;
-use Google\Ads\GoogleAds\V3\Services\KeywordPlanAdGroupOperation;
-use Google\Ads\GoogleAds\V3\Services\KeywordPlanCampaignOperation;
-use Google\Ads\GoogleAds\V3\Services\KeywordPlanKeywordOperation;
-use Google\Ads\GoogleAds\V3\Services\KeywordPlanNegativeKeywordOperation;
-use Google\Ads\GoogleAds\V3\Services\KeywordPlanOperation;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V4\Enums\KeywordPlanForecastIntervalEnum\KeywordPlanForecastInterval;
+use Google\Ads\GoogleAds\V4\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\KeywordPlan;
+use Google\Ads\GoogleAds\V4\Resources\KeywordPlanAdGroup;
+use Google\Ads\GoogleAds\V4\Resources\KeywordPlanAdGroupKeyword;
+use Google\Ads\GoogleAds\V4\Resources\KeywordPlanCampaign;
+use Google\Ads\GoogleAds\V4\Resources\KeywordPlanCampaignKeyword;
+use Google\Ads\GoogleAds\V4\Resources\KeywordPlanForecastPeriod;
+use Google\Ads\GoogleAds\V4\Resources\KeywordPlanGeoTarget;
+use Google\Ads\GoogleAds\V4\Services\KeywordPlanAdGroupKeywordOperation;
+use Google\Ads\GoogleAds\V4\Services\KeywordPlanAdGroupOperation;
+use Google\Ads\GoogleAds\V4\Services\KeywordPlanCampaignKeywordOperation;
+use Google\Ads\GoogleAds\V4\Services\KeywordPlanCampaignOperation;
+use Google\Ads\GoogleAds\V4\Services\KeywordPlanOperation;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -131,13 +131,13 @@ class AddKeywordPlan
             $planCampaignResource
         );
 
-        self::createKeywordPlanKeywords(
+        self::createKeywordPlanAdGroupKeywords(
             $googleAdsClient,
             $customerId,
             $planAdGroupResource
         );
 
-        self::createKeywordPlanNegativeKeywords(
+        self::createKeywordPlanNegativeCampaignKeywords(
             $googleAdsClient,
             $customerId,
             $planCampaignResource
@@ -177,7 +177,7 @@ class AddKeywordPlan
         );
 
         $resourceName = $response->getResults()[0]->getResourceName();
-        printf("Created keyword plan: %s%s", $resourceName, PHP_EOL);
+        printf("Created keyword plan: '%s'%s", $resourceName, PHP_EOL);
 
         return $resourceName;
     }
@@ -231,7 +231,7 @@ class AddKeywordPlan
         );
 
         $planCampaignResource = $response->getResults()[0]->getResourceName();
-        printf("Created campaign for keyword plan: %s%s", $planCampaignResource, PHP_EOL);
+        printf("Created campaign for keyword plan: '%s'%s", $planCampaignResource, PHP_EOL);
 
         return $planCampaignResource;
     }
@@ -269,107 +269,114 @@ class AddKeywordPlan
         );
 
         $planAdGroupResource = $response->getResults()[0]->getResourceName();
-        printf("Created ad group for keyword plan: %s%s", $planAdGroupResource, PHP_EOL);
+        printf("Created ad group for keyword plan: '%s'%s", $planAdGroupResource, PHP_EOL);
 
         return $planAdGroupResource;
     }
 
     /**
-     * Creates keywords for the keyword plan.
+     * Creates ad group keywords for the keyword plan.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string $planAdGroupResource the resource name of the ad group under which the
      *     keywords are created
      */
-    private static function createKeywordPlanKeywords(
+    private static function createKeywordPlanAdGroupKeywords(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $planAdGroupResource
     ) {
-        // Creates the keywords for the keyword plan.
-        $keywordPlanKeyword1 = new KeywordPlanKeyword([
+        // Creates the ad group keywords for the keyword plan.
+        $keywordPlanAdGroupKeyword1 = new KeywordPlanAdGroupKeyword([
             'text' => new StringValue(['value' => 'mars cruise']),
             'cpc_bid_micros' => new Int64Value(['value' => 2000000]),
             'match_type' => KeywordMatchType::BROAD,
             'keyword_plan_ad_group' => new StringValue(['value' => $planAdGroupResource])
         ]);
 
-        $keywordPlanKeyword2 = new KeywordPlanKeyword([
+        $keywordPlanAdGroupKeyword2 = new KeywordPlanAdGroupKeyword([
             'text' => new StringValue(['value' => 'cheap cruise']),
             'cpc_bid_micros' => new Int64Value(['value' => 15000000]),
             'match_type' => KeywordMatchType::PHRASE,
             'keyword_plan_ad_group' => new StringValue(['value' => $planAdGroupResource])
         ]);
 
-        $keywordPlanKeyword3 = new KeywordPlanKeyword([
+        $keywordPlanAdGroupKeyword3 = new KeywordPlanAdGroupKeyword([
             'text' => new StringValue(['value' => 'jupiter cruise']),
             'cpc_bid_micros' => new Int64Value(['value' => 1990000]),
             'match_type' => KeywordMatchType::EXACT,
             'keyword_plan_ad_group' => new StringValue(['value' => $planAdGroupResource])
         ]);
 
-        $keywordPlanKeywords = [$keywordPlanKeyword1, $keywordPlanKeyword2, $keywordPlanKeyword3];
+        $keywordPlanAdGroupKeywords =
+            [$keywordPlanAdGroupKeyword1, $keywordPlanAdGroupKeyword2, $keywordPlanAdGroupKeyword3];
 
-        // Creates an array of keyword plan keyword operations.
-        $keywordPlanKeywordOperations = [];
+        // Creates an array of keyword plan ad group keyword operations.
+        $keywordPlanAdGroupKeywordOperations = [];
 
-        foreach ($keywordPlanKeywords as $keyword) {
-            $keywordPlanKeywordOperation = new KeywordPlanKeywordOperation();
-            $keywordPlanKeywordOperation->setCreate($keyword);
-            $keywordPlanKeywordOperations[] = $keywordPlanKeywordOperation;
+        foreach ($keywordPlanAdGroupKeywords as $keyword) {
+            $keywordPlanAdGroupKeywordOperation = new KeywordPlanAdGroupKeywordOperation();
+            $keywordPlanAdGroupKeywordOperation->setCreate($keyword);
+            $keywordPlanAdGroupKeywordOperations[] = $keywordPlanAdGroupKeywordOperation;
         }
 
-        $keywordPlanKeywordServiceClient = $googleAdsClient->getKeywordPlanKeywordServiceClient();
+        $keywordPlanAdGroupKeywordServiceClient =
+            $googleAdsClient->getKeywordPlanAdGroupKeywordServiceClient();
 
-        // Adds the keyword plan keywords.
-        $response = $keywordPlanKeywordServiceClient->mutateKeywordPlanKeywords(
+        // Adds the keyword plan ad group keywords.
+        $response = $keywordPlanAdGroupKeywordServiceClient->mutateKeywordPlanAdGroupKeywords(
             $customerId,
-            $keywordPlanKeywordOperations
+            $keywordPlanAdGroupKeywordOperations
         );
 
-        /** @var KeywordPlanKeyword $result */
+        /** @var KeywordPlanAdGroupKeyword $result */
         foreach ($response->getResults() as $result) {
-            printf("Created keyword for keyword plan: %s%s", $result->getResourceName(), PHP_EOL);
+            printf(
+                "Created ad group keyword for keyword plan: '%s'%s",
+                $result->getResourceName(),
+                PHP_EOL
+            );
         }
     }
 
     /**
-     * Creates negative keywords for the keyword plan.
+     * Creates negative campaign keywords for the keyword plan.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string $planCampaignResource the resource name of the campaign under which
      *     the keywords are created
      */
-    private static function createKeywordPlanNegativeKeywords(
+    private static function createKeywordPlanNegativeCampaignKeywords(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $planCampaignResource
     ) {
-        // Creates a negative keyword for the keyword plan.
-        $keywordPlanNegativeKeyword = new KeywordPlanNegativeKeyword([
+        // Creates a negative campaign keyword for the keyword plan.
+        $keywordPlanCampaignKeyword = new KeywordPlanCampaignKeyword([
             'text' => new StringValue(['value' => 'moon walk']),
             'match_type' => KeywordMatchType::BROAD,
-            'keyword_plan_campaign' => new StringValue(['value' => $planCampaignResource])
+            'keyword_plan_campaign' => new StringValue(['value' => $planCampaignResource]),
+            'negative' => true
         ]);
 
-        $keywordPlanNegativeKeywordOperation = new KeywordPlanNegativeKeywordOperation();
-        $keywordPlanNegativeKeywordOperation->setCreate($keywordPlanNegativeKeyword);
+        $keywordPlanCampaignKeywordOperation = new KeywordPlanCampaignKeywordOperation();
+        $keywordPlanCampaignKeywordOperation->setCreate($keywordPlanCampaignKeyword);
 
-        $keywordPlanNegativeKeywordServiceClient =
-            $googleAdsClient->getKeywordPlanNegativeKeywordServiceClient();
+        $keywordPlanCampaignKeywordServiceClient =
+            $googleAdsClient->getKeywordPlanCampaignKeywordServiceClient();
 
-        // Adds the negative keyword.
-        $response = $keywordPlanNegativeKeywordServiceClient->mutateKeywordPlanNegativeKeywords(
+        // Adds the negative campaign keyword.
+        $response = $keywordPlanCampaignKeywordServiceClient->mutateKeywordPlanCampaignKeywords(
             $customerId,
-            [$keywordPlanNegativeKeywordOperation]
+            [$keywordPlanCampaignKeywordOperation]
         );
 
-        /** @var KeywordPlanNegativeKeyword $result */
+        /** @var KeywordPlanCampaignKeyword $result */
         foreach ($response->getResults() as $result) {
             printf(
-                "Created negative keyword for keyword plan: %s%s",
+                "Created negative campaign keyword for keyword plan: '%s'%s",
                 $result->getResourceName(),
                 PHP_EOL
             );

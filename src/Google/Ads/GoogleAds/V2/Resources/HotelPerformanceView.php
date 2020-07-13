@@ -16,11 +16,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class HotelPerformanceView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the hotel performance view.
+     * Output only. The resource name of the hotel performance view.
      * Hotel performance view resource names have the form:
      * `customers/{customer_id}/hotelPerformanceView`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
 
@@ -31,7 +31,7 @@ class HotelPerformanceView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the hotel performance view.
+     *           Output only. The resource name of the hotel performance view.
      *           Hotel performance view resource names have the form:
      *           `customers/{customer_id}/hotelPerformanceView`
      * }
@@ -42,11 +42,11 @@ class HotelPerformanceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the hotel performance view.
+     * Output only. The resource name of the hotel performance view.
      * Hotel performance view resource names have the form:
      * `customers/{customer_id}/hotelPerformanceView`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -55,11 +55,11 @@ class HotelPerformanceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the hotel performance view.
+     * Output only. The resource name of the hotel performance view.
      * Hotel performance view resource names have the form:
      * `customers/{customer_id}/hotelPerformanceView`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

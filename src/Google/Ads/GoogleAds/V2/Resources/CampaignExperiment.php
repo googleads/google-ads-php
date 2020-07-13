@@ -17,24 +17,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class CampaignExperiment extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign experiment.
+     * Immutable. The resource name of the campaign experiment.
      * Campaign experiment resource names have the form:
      * `customers/{customer_id}/campaignExperiments/{campaign_experiment_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the campaign experiment.
+     * Output only. The ID of the campaign experiment.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The campaign draft with staged changes to the base campaign.
+     * Immutable. The campaign draft with staged changes to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $campaign_draft = null;
     /**
@@ -55,37 +55,37 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      */
     protected $description = null;
     /**
-     * Share of traffic directed to experiment as a percent (must be between 1 and
+     * Immutable. Share of traffic directed to experiment as a percent (must be between 1 and
      * 99 inclusive. Base campaign receives the remainder of the traffic
      * (100 - traffic_split_percent). Required for create.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $traffic_split_percent = null;
     /**
-     * Determines the behavior of the traffic split.
+     * Immutable. Determines the behavior of the traffic split.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType traffic_split_type = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType traffic_split_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $traffic_split_type = 0;
     /**
-     * The experiment campaign, as opposed to the base campaign.
+     * Output only. The experiment campaign, as opposed to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $experiment_campaign = null;
     /**
-     * The status of the campaign experiment. This field is read-only.
+     * Output only. The status of the campaign experiment. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentStatusEnum.CampaignExperimentStatus status = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentStatusEnum.CampaignExperimentStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion of experiment create or promote. The most recent long
      * running operation is returned.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $long_running_operation = null;
     /**
@@ -117,14 +117,14 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the campaign experiment.
+     *           Immutable. The resource name of the campaign experiment.
      *           Campaign experiment resource names have the form:
      *           `customers/{customer_id}/campaignExperiments/{campaign_experiment_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the campaign experiment.
+     *           Output only. The ID of the campaign experiment.
      *           This field is read-only.
      *     @type \Google\Protobuf\StringValue $campaign_draft
-     *           The campaign draft with staged changes to the base campaign.
+     *           Immutable. The campaign draft with staged changes to the base campaign.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the campaign experiment.
      *           This field is required when creating new campaign experiments
@@ -135,17 +135,17 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $description
      *           The description of the experiment.
      *     @type \Google\Protobuf\Int64Value $traffic_split_percent
-     *           Share of traffic directed to experiment as a percent (must be between 1 and
+     *           Immutable. Share of traffic directed to experiment as a percent (must be between 1 and
      *           99 inclusive. Base campaign receives the remainder of the traffic
      *           (100 - traffic_split_percent). Required for create.
      *     @type int $traffic_split_type
-     *           Determines the behavior of the traffic split.
+     *           Immutable. Determines the behavior of the traffic split.
      *     @type \Google\Protobuf\StringValue $experiment_campaign
-     *           The experiment campaign, as opposed to the base campaign.
+     *           Output only. The experiment campaign, as opposed to the base campaign.
      *     @type int $status
-     *           The status of the campaign experiment. This field is read-only.
+     *           Output only. The status of the campaign experiment. This field is read-only.
      *     @type \Google\Protobuf\StringValue $long_running_operation
-     *           The resource name of the long-running operation that can be used to poll
+     *           Output only. The resource name of the long-running operation that can be used to poll
      *           for completion of experiment create or promote. The most recent long
      *           running operation is returned.
      *     @type \Google\Protobuf\StringValue $start_date
@@ -169,11 +169,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign experiment.
+     * Immutable. The resource name of the campaign experiment.
      * Campaign experiment resource names have the form:
      * `customers/{customer_id}/campaignExperiments/{campaign_experiment_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -182,11 +182,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign experiment.
+     * Immutable. The resource name of the campaign experiment.
      * Campaign experiment resource names have the form:
      * `customers/{customer_id}/campaignExperiments/{campaign_experiment_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -199,10 +199,10 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the campaign experiment.
+     * Output only. The ID of the campaign experiment.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -213,10 +213,10 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the campaign experiment.
+     * Output only. The ID of the campaign experiment.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -225,10 +225,10 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the campaign experiment.
+     * Output only. The ID of the campaign experiment.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -243,10 +243,10 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the campaign experiment.
+     * Output only. The ID of the campaign experiment.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -256,9 +256,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The campaign draft with staged changes to the base campaign.
+     * Immutable. The campaign draft with staged changes to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaignDraft()
@@ -269,9 +269,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaignDraft()</code>
 
-     * The campaign draft with staged changes to the base campaign.
+     * Immutable. The campaign draft with staged changes to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignDraftUnwrapped()
@@ -280,9 +280,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign draft with staged changes to the base campaign.
+     * Immutable. The campaign draft with staged changes to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -297,9 +297,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The campaign draft with staged changes to the base campaign.
+     * Immutable. The campaign draft with staged changes to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign_draft = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -435,11 +435,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Share of traffic directed to experiment as a percent (must be between 1 and
+     * Immutable. Share of traffic directed to experiment as a percent (must be between 1 and
      * 99 inclusive. Base campaign receives the remainder of the traffic
      * (100 - traffic_split_percent). Required for create.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getTrafficSplitPercent()
@@ -450,11 +450,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTrafficSplitPercent()</code>
 
-     * Share of traffic directed to experiment as a percent (must be between 1 and
+     * Immutable. Share of traffic directed to experiment as a percent (must be between 1 and
      * 99 inclusive. Base campaign receives the remainder of the traffic
      * (100 - traffic_split_percent). Required for create.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int|string|null
      */
     public function getTrafficSplitPercentUnwrapped()
@@ -463,11 +463,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Share of traffic directed to experiment as a percent (must be between 1 and
+     * Immutable. Share of traffic directed to experiment as a percent (must be between 1 and
      * 99 inclusive. Base campaign receives the remainder of the traffic
      * (100 - traffic_split_percent). Required for create.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -482,11 +482,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Share of traffic directed to experiment as a percent (must be between 1 and
+     * Immutable. Share of traffic directed to experiment as a percent (must be between 1 and
      * 99 inclusive. Base campaign receives the remainder of the traffic
      * (100 - traffic_split_percent). Required for create.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value traffic_split_percent = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -496,9 +496,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Determines the behavior of the traffic split.
+     * Immutable. Determines the behavior of the traffic split.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType traffic_split_type = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType traffic_split_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getTrafficSplitType()
@@ -507,9 +507,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Determines the behavior of the traffic split.
+     * Immutable. Determines the behavior of the traffic split.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType traffic_split_type = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType traffic_split_type = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -522,9 +522,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The experiment campaign, as opposed to the base campaign.
+     * Output only. The experiment campaign, as opposed to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getExperimentCampaign()
@@ -535,9 +535,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getExperimentCampaign()</code>
 
-     * The experiment campaign, as opposed to the base campaign.
+     * Output only. The experiment campaign, as opposed to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getExperimentCampaignUnwrapped()
@@ -546,9 +546,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The experiment campaign, as opposed to the base campaign.
+     * Output only. The experiment campaign, as opposed to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -563,9 +563,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The experiment campaign, as opposed to the base campaign.
+     * Output only. The experiment campaign, as opposed to the base campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue experiment_campaign = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -575,9 +575,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The status of the campaign experiment. This field is read-only.
+     * Output only. The status of the campaign experiment. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentStatusEnum.CampaignExperimentStatus status = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentStatusEnum.CampaignExperimentStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -586,9 +586,9 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of the campaign experiment. This field is read-only.
+     * Output only. The status of the campaign experiment. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentStatusEnum.CampaignExperimentStatus status = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.CampaignExperimentStatusEnum.CampaignExperimentStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -601,11 +601,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion of experiment create or promote. The most recent long
      * running operation is returned.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getLongRunningOperation()
@@ -616,11 +616,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLongRunningOperation()</code>
 
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion of experiment create or promote. The most recent long
      * running operation is returned.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getLongRunningOperationUnwrapped()
@@ -629,11 +629,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion of experiment create or promote. The most recent long
      * running operation is returned.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -648,11 +648,11 @@ class CampaignExperiment extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the long-running operation that can be used to poll
+     * Output only. The resource name of the long-running operation that can be used to poll
      * for completion of experiment create or promote. The most recent long
      * running operation is returned.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue long_running_operation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

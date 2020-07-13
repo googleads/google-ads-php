@@ -12,49 +12,52 @@ use Google\Protobuf\Internal\GPBUtil;
  * A click view with metrics aggregated at each click level, including both
  * valid and invalid clicks. For non-Search campaigns, metrics.clicks
  * represents the number of valid and invalid interactions.
+ * Queries including ClickView must have a filter limiting the results to one
+ * day and can be requested for dates back to 90 days before the time of the
+ * request.
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.ClickView</code>
  */
 class ClickView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the click view.
+     * Output only. The resource name of the click view.
      * Click view resource names have the form:
      * `customers/{customer_id}/clickViews/{date (yyyy-MM-dd)}~{gclid}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The Google Click ID.
+     * Output only. The Google Click ID.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $gclid = null;
     /**
-     * The location criteria matching the area of interest associated with the
+     * Output only. The location criteria matching the area of interest associated with the
      * impression.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation area_of_interest = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation area_of_interest = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $area_of_interest = null;
     /**
-     * The location criteria matching the location of presence associated with the
+     * Output only. The location criteria matching the location of presence associated with the
      * impression.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation location_of_presence = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation location_of_presence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $location_of_presence = null;
     /**
-     * Page number in search results where the ad was shown.
+     * Output only. Page number in search results where the ad was shown.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $page_number = null;
     /**
-     * The associated ad.
+     * Output only. The associated ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_ad = null;
 
@@ -65,21 +68,21 @@ class ClickView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the click view.
+     *           Output only. The resource name of the click view.
      *           Click view resource names have the form:
      *           `customers/{customer_id}/clickViews/{date (yyyy-MM-dd)}~{gclid}`
      *     @type \Google\Protobuf\StringValue $gclid
-     *           The Google Click ID.
+     *           Output only. The Google Click ID.
      *     @type \Google\Ads\GoogleAds\V2\Common\ClickLocation $area_of_interest
-     *           The location criteria matching the area of interest associated with the
+     *           Output only. The location criteria matching the area of interest associated with the
      *           impression.
      *     @type \Google\Ads\GoogleAds\V2\Common\ClickLocation $location_of_presence
-     *           The location criteria matching the location of presence associated with the
+     *           Output only. The location criteria matching the location of presence associated with the
      *           impression.
      *     @type \Google\Protobuf\Int64Value $page_number
-     *           Page number in search results where the ad was shown.
+     *           Output only. Page number in search results where the ad was shown.
      *     @type \Google\Protobuf\StringValue $ad_group_ad
-     *           The associated ad.
+     *           Output only. The associated ad.
      * }
      */
     public function __construct($data = NULL) {
@@ -88,11 +91,11 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the click view.
+     * Output only. The resource name of the click view.
      * Click view resource names have the form:
      * `customers/{customer_id}/clickViews/{date (yyyy-MM-dd)}~{gclid}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -101,11 +104,11 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the click view.
+     * Output only. The resource name of the click view.
      * Click view resource names have the form:
      * `customers/{customer_id}/clickViews/{date (yyyy-MM-dd)}~{gclid}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -118,9 +121,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Click ID.
+     * Output only. The Google Click ID.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getGclid()
@@ -131,9 +134,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getGclid()</code>
 
-     * The Google Click ID.
+     * Output only. The Google Click ID.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getGclidUnwrapped()
@@ -142,9 +145,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Click ID.
+     * Output only. The Google Click ID.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -159,9 +162,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The Google Click ID.
+     * Output only. The Google Click ID.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue gclid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -171,10 +174,10 @@ class ClickView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The location criteria matching the area of interest associated with the
+     * Output only. The location criteria matching the area of interest associated with the
      * impression.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation area_of_interest = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation area_of_interest = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\ClickLocation
      */
     public function getAreaOfInterest()
@@ -183,10 +186,10 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The location criteria matching the area of interest associated with the
+     * Output only. The location criteria matching the area of interest associated with the
      * impression.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation area_of_interest = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation area_of_interest = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\ClickLocation $var
      * @return $this
      */
@@ -199,10 +202,10 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The location criteria matching the location of presence associated with the
+     * Output only. The location criteria matching the location of presence associated with the
      * impression.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation location_of_presence = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation location_of_presence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\ClickLocation
      */
     public function getLocationOfPresence()
@@ -211,10 +214,10 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The location criteria matching the location of presence associated with the
+     * Output only. The location criteria matching the location of presence associated with the
      * impression.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation location_of_presence = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.ClickLocation location_of_presence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\ClickLocation $var
      * @return $this
      */
@@ -227,9 +230,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Page number in search results where the ad was shown.
+     * Output only. Page number in search results where the ad was shown.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getPageNumber()
@@ -240,9 +243,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPageNumber()</code>
 
-     * Page number in search results where the ad was shown.
+     * Output only. Page number in search results where the ad was shown.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getPageNumberUnwrapped()
@@ -251,9 +254,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Page number in search results where the ad was shown.
+     * Output only. Page number in search results where the ad was shown.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -268,9 +271,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Page number in search results where the ad was shown.
+     * Output only. Page number in search results where the ad was shown.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value page_number = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -280,9 +283,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The associated ad.
+     * Output only. The associated ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroupAd()
@@ -293,9 +296,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroupAd()</code>
 
-     * The associated ad.
+     * Output only. The associated ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupAdUnwrapped()
@@ -304,9 +307,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The associated ad.
+     * Output only. The associated ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -321,9 +324,9 @@ class ClickView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The associated ad.
+     * Output only. The associated ad.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group_ad = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */

@@ -39,6 +39,7 @@ class AdParameterServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdParameterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdParameter
      */
     public function GetAdParameter(\Google\Ads\GoogleAds\V3\Services\GetAdParameterRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class AdParameterServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateAdParametersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateAdParametersResponse
      */
     public function MutateAdParameters(\Google\Ads\GoogleAds\V3\Services\MutateAdParametersRequest $argument,
       $metadata = [], $options = []) {

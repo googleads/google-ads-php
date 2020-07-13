@@ -55,7 +55,6 @@ use Google\Ads\GoogleAds\V2\Services\CarrierConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ChangeStatusServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ClickViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ConversionActionServiceClient;
-use Google\Ads\GoogleAds\V2\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomerClientServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomerExtensionSettingServiceClient;
@@ -64,6 +63,7 @@ use Google\Ads\GoogleAds\V2\Services\CustomerLabelServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V2\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V2\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V2\Services\DetailPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\DisplayKeywordViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\DomainCategoryServiceClient;
@@ -72,11 +72,10 @@ use Google\Ads\GoogleAds\V2\Services\ExtensionFeedItemServiceClient;
 use Google\Ads\GoogleAds\V2\Services\FeedItemServiceClient;
 use Google\Ads\GoogleAds\V2\Services\FeedItemTargetServiceClient;
 use Google\Ads\GoogleAds\V2\Services\FeedMappingServiceClient;
-use Google\Ads\GoogleAds\V2\Services\FeedPlaceholderViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\FeedServiceClient;
 use Google\Ads\GoogleAds\V2\Services\GenderViewServiceClient;
-use Google\Ads\GoogleAds\V2\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\GeographicViewServiceClient;
+use Google\Ads\GoogleAds\V2\Services\GeoTargetConstantServiceClient;
 use Google\Ads\GoogleAds\V2\Services\GoogleAdsFieldServiceClient;
 use Google\Ads\GoogleAds\V2\Services\GroupPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\HotelGroupViewServiceClient;
@@ -108,7 +107,6 @@ use Google\Ads\GoogleAds\V2\Services\SharedCriterionServiceClient;
 use Google\Ads\GoogleAds\V2\Services\SharedSetServiceClient;
 use Google\Ads\GoogleAds\V2\Services\ShoppingPerformanceViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\TopicConstantServiceClient;
-use Google\Ads\GoogleAds\V2\Services\TopicViewServiceClient;
 use Google\Ads\GoogleAds\V2\Services\UserInterestServiceClient;
 use Google\Ads\GoogleAds\V2\Services\UserListServiceClient;
 use Google\Ads\GoogleAds\V2\Services\VideoServiceClient;
@@ -123,7 +121,7 @@ use PHPUnit\Framework\TestCase;
 class ResourceNamesTest extends TestCase
 {
 
-    const CUSTOMER_ID = 1234567890;
+    private const CUSTOMER_ID = 1234567890;
 
     /**
      * @covers \Google\Ads\GoogleAds\Util\V2\ResourceNames::forAccountBudgetProposal()
@@ -311,7 +309,7 @@ class ResourceNamesTest extends TestCase
 
         $names = AdGroupCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
-        $this->assertEquals("{$adGroupId}~{$criterionId}", $names['ad_group_criteria']);
+        $this->assertEquals("{$adGroupId}~{$criterionId}", $names['ad_group_criterion']);
     }
 
     /**
@@ -696,7 +694,7 @@ class ResourceNamesTest extends TestCase
 
         $names = CampaignCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
-        $this->assertEquals("{$campaignId}~{$criterionId}", $names['campaign_criteria']);
+        $this->assertEquals("{$campaignId}~{$criterionId}", $names['campaign_criterion']);
     }
 
     /**
@@ -1153,7 +1151,7 @@ class ResourceNamesTest extends TestCase
 
         $names = CustomerNegativeCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
-        $this->assertEquals($criterionId, $names['customer_negative_criteria']);
+        $this->assertEquals($criterionId, $names['customer_negative_criterion']);
     }
 
     /**
@@ -2061,7 +2059,7 @@ class ResourceNamesTest extends TestCase
 
         $names = SharedCriterionServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
-        $this->assertEquals("{$sharedSetId}~{$criterionId}", $names['shared_criteria']);
+        $this->assertEquals("{$sharedSetId}~{$criterionId}", $names['shared_criterion']);
     }
 
     /**

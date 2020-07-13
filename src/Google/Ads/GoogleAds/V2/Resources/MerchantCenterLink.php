@@ -17,25 +17,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class MerchantCenterLink extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the merchant center link.
+     * Immutable. The resource name of the merchant center link.
      * Merchant center link resource names have the form:
      * `customers/{customer_id}/merchantCenterLinks/{merchant_center_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the Merchant Center account.
+     * Output only. The ID of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The name of the Merchant Center account.
+     * Output only. The name of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $merchant_center_account_name = null;
     /**
@@ -52,14 +52,14 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the merchant center link.
+     *           Immutable. The resource name of the merchant center link.
      *           Merchant center link resource names have the form:
      *           `customers/{customer_id}/merchantCenterLinks/{merchant_center_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the Merchant Center account.
+     *           Output only. The ID of the Merchant Center account.
      *           This field is readonly.
      *     @type \Google\Protobuf\StringValue $merchant_center_account_name
-     *           The name of the Merchant Center account.
+     *           Output only. The name of the Merchant Center account.
      *           This field is readonly.
      *     @type int $status
      *           The status of the link.
@@ -71,11 +71,11 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the merchant center link.
+     * Immutable. The resource name of the merchant center link.
      * Merchant center link resource names have the form:
      * `customers/{customer_id}/merchantCenterLinks/{merchant_center_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -84,11 +84,11 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the merchant center link.
+     * Immutable. The resource name of the merchant center link.
      * Merchant center link resource names have the form:
      * `customers/{customer_id}/merchantCenterLinks/{merchant_center_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -101,10 +101,10 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the Merchant Center account.
+     * Output only. The ID of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -115,10 +115,10 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the Merchant Center account.
+     * Output only. The ID of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -127,10 +127,10 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the Merchant Center account.
+     * Output only. The ID of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -145,10 +145,10 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the Merchant Center account.
+     * Output only. The ID of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -158,10 +158,10 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The name of the Merchant Center account.
+     * Output only. The name of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getMerchantCenterAccountName()
@@ -172,10 +172,10 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getMerchantCenterAccountName()</code>
 
-     * The name of the Merchant Center account.
+     * Output only. The name of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getMerchantCenterAccountNameUnwrapped()
@@ -184,10 +184,10 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the Merchant Center account.
+     * Output only. The name of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -202,10 +202,10 @@ class MerchantCenterLink extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the Merchant Center account.
+     * Output only. The name of the Merchant Center account.
      * This field is readonly.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue merchant_center_account_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

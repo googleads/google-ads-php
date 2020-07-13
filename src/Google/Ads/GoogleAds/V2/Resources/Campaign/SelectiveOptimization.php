@@ -19,7 +19,7 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
     /**
      * The selected set of conversion actions for optimizing this campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue conversion_actions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue conversion_actions = 1 [(.google.api.resource_reference) = {</code>
      */
     private $conversion_actions;
 
@@ -41,7 +41,7 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
     /**
      * The selected set of conversion actions for optimizing this campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue conversion_actions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue conversion_actions = 1 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getConversionActions()
@@ -52,7 +52,7 @@ class SelectiveOptimization extends \Google\Protobuf\Internal\Message
     /**
      * The selected set of conversion actions for optimizing this campaign.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue conversion_actions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue conversion_actions = 1 [(.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

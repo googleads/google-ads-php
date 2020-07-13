@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class Customer extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the customer.
+     * Immutable. The resource name of the customer.
      * Customer resource names have the form:
      * `customers/{customer_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the customer.
+     * Output only. The ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -36,17 +36,17 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $descriptive_name = null;
     /**
-     * The currency in which the account operates.
+     * Immutable. The currency in which the account operates.
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $currency_code = null;
     /**
-     * The local timezone ID of the customer.
+     * Immutable. The local timezone ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $time_zone = null;
     /**
@@ -68,23 +68,23 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $auto_tagging_enabled = null;
     /**
-     * Whether the Customer has a Partners program badge. If the Customer is not
+     * Output only. Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $has_partners_badge = null;
     /**
-     * Whether the customer is a manager.
+     * Output only. Whether the customer is a manager.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $manager = null;
     /**
-     * Whether the customer is a test account.
+     * Output only. Whether the customer is a test account.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $test_account = null;
     /**
@@ -94,22 +94,22 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $call_reporting_setting = null;
     /**
-     * Conversion tracking setting for a customer.
+     * Output only. Conversion tracking setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionTrackingSetting conversion_tracking_setting = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $conversion_tracking_setting = null;
     /**
-     * Remarketing setting for a customer.
+     * Output only. Remarketing setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.RemarketingSetting remarketing_setting = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.RemarketingSetting remarketing_setting = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $remarketing_setting = null;
     /**
-     * Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
+     * Output only. Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
      * the list is empty, the customer is eligible. This field is read-only.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $pay_per_conversion_eligibility_failure_reasons;
 
@@ -120,19 +120,19 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the customer.
+     *           Immutable. The resource name of the customer.
      *           Customer resource names have the form:
      *           `customers/{customer_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the customer.
+     *           Output only. The ID of the customer.
      *     @type \Google\Protobuf\StringValue $descriptive_name
      *           Optional, non-unique descriptive name of the customer.
      *     @type \Google\Protobuf\StringValue $currency_code
-     *           The currency in which the account operates.
+     *           Immutable. The currency in which the account operates.
      *           A subset of the currency codes from the ISO 4217 standard is
      *           supported.
      *     @type \Google\Protobuf\StringValue $time_zone
-     *           The local timezone ID of the customer.
+     *           Immutable. The local timezone ID of the customer.
      *     @type \Google\Protobuf\StringValue $tracking_url_template
      *           The URL template for constructing a tracking URL out of parameters.
      *     @type \Google\Protobuf\StringValue $final_url_suffix
@@ -140,21 +140,21 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\BoolValue $auto_tagging_enabled
      *           Whether auto-tagging is enabled for the customer.
      *     @type \Google\Protobuf\BoolValue $has_partners_badge
-     *           Whether the Customer has a Partners program badge. If the Customer is not
+     *           Output only. Whether the Customer has a Partners program badge. If the Customer is not
      *           associated with the Partners program, this will be false. For more
      *           information, see https://support.google.com/partners/answer/3125774.
      *     @type \Google\Protobuf\BoolValue $manager
-     *           Whether the customer is a manager.
+     *           Output only. Whether the customer is a manager.
      *     @type \Google\Protobuf\BoolValue $test_account
-     *           Whether the customer is a test account.
+     *           Output only. Whether the customer is a test account.
      *     @type \Google\Ads\GoogleAds\V2\Resources\CallReportingSetting $call_reporting_setting
      *           Call reporting setting for a customer.
      *     @type \Google\Ads\GoogleAds\V2\Resources\ConversionTrackingSetting $conversion_tracking_setting
-     *           Conversion tracking setting for a customer.
+     *           Output only. Conversion tracking setting for a customer.
      *     @type \Google\Ads\GoogleAds\V2\Resources\RemarketingSetting $remarketing_setting
-     *           Remarketing setting for a customer.
+     *           Output only. Remarketing setting for a customer.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $pay_per_conversion_eligibility_failure_reasons
-     *           Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
+     *           Output only. Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
      *           the list is empty, the customer is eligible. This field is read-only.
      * }
      */
@@ -164,11 +164,11 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer.
+     * Immutable. The resource name of the customer.
      * Customer resource names have the form:
      * `customers/{customer_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -177,11 +177,11 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the customer.
+     * Immutable. The resource name of the customer.
      * Customer resource names have the form:
      * `customers/{customer_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -194,9 +194,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer.
+     * Output only. The ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -207,9 +207,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the customer.
+     * Output only. The ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -218,9 +218,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer.
+     * Output only. The ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -235,9 +235,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the customer.
+     * Output only. The ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -300,11 +300,11 @@ class Customer extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The currency in which the account operates.
+     * Immutable. The currency in which the account operates.
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCurrencyCode()
@@ -315,11 +315,11 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCurrencyCode()</code>
 
-     * The currency in which the account operates.
+     * Immutable. The currency in which the account operates.
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getCurrencyCodeUnwrapped()
@@ -328,11 +328,11 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The currency in which the account operates.
+     * Immutable. The currency in which the account operates.
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -347,11 +347,11 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The currency in which the account operates.
+     * Immutable. The currency in which the account operates.
      * A subset of the currency codes from the ISO 4217 standard is
      * supported.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -361,9 +361,9 @@ class Customer extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The local timezone ID of the customer.
+     * Immutable. The local timezone ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTimeZone()
@@ -374,9 +374,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTimeZone()</code>
 
-     * The local timezone ID of the customer.
+     * Immutable. The local timezone ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getTimeZoneUnwrapped()
@@ -385,9 +385,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The local timezone ID of the customer.
+     * Immutable. The local timezone ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -402,9 +402,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The local timezone ID of the customer.
+     * Immutable. The local timezone ID of the customer.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue time_zone = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -573,11 +573,11 @@ class Customer extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Whether the Customer has a Partners program badge. If the Customer is not
+     * Output only. Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getHasPartnersBadge()
@@ -588,11 +588,11 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHasPartnersBadge()</code>
 
-     * Whether the Customer has a Partners program badge. If the Customer is not
+     * Output only. Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getHasPartnersBadgeUnwrapped()
@@ -601,11 +601,11 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the Customer has a Partners program badge. If the Customer is not
+     * Output only. Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -620,11 +620,11 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether the Customer has a Partners program badge. If the Customer is not
+     * Output only. Whether the Customer has a Partners program badge. If the Customer is not
      * associated with the Partners program, this will be false. For more
      * information, see https://support.google.com/partners/answer/3125774.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_partners_badge = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -634,9 +634,9 @@ class Customer extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Whether the customer is a manager.
+     * Output only. Whether the customer is a manager.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getManager()
@@ -647,9 +647,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getManager()</code>
 
-     * Whether the customer is a manager.
+     * Output only. Whether the customer is a manager.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getManagerUnwrapped()
@@ -658,9 +658,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the customer is a manager.
+     * Output only. Whether the customer is a manager.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -675,9 +675,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether the customer is a manager.
+     * Output only. Whether the customer is a manager.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue manager = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -687,9 +687,9 @@ class Customer extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Whether the customer is a test account.
+     * Output only. Whether the customer is a test account.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getTestAccount()
@@ -700,9 +700,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTestAccount()</code>
 
-     * Whether the customer is a test account.
+     * Output only. Whether the customer is a test account.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getTestAccountUnwrapped()
@@ -711,9 +711,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the customer is a test account.
+     * Output only. Whether the customer is a test account.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -728,9 +728,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether the customer is a test account.
+     * Output only. Whether the customer is a test account.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue test_account = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -766,9 +766,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Conversion tracking setting for a customer.
+     * Output only. Conversion tracking setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionTrackingSetting conversion_tracking_setting = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\ConversionTrackingSetting
      */
     public function getConversionTrackingSetting()
@@ -777,9 +777,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Conversion tracking setting for a customer.
+     * Output only. Conversion tracking setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionTrackingSetting conversion_tracking_setting = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.ConversionTrackingSetting conversion_tracking_setting = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\ConversionTrackingSetting $var
      * @return $this
      */
@@ -792,9 +792,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Remarketing setting for a customer.
+     * Output only. Remarketing setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.RemarketingSetting remarketing_setting = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.RemarketingSetting remarketing_setting = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\RemarketingSetting
      */
     public function getRemarketingSetting()
@@ -803,9 +803,9 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Remarketing setting for a customer.
+     * Output only. Remarketing setting for a customer.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.RemarketingSetting remarketing_setting = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.RemarketingSetting remarketing_setting = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\RemarketingSetting $var
      * @return $this
      */
@@ -818,10 +818,10 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
+     * Output only. Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
      * the list is empty, the customer is eligible. This field is read-only.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPayPerConversionEligibilityFailureReasons()
@@ -830,10 +830,10 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
+     * Output only. Reasons why the customer is not eligible to use PaymentMode.CONVERSIONS. If
      * the list is empty, the customer is eligible. This field is read-only.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.enums.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason pay_per_conversion_eligibility_failure_reasons = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

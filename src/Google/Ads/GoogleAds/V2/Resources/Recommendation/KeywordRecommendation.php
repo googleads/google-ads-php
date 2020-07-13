@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class KeywordRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The recommended keyword.
+     * Output only. The recommended keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $keyword = null;
     /**
-     * The recommended CPC (cost-per-click) bid.
+     * Output only. The recommended CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_cpc_bid_micros = null;
 
@@ -35,9 +35,9 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V2\Common\KeywordInfo $keyword
-     *           The recommended keyword.
+     *           Output only. The recommended keyword.
      *     @type \Google\Protobuf\Int64Value $recommended_cpc_bid_micros
-     *           The recommended CPC (cost-per-click) bid.
+     *           Output only. The recommended CPC (cost-per-click) bid.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,9 +46,9 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended keyword.
+     * Output only. The recommended keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\KeywordInfo
      */
     public function getKeyword()
@@ -57,9 +57,9 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended keyword.
+     * Output only. The recommended keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\KeywordInfo $var
      * @return $this
      */
@@ -72,9 +72,9 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended CPC (cost-per-click) bid.
+     * Output only. The recommended CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getRecommendedCpcBidMicros()
@@ -85,9 +85,9 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRecommendedCpcBidMicros()</code>
 
-     * The recommended CPC (cost-per-click) bid.
+     * Output only. The recommended CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getRecommendedCpcBidMicrosUnwrapped()
@@ -96,9 +96,9 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended CPC (cost-per-click) bid.
+     * Output only. The recommended CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -113,9 +113,9 @@ class KeywordRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The recommended CPC (cost-per-click) bid.
+     * Output only. The recommended CPC (cost-per-click) bid.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_cpc_bid_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

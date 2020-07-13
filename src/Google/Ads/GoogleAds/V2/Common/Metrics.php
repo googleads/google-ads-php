@@ -443,7 +443,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $engagements = null;
     /**
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      */
@@ -656,7 +656,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * https://support.google.com/google-ads/answer/7501826
      * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
@@ -1052,7 +1052,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           An engagement occurs when a viewer expands your Lightbox ad. Also, in the
      *           future, other ad types may support engagement metrics.
      *     @type \Google\Protobuf\DoubleValue $hotel_average_lead_value_micros
-     *           Average lead value of hotel.
+     *           Average lead value based on clicks.
      *     @type \Google\Protobuf\DoubleValue $hotel_price_difference_percentage
      *           The average price difference between the price offered by reporting hotel
      *           advertiser and the cheapest price offered by the competing advertiser.
@@ -1145,7 +1145,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\DoubleValue $search_absolute_top_impression_share
      *           The percentage of the customer's Shopping or Search ad impressions that are
      *           shown in the most prominent Shopping position. See
-     *           [this article](https://support.google.com/google-ads/answer/7501826)
+     *           https://support.google.com/google-ads/answer/7501826
      *           for details. Any value below 0.1 is reported as 0.0999.
      *     @type \Google\Protobuf\DoubleValue $search_budget_lost_absolute_top_impression_share
      *           The number estimating how often your ad wasn't the very first ad above the
@@ -4607,7 +4607,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @return \Google\Protobuf\DoubleValue
@@ -4620,7 +4620,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHotelAverageLeadValueMicros()</code>
 
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @return float|null
@@ -4631,7 +4631,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -4648,7 +4648,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Average lead value of hotel.
+     * Average lead value based on clicks.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue hotel_average_lead_value_micros = 75;</code>
      * @param float|null $var
@@ -6215,7 +6215,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * https://support.google.com/google-ads/answer/7501826
      * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
@@ -6231,7 +6231,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * https://support.google.com/google-ads/answer/7501826
      * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
@@ -6245,7 +6245,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
     /**
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * https://support.google.com/google-ads/answer/7501826
      * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>
@@ -6265,7 +6265,7 @@ class Metrics extends \Google\Protobuf\Internal\Message
 
      * The percentage of the customer's Shopping or Search ad impressions that are
      * shown in the most prominent Shopping position. See
-     * [this article](https://support.google.com/google-ads/answer/7501826)
+     * https://support.google.com/google-ads/answer/7501826
      * for details. Any value below 0.1 is reported as 0.0999.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue search_absolute_top_impression_share = 78;</code>

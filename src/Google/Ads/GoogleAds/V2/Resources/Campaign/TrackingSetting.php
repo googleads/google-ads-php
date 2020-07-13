@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Campaign level settings for tracking information.
+ * Campaign-level settings for tracking information.
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.Campaign.TrackingSetting</code>
  */
 class TrackingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The url used for dynamic tracking.
+     * Output only. The url used for dynamic tracking.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $tracking_url = null;
 
@@ -29,7 +29,7 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\StringValue $tracking_url
-     *           The url used for dynamic tracking.
+     *           Output only. The url used for dynamic tracking.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The url used for dynamic tracking.
+     * Output only. The url used for dynamic tracking.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTrackingUrl()
@@ -51,9 +51,9 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTrackingUrl()</code>
 
-     * The url used for dynamic tracking.
+     * Output only. The url used for dynamic tracking.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getTrackingUrlUnwrapped()
@@ -62,9 +62,9 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The url used for dynamic tracking.
+     * Output only. The url used for dynamic tracking.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -79,9 +79,9 @@ class TrackingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The url used for dynamic tracking.
+     * Output only. The url used for dynamic tracking.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue tracking_url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

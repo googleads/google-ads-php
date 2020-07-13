@@ -16,21 +16,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class CampaignBudget extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign budget.
+     * Immutable. The resource name of the campaign budget.
      * Campaign budget resource names have the form:
      * `customers/{customer_id}/campaignBudgets/{budget_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the campaign budget.
+     * Output only. The ID of the campaign budget.
      * A campaign budget is created using the CampaignBudgetService create
      * operation and is assigned a budget ID. A budget ID can be shared across
      * different campaigns; the system will then allocate the campaign budget
      * among different campaigns to get optimum results.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -62,9 +62,9 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      */
     protected $total_amount_micros = null;
     /**
-     * The status of this campaign budget. This field is read-only.
+     * Output only. The status of this campaign budget. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetStatusEnum.BudgetStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetStatusEnum.BudgetStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
@@ -92,69 +92,69 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      */
     protected $explicitly_shared = null;
     /**
-     * The number of campaigns actively using the budget.
+     * Output only. The number of campaigns actively using the budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $reference_count = null;
     /**
-     * Indicates whether there is a recommended budget for this campaign budget.
+     * Output only. Indicates whether there is a recommended budget for this campaign budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $has_recommended_budget = null;
     /**
-     * The recommended budget amount. If no recommendation is available, this will
+     * Output only. The recommended budget amount. If no recommendation is available, this will
      * be set to the budget amount.
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_amount_micros = null;
     /**
-     * Period over which to spend the budget. Defaults to DAILY if not specified.
+     * Immutable. Period over which to spend the budget. Defaults to DAILY if not specified.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetPeriodEnum.BudgetPeriod period = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetPeriodEnum.BudgetPeriod period = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $period = 0;
     /**
-     * The estimated change in weekly clicks if the recommended budget is applied.
+     * Output only. The estimated change in weekly clicks if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_estimated_change_weekly_clicks = null;
     /**
-     * The estimated change in weekly cost in micros if the recommended budget is
+     * Output only. The estimated change in weekly cost in micros if the recommended budget is
      * applied. One million is equivalent to one currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_estimated_change_weekly_cost_micros = null;
     /**
-     * The estimated change in weekly interactions if the recommended budget is
+     * Output only. The estimated change in weekly interactions if the recommended budget is
      * applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_estimated_change_weekly_interactions = null;
     /**
-     * The estimated change in weekly views if the recommended budget is applied.
+     * Output only. The estimated change in weekly views if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_budget_estimated_change_weekly_views = null;
     /**
-     * The type of the campaign budget.
+     * Immutable. The type of the campaign budget.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetTypeEnum.BudgetType type = 18;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetTypeEnum.BudgetType type = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $type = 0;
 
@@ -165,11 +165,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the campaign budget.
+     *           Immutable. The resource name of the campaign budget.
      *           Campaign budget resource names have the form:
      *           `customers/{customer_id}/campaignBudgets/{budget_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the campaign budget.
+     *           Output only. The ID of the campaign budget.
      *           A campaign budget is created using the CampaignBudgetService create
      *           operation and is assigned a budget ID. A budget ID can be shared across
      *           different campaigns; the system will then allocate the campaign budget
@@ -191,7 +191,7 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *           Amount is specified in micros, where one million is equivalent to one
      *           currency unit.
      *     @type int $status
-     *           The status of this campaign budget. This field is read-only.
+     *           Output only. The status of this campaign budget. This field is read-only.
      *     @type int $delivery_method
      *           The delivery method that determines the rate at which the campaign budget
      *           is spent.
@@ -209,35 +209,35 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
      *           must also assign the budget a name.
      *           A shared campaign budget can never become non-shared.
      *     @type \Google\Protobuf\Int64Value $reference_count
-     *           The number of campaigns actively using the budget.
+     *           Output only. The number of campaigns actively using the budget.
      *           This field is read-only.
      *     @type \Google\Protobuf\BoolValue $has_recommended_budget
-     *           Indicates whether there is a recommended budget for this campaign budget.
+     *           Output only. Indicates whether there is a recommended budget for this campaign budget.
      *           This field is read-only.
      *     @type \Google\Protobuf\Int64Value $recommended_budget_amount_micros
-     *           The recommended budget amount. If no recommendation is available, this will
+     *           Output only. The recommended budget amount. If no recommendation is available, this will
      *           be set to the budget amount.
      *           Amount is specified in micros, where one million is equivalent to one
      *           currency unit.
      *           This field is read-only.
      *     @type int $period
-     *           Period over which to spend the budget. Defaults to DAILY if not specified.
+     *           Immutable. Period over which to spend the budget. Defaults to DAILY if not specified.
      *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_clicks
-     *           The estimated change in weekly clicks if the recommended budget is applied.
+     *           Output only. The estimated change in weekly clicks if the recommended budget is applied.
      *           This field is read-only.
      *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_cost_micros
-     *           The estimated change in weekly cost in micros if the recommended budget is
+     *           Output only. The estimated change in weekly cost in micros if the recommended budget is
      *           applied. One million is equivalent to one currency unit.
      *           This field is read-only.
      *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_interactions
-     *           The estimated change in weekly interactions if the recommended budget is
+     *           Output only. The estimated change in weekly interactions if the recommended budget is
      *           applied.
      *           This field is read-only.
      *     @type \Google\Protobuf\Int64Value $recommended_budget_estimated_change_weekly_views
-     *           The estimated change in weekly views if the recommended budget is applied.
+     *           Output only. The estimated change in weekly views if the recommended budget is applied.
      *           This field is read-only.
      *     @type int $type
-     *           The type of the campaign budget.
+     *           Immutable. The type of the campaign budget.
      * }
      */
     public function __construct($data = NULL) {
@@ -246,11 +246,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign budget.
+     * Immutable. The resource name of the campaign budget.
      * Campaign budget resource names have the form:
      * `customers/{customer_id}/campaignBudgets/{budget_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -259,11 +259,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign budget.
+     * Immutable. The resource name of the campaign budget.
      * Campaign budget resource names have the form:
      * `customers/{customer_id}/campaignBudgets/{budget_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -276,13 +276,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the campaign budget.
+     * Output only. The ID of the campaign budget.
      * A campaign budget is created using the CampaignBudgetService create
      * operation and is assigned a budget ID. A budget ID can be shared across
      * different campaigns; the system will then allocate the campaign budget
      * among different campaigns to get optimum results.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -293,13 +293,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the campaign budget.
+     * Output only. The ID of the campaign budget.
      * A campaign budget is created using the CampaignBudgetService create
      * operation and is assigned a budget ID. A budget ID can be shared across
      * different campaigns; the system will then allocate the campaign budget
      * among different campaigns to get optimum results.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -308,13 +308,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the campaign budget.
+     * Output only. The ID of the campaign budget.
      * A campaign budget is created using the CampaignBudgetService create
      * operation and is assigned a budget ID. A budget ID can be shared across
      * different campaigns; the system will then allocate the campaign budget
      * among different campaigns to get optimum results.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -329,13 +329,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the campaign budget.
+     * Output only. The ID of the campaign budget.
      * A campaign budget is created using the CampaignBudgetService create
      * operation and is assigned a budget ID. A budget ID can be shared across
      * different campaigns; the system will then allocate the campaign budget
      * among different campaigns to get optimum results.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -544,9 +544,9 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The status of this campaign budget. This field is read-only.
+     * Output only. The status of this campaign budget. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetStatusEnum.BudgetStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetStatusEnum.BudgetStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -555,9 +555,9 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of this campaign budget. This field is read-only.
+     * Output only. The status of this campaign budget. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetStatusEnum.BudgetStatus status = 6;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetStatusEnum.BudgetStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -693,10 +693,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The number of campaigns actively using the budget.
+     * Output only. The number of campaigns actively using the budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getReferenceCount()
@@ -707,10 +707,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getReferenceCount()</code>
 
-     * The number of campaigns actively using the budget.
+     * Output only. The number of campaigns actively using the budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getReferenceCountUnwrapped()
@@ -719,10 +719,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of campaigns actively using the budget.
+     * Output only. The number of campaigns actively using the budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -737,10 +737,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The number of campaigns actively using the budget.
+     * Output only. The number of campaigns actively using the budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value reference_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -750,10 +750,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Indicates whether there is a recommended budget for this campaign budget.
+     * Output only. Indicates whether there is a recommended budget for this campaign budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getHasRecommendedBudget()
@@ -764,10 +764,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHasRecommendedBudget()</code>
 
-     * Indicates whether there is a recommended budget for this campaign budget.
+     * Output only. Indicates whether there is a recommended budget for this campaign budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getHasRecommendedBudgetUnwrapped()
@@ -776,10 +776,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates whether there is a recommended budget for this campaign budget.
+     * Output only. Indicates whether there is a recommended budget for this campaign budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -794,10 +794,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Indicates whether there is a recommended budget for this campaign budget.
+     * Output only. Indicates whether there is a recommended budget for this campaign budget.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue has_recommended_budget = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -807,13 +807,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The recommended budget amount. If no recommendation is available, this will
+     * Output only. The recommended budget amount. If no recommendation is available, this will
      * be set to the budget amount.
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getRecommendedBudgetAmountMicros()
@@ -824,13 +824,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRecommendedBudgetAmountMicros()</code>
 
-     * The recommended budget amount. If no recommendation is available, this will
+     * Output only. The recommended budget amount. If no recommendation is available, this will
      * be set to the budget amount.
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getRecommendedBudgetAmountMicrosUnwrapped()
@@ -839,13 +839,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended budget amount. If no recommendation is available, this will
+     * Output only. The recommended budget amount. If no recommendation is available, this will
      * be set to the budget amount.
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -860,13 +860,13 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The recommended budget amount. If no recommendation is available, this will
+     * Output only. The recommended budget amount. If no recommendation is available, this will
      * be set to the budget amount.
      * Amount is specified in micros, where one million is equivalent to one
      * currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_amount_micros = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -876,9 +876,9 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Period over which to spend the budget. Defaults to DAILY if not specified.
+     * Immutable. Period over which to spend the budget. Defaults to DAILY if not specified.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetPeriodEnum.BudgetPeriod period = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetPeriodEnum.BudgetPeriod period = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getPeriod()
@@ -887,9 +887,9 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Period over which to spend the budget. Defaults to DAILY if not specified.
+     * Immutable. Period over which to spend the budget. Defaults to DAILY if not specified.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetPeriodEnum.BudgetPeriod period = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetPeriodEnum.BudgetPeriod period = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -902,10 +902,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The estimated change in weekly clicks if the recommended budget is applied.
+     * Output only. The estimated change in weekly clicks if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyClicks()
@@ -916,10 +916,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRecommendedBudgetEstimatedChangeWeeklyClicks()</code>
 
-     * The estimated change in weekly clicks if the recommended budget is applied.
+     * Output only. The estimated change in weekly clicks if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyClicksUnwrapped()
@@ -928,10 +928,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The estimated change in weekly clicks if the recommended budget is applied.
+     * Output only. The estimated change in weekly clicks if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -946,10 +946,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The estimated change in weekly clicks if the recommended budget is applied.
+     * Output only. The estimated change in weekly clicks if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_clicks = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -959,11 +959,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The estimated change in weekly cost in micros if the recommended budget is
+     * Output only. The estimated change in weekly cost in micros if the recommended budget is
      * applied. One million is equivalent to one currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyCostMicros()
@@ -974,11 +974,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRecommendedBudgetEstimatedChangeWeeklyCostMicros()</code>
 
-     * The estimated change in weekly cost in micros if the recommended budget is
+     * Output only. The estimated change in weekly cost in micros if the recommended budget is
      * applied. One million is equivalent to one currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyCostMicrosUnwrapped()
@@ -987,11 +987,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The estimated change in weekly cost in micros if the recommended budget is
+     * Output only. The estimated change in weekly cost in micros if the recommended budget is
      * applied. One million is equivalent to one currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1006,11 +1006,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The estimated change in weekly cost in micros if the recommended budget is
+     * Output only. The estimated change in weekly cost in micros if the recommended budget is
      * applied. One million is equivalent to one currency unit.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_cost_micros = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1020,11 +1020,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The estimated change in weekly interactions if the recommended budget is
+     * Output only. The estimated change in weekly interactions if the recommended budget is
      * applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyInteractions()
@@ -1035,11 +1035,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRecommendedBudgetEstimatedChangeWeeklyInteractions()</code>
 
-     * The estimated change in weekly interactions if the recommended budget is
+     * Output only. The estimated change in weekly interactions if the recommended budget is
      * applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyInteractionsUnwrapped()
@@ -1048,11 +1048,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The estimated change in weekly interactions if the recommended budget is
+     * Output only. The estimated change in weekly interactions if the recommended budget is
      * applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1067,11 +1067,11 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The estimated change in weekly interactions if the recommended budget is
+     * Output only. The estimated change in weekly interactions if the recommended budget is
      * applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_interactions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1081,10 +1081,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The estimated change in weekly views if the recommended budget is applied.
+     * Output only. The estimated change in weekly views if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyViews()
@@ -1095,10 +1095,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRecommendedBudgetEstimatedChangeWeeklyViews()</code>
 
-     * The estimated change in weekly views if the recommended budget is applied.
+     * Output only. The estimated change in weekly views if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getRecommendedBudgetEstimatedChangeWeeklyViewsUnwrapped()
@@ -1107,10 +1107,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The estimated change in weekly views if the recommended budget is applied.
+     * Output only. The estimated change in weekly views if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -1125,10 +1125,10 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The estimated change in weekly views if the recommended budget is applied.
+     * Output only. The estimated change in weekly views if the recommended budget is applied.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_budget_estimated_change_weekly_views = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -1138,9 +1138,9 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The type of the campaign budget.
+     * Immutable. The type of the campaign budget.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetTypeEnum.BudgetType type = 18;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetTypeEnum.BudgetType type = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getType()
@@ -1149,9 +1149,9 @@ class CampaignBudget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of the campaign budget.
+     * Immutable. The type of the campaign budget.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetTypeEnum.BudgetType type = 18;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BudgetTypeEnum.BudgetType type = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */

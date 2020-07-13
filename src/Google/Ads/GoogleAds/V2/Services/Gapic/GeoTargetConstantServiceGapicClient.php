@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class GeoTargetConstantServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the geo target constant to fetch.
+     * @param string $resourceName Required. The resource name of the geo target constant to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -309,21 +309,21 @@ class GeoTargetConstantServiceGapicClient
      * ```
      * $geoTargetConstantServiceClient = new GeoTargetConstantServiceClient();
      * try {
-     *     $locale = new StringValue();
-     *     $countryCode = new StringValue();
-     *     $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants($locale, $countryCode);
+     *     $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants();
      * } finally {
      *     $geoTargetConstantServiceClient->close();
      * }
      * ```
      *
-     * @param StringValue $locale       If possible, returned geo targets are translated using this locale. If not,
-     *                                  en is used by default. This is also used as a hint for returned geo
-     *                                  targets.
-     * @param StringValue $countryCode  Returned geo targets are restricted to this country code.
-     * @param array       $optionalArgs {
-     *                                  Optional.
+     * @param array $optionalArgs {
+     *                            Optional.
      *
+     *     @type StringValue $locale
+     *          If possible, returned geo targets are translated using this locale. If not,
+     *          en is used by default. This is also used as a hint for returned geo
+     *          targets.
+     *     @type StringValue $countryCode
+     *          Returned geo targets are restricted to this country code.
      *     @type LocationNames $locationNames
      *          The location names to search by. At most 25 names can be set.
      *     @type GeoTargets $geoTargets
@@ -340,11 +340,15 @@ class GeoTargetConstantServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function suggestGeoTargetConstants($locale, $countryCode, array $optionalArgs = [])
+    public function suggestGeoTargetConstants(array $optionalArgs = [])
     {
         $request = new SuggestGeoTargetConstantsRequest();
-        $request->setLocale($locale);
-        $request->setCountryCode($countryCode);
+        if (isset($optionalArgs['locale'])) {
+            $request->setLocale($optionalArgs['locale']);
+        }
+        if (isset($optionalArgs['countryCode'])) {
+            $request->setCountryCode($optionalArgs['countryCode']);
+        }
         if (isset($optionalArgs['locationNames'])) {
             $request->setLocationNames($optionalArgs['locationNames']);
         }

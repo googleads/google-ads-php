@@ -23,20 +23,23 @@ class Targeting extends \Google\Protobuf\Internal\Message
      */
     protected $plannable_location_id = null;
     /**
-     * Required
-     * Selected age range to be planned on.
+     * Targeted age range.
+     * If not specified, targets all age ranges.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
      */
     protected $age_range = 0;
     /**
-     * Targetable genders for the ad product.
+     * Targeted genders.
+     * If not specified, targets all genders.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.GenderInfo genders = 3;</code>
      */
     private $genders;
     /**
-     * Targetable devices for the ad product.
+     * Targeted devices.
+     * If not specified, targets all applicable devices. Applicable devices vary
+     * by product and region and can be obtained from ListPlannableProducts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.DeviceInfo devices = 4;</code>
      */
@@ -52,12 +55,15 @@ class Targeting extends \Google\Protobuf\Internal\Message
      *           Required. The ID of the selected location.
      *           Plannable locations ID can be obtained from ListPlannableLocations.
      *     @type int $age_range
-     *           Required
-     *           Selected age range to be planned on.
+     *           Targeted age range.
+     *           If not specified, targets all age ranges.
      *     @type \Google\Ads\GoogleAds\V2\Common\GenderInfo[]|\Google\Protobuf\Internal\RepeatedField $genders
-     *           Targetable genders for the ad product.
+     *           Targeted genders.
+     *           If not specified, targets all genders.
      *     @type \Google\Ads\GoogleAds\V2\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $devices
-     *           Targetable devices for the ad product.
+     *           Targeted devices.
+     *           If not specified, targets all applicable devices. Applicable devices vary
+     *           by product and region and can be obtained from ListPlannableProducts.
      * }
      */
     public function __construct($data = NULL) {
@@ -123,8 +129,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Required
-     * Selected age range to be planned on.
+     * Targeted age range.
+     * If not specified, targets all age ranges.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
      * @return int
@@ -135,8 +141,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required
-     * Selected age range to be planned on.
+     * Targeted age range.
+     * If not specified, targets all age ranges.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
      * @param int $var
@@ -151,7 +157,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Targetable genders for the ad product.
+     * Targeted genders.
+     * If not specified, targets all genders.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.GenderInfo genders = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -162,7 +169,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Targetable genders for the ad product.
+     * Targeted genders.
+     * If not specified, targets all genders.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.GenderInfo genders = 3;</code>
      * @param \Google\Ads\GoogleAds\V2\Common\GenderInfo[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -177,7 +185,9 @@ class Targeting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Targetable devices for the ad product.
+     * Targeted devices.
+     * If not specified, targets all applicable devices. Applicable devices vary
+     * by product and region and can be obtained from ListPlannableProducts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.DeviceInfo devices = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -188,7 +198,9 @@ class Targeting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Targetable devices for the ad product.
+     * Targeted devices.
+     * If not specified, targets all applicable devices. Applicable devices vary
+     * by product and region and can be obtained from ListPlannableProducts.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.DeviceInfo devices = 4;</code>
      * @param \Google\Ads\GoogleAds\V2\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $var

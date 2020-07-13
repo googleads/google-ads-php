@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class AdGroupExtensionSettingServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the ad group extension setting to fetch.
+     * @param string $resourceName Required. The resource name of the ad group extension setting to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -318,9 +318,9 @@ class AdGroupExtensionSettingServiceGapicClient
      * }
      * ```
      *
-     * @param string                             $customerId   The ID of the customer whose ad group extension settings are being
+     * @param string                             $customerId   Required. The ID of the customer whose ad group extension settings are being
      *                                                         modified.
-     * @param AdGroupExtensionSettingOperation[] $operations   The list of operations to perform on individual ad group extension
+     * @param AdGroupExtensionSettingOperation[] $operations   Required. The list of operations to perform on individual ad group extension
      *                                                         settings.
      * @param array                              $optionalArgs {
      *                                                         Optional.

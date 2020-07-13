@@ -39,6 +39,7 @@ class KeywordPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetKeywordPlanRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\KeywordPlan
      */
     public function GetKeywordPlan(\Google\Ads\GoogleAds\V3\Services\GetKeywordPlanRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class KeywordPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateKeywordPlansRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateKeywordPlansResponse
      */
     public function MutateKeywordPlans(\Google\Ads\GoogleAds\V3\Services\MutateKeywordPlansRequest $argument,
       $metadata = [], $options = []) {
@@ -68,6 +70,7 @@ class KeywordPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GenerateForecastMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\GenerateForecastMetricsResponse
      */
     public function GenerateForecastMetrics(\Google\Ads\GoogleAds\V3\Services\GenerateForecastMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -82,6 +85,7 @@ class KeywordPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GenerateHistoricalMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\GenerateHistoricalMetricsResponse
      */
     public function GenerateHistoricalMetrics(\Google\Ads\GoogleAds\V3\Services\GenerateHistoricalMetricsRequest $argument,
       $metadata = [], $options = []) {

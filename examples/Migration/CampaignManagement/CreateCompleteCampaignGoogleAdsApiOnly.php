@@ -401,7 +401,6 @@ class CreateCompleteCampaignGoogleAdsApiOnly
      * @param int $customerId the client customer ID
      * @param AdGroup $adGroup the ad group
      * @param array $keywordsToAdd the keywords to create
-     * @return AdGroupCriterion[] an array of keywords
      */
     private static function createKeywords(
         GoogleAdsClient $googleAdsClient,

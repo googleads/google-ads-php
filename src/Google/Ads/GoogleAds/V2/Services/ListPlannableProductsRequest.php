@@ -16,10 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the selected location for planning. To list the available
+     * Required. The ID of the selected location for planning. To list the available
      * plannable location ids use ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $plannable_location_id = null;
 
@@ -30,7 +30,7 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\StringValue $plannable_location_id
-     *           The ID of the selected location for planning. To list the available
+     *           Required. The ID of the selected location for planning. To list the available
      *           plannable location ids use ListPlannableLocations.
      * }
      */
@@ -40,10 +40,10 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the selected location for planning. To list the available
+     * Required. The ID of the selected location for planning. To list the available
      * plannable location ids use ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPlannableLocationId()
@@ -54,10 +54,10 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPlannableLocationId()</code>
 
-     * The ID of the selected location for planning. To list the available
+     * Required. The ID of the selected location for planning. To list the available
      * plannable location ids use ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string|null
      */
     public function getPlannableLocationIdUnwrapped()
@@ -66,10 +66,10 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the selected location for planning. To list the available
+     * Required. The ID of the selected location for planning. To list the available
      * plannable location ids use ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -84,10 +84,10 @@ class ListPlannableProductsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The ID of the selected location for planning. To list the available
+     * Required. The ID of the selected location for planning. To list the available
      * plannable location ids use ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string|null $var
      * @return $this
      */

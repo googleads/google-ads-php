@@ -17,20 +17,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The conversion tracking id used for this account. This id is automatically
+     * Output only. The conversion tracking id used for this account. This id is automatically
      * assigned after any conversion tracking feature is used. If the customer
      * doesn't use conversion tracking, this is 0. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $conversion_tracking_id = null;
     /**
-     * The conversion tracking id of the customer's manager. This is set when the
+     * Output only. The conversion tracking id of the customer's manager. This is set when the
      * customer is opted into cross account conversion tracking, and it overrides
      * conversion_tracking_id. This field can only be managed through the Google
      * Ads UI. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $cross_account_conversion_tracking_id = null;
 
@@ -41,11 +41,11 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Int64Value $conversion_tracking_id
-     *           The conversion tracking id used for this account. This id is automatically
+     *           Output only. The conversion tracking id used for this account. This id is automatically
      *           assigned after any conversion tracking feature is used. If the customer
      *           doesn't use conversion tracking, this is 0. This field is read-only.
      *     @type \Google\Protobuf\Int64Value $cross_account_conversion_tracking_id
-     *           The conversion tracking id of the customer's manager. This is set when the
+     *           Output only. The conversion tracking id of the customer's manager. This is set when the
      *           customer is opted into cross account conversion tracking, and it overrides
      *           conversion_tracking_id. This field can only be managed through the Google
      *           Ads UI. This field is read-only.
@@ -57,11 +57,11 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The conversion tracking id used for this account. This id is automatically
+     * Output only. The conversion tracking id used for this account. This id is automatically
      * assigned after any conversion tracking feature is used. If the customer
      * doesn't use conversion tracking, this is 0. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getConversionTrackingId()
@@ -72,11 +72,11 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getConversionTrackingId()</code>
 
-     * The conversion tracking id used for this account. This id is automatically
+     * Output only. The conversion tracking id used for this account. This id is automatically
      * assigned after any conversion tracking feature is used. If the customer
      * doesn't use conversion tracking, this is 0. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getConversionTrackingIdUnwrapped()
@@ -85,11 +85,11 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The conversion tracking id used for this account. This id is automatically
+     * Output only. The conversion tracking id used for this account. This id is automatically
      * assigned after any conversion tracking feature is used. If the customer
      * doesn't use conversion tracking, this is 0. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -104,11 +104,11 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The conversion tracking id used for this account. This id is automatically
+     * Output only. The conversion tracking id used for this account. This id is automatically
      * assigned after any conversion tracking feature is used. If the customer
      * doesn't use conversion tracking, this is 0. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value conversion_tracking_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -118,12 +118,12 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The conversion tracking id of the customer's manager. This is set when the
+     * Output only. The conversion tracking id of the customer's manager. This is set when the
      * customer is opted into cross account conversion tracking, and it overrides
      * conversion_tracking_id. This field can only be managed through the Google
      * Ads UI. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCrossAccountConversionTrackingId()
@@ -134,12 +134,12 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCrossAccountConversionTrackingId()</code>
 
-     * The conversion tracking id of the customer's manager. This is set when the
+     * Output only. The conversion tracking id of the customer's manager. This is set when the
      * customer is opted into cross account conversion tracking, and it overrides
      * conversion_tracking_id. This field can only be managed through the Google
      * Ads UI. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCrossAccountConversionTrackingIdUnwrapped()
@@ -148,12 +148,12 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The conversion tracking id of the customer's manager. This is set when the
+     * Output only. The conversion tracking id of the customer's manager. This is set when the
      * customer is opted into cross account conversion tracking, and it overrides
      * conversion_tracking_id. This field can only be managed through the Google
      * Ads UI. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -168,12 +168,12 @@ class ConversionTrackingSetting extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The conversion tracking id of the customer's manager. This is set when the
+     * Output only. The conversion tracking id of the customer's manager. This is set when the
      * customer is opted into cross account conversion tracking, and it overrides
      * conversion_tracking_id. This field can only be managed through the Google
      * Ads UI. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value cross_account_conversion_tracking_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

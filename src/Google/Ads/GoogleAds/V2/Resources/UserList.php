@@ -16,26 +16,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class UserList extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the user list.
+     * Immutable. The resource name of the user list.
      * User list resource names have the form:
      * `customers/{customer_id}/userLists/{user_list_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Id of the user list.
+     * Output only. Id of the user list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * A flag that indicates if a user may edit a list. Depends on the list
+     * Output only. A flag that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $read_only = null;
     /**
@@ -77,42 +77,42 @@ class UserList extends \Google\Protobuf\Internal\Message
      */
     protected $membership_life_span = null;
     /**
-     * Estimated number of users in this user list, on the Google Display Network.
+     * Output only. Estimated number of users in this user list, on the Google Display Network.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $size_for_display = null;
     /**
-     * Size range in terms of number of users of the UserList, on the Google
+     * Output only. Size range in terms of number of users of the UserList, on the Google
      * Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_display = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_display = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $size_range_for_display = 0;
     /**
-     * Estimated number of users in this user list in the google.com domain.
+     * Output only. Estimated number of users in this user list in the google.com domain.
      * These are the users available for targeting in Search campaigns.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $size_for_search = null;
     /**
-     * Size range in terms of number of users of the UserList, for Search ads.
+     * Output only. Size range in terms of number of users of the UserList, for Search ads.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_search = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_search = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $size_range_for_search = 0;
     /**
-     * Type of this list.
+     * Output only. Type of this list.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListTypeEnum.UserListType type = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListTypeEnum.UserListType type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     /**
@@ -124,11 +124,11 @@ class UserList extends \Google\Protobuf\Internal\Message
      */
     protected $closing_reason = 0;
     /**
-     * Indicates the reason this account has been granted access to the list.
+     * Output only. Indicates the reason this account has been granted access to the list.
      * The reason can be SHARED, OWNED, LICENSED or SUBSCRIBED.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccessReasonEnum.AccessReason access_reason = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccessReasonEnum.AccessReason access_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $access_reason = 0;
     /**
@@ -147,10 +147,10 @@ class UserList extends \Google\Protobuf\Internal\Message
      */
     protected $eligible_for_search = null;
     /**
-     * Indicates this user list is eligible for Google Display Network.
+     * Output only. Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $eligible_for_display = null;
     protected $user_list;
@@ -162,13 +162,13 @@ class UserList extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the user list.
+     *           Immutable. The resource name of the user list.
      *           User list resource names have the form:
      *           `customers/{customer_id}/userLists/{user_list_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           Id of the user list.
+     *           Output only. Id of the user list.
      *     @type \Google\Protobuf\BoolValue $read_only
-     *           A flag that indicates if a user may edit a list. Depends on the list
+     *           Output only. A flag that indicates if a user may edit a list. Depends on the list
      *           ownership and list type. For example, external remarketing user lists are
      *           not editable.
      *           This field is read-only.
@@ -191,30 +191,30 @@ class UserList extends \Google\Protobuf\Internal\Message
      *           means no expiration.
      *           It'll be ignored for logical_user_list.
      *     @type \Google\Protobuf\Int64Value $size_for_display
-     *           Estimated number of users in this user list, on the Google Display Network.
+     *           Output only. Estimated number of users in this user list, on the Google Display Network.
      *           This value is null if the number of users has not yet been determined.
      *           This field is read-only.
      *     @type int $size_range_for_display
-     *           Size range in terms of number of users of the UserList, on the Google
+     *           Output only. Size range in terms of number of users of the UserList, on the Google
      *           Display Network.
      *           This field is read-only.
      *     @type \Google\Protobuf\Int64Value $size_for_search
-     *           Estimated number of users in this user list in the google.com domain.
+     *           Output only. Estimated number of users in this user list in the google.com domain.
      *           These are the users available for targeting in Search campaigns.
      *           This value is null if the number of users has not yet been determined.
      *           This field is read-only.
      *     @type int $size_range_for_search
-     *           Size range in terms of number of users of the UserList, for Search ads.
+     *           Output only. Size range in terms of number of users of the UserList, for Search ads.
      *           This field is read-only.
      *     @type int $type
-     *           Type of this list.
+     *           Output only. Type of this list.
      *           This field is read-only.
      *     @type int $closing_reason
      *           Indicating the reason why this user list membership status is closed. It is
      *           only populated on lists that were automatically closed due to inactivity,
      *           and will be cleared once the list membership status becomes open.
      *     @type int $access_reason
-     *           Indicates the reason this account has been granted access to the list.
+     *           Output only. Indicates the reason this account has been granted access to the list.
      *           The reason can be SHARED, OWNED, LICENSED or SUBSCRIBED.
      *           This field is read-only.
      *     @type int $account_user_list_status
@@ -225,12 +225,12 @@ class UserList extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\BoolValue $eligible_for_search
      *           Indicates if this user list is eligible for Google Search Network.
      *     @type \Google\Protobuf\BoolValue $eligible_for_display
-     *           Indicates this user list is eligible for Google Display Network.
+     *           Output only. Indicates this user list is eligible for Google Display Network.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V2\Common\CrmBasedUserListInfo $crm_based_user_list
      *           User list of CRM users provided by the advertiser.
      *     @type \Google\Ads\GoogleAds\V2\Common\SimilarUserListInfo $similar_user_list
-     *           User list which are similar to users from another UserList.
+     *           Output only. User list which are similar to users from another UserList.
      *           These lists are readonly and automatically created by google.
      *     @type \Google\Ads\GoogleAds\V2\Common\RuleBasedUserListInfo $rule_based_user_list
      *           User list generated by a rule.
@@ -246,11 +246,11 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the user list.
+     * Immutable. The resource name of the user list.
      * User list resource names have the form:
      * `customers/{customer_id}/userLists/{user_list_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -259,11 +259,11 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the user list.
+     * Immutable. The resource name of the user list.
      * User list resource names have the form:
      * `customers/{customer_id}/userLists/{user_list_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -276,9 +276,9 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the user list.
+     * Output only. Id of the user list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -289,9 +289,9 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * Id of the user list.
+     * Output only. Id of the user list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -300,9 +300,9 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the user list.
+     * Output only. Id of the user list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -317,9 +317,9 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Id of the user list.
+     * Output only. Id of the user list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -329,12 +329,12 @@ class UserList extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * A flag that indicates if a user may edit a list. Depends on the list
+     * Output only. A flag that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getReadOnly()
@@ -345,12 +345,12 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getReadOnly()</code>
 
-     * A flag that indicates if a user may edit a list. Depends on the list
+     * Output only. A flag that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getReadOnlyUnwrapped()
@@ -359,12 +359,12 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A flag that indicates if a user may edit a list. Depends on the list
+     * Output only. A flag that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -379,12 +379,12 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * A flag that indicates if a user may edit a list. Depends on the list
+     * Output only. A flag that indicates if a user may edit a list. Depends on the list
      * ownership and list type. For example, external remarketing user lists are
      * not editable.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue read_only = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -660,11 +660,11 @@ class UserList extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Estimated number of users in this user list, on the Google Display Network.
+     * Output only. Estimated number of users in this user list, on the Google Display Network.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getSizeForDisplay()
@@ -675,11 +675,11 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSizeForDisplay()</code>
 
-     * Estimated number of users in this user list, on the Google Display Network.
+     * Output only. Estimated number of users in this user list, on the Google Display Network.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getSizeForDisplayUnwrapped()
@@ -688,11 +688,11 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of users in this user list, on the Google Display Network.
+     * Output only. Estimated number of users in this user list, on the Google Display Network.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -707,11 +707,11 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Estimated number of users in this user list, on the Google Display Network.
+     * Output only. Estimated number of users in this user list, on the Google Display Network.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_display = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -721,11 +721,11 @@ class UserList extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Size range in terms of number of users of the UserList, on the Google
+     * Output only. Size range in terms of number of users of the UserList, on the Google
      * Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_display = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_display = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getSizeRangeForDisplay()
@@ -734,11 +734,11 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Size range in terms of number of users of the UserList, on the Google
+     * Output only. Size range in terms of number of users of the UserList, on the Google
      * Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_display = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_display = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -751,12 +751,12 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of users in this user list in the google.com domain.
+     * Output only. Estimated number of users in this user list in the google.com domain.
      * These are the users available for targeting in Search campaigns.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getSizeForSearch()
@@ -767,12 +767,12 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSizeForSearch()</code>
 
-     * Estimated number of users in this user list in the google.com domain.
+     * Output only. Estimated number of users in this user list in the google.com domain.
      * These are the users available for targeting in Search campaigns.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getSizeForSearchUnwrapped()
@@ -781,12 +781,12 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated number of users in this user list in the google.com domain.
+     * Output only. Estimated number of users in this user list in the google.com domain.
      * These are the users available for targeting in Search campaigns.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -801,12 +801,12 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Estimated number of users in this user list in the google.com domain.
+     * Output only. Estimated number of users in this user list in the google.com domain.
      * These are the users available for targeting in Search campaigns.
      * This value is null if the number of users has not yet been determined.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value size_for_search = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -816,10 +816,10 @@ class UserList extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Size range in terms of number of users of the UserList, for Search ads.
+     * Output only. Size range in terms of number of users of the UserList, for Search ads.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_search = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_search = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getSizeRangeForSearch()
@@ -828,10 +828,10 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Size range in terms of number of users of the UserList, for Search ads.
+     * Output only. Size range in terms of number of users of the UserList, for Search ads.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_search = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListSizeRangeEnum.UserListSizeRange size_range_for_search = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -844,10 +844,10 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of this list.
+     * Output only. Type of this list.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListTypeEnum.UserListType type = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListTypeEnum.UserListType type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -856,10 +856,10 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of this list.
+     * Output only. Type of this list.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListTypeEnum.UserListType type = 13;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.UserListTypeEnum.UserListType type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -902,11 +902,11 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the reason this account has been granted access to the list.
+     * Output only. Indicates the reason this account has been granted access to the list.
      * The reason can be SHARED, OWNED, LICENSED or SUBSCRIBED.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccessReasonEnum.AccessReason access_reason = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccessReasonEnum.AccessReason access_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getAccessReason()
@@ -915,11 +915,11 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the reason this account has been granted access to the list.
+     * Output only. Indicates the reason this account has been granted access to the list.
      * The reason can be SHARED, OWNED, LICENSED or SUBSCRIBED.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccessReasonEnum.AccessReason access_reason = 15;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.AccessReasonEnum.AccessReason access_reason = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -1017,10 +1017,10 @@ class UserList extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Indicates this user list is eligible for Google Display Network.
+     * Output only. Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getEligibleForDisplay()
@@ -1031,10 +1031,10 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEligibleForDisplay()</code>
 
-     * Indicates this user list is eligible for Google Display Network.
+     * Output only. Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getEligibleForDisplayUnwrapped()
@@ -1043,10 +1043,10 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates this user list is eligible for Google Display Network.
+     * Output only. Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -1061,10 +1061,10 @@ class UserList extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Indicates this user list is eligible for Google Display Network.
+     * Output only. Indicates this user list is eligible for Google Display Network.
      * This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue eligible_for_display = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -1100,10 +1100,10 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User list which are similar to users from another UserList.
+     * Output only. User list which are similar to users from another UserList.
      * These lists are readonly and automatically created by google.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.SimilarUserListInfo similar_user_list = 20;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.SimilarUserListInfo similar_user_list = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\SimilarUserListInfo
      */
     public function getSimilarUserList()
@@ -1112,10 +1112,10 @@ class UserList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User list which are similar to users from another UserList.
+     * Output only. User list which are similar to users from another UserList.
      * These lists are readonly and automatically created by google.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.SimilarUserListInfo similar_user_list = 20;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.SimilarUserListInfo similar_user_list = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\SimilarUserListInfo $var
      * @return $this
      */

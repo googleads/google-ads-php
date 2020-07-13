@@ -39,6 +39,7 @@ class FeedPlaceholderViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetFeedPlaceholderViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\FeedPlaceholderView
      */
     public function GetFeedPlaceholderView(\Google\Ads\GoogleAds\V3\Services\GetFeedPlaceholderViewRequest $argument,
       $metadata = [], $options = []) {

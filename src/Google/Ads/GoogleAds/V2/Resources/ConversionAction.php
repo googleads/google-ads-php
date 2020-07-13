@@ -16,17 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class ConversionAction extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the conversion action.
+     * Immutable. The resource name of the conversion action.
      * Conversion action resource names have the form:
      * `customers/{customer_id}/conversionActions/{conversion_action_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the conversion action.
+     * Output only. The ID of the conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -44,9 +44,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * The type of this conversion action.
+     * Immutable. The type of this conversion action.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionTypeEnum.ConversionActionType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionTypeEnum.ConversionActionType type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $type = 0;
     /**
@@ -56,10 +56,10 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     protected $category = 0;
     /**
-     * The resource name of the conversion action owner customer, or null if this
+     * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $owner_customer = null;
     /**
@@ -103,9 +103,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      */
     protected $attribution_model_settings = null;
     /**
-     * The snippets used for tracking conversions.
+     * Output only. The snippets used for tracking conversions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 14;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $tag_snippets;
     /**
@@ -130,11 +130,11 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the conversion action.
+     *           Immutable. The resource name of the conversion action.
      *           Conversion action resource names have the form:
      *           `customers/{customer_id}/conversionActions/{conversion_action_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the conversion action.
+     *           Output only. The ID of the conversion action.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the conversion action.
      *           This field is required and should not be empty when creating new
@@ -142,11 +142,11 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *           The status of this conversion action for conversion event accrual.
      *     @type int $type
-     *           The type of this conversion action.
+     *           Immutable. The type of this conversion action.
      *     @type int $category
      *           The category of conversions reported for this conversion action.
      *     @type \Google\Protobuf\StringValue $owner_customer
-     *           The resource name of the conversion action owner customer, or null if this
+     *           Output only. The resource name of the conversion action owner customer, or null if this
      *           is a system-defined conversion action.
      *     @type \Google\Protobuf\BoolValue $include_in_conversions_metric
      *           Whether this conversion action should be included in the "conversions"
@@ -165,7 +165,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V2\Resources\ConversionAction\AttributionModelSettings $attribution_model_settings
      *           Settings related to this conversion action's attribution model.
      *     @type \Google\Ads\GoogleAds\V2\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $tag_snippets
-     *           The snippets used for tracking conversions.
+     *           Output only. The snippets used for tracking conversions.
      *     @type \Google\Protobuf\Int64Value $phone_call_duration_seconds
      *           The phone call duration in seconds after which a conversion should be
      *           reported for this conversion action.
@@ -180,11 +180,11 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the conversion action.
+     * Immutable. The resource name of the conversion action.
      * Conversion action resource names have the form:
      * `customers/{customer_id}/conversionActions/{conversion_action_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -193,11 +193,11 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the conversion action.
+     * Immutable. The resource name of the conversion action.
      * Conversion action resource names have the form:
      * `customers/{customer_id}/conversionActions/{conversion_action_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -210,9 +210,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the conversion action.
+     * Output only. The ID of the conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -223,9 +223,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the conversion action.
+     * Output only. The ID of the conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -234,9 +234,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the conversion action.
+     * Output only. The ID of the conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -251,9 +251,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the conversion action.
+     * Output only. The ID of the conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -350,9 +350,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of this conversion action.
+     * Immutable. The type of this conversion action.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionTypeEnum.ConversionActionType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionTypeEnum.ConversionActionType type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getType()
@@ -361,9 +361,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of this conversion action.
+     * Immutable. The type of this conversion action.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionTypeEnum.ConversionActionType type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.ConversionActionTypeEnum.ConversionActionType type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -402,10 +402,10 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the conversion action owner customer, or null if this
+     * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getOwnerCustomer()
@@ -416,10 +416,10 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getOwnerCustomer()</code>
 
-     * The resource name of the conversion action owner customer, or null if this
+     * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getOwnerCustomerUnwrapped()
@@ -428,10 +428,10 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the conversion action owner customer, or null if this
+     * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -446,10 +446,10 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the conversion action owner customer, or null if this
+     * Output only. The resource name of the conversion action owner customer, or null if this
      * is a system-defined conversion action.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue owner_customer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -710,9 +710,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The snippets used for tracking conversions.
+     * Output only. The snippets used for tracking conversions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 14;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTagSnippets()
@@ -721,9 +721,9 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The snippets used for tracking conversions.
+     * Output only. The snippets used for tracking conversions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 14;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

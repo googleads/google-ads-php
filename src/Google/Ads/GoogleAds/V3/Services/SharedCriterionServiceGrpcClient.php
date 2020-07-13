@@ -39,6 +39,7 @@ class SharedCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetSharedCriterionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\SharedCriterion
      */
     public function GetSharedCriterion(\Google\Ads\GoogleAds\V3\Services\GetSharedCriterionRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class SharedCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateSharedCriteriaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateSharedCriteriaResponse
      */
     public function MutateSharedCriteria(\Google\Ads\GoogleAds\V3\Services\MutateSharedCriteriaRequest $argument,
       $metadata = [], $options = []) {

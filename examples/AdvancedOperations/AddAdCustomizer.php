@@ -24,30 +24,31 @@ use DateTime;
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V3\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V3\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V3\Resources\Ad;
-use Google\Ads\GoogleAds\V3\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V3\Resources\Feed;
-use Google\Ads\GoogleAds\V3\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V3\Resources\FeedItem;
-use Google\Ads\GoogleAds\V3\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V3\Services\FeedOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V3\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V3\Enums\AdCustomizerPlaceholderFieldEnum\AdCustomizerPlaceholderField;
-use Google\Ads\GoogleAds\V3\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V3\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V3\Resources\FeedItemTarget;
-use Google\Ads\GoogleAds\V3\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedItemTargetOperation;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V4\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V4\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\Ad;
+use Google\Ads\GoogleAds\V4\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V4\Resources\Feed;
+use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V4\Resources\FeedItem;
+use Google\Ads\GoogleAds\V4\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V4\Services\FeedOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V4\Enums\AdCustomizerPlaceholderFieldEnum\AdCustomizerPlaceholderField;
+use Google\Ads\GoogleAds\V4\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V4\Resources\FeedItemTarget;
+use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedItemTargetOperation;
 use Google\Protobuf\StringValue;
 use Google\ApiCore\ApiException;
 
@@ -189,7 +190,7 @@ class AddAdCustomizer
    /**
     * Creates a feed to be used for ad customization.
     *
-    * @param GoogleAdsClient googleAdsClient the Google Ads API client
+    * @param GoogleAdsClient $googleAdsClient the Google Ads API client
     * @param int $customerId the customer ID in which to create the feed
     * @param string $feedName the name of the feed to create
     * @return string the resource name of the newly created feed
@@ -240,9 +241,9 @@ class AddAdCustomizer
     /**
      * Retrieves attributes for a feed.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the customer ID
-     * @param string feedResourceName the resource name of the feed
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
+     * @param string $feedResourceName the resource name of the feed
      * @return array the feed attributes, keyed by attribute name
      */
     private static function getFeedAttributes(
@@ -281,10 +282,10 @@ class AddAdCustomizer
     /**
      * Creates a feed mapping for a given feed.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the customer ID
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
      * @param string $adCustomizerFeedResourceName the resource name of the ad customizer feed
-     * @param array feedDetails an associative array from feed attribute names to their IDs
+     * @param array $feedDetails an associative array from feed attribute names to their IDs
      */
     private static function createAdCustomizerMapping(
         GoogleAdsClient $googleAdsClient,
@@ -339,19 +340,20 @@ class AddAdCustomizer
     /**
      * Creates two different feed items to enable two different ad customizations.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string $adCustomizerFeedResourceName the resource name of the feed
      * @param array $adCustomizerFeedAttributes the attributes of the feed
+     * @return string[] the created feed item resource names
      */
-    private function createFeedItems(
+    private static function createFeedItems(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $adCustomizerFeedResourceName,
         array $adCustomizerFeedAttributes
     ) {
         $feedItemOperations = [];
-                
+
         $feedItemOperations[] = self::createFeedItemOperation(
             'Mars',
             '$1234.56',
@@ -359,7 +361,7 @@ class AddAdCustomizer
             $adCustomizerFeedResourceName,
             $adCustomizerFeedAttributes
         );
-        
+
         $feedItemOperations[] = self::createFeedItemOperation(
             'Venus',
             '$6543.21',
@@ -390,14 +392,14 @@ class AddAdCustomizer
     /**
      * Creates a FeedItemOperation.
      *
-     * @param string name the value of the Name attribute
-     * @param string price the value of the Price attribute
-     * @param string date the value of the Date attribute
-     * @param string adCustomizerFeedResourceName the resource name of the feed
-     * @param array adCustomizerFeedAttributes the attributes to be set on the feed
+     * @param string $name the value of the Name attribute
+     * @param string $price the value of the Price attribute
+     * @param string $date the value of the Date attribute
+     * @param string $adCustomizerFeedResourceName the resource name of the feed
+     * @param array $adCustomizerFeedAttributes the attributes to be set on the feed
      * @return FeedItemOperation the feed item operation to create a feed item
      */
-    private function createFeedItemOperation(
+    private static function createFeedItemOperation(
         string $name,
         string $price,
         string $date,
@@ -439,12 +441,12 @@ class AddAdCustomizer
    * from being used elsewhere and makes sure they are used only for customizing a specific ad
    * group.
    *
-   * @param GoogleAdsClient googleAdsClient the Google Ads API client
+   * @param GoogleAdsClient $googleAdsClient the Google Ads API client
    * @param int $customerId the customer ID
-   * @param array adGroupIds the ad group IDs to bind the feed items to
-   * @param array feedItemResourceNames the resource names of the feed items
+   * @param array $adGroupIds the ad group IDs to bind the feed items to
+   * @param array $feedItemResourceNames the resource names of the feed items
    */
-    private function createFeedItemTargets(
+    private static function createFeedItemTargets(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         array $adGroupIds,
@@ -485,12 +487,12 @@ class AddAdCustomizer
     /**
      * Creates expanded text ads that use the ad customizer feed to populate the placeholders.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the client customer ID
-     * @param array adGroupIds the ad group IDs in which to create the ads
-     * @param string feedName the name of the feed
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the client customer ID
+     * @param array $adGroupIds the ad group IDs in which to create the ads
+     * @param string $feedName the name of the feed
      */
-    private function createAdsWithCustomizations(
+    private static function createAdsWithCustomizations(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         array $adGroupIds,

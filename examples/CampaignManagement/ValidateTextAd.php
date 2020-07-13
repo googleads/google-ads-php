@@ -24,20 +24,19 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V3\Common\PolicyTopicEntry;
-use Google\Ads\GoogleAds\V3\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V3\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Errors\PolicyFindingErrorEnum\PolicyFindingError;
-use Google\Ads\GoogleAds\V3\Errors\PolicyViolationErrorEnum\PolicyViolationError;
-use Google\Ads\GoogleAds\V3\Resources\Ad;
-use Google\Ads\GoogleAds\V3\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V3\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V4\Common\PolicyTopicEntry;
+use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V4\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Errors\PolicyFindingErrorEnum\PolicyFindingError;
+use Google\Ads\GoogleAds\V4\Resources\Ad;
+use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -73,7 +72,7 @@ class ValidateTextAd
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID,
+                $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -107,7 +106,7 @@ class ValidateTextAd
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID to validate the ad againts
+     * @param int $adGroupId the ad group ID to validate the ad against
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -145,7 +144,7 @@ class ValidateTextAd
 
         try {
             // Try sending a mutate request to add the ad group ad.
-            $response = $adGroupAdServiceClient->mutateAdGroupAds(
+            $adGroupAdServiceClient->mutateAdGroupAds(
                 $customerId,
                 [$adGroupAdOperation],
                 ['validateOnly' => true]

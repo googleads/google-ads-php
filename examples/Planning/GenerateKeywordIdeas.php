@@ -23,17 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Services\GenerateKeywordIdeaResult;
-use Google\Ads\GoogleAds\V3\Services\KeywordAndUrlSeed;
-use Google\Ads\GoogleAds\V3\Services\KeywordSeed;
-use Google\Ads\GoogleAds\V3\Services\UrlSeed;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Services\GenerateKeywordIdeaResult;
+use Google\Ads\GoogleAds\V4\Services\KeywordAndUrlSeed;
+use Google\Ads\GoogleAds\V4\Services\KeywordSeed;
+use Google\Ads\GoogleAds\V4\Services\UrlSeed;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -179,19 +179,20 @@ class GenerateKeywordIdeas
 
         // Generate keyword ideas based on the specified parameters.
         $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas(
-            $customerId,
             // Set the language resource using the provided language ID.
             new StringValue(['value' => ResourceNames::forLanguageConstant($languageId)]),
-            // Add the resource name of each location ID to the request.
-            $geoTargetConstants,
-            // Set the network. To restrict to only Google Search, change the parameter below to
-            // KeywordPlanNetwork::GOOGLE_SEARCH.
-            KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS,
-            $requestOptionalArgs
+            [
+                'customerId' => $customerId,
+                // Add the resource name of each location ID to the request.
+                'geoTargetConstants' => $geoTargetConstants,
+                // Set the network. To restrict to only Google Search, change the parameter below to
+                // KeywordPlanNetwork::GOOGLE_SEARCH.
+                'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
+            ] + $requestOptionalArgs
         );
 
         // Iterate over the results and print its detail.
-        foreach ($response->getResults() as $result) {
+        foreach ($response->iterateAllElements() as $result) {
             /** @var GenerateKeywordIdeaResult $result */
             // Note that the competition printed below is enum value.
             // For example, a value of 2 will be returned when the competition is 'LOW'.

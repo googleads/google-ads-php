@@ -39,6 +39,7 @@ class CarrierConstantServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCarrierConstantRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CarrierConstant
      */
     public function GetCarrierConstant(\Google\Ads\GoogleAds\V3\Services\GetCarrierConstantRequest $argument,
       $metadata = [], $options = []) {

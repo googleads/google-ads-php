@@ -16,75 +16,75 @@ use Google\Protobuf\Internal\GPBUtil;
 class GoogleAdsField extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the artifact.
+     * Output only. The resource name of the artifact.
      * Artifact resource names have the form:
      * `googleAdsFields/{name}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The name of the artifact.
+     * Output only. The name of the artifact.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
-     * The category of the artifact.
+     * Output only. The category of the artifact.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory category = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory category = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $category = 0;
     /**
-     * Whether the artifact can be used in a SELECT clause in search
+     * Output only. Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $selectable = null;
     /**
-     * Whether the artifact can be used in a WHERE clause in search
+     * Output only. Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $filterable = null;
     /**
-     * Whether the artifact can be used in a ORDER BY clause in search
+     * Output only. Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $sortable = null;
     /**
-     * The names of all resources, segments, and metrics that are selectable with
+     * Output only. The names of all resources, segments, and metrics that are selectable with
      * the described artifact.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue selectable_with = 7;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue selectable_with = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $selectable_with;
     /**
-     * The names of all resources that are selectable with the described
+     * Output only. The names of all resources that are selectable with the described
      * artifact. Fields from these resources do not segment metrics when included
      * in search queries.
      * This field is only set for artifacts whose category is RESOURCE.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue attribute_resources = 8;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue attribute_resources = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $attribute_resources;
     /**
-     * At and beyond version V1 this field lists the names of all metrics that are
+     * Output only. At and beyond version V1 this field lists the names of all metrics that are
      * selectable with the described artifact when it is used in the FROM clause.
      * It is only set for artifacts whose category is RESOURCE.
      * Before version V1 this field lists the names of all metrics that are
      * selectable with the described artifact. It is only set for artifacts whose
      * category is either RESOURCE or SEGMENT
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue metrics = 9;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $metrics;
     /**
-     * At and beyond version V1 this field lists the names of all artifacts,
+     * Output only. At and beyond version V1 this field lists the names of all artifacts,
      * whether a segment or another resource, that segment metrics when included
      * in search queries and when the described artifact is used in the FROM
      * clause. It is only set for artifacts whose category is RESOURCE.
@@ -93,33 +93,33 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * queries. It is only set for artifacts of category RESOURCE, SEGMENT or
      * METRIC.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue segments = 10;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue segments = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $segments;
     /**
-     * Values the artifact can assume if it is a field of type ENUM.
+     * Output only. Values the artifact can assume if it is a field of type ENUM.
      * This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue enum_values = 11;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue enum_values = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $enum_values;
     /**
-     * This field determines the operators that can be used with the artifact
+     * Output only. This field determines the operators that can be used with the artifact
      * in WHERE clauses.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType data_type = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType data_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $data_type = 0;
     /**
-     * The URL of proto describing the artifact's data type.
+     * Output only. The URL of proto describing the artifact's data type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type_url = null;
     /**
-     * Whether the field artifact is repeated.
+     * Output only. Whether the field artifact is repeated.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $is_repeated = null;
 
@@ -130,39 +130,39 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the artifact.
+     *           Output only. The resource name of the artifact.
      *           Artifact resource names have the form:
      *           `googleAdsFields/{name}`
      *     @type \Google\Protobuf\StringValue $name
-     *           The name of the artifact.
+     *           Output only. The name of the artifact.
      *     @type int $category
-     *           The category of the artifact.
+     *           Output only. The category of the artifact.
      *     @type \Google\Protobuf\BoolValue $selectable
-     *           Whether the artifact can be used in a SELECT clause in search
+     *           Output only. Whether the artifact can be used in a SELECT clause in search
      *           queries.
      *     @type \Google\Protobuf\BoolValue $filterable
-     *           Whether the artifact can be used in a WHERE clause in search
+     *           Output only. Whether the artifact can be used in a WHERE clause in search
      *           queries.
      *     @type \Google\Protobuf\BoolValue $sortable
-     *           Whether the artifact can be used in a ORDER BY clause in search
+     *           Output only. Whether the artifact can be used in a ORDER BY clause in search
      *           queries.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $selectable_with
-     *           The names of all resources, segments, and metrics that are selectable with
+     *           Output only. The names of all resources, segments, and metrics that are selectable with
      *           the described artifact.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $attribute_resources
-     *           The names of all resources that are selectable with the described
+     *           Output only. The names of all resources that are selectable with the described
      *           artifact. Fields from these resources do not segment metrics when included
      *           in search queries.
      *           This field is only set for artifacts whose category is RESOURCE.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $metrics
-     *           At and beyond version V1 this field lists the names of all metrics that are
+     *           Output only. At and beyond version V1 this field lists the names of all metrics that are
      *           selectable with the described artifact when it is used in the FROM clause.
      *           It is only set for artifacts whose category is RESOURCE.
      *           Before version V1 this field lists the names of all metrics that are
      *           selectable with the described artifact. It is only set for artifacts whose
      *           category is either RESOURCE or SEGMENT
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $segments
-     *           At and beyond version V1 this field lists the names of all artifacts,
+     *           Output only. At and beyond version V1 this field lists the names of all artifacts,
      *           whether a segment or another resource, that segment metrics when included
      *           in search queries and when the described artifact is used in the FROM
      *           clause. It is only set for artifacts whose category is RESOURCE.
@@ -171,15 +171,15 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      *           queries. It is only set for artifacts of category RESOURCE, SEGMENT or
      *           METRIC.
      *     @type \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $enum_values
-     *           Values the artifact can assume if it is a field of type ENUM.
+     *           Output only. Values the artifact can assume if it is a field of type ENUM.
      *           This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
      *     @type int $data_type
-     *           This field determines the operators that can be used with the artifact
+     *           Output only. This field determines the operators that can be used with the artifact
      *           in WHERE clauses.
      *     @type \Google\Protobuf\StringValue $type_url
-     *           The URL of proto describing the artifact's data type.
+     *           Output only. The URL of proto describing the artifact's data type.
      *     @type \Google\Protobuf\BoolValue $is_repeated
-     *           Whether the field artifact is repeated.
+     *           Output only. Whether the field artifact is repeated.
      * }
      */
     public function __construct($data = NULL) {
@@ -188,11 +188,11 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the artifact.
+     * Output only. The resource name of the artifact.
      * Artifact resource names have the form:
      * `googleAdsFields/{name}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -201,11 +201,11 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the artifact.
+     * Output only. The resource name of the artifact.
      * Artifact resource names have the form:
      * `googleAdsFields/{name}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -218,9 +218,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the artifact.
+     * Output only. The name of the artifact.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -231,9 +231,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * The name of the artifact.
+     * Output only. The name of the artifact.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -242,9 +242,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The name of the artifact.
+     * Output only. The name of the artifact.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -259,9 +259,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The name of the artifact.
+     * Output only. The name of the artifact.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -271,9 +271,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The category of the artifact.
+     * Output only. The category of the artifact.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory category = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory category = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getCategory()
@@ -282,9 +282,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The category of the artifact.
+     * Output only. The category of the artifact.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory category = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory category = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -297,10 +297,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the artifact can be used in a SELECT clause in search
+     * Output only. Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getSelectable()
@@ -311,10 +311,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSelectable()</code>
 
-     * Whether the artifact can be used in a SELECT clause in search
+     * Output only. Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getSelectableUnwrapped()
@@ -323,10 +323,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the artifact can be used in a SELECT clause in search
+     * Output only. Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -341,10 +341,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether the artifact can be used in a SELECT clause in search
+     * Output only. Whether the artifact can be used in a SELECT clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue selectable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -354,10 +354,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Whether the artifact can be used in a WHERE clause in search
+     * Output only. Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getFilterable()
@@ -368,10 +368,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFilterable()</code>
 
-     * Whether the artifact can be used in a WHERE clause in search
+     * Output only. Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getFilterableUnwrapped()
@@ -380,10 +380,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the artifact can be used in a WHERE clause in search
+     * Output only. Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -398,10 +398,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether the artifact can be used in a WHERE clause in search
+     * Output only. Whether the artifact can be used in a WHERE clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue filterable = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -411,10 +411,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Whether the artifact can be used in a ORDER BY clause in search
+     * Output only. Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getSortable()
@@ -425,10 +425,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSortable()</code>
 
-     * Whether the artifact can be used in a ORDER BY clause in search
+     * Output only. Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getSortableUnwrapped()
@@ -437,10 +437,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the artifact can be used in a ORDER BY clause in search
+     * Output only. Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -455,10 +455,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether the artifact can be used in a ORDER BY clause in search
+     * Output only. Whether the artifact can be used in a ORDER BY clause in search
      * queries.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue sortable = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */
@@ -468,10 +468,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The names of all resources, segments, and metrics that are selectable with
+     * Output only. The names of all resources, segments, and metrics that are selectable with
      * the described artifact.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue selectable_with = 7;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue selectable_with = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSelectableWith()
@@ -480,10 +480,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The names of all resources, segments, and metrics that are selectable with
+     * Output only. The names of all resources, segments, and metrics that are selectable with
      * the described artifact.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue selectable_with = 7;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue selectable_with = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -496,12 +496,12 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The names of all resources that are selectable with the described
+     * Output only. The names of all resources that are selectable with the described
      * artifact. Fields from these resources do not segment metrics when included
      * in search queries.
      * This field is only set for artifacts whose category is RESOURCE.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue attribute_resources = 8;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue attribute_resources = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAttributeResources()
@@ -510,12 +510,12 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The names of all resources that are selectable with the described
+     * Output only. The names of all resources that are selectable with the described
      * artifact. Fields from these resources do not segment metrics when included
      * in search queries.
      * This field is only set for artifacts whose category is RESOURCE.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue attribute_resources = 8;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue attribute_resources = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -528,14 +528,14 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * At and beyond version V1 this field lists the names of all metrics that are
+     * Output only. At and beyond version V1 this field lists the names of all metrics that are
      * selectable with the described artifact when it is used in the FROM clause.
      * It is only set for artifacts whose category is RESOURCE.
      * Before version V1 this field lists the names of all metrics that are
      * selectable with the described artifact. It is only set for artifacts whose
      * category is either RESOURCE or SEGMENT
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue metrics = 9;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMetrics()
@@ -544,14 +544,14 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * At and beyond version V1 this field lists the names of all metrics that are
+     * Output only. At and beyond version V1 this field lists the names of all metrics that are
      * selectable with the described artifact when it is used in the FROM clause.
      * It is only set for artifacts whose category is RESOURCE.
      * Before version V1 this field lists the names of all metrics that are
      * selectable with the described artifact. It is only set for artifacts whose
      * category is either RESOURCE or SEGMENT
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue metrics = 9;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -564,7 +564,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * At and beyond version V1 this field lists the names of all artifacts,
+     * Output only. At and beyond version V1 this field lists the names of all artifacts,
      * whether a segment or another resource, that segment metrics when included
      * in search queries and when the described artifact is used in the FROM
      * clause. It is only set for artifacts whose category is RESOURCE.
@@ -573,7 +573,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * queries. It is only set for artifacts of category RESOURCE, SEGMENT or
      * METRIC.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue segments = 10;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue segments = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSegments()
@@ -582,7 +582,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * At and beyond version V1 this field lists the names of all artifacts,
+     * Output only. At and beyond version V1 this field lists the names of all artifacts,
      * whether a segment or another resource, that segment metrics when included
      * in search queries and when the described artifact is used in the FROM
      * clause. It is only set for artifacts whose category is RESOURCE.
@@ -591,7 +591,7 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      * queries. It is only set for artifacts of category RESOURCE, SEGMENT or
      * METRIC.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue segments = 10;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue segments = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -604,10 +604,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Values the artifact can assume if it is a field of type ENUM.
+     * Output only. Values the artifact can assume if it is a field of type ENUM.
      * This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue enum_values = 11;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue enum_values = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getEnumValues()
@@ -616,10 +616,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Values the artifact can assume if it is a field of type ENUM.
+     * Output only. Values the artifact can assume if it is a field of type ENUM.
      * This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.StringValue enum_values = 11;</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.StringValue enum_values = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -632,10 +632,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This field determines the operators that can be used with the artifact
+     * Output only. This field determines the operators that can be used with the artifact
      * in WHERE clauses.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType data_type = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType data_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getDataType()
@@ -644,10 +644,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This field determines the operators that can be used with the artifact
+     * Output only. This field determines the operators that can be used with the artifact
      * in WHERE clauses.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType data_type = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType data_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -660,9 +660,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL of proto describing the artifact's data type.
+     * Output only. The URL of proto describing the artifact's data type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getTypeUrl()
@@ -673,9 +673,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTypeUrl()</code>
 
-     * The URL of proto describing the artifact's data type.
+     * Output only. The URL of proto describing the artifact's data type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getTypeUrlUnwrapped()
@@ -684,9 +684,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The URL of proto describing the artifact's data type.
+     * Output only. The URL of proto describing the artifact's data type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -701,9 +701,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The URL of proto describing the artifact's data type.
+     * Output only. The URL of proto describing the artifact's data type.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue type_url = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -713,9 +713,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Whether the field artifact is repeated.
+     * Output only. Whether the field artifact is repeated.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue
      */
     public function getIsRepeated()
@@ -726,9 +726,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getIsRepeated()</code>
 
-     * Whether the field artifact is repeated.
+     * Output only. Whether the field artifact is repeated.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool|null
      */
     public function getIsRepeatedUnwrapped()
@@ -737,9 +737,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the field artifact is repeated.
+     * Output only. Whether the field artifact is repeated.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
      * @return $this
      */
@@ -754,9 +754,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether the field artifact is repeated.
+     * Output only. Whether the field artifact is repeated.
      *
-     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.BoolValue is_repeated = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool|null $var
      * @return $this
      */

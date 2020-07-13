@@ -49,14 +49,6 @@ class PaymentMode
      * Generated from protobuf enum <code>CONVERSIONS = 6;</code>
      */
     const CONVERSIONS = 6;
-    /**
-     * Pay per guest stay value. This mode is only supported by campaigns with
-     * AdvertisingChannelType.HOTEL, BiddingStrategyType.COMMISSION, and
-     * BudgetType.HOTEL_ADS_COMMISSION.
-     *
-     * Generated from protobuf enum <code>GUEST_STAY = 7;</code>
-     */
-    const GUEST_STAY = 7;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -64,7 +56,6 @@ class PaymentMode
         self::CLICKS => 'CLICKS',
         self::CONVERSION_VALUE => 'CONVERSION_VALUE',
         self::CONVERSIONS => 'CONVERSIONS',
-        self::GUEST_STAY => 'GUEST_STAY',
     ];
 
     public static function name($value)

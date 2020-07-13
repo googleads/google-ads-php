@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -211,8 +211,8 @@ class GoogleAdsServiceGapicClient
      * }
      * ```
      *
-     * @param string $customerId   The ID of the customer being queried.
-     * @param string $query        The query string.
+     * @param string $customerId   Required. The ID of the customer being queried.
+     * @param string $query        Required. The query string.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -340,8 +340,8 @@ class GoogleAdsServiceGapicClient
      * }
      * ```
      *
-     * @param string            $customerId       The ID of the customer whose resources are being modified.
-     * @param MutateOperation[] $mutateOperations The list of operations to perform on individual resources.
+     * @param string            $customerId       Required. The ID of the customer whose resources are being modified.
+     * @param MutateOperation[] $mutateOperations Required. The list of operations to perform on individual resources.
      * @param array             $optionalArgs     {
      *                                            Optional.
      *

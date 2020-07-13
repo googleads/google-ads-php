@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -313,7 +313,7 @@ class MutateJobServiceGapicClient
      * }
      * ```
      *
-     * @param string $customerId   The ID of the customer for which to create a mutate job.
+     * @param string $customerId   Required. The ID of the customer for which to create a mutate job.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -363,7 +363,7 @@ class MutateJobServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the MutateJob to get.
+     * @param string $resourceName Required. The resource name of the MutateJob to get.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -429,7 +429,7 @@ class MutateJobServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the MutateJob whose results are being listed.
+     * @param string $resourceName Required. The resource name of the MutateJob whose results are being listed.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -524,7 +524,7 @@ class MutateJobServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the MutateJob to run.
+     * @param string $resourceName Required. The resource name of the MutateJob to run.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -568,22 +568,15 @@ class MutateJobServiceGapicClient
      * $mutateJobServiceClient = new MutateJobServiceClient();
      * try {
      *     $formattedResourceName = $mutateJobServiceClient->mutateJobName('[CUSTOMER]', '[MUTATE_JOB]');
-     *     $sequenceToken = '';
      *     $mutateOperations = [];
-     *     $response = $mutateJobServiceClient->addMutateJobOperations($formattedResourceName, $sequenceToken, $mutateOperations);
+     *     $response = $mutateJobServiceClient->addMutateJobOperations($formattedResourceName, $mutateOperations);
      * } finally {
      *     $mutateJobServiceClient->close();
      * }
      * ```
      *
-     * @param string $resourceName  The resource name of the MutateJob.
-     * @param string $sequenceToken A token used to enforce sequencing.
-     *
-     * The first AddMutateJobOperations request for a MutateJob should not set
-     * sequence_token. Subsequent requests must set sequence_token to the value of
-     * next_sequence_token received in the previous AddMutateJobOperations
-     * response.
-     * @param MutateOperation[] $mutateOperations The list of mutates being added.
+     * @param string            $resourceName     Required. The resource name of the MutateJob.
+     * @param MutateOperation[] $mutateOperations Required. The list of mutates being added.
      *
      * Operations can use negative integers as temp ids to signify dependencies
      * between entities created in this MutateJob. For example, a customer with
@@ -595,6 +588,13 @@ class MutateJobServiceGapicClient
      * @param array $optionalArgs {
      *                            Optional.
      *
+     *     @type string $sequenceToken
+     *          A token used to enforce sequencing.
+     *
+     *          The first AddMutateJobOperations request for a MutateJob should not set
+     *          sequence_token. Subsequent requests must set sequence_token to the value of
+     *          next_sequence_token received in the previous AddMutateJobOperations
+     *          response.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -607,12 +607,14 @@ class MutateJobServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addMutateJobOperations($resourceName, $sequenceToken, $mutateOperations, array $optionalArgs = [])
+    public function addMutateJobOperations($resourceName, $mutateOperations, array $optionalArgs = [])
     {
         $request = new AddMutateJobOperationsRequest();
         $request->setResourceName($resourceName);
-        $request->setSequenceToken($sequenceToken);
         $request->setMutateOperations($mutateOperations);
+        if (isset($optionalArgs['sequenceToken'])) {
+            $request->setSequenceToken($optionalArgs['sequenceToken']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'resource_name' => $request->getResourceName(),

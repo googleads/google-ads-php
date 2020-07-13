@@ -39,6 +39,7 @@ class DisplayKeywordViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetDisplayKeywordViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\DisplayKeywordView
      */
     public function GetDisplayKeywordView(\Google\Ads\GoogleAds\V3\Services\GetDisplayKeywordViewRequest $argument,
       $metadata = [], $options = []) {
