@@ -59,7 +59,7 @@ use Google\Protobuf\StringValue;
  * integration with Google Hotels. The integration instructions can be found at:
  * https://support.google.com/hotelprices/answer/6101897.
  */
-class AddHotelAds
+class AddHotelAd
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // Specify your Hotels account ID below. You can see how to find the account ID in the Hotel
@@ -358,4 +358,4 @@ class AddHotelAds
     // [END addHotelAdGroupAd]
 }
 
-AddHotelAds::main();
+AddHotelAd::main();
