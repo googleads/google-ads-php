@@ -39,6 +39,7 @@ class BiddingStrategyServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetBiddingStrategyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\BiddingStrategy
      */
     public function GetBiddingStrategy(\Google\Ads\GoogleAds\V3\Services\GetBiddingStrategyRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class BiddingStrategyServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateBiddingStrategiesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateBiddingStrategiesResponse
      */
     public function MutateBiddingStrategies(\Google\Ads\GoogleAds\V3\Services\MutateBiddingStrategiesRequest $argument,
       $metadata = [], $options = []) {

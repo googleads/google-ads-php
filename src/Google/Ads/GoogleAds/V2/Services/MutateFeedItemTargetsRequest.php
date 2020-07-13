@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateFeedItemTargetsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer whose feed item targets are being modified.
+     * Required. The ID of the customer whose feed item targets are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The list of operations to perform on individual feed item targets.
+     * Required. The list of operations to perform on individual feed item targets.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.FeedItemTargetOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.FeedItemTargetOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $operations;
 
@@ -35,9 +35,9 @@ class MutateFeedItemTargetsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer whose feed item targets are being modified.
+     *           Required. The ID of the customer whose feed item targets are being modified.
      *     @type \Google\Ads\GoogleAds\V2\Services\FeedItemTargetOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
-     *           The list of operations to perform on individual feed item targets.
+     *           Required. The list of operations to perform on individual feed item targets.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,9 +46,9 @@ class MutateFeedItemTargetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer whose feed item targets are being modified.
+     * Required. The ID of the customer whose feed item targets are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -57,9 +57,9 @@ class MutateFeedItemTargetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer whose feed item targets are being modified.
+     * Required. The ID of the customer whose feed item targets are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -72,9 +72,9 @@ class MutateFeedItemTargetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of operations to perform on individual feed item targets.
+     * Required. The list of operations to perform on individual feed item targets.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.FeedItemTargetOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.FeedItemTargetOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getOperations()
@@ -83,9 +83,9 @@ class MutateFeedItemTargetsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of operations to perform on individual feed item targets.
+     * Required. The list of operations to perform on individual feed item targets.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.FeedItemTargetOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.FeedItemTargetOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\FeedItemTargetOperation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

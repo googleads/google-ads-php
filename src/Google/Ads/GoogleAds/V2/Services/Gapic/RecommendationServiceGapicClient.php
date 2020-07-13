@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -269,7 +269,7 @@ class RecommendationServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the recommendation to fetch.
+     * @param string $resourceName Required. The resource name of the recommendation to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -320,8 +320,8 @@ class RecommendationServiceGapicClient
      * }
      * ```
      *
-     * @param string                         $customerId   The ID of the customer with the recommendation.
-     * @param ApplyRecommendationOperation[] $operations   The list of operations to apply recommendations.
+     * @param string                         $customerId   Required. The ID of the customer with the recommendation.
+     * @param ApplyRecommendationOperation[] $operations   Required. The list of operations to apply recommendations.
      *                                                     If partial_failure=false all recommendations should be of the same type
      *                                                     There is a limit of 100 operations per request.
      * @param array                          $optionalArgs {
@@ -383,8 +383,8 @@ class RecommendationServiceGapicClient
      * }
      * ```
      *
-     * @param string                           $customerId   The ID of the customer with the recommendation.
-     * @param DismissRecommendationOperation[] $operations   The list of operations to dismiss recommendations.
+     * @param string                           $customerId   Required. The ID of the customer with the recommendation.
+     * @param DismissRecommendationOperation[] $operations   Required. The list of operations to dismiss recommendations.
      *                                                       If partial_failure=false all recommendations should be of the same type
      *                                                       There is a limit of 100 operations per request.
      * @param array                            $optionalArgs {

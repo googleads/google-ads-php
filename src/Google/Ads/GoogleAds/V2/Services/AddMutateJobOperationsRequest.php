@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the MutateJob.
+     * Required. The resource name of the MutateJob.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
@@ -32,7 +32,7 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $sequence_token = '';
     /**
-     * The list of mutates being added.
+     * Required. The list of mutates being added.
      * Operations can use negative integers as temp ids to signify dependencies
      * between entities created in this MutateJob. For example, a customer with
      * id = 1234 can create a campaign and an ad group in that same campaign by
@@ -41,7 +41,7 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
      * in the second operation with the campaign field also set to
      * "customers/1234/campaigns/-1".
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.MutateOperation mutate_operations = 3;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.MutateOperation mutate_operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $mutate_operations;
 
@@ -52,7 +52,7 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the MutateJob.
+     *           Required. The resource name of the MutateJob.
      *     @type string $sequence_token
      *           A token used to enforce sequencing.
      *           The first AddMutateJobOperations request for a MutateJob should not set
@@ -60,7 +60,7 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
      *           next_sequence_token received in the previous AddMutateJobOperations
      *           response.
      *     @type \Google\Ads\GoogleAds\V2\Services\MutateOperation[]|\Google\Protobuf\Internal\RepeatedField $mutate_operations
-     *           The list of mutates being added.
+     *           Required. The list of mutates being added.
      *           Operations can use negative integers as temp ids to signify dependencies
      *           between entities created in this MutateJob. For example, a customer with
      *           id = 1234 can create a campaign and an ad group in that same campaign by
@@ -76,9 +76,9 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the MutateJob.
+     * Required. The resource name of the MutateJob.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -87,9 +87,9 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the MutateJob.
+     * Required. The resource name of the MutateJob.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -136,7 +136,7 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of mutates being added.
+     * Required. The list of mutates being added.
      * Operations can use negative integers as temp ids to signify dependencies
      * between entities created in this MutateJob. For example, a customer with
      * id = 1234 can create a campaign and an ad group in that same campaign by
@@ -145,7 +145,7 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
      * in the second operation with the campaign field also set to
      * "customers/1234/campaigns/-1".
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.MutateOperation mutate_operations = 3;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.MutateOperation mutate_operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMutateOperations()
@@ -154,7 +154,7 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of mutates being added.
+     * Required. The list of mutates being added.
      * Operations can use negative integers as temp ids to signify dependencies
      * between entities created in this MutateJob. For example, a customer with
      * id = 1234 can create a campaign and an ad group in that same campaign by
@@ -163,7 +163,7 @@ class AddMutateJobOperationsRequest extends \Google\Protobuf\Internal\Message
      * in the second operation with the campaign field also set to
      * "customers/1234/campaigns/-1".
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.MutateOperation mutate_operations = 3;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.MutateOperation mutate_operations = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\MutateOperation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

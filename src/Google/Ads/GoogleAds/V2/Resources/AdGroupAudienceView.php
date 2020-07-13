@@ -19,11 +19,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class AdGroupAudienceView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad group audience view.
+     * Output only. The resource name of the ad group audience view.
      * Ad group audience view resource names have the form:
      * `customers/{customer_id}/adGroupAudienceViews/{ad_group_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
 
@@ -34,7 +34,7 @@ class AdGroupAudienceView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad group audience view.
+     *           Output only. The resource name of the ad group audience view.
      *           Ad group audience view resource names have the form:
      *           `customers/{customer_id}/adGroupAudienceViews/{ad_group_id}~{criterion_id}`
      * }
@@ -45,11 +45,11 @@ class AdGroupAudienceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group audience view.
+     * Output only. The resource name of the ad group audience view.
      * Ad group audience view resource names have the form:
      * `customers/{customer_id}/adGroupAudienceViews/{ad_group_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -58,11 +58,11 @@ class AdGroupAudienceView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group audience view.
+     * Output only. The resource name of the ad group audience view.
      * Ad group audience view resource names have the form:
      * `customers/{customer_id}/adGroupAudienceViews/{ad_group_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

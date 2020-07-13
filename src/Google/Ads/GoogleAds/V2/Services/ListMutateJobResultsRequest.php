@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListMutateJobResultsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the MutateJob whose results are being listed.
+     * Required. The resource name of the MutateJob whose results are being listed.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
@@ -46,7 +46,7 @@ class ListMutateJobResultsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the MutateJob whose results are being listed.
+     *           Required. The resource name of the MutateJob whose results are being listed.
      *     @type string $page_token
      *           Token of the page to retrieve. If not specified, the first
      *           page of results will be returned. Use the value obtained from
@@ -64,9 +64,9 @@ class ListMutateJobResultsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the MutateJob whose results are being listed.
+     * Required. The resource name of the MutateJob whose results are being listed.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -75,9 +75,9 @@ class ListMutateJobResultsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the MutateJob whose results are being listed.
+     * Required. The resource name of the MutateJob whose results are being listed.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

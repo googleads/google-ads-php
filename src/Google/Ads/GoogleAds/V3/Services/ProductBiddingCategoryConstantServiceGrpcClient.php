@@ -39,6 +39,7 @@ class ProductBiddingCategoryConstantServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetProductBiddingCategoryConstantRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ProductBiddingCategoryConstant
      */
     public function GetProductBiddingCategoryConstant(\Google\Ads\GoogleAds\V3\Services\GetProductBiddingCategoryConstantRequest $argument,
       $metadata = [], $options = []) {

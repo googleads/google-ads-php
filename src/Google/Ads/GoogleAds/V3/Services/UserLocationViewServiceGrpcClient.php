@@ -39,6 +39,7 @@ class UserLocationViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetUserLocationViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\UserLocationView
      */
     public function GetUserLocationView(\Google\Ads\GoogleAds\V3\Services\GetUserLocationViewRequest $argument,
       $metadata = [], $options = []) {

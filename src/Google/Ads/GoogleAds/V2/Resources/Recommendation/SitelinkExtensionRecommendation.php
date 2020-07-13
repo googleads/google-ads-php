@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class SitelinkExtensionRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Sitelink extensions recommended to be added.
+     * Output only. Sitelink extensions recommended to be added.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.SitelinkFeedItem recommended_extensions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $recommended_extensions;
 
@@ -29,7 +29,7 @@ class SitelinkExtensionRecommendation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V2\Common\SitelinkFeedItem[]|\Google\Protobuf\Internal\RepeatedField $recommended_extensions
-     *           Sitelink extensions recommended to be added.
+     *           Output only. Sitelink extensions recommended to be added.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class SitelinkExtensionRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sitelink extensions recommended to be added.
+     * Output only. Sitelink extensions recommended to be added.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.SitelinkFeedItem recommended_extensions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRecommendedExtensions()
@@ -49,9 +49,9 @@ class SitelinkExtensionRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sitelink extensions recommended to be added.
+     * Output only. Sitelink extensions recommended to be added.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.SitelinkFeedItem recommended_extensions = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.SitelinkFeedItem recommended_extensions = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\SitelinkFeedItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

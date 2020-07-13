@@ -39,6 +39,7 @@ class AdGroupCriterionSimulationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdGroupCriterionSimulationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupCriterionSimulation
      */
     public function GetAdGroupCriterionSimulation(\Google\Ads\GoogleAds\V3\Services\GetAdGroupCriterionSimulationRequest $argument,
       $metadata = [], $options = []) {

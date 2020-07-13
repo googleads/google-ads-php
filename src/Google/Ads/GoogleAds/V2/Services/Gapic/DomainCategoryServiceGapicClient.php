@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -263,7 +263,7 @@ class DomainCategoryServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName Resource name of the domain category to fetch.
+     * @param string $resourceName Required. Resource name of the domain category to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *

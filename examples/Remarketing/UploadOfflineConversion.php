@@ -24,13 +24,13 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Services\ClickConversion;
-use Google\Ads\GoogleAds\V3\Services\UploadClickConversionsResponse;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Services\ClickConversion;
+use Google\Ads\GoogleAds\V4\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\DoubleValue;
 use Google\Protobuf\StringValue;
@@ -45,7 +45,9 @@ class UploadOfflineConversion
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
+    // The Google Click ID for which conversions are uploaded.
     private const GCLID = 'INSERT_GCLID_HERE';
+    // The conversion date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
     private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
     private const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
 
@@ -145,7 +147,7 @@ class UploadOfflineConversion
         $response = $conversionUploadServiceClient->uploadClickConversions(
             $customerId,
             [$clickConversion],
-            ['partialFailure' => true]
+            true
         );
 
         // Prints the status message if any partial failure error is returned.

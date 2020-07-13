@@ -25,22 +25,22 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Feeds;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\V3\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V3\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
-use Google\Ads\GoogleAds\V3\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V3\Resources\Feed;
-use Google\Ads\GoogleAds\V3\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V3\Resources\FeedItem;
-use Google\Ads\GoogleAds\V3\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V3\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V3\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedOperation;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\V4\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V4\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
+use Google\Ads\GoogleAds\V4\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V4\Resources\Feed;
+use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V4\Resources\FeedItem;
+use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V4\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V4\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedOperation;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -49,7 +49,6 @@ use Google\Protobuf\StringValue;
 class AddFlightsFeed
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const PAGE_SIZE = 1000;
 
     public static function main()
     {

@@ -24,26 +24,26 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V3\GoogleAdsFailures;
-use Google\Ads\GoogleAds\V3\Common\CrmBasedUserListInfo;
-use Google\Ads\GoogleAds\V3\Common\CustomerMatchUserListMetadata;
-use Google\Ads\GoogleAds\V3\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V3\Common\UserData;
-use Google\Ads\GoogleAds\V3\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V3\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
-use Google\Ads\GoogleAds\V3\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V3\Resources\UserList;
-use Google\Ads\GoogleAds\V3\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V3\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V3\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V3\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V4\GoogleAdsFailures;
+use Google\Ads\GoogleAds\V4\Common\CrmBasedUserListInfo;
+use Google\Ads\GoogleAds\V4\Common\CustomerMatchUserListMetadata;
+use Google\Ads\GoogleAds\V4\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V4\Common\UserData;
+use Google\Ads\GoogleAds\V4\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V4\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
+use Google\Ads\GoogleAds\V4\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V4\Resources\UserList;
+use Google\Ads\GoogleAds\V4\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V4\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V4\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V4\Services\UserListOperation;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\OperationResponse;
 use Google\Protobuf\BoolValue;
@@ -212,8 +212,8 @@ class AddCustomerMatchUserList
         /** @var AddOfflineUserDataJobOperationsResponse $operationResponse */
         $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
             $offlineUserDataJobResourceName,
-            new BoolValue(['value' => true]),
-            self::buildOfflineUserDataJobOperations()
+            self::buildOfflineUserDataJobOperations(),
+            ['enablePartialFailure' => new BoolValue(['value' => true])]
         );
 
         // Prints the status message if any partial failure error is returned.

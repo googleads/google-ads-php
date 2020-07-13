@@ -39,6 +39,7 @@ class ProductGroupViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetProductGroupViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ProductGroupView
      */
     public function GetProductGroupView(\Google\Ads\GoogleAds\V3\Services\GetProductGroupViewRequest $argument,
       $metadata = [], $options = []) {

@@ -162,7 +162,7 @@ class CreateCompleteCampaignBothApisPhase1
     /**
      * Gets a campaign budget.
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param string $customerId the customer ID
+     * @param int $customerId the customer ID
      * @param string $resourceName the resource name of the campaign budget to retrieve
      * @return CampaignBudget the campaign budget
      */

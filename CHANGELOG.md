@@ -1,3 +1,35 @@
+## 4.0.0
+*   Added support for v4 of Google Ads API.
+*   Updated code examples to v4.
+*   Removed support for v1.
+*   Regenerated source for v2 and v3 to reflect a new design.
+    The following methods now have different signatures:
+    * `ConversionUploadServiceClient::uploadClickConversions()`
+    * `ConversionUploadServiceClient::uploadCallConversions()`
+    * `ConversionAdjustmentUploadServiceClient::uploadConversionAdjustment()`
+    * `GeoTargetConstantServiceClient::suggestGeoTargetConstants()`
+    * `KeywordPlanIdeaServiceClient::generateKeywordIdeas()`
+    * `MutateJobServiceClient::addMutateJobOperations()`
+    * `ReachPlanServiceClient::generateProductMixIdeas()`
+    * `ReachPlanServiceClient::generateReachForecast()`
+*   Added support for the `linked-customer-id` header for v4.
+*   Added more tests to increase code coverage.
+*   Fixed some test data.
+*   Renamed `AddCompleteCampaignsUsingMutateJob` to
+    `AddCompleteCampaignsUsingBatchJob` to reflect a new name in v4.
+*   Added code examples:
+    * AddDisplayUploadAd
+    * AddSitelinksUsingFeeds
+*   Fixed/improved code examples:
+    * AddDynamicPageFeed
+    * GenerateKeywordIdeas
+    * HandleExpandedTextAdPolicyViolations
+    * HandleKeywordPolicyViolations
+    * RemoveFlightsFeedItemAttributeValue
+    * UpdateAdGroup
+    * UpdateFlightsFeedItemStringAttributeValue
+    * UsePortfolioBiddingStrategy
+
 ## 3.2.0
 *   Added support for v3_1 of Google Ads API.
 *   Fixed the field masks to work properly with repeated fields in a message.

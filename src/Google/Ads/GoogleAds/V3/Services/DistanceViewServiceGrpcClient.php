@@ -39,6 +39,7 @@ class DistanceViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetDistanceViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\DistanceView
      */
     public function GetDistanceView(\Google\Ads\GoogleAds\V3\Services\GetDistanceViewRequest $argument,
       $metadata = [], $options = []) {

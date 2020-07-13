@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer being modified.
+     * Required. The ID of the customer being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The operation to perform on the customer
+     * Required. The operation to perform on the customer
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CustomerOperation operation = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CustomerOperation operation = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $operation = null;
     /**
@@ -42,9 +42,9 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer being modified.
+     *           Required. The ID of the customer being modified.
      *     @type \Google\Ads\GoogleAds\V2\Services\CustomerOperation $operation
-     *           The operation to perform on the customer
+     *           Required. The operation to perform on the customer
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
      *           returned, not results.
@@ -56,9 +56,9 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer being modified.
+     * Required. The ID of the customer being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -67,9 +67,9 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer being modified.
+     * Required. The ID of the customer being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -82,9 +82,9 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The operation to perform on the customer
+     * Required. The operation to perform on the customer
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CustomerOperation operation = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CustomerOperation operation = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Ads\GoogleAds\V2\Services\CustomerOperation
      */
     public function getOperation()
@@ -93,9 +93,9 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The operation to perform on the customer
+     * Required. The operation to perform on the customer
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CustomerOperation operation = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.CustomerOperation operation = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\CustomerOperation $var
      * @return $this
      */

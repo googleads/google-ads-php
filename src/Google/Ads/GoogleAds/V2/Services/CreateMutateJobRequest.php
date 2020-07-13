@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateMutateJobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer for which to create a mutate job.
+     * Required. The ID of the customer for which to create a mutate job.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
 
@@ -29,7 +29,7 @@ class CreateMutateJobRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer for which to create a mutate job.
+     *           Required. The ID of the customer for which to create a mutate job.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class CreateMutateJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer for which to create a mutate job.
+     * Required. The ID of the customer for which to create a mutate job.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -49,9 +49,9 @@ class CreateMutateJobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer for which to create a mutate job.
+     * Required. The ID of the customer for which to create a mutate job.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

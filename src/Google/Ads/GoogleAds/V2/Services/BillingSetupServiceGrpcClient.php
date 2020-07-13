@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2019 Google LLC.
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
 //
 namespace Google\Ads\GoogleAds\V2\Services;
 
@@ -48,6 +47,7 @@ class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GetBillingSetupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Resources\BillingSetup
      */
     public function GetBillingSetup(\Google\Ads\GoogleAds\V2\Services\GetBillingSetupRequest $argument,
       $metadata = [], $options = []) {
@@ -62,6 +62,7 @@ class BillingSetupServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\MutateBillingSetupRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\MutateBillingSetupResponse
      */
     public function MutateBillingSetup(\Google\Ads\GoogleAds\V2\Services\MutateBillingSetupRequest $argument,
       $metadata = [], $options = []) {

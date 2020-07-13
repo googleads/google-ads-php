@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class SearchGoogleAdsFieldsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The query string.
+     * Required. The query string.
      *
-     * Generated from protobuf field <code>string query = 1;</code>
+     * Generated from protobuf field <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $query = '';
     /**
@@ -45,7 +45,7 @@ class SearchGoogleAdsFieldsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query
-     *           The query string.
+     *           Required. The query string.
      *     @type string $page_token
      *           Token of the page to retrieve. If not specified, the first page of
      *           results will be returned. Use the value obtained from `next_page_token`
@@ -62,9 +62,9 @@ class SearchGoogleAdsFieldsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The query string.
+     * Required. The query string.
      *
-     * Generated from protobuf field <code>string query = 1;</code>
+     * Generated from protobuf field <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getQuery()
@@ -73,9 +73,9 @@ class SearchGoogleAdsFieldsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The query string.
+     * Required. The query string.
      *
-     * Generated from protobuf field <code>string query = 1;</code>
+     * Generated from protobuf field <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

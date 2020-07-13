@@ -17,15 +17,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The operation to perform on an individual account-level budget proposal.
+     * Required. The operation to perform on an individual account-level budget proposal.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.AccountBudgetProposalOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.AccountBudgetProposalOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $operation = null;
     /**
@@ -43,9 +43,9 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer.
+     *           Required. The ID of the customer.
      *     @type \Google\Ads\GoogleAds\V2\Services\AccountBudgetProposalOperation $operation
-     *           The operation to perform on an individual account-level budget proposal.
+     *           Required. The operation to perform on an individual account-level budget proposal.
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
      *           returned, not results.
@@ -57,9 +57,9 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -68,9 +68,9 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -83,9 +83,9 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The operation to perform on an individual account-level budget proposal.
+     * Required. The operation to perform on an individual account-level budget proposal.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.AccountBudgetProposalOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.AccountBudgetProposalOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Ads\GoogleAds\V2\Services\AccountBudgetProposalOperation
      */
     public function getOperation()
@@ -94,9 +94,9 @@ class MutateAccountBudgetProposalRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * The operation to perform on an individual account-level budget proposal.
+     * Required. The operation to perform on an individual account-level budget proposal.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.services.AccountBudgetProposalOperation operation = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.services.AccountBudgetProposalOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\AccountBudgetProposalOperation $var
      * @return $this
      */

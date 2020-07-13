@@ -16,16 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The available goals and corresponding options for Target CPA strategy.
+     * Output only. The available goals and corresponding options for Target CPA strategy.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $options;
     /**
-     * The recommended average CPA target. See required budget amount and impact
+     * Output only. The recommended average CPA target. See required budget amount and impact
      * of using this recommendation in options list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $recommended_target_cpa_micros = null;
 
@@ -36,9 +36,9 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V2\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption[]|\Google\Protobuf\Internal\RepeatedField $options
-     *           The available goals and corresponding options for Target CPA strategy.
+     *           Output only. The available goals and corresponding options for Target CPA strategy.
      *     @type \Google\Protobuf\Int64Value $recommended_target_cpa_micros
-     *           The recommended average CPA target. See required budget amount and impact
+     *           Output only. The recommended average CPA target. See required budget amount and impact
      *           of using this recommendation in options list.
      * }
      */
@@ -48,9 +48,9 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The available goals and corresponding options for Target CPA strategy.
+     * Output only. The available goals and corresponding options for Target CPA strategy.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getOptions()
@@ -59,9 +59,9 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The available goals and corresponding options for Target CPA strategy.
+     * Output only. The available goals and corresponding options for Target CPA strategy.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.resources.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption options = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\Recommendation\TargetCpaOptInRecommendation\TargetCpaOptInRecommendationOption[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -74,10 +74,10 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended average CPA target. See required budget amount and impact
+     * Output only. The recommended average CPA target. See required budget amount and impact
      * of using this recommendation in options list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getRecommendedTargetCpaMicros()
@@ -88,10 +88,10 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRecommendedTargetCpaMicros()</code>
 
-     * The recommended average CPA target. See required budget amount and impact
+     * Output only. The recommended average CPA target. See required budget amount and impact
      * of using this recommendation in options list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getRecommendedTargetCpaMicrosUnwrapped()
@@ -100,10 +100,10 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The recommended average CPA target. See required budget amount and impact
+     * Output only. The recommended average CPA target. See required budget amount and impact
      * of using this recommendation in options list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -118,10 +118,10 @@ class TargetCpaOptInRecommendation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The recommended average CPA target. See required budget amount and impact
+     * Output only. The recommended average CPA target. See required budget amount and impact
      * of using this recommendation in options list.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value recommended_target_cpa_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */

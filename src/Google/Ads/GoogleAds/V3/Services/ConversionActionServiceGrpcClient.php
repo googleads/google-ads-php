@@ -39,6 +39,7 @@ class ConversionActionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetConversionActionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ConversionAction
      */
     public function GetConversionAction(\Google\Ads\GoogleAds\V3\Services\GetConversionActionRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class ConversionActionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateConversionActionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateConversionActionsResponse
      */
     public function MutateConversionActions(\Google\Ads\GoogleAds\V3\Services\MutateConversionActionsRequest $argument,
       $metadata = [], $options = []) {

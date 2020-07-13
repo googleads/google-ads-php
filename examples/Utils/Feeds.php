@@ -18,13 +18,13 @@
 
 namespace Google\Ads\GoogleAds\Examples\Utils;
 
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\V3\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
-use Google\Ads\GoogleAds\V3\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
-use Google\Ads\GoogleAds\V3\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V3\Resources\FeedItem;
-use Google\Ads\GoogleAds\V3\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\V4\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
+use Google\Ads\GoogleAds\V4\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
+use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V4\Resources\FeedItem;
+use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
 
 /**
  * Utilities that are shared between code examples related to feeds.
@@ -68,6 +68,7 @@ final class Feeds
      *     that will be updated
      * @param FeedItem $feedItem the feed item that will be updated. It should be populated with
      *     the current attribute values
+     * @return int the attribute index
      */
     public static function attributeIndexFor(
         FeedItemAttributeValue $targetFeedItemAttributeValue,

@@ -107,14 +107,14 @@ class CampaignError
      */
     const INVALID_AD_SERVING_OPTIMIZATION_STATUS = 15;
     /**
-     * Error in the campaign level tracking url.
+     * Error in the campaign level tracking URL.
      *
      * Generated from protobuf enum <code>INVALID_TRACKING_URL = 16;</code>
      */
     const INVALID_TRACKING_URL = 16;
     /**
-     * Cannot set both tracking url template and tracking setting. An user has
-     * to clear legacy tracking setting in order to add tracking url template.
+     * Cannot set both tracking URL template and tracking setting. A user has
+     * to clear legacy tracking setting in order to add tracking URL template.
      *
      * Generated from protobuf enum <code>CANNOT_SET_BOTH_TRACKING_URL_TEMPLATE_AND_TRACKING_SETTING = 17;</code>
      */

@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2019 Google LLC.
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
 //
 namespace Google\Ads\GoogleAds\V2\Services;
 
@@ -40,6 +39,7 @@ class KeywordPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GetKeywordPlanRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Resources\KeywordPlan
      */
     public function GetKeywordPlan(\Google\Ads\GoogleAds\V2\Services\GetKeywordPlanRequest $argument,
       $metadata = [], $options = []) {
@@ -55,6 +55,7 @@ class KeywordPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\MutateKeywordPlansRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\MutateKeywordPlansResponse
      */
     public function MutateKeywordPlans(\Google\Ads\GoogleAds\V2\Services\MutateKeywordPlansRequest $argument,
       $metadata = [], $options = []) {
@@ -69,6 +70,7 @@ class KeywordPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GenerateForecastMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\GenerateForecastMetricsResponse
      */
     public function GenerateForecastMetrics(\Google\Ads\GoogleAds\V2\Services\GenerateForecastMetricsRequest $argument,
       $metadata = [], $options = []) {
@@ -83,6 +85,7 @@ class KeywordPlanServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GenerateHistoricalMetricsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\GenerateHistoricalMetricsResponse
      */
     public function GenerateHistoricalMetrics(\Google\Ads\GoogleAds\V2\Services\GenerateHistoricalMetricsRequest $argument,
       $metadata = [], $options = []) {

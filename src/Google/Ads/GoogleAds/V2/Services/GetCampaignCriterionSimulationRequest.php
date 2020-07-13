@@ -17,9 +17,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetCampaignCriterionSimulationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign criterion simulation to fetch.
+     * Required. The resource name of the campaign criterion simulation to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
 
@@ -30,7 +30,7 @@ class GetCampaignCriterionSimulationRequest extends \Google\Protobuf\Internal\Me
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the campaign criterion simulation to fetch.
+     *           Required. The resource name of the campaign criterion simulation to fetch.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,9 +39,9 @@ class GetCampaignCriterionSimulationRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * The resource name of the campaign criterion simulation to fetch.
+     * Required. The resource name of the campaign criterion simulation to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -50,9 +50,9 @@ class GetCampaignCriterionSimulationRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * The resource name of the campaign criterion simulation to fetch.
+     * Required. The resource name of the campaign criterion simulation to fetch.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

@@ -37,6 +37,7 @@ class CustomerClientLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCustomerClientLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CustomerClientLink
      */
     public function GetCustomerClientLink(\Google\Ads\GoogleAds\V3\Services\GetCustomerClientLinkRequest $argument,
       $metadata = [], $options = []) {
@@ -51,6 +52,7 @@ class CustomerClientLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCustomerClientLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCustomerClientLinkResponse
      */
     public function MutateCustomerClientLink(\Google\Ads\GoogleAds\V3\Services\MutateCustomerClientLinkRequest $argument,
       $metadata = [], $options = []) {

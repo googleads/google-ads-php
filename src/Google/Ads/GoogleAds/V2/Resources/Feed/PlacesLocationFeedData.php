@@ -17,11 +17,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required authentication token (from OAuth API) for the email.
+     * Immutable. Required authentication token (from OAuth API) for the email.
      * This field can only be specified in a create request. All its subfields
      * are not selectable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $oauth_info = null;
     /**
@@ -74,7 +74,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V2\Resources\Feed\PlacesLocationFeedData\OAuthInfo $oauth_info
-     *           Required authentication token (from OAuth API) for the email.
+     *           Immutable. Required authentication token (from OAuth API) for the email.
      *           This field can only be specified in a create request. All its subfields
      *           are not selectable.
      *     @type \Google\Protobuf\StringValue $email_address
@@ -107,11 +107,11 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required authentication token (from OAuth API) for the email.
+     * Immutable. Required authentication token (from OAuth API) for the email.
      * This field can only be specified in a create request. All its subfields
      * are not selectable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\Feed\PlacesLocationFeedData\OAuthInfo
      */
     public function getOauthInfo()
@@ -120,11 +120,11 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required authentication token (from OAuth API) for the email.
+     * Immutable. Required authentication token (from OAuth API) for the email.
      * This field can only be specified in a create request. All its subfields
      * are not selectable.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\Feed\PlacesLocationFeedData\OAuthInfo $var
      * @return $this
      */

@@ -17,15 +17,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class RecommendationImpact extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Base metrics at the time the recommendation was generated.
+     * Output only. Base metrics at the time the recommendation was generated.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics base_metrics = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics base_metrics = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $base_metrics = null;
     /**
-     * Estimated metrics if the recommendation is applied.
+     * Output only. Estimated metrics if the recommendation is applied.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics potential_metrics = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics potential_metrics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $potential_metrics = null;
 
@@ -36,9 +36,9 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Ads\GoogleAds\V2\Resources\Recommendation\RecommendationMetrics $base_metrics
-     *           Base metrics at the time the recommendation was generated.
+     *           Output only. Base metrics at the time the recommendation was generated.
      *     @type \Google\Ads\GoogleAds\V2\Resources\Recommendation\RecommendationMetrics $potential_metrics
-     *           Estimated metrics if the recommendation is applied.
+     *           Output only. Estimated metrics if the recommendation is applied.
      * }
      */
     public function __construct($data = NULL) {
@@ -47,9 +47,9 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Base metrics at the time the recommendation was generated.
+     * Output only. Base metrics at the time the recommendation was generated.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics base_metrics = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics base_metrics = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\Recommendation\RecommendationMetrics
      */
     public function getBaseMetrics()
@@ -58,9 +58,9 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Base metrics at the time the recommendation was generated.
+     * Output only. Base metrics at the time the recommendation was generated.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics base_metrics = 1;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics base_metrics = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\Recommendation\RecommendationMetrics $var
      * @return $this
      */
@@ -73,9 +73,9 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated metrics if the recommendation is applied.
+     * Output only. Estimated metrics if the recommendation is applied.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics potential_metrics = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics potential_metrics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\Recommendation\RecommendationMetrics
      */
     public function getPotentialMetrics()
@@ -84,9 +84,9 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Estimated metrics if the recommendation is applied.
+     * Output only. Estimated metrics if the recommendation is applied.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics potential_metrics = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.Recommendation.RecommendationMetrics potential_metrics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\Recommendation\RecommendationMetrics $var
      * @return $this
      */

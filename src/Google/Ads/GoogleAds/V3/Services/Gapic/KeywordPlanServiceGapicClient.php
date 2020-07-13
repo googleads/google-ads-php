@@ -381,8 +381,8 @@ class KeywordPlanServiceGapicClient
      * ```
      * $keywordPlanServiceClient = new KeywordPlanServiceClient();
      * try {
-     *     $formattedKeywordPlan = $keywordPlanServiceClient->keywordPlanName('[CUSTOMER]', '[KEYWORD_PLAN]');
-     *     $response = $keywordPlanServiceClient->generateForecastMetrics($formattedKeywordPlan);
+     *     $keywordPlan = '';
+     *     $response = $keywordPlanServiceClient->generateForecastMetrics($keywordPlan);
      * } finally {
      *     $keywordPlanServiceClient->close();
      * }
@@ -431,8 +431,8 @@ class KeywordPlanServiceGapicClient
      * ```
      * $keywordPlanServiceClient = new KeywordPlanServiceClient();
      * try {
-     *     $formattedKeywordPlan = $keywordPlanServiceClient->keywordPlanName('[CUSTOMER]', '[KEYWORD_PLAN]');
-     *     $response = $keywordPlanServiceClient->generateHistoricalMetrics($formattedKeywordPlan);
+     *     $keywordPlan = '';
+     *     $response = $keywordPlanServiceClient->generateHistoricalMetrics($keywordPlan);
      * } finally {
      *     $keywordPlanServiceClient->close();
      * }

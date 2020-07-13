@@ -39,6 +39,7 @@ class GeographicViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetGeographicViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\GeographicView
      */
     public function GetGeographicView(\Google\Ads\GoogleAds\V3\Services\GetGeographicViewRequest $argument,
       $metadata = [], $options = []) {

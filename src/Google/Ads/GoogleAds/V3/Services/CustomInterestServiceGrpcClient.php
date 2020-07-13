@@ -39,6 +39,7 @@ class CustomInterestServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCustomInterestRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CustomInterest
      */
     public function GetCustomInterest(\Google\Ads\GoogleAds\V3\Services\GetCustomInterestRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class CustomInterestServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCustomInterestsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCustomInterestsResponse
      */
     public function MutateCustomInterests(\Google\Ads\GoogleAds\V3\Services\MutateCustomInterestsRequest $argument,
       $metadata = [], $options = []) {

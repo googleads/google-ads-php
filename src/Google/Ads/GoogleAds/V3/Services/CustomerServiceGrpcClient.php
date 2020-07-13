@@ -39,6 +39,7 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCustomerRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\Customer
      */
     public function GetCustomer(\Google\Ads\GoogleAds\V3\Services\GetCustomerRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCustomerRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCustomerResponse
      */
     public function MutateCustomer(\Google\Ads\GoogleAds\V3\Services\MutateCustomerRequest $argument,
       $metadata = [], $options = []) {
@@ -68,6 +70,7 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ListAccessibleCustomersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ListAccessibleCustomersResponse
      */
     public function ListAccessibleCustomers(\Google\Ads\GoogleAds\V3\Services\ListAccessibleCustomersRequest $argument,
       $metadata = [], $options = []) {
@@ -82,6 +85,7 @@ class CustomerServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\CreateCustomerClientRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\CreateCustomerClientResponse
      */
     public function CreateCustomerClient(\Google\Ads\GoogleAds\V3\Services\CreateCustomerClientRequest $argument,
       $metadata = [], $options = []) {

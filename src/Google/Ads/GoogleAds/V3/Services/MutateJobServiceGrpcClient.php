@@ -39,6 +39,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\CreateMutateJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\CreateMutateJobResponse
      */
     public function CreateMutateJob(\Google\Ads\GoogleAds\V3\Services\CreateMutateJobRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetMutateJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\MutateJob
      */
     public function GetMutateJob(\Google\Ads\GoogleAds\V3\Services\GetMutateJobRequest $argument,
       $metadata = [], $options = []) {
@@ -68,6 +70,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ListMutateJobResultsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ListMutateJobResultsResponse
      */
     public function ListMutateJobResults(\Google\Ads\GoogleAds\V3\Services\ListMutateJobResultsRequest $argument,
       $metadata = [], $options = []) {
@@ -86,6 +89,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\RunMutateJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\LongRunning\Operation
      */
     public function RunMutateJob(\Google\Ads\GoogleAds\V3\Services\RunMutateJobRequest $argument,
       $metadata = [], $options = []) {
@@ -100,6 +104,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\AddMutateJobOperationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\AddMutateJobOperationsResponse
      */
     public function AddMutateJobOperations(\Google\Ads\GoogleAds\V3\Services\AddMutateJobOperationsRequest $argument,
       $metadata = [], $options = []) {

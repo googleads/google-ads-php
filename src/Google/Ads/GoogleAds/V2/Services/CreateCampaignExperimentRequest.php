@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer whose campaign experiment is being created.
+     * Required. The ID of the customer whose campaign experiment is being created.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The campaign experiment to be created.
+     * Required. The campaign experiment to be created.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignExperiment campaign_experiment = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignExperiment campaign_experiment = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $campaign_experiment = null;
     /**
@@ -42,9 +42,9 @@ class CreateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer whose campaign experiment is being created.
+     *           Required. The ID of the customer whose campaign experiment is being created.
      *     @type \Google\Ads\GoogleAds\V2\Resources\CampaignExperiment $campaign_experiment
-     *           The campaign experiment to be created.
+     *           Required. The campaign experiment to be created.
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
      *           returned, not results.
@@ -56,9 +56,9 @@ class CreateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer whose campaign experiment is being created.
+     * Required. The ID of the customer whose campaign experiment is being created.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -67,9 +67,9 @@ class CreateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer whose campaign experiment is being created.
+     * Required. The ID of the customer whose campaign experiment is being created.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -82,9 +82,9 @@ class CreateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign experiment to be created.
+     * Required. The campaign experiment to be created.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignExperiment campaign_experiment = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignExperiment campaign_experiment = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\CampaignExperiment
      */
     public function getCampaignExperiment()
@@ -93,9 +93,9 @@ class CreateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign experiment to be created.
+     * Required. The campaign experiment to be created.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignExperiment campaign_experiment = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.CampaignExperiment campaign_experiment = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\CampaignExperiment $var
      * @return $this
      */

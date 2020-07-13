@@ -34,7 +34,6 @@ use Google\ApiCore\Testing\MockTransport;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
-use Google\Protobuf\BoolValue;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use stdClass;
@@ -73,6 +72,146 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         ];
 
         return new OfflineUserDataJobServiceClient($options);
+    }
+
+    /**
+     * @test
+     */
+    public function runOfflineUserDataJobTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/runOfflineUserDataJobTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+        $expectedResponse = new GPBEmpty();
+        $anyResponse = new Any();
+        $anyResponse->setValue($expectedResponse->serializeToString());
+        $completeOperation = new Operation();
+        $completeOperation->setName('operations/runOfflineUserDataJobTest');
+        $completeOperation->setDone(true);
+        $completeOperation->setResponse($anyResponse);
+        $operationsTransport->addResponse($completeOperation);
+
+        // Mock request
+        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
+
+        $response = $client->runOfflineUserDataJob($formattedResourceName);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+        $apiRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($apiRequests));
+        $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
+        $this->assertSame(0, count($operationsRequestsEmpty));
+
+        $actualApiFuncCall = $apiRequests[0]->getFuncCall();
+        $actualApiRequestObject = $apiRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v3.services.OfflineUserDataJobService/RunOfflineUserDataJob', $actualApiFuncCall);
+        $actualValue = $actualApiRequestObject->getResourceName();
+
+        $this->assertProtobufEquals($formattedResourceName, $actualValue);
+
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/runOfflineUserDataJobTest');
+
+        $response->pollUntilComplete([
+            'initialPollDelayMillis' => 1,
+        ]);
+        $this->assertTrue($response->isDone());
+        $this->assertEquals($expectedResponse, $response->getResult());
+        $apiRequestsEmpty = $transport->popReceivedCalls();
+        $this->assertSame(0, count($apiRequestsEmpty));
+        $operationsRequests = $operationsTransport->popReceivedCalls();
+        $this->assertSame(1, count($operationsRequests));
+
+        $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
+        $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
+        $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
+        $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
+
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function runOfflineUserDataJobExceptionTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/runOfflineUserDataJobTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+
+        $expectedExceptionMessage = json_encode([
+           'message' => 'internal error',
+           'code' => Code::DATA_LOSS,
+           'status' => 'DATA_LOSS',
+           'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $operationsTransport->addResponse(null, $status);
+
+        // Mock request
+        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
+
+        $response = $client->runOfflineUserDataJob($formattedResourceName);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/runOfflineUserDataJobTest');
+
+        try {
+            $response->pollUntilComplete([
+                'initialPollDelayMillis' => 1,
+            ]);
+            // If the pollUntilComplete() method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+
+        // Call popReceivedCalls to ensure the stubs are exhausted
+        $transport->popReceivedCalls();
+        $operationsTransport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
     }
 
     /**
@@ -242,10 +381,9 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
 
         // Mock request
         $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
-        $enablePartialFailure = new BoolValue();
         $operations = [];
 
-        $response = $client->addOfflineUserDataJobOperations($formattedResourceName, $enablePartialFailure, $operations);
+        $response = $client->addOfflineUserDataJobOperations($formattedResourceName, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -256,9 +394,6 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResourceName();
 
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-        $actualValue = $actualRequestObject->getEnablePartialFailure();
-
-        $this->assertProtobufEquals($enablePartialFailure, $actualValue);
         $actualValue = $actualRequestObject->getOperations();
 
         $this->assertProtobufEquals($operations, $actualValue);
@@ -290,11 +425,10 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
 
         // Mock request
         $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
-        $enablePartialFailure = new BoolValue();
         $operations = [];
 
         try {
-            $client->addOfflineUserDataJobOperations($formattedResourceName, $enablePartialFailure, $operations);
+            $client->addOfflineUserDataJobOperations($formattedResourceName, $operations);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -305,145 +439,5 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function runOfflineUserDataJobTest()
-    {
-        $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient([
-            'serviceAddress' => '',
-            'transport' => $operationsTransport,
-            'credentials' => $this->createCredentials(),
-        ]);
-        $transport = $this->createTransport();
-        $client = $this->createClient([
-            'transport' => $transport,
-            'operationsClient' => $operationsClient,
-        ]);
-
-        $this->assertTrue($transport->isExhausted());
-        $this->assertTrue($operationsTransport->isExhausted());
-
-        // Mock response
-        $incompleteOperation = new Operation();
-        $incompleteOperation->setName('operations/runOfflineUserDataJobTest');
-        $incompleteOperation->setDone(false);
-        $transport->addResponse($incompleteOperation);
-        $expectedResponse = new GPBEmpty();
-        $anyResponse = new Any();
-        $anyResponse->setValue($expectedResponse->serializeToString());
-        $completeOperation = new Operation();
-        $completeOperation->setName('operations/runOfflineUserDataJobTest');
-        $completeOperation->setDone(true);
-        $completeOperation->setResponse($anyResponse);
-        $operationsTransport->addResponse($completeOperation);
-
-        // Mock request
-        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
-
-        $response = $client->runOfflineUserDataJob($formattedResourceName);
-        $this->assertFalse($response->isDone());
-        $this->assertNull($response->getResult());
-        $apiRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($apiRequests));
-        $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
-        $this->assertSame(0, count($operationsRequestsEmpty));
-
-        $actualApiFuncCall = $apiRequests[0]->getFuncCall();
-        $actualApiRequestObject = $apiRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v3.services.OfflineUserDataJobService/RunOfflineUserDataJob', $actualApiFuncCall);
-        $actualValue = $actualApiRequestObject->getResourceName();
-
-        $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
-        $expectedOperationsRequestObject = new GetOperationRequest();
-        $expectedOperationsRequestObject->setName('operations/runOfflineUserDataJobTest');
-
-        $response->pollUntilComplete([
-            'initialPollDelayMillis' => 1,
-        ]);
-        $this->assertTrue($response->isDone());
-        $this->assertEquals($expectedResponse, $response->getResult());
-        $apiRequestsEmpty = $transport->popReceivedCalls();
-        $this->assertSame(0, count($apiRequestsEmpty));
-        $operationsRequests = $operationsTransport->popReceivedCalls();
-        $this->assertSame(1, count($operationsRequests));
-
-        $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
-        $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
-        $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
-        $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
-        $this->assertTrue($transport->isExhausted());
-        $this->assertTrue($operationsTransport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function runOfflineUserDataJobExceptionTest()
-    {
-        $operationsTransport = $this->createTransport();
-        $operationsClient = new OperationsClient([
-            'serviceAddress' => '',
-            'transport' => $operationsTransport,
-            'credentials' => $this->createCredentials(),
-        ]);
-        $transport = $this->createTransport();
-        $client = $this->createClient([
-            'transport' => $transport,
-            'operationsClient' => $operationsClient,
-        ]);
-
-        $this->assertTrue($transport->isExhausted());
-        $this->assertTrue($operationsTransport->isExhausted());
-
-        // Mock response
-        $incompleteOperation = new Operation();
-        $incompleteOperation->setName('operations/runOfflineUserDataJobTest');
-        $incompleteOperation->setDone(false);
-        $transport->addResponse($incompleteOperation);
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $operationsTransport->addResponse(null, $status);
-
-        // Mock request
-        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
-
-        $response = $client->runOfflineUserDataJob($formattedResourceName);
-        $this->assertFalse($response->isDone());
-        $this->assertNull($response->getResult());
-
-        $expectedOperationsRequestObject = new GetOperationRequest();
-        $expectedOperationsRequestObject->setName('operations/runOfflineUserDataJobTest');
-
-        try {
-            $response->pollUntilComplete([
-                'initialPollDelayMillis' => 1,
-            ]);
-            // If the pollUntilComplete() method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stubs are exhausted
-        $transport->popReceivedCalls();
-        $operationsTransport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-        $this->assertTrue($operationsTransport->isExhausted());
     }
 }

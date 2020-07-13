@@ -37,6 +37,7 @@ class CurrencyConstantServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCurrencyConstantRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CurrencyConstant
      */
     public function GetCurrencyConstant(\Google\Ads\GoogleAds\V3\Services\GetCurrencyConstantRequest $argument,
       $metadata = [], $options = []) {

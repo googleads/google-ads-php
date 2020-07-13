@@ -16,10 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer onto which to apply the Merchant Center link list
+     * Required. The ID of the customer onto which to apply the Merchant Center link list
      * operation.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
 
@@ -30,7 +30,7 @@ class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer onto which to apply the Merchant Center link list
+     *           Required. The ID of the customer onto which to apply the Merchant Center link list
      *           operation.
      * }
      */
@@ -40,10 +40,10 @@ class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer onto which to apply the Merchant Center link list
+     * Required. The ID of the customer onto which to apply the Merchant Center link list
      * operation.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -52,10 +52,10 @@ class ListMerchantCenterLinksRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer onto which to apply the Merchant Center link list
+     * Required. The ID of the customer onto which to apply the Merchant Center link list
      * operation.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

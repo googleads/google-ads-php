@@ -39,6 +39,7 @@ class MobileDeviceConstantServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetMobileDeviceConstantRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\MobileDeviceConstant
      */
     public function GetMobileDeviceConstant(\Google\Ads\GoogleAds\V3\Services\GetMobileDeviceConstantRequest $argument,
       $metadata = [], $options = []) {

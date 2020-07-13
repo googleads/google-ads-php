@@ -52,6 +52,7 @@ class AccountBudgetProposalServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAccountBudgetProposalRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AccountBudgetProposal
      */
     public function GetAccountBudgetProposal(\Google\Ads\GoogleAds\V3\Services\GetAccountBudgetProposalRequest $argument,
       $metadata = [], $options = []) {
@@ -67,6 +68,7 @@ class AccountBudgetProposalServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateAccountBudgetProposalRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateAccountBudgetProposalResponse
      */
     public function MutateAccountBudgetProposal(\Google\Ads\GoogleAds\V3\Services\MutateAccountBudgetProposalRequest $argument,
       $metadata = [], $options = []) {

@@ -568,21 +568,14 @@ class MutateJobServiceGapicClient
      * $mutateJobServiceClient = new MutateJobServiceClient();
      * try {
      *     $formattedResourceName = $mutateJobServiceClient->mutateJobName('[CUSTOMER]', '[MUTATE_JOB]');
-     *     $sequenceToken = '';
      *     $mutateOperations = [];
-     *     $response = $mutateJobServiceClient->addMutateJobOperations($formattedResourceName, $sequenceToken, $mutateOperations);
+     *     $response = $mutateJobServiceClient->addMutateJobOperations($formattedResourceName, $mutateOperations);
      * } finally {
      *     $mutateJobServiceClient->close();
      * }
      * ```
      *
-     * @param string $resourceName  Required. The resource name of the MutateJob.
-     * @param string $sequenceToken A token used to enforce sequencing.
-     *
-     * The first AddMutateJobOperations request for a MutateJob should not set
-     * sequence_token. Subsequent requests must set sequence_token to the value of
-     * next_sequence_token received in the previous AddMutateJobOperations
-     * response.
+     * @param string            $resourceName     Required. The resource name of the MutateJob.
      * @param MutateOperation[] $mutateOperations Required. The list of mutates being added.
      *
      * Operations can use negative integers as temp ids to signify dependencies
@@ -595,6 +588,13 @@ class MutateJobServiceGapicClient
      * @param array $optionalArgs {
      *                            Optional.
      *
+     *     @type string $sequenceToken
+     *          A token used to enforce sequencing.
+     *
+     *          The first AddMutateJobOperations request for a MutateJob should not set
+     *          sequence_token. Subsequent requests must set sequence_token to the value of
+     *          next_sequence_token received in the previous AddMutateJobOperations
+     *          response.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -607,12 +607,14 @@ class MutateJobServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addMutateJobOperations($resourceName, $sequenceToken, $mutateOperations, array $optionalArgs = [])
+    public function addMutateJobOperations($resourceName, $mutateOperations, array $optionalArgs = [])
     {
         $request = new AddMutateJobOperationsRequest();
         $request->setResourceName($resourceName);
-        $request->setSequenceToken($sequenceToken);
         $request->setMutateOperations($mutateOperations);
+        if (isset($optionalArgs['sequenceToken'])) {
+            $request->setSequenceToken($optionalArgs['sequenceToken']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'resource_name' => $request->getResourceName(),

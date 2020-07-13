@@ -23,33 +23,33 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V3\Common\WebpageConditionInfo;
-use Google\Ads\GoogleAds\V3\Common\WebpageInfo;
-use Google\Ads\GoogleAds\V3\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
-use Google\Ads\GoogleAds\V3\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V3\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V3\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
-use Google\Ads\GoogleAds\V3\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
-use Google\Ads\GoogleAds\V3\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V3\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V3\Resources\Campaign;
-use Google\Ads\GoogleAds\V3\Resources\Campaign\DynamicSearchAdsSetting;
-use Google\Ads\GoogleAds\V3\Resources\Feed;
-use Google\Ads\GoogleAds\V3\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V3\Resources\FeedItem;
-use Google\Ads\GoogleAds\V3\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V3\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V3\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V3\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V4\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V4\Common\WebpageInfo;
+use Google\Ads\GoogleAds\V4\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
+use Google\Ads\GoogleAds\V4\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V4\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V4\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
+use Google\Ads\GoogleAds\V4\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
+use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V4\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V4\Resources\Campaign;
+use Google\Ads\GoogleAds\V4\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V4\Resources\Feed;
+use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V4\Resources\FeedItem;
+use Google\Ads\GoogleAds\V4\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 
@@ -152,7 +152,7 @@ class AddDynamicPageFeed
    /**
     * Creates a feed.
     *
-    * @param GoogleAdsClient googleAdsClient the Google Ads API client
+    * @param GoogleAdsClient $googleAdsClient the Google Ads API client
     * @param int $customerId the customer ID in which to create the feed
     * @return array the names and IDs of feed attributes
     */
@@ -196,11 +196,11 @@ class AddDynamicPageFeed
     /**
      * Retrieves details about a feed.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the customer ID
-     * @param string feedResourceName the resource name of the feed
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
+     * @param string $feedResourceName the resource name of the feed
      * @return array the feed details containing the feed's resource name and the feed attributes'
-     * names and values
+     *     names and values
      */
     private static function getFeed(
         GoogleAdsClient $googleAdsClient,
@@ -225,9 +225,9 @@ class AddDynamicPageFeed
     /**
      * Creates a feed mapping for a given feed.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
-     * @param int customerId the customer ID
-     * @param array feedDetails the names and IDs of feed attributes
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
+     * @param array $feedDetails the names and IDs of feed attributes
      */
     private static function createFeedMapping(
         GoogleAdsClient $googleAdsClient,
@@ -276,12 +276,12 @@ class AddDynamicPageFeed
     /**
      * Creates feed items for a given feed.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param array $feedDetails the names and IDs of feed attributes
      * @param string $dsaPageUrlLabel the label for the DSA page URLs
      */
-    private function createFeedItems(
+    private static function createFeedItems(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         array $feedDetails,
@@ -337,7 +337,7 @@ class AddDynamicPageFeed
     /**
      * Updates a campaign to set the DSA feed.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param array $feedDetails the names and IDs of feed attributes
      * @param int $campaignId the campaign ID of the campaign to update
@@ -388,7 +388,7 @@ class AddDynamicPageFeed
      * Returns the DSA settings for a campaign. Throws an error if the campaign does not exist or
      * is not a DSA campaign.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $campaignId the campaign ID of the campaign to update
      * @return DynamicSearchAdsSetting the DSA settings for the campaign
@@ -439,7 +439,7 @@ class AddDynamicPageFeed
     /**
      * Creates an ad group criterion targeting the DSA label.
      *
-     * @param GoogleAdsClient googleAdsClient the Google Ads API client
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      * @param string $dsaPageUrlLabel the label for the DSA page URLs

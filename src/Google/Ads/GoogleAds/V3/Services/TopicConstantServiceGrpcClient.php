@@ -39,6 +39,7 @@ class TopicConstantServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetTopicConstantRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\TopicConstant
      */
     public function GetTopicConstant(\Google\Ads\GoogleAds\V3\Services\GetTopicConstantRequest $argument,
       $metadata = [], $options = []) {

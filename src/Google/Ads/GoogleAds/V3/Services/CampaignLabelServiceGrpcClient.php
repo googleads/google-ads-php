@@ -39,6 +39,7 @@ class CampaignLabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCampaignLabelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CampaignLabel
      */
     public function GetCampaignLabel(\Google\Ads\GoogleAds\V3\Services\GetCampaignLabelRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class CampaignLabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCampaignLabelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCampaignLabelsResponse
      */
     public function MutateCampaignLabels(\Google\Ads\GoogleAds\V3\Services\MutateCampaignLabelsRequest $argument,
       $metadata = [], $options = []) {

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -279,7 +279,7 @@ class AccountBudgetProposalServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the account-level budget proposal to fetch.
+     * @param string $resourceName Required. The resource name of the account-level budget proposal to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -331,8 +331,8 @@ class AccountBudgetProposalServiceGapicClient
      * }
      * ```
      *
-     * @param string                         $customerId   The ID of the customer.
-     * @param AccountBudgetProposalOperation $operation    The operation to perform on an individual account-level budget proposal.
+     * @param string                         $customerId   Required. The ID of the customer.
+     * @param AccountBudgetProposalOperation $operation    Required. The operation to perform on an individual account-level budget proposal.
      * @param array                          $optionalArgs {
      *                                                     Optional.
      *

@@ -39,6 +39,7 @@ class HotelPerformanceViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetHotelPerformanceViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\HotelPerformanceView
      */
     public function GetHotelPerformanceView(\Google\Ads\GoogleAds\V3\Services\GetHotelPerformanceViewRequest $argument,
       $metadata = [], $options = []) {

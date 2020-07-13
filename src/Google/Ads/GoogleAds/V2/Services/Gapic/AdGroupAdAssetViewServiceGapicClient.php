@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,7 +115,7 @@ class AdGroupAdAssetViewServiceGapicClient
     private static function getAdGroupAdAssetViewNameTemplate()
     {
         if (null == self::$adGroupAdAssetViewNameTemplate) {
-            self::$adGroupAdAssetViewNameTemplate = new PathTemplate('customers/{customer}/adGroupAdAssetViews/{ad_group_ad_asset_view}');
+            self::$adGroupAdAssetViewNameTemplate = new PathTemplate('customers/{customer}/adGroupAdAssets/{ad_group_ad_asset_view}');
         }
 
         return self::$adGroupAdAssetViewNameTemplate;
@@ -154,7 +154,7 @@ class AdGroupAdAssetViewServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - adGroupAdAssetView: customers/{customer}/adGroupAdAssetViews/{ad_group_ad_asset_view}.
+     * - adGroupAdAssetView: customers/{customer}/adGroupAdAssets/{ad_group_ad_asset_view}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -263,7 +263,7 @@ class AdGroupAdAssetViewServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the ad group ad asset view to fetch.
+     * @param string $resourceName Required. The resource name of the ad group ad asset view to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *

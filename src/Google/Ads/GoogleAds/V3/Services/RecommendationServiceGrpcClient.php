@@ -39,6 +39,7 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetRecommendationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\Recommendation
      */
     public function GetRecommendation(\Google\Ads\GoogleAds\V3\Services\GetRecommendationRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ApplyRecommendationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ApplyRecommendationResponse
      */
     public function ApplyRecommendation(\Google\Ads\GoogleAds\V3\Services\ApplyRecommendationRequest $argument,
       $metadata = [], $options = []) {
@@ -67,6 +69,7 @@ class RecommendationServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\DismissRecommendationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\DismissRecommendationResponse
      */
     public function DismissRecommendation(\Google\Ads\GoogleAds\V3\Services\DismissRecommendationRequest $argument,
       $metadata = [], $options = []) {

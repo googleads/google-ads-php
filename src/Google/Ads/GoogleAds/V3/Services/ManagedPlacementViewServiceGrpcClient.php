@@ -39,6 +39,7 @@ class ManagedPlacementViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetManagedPlacementViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ManagedPlacementView
      */
     public function GetManagedPlacementView(\Google\Ads\GoogleAds\V3\Services\GetManagedPlacementViewRequest $argument,
       $metadata = [], $options = []) {

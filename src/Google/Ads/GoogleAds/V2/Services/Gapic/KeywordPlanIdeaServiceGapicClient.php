@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,8 @@ use Google\Protobuf\StringValue;
  * ```
  * $keywordPlanIdeaServiceClient = new KeywordPlanIdeaServiceClient();
  * try {
- *     $customerId = '';
  *     $language = new StringValue();
- *     $geoTargetConstants = [];
- *     $keywordPlanNetwork = KeywordPlanNetwork::UNSPECIFIED;
- *     $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork);
+ *     $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas($language);
  * } finally {
  *     $keywordPlanIdeaServiceClient->close();
  * }
@@ -177,26 +174,26 @@ class KeywordPlanIdeaServiceGapicClient
      * ```
      * $keywordPlanIdeaServiceClient = new KeywordPlanIdeaServiceClient();
      * try {
-     *     $customerId = '';
      *     $language = new StringValue();
-     *     $geoTargetConstants = [];
-     *     $keywordPlanNetwork = KeywordPlanNetwork::UNSPECIFIED;
-     *     $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork);
+     *     $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas($language);
      * } finally {
      *     $keywordPlanIdeaServiceClient->close();
      * }
      * ```
      *
-     * @param string        $customerId         The ID of the customer with the recommendation.
-     * @param StringValue   $language           The resource name of the language to target.
-     *                                          Required
-     * @param StringValue[] $geoTargetConstants The resource names of the location to target.
-     *                                          Max 10
-     * @param int           $keywordPlanNetwork Targeting network.
-     *                                          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V2\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork}
-     * @param array         $optionalArgs       {
-     *                                          Optional.
+     * @param StringValue $language     Required. The resource name of the language to target.
+     *                                  Required
+     * @param array       $optionalArgs {
+     *                                  Optional.
      *
+     *     @type string $customerId
+     *          The ID of the customer with the recommendation.
+     *     @type StringValue[] $geoTargetConstants
+     *          The resource names of the location to target.
+     *          Max 10
+     *     @type int $keywordPlanNetwork
+     *          Targeting network.
+     *          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V2\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork}
      *     @type KeywordAndUrlSeed $keywordAndUrlSeed
      *          A Keyword and a specific Url to generate ideas from
      *          e.g. cars, www.example.com/cars.
@@ -216,13 +213,19 @@ class KeywordPlanIdeaServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork, array $optionalArgs = [])
+    public function generateKeywordIdeas($language, array $optionalArgs = [])
     {
         $request = new GenerateKeywordIdeasRequest();
-        $request->setCustomerId($customerId);
         $request->setLanguage($language);
-        $request->setGeoTargetConstants($geoTargetConstants);
-        $request->setKeywordPlanNetwork($keywordPlanNetwork);
+        if (isset($optionalArgs['customerId'])) {
+            $request->setCustomerId($optionalArgs['customerId']);
+        }
+        if (isset($optionalArgs['geoTargetConstants'])) {
+            $request->setGeoTargetConstants($optionalArgs['geoTargetConstants']);
+        }
+        if (isset($optionalArgs['keywordPlanNetwork'])) {
+            $request->setKeywordPlanNetwork($optionalArgs['keywordPlanNetwork']);
+        }
         if (isset($optionalArgs['keywordAndUrlSeed'])) {
             $request->setKeywordAndUrlSeed($optionalArgs['keywordAndUrlSeed']);
         }

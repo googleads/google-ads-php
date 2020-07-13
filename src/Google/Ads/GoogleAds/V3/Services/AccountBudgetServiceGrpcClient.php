@@ -41,6 +41,7 @@ class AccountBudgetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAccountBudgetRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AccountBudget
      */
     public function GetAccountBudget(\Google\Ads\GoogleAds\V3\Services\GetAccountBudgetRequest $argument,
       $metadata = [], $options = []) {

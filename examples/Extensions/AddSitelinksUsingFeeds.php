@@ -24,32 +24,32 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Common\MatchingFunction;
-use Google\Ads\GoogleAds\V3\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V3\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V3\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V3\Enums\SitelinkPlaceholderFieldEnum\SitelinkPlaceholderField;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V3\Resources\CampaignFeed;
-use Google\Ads\GoogleAds\V3\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V3\Resources\Feed;
-use Google\Ads\GoogleAds\V3\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V3\Resources\FeedItem;
-use Google\Ads\GoogleAds\V3\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V3\Resources\FeedItemTarget;
-use Google\Ads\GoogleAds\V3\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V3\Services\CampaignFeedOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedItemTargetOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V3\Services\FeedOperation;
-use Google\Ads\GoogleAds\V3\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Common\MatchingFunction;
+use Google\Ads\GoogleAds\V4\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V4\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V4\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V4\Enums\SitelinkPlaceholderFieldEnum\SitelinkPlaceholderField;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V4\Resources\CampaignFeed;
+use Google\Ads\GoogleAds\V4\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V4\Resources\Feed;
+use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V4\Resources\FeedItem;
+use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V4\Resources\FeedItemTarget;
+use Google\Ads\GoogleAds\V4\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V4\Services\CampaignFeedOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedItemTargetOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V4\Services\FeedOperation;
+use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -473,7 +473,7 @@ class AddSitelinksUsingFeeds
         $campaignFeedResourceName = $response->getResults()[0]->getResourceName();
         // Prints some information about the created campaign feed.
         printf(
-            "Created a camapign feed with the resource name: '%s'.%s",
+            "Created a campaign feed with the resource name: '%s'.%s",
             $campaignFeedResourceName,
             PHP_EOL
         );

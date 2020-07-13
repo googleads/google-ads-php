@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2019 Google LLC.
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
 //
 namespace Google\Ads\GoogleAds\V2\Services;
 
@@ -40,6 +39,7 @@ class FeedServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GetFeedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Resources\Feed
      */
     public function GetFeed(\Google\Ads\GoogleAds\V2\Services\GetFeedRequest $argument,
       $metadata = [], $options = []) {
@@ -55,6 +55,7 @@ class FeedServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\MutateFeedsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\MutateFeedsResponse
      */
     public function MutateFeeds(\Google\Ads\GoogleAds\V2\Services\MutateFeedsRequest $argument,
       $metadata = [], $options = []) {

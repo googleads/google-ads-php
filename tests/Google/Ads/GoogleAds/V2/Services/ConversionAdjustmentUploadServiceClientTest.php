@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,8 +85,9 @@ class ConversionAdjustmentUploadServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $conversionAdjustments = [];
+        $partialFailure = true;
 
-        $response = $client->uploadConversionAdjustments($customerId, $conversionAdjustments);
+        $response = $client->uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -100,6 +101,9 @@ class ConversionAdjustmentUploadServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getConversionAdjustments();
 
         $this->assertProtobufEquals($conversionAdjustments, $actualValue);
+        $actualValue = $actualRequestObject->getPartialFailure();
+
+        $this->assertProtobufEquals($partialFailure, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -129,9 +133,10 @@ class ConversionAdjustmentUploadServiceClientTest extends GeneratedTest
         // Mock request
         $customerId = 'customerId-1772061412';
         $conversionAdjustments = [];
+        $partialFailure = true;
 
         try {
-            $client->uploadConversionAdjustments($customerId, $conversionAdjustments);
+            $client->uploadConversionAdjustments($customerId, $conversionAdjustments, $partialFailure);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

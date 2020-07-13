@@ -39,6 +39,7 @@ class AdGroupLabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdGroupLabelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupLabel
      */
     public function GetAdGroupLabel(\Google\Ads\GoogleAds\V3\Services\GetAdGroupLabelRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class AdGroupLabelServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateAdGroupLabelsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateAdGroupLabelsResponse
      */
     public function MutateAdGroupLabels(\Google\Ads\GoogleAds\V3\Services\MutateAdGroupLabelsRequest $argument,
       $metadata = [], $options = []) {

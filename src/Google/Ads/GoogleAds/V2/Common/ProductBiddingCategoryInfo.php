@@ -18,7 +18,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
     /**
      * ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
-     * this article: https://support.google.com/merchants/answer/6324436.
+     * this article: https://support.google.com/merchants/answer/6324436
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      */
@@ -46,7 +46,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Int64Value $id
      *           ID of the product bidding category.
      *           This ID is equivalent to the google_product_category ID as described in
-     *           this article: https://support.google.com/merchants/answer/6324436.
+     *           this article: https://support.google.com/merchants/answer/6324436
      *     @type \Google\Protobuf\StringValue $country_code
      *           Two-letter upper-case country code of the product bidding category. It must
      *           match the campaign.shopping_setting.sales_country field.
@@ -62,7 +62,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
     /**
      * ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
-     * this article: https://support.google.com/merchants/answer/6324436.
+     * this article: https://support.google.com/merchants/answer/6324436
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      * @return \Google\Protobuf\Int64Value
@@ -77,7 +77,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
 
      * ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
-     * this article: https://support.google.com/merchants/answer/6324436.
+     * this article: https://support.google.com/merchants/answer/6324436
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      * @return int|string|null
@@ -90,7 +90,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
     /**
      * ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
-     * this article: https://support.google.com/merchants/answer/6324436.
+     * this article: https://support.google.com/merchants/answer/6324436
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      * @param \Google\Protobuf\Int64Value $var
@@ -109,7 +109,7 @@ class ProductBiddingCategoryInfo extends \Google\Protobuf\Internal\Message
 
      * ID of the product bidding category.
      * This ID is equivalent to the google_product_category ID as described in
-     * this article: https://support.google.com/merchants/answer/6324436.
+     * this article: https://support.google.com/merchants/answer/6324436
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value id = 1;</code>
      * @param int|string|null $var

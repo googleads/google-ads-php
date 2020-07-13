@@ -12,55 +12,55 @@ use Google\Protobuf\Internal\GPBUtil;
  * An ad group simulation. Supported combinations of advertising
  * channel type, simulation type and simulation modification method is
  * detailed below respectively.
- * SEARCH   CPC_BID     DEFAULT
- * SEARCH   CPC_BID     UNIFORM
- * SEARCH   TARGET_CPA  UNIFORM
- * DISPLAY  CPC_BID     DEFAULT
- * DISPLAY  CPC_BID     UNIFORM
- * DISPLAY  TARGET_CPA  UNIFORM
- * VIDEO    CPV_BID     DEFAULT
- * VIDEO    CPV_BID     UNIFORM
+ * 1. SEARCH - CPC_BID - DEFAULT
+ * 2. SEARCH - CPC_BID - UNIFORM
+ * 3. SEARCH - TARGET_CPA - UNIFORM
+ * 4. DISPLAY - CPC_BID - DEFAULT
+ * 5. DISPLAY - CPC_BID - UNIFORM
+ * 6. DISPLAY - TARGET_CPA - UNIFORM
+ * 7. VIDEO - CPV_BID - DEFAULT
+ * 8. VIDEO - CPV_BID - UNIFORM
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.AdGroupSimulation</code>
  */
 class AdGroupSimulation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the ad group simulation.
+     * Output only. The resource name of the ad group simulation.
      * Ad group simulation resource names have the form:
      * `customers/{customer_id}/adGroupSimulations/{ad_group_id}~{type}~{modification_method}~{start_date}~{end_date}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Ad group id of the simulation.
+     * Output only. Ad group id of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_group_id = null;
     /**
-     * The field that the simulation modifies.
+     * Output only. The field that the simulation modifies.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     /**
-     * How the simulation modifies the field.
+     * Output only. How the simulation modifies the field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $modification_method = 0;
     /**
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $start_date = null;
     /**
-     * Last day on which the simulation is based, in YYYY-MM-DD format
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $end_date = null;
     protected $point_list;
@@ -72,25 +72,25 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the ad group simulation.
+     *           Output only. The resource name of the ad group simulation.
      *           Ad group simulation resource names have the form:
      *           `customers/{customer_id}/adGroupSimulations/{ad_group_id}~{type}~{modification_method}~{start_date}~{end_date}`
      *     @type \Google\Protobuf\Int64Value $ad_group_id
-     *           Ad group id of the simulation.
+     *           Output only. Ad group id of the simulation.
      *     @type int $type
-     *           The field that the simulation modifies.
+     *           Output only. The field that the simulation modifies.
      *     @type int $modification_method
-     *           How the simulation modifies the field.
+     *           Output only. How the simulation modifies the field.
      *     @type \Google\Protobuf\StringValue $start_date
-     *           First day on which the simulation is based, in YYYY-MM-DD format.
+     *           Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *     @type \Google\Protobuf\StringValue $end_date
-     *           Last day on which the simulation is based, in YYYY-MM-DD format
+     *           Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *     @type \Google\Ads\GoogleAds\V2\Common\CpcBidSimulationPointList $cpc_bid_point_list
-     *           Simulation points if the simulation type is CPC_BID.
+     *           Output only. Simulation points if the simulation type is CPC_BID.
      *     @type \Google\Ads\GoogleAds\V2\Common\CpvBidSimulationPointList $cpv_bid_point_list
-     *           Simulation points if the simulation type is CPV_BID.
+     *           Output only. Simulation points if the simulation type is CPV_BID.
      *     @type \Google\Ads\GoogleAds\V2\Common\TargetCpaSimulationPointList $target_cpa_point_list
-     *           Simulation points if the simulation type is TARGET_CPA.
+     *           Output only. Simulation points if the simulation type is TARGET_CPA.
      * }
      */
     public function __construct($data = NULL) {
@@ -99,11 +99,11 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group simulation.
+     * Output only. The resource name of the ad group simulation.
      * Ad group simulation resource names have the form:
      * `customers/{customer_id}/adGroupSimulations/{ad_group_id}~{type}~{modification_method}~{start_date}~{end_date}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -112,11 +112,11 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the ad group simulation.
+     * Output only. The resource name of the ad group simulation.
      * Ad group simulation resource names have the form:
      * `customers/{customer_id}/adGroupSimulations/{ad_group_id}~{type}~{modification_method}~{start_date}~{end_date}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -129,9 +129,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Ad group id of the simulation.
+     * Output only. Ad group id of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getAdGroupId()
@@ -142,9 +142,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroupId()</code>
 
-     * Ad group id of the simulation.
+     * Output only. Ad group id of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getAdGroupIdUnwrapped()
@@ -153,9 +153,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Ad group id of the simulation.
+     * Output only. Ad group id of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -170,9 +170,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Ad group id of the simulation.
+     * Output only. Ad group id of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value ad_group_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -182,9 +182,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The field that the simulation modifies.
+     * Output only. The field that the simulation modifies.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -193,9 +193,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The field that the simulation modifies.
+     * Output only. The field that the simulation modifies.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -208,9 +208,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * How the simulation modifies the field.
+     * Output only. How the simulation modifies the field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getModificationMethod()
@@ -219,9 +219,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * How the simulation modifies the field.
+     * Output only. How the simulation modifies the field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -234,9 +234,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getStartDate()
@@ -247,9 +247,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getStartDate()</code>
 
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getStartDateUnwrapped()
@@ -258,9 +258,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -275,9 +275,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -287,9 +287,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Last day on which the simulation is based, in YYYY-MM-DD format
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getEndDate()
@@ -300,9 +300,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEndDate()</code>
 
-     * Last day on which the simulation is based, in YYYY-MM-DD format
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getEndDateUnwrapped()
@@ -311,9 +311,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Last day on which the simulation is based, in YYYY-MM-DD format
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -328,9 +328,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Last day on which the simulation is based, in YYYY-MM-DD format
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -340,9 +340,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Simulation points if the simulation type is CPC_BID.
+     * Output only. Simulation points if the simulation type is CPC_BID.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CpcBidSimulationPointList cpc_bid_point_list = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CpcBidSimulationPointList cpc_bid_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\CpcBidSimulationPointList
      */
     public function getCpcBidPointList()
@@ -351,9 +351,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Simulation points if the simulation type is CPC_BID.
+     * Output only. Simulation points if the simulation type is CPC_BID.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CpcBidSimulationPointList cpc_bid_point_list = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CpcBidSimulationPointList cpc_bid_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\CpcBidSimulationPointList $var
      * @return $this
      */
@@ -366,9 +366,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Simulation points if the simulation type is CPV_BID.
+     * Output only. Simulation points if the simulation type is CPV_BID.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CpvBidSimulationPointList cpv_bid_point_list = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CpvBidSimulationPointList cpv_bid_point_list = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\CpvBidSimulationPointList
      */
     public function getCpvBidPointList()
@@ -377,9 +377,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Simulation points if the simulation type is CPV_BID.
+     * Output only. Simulation points if the simulation type is CPV_BID.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CpvBidSimulationPointList cpv_bid_point_list = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.CpvBidSimulationPointList cpv_bid_point_list = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\CpvBidSimulationPointList $var
      * @return $this
      */
@@ -392,9 +392,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Simulation points if the simulation type is TARGET_CPA.
+     * Output only. Simulation points if the simulation type is TARGET_CPA.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.TargetCpaSimulationPointList target_cpa_point_list = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.TargetCpaSimulationPointList target_cpa_point_list = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\TargetCpaSimulationPointList
      */
     public function getTargetCpaPointList()
@@ -403,9 +403,9 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Simulation points if the simulation type is TARGET_CPA.
+     * Output only. Simulation points if the simulation type is TARGET_CPA.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.TargetCpaSimulationPointList target_cpa_point_list = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.TargetCpaSimulationPointList target_cpa_point_list = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\TargetCpaSimulationPointList $var
      * @return $this
      */

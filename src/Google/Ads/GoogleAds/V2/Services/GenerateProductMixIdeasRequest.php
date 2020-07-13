@@ -16,30 +16,30 @@ use Google\Protobuf\Internal\GPBUtil;
 class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
      * Required. The ID of the location, this is one of the ids returned by
      * ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $plannable_location_id = null;
     /**
      * Required. Currency code.
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $currency_code = null;
     /**
      * Required. Total budget.
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $budget_micros = null;
     /**
@@ -58,7 +58,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           The ID of the customer.
+     *           Required. The ID of the customer.
      *     @type \Google\Protobuf\StringValue $plannable_location_id
      *           Required. The ID of the location, this is one of the ids returned by
      *           ListPlannableLocations.
@@ -80,9 +80,9 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -91,9 +91,9 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the customer.
+     * Required. The ID of the customer.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -109,7 +109,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. The ID of the location, this is one of the ids returned by
      * ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPlannableLocationId()
@@ -123,7 +123,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. The ID of the location, this is one of the ids returned by
      * ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string|null
      */
     public function getPlannableLocationIdUnwrapped()
@@ -135,7 +135,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. The ID of the location, this is one of the ids returned by
      * ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -153,7 +153,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. The ID of the location, this is one of the ids returned by
      * ListPlannableLocations.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string|null $var
      * @return $this
      */
@@ -166,7 +166,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. Currency code.
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCurrencyCode()
@@ -180,7 +180,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. Currency code.
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string|null
      */
     public function getCurrencyCodeUnwrapped()
@@ -192,7 +192,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. Currency code.
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -210,7 +210,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. Currency code.
      * Three-character ISO 4217 currency code.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue currency_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string|null $var
      * @return $this
      */
@@ -223,7 +223,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. Total budget.
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getBudgetMicros()
@@ -237,7 +237,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. Total budget.
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int|string|null
      */
     public function getBudgetMicrosUnwrapped()
@@ -249,7 +249,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. Total budget.
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -267,7 +267,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * Required. Total budget.
      * Amount in micros. One million is equivalent to one unit.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value budget_micros = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int|string|null $var
      * @return $this
      */

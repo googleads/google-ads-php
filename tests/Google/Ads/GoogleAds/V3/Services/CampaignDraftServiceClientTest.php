@@ -259,9 +259,9 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
 
         // Mock request
-        $formattedCampaignDraft = $client->campaignDraftName('[CUSTOMER]', '[CAMPAIGN_DRAFT]');
+        $campaignDraft = 'campaignDraft-1319448142';
 
-        $response = $client->promoteCampaignDraft($formattedCampaignDraft);
+        $response = $client->promoteCampaignDraft($campaignDraft);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $apiRequests = $transport->popReceivedCalls();
@@ -274,7 +274,7 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $this->assertSame('/google.ads.googleads.v3.services.CampaignDraftService/PromoteCampaignDraft', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getCampaignDraft();
 
-        $this->assertProtobufEquals($formattedCampaignDraft, $actualValue);
+        $this->assertProtobufEquals($campaignDraft, $actualValue);
 
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/promoteCampaignDraftTest');
@@ -337,9 +337,9 @@ class CampaignDraftServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
 
         // Mock request
-        $formattedCampaignDraft = $client->campaignDraftName('[CUSTOMER]', '[CAMPAIGN_DRAFT]');
+        $campaignDraft = 'campaignDraft-1319448142';
 
-        $response = $client->promoteCampaignDraft($formattedCampaignDraft);
+        $response = $client->promoteCampaignDraft($campaignDraft);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
 

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -265,7 +265,7 @@ class AccountBudgetServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the account-level budget to fetch.
+     * @param string $resourceName Required. The resource name of the account-level budget to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@
 namespace Google\Ads\GoogleAds\V2\Services;
 
 use Google\Ads\GoogleAds\V2\Services\KeywordPlanIdeaServiceClient;
-use Google\Ads\GoogleAds\V2\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
 use Google\Ads\GoogleAds\V2\Services\GenerateKeywordIdeaResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -85,12 +84,9 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $customerId = 'customerId-1772061412';
         $language = new StringValue();
-        $geoTargetConstants = [];
-        $keywordPlanNetwork = KeywordPlanNetwork::UNSPECIFIED;
 
-        $response = $client->generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork);
+        $response = $client->generateKeywordIdeas($language);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -98,18 +94,9 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v2.services.KeywordPlanIdeaService/GenerateKeywordIdeas', $actualFuncCall);
 
-        $actualValue = $actualRequestObject->getCustomerId();
-
-        $this->assertProtobufEquals($customerId, $actualValue);
         $actualValue = $actualRequestObject->getLanguage();
 
         $this->assertProtobufEquals($language, $actualValue);
-        $actualValue = $actualRequestObject->getGeoTargetConstants();
-
-        $this->assertProtobufEquals($geoTargetConstants, $actualValue);
-        $actualValue = $actualRequestObject->getKeywordPlanNetwork();
-
-        $this->assertProtobufEquals($keywordPlanNetwork, $actualValue);
 
         $this->assertTrue($transport->isExhausted());
     }
@@ -137,13 +124,10 @@ class KeywordPlanIdeaServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $customerId = 'customerId-1772061412';
         $language = new StringValue();
-        $geoTargetConstants = [];
-        $keywordPlanNetwork = KeywordPlanNetwork::UNSPECIFIED;
 
         try {
-            $client->generateKeywordIdeas($customerId, $language, $geoTargetConstants, $keywordPlanNetwork);
+            $client->generateKeywordIdeas($language);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

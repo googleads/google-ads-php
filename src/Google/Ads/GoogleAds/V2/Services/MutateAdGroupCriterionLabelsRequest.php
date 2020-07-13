@@ -17,15 +17,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * ID of the customer whose ad group criterion labels are being modified.
+     * Required. ID of the customer whose ad group criterion labels are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The list of operations to perform on ad group criterion labels.
+     * Required. The list of operations to perform on ad group criterion labels.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupCriterionLabelOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupCriterionLabelOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $operations;
     /**
@@ -52,9 +52,9 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           ID of the customer whose ad group criterion labels are being modified.
+     *           Required. ID of the customer whose ad group criterion labels are being modified.
      *     @type \Google\Ads\GoogleAds\V2\Services\AdGroupCriterionLabelOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
-     *           The list of operations to perform on ad group criterion labels.
+     *           Required. The list of operations to perform on ad group criterion labels.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
      *           operations will return errors. If false, all operations will be carried
@@ -71,9 +71,9 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * ID of the customer whose ad group criterion labels are being modified.
+     * Required. ID of the customer whose ad group criterion labels are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -82,9 +82,9 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * ID of the customer whose ad group criterion labels are being modified.
+     * Required. ID of the customer whose ad group criterion labels are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -97,9 +97,9 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * The list of operations to perform on ad group criterion labels.
+     * Required. The list of operations to perform on ad group criterion labels.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupCriterionLabelOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupCriterionLabelOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getOperations()
@@ -108,9 +108,9 @@ class MutateAdGroupCriterionLabelsRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * The list of operations to perform on ad group criterion labels.
+     * Required. The list of operations to perform on ad group criterion labels.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupCriterionLabelOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.AdGroupCriterionLabelOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\AdGroupCriterionLabelOperation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

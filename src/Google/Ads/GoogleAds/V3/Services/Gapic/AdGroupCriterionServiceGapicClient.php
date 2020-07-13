@@ -50,7 +50,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $adGroupCriterionServiceClient = new AdGroupCriterionServiceClient();
  * try {
- *     $formattedResourceName = $adGroupCriterionServiceClient->adGroupCriteriaName('[CUSTOMER]', '[AD_GROUP_CRITERIA]');
+ *     $formattedResourceName = $adGroupCriterionServiceClient->adGroupCriterionName('[CUSTOMER]', '[AD_GROUP_CRITERION]');
  *     $response = $adGroupCriterionServiceClient->getAdGroupCriterion($formattedResourceName);
  * } finally {
  *     $adGroupCriterionServiceClient->close();
@@ -93,7 +93,7 @@ class AdGroupCriterionServiceGapicClient
      */
     public static $serviceScopes = [
     ];
-    private static $adGroupCriteriaNameTemplate;
+    private static $adGroupCriterionNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -115,20 +115,20 @@ class AdGroupCriterionServiceGapicClient
         ];
     }
 
-    private static function getAdGroupCriteriaNameTemplate()
+    private static function getAdGroupCriterionNameTemplate()
     {
-        if (null == self::$adGroupCriteriaNameTemplate) {
-            self::$adGroupCriteriaNameTemplate = new PathTemplate('customers/{customer}/adGroupCriteria/{ad_group_criteria}');
+        if (null == self::$adGroupCriterionNameTemplate) {
+            self::$adGroupCriterionNameTemplate = new PathTemplate('customers/{customer}/adGroupCriteria/{ad_group_criterion}');
         }
 
-        return self::$adGroupCriteriaNameTemplate;
+        return self::$adGroupCriterionNameTemplate;
     }
 
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
-                'adGroupCriteria' => self::getAdGroupCriteriaNameTemplate(),
+                'adGroupCriterion' => self::getAdGroupCriterionNameTemplate(),
             ];
         }
 
@@ -137,19 +137,19 @@ class AdGroupCriterionServiceGapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a ad_group_criteria resource.
+     * a ad_group_criterion resource.
      *
      * @param string $customer
-     * @param string $adGroupCriteria
+     * @param string $adGroupCriterion
      *
-     * @return string The formatted ad_group_criteria resource.
+     * @return string The formatted ad_group_criterion resource.
      * @experimental
      */
-    public static function adGroupCriteriaName($customer, $adGroupCriteria)
+    public static function adGroupCriterionName($customer, $adGroupCriterion)
     {
-        return self::getAdGroupCriteriaNameTemplate()->render([
+        return self::getAdGroupCriterionNameTemplate()->render([
             'customer' => $customer,
-            'ad_group_criteria' => $adGroupCriteria,
+            'ad_group_criterion' => $adGroupCriterion,
         ]);
     }
 
@@ -157,7 +157,7 @@ class AdGroupCriterionServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - adGroupCriteria: customers/{customer}/adGroupCriteria/{ad_group_criteria}.
+     * - adGroupCriterion: customers/{customer}/adGroupCriteria/{ad_group_criterion}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -259,7 +259,7 @@ class AdGroupCriterionServiceGapicClient
      * ```
      * $adGroupCriterionServiceClient = new AdGroupCriterionServiceClient();
      * try {
-     *     $formattedResourceName = $adGroupCriterionServiceClient->adGroupCriteriaName('[CUSTOMER]', '[AD_GROUP_CRITERIA]');
+     *     $formattedResourceName = $adGroupCriterionServiceClient->adGroupCriterionName('[CUSTOMER]', '[AD_GROUP_CRITERION]');
      *     $response = $adGroupCriterionServiceClient->getAdGroupCriterion($formattedResourceName);
      * } finally {
      *     $adGroupCriterionServiceClient->close();

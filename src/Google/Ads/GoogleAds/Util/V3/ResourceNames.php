@@ -253,7 +253,7 @@ final class ResourceNames
      */
     public static function forAdGroupCriterion($customerId, $adGroupId, $criterionId)
     {
-        return AdGroupCriterionServiceClient::adGroupCriteriaName(
+        return AdGroupCriterionServiceClient::adGroupCriterionName(
             $customerId,
             "{$adGroupId}~{$criterionId}"
         );
@@ -513,7 +513,7 @@ final class ResourceNames
      */
     public static function forCampaignCriterion($customerId, $campaignId, $criterionId)
     {
-        return CampaignCriterionServiceClient::campaignCriteriaName(
+        return CampaignCriterionServiceClient::campaignCriterionName(
             $customerId,
             "{$campaignId}~{$criterionId}"
         );
@@ -819,7 +819,7 @@ final class ResourceNames
      */
     public static function forCustomerNegativeCriterion($customerId, $criterionId)
     {
-        return CustomerNegativeCriterionServiceClient::customerNegativeCriteriaName(
+        return CustomerNegativeCriterionServiceClient::customerNegativeCriterionName(
             $customerId,
             $criterionId
         );
@@ -1445,7 +1445,7 @@ final class ResourceNames
      */
     public static function forSharedCriterion($customerId, $sharedSetId, $criterionId)
     {
-        return SharedCriterionServiceClient::sharedCriteriaName(
+        return SharedCriterionServiceClient::sharedCriterionName(
             $customerId,
             "{$sharedSetId}~{$criterionId}"
         );

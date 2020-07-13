@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class MediaBundle extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Raw zipped data.
+     * Immutable. Raw zipped data.
      *
-     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $data = null;
 
@@ -29,7 +29,7 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\BytesValue $data
-     *           Raw zipped data.
+     *           Immutable. Raw zipped data.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,9 +38,9 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Raw zipped data.
+     * Immutable. Raw zipped data.
      *
-     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\BytesValue
      */
     public function getData()
@@ -51,9 +51,9 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getData()</code>
 
-     * Raw zipped data.
+     * Immutable. Raw zipped data.
      *
-     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getDataUnwrapped()
@@ -62,9 +62,9 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Raw zipped data.
+     * Immutable. Raw zipped data.
      *
-     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\BytesValue $var
      * @return $this
      */
@@ -79,9 +79,9 @@ class MediaBundle extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BytesValue object.
 
-     * Raw zipped data.
+     * Immutable. Raw zipped data.
      *
-     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1;</code>
+     * Generated from protobuf field <code>.google.protobuf.BytesValue data = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */

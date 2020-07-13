@@ -17,17 +17,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the expanded landing page view.
+     * Output only. The resource name of the expanded landing page view.
      * Expanded landing page view resource names have the form:
      * `customers/{customer_id}/expandedLandingPageViews/{expanded_final_url_fingerprint}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The final URL that clicks are directed to.
+     * Output only. The final URL that clicks are directed to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $expanded_final_url = null;
 
@@ -38,11 +38,11 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the expanded landing page view.
+     *           Output only. The resource name of the expanded landing page view.
      *           Expanded landing page view resource names have the form:
      *           `customers/{customer_id}/expandedLandingPageViews/{expanded_final_url_fingerprint}`
      *     @type \Google\Protobuf\StringValue $expanded_final_url
-     *           The final URL that clicks are directed to.
+     *           Output only. The final URL that clicks are directed to.
      * }
      */
     public function __construct($data = NULL) {
@@ -51,11 +51,11 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the expanded landing page view.
+     * Output only. The resource name of the expanded landing page view.
      * Expanded landing page view resource names have the form:
      * `customers/{customer_id}/expandedLandingPageViews/{expanded_final_url_fingerprint}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -64,11 +64,11 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the expanded landing page view.
+     * Output only. The resource name of the expanded landing page view.
      * Expanded landing page view resource names have the form:
      * `customers/{customer_id}/expandedLandingPageViews/{expanded_final_url_fingerprint}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -81,9 +81,9 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The final URL that clicks are directed to.
+     * Output only. The final URL that clicks are directed to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getExpandedFinalUrl()
@@ -94,9 +94,9 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getExpandedFinalUrl()</code>
 
-     * The final URL that clicks are directed to.
+     * Output only. The final URL that clicks are directed to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getExpandedFinalUrlUnwrapped()
@@ -105,9 +105,9 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The final URL that clicks are directed to.
+     * Output only. The final URL that clicks are directed to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -122,9 +122,9 @@ class ExpandedLandingPageView extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The final URL that clicks are directed to.
+     * Output only. The final URL that clicks are directed to.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue expanded_final_url = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

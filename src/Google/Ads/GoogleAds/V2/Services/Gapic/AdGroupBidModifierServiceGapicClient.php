@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class AdGroupBidModifierServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the ad group bid modifier to fetch.
+     * @param string $resourceName Required. The resource name of the ad group bid modifier to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -318,8 +318,8 @@ class AdGroupBidModifierServiceGapicClient
      * }
      * ```
      *
-     * @param string                        $customerId   ID of the customer whose ad group bid modifiers are being modified.
-     * @param AdGroupBidModifierOperation[] $operations   The list of operations to perform on individual ad group bid modifiers.
+     * @param string                        $customerId   Required. ID of the customer whose ad group bid modifiers are being modified.
+     * @param AdGroupBidModifierOperation[] $operations   Required. The list of operations to perform on individual ad group bid modifiers.
      * @param array                         $optionalArgs {
      *                                                    Optional.
      *

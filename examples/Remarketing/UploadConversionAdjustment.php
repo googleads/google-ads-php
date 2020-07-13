@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V3\ResourceNames;
-use Google\Ads\GoogleAds\V3\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
-use Google\Ads\GoogleAds\V3\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V3\Services\ConversionAdjustment;
-use Google\Ads\GoogleAds\V3\Services\GclidDateTimePair;
-use Google\Ads\GoogleAds\V3\Services\RestatementValue;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
+use Google\Ads\GoogleAds\V4\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V4\Services\ConversionAdjustment;
+use Google\Ads\GoogleAds\V4\Services\GclidDateTimePair;
+use Google\Ads\GoogleAds\V4\Services\RestatementValue;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\DoubleValue;
 use Google\Protobuf\StringValue;
@@ -47,7 +47,9 @@ class UploadConversionAdjustment
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
     private const GCLID = 'INSERT_GCLID_HERE';
     private const ADJUSTMENT_TYPE = "INSERT_ADJUSTMENT_TYPE_HERE";
+    // The conversion date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
     private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
+    // The adjustment date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
     private const ADJUSTMENT_DATE_TIME = "INSERT_ADJUSTMENT_DATE_TIME_HERE";
     // Optional: Specify an adjusted value below for adjustment type RESTATEMENT.
     // This value will be ignored if you specify RETRACTION as adjustment type.
@@ -171,7 +173,7 @@ class UploadConversionAdjustment
         $response = $conversionAdjustmentUploadServiceClient->uploadConversionAdjustments(
             $customerId,
             [$conversionAdjustment],
-            ['partialFailure' => true]
+            true
         );
 
         // Prints the status message if any partial failure error is returned.

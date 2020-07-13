@@ -39,6 +39,7 @@ class CampaignCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCampaignCriterionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CampaignCriterion
      */
     public function GetCampaignCriterion(\Google\Ads\GoogleAds\V3\Services\GetCampaignCriterionRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class CampaignCriterionServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCampaignCriteriaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCampaignCriteriaResponse
      */
     public function MutateCampaignCriteria(\Google\Ads\GoogleAds\V3\Services\MutateCampaignCriteriaRequest $argument,
       $metadata = [], $options = []) {

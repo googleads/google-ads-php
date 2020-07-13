@@ -39,6 +39,7 @@ class SearchTermViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetSearchTermViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\SearchTermView
      */
     public function GetSearchTermView(\Google\Ads\GoogleAds\V3\Services\GetSearchTermViewRequest $argument,
       $metadata = [], $options = []) {

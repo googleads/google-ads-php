@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class SharedSetServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the shared set to fetch.
+     * @param string $resourceName Required. The resource name of the shared set to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -317,8 +317,8 @@ class SharedSetServiceGapicClient
      * }
      * ```
      *
-     * @param string               $customerId   The ID of the customer whose shared sets are being modified.
-     * @param SharedSetOperation[] $operations   The list of operations to perform on individual shared sets.
+     * @param string               $customerId   Required. The ID of the customer whose shared sets are being modified.
+     * @param SharedSetOperation[] $operations   Required. The list of operations to perform on individual shared sets.
      * @param array                $optionalArgs {
      *                                           Optional.
      *

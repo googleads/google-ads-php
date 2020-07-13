@@ -39,7 +39,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
     protected $on_target_impressions = null;
     /**
      * Total number of ad impressions. This includes impressions that may fall
-     * outside the specified Targeting, due to insufficent information on
+     * outside the specified Targeting, due to insufficient information on
      * signed-in users.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_impressions = 4;</code>
@@ -64,7 +64,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      *           Number of ad impressions that exactly matches the Targeting.
      *     @type \Google\Protobuf\Int64Value $total_impressions
      *           Total number of ad impressions. This includes impressions that may fall
-     *           outside the specified Targeting, due to insufficent information on
+     *           outside the specified Targeting, due to insufficient information on
      *           signed-in users.
      * }
      */
@@ -250,7 +250,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
 
     /**
      * Total number of ad impressions. This includes impressions that may fall
-     * outside the specified Targeting, due to insufficent information on
+     * outside the specified Targeting, due to insufficient information on
      * signed-in users.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_impressions = 4;</code>
@@ -265,7 +265,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getTotalImpressions()</code>
 
      * Total number of ad impressions. This includes impressions that may fall
-     * outside the specified Targeting, due to insufficent information on
+     * outside the specified Targeting, due to insufficient information on
      * signed-in users.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_impressions = 4;</code>
@@ -278,7 +278,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
 
     /**
      * Total number of ad impressions. This includes impressions that may fall
-     * outside the specified Targeting, due to insufficent information on
+     * outside the specified Targeting, due to insufficient information on
      * signed-in users.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_impressions = 4;</code>
@@ -297,7 +297,7 @@ class Forecast extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
      * Total number of ad impressions. This includes impressions that may fall
-     * outside the specified Targeting, due to insufficent information on
+     * outside the specified Targeting, due to insufficient information on
      * signed-in users.
      *
      * Generated from protobuf field <code>.google.protobuf.Int64Value total_impressions = 4;</code>

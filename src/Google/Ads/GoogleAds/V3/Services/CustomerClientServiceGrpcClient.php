@@ -39,6 +39,7 @@ class CustomerClientServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCustomerClientRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CustomerClient
      */
     public function GetCustomerClient(\Google\Ads\GoogleAds\V3\Services\GetCustomerClientRequest $argument,
       $metadata = [], $options = []) {

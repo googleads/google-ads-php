@@ -39,6 +39,7 @@ class CampaignServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCampaignRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\Campaign
      */
     public function GetCampaign(\Google\Ads\GoogleAds\V3\Services\GetCampaignRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class CampaignServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCampaignsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCampaignsResponse
      */
     public function MutateCampaigns(\Google\Ads\GoogleAds\V3\Services\MutateCampaignsRequest $argument,
       $metadata = [], $options = []) {

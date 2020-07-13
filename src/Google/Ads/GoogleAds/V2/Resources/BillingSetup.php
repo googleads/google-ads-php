@@ -17,27 +17,27 @@ use Google\Protobuf\Internal\GPBUtil;
 class BillingSetup extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the billing setup.
+     * Immutable. The resource name of the billing setup.
      * BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the billing setup.
+     * Output only. The ID of the billing setup.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The status of the billing setup.
+     * Output only. The status of the billing setup.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BillingSetupStatusEnum.BillingSetupStatus status = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BillingSetupStatusEnum.BillingSetupStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $status = 0;
     /**
-     * The resource name of the payments account associated with this billing
+     * Immutable. The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      * When setting up billing, this is used to signup with an existing payments
@@ -45,17 +45,17 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * When getting a billing setup, this and payments_account_info will be
      * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $payments_account = null;
     /**
-     * The payments account information associated with this billing setup.
+     * Immutable. The payments account information associated with this billing setup.
      * When setting up billing, this is used to signup with a new payments account
      * (and then payments_account should not be set).
      * When getting a billing setup, this and payments_account will be
      * populated.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $payments_account_info = null;
     protected $start_time;
@@ -68,15 +68,15 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the billing setup.
+     *           Immutable. The resource name of the billing setup.
      *           BillingSetup resource names have the form:
      *           `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the billing setup.
+     *           Output only. The ID of the billing setup.
      *     @type int $status
-     *           The status of the billing setup.
+     *           Output only. The status of the billing setup.
      *     @type \Google\Protobuf\StringValue $payments_account
-     *           The resource name of the payments account associated with this billing
+     *           Immutable. The resource name of the payments account associated with this billing
      *           setup. Payments resource names have the form:
      *           `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      *           When setting up billing, this is used to signup with an existing payments
@@ -84,20 +84,20 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      *           When getting a billing setup, this and payments_account_info will be
      *           populated.
      *     @type \Google\Ads\GoogleAds\V2\Resources\BillingSetup\PaymentsAccountInfo $payments_account_info
-     *           The payments account information associated with this billing setup.
+     *           Immutable. The payments account information associated with this billing setup.
      *           When setting up billing, this is used to signup with a new payments account
      *           (and then payments_account should not be set).
      *           When getting a billing setup, this and payments_account will be
      *           populated.
      *     @type \Google\Protobuf\StringValue $start_date_time
-     *           The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     *           Immutable. The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
      *           future time is allowed.
      *     @type int $start_time_type
-     *           The start time as a type. Only NOW is allowed.
+     *           Immutable. The start time as a type. Only NOW is allowed.
      *     @type \Google\Protobuf\StringValue $end_date_time
-     *           The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     *           Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
      *     @type int $end_time_type
-     *           The end time as a type.  The only possible value is FOREVER.
+     *           Output only. The end time as a type.  The only possible value is FOREVER.
      * }
      */
     public function __construct($data = NULL) {
@@ -106,11 +106,11 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the billing setup.
+     * Immutable. The resource name of the billing setup.
      * BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -119,11 +119,11 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the billing setup.
+     * Immutable. The resource name of the billing setup.
      * BillingSetup resource names have the form:
      * `customers/{customer_id}/billingSetups/{billing_setup_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -136,9 +136,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the billing setup.
+     * Output only. The ID of the billing setup.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -149,9 +149,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the billing setup.
+     * Output only. The ID of the billing setup.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -160,9 +160,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the billing setup.
+     * Output only. The ID of the billing setup.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -177,9 +177,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the billing setup.
+     * Output only. The ID of the billing setup.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -189,9 +189,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The status of the billing setup.
+     * Output only. The status of the billing setup.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BillingSetupStatusEnum.BillingSetupStatus status = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BillingSetupStatusEnum.BillingSetupStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getStatus()
@@ -200,9 +200,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The status of the billing setup.
+     * Output only. The status of the billing setup.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BillingSetupStatusEnum.BillingSetupStatus status = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.BillingSetupStatusEnum.BillingSetupStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -215,7 +215,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the payments account associated with this billing
+     * Immutable. The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      * When setting up billing, this is used to signup with an existing payments
@@ -223,7 +223,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * When getting a billing setup, this and payments_account_info will be
      * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getPaymentsAccount()
@@ -234,7 +234,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getPaymentsAccount()</code>
 
-     * The resource name of the payments account associated with this billing
+     * Immutable. The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      * When setting up billing, this is used to signup with an existing payments
@@ -242,7 +242,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * When getting a billing setup, this and payments_account_info will be
      * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getPaymentsAccountUnwrapped()
@@ -251,7 +251,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the payments account associated with this billing
+     * Immutable. The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      * When setting up billing, this is used to signup with an existing payments
@@ -259,7 +259,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * When getting a billing setup, this and payments_account_info will be
      * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -274,7 +274,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The resource name of the payments account associated with this billing
+     * Immutable. The resource name of the payments account associated with this billing
      * setup. Payments resource names have the form:
      * `customers/{customer_id}/paymentsAccounts/{payments_account_id}`
      * When setting up billing, this is used to signup with an existing payments
@@ -282,7 +282,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * When getting a billing setup, this and payments_account_info will be
      * populated.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue payments_account = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -292,13 +292,13 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The payments account information associated with this billing setup.
+     * Immutable. The payments account information associated with this billing setup.
      * When setting up billing, this is used to signup with a new payments account
      * (and then payments_account should not be set).
      * When getting a billing setup, this and payments_account will be
      * populated.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Resources\BillingSetup\PaymentsAccountInfo
      */
     public function getPaymentsAccountInfo()
@@ -307,13 +307,13 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The payments account information associated with this billing setup.
+     * Immutable. The payments account information associated with this billing setup.
      * When setting up billing, this is used to signup with a new payments account
      * (and then payments_account should not be set).
      * When getting a billing setup, this and payments_account will be
      * populated.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Resources\BillingSetup\PaymentsAccountInfo $var
      * @return $this
      */
@@ -326,10 +326,10 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     * Immutable. The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
      * future time is allowed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getStartDateTime()
@@ -340,10 +340,10 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getStartDateTime()</code>
 
-     * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     * Immutable. The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
      * future time is allowed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string|null
      */
     public function getStartDateTimeUnwrapped()
@@ -352,10 +352,10 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     * Immutable. The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
      * future time is allowed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -370,10 +370,10 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
+     * Immutable. The start date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format. Only a
      * future time is allowed.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date_time = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string|null $var
      * @return $this
      */
@@ -383,9 +383,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The start time as a type. Only NOW is allowed.
+     * Immutable. The start time as a type. Only NOW is allowed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TimeTypeEnum.TimeType start_time_type = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getStartTimeType()
@@ -394,9 +394,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The start time as a type. Only NOW is allowed.
+     * Immutable. The start time as a type. Only NOW is allowed.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TimeTypeEnum.TimeType start_time_type = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TimeTypeEnum.TimeType start_time_type = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -409,9 +409,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     * Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getEndDateTime()
@@ -422,9 +422,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEndDateTime()</code>
 
-     * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     * Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getEndDateTimeUnwrapped()
@@ -433,9 +433,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     * Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -450,9 +450,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
+     * Output only. The end date time in yyyy-MM-dd or yyyy-MM-dd HH:mm:ss format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -462,9 +462,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The end time as a type.  The only possible value is FOREVER.
+     * Output only. The end time as a type.  The only possible value is FOREVER.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TimeTypeEnum.TimeType end_time_type = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TimeTypeEnum.TimeType end_time_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getEndTimeType()
@@ -473,9 +473,9 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The end time as a type.  The only possible value is FOREVER.
+     * Output only. The end time as a type.  The only possible value is FOREVER.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TimeTypeEnum.TimeType end_time_type = 14;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.TimeTypeEnum.TimeType end_time_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

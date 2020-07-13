@@ -39,6 +39,7 @@ class PaidOrganicSearchTermViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetPaidOrganicSearchTermViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\PaidOrganicSearchTermView
      */
     public function GetPaidOrganicSearchTermView(\Google\Ads\GoogleAds\V3\Services\GetPaidOrganicSearchTermViewRequest $argument,
       $metadata = [], $options = []) {

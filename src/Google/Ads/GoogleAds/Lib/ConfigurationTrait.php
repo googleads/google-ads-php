@@ -28,6 +28,7 @@ trait ConfigurationTrait
 {
     private $developerToken;
     private $loginCustomerId;
+    private $linkedCustomerId;
     private $endpoint;
     private $oAuth2Credential;
     private $logger;
@@ -53,6 +54,16 @@ trait ConfigurationTrait
     public function getLoginCustomerId()
     {
         return $this->loginCustomerId;
+    }
+
+    /**
+     * Gets the linked customer ID for this client.
+     *
+     * @return int
+     */
+    public function getLinkedCustomerId()
+    {
+        return $this->linkedCustomerId;
     }
 
     /**

@@ -86,7 +86,7 @@ class CampaignCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedResourceName = $client->campaignCriteriaName('[CUSTOMER]', '[CAMPAIGN_CRITERIA]');
+        $formattedResourceName = $client->campaignCriterionName('[CUSTOMER]', '[CAMPAIGN_CRITERION]');
 
         $response = $client->getCampaignCriterion($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
@@ -126,7 +126,7 @@ class CampaignCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedResourceName = $client->campaignCriteriaName('[CUSTOMER]', '[CAMPAIGN_CRITERIA]');
+        $formattedResourceName = $client->campaignCriterionName('[CUSTOMER]', '[CAMPAIGN_CRITERION]');
 
         try {
             $client->getCampaignCriterion($formattedResourceName);

@@ -48,6 +48,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CampaignExperiment
      */
     public function GetCampaignExperiment(\Google\Ads\GoogleAds\V3\Services\GetCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -71,6 +72,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\CreateCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\LongRunning\Operation
      */
     public function CreateCampaignExperiment(\Google\Ads\GoogleAds\V3\Services\CreateCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -85,6 +87,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCampaignExperimentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCampaignExperimentsResponse
      */
     public function MutateCampaignExperiments(\Google\Ads\GoogleAds\V3\Services\MutateCampaignExperimentsRequest $argument,
       $metadata = [], $options = []) {
@@ -100,6 +103,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GraduateCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\GraduateCampaignExperimentResponse
      */
     public function GraduateCampaignExperiment(\Google\Ads\GoogleAds\V3\Services\GraduateCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -119,6 +123,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\PromoteCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\LongRunning\Operation
      */
     public function PromoteCampaignExperiment(\Google\Ads\GoogleAds\V3\Services\PromoteCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -135,6 +140,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\EndCampaignExperimentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Protobuf\GPBEmpty
      */
     public function EndCampaignExperiment(\Google\Ads\GoogleAds\V3\Services\EndCampaignExperimentRequest $argument,
       $metadata = [], $options = []) {
@@ -151,6 +157,7 @@ class CampaignExperimentServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ListCampaignExperimentAsyncErrorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ListCampaignExperimentAsyncErrorsResponse
      */
     public function ListCampaignExperimentAsyncErrors(\Google\Ads\GoogleAds\V3\Services\ListCampaignExperimentAsyncErrorsRequest $argument,
       $metadata = [], $options = []) {

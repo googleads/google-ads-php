@@ -39,6 +39,7 @@ class AdScheduleViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdScheduleViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdScheduleView
      */
     public function GetAdScheduleView(\Google\Ads\GoogleAds\V3\Services\GetAdScheduleViewRequest $argument,
       $metadata = [], $options = []) {

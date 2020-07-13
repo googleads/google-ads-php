@@ -39,6 +39,7 @@ class ClickViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetClickViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ClickView
      */
     public function GetClickView(\Google\Ads\GoogleAds\V3\Services\GetClickViewRequest $argument,
       $metadata = [], $options = []) {

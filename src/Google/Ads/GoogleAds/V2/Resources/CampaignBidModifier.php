@@ -16,24 +16,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class CampaignBidModifier extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign bid modifier.
+     * Immutable. The resource name of the campaign bid modifier.
      * Campaign bid modifier resource names have the form:
      * `customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The campaign to which this criterion belongs.
+     * Output only. The campaign to which this criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $campaign = null;
     /**
-     * The ID of the criterion to bid modify.
+     * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
@@ -51,18 +51,18 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the campaign bid modifier.
+     *           Immutable. The resource name of the campaign bid modifier.
      *           Campaign bid modifier resource names have the form:
      *           `customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}`
      *     @type \Google\Protobuf\StringValue $campaign
-     *           The campaign to which this criterion belongs.
+     *           Output only. The campaign to which this criterion belongs.
      *     @type \Google\Protobuf\Int64Value $criterion_id
-     *           The ID of the criterion to bid modify.
+     *           Output only. The ID of the criterion to bid modify.
      *           This field is ignored for mutates.
      *     @type \Google\Protobuf\DoubleValue $bid_modifier
      *           The modifier for the bid when the criterion matches.
      *     @type \Google\Ads\GoogleAds\V2\Common\InteractionTypeInfo $interaction_type
-     *           Criterion for interaction type. Only supported for search campaigns.
+     *           Immutable. Criterion for interaction type. Only supported for search campaigns.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,11 +71,11 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign bid modifier.
+     * Immutable. The resource name of the campaign bid modifier.
      * Campaign bid modifier resource names have the form:
      * `customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -84,11 +84,11 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign bid modifier.
+     * Immutable. The resource name of the campaign bid modifier.
      * Campaign bid modifier resource names have the form:
      * `customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -101,9 +101,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign to which this criterion belongs.
+     * Output only. The campaign to which this criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaign()
@@ -114,9 +114,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaign()</code>
 
-     * The campaign to which this criterion belongs.
+     * Output only. The campaign to which this criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignUnwrapped()
@@ -125,9 +125,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The campaign to which this criterion belongs.
+     * Output only. The campaign to which this criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -142,9 +142,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The campaign to which this criterion belongs.
+     * Output only. The campaign to which this criterion belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -154,10 +154,10 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ID of the criterion to bid modify.
+     * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCriterionId()
@@ -168,10 +168,10 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCriterionId()</code>
 
-     * The ID of the criterion to bid modify.
+     * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCriterionIdUnwrapped()
@@ -180,10 +180,10 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the criterion to bid modify.
+     * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -198,10 +198,10 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the criterion to bid modify.
+     * Output only. The ID of the criterion to bid modify.
      * This field is ignored for mutates.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -264,9 +264,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Criterion for interaction type. Only supported for search campaigns.
+     * Immutable. Criterion for interaction type. Only supported for search campaigns.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.InteractionTypeInfo interaction_type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.InteractionTypeInfo interaction_type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\InteractionTypeInfo
      */
     public function getInteractionType()
@@ -275,9 +275,9 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Criterion for interaction type. Only supported for search campaigns.
+     * Immutable. Criterion for interaction type. Only supported for search campaigns.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.InteractionTypeInfo interaction_type = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.InteractionTypeInfo interaction_type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\InteractionTypeInfo $var
      * @return $this
      */

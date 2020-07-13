@@ -16,29 +16,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class FeedItemTarget extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the feed item target.
+     * Immutable. The resource name of the feed item target.
      * Feed item target resource names have the form:
      * `customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The feed item to which this feed item target belongs.
+     * Immutable. The feed item to which this feed item target belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $feed_item = null;
     /**
-     * The target type of this feed item target. This field is read-only.
+     * Output only. The target type of this feed item target. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetTypeEnum.FeedItemTargetType feed_item_target_type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetTypeEnum.FeedItemTargetType feed_item_target_type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $feed_item_target_type = 0;
     /**
-     * The ID of the targeted resource. This field is read-only.
+     * Output only. The ID of the targeted resource. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $feed_item_target_id = null;
     protected $target;
@@ -50,27 +50,27 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the feed item target.
+     *           Immutable. The resource name of the feed item target.
      *           Feed item target resource names have the form:
      *           `customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}`
      *     @type \Google\Protobuf\StringValue $feed_item
-     *           The feed item to which this feed item target belongs.
+     *           Immutable. The feed item to which this feed item target belongs.
      *     @type int $feed_item_target_type
-     *           The target type of this feed item target. This field is read-only.
+     *           Output only. The target type of this feed item target. This field is read-only.
      *     @type \Google\Protobuf\Int64Value $feed_item_target_id
-     *           The ID of the targeted resource. This field is read-only.
+     *           Output only. The ID of the targeted resource. This field is read-only.
      *     @type \Google\Protobuf\StringValue $campaign
-     *           The targeted campaign.
+     *           Immutable. The targeted campaign.
      *     @type \Google\Protobuf\StringValue $ad_group
-     *           The targeted ad group.
+     *           Immutable. The targeted ad group.
      *     @type \Google\Ads\GoogleAds\V2\Common\KeywordInfo $keyword
-     *           The targeted keyword.
+     *           Immutable. The targeted keyword.
      *     @type \Google\Protobuf\StringValue $geo_target_constant
-     *           The targeted geo target constant resource name.
+     *           Immutable. The targeted geo target constant resource name.
      *     @type int $device
-     *           The targeted device.
+     *           Immutable. The targeted device.
      *     @type \Google\Ads\GoogleAds\V2\Common\AdScheduleInfo $ad_schedule
-     *           The targeted schedule.
+     *           Immutable. The targeted schedule.
      * }
      */
     public function __construct($data = NULL) {
@@ -79,11 +79,11 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the feed item target.
+     * Immutable. The resource name of the feed item target.
      * Feed item target resource names have the form:
      * `customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -92,11 +92,11 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the feed item target.
+     * Immutable. The resource name of the feed item target.
      * Feed item target resource names have the form:
      * `customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -109,9 +109,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The feed item to which this feed item target belongs.
+     * Immutable. The feed item to which this feed item target belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getFeedItem()
@@ -122,9 +122,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFeedItem()</code>
 
-     * The feed item to which this feed item target belongs.
+     * Immutable. The feed item to which this feed item target belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getFeedItemUnwrapped()
@@ -133,9 +133,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The feed item to which this feed item target belongs.
+     * Immutable. The feed item to which this feed item target belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -150,9 +150,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The feed item to which this feed item target belongs.
+     * Immutable. The feed item to which this feed item target belongs.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue feed_item = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -162,9 +162,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The target type of this feed item target. This field is read-only.
+     * Output only. The target type of this feed item target. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetTypeEnum.FeedItemTargetType feed_item_target_type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetTypeEnum.FeedItemTargetType feed_item_target_type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getFeedItemTargetType()
@@ -173,9 +173,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The target type of this feed item target. This field is read-only.
+     * Output only. The target type of this feed item target. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetTypeEnum.FeedItemTargetType feed_item_target_type = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetTypeEnum.FeedItemTargetType feed_item_target_type = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -188,9 +188,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the targeted resource. This field is read-only.
+     * Output only. The ID of the targeted resource. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getFeedItemTargetId()
@@ -201,9 +201,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getFeedItemTargetId()</code>
 
-     * The ID of the targeted resource. This field is read-only.
+     * Output only. The ID of the targeted resource. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getFeedItemTargetIdUnwrapped()
@@ -212,9 +212,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the targeted resource. This field is read-only.
+     * Output only. The ID of the targeted resource. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -229,9 +229,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the targeted resource. This field is read-only.
+     * Output only. The ID of the targeted resource. This field is read-only.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value feed_item_target_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -241,9 +241,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The targeted campaign.
+     * Immutable. The targeted campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCampaign()
@@ -254,9 +254,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaign()</code>
 
-     * The targeted campaign.
+     * Immutable. The targeted campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getCampaignUnwrapped()
@@ -265,9 +265,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The targeted campaign.
+     * Immutable. The targeted campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -282,9 +282,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The targeted campaign.
+     * Immutable. The targeted campaign.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue campaign = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -294,9 +294,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The targeted ad group.
+     * Immutable. The targeted ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getAdGroup()
@@ -307,9 +307,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAdGroup()</code>
 
-     * The targeted ad group.
+     * Immutable. The targeted ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getAdGroupUnwrapped()
@@ -318,9 +318,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The targeted ad group.
+     * Immutable. The targeted ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -335,9 +335,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The targeted ad group.
+     * Immutable. The targeted ad group.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue ad_group = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -347,9 +347,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The targeted keyword.
+     * Immutable. The targeted keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\KeywordInfo
      */
     public function getKeyword()
@@ -358,9 +358,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The targeted keyword.
+     * Immutable. The targeted keyword.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 7;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.KeywordInfo keyword = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\KeywordInfo $var
      * @return $this
      */
@@ -373,9 +373,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The targeted geo target constant resource name.
+     * Immutable. The targeted geo target constant resource name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getGeoTargetConstant()
@@ -386,9 +386,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getGeoTargetConstant()</code>
 
-     * The targeted geo target constant resource name.
+     * Immutable. The targeted geo target constant resource name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string|null
      */
     public function getGeoTargetConstantUnwrapped()
@@ -397,9 +397,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The targeted geo target constant resource name.
+     * Immutable. The targeted geo target constant resource name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -414,9 +414,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The targeted geo target constant resource name.
+     * Immutable. The targeted geo target constant resource name.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue geo_target_constant = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string|null $var
      * @return $this
      */
@@ -426,9 +426,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The targeted device.
+     * Immutable. The targeted device.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getDevice()
@@ -437,9 +437,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The targeted device.
+     * Immutable. The targeted device.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.FeedItemTargetDeviceEnum.FeedItemTargetDevice device = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -452,9 +452,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The targeted schedule.
+     * Immutable. The targeted schedule.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AdScheduleInfo ad_schedule = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AdScheduleInfo ad_schedule = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\AdScheduleInfo
      */
     public function getAdSchedule()
@@ -463,9 +463,9 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The targeted schedule.
+     * Immutable. The targeted schedule.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AdScheduleInfo ad_schedule = 10;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.AdScheduleInfo ad_schedule = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\AdScheduleInfo $var
      * @return $this
      */

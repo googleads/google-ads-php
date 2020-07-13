@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A rule item composed of number operation.
+ * A rule item composed of a number operation.
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.common.UserListNumberRuleItemInfo</code>
  */

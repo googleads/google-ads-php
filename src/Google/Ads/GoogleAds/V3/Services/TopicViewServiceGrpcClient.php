@@ -39,6 +39,7 @@ class TopicViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetTopicViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\TopicView
      */
     public function GetTopicView(\Google\Ads\GoogleAds\V3\Services\GetTopicViewRequest $argument,
       $metadata = [], $options = []) {

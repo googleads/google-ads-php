@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,7 +86,7 @@ class CampaignCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
 
         // Mock request
-        $formattedResourceName = $client->campaignCriteriaName('[CUSTOMER]', '[CAMPAIGN_CRITERIA]');
+        $formattedResourceName = $client->campaignCriterionName('[CUSTOMER]', '[CAMPAIGN_CRITERION]');
 
         $response = $client->getCampaignCriterion($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
@@ -126,7 +126,7 @@ class CampaignCriterionServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
 
         // Mock request
-        $formattedResourceName = $client->campaignCriteriaName('[CUSTOMER]', '[CAMPAIGN_CRITERIA]');
+        $formattedResourceName = $client->campaignCriterionName('[CUSTOMER]', '[CAMPAIGN_CRITERION]');
 
         try {
             $client->getCampaignCriterion($formattedResourceName);

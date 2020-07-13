@@ -461,10 +461,9 @@ class MutateJobServiceClientTest extends GeneratedTest
 
         // Mock request
         $formattedResourceName = $client->mutateJobName('[CUSTOMER]', '[MUTATE_JOB]');
-        $sequenceToken = 'sequenceToken-868155397';
         $mutateOperations = [];
 
-        $response = $client->addMutateJobOperations($formattedResourceName, $sequenceToken, $mutateOperations);
+        $response = $client->addMutateJobOperations($formattedResourceName, $mutateOperations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -475,9 +474,6 @@ class MutateJobServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getResourceName();
 
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-        $actualValue = $actualRequestObject->getSequenceToken();
-
-        $this->assertProtobufEquals($sequenceToken, $actualValue);
         $actualValue = $actualRequestObject->getMutateOperations();
 
         $this->assertProtobufEquals($mutateOperations, $actualValue);
@@ -509,11 +505,10 @@ class MutateJobServiceClientTest extends GeneratedTest
 
         // Mock request
         $formattedResourceName = $client->mutateJobName('[CUSTOMER]', '[MUTATE_JOB]');
-        $sequenceToken = 'sequenceToken-868155397';
         $mutateOperations = [];
 
         try {
-            $client->addMutateJobOperations($formattedResourceName, $sequenceToken, $mutateOperations);
+            $client->addMutateJobOperations($formattedResourceName, $mutateOperations);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

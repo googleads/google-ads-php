@@ -39,6 +39,7 @@ class ChangeStatusServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetChangeStatusRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ChangeStatus
      */
     public function GetChangeStatus(\Google\Ads\GoogleAds\V3\Services\GetChangeStatusRequest $argument,
       $metadata = [], $options = []) {

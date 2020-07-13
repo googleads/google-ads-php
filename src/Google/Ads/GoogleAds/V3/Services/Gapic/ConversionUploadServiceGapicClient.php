@@ -52,7 +52,8 @@ use Google\Auth\FetchAuthTokenInterface;
  * try {
  *     $customerId = '';
  *     $conversions = [];
- *     $response = $conversionUploadServiceClient->uploadClickConversions($customerId, $conversions);
+ *     $partialFailure = false;
+ *     $response = $conversionUploadServiceClient->uploadClickConversions($customerId, $conversions, $partialFailure);
  * } finally {
  *     $conversionUploadServiceClient->close();
  * }
@@ -176,22 +177,22 @@ class ConversionUploadServiceGapicClient
      * try {
      *     $customerId = '';
      *     $conversions = [];
-     *     $response = $conversionUploadServiceClient->uploadClickConversions($customerId, $conversions);
+     *     $partialFailure = false;
+     *     $response = $conversionUploadServiceClient->uploadClickConversions($customerId, $conversions, $partialFailure);
      * } finally {
      *     $conversionUploadServiceClient->close();
      * }
      * ```
      *
-     * @param string            $customerId   Required. The ID of the customer performing the upload.
-     * @param ClickConversion[] $conversions  Required. The conversions that are being uploaded.
-     * @param array             $optionalArgs {
-     *                                        Optional.
+     * @param string            $customerId     Required. The ID of the customer performing the upload.
+     * @param ClickConversion[] $conversions    Required. The conversions that are being uploaded.
+     * @param bool              $partialFailure Required. If true, successful operations will be carried out and invalid
+     *                                          operations will return errors. If false, all operations will be carried
+     *                                          out in one transaction if and only if they are all valid.
+     *                                          This should always be set to true.
+     * @param array             $optionalArgs   {
+     *                                          Optional.
      *
-     *     @type bool $partialFailure
-     *          Required. If true, successful operations will be carried out and invalid
-     *          operations will return errors. If false, all operations will be carried
-     *          out in one transaction if and only if they are all valid.
-     *          This should always be set to true.
      *     @type bool $validateOnly
      *          If true, the request is validated but not executed. Only errors are
      *          returned, not results.
@@ -207,14 +208,12 @@ class ConversionUploadServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function uploadClickConversions($customerId, $conversions, array $optionalArgs = [])
+    public function uploadClickConversions($customerId, $conversions, $partialFailure, array $optionalArgs = [])
     {
         $request = new UploadClickConversionsRequest();
         $request->setCustomerId($customerId);
         $request->setConversions($conversions);
-        if (isset($optionalArgs['partialFailure'])) {
-            $request->setPartialFailure($optionalArgs['partialFailure']);
-        }
+        $request->setPartialFailure($partialFailure);
         if (isset($optionalArgs['validateOnly'])) {
             $request->setValidateOnly($optionalArgs['validateOnly']);
         }
@@ -243,22 +242,22 @@ class ConversionUploadServiceGapicClient
      * try {
      *     $customerId = '';
      *     $conversions = [];
-     *     $response = $conversionUploadServiceClient->uploadCallConversions($customerId, $conversions);
+     *     $partialFailure = false;
+     *     $response = $conversionUploadServiceClient->uploadCallConversions($customerId, $conversions, $partialFailure);
      * } finally {
      *     $conversionUploadServiceClient->close();
      * }
      * ```
      *
-     * @param string           $customerId   Required. The ID of the customer performing the upload.
-     * @param CallConversion[] $conversions  Required. The conversions that are being uploaded.
-     * @param array            $optionalArgs {
-     *                                       Optional.
+     * @param string           $customerId     Required. The ID of the customer performing the upload.
+     * @param CallConversion[] $conversions    Required. The conversions that are being uploaded.
+     * @param bool             $partialFailure Required. If true, successful operations will be carried out and invalid
+     *                                         operations will return errors. If false, all operations will be carried
+     *                                         out in one transaction if and only if they are all valid.
+     *                                         This should always be set to true.
+     * @param array            $optionalArgs   {
+     *                                         Optional.
      *
-     *     @type bool $partialFailure
-     *          Required. If true, successful operations will be carried out and invalid
-     *          operations will return errors. If false, all operations will be carried
-     *          out in one transaction if and only if they are all valid.
-     *          This should always be set to true.
      *     @type bool $validateOnly
      *          If true, the request is validated but not executed. Only errors are
      *          returned, not results.
@@ -274,14 +273,12 @@ class ConversionUploadServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function uploadCallConversions($customerId, $conversions, array $optionalArgs = [])
+    public function uploadCallConversions($customerId, $conversions, $partialFailure, array $optionalArgs = [])
     {
         $request = new UploadCallConversionsRequest();
         $request->setCustomerId($customerId);
         $request->setConversions($conversions);
-        if (isset($optionalArgs['partialFailure'])) {
-            $request->setPartialFailure($optionalArgs['partialFailure']);
-        }
+        $request->setPartialFailure($partialFailure);
         if (isset($optionalArgs['validateOnly'])) {
             $request->setValidateOnly($optionalArgs['validateOnly']);
         }

@@ -16,30 +16,30 @@ use Google\Protobuf\Internal\GPBUtil;
 class CarrierConstant extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the carrier criterion.
+     * Output only. The resource name of the carrier criterion.
      * Carrier criterion resource names have the form:
      * `carrierConstants/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * The ID of the carrier criterion.
+     * Output only. The ID of the carrier criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
-     * The full name of the carrier in English.
+     * Output only. The full name of the carrier in English.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = null;
     /**
-     * The country code of the country where the carrier is located, e.g., "AR",
+     * Output only. The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $country_code = null;
 
@@ -50,15 +50,15 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the carrier criterion.
+     *           Output only. The resource name of the carrier criterion.
      *           Carrier criterion resource names have the form:
      *           `carrierConstants/{criterion_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           The ID of the carrier criterion.
+     *           Output only. The ID of the carrier criterion.
      *     @type \Google\Protobuf\StringValue $name
-     *           The full name of the carrier in English.
+     *           Output only. The full name of the carrier in English.
      *     @type \Google\Protobuf\StringValue $country_code
-     *           The country code of the country where the carrier is located, e.g., "AR",
+     *           Output only. The country code of the country where the carrier is located, e.g., "AR",
      *           "FR", etc.
      * }
      */
@@ -68,11 +68,11 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the carrier criterion.
+     * Output only. The resource name of the carrier criterion.
      * Carrier criterion resource names have the form:
      * `carrierConstants/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -81,11 +81,11 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the carrier criterion.
+     * Output only. The resource name of the carrier criterion.
      * Carrier criterion resource names have the form:
      * `carrierConstants/{criterion_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -98,9 +98,9 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the carrier criterion.
+     * Output only. The ID of the carrier criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -111,9 +111,9 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * The ID of the carrier criterion.
+     * Output only. The ID of the carrier criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -122,9 +122,9 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the carrier criterion.
+     * Output only. The ID of the carrier criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -139,9 +139,9 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * The ID of the carrier criterion.
+     * Output only. The ID of the carrier criterion.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -151,9 +151,9 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The full name of the carrier in English.
+     * Output only. The full name of the carrier in English.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getName()
@@ -164,9 +164,9 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getName()</code>
 
-     * The full name of the carrier in English.
+     * Output only. The full name of the carrier in English.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getNameUnwrapped()
@@ -175,9 +175,9 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full name of the carrier in English.
+     * Output only. The full name of the carrier in English.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -192,9 +192,9 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The full name of the carrier in English.
+     * Output only. The full name of the carrier in English.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -204,10 +204,10 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The country code of the country where the carrier is located, e.g., "AR",
+     * Output only. The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getCountryCode()
@@ -218,10 +218,10 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCountryCode()</code>
 
-     * The country code of the country where the carrier is located, e.g., "AR",
+     * Output only. The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getCountryCodeUnwrapped()
@@ -230,10 +230,10 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The country code of the country where the carrier is located, e.g., "AR",
+     * Output only. The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -248,10 +248,10 @@ class CarrierConstant extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * The country code of the country where the carrier is located, e.g., "AR",
+     * Output only. The country code of the country where the carrier is located, e.g., "AR",
      * "FR", etc.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue country_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */

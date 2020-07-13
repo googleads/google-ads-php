@@ -16,15 +16,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * ID of the customer whose campaign bid modifiers are being modified.
+     * Required. ID of the customer whose campaign bid modifiers are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $customer_id = '';
     /**
-     * The list of operations to perform on individual campaign bid modifiers.
+     * Required. The list of operations to perform on individual campaign bid modifiers.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.CampaignBidModifierOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.CampaignBidModifierOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $operations;
     /**
@@ -51,9 +51,9 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type string $customer_id
-     *           ID of the customer whose campaign bid modifiers are being modified.
+     *           Required. ID of the customer whose campaign bid modifiers are being modified.
      *     @type \Google\Ads\GoogleAds\V2\Services\CampaignBidModifierOperation[]|\Google\Protobuf\Internal\RepeatedField $operations
-     *           The list of operations to perform on individual campaign bid modifiers.
+     *           Required. The list of operations to perform on individual campaign bid modifiers.
      *     @type bool $partial_failure
      *           If true, successful operations will be carried out and invalid
      *           operations will return errors. If false, all operations will be carried
@@ -70,9 +70,9 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * ID of the customer whose campaign bid modifiers are being modified.
+     * Required. ID of the customer whose campaign bid modifiers are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCustomerId()
@@ -81,9 +81,9 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * ID of the customer whose campaign bid modifiers are being modified.
+     * Required. ID of the customer whose campaign bid modifiers are being modified.
      *
-     * Generated from protobuf field <code>string customer_id = 1;</code>
+     * Generated from protobuf field <code>string customer_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -96,9 +96,9 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * The list of operations to perform on individual campaign bid modifiers.
+     * Required. The list of operations to perform on individual campaign bid modifiers.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.CampaignBidModifierOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.CampaignBidModifierOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getOperations()
@@ -107,9 +107,9 @@ class MutateCampaignBidModifiersRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * The list of operations to perform on individual campaign bid modifiers.
+     * Required. The list of operations to perform on individual campaign bid modifiers.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.CampaignBidModifierOperation operations = 2;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.services.CampaignBidModifierOperation operations = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Ads\GoogleAds\V2\Services\CampaignBidModifierOperation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

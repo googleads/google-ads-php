@@ -39,6 +39,7 @@ class AdGroupAdAssetViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdGroupAdAssetViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupAdAssetView
      */
     public function GetAdGroupAdAssetView(\Google\Ads\GoogleAds\V3\Services\GetAdGroupAdAssetViewRequest $argument,
       $metadata = [], $options = []) {

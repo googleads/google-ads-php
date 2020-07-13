@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -274,7 +274,7 @@ class BillingSetupServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the billing setup to fetch.
+     * @param string $resourceName Required. The resource name of the billing setup to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -325,8 +325,8 @@ class BillingSetupServiceGapicClient
      * }
      * ```
      *
-     * @param string                $customerId   Id of the customer to apply the billing setup mutate operation to.
-     * @param BillingSetupOperation $operation    The operation to perform.
+     * @param string                $customerId   Required. Id of the customer to apply the billing setup mutate operation to.
+     * @param BillingSetupOperation $operation    Required. The operation to perform.
      * @param array                 $optionalArgs {
      *                                            Optional.
      *

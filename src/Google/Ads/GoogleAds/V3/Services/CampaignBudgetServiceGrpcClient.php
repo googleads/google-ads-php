@@ -39,6 +39,7 @@ class CampaignBudgetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCampaignBudgetRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CampaignBudget
      */
     public function GetCampaignBudget(\Google\Ads\GoogleAds\V3\Services\GetCampaignBudgetRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class CampaignBudgetServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCampaignBudgetsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCampaignBudgetsResponse
      */
     public function MutateCampaignBudgets(\Google\Ads\GoogleAds\V3\Services\MutateCampaignBudgetsRequest $argument,
       $metadata = [], $options = []) {

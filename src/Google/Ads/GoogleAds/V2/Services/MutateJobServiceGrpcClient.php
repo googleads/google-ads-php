@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2019 Google LLC.
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-//
 //
 namespace Google\Ads\GoogleAds\V2\Services;
 
@@ -40,6 +39,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\CreateMutateJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\CreateMutateJobResponse
      */
     public function CreateMutateJob(\Google\Ads\GoogleAds\V2\Services\CreateMutateJobRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +54,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\GetMutateJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Resources\MutateJob
      */
     public function GetMutateJob(\Google\Ads\GoogleAds\V2\Services\GetMutateJobRequest $argument,
       $metadata = [], $options = []) {
@@ -69,6 +70,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\ListMutateJobResultsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\ListMutateJobResultsResponse
      */
     public function ListMutateJobResults(\Google\Ads\GoogleAds\V2\Services\ListMutateJobResultsRequest $argument,
       $metadata = [], $options = []) {
@@ -87,6 +89,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\RunMutateJobRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\LongRunning\Operation
      */
     public function RunMutateJob(\Google\Ads\GoogleAds\V2\Services\RunMutateJobRequest $argument,
       $metadata = [], $options = []) {
@@ -101,6 +104,7 @@ class MutateJobServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V2\Services\AddMutateJobOperationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V2\Services\AddMutateJobOperationsResponse
      */
     public function AddMutateJobOperations(\Google\Ads\GoogleAds\V2\Services\AddMutateJobOperationsRequest $argument,
       $metadata = [], $options = []) {

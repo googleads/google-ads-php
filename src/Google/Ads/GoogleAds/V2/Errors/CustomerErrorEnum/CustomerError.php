@@ -8,7 +8,6 @@ use UnexpectedValueException;
 
 /**
  * Set of errors that are related to requests dealing with Customer.
- * Next id: 26
  *
  * Protobuf type <code>google.ads.googleads.v2.errors.CustomerErrorEnum.CustomerError</code>
  */

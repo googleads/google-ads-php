@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,7 +266,7 @@ class FeedItemServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the feed item to fetch.
+     * @param string $resourceName Required. The resource name of the feed item to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -318,8 +318,8 @@ class FeedItemServiceGapicClient
      * }
      * ```
      *
-     * @param string              $customerId   The ID of the customer whose feed items are being modified.
-     * @param FeedItemOperation[] $operations   The list of operations to perform on individual feed items.
+     * @param string              $customerId   Required. The ID of the customer whose feed items are being modified.
+     * @param FeedItemOperation[] $operations   Required. The list of operations to perform on individual feed items.
      * @param array               $optionalArgs {
      *                                          Optional.
      *

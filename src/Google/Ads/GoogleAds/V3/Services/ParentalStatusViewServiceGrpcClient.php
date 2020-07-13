@@ -39,6 +39,7 @@ class ParentalStatusViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetParentalStatusViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\ParentalStatusView
      */
     public function GetParentalStatusView(\Google\Ads\GoogleAds\V3\Services\GetParentalStatusViewRequest $argument,
       $metadata = [], $options = []) {

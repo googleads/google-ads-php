@@ -39,6 +39,7 @@ class InvoiceServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ListInvoicesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ListInvoicesResponse
      */
     public function ListInvoices(\Google\Ads\GoogleAds\V3\Services\ListInvoicesRequest $argument,
       $metadata = [], $options = []) {

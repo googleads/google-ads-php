@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -310,7 +310,7 @@ class CampaignDraftServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the campaign draft to fetch.
+     * @param string $resourceName Required. The resource name of the campaign draft to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -362,8 +362,8 @@ class CampaignDraftServiceGapicClient
      * }
      * ```
      *
-     * @param string                   $customerId   The ID of the customer whose campaign drafts are being modified.
-     * @param CampaignDraftOperation[] $operations   The list of operations to perform on individual campaign drafts.
+     * @param string                   $customerId   Required. The ID of the customer whose campaign drafts are being modified.
+     * @param CampaignDraftOperation[] $operations   Required. The list of operations to perform on individual campaign drafts.
      * @param array                    $optionalArgs {
      *                                               Optional.
      *
@@ -429,8 +429,8 @@ class CampaignDraftServiceGapicClient
      * ```
      * $campaignDraftServiceClient = new CampaignDraftServiceClient();
      * try {
-     *     $formattedCampaignDraft = $campaignDraftServiceClient->campaignDraftName('[CUSTOMER]', '[CAMPAIGN_DRAFT]');
-     *     $operationResponse = $campaignDraftServiceClient->promoteCampaignDraft($formattedCampaignDraft);
+     *     $campaignDraft = '';
+     *     $operationResponse = $campaignDraftServiceClient->promoteCampaignDraft($campaignDraft);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         // operation succeeded and returns no value
@@ -443,7 +443,7 @@ class CampaignDraftServiceGapicClient
      *     // Alternatively:
      *
      *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $campaignDraftServiceClient->promoteCampaignDraft($formattedCampaignDraft);
+     *     $operationResponse = $campaignDraftServiceClient->promoteCampaignDraft($campaignDraft);
      *     $operationName = $operationResponse->getName();
      *     // ... do other work
      *     $newOperationResponse = $campaignDraftServiceClient->resumeOperation($operationName, 'promoteCampaignDraft');
@@ -462,7 +462,7 @@ class CampaignDraftServiceGapicClient
      * }
      * ```
      *
-     * @param string $campaignDraft The resource name of the campaign draft to promote.
+     * @param string $campaignDraft Required. The resource name of the campaign draft to promote.
      * @param array  $optionalArgs  {
      *                              Optional.
      *
@@ -529,7 +529,7 @@ class CampaignDraftServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The name of the campaign draft from which to retrieve the async errors.
+     * @param string $resourceName Required. The name of the campaign draft from which to retrieve the async errors.
      * @param array  $optionalArgs {
      *                             Optional.
      *

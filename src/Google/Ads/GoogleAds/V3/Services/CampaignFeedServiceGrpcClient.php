@@ -39,6 +39,7 @@ class CampaignFeedServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCampaignFeedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CampaignFeed
      */
     public function GetCampaignFeed(\Google\Ads\GoogleAds\V3\Services\GetCampaignFeedRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class CampaignFeedServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCampaignFeedsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCampaignFeedsResponse
      */
     public function MutateCampaignFeeds(\Google\Ads\GoogleAds\V3\Services\MutateCampaignFeedsRequest $argument,
       $metadata = [], $options = []) {

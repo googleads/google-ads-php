@@ -39,6 +39,7 @@ class OperatingSystemVersionConstantServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetOperatingSystemVersionConstantRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\OperatingSystemVersionConstant
      */
     public function GetOperatingSystemVersionConstant(\Google\Ads\GoogleAds\V3\Services\GetOperatingSystemVersionConstantRequest $argument,
       $metadata = [], $options = []) {

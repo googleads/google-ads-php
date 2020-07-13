@@ -39,6 +39,7 @@ class MediaFileServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetMediaFileRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\MediaFile
      */
     public function GetMediaFile(\Google\Ads\GoogleAds\V3\Services\GetMediaFileRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class MediaFileServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateMediaFilesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateMediaFilesResponse
      */
     public function MutateMediaFiles(\Google\Ads\GoogleAds\V3\Services\MutateMediaFilesRequest $argument,
       $metadata = [], $options = []) {

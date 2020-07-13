@@ -39,6 +39,7 @@ class AdGroupFeedServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetAdGroupFeedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\AdGroupFeed
      */
     public function GetAdGroupFeed(\Google\Ads\GoogleAds\V3\Services\GetAdGroupFeedRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class AdGroupFeedServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateAdGroupFeedsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateAdGroupFeedsResponse
      */
     public function MutateAdGroupFeeds(\Google\Ads\GoogleAds\V3\Services\MutateAdGroupFeedsRequest $argument,
       $metadata = [], $options = []) {

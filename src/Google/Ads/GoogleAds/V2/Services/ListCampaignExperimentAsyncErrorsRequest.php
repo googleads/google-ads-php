@@ -17,10 +17,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The name of the campaign experiment from which to retrieve the async
+     * Required. The name of the campaign experiment from which to retrieve the async
      * errors.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
@@ -48,7 +48,7 @@ class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The name of the campaign experiment from which to retrieve the async
+     *           Required. The name of the campaign experiment from which to retrieve the async
      *           errors.
      *     @type string $page_token
      *           Token of the page to retrieve. If not specified, the first
@@ -67,10 +67,10 @@ class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * The name of the campaign experiment from which to retrieve the async
+     * Required. The name of the campaign experiment from which to retrieve the async
      * errors.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -79,10 +79,10 @@ class ListCampaignExperimentAsyncErrorsRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * The name of the campaign experiment from which to retrieve the async
+     * Required. The name of the campaign experiment from which to retrieve the async
      * errors.
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

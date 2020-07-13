@@ -16,16 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign experiment to graduate.
+     * Required. The resource name of the campaign experiment to graduate.
      *
-     * Generated from protobuf field <code>string campaign_experiment = 1;</code>
+     * Generated from protobuf field <code>string campaign_experiment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $campaign_experiment = '';
     /**
-     * Resource name of the budget to attach to the campaign graduated from the
+     * Required. Resource name of the budget to attach to the campaign graduated from the
      * experiment.
      *
-     * Generated from protobuf field <code>string campaign_budget = 2;</code>
+     * Generated from protobuf field <code>string campaign_budget = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $campaign_budget = '';
 
@@ -36,9 +36,9 @@ class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type string $campaign_experiment
-     *           The resource name of the campaign experiment to graduate.
+     *           Required. The resource name of the campaign experiment to graduate.
      *     @type string $campaign_budget
-     *           Resource name of the budget to attach to the campaign graduated from the
+     *           Required. Resource name of the budget to attach to the campaign graduated from the
      *           experiment.
      * }
      */
@@ -48,9 +48,9 @@ class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * The resource name of the campaign experiment to graduate.
+     * Required. The resource name of the campaign experiment to graduate.
      *
-     * Generated from protobuf field <code>string campaign_experiment = 1;</code>
+     * Generated from protobuf field <code>string campaign_experiment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCampaignExperiment()
@@ -59,9 +59,9 @@ class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * The resource name of the campaign experiment to graduate.
+     * Required. The resource name of the campaign experiment to graduate.
      *
-     * Generated from protobuf field <code>string campaign_experiment = 1;</code>
+     * Generated from protobuf field <code>string campaign_experiment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -74,10 +74,10 @@ class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Resource name of the budget to attach to the campaign graduated from the
+     * Required. Resource name of the budget to attach to the campaign graduated from the
      * experiment.
      *
-     * Generated from protobuf field <code>string campaign_budget = 2;</code>
+     * Generated from protobuf field <code>string campaign_budget = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getCampaignBudget()
@@ -86,10 +86,10 @@ class GraduateCampaignExperimentRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Resource name of the budget to attach to the campaign graduated from the
+     * Required. Resource name of the budget to attach to the campaign graduated from the
      * experiment.
      *
-     * Generated from protobuf field <code>string campaign_budget = 2;</code>
+     * Generated from protobuf field <code>string campaign_budget = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

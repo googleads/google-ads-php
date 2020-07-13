@@ -429,8 +429,8 @@ class CampaignDraftServiceGapicClient
      * ```
      * $campaignDraftServiceClient = new CampaignDraftServiceClient();
      * try {
-     *     $formattedCampaignDraft = $campaignDraftServiceClient->campaignDraftName('[CUSTOMER]', '[CAMPAIGN_DRAFT]');
-     *     $operationResponse = $campaignDraftServiceClient->promoteCampaignDraft($formattedCampaignDraft);
+     *     $campaignDraft = '';
+     *     $operationResponse = $campaignDraftServiceClient->promoteCampaignDraft($campaignDraft);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         // operation succeeded and returns no value
@@ -443,7 +443,7 @@ class CampaignDraftServiceGapicClient
      *     // Alternatively:
      *
      *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $campaignDraftServiceClient->promoteCampaignDraft($formattedCampaignDraft);
+     *     $operationResponse = $campaignDraftServiceClient->promoteCampaignDraft($campaignDraft);
      *     $operationName = $operationResponse->getName();
      *     // ... do other work
      *     $newOperationResponse = $campaignDraftServiceClient->resumeOperation($operationName, 'promoteCampaignDraft');

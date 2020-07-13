@@ -18,17 +18,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class RemarketingAction extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the remarketing action.
+     * Immutable. The resource name of the remarketing action.
      * Remarketing action resource names have the form:
      * `customers/{customer_id}/remarketingActions/{remarketing_action_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Id of the remarketing action.
+     * Output only. Id of the remarketing action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $id = null;
     /**
@@ -40,9 +40,9 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * The snippets used for tracking remarketing actions.
+     * Output only. The snippets used for tracking remarketing actions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 4;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $tag_snippets;
 
@@ -53,17 +53,17 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the remarketing action.
+     *           Immutable. The resource name of the remarketing action.
      *           Remarketing action resource names have the form:
      *           `customers/{customer_id}/remarketingActions/{remarketing_action_id}`
      *     @type \Google\Protobuf\Int64Value $id
-     *           Id of the remarketing action.
+     *           Output only. Id of the remarketing action.
      *     @type \Google\Protobuf\StringValue $name
      *           The name of the remarketing action.
      *           This field is required and should not be empty when creating new
      *           remarketing actions.
      *     @type \Google\Ads\GoogleAds\V2\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $tag_snippets
-     *           The snippets used for tracking remarketing actions.
+     *           Output only. The snippets used for tracking remarketing actions.
      * }
      */
     public function __construct($data = NULL) {
@@ -72,11 +72,11 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the remarketing action.
+     * Immutable. The resource name of the remarketing action.
      * Remarketing action resource names have the form:
      * `customers/{customer_id}/remarketingActions/{remarketing_action_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -85,11 +85,11 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the remarketing action.
+     * Immutable. The resource name of the remarketing action.
      * Remarketing action resource names have the form:
      * `customers/{customer_id}/remarketingActions/{remarketing_action_id}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -102,9 +102,9 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the remarketing action.
+     * Output only. Id of the remarketing action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getId()
@@ -115,9 +115,9 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getId()</code>
 
-     * Id of the remarketing action.
+     * Output only. Id of the remarketing action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getIdUnwrapped()
@@ -126,9 +126,9 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Id of the remarketing action.
+     * Output only. Id of the remarketing action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -143,9 +143,9 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Id of the remarketing action.
+     * Output only. Id of the remarketing action.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -216,9 +216,9 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The snippets used for tracking remarketing actions.
+     * Output only. The snippets used for tracking remarketing actions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 4;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTagSnippets()
@@ -227,9 +227,9 @@ class RemarketingAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The snippets used for tracking remarketing actions.
+     * Output only. The snippets used for tracking remarketing actions.
      *
-     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 4;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v2.common.TagSnippet tag_snippets = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\TagSnippet[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

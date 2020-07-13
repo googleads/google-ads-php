@@ -39,6 +39,7 @@ class DomainCategoryServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetDomainCategoryRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\DomainCategory
      */
     public function GetDomainCategory(\Google\Ads\GoogleAds\V3\Services\GetDomainCategoryRequest $argument,
       $metadata = [], $options = []) {

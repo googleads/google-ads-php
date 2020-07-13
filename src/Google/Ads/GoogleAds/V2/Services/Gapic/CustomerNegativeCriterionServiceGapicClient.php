@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $customerNegativeCriterionServiceClient = new CustomerNegativeCriterionServiceClient();
  * try {
- *     $formattedResourceName = $customerNegativeCriterionServiceClient->customerNegativeCriteriaName('[CUSTOMER]', '[CUSTOMER_NEGATIVE_CRITERIA]');
+ *     $formattedResourceName = $customerNegativeCriterionServiceClient->customerNegativeCriterionName('[CUSTOMER]', '[CUSTOMER_NEGATIVE_CRITERION]');
  *     $response = $customerNegativeCriterionServiceClient->getCustomerNegativeCriterion($formattedResourceName);
  * } finally {
  *     $customerNegativeCriterionServiceClient->close();
@@ -93,7 +93,7 @@ class CustomerNegativeCriterionServiceGapicClient
      */
     public static $serviceScopes = [
     ];
-    private static $customerNegativeCriteriaNameTemplate;
+    private static $customerNegativeCriterionNameTemplate;
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -115,20 +115,20 @@ class CustomerNegativeCriterionServiceGapicClient
         ];
     }
 
-    private static function getCustomerNegativeCriteriaNameTemplate()
+    private static function getCustomerNegativeCriterionNameTemplate()
     {
-        if (null == self::$customerNegativeCriteriaNameTemplate) {
-            self::$customerNegativeCriteriaNameTemplate = new PathTemplate('customers/{customer}/customerNegativeCriteria/{customer_negative_criteria}');
+        if (null == self::$customerNegativeCriterionNameTemplate) {
+            self::$customerNegativeCriterionNameTemplate = new PathTemplate('customers/{customer}/customerNegativeCriteria/{customer_negative_criterion}');
         }
 
-        return self::$customerNegativeCriteriaNameTemplate;
+        return self::$customerNegativeCriterionNameTemplate;
     }
 
     private static function getPathTemplateMap()
     {
         if (null == self::$pathTemplateMap) {
             self::$pathTemplateMap = [
-                'customerNegativeCriteria' => self::getCustomerNegativeCriteriaNameTemplate(),
+                'customerNegativeCriterion' => self::getCustomerNegativeCriterionNameTemplate(),
             ];
         }
 
@@ -137,19 +137,19 @@ class CustomerNegativeCriterionServiceGapicClient
 
     /**
      * Formats a string containing the fully-qualified path to represent
-     * a customer_negative_criteria resource.
+     * a customer_negative_criterion resource.
      *
      * @param string $customer
-     * @param string $customerNegativeCriteria
+     * @param string $customerNegativeCriterion
      *
-     * @return string The formatted customer_negative_criteria resource.
+     * @return string The formatted customer_negative_criterion resource.
      * @experimental
      */
-    public static function customerNegativeCriteriaName($customer, $customerNegativeCriteria)
+    public static function customerNegativeCriterionName($customer, $customerNegativeCriterion)
     {
-        return self::getCustomerNegativeCriteriaNameTemplate()->render([
+        return self::getCustomerNegativeCriterionNameTemplate()->render([
             'customer' => $customer,
-            'customer_negative_criteria' => $customerNegativeCriteria,
+            'customer_negative_criterion' => $customerNegativeCriterion,
         ]);
     }
 
@@ -157,7 +157,7 @@ class CustomerNegativeCriterionServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - customerNegativeCriteria: customers/{customer}/customerNegativeCriteria/{customer_negative_criteria}.
+     * - customerNegativeCriterion: customers/{customer}/customerNegativeCriteria/{customer_negative_criterion}.
      *
      * The optional $template argument can be supplied to specify a particular pattern, and must
      * match one of the templates listed above. If no $template argument is provided, or if the
@@ -259,14 +259,14 @@ class CustomerNegativeCriterionServiceGapicClient
      * ```
      * $customerNegativeCriterionServiceClient = new CustomerNegativeCriterionServiceClient();
      * try {
-     *     $formattedResourceName = $customerNegativeCriterionServiceClient->customerNegativeCriteriaName('[CUSTOMER]', '[CUSTOMER_NEGATIVE_CRITERIA]');
+     *     $formattedResourceName = $customerNegativeCriterionServiceClient->customerNegativeCriterionName('[CUSTOMER]', '[CUSTOMER_NEGATIVE_CRITERION]');
      *     $response = $customerNegativeCriterionServiceClient->getCustomerNegativeCriterion($formattedResourceName);
      * } finally {
      *     $customerNegativeCriterionServiceClient->close();
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the criterion to fetch.
+     * @param string $resourceName Required. The resource name of the criterion to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -317,8 +317,8 @@ class CustomerNegativeCriterionServiceGapicClient
      * }
      * ```
      *
-     * @param string                               $customerId   The ID of the customer whose criteria are being modified.
-     * @param CustomerNegativeCriterionOperation[] $operations   The list of operations to perform on individual criteria.
+     * @param string                               $customerId   Required. The ID of the customer whose criteria are being modified.
+     * @param CustomerNegativeCriterionOperation[] $operations   Required. The list of operations to perform on individual criteria.
      * @param array                                $optionalArgs {
      *                                                           Optional.
      *

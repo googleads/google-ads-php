@@ -39,6 +39,7 @@ class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetCampaignDraftRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\CampaignDraft
      */
     public function GetCampaignDraft(\Google\Ads\GoogleAds\V3\Services\GetCampaignDraftRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateCampaignDraftsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateCampaignDraftsResponse
      */
     public function MutateCampaignDrafts(\Google\Ads\GoogleAds\V3\Services\MutateCampaignDraftsRequest $argument,
       $metadata = [], $options = []) {
@@ -76,6 +78,7 @@ class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\PromoteCampaignDraftRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\LongRunning\Operation
      */
     public function PromoteCampaignDraft(\Google\Ads\GoogleAds\V3\Services\PromoteCampaignDraftRequest $argument,
       $metadata = [], $options = []) {
@@ -92,6 +95,7 @@ class CampaignDraftServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ListCampaignDraftAsyncErrorsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ListCampaignDraftAsyncErrorsResponse
      */
     public function ListCampaignDraftAsyncErrors(\Google\Ads\GoogleAds\V3\Services\ListCampaignDraftAsyncErrorsRequest $argument,
       $metadata = [], $options = []) {

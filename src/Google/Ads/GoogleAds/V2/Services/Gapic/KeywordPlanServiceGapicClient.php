@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -270,7 +270,7 @@ class KeywordPlanServiceGapicClient
      * }
      * ```
      *
-     * @param string $resourceName The resource name of the plan to fetch.
+     * @param string $resourceName Required. The resource name of the plan to fetch.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -322,8 +322,8 @@ class KeywordPlanServiceGapicClient
      * }
      * ```
      *
-     * @param string                 $customerId   The ID of the customer whose keyword plans are being modified.
-     * @param KeywordPlanOperation[] $operations   The list of operations to perform on individual keyword plans.
+     * @param string                 $customerId   Required. The ID of the customer whose keyword plans are being modified.
+     * @param KeywordPlanOperation[] $operations   Required. The list of operations to perform on individual keyword plans.
      * @param array                  $optionalArgs {
      *                                             Optional.
      *
@@ -381,14 +381,14 @@ class KeywordPlanServiceGapicClient
      * ```
      * $keywordPlanServiceClient = new KeywordPlanServiceClient();
      * try {
-     *     $formattedKeywordPlan = $keywordPlanServiceClient->keywordPlanName('[CUSTOMER]', '[KEYWORD_PLAN]');
-     *     $response = $keywordPlanServiceClient->generateForecastMetrics($formattedKeywordPlan);
+     *     $keywordPlan = '';
+     *     $response = $keywordPlanServiceClient->generateForecastMetrics($keywordPlan);
      * } finally {
      *     $keywordPlanServiceClient->close();
      * }
      * ```
      *
-     * @param string $keywordPlan  The resource name of the keyword plan to be forecasted.
+     * @param string $keywordPlan  Required. The resource name of the keyword plan to be forecasted.
      * @param array  $optionalArgs {
      *                             Optional.
      *
@@ -431,14 +431,14 @@ class KeywordPlanServiceGapicClient
      * ```
      * $keywordPlanServiceClient = new KeywordPlanServiceClient();
      * try {
-     *     $formattedKeywordPlan = $keywordPlanServiceClient->keywordPlanName('[CUSTOMER]', '[KEYWORD_PLAN]');
-     *     $response = $keywordPlanServiceClient->generateHistoricalMetrics($formattedKeywordPlan);
+     *     $keywordPlan = '';
+     *     $response = $keywordPlanServiceClient->generateHistoricalMetrics($keywordPlan);
      * } finally {
      *     $keywordPlanServiceClient->close();
      * }
      * ```
      *
-     * @param string $keywordPlan  The resource name of the keyword plan of which historical metrics are
+     * @param string $keywordPlan  Required. The resource name of the keyword plan of which historical metrics are
      *                             requested.
      * @param array  $optionalArgs {
      *                             Optional.

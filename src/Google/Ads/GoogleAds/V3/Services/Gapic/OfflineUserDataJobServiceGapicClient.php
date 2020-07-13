@@ -57,9 +57,34 @@ use Google\Protobuf\BoolValue;
  * ```
  * $offlineUserDataJobServiceClient = new OfflineUserDataJobServiceClient();
  * try {
- *     $customerId = '';
- *     $job = new OfflineUserDataJob();
- *     $response = $offlineUserDataJobServiceClient->createOfflineUserDataJob($customerId, $job);
+ *     $formattedResourceName = $offlineUserDataJobServiceClient->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
+ *     $operationResponse = $offlineUserDataJobServiceClient->runOfflineUserDataJob($formattedResourceName);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // operation succeeded and returns no value
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *
+ *
+ *     // Alternatively:
+ *
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $offlineUserDataJobServiceClient->runOfflineUserDataJob($formattedResourceName);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $offlineUserDataJobServiceClient->resumeOperation($operationName, 'runOfflineUserDataJob');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *       // operation succeeded and returns no value
+ *     } else {
+ *       $error = $newOperationResponse->getError();
+ *       // handleError($error)
+ *     }
  * } finally {
  *     $offlineUserDataJobServiceClient->close();
  * }
@@ -299,6 +324,85 @@ class OfflineUserDataJobServiceGapicClient
     }
 
     /**
+     * Runs the offline user data job.
+     *
+     * When finished, the long running operation will contain the processing
+     * result or failure information, if any.
+     *
+     * Sample code:
+     * ```
+     * $offlineUserDataJobServiceClient = new OfflineUserDataJobServiceClient();
+     * try {
+     *     $formattedResourceName = $offlineUserDataJobServiceClient->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
+     *     $operationResponse = $offlineUserDataJobServiceClient->runOfflineUserDataJob($formattedResourceName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *
+     *
+     *     // Alternatively:
+     *
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $offlineUserDataJobServiceClient->runOfflineUserDataJob($formattedResourceName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $offlineUserDataJobServiceClient->resumeOperation($operationName, 'runOfflineUserDataJob');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *       // operation succeeded and returns no value
+     *     } else {
+     *       $error = $newOperationResponse->getError();
+     *       // handleError($error)
+     *     }
+     * } finally {
+     *     $offlineUserDataJobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $resourceName Required. The resource name of the OfflineUserDataJob to run.
+     * @param array  $optionalArgs {
+     *                             Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *          Retry settings to use for this call. Can be a
+     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
+     *          of retry settings parameters. See the documentation on
+     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     * @experimental
+     */
+    public function runOfflineUserDataJob($resourceName, array $optionalArgs = [])
+    {
+        $request = new RunOfflineUserDataJobRequest();
+        $request->setResourceName($resourceName);
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+          'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers'])
+            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
+            : $requestParams->getHeader();
+
+        return $this->startOperationsCall(
+            'RunOfflineUserDataJob',
+            $optionalArgs,
+            $request,
+            $this->getOperationsClient()
+        )->wait();
+    }
+
+    /**
      * Creates an offline user data job.
      *
      * Sample code:
@@ -409,20 +513,20 @@ class OfflineUserDataJobServiceGapicClient
      * $offlineUserDataJobServiceClient = new OfflineUserDataJobServiceClient();
      * try {
      *     $formattedResourceName = $offlineUserDataJobServiceClient->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
-     *     $enablePartialFailure = new BoolValue();
      *     $operations = [];
-     *     $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations($formattedResourceName, $enablePartialFailure, $operations);
+     *     $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations($formattedResourceName, $operations);
      * } finally {
      *     $offlineUserDataJobServiceClient->close();
      * }
      * ```
      *
-     * @param string                        $resourceName         Required. The resource name of the OfflineUserDataJob.
-     * @param BoolValue                     $enablePartialFailure True to enable partial failure for the offline user data job.
-     * @param OfflineUserDataJobOperation[] $operations           Required. The list of operations to be done.
-     * @param array                         $optionalArgs         {
-     *                                                            Optional.
+     * @param string                        $resourceName Required. The resource name of the OfflineUserDataJob.
+     * @param OfflineUserDataJobOperation[] $operations   Required. The list of operations to be done.
+     * @param array                         $optionalArgs {
+     *                                                    Optional.
      *
+     *     @type BoolValue $enablePartialFailure
+     *          True to enable partial failure for the offline user data job.
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -435,12 +539,14 @@ class OfflineUserDataJobServiceGapicClient
      * @throws ApiException if the remote call fails
      * @experimental
      */
-    public function addOfflineUserDataJobOperations($resourceName, $enablePartialFailure, $operations, array $optionalArgs = [])
+    public function addOfflineUserDataJobOperations($resourceName, $operations, array $optionalArgs = [])
     {
         $request = new AddOfflineUserDataJobOperationsRequest();
         $request->setResourceName($resourceName);
-        $request->setEnablePartialFailure($enablePartialFailure);
         $request->setOperations($operations);
+        if (isset($optionalArgs['enablePartialFailure'])) {
+            $request->setEnablePartialFailure($optionalArgs['enablePartialFailure']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
           'resource_name' => $request->getResourceName(),
@@ -454,85 +560,6 @@ class OfflineUserDataJobServiceGapicClient
             AddOfflineUserDataJobOperationsResponse::class,
             $optionalArgs,
             $request
-        )->wait();
-    }
-
-    /**
-     * Runs the offline user data job.
-     *
-     * When finished, the long running operation will contain the processing
-     * result or failure information, if any.
-     *
-     * Sample code:
-     * ```
-     * $offlineUserDataJobServiceClient = new OfflineUserDataJobServiceClient();
-     * try {
-     *     $formattedResourceName = $offlineUserDataJobServiceClient->offlineUserDataJobName('[CUSTOMER]', '[OFFLINE_USER_DATA_JOB]');
-     *     $operationResponse = $offlineUserDataJobServiceClient->runOfflineUserDataJob($formattedResourceName);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         // operation succeeded and returns no value
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $offlineUserDataJobServiceClient->runOfflineUserDataJob($formattedResourceName);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $offlineUserDataJobServiceClient->resumeOperation($operationName, 'runOfflineUserDataJob');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
-     *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
-     *     }
-     * } finally {
-     *     $offlineUserDataJobServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $resourceName Required. The resource name of the OfflineUserDataJob to run.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function runOfflineUserDataJob($resourceName, array $optionalArgs = [])
-    {
-        $request = new RunOfflineUserDataJobRequest();
-        $request->setResourceName($resourceName);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource_name' => $request->getResourceName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'RunOfflineUserDataJob',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
         )->wait();
     }
 }

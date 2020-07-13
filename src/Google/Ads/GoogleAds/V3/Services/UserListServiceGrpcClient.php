@@ -39,6 +39,7 @@ class UserListServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetUserListRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\UserList
      */
     public function GetUserList(\Google\Ads\GoogleAds\V3\Services\GetUserListRequest $argument,
       $metadata = [], $options = []) {
@@ -53,6 +54,7 @@ class UserListServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateUserListsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateUserListsResponse
      */
     public function MutateUserLists(\Google\Ads\GoogleAds\V3\Services\MutateUserListsRequest $argument,
       $metadata = [], $options = []) {

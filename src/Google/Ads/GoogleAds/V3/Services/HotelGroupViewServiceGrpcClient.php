@@ -39,6 +39,7 @@ class HotelGroupViewServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetHotelGroupViewRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\HotelGroupView
      */
     public function GetHotelGroupView(\Google\Ads\GoogleAds\V3\Services\GetHotelGroupViewRequest $argument,
       $metadata = [], $options = []) {

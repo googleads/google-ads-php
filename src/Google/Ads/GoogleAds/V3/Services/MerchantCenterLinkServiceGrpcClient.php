@@ -40,6 +40,7 @@ class MerchantCenterLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\ListMerchantCenterLinksRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\ListMerchantCenterLinksResponse
      */
     public function ListMerchantCenterLinks(\Google\Ads\GoogleAds\V3\Services\ListMerchantCenterLinksRequest $argument,
       $metadata = [], $options = []) {
@@ -54,6 +55,7 @@ class MerchantCenterLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\GetMerchantCenterLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Resources\MerchantCenterLink
      */
     public function GetMerchantCenterLink(\Google\Ads\GoogleAds\V3\Services\GetMerchantCenterLinkRequest $argument,
       $metadata = [], $options = []) {
@@ -68,6 +70,7 @@ class MerchantCenterLinkServiceGrpcClient extends \Grpc\BaseStub {
      * @param \Google\Ads\GoogleAds\V3\Services\MutateMerchantCenterLinkRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
+     * @return \Google\Ads\GoogleAds\V3\Services\MutateMerchantCenterLinkResponse
      */
     public function MutateMerchantCenterLink(\Google\Ads\GoogleAds\V3\Services\MutateMerchantCenterLinkRequest $argument,
       $metadata = [], $options = []) {

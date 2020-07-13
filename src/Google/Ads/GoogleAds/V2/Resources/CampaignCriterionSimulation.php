@@ -12,56 +12,56 @@ use Google\Protobuf\Internal\GPBUtil;
  * A campaign criterion simulation. Supported combinations of advertising
  * channel type, criterion ids, simulation type and simulation modification
  * method is detailed below respectively.
- * SEARCH     30000,30001,30002  BID_MODIFIER  UNIFORM
- * SHOPPING   30000,30001,30002  BID_MODIFIER  UNIFORM
- * DISPLAY    30001              BID_MODIFIER  UNIFORM
+ * 1. SEARCH - 30000,30001,30002 - BID_MODIFIER - UNIFORM
+ * 2. SHOPPING - 30000,30001,30002 - BID_MODIFIER - UNIFORM
+ * 3. DISPLAY - 30001 - BID_MODIFIER - UNIFORM
  *
  * Generated from protobuf message <code>google.ads.googleads.v2.resources.CampaignCriterionSimulation</code>
  */
 class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the campaign criterion simulation.
+     * Output only. The resource name of the campaign criterion simulation.
      * Campaign criterion simulation resource names have the form:
      * `customers/{customer_id}/campaignCriterionSimulations/{campaign_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $resource_name = '';
     /**
-     * Campaign ID of the simulation.
+     * Output only. Campaign ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $campaign_id = null;
     /**
-     * Criterion ID of the simulation.
+     * Output only. Criterion ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $criterion_id = null;
     /**
-     * The field that the simulation modifies.
+     * Output only. The field that the simulation modifies.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $type = 0;
     /**
-     * How the simulation modifies the field.
+     * Output only. How the simulation modifies the field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $modification_method = 0;
     /**
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $start_date = null;
     /**
-     * Last day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $end_date = null;
     protected $point_list;
@@ -73,23 +73,23 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_name
-     *           The resource name of the campaign criterion simulation.
+     *           Output only. The resource name of the campaign criterion simulation.
      *           Campaign criterion simulation resource names have the form:
      *           `customers/{customer_id}/campaignCriterionSimulations/{campaign_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}`
      *     @type \Google\Protobuf\Int64Value $campaign_id
-     *           Campaign ID of the simulation.
+     *           Output only. Campaign ID of the simulation.
      *     @type \Google\Protobuf\Int64Value $criterion_id
-     *           Criterion ID of the simulation.
+     *           Output only. Criterion ID of the simulation.
      *     @type int $type
-     *           The field that the simulation modifies.
+     *           Output only. The field that the simulation modifies.
      *     @type int $modification_method
-     *           How the simulation modifies the field.
+     *           Output only. How the simulation modifies the field.
      *     @type \Google\Protobuf\StringValue $start_date
-     *           First day on which the simulation is based, in YYYY-MM-DD format.
+     *           Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *     @type \Google\Protobuf\StringValue $end_date
-     *           Last day on which the simulation is based, in YYYY-MM-DD format.
+     *           Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *     @type \Google\Ads\GoogleAds\V2\Common\BidModifierSimulationPointList $bid_modifier_point_list
-     *           Simulation points if the simulation type is BID_MODIFIER.
+     *           Output only. Simulation points if the simulation type is BID_MODIFIER.
      * }
      */
     public function __construct($data = NULL) {
@@ -98,11 +98,11 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign criterion simulation.
+     * Output only. The resource name of the campaign criterion simulation.
      * Campaign criterion simulation resource names have the form:
      * `customers/{customer_id}/campaignCriterionSimulations/{campaign_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResourceName()
@@ -111,11 +111,11 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the campaign criterion simulation.
+     * Output only. The resource name of the campaign criterion simulation.
      * Campaign criterion simulation resource names have the form:
      * `customers/{customer_id}/campaignCriterionSimulations/{campaign_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}`
      *
-     * Generated from protobuf field <code>string resource_name = 1;</code>
+     * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -128,9 +128,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Campaign ID of the simulation.
+     * Output only. Campaign ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCampaignId()
@@ -141,9 +141,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCampaignId()</code>
 
-     * Campaign ID of the simulation.
+     * Output only. Campaign ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCampaignIdUnwrapped()
@@ -152,9 +152,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Campaign ID of the simulation.
+     * Output only. Campaign ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -169,9 +169,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Campaign ID of the simulation.
+     * Output only. Campaign ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value campaign_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -181,9 +181,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Criterion ID of the simulation.
+     * Output only. Criterion ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int64Value
      */
     public function getCriterionId()
@@ -194,9 +194,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getCriterionId()</code>
 
-     * Criterion ID of the simulation.
+     * Output only. Criterion ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string|null
      */
     public function getCriterionIdUnwrapped()
@@ -205,9 +205,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Criterion ID of the simulation.
+     * Output only. Criterion ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int64Value $var
      * @return $this
      */
@@ -222,9 +222,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int64Value object.
 
-     * Criterion ID of the simulation.
+     * Output only. Criterion ID of the simulation.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int64Value criterion_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string|null $var
      * @return $this
      */
@@ -234,9 +234,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The field that the simulation modifies.
+     * Output only. The field that the simulation modifies.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getType()
@@ -245,9 +245,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The field that the simulation modifies.
+     * Output only. The field that the simulation modifies.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationTypeEnum.SimulationType type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -260,9 +260,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * How the simulation modifies the field.
+     * Output only. How the simulation modifies the field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getModificationMethod()
@@ -271,9 +271,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * How the simulation modifies the field.
+     * Output only. How the simulation modifies the field.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 5;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.enums.SimulationModificationMethodEnum.SimulationModificationMethod modification_method = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -286,9 +286,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getStartDate()
@@ -299,9 +299,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getStartDate()</code>
 
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getStartDateUnwrapped()
@@ -310,9 +310,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -327,9 +327,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * First day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. First day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue start_date = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -339,9 +339,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Last day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\StringValue
      */
     public function getEndDate()
@@ -352,9 +352,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getEndDate()</code>
 
-     * Last day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string|null
      */
     public function getEndDateUnwrapped()
@@ -363,9 +363,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Last day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\StringValue $var
      * @return $this
      */
@@ -380,9 +380,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
 
-     * Last day on which the simulation is based, in YYYY-MM-DD format.
+     * Output only. Last day on which the simulation is based, in YYYY-MM-DD format.
      *
-     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.StringValue end_date = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string|null $var
      * @return $this
      */
@@ -392,9 +392,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Simulation points if the simulation type is BID_MODIFIER.
+     * Output only. Simulation points if the simulation type is BID_MODIFIER.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.BidModifierSimulationPointList bid_modifier_point_list = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.BidModifierSimulationPointList bid_modifier_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V2\Common\BidModifierSimulationPointList
      */
     public function getBidModifierPointList()
@@ -403,9 +403,9 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Simulation points if the simulation type is BID_MODIFIER.
+     * Output only. Simulation points if the simulation type is BID_MODIFIER.
      *
-     * Generated from protobuf field <code>.google.ads.googleads.v2.common.BidModifierSimulationPointList bid_modifier_point_list = 8;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.v2.common.BidModifierSimulationPointList bid_modifier_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V2\Common\BidModifierSimulationPointList $var
      * @return $this
      */
