@@ -124,7 +124,7 @@ class AddAdCustomizer
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $adGroupIds the ad group IDs
+     * @param array $adGroupIds the ad group IDs
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
