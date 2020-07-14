@@ -172,7 +172,7 @@ class AddBillingSetup
         int $customerId,
         ?string $paymentsAccountId,
         ?string $paymentsProfileId
-    ) {
+    ): BillingSetup {
         $billingSetup = new BillingSetup();
 
         // Sets the appropriate payments account field.
