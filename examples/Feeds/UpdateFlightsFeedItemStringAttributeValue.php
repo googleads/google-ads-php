@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Examples\Remarketing;
+namespace Google\Ads\GoogleAds\Examples\Feeds;
 
 require __DIR__ . '/../../vendor/autoload.php';
 

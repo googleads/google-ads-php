@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Examples\BasicOperations;
+namespace Google\Ads\GoogleAds\Examples\Reporting;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
