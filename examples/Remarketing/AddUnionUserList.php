@@ -152,7 +152,8 @@ class AddUnionUserList
         // Issues a mutate request to add the user list and prints some information.
         $userListServiceClient = $googleAdsClient->getUserListServiceClient();
         $response = $userListServiceClient->mutateUserLists($customerId, [$operation]);
-        printf("Created combination user list with resource name '%s'.%s",
+        printf(
+            "Created combination user list with resource name '%s'.%s",
             $response->getResults()[0]->getResourceName(),
             PHP_EOL
         );
