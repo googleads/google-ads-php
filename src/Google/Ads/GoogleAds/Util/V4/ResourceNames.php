@@ -103,6 +103,7 @@ use Google\Ads\GoogleAds\V4\Services\MobileDeviceConstantServiceClient;
 use Google\Ads\GoogleAds\V4\Services\OperatingSystemVersionConstantServiceClient;
 use Google\Ads\GoogleAds\V4\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V4\Services\ParentalStatusViewServiceClient;
+use Google\Ads\GoogleAds\V4\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V4\Services\ProductBiddingCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V4\Services\ProductGroupViewServiceClient;
 use Google\Ads\GoogleAds\V4\Services\RecommendationServiceClient;
@@ -1372,6 +1373,20 @@ final class ResourceNames
         return ParentalStatusViewServiceClient::parentalStatusViewName(
             $customerId,
             "{$adGroupId}~{$criterionId}"
+        );
+    }
+
+    /**
+     * Generates resource name for a payments account.
+     *
+     * @param int $customerId the customer ID
+     * @param int $paymentsAccountId the payments account ID
+     * @return string the payments account resource name
+     */
+    public static function forPaymentsAccount($customerId, $paymentsAccountId)
+    {
+        return PaymentsAccountServiceClient::paymentsAccountName(
+            $customerId, $paymentsAccountId
         );
     }
 

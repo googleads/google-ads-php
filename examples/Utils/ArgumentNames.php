@@ -84,6 +84,8 @@ final class ArgumentNames
     public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
     public const PAGE_URL = 'pageUrl';
     public const PARTNER_ID = 'partnerId';
+    public const PAYMENTS_ACCOUNT_ID = 'paymentsAccountId';
+    public const PAYMENTS_PROFILE_ID = 'paymentsProfileId';
     public const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     public const RECOMMENDATION_ID = 'recommendationId';
     public const RESTATEMENT_VALUE = 'restatementValue';
@@ -158,6 +160,8 @@ final class ArgumentNames
         self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
         self::PAGE_URL => 'The page URL',
         self::PARTNER_ID => 'The partner ID',
+        self::PAYMENTS_ACCOUNT_ID => 'The payments account ID',
+        self::PAYMENTS_PROFILE_ID => 'The payments profile ID',
         self::PERCENT_CPC_BID_MICRO_AMOUNT =>
             'The CPC bid micro amount for the Percent CPC bidding strategy',
         self::RECOMMENDATION_ID => 'The recommendation ID',
