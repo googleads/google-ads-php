@@ -172,12 +172,13 @@ class AddCombinedRuleUserList
 
         // Creates a user list.
         $userList = new UserList([
-            'name' => new StringValue(['value' =>
-                'All visitors to http://example.com/example1 AND http://example.com/example2 #' .
-                uniqid()
+            'name' => new StringValue([
+                'value' => 'All visitors to http://example.com/example1 AND ' .
+                    'http://example.com/example2 #' . uniqid()
             ]),
-            'description' => new StringValue(['value' =>
-                'Visitors of both http://example.com/example1 AND http://example.com/example2'
+            'description' => new StringValue([
+                'value' => 'Visitors of both http://example.com/example1 AND ' .
+                    'http://example.com/example2'
             ]),
             'membership_status' => UserListMembershipStatus::OPEN,
             'membership_life_span' => new Int64Value(['value' => 365]),
