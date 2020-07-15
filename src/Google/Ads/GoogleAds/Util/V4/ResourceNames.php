@@ -118,6 +118,7 @@ use Google\Ads\GoogleAds\V4\Services\TopicViewServiceClient;
 use Google\Ads\GoogleAds\V4\Services\UserInterestServiceClient;
 use Google\Ads\GoogleAds\V4\Services\UserListServiceClient;
 use Google\Ads\GoogleAds\V4\Services\VideoServiceClient;
+use Google\ApiCore\PathTemplate;
 
 /**
  * Provides resource names for Google Ads API entities.
@@ -1385,9 +1386,13 @@ final class ResourceNames
      */
     public static function forPaymentsAccount($customerId, $paymentsAccountId)
     {
-        return PaymentsAccountServiceClient::paymentsAccountName(
-            $customerId, $paymentsAccountId
+        $pathTemplate = new PathTemplate(
+            'customers/{customer}/paymentsAccounts/{payments_account}'
         );
+        return $pathTemplate->render([
+            'customer' => $customerId,
+            'payments_account' => $paymentsAccountId,
+        ]);
     }
 
     /**
