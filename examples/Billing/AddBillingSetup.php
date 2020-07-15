@@ -176,8 +176,7 @@ class AddBillingSetup
         $billingSetup = new BillingSetup();
 
         // Sets the appropriate payments account field.
-        if(!is_null($paymentsAccountId))
-        {
+        if (!is_null($paymentsAccountId)) {
             // If a payments account ID has been provided, set the resource name.
             // You can list available payments accounts via the PaymentsAccountService's
             // ListPaymentsAccounts method.
@@ -186,7 +185,7 @@ class AddBillingSetup
                     'value' => ResourceNames::forPaymentsAccount($customerId, $paymentsAccountId)
                 ])
             );
-        } else if(!is_null($paymentsProfileId)) {
+        } else if (!is_null($paymentsProfileId)) {
             // Otherwise, creates a new payments account by setting the payments account info.
             // See https://support.google.com/google-ads/answer/7268503 for more information about
             // payments profiles.
@@ -242,7 +241,7 @@ class AddBillingSetup
             // Retrieves the ending date time of the last billing setup
             $lastEndingDateTimeString = $googleAdsRow->getBillingSetup()->getEndDateTimeUnwrapped();
 
-            if(is_null($lastEndingDateTimeString)) {
+            if (is_null($lastEndingDateTimeString)) {
                 // If the ending date is null then it is set to run indefinitely. Creating a new
                 // billing setup can impact it.
                 throw new Exception(
