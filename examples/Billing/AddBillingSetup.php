@@ -56,12 +56,12 @@ class AddBillingSetup
      * Provide an existing payments account ID to link to the new billing setup. Must be
      * formatted as "1234-5678-9012-3456".
      */
-    private const PAYMENTS_ACCOUNT_ID = 'INSERT_PAYMENTS_ACCOUNT_ID_HERE';
+    private const PAYMENTS_ACCOUNT_ID = null;
     /**
      * Alternatively, provide a payments profile ID which will be linked to a new payments
      * account and the new billing setup. Must be formatted as "1234-5678-9012".
      */
-    private const PAYMENTS_PROFILE_ID = 'INSERT_PAYMENTS_PROFILE_ID_HERE';
+    private const PAYMENTS_PROFILE_ID = null;
 
     public static function main()
     {
