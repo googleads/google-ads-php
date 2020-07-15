@@ -103,7 +103,6 @@ use Google\Ads\GoogleAds\V4\Services\MobileDeviceConstantServiceClient;
 use Google\Ads\GoogleAds\V4\Services\OperatingSystemVersionConstantServiceClient;
 use Google\Ads\GoogleAds\V4\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V4\Services\ParentalStatusViewServiceClient;
-use Google\Ads\GoogleAds\V4\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V4\Services\ProductBiddingCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V4\Services\ProductGroupViewServiceClient;
 use Google\Ads\GoogleAds\V4\Services\RecommendationServiceClient;
