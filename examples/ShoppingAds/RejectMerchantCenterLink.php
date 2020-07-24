@@ -112,8 +112,7 @@ class RejectMerchantCenterLink
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $merchantCenterAccountId
-    )
-    {
+    ) {
         $merchantCenterLinkService = $googleAdsClient->getMerchantCenterLinkServiceClient();
 
         // Rejects a pending link request or unlinks an enabled link for a Google Ads account with
@@ -165,8 +164,7 @@ class RejectMerchantCenterLink
         MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient,
         int $customerId,
         MerchantCenterLink $merchantCenterLink
-    )
-    {
+    ) {
         // Creates a single remove operation, specifying the Merchant Center link resource name.
         $merchantCenterLinkOperation = new MerchantCenterLinkOperation();
         $merchantCenterLinkOperation->setRemove($merchantCenterLink->getResourceName());
