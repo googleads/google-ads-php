@@ -116,7 +116,7 @@ class RejectMerchantCenterLink
         $merchantCenterLinkService = $googleAdsClient->getMerchantCenterLinkServiceClient();
 
         // Rejects a pending link request or unlinks an enabled link for a Google Ads account with
-        // customerId from a Merchant Center account with merchantCenterAccountId.
+        // $customerId from a Merchant Center account with $merchantCenterAccountId.
         $response = $merchantCenterLinkService->listMerchantCenterLinks($customerId);
         printf(
             "%d Merchant Center link(s) found with the following details:%s",
@@ -156,8 +156,7 @@ class RejectMerchantCenterLink
      *
      * @param MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient the
      *     MerchantCenterLinkService client
-     * @param int $customerId the client customer ID of the Google Ads account that has the link
-     *     request
+     * @param int $customerId the customer ID of the Google Ads account that has the link request
      * @param MerchantCenterLink $merchantCenterLink the MerchantCenterLink object to remove
      */
     public static function removeMerchantCenterLink(
