@@ -36,7 +36,7 @@ use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
 /**
- * Adds a geo target to a extension feed item for targeting.
+ * Adds a geo target to an extension feed item for targeting.
  */
 class AddGeoTarget
 {
