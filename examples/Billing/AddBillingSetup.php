@@ -40,8 +40,10 @@ use Exception;
 
 /**
  * This example creates a billing setup for a customer. A billing setup is a link between
- * a payment accounts and a customer. The new billing setup can either reuse an existing payments
+ * a payments account and a customer. The new billing setup can either reuse an existing payments
  * account, or create a new payments account with a given payments profile.
+ * Billing setups are applicable for clients on monthly invoicing only. See here for details
+ * about applying for monthly invoicing: https://support.google.com/google-ads/answer/2375377.
  * In the case of consolidated billing, a payments account is linked to the manager account and
  * is linked to a customer account via a billing setup.
  */
@@ -158,7 +160,7 @@ class AddBillingSetup
     }
 
     /**
-     * Creates and returns a new billing setup instance with complete payment details. Either
+     * Creates and returns a new billing setup instance with complete payment details. One of
      * the payments account ID or payments profile ID must be provided.
      *
      * @param int $customerId the customer ID
@@ -186,16 +188,14 @@ class AddBillingSetup
                 ])
             );
         } else if (!is_null($paymentsProfileId)) {
-            // Otherwise, creates a new payments account by setting the payments account info.
+            // Otherwise, create a new payments account by setting the payments account info.
             // See https://support.google.com/google-ads/answer/7268503 for more information about
             // payments profiles.
             $billingSetup->setPaymentsAccountInfo(new PaymentsAccountInfo([
                 'payments_account_name' => new StringValue([
                     'value' => 'Payments Account #' . uniqid()
                 ]),
-                'payments_profile_id' => new StringValue([
-                    'value' => $paymentsProfileId
-                ])
+                'payments_profile_id' => new StringValue(['value' => $paymentsProfileId])
             ]));
         } else {
             throw new Exception(
@@ -232,8 +232,7 @@ class AddBillingSetup
 
         // Issues a search stream request.
         /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream =
-            $googleAdsClient->getGoogleAdsServiceClient()->searchStream($customerId, $query);
+        $stream = $googleAdsClient->getGoogleAdsServiceClient()->searchStream($customerId, $query);
         /** @var GoogleAdsRow $googleAdsRow */
         $googleAdsRow = $stream->iterateAllElements()->current();
 
@@ -242,10 +241,11 @@ class AddBillingSetup
             $lastEndingDateTimeString = $googleAdsRow->getBillingSetup()->getEndDateTimeUnwrapped();
 
             if (is_null($lastEndingDateTimeString)) {
-                // If the ending date is null then it is set to run indefinitely. Creating a new
-                // billing setup can impact it.
+                // A null ending date time indicates that the current billing setup is set to run
+                // indefinitely. Billing setups cannot overlap, so throw an exception in this case.
                 throw new Exception(
-                    'The latest existing billing setup is set to run indefinitely.'
+                    'Cannot set starting and ending date times for the new billing setup; the ' .
+                    'latest existing billing setup is set to run indefinitely.'
                 );
             }
 
@@ -256,11 +256,11 @@ class AddBillingSetup
             $startDate = time();
         }
         $billingSetup->setStartDateTime(new StringValue([
-            'value' => date('yyyy-MM-dd', $startDate)
+            'value' => date('Y-m-d', $startDate)
         ]));
         // Sets the new billing setup to end one day after the starting date time.
         $billingSetup->setEndDateTime(new StringValue([
-            'value' => date('yyyy-MM-dd', strtotime('+1 day', $startDate))
+            'value' => date('Y-m-d', strtotime('+1 day', $startDate))
         ]));
     }
 }
