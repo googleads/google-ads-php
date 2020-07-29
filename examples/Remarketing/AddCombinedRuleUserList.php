@@ -155,7 +155,7 @@ class AddCombinedRuleUserList
 
         // Creates the user list where "Visitors of a page who did visit another page". To create a
         // user list where "Visitors of a page who did not visit another page", change the
-        // UserListCombinedRuleOperator from PBAND to AND_NOT.
+        // UserListCombinedRuleOperator from AND to AND_NOT.
         $combinedRuleUserListInfo = new CombinedRuleUserListInfo([
             'left_operand' => $userVisitedSite1RuleInfo,
             'right_operand' => $userVisitedSite2RuleInfo,
