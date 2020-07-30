@@ -18,6 +18,7 @@
 
 namespace Google\Ads\GoogleAds\Util\V4;
 
+use Google\Ads\GoogleAds\V2\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V4\Enums\ExtensionTypeEnum\ExtensionType;
 use Google\Ads\GoogleAds\V4\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V4\Services\AccountBudgetServiceClient;
@@ -1988,6 +1989,23 @@ class ResourceNamesTest extends TestCase
         $names = ParentalStatusViewServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer']);
         $this->assertEquals("{$adGroupId}~{$criterionId}", $names['parental_status_view']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V4\ResourceNames::forPaymentsAccount()
+     */
+    public function testGetNameForPaymentsAccount()
+    {
+        $paymentsAccountId = '1111-2222-3333-4444';
+        $expectedResourceName = sprintf(
+            'customers/%s/paymentsAccounts/%s',
+            self::CUSTOMER_ID,
+            $paymentsAccountId
+        );
+        $this->assertEquals($expectedResourceName, ResourceNames::forPaymentsAccount(
+            self::CUSTOMER_ID,
+            $paymentsAccountId
+        ));
     }
 
     /**
