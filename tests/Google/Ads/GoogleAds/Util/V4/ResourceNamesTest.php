@@ -18,7 +18,6 @@
 
 namespace Google\Ads\GoogleAds\Util\V4;
 
-use Google\Ads\GoogleAds\V2\Services\PaymentsAccountServiceClient;
 use Google\Ads\GoogleAds\V4\Enums\ExtensionTypeEnum\ExtensionType;
 use Google\Ads\GoogleAds\V4\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V4\Services\AccountBudgetServiceClient;
