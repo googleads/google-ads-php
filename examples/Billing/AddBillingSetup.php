@@ -198,7 +198,7 @@ class AddBillingSetup
                 'payments_profile_id' => new StringValue(['value' => $paymentsProfileId])
             ]));
         } else {
-            throw new \RuntimeException(
+            throw new \UnexpectedValueException(
                 'No payments account ID or payments profile ID is provided.' . PHP_EOL
             );
         }
