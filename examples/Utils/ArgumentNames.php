@@ -97,6 +97,7 @@ final class ArgumentNames
     public const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =
         'squareMarketingImageAssetResourceName';
     public const USER_LIST_ID = 'userListId';
+    public const USER_LIST_IDS = 'userListIds';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
         self::ADJUSTMENT_DATE_TIME => 'The adjustment date time',
@@ -177,6 +178,7 @@ final class ArgumentNames
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =>
             'The resource name of square marketing image asset',
-        self::USER_LIST_ID => 'The user list ID'
+        self::USER_LIST_ID => 'The user list ID',
+        self::USER_LIST_IDS => 'The user list IDs'
     ];
 }
