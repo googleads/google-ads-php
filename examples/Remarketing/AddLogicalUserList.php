@@ -42,7 +42,7 @@ use Google\Protobuf\StringValue;
  * Creates a combination user list containing users that are present on any one of the provided user
  * lists.
  */
-class AddUnionUserList
+class AddLogicalUserList
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const USER_LIST_ID_1 = 'INSERT_USER_LIST_ID_1_HERE';
@@ -160,4 +160,4 @@ class AddUnionUserList
     }
 }
 
-AddUnionUserList::main();
+AddLogicalUserList::main();
