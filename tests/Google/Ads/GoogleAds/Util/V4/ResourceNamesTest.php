@@ -1991,6 +1991,23 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V4\ResourceNames::forPaymentsAccount()
+     */
+    public function testGetNameForPaymentsAccount()
+    {
+        $paymentsAccountId = '1111-2222-3333-4444';
+        $expectedResourceName = sprintf(
+            'customers/%s/paymentsAccounts/%s',
+            self::CUSTOMER_ID,
+            $paymentsAccountId
+        );
+        $this->assertEquals($expectedResourceName, ResourceNames::forPaymentsAccount(
+            self::CUSTOMER_ID,
+            $paymentsAccountId
+        ));
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V4\ResourceNames::forProductBiddingCategoryConstant()
      */
     public function testGetNameForProductBiddingCategoryConstant()
