@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Examples\ShoppingAds;
+namespace Google\Ads\GoogleAds\Examples\AccountManagement;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
@@ -159,7 +159,7 @@ class RejectMerchantCenterLink
      * @param int $customerId the customer ID of the Google Ads account that has the link request
      * @param MerchantCenterLink $merchantCenterLink the MerchantCenterLink object to remove
      */
-    public static function removeMerchantCenterLink(
+    private static function removeMerchantCenterLink(
         MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient,
         int $customerId,
         MerchantCenterLink $merchantCenterLink
