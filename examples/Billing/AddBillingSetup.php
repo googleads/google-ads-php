@@ -210,7 +210,7 @@ class AddBillingSetup
      * Sets the starting and ending date times for the new billing setup. Queries the customer's
      * account to see if there are any approved billing setups. If there are any, the new billing
      * setup starting date time is set to one day after the last. If not, the billing setup is
-     * set to start immediately. The ending date is set to one day after the starting date time,
+     * set to start immediately. The ending date is set to one day after the starting date time.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
