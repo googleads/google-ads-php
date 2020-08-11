@@ -27,6 +27,7 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V4\ResourceNames;
 use Google\Ads\GoogleAds\V4\Common\AdImageAsset;
 use Google\Ads\GoogleAds\V4\Common\AdTextAsset;
 use Google\Ads\GoogleAds\V4\Common\ImageAsset;
@@ -66,7 +67,7 @@ use Google\Protobuf\StringValue;
  *
  * IMPORTANT: The AssetService requires you to reuse what you've uploaded previously. Therefore,
  * you cannot create an image asset with the exactly same bytes. In case you want to run this
- * example more than once, note down the created assets' resource names and specify them as
+ * example more than once, note down the created assets' IDs and specify them as
  * command-line arguments for marketing and square marketing images.
  *
  * Alternatively, you can modify the image URLs' constants directly to use other images. You can
@@ -87,8 +88,8 @@ class AddSmartDisplayAd
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::MARKETING_IMAGE_ASSET_RESOURCE_NAME => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::MARKETING_IMAGE_ASSET_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::SQUARE_MARKETING_IMAGE_ASSET_ID => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -104,8 +105,8 @@ class AddSmartDisplayAd
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::MARKETING_IMAGE_ASSET_RESOURCE_NAME],
-                $options[ArgumentNames::SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME]
+                $options[ArgumentNames::MARKETING_IMAGE_ASSET_ID],
+                $options[ArgumentNames::SQUARE_MARKETING_IMAGE_ASSET_ID]
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -139,16 +140,14 @@ class AddSmartDisplayAd
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param string|null $marketingImageAssetResourceName optional, the resource name of marketing
-     *     image asset
-     * @param string|null $squareMarketingImageAssetResourceName optional, the resource name of
-     *     square marketing image asset
+     * @param int|null $marketingImageAssetId optional, the ID of marketing image asset
+     * @param int|null $squareMarketingImageAssetId optional, the ID of square marketing image asset
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $marketingImageAssetResourceName = null,
-        string $squareMarketingImageAssetResourceName = null
+        ?int $marketingImageAssetId,
+        ?int $squareMarketingImageAssetId
     ) {
         $budgetResourceName = self::createCampaignBudget($googleAdsClient, $customerId);
         $campaignResourceName = self::createSmartDisplayCampaign(
@@ -165,8 +164,8 @@ class AddSmartDisplayAd
             $googleAdsClient,
             $customerId,
             $adGroupResourceName,
-            $marketingImageAssetResourceName,
-            $squareMarketingImageAssetResourceName
+            $marketingImageAssetId,
+            $squareMarketingImageAssetId
         );
     }
 
@@ -298,29 +297,29 @@ class AddSmartDisplayAd
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param string $adGroupResourceName the ad group resource name
-     * @param string|null $marketingImageAssetResourceName optional, the resource name of marketing
-     *     image asset
-     * @param string|null $squareMarketingImageAssetResourceName optional, the resource name of
-     *     square marketing image asset
+     * @param int|null $marketingImageAssetId optional, the ID of marketing image asset
+     * @param int|null $squareMarketingImageAssetId optional, the ID of square marketing image asset
      */
     private static function createResponsiveDisplayAd(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         string $adGroupResourceName,
-        string $marketingImageAssetResourceName = null,
-        string $squareMarketingImageAssetResourceName = null
+        ?int $marketingImageAssetId,
+        ?int $squareMarketingImageAssetId
     ) {
         // Creates a new image asset for marketing image and square marketing image if there are no
-        // assets' resource names specified.
-        $marketingImageAssetResourceName = $marketingImageAssetResourceName ?:
-            self::createImageAsset(
+        // assets' IDs specified.
+        $marketingImageAssetResourceName = $marketingImageAssetId
+            ? ResourceNames::forAsset($customerId, $marketingImageAssetId)
+            : self::createImageAsset(
                 $googleAdsClient,
                 $customerId,
                 self::MARKETING_IMAGE_URL,
                 'Marketing Image'
             );
-        $squareMarketingImageAssetResourceName = $squareMarketingImageAssetResourceName ?:
-            self::createImageAsset(
+        $squareMarketingImageAssetResourceName = $squareMarketingImageAssetId
+            ? ResourceNames::forAsset($customerId, $squareMarketingImageAssetId)
+            : self::createImageAsset(
                 $googleAdsClient,
                 $customerId,
                 self::SQUARE_MARKETING_IMAGE_URL,
