@@ -74,10 +74,7 @@ class UpdateSitelinkCampaignExtensionSetting
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID,
                 $options[ArgumentNames::EXTENSION_FEED_ITEM_IDS] ?:
-                    [
-                        self::EXTENSION_FEED_ITEM_ID1,
-                        self::EXTENSION_FEED_ITEM_ID2
-                    ]
+                    [self::EXTENSION_FEED_ITEM_ID1, self::EXTENSION_FEED_ITEM_ID2]
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
