@@ -46,8 +46,8 @@ class UpdateSitelinkCampaignExtensionSetting
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
-    private const EXTENSION_FEED_ITEM_ID1 = 'INSERT_EXTENSION_FEED_ITEM_ID1_HERE';
-    private const EXTENSION_FEED_ITEM_ID2 = 'INSERT_EXTENSION_FEED_ITEM_ID2_HERE';
+    private const FEED_ITEM_ID1 = 'INSERT_FEED_ITEM_ID1_HERE';
+    private const FEED_ITEM_ID2 = 'INSERT_FEED_ITEM_ID2_HERE';
 
     public static function main()
     {
@@ -56,7 +56,7 @@ class UpdateSitelinkCampaignExtensionSetting
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::EXTENSION_FEED_ITEM_IDS => GetOpt::MULTIPLE_ARGUMENT
+            ArgumentNames::FEED_ITEM_IDS => GetOpt::MULTIPLE_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -73,8 +73,8 @@ class UpdateSitelinkCampaignExtensionSetting
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID,
-                $options[ArgumentNames::EXTENSION_FEED_ITEM_IDS] ?:
-                    [self::EXTENSION_FEED_ITEM_ID1, self::EXTENSION_FEED_ITEM_ID2]
+                $options[ArgumentNames::FEED_ITEM_IDS] ?:
+                    [self::FEED_ITEM_ID1, self::FEED_ITEM_ID2]
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -109,21 +109,21 @@ class UpdateSitelinkCampaignExtensionSetting
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
      * @param int $campaignId the campaign ID
-     * @param int[] $extensionFeedItemIds the IDs of the extension feed items to replace
+     * @param int[] $feedItemIds the IDs of the feed items to replace
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $campaignId,
-        array $extensionFeedItemIds
+        array $feedItemIds
     ) {
         // Transforms the specified feed item IDs to resource names and an array of StringValue, as
         // required by the API.
-        $extensionFeedItems = array_map(function ($itemId) use ($customerId) {
+        $extensionFeedItems = array_map(function ($feedItemId) use ($customerId) {
             return new StringValue([
-                'value' => ResourceNames::forExtensionFeedItem($customerId, $itemId)
+                'value' => ResourceNames::forExtensionFeedItem($customerId, $feedItemId)
             ]);
-        }, $extensionFeedItemIds);
+        }, $feedItemIds);
 
         // Creates a campaign extension setting using the specified campaign ID and extension feed
         // item resource names.
