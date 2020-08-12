@@ -80,7 +80,7 @@ final class ArgumentNames
     public const LOCATION_NAMES = 'locationNames';
     public const LOGIN_CUSTOMER_ID = 'loginCustomerId';
     public const MANAGER_CUSTOMER_ID = 'managerCustomerId';
-    public const MARKETING_IMAGE_ASSET_RESOURCE_NAME = 'marketingImageAssetResourceName';
+    public const MARKETING_IMAGE_ASSET_ID = 'marketingImageAssetId';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
     public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
     public const PAGE_URL = 'pageUrl';
@@ -94,8 +94,7 @@ final class ArgumentNames
     public const SHOULD_DELETE_EXISTING_FEEDS = 'shouldDeleteExistingFeeds';
     public const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
     public const SITELINK_TEXT = 'sitelinkText';
-    public const SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =
-        'squareMarketingImageAssetResourceName';
+    public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
     public const USER_LIST_ID = 'userListId';
     public const USER_LIST_IDS = 'userListIds';
 
@@ -158,7 +157,7 @@ final class ArgumentNames
         self::LOCATION_NAMES => 'The list of location names',
         self::LOGIN_CUSTOMER_ID => 'The login customer ID',
         self::MANAGER_CUSTOMER_ID => 'The manager customer ID',
-        self::MARKETING_IMAGE_ASSET_RESOURCE_NAME => 'The resource name of marketing image asset',
+        self::MARKETING_IMAGE_ASSET_ID => 'The ID of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
         self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
         self::PAGE_URL => 'The page URL',
@@ -176,8 +175,7 @@ final class ArgumentNames
         self::SHOULD_REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group',
         self::SITELINK_TEXT => 'The sitelink text',
-        self::SQUARE_MARKETING_IMAGE_ASSET_RESOURCE_NAME =>
-            'The resource name of square marketing image asset',
+        self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
         self::USER_LIST_ID => 'The user list ID',
         self::USER_LIST_IDS => 'The user list IDs'
     ];
