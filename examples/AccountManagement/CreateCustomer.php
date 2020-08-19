@@ -114,8 +114,7 @@ class CreateCustomer
             'tracking_url_template' => new StringValue(['value' => '{lpurl}?device={device}']),
             'final_url_suffix' => new StringValue([
                     'value' => 'keyword={keyword}&matchtype={matchtype}&adgroupid={adgroupid}'
-            ]),
-            'has_partners_badge' => new BoolValue(['value' => false])
+            ])
         ]);
 
         // Issues a mutate request to create an account
