@@ -149,8 +149,7 @@ class UsePortfolioBiddingStrategy
         $portfolioBiddingStrategy = new BiddingStrategy([
             'name' => new StringValue(['value' => 'Maximize Clicks #' . uniqid()]),
             'target_spend' => new TargetSpend([
-                'cpc_bid_ceiling_micros' => new Int64Value(['value' => 2000000]),
-                'target_spend_micros' => new Int64Value(['value' => 20000000])
+                'cpc_bid_ceiling_micros' => new Int64Value(['value' => 2000000])
             ])
         ]);
 
