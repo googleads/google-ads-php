@@ -60,7 +60,7 @@ class ForecastReach
     // https://developers.google.com/adwords/api/docs/appendix/geotargeting or by calling
     // ListPlannableLocations on the ReachPlanService.
     private const LOCATION_ID = '2840'; // US
-    private const BUDGET_MICROS = 500000000000; // 500,000
+    private const BUDGET_MICROS = 5000000; // 5
 
     public static function main()
     {
@@ -135,11 +135,11 @@ class ForecastReach
     {
         $response = $googleAdsClient->getReachPlanServiceClient()->listPlannableLocations();
 
-        printf("Plannable Locations:%sName,\tId,\tParentCountryId%s", PHP_EOL, PHP_EOL);
+        printf("Plannable Locations:%sName, Id, ParentCountryId%s", PHP_EOL, PHP_EOL);
         foreach ($response->getPlannableLocations() as $location) {
             /** @var PlannableLocation $location */
             printf(
-                "'%s',\t%s,\t%s%s",
+                "'%s', %s, %s%s",
                 $location->getNameUnwrapped(),
                 $location->getIdUnwrapped(),
                 $location->getParentCountryIdUnwrapped(),
@@ -182,7 +182,7 @@ class ForecastReach
     }
 
     /**
-     * Creates a sample request for a given product mix.
+     * Retrieves and prints the reach curve for a given product mix.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
@@ -192,7 +192,7 @@ class ForecastReach
      *     by calling ListPlannableLocations on the ReachPlanService.
      * @param string $currencyCode three-character ISO 4217 currency code
      */
-    private static function requestReachCurve(
+    private static function getReachCurve(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         array $productMix,
@@ -219,7 +219,7 @@ class ForecastReach
         ]);
 
         // See the docs for defaults and valid ranges:
-        // https://developers.google.com/google-ads/api/reference/rpc/v4/GenerateReachForecastRequest
+        // https://developers.google.com/google-ads/api/reference/rpc/latest/GenerateReachForecastRequest
         $response = $googleAdsClient->getReachPlanServiceClient()->generateReachForecast(
             $customerId,
             $duration,
@@ -231,8 +231,8 @@ class ForecastReach
         );
 
         printf(
-            "Reach curve output:%sCurrency,\tCost Micros,\tOn-Target Reach,\tOn-Target Imprs," .
-                "\tTotal Reach,\tTotal Imprs,\tProducts%s",
+            "Reach curve output:%sCurrency, Cost Micros, On-Target Reach, On-Target Imprs," .
+                " Total Reach, Total Imprs, Products%s",
             PHP_EOL,
             PHP_EOL
         );
@@ -248,7 +248,7 @@ class ForecastReach
                 );
             }
             printf(
-                "%s,\t%d,\t%d,\t%d,\t%d,\t%d,\t%s%s",
+                "%s, %d, %d, %d, %d, %d, %s%s",
                 $currencyCode,
                 $point->getCostMicrosUnwrapped(),
                 $point->getForecast()->getOnTargetReachUnwrapped(),
@@ -262,7 +262,7 @@ class ForecastReach
     }
 
     /**
-     * Pulls a forecast for product mix created manually.
+     * Gets a forecast for product mix created manually.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
@@ -275,7 +275,7 @@ class ForecastReach
 
         // See listPlannableProducts on ReachPlanService to retrieve a list
         // of valid PlannableProductCode's for a given location:
-        // https://developers.google.com/google-ads/api/reference/rpc/Google.Ads.GoogleAds.V4.services#reachplanservice
+        // https://developers.google.com/google-ads/api/reference/rpc/latest/ReachPlanService
         $productMix = [
             new PlannedProduct([
                 'plannable_product_code' => new StringValue(['value' => 'TRUEVIEW_IN_STREAM']),
@@ -291,7 +291,7 @@ class ForecastReach
             ])
         ];
 
-        self::requestReachCurve(
+        self::getReachCurve(
             $googleAdsClient,
             $customerId,
             $productMix,
@@ -301,7 +301,7 @@ class ForecastReach
     }
 
     /**
-     * Pulls a forecast for a product mix based on your set of preferences.
+     * Gets a forecast for a product mix based on your set of preferences.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
@@ -336,7 +336,7 @@ class ForecastReach
             ]);
         }
 
-        self::requestReachCurve(
+        self::getReachCurve(
             $googleAdsClient,
             $customerId,
             $productMix,
