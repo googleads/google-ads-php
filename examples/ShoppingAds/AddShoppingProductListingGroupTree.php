@@ -23,25 +23,23 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\ProductBrandInfo;
-use Google\Ads\GoogleAds\V4\Common\ListingDimensionInfo;
-use Google\Ads\GoogleAds\V4\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V4\Common\ProductConditionInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V4\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V4\Enums\ProductConditionEnum\ProductCondition;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\ProductBrandInfo;
+use Google\Ads\GoogleAds\V5\Common\ListingDimensionInfo;
+use Google\Ads\GoogleAds\V5\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V5\Common\ProductConditionInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V5\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V5\Enums\ProductConditionEnum\ProductCondition;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example shows how to add a shopping listing group tree to a shopping ad group. The example
@@ -220,9 +218,7 @@ class AddShoppingProductListingGroupTree
             $adGroupId,
             $adGroupCriterionResourceNameConditionOther,
             new ListingDimensionInfo([
-                'product_brand' => new ProductBrandInfo(
-                    ['value' => new StringValue(['value' => 'CoolBrand'])]
-                )
+                'product_brand' => new ProductBrandInfo(['value' => 'CoolBrand'])
             ]),
             900000
         );
@@ -237,9 +233,7 @@ class AddShoppingProductListingGroupTree
             $adGroupId,
             $adGroupCriterionResourceNameConditionOther,
             new ListingDimensionInfo([
-                'product_brand' => new ProductBrandInfo(
-                    ['value' => new StringValue(['value' => 'CheapBrand'])]
-                )
+                'product_brand' => new ProductBrandInfo(['value' => 'CheapBrand'])
             ]),
             10000
         );
@@ -361,10 +355,7 @@ class AddShoppingProductListingGroupTree
         if (!is_null($parentAdGroupCriterionResourceName) && !is_null($listingDimensionInfo)) {
             // Set the ad group criterion resource name for the parent listing group.
             // This can include a temporary ID if the parent criterion is not yet created.
-            // Use StringValue to convert from a string to a compatible argument type.
-            $listingGroupInfo->setParentAdGroupCriterion(
-                new StringValue(['value' => $parentAdGroupCriterionResourceName])
-            );
+            $listingGroupInfo->setParentAdGroupCriterion($parentAdGroupCriterionResourceName);
             // Case values contain the listing dimension used for the node.
             $listingGroupInfo->setCaseValue($listingDimensionInfo);
         }
@@ -416,25 +407,20 @@ class AddShoppingProductListingGroupTree
         // This example demonstrates method (1).
         $adGroupCriterion = new AdGroupCriterion([
             // The ad group the listing group will be attached to.
-            'ad_group' => new StringValue(
-                ['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]
-            ),
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'status' => AdGroupCriterionStatus::ENABLED,
             'listing_group' => new ListingGroupInfo([
                 // Set the type as a UNIT, which will allow the group to be biddable.
                 'type' => ListingGroupType::UNIT,
                 // Set the ad group criterion resource name for the parent listing group.
                 // This can include a temporary ID if the parent criterion is not yet created.
-                // Use StringValue to convert from a string to a compatible argument type.
-                'parent_ad_group_criterion' => new StringValue(
-                    ['value' => $parentAdGroupCriterionResourceName]
-                ),
+                'parent_ad_group_criterion' => $parentAdGroupCriterionResourceName,
                 // Case values contain the listing dimension used for the node.
                 'case_value' => $listingDimensionInfo
             ]),
             // Set the bid for this listing group unit.
             // This will be used as the CPC bid for items that are included in this listing group.
-            'cpc_bid_micros' => new Int64Value(['value' => $cpcBidMicros])
+            'cpc_bid_micros' => $cpcBidMicros
         ]);
 
         return $adGroupCriterion;

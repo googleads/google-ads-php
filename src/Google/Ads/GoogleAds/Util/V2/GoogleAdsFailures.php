@@ -58,7 +58,7 @@ final class GoogleAdsFailures
     }
 
     /**
-     * Initializes
+     * Initializes.
      */
     public static function init()
     {

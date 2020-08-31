@@ -24,15 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\CallConversion;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\CallConversion;
+use Google\Ads\GoogleAds\V5\Services\CallConversionResult;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example imports offline call conversion values for calls related to the ads in your account.
@@ -133,14 +132,13 @@ class UploadCallConversion
     ) {
         // Creates a call conversion by specifying currency as USD.
         $callConversion = new CallConversion([
-            'conversion_action' => new StringValue([
-                'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
-            ]),
-            'caller_id' => new StringValue(['value' => $callerId]),
-            'call_start_date_time' => new StringValue(['value' => $callStartDateTime]),
-            'conversion_date_time' => new StringValue(['value' => $conversionDateTime]),
-            'conversion_value' => new DoubleValue(['value' => $conversionValue]),
-            'currency_code' => new StringValue(['value' => 'USD']),
+            'conversion_action' =>
+                ResourceNames::forConversionAction($customerId, $conversionActionId),
+            'caller_id' => $callerId,
+            'call_start_date_time' => $callStartDateTime,
+            'conversion_date_time' => $conversionDateTime,
+            'conversion_value' => $conversionValue,
+            'currency_code' => 'USD',
         ]);
 
         // Issues a request to upload the call conversion.
@@ -162,14 +160,14 @@ class UploadCallConversion
             );
         } else {
             // Prints the result if exists.
-            /** @var CallConversion $uploadedCallConversion */
+            /** @var CallConversionResult $uploadedCallConversion */
             $uploadedCallConversion = $response->getResults()[0];
             printf(
                 "Uploaded call conversion that occurred at '%s' for caller ID '%s' to the "
                 . "conversion action with resource name '%s'.%s",
-                $uploadedCallConversion->getCallStartDateTimeUnwrapped(),
-                $uploadedCallConversion->getCallerIdUnwrapped(),
-                $uploadedCallConversion->getConversionActionUnwrapped(),
+                $uploadedCallConversion->getCallStartDateTime(),
+                $uploadedCallConversion->getCallerId(),
+                $uploadedCallConversion->getConversionAction(),
                 PHP_EOL
             );
         }

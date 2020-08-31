@@ -24,25 +24,24 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V4\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V4\Common\SitelinkFeedItem;
-use Google\Ads\GoogleAds\V4\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V4\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V4\Enums\FeedItemTargetDeviceEnum\FeedItemTargetDevice;
-use Google\Ads\GoogleAds\V4\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V4\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V4\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V4\Services\CampaignExtensionSettingOperation;
-use Google\Ads\GoogleAds\V4\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\AdScheduleInfo;
+use Google\Ads\GoogleAds\V5\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V5\Common\SitelinkFeedItem;
+use Google\Ads\GoogleAds\V5\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V5\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V5\Enums\FeedItemTargetDeviceEnum\FeedItemTargetDevice;
+use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V5\Enums\MinuteOfHourEnum\MinuteOfHour;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\CampaignExtensionSetting;
+use Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V5\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\V5\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int32Value;
 use Google\Protobuf\StringValue;
 
 /**
@@ -217,7 +216,7 @@ class AddSitelinks
             'targeted_campaign' => new StringValue(['value' => $campaignResourceName]),
             'device' => FeedItemTargetDevice::MOBILE,
             'targeted_keyword' => new KeywordInfo([
-                'text' => new StringValue(['value' => 'free wifi']),
+                'text' => 'free wifi',
                 'match_type' => KeywordMatchType::BROAD
             ])
         ]);
@@ -293,7 +292,9 @@ class AddSitelinks
             /** @var ExtensionFeedItem $addedExtensionFeedItem */
             $addedExtensionFeedItemResourceName = $addedExtensionFeedItem->getResourceName();
             print $addedExtensionFeedItemResourceName . PHP_EOL;
-            $createdExtensionFeedItemsResourceNames[] = $addedExtensionFeedItemResourceName;
+            $createdExtensionFeedItemsResourceNames[] = new StringValue([
+                'value' => $addedExtensionFeedItemResourceName
+            ]);
         }
         return $createdExtensionFeedItemsResourceNames;
     }
@@ -332,9 +333,9 @@ class AddSitelinks
     ) {
         return new AdScheduleInfo([
             'day_of_week' => $day,
-            'start_hour' => new Int32Value(['value' => $startHour]),
+            'start_hour' => $startHour,
             'start_minute' => $startMinute,
-            'end_hour' => new Int32Value(['value' => $endHour]),
+            'end_hour' => $endHour,
             'end_minute' => $endMinute
         ]);
     }

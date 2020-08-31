@@ -23,13 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\BillingSetupStatusEnum\BillingSetupStatus;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Enums\BillingSetupStatusEnum\BillingSetupStatus;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This sample gets all BillingSetup objects available for the specified customer ID. */
@@ -120,7 +120,7 @@ class GetBillingSetup
                 printf(
                     'Found the billing setup with ID %1$d, %3$s'
                     . '  status \'%2$d\' with no payment account info. %3$s',
-                    $googleAdsRow->getBillingSetup()->getId()->getValue(),
+                    $googleAdsRow->getBillingSetup()->getIdUnwrapped(),
                     $googleAdsRow->getBillingSetup()->getStatus(),
                     PHP_EOL
                 );

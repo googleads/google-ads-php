@@ -24,31 +24,31 @@ use DateTime;
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V4\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V4\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V4\Resources\Feed;
-use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V4\Resources\FeedItem;
-use Google\Ads\GoogleAds\V4\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V4\Services\FeedOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V4\Enums\AdCustomizerPlaceholderFieldEnum\AdCustomizerPlaceholderField;
-use Google\Ads\GoogleAds\V4\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Resources\FeedItemTarget;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedItemTargetOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V5\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V5\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V5\Resources\Feed;
+use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V5\Resources\FeedItem;
+use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V5\Services\FeedOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V5\Enums\AdCustomizerPlaceholderFieldEnum\AdCustomizerPlaceholderField;
+use Google\Ads\GoogleAds\V5\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\FeedItemTarget;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedItemTargetOperation;
 use Google\Protobuf\StringValue;
 use Google\ApiCore\ApiException;
 
@@ -258,6 +258,7 @@ class AddAdCustomizer
         $response =
             $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
 
+        /** @var Feed $feed */
         $feed = $response->getIterator()->current()->getFeed();
         $feedDetails = [];
         printf(
@@ -312,7 +313,7 @@ class AddAdCustomizer
         // Creates the feed mapping.
         $feedMapping = new FeedMapping([
             'placeholder_type' => PlaceholderType::AD_CUSTOMIZER,
-            'feed' => $adCustomizerFeedResourceName,
+            'feed' => new StringValue(['value' => $adCustomizerFeedResourceName]),
             'attribute_field_mappings' => [$nameFieldMapping, $priceFieldMapping, $dateFieldMapping]
         ]);
 
@@ -415,14 +416,14 @@ class AddAdCustomizer
             'feed_attribute_id' => $adCustomizerFeedAttributes['Price'],
             'string_value' => new StringValue(['value' => $price])
         ]);
-                
+
         $dateAttributeValue = new FeedItemAttributeValue([
             'feed_attribute_id' => $adCustomizerFeedAttributes['Date'],
             'string_value' => new StringValue(['value' => $date])
         ]);
 
         $feedItem = new FeedItem([
-            'feed' => $adCustomizerFeedResourceName,
+            'feed' => new StringValue(['value' => $adCustomizerFeedResourceName]),
             'attribute_values' => [
                 $nameAttributeValue,
                 $priceAttributeValue,
@@ -460,7 +461,9 @@ class AddAdCustomizer
 
             $feedItemTarget = new FeedItemTarget([
                 'feed_item' => new StringValue(['value' => $feedItemResourceName]),
-                'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
+                'ad_group' => new StringValue([
+                    'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
+                ])
             ]);
 
             // Creates the operation.
@@ -499,11 +502,9 @@ class AddAdCustomizer
         string $feedName
     ) {
         $expandedTextAdInfo = new ExpandedTextAdInfo([
-            'headline_part1' => new StringValue(['value' => "Luxury cruise to {=$feedName.Name}"]),
-            'headline_part2' => new StringValue(['value' => "Only {=$feedName.Price}"]),
-            'description' => new StringValue([
-                'value' => "Offer ends in {=countdown($feedName.Date)}!"
-            ])
+            'headline_part1' => "Luxury cruise to {=$feedName.Name}",
+            'headline_part2' => "Only {=$feedName.Price}",
+            'description' => "Offer ends in {=countdown($feedName.Date)}!"
         ]);
 
         $ad = new Ad([
@@ -516,9 +517,7 @@ class AddAdCustomizer
         foreach ($adGroupIds as $adGroupId) {
             $adGroupAd = new AdGroupAd([
                 'ad' => $ad,
-                'ad_group' => new StringValue([
-                    'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
-                ])
+                'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
             ]);
 
             $adGroupAdOperation = new AdGroupAdOperation();

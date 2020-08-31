@@ -23,19 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /** This example demonstrates how to add expanded text ads to a given ad group. */
 class AddExpandedTextAds
@@ -108,27 +107,24 @@ class AddExpandedTextAds
         int $customerId,
         int $adGroupId
     ) {
-        $adGroupResourceName =
-            new StringValue(['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]);
-
         $operations = [];
         for ($i = 0; $i < self::NUMBER_OF_ADS_TO_ADD; $i++) {
             // Creates the expanded text ad info.
             $expandedTextAdInfo = new ExpandedTextAdInfo([
-                'headline_part1' => new StringValue(['value' => 'Cruise to Mars #' . uniqid()]),
-                'headline_part2' => new StringValue(['value' => 'Best Space Cruise Line']),
-                'description' => new StringValue(['value' => 'Buy your tickets now!'])
+                'headline_part1' => 'Cruise to Mars #' . uniqid(),
+                'headline_part2' => 'Best Space Cruise Line',
+                'description' => 'Buy your tickets now!'
             ]);
 
             // Sets the expanded text ad info on an Ad.
             $ad = new Ad([
                 'expanded_text_ad' => $expandedTextAdInfo,
-                'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+                'final_urls' => ['http://www.example.com']
             ]);
 
             // Creates an ad group ad to hold the above ad.
             $adGroupAd = new AdGroupAd([
-                'ad_group' => $adGroupResourceName,
+                'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
                 'status' => AdGroupAdStatus::PAUSED,
                 'ad' => $ad
             ]);

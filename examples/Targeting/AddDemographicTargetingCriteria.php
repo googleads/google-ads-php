@@ -24,20 +24,18 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\AgeRangeInfo;
-use Google\Ads\GoogleAds\V4\Common\GenderInfo;
-use Google\Ads\GoogleAds\V4\Enums\AgeRangeTypeEnum\AgeRangeType;
-use Google\Ads\GoogleAds\V4\Enums\GenderTypeEnum\GenderType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\AgeRangeInfo;
+use Google\Ads\GoogleAds\V5\Common\GenderInfo;
+use Google\Ads\GoogleAds\V5\Enums\AgeRangeTypeEnum\AgeRangeType;
+use Google\Ads\GoogleAds\V5\Enums\GenderTypeEnum\GenderType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds demographic target criteria to an ad group, one as positive ad group criterion
@@ -111,28 +109,22 @@ class AddDemographicTargetingCriteria
         int $customerId,
         int $adGroupId
     ) {
-        $adGroupResourceName = new StringValue([
-            'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
-        ]);
+        $adGroupResourceName = ResourceNames::forAdGroup($customerId, $adGroupId);
 
         // Creates a positive ad group criterion for gender.
         $genderAdGroupCriterion = new AdGroupCriterion([
             'ad_group' => $adGroupResourceName,
             // Targets male.
-            'gender' => new GenderInfo([
-                'type' => GenderType::MALE
-            ])
+            'gender' => new GenderInfo(['type' => GenderType::MALE])
         ]);
 
         // Creates a negative ad group criterion for age range.
         $ageRangeNegativeAdGroupCriterion = new AdGroupCriterion([
             'ad_group' => $adGroupResourceName,
             // Makes this ad group criterion negative.
-            'negative' => new BoolValue(['value' => true]),
+            'negative' => true,
             // Targets the age range of 18 to 24.
-            'age_range' => new AgeRangeInfo([
-                'type' => AgeRangeType::AGE_RANGE_18_24
-            ])
+            'age_range' => new AgeRangeInfo(['type' => AgeRangeType::AGE_RANGE_18_24])
         ]);
 
         // Creates ad group criterion operations for both ad group criteria.

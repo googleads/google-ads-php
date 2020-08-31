@@ -23,14 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /** This example gets all `TEXT_AD` recommendations. */
 class GetTextAdRecommendations
@@ -116,7 +115,7 @@ class GetTextAdRecommendations
                 "Recommendation with resource name '%s' was found for campaign "
                 . "with resource name '%s':%s",
                 $recommendation->getResourceName(),
-                $recommendation->getCampaign()->getValue(),
+                $recommendation->getCampaignUnwrapped(),
                 PHP_EOL
             );
             $recommendedAd = $recommendation->getTextAdRecommendation()->getAd();
@@ -124,34 +123,34 @@ class GetTextAdRecommendations
                 $recommendedExpandedTextAd = $recommendedAd->getExpandedTextAd();
                 printf(
                     "\tHeadline part 1 is '%s'.%s",
-                    $recommendedExpandedTextAd->getHeadlinePart1()->getValue(),
+                    $recommendedExpandedTextAd->getHeadlinePart1(),
                     PHP_EOL
                 );
                 printf(
                     "\tHeadline part 2 is '%s'.%s",
-                    $recommendedExpandedTextAd->getHeadlinePart2()->getValue(),
+                    $recommendedExpandedTextAd->getHeadlinePart2(),
                     PHP_EOL
                 );
                 printf(
                     "\tDescription is '%s'%s",
-                    $recommendedExpandedTextAd->getDescription()->getValue(),
+                    $recommendedExpandedTextAd->getDescription(),
                     PHP_EOL
                 );
             }
             if (!is_null($recommendedAd->getDisplayUrl())) {
                 printf(
                     "\tDisplay URL is '%s'.%s",
-                    $recommendedAd->getDisplayUrl()->getValue(),
+                    $recommendedAd->getDisplayUrl(),
                     PHP_EOL
                 );
             }
             foreach ($recommendedAd->getFinalUrls() as $finalUrl) {
-                /** @var StringValue $finalUrl */
-                printf("\tFinal URL is '%s'.%s", $finalUrl->getValue(), PHP_EOL);
+                /** @var string $finalUrl */
+                printf("\tFinal URL is '%s'.%s", $finalUrl, PHP_EOL);
             }
             foreach ($recommendedAd->getFinalMobileUrls() as $finalMobileUrl) {
-                /** @var StringValue $finalMobileUrl */
-                printf("\tFinal Mobile URL is '%s'.%s", $finalMobileUrl->getValue(), PHP_EOL);
+                /** @var string $finalMobileUrl */
+                printf("\tFinal Mobile URL is '%s'.%s", $finalMobileUrl, PHP_EOL);
             }
         }
     }

@@ -18,10 +18,10 @@
 
 namespace Google\Ads\GoogleAds\Util\V4;
 
+use Google\Ads\GoogleAds\V4\Errors\GoogleAdsFailure;
 use Google\Protobuf\Any;
 use Google\Protobuf\DescriptorPool;
 use Google\Rpc\Status;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsFailure;
 
 final class GoogleAdsFailures
 {
@@ -58,7 +58,7 @@ final class GoogleAdsFailures
     }
 
     /**
-     * Initializes
+     * Initializes.
      */
     public static function init()
     {

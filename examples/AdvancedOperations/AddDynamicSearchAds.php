@@ -23,41 +23,41 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Common\ExpandedDynamicSearchAdInfo;
-use Google\Ads\GoogleAds\V4\Common\ManualCpc;
-use Google\Ads\GoogleAds\V4\Common\WebpageConditionInfo;
-use Google\Ads\GoogleAds\V4\Common\WebpageInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V4\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V4\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V4\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroup;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\Campaign\DynamicSearchAdsSetting;
-use Google\Ads\GoogleAds\V4\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V4\Services\MutateAdGroupAdsResponse;
-use Google\Ads\GoogleAds\V4\Services\MutateAdGroupsResponse;
-use Google\Ads\GoogleAds\V4\Services\MutateAdGroupCriteriaResponse;
-use Google\Ads\GoogleAds\V4\Services\MutateCampaignBudgetsResponse;
-use Google\Ads\GoogleAds\V4\Services\MutateCampaignsResponse;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
+use Google\Ads\GoogleAds\V5\Common\ExpandedDynamicSearchAdInfo;
+use Google\Ads\GoogleAds\V5\Common\ManualCpc;
+use Google\Ads\GoogleAds\V5\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V5\Common\WebpageInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateAdGroupAdsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateAdGroupsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateAdGroupCriteriaResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignsResponse;
+use Google\ApiCore\ApiException;
 
 /**
  * This example adds a new dynamic search ad (DSA) and a webpage targeting criterion for the DSA.
@@ -152,15 +152,15 @@ class AddDynamicSearchAds
         int $customerId
     ) {
         $campaignBudget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
-            'amount_micros' => new Int64Value(['value' => 500000])
+            'amount_micros' => 500000
         ]);
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
-     
+
         // Issues a mutate request to add campaign budgets.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
@@ -189,20 +189,20 @@ class AddDynamicSearchAds
         string $campaignBudgetResourceName
     ) {
         $campaign = new Campaign([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
+            'name' => 'Interplanetary Cruise #' . uniqid(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             'status' => CampaignStatus::PAUSED,
             'manual_cpc' => new ManualCpc(),
             'campaign_budget' => $campaignBudgetResourceName,
             // Enables the campaign for DSAs.
             'dynamic_search_ads_setting' => new DynamicSearchAdsSetting([
-                'domain_name' => new StringValue(['value' => 'example.com']),
-                'language_code' => new StringValue(['value' => 'en'])
+                'domain_name' => 'example.com',
+                'language_code' => 'en'
             ]),
             // Optional: Sets the start and end dates for the campaign, beginning one day from
             // now and ending a month from now.
-            'start_date' => new StringValue(['value' => date('Ymd', strtotime('+1 day'))]),
-            'end_date' => new StringValue(['value' => date('Ymd', strtotime('+1 month'))])
+            'start_date' => date('Ymd', strtotime('+1 day')),
+            'end_date' => date('Ymd', strtotime('+1 month'))
         ]);
 
         // Creates a campaign operation.
@@ -238,14 +238,12 @@ class AddDynamicSearchAds
     ) {
         // Constructs an ad group and sets an optional CPC value.
         $adGroup = new AdGroup([
-            'name' => new StringValue(['value' => 'Earth to Mars Cruises #' . uniqid()]),
+            'name' => 'Earth to Mars Cruises #' . uniqid(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::PAUSED,
             'type' => AdGroupType::SEARCH_DYNAMIC_ADS,
-            'tracking_url_template' => new StringValue(
-                ['value' => 'http://tracker.examples.com/traveltracker/{escapedlpurl}']
-            ),
-            'cpc_bid_micros' => new Int64Value(['value' => 10000000])
+            'tracking_url_template' => 'http://tracker.examples.com/traveltracker/{escapedlpurl}',
+            'cpc_bid_micros' => 10000000
         ]);
 
         // Creates an ad group operation.
@@ -280,7 +278,7 @@ class AddDynamicSearchAds
             'status' => AdGroupAdStatus::PAUSED,
             'ad' => new Ad([
                 'expanded_dynamic_search_ad' => new ExpandedDynamicSearchAdInfo([
-                    'description' => new StringValue(['value' => 'Buy tickets now!'])
+                    'description' => 'Buy tickets now!'
                 ])
             ])
         ]);
@@ -315,20 +313,20 @@ class AddDynamicSearchAds
         string $adGroupResourceName
     ) {
         $adGroupCriterion = new AdGroupCriterion([
-            'ad_group' => new StringValue(['value' => $adGroupResourceName]),
+            'ad_group' => $adGroupResourceName,
             'status' => AdGroupCriterionStatus::PAUSED,
-            'cpc_bid_micros' => new Int64Value(['value' => 10000000]),
+            'cpc_bid_micros' => 10000000,
             // Sets the criterion to match a specific page URL and title.
             'webpage' => new WebpageInfo([
-                'criterion_name' => new StringValue(['value' => 'Special Offers']),
+                'criterion_name' => 'Special Offers',
                 'conditions' => [
                     new WebpageConditionInfo([
                         'operand' => WebpageConditionOperand::URL,
-                        'argument' => new StringValue(['value' => '/specialoffers'])
+                        'argument' => '/specialoffers'
                     ]),
                     new WebpageConditionInfo([
                         'operand' => WebpageConditionOperand::PAGE_TITLE,
-                        'argument' => new StringValue(['value' => 'Special Offers'])
+                        'argument' => 'Special Offers'
                     ])
                 ]
             ])

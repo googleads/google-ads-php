@@ -23,12 +23,12 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example gets all campaigns with a specific label. */
@@ -118,8 +118,8 @@ class GetCampaignsByLabel
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 "Campaign found with name '%s', ID %d, and label: '%s'.%s",
-                $googleAdsRow->getCampaign()->getNameUnwrapped(),
-                $googleAdsRow->getCampaign()->getIdUnwrapped(),
+                $googleAdsRow->getCampaign()->getName(),
+                $googleAdsRow->getCampaign()->getId(),
                 $googleAdsRow->getLabel()->getNameUnwrapped(),
                 PHP_EOL
             );

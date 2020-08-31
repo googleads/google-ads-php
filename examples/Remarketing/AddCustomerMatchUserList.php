@@ -24,26 +24,26 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V4\GoogleAdsFailures;
-use Google\Ads\GoogleAds\V4\Common\CrmBasedUserListInfo;
-use Google\Ads\GoogleAds\V4\Common\CustomerMatchUserListMetadata;
-use Google\Ads\GoogleAds\V4\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V4\Common\UserData;
-use Google\Ads\GoogleAds\V4\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V4\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
-use Google\Ads\GoogleAds\V4\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V4\Resources\UserList;
-use Google\Ads\GoogleAds\V4\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V4\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V4\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V4\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V5\GoogleAdsFailures;
+use Google\Ads\GoogleAds\V5\Common\CrmBasedUserListInfo;
+use Google\Ads\GoogleAds\V5\Common\CustomerMatchUserListMetadata;
+use Google\Ads\GoogleAds\V5\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V5\Common\UserData;
+use Google\Ads\GoogleAds\V5\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V5\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
+use Google\Ads\GoogleAds\V5\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V5\Resources\UserList;
+use Google\Ads\GoogleAds\V5\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V5\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V5\Services\UserListOperation;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\OperationResponse;
 use Google\Protobuf\BoolValue;
@@ -280,7 +280,9 @@ class AddCustomerMatchUserList
             'user_identifiers' => [
                 new UserIdentifier([
                     // Hash normalized email addresses based on SHA-256 hashing algorithm.
-                    'hashed_email' => self::normalizeAndHash('customer@example.com')
+                    'hashed_email' => new StringValue([
+                        'value' => self::normalizeAndHash('customer@example.com')
+                    ])
                 ])
             ]
         ]);
@@ -291,11 +293,15 @@ class AddCustomerMatchUserList
                 new UserIdentifier([
                     'address_info' => new OfflineUserAddressInfo([
                         // First and last name must be normalized and hashed.
-                        'hashed_first_name' => self::normalizeAndHash('John'),
-                        'hashed_last_name' => self::normalizeAndHash('Doe'),
+                        'hashed_first_name' => new StringValue([
+                            self::normalizeAndHash('John')
+                        ]),
+                        'hashed_last_name' => new StringValue([
+                            self::normalizeAndHash('Doe')
+                        ]),
                         // Country code and zip code are sent in plain text.
-                        'country_code' => 'US',
-                        'postal_code' => '10011'
+                        'country_code' => new StringValue(['US']),
+                        'postal_code' => new StringValue(['10011'])
                     ])
                 ])
             ]

@@ -23,19 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Common\TagSnippet;
-use Google\Ads\GoogleAds\V4\Enums\TrackingCodePageFormatEnum\TrackingCodePageFormat;
-use Google\Ads\GoogleAds\V4\Enums\TrackingCodeTypeEnum\TrackingCodeType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\RemarketingAction;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V4\Services\RemarketingActionOperation;
+use Google\Ads\GoogleAds\V5\Common\TagSnippet;
+use Google\Ads\GoogleAds\V5\Enums\TrackingCodePageFormatEnum\TrackingCodePageFormat;
+use Google\Ads\GoogleAds\V5\Enums\TrackingCodeTypeEnum\TrackingCodeType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\RemarketingAction;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Services\RemarketingActionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds a new remarketing action to the customer and then retrieves its associated
@@ -106,9 +105,7 @@ class AddRemarketingAction
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a remarketing action with the specified name.
-        $remarketingAction = new RemarketingAction([
-            'name' => new StringValue(['value' => 'Remarketing action #' . uniqid()])
-        ]);
+        $remarketingAction = new RemarketingAction(['name' => 'Remarketing action #' . uniqid()]);
 
         // Creates a remarketing action operation.
         $remarketingActionOperation =
@@ -150,8 +147,8 @@ class AddRemarketingAction
         // by the API.
         printf(
             "Remarketing action has ID %d and name '%s'.%s%s",
-            $googleAdsRow->getRemarketingAction()->getIdUnwrapped(),
-            $googleAdsRow->getRemarketingAction()->getNameUnwrapped(),
+            $googleAdsRow->getRemarketingAction()->getId(),
+            $googleAdsRow->getRemarketingAction()->getName(),
             PHP_EOL,
             PHP_EOL
         );
@@ -164,13 +161,13 @@ class AddRemarketingAction
                 TrackingCodeType::name($tagSnippet->getType()),
                 TrackingCodePageFormat::name($tagSnippet->getPageFormat()),
                 PHP_EOL,
-                $tagSnippet->getGlobalSiteTagUnwrapped(),
+                $tagSnippet->getGlobalSiteTag(),
                 PHP_EOL
             );
             printf(
                 "and the following event snippet:%s%s%s%s",
                 PHP_EOL,
-                $tagSnippet->getEventSnippetUnwrapped(),
+                $tagSnippet->getEventSnippet(),
                 PHP_EOL,
                 PHP_EOL
             );

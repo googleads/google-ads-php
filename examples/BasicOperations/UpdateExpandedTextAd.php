@@ -24,17 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Services\AdOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Services\AdOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example updates an expanded text ad. To get expanded text ads, run GetExpandedTextAds.php.
@@ -111,12 +110,12 @@ class UpdateExpandedTextAd
         $ad = new Ad([
             'resource_name' => ResourceNames::forAd($customerId, $adId),
             'expanded_text_ad' => new ExpandedTextAdInfo([
-                'headline_part1' => new StringValue(['value' => 'Cruise to Pluto #' . uniqid()]),
-                'headline_part2' => new StringValue(['value' => 'Tickets on sale now']),
-                'description' => new StringValue(['value' => 'Best space cruise ever'])
+                'headline_part1' => 'Cruise to Pluto #' . uniqid(),
+                'headline_part2' => 'Tickets on sale now',
+                'description' => 'Best space cruise ever'
             ]),
-            'final_urls' => [new StringValue(['value' => 'http://www.example.com'])],
-            'final_mobile_urls' => [new StringValue(['value' => 'http://www.example.com/mobile'])]
+            'final_urls' => ['http://www.example.com'],
+            'final_mobile_urls' => ['http://www.example.com/mobile']
         ]);
 
         // Constructs an operation that will update the ad, using the FieldMasks to derive the

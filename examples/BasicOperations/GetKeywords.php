@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V4\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example gets keywords from ad group criteria. */
@@ -131,13 +131,13 @@ class GetKeywords
             printf(
                 "Keyword with text '%s', match type '%s', criterion type '%s', and ID %d "
                 . "was found in ad group with ID %d.%s",
-                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getTextUnwrapped(),
+                $googleAdsRow->getAdGroupCriterion()->getKeyword()->getText(),
                 KeywordMatchType::name(
                     $googleAdsRow->getAdGroupCriterion()->getKeyword()->getMatchType()
                 ),
                 CriterionType::name($googleAdsRow->getAdGroupCriterion()->getType()),
-                $googleAdsRow->getAdGroupCriterion()->getCriterionIdUnwrapped(),
-                $googleAdsRow->getAdGroup()->getIdUnwrapped(),
+                $googleAdsRow->getAdGroupCriterion()->getCriterionId(),
+                $googleAdsRow->getAdGroup()->getId(),
                 PHP_EOL
             );
         }

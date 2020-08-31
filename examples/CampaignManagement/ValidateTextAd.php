@@ -24,21 +24,20 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V4\Common\PolicyTopicEntry;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Errors\PolicyFindingErrorEnum\PolicyFindingError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V5\Common\PolicyTopicEntry;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Errors\PolicyFindingErrorEnum\PolicyFindingError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This code example shows how to use the validateOnly header to validate
@@ -115,23 +114,21 @@ class ValidateTextAd
     ) {
         // Creates the expanded text ad info.
         $expandedTextAdInfo = new ExpandedTextAdInfo([
-            'description' => new StringValue(['value' => 'Luxury Cruise to Mars']),
-            'headline_part1' => new StringValue(['value' => 'Visit the Red Planet in style.']),
+            'description' => 'Luxury Cruise to Mars',
+            'headline_part1' => 'Visit the Red Planet in style.',
             // Adds a headline that will trigger a policy violation to demonstrate error handling.
-            'headline_part2' => new StringValue(['value' => 'Low-gravity fun for everyone!!'])
+            'headline_part2' => 'Low-gravity fun for everyone!!'
         ]);
 
         // Sets the expanded text ad info on an ad.
         $ad = new Ad([
             'expanded_text_ad' => $expandedTextAdInfo,
-            'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+            'final_urls' => ['http://www.example.com']
         ]);
 
         // Creates an ad group ad to hold the above ad.
         $adGroupAd = new AdGroupAd([
-            'ad_group' => new StringValue([
-                'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
-            ]),
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             // Optional: Set the status.
             'status' => AdGroupAdStatus::PAUSED,
             'ad' => $ad
@@ -176,7 +173,7 @@ class ValidateTextAd
                                 "%d) Policy topic entry with topic '%s' and type '%s'" .
                                 " was found.%s",
                                 $count,
-                                $entry->getTopicUnwrapped(),
+                                $entry->getTopic(),
                                 PolicyTopicEntryType::name($entry->getType()),
                                 PHP_EOL
                             );

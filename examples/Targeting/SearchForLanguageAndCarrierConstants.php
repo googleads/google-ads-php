@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsServiceClient;
 use Google\ApiCore\ApiException;
 
 /**
@@ -153,10 +153,10 @@ class SearchForLanguageAndCarrierConstants
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 'Language with ID %d, code "%s", name "%s" and targetable "%s" was found.%s',
-                $googleAdsRow->getLanguageConstant()->getIdUnwrapped(),
-                $googleAdsRow->getLanguageConstant()->getCodeUnwrapped(),
-                $googleAdsRow->getLanguageConstant()->getNameUnwrapped(),
-                $googleAdsRow->getLanguageConstant()->getTargetableUnwrapped(),
+                $googleAdsRow->getLanguageConstant()->getId(),
+                $googleAdsRow->getLanguageConstant()->getCode(),
+                $googleAdsRow->getLanguageConstant()->getName(),
+                $googleAdsRow->getLanguageConstant()->getTargetable(),
                 PHP_EOL
             );
         }
@@ -193,9 +193,9 @@ class SearchForLanguageAndCarrierConstants
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
                 'Carrier with ID %d, name "%s" and country code "%s" was found.%s',
-                $googleAdsRow->getCarrierConstant()->getIdUnwrapped(),
-                $googleAdsRow->getCarrierConstant()->getNameUnwrapped(),
-                $googleAdsRow->getCarrierConstant()->getCountryCodeUnwrapped(),
+                $googleAdsRow->getCarrierConstant()->getId(),
+                $googleAdsRow->getCarrierConstant()->getName(),
+                $googleAdsRow->getCarrierConstant()->getCountryCode(),
                 PHP_EOL
             );
         }

@@ -23,42 +23,37 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\AdImageAsset;
-use Google\Ads\GoogleAds\V4\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V4\Common\ImageAsset;
-use Google\Ads\GoogleAds\V4\Common\ManualCpc;
-use Google\Ads\GoogleAds\V4\Common\ResponsiveDisplayAdInfo;
-use Google\Ads\GoogleAds\V4\Common\UserListInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V4\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V4\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V4\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroup;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Resources\Asset;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V4\Services\AssetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V4\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\AdImageAsset;
+use Google\Ads\GoogleAds\V5\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V5\Common\ImageAsset;
+use Google\Ads\GoogleAds\V5\Common\ManualCpc;
+use Google\Ads\GoogleAds\V5\Common\ResponsiveDisplayAdInfo;
+use Google\Ads\GoogleAds\V5\Common\UserListInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Enums\DisplayAdFormatSettingEnum\DisplayAdFormatSetting;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Resources\Asset;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\AssetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateAssetResult;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\BytesValue;
-use Google\Protobuf\Int32Value;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example creates a shopping campaign associated with an existing merchant center account,
@@ -179,27 +174,25 @@ class AddMerchantCenterDynamicRemarketingCampaign
         int $merchantCenterAccountId,
         int $campaignBudgetId
     ): string {
-        $budgetResourceName = ResourceNames::forCampaignBudget($customerId, $campaignBudgetId);
-
         // Configures the settings for the shopping campaign.
         $shoppingSettings = new ShoppingSetting([
-            'campaign_priority' => new Int32Value(['value' => 0]),
-            'merchant_id' => new Int64Value(['value' => $merchantCenterAccountId]),
+            'campaign_priority' => 0,
+            'merchant_id' => $merchantCenterAccountId,
             // Display Network campaigns do not support partition by country. The only
             // supported value is "ZZ". This signals that products from all countries are
             // available in the campaign. The actual products which serve are based on
             // the products tagged in the user list entry.
-            'sales_country' => new StringValue(['value' => 'ZZ']),
-            'enable_local' => new BoolValue(['value' => true])
+            'sales_country' => 'ZZ',
+            'enable_local' => true
         ]);
 
         // Creates the campaign.
         $campaign = new Campaign([
-            'name' => new StringValue(['value' => 'Shopping campaign #' . uniqid()]),
+            'name' => 'Shopping campaign #' . uniqid(),
             // Dynamic remarketing campaigns are only available on the Google Display Network.
             'advertising_channel_type' => AdvertisingChannelType::DISPLAY,
             'status' => CampaignStatus::PAUSED,
-            'campaign_budget' => new StringValue(['value' => $budgetResourceName]),
+            'campaign_budget' => ResourceNames::forCampaignBudget($customerId, $campaignBudgetId),
             'manual_cpc' => new ManualCpc(),
             // This connects the campaign to the merchant center account.
             'shopping_setting' => $shoppingSettings
@@ -237,8 +230,8 @@ class AddMerchantCenterDynamicRemarketingCampaign
     ): string {
         // Creates the ad group.
         $adGroup = new AdGroup([
-            'name' => new StringValue(['value' => 'Dynamic remarketing ad group']),
-            'campaign' => new StringValue(['value' => $campaignResourceName]),
+            'name' => 'Dynamic remarketing ad group',
+            'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::ENABLED
         ]);
 
@@ -286,41 +279,31 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Creates the responsive display ad info object.
         $responsiveDisplayAdInfo = new ResponsiveDisplayAdInfo([
-            'marketing_images' => [new AdImageAsset([
-                'asset' => new StringValue(['value' => $marketingImageResourceName])
-            ])],
+            'marketing_images' => [new AdImageAsset(['asset' => $marketingImageResourceName])],
             'square_marketing_images' => [new AdImageAsset([
-                'asset' => new StringValue(['value' => $squareMarketingImageResourceName])
+                'asset' => $squareMarketingImageResourceName
             ])],
-            'headlines' => [new AdTextAsset([
-                'text' => new StringValue(['value' => 'Travel'])
-            ])],
-            'long_headline' => new AdTextAsset([
-                'text' => new StringValue(['value' => 'Travel the World'])
-            ]),
-            'descriptions' => [new AdTextAsset([
-                'text' => new StringValue(['value' => 'Take to the air!'])
-            ])],
-            'business_name' => new StringValue(['value' => 'Interplanetary Cruises']),
+            'headlines' => [new AdTextAsset(['text' => 'Travel'])],
+            'long_headline' => new AdTextAsset(['text' => 'Travel the World']),
+            'descriptions' => [new AdTextAsset(['text' => 'Take to the air!'])],
+            'business_name' => 'Interplanetary Cruises',
             // Optional: Call to action text.
             // Valid texts: https://support.google.com/google-ads/answer/7005917
-            'call_to_action_text' => new StringValue(['value' => 'Apply Now']),
+            'call_to_action_text' => 'Apply Now',
             // Optional: Sets the ad colors.
-            'main_color' => new StringValue(['value' => '#0000ff']),
-            'accent_color' => new StringValue(['value' => '#ffff00']),
+            'main_color' => '#0000ff',
+            'accent_color' => '#ffff00',
             // Optional: Sets to false to strictly render the ad using the colors.
-            'allow_flexible_color' => new BoolValue(['value' => false]),
+            'allow_flexible_color' => false,
             // Optional: Sets the format setting that the ad will be served in.
             'format_setting' => DisplayAdFormatSetting::NON_NATIVE
             // Optional: Creates a logo image and sets it to the ad.
             // 'logo_images' => [new AdImageAsset([
-            //     'asset' => new StringValue(['value' => 'INSERT_LOGO_IMAGE_RESOURCE_NAME_HERE'])
+            //     'asset' => 'INSERT_LOGO_IMAGE_RESOURCE_NAME_HERE'
             // ])],
             // Optional: Creates a square logo image and sets it to the ad.
             // 'square_logo_images' => [new AdImageAsset([
-            //     'asset' => new StringValue([
-            //         'value' => 'INSERT_SQUARE_LOGO_IMAGE_RESOURCE_NAME_HERE'
-            //     ])
+            //     'asset' => 'INSERT_SQUARE_LOGO_IMAGE_RESOURCE_NAME_HERE'
             // ])]
         ]);
 
@@ -328,9 +311,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
         $adGroupAd = new AdGroupAd([
             'ad' => new Ad([
                 'responsive_display_ad' => $responsiveDisplayAdInfo,
-                'final_urls' => [new StringValue(['value' => 'http://www.example.com/'])]
+                'final_urls' => ['http://www.example.com/']
             ]),
-            'ad_group' => new StringValue(['value' => $adGroupResourceName])
+            'ad_group' => $adGroupResourceName
         ]);
 
         // Creates an ad group ad operation.
@@ -367,11 +350,9 @@ class AddMerchantCenterDynamicRemarketingCampaign
     ): string {
         // Creates an asset.
         $asset = new Asset([
-            'name' => new StringValue(['value' =>  $assetName]),
+            'name' => $assetName,
             'type' => AssetType::IMAGE,
-            'image_asset' => new ImageAsset([
-                'data' => new BytesValue(['value' => file_get_contents($imageUrl)]),
-            ])
+            'image_asset' => new ImageAsset(['data' => file_get_contents($imageUrl)])
         ]);
 
         // Creates an asset operation.
@@ -410,13 +391,11 @@ class AddMerchantCenterDynamicRemarketingCampaign
         string $adGroupResourceName,
         int $userListId
     ) {
-        $userListResourceName = ResourceNames::forUserList($customerId, $userListId);
-
         // Creates the ad group criterion that targets the user list.
         $adGroupCriterion = new AdGroupCriterion([
-            'ad_group' => new StringValue(['value' => $adGroupResourceName]),
+            'ad_group' => $adGroupResourceName,
             'user_list' => new UserListInfo([
-                'user_list' => new StringValue(['value' => $userListResourceName])
+                'user_list' => ResourceNames::forUserList($customerId, $userListId)
             ])
         ]);
 

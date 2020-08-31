@@ -24,27 +24,26 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V4\Common\Money;
-use Google\Ads\GoogleAds\V4\Common\PriceFeedItem;
-use Google\Ads\GoogleAds\V4\Common\PriceOffer;
-use Google\Ads\GoogleAds\V4\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V4\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V4\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V4\Enums\PriceExtensionPriceQualifierEnum\PriceExtensionPriceQualifier;
-use Google\Ads\GoogleAds\V4\Enums\PriceExtensionPriceUnitEnum\PriceExtensionPriceUnit;
-use Google\Ads\GoogleAds\V4\Enums\PriceExtensionTypeEnum\PriceExtensionType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\CustomerExtensionSetting;
-use Google\Ads\GoogleAds\V4\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V4\Services\CustomerExtensionSettingOperation;
-use Google\Ads\GoogleAds\V4\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\AdScheduleInfo;
+use Google\Ads\GoogleAds\V5\Common\Money;
+use Google\Ads\GoogleAds\V5\Common\PriceFeedItem;
+use Google\Ads\GoogleAds\V5\Common\PriceOffer;
+use Google\Ads\GoogleAds\V5\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V5\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V5\Enums\MinuteOfHourEnum\MinuteOfHour;
+use Google\Ads\GoogleAds\V5\Enums\PriceExtensionPriceQualifierEnum\PriceExtensionPriceQualifier;
+use Google\Ads\GoogleAds\V5\Enums\PriceExtensionPriceUnitEnum\PriceExtensionPriceUnit;
+use Google\Ads\GoogleAds\V5\Enums\PriceExtensionTypeEnum\PriceExtensionType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\CustomerExtensionSetting;
+use Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V5\Services\CustomerExtensionSettingOperation;
+use Google\Ads\GoogleAds\V5\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int32Value;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 
@@ -205,7 +204,9 @@ class AddPrices
         $extensionFeedItem = new ExtensionFeedItem([
             'extension_type' => ExtensionType::PRICE,
             'price_feed_item' => $priceFeedItem,
-            'targeted_campaign' => ResourceNames::forCampaign($customerId, $campaignId),
+            'targeted_campaign' => new StringValue([
+                'value' => ResourceNames::forCampaign($customerId, $campaignId)
+            ]),
             'ad_schedules' => [
                 self::createAdScheduleInfo(
                     DayOfWeek::SUNDAY,
@@ -303,9 +304,9 @@ class AddPrices
     ) {
         return new AdScheduleInfo([
             'day_of_week' => $dayOfWeek,
-            'start_hour' => new Int32Value(['value' => $startHour]),
+            'start_hour' => $startHour,
             'start_minute' => $startMinute,
-            'end_hour' => new Int32Value(['value' => $endHour]),
+            'end_hour' => $endHour,
             'end_minute' => $endMinute
         ]);
     }

@@ -23,17 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
-use Google\Ads\GoogleAds\V4\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\GoogleAdsField;
+use Google\Ads\GoogleAds\V5\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
+use Google\Ads\GoogleAds\V5\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\GoogleAdsField;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example gets the metadata, such as whether the artifact is selectable, filterable and
@@ -114,7 +112,7 @@ class GetArtifactMetadata
             printf(
                 "An artifact named '%s' with category '%s' and data type '%s' %s selectable, %s "
                 . "filterable, %s sortable and %s repeated.%s",
-                $googleAdsField->getNameUnwrapped(),
+                $googleAdsField->getName(),
                 GoogleAdsFieldCategory::name($googleAdsField->getCategory()),
                 GoogleAdsFieldDataType::name($googleAdsField->getDataType()),
                 self::getIsOrIsNot($googleAdsField->getSelectable()),
@@ -124,16 +122,12 @@ class GetArtifactMetadata
                 PHP_EOL
             );
             if ($googleAdsField->getSelectableWith()->count() > 0) {
-                $selectableArtifacts = [];
-                foreach ($googleAdsField->getSelectableWith() as $wrappedSelectableArtifact) {
-                    /** @var StringValue $wrappedSelectableArtifact */
-                    $selectableArtifacts[] = $wrappedSelectableArtifact->getValue();
-                }
                 printf(
                     '%1$sThe artifact can be selected with the following artifacts:%1$s',
                     PHP_EOL
                 );
-                foreach ($selectableArtifacts as $selectableArtifact) {
+                foreach ($googleAdsField->getSelectableWith() as $selectableArtifact) {
+                    /** @var string $selectableArtifact */
                     print $selectableArtifact . PHP_EOL;
                 }
             }
@@ -143,12 +137,12 @@ class GetArtifactMetadata
     /**
      * Returns 'is' when the provided boolean value is true or 'is not' when it's false.
      *
-     * @param BoolValue $boolValue the boolean value
+     * @param bool $bool the boolean value
      * @return string the string 'is' or 'is not' depending on the passed value
      */
-    private static function getIsOrIsNot(BoolValue $boolValue)
+    private static function getIsOrIsNot(bool $bool)
     {
-        return $boolValue->getValue() ? 'is' : 'is not';
+        return $bool ? 'is' : 'is not';
     }
 }
 

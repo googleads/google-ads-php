@@ -24,32 +24,32 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\MatchingFunction;
-use Google\Ads\GoogleAds\V4\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V4\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V4\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V4\Enums\SitelinkPlaceholderFieldEnum\SitelinkPlaceholderField;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V4\Resources\CampaignFeed;
-use Google\Ads\GoogleAds\V4\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V4\Resources\Feed;
-use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V4\Resources\FeedItem;
-use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V4\Resources\FeedItemTarget;
-use Google\Ads\GoogleAds\V4\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V4\Services\CampaignFeedOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedItemTargetOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedOperation;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\MatchingFunction;
+use Google\Ads\GoogleAds\V5\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V5\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V5\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V5\Enums\SitelinkPlaceholderFieldEnum\SitelinkPlaceholderField;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V5\Resources\CampaignFeed;
+use Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V5\Resources\Feed;
+use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V5\Resources\FeedItem;
+use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V5\Resources\FeedItemTarget;
+use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V5\Services\CampaignFeedOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedItemTargetOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedOperation;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -448,7 +448,8 @@ class AddSitelinksUsingFeeds
             'feed' => new StringValue(['value' => $feedData['feed']]),
             'placeholder_types' => [PlaceholderType::SITELINK],
             'campaign' => new StringValue([
-                'value' => ResourceNames::forCampaign($customerId, $campaignId)]),
+                'value' => ResourceNames::forCampaign($customerId, $campaignId)
+            ]),
             'matching_function' => new MatchingFunction([
                 'function_string' => new StringValue([
                     'value' => sprintf(
@@ -501,7 +502,8 @@ class AddSitelinksUsingFeeds
             // first feed item we added to only serve for the given ad group.
             'feed_item' => $feedItem,
             'ad_group' => new StringValue([
-                'value' => ResourceNames::forAdGroup($customerId, $adGroupId)])
+                'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
+            ])
         ]);
 
         // Creates a feed item target operation.

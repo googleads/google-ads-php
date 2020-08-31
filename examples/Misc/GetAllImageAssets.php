@@ -23,12 +23,12 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example gets all image assets. */
@@ -104,8 +104,11 @@ class GetAllImageAssets
             "asset.image_asset.full_size.url " .
             "FROM asset WHERE asset.type = 'IMAGE'";
         // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
+        $response = $googleAdsServiceClient->search(
+            $customerId,
+            $query,
+            ['pageSize' => self::PAGE_SIZE, 'returnTotalResultsCount' => true]
+        );
 
         // Iterates over all rows in all pages and prints the requested field values for the image
         // asset in each row.
@@ -114,16 +117,21 @@ class GetAllImageAssets
             printf(
                 "Image with name '%s', file size %d bytes, width %dpx, height %dpx, " .
                     "and URL '%s' was found.%s",
-                $googleAdsRow->getAsset()->getNameUnwrapped(),
-                $googleAdsRow->getAsset()->getImageAsset()->getFileSizeUnwrapped(),
+                $googleAdsRow->getAsset()->getName(),
+                $googleAdsRow->getAsset()->getImageAsset()->getFileSize(),
                 $googleAdsRow
-                    ->getAsset()->getImageAsset()->getFullSize()->getWidthPixelsUnwrapped(),
+                    ->getAsset()->getImageAsset()->getFullSize()->getWidthPixels(),
                 $googleAdsRow
-                    ->getAsset()->getImageAsset()->getFullSize()->getHeightPixelsUnwrapped(),
-                $googleAdsRow->getAsset()->getImageAsset()->getFullSize()->getUrlUnwrapped(),
+                    ->getAsset()->getImageAsset()->getFullSize()->getHeightPixels(),
+                $googleAdsRow->getAsset()->getImageAsset()->getFullSize()->getUrl(),
                 PHP_EOL
             );
         }
+        printf(
+            "Number of images found: %d.%s",
+            $response->getPage()->getResponseObject()->getTotalResultsCount(),
+            PHP_EOL
+        );
     }
 }
 

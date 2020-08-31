@@ -24,41 +24,37 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\AdImageAsset;
-use Google\Ads\GoogleAds\V4\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V4\Common\ImageAsset;
-use Google\Ads\GoogleAds\V4\Common\ResponsiveDisplayAdInfo;
-use Google\Ads\GoogleAds\V4\Common\TargetCpa;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V4\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V4\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroup;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Resources\Asset;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V4\Services\AssetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V4\Services\MutateAdGroupAdsResponse;
-use Google\Ads\GoogleAds\V4\Services\MutateAdGroupsResponse;
-use Google\Ads\GoogleAds\V4\Services\MutateCampaignBudgetsResponse;
-use Google\Ads\GoogleAds\V4\Services\MutateCampaignsResponse;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\V5\Common\AdImageAsset;
+use Google\Ads\GoogleAds\V5\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V5\Common\ImageAsset;
+use Google\Ads\GoogleAds\V5\Common\ResponsiveDisplayAdInfo;
+use Google\Ads\GoogleAds\V5\Common\TargetCpa;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\Asset;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\AssetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateAdGroupAdsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateAdGroupsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignsResponse;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BytesValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds a Smart Display campaign, an ad group and a responsive display ad.
@@ -182,9 +178,9 @@ class AddSmartDisplayAd
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
-            'amount_micros' => new Int64Value(['value' => 5000000])
+            'amount_micros' => 5000000
         ]);
 
         // Creates a campaign budget operation.
@@ -220,21 +216,19 @@ class AddSmartDisplayAd
         string $campaignBudgetResourceName
     ) {
         $campaign = new Campaign([
-            'name' => new StringValue(['value' => 'Smart Display Campaign #' . uniqid()]),
+            'name' => 'Smart Display Campaign #' . uniqid(),
             // Smart Display campaign requires the advertising_channel_type as 'DISPLAY'.
             'advertising_channel_type' => AdvertisingChannelType::DISPLAY,
             // Smart Display campaign requires the advertising_channel_sub_type as
             // 'DISPLAY_SMART_CAMPAIGN'.
             'advertising_channel_sub_type' => AdvertisingChannelSubType::DISPLAY_SMART_CAMPAIGN,
             // Smart Display campaign requires the TargetCpa bidding strategy.
-            'target_cpa' => new TargetCpa([
-                'target_cpa_micros' => new Int64Value(['value' => 5000000])
-            ]),
+            'target_cpa' => new TargetCpa(['target_cpa_micros' => 5000000]),
             'campaign_budget' => $campaignBudgetResourceName,
             // Optional: Sets the start and end dates for the campaign, beginning one day from
             // now and ending a month from now.
-            'start_date' => new StringValue(['value' => date('Ymd', strtotime('+1 day'))]),
-            'end_date' => new StringValue(['value' => date('Ymd', strtotime('+1 month'))])
+            'start_date' => date('Ymd', strtotime('+1 day')),
+            'end_date' => date('Ymd', strtotime('+1 month'))
         ]);
 
         // Creates a campaign operation.
@@ -270,7 +264,7 @@ class AddSmartDisplayAd
     ) {
         // Constructs an ad group and set its type.
         $adGroup = new AdGroup([
-            'name' => new StringValue(['value' => 'Earth to Mars Cruises #' . uniqid()]),
+            'name' => 'Earth to Mars Cruises #' . uniqid(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::PAUSED,
         ]);
@@ -329,30 +323,22 @@ class AddSmartDisplayAd
         // Creates a responsive display ad info.
         $responsiveDisplayAdInfo = new ResponsiveDisplayAdInfo([
             // Sets some basic required information for the responsive display ad.
-            'headlines' => [new AdTextAsset(['text' => new StringValue(['value' => 'Travel'])])],
-            'long_headline' => new AdTextAsset([
-                'text' => new StringValue(['value' => 'Travel the World'])
-            ]),
-            'descriptions' => [
-                new AdTextAsset(['text' => new StringValue(['value' => 'Take to the air!'])])
-            ],
-            'business_name' => new StringValue(['value' => 'Google']),
+            'headlines' => [new AdTextAsset(['text' => 'Travel'])],
+            'long_headline' => new AdTextAsset(['text' => 'Travel the World']),
+            'descriptions' => [new AdTextAsset(['text' => 'Take to the air!'])],
+            'business_name' => 'Google',
             // Sets the marketing image and square marketing image to the previously created
             // image assets.
             'marketing_images' => [
-                new AdImageAsset([
-                    'asset' => new StringValue(['value' => $marketingImageAssetResourceName])
-                ])
+                new AdImageAsset(['asset' => $marketingImageAssetResourceName])
             ],
             'square_marketing_images' => [
-                new AdImageAsset([
-                    'asset' => new StringValue(['value' => $squareMarketingImageAssetResourceName])
-                ])
+                new AdImageAsset(['asset' => $squareMarketingImageAssetResourceName])
             ],
             // Optional: Sets call to action text, price prefix and promotion text.
-            'call_to_action_text' => new StringValue(['value' => 'Shop Now']),
-            'price_prefix' => new StringValue(['value' => 'as low as']),
-            'promo_text' => new StringValue(['value' => 'Free shipping!']),
+            'call_to_action_text' => 'Shop Now',
+            'price_prefix' => 'as low as',
+            'promo_text' => 'Free shipping!',
         ]);
 
         // Creates an ad group ad with the created responsive display ad info.
@@ -360,7 +346,7 @@ class AddSmartDisplayAd
             'ad_group' => $adGroupResourceName,
             'status' => AdGroupAdStatus::PAUSED,
             'ad' => new Ad([
-                'final_urls' => [new StringValue(['value' => 'https://www.example.com'])],
+                'final_urls' => ['https://www.example.com'],
                 'responsive_display_ad' => $responsiveDisplayAdInfo
             ])
         ]);
@@ -399,11 +385,9 @@ class AddSmartDisplayAd
     ) {
         // Creates a media file.
         $asset = new Asset([
-            'name' => new StringValue(['value' => $imageName]),
+            'name' => $imageName,
             'type' => AssetType::IMAGE,
-            'image_asset' => new ImageAsset([
-                'data' => new BytesValue(['value' => file_get_contents($imageUrl)])
-            ])
+            'image_asset' => new ImageAsset(['data' => file_get_contents($imageUrl)])
         ]);
 
         // Creates an asset operation.

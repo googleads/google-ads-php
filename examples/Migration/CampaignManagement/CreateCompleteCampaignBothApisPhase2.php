@@ -20,18 +20,18 @@ namespace Google\Ads\GoogleAds\Examples\Migration\CampaignManagement;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\V3\Common\ManualCpc;
-use Google\Ads\GoogleAds\V3\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V3\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V3\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V3\Resources\Campaign;
-use Google\Ads\GoogleAds\V3\Resources\Campaign\NetworkSettings;
-use Google\Ads\GoogleAds\V3\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V3\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V3\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V3\Services\MutateCampaignBudgetsResponse;
-use Google\Ads\GoogleAds\V3\Services\MutateCampaignsResponse;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\V5\Common\ManualCpc;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\NetworkSettings;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignsResponse;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroup;
@@ -56,9 +56,6 @@ use Google\AdsApi\AdWords\v201809\cm\Money;
 use Google\AdsApi\AdWords\v201809\cm\Operator;
 use Google\AdsApi\AdWords\v201809\cm\UrlList;
 use Google\AdsApi\AdWords\v201809\cm\UserStatus;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This code example is the third in a series of code examples that shows how to create
@@ -102,7 +99,7 @@ class CreateCompleteCampaignBothApisPhase2
         $adGroup = self::createAdGroup(
             $adWordsServices,
             $adWordsSession,
-            $campaign->getId()->getValue()
+            $campaign->getId()
         );
         self::createTextAds($adWordsServices, $adWordsSession, $adGroup->getId());
         self::createKeywords(
@@ -125,9 +122,9 @@ class CreateCompleteCampaignBothApisPhase2
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
-            'amount_micros' => new Int64Value(['value' => 500000])
+            'amount_micros' => 500000
         ]);
 
         // Creates a campaign budget operation.
@@ -149,7 +146,7 @@ class CreateCompleteCampaignBothApisPhase2
             $campaignBudgetResourceName
         );
 
-        printf("Added budget named '%s'.%s", $newCampaignBudget->getName()->getValue(), PHP_EOL);
+        printf("Added budget named '%s'.%s", $newCampaignBudget->getName(), PHP_EOL);
 
         return $newCampaignBudget;
     }
@@ -189,14 +186,8 @@ class CreateCompleteCampaignBothApisPhase2
         int $customerId,
         CampaignBudget $campaignBudget
     ) {
-        $trueValue = new BoolValue(['value' => true]);
-        $falseValue = new BoolValue(['value' => false]);
-
-        $startDate = new StringValue(['value' => date('Ymd', strtotime('+1 day'))]);
-        $endDate = new StringValue(['value' => date('Ymd', strtotime('+1 month'))]);
-
         $campaign = new Campaign([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
+            'name' => 'Interplanetary Cruise #' . uniqid(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added
@@ -207,14 +198,14 @@ class CreateCompleteCampaignBothApisPhase2
             'campaign_budget' => $campaignBudget->getResourceName(),
             // Adds the network settings configured above.
             'network_settings' => new NetworkSettings([
-                'target_google_search' => $trueValue,
-                'target_search_network' => $trueValue,
-                'target_content_network' => $falseValue,
-                'target_partner_search_network' => $falseValue
+                'target_google_search' => true,
+                'target_search_network' => true,
+                'target_content_network' => false,
+                'target_partner_search_network' => false
             ]),
             // Optional: Sets the start and end dates.
-            'start_date' => $startDate,
-            'end_date' => $endDate
+            'start_date' => date('Ymd', strtotime('+1 day')),
+            'end_date' => date('Ymd', strtotime('+1 month'))
         ]);
 
         // Creates a campaign operation.
@@ -232,7 +223,7 @@ class CreateCompleteCampaignBothApisPhase2
         $campaignResourceName = $campaignResponse->getResults()[0]->getResourceName();
         $newCampaign = self::getCampaign($googleAdsClient, $customerId, $campaignResourceName);
 
-        printf("Added campaign named '%s'.%s", $newCampaign->getName()->getValue(), PHP_EOL);
+        printf("Added campaign named '%s'.%s", $newCampaign->getName(), PHP_EOL);
 
         return $newCampaign;
     }

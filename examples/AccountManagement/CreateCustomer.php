@@ -23,15 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Customer;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Customer;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example illustrates how to create a new customer under a given manager account.
@@ -102,19 +100,15 @@ class CreateCustomer
     public static function runExample(GoogleAdsClient $googleAdsClient, int $managerCustomerId)
     {
         $customer = new Customer([
-            'descriptive_name' => new StringValue(
-                ['value' => 'Account created with CustomerService on ' . date('Ymd h:i:s')]
-            ),
+            'descriptive_name' => 'Account created with CustomerService on ' . date('Ymd h:i:s'),
             // For a list of valid currency codes and time zones see this documentation:
             // https://developers.google.com/adwords/api/docs/appendix/codes-formats.
-            'currency_code' => new StringValue(['value' => 'USD']),
-            'time_zone' => new StringValue(['value' => 'America/New_York']),
+            'currency_code' => 'USD',
+            'time_zone' => 'America/New_York',
             // The below values are optional. For more information about URL
             // options see: https://support.google.com/google-ads/answer/6305348.
-            'tracking_url_template' => new StringValue(['value' => '{lpurl}?device={device}']),
-            'final_url_suffix' => new StringValue([
-                    'value' => 'keyword={keyword}&matchtype={matchtype}&adgroupid={adgroupid}'
-            ])
+            'tracking_url_template' => '{lpurl}?device={device}',
+            'final_url_suffix' => 'keyword={keyword}&matchtype={matchtype}&adgroupid={adgroupid}'
         ]);
 
         // Issues a mutate request to create an account

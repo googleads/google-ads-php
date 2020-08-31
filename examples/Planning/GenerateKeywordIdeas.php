@@ -23,17 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GenerateKeywordIdeaResult;
-use Google\Ads\GoogleAds\V4\Services\KeywordAndUrlSeed;
-use Google\Ads\GoogleAds\V4\Services\KeywordSeed;
-use Google\Ads\GoogleAds\V4\Services\UrlSeed;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GenerateKeywordIdeaResult;
+use Google\Ads\GoogleAds\V5\Services\KeywordAndUrlSeed;
+use Google\Ads\GoogleAds\V5\Services\KeywordSeed;
+use Google\Ads\GoogleAds\V5\Services\UrlSeed;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
@@ -199,9 +199,9 @@ class GenerateKeywordIdeas
             // A mapping of enum names to values can be found at KeywordPlanCompetitionLevel.php.
             printf(
                 "Keyword idea text '%s' has %d average monthly searches and competition as %d.%s",
-                $result->getText()->getValue(),
+                $result->getTextUnwrapped(),
                 is_null($result->getKeywordIdeaMetrics()) ?
-                    0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches()->getValue(),
+                    0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearchesUnwrapped(),
                 is_null($result->getKeywordIdeaMetrics()) ?
                     0 : $result->getKeywordIdeaMetrics()->getCompetition(),
                 PHP_EOL

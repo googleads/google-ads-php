@@ -23,25 +23,24 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\GmailAdInfo;
-use Google\Ads\GoogleAds\V4\Common\GmailTeaser;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\MediaTypeEnum\MediaType;
-use Google\Ads\GoogleAds\V4\Enums\MimeTypeEnum\MimeType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Resources\MediaFile;
-use Google\Ads\GoogleAds\V4\Resources\MediaImage;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\MediaFileOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\GmailAdInfo;
+use Google\Ads\GoogleAds\V5\Common\GmailTeaser;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\MediaTypeEnum\MediaType;
+use Google\Ads\GoogleAds\V5\Enums\MimeTypeEnum\MimeType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\MediaFile;
+use Google\Ads\GoogleAds\V5\Resources\MediaImage;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\MediaFileOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to add a Gmail ad to a given ad group. The ad group's campaign
@@ -203,34 +202,29 @@ class AddGmailAd
         $gmailAdInfo = new GmailAdInfo([
             // Sets the teaser information.
             'teaser' => new GmailTeaser([
-                'headline' => new StringValue(['value' => 'Dream']),
-                'description' => new StringValue(['value' => 'Create your own adventure']),
-                'business_name' => new StringValue(['value' => 'Interplanetary Ships']),
-                'logo_image' => new StringValue(['value' => $mediaFiles['logoResourceName']])
+                'headline' => 'Dream',
+                'description' => 'Create your own adventure',
+                'business_name' => 'Interplanetary Ships',
+                'logo_image' => $mediaFiles['logoResourceName']
             ]),
             // Sets the marketing image and other information.
-            'marketing_image' =>
-                new StringValue(['value' => $mediaFiles['marketingImageResourceName']]),
-            'marketing_image_headline' => new StringValue(['value' => 'Travel']),
-            'marketing_image_description' => new StringValue(['value' => 'Take to the skies!'])
+            'marketing_image' => $mediaFiles['marketingImageResourceName'],
+            'marketing_image_headline' => 'Travel',
+            'marketing_image_description' => 'Take to the skies!'
         ]);
 
         // Sets the Gmail ad info on an Ad.
         $ad = new Ad([
-            'name' => new StringValue(['value' => "Gmail Ad #" . uniqid()]),
-            'final_urls' => [new StringValue(['value' => 'http://www.example.com'])],
+            'name' => 'Gmail Ad #' . uniqid(),
+            'final_urls' => ['http://www.example.com'],
             'gmail_ad' => $gmailAdInfo
         ]);
-
-        // Gets the ad group resource name.
-        $adGroupResourceName =
-            new StringValue(['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]);
 
         // Creates an ad group ad to hold the above ad.
         $adGroupAd = new AdGroupAd([
             'ad' => $ad,
             'status' => AdGroupAdStatus::PAUSED,
-            'ad_group' => $adGroupResourceName
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
         ]);
 
         // Creates an ad group ad operation.

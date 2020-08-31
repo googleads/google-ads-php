@@ -23,13 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example gets expanded text ads. */
@@ -131,11 +131,11 @@ class GetExpandedTextAds
             printf(
                 "Expanded text ad with ID %d, status '%s', and headline '%s - %s' was found in ad "
                 . "group with ID %d.%s",
-                $ad->getIdUnwrapped(),
+                $ad->getId(),
                 AdGroupAdStatus::name($googleAdsRow->getAdGroupAd()->getStatus()),
-                $ad->getExpandedTextAd()->getHeadlinePart1Unwrapped(),
-                $ad->getExpandedTextAd()->getHeadlinePart2Unwrapped(),
-                $googleAdsRow->getAdGroup()->getIdUnwrapped(),
+                $ad->getExpandedTextAd()->getHeadlinePart1(),
+                $ad->getExpandedTextAd()->getHeadlinePart2(),
+                $googleAdsRow->getAdGroup()->getId(),
                 PHP_EOL
             );
         }

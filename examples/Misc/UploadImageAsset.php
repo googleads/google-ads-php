@@ -24,17 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\V4\Common\ImageAsset;
-use Google\Ads\GoogleAds\V4\Enums\AssetTypeEnum\AssetType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Asset;
-use Google\Ads\GoogleAds\V4\Services\AssetOperation;
-use Google\Ads\GoogleAds\V4\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\V5\Common\ImageAsset;
+use Google\Ads\GoogleAds\V5\Enums\AssetTypeEnum\AssetType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Asset;
+use Google\Ads\GoogleAds\V5\Services\AssetOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateAssetResult;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BytesValue;
 
 /** This example uploads an image asset. To get image assets, run GetAllImageAssets.php. */
 class UploadImageAsset
@@ -109,11 +108,9 @@ class UploadImageAsset
             // If you specify the name field, then both the asset name and the image being
             // uploaded should be unique, and should not match another ACTIVE asset in this
             // customer account.
-            // 'name' => new StringValue(['value' => 'Jupiter Trip #' . uniqid()]),
+            // 'name' => 'Jupiter Trip #' . uniqid(),
             'type' => AssetType::IMAGE,
-            'image_asset' => new ImageAsset([
-                'data' => new BytesValue(['value' => $imageContent]),
-            ])
+            'image_asset' => new ImageAsset(['data' => $imageContent])
         ]);
 
         // Creates an asset operation.

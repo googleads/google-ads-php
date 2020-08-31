@@ -24,16 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\ClickConversion;
-use Google\Ads\GoogleAds\V4\Services\UploadClickConversionsResponse;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\ClickConversion;
+use Google\Ads\GoogleAds\V5\Services\ClickConversionResult;
+use Google\Ads\GoogleAds\V5\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This code example imports offline conversion values for specific clicks to your account.
@@ -132,13 +131,12 @@ class UploadOfflineConversion
     ) {
         // Creates a click conversion by specifying currency as USD.
         $clickConversion = new ClickConversion([
-            'conversion_action' => new StringValue([
-                'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
-            ]),
-            'gclid' => new StringValue(['value' => $gclid]),
-            'conversion_value' => new DoubleValue(['value' => $conversionValue]),
-            'conversion_date_time' => new StringValue(['value' => $conversionDateTime]),
-            'currency_code' => new StringValue(['value' => 'USD']),
+            'conversion_action' =>
+                ResourceNames::forConversionAction($customerId, $conversionActionId),
+            'gclid' => $gclid,
+            'conversion_value' => $conversionValue,
+            'conversion_date_time' => $conversionDateTime,
+            'currency_code' => 'USD',
         ]);
 
         // Issues a request to upload the click conversion.
@@ -161,14 +159,14 @@ class UploadOfflineConversion
             );
         } else {
             // Prints the result if exists.
-            /** @var ClickConversion $uploadedClickConversion */
+            /** @var ClickConversionResult $uploadedClickConversion */
             $uploadedClickConversion = $response->getResults()[0];
             printf(
                 "Uploaded click conversion that occurred at '%s' from Google Click ID '%s' " .
                 "to '%s'.%s",
-                $uploadedClickConversion->getConversionDateTimeUnwrapped(),
-                $uploadedClickConversion->getGclidUnwrapped(),
-                $uploadedClickConversion->getConversionActionUnwrapped(),
+                $uploadedClickConversion->getConversionDateTime(),
+                $uploadedClickConversion->getGclid(),
+                $uploadedClickConversion->getConversionAction(),
                 PHP_EOL
             );
         }

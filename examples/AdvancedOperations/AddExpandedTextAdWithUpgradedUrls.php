@@ -23,20 +23,19 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Common\CustomParameter;
-use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupServiceClient;
+use Google\Ads\GoogleAds\V5\Common\CustomParameter;
+use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupServiceClient;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to add expanded text ads to a given ad group.
@@ -112,9 +111,9 @@ class AddExpandedTextAdWithUpgradedUrls
     ) {
         // Creates the expanded text ad info.
         $expandedTextAdInfo = new ExpandedTextAdInfo([
-            'headline_part1' => new StringValue(['value' => 'Luxury Cruise to Mars']),
-            'headline_part2' => new StringValue(['value' => 'Visit the Red Planet in style.']),
-            'description' => new StringValue(['value' => 'Low-gravity fun for everyone!'])
+            'headline_part1' => 'Luxury Cruise to Mars',
+            'headline_part2' => 'Visit the Red Planet in style.',
+            'description' => 'Low-gravity fun for everyone!'
         ]);
 
         $ad = new Ad([
@@ -123,26 +122,18 @@ class AddExpandedTextAdWithUpgradedUrls
             // Specifies a list of final URLs. This field cannot be set if URL field is set. This
             // may be specified at ad and criterion levels.
             'final_urls' => [
-                new StringValue(['value' => 'http://www.example.com/cruise/space/']),
-                new StringValue(['value' => 'http://www.example.com/locations/mars/'])
+                'http://www.example.com/cruise/space/',
+                'http://www.example.com/locations/mars/'
             ],
             // Specifies a tracking URL for 3rd party tracking provider. You may specify one at
             // customer, campaign, ad group, ad or criterion levels.
-            'tracking_url_template' => new StringValue(
-                ['value' =>
-                    'http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}']
-            ),
+            'tracking_url_template' =>
+                'http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}',
             // Since your tracking URL has two custom parameters, provide their values too. This can
             // be provided at campaign, ad group, ad or criterion levels.
             'url_custom_parameters' => [
-                new CustomParameter([
-                    'key' => new StringValue(['value' => 'season']),
-                    'value' => new StringValue(['value' => 'christmas'])
-                ]),
-                new CustomParameter([
-                    'key' => new StringValue(['value' => 'promocode']),
-                    'value' => new StringValue(['value' => 'NY123'])
-                ])
+                new CustomParameter(['key' => 'season', 'value' => 'christmas']),
+                new CustomParameter(['key' => 'promocode', 'value' => 'NY123'])
             ]
         ]);
 
@@ -150,16 +141,14 @@ class AddExpandedTextAdWithUpgradedUrls
         // finalUrls is unset. This may be specified at ad and criterion levels.
         /*
         $ad->setFinalMobileUrls([
-            new StringValue(['value' => 'http://mobile.example.com/cruise/space/']),
-            new StringValue(['value' => 'http://mobile.example.com/locations/mars/'])
+            'http://mobile.example.com/cruise/space/',
+            'http://mobile.example.com/locations/mars/'
         ]);
         */
 
         // Creates an ad group ad to hold the above ad.
         $adGroupAd = new AdGroupAd([
-            'ad_group' => new StringValue(
-                ['value' => AdGroupServiceClient::adGroupName($customerId, $adGroupId)]
-            ),
+            'ad_group' => AdGroupServiceClient::adGroupName($customerId, $adGroupId),
             'status' => AdGroupAdStatus::PAUSED,
             'ad' => $ad
         ]);

@@ -24,18 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\ConversionAdjustment;
-use Google\Ads\GoogleAds\V4\Services\GclidDateTimePair;
-use Google\Ads\GoogleAds\V4\Services\RestatementValue;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\ConversionAdjustment;
+use Google\Ads\GoogleAds\V5\Services\ConversionAdjustmentResult;
+use Google\Ads\GoogleAds\V5\Services\GclidDateTimePair;
+use Google\Ads\GoogleAds\V5\Services\RestatementValue;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example imports conversion adjustments for conversions that already exist.
@@ -146,15 +145,14 @@ class UploadConversionAdjustment
         // Associates conversion adjustments with the existing conversion action.
         // The GCLID should have been uploaded before with a conversion.
         $conversionAdjustment = new ConversionAdjustment([
-            'conversion_action' => new StringValue([
-                'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
-            ]),
+            'conversion_action' =>
+                ResourceNames::forConversionAction($customerId, $conversionActionId),
             'adjustment_type' => $conversionAdjustmentType,
             'gclid_date_time_pair' => new GclidDateTimePair([
-                'gclid' => new StringValue(['value' => $gclid]),
-                'conversion_date_time' => new StringValue(['value' => $conversionDateTime])
+                'gclid' => $gclid,
+                'conversion_date_time' => $conversionDateTime
             ]),
-            'adjustment_date_time' => new StringValue(['value' => $adjustmentDateTime])
+            'adjustment_date_time' => $adjustmentDateTime
         ]);
 
         // Sets adjusted value for adjustment type RESTATEMENT.
@@ -163,7 +161,7 @@ class UploadConversionAdjustment
             && $conversionAdjustmentType === ConversionAdjustmentType::RESTATEMENT
         ) {
             $conversionAdjustment->setRestatementValue(new RestatementValue([
-                'adjusted_value' => new DoubleValue(['value' => $restatementValue])
+                'adjusted_value' => $restatementValue
             ]));
         }
 
@@ -187,12 +185,12 @@ class UploadConversionAdjustment
             );
         } else {
             // Prints the result if exists.
-            /** @var ConversionAdjustment $uploadedConversionAdjustment */
+            /** @var ConversionAdjustmentResult $uploadedConversionAdjustment */
             $uploadedConversionAdjustment = $response->getResults()[0];
             printf(
                 "Uploaded conversion adjustment of '%s' for Google Click ID '%s'.%s",
-                $uploadedConversionAdjustment->getConversionActionUnwrapped(),
-                $uploadedConversionAdjustment->getGclidDateTimePair()->getGclidUnwrapped(),
+                $uploadedConversionAdjustment->getConversionAction(),
+                $uploadedConversionAdjustment->getGclidDateTimePair()->getGclid(),
                 PHP_EOL
             );
         }

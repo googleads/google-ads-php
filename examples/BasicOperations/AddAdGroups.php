@@ -23,19 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroup;
-use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /** This example adds ad groups to a campaign. */
 class AddAdGroups
@@ -106,18 +104,17 @@ class AddAdGroups
         int $customerId,
         int $campaignId
     ) {
-        $campaignResourceName =
-            new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]);
+        $campaignResourceName = ResourceNames::forCampaign($customerId, $campaignId);
 
         $operations = [];
 
         // Constructs an ad group and sets an optional CPC value.
         $adGroup1 = new AdGroup([
-            'name' => new StringValue(['value' => 'Earth to Mars Cruises #' . uniqid()]),
+            'name' => 'Earth to Mars Cruises #' . uniqid(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::ENABLED,
             'type' => AdGroupType::SEARCH_STANDARD,
-            'cpc_bid_micros' => new Int64Value(['value' => 10000000])
+            'cpc_bid_micros' => 10000000
         ]);
 
         $adGroupOperation1 = new AdGroupOperation();
@@ -126,11 +123,11 @@ class AddAdGroups
 
         // Constructs another ad group.
         $adGroup2 = new AdGroup([
-            'name' => new StringValue(['value' => 'Earth to Venus Cruises #' . uniqid()]),
+            'name' => 'Earth to Venus Cruises #' . uniqid(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::ENABLED,
             'type' => AdGroupType::SEARCH_STANDARD,
-            'cpc_bid_micros' => new Int64Value(['value' => 20000000])
+            'cpc_bid_micros' => 20000000
         ]);
 
         $adGroupOperation2 = new AdGroupOperation();
