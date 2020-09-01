@@ -76,6 +76,9 @@ final class GoogleAdsCallLogger
         array $responseData
     ) {
         $level = $this->getAppropriateLogLevel($responseData['status']->code);
+        // Logs only if the appropriate log level is enabled: this is to avoid unnecessary message
+        // formatting as it could take a significant time depending on the request and response
+        // payloads.
         if ($this->isEnabled($level)) {
             $this->logger->log(
                 $level,
@@ -105,6 +108,9 @@ final class GoogleAdsCallLogger
         );
 
         if ($this->isEnabled($level)) {
+            // Logs only if the appropriate log level is enabled: this is to avoid unnecessary message
+            // formatting as it could take a significant time depending on the request and response
+            // payloads.
             $this->logger->log(
                 $level,
                 $this->logMessageFormatter->formatDetail($requestData, $responseData, $this->endpoint),
