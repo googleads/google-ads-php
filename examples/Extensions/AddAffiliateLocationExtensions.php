@@ -24,28 +24,28 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\MatchingFunction;
-use Google\Ads\GoogleAds\V4\Enums\AffiliateLocationFeedRelationshipTypeEnum\AffiliateLocationFeedRelationshipType;
-use Google\Ads\GoogleAds\V4\Enums\AffiliateLocationPlaceholderFieldEnum\AffiliateLocationPlaceholderField;
-use Google\Ads\GoogleAds\V4\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V4\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V4\Resources\CampaignFeed;
-use Google\Ads\GoogleAds\V4\Resources\CustomerFeed;
-use Google\Ads\GoogleAds\V4\Resources\Feed;
-use Google\Ads\GoogleAds\V4\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V4\Resources\Feed\AffiliateLocationFeedData;
-use Google\Ads\GoogleAds\V4\Services\CampaignFeedOperation;
-use Google\Ads\GoogleAds\V4\Services\CustomerFeedOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedServiceClient;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\MatchingFunction;
+use Google\Ads\GoogleAds\V5\Enums\AffiliateLocationFeedRelationshipTypeEnum\AffiliateLocationFeedRelationshipType;
+use Google\Ads\GoogleAds\V5\Enums\AffiliateLocationPlaceholderFieldEnum\AffiliateLocationPlaceholderField;
+use Google\Ads\GoogleAds\V5\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V5\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V5\Resources\CampaignFeed;
+use Google\Ads\GoogleAds\V5\Resources\CustomerFeed;
+use Google\Ads\GoogleAds\V5\Resources\Feed;
+use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V5\Resources\Feed\AffiliateLocationFeedData;
+use Google\Ads\GoogleAds\V5\Services\CampaignFeedOperation;
+use Google\Ads\GoogleAds\V5\Services\CustomerFeedOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedServiceClient;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
@@ -493,7 +493,9 @@ class AddAffiliateLocationExtensions
             'matching_function' => new MatchingFunction([
                 'function_string' => new StringValue(['value' => $matchingFunction])
             ]),
-            'campaign' => ResourceNames::forCampaign($customerId, $campaignId)
+            'campaign' => new StringValue([
+                'value' => ResourceNames::forCampaign($customerId, $campaignId)
+            ])
         ]);
 
         // Creates the campaign feed operation.

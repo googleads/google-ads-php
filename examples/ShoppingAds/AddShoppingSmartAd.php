@@ -23,39 +23,35 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V4\Common\MaximizeConversionValue;
-use Google\Ads\GoogleAds\V4\Common\ShoppingSmartAdInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V4\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V4\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V4\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroup;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\Campaign\ShoppingSetting;
-use Google\Ads\GoogleAds\V4\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V5\Common\MaximizeConversionValue;
+use Google\Ads\GoogleAds\V5\Common\ShoppingSmartAdInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\ShoppingSetting;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example creates a Smart Shopping campaign, a Smart Shopping ad group, a Smart Shopping ad
@@ -192,14 +188,14 @@ class AddShoppingSmartAd
     {
         // Creates a campaign budget.
         $budget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // The budget is specified in the local currency of the account.
             // The amount should be specified in micros, where one million is equivalent to one
             // unit.
-            'amount_micros' => new Int64Value(['value' => 50000000]),
+            'amount_micros' => 50000000,
             // Budgets for Smart Shopping campaigns cannot be shared.
-            'explicitly_shared' => new BoolValue(['value' => false])
+            'explicitly_shared' => false
         ]);
 
         // Creates a campaign budget operation.
@@ -244,13 +240,13 @@ class AddShoppingSmartAd
             // Sets the sales country of products to include in the campaign.
             // Only products from Merchant Center targeting this country will appear in the
             // campaign.
-            'sales_country' => new StringValue(['value' => 'US']),
-            'merchant_id' => new Int64Value(['value' => $merchantCenterAccountId])
+            'sales_country' => 'US',
+            'merchant_id' => $merchantCenterAccountId
         ]);
 
         // Creates the campaign.
         $campaign = new Campaign([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise Campaign #' . uniqid()]),
+            'name' => 'Interplanetary Cruise Campaign #' . uniqid(),
             // Configures settings related to shopping campaigns including
             // advertising channel type, advertising sub-type and shopping setting.
             'advertising_channel_type' => AdvertisingChannelType::SHOPPING,
@@ -270,11 +266,9 @@ class AddShoppingSmartAd
             // "total value" by "total spend".
             // For more information on maximize conversion value, see the support article:
             // http://support.google.com/google-ads/answer/7684216.
-            'maximize_conversion_value' => new MaximizeConversionValue([
-                'target_roas' => new DoubleValue(['value' => 3.5])
-            ]),
+            'maximize_conversion_value' => new MaximizeConversionValue(['target_roas' => 3.5]),
             // Sets the budget.
-            'campaign_budget' => new StringValue(['value' => $budgetResourceName])
+            'campaign_budget' => $budgetResourceName
         ]);
 
         // Creates a campaign operation.
@@ -313,8 +307,8 @@ class AddShoppingSmartAd
     ) {
         // Creates an ad group.
         $adGroup = new AdGroup([
-            'name' => new StringValue(['value' => 'Earth to Mars Cruise #' . uniqid()]),
-            'campaign' => new StringValue(['value' => $campaignResourceName]),
+            'name' => 'Earth to Mars Cruise #' . uniqid(),
+            'campaign' => $campaignResourceName,
             // Sets the ad group type to SHOPPING_SMART_ADS. This cannot be set to other types.
             'type' => AdGroupType::SHOPPING_SMART_ADS,
             'status' => AdGroupStatus::ENABLED
@@ -358,7 +352,7 @@ class AddShoppingSmartAd
             // Sets a new Smart Shopping ad.
             'ad' => new Ad(['shopping_smart_ad' => new ShoppingSmartAdInfo()]),
             // Sets the ad group.
-            'ad_group' => new StringValue(['value' => $adGroupResourceName])
+            'ad_group' => $adGroupResourceName
         ]);
 
         // Creates an ad group ad operation.
@@ -397,7 +391,7 @@ class AddShoppingSmartAd
         // Creates a new ad group criterion. This will contain a listing group.
         // This will be the listing group for 'All products' and will contain a single root node.
         $adGroupCriterion = new AdGroupCriterion([
-            'ad_group' => new StringValue(['value' => $adGroupResourceName]),
+            'ad_group' => $adGroupResourceName,
             'status' => AdGroupAdStatus::ENABLED,
             // Creates a new listing group. This will be the top-level "root" node.
             // Sets the type of the listing group to be a biddable unit.

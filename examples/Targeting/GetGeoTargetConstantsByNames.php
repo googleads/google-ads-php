@@ -23,16 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GeoTargetConstantSuggestion;
-use Google\Ads\GoogleAds\V4\Services\SuggestGeoTargetConstantsRequest\LocationNames;
+use Google\Ads\GoogleAds\V5\Enums\GeoTargetConstantStatusEnum\GeoTargetConstantStatus;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GeoTargetConstantSuggestion;
+use Google\Ads\GoogleAds\V5\Services\SuggestGeoTargetConstantsRequest\LocationNames;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This code example gets geo target constants by given location names.
@@ -118,15 +117,11 @@ class GetGeoTargetConstantsByNames
     ) {
         $geoTargetConstantServiceClient = $googleAdsClient->getGeoTargetConstantServiceClient();
 
-        $names = [];
-        foreach ($locationNames as $locationName) {
-            $names[] = new StringValue(['value' => $locationName]);
-        }
-        $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants(
-            new StringValue(['value' => $locale]),
-            new StringValue(['value' => $countryCode]),
-            ['locationNames' => new LocationNames(['names' => $names])]
-        );
+        $response = $geoTargetConstantServiceClient->suggestGeoTargetConstants([
+            'locale' => $locale,
+            'countryCode' => $countryCode,
+            'locationNames' => new LocationNames(['names' => $locationNames])
+        ]);
 
         // Iterates over all geo target constant suggestion objects and prints the requested field
         // values for each one.
@@ -136,15 +131,15 @@ class GetGeoTargetConstantsByNames
                 "Found '%s' ('%s','%s','%s',%s) in locale '%s' with reach %d"
                 . " for the search term '%s'.%s",
                 $geoTargetConstantSuggestion->getGeoTargetConstant()->getResourceName(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getNameUnwrapped(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getCountryCodeUnwrapped(),
-                $geoTargetConstantSuggestion->getGeoTargetConstant()->getTargetTypeUnwrapped(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getName(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getCountryCode(),
+                $geoTargetConstantSuggestion->getGeoTargetConstant()->getTargetType(),
                 GeoTargetConstantStatus::name(
                     $geoTargetConstantSuggestion->getGeoTargetConstant()->getStatus()
                 ),
-                $geoTargetConstantSuggestion->getLocaleUnwrapped(),
-                $geoTargetConstantSuggestion->getReachUnwrapped(),
-                $geoTargetConstantSuggestion->getSearchTermUnwrapped(),
+                $geoTargetConstantSuggestion->getLocale(),
+                $geoTargetConstantSuggestion->getReach(),
+                $geoTargetConstantSuggestion->getSearchTerm(),
                 PHP_EOL
             );
         }

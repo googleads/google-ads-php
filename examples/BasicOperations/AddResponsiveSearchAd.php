@@ -24,20 +24,19 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V4\Common\ResponsiveSearchAdInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\ServedAssetFieldTypeEnum\ServedAssetFieldType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V5\Common\ResponsiveSearchAdInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\ServedAssetFieldTypeEnum\ServedAssetFieldType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds a responsive search ad to a given ad group. To get ad groups,
@@ -111,9 +110,6 @@ class AddResponsiveSearchAd
         int $customerId,
         int $adGroupId
     ) {
-        $adGroupResourceName =
-            new StringValue(['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]);
-
         // Creates an ad and sets responsive search ad info.
         $ad = new Ad([
             'responsive_search_ad' => new ResponsiveSearchAdInfo([
@@ -132,15 +128,15 @@ class AddResponsiveSearchAd
                     self::createAdTextAsset('Buy your tickets now'),
                     self::createAdTextAsset('Visit the Red Planet')
                 ],
-                'path1' => new StringValue(['value' => 'all-inclusive']),
-                'path2' => new StringValue(['value' => 'deals'])
+                'path1' => 'all-inclusive',
+                'path2' => 'deals'
             ]),
-            'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+            'final_urls' => ['http://www.example.com']
         ]);
 
         // Creates an ad group ad to hold the above ad.
         $adGroupAd = new AdGroupAd([
-            'ad_group' => $adGroupResourceName,
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'status' => AdGroupAdStatus::PAUSED,
             'ad' => $ad
         ]);
@@ -170,7 +166,7 @@ class AddResponsiveSearchAd
      */
     private static function createAdTextAsset(string $text, int $pinField = null): AdTextAsset
     {
-        $adTextAsset = new AdTextAsset(['text' => new StringValue(['value' => $text])]);
+        $adTextAsset = new AdTextAsset(['text' => $text]);
         if (!is_null($pinField)) {
             $adTextAsset->setPinnedField($pinField);
         }

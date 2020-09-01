@@ -1,3 +1,22 @@
+## 5.0.0
+*   Added support for v5 of Google Ads API.
+*   Upgraded dependencies: `google/protobuf` (^3.13.0), `ulrichsg/getopt-php` (^3.4).
+*   Fixed instantiation tests and PSR-4 issues.
+*   Updated all code examples to v5.
+*   Added code examples:
+    * AddLogicalUserList
+    * AddCombinedRuleUserList
+    * AddExpressionRuleUserList
+    * AddConversionBasedUserList
+    * AddBillingSetup
+    * RejectMerchantCenterLink
+*   Fixed/improved code examples:
+    * AddSmartDisplayAd
+    * UpdateSitelinkCampaignExtensionSetting
+    * CreateCustomer
+    * UsePortfolioBiddingStrategy
+    * ForecastReach
+
 ## 4.0.0
 *   Added support for v4 of Google Ads API.
 *   Updated code examples to v4.

@@ -24,45 +24,42 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\GoogleAdsFailures;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V4\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V4\Common\ManualCpc;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V4\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V4\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V4\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroup;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Resources\BatchJob;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V4\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V4\Services\BatchJobOperation;
-use Google\Ads\GoogleAds\V4\Services\BatchJobResult;
-use Google\Ads\GoogleAds\V4\Services\BatchJobServiceClient;
-use Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V4\Services\MutateOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\GoogleAdsFailures;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V5\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V5\Common\ManualCpc;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Resources\BatchJob;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\BatchJobOperation;
+use Google\Ads\GoogleAds\V5\Services\BatchJobResult;
+use Google\Ads\GoogleAds\V5\Services\BatchJobServiceClient;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateOperation;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\OperationResponse;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds complete campaigns including campaign budgets, campaigns, ad groups and
@@ -372,9 +369,9 @@ class AddCompleteCampaignsUsingBatchJob
                     $customerId,
                     self::getNextTemporaryId()
                 ),
-                'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+                'name' => 'Interplanetary Cruise Budget #' . uniqid(),
                 'delivery_method' => BudgetDeliveryMethod::STANDARD,
-                'amount_micros' => new Int64Value(['value' => 5000000])
+                'amount_micros' => 5000000
             ])
         ]);
     }
@@ -398,9 +395,7 @@ class AddCompleteCampaignsUsingBatchJob
             $campaign = new Campaign([
                 // Creates a resource name using the temporary ID.
                 'resource_name' => ResourceNames::forCampaign($customerId, $campaignId),
-                'name' => new StringValue(
-                    ['value' => sprintf('Mutate job campaign #%s.%d', uniqid(), $campaignId)]
-                ),
+                'name' => sprintf('Mutate job campaign #%s.%d', uniqid(), $campaignId),
                 'advertising_channel_type' => AdvertisingChannelType::SEARCH,
                 // Recommendation: Set the campaign to PAUSED when creating it to prevent
                 // the ads from immediately serving. Set to ENABLED once you've added
@@ -433,14 +428,12 @@ class AddCompleteCampaignsUsingBatchJob
             // Creates a campaign criterion.
             $campaignCriterion = new CampaignCriterion([
                 'keyword' => new KeywordInfo([
-                    'text' => new StringValue(['value' => 'venus']),
+                    'text' => 'venus',
                     'match_type' => KeywordMatchType::BROAD
                 ]),
                 // Sets the campaign criterion as a negative criterion.
-                'negative' => new BoolValue(['value' => true]),
-                'campaign' => new StringValue(
-                    ['value' => $campaignOperation->getCreate()->getResourceName()]
-                )
+                'negative' => true,
+                'campaign' => $campaignOperation->getCreate()->getResourceName()
             ]);
 
             // Creates a campaign criterion operation and add it to the operations list.
@@ -467,14 +460,10 @@ class AddCompleteCampaignsUsingBatchJob
                 $adGroup = new AdGroup([
                     // Creates a resource name using the temporary ID.
                     'resource_name' => ResourceNames::forAdGroup($customerId, $adGroupId),
-                    'name' => new StringValue(
-                        ['value' => sprintf('Mutate job ad group #%s.%d', uniqid(), $adGroupId)]
-                    ),
-                    'campaign' => new StringValue(
-                        ['value' => $campaignOperation->getCreate()->getResourceName()]
-                    ),
+                    'name' => sprintf('Mutate job ad group #%s.%d', uniqid(), $adGroupId),
+                    'campaign' => $campaignOperation->getCreate()->getResourceName(),
                     'type' => AdGroupType::SEARCH_STANDARD,
-                    'cpc_bid_micros' => new Int64Value(['value' => 10000000])
+                    'cpc_bid_micros' => 10000000
                 ]);
 
                 // Creates an ad group operation and add it to the operations list.
@@ -507,12 +496,10 @@ class AddCompleteCampaignsUsingBatchJob
                 // Creates an ad group criterion using the created keyword text.
                 $adGroupCriterion = new AdGroupCriterion([
                     'keyword' => new KeywordInfo([
-                        'text' => new StringValue(['value' => $keywordText]),
+                        'text' => $keywordText,
                         'match_type' => KeywordMatchType::BROAD
                     ]),
-                    'ad_group' => new StringValue(
-                        ['value' => $adGroupOperation->getCreate()->getResourceName()]
-                    ),
+                    'ad_group' => $adGroupOperation->getCreate()->getResourceName(),
                     'status' => AdGroupCriterionStatus::ENABLED,
                 ]);
 
@@ -540,17 +527,13 @@ class AddCompleteCampaignsUsingBatchJob
                 'ad' => new Ad([
                     // Sets the expanded text ad info on an ad.
                     'expanded_text_ad' => new ExpandedTextAdInfo([
-                        'headline_part1' => new StringValue(
-                            ['value' => 'Cruise to Mars #' . uniqid()]
-                        ),
-                        'headline_part2' => new StringValue(['value' => 'Best Space Cruise Line']),
-                        'description' => new StringValue(['value' => 'Buy your tickets now!'])
+                        'headline_part1' => 'Cruise to Mars #' . uniqid(),
+                        'headline_part2' => 'Best Space Cruise Line',
+                        'description' => 'Buy your tickets now!'
                     ]),
-                    'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+                    'final_urls' => ['http://www.example.com']
                 ]),
-                'ad_group' => new StringValue(
-                    ['value' => $adGroupOperation->getCreate()->getResourceName()]
-                ),
+                'ad_group' => $adGroupOperation->getCreate()->getResourceName(),
                 'status' => AdGroupAdStatus::PAUSED,
             ]);
 

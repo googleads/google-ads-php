@@ -23,17 +23,16 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Common\PolicyTopicEntry;
-use Google\Ads\GoogleAds\V4\Common\PolicyTopicEvidence;
-use Google\Ads\GoogleAds\V4\Enums\AdTypeEnum\AdType;
-use Google\Ads\GoogleAds\V4\Enums\PolicyApprovalStatusEnum\PolicyApprovalStatus;
-use Google\Ads\GoogleAds\V4\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Common\PolicyTopicEntry;
+use Google\Ads\GoogleAds\V5\Common\PolicyTopicEvidence;
+use Google\Ads\GoogleAds\V5\Enums\AdTypeEnum\AdType;
+use Google\Ads\GoogleAds\V5\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all the disapproved ads in a given campaign. */
@@ -109,18 +108,21 @@ class GetAllDisapprovedAds
         int $campaignId
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        // Creates a query that retrieves all ads of the specified campaign ID.
+        // Creates a query that retrieves all the disapproved ads of the specified campaign ID.
         $query = 'SELECT ad_group_ad.ad.id, '
                   . 'ad_group_ad.ad.type, '
-                  . 'ad_group_ad.policy_summary '
+                  . 'ad_group_ad.policy_summary.approval_status, '
+                  . 'ad_group_ad.policy_summary.policy_topic_entries '
                   . 'FROM ad_group_ad '
-                  . 'WHERE campaign.id = ' . $campaignId;
+                  . 'WHERE campaign.id = ' . $campaignId . ' '
+                  . 'AND ad_group_ad.policy_summary.approval_status = DISAPPROVED';
 
         // Issues a search request by specifying page size.
-        $response =
-            $googleAdsServiceClient->search($customerId, $query, ['pageSize' => self::PAGE_SIZE]);
-
-        $disapprovedAdsCount = 0;
+        $response = $googleAdsServiceClient->search(
+            $customerId,
+            $query,
+            ['pageSize' => self::PAGE_SIZE, 'returnTotalResultsCount' => true]
+        );
 
         // Iterates over all rows in all pages and counts disapproved ads.
         foreach ($response->iterateAllElements() as $googleAdsRow) {
@@ -129,16 +131,10 @@ class GetAllDisapprovedAds
             $policySummary = $adGroupAd->getPolicySummary();
             $ad = $adGroupAd->getAd();
 
-            if ($policySummary->getApprovalStatus() !== PolicyApprovalStatus::DISAPPROVED) {
-                continue;
-            }
-
-            $disapprovedAdsCount++;
-
             printf(
                 "Ad with ID %d and type '%s' was disapproved with the following policy "
                 . "topic entries:%s",
-                $ad->getIdUnwrapped(),
+                $ad->getId(),
                 AdType::name($ad->getType()),
                 PHP_EOL
             );
@@ -146,7 +142,7 @@ class GetAllDisapprovedAds
                 /** @var PolicyTopicEntry $policyTopicEntry */
                 printf(
                     "  topic: '%s', type: '%s'%s",
-                    $policyTopicEntry->getTopicUnwrapped(),
+                    $policyTopicEntry->getTopic(),
                     PolicyTopicEntryType::name($policyTopicEntry->getType()),
                     PHP_EOL
                 );
@@ -157,14 +153,18 @@ class GetAllDisapprovedAds
                         printf(
                             "    evidence text[%d]: '%s'%s",
                             $i,
-                            $textList->getTexts()[$i]->getValue(),
+                            $textList->getTexts()[$i],
                             PHP_EOL
                         );
                     }
                 }
             }
         }
-        printf("Number of disapproved ads found: %d%s", $disapprovedAdsCount, PHP_EOL);
+        printf(
+            "Number of disapproved ads found: %d.%s",
+            $response->getPage()->getResponseObject()->getTotalResultsCount(),
+            PHP_EOL
+        );
     }
 }
 

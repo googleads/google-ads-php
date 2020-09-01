@@ -24,15 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V4\Enums\AccountBudgetStatusEnum\AccountBudgetStatus;
-use Google\Ads\GoogleAds\V4\Enums\SpendingLimitTypeEnum\SpendingLimitType;
-use Google\Ads\GoogleAds\V4\Enums\TimeTypeEnum\TimeType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V5\Enums\AccountBudgetStatusEnum\AccountBudgetStatus;
+use Google\Ads\GoogleAds\V5\Enums\SpendingLimitTypeEnum\SpendingLimitType;
+use Google\Ads\GoogleAds\V5\Enums\TimeTypeEnum\TimeType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** This example retrieves all account budgets for a Google Ads customer. */
@@ -134,42 +134,42 @@ class GetAccountBudgets
                 $accountBudget->getResourceName(),
                 AccountBudgetStatus::name($accountBudget->getStatus()),
                 $accountBudget->getBillingSetup()
-                    ? $accountBudget->getBillingSetupUnwrapped() : 'none',
+                    ? $accountBudget->getBillingSetup() : 'none',
                 $accountBudget->getAmountServedMicros()
-                    ? $accountBudget->getAmountServedMicrosUnwrapped() / 1000000.0
+                    ? $accountBudget->getAmountServedMicros() / 1000000.0
                     : 0.0,
                 $accountBudget->getTotalAdjustmentsMicros()
-                    ? $accountBudget->getTotalAdjustmentsMicrosUnwrapped() / 1000000.0
+                    ? $accountBudget->getTotalAdjustmentsMicros() / 1000000.0
                     : 0.0,
                 PHP_EOL,
                 $accountBudget->getApprovedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getApprovedSpendingLimitMicrosUnwrapped() / 1000000.0
+                        $accountBudget->getApprovedSpendingLimitMicros() / 1000000.0
                     ) : SpendingLimitType::name($accountBudget->getApprovedSpendingLimitType()),
                 $accountBudget->getProposedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getProposedSpendingLimitMicrosUnwrapped() / 1000000.0
+                        $accountBudget->getProposedSpendingLimitMicros() / 1000000.0
                     ) : SpendingLimitType::name($accountBudget->getProposedSpendingLimitType()),
                 $accountBudget->getAdjustedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getAdjustedSpendingLimitMicrosUnwrapped() / 1000000.0
+                        $accountBudget->getAdjustedSpendingLimitMicros() / 1000000.0
                     ) : SpendingLimitType::name($accountBudget->getAdjustedSpendingLimitType()),
                 PHP_EOL,
                 $accountBudget->getApprovedStartDateTime()
-                    ? $accountBudget->getApprovedStartDateTimeUnwrapped()
+                    ? $accountBudget->getApprovedStartDateTime()
                     : 'none',
                 $accountBudget->getProposedStartDateTime()
-                    ? $accountBudget->getProposedStartDateTimeUnwrapped()
+                    ? $accountBudget->getProposedStartDateTime()
                     : 'none',
                 PHP_EOL,
                 $accountBudget->getApprovedEndDateTime()
-                    ? $accountBudget->getApprovedEndDateTimeUnwrapped()
+                    ? $accountBudget->getApprovedEndDateTime()
                     : TimeType::name($accountBudget->getApprovedEndTimeType()),
                 $accountBudget->getProposedEndDateTime()
-                    ? $accountBudget->getProposedEndDateTimeUnwrapped()
+                    ? $accountBudget->getProposedEndDateTime()
                     : TimeType::name($accountBudget->getProposedEndTimeType()),
                 PHP_EOL
             );

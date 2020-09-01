@@ -23,27 +23,24 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\TargetSpend;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V4\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V4\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\BiddingStrategy;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\Campaign\NetworkSettings;
-use Google\Ads\GoogleAds\V4\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V4\Services\BiddingStrategyOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\TargetSpend;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\BiddingStrategy;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\NetworkSettings;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Services\BiddingStrategyOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds a portfolio bidding strategy and uses it to construct a campaign.
@@ -147,9 +144,9 @@ class UsePortfolioBiddingStrategy
     {
         // Creates a portfolio bidding strategy.
         $portfolioBiddingStrategy = new BiddingStrategy([
-            'name' => new StringValue(['value' => 'Maximize Clicks #' . uniqid()]),
+            'name' => 'Maximize Clicks #' . uniqid(),
             'target_spend' => new TargetSpend([
-                'cpc_bid_ceiling_micros' => new Int64Value(['value' => 2000000])
+                'cpc_bid_ceiling_micros' => 2000000
             ])
         ]);
 
@@ -189,12 +186,12 @@ class UsePortfolioBiddingStrategy
     ) {
         // Creates a shared budget.
         $budget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Shared Interplanetary Budget #' . uniqid()]),
+            'name' => 'Shared Interplanetary Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // Sets the amount of budget.
-            'amount_micros' => new Int64Value(['value' => 50000000]),
+            'amount_micros' => 50000000,
             // Makes the budget explicitly shared.
-            'explicitly_shared' => new BoolValue(['value' => true])
+            'explicitly_shared' => true
         ]);
 
         // Constructs a campaign budget operation.
@@ -235,7 +232,7 @@ class UsePortfolioBiddingStrategy
     ) {
         // Creates a Search campaign.
         $campaign = new Campaign([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
+            'name' => 'Interplanetary Cruise #' . uniqid(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added
@@ -243,13 +240,13 @@ class UsePortfolioBiddingStrategy
             'status' => CampaignStatus::PAUSED,
             // Configures the campaign network options.
             'network_settings' => new NetworkSettings([
-                'target_google_search' => new BoolValue(['value' => true]),
-                'target_search_network' => new BoolValue(['value' => true]),
-                'target_content_network' => new BoolValue(['value' => true]),
+                'target_google_search' => true,
+                'target_search_network' => true,
+                'target_content_network' => true,
             ]),
             // Sets the bidding strategy and budget.
-            'bidding_strategy' => new StringValue(['value' => $biddingStrategyResourceName]),
-            'campaign_budget' => new StringValue(['value' => $campaignBudgetResourceName])
+            'bidding_strategy' => $biddingStrategyResourceName,
+            'campaign_budget' => $campaignBudgetResourceName
         ]);
 
         // Constructs a campaign operation.

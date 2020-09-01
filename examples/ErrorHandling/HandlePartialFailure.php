@@ -23,19 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\GoogleAdsErrors;
-use Google\Ads\GoogleAds\Util\V4\PartialFailures;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroup;
-use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V4\Services\MutateAdGroupsResponse;
+use Google\Ads\GoogleAds\Util\V5\GoogleAdsErrors;
+use Google\Ads\GoogleAds\Util\V5\PartialFailures;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateAdGroupsResponse;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Shows how to handle partial failures. There are several ways of detecting partial failures. This
@@ -135,19 +134,18 @@ class HandlePartialFailure
         int $customerId,
         int $campaignId
     ) {
-        $campaignResourceName =
-            new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]);
+        $campaignResourceName = ResourceNames::forCampaign($customerId, $campaignId);
 
         // This ad group should be created successfully - assuming the campaign in the params
         // exists.
         $adGroup1 = new AdGroup([
-            'name' => new StringValue(['value' => 'Valid AdGroup #' . uniqid()]),
+            'name' => 'Valid AdGroup #' . uniqid(),
             'campaign' => $campaignResourceName
         ]);
 
         // This ad group will always fail - campaign ID 0 in the resource name is never valid.
         $adGroup2 = new AdGroup([
-            'name' => new StringValue(['value' => 'Broken AdGroup #' . uniqid()]),
+            'name' => 'Broken AdGroup #' . uniqid(),
             'campaign' => ResourceNames::forCampaign($customerId, 0)
         ]);
 

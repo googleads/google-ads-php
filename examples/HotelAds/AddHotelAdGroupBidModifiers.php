@@ -23,21 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\HotelCheckInDayInfo;
-use Google\Ads\GoogleAds\V4\Common\HotelLengthOfStayInfo;
-use Google\Ads\GoogleAds\V4\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupBidModifier;
-use Google\Ads\GoogleAds\V4\Services\AdGroupBidModifierOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\HotelCheckInDayInfo;
+use Google\Ads\GoogleAds\V5\Common\HotelLengthOfStayInfo;
+use Google\Ads\GoogleAds\V5\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupBidModifier;
+use Google\Ads\GoogleAds\V5\Services\AdGroupBidModifierOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example shows how to add ad group bid modifiers to a hotel ad group based on hotel check-in
@@ -118,13 +115,12 @@ class AddHotelAdGroupBidModifiers
         // 1) Creates an ad group bid modifier based on the hotel check-in day.
         $checkInDayAdGroupBidModifier = new AdGroupBidModifier([
             // Sets the ad group.
-            'ad_group' =>
-                new StringValue(['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]),
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'hotel_check_in_day' => new HotelCheckInDayInfo([
                 'day_of_week' => DayOfWeek::MONDAY
             ]),
             // Sets the bid modifier value to 150%.
-            'bid_modifier' => new DoubleValue(['value' => 1.5])
+            'bid_modifier' => 1.5
         ]);
 
         // Creates an ad group bid modifier operation.
@@ -135,15 +131,14 @@ class AddHotelAdGroupBidModifiers
         // 2) Creates an ad group bid modifier based on the hotel length of stay.
         $lengthOfStayAdGroupBidModifier = new AdGroupBidModifier([
             // Sets the ad group.
-            'ad_group' =>
-                new StringValue(['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]),
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             // Creates the hotel length of stay info.
             'hotel_length_of_stay' => new HotelLengthOfStayInfo([
-                'min_nights' => new Int64Value(['value' => 3]),
-                'max_nights' => new Int64Value(['value' => 7]),
+                'min_nights' => 3,
+                'max_nights' => 7,
             ]),
             // Sets the bid modifier value to 170%.
-            'bid_modifier' => new DoubleValue(['value' => 1.7])
+            'bid_modifier' => 1.7
         ]);
 
         // Creates an ad group bid modifier operation.

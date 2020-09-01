@@ -23,23 +23,21 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\HotelClassInfo;
-use Google\Ads\GoogleAds\V4\Common\HotelCountryRegionInfo;
-use Google\Ads\GoogleAds\V4\Common\ListingDimensionInfo;
-use Google\Ads\GoogleAds\V4\Common\ListingGroupInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V4\Enums\ListingGroupTypeEnum\ListingGroupType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\HotelClassInfo;
+use Google\Ads\GoogleAds\V5\Common\HotelCountryRegionInfo;
+use Google\Ads\GoogleAds\V5\Common\ListingDimensionInfo;
+use Google\Ads\GoogleAds\V5\Common\ListingGroupInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V5\Enums\ListingGroupTypeEnum\ListingGroupType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example shows how to add a hotel listing group tree, which has two levels. The first level
@@ -231,7 +229,7 @@ class AddHotelListingGroupTree
     ) {
         // Creates hotel class info and dimension info for 5-star hotels.
         $fiveStarredDimensionInfo = new ListingDimensionInfo([
-            'hotel_class' => new HotelClassInfo(['value' => new Int64Value(['value' => 5])])
+            'hotel_class' => new HotelClassInfo(['value' => 5])
         ]);
         // Creates listing group info for 5-star hotels as a UNIT node.
         $fiveStarredUnit = self::createListingGroupInfo(
@@ -308,9 +306,8 @@ class AddHotelListingGroupTree
         $japanDimensionInfo = new ListingDimensionInfo([
             // Creates hotel country region info and dimension info for hotels in Japan.
             'hotel_country_region' => new HotelCountryRegionInfo([
-                'country_region_criterion' => new StringValue(
-                    ['value' => ResourceNames::forGeoTargetConstant($japanGeoTargetConstantId)]
-                )
+                'country_region_criterion' =>
+                    ResourceNames::forGeoTargetConstant($japanGeoTargetConstantId)
             ])
         ]);
         // Creates listing group info for hotels in Japan as a UNIT node.
@@ -372,9 +369,7 @@ class AddHotelListingGroupTree
             'type' => $listingGroupType
         ]);
         if (!is_null($parentCriterionResourceName)) {
-            $listingGroupInfo->setParentAdGroupCriterion(
-                new StringValue(['value' => $parentCriterionResourceName])
-            );
+            $listingGroupInfo->setParentAdGroupCriterion($parentCriterionResourceName);
             $listingGroupInfo->setCaseValue($caseValue);
         }
 
@@ -408,9 +403,7 @@ class AddHotelListingGroupTree
 
         // Bids are valid only for UNIT nodes.
         if ($listingGroupInfo->getType() == ListingGroupType::UNIT) {
-            $adGroupCriterion->setPercentCpcBidMicros(
-                new Int64Value(['value' => $percentCpcBidMicroAmount])
-            );
+            $adGroupCriterion->setPercentCpcBidMicros($percentCpcBidMicroAmount);
         }
 
         return $adGroupCriterion;

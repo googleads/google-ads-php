@@ -23,42 +23,39 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V4\Common\AppAdInfo;
-use Google\Ads\GoogleAds\V4\Common\LanguageInfo;
-use Google\Ads\GoogleAds\V4\Common\LocationInfo;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V4\Enums\AppCampaignBiddingStrategyGoalTypeEnum\AppCampaignBiddingStrategyGoalType;
-use Google\Ads\GoogleAds\V4\Common\TargetCpa;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V4\Enums\AppCampaignAppStoreEnum\AppCampaignAppStore;
-use Google\Ads\GoogleAds\V4\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V4\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V4\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroup;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\Campaign\AppCampaignSetting;
-use Google\Ads\GoogleAds\V4\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V4\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V5\Common\AppAdInfo;
+use Google\Ads\GoogleAds\V5\Common\LanguageInfo;
+use Google\Ads\GoogleAds\V5\Common\LocationInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V5\Enums\AppCampaignBiddingStrategyGoalTypeEnum\AppCampaignBiddingStrategyGoalType;
+use Google\Ads\GoogleAds\V5\Common\TargetCpa;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\AppCampaignAppStoreEnum\AppCampaignAppStore;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Enums\CriterionTypeEnum\CriterionType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\AppCampaignSetting;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds an App campaign.
@@ -170,12 +167,12 @@ class AddAppCampaign
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
-            'amount_micros' => new Int64Value(['value' => 50000000]),
+            'name' => 'Interplanetary Cruise #' . uniqid(),
+            'amount_micros' => 50000000,
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // An App campaign cannot use a shared campaign budget.
             // explicitly_shared must be set to false.
-            'explicitly_shared' => new BoolValue(['value' => false])
+            'explicitly_shared' => false
         ]);
 
         // Creates a campaign budget operation.
@@ -215,8 +212,8 @@ class AddAppCampaign
     ) {
         // Creates a campaign.
         $campaign = new Campaign([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise App #' . uniqid()]),
-            'campaign_budget' => new StringValue(['value' => $budgetResourceName]),
+            'name' => 'Interplanetary Cruise App #' . uniqid(),
+            'campaign_budget' => $budgetResourceName,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added
             // targeting and the ads are ready to serve.
@@ -233,29 +230,25 @@ class AddAppCampaign
             // manual_cpc, commission, maximize_conversions, etc.
             // See https://developers.google.com/google-ads/api/reference/rpc
             // under current version / resources / Campaign.
-            'target_cpa' => new TargetCpa([
-                'target_cpa_micros' => new Int64Value(['value' => 1000000])
-            ]),
+            'target_cpa' => new TargetCpa(['target_cpa_micros' => 1000000]),
             // Sets the App campaign settings.
             'app_campaign_setting' => new AppCampaignSetting([
-                'app_id' => new StringValue(['value' => 'com.google.android.apps.adwords']),
+                'app_id' => 'com.google.android.apps.adwords',
                 'app_store' => AppCampaignAppStore::GOOGLE_APP_STORE,
                 // Optional: Optimize this campaign for getting new users for your app.
                 'bidding_strategy_goal_type' =>
                     AppCampaignBiddingStrategyGoalType::OPTIMIZE_INSTALLS_TARGET_INSTALL_COST
             ]),
             // Optional fields.
-            'start_date' => new StringValue(['value' => date('Ymd', strtotime('+1 day'))]),
-            'end_date' => new StringValue(['value' => date('Ymd', strtotime('+365 days'))])
+            'start_date' => date('Ymd', strtotime('+1 day')),
+            'end_date' => date('Ymd', strtotime('+365 days'))
             // If you select the
             // OPTIMIZE_IN_APP_CONVERSIONS_TARGET_INSTALL_COST goal type, then also
             // specify your in-app conversion types so the Google Ads API can focus
             // your campaign on people who are most likely to complete the
             // corresponding in-app actions.
             // 'selective_optimization' => new SelectiveOptimization([
-            //     'conversion_actions' => [
-            //         new StringValue(['value' => 'INSERT_CONVERSION_TYPE_ID_HERE'])
-            //     ]
+            //     'conversion_actions' => ['INSERT_CONVERSION_TYPE_ID_HERE']
             // ])
         ]);
 
@@ -305,12 +298,10 @@ class AddAppCampaign
         foreach ($locationIds as $locationId) {
             // Creates a campaign criterion.
             $campaignCriterion = new CampaignCriterion([
-                'campaign' => new StringValue(['value' => $campaignResourceName]),
+                'campaign' => $campaignResourceName,
                 'type' => CriterionType::LOCATION,
                 'location' => new LocationInfo([
-                    'geo_target_constant' => new StringValue([
-                        'value' => ResourceNames::forGeoTargetConstant($locationId)
-                    ])
+                    'geo_target_constant' => ResourceNames::forGeoTargetConstant($locationId)
                 ])
             ]);
 
@@ -329,12 +320,10 @@ class AddAppCampaign
         foreach ($languageIds as $languageId) {
             // Creates a campaign criterion.
             $campaignCriterion = new CampaignCriterion([
-                'campaign' => new StringValue(['value' => $campaignResourceName]),
+                'campaign' => $campaignResourceName,
                 'type' => CriterionType::LANGUAGE,
                 'language' => new LanguageInfo([
-                    'language_constant' => new StringValue([
-                        'value' => ResourceNames::forLanguageConstant($languageId)
-                    ])
+                    'language_constant' => ResourceNames::forLanguageConstant($languageId)
                 ])
             ]);
 
@@ -383,9 +372,9 @@ class AddAppCampaign
         //   1. you cannot override bid settings at the ad group level.
         //   2. you cannot add ad group criteria.
         $adGroup = new AdGroup([
-            'name' => new StringValue(['value' => 'Earth to Mars cruises ' . uniqid()]),
+            'name' => 'Earth to Mars cruises ' . uniqid(),
             'status' => AdGroupStatus::ENABLED,
-            'campaign' => new StringValue(['value' => $campaignResourceName])
+            'campaign' => $campaignResourceName
         ]);
 
         // Creates an ad group operation.
@@ -421,34 +410,24 @@ class AddAppCampaign
         // Creates an ad group ad.
         $adGroupAd = new AdGroupAd([
             'status' => AdGroupAdStatus::ENABLED,
-            'ad_group' => new StringValue(['value' => $adGroupResourceName]),
+            'ad_group' => $adGroupResourceName,
             'ad' => new Ad([
                 // ad_data is a 'oneof' message so setting app_ad
                 // is mutually exclusive with ad data fields such as
                 // text_ad, gmail_ad, etc.
                 'app_ad' => new AppAdInfo([
                     'headlines' => [
-                        new AdTextAsset([
-                            'text' => new StringValue(['value' => 'A cool puzzle game'])
-                        ]),
-                        new AdTextAsset([
-                            'text' => new StringValue(['value' => 'Remove connected blocks'])
-                        ])
+                        new AdTextAsset(['text' => 'A cool puzzle game']),
+                        new AdTextAsset(['text' => 'Remove connected blocks'])
                     ],
                     'descriptions' => [
-                        new AdTextAsset([
-                            'text' => new StringValue(['value' => '3 difficulty levels'])
-                        ]),
-                        new AdTextAsset([
-                            'text' => new StringValue(['value' => '4 colorful fun skins'])
-                        ])
+                        new AdTextAsset(['text' => '3 difficulty levels']),
+                        new AdTextAsset(['text' => '4 colorful fun skins'])
                     ]
                     // Optional: You can set up to 20 image assets for your campaign.
                     // 'images' => [
                     //     new AdImageAsset([
-                    //         'asset' => new StringValue([
-                    //             'value' => INSERT_AD_IMAGE_ASSET_RESOURCE_NAME_HERE
-                    //         ])
+                    //         'asset' => INSERT_AD_IMAGE_ASSET_RESOURCE_NAME_HERE
                     //     ])
                     // ]
                 ])

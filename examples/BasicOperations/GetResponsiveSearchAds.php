@@ -23,15 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\ServedAssetFieldTypeEnum\ServedAssetFieldType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\ServedAssetFieldTypeEnum\ServedAssetFieldType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\Internal\RepeatedField;
 
@@ -171,7 +171,7 @@ class GetResponsiveSearchAds
             /** @var AdTextAsset $asset */
             $result .= sprintf(
                 "\t%s pinned to %s.%s",
-                $asset->getTextUnwrapped(),
+                $asset->getText(),
                 ServedAssetFieldType::name($asset->getPinnedField()),
                 PHP_EOL
             );

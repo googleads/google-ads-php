@@ -24,20 +24,19 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V4\Common\PolicyViolationKey;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V4\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionServiceClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V5\Common\PolicyViolationKey;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionServiceClient;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to request an exemption for policy violations of a keyword.
@@ -126,15 +125,13 @@ class HandleKeywordPolicyViolations
     ) {
         // Configures the keyword text and match type settings.
         $keywordInfo = new KeywordInfo([
-            'text' => new StringValue(['value' => $keywordText]),
+            'text' => $keywordText,
             'match_type' => KeywordMatchType::EXACT
         ]);
 
         // Constructs an ad group criterion using the keyword text info above.
         $adGroupCriterion = new AdGroupCriterion([
-            'ad_group' => new StringValue(
-                ['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]
-            ),
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'status' => AdGroupCriterionStatus::ENABLED,
             'keyword' => $keywordInfo
         ]);
@@ -219,12 +216,12 @@ class HandleKeywordPolicyViolations
                     printf("\t\tPolicy violation key:%s", PHP_EOL);
                     printf(
                         "\t\t\tName: '%s'%s",
-                        $policyViolationDetailsKey->getPolicyNameUnwrapped(),
+                        $policyViolationDetailsKey->getPolicyName(),
                         PHP_EOL
                     );
                     printf(
                         "\t\t\tViolating text: '%s'%s",
-                        $policyViolationDetailsKey->getViolatingTextUnwrapped(),
+                        $policyViolationDetailsKey->getViolatingText(),
                         PHP_EOL
                     );
                 } else {

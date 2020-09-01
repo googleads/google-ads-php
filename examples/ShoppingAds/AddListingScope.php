@@ -24,22 +24,21 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\ListingDimensionInfo;
-use Google\Ads\GoogleAds\V4\Common\ListingScopeInfo;
-use Google\Ads\GoogleAds\V4\Common\ProductBrandInfo;
-use Google\Ads\GoogleAds\V4\Common\ProductCustomAttributeInfo;
-use Google\Ads\GoogleAds\V4\Common\ProductTypeInfo;
-use Google\Ads\GoogleAds\V4\Enums\ProductCustomAttributeIndexEnum\ProductCustomAttributeIndex;
-use Google\Ads\GoogleAds\V4\Enums\ProductTypeLevelEnum\ProductTypeLevel;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V4\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\ListingDimensionInfo;
+use Google\Ads\GoogleAds\V5\Common\ListingScopeInfo;
+use Google\Ads\GoogleAds\V5\Common\ProductBrandInfo;
+use Google\Ads\GoogleAds\V5\Common\ProductCustomAttributeInfo;
+use Google\Ads\GoogleAds\V5\Common\ProductTypeInfo;
+use Google\Ads\GoogleAds\V5\Enums\ProductCustomAttributeIndexEnum\ProductCustomAttributeIndex;
+use Google\Ads\GoogleAds\V5\Enums\ProductTypeLevelEnum\ProductTypeLevel;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V5\Services\CampaignCriterionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Adds a shopping listing scope to a shopping campaign. The example will construct and add a new
@@ -134,29 +133,27 @@ class AddListingScope
             'dimensions' => [
                 // Creates a product brand info set to "google".
                 new ListingDimensionInfo([
-                    'product_brand' => new ProductBrandInfo([
-                        'value' => new StringValue(['value' => 'google'])
-                    ])
+                    'product_brand' => new ProductBrandInfo(['value' => 'google'])
                 ]),
                 // Creates a product custom attribute info for INDEX0 set to "top_selling_products".
                 new ListingDimensionInfo([
                     'product_custom_attribute' => new ProductCustomAttributeInfo([
                         'index' => ProductCustomAttributeIndex::INDEX0,
-                        'value' => new StringValue(['value' => 'top_selling_products'])
+                        'value' => 'top_selling_products'
                     ])
                 ]),
                 // Creates a product type info for LEVEL1 set to "electronics".
                 new ListingDimensionInfo([
                     'product_type' => new ProductTypeInfo([
                         'level' => ProductTypeLevel::LEVEL1,
-                        'value' => new StringValue(['value' => 'electronics'])
+                        'value' => 'electronics'
                     ])
                 ]),
                 // Creates a product type info for LEVEL2 set to "smartphones".
                 new ListingDimensionInfo([
                     'product_type' => new ProductTypeInfo([
                         'level' => ProductTypeLevel::LEVEL2,
-                        'value' => new StringValue(['value' => 'smartphones'])
+                        'value' => 'smartphones'
                     ])
                 ])
             ]
@@ -164,8 +161,7 @@ class AddListingScope
 
         // Creates a campaign criterion to store the listing scope.
         $campaignCriterion = new CampaignCriterion([
-            'campaign' =>
-                new StringValue(['value' => ResourceNames::forCampaign($customerId, $campaignId)]),
+            'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
             'listing_scope' => $listingScopeInfo
         ]);
         // Creates a campaign criterion operation.

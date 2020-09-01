@@ -24,22 +24,21 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V4\Common\PolicyTopicEntry;
-use Google\Ads\GoogleAds\V4\Common\PolicyValidationParameter;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V4\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Ad;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V4\Services\AdGroupAdServiceClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V5\Common\PolicyTopicEntry;
+use Google\Ads\GoogleAds\V5\Common\PolicyValidationParameter;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\PolicyTopicEntryTypeEnum\PolicyTopicEntryType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdServiceClient;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to request an exemption for policy violations of an expanded text
@@ -114,28 +113,25 @@ class HandleExpandedTextAdPolicyViolations
         int $customerId,
         int $adGroupId
     ) {
-        $adGroupResourceName =
-            new StringValue(['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]);
-
         // Creates an expanded text ad info object.
         $expandedTextAdInfo = new ExpandedTextAdInfo([
-            'headline_part1' => new StringValue(['value' => 'Cruise to Mars #' . uniqid()]),
-            'headline_part2' => new StringValue(['value' => 'Best Space Cruise Line']),
+            'headline_part1' => 'Cruise to Mars #' . uniqid(),
+            'headline_part2' => 'Best Space Cruise Line',
             // Intentionally use an ad text that violates policy -- having too many exclamation
             // marks.
-            'description' => new StringValue(['value' => 'Buy your tickets now!!!!!!!'])
+            'description' => 'Buy your tickets now!!!!!!!'
         ]);
 
         // Creates an ad group ad to hold the above ad.
         $adGroupAd = new AdGroupAd([
-            'ad_group' => $adGroupResourceName,
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             // Set the ad group ad to PAUSED to prevent it from immediately serving.
             // Set to ENABLED once you've added targeting and the ad are ready to serve.
             'status' => AdGroupAdStatus::PAUSED,
             // Sets the expanded text ad info on an Ad.
             'ad' => new Ad([
                 'expanded_text_ad' => $expandedTextAdInfo,
-                'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+                'final_urls' => ['http://www.example.com']
             ])
         ]);
 
@@ -167,7 +163,7 @@ class HandleExpandedTextAdPolicyViolations
      * Collects all ignorable policy topics that will be sent for exemption request later.
      *
      * @param GoogleAdsException $googleAdsException the Google Ads exception
-     * @return StringValue[] the ignorable policy topics
+     * @return string[] the ignorable policy topics
      */
     private static function fetchIgnorablePolicyTopics(GoogleAdsException $googleAdsException)
     {
@@ -200,7 +196,7 @@ class HandleExpandedTextAdPolicyViolations
                     $ignorablePolicyTopics[] = $policyTopicEntry->getTopic();
                     printf(
                         "\t\tPolicy topic name: '%s'%s",
-                        $policyTopicEntry->getTopicUnwrapped(),
+                        $policyTopicEntry->getTopic(),
                         PHP_EOL
                     );
                     printf(
@@ -224,7 +220,7 @@ class HandleExpandedTextAdPolicyViolations
      * @param int $customerId
      * @param AdGroupAdServiceClient $adGroupAdServiceClient
      * @param AdGroupAdOperation $adGroupAdOperation
-     * @param StringValue[] $ignorablePolicyTopics
+     * @param string[] $ignorablePolicyTopics
      */
     private static function requestExemption(
         int $customerId,

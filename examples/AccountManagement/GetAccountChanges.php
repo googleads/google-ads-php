@@ -23,15 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
-use Google\Ads\GoogleAds\V4\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\ChangeStatus;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Enums\ChangeStatusOperationEnum\ChangeStatusOperation;
+use Google\Ads\GoogleAds\V5\Enums\ChangeStatusResourceTypeEnum\ChangeStatusResourceType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\ChangeStatus;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -158,7 +158,7 @@ class GetAccountChanges
         $resourceName = ''; // Default value for UNSPECIFIED or UNKNOWN resource type.
         switch ($resourceType) {
             case ChangeStatusResourceType::AD_GROUP:
-                $resourceName = $changeStatus->getAdGroupUnwrapped();
+                $resourceName = $changeStatus->getAdGroup();
                 break;
             case ChangeStatusResourceType::AD_GROUP_AD:
                 $resourceName = $changeStatus->getAdGroupAdUnwrapped();
@@ -173,7 +173,7 @@ class GetAccountChanges
                 $resourceName = $changeStatus->getAdGroupFeedUnwrapped();
                 break;
             case ChangeStatusResourceType::CAMPAIGN:
-                $resourceName = $changeStatus->getCampaignUnwrapped();
+                $resourceName = $changeStatus->getCampaign();
                 break;
             case ChangeStatusResourceType::CAMPAIGN_CRITERION:
                 $resourceName = $changeStatus->getCampaignCriterionUnwrapped();

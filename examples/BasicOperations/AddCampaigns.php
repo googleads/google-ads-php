@@ -23,24 +23,21 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Common\ManualCpc;
-use Google\Ads\GoogleAds\V4\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V4\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V4\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\Campaign\NetworkSettings;
-use Google\Ads\GoogleAds\V4\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V4\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Common\ManualCpc;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\NetworkSettings;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /** This example adds new campaigns to an account. */
 class AddCampaigns
@@ -107,28 +104,21 @@ class AddCampaigns
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a single shared budget to be used by the campaigns added below.
-        $budgetResourceName =
-            new StringValue(['value' => self::addCampaignBudget($googleAdsClient, $customerId)]);
-
-        $trueValue = new BoolValue(['value' => true]);
-        $falseValue = new BoolValue(['value' => false]);
-
-        $startDate = new StringValue(['value' => date('Ymd', strtotime('+1 day'))]);
-        $endDate = new StringValue(['value' => date('Ymd', strtotime('+1 month'))]);
+        $budgetResourceName = self::addCampaignBudget($googleAdsClient, $customerId);
 
         // Configures the campaign network options.
         $networkSettings = new NetworkSettings([
-            'target_google_search' => $trueValue,
-            'target_search_network' => $trueValue,
-            'target_content_network' => $falseValue,
-            'target_partner_search_network' => $falseValue
+            'target_google_search' => true,
+            'target_search_network' => true,
+            'target_content_network' => false,
+            'target_partner_search_network' => false
         ]);
 
         $campaignOperations = [];
         for ($i = 0; $i < self::NUMBER_OF_CAMPAIGNS_TO_ADD; $i++) {
             // Creates a campaign.
             $campaign = new Campaign([
-                'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
+                'name' => 'Interplanetary Cruise #' . uniqid(),
                 'advertising_channel_type' => AdvertisingChannelType::SEARCH,
                 // Recommendation: Set the campaign to PAUSED when creating it to prevent
                 // the ads from immediately serving. Set to ENABLED once you've added
@@ -140,8 +130,8 @@ class AddCampaigns
                 // Adds the network settings configured above.
                 'network_settings' => $networkSettings,
                 // Optional: Sets the start and end dates.
-                'start_date' => $startDate,
-                'end_date' => $endDate
+                'start_date' => date('Ymd', strtotime('+1 day')),
+                'end_date' => date('Ymd', strtotime('+1 month'))
             ]);
 
             // Creates a campaign operation.
@@ -173,9 +163,9 @@ class AddCampaigns
     {
         // Creates a campaign budget.
         $budget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
-            'amount_micros' => new Int64Value(['value' => 500000])
+            'amount_micros' => 500000
         ]);
 
         // Creates a campaign budget operation.

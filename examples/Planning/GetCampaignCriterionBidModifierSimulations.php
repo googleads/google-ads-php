@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V4\Common\BidModifierSimulationPoint;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V5\Common\BidModifierSimulationPoint;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -132,9 +132,9 @@ class GetCampaignCriterionBidModifierSimulations
             printf(
                 'Found campaign-level criterion bid modifier simulation for ' .
                 'criterion with ID %d, start date "%s", end date "%s", and points:%s',
-                $simulation->getCriterionIdUnwrapped(),
-                $simulation->getStartDateUnwrapped(),
-                $simulation->getEndDateUnwrapped(),
+                $simulation->getCriterionId(),
+                $simulation->getStartDate(),
+                $simulation->getEndDate(),
                 PHP_EOL
             );
             foreach ($simulation->getBidModifierPointList()->getPoints() as $point) {
@@ -143,14 +143,14 @@ class GetCampaignCriterionBidModifierSimulations
                     '  bid modifier: %.2f => clicks: %d, cost: %d, impressions: %d, ' .
                     'parent clicks: %d, parent cost: %d, parent impressions: %d, ' .
                     'parent required budget: %d%s',
-                    $point->getBidModifierUnwrapped(),
-                    $point->getClicksUnwrapped(),
-                    $point->getCostMicrosUnwrapped(),
-                    $point->getImpressionsUnwrapped(),
-                    $point->getParentClicksUnwrapped(),
-                    $point->getParentCostMicrosUnwrapped(),
-                    $point->getParentImpressionsUnwrapped(),
-                    $point->getParentRequiredBudgetMicrosUnwrapped(),
+                    $point->getBidModifier(),
+                    $point->getClicks(),
+                    $point->getCostMicros(),
+                    $point->getImpressions(),
+                    $point->getParentClicks(),
+                    $point->getParentCostMicros(),
+                    $point->getParentImpressions(),
+                    $point->getParentRequiredBudgetMicros(),
                     PHP_EOL
                 );
             }

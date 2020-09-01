@@ -23,24 +23,21 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\AddressInfo;
-use Google\Ads\GoogleAds\V4\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V4\Common\LocationInfo;
-use Google\Ads\GoogleAds\V4\Common\ProximityInfo;
-use Google\Ads\GoogleAds\V4\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V4\Enums\ProximityRadiusUnitsEnum\ProximityRadiusUnits;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V4\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\AddressInfo;
+use Google\Ads\GoogleAds\V5\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V5\Common\LocationInfo;
+use Google\Ads\GoogleAds\V5\Common\ProximityInfo;
+use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V5\Enums\ProximityRadiusUnitsEnum\ProximityRadiusUnits;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V5\Services\CampaignCriterionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds campaign targeting criteria. To get campaign targeting criteria, run
@@ -174,12 +171,12 @@ class AddCampaignTargetingCriteria
         $campaignCriterion = new CampaignCriterion([
             // Creates a keyword with BROAD match type.
             'keyword' => new KeywordInfo([
-                'text' => new StringValue(['value' => $keywordText]),
+                'text' => $keywordText,
                 'match_type' => KeywordMatchType::BROAD
             ]),
             // Sets the campaign criterion as a negative criterion.
-            'negative' => new BoolValue(['value' => true]),
-            'campaign' => new StringValue(['value' => $campaignResourceName])
+            'negative' => true,
+            'campaign' => $campaignResourceName
         ]);
 
         return new CampaignCriterionOperation(['create' => $campaignCriterion]);
@@ -202,15 +199,13 @@ class AddCampaignTargetingCriteria
         $campaignCriterion = new CampaignCriterion([
             // Creates a location using the specified location ID.
             'location' => new LocationInfo([
-                'geo_target_constant' => new StringValue(
-                    // Besides using location ID, you can also search by location names using
-                    // GeoTargetConstantServiceClient::suggestGeoTargetConstants() and directly
-                    // apply GeoTargetConstant::$resourceName here. An example can be found
-                    // in GetGeoTargetConstantByNames.php.
-                    ['value' => ResourceNames::forGeoTargetConstant($locationId)]
-                )
+                // Besides using location ID, you can also search by location names using
+                // GeoTargetConstantServiceClient::suggestGeoTargetConstants() and directly
+                // apply GeoTargetConstant::$resourceName here. An example can be found
+                // in GetGeoTargetConstantByNames.php.
+                'geo_target_constant' => ResourceNames::forGeoTargetConstant($locationId)
             ]),
-            'campaign' => new StringValue(['value' => $campaignResourceName])
+            'campaign' => $campaignResourceName
         ]);
 
         return new CampaignCriterionOperation(['create' => $campaignCriterion]);
@@ -229,16 +224,16 @@ class AddCampaignTargetingCriteria
         $campaignCriterion = new CampaignCriterion([
             'proximity' => new ProximityInfo([
                 'address' => new AddressInfo([
-                    'street_address' => new StringValue(['value' => '38 avenue de l\'Opéra']),
-                    'city_name' => new StringValue(['value' => 'Paris']),
-                    'postal_code' => new StringValue(['value' => '75002']),
-                    'country_code' => new StringValue(['value' => 'FR']),
+                    'street_address' => '38 avenue de l\'Opéra',
+                    'city_name' => 'Paris',
+                    'postal_code' => '75002',
+                    'country_code' => 'FR',
                 ]),
-                'radius' => new DoubleValue(['value' => 10.0]),
+                'radius' => 10.0,
                 // Default is kilometers.
                 'radius_units' => ProximityRadiusUnits::MILES
             ]),
-            'campaign' => new StringValue(['value' => $campaignResourceName])
+            'campaign' => $campaignResourceName
         ]);
 
         return new CampaignCriterionOperation(['create' => $campaignCriterion]);

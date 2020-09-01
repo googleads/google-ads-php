@@ -18,13 +18,13 @@
 
 namespace Google\Ads\GoogleAds\Examples\Utils;
 
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\V4\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
-use Google\Ads\GoogleAds\V4\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
-use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V4\Resources\FeedItem;
-use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\V5\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
+use Google\Ads\GoogleAds\V5\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
+use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V5\Resources\FeedItem;
+use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 
 /**
  * Utilities that are shared between code examples related to feeds.

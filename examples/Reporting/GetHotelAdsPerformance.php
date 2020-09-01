@@ -23,13 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -129,12 +129,12 @@ class GetHotelAdsPerformance
                 . "with hotel check-in on %s and %d day(s) of stay "
                 . "had %d impression(s) and %d average lead value (in micros) "
                 . "during the last 7 days.%s",
-                $googleAdsRow->getAdGroup()->getIdUnwrapped(),
-                $googleAdsRow->getCampaign()->getIdUnwrapped(),
+                $googleAdsRow->getAdGroup()->getId(),
+                $googleAdsRow->getCampaign()->getId(),
                 DayOfWeek::name($googleAdsRow->getSegments()->getHotelCheckInDayOfWeek()),
-                $googleAdsRow->getSegments()->getHotelLengthOfStayUnwrapped(),
-                $googleAdsRow->getMetrics()->getImpressionsUnwrapped(),
-                $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicrosUnwrapped(),
+                $googleAdsRow->getSegments()->getHotelLengthOfStay(),
+                $googleAdsRow->getMetrics()->getImpressions(),
+                $googleAdsRow->getMetrics()->getHotelAverageLeadValueMicros(),
                 PHP_EOL
             );
         }

@@ -23,17 +23,16 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\MediaTypeEnum\MediaType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\MediaFile;
-use Google\Ads\GoogleAds\V4\Resources\MediaImage;
-use Google\Ads\GoogleAds\V4\Services\MediaFileOperation;
+use Google\Ads\GoogleAds\V5\Enums\MediaTypeEnum\MediaType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\MediaFile;
+use Google\Ads\GoogleAds\V5\Resources\MediaImage;
+use Google\Ads\GoogleAds\V5\Services\MediaFileOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /** This example uploads an image. */
 class UploadImage
@@ -104,9 +103,9 @@ class UploadImage
 
         // Creates a media file.
         $mediaFile = new MediaFile([
-            'name' => new StringValue(['value' => 'Ad Image']),
+            'name' => 'Ad Image',
             'type' => MediaType::IMAGE,
-            'source_url' => new StringValue(['value' => self::IMAGE_URL]),
+            'source_url' => self::IMAGE_URL,
             'image' => new MediaImage(['data' => $imageContent])
         ]);
 

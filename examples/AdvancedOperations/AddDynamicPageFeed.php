@@ -23,34 +23,35 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Common\WebpageConditionInfo;
-use Google\Ads\GoogleAds\V4\Common\WebpageInfo;
-use Google\Ads\GoogleAds\V4\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
-use Google\Ads\GoogleAds\V4\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V4\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V4\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
-use Google\Ads\GoogleAds\V4\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V4\Resources\Campaign;
-use Google\Ads\GoogleAds\V4\Resources\Campaign\DynamicSearchAdsSetting;
-use Google\Ads\GoogleAds\V4\Resources\Feed;
-use Google\Ads\GoogleAds\V4\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V4\Resources\FeedItem;
-use Google\Ads\GoogleAds\V4\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V4\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V4\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V5\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V5\Common\WebpageInfo;
+use Google\Ads\GoogleAds\V5\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
+use Google\Ads\GoogleAds\V5\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V5\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V5\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
+use Google\Ads\GoogleAds\V5\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V5\Resources\Feed;
+use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V5\Resources\FeedItem;
+use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V5\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Protobuf\Int64Value;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\ApiCore\ApiException;
 use Google\Protobuf\StringValue;
 
 /**
@@ -355,8 +356,7 @@ class AddDynamicPageFeed
             $campaignId
         );
 
-        $feedResourceName = $feedDetails['resource_name'];
-        $dsaSetting->setFeeds([new StringValue(['value' => $feedResourceName])]);
+        $dsaSetting->setFeeds([$feedDetails['resource_name']]);
 
         // Creates the campaign object to be updated.
         $campaign = new Campaign();
@@ -419,12 +419,9 @@ class AddDynamicPageFeed
             throw new \InvalidArgumentException("No campaign found with ID $campaignId");
         }
 
-        $dynamicSearchAdsSetting = $response
-            ->getPage()
-            ->getResponseObject()
-            ->getResults()[0]
-            ->getCampaign()
-            ->getDynamicSearchAdsSetting();
+        /** @var Campaign $campaign */
+        $campaign = $response->getPage()->getResponseObject()->getResults()[0]->getCampaign();
+        $dynamicSearchAdsSetting = $campaign->getDynamicSearchAdsSetting();
 
         // Throws an exception if the campaign is not a DSA campaign.
         if (is_null($dynamicSearchAdsSetting)) {
@@ -450,8 +447,6 @@ class AddDynamicPageFeed
         int $adGroupId,
         string $dsaPageUrlLabel
     ) {
-        $adGroupResourceName = ResourceNames::forAdGroup($customerId, $adGroupId);
-
         // Creates the webpage condition info.
         $webPageConditionInfo = new WebpageConditionInfo([
             'operand' => WebpageConditionOperand::CUSTOM_LABEL,
@@ -460,21 +455,21 @@ class AddDynamicPageFeed
 
         // Creates the webpage info.
         $webPageInfo = new WebpageInfo([
-            'criterion_name' => new StringValue(['value' => 'Test Criterion']),
+            'criterion_name' => 'Test Criterion',
             'conditions' => [$webPageConditionInfo]
         ]);
 
         // Creates the ad group criterion.
         $adGroupCriterion = new AdGroupCriterion([
-            'ad_group' => $adGroupResourceName,
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'webpage' => $webPageInfo,
-            'cpc_bid_micros' => new Int64Value(['value' => 1500000])
+            'cpc_bid_micros' => 1500000
         ]);
 
         // Creates the operation.
         $adGroupCriterionOperation = new AdGroupCriterionOperation();
         $adGroupCriterionOperation->setCreate($adGroupCriterion);
-        
+
         $adGroupCriterionServiceClient = $googleAdsClient->getAdGroupCriterionServiceClient();
         $response = $adGroupCriterionServiceClient->mutateAdGroupCriteria(
             $customerId,

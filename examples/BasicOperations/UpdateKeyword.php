@@ -23,18 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V4\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupCriterionStatusEnum\AdGroupCriterionStatus;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example updates an ad group criterion (keyword) of an ad group. To get keywords,
@@ -122,7 +121,7 @@ class UpdateKeyword
                 $criterionId
             ),
             'status' => AdGroupCriterionStatus::ENABLED,
-            'final_urls' => [new StringValue(['value' => 'https://www.example.com'])]
+            'final_urls' => ['https://www.example.com']
         ]);
 
         // Constructs an operation that will update the ad group criterion, using the FieldMasks

@@ -24,27 +24,27 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V4\Common\StoreSalesMetadata;
-use Google\Ads\GoogleAds\V4\Common\StoreSalesThirdPartyMetadata;
-use Google\Ads\GoogleAds\V4\Common\TransactionAttribute;
-use Google\Ads\GoogleAds\V4\Common\UserData;
-use Google\Ads\GoogleAds\V4\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V4\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
-use Google\Ads\GoogleAds\V4\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
-use Google\Ads\GoogleAds\V4\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V4\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V4\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V4\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V4\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V4\Services\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V5\Common\StoreSalesMetadata;
+use Google\Ads\GoogleAds\V5\Common\StoreSalesThirdPartyMetadata;
+use Google\Ads\GoogleAds\V5\Common\TransactionAttribute;
+use Google\Ads\GoogleAds\V5\Common\UserData;
+use Google\Ads\GoogleAds\V5\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V5\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
+use Google\Ads\GoogleAds\V5\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
+use Google\Ads\GoogleAds\V5\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V5\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V5\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V5\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V5\Services\OfflineUserDataJobServiceClient;
 use Google\ApiCore\ApiException;
 use Google\Protobuf\BoolValue;
 use Google\Protobuf\DoubleValue;
@@ -267,8 +267,9 @@ class UploadStoreSalesTransactions
             // Creates additional metadata required for uploading third party data.
             $storeSalesThirdPartyMetadata = new StoreSalesThirdPartyMetadata([
                 // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
-                'advertiser_upload_date_time'
-                    => new StringValue(['value' => $advertiserUploadDateTime]),
+                'advertiser_upload_date_time' => new StringValue([
+                    'value' => $advertiserUploadDateTime
+                ]),
                 // Sets the fraction of transactions you received from the advertiser that have
                 // valid formatting and values. This captures any transactions the advertiser
                 // provided to you but which you are unable to upload to Google due to formatting
@@ -419,11 +420,15 @@ class UploadStoreSalesTransactions
                 new UserIdentifier([
                     'address_info' => new OfflineUserAddressInfo([
                         // First and last name must be normalized and hashed.
-                        'hashed_first_name' => self::normalizeAndHash('John'),
-                        'hashed_last_name' => self::normalizeAndHash('Doe'),
+                        'hashed_first_name' => new StringValue([
+                            'value' => self::normalizeAndHash('John')
+                        ]),
+                        'hashed_last_name' => new StringValue([
+                            'value' => self::normalizeAndHash('Doe')
+                        ]),
                         // Country code and zip code are sent in plain text.
-                        'country_code' => 'US',
-                        'postal_code' => '10011'
+                        'country_code' => new StringValue(['value' => 'US']),
+                        'postal_code' => new StringValue(['value' => '10011'])
                     ])
                 ])
             ],

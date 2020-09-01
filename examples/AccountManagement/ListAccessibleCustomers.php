@@ -20,11 +20,11 @@ namespace Google\Ads\GoogleAds\Examples\AccountManagement;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
 use Google\ApiCore\ApiException;
 
 /**

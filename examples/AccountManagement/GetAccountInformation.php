@@ -23,12 +23,12 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
 use Google\ApiCore\ApiException;
 
 /**
@@ -104,13 +104,13 @@ class GetAccountInformation
         printf(
             "Customer with ID %d, descriptive name '%s', currency code '%s', timezone '%s', "
             . "tracking URL template '%s' and auto tagging enabled '%s' was retrieved.%s",
-            $customer->getId()->getValue(),
-            $customer->getDescriptiveName()->getValue(),
-            $customer->getCurrencyCode()->getValue(),
-            $customer->getTimeZone()->getValue(),
+            $customer->getId(),
+            $customer->getDescriptiveName(),
+            $customer->getCurrencyCode(),
+            $customer->getTimeZone(),
             is_null($customer->getTrackingUrlTemplate())
-                ? 'N/A' : $customer->getTrackingUrlTemplate()->getValue(),
-            $customer->getAutoTaggingEnabled()->getValue() ? 'true' : 'false',
+                ? 'N/A' : $customer->getTrackingUrlTemplate(),
+            $customer->getAutoTaggingEnabled() ? 'true' : 'false',
             PHP_EOL
         );
     }

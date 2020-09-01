@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\Recommendation;
-use Google\Ads\GoogleAds\V4\Services\ApplyRecommendationOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\Recommendation;
+use Google\Ads\GoogleAds\V5\Services\ApplyRecommendationOperation;
 use Google\ApiCore\ApiException;
 
 /**
@@ -121,7 +121,7 @@ class ApplyRecommendation
         // https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v1.services#google.ads.googleads.v1.services.ApplyRecommendationOperation.
         /*
         $overridingAd = new Ad([
-            'id' => new Int64Value(['value' => 'INSERT_AD_ID_AS_INTEGER_HERE'])
+            'id' => 'INSERT_AD_ID_AS_INTEGER_HERE'
         ]);
         $applyRecommendationOperation->setTextAd(new TextAdParameters(['ad' => $overridingAd]));
         */

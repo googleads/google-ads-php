@@ -24,17 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\V4\Common\PlacementInfo;
-use Google\Ads\GoogleAds\V4\Enums\ContentLabelTypeEnum\ContentLabelType;
-use Google\Ads\GoogleAds\V4\Common\ContentLabelInfo;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\CustomerNegativeCriterion;
-use Google\Ads\GoogleAds\V4\Services\CustomerNegativeCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\V5\Common\PlacementInfo;
+use Google\Ads\GoogleAds\V5\Enums\ContentLabelTypeEnum\ContentLabelType;
+use Google\Ads\GoogleAds\V5\Common\ContentLabelInfo;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\CustomerNegativeCriterion;
+use Google\Ads\GoogleAds\V5\Services\CustomerNegativeCriterionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Adds various types of negative criteria as exclusions at the customer level. These
@@ -113,9 +112,7 @@ class AddCustomerNegativeCriteria
         // Creates a negative customer criterion excluding the placement with url
         // 'http://www.example.com'.
         $placementCriterion = new CustomerNegativeCriterion([
-            'placement' => new PlacementInfo([
-                'url' => new StringValue(['value' => 'http://www.example.com'])
-            ])
+            'placement' => new PlacementInfo(['url' => 'http://www.example.com'])
         ]);
 
         // Creates the operations.

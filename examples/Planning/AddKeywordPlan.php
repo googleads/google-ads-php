@@ -24,27 +24,28 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V4\Enums\KeywordPlanForecastIntervalEnum\KeywordPlanForecastInterval;
-use Google\Ads\GoogleAds\V4\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\KeywordPlan;
-use Google\Ads\GoogleAds\V4\Resources\KeywordPlanAdGroup;
-use Google\Ads\GoogleAds\V4\Resources\KeywordPlanAdGroupKeyword;
-use Google\Ads\GoogleAds\V4\Resources\KeywordPlanCampaign;
-use Google\Ads\GoogleAds\V4\Resources\KeywordPlanCampaignKeyword;
-use Google\Ads\GoogleAds\V4\Resources\KeywordPlanForecastPeriod;
-use Google\Ads\GoogleAds\V4\Resources\KeywordPlanGeoTarget;
-use Google\Ads\GoogleAds\V4\Services\KeywordPlanAdGroupKeywordOperation;
-use Google\Ads\GoogleAds\V4\Services\KeywordPlanAdGroupOperation;
-use Google\Ads\GoogleAds\V4\Services\KeywordPlanCampaignKeywordOperation;
-use Google\Ads\GoogleAds\V4\Services\KeywordPlanCampaignOperation;
-use Google\Ads\GoogleAds\V4\Services\KeywordPlanOperation;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V5\Enums\KeywordPlanForecastIntervalEnum\KeywordPlanForecastInterval;
+use Google\Ads\GoogleAds\V5\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\KeywordPlan;
+use Google\Ads\GoogleAds\V5\Resources\KeywordPlanAdGroup;
+use Google\Ads\GoogleAds\V5\Resources\KeywordPlanAdGroupKeyword;
+use Google\Ads\GoogleAds\V5\Resources\KeywordPlanCampaign;
+use Google\Ads\GoogleAds\V5\Resources\KeywordPlanCampaignKeyword;
+use Google\Ads\GoogleAds\V5\Resources\KeywordPlanForecastPeriod;
+use Google\Ads\GoogleAds\V5\Resources\KeywordPlanGeoTarget;
+use Google\Ads\GoogleAds\V5\Services\KeywordPlanAdGroupKeywordOperation;
+use Google\Ads\GoogleAds\V5\Services\KeywordPlanAdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\KeywordPlanCampaignKeywordOperation;
+use Google\Ads\GoogleAds\V5\Services\KeywordPlanCampaignOperation;
+use Google\Ads\GoogleAds\V5\Services\KeywordPlanOperation;
 use Google\ApiCore\ApiException;
+use Google\Protobuf\BoolValue;
 use Google\Protobuf\Int64Value;
 use Google\Protobuf\StringValue;
 
@@ -358,7 +359,7 @@ class AddKeywordPlan
             'text' => new StringValue(['value' => 'moon walk']),
             'match_type' => KeywordMatchType::BROAD,
             'keyword_plan_campaign' => new StringValue(['value' => $planCampaignResource]),
-            'negative' => true
+            'negative' => new BoolValue(['value' => true])
         ]);
 
         $keywordPlanCampaignKeywordOperation = new KeywordPlanCampaignKeywordOperation();

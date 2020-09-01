@@ -23,22 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V4\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
-use Google\Ads\GoogleAds\V4\Enums\ConversionActionStatusEnum\ConversionActionStatus;
-use Google\Ads\GoogleAds\V4\Enums\ConversionActionTypeEnum\ConversionActionType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\ConversionAction;
-use Google\Ads\GoogleAds\V4\Resources\ConversionAction\ValueSettings;
-use Google\Ads\GoogleAds\V4\Services\ConversionActionOperation;
+use Google\Ads\GoogleAds\V5\Enums\ConversionActionCategoryEnum\ConversionActionCategory;
+use Google\Ads\GoogleAds\V5\Enums\ConversionActionStatusEnum\ConversionActionStatus;
+use Google\Ads\GoogleAds\V5\Enums\ConversionActionTypeEnum\ConversionActionType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\ConversionAction;
+use Google\Ads\GoogleAds\V5\Resources\ConversionAction\ValueSettings;
+use Google\Ads\GoogleAds\V5\Services\ConversionActionOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /** This example illustrates adding a conversion action. */
 class AddConversionAction
@@ -105,14 +101,14 @@ class AddConversionAction
     {
         // Creates a conversion action.
         $conversionAction = new ConversionAction([
-            'name' => new StringValue(['value' => 'Earth to Mars Cruises Conversion #' . uniqid()]),
+            'name' => 'Earth to Mars Cruises Conversion #' . uniqid(),
             'category' => ConversionActionCategory::PBDEFAULT,
             'type' => ConversionActionType::WEBPAGE,
             'status' => ConversionActionStatus::ENABLED,
-            'view_through_lookback_window_days' => new Int64Value(['value' => 15]),
+            'view_through_lookback_window_days' => 15,
             'value_settings' => new ValueSettings([
-                'default_value' => new DoubleValue(['value' => 23.41]),
-                'always_use_default_value' => new BoolValue(['value' => true])
+                'default_value' => 23.41,
+                'always_use_default_value' => true
             ])
         ]);
 

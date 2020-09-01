@@ -20,11 +20,11 @@ namespace Google\Ads\GoogleAds\Examples\Migration\CampaignManagement;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\V3\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V3\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V3\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V3\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignBudgetsResponse;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroup;
@@ -57,8 +57,6 @@ use Google\AdsApi\AdWords\v201809\cm\NetworkSetting;
 use Google\AdsApi\AdWords\v201809\cm\Operator;
 use Google\AdsApi\AdWords\v201809\cm\UrlList;
 use Google\AdsApi\AdWords\v201809\cm\UserStatus;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This code example is the second in a series of code examples that shows how to create
@@ -102,7 +100,7 @@ class CreateCompleteCampaignBothApisPhase1
         $campaign = self::createCampaign(
             $adWordsServices,
             $adWordsSession,
-            $campaignBudget->getId()->getValue()
+            $campaignBudget->getId()
         );
         $adGroup = self::createAdGroup(
             $adWordsServices,
@@ -130,15 +128,15 @@ class CreateCompleteCampaignBothApisPhase1
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
-            'amount_micros' => new Int64Value(['value' => 500000])
+            'amount_micros' => 500000
         ]);
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
-       
+
         // Issues a mutate request to add campaign budgets.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
@@ -154,7 +152,7 @@ class CreateCompleteCampaignBothApisPhase1
             $campaignBudgetResourceName
         );
 
-        printf("Added budget named '%s'.%s", $newCampaignBudget->getName()->getValue(), PHP_EOL);
+        printf("Added budget named '%s'.%s", $newCampaignBudget->getName(), PHP_EOL);
 
         return $newCampaignBudget;
     }

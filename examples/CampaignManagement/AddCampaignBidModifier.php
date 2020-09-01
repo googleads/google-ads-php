@@ -23,19 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\InteractionTypeInfo;
-use Google\Ads\GoogleAds\V4\Enums\InteractionTypeEnum;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\CampaignBidModifier;
-use Google\Ads\GoogleAds\V4\Services\CampaignBidModifierOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\InteractionTypeInfo;
+use Google\Ads\GoogleAds\V5\Enums\InteractionTypeEnum;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBidModifier;
+use Google\Ads\GoogleAds\V5\Services\CampaignBidModifierOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to add a campaign-level bid modifier for call interactions.
@@ -115,11 +113,9 @@ class AddCampaignBidModifier
     ) {
         // Creates a campaign bid modifier.
         $campaignBidModifier = new CampaignBidModifier([
-            'campaign' => new StringValue(
-                ['value' => ResourceNames::forCampaign($customerId, $campaignId)]
-            ),
+            'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
             // Use the specified bid modifier value.
-            'bid_modifier' => new DoubleValue(['value' => $bidModifierValue]),
+            'bid_modifier' => $bidModifierValue,
             // Make the bid modifier apply to call interactions.
             'interaction_type' => new InteractionTypeInfo(
                 ['type' => InteractionTypeEnum\InteractionType::CALLS]

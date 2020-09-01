@@ -23,23 +23,22 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V4\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V4\Enums\SharedSetTypeEnum\SharedSetType;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\CampaignSharedSet;
-use Google\Ads\GoogleAds\V4\Resources\SharedCriterion;
-use Google\Ads\GoogleAds\V4\Resources\SharedSet;
-use Google\Ads\GoogleAds\V4\Services\CampaignSharedSetOperation;
-use Google\Ads\GoogleAds\V4\Services\SharedCriterionOperation;
-use Google\Ads\GoogleAds\V4\Services\SharedSetOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V5\Enums\SharedSetTypeEnum\SharedSetType;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\CampaignSharedSet;
+use Google\Ads\GoogleAds\V5\Resources\SharedCriterion;
+use Google\Ads\GoogleAds\V5\Resources\SharedSet;
+use Google\Ads\GoogleAds\V5\Services\CampaignSharedSetOperation;
+use Google\Ads\GoogleAds\V5\Services\SharedCriterionOperation;
+use Google\Ads\GoogleAds\V5\Services\SharedSetOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example creates a shared list of negative broad match keywords. It then attaches them to a
@@ -115,9 +114,7 @@ class CreateAndAttachSharedKeywordSet
     ) {
         // Create shared negative keyword set.
         $sharedSet = new SharedSet([
-            'name' => new StringValue(
-                ['value' => 'API Negative keyword list - ' . uniqid()]
-            ),
+            'name' => 'API Negative keyword list - ' . uniqid(),
             'type' => SharedSetType::NEGATIVE_KEYWORDS,
         ]);
 
@@ -140,12 +137,10 @@ class CreateAndAttachSharedKeywordSet
         foreach ($keywords as $keyword) {
             $sharedCriterion = new SharedCriterion([
                 'keyword' => new KeywordInfo([
-                    'text' => new StringValue(['value' => $keyword]),
+                    'text' => $keyword,
                     'match_type' => KeywordMatchType::BROAD
                 ]),
-                'shared_set' => new StringValue(
-                    ['value' => $sharedSetResourceName]
-                )
+                'shared_set' => $sharedSetResourceName
             ]);
 
             $sharedCriterionOperation = new SharedCriterionOperation();
@@ -167,10 +162,8 @@ class CreateAndAttachSharedKeywordSet
 
         // Creates campaign shared set.
         $campaignSharedSet = new CampaignSharedSet([
-            'campaign' => new StringValue(
-                ['value' => ResourceNames::forCampaign($customerId, $campaignId)]
-            ),
-            'shared_set' => new StringValue(['value' => $sharedSetResourceName])
+            'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
+            'shared_set' => $sharedSetResourceName
         ]);
 
         $campaignSharedSetOperation = new CampaignSharedSetOperation();

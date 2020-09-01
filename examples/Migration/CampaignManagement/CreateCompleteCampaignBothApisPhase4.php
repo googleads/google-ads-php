@@ -20,29 +20,29 @@ namespace Google\Ads\GoogleAds\Examples\Migration\CampaignManagement;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsClient;
-use Google\Ads\GoogleAds\V3\Common\ManualCpc;
-use Google\Ads\GoogleAds\V3\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V3\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
-use Google\Ads\GoogleAds\V3\Enums\AdGroupStatusEnum\AdGroupStatus;
-use Google\Ads\GoogleAds\V3\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V3\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V3\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V3\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V3\Resources\Ad;
-use Google\Ads\GoogleAds\V3\Resources\AdGroup;
-use Google\Ads\GoogleAds\V3\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V3\Resources\Campaign;
-use Google\Ads\GoogleAds\V3\Resources\Campaign\NetworkSettings;
-use Google\Ads\GoogleAds\V3\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V3\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V3\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V3\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V3\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V3\Services\MutateAdGroupAdsResponse;
-use Google\Ads\GoogleAds\V3\Services\MutateAdGroupsResponse;
-use Google\Ads\GoogleAds\V3\Services\MutateCampaignBudgetsResponse;
-use Google\Ads\GoogleAds\V3\Services\MutateCampaignsResponse;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\V5\Common\ManualCpc;
+use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupAdStatusEnum\AdGroupAdStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupStatusEnum\AdGroupStatus;
+use Google\Ads\GoogleAds\V5\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V5\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V5\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
+use Google\Ads\GoogleAds\V5\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V5\Resources\Ad;
+use Google\Ads\GoogleAds\V5\Resources\AdGroup;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V5\Resources\Campaign;
+use Google\Ads\GoogleAds\V5\Resources\Campaign\NetworkSettings;
+use Google\Ads\GoogleAds\V5\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V5\Services\MutateAdGroupAdsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateAdGroupsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignBudgetsResponse;
+use Google\Ads\GoogleAds\V5\Services\MutateCampaignsResponse;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSession;
 use Google\AdsApi\AdWords\v201809\cm\AdGroupCriterionOperation;
@@ -53,9 +53,6 @@ use Google\AdsApi\AdWords\v201809\cm\KeywordMatchType;
 use Google\AdsApi\AdWords\v201809\cm\Operator;
 use Google\AdsApi\AdWords\v201809\cm\UrlList;
 use Google\AdsApi\AdWords\v201809\cm\UserStatus;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This code example is the fifth in a series of code examples that shows how to create
@@ -101,7 +98,7 @@ class CreateCompleteCampaignBothApisPhase4
         self::createKeywords(
             $adWordsServices,
             $adWordsSession,
-            $adGroup->getId()->getValue(),
+            $adGroup->getId(),
             self::KEYWORDS_TO_ADD
         );
     }
@@ -118,15 +115,15 @@ class CreateCompleteCampaignBothApisPhase4
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise Budget #' . uniqid()]),
+            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
-            'amount_micros' => new Int64Value(['value' => 500000])
+            'amount_micros' => 500000
         ]);
 
         // Creates a campaign budget operation.
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
-        
+
         // Issues a mutate request to add campaign budgets.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
@@ -142,7 +139,7 @@ class CreateCompleteCampaignBothApisPhase4
             $campaignBudgetResourceName
         );
 
-        printf("Added budget named '%s'.%s", $newCampaignBudget->getName()->getValue(), PHP_EOL);
+        printf("Added budget named '%s'.%s", $newCampaignBudget->getName(), PHP_EOL);
 
         return $newCampaignBudget;
     }
@@ -182,14 +179,8 @@ class CreateCompleteCampaignBothApisPhase4
         int $customerId,
         CampaignBudget $campaignBudget
     ) {
-        $trueValue = new BoolValue(['value' => true]);
-        $falseValue = new BoolValue(['value' => false]);
-
-        $startDate = new StringValue(['value' => date('Ymd', strtotime('+1 day'))]);
-        $endDate = new StringValue(['value' => date('Ymd', strtotime('+1 month'))]);
-
         $campaign = new Campaign([
-            'name' => new StringValue(['value' => 'Interplanetary Cruise #' . uniqid()]),
+            'name' => 'Interplanetary Cruise #' . uniqid(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added
@@ -200,14 +191,14 @@ class CreateCompleteCampaignBothApisPhase4
             'campaign_budget' => $campaignBudget->getResourceName(),
             // Adds the network settings configured above.
             'network_settings' => new NetworkSettings([
-                'target_google_search' => $trueValue,
-                'target_search_network' => $trueValue,
-                'target_content_network' => $falseValue,
-                'target_partner_search_network' => $falseValue
+                'target_google_search' => true,
+                'target_search_network' => true,
+                'target_content_network' => false,
+                'target_partner_search_network' => false
             ]),
             // Optional: Sets the start and end dates.
-            'start_date' => $startDate,
-            'end_date' => $endDate
+            'start_date' => date('Ymd', strtotime('+1 day')),
+            'end_date' => date('Ymd', strtotime('+1 month'))
         ]);
 
         // Creates a campaign operation.
@@ -225,7 +216,7 @@ class CreateCompleteCampaignBothApisPhase4
         $campaignResourceName = $campaignResponse->getResults()[0]->getResourceName();
         $newCampaign = self::getCampaign($googleAdsClient, $customerId, $campaignResourceName);
 
-        printf("Added campaign named '%s'.%s", $newCampaign->getName()->getValue(), PHP_EOL);
+        printf("Added campaign named '%s'.%s", $newCampaign->getName(), PHP_EOL);
 
         return $newCampaign;
     }
@@ -267,11 +258,11 @@ class CreateCompleteCampaignBothApisPhase4
     ) {
         // Constructs an ad group and sets an optional CPC value.
         $adGroup = new AdGroup([
-            'name' => new StringValue(['value' => 'Earth to Mars Cruises #' . uniqid()]),
+            'name' => 'Earth to Mars Cruises #' . uniqid(),
             'campaign' => $campaign->getResourceName(),
             'status' => AdGroupStatus::ENABLED,
             'type' => AdGroupType::SEARCH_STANDARD,
-            'cpc_bid_micros' => new Int64Value(['value' => 10000000])
+            'cpc_bid_micros' => 10000000
         ]);
 
         // Creates an ad group operation.
@@ -286,7 +277,7 @@ class CreateCompleteCampaignBothApisPhase4
         $adGroupResourceName = $adGroupResponse->getResults()[0]->getResourceName();
         $newAdGroup = self::getAdGroup($googleAdsClient, $customerId, $adGroupResourceName);
 
-        printf("Added ad group named '%s'.%s", $newAdGroup->getName()->getValue(), PHP_EOL);
+        printf("Added ad group named '%s'.%s", $newAdGroup->getName(), PHP_EOL);
 
         return $newAdGroup;
     }
@@ -329,9 +320,9 @@ class CreateCompleteCampaignBothApisPhase4
         for ($i = 0; $i < self::NUMBER_OF_ADS; $i++) {
             // Creates the expanded text ad info.
             $expandedTextAdInfo = new ExpandedTextAdInfo([
-                'headline_part1' => new StringValue(['value' => 'Cruise to Mars #' . uniqid()]),
-                'headline_part2' => new StringValue(['value' => 'Best Space Cruise Line']),
-                'description' => new StringValue(['value' => 'Buy your tickets now!'])
+                'headline_part1' => 'Cruise to Mars #' . uniqid(),
+                'headline_part2' => 'Best Space Cruise Line',
+                'description' => 'Buy your tickets now!'
             ]);
 
             // Creates an ad group ad to hold the above ad.
@@ -340,7 +331,7 @@ class CreateCompleteCampaignBothApisPhase4
                 'status' => AdGroupAdStatus::PAUSED,
                 'ad' => new Ad([
                     'expanded_text_ad' => $expandedTextAdInfo,
-                    'final_urls' => [new StringValue(['value' => 'http://www.example.com'])]
+                    'final_urls' => ['http://www.example.com']
                 ])
             ]);
 
@@ -362,15 +353,16 @@ class CreateCompleteCampaignBothApisPhase4
 
         $newAds = self::getAds($googleAdsClient, $customerId, $newAdResourceNames);
         foreach ($newAds as $newAd) {
+            /** @var AdGroupAd $newAd */
             // Note that the status printed below is an enum value.
             // For example, a value of 2 will be returned when the ad status is 'ENABLED'.
             // A mapping of enum names to values can be found at AdGroupAdStatus.php.
             printf(
                 "Created expanded text ad with ID %d, status %d and headline '%s - %s'.%s",
-                $newAd->getAd()->getId()->getValue(),
+                $newAd->getAd()->getId(),
                 $newAd->getStatus(),
-                $newAd->getAd()->getExpandedTextAd()->getHeadlinePart1()->getValue(),
-                $newAd->getAd()->getExpandedTextAd()->getHeadlinePart2()->getValue(),
+                $newAd->getAd()->getExpandedTextAd()->getHeadlinePart1(),
+                $newAd->getAd()->getExpandedTextAd()->getHeadlinePart2(),
                 PHP_EOL
             );
         }

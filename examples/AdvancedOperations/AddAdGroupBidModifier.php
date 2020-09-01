@@ -23,19 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V4\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V4\ResourceNames;
-use Google\Ads\GoogleAds\V4\Common\DeviceInfo;
-use Google\Ads\GoogleAds\V4\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V4\Resources\AdGroupBidModifier;
-use Google\Ads\GoogleAds\V4\Services\AdGroupBidModifierOperation;
+use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Common\DeviceInfo;
+use Google\Ads\GoogleAds\V5\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V5\Resources\AdGroupBidModifier;
+use Google\Ads\GoogleAds\V5\Services\AdGroupBidModifierOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to add an ad group bid modifier for mobile devices. To get ad
@@ -118,10 +116,8 @@ class AddAdGroupBidModifier
         // Creates an ad group bid modifier for mobile devices with the specified ad group ID and
         // bid modifier value.
         $adGroupBidModifier = new AdGroupBidModifier([
-            'ad_group' => new StringValue(
-                ['value' => ResourceNames::forAdGroup($customerId, $adGroupId)]
-            ),
-            'bid_modifier' => new DoubleValue(['value' => $bidModifierValue]),
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
+            'bid_modifier' => $bidModifierValue,
             'device' => new DeviceInfo(['type' => Device::MOBILE])
         ]);
 
