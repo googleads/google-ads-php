@@ -475,7 +475,7 @@ class AddCompleteCampaignsUsingBatchJob
 
     /**
      * Builds new ad group criterion operations for creating keywords. 50% of keywords are created
-     * with some invalid characters to demonstrate how MutateJobService returns information about
+     * with some invalid characters to demonstrate how BatchJobService returns information about
      * such errors.
      *
      * @param AdGroupOperation[] $adGroupOperations the ad group operations to be used to create
