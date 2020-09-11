@@ -97,6 +97,7 @@ class RemoveBillingSetup
      * @param int $customerId the customer ID
      * @param int $billingSetupId the ID of the billing setup to remove
      */
+    // [START IxYzdhNWQ3]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -122,6 +123,7 @@ class RemoveBillingSetup
             PHP_EOL
         );
     }
+    // [END IxYzdhNWQ3]
 }
 
 RemoveBillingSetup::main();
