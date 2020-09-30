@@ -108,5 +108,46 @@
       }
     },
     "expectedMask": "foo.bar.nestedWrapper"
+  }, {
+    "description": "[Presence] Create optional field.",
+    "originalResource": {
+    },
+    "modifiedResource": {
+      "presence": 123
+    },
+    "expectedMask": "presence"
+  }, {
+    "description": "[Presence] Modify optional field.",
+    "originalResource": {
+      "presence": 123
+    },
+    "modifiedResource": {
+      "presence": 456
+    },
+    "expectedMask": "presence"
+  }, {
+    "description": "[Presence] Add repeated optional field.",
+    "originalResource": {
+    },
+    "modifiedResource": {
+      "foos": [{
+        "bar": {
+          "nestedPresence": 123
+        }
+      }]
+    },
+    "expectedMask": "foos"
+  }, {
+    "description": "[Presence] Add nested optional field.",
+    "originalResource": {
+    },
+    "modifiedResource": {
+      "foo": {
+        "bar": {
+          "nestedPresence": 123
+        }
+      }
+    },
+    "expectedMask": "foo.bar.nestedPresence"
   }
 ]}

@@ -25,6 +25,10 @@ class Resource extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.util.testing.Foo foos = 3;</code>
      */
     private $foos;
+    /**
+     * Generated from protobuf field <code>int32 presence = 4;</code>
+     */
+    protected $presence = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Resource extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\StringValue $wrapper
      *     @type \Google\Ads\GoogleAds\Util\Testing\Foo $foo
      *     @type \Google\Ads\GoogleAds\Util\Testing\Foo[]|\Google\Protobuf\Internal\RepeatedField $foos
+     *     @type int $presence
      * }
      */
     public function __construct($data = NULL) {
@@ -48,7 +53,17 @@ class Resource extends \Google\Protobuf\Internal\Message
      */
     public function getWrapper()
     {
-        return $this->wrapper;
+        return isset($this->wrapper) ? $this->wrapper : null;
+    }
+
+    public function hasWrapper()
+    {
+        return isset($this->wrapper);
+    }
+
+    public function clearWrapper()
+    {
+        unset($this->wrapper);
     }
 
     /**
@@ -93,7 +108,17 @@ class Resource extends \Google\Protobuf\Internal\Message
      */
     public function getFoo()
     {
-        return $this->foo;
+        return isset($this->foo) ? $this->foo : null;
+    }
+
+    public function hasFoo()
+    {
+        return isset($this->foo);
+    }
+
+    public function clearFoo()
+    {
+        unset($this->foo);
     }
 
     /**
@@ -127,6 +152,38 @@ class Resource extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\Util\Testing\Foo::class);
         $this->foos = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 presence = 4;</code>
+     * @return int
+     */
+    public function getPresence()
+    {
+        return isset($this->presence) ? $this->presence : 0;
+    }
+
+    public function hasPresence()
+    {
+        return isset($this->presence);
+    }
+
+    public function clearPresence()
+    {
+        unset($this->presence);
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 presence = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPresence($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->presence = $var;
 
         return $this;
     }

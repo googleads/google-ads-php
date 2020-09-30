@@ -9,3 +9,6 @@ To run this script, you need to install `protoc` via
 
 The `generate.sh` script should be invoked whenever a change is made to the
 `tester.proto` file, and the generated PHP classes need to be updated.
+
+You must install protoc with proto3 presence support (>= 3.12.4).
+For example: https://github.com/protocolbuffers/protobuf/releases/tag/v3.12.4

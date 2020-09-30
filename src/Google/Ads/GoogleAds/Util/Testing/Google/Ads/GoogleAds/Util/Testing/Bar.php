@@ -21,6 +21,10 @@ class Bar extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.BoolValue nested_wrapper = 2;</code>
      */
     protected $nested_wrapper = null;
+    /**
+     * Generated from protobuf field <code>int32 nested_presence = 3;</code>
+     */
+    protected $nested_presence = null;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class Bar extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $num
      *     @type \Google\Protobuf\BoolValue $nested_wrapper
+     *     @type int $nested_presence
      * }
      */
     public function __construct($data = NULL) {
@@ -65,7 +70,17 @@ class Bar extends \Google\Protobuf\Internal\Message
      */
     public function getNestedWrapper()
     {
-        return $this->nested_wrapper;
+        return isset($this->nested_wrapper) ? $this->nested_wrapper : null;
+    }
+
+    public function hasNestedWrapper()
+    {
+        return isset($this->nested_wrapper);
+    }
+
+    public function clearNestedWrapper()
+    {
+        unset($this->nested_wrapper);
     }
 
     /**
@@ -103,6 +118,38 @@ class Bar extends \Google\Protobuf\Internal\Message
     {
         $this->writeWrapperValue("nested_wrapper", $var);
         return $this;}
+
+    /**
+     * Generated from protobuf field <code>int32 nested_presence = 3;</code>
+     * @return int
+     */
+    public function getNestedPresence()
+    {
+        return isset($this->nested_presence) ? $this->nested_presence : 0;
+    }
+
+    public function hasNestedPresence()
+    {
+        return isset($this->nested_presence);
+    }
+
+    public function clearNestedPresence()
+    {
+        unset($this->nested_presence);
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 nested_presence = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNestedPresence($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->nested_presence = $var;
+
+        return $this;
+    }
 
 }
 

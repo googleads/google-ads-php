@@ -142,7 +142,7 @@ class FieldMasks
 
             $getter = Serializer::getGetter($fieldDescriptor->getName());
             $originalValue = is_null($original) ? null : $original->$getter();
-            $modifiedValue = $modified->$getter();
+            $modifiedValue = is_null($modified) ? null : $modified->$getter();
 
             if (self::isFieldRepeated($fieldDescriptor)) {
                 // For protobuf objects, the repeated fields that have no members are semantically
@@ -155,9 +155,16 @@ class FieldMasks
                     $paths[] = $fieldName;
                 }
             } else {
+                $hasser = self::getHasser($fieldDescriptor->getName());
+                $hasValueChanged =
+                    // In the first condition, when $original is null, $modified will not be null.
+                    // If both $original and $modified are null, this function will return at the
+                    // beginning.
+                    (!is_null($original) && $original->$hasser() != $modified->$hasser())
+                    || $originalValue != $modifiedValue;
                 switch ($fieldDescriptor->getType()) {
                     case GPBType::MESSAGE:
-                        if ($originalValue != $modifiedValue) {
+                        if ($hasValueChanged) {
                             if (self::isWrapperType($fieldDescriptor->getMessageType())) {
                                 // For wrapper types, just emit the field name.
                                 $paths[] = $fieldName;
@@ -192,7 +199,7 @@ class FieldMasks
                     case GPBType::SINT32:
                     case GPBType::SINT64:
                         // Handle all supported types except MESSAGE.
-                        if ($originalValue != $modifiedValue) {
+                        if ($hasValueChanged) {
                             $paths[] = $fieldName;
                         }
                         break;
@@ -246,5 +253,15 @@ class FieldMasks
     private static function isWrapperType(Descriptor $descriptor)
     {
         return in_array($descriptor->getClass(), self::$WRAPPER_TYPES);
+    }
+
+    // TODO: We can remove this function when it's supported in google/gax-php.
+    /**
+     * @param string $name
+     * @return string the name of hasser function
+     */
+    private static function getHasser(string $name)
+    {
+        return 'has' . ucfirst(Serializer::toCamelCase($name));
     }
 }
