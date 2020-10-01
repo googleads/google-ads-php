@@ -97,6 +97,13 @@
     },
     "expectedMask": ""
   }, {
+    "description": "Both empty",
+    "originalResource": {
+    },
+    "modifiedResource": {
+    },
+    "expectedMask": ""
+  }, {
     "description": "Create message with nested wrapper",
     "originalResource": {
     },
@@ -116,6 +123,15 @@
       "presence": 123
     },
     "expectedMask": "presence"
+  }, {
+    "description": "[Presence] Both same values",
+    "originalResource": {
+      "presence": 123
+    },
+    "modifiedResource": {
+      "presence": 123
+    },
+    "expectedMask": ""
   }, {
     "description": "[Presence] Modify optional field.",
     "originalResource": {
