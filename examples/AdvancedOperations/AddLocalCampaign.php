@@ -166,7 +166,7 @@ class AddLocalCampaign
         $campaignBudget = new CampaignBudget([
             'name' => 'Interplanetary Cruise Budget #' . uniqid(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
-            'amount_micros' => 500000,
+            'amount_micros' => 50000000,
             // A Local campaign cannot use a shared campaign budget.
             'explicitly_shared' => false
         ]);
@@ -175,7 +175,7 @@ class AddLocalCampaign
         $campaignBudgetOperation = new CampaignBudgetOperation();
         $campaignBudgetOperation->setCreate($campaignBudget);
 
-        // Issues a mutate request to add campaign budgets.
+        // Issues a mutate request to add campaign budget.
         $campaignBudgetServiceClient = $googleAdsClient->getCampaignBudgetServiceClient();
         /** @var MutateCampaignBudgetsResponse $campaignBudgetResponse */
         $campaignBudgetResponse = $campaignBudgetServiceClient->mutateCampaignBudgets(
@@ -246,7 +246,7 @@ class AddLocalCampaign
         $campaignOperation = new CampaignOperation();
         $campaignOperation->setCreate($campaign);
 
-        // Issues a mutate request to add campaigns.
+        // Issues a mutate request to add campaign.
         $campaignServiceClient = $googleAdsClient->getCampaignServiceClient();
         /** @var MutateCampaignsResponse $campaignResponse */
         $campaignResponse = $campaignServiceClient->mutateCampaigns(
@@ -292,7 +292,7 @@ class AddLocalCampaign
         $adGroupOperation = new AdGroupOperation();
         $adGroupOperation->setCreate($adGroup);
 
-        // Issues a mutate request to add the ad groups.
+        // Issues a mutate request to add the ad group.
         $adGroupServiceClient = $googleAdsClient->getAdGroupServiceClient();
         /** @var MutateAdGroupsResponse $adGroupResponse */
         $adGroupResponse = $adGroupServiceClient->mutateAdGroups($customerId, [$adGroupOperation]);
@@ -358,7 +358,7 @@ class AddLocalCampaign
         $adGroupAdOperation = new AdGroupAdOperation();
         $adGroupAdOperation->setCreate($adGroupAd);
 
-        // Issues a mutate request to add the ad group ads.
+        // Issues a mutate request to add the ad group ad.
         $adGroupAdServiceClient = $googleAdsClient->getAdGroupAdServiceClient();
         /** @var MutateAdGroupAdsResponse $adGroupAdResponse */
         $adGroupAdResponse = $adGroupAdServiceClient->mutateAdGroupAds(
