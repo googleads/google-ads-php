@@ -160,7 +160,8 @@ class FieldMasks
                     // In the first condition, when $original is null, $modified will not be null.
                     // If both $original and $modified are null, this function will return at the
                     // beginning.
-                    (!is_null($original) && $original->$hasser() != $modified->$hasser())
+                    (!is_null($original) && method_exists($original, $hasser)
+                        && $original->$hasser() != $modified->$hasser())
                     || $originalValue != $modifiedValue;
                 switch ($fieldDescriptor->getType()) {
                     case GPBType::MESSAGE:
@@ -255,7 +256,8 @@ class FieldMasks
         return in_array($descriptor->getClass(), self::$WRAPPER_TYPES);
     }
 
-    // TODO: We can remove this function when it's supported in google/gax-php.
+    // TODO: We can remove this function when it's supported in google/gax-php:
+    // https://github.com/googleapis/gax-php/issues/285
     /**
      * @param string $name
      * @return string the name of hasser function
