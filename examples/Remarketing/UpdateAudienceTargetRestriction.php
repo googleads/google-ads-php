@@ -38,7 +38,8 @@ use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
 use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
-/** This example demonstrates how to update the AUDIENCE target restriction of a given ad group to
+/**
+ * This example demonstrates how to update the AUDIENCE target restriction of a given ad group to
  * bid only.
  */
 class UpdateAudienceTargetRestriction
@@ -202,7 +203,7 @@ class UpdateAudienceTargetRestriction
      * @param int $adGroupId the ID of the ad group to update
      * @param TargetingSetting $targetingSetting the updated targeting setting
      */
-    public static function updateTargetingSetting(
+    private static function updateTargetingSetting(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $adGroupId,
@@ -230,7 +231,7 @@ class UpdateAudienceTargetRestriction
 
         // Prints the resource name of the updated ad group.
         printf(
-            "Updated targeting setting of ad group with resourceName '%s'; set the AUDIENCE " .
+            "Updated targeting setting of ad group with resource name '%s'; set the AUDIENCE " .
             "target restriction to 'Observation'.%s",
             $response->getResults()[0]->getResourceName(),
             PHP_EOL
