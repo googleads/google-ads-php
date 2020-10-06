@@ -33,12 +33,18 @@ use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\ApiStatus;
 
-/** This example illustrates the use of custom client timeouts. */
-class UseCustomClientTimeouts
+/**
+ * This example illustrates the use of custom client timeouts in the context of server streaming and
+ * unary calls.
+ *
+ * For more information about the concepts, see this documentation:
+ * https://grpc.io/docs/what-is-grpc/core-concepts/#rpc-life-cycle.
+ */
+class SetCustomClientTimeouts
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
-    private const CUSTOM_CLIENT_TIMEOUT = 5 * 60 * 1000; // 5 minutes in millis
+    private const CLIENT_TIMEOUT_MILLIS = 5 * 60 * 1000; // 5 minutes in millis
 
     public static function main()
     {
@@ -98,8 +104,8 @@ class UseCustomClientTimeouts
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
-        self::serverStreamingCall($googleAdsClient, $customerId);
-        self::unaryCall($googleAdsClient, $customerId);
+        self::makeServerStreamingCall($googleAdsClient, $customerId);
+        self::makeUnaryCall($googleAdsClient, $customerId);
     }
 
     /**
@@ -108,20 +114,30 @@ class UseCustomClientTimeouts
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
-    private static function serverStreamingCall(GoogleAdsClient $googleAdsClient, int $customerId)
-    {
+    private static function makeServerStreamingCall(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId
+    ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves all campaign IDs.
         $query = 'SELECT campaign.id FROM campaign';
 
         $output = '';
         try {
-            // Issues a search stream request.
+            // Issues a search stream request by setting a custom client timeout.
             /** @var GoogleAdsServerStreamDecorator $stream */
             $stream = $googleAdsServiceClient->searchStream(
                 $customerId,
                 $query,
-                ['timeoutMillis' => self::CUSTOM_CLIENT_TIMEOUT]
+                [
+                    // As of V5, any server streaming call has a default timeout setting. For this
+                    // particular call, the default setting can be found in the following file:
+                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V5/Services/resources/google_ads_service_client_config.json.
+                    //
+                    // When making a server streaming call, an optional argument is provided and can
+                    // be used to override the default timeout setting with a given value.
+                    'timeoutMillis' => self::CLIENT_TIMEOUT_MILLIS
+                ]
             );
             // Iterates over all rows in all messages and collects the campaign IDs.
             foreach ($stream->iterateAllElements() as $googleAdsRow) {
@@ -147,7 +163,7 @@ class UseCustomClientTimeouts
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
-    private static function unaryCall(GoogleAdsClient $googleAdsClient, int $customerId)
+    private static function makeUnaryCall(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves all campaign IDs.
@@ -155,16 +171,27 @@ class UseCustomClientTimeouts
 
         $output = '';
         try {
-            // Issues a search request.
+            // Issues a search request by setting a custom client timeout.
             $response = $googleAdsServiceClient->search(
                 $customerId,
                 $query,
                 [
-                    'timeoutMillis' => self::CUSTOM_CLIENT_TIMEOUT,
+                    // As of V5, any unary call is retryable and has default retry settings.
+                    // Complete information about these settings can be found here:
+                    // https://googleapis.github.io/gax-php/master/Google/ApiCore/RetrySettings.html.
+                    // For this particular call, the default retry settings can be found in the
+                    // following file:
+                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V5/Services/resources/google_ads_service_client_config.json.
+                    //
+                    // When making an unary call, an optional argument is provided and can be
+                    // used to override the default retry settings with given values.
                     'retrySettings' => [
-                        'initialRpcTimeoutMillis' => self::CUSTOM_CLIENT_TIMEOUT,
-                        'maxRpcTimeoutMillis' => self::CUSTOM_CLIENT_TIMEOUT,
-                        'totalTimeoutMillis' => self::CUSTOM_CLIENT_TIMEOUT
+                        // Sets the timeout that is used for the first try.
+                        'initialRpcTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS,
+                        // Sets the maximum timeout that can be used for any given try.
+                        'maxRpcTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS,
+                        // Sets the maximum accumulative timeout of the call, it includes all tries.
+                        'totalTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS
                     ]
                 ]
             );
@@ -187,4 +214,4 @@ class UseCustomClientTimeouts
     }
 }
 
-UseCustomClientTimeouts::main();
+SetCustomClientTimeouts::main();
