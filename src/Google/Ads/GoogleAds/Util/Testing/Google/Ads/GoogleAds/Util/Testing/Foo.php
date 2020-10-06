@@ -70,7 +70,17 @@ class Foo extends \Google\Protobuf\Internal\Message
      */
     public function getBar()
     {
-        return $this->bar;
+        return isset($this->bar) ? $this->bar : null;
+    }
+
+    public function hasBar()
+    {
+        return isset($this->bar);
+    }
+
+    public function clearBar()
+    {
+        unset($this->bar);
     }
 
     /**

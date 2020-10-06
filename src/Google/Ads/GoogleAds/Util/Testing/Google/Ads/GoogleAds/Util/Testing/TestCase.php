@@ -75,7 +75,17 @@ class TestCase extends \Google\Protobuf\Internal\Message
      */
     public function getOriginalResource()
     {
-        return $this->original_resource;
+        return isset($this->original_resource) ? $this->original_resource : null;
+    }
+
+    public function hasOriginalResource()
+    {
+        return isset($this->original_resource);
+    }
+
+    public function clearOriginalResource()
+    {
+        unset($this->original_resource);
     }
 
     /**
@@ -97,7 +107,17 @@ class TestCase extends \Google\Protobuf\Internal\Message
      */
     public function getModifiedResource()
     {
-        return $this->modified_resource;
+        return isset($this->modified_resource) ? $this->modified_resource : null;
+    }
+
+    public function hasModifiedResource()
+    {
+        return isset($this->modified_resource);
+    }
+
+    public function clearModifiedResource()
+    {
+        unset($this->modified_resource);
     }
 
     /**
@@ -119,7 +139,17 @@ class TestCase extends \Google\Protobuf\Internal\Message
      */
     public function getExpectedMask()
     {
-        return $this->expected_mask;
+        return isset($this->expected_mask) ? $this->expected_mask : null;
+    }
+
+    public function hasExpectedMask()
+    {
+        return isset($this->expected_mask);
+    }
+
+    public function clearExpectedMask()
+    {
+        unset($this->expected_mask);
     }
 
     /**
