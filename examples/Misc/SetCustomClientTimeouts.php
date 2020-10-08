@@ -186,12 +186,15 @@ class SetCustomClientTimeouts
                     // When making an unary call, an optional argument is provided and can be
                     // used to override the default retry settings with given values.
                     'retrySettings' => [
-                        // Sets the timeout that is used for the first try.
-                        'initialRpcTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS,
-                        // Sets the maximum timeout that can be used for any given try.
-                        'maxRpcTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS,
                         // Sets the maximum accumulative timeout of the call, it includes all tries.
-                        'totalTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS
+                        'totalTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS,
+                        // Sets the timeout that is used for the first try to one tenth of the
+                        // maximum accumulative timeout of the call.
+                        'initialRpcTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS / 10,
+                        // Sets the maximum timeout that can be used for any given try to one fifth
+                        // of the maximum accumulative timeout of the call (two times greater than
+                        // the timeout that is used for the first try).
+                        'maxRpcTimeoutMillis' => self::CLIENT_TIMEOUT_MILLIS / 5
                     ]
                 ]
             );
