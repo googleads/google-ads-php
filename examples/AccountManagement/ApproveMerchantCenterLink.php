@@ -133,8 +133,8 @@ class ApproveMerchantCenterLink
                 MerchantCenterLinkStatus::name($merchantCenterLink->getStatus()),
                 PHP_EOL
             );
-            // Approves a pending link request for a Google Ads account with the specified customer
             // [END ApproveMerchantCenterLink_1]
+            // Approves a pending link request for a Google Ads account with the specified customer
             // ID from a Merchant Center account with the specified Merchant Center account ID.
             if (
                 $merchantCenterLink->getId() === $merchantCenterAccountId
