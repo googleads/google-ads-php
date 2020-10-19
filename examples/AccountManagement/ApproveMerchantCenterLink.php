@@ -123,8 +123,8 @@ class ApproveMerchantCenterLink
             $response->getMerchantCenterLinks()->count(),
             PHP_EOL
         );
-        foreach ($response->getMerchantCenterLinks() as $merchantCenterLink) {
         // [END ApproveMerchantCenterLink]
+        foreach ($response->getMerchantCenterLinks() as $merchantCenterLink) {
             /** @var MerchantCenterLink $merchantCenterLink */
             // [START ApproveMerchantCenterLink_1]
             printf(
