@@ -109,6 +109,7 @@ class GetGeoTargetConstantsByNames
      * @param string $locale the locale of the geo target constant to be retrieved
      * @param string $countryCode the country code of the geo target constant to be retrieved
      */
+    // [START GetGeoTargetConstantsByNames]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         array $locationNames,
@@ -144,6 +145,7 @@ class GetGeoTargetConstantsByNames
             );
         }
     }
+    // [END GetGeoTargetConstantsByNames]
 }
 
 GetGeoTargetConstantsByNames::main();

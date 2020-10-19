@@ -102,6 +102,7 @@ class AddRemarketingAction
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START AddRemarketingAction_1]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a remarketing action with the specified name.
@@ -126,12 +127,14 @@ class AddRemarketingAction
 
         // Creates a query that retrieves the previously created remarketing action with its
         // generated tag snippets.
+        // [START AddRemarketingAction]
         $query =
             "SELECT remarketing_action.id, "
             . "remarketing_action.name, "
             . "remarketing_action.tag_snippets "
             . "FROM remarketing_action "
             . "WHERE remarketing_action.resource_name = '$remarketingActionResourceName'";
+            // [END AddRemarketingAction]
 
         // Issues a search request by specifying page size.
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -173,6 +176,7 @@ class AddRemarketingAction
             );
         }
     }
+    // [END AddRemarketingAction_1]
 }
 
 AddRemarketingAction::main();

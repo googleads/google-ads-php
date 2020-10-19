@@ -97,6 +97,7 @@ class GetAccountChanges
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START GetAccountChanges]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -191,6 +192,7 @@ class GetAccountChanges
 
         return $resourceName;
     }
+    // [END GetAccountChanges]
 }
 
 GetAccountChanges::main();

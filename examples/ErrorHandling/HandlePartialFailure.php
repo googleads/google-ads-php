@@ -129,6 +129,7 @@ class HandlePartialFailure
      * @param int $campaignId a campaign ID
      * @return MutateAdGroupsResponse
      */
+    // [START HandlePartialFailure]
     private static function createAdGroups(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -177,12 +178,14 @@ class HandlePartialFailure
             ['partialFailure' => true]
         );
     }
+    // [END HandlePartialFailure]
 
     /**
      * Check if there exists partial failure error in the given mutate ad group response.
      *
      * @param MutateAdGroupsResponse $response the mutate ad group response
      */
+    // [START HandlePartialFailure_1]
     private static function checkIfPartialFailureErrorExists(MutateAdGroupsResponse $response)
     {
         if (!is_null($response->getPartialFailureError())) {
@@ -194,6 +197,7 @@ class HandlePartialFailure
             );
         }
     }
+    // [END HandlePartialFailure_1]
 
     /**
      * Print results of the given mutate ad group response. For those that are partial failure,
@@ -202,6 +206,7 @@ class HandlePartialFailure
      *
      * @param MutateAdGroupsResponse $response the mutate ad group response
      */
+    // [START HandlePartialFailure_2]
     private static function printResults(MutateAdGroupsResponse $response)
     {
         // Finds the failed operations by looping through the results.
@@ -232,6 +237,7 @@ class HandlePartialFailure
             $operationIndex++;
         }
     }
+    // [END HandlePartialFailure_2]
 }
 
 HandlePartialFailure::main();

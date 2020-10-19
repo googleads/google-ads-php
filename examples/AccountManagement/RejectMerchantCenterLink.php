@@ -159,6 +159,7 @@ class RejectMerchantCenterLink
      * @param int $customerId the customer ID of the Google Ads account that has the link request
      * @param MerchantCenterLink $merchantCenterLink the MerchantCenterLink object to remove
      */
+    // [START RejectMerchantCenterLink]
     private static function removeMerchantCenterLink(
         MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient,
         int $customerId,
@@ -180,6 +181,7 @@ class RejectMerchantCenterLink
             PHP_EOL
         );
     }
+    // [END RejectMerchantCenterLink]
 }
 
 RejectMerchantCenterLink::main();

@@ -195,6 +195,7 @@ class AddAdCustomizer
     * @param string $feedName the name of the feed to create
     * @return string the resource name of the newly created feed
     */
+    // [START AddAdCustomizer]
     private static function createAdCustomizerFeed(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -237,6 +238,7 @@ class AddAdCustomizer
 
         return $feedResourceName;
     }
+    // [END AddAdCustomizer]
 
     /**
      * Retrieves attributes for a feed.
@@ -246,6 +248,7 @@ class AddAdCustomizer
      * @param string $feedResourceName the resource name of the feed
      * @return array the feed attributes, keyed by attribute name
      */
+    // [START AddAdCustomizer_1]
     private static function getFeedAttributes(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -279,6 +282,7 @@ class AddAdCustomizer
         }
         return $feedDetails;
     }
+    // [END AddAdCustomizer_1]
 
     /**
      * Creates a feed mapping for a given feed.
@@ -288,6 +292,7 @@ class AddAdCustomizer
      * @param string $adCustomizerFeedResourceName the resource name of the ad customizer feed
      * @param array $feedDetails an associative array from feed attribute names to their IDs
      */
+    // [START AddAdCustomizer_2]
     private static function createAdCustomizerMapping(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -337,6 +342,7 @@ class AddAdCustomizer
             );
         }
     }
+    // [END AddAdCustomizer_2]
 
     /**
      * Creates two different feed items to enable two different ad customizations.
@@ -347,6 +353,7 @@ class AddAdCustomizer
      * @param array $adCustomizerFeedAttributes the attributes of the feed
      * @return string[] the created feed item resource names
      */
+    // [START AddAdCustomizer_3]
     private static function createFeedItems(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -389,6 +396,7 @@ class AddAdCustomizer
 
         return $feedItemResourceNames;
     }
+    // [END AddAdCustomizer_3]
 
     /**
      * Creates a FeedItemOperation.
@@ -400,6 +408,7 @@ class AddAdCustomizer
      * @param array $adCustomizerFeedAttributes the attributes to be set on the feed
      * @return FeedItemOperation the feed item operation to create a feed item
      */
+    // [START AddAdCustomizer_4]
     private static function createFeedItemOperation(
         string $name,
         string $price,
@@ -436,6 +445,7 @@ class AddAdCustomizer
 
         return $feedItemOperation;
     }
+    // [END AddAdCustomizer_4]
 
   /**
    * Restricts the feed items to work only with a specific ad group; this prevents the feed items
@@ -447,6 +457,7 @@ class AddAdCustomizer
    * @param array $adGroupIds the ad group IDs to bind the feed items to
    * @param array $feedItemResourceNames the resource names of the feed items
    */
+    // [START AddAdCustomizer_5]
     private static function createFeedItemTargets(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -486,6 +497,7 @@ class AddAdCustomizer
             );
         }
     }
+    // [END AddAdCustomizer_5]
 
     /**
      * Creates expanded text ads that use the ad customizer feed to populate the placeholders.
@@ -495,6 +507,7 @@ class AddAdCustomizer
      * @param array $adGroupIds the ad group IDs in which to create the ads
      * @param string $feedName the name of the feed
      */
+    // [START AddAdCustomizer_6]
     private static function createAdsWithCustomizations(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -538,6 +551,7 @@ class AddAdCustomizer
             printf("Added an ad with resource name '%s'.%s", $result->getResourceName(), PHP_EOL);
         }
     }
+    // [END AddAdCustomizer_6]
 }
 
 AddAdCustomizer::main();

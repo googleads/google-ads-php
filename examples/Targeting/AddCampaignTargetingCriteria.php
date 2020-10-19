@@ -190,6 +190,7 @@ class AddCampaignTargetingCriteria
      *      belongs to
      * @return CampaignCriterionOperation the created campaign criterion operation
      */
+    // [START AddCampaignTargetingCriteria]
     private static function createLocationCampaignCriterionOperation(
         int $locationId,
         string $campaignResourceName
@@ -210,6 +211,7 @@ class AddCampaignTargetingCriteria
 
         return new CampaignCriterionOperation(['create' => $campaignCriterion]);
     }
+    // [END AddCampaignTargetingCriteria]
 
     /**
      * Creates a campaign criterion operation for the area around a specific address (proximity).
@@ -218,6 +220,7 @@ class AddCampaignTargetingCriteria
      *      belongs to
      * @return CampaignCriterionOperation the created campaign criterion operation
      */
+    // [START AddCampaignTargetingCriteria_1]
     private static function createProximityCampaignCriterionOperation(string $campaignResourceName)
     {
         // Constructs a campaign criterion as a proximity.
@@ -238,6 +241,7 @@ class AddCampaignTargetingCriteria
 
         return new CampaignCriterionOperation(['create' => $campaignCriterion]);
     }
+    // [END AddCampaignTargetingCriteria_1]
 }
 
 AddCampaignTargetingCriteria::main();

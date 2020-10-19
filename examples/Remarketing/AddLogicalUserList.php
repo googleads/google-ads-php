@@ -108,6 +108,7 @@ class AddLogicalUserList
      * @param int $customerId the customer ID
      * @param array $userListIds the IDs of the lists to be used for the new combination user list
      */
+    // [START AddLogicalUserList]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -158,6 +159,7 @@ class AddLogicalUserList
             PHP_EOL
         );
     }
+    // [END AddLogicalUserList]
 }
 
 AddLogicalUserList::main();

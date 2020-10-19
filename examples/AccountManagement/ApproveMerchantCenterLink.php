@@ -114,6 +114,7 @@ class ApproveMerchantCenterLink
         int $customerId,
         int $merchantCenterAccountId
     ) {
+        // [START ApproveMerchantCenterLink]
         // Lists all merchant links of the specified customer ID.
         $merchantCenterLinkServiceClient = $googleAdsClient->getMerchantCenterLinkServiceClient();
         $response = $merchantCenterLinkServiceClient->listMerchantCenterLinks($customerId);
@@ -123,7 +124,9 @@ class ApproveMerchantCenterLink
             PHP_EOL
         );
         foreach ($response->getMerchantCenterLinks() as $merchantCenterLink) {
+        // [END ApproveMerchantCenterLink]
             /** @var MerchantCenterLink $merchantCenterLink */
+            // [START ApproveMerchantCenterLink_1]
             printf(
                 "Link '%s' has status '%s'.%s",
                 $merchantCenterLink->getResourceName(),
@@ -131,6 +134,7 @@ class ApproveMerchantCenterLink
                 PHP_EOL
             );
             // Approves a pending link request for a Google Ads account with the specified customer
+            // [END ApproveMerchantCenterLink_1]
             // ID from a Merchant Center account with the specified Merchant Center account ID.
             if (
                 $merchantCenterLink->getId() === $merchantCenterAccountId
@@ -159,6 +163,7 @@ class ApproveMerchantCenterLink
      * @param MerchantCenterLink $merchantCenterLink the Merchant Center link to update
      * @param int $newMerchantCenterLinkStatus the status to be updated to
      */
+    // [START ApproveMerchantCenterLink_2]
     private static function updateMerchantCenterLinkStatus(
         MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient,
         int $customerId,
@@ -195,6 +200,7 @@ class ApproveMerchantCenterLink
             PHP_EOL
         );
     }
+    // [END ApproveMerchantCenterLink_2]
 }
 
 ApproveMerchantCenterLink::main();

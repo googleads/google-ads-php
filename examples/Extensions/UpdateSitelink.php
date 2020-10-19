@@ -106,6 +106,7 @@ class UpdateSitelink
      * @param int $feedItemId the feed item ID
      * @param string $sitelinkText the new sitelink text to update to
      */
+    // [START UpdateSitelink]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -143,6 +144,7 @@ class UpdateSitelink
             PHP_EOL
         );
     }
+    // [END UpdateSitelink]
 }
 
 UpdateSitelink::main();

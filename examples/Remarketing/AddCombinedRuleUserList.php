@@ -109,6 +109,7 @@ class AddCombinedRuleUserList
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START AddCombinedRuleUserList]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId
@@ -198,6 +199,7 @@ class AddCombinedRuleUserList
             PHP_EOL
         );
     }
+    // [END AddCombinedRuleUserList]
 }
 
 AddCombinedRuleUserList::main();
