@@ -28,13 +28,16 @@ use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\V5\Enums\InvoiceTypeEnum\InvoiceType;
 use Google\Ads\GoogleAds\V5\Enums\MonthOfYearEnum\MonthOfYear;
 use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V5\Resources\Invoice;
+use Google\Ads\GoogleAds\V5\Resources\Invoice\AccountBudgetSummary;
 use Google\ApiCore\ApiException;
 
 /**
- * This code example gets all invoices issued last month for a given customer and billing setup.
+ * This code example retrieves the invoices issued last month for a given customer and billing
+ * setup.
  */
 class GetInvoices
 {
@@ -117,11 +120,82 @@ class GetInvoices
             MonthOfYear::value(strtoupper(date('F', $lastMonth)))
         );
 
-        // Iterates over all invoices retrieved and prints information.
+        // Iterates over all invoices retrieved and prints their information.
         foreach ($response->getInvoices() as $invoice) {
             /** @var Invoice $invoice */
-            print $invoice->getIdUnwrapped() . PHP_EOL;
+            printf(
+                "- Found the invoice '%s':" . PHP_EOL .
+                "  ID: %s" . PHP_EOL .
+                "  Type: %s" . PHP_EOL .
+                "  Billing setup ID: %s" . PHP_EOL .
+                "  Payments account ID: %s" . PHP_EOL .
+                "  Payments profile ID: %s" . PHP_EOL .
+                "  Issue date: %s" . PHP_EOL .
+                "  Due date: %s" . PHP_EOL .
+                "  Currency code: %s" . PHP_EOL .
+                "  Service date range: from %s to %s" . PHP_EOL .
+                "  Adjustments: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL .
+                "  Regulatory costs: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL .
+                "  Replaced invoices: %s" . PHP_EOL .
+                "  Amounts: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL .
+                "  Corrected invoice: %s" . PHP_EOL .
+                "  PDF URL: " . PHP_EOL .
+                "  Account budgets:" . PHP_EOL,
+                $invoice->getResourceName(),
+                $invoice->getIdUnwrapped(),
+                InvoiceType::name($invoice->getType()),
+                $invoice->getBillingSetupUnwrapped(),
+                $invoice->getPaymentsAccountIdUnwrapped(),
+                $invoice->getPaymentsProfileIdUnwrapped(),
+                $invoice->getIssueDateUnwrapped(),
+                $invoice->getDueDateUnwrapped(),
+                $invoice->getCurrencyCodeUnwrapped(),
+                $invoice->getServiceDateRange()->getStartDateUnwrapped(),
+                $invoice->getServiceDateRange()->getEndDateUnwrapped(),
+                self::microsToPlain($invoice->getAdjustmentsSubtotalAmountMicrosUnwrapped()),
+                self::microsToPlain($invoice->getAdjustmentsTaxAmountMicrosUnwrapped()),
+                self::microsToPlain($invoice->getAdjustmentsTotalAmountMicrosUnwrapped()),
+                self::microsToPlain($invoice->getRegulatoryCostsSubtotalAmountMicrosUnwrapped()),
+                self::microsToPlain($invoice->getRegulatoryCostsTaxAmountMicrosUnwrapped()),
+                self::microsToPlain($invoice->getRegulatoryCostsTotalAmountMicrosUnwrapped()),
+                implode(', ', iterator_to_array($invoice->getReplacedInvoices()->getIterator())),
+                self::microsToPlain($invoice->getSubtotalAmountMicrosUnwrapped()),
+                self::microsToPlain($invoice->getTaxAmountMicrosUnwrapped()),
+                self::microsToPlain($invoice->getTotalAmountMicrosUnwrapped()),
+                $invoice->getCorrectedInvoiceUnwrapped(),
+                $invoice->getPdfUrlUnwrapped()
+            );
+            foreach ($invoice->getAccountBudgetSummaries() as $accountBudgetSummary) {
+                /** @var AccountBudgetSummary $accountBudgetSummaries */
+                printf(
+                    "  - Account budget: resource name '%s', name '%s'" . PHP_EOL .
+                    "      Customer: ID '%s', descriptive name '%s'" . PHP_EOL .
+                    "      Purchase order number: %s" . PHP_EOL .
+                    "      Billing activity date range: from %s to %s" . PHP_EOL .
+                    "      Amounts: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL,
+                    $accountBudgetSummary->getAccountBudgetUnwrapped(),
+                    $accountBudgetSummary->getAccountBudgetNameUnwrapped(),
+                    $accountBudgetSummary->getCustomerUnwrapped(),
+                    $accountBudgetSummary->getCustomerDescriptiveNameUnwrapped(),
+                    $accountBudgetSummary->getPurchaseOrderNumberUnwrapped(),
+                    $accountBudgetSummary->getBillableActivityDateRange()->getStartDateUnwrapped(),
+                    $accountBudgetSummary->getBillableActivityDateRange()->getEndDateUnwrapped(),
+                    $accountBudgetSummary->getSubtotalAmountMicrosUnwrapped() / 1000000.0,
+                    $accountBudgetSummary->getTaxAmountMicrosUnwrapped() / 1000000.0,
+                    $accountBudgetSummary->getTotalAmountMicrosUnwrapped() / 1000000.0
+                );
+            }
         }
+    }
+
+    /**
+     * Converts an amount from the micro unit to the plain unit.
+     *
+     * @param int $amount the amount
+     * @return int the amount converted in plain unit if not null otherwise 0
+     */
+    private static function microsToPlain(int $amount): int {
+        return $amount ? $amount / 1000000.0 : 0.0;
     }
 }
 
