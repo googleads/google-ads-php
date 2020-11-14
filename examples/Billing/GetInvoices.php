@@ -108,14 +108,14 @@ class GetInvoices
         int $customerId,
         int $billingSetupId
     ) {
-        // Identify the last month
+        // Gets the date one month before now.
         $lastMonth = strtotime('-1 month');
 
         // Issues the request.
         $response = $googleAdsClient->getInvoiceServiceClient()->listInvoices(
             $customerId,
             ResourceNames::forBillingSetup($customerId, $billingSetupId),
-            // Needs to be 2019 or later
+            // The year needs to be 2019 or later.
             date('Y', $lastMonth),
             MonthOfYear::value(strtoupper(date('F', $lastMonth)))
         );
@@ -139,7 +139,7 @@ class GetInvoices
                 "  Replaced invoices: %s" . PHP_EOL .
                 "  Amounts: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL .
                 "  Corrected invoice: %s" . PHP_EOL .
-                "  PDF URL: " . PHP_EOL .
+                "  PDF URL: %s" . PHP_EOL .
                 "  Account budgets:" . PHP_EOL,
                 $invoice->getResourceName(),
                 $invoice->getIdUnwrapped(),
@@ -168,7 +168,8 @@ class GetInvoices
             foreach ($invoice->getAccountBudgetSummaries() as $accountBudgetSummary) {
                 /** @var AccountBudgetSummary $accountBudgetSummaries */
                 printf(
-                    "  - Account budget: resource name '%s', name '%s'" . PHP_EOL .
+                    "  - Account budget '%s':" . PHP_EOL .
+                    "      Name: %s" . PHP_EOL .
                     "      Customer: ID '%s', descriptive name '%s'" . PHP_EOL .
                     "      Purchase order number: %s" . PHP_EOL .
                     "      Billing activity date range: from %s to %s" . PHP_EOL .
@@ -180,9 +181,9 @@ class GetInvoices
                     $accountBudgetSummary->getPurchaseOrderNumberUnwrapped(),
                     $accountBudgetSummary->getBillableActivityDateRange()->getStartDateUnwrapped(),
                     $accountBudgetSummary->getBillableActivityDateRange()->getEndDateUnwrapped(),
-                    $accountBudgetSummary->getSubtotalAmountMicrosUnwrapped() / 1000000.0,
-                    $accountBudgetSummary->getTaxAmountMicrosUnwrapped() / 1000000.0,
-                    $accountBudgetSummary->getTotalAmountMicrosUnwrapped() / 1000000.0
+                    self::microsToPlain($accountBudgetSummary->getSubtotalAmountMicrosUnwrapped()),
+                    self::microsToPlain($accountBudgetSummary->getTaxAmountMicrosUnwrapped()),
+                    self::microsToPlain($accountBudgetSummary->getTotalAmountMicrosUnwrapped())
                 );
             }
         }
