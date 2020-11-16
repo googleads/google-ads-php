@@ -24,30 +24,27 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V5\Enums\KeywordPlanForecastIntervalEnum\KeywordPlanForecastInterval;
-use Google\Ads\GoogleAds\V5\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\KeywordPlan;
-use Google\Ads\GoogleAds\V5\Resources\KeywordPlanAdGroup;
-use Google\Ads\GoogleAds\V5\Resources\KeywordPlanAdGroupKeyword;
-use Google\Ads\GoogleAds\V5\Resources\KeywordPlanCampaign;
-use Google\Ads\GoogleAds\V5\Resources\KeywordPlanCampaignKeyword;
-use Google\Ads\GoogleAds\V5\Resources\KeywordPlanForecastPeriod;
-use Google\Ads\GoogleAds\V5\Resources\KeywordPlanGeoTarget;
-use Google\Ads\GoogleAds\V5\Services\KeywordPlanAdGroupKeywordOperation;
-use Google\Ads\GoogleAds\V5\Services\KeywordPlanAdGroupOperation;
-use Google\Ads\GoogleAds\V5\Services\KeywordPlanCampaignKeywordOperation;
-use Google\Ads\GoogleAds\V5\Services\KeywordPlanCampaignOperation;
-use Google\Ads\GoogleAds\V5\Services\KeywordPlanOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V6\Enums\KeywordPlanForecastIntervalEnum\KeywordPlanForecastInterval;
+use Google\Ads\GoogleAds\V6\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\KeywordPlan;
+use Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroup;
+use Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroupKeyword;
+use Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaign;
+use Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaignKeyword;
+use Google\Ads\GoogleAds\V6\Resources\KeywordPlanForecastPeriod;
+use Google\Ads\GoogleAds\V6\Resources\KeywordPlanGeoTarget;
+use Google\Ads\GoogleAds\V6\Services\KeywordPlanAdGroupKeywordOperation;
+use Google\Ads\GoogleAds\V6\Services\KeywordPlanAdGroupOperation;
+use Google\Ads\GoogleAds\V6\Services\KeywordPlanCampaignKeywordOperation;
+use Google\Ads\GoogleAds\V6\Services\KeywordPlanCampaignOperation;
+use Google\Ads\GoogleAds\V6\Services\KeywordPlanOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This class creates a keyword plan, which can be reused for retrieving forecast metrics and
@@ -158,9 +155,7 @@ class AddKeywordPlan
     ) {
         // Creates a keyword plan.
         $keywordPlan = new KeywordPlan([
-            'name' => new StringValue(
-                ['value' => 'Keyword plan for traffic estimate #' . uniqid()]
-            ),
+            'name' => 'Keyword plan for traffic estimate #' . uniqid(),
             'forecast_period' => new KeywordPlanForecastPeriod([
                 'date_interval' => KeywordPlanForecastInterval::NEXT_QUARTER
             ])
@@ -198,27 +193,24 @@ class AddKeywordPlan
     ) {
         // Creates a keyword plan campaign.
         $keywordPlanCampaign = new KeywordPlanCampaign([
-            'name' => new StringValue(['value' => 'Keyword plan campaign #' . uniqid()]),
-            'cpc_bid_micros' => new Int64Value(['value' => 1000000]),
+            'name' => 'Keyword plan campaign #' . uniqid(),
+            'cpc_bid_micros' => 1000000,
             'keyword_plan_network' => KeywordPlanNetwork::GOOGLE_SEARCH,
-            'keyword_plan' => new StringValue(['value' => $keywordPlanResource]),
+            'keyword_plan' => $keywordPlanResource,
         ]);
 
         // See https://developers.google.com/adwords/api/docs/appendix/geotargeting
         // for the list of geo target IDs.
         $keywordPlanCampaign->setGeoTargets([
             new KeywordPlanGeoTarget([
-                'geo_target_constant' => new StringValue(
-                    ['value' => ResourceNames::forGeoTargetConstant(2840)] // USA
-                )
+                'geo_target_constant' => ResourceNames::forGeoTargetConstant(2840) // USA
             ])
         ]);
 
         // See https://developers.google.com/adwords/api/docs/appendix/codes-formats#languages
         // for the list of language criteria IDs.
-        $keywordPlanCampaign->setLanguageConstants([
-            new StringValue(['value' => ResourceNames::forLanguageConstant(1000)]) // English
-        ]);
+        // Set English as a language constant.
+        $keywordPlanCampaign->setLanguageConstants([ResourceNames::forLanguageConstant(1000)]);
 
         // Creates a keyword plan campaign operation.
         $keywordPlanCampaignOperation = new KeywordPlanCampaignOperation();
@@ -254,9 +246,9 @@ class AddKeywordPlan
     ) {
         // Creates a keyword plan ad group.
         $keywordPlanAdGroup = new KeywordPlanAdGroup([
-            'name' => new StringValue(['value' => 'Keyword plan ad group #' . uniqid()]),
-            'cpc_bid_micros' => new Int64Value(['value' => 2500000]),
-            'keyword_plan_campaign' => new StringValue(['value' => $planCampaignResource])
+            'name' => 'Keyword plan ad group #' . uniqid(),
+            'cpc_bid_micros' => 2500000,
+            'keyword_plan_campaign' => $planCampaignResource
         ]);
 
         // Creates a keyword plan ad group operation.
@@ -290,24 +282,24 @@ class AddKeywordPlan
     ) {
         // Creates the ad group keywords for the keyword plan.
         $keywordPlanAdGroupKeyword1 = new KeywordPlanAdGroupKeyword([
-            'text' => new StringValue(['value' => 'mars cruise']),
-            'cpc_bid_micros' => new Int64Value(['value' => 2000000]),
+            'text' => 'mars cruise',
+            'cpc_bid_micros' => 2000000,
             'match_type' => KeywordMatchType::BROAD,
-            'keyword_plan_ad_group' => new StringValue(['value' => $planAdGroupResource])
+            'keyword_plan_ad_group' => $planAdGroupResource
         ]);
 
         $keywordPlanAdGroupKeyword2 = new KeywordPlanAdGroupKeyword([
-            'text' => new StringValue(['value' => 'cheap cruise']),
-            'cpc_bid_micros' => new Int64Value(['value' => 15000000]),
+            'text' => 'cheap cruise',
+            'cpc_bid_micros' => 15000000,
             'match_type' => KeywordMatchType::PHRASE,
-            'keyword_plan_ad_group' => new StringValue(['value' => $planAdGroupResource])
+            'keyword_plan_ad_group' => $planAdGroupResource
         ]);
 
         $keywordPlanAdGroupKeyword3 = new KeywordPlanAdGroupKeyword([
-            'text' => new StringValue(['value' => 'jupiter cruise']),
-            'cpc_bid_micros' => new Int64Value(['value' => 1990000]),
+            'text' => 'jupiter cruise',
+            'cpc_bid_micros' => 1990000,
             'match_type' => KeywordMatchType::EXACT,
-            'keyword_plan_ad_group' => new StringValue(['value' => $planAdGroupResource])
+            'keyword_plan_ad_group' => $planAdGroupResource
         ]);
 
         $keywordPlanAdGroupKeywords =
@@ -356,10 +348,10 @@ class AddKeywordPlan
     ) {
         // Creates a negative campaign keyword for the keyword plan.
         $keywordPlanCampaignKeyword = new KeywordPlanCampaignKeyword([
-            'text' => new StringValue(['value' => 'moon walk']),
+            'text' => 'moon walk',
             'match_type' => KeywordMatchType::BROAD,
-            'keyword_plan_campaign' => new StringValue(['value' => $planCampaignResource]),
-            'negative' => new BoolValue(['value' => true])
+            'keyword_plan_campaign' => $planCampaignResource,
+            'negative' => true
         ]);
 
         $keywordPlanCampaignKeywordOperation = new KeywordPlanCampaignKeywordOperation();

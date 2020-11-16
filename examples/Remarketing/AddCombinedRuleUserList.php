@@ -23,26 +23,24 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V5\Common\CombinedRuleUserListInfo;
-use Google\Ads\GoogleAds\V5\Common\RuleBasedUserListInfo;
-use Google\Ads\GoogleAds\V5\Common\UserListRuleInfo;
-use Google\Ads\GoogleAds\V5\Common\UserListRuleItemGroupInfo;
-use Google\Ads\GoogleAds\V5\Common\UserListRuleItemInfo;
-use Google\Ads\GoogleAds\V5\Common\UserListStringRuleItemInfo;
-use Google\Ads\GoogleAds\V5\Enums\UserListCombinedRuleOperatorEnum\UserListCombinedRuleOperator;
-use Google\Ads\GoogleAds\V5\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
-use Google\Ads\GoogleAds\V5\Enums\UserListPrepopulationStatusEnum\UserListPrepopulationStatus;
-use Google\Ads\GoogleAds\V5\Enums\UserListStringRuleItemOperatorEnum\UserListStringRuleItemOperator;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\UserList;
-use Google\Ads\GoogleAds\V5\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\V6\Common\CombinedRuleUserListInfo;
+use Google\Ads\GoogleAds\V6\Common\RuleBasedUserListInfo;
+use Google\Ads\GoogleAds\V6\Common\UserListRuleInfo;
+use Google\Ads\GoogleAds\V6\Common\UserListRuleItemGroupInfo;
+use Google\Ads\GoogleAds\V6\Common\UserListRuleItemInfo;
+use Google\Ads\GoogleAds\V6\Common\UserListStringRuleItemInfo;
+use Google\Ads\GoogleAds\V6\Enums\UserListCombinedRuleOperatorEnum\UserListCombinedRuleOperator;
+use Google\Ads\GoogleAds\V6\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
+use Google\Ads\GoogleAds\V6\Enums\UserListPrepopulationStatusEnum\UserListPrepopulationStatus;
+use Google\Ads\GoogleAds\V6\Enums\UserListStringRuleItemOperatorEnum\UserListStringRuleItemOperator;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\UserList;
+use Google\Ads\GoogleAds\V6\Services\UserListOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * Creates a rule-based user list defined by a combination of rules for users who have visited two
@@ -117,10 +115,10 @@ class AddCombinedRuleUserList
         // http://example.com/example1'.
         $userVisitedSite1Rule = new UserListRuleItemInfo([
             // Uses a built-in parameter to create a domain URL rule.
-            'name' => new StringValue(['value' => self::URL_STRING]),
+            'name' => self::URL_STRING,
             'string_rule_item' => new UserListStringRuleItemInfo([
                 'operator' => UserListStringRuleItemOperator::EQUALS,
-                'value' => new StringValue(['value' => 'http://example.com/example1'])
+                'value' => 'http://example.com/example1'
             ])
         ]);
 
@@ -137,10 +135,10 @@ class AddCombinedRuleUserList
         // http://example.com/example2'.
         $userVisitedSite2Rule = new UserListRuleItemInfo([
             // Uses a built-in parameter to create a domain URL rule.
-            'name' => new StringValue(['value' => self::URL_STRING]),
+            'name' => self::URL_STRING,
             'string_rule_item' => new UserListStringRuleItemInfo([
                 'operator' => UserListStringRuleItemOperator::EQUALS,
-                'value' => new StringValue(['value' => 'http://example.com/example2'])
+                'value' => 'http://example.com/example2'
             ])
         ]);
 
@@ -172,16 +170,12 @@ class AddCombinedRuleUserList
 
         // Creates a user list.
         $userList = new UserList([
-            'name' => new StringValue([
-                'value' => 'All visitors to http://example.com/example1 AND ' .
-                    'http://example.com/example2 #' . uniqid()
-            ]),
-            'description' => new StringValue([
-                'value' => 'Visitors of both http://example.com/example1 AND ' .
-                    'http://example.com/example2'
-            ]),
+            'name' => 'All visitors to http://example.com/example1 AND ' .
+                'http://example.com/example2 #' . uniqid(),
+            'description' => 'Visitors of both http://example.com/example1 AND ' .
+                'http://example.com/example2',
             'membership_status' => UserListMembershipStatus::OPEN,
-            'membership_life_span' => new Int64Value(['value' => 365]),
+            'membership_life_span' => 365,
             'rule_based_user_list' => $ruleBasedUserListInfo
         ]);
 

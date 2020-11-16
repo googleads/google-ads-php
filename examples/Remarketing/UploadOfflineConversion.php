@@ -24,14 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Services\ClickConversion;
-use Google\Ads\GoogleAds\V5\Services\ClickConversionResult;
-use Google\Ads\GoogleAds\V5\Services\UploadClickConversionsResponse;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Services\ClickConversion;
+use Google\Ads\GoogleAds\V6\Services\ClickConversionResult;
+use Google\Ads\GoogleAds\V6\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 
 /**

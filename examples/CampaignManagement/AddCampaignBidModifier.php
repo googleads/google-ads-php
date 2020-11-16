@@ -23,16 +23,16 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\InteractionTypeInfo;
-use Google\Ads\GoogleAds\V5\Enums\InteractionTypeEnum;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\CampaignBidModifier;
-use Google\Ads\GoogleAds\V5\Services\CampaignBidModifierOperation;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\InteractionTypeInfo;
+use Google\Ads\GoogleAds\V6\Enums\InteractionTypeEnum;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier;
+use Google\Ads\GoogleAds\V6\Services\CampaignBidModifierOperation;
 use Google\ApiCore\ApiException;
 
 /**

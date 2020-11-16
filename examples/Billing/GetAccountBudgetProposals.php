@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V5\Enums\AccountBudgetProposalStatusEnum\AccountBudgetProposalStatus;
-use Google\Ads\GoogleAds\V5\Enums\AccountBudgetProposalTypeEnum\AccountBudgetProposalType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V6\Enums\AccountBudgetProposalStatusEnum\AccountBudgetProposalStatus;
+use Google\Ads\GoogleAds\V6\Enums\AccountBudgetProposalTypeEnum\AccountBudgetProposalType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -134,16 +134,16 @@ class GetAccountBudgetProposals
                 . '  proposed type \'%8$s\'.%11$s'
                 . '  approval date time \'%9$s\'.%11$s'
                 . '  creation date time \'%10$s\'.%11$s',
-                $accountBudgetProposal->getIdUnwrapped(),
+                $accountBudgetProposal->getId(),
                 AccountBudgetProposalStatus::name($accountBudgetProposal->getStatus()),
-                $accountBudgetProposal->getAccountBudgetUnwrapped(),
-                $accountBudgetProposal->getBillingSetupUnwrapped(),
-                $accountBudgetProposal->getProposedNameUnwrapped(),
-                $accountBudgetProposal->getProposedNotesUnwrapped(),
-                $accountBudgetProposal->getProposedPurchaseOrderNumberUnwrapped(),
+                $accountBudgetProposal->getAccountBudget(),
+                $accountBudgetProposal->getBillingSetup(),
+                $accountBudgetProposal->getProposedName(),
+                $accountBudgetProposal->getProposedNotes(),
+                $accountBudgetProposal->getProposedPurchaseOrderNumber(),
                 AccountBudgetProposalType::name($accountBudgetProposal->getProposalType()),
-                $accountBudgetProposal->getApprovalDateTimeUnwrapped(),
-                $accountBudgetProposal->getCreationDateTimeUnwrapped(),
+                $accountBudgetProposal->getApprovalDateTime(),
+                $accountBudgetProposal->getCreationDateTime(),
                 PHP_EOL
             );
         }

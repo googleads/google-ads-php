@@ -23,19 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\AccountBudgetProposalTypeEnum\AccountBudgetProposalType;
-use Google\Ads\GoogleAds\V5\Enums\TimeTypeEnum\TimeType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\AccountBudgetProposal;
-use Google\Ads\GoogleAds\V5\Services\AccountBudgetProposalOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\AccountBudgetProposalTypeEnum\AccountBudgetProposalType;
+use Google\Ads\GoogleAds\V6\Enums\TimeTypeEnum\TimeType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\AccountBudgetProposal;
+use Google\Ads\GoogleAds\V6\Services\AccountBudgetProposalOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example creates an account budget proposal using the 'CREATE' operation. To get account
@@ -111,33 +109,31 @@ class AddAccountBudgetProposal
     ) {
         // Constructs an account budget proposal.
         $accountBudgetProposal = new AccountBudgetProposal([
-            'billing_setup' => new StringValue(
-                ['value' => ResourceNames::forBillingSetup($customerId, $billingSetupId)]
-            ),
+            'billing_setup' => ResourceNames::forBillingSetup($customerId, $billingSetupId),
             'proposal_type' => AccountBudgetProposalType::CREATE,
-            'proposed_name' => new StringValue(['value' => 'Account Budget (example)']),
+            'proposed_name' => 'Account Budget (example)',
             // Specifies the account budget starts immediately.
             'proposed_start_time_type' => TimeType::NOW,
             // Alternatively you can specify a specific start time. Refer to the
             // AccountBudgetProposal class for allowed formats.
             //
-            // 'proposed_start_date_time' => new StringValue(['value' => '2020-01-02 03:04:05']),
+            // 'proposed_start_date_time' => '2020-01-02 03:04:05',
 
             // Specify that the budget runs forever.
             'proposed_end_time_type' => TimeType::FOREVER,
             // Alternatively you can specify a specific end time. Allowed formats are as above.
-            // 'proposed_end_date_time' => new StringValue(['value' => '2021-02-03 04:05:06']),
+            // 'proposed_end_date_time' => '2021-02-03 04:05:06',
 
             // Optional: set notes for the budget. These are free text and do not effect budget
             // delivery.
-            // 'proposed_notes' => new StringValue(['value' => 'Received prepayment of $0.01']),
+            // 'proposed_notes' => 'Received prepayment of $0.01',
 
             // Optional: set PO number for record keeping. This value is at the user's
             // discretion, and has no effect on Google Billing & Payments.
-            // 'proposed_purchase_order_number' => new StringValue(['value' => 'PO number 12345']),
+            // 'proposed_purchase_order_number' => 'PO number 12345',
 
             // Set the spending limit to 0.01, measured in the Google Ads account currency.
-            'proposed_spending_limit_micros' => new Int64Value(['value' => 10000])
+            'proposed_spending_limit_micros' => 10000
         ]);
 
         $accountBudgetProposalOperation = new AccountBudgetProposalOperation();

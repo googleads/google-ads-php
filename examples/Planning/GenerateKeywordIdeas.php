@@ -23,19 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Services\GenerateKeywordIdeaResult;
-use Google\Ads\GoogleAds\V5\Services\KeywordAndUrlSeed;
-use Google\Ads\GoogleAds\V5\Services\KeywordSeed;
-use Google\Ads\GoogleAds\V5\Services\UrlSeed;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Services\GenerateKeywordIdeaResult;
+use Google\Ads\GoogleAds\V6\Services\KeywordAndUrlSeed;
+use Google\Ads\GoogleAds\V6\Services\KeywordSeed;
+use Google\Ads\GoogleAds\V6\Services\UrlSeed;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /** This example generates keyword ideas from a list of seed keywords or a seed page URL. */
 class GenerateKeywordIdeas
@@ -150,38 +149,27 @@ class GenerateKeywordIdeas
         $requestOptionalArgs = [];
         if (empty($keywords)) {
             // Only page URL was specified, so use a UrlSeed.
-            $requestOptionalArgs['urlSeed'] =
-                new UrlSeed(['url' => new StringValue(['value' => $pageUrl])]);
+            $requestOptionalArgs['urlSeed'] = new UrlSeed(['url' => $pageUrl]);
         } elseif (is_null($pageUrl)) {
             // Only keywords were specified, so use a KeywordSeed.
-            $requestOptionalArgs['keywordSeed'] = new KeywordSeed([
-                'keywords' => array_map(function ($keyword) {
-                    return new StringValue(['value' => $keyword]);
-                }, $keywords)
-            ]);
+            $requestOptionalArgs['keywordSeed'] = new KeywordSeed(['keywords' => $keywords]);
         } else {
             // Both page URL and keywords were specified, so use a KeywordAndUrlSeed.
-            $requestOptionalArgs['keywordAndUrlSeed'] = new KeywordAndUrlSeed([
-                'url' => new StringValue(['value' => $pageUrl]),
-                'keywords' => array_map(function ($keyword) {
-                    return new StringValue(['value' => $keyword]);
-                }, $keywords)
-            ]);
+            $requestOptionalArgs['keywordAndUrlSeed'] =
+                new KeywordAndUrlSeed(['url' => $pageUrl, 'keywords' => $keywords]);
         }
 
         // Create a list of geo target constants based on the resource name of specified location
         // IDs.
         $geoTargetConstants =  array_map(function ($locationId) {
-            return new StringValue(
-                ['value' => ResourceNames::forGeoTargetConstant($locationId)]
-            );
+            return ResourceNames::forGeoTargetConstant($locationId);
         }, $locationIds);
 
         // Generate keyword ideas based on the specified parameters.
         $response = $keywordPlanIdeaServiceClient->generateKeywordIdeas(
-            // Set the language resource using the provided language ID.
-            new StringValue(['value' => ResourceNames::forLanguageConstant($languageId)]),
             [
+                // Set the language resource using the provided language ID.
+                'language' => ResourceNames::forLanguageConstant($languageId),
                 'customerId' => $customerId,
                 // Add the resource name of each location ID to the request.
                 'geoTargetConstants' => $geoTargetConstants,
@@ -199,9 +187,9 @@ class GenerateKeywordIdeas
             // A mapping of enum names to values can be found at KeywordPlanCompetitionLevel.php.
             printf(
                 "Keyword idea text '%s' has %d average monthly searches and competition as %d.%s",
-                $result->getTextUnwrapped(),
+                $result->getText(),
                 is_null($result->getKeywordIdeaMetrics()) ?
-                    0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearchesUnwrapped(),
+                    0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches(),
                 is_null($result->getKeywordIdeaMetrics()) ?
                     0 : $result->getKeywordIdeaMetrics()->getCompetition(),
                 PHP_EOL

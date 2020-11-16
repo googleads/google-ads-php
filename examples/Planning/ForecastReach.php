@@ -23,30 +23,27 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\V5\Common\DeviceInfo;
-use Google\Ads\GoogleAds\V5\Common\GenderInfo;
-use Google\Ads\GoogleAds\V5\Enums\DeviceEnum\Device;
-use Google\Ads\GoogleAds\V5\Enums\GenderTypeEnum\GenderType;
-use Google\Ads\GoogleAds\V5\Enums\ReachPlanAdLengthEnum\ReachPlanAdLength;
-use Google\Ads\GoogleAds\V5\Enums\ReachPlanAgeRangeEnum\ReachPlanAgeRange;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Services\CampaignDuration;
-use Google\Ads\GoogleAds\V5\Services\PlannableLocation;
-use Google\Ads\GoogleAds\V5\Services\PlannedProduct;
-use Google\Ads\GoogleAds\V5\Services\Preferences;
-use Google\Ads\GoogleAds\V5\Services\ProductAllocation;
-use Google\Ads\GoogleAds\V5\Services\ProductMetadata;
-use Google\Ads\GoogleAds\V5\Services\ReachForecast;
-use Google\Ads\GoogleAds\V5\Services\Targeting;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\V6\Common\DeviceInfo;
+use Google\Ads\GoogleAds\V6\Common\GenderInfo;
+use Google\Ads\GoogleAds\V6\Enums\DeviceEnum\Device;
+use Google\Ads\GoogleAds\V6\Enums\GenderTypeEnum\GenderType;
+use Google\Ads\GoogleAds\V6\Enums\ReachPlanAdLengthEnum\ReachPlanAdLength;
+use Google\Ads\GoogleAds\V6\Enums\ReachPlanAgeRangeEnum\ReachPlanAgeRange;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Services\CampaignDuration;
+use Google\Ads\GoogleAds\V6\Services\PlannableLocation;
+use Google\Ads\GoogleAds\V6\Services\PlannedProduct;
+use Google\Ads\GoogleAds\V6\Services\PlannedProductReachForecast;
+use Google\Ads\GoogleAds\V6\Services\Preferences;
+use Google\Ads\GoogleAds\V6\Services\ProductAllocation;
+use Google\Ads\GoogleAds\V6\Services\ProductMetadata;
+use Google\Ads\GoogleAds\V6\Services\ReachForecast;
+use Google\Ads\GoogleAds\V6\Services\Targeting;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int32Value;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to interact with the ReachPlanService to find plannable
@@ -140,9 +137,9 @@ class ForecastReach
             /** @var PlannableLocation $location */
             printf(
                 "'%s', %s, %s%s",
-                $location->getNameUnwrapped(),
-                $location->getIdUnwrapped(),
-                $location->getParentCountryIdUnwrapped(),
+                $location->getName(),
+                $location->getId(),
+                $location->getParentCountryId(),
                 PHP_EOL
             );
         }
@@ -156,13 +153,13 @@ class ForecastReach
     private static function showPlannableProducts(GoogleAdsClient $googleAdsClient)
     {
         $response = $googleAdsClient->getReachPlanServiceClient()->listPlannableProducts(
-            new StringValue(['value' => self::LOCATION_ID])
+            self::LOCATION_ID
         );
 
         print 'Plannable Products for Location ID ' . self::LOCATION_ID . ':' . PHP_EOL;
         foreach ($response->getProductMetadata() as $product) {
             /** @var ProductMetadata $product */
-            print $product->getPlannableProductCodeUnwrapped() . ':' . PHP_EOL;
+            print $product->getPlannableProductCode() . ':' . PHP_EOL;
             print 'Age Ranges:' . PHP_EOL;
             foreach ($product->getPlannableTargeting()->getAgeRanges() as $ageRange) {
                 /** @var ReachPlanAgeRange $ageRange */
@@ -199,13 +196,10 @@ class ForecastReach
         string $locationId,
         string $currencyCode
     ) {
-        $duration = new CampaignDuration([
-            // Valid durations are between 1 and 90 days.
-            'duration_in_days' => new Int32Value(['value' => 28])
-        ]);
-
+        // Valid durations are between 1 and 90 days.
+        $duration = new CampaignDuration(['duration_in_days' => 28]);
         $targeting = new Targeting([
-            'plannable_location_id' => new StringValue(['value' => $locationId]),
+            'plannable_location_id' => $locationId,
             'age_range' => ReachPlanAgeRange::AGE_RANGE_18_65_UP,
             'genders' => [
                 new GenderInfo(['type' => GenderType::FEMALE]),
@@ -224,10 +218,7 @@ class ForecastReach
             $customerId,
             $duration,
             $productMix,
-            [
-                'currencyCode' => new StringValue(['value' => $currencyCode]),
-                'targeting' => $targeting
-            ]
+            ['currencyCode' => $currencyCode, 'targeting' => $targeting]
         );
 
         printf(
@@ -239,22 +230,22 @@ class ForecastReach
         foreach ($response->getReachCurve()->getReachForecasts() as $point) {
             $products = '';
             /** @var ReachForecast $point */
-            foreach ($point->getForecastedProductAllocations() as $product) {
-                /** @var ProductAllocation $product */
+            foreach ($point->getPlannedProductReachForecasts() as $plannedProductReachForecast) {
+                /** @var PlannedProductReachForecast $plannedProductReachForecast */
                 $products .= sprintf(
                     '(Product: %s, Budget Micros: %s)',
-                    $product->getPlannableProductCodeUnwrapped(),
-                    $product->getBudgetMicrosUnwrapped()
+                    $plannedProductReachForecast->getPlannableProductCode(),
+                    $plannedProductReachForecast->getCostMicros()
                 );
             }
             printf(
                 "%s, %d, %d, %d, %d, %d, %s%s",
                 $currencyCode,
-                $point->getCostMicrosUnwrapped(),
-                $point->getForecast()->getOnTargetReachUnwrapped(),
-                $point->getForecast()->getOnTargetImpressionsUnwrapped(),
-                $point->getForecast()->getTotalReachUnwrapped(),
-                $point->getForecast()->getTotalImpressionsUnwrapped(),
+                $point->getCostMicros(),
+                $point->getForecast()->getOnTargetReach(),
+                $point->getForecast()->getOnTargetImpressions(),
+                $point->getForecast()->getTotalReach(),
+                $point->getForecast()->getTotalImpressions(),
                 $products,
                 PHP_EOL
             );
@@ -278,16 +269,12 @@ class ForecastReach
         // https://developers.google.com/google-ads/api/reference/rpc/latest/ReachPlanService
         $productMix = [
             new PlannedProduct([
-                'plannable_product_code' => new StringValue(['value' => 'TRUEVIEW_IN_STREAM']),
-                'budget_micros' => new Int64Value([
-                    'value' => self::BUDGET_MICROS * $trueviewAllocation
-                ])
+                'plannable_product_code' => 'TRUEVIEW_IN_STREAM',
+                'budget_micros' => self::BUDGET_MICROS * $trueviewAllocation
             ]),
             new PlannedProduct([
-                'plannable_product_code' => new StringValue(['value' => 'BUMPER']),
-                'budget_micros' => new Int64Value([
-                    'value' => self::BUDGET_MICROS * $bumperAllocation
-                ])
+                'plannable_product_code' => 'BUMPER',
+                'budget_micros' => self::BUDGET_MICROS * $bumperAllocation
             ])
         ];
 
@@ -308,22 +295,19 @@ class ForecastReach
      */
     private static function forecastSuggestedMix(GoogleAdsClient $googleAdsClient, int $customerId)
     {
-        $trueValue = new BoolValue(['value' => true]);
-        $falseValue = new BoolValue(['value' => false]);
-
         $preferences = new Preferences([
-            'has_guaranteed_price' => $trueValue,
-            'starts_with_sound' => $trueValue,
-            'is_skippable' => $falseValue,
-            'top_content_only' => $trueValue,
+            'has_guaranteed_price' => true,
+            'starts_with_sound' => true,
+            'is_skippable' => false,
+            'top_content_only' => true,
             'ad_length' => ReachPlanAdLength::FIFTEEN_OR_TWENTY_SECONDS
         ]);
 
         $mixResponse = $googleAdsClient->getReachPlanServiceClient()->generateProductMixIdeas(
             $customerId,
-            new StringValue(['value' => self::LOCATION_ID]),
-            new StringValue(['value' => self::CURRENCY_CODE]),
-            new Int64Value(['value' => self::BUDGET_MICROS]),
+            self::LOCATION_ID,
+            self::CURRENCY_CODE,
+            self::BUDGET_MICROS,
             ['preferences' => $preferences]
         );
 

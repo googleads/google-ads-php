@@ -24,32 +24,28 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V5\Common\StoreSalesMetadata;
-use Google\Ads\GoogleAds\V5\Common\StoreSalesThirdPartyMetadata;
-use Google\Ads\GoogleAds\V5\Common\TransactionAttribute;
-use Google\Ads\GoogleAds\V5\Common\UserData;
-use Google\Ads\GoogleAds\V5\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V5\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
-use Google\Ads\GoogleAds\V5\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
-use Google\Ads\GoogleAds\V5\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V5\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V5\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V5\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V5\Services\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V6\Common\StoreSalesMetadata;
+use Google\Ads\GoogleAds\V6\Common\StoreSalesThirdPartyMetadata;
+use Google\Ads\GoogleAds\V6\Common\TransactionAttribute;
+use Google\Ads\GoogleAds\V6\Common\UserData;
+use Google\Ads\GoogleAds\V6\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V6\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
+use Google\Ads\GoogleAds\V6\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
+use Google\Ads\GoogleAds\V6\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V6\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V6\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V6\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V6\Services\OfflineUserDataJobServiceClient;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\DoubleValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * Uploads offline data for store sales transactions.
@@ -251,14 +247,14 @@ class UploadStoreSalesTransactions
             // your database or loyalty program.
             // For example, set this to 0.7 if you have 100 transactions over 30 days, and out of
             // those 100 transactions, you can identify 70 by an email address or phone number.
-            'loyalty_fraction' => new DoubleValue(['value' => 0.7]),
+            'loyalty_fraction' => 0.7,
             // Sets the fraction of sales you're uploading out of the overall sales that you (or the
             // advertiser, in the third party case) can associate with a customer. In most cases,
             // you will set this to 1.0.
             // Continuing the example above for loyalty fraction, a value of 1.0 here indicates that
             // you are uploading all 70 of the transactions that can be identified by an email
             // address or phone number.
-            'transaction_upload_fraction' => new DoubleValue(['value' => 1.0]),
+            'transaction_upload_fraction' => 1.0,
         ]);
         if (
             OfflineUserDataJobType::value($offlineUserDataJobType)
@@ -267,20 +263,18 @@ class UploadStoreSalesTransactions
             // Creates additional metadata required for uploading third party data.
             $storeSalesThirdPartyMetadata = new StoreSalesThirdPartyMetadata([
                 // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
-                'advertiser_upload_date_time' => new StringValue([
-                    'value' => $advertiserUploadDateTime
-                ]),
+                'advertiser_upload_date_time' => $advertiserUploadDateTime,
                 // Sets the fraction of transactions you received from the advertiser that have
                 // valid formatting and values. This captures any transactions the advertiser
                 // provided to you but which you are unable to upload to Google due to formatting
                 // errors or missing data.
                 // In most cases, you will set this to 1.0.
-                'valid_transaction_fraction' => new DoubleValue(['value' => 1.0]),
+                'valid_transaction_fraction' => 1.0,
                 // Sets the fraction of valid transactions (as defined above) you received from the
                 // advertiser that you (the third party) have matched to an external user ID on your
                 // side.
                 // In most cases, you will set this to 1.0.
-                'partner_match_fraction' => new DoubleValue(['value' => 1.0]),
+                'partner_match_fraction' => 1.0,
                 // Sets the fraction of transactions you (the third party) are uploading out of the
                 // transactions you received from the advertiser that meet both of the following
                 // criteria:
@@ -289,13 +283,13 @@ class UploadStoreSalesTransactions
                 // 2. You matched to an external user ID on your side. See partner match fraction
                 // above.
                 // In most cases, you will set this to 1.0.
-                'partner_upload_fraction' => new DoubleValue(['value' => 1.0]),
+                'partner_upload_fraction' => 1.0,
                 // Please speak with your Google representative to get the values to use for the
                 // bridge map version and partner IDs.
                 // Sets the version of partner IDs to be used for uploads.
-                'bridge_map_version_id' => new StringValue(['value' => $bridgeMapVersionId]),
+                'bridge_map_version_id' => $bridgeMapVersionId,
                 // Sets the third party partner ID uploading the transactions.
-                'partner_id' => new Int64Value(['value' => $partnerId]),
+                'partner_id' => $partnerId,
             ]);
             $storeSalesMetadata->setThirdPartyMetadata($storeSalesThirdPartyMetadata);
         }
@@ -305,7 +299,7 @@ class UploadStoreSalesTransactions
             'store_sales_metadata' => $storeSalesMetadata
         ]);
         if (!is_null($externalId)) {
-            $offlineUserDataJob->setExternalId(new Int64Value(['value' => $externalId]));
+            $offlineUserDataJob->setExternalId($externalId);
         }
 
         // Issues a request to create the offline user data job.
@@ -349,7 +343,7 @@ class UploadStoreSalesTransactions
         $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
             $offlineUserDataJobResourceName,
             $userDataJobOperations,
-            ['enablePartialFailure' => new BoolValue(['value' => true])]
+            ['enablePartialFailure' => true]
         );
 
         // Prints the status message if any partial failure error is returned.
@@ -390,27 +384,24 @@ class UploadStoreSalesTransactions
             'user_identifiers' => [
                 new UserIdentifier([
                     // Email addresses must be normalized and hashed.
-                    'hashed_email' => new StringValue([
-                        'value' => self::normalizeAndHash('customer@example.com')
-                    ])
+                    'hashed_email' => self::normalizeAndHash('customer@example.com')
                 ]),
                 new UserIdentifier([
-                    'address_info' => new OfflineUserAddressInfo([
-                        'state' => new StringValue(['value' => 'NY'])
-                    ])
+                    'address_info' => new OfflineUserAddressInfo(['state' => 'NY'])
                 ])
             ],
             'transaction_attribute' => new TransactionAttribute([
-                'conversion_action' => new StringValue([
-                    'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
-                ]),
-                'currency_code' => new StringValue(['value' => 'USD']),
+                'conversion_action'
+                    => ResourceNames::forConversionAction($customerId, $conversionActionId),
+                'currency_code' => 'USD',
                 // Converts the transaction amount from $200 USD to micros.
-                'transaction_amount_micros' => new DoubleValue(['value' => 200 * 1000000]),
-                // Specifies the date and time of the transaction. This date and time will be
-                // interpreted by the API using the Google Ads customer's time zone.
-                // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
-                'transaction_date_time' => new StringValue(['value' => '2020-05-01 23:52:12'])
+                'transaction_amount_micros' => 200 * 1000000,
+                // Specifies the date and time of the transaction. The format is
+                // "YYYY-MM-DD HH:MM:SS[+HH:MM]", where [+HH:MM] is an optional
+                // timezone offset from UTC. If the offset is absent, the API will
+                // use the account's timezone as default. Examples: "2018-03-05 09:15:00"
+                // or "2018-02-01 14:34:30+03:00".
+                'transaction_date_time' => '2020-05-01 23:52:12'
             ])
         ]);
 
@@ -420,29 +411,24 @@ class UploadStoreSalesTransactions
                 new UserIdentifier([
                     'address_info' => new OfflineUserAddressInfo([
                         // First and last name must be normalized and hashed.
-                        'hashed_first_name' => new StringValue([
-                            'value' => self::normalizeAndHash('John')
-                        ]),
-                        'hashed_last_name' => new StringValue([
-                            'value' => self::normalizeAndHash('Doe')
-                        ]),
+                        'hashed_first_name' => self::normalizeAndHash('John'),
+                        'hashed_last_name' => self::normalizeAndHash('Doe'),
                         // Country code and zip code are sent in plain text.
-                        'country_code' => new StringValue(['value' => 'US']),
-                        'postal_code' => new StringValue(['value' => '10011'])
+                        'country_code' => 'US',
+                        'postal_code' => '10011'
                     ])
                 ])
             ],
             'transaction_attribute' => new TransactionAttribute([
-                'conversion_action' => new StringValue([
-                    'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
-                ]),
-                'currency_code' => new StringValue(['value' => 'EUR']),
+                'conversion_action'
+                    => ResourceNames::forConversionAction($customerId, $conversionActionId),
+                'currency_code' => 'EUR',
                 // Converts the transaction amount from 450 EUR to micros.
-                'transaction_amount_micros' => new DoubleValue(['value' => 450 * 1000000]),
+                'transaction_amount_micros' => 450 * 1000000,
                 // Specifies the date and time of the transaction. This date and time will be
                 // interpreted by the API using the Google Ads customer's time zone.
                 // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
-                'transaction_date_time' => new StringValue(['value' => '2020-05-14 19:07:02'])
+                'transaction_date_time' => '2020-05-14 19:07:02'
             ])
         ]);
 
@@ -502,7 +488,7 @@ class UploadStoreSalesTransactions
         $offlineUserDataJob = $googleAdsRow->getOfflineUserDataJob();
         printf(
             "Offline user data job ID %d with type '%s' has status: %s.%s",
-            $offlineUserDataJob->getIdUnwrapped(),
+            $offlineUserDataJob->getId(),
             OfflineUserDataJobType::name($offlineUserDataJob->getType()),
             OfflineUserDataJobStatus::name($offlineUserDataJob->getStatus()),
             PHP_EOL

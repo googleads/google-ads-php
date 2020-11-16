@@ -29,10 +29,8 @@ use UnexpectedValueException;
  *
  * @see FetchAuthTokenInterface
  */
-final class OAuth2TokenBuilder implements GoogleAdsBuilder
+final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
 {
-
-    private $configurationLoader;
 
     private $jsonKeyFilePath;
     private $scopes;
@@ -41,31 +39,6 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
     private $clientId;
     private $clientSecret;
     private $refreshToken;
-
-    public function __construct(ConfigurationLoader $configurationLoader = null)
-    {
-        $this->configurationLoader = $configurationLoader ?? new ConfigurationLoader();
-    }
-
-    /**
-     * Reads configuration settings from the specified file path. The file path is
-     * optional, and if omitted, it will look for the default configuration
-     * filename in the home directory of the user running PHP.
-     *
-     * @see GoogleAdsBuilder::DEFAULT_CONFIGURATION_FILENAME
-     *
-     * @param string $path the file path
-     * @return self this builder populated from the configuration
-     * @throws InvalidArgumentException if the configuration file could not be
-     *     found
-     */
-    public function fromFile($path = null)
-    {
-        if ($path === null) {
-            $path = self::DEFAULT_CONFIGURATION_FILENAME;
-        }
-        return $this->from($this->configurationLoader->fromFile($path));
-    }
 
     /**
      * @see GoogleAdsBuilder::from()
@@ -78,6 +51,24 @@ final class OAuth2TokenBuilder implements GoogleAdsBuilder
         $this->jsonKeyFilePath = $configuration->getConfiguration('jsonKeyFilePath', 'OAUTH2');
         $this->scopes = $configuration->getConfiguration('scopes', 'OAUTH2');
         $this->impersonatedEmail = $configuration->getConfiguration('impersonatedEmail', 'OAUTH2');
+
+        return $this;
+    }
+
+    /**
+     * @see GoogleAdsBuilder::fromEnvironmentVariablesConfiguration()
+     */
+    public function fromEnvironmentVariablesConfiguration(Configuration $configuration)
+    {
+        $this->clientId = $configuration->getConfiguration('CLIENT_ID') ?? $this->clientId;
+        $this->clientSecret = $configuration->getConfiguration('CLIENT_SECRET') ??
+            $this->clientSecret;
+        $this->refreshToken = $configuration->getConfiguration('REFRESH_TOKEN') ??
+            $this->refreshToken;
+        $this->jsonKeyFilePath = $configuration->getConfiguration('JSON_KEY_FILE_PATH') ??
+            $this->jsonKeyFilePath;
+        $this->impersonatedEmail = $configuration->getConfiguration('IMPERSONATED_EMAIL') ??
+            $this->impersonatedEmail;
 
         return $this;
     }

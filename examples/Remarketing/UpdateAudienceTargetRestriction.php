@@ -23,19 +23,19 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\TargetingSetting;
-use Google\Ads\GoogleAds\V5\Common\TargetRestriction;
-use Google\Ads\GoogleAds\V5\Enums\TargetingDimensionEnum\TargetingDimension;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\AdGroup;
-use Google\Ads\GoogleAds\V5\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\TargetingSetting;
+use Google\Ads\GoogleAds\V6\Common\TargetRestriction;
+use Google\Ads\GoogleAds\V6\Enums\TargetingDimensionEnum\TargetingDimension;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\AdGroup;
+use Google\Ads\GoogleAds\V6\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -163,7 +163,7 @@ class UpdateAudienceTargetRestriction
                 // dimension has a value other than AUDIENCE because those should not change.
                 if ($targetingDimension !== TargetingDimension::AUDIENCE) {
                     $targetRestrictions[] = $targetRestriction;
-                } else if (!$bidOnly) {
+                } elseif (!$bidOnly) {
                     $shouldUpdateTargetingSetting = true;
 
                     // Adds an AUDIENCE target restriction with bid_only set to true to the

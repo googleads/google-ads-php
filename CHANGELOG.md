@@ -1,3 +1,26 @@
+## 6.0.0
+*   Added support for v6 of Google Ads API.
+*   Updated all code examples to v6.
+*   Removed support for v2.
+*   Refactored LogMessageFormatter to redact any email addresses present in the requests and
+    responses.
+*   Added support of client configuration from environment variables.
+*   Added code examples:
+    * UpdateAudienceTargetRestriction
+    * AddLocalCampaign
+    * SetCustomClientTimeouts
+    * GetChangeDetails
+    * CreateFeedItemSet
+    * GetFeedItemsOfFeedItemSet
+    * LinkFeedItemSet
+    * AddLeadFormExtension
+*   Renamed the code examples:
+    * From GetAccountChanges to GetChangeSummary
+    * From AuthenticateInStandaloneApplication to AuthenticateInDesktopApplication
+*   Migrated to [field presence](https://github.com/protocolbuffers/protobuf/blob/master/docs/field_presence.md).
+    * Migrated the code examples.
+    * Added unit tests.
+
 ## 5.0.0
 *   Added support for v5 of Google Ads API.
 *   Upgraded dependencies: `google/protobuf` (^3.13.0), `ulrichsg/getopt-php` (^3.4).

@@ -24,23 +24,22 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\HotelCalloutFeedItem;
-use Google\Ads\GoogleAds\V5\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\AdGroupExtensionSetting;
-use Google\Ads\GoogleAds\V5\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V5\Resources\CustomerExtensionSetting;
-use Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V5\Services\AdGroupExtensionSettingOperation;
-use Google\Ads\GoogleAds\V5\Services\CampaignExtensionSettingOperation;
-use Google\Ads\GoogleAds\V5\Services\CustomerExtensionSettingOperation;
-use Google\Ads\GoogleAds\V5\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\HotelCalloutFeedItem;
+use Google\Ads\GoogleAds\V6\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting;
+use Google\Ads\GoogleAds\V6\Resources\CampaignExtensionSetting;
+use Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting;
+use Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V6\Services\AdGroupExtensionSettingOperation;
+use Google\Ads\GoogleAds\V6\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\V6\Services\CustomerExtensionSettingOperation;
+use Google\Ads\GoogleAds\V6\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds a hotel callout extension to a specific account, campaign within the account,
@@ -173,8 +172,8 @@ class AddHotelCallout
     ): string {
         // Creates the callout extension with the specified text and language.
         $hotelCalloutFeedItem = new HotelCalloutFeedItem([
-            'text' => new StringValue(['value' => $calloutText]),
-            'language_code' => new StringValue(['value' => $languageCode])
+            'text' => $calloutText,
+            'language_code' => $languageCode
         ]);
 
         // Creates a feed item from the hotel callout extension.
@@ -217,7 +216,7 @@ class AddHotelCallout
         // feed item.
         $customerExtensionSetting = new CustomerExtensionSetting([
             'extension_type' => ExtensionType::HOTEL_CALLOUT,
-            'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
+            'extension_feed_items' => [$extensionFeedItemResourceName]
         ]);
 
         // Creates a customer extension setting operation.
@@ -255,11 +254,9 @@ class AddHotelCallout
         // Creates a campaign extension setting, sets its type to HOTEL_CALLOUT, and attaches the
         // feed item.
         $campaignExtensionSetting = new CampaignExtensionSetting([
-            'campaign' => new StringValue([
-                'value' => ResourceNames::forCampaign($customerId, $campaignId)
-            ]),
+            'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
             'extension_type' => ExtensionType::HOTEL_CALLOUT,
-            'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
+            'extension_feed_items' => [$extensionFeedItemResourceName]
         ]);
 
         // Creates a campaign extension setting operation.
@@ -297,11 +294,9 @@ class AddHotelCallout
         // Creates an ad group extension setting, sets its type to HOTEL_CALLOUT, and attaches the
         // feed item.
         $adGroupExtensionSetting = new AdGroupExtensionSetting([
-            'ad_group' => new StringValue([
-                'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
-            ]),
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
             'extension_type' => ExtensionType::HOTEL_CALLOUT,
-            'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
+            'extension_feed_items' => [$extensionFeedItemResourceName]
         ]);
 
         // Creates an ad group extension setting operation.

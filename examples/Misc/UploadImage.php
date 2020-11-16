@@ -23,15 +23,15 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V5\Enums\MediaTypeEnum\MediaType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\MediaFile;
-use Google\Ads\GoogleAds\V5\Resources\MediaImage;
-use Google\Ads\GoogleAds\V5\Services\MediaFileOperation;
+use Google\Ads\GoogleAds\V6\Enums\MediaTypeEnum\MediaType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\MediaFile;
+use Google\Ads\GoogleAds\V6\Resources\MediaImage;
+use Google\Ads\GoogleAds\V6\Services\MediaFileOperation;
 use Google\ApiCore\ApiException;
 
 /** This example uploads an image. */

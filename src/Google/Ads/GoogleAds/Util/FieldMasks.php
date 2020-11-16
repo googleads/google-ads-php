@@ -37,6 +37,7 @@ use Google\Protobuf\StringValue;
 use Google\Protobuf\UInt32Value;
 use Google\Protobuf\UInt64Value;
 use InvalidArgumentException;
+use UnexpectedValueException;
 
 /** Utility methods for working with field masks.*/
 class FieldMasks
@@ -210,6 +211,51 @@ class FieldMasks
                 }
             }
         }
+    }
+
+
+    /**
+     * Gets the value of the specified field of the specified object.
+     *
+     * @param string $fieldMaskPath the field mask path
+     * @param Message $object the object whose field value to be get
+     * @return mixed the value of the specified field of the specified object
+     */
+    public static function getFieldValue(string $fieldMaskPath, Message $object)
+    {
+        $fieldMaskParts = explode('.', $fieldMaskPath);
+        $descriptor = self::getDescriptorForMessage($object);
+        foreach ($fieldMaskParts as $part) {
+            $fieldValue = null;
+            for ($i = 0; $i < $descriptor->getFieldCount(); $i++) {
+                $fieldDescriptor = $descriptor->getField($i);
+                if ($fieldDescriptor->getName() !== $part) {
+                    continue;
+                }
+
+                $getter = Serializer::getGetter($fieldDescriptor->getName());
+                $fieldValue = $object->$getter();
+                if ($fieldDescriptor->getType() === GPBType::MESSAGE) {
+                    $object = $fieldValue;
+                    if (is_null($object)) {
+                        throw new UnexpectedValueException(
+                            'The object to get its field value is null. '
+                            . 'This could happen when the passed field mask path points to the '
+                            . ' wrong place, where the nested message is not set.'
+                        );
+                    }
+                    $descriptor = self::getDescriptorForMessage($fieldValue);
+                }
+                // There is only one field that matches the field mask part, so no need to loop
+                // when the field is found.
+                break;
+            }
+        }
+        if (!isset($fieldValue)) {
+            throw new UnexpectedValueException('The field value cannot be obtained because the '
+                . 'given field mask path is unrecognized.');
+        }
+        return $fieldValue;
     }
 
     /**

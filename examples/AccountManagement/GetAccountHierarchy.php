@@ -24,14 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\CustomerClient;
-use Google\Ads\GoogleAds\V5\Services\CustomerServiceClient;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\CustomerClient;
+use Google\Ads\GoogleAds\V6\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /**
@@ -237,14 +237,14 @@ class GetAccountHierarchy
                 $customerClient = $googleAdsRow->getCustomerClient();
 
                 // Gets the CustomerClient object for the root customer in the tree.
-                if ($customerClient->getIdUnwrapped() === $rootCustomerId) {
+                if ($customerClient->getId() === $rootCustomerId) {
                     $rootCustomerClient = $customerClient;
                     self::$rootCustomerClients[$rootCustomerId] = $rootCustomerClient;
                 }
 
                 // The steps below map parent and children accounts. Continue here so that managers
                 // accounts exclude themselves from the list of their children accounts.
-                if ($customerClient->getIdUnwrapped() === $customerIdToSearch) {
+                if ($customerClient->getId() === $customerIdToSearch) {
                     continue;
                 }
 
@@ -254,23 +254,23 @@ class GetAccountHierarchy
                 $customerIdsToChildAccounts[$customerIdToSearch][] = $customerClient;
                 // Checks if the child account is a manager itself so that it can later be processed
                 // and added to the map if it hasn't been already.
-                if ($customerClient->getManagerUnwrapped()) {
+                if ($customerClient->getManager()) {
                     // A customer can be managed by multiple managers, so to prevent visiting
                     // the same customer multiple times, we need to check if it's already in the
                     // map.
                     $alreadyVisited = array_key_exists(
-                        $customerClient->getIdUnwrapped(),
+                        $customerClient->getId(),
                         $customerIdsToChildAccounts
                     );
-                    if (!$alreadyVisited && $customerClient->getLevelUnwrapped() === 1) {
-                        array_push($managerCustomerIdsToSearch, $customerClient->getIdUnwrapped());
+                    if (!$alreadyVisited && $customerClient->getLevel() === 1) {
+                        array_push($managerCustomerIdsToSearch, $customerClient->getId());
                     }
                 }
             }
         }
 
         return is_null($rootCustomerClient) ? null
-            : [$rootCustomerClient->getIdUnwrapped() => $customerIdsToChildAccounts];
+            : [$rootCustomerClient->getId() => $customerIdsToChildAccounts];
     }
 
     /**
@@ -317,14 +317,14 @@ class GetAccountHierarchy
         if ($depth === 0) {
             print 'Customer ID (Descriptive Name, Currency Code, Time Zone)' . PHP_EOL;
         }
-        $customerId = $customerClient->getIdUnwrapped();
+        $customerId = $customerClient->getId();
         print str_repeat('-', $depth * 2);
         printf(
             " %d ('%s', '%s', '%s')%s",
             $customerId,
-            $customerClient->getDescriptiveNameUnwrapped(),
-            $customerClient->getCurrencyCodeUnwrapped(),
-            $customerClient->getTimeZoneUnwrapped(),
+            $customerClient->getDescriptiveName(),
+            $customerClient->getCurrencyCode(),
+            $customerClient->getTimeZone(),
             PHP_EOL
         );
 

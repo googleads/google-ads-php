@@ -23,20 +23,18 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\BasicUserListInfo;
-use Google\Ads\GoogleAds\V5\Common\UserListActionInfo;
-use Google\Ads\GoogleAds\V5\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\UserList;
-use Google\Ads\GoogleAds\V5\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\BasicUserListInfo;
+use Google\Ads\GoogleAds\V6\Common\UserListActionInfo;
+use Google\Ads\GoogleAds\V6\Enums\UserListMembershipStatusEnum\UserListMembershipStatus;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\UserList;
+use Google\Ads\GoogleAds\V6\Services\UserListOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * Creates a basic user list consisting of people who triggered one or more conversion actions.
@@ -118,9 +116,10 @@ class AddConversionBasedUserList
             // the conversion action that, when triggered, will cause a user to be added to a
             // UserList.
             $userListActionInfoList[] = new UserListActionInfo([
-                'conversion_action' => new StringValue([
-                    'value' => ResourceNames::forConversionAction($customerId, $conversionActionId)
-                ])
+                'conversion_action' => ResourceNames::forConversionAction(
+                    $customerId,
+                    $conversionActionId
+                )
             ]);
         }
 
@@ -129,12 +128,10 @@ class AddConversionBasedUserList
 
         // Creates the basic user list.
         $basicUserList = new UserList([
-            'name' => new StringValue(['value' => 'Example BasicUserList #' . uniqid()]),
-            'description' => new StringValue([
-                'value' => 'A list of people who have triggered one or more conversion actions'
-            ]),
+            'name' => 'Example BasicUserList #' . uniqid(),
+            'description' => 'A list of people who have triggered one or more conversion actions',
             'membership_status' => UserListMembershipStatus::OPEN,
-            'membership_life_span' => new Int64Value(['value' => 365]),
+            'membership_life_span' => 365,
             'basic_user_list' => $basicUserListInfo
         ]);
 

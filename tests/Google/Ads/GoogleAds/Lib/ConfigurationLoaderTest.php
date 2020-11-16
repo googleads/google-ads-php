@@ -46,6 +46,13 @@ class ConfigurationLoaderTest extends TestCase
         $environmentalVariablesMock
             ->method('getHome')
             ->willReturn(ConfigurationLoaderTestProvider::getFilePathToFakeHome());
+        $environmentalVariablesMock
+            ->method('getStartingWith')
+            ->with(GoogleAdsBuilder::CONFIGURATION_ENVIRONMENT_VARIABLES_PREFIX)
+            ->willReturn([
+                GoogleAdsBuilder::DEFAULT_CONFIGURATION_FILENAME_ENVIRONMENT_VARIABLE_NAME =>
+                    ConfigurationLoaderTestProvider::getFakeHomeFilePathForTestIniFile()
+            ]);
         $this->configurationLoader =
             new ConfigurationLoader($environmentalVariablesMock);
     }
@@ -95,6 +102,15 @@ class ConfigurationLoaderTest extends TestCase
             ConfigurationLoaderTestProvider::getFilePathForTestIniFile()
         );
         $config = $this->configurationLoader->fromString($iniString);
+        $this->assertNotNull($config);
+        $this->assertInstanceOf(Configuration::class, $config);
+    }
+
+    public function testFromEnvironmentVariables()
+    {
+        $config = $this->configurationLoader->fromEnvironmentVariables(
+            GoogleAdsBuilder::CONFIGURATION_ENVIRONMENT_VARIABLES_PREFIX
+        );
         $this->assertNotNull($config);
         $this->assertInstanceOf(Configuration::class, $config);
     }

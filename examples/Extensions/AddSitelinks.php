@@ -24,25 +24,24 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V5\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V5\Common\SitelinkFeedItem;
-use Google\Ads\GoogleAds\V5\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V5\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V5\Enums\FeedItemTargetDeviceEnum\FeedItemTargetDevice;
-use Google\Ads\GoogleAds\V5\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V5\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V5\Services\CampaignExtensionSettingOperation;
-use Google\Ads\GoogleAds\V5\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\AdScheduleInfo;
+use Google\Ads\GoogleAds\V6\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V6\Common\SitelinkFeedItem;
+use Google\Ads\GoogleAds\V6\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V6\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V6\Enums\FeedItemTargetDeviceEnum\FeedItemTargetDevice;
+use Google\Ads\GoogleAds\V6\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V6\Enums\MinuteOfHourEnum\MinuteOfHour;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\CampaignExtensionSetting;
+use Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V6\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\V6\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Adds sitelinks to a campaign. To create a campaign, run AddCampaigns.php.
@@ -123,7 +122,7 @@ class AddSitelinks
 
         // Creates a campaign extension setting using the previously created extension feed items.
         $campaignExtensionSetting = new CampaignExtensionSetting([
-            'campaign' => new StringValue(['value' => $campaignResourceName]),
+            'campaign' => $campaignResourceName,
             'extension_type' => ExtensionType::SITELINK,
             'extension_feed_items' => $extensionFeedItems
         ]);
@@ -156,7 +155,7 @@ class AddSitelinks
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
      * @param string $campaignResourceName the resource name of the campaign to target
-     * @return StringValue[] the list of extension feed items' resource names
+     * @return string[] the list of extension feed items' resource names
      */
     private static function createExtensionFeedItems(
         GoogleAdsClient $googleAdsClient,
@@ -171,7 +170,7 @@ class AddSitelinks
         $extensionFeedItem1 = new ExtensionFeedItem([
             'extension_type' => ExtensionType::SITELINK,
             'sitelink_feed_item' => $sitelinkFeedItem1,
-            'targeted_campaign' => new StringValue(['value' => $campaignResourceName])
+            'targeted_campaign' => $campaignResourceName
         ]);
 
         // Creates the second sitelink feed item.
@@ -199,10 +198,10 @@ class AddSitelinks
         $extensionFeedItem2 = new ExtensionFeedItem([
             'extension_type' => ExtensionType::SITELINK,
             'sitelink_feed_item' => $sitelinkFeedItem2,
-            'targeted_campaign' => new StringValue(['value' => $campaignResourceName]),
-            'start_date_time' => new StringValue(['value' => $startTimeString]),
-            'end_date_time' => new StringValue(['value' => $endTimeString]),
-            'targeted_geo_target_constant' => new StringValue(['value' => $unitedStates])
+            'targeted_campaign' => $campaignResourceName,
+            'start_date_time' => $startTimeString,
+            'end_date_time' => $endTimeString,
+            'targeted_geo_target_constant' => $unitedStates
         ]);
 
         // Creates the third sitelink feed item.
@@ -213,7 +212,7 @@ class AddSitelinks
         $extensionFeedItem3 = new ExtensionFeedItem([
             'extension_type' => ExtensionType::SITELINK,
             'sitelink_feed_item' => $sitelinkFeedItem3,
-            'targeted_campaign' => new StringValue(['value' => $campaignResourceName]),
+            'targeted_campaign' => $campaignResourceName,
             'device' => FeedItemTargetDevice::MOBILE,
             'targeted_keyword' => new KeywordInfo([
                 'text' => 'free wifi',
@@ -229,7 +228,7 @@ class AddSitelinks
         $extensionFeedItem4 = new ExtensionFeedItem([
             'extension_type' => ExtensionType::SITELINK,
             'sitelink_feed_item' => $sitelinkFeedItem4,
-            'targeted_campaign' => new StringValue(['value' => $campaignResourceName]),
+            'targeted_campaign' => $campaignResourceName,
             'ad_schedules' => [
                 self::createAdScheduleInfo(
                     DayOfWeek::MONDAY,
@@ -292,9 +291,7 @@ class AddSitelinks
             /** @var ExtensionFeedItem $addedExtensionFeedItem */
             $addedExtensionFeedItemResourceName = $addedExtensionFeedItem->getResourceName();
             print $addedExtensionFeedItemResourceName . PHP_EOL;
-            $createdExtensionFeedItemsResourceNames[] = new StringValue([
-                'value' => $addedExtensionFeedItemResourceName
-            ]);
+            $createdExtensionFeedItemsResourceNames[] = $addedExtensionFeedItemResourceName;
         }
         return $createdExtensionFeedItemsResourceNames;
     }
@@ -308,10 +305,7 @@ class AddSitelinks
      */
     private static function createSitelinkFeedItem(string $sitelinkText, string $sitelinkUrl)
     {
-        return new SitelinkFeedItem([
-            'link_text' => new StringValue(['value' => $sitelinkText]),
-            'final_urls' => [new StringValue(['value' => $sitelinkUrl])],
-        ]);
+        return new SitelinkFeedItem(['link_text' => $sitelinkText, 'final_urls' => [$sitelinkUrl]]);
     }
 
     /**

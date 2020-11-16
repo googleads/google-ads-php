@@ -24,20 +24,19 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Services\CampaignExtensionSettingOperation;
-use Google\Ads\GoogleAds\V5\Services\ExtensionFeedItemOperation;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsServiceClient;
-use Google\Ads\GoogleAds\V5\Services\MutateOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\V6\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsServiceClient;
+use Google\Ads\GoogleAds\V6\Services\MutateOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Removes the entire sitelink campaign extension setting by removing both the sitelink campaign
@@ -227,12 +226,11 @@ class RemoveEntireSitelinkCampaignExtensionSetting
             $extensionFeedItems =
                 $googleAdsRow->getCampaignExtensionSetting()->getExtensionFeedItems();
             foreach ($extensionFeedItems as $extensionFeedItem) {
-                /** @var StringValue $extensionFeedItem */
-                $extensionFeedItemResourceName = $extensionFeedItem->getValue();
-                $extensionFeedItemResourceNames[] = $extensionFeedItemResourceName;
+                /** @var string $extensionFeedItem */
+                $extensionFeedItemResourceNames[] = $extensionFeedItem;
                 printf(
                     "Extension feed item with resource name '%s' was found.%s",
-                    $extensionFeedItemResourceName,
+                    $extensionFeedItem,
                     PHP_EOL
                 );
             }
