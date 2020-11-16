@@ -23,21 +23,20 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\InvoiceTypeEnum\InvoiceType;
-use Google\Ads\GoogleAds\V5\Enums\MonthOfYearEnum\MonthOfYear;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\Invoice;
-use Google\Ads\GoogleAds\V5\Resources\Invoice\AccountBudgetSummary;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\InvoiceTypeEnum\InvoiceType;
+use Google\Ads\GoogleAds\V6\Enums\MonthOfYearEnum\MonthOfYear;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\Invoice;
+use Google\Ads\GoogleAds\V6\Resources\Invoice\AccountBudgetSummary;
 use Google\ApiCore\ApiException;
 
 /**
- * This code example retrieves the invoices issued last month for a given customer and billing
- * setup.
+ * This code example retrieves the invoices issued last month for a given billing setup.
  */
 class GetInvoices
 {
@@ -142,31 +141,31 @@ class GetInvoices
                 "  PDF URL: %s" . PHP_EOL .
                 "  Account budgets:" . PHP_EOL,
                 $invoice->getResourceName(),
-                $invoice->getIdUnwrapped(),
+                $invoice->getId(),
                 InvoiceType::name($invoice->getType()),
-                $invoice->getBillingSetupUnwrapped(),
-                $invoice->getPaymentsAccountIdUnwrapped(),
-                $invoice->getPaymentsProfileIdUnwrapped(),
-                $invoice->getIssueDateUnwrapped(),
-                $invoice->getDueDateUnwrapped(),
-                $invoice->getCurrencyCodeUnwrapped(),
-                $invoice->getServiceDateRange()->getStartDateUnwrapped(),
-                $invoice->getServiceDateRange()->getEndDateUnwrapped(),
-                self::microsToPlain($invoice->getAdjustmentsSubtotalAmountMicrosUnwrapped()),
-                self::microsToPlain($invoice->getAdjustmentsTaxAmountMicrosUnwrapped()),
-                self::microsToPlain($invoice->getAdjustmentsTotalAmountMicrosUnwrapped()),
-                self::microsToPlain($invoice->getRegulatoryCostsSubtotalAmountMicrosUnwrapped()),
-                self::microsToPlain($invoice->getRegulatoryCostsTaxAmountMicrosUnwrapped()),
-                self::microsToPlain($invoice->getRegulatoryCostsTotalAmountMicrosUnwrapped()),
+                $invoice->getBillingSetup(),
+                $invoice->getPaymentsAccountId(),
+                $invoice->getPaymentsProfileId(),
+                $invoice->getIssueDate(),
+                $invoice->getDueDate(),
+                $invoice->getCurrencyCode(),
+                $invoice->getServiceDateRange()->getStartDate(),
+                $invoice->getServiceDateRange()->getEndDate(),
+                self::microsToPlain($invoice->getAdjustmentsSubtotalAmountMicros()),
+                self::microsToPlain($invoice->getAdjustmentsTaxAmountMicros()),
+                self::microsToPlain($invoice->getAdjustmentsTotalAmountMicros()),
+                self::microsToPlain($invoice->getRegulatoryCostsSubtotalAmountMicros()),
+                self::microsToPlain($invoice->getRegulatoryCostsTaxAmountMicros()),
+                self::microsToPlain($invoice->getRegulatoryCostsTotalAmountMicros()),
                 implode(', ', iterator_to_array($invoice->getReplacedInvoices()->getIterator())),
-                self::microsToPlain($invoice->getSubtotalAmountMicrosUnwrapped()),
-                self::microsToPlain($invoice->getTaxAmountMicrosUnwrapped()),
-                self::microsToPlain($invoice->getTotalAmountMicrosUnwrapped()),
-                $invoice->getCorrectedInvoiceUnwrapped(),
-                $invoice->getPdfUrlUnwrapped()
+                self::microsToPlain($invoice->getSubtotalAmountMicros()),
+                self::microsToPlain($invoice->getTaxAmountMicros()),
+                self::microsToPlain($invoice->getTotalAmountMicros()),
+                $invoice->getCorrectedInvoice(),
+                $invoice->getPdfUrl()
             );
             foreach ($invoice->getAccountBudgetSummaries() as $accountBudgetSummary) {
-                /** @var AccountBudgetSummary $accountBudgetSummaries */
+                /** @var AccountBudgetSummary $accountBudgetSummary */
                 printf(
                     "  - Account budget '%s':" . PHP_EOL .
                     "      Name: %s" . PHP_EOL .
@@ -174,16 +173,16 @@ class GetInvoices
                     "      Purchase order number: %s" . PHP_EOL .
                     "      Billing activity date range: from %s to %s" . PHP_EOL .
                     "      Amounts: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL,
-                    $accountBudgetSummary->getAccountBudgetUnwrapped(),
-                    $accountBudgetSummary->getAccountBudgetNameUnwrapped(),
-                    $accountBudgetSummary->getCustomerUnwrapped(),
-                    $accountBudgetSummary->getCustomerDescriptiveNameUnwrapped(),
-                    $accountBudgetSummary->getPurchaseOrderNumberUnwrapped(),
-                    $accountBudgetSummary->getBillableActivityDateRange()->getStartDateUnwrapped(),
-                    $accountBudgetSummary->getBillableActivityDateRange()->getEndDateUnwrapped(),
-                    self::microsToPlain($accountBudgetSummary->getSubtotalAmountMicrosUnwrapped()),
-                    self::microsToPlain($accountBudgetSummary->getTaxAmountMicrosUnwrapped()),
-                    self::microsToPlain($accountBudgetSummary->getTotalAmountMicrosUnwrapped())
+                    $accountBudgetSummary->getAccountBudget(),
+                    $accountBudgetSummary->getAccountBudgetName(),
+                    $accountBudgetSummary->getCustomer(),
+                    $accountBudgetSummary->getCustomerDescriptiveName(),
+                    $accountBudgetSummary->getPurchaseOrderNumber(),
+                    $accountBudgetSummary->getBillableActivityDateRange()->getStartDate(),
+                    $accountBudgetSummary->getBillableActivityDateRange()->getEndDate(),
+                    self::microsToPlain($accountBudgetSummary->getSubtotalAmountMicros()),
+                    self::microsToPlain($accountBudgetSummary->getTaxAmountMicros()),
+                    self::microsToPlain($accountBudgetSummary->getTotalAmountMicros())
                 );
             }
         }
