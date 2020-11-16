@@ -124,15 +124,15 @@ class GetInvoices
             /** @var Invoice $invoice */
             printf(
                 "- Found the invoice '%s':" . PHP_EOL .
-                "  ID: %s" . PHP_EOL .
+                "  ID (also known as Invoice Number): %s" . PHP_EOL .
                 "  Type: %s" . PHP_EOL .
                 "  Billing setup ID: %s" . PHP_EOL .
-                "  Payments account ID: %s" . PHP_EOL .
-                "  Payments profile ID: %s" . PHP_EOL .
-                "  Issue date: %s" . PHP_EOL .
+                "  Payments account ID (also known as Billing Account Number): %s" . PHP_EOL .
+                "  Payments profile ID (also known as Billing ID): %s" . PHP_EOL .
+                "  Issue date (also known as Invoice Date): %s" . PHP_EOL .
                 "  Due date: %s" . PHP_EOL .
                 "  Currency code: %s" . PHP_EOL .
-                "  Service date range: from %s to %s" . PHP_EOL .
+                "  Service date range (inclusive): from %s to %s" . PHP_EOL .
                 "  Adjustments: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL .
                 "  Regulatory costs: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL .
                 "  Replaced invoices: %s" . PHP_EOL .
@@ -157,27 +157,32 @@ class GetInvoices
                 self::microsToPlain($invoice->getRegulatoryCostsSubtotalAmountMicros()),
                 self::microsToPlain($invoice->getRegulatoryCostsTaxAmountMicros()),
                 self::microsToPlain($invoice->getRegulatoryCostsTotalAmountMicros()),
-                implode(', ', iterator_to_array($invoice->getReplacedInvoices()->getIterator())),
+                $invoice->getReplacedInvoices()
+                    ? implode(
+                        ', ',
+                        iterator_to_array($invoice->getReplacedInvoices()->getIterator())
+                    ) : 'none',
                 self::microsToPlain($invoice->getSubtotalAmountMicros()),
                 self::microsToPlain($invoice->getTaxAmountMicros()),
                 self::microsToPlain($invoice->getTotalAmountMicros()),
-                $invoice->getCorrectedInvoice(),
+                $invoice->getCorrectedInvoice() ?: 'none',
                 $invoice->getPdfUrl()
             );
             foreach ($invoice->getAccountBudgetSummaries() as $accountBudgetSummary) {
                 /** @var AccountBudgetSummary $accountBudgetSummary */
                 printf(
                     "  - Account budget '%s':" . PHP_EOL .
-                    "      Name: %s" . PHP_EOL .
-                    "      Customer: ID '%s', descriptive name '%s'" . PHP_EOL .
-                    "      Purchase order number: %s" . PHP_EOL .
-                    "      Billing activity date range: from %s to %s" . PHP_EOL .
+                    "      Name (also known as Account Budget): %s" . PHP_EOL .
+                    "      Customer (also known as Account ID): %s" . PHP_EOL .
+                    "      Customer descriptive name (also known as Account): %s" . PHP_EOL .
+                    "      Purchase order number (also known as Purchase Order): %s" . PHP_EOL .
+                    "      Billing activity date range (inclusive): from %s to %s" . PHP_EOL .
                     "      Amounts: subtotal '%.2f', tax '%.2f', total '%.2f'" . PHP_EOL,
                     $accountBudgetSummary->getAccountBudget(),
-                    $accountBudgetSummary->getAccountBudgetName(),
+                    $accountBudgetSummary->getAccountBudgetName() ?: 'none',
                     $accountBudgetSummary->getCustomer(),
-                    $accountBudgetSummary->getCustomerDescriptiveName(),
-                    $accountBudgetSummary->getPurchaseOrderNumber(),
+                    $accountBudgetSummary->getCustomerDescriptiveName() ?: 'none',
+                    $accountBudgetSummary->getPurchaseOrderNumber() ?: 'none',
                     $accountBudgetSummary->getBillableActivityDateRange()->getStartDate(),
                     $accountBudgetSummary->getBillableActivityDateRange()->getEndDate(),
                     self::microsToPlain($accountBudgetSummary->getSubtotalAmountMicros()),
