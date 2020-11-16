@@ -25,25 +25,23 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Feeds;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V6\Services\FeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * Updates a feed item attribute value in a flights feed. To create a flights feed,
  * run the AddFlightsFeed example. This example is specific to feeds of type DYNAMIC_FLIGHT.
  * The attribute you are updating must be present on the feed.
  *
- * This example is specifically for updating the StringValue of an attribute of a flights feed item,
+ * This example is specifically for updating the string attribute of a flights feed item,
  * but it can also be changed to work with other data types of an attribute and feed types.
  *
  * To make this work with other data types, replace `string_value` with the type of an attribute
@@ -149,11 +147,11 @@ class UpdateFlightsFeedItemStringAttributeValue
         // Gets the ID of the feed attribute for the placeholder field. This is needed to specify
         // which feed item attribute value will be updated in the given feed item.
         $attributeId = $placeHoldersToFeedAttributesMap[
-            FlightPlaceholderField::value($flightPlaceholderFieldName)]->getIdUnwrapped();
+            FlightPlaceholderField::value($flightPlaceholderFieldName)]->getId();
         // Creates the updated feed item attribute value.
         $updatedFeedItemAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value(['value' => $attributeId]),
-            'string_value' => new StringValue(['value' => $attributeValue])
+            'feed_attribute_id' => $attributeId,
+            'string_value' => $attributeValue
         ]);
 
         // Retrieves the feed item and its associated attributes based on the resource name.

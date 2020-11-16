@@ -23,36 +23,35 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V5\Common\WebpageConditionInfo;
-use Google\Ads\GoogleAds\V5\Common\WebpageInfo;
-use Google\Ads\GoogleAds\V5\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
-use Google\Ads\GoogleAds\V5\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V5\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V5\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
-use Google\Ads\GoogleAds\V5\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V5\Resources\Campaign;
-use Google\Ads\GoogleAds\V5\Resources\Campaign\DynamicSearchAdsSetting;
-use Google\Ads\GoogleAds\V5\Resources\Feed;
-use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V5\Resources\FeedItem;
-use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V5\Services\AdGroupCriterionOperation;
-use Google\Ads\GoogleAds\V5\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\WebpageConditionInfo;
+use Google\Ads\GoogleAds\V6\Common\WebpageInfo;
+use Google\Ads\GoogleAds\V6\Enums\DsaPageFeedCriterionFieldEnum\DsaPageFeedCriterionField;
+use Google\Ads\GoogleAds\V6\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V6\Enums\FeedMappingCriterionTypeEnum\FeedMappingCriterionType;
+use Google\Ads\GoogleAds\V6\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V6\Enums\WebpageConditionOperandEnum\WebpageConditionOperand;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V6\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V6\Resources\Campaign;
+use Google\Ads\GoogleAds\V6\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V6\Resources\Feed;
+use Google\Ads\GoogleAds\V6\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V6\Resources\FeedItem;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V6\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V6\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\V6\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This code example adds a page feed to specify precisely which URLs to use with your Dynamic
@@ -164,18 +163,18 @@ class AddDynamicPageFeed
         // Creates a URL attribute.
         $urlAttribute = new FeedAttribute([
             'type' => FeedAttributeType::URL_LIST,
-            'name' => new StringValue(['value' => 'Page URL'])
+            'name' => 'Page URL'
         ]);
 
         // Creates a label attribute.
         $labelAttribute = new FeedAttribute([
             'type' => FeedAttributeType::STRING_LIST,
-            'name' => new StringValue(['value' => 'Label'])
+            'name' => 'Label'
         ]);
 
         // Creates the feed.
         $feed = new Feed([
-            'name' => new StringValue(['value' => 'DSA Feed #' . uniqid()]),
+            'name' => 'DSA Feed #' . uniqid(),
             'attributes' => [$urlAttribute, $labelAttribute],
             'origin' => FeedOrigin::USER
         ]);
@@ -218,7 +217,7 @@ class AddDynamicPageFeed
         $feedDetails = ['resource_name' => $feedResourceName];
         foreach ($feedAttributes as $feedAttribute) {
             /** @var FeedAttribute $feedAttribute */
-            $feedDetails[$feedAttribute->getNameUnwrapped()] = $feedAttribute->getIdUnwrapped();
+            $feedDetails[$feedAttribute->getName()] = $feedAttribute->getId();
         }
         return $feedDetails;
     }
@@ -297,7 +296,7 @@ class AddDynamicPageFeed
         // Creates a label attribute.
         $labelAttributeValue = new FeedItemAttributeValue([
             'feed_attribute_id' => $feedDetails['Label'],
-            'string_values' => [new StringValue(['value' => $dsaPageUrlLabel])]
+            'string_values' => [$dsaPageUrlLabel]
         ]);
 
         // Creates one operation per URL.
@@ -306,9 +305,9 @@ class AddDynamicPageFeed
             // Creates a url attribute.
             $urlAttributeValue = new FeedItemAttributeValue([
                 'feed_attribute_id' => $feedDetails['Page URL'],
-                'string_values' => [new StringValue(['value' => $url])]
+                'string_values' => [$url]
             ]);
-     
+
             // Creates a feed item.
             $feedItem = new FeedItem([
                 'feed' => $feedDetails['resource_name'],

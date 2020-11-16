@@ -25,25 +25,23 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Feeds;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\V5\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V5\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
-use Google\Ads\GoogleAds\V5\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V5\Resources\Feed;
-use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V5\Resources\FeedItem;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\V6\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V6\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
+use Google\Ads\GoogleAds\V6\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V6\Resources\Feed;
+use Google\Ads\GoogleAds\V6\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V6\Resources\FeedItem;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V6\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V6\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /** Adds a flights feed, creates the associated feed mapping, and adds a feed item. */
 class AddFlightsFeed
@@ -142,32 +140,32 @@ class AddFlightsFeed
         // Creates a flight description attribute.
         $flightDescriptionAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::STRING,
-            'name' => new StringValue(['value' => 'Flight Description'])
+            'name' => 'Flight Description'
         ]);
         // Creates a destination ID attribute.
         $destinationIdAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::STRING,
-            'name' => new StringValue(['value' => 'Destination ID'])
+            'name' => 'Destination ID'
         ]);
         // Creates a flight price attribute.
         $flightPriceAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::STRING,
-            'name' => new StringValue(['value' => 'Flight Price'])
+            'name' => 'Flight Price'
         ]);
         // Creates a flight sale price attribute.
         $flightSalesPriceAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::STRING,
-            'name' => new StringValue(['value' => 'Flight Sale Price'])
+            'name' => 'Flight Sale Price'
         ]);
         // Creates a Final URLs attribute.
         $finalUrlsAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::URL_LIST,
-            'name' => new StringValue(['value' => 'Final URLs'])
+            'name' => 'Final URLs'
         ]);
 
         // Creates the feed with the newly created feed attributes.
         $feed = new Feed([
-            'name' => new StringValue(['value' => 'Flights Feed #' . uniqid()]),
+            'name' => 'Flights Feed #' . uniqid(),
             'attributes' => [
                 $flightDescriptionAttribute,
                 $destinationIdAttribute,
@@ -207,50 +205,35 @@ class AddFlightsFeed
     ) {
         // Maps the feed attribute IDs to the field ID constants.
         $flightDescriptionMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_DESCRIPTION]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::FLIGHT_DESCRIPTION]->getId(),
             'flight_field' => FlightPlaceholderField::FLIGHT_DESCRIPTION
         ]);
         $destinationIdMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::DESTINATION_ID]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::DESTINATION_ID]->getId(),
             'flight_field' => FlightPlaceholderField::DESTINATION_ID
         ]);
         $flightPriceMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_PRICE]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::FLIGHT_PRICE]->getId(),
             'flight_field' => FlightPlaceholderField::FLIGHT_PRICE
         ]);
         $flightSalePriceMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_SALE_PRICE]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::FLIGHT_SALE_PRICE]->getId(),
             'flight_field' => FlightPlaceholderField::FLIGHT_SALE_PRICE
         ]);
         $finalUrlsMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FINAL_URLS]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::FINAL_URLS]->getId(),
             'flight_field' => FlightPlaceholderField::FINAL_URLS
         ]);
 
         // Creates the feed mapping.
         $feedMapping = new FeedMapping([
             'placeholder_type' => PlaceholderType::DYNAMIC_FLIGHT,
-            'feed' => new StringValue(['value' => $feedResourceName]),
+            'feed' => $feedResourceName,
             'attribute_field_mappings' => [
                 $flightDescriptionMapping,
                 $destinationIdMapping,
@@ -291,53 +274,38 @@ class AddFlightsFeed
     ) {
         // Creates the flight description feed attribute value.
         $flightDescriptionAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_DESCRIPTION]
-                        ->getIdUnwrapped()
-            ]),
-            'string_value' => new StringValue(['value' => 'Earth to Mars'])
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::FLIGHT_DESCRIPTION]->getId(),
+            'string_value' => 'Earth to Mars'
         ]);
         // Creates the destination ID feed attribute value.
         $destinationIdAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::DESTINATION_ID]
-                        ->getIdUnwrapped()
-            ]),
-            'string_value' => new StringValue(['value' => 'Mars'])
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::DESTINATION_ID]->getId(),
+            'string_value' => 'Mars'
         ]);
         // Creates the flight price feed attribute value.
         $flightPriceAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_PRICE]
-                        ->getIdUnwrapped()
-            ]),
-            'string_value' => new StringValue(['value' => '499.99 USD'])
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::FLIGHT_PRICE]->getId(),
+            'string_value' => '499.99 USD'
         ]);
         // Creates the flight sale price feed attribute value.
         $flightSalePriceAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FLIGHT_SALE_PRICE]
-                        ->getIdUnwrapped()
-            ]),
-            'string_value' => new StringValue(['value' => '299.99 USD'])
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                FlightPlaceholderField::FLIGHT_SALE_PRICE]->getId(),
+            'string_value' => '299.99 USD'
         ]);
         // Creates the final URLs feed attribute value.
         $finalUrlsAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FINAL_URLS]
-                        ->getIdUnwrapped()
-            ]),
-            'string_values' => [new StringValue(['value' => 'http://www.example.com/flights/'])]
+            'feed_attribute_id'
+                => $placeHoldersToFeedAttributesMap[FlightPlaceholderField::FINAL_URLS]->getId(),
+            'string_values' => ['http://www.example.com/flights/']
         ]);
 
         // Creates the feed item, specifying the feed ID and the attributes created above.
         $feedItem = new FeedItem([
-            'feed' => new StringValue(['value' => $feedResourceName]),
+            'feed' => $feedResourceName,
             'attribute_values' => [
                 $flightDescriptionAttributeValue,
                 $destinationIdAttributeValue,

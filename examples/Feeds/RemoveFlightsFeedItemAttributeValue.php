@@ -25,17 +25,16 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Feeds;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V6\Services\FeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
 
 /**
  * Removes a feed item attribute value of a feed item in a flights feed. To create a flights feed,
@@ -139,11 +138,11 @@ class RemoveFlightsFeedItemAttributeValue
         );
         // Gets the ID of the feed attribute for the placeholder field.
         $attributeId = $placeHoldersToFeedAttributesMap[
-            FlightPlaceholderField::value($flightPlaceholderFieldName)]->getIdUnwrapped();
+            FlightPlaceholderField::value($flightPlaceholderFieldName)]->getId();
         // Creates the feed item attribute value that will be removed, so only the feed attribute ID
         // is needed.
         $removedFeedItemAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value(['value' => $attributeId])
+            'feed_attribute_id' => $attributeId
         ]);
 
         // Retrieves the feed item and its associated attributes based on the resource name.

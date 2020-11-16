@@ -23,20 +23,19 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\ManagerLinkStatusEnum\ManagerLinkStatus;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\CustomerClientLink;
-use Google\Ads\GoogleAds\V5\Resources\CustomerManagerLink;
-use Google\Ads\GoogleAds\V5\Services\CustomerClientLinkOperation;
-use Google\Ads\GoogleAds\V5\Services\CustomerManagerLinkOperation;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\ManagerLinkStatusEnum\ManagerLinkStatus;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\CustomerClientLink;
+use Google\Ads\GoogleAds\V6\Resources\CustomerManagerLink;
+use Google\Ads\GoogleAds\V6\Services\CustomerClientLinkOperation;
+use Google\Ads\GoogleAds\V6\Services\CustomerManagerLinkOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * This example demonstrates how to link an existing Google Ads manager customer
@@ -137,8 +136,7 @@ class LinkManagerToClient
         // Creates a customer client link.
         $customerClientLink = new CustomerClientLink([
             // Sets the client customer to invite.
-            'client_customer' =>
-                new StringValue(['value' => ResourceNames::forCustomer($clientCustomerId)]),
+            'client_customer' => ResourceNames::forCustomer($clientCustomerId),
             'status' => ManagerLinkStatus::PENDING
         ]);
 
@@ -199,7 +197,7 @@ class LinkManagerToClient
         // Gets the ID and resource name associated to the manager link found.
         $managerLinkId = $response->getIterator()->current()
             ->getCustomerClientLink()
-            ->getManagerLinkIdUnwrapped();
+            ->getManagerLinkId();
         $managerLinkResourceName = ResourceNames::forCustomerManagerLink(
             $clientCustomerId,
             $managerCustomerId,

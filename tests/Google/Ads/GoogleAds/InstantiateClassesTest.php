@@ -46,7 +46,7 @@ class InstantiateClassesTest extends TestCase
         }
 
         $classObject = new \ReflectionClass($class);
-        if ($classObject->isInterface() || $classObject->isTrait()) {
+        if ($classObject->isInterface() || $classObject->isTrait() || $classObject->isAbstract()) {
             return;
         }
 

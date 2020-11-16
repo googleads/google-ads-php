@@ -19,7 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib;
 
 /**
- * Holds and helps retrieve configuration data loaded from an *.ini file.
+ * Holds and helps retrieve configuration data.
  */
 class Configuration
 {
@@ -27,14 +27,13 @@ class Configuration
     private $config;
 
     /**
-     * Creates a new configuration from the specified associative array of
-     * settings loaded from an *.ini file.
+     * Creates a new configuration from the specified associative array of settings.
      *
-     * @param array $iniFileContents an associative array of settings
+     * @param array $settings an associative array of settings
      */
-    public function __construct(array $iniFileContents)
+    public function __construct(array $settings)
     {
-        $this->config = $iniFileContents;
+        $this->config = $settings;
     }
 
     /**

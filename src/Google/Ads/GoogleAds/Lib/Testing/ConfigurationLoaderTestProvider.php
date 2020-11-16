@@ -35,6 +35,7 @@ class ConfigurationLoaderTestProvider
     {
         return dirname(__FILE__) . DIRECTORY_SEPARATOR . 'google_ads_php.ini';
     }
+
     /**
      * Gets the absolute file path to the fake home directory for
      * `ConfigurationLoader` tests.
@@ -44,5 +45,16 @@ class ConfigurationLoaderTestProvider
     public static function getFilePathToFakeHome()
     {
         return dirname(__FILE__) . DIRECTORY_SEPARATOR . 'fakehome';
+    }
+
+    /**
+     * Gets the absolute file path of the fake INI file located in the fake home directory used for
+     * `ConfigurationLoader` tests.
+     *
+     * @return string
+     */
+    public static function getFakeHomeFilePathForTestIniFile()
+    {
+        return self::getFilePathToFakeHome() . DIRECTORY_SEPARATOR . 'home_google_ads_php.ini';
     }
 }

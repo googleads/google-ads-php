@@ -24,12 +24,12 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Services\KeywordPlanKeywordForecast;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Services\KeywordPlanKeywordForecast;
 use Google\ApiCore\ApiException;
 
 /**
@@ -120,24 +120,24 @@ class GenerateForecastMetrics
             printf(
                 "%d) Keyword ID: %s%s",
                 ++$i,
-                $forecast->getKeywordPlanAdGroupKeywordUnwrapped(),
+                $forecast->getKeywordPlanAdGroupKeyword(),
                 PHP_EOL
             );
             printf(
                 "Estimated daily clicks: %s%s",
                 is_null($metrics->getClicks()) ? 'null'
-                    : sprintf("%.2f", $metrics->getClicksUnwrapped()),
+                    : sprintf("%.2f", $metrics->getClicks()),
                 PHP_EOL
             );
             printf(
                 "Estimated daily impressions: %s%s",
                 is_null($metrics->getImpressions())
-                    ? 'null' : sprintf("%.2f", $metrics->getImpressionsUnwrapped()),
+                    ? 'null' : sprintf("%.2f", $metrics->getImpressions()),
                 PHP_EOL
             );
             printf(
                 "Estimated average cpc (micros): %s%s",
-                is_null($metrics->getAverageCpc()) ? 'null' : $metrics->getAverageCpcUnwrapped(),
+                is_null($metrics->getAverageCpc()) ? 'null' : $metrics->getAverageCpc(),
                 PHP_EOL
             );
         }

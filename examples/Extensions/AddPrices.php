@@ -24,28 +24,26 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V5\Common\Money;
-use Google\Ads\GoogleAds\V5\Common\PriceFeedItem;
-use Google\Ads\GoogleAds\V5\Common\PriceOffer;
-use Google\Ads\GoogleAds\V5\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V5\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V5\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V5\Enums\PriceExtensionPriceQualifierEnum\PriceExtensionPriceQualifier;
-use Google\Ads\GoogleAds\V5\Enums\PriceExtensionPriceUnitEnum\PriceExtensionPriceUnit;
-use Google\Ads\GoogleAds\V5\Enums\PriceExtensionTypeEnum\PriceExtensionType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\CustomerExtensionSetting;
-use Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V5\Services\CustomerExtensionSettingOperation;
-use Google\Ads\GoogleAds\V5\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\AdScheduleInfo;
+use Google\Ads\GoogleAds\V6\Common\Money;
+use Google\Ads\GoogleAds\V6\Common\PriceFeedItem;
+use Google\Ads\GoogleAds\V6\Common\PriceOffer;
+use Google\Ads\GoogleAds\V6\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V6\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V6\Enums\MinuteOfHourEnum\MinuteOfHour;
+use Google\Ads\GoogleAds\V6\Enums\PriceExtensionPriceQualifierEnum\PriceExtensionPriceQualifier;
+use Google\Ads\GoogleAds\V6\Enums\PriceExtensionPriceUnitEnum\PriceExtensionPriceUnit;
+use Google\Ads\GoogleAds\V6\Enums\PriceExtensionTypeEnum\PriceExtensionType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting;
+use Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V6\Services\CustomerExtensionSettingOperation;
+use Google\Ads\GoogleAds\V6\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds a price extension and associates it with an account. Campaign
@@ -127,7 +125,7 @@ class AddPrices
         // feed item. This associates the price extension to your account.
         $customerExtensionSetting = new CustomerExtensionSetting([
             'extension_type' => ExtensionType::PRICE,
-            'extension_feed_items' => [new StringValue(['value' => $extensionFeedItemResourceName])]
+            'extension_feed_items' => [$extensionFeedItemResourceName]
         ]);
         // Creates a customer extension setting operation.
         $customerExtensionSettingOperation = new CustomerExtensionSettingOperation();
@@ -165,9 +163,8 @@ class AddPrices
             'type' => PriceExtensionType::SERVICES,
             // Optional: Sets price qualifier.
             'price_qualifier' => PriceExtensionPriceQualifier::FROM,
-            'tracking_url_template' => new StringValue([
-                'value' => 'http://tracker.example.com/?u={lpurl}']),
-            'language_code' => new StringValue(['value' => 'en'])
+            'tracking_url_template' => 'http://tracker.example.com/?u={lpurl}',
+            'language_code' => 'en'
         ]);
 
         // To create a price extension, at least three price offerings are needed.
@@ -204,9 +201,7 @@ class AddPrices
         $extensionFeedItem = new ExtensionFeedItem([
             'extension_type' => ExtensionType::PRICE,
             'price_feed_item' => $priceFeedItem,
-            'targeted_campaign' => new StringValue([
-                'value' => ResourceNames::forCampaign($customerId, $campaignId)
-            ]),
+            'targeted_campaign' => ResourceNames::forCampaign($customerId, $campaignId),
             'ad_schedules' => [
                 self::createAdScheduleInfo(
                     DayOfWeek::SUNDAY,
@@ -267,19 +262,19 @@ class AddPrices
         string $finalMobileUrl = null
     ) {
         $priceOffer = new PriceOffer([
-            'header' => new StringValue(['value' => $header]),
-            'description' => new StringValue(['value' => $description]),
-            'final_urls' => [new StringValue(['value' => $finalUrl])],
+            'header' => $header,
+            'description' => $description,
+            'final_urls' => [$finalUrl],
             'price' => new Money([
-                'amount_micros' => new Int64Value(['value' => $priceInMicros]),
-                'currency_code' => new StringValue(['value' => $currencyCode])
+                'amount_micros' => $priceInMicros,
+                'currency_code' => $currencyCode
             ]),
             'unit' => $unit
         ]);
 
         // Optional: Sets the final mobile URLs.
         if (!is_null($finalMobileUrl)) {
-            $priceOffer->setFinalMobileUrls([new StringValue(['value' => $finalMobileUrl])]);
+            $priceOffer->setFinalMobileUrls([$finalMobileUrl]);
         }
 
         return $priceOffer;

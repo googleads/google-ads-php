@@ -33,12 +33,46 @@ interface GoogleAdsBuilder
     public const DEFAULT_CONFIGURATION_FILENAME = 'google_ads_php.ini';
 
     /**
+     * @var string the prefix of the environment variable names used for configuration
+     */
+    public const CONFIGURATION_ENVIRONMENT_VARIABLES_PREFIX = 'GOOGLE_ADS_';
+
+    /**
+     * @var string the environment variable name used to specify the default configuration file path
+     */
+    public const DEFAULT_CONFIGURATION_FILENAME_ENVIRONMENT_VARIABLE_NAME =
+        self::CONFIGURATION_ENVIRONMENT_VARIABLES_PREFIX . 'CONFIGURATION_FILE_PATH';
+
+    /**
      * Populates this builder from the specified configuration object.
      *
      * @param Configuration $configuration the configuration
      * @return self this builder populated from the configuration
      */
     public function from(Configuration $configuration);
+
+    /**
+     * Populates this builder from the specified configuration object.
+     *
+     * @param Configuration $configuration the configuration
+     * @return self this builder populated from the configuration
+     */
+    public function fromEnvironmentVariablesConfiguration(Configuration $configuration);
+
+    /**
+     * Populates this builder from the specified file path.
+     *
+     * @param string $path the file path
+     * @return self this builder populated from the configuration
+     */
+    public function fromFile(string $path);
+
+    /**
+     * Populates this builder from environment variables.
+     *
+     * @return self this builder populated from the configuration
+     */
+    public function fromEnvironmentVariables();
 
     /**
      * Creates a new instance of the data object being populated. This method

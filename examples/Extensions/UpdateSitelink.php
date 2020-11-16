@@ -24,17 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\SitelinkFeedItem;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V5\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\SitelinkFeedItem;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V6\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Updates the sitelink extension feed item with the specified link text and URL.
@@ -115,9 +114,7 @@ class UpdateSitelink
         // Creates an extension feed item using the specified feed item ID and sitelink text.
         $extensionFeedItem = new ExtensionFeedItem([
             'resource_name' => ResourceNames::forExtensionFeedItem($customerId, $feedItemId),
-            'sitelink_feed_item' => new SitelinkFeedItem([
-                'link_text' => new StringValue(['value' => $sitelinkText])
-            ])
+            'sitelink_feed_item' => new SitelinkFeedItem(['link_text' => $sitelinkText])
         ]);
 
         // Constructs an operation that will update the extension feed item, using the FieldMasks

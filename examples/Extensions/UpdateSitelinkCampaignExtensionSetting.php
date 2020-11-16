@@ -24,17 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V5\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\CampaignExtensionSetting;
+use Google\Ads\GoogleAds\V6\Services\CampaignExtensionSettingOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Updates the sitelink campaign extension setting to replace its extension feed items.
@@ -117,12 +116,9 @@ class UpdateSitelinkCampaignExtensionSetting
         int $campaignId,
         array $feedItemIds
     ) {
-        // Transforms the specified feed item IDs to resource names and an array of StringValue, as
-        // required by the API.
+        // Transforms the specified feed item IDs to resource names as required by the API.
         $extensionFeedItems = array_map(function ($feedItemId) use ($customerId) {
-            return new StringValue([
-                'value' => ResourceNames::forExtensionFeedItem($customerId, $feedItemId)
-            ]);
+            return ResourceNames::forExtensionFeedItem($customerId, $feedItemId);
         }, $feedItemIds);
 
         // Creates a campaign extension setting using the specified campaign ID and extension feed
