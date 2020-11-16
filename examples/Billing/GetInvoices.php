@@ -203,7 +203,8 @@ class GetInvoices
      * @param int $amount the amount
      * @return int the amount converted in plain unit if not null otherwise 0
      */
-    private static function microsToPlain(int $amount): int {
+    private static function microsToPlain(int $amount): int
+    {
         return $amount ? $amount / 1000000.0 : 0.0;
     }
 }
