@@ -133,78 +133,22 @@ API](https://developers.google.com/google-ads/api/docs/start).
 
 ## Basic usage
 
+### Instantiate a client
+
 To issue requests via the Google Ads API, you first need to create a
-[GoogleAdsClient](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/V1/GoogleAdsClient.php).
-For convenience, you can store the required settings in a properties file
-(`google_ads_php.ini`) with the following format:
+[GoogleAdsClient](https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/Lib/V6/GoogleAdsClient.php).
 
-    [GOOGLE_ADS]
-    developerToken = "INSERT_DEVELOPER_TOKEN_HERE"
-
-    [OAUTH2]
-    clientId = "INSERT_OAUTH2_CLIENT_ID_HERE"
-    clientSecret = "INSERT_OAUTH2_CLIENT_SECRET_HERE"
-    refreshToken = "INSERT_OAUTH2_REFRESH_TOKEN_HERE"
-
-If you're authenticating as a manager account, additionally you must specify the manager account ID
-(with hyphens removed) as the login customer ID:
-
-    [GOOGLE_ADS]
-    loginCustomerId = "INSERT_LOGIN_CUSTOMER_ID_HERE"
-
-This configuration file format is similar to the format used in the AdWords
-API's [client library for PHP](https://github.com/googleads/googleads-php-lib).
-
-If you have a `google_ads_php.ini` configuration file in the above format in
-your home directory, you can use the no-arg version of `fromFile()` as follows:
-
-```php
-$googleAdsClient = (new GoogleAdsClientBuilder())
-    ->fromFile()
-    ->withOAuth2Credential($oAuth2Credential)
-    ->build();
-```
-
-where `$oAuth2Credential` was created by:
-
-```php
-$oAuth2Credential = (new OAuth2TokenBuilder())->fromFile()->build();
-```
-
-If your configuration file is not in your home directory, you can pass the file
-location to the `fromFile` methods as follows:
-
-```php
-$oAuth2Credential = (new OAuth2TokenBuilder())
-    ->fromFile('/path/to/google_ads_php.ini')
-    ->build();
-$googleAdsClient = (new GoogleAdsClientBuilder())
-    ->fromFile('/path/to/google_ads_php.ini')
-    ->withOAuth2Credential($oAuth2Credential)
-    ->build();
-```
-
-You can also construct an OAuth2 credential object by specifying the client ID,
-client secret, and refresh token at runtime, then pass that to the
-`GoogleAdsClientBuilder` as follows:
-
-```php
-$oAuth2Credential = (new OAuth2TokenBuilder())
-    ->withClientId('INSERT_CLIENT_ID')
-    ->withClientSecret('INSERT_CLIENT_SECRET')
-    ->withRefreshToken('INSERT_REFRESH_TOKEN')
-    ->build();
-$googleAdsClient = (new GoogleAdsClientBuilder())
-    ->withOAuth2Credential($oAuth2Credential)
-    ->withDeveloperToken('INSERT_DEVELOPER_TOKEN_HERE')
-    ->withLoginCustomerId('INSERT_LOGIN_CUSTOMER_ID_HERE')
-    ->build();
-```
+For more information on how to configure a client when instantiating it, see the
+[configuration guide](https://developers.google.com/google-ads/api/docs/client-libs/php/configuration).
 
 ### Get a service client
 
 Once you have an instance of `GoogleAdsClient`, you can obtain a service client
 for a particular service using one of the `get...ServiceClient()` methods.
+
+## Client configuration
+
+See the [Configuration guide](https://developers.google.com/google-ads/api/docs/client-libs/php/configuration).
 
 ## Transport
 
