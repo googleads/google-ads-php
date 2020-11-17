@@ -154,20 +154,20 @@ class GetInvoices
                 $invoice->getCurrencyCode(),
                 $invoice->getServiceDateRange()->getStartDate(),
                 $invoice->getServiceDateRange()->getEndDate(),
-                self::microsToPlain($invoice->getAdjustmentsSubtotalAmountMicros()),
-                self::microsToPlain($invoice->getAdjustmentsTaxAmountMicros()),
-                self::microsToPlain($invoice->getAdjustmentsTotalAmountMicros()),
-                self::microsToPlain($invoice->getRegulatoryCostsSubtotalAmountMicros()),
-                self::microsToPlain($invoice->getRegulatoryCostsTaxAmountMicros()),
-                self::microsToPlain($invoice->getRegulatoryCostsTotalAmountMicros()),
+                self::microToBase($invoice->getAdjustmentsSubtotalAmountMicros()),
+                self::microToBase($invoice->getAdjustmentsTaxAmountMicros()),
+                self::microToBase($invoice->getAdjustmentsTotalAmountMicros()),
+                self::microToBase($invoice->getRegulatoryCostsSubtotalAmountMicros()),
+                self::microToBase($invoice->getRegulatoryCostsTaxAmountMicros()),
+                self::microToBase($invoice->getRegulatoryCostsTotalAmountMicros()),
                 $invoice->getReplacedInvoices()
                     ? implode(
                         "', '",
                         iterator_to_array($invoice->getReplacedInvoices()->getIterator())
                     ) : 'none',
-                self::microsToPlain($invoice->getSubtotalAmountMicros()),
-                self::microsToPlain($invoice->getTaxAmountMicros()),
-                self::microsToPlain($invoice->getTotalAmountMicros()),
+                self::microToBase($invoice->getSubtotalAmountMicros()),
+                self::microToBase($invoice->getTaxAmountMicros()),
+                self::microToBase($invoice->getTotalAmountMicros()),
                 $invoice->getCorrectedInvoice() ?: 'none',
                 $invoice->getPdfUrl()
             );
@@ -188,9 +188,9 @@ class GetInvoices
                     $accountBudgetSummary->getPurchaseOrderNumber() ?: 'none',
                     $accountBudgetSummary->getBillableActivityDateRange()->getStartDate(),
                     $accountBudgetSummary->getBillableActivityDateRange()->getEndDate(),
-                    self::microsToPlain($accountBudgetSummary->getSubtotalAmountMicros()),
-                    self::microsToPlain($accountBudgetSummary->getTaxAmountMicros()),
-                    self::microsToPlain($accountBudgetSummary->getTotalAmountMicros())
+                    self::microToBase($accountBudgetSummary->getSubtotalAmountMicros()),
+                    self::microToBase($accountBudgetSummary->getTaxAmountMicros()),
+                    self::microToBase($accountBudgetSummary->getTotalAmountMicros())
                 );
             }
         }
@@ -198,12 +198,12 @@ class GetInvoices
     }
 
     /**
-     * Converts an amount from the micro unit to the plain unit.
+     * Converts an amount from the micro unit to the base unit.
      *
      * @param int $amount the amount
-     * @return int the amount converted in plain unit if not null otherwise 0
+     * @return int the amount converted to the base unit if not null otherwise 0
      */
-    private static function microsToPlain(int $amount): int
+    private static function microToBase(int $amount): int
     {
         return $amount ? $amount / 1000000.0 : 0.0;
     }
