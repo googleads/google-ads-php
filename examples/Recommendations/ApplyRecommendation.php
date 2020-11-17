@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\Recommendation;
-use Google\Ads\GoogleAds\V5\Services\ApplyRecommendationOperation;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\Recommendation;
+use Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation;
 use Google\ApiCore\ApiException;
 
 /**
@@ -118,7 +118,7 @@ class ApplyRecommendation
         // Each recommendation type has optional parameters to override the recommended values.
         // This is an example to override a recommended ad when a TextAdRecommendation is applied.
         // For details, please read
-        // https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v1.services#google.ads.googleads.v1.services.ApplyRecommendationOperation.
+        // https://developers.google.com/google-ads/api/reference/rpc/latest/ApplyRecommendationOperation.
         /*
         $overridingAd = new Ad([
             'id' => 'INSERT_AD_ID_AS_INTEGER_HERE'

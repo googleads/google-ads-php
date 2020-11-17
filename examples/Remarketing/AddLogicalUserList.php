@@ -23,20 +23,19 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\LogicalUserListInfo;
-use Google\Ads\GoogleAds\V5\Common\LogicalUserListOperandInfo;
-use Google\Ads\GoogleAds\V5\Common\UserListLogicalRuleInfo;
-use Google\Ads\GoogleAds\V5\Enums\UserListLogicalRuleOperatorEnum\UserListLogicalRuleOperator;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\UserList;
-use Google\Ads\GoogleAds\V5\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\LogicalUserListInfo;
+use Google\Ads\GoogleAds\V6\Common\LogicalUserListOperandInfo;
+use Google\Ads\GoogleAds\V6\Common\UserListLogicalRuleInfo;
+use Google\Ads\GoogleAds\V6\Enums\UserListLogicalRuleOperatorEnum\UserListLogicalRuleOperator;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\UserList;
+use Google\Ads\GoogleAds\V6\Services\UserListOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Creates a combination user list containing users that are present on any one of the provided user
@@ -118,9 +117,7 @@ class AddLogicalUserList
         $logicalUserListOperandInfoList = [];
         foreach ($userListIds as $userListId) {
             $logicalUserListOperandInfoList[] = new LogicalUserListOperandInfo([
-                'user_list' => new StringValue([
-                    'value' => ResourceNames::forUserList($customerId, $userListId)
-                ])
+                'user_list' => ResourceNames::forUserList($customerId, $userListId)
             ]);
         }
 
@@ -137,9 +134,7 @@ class AddLogicalUserList
 
         // Creates the new combination user list.
         $userList = new UserList([
-            'name' => new StringValue([
-                'value' => 'My combination list of other user lists #' . uniqid()
-            ]),
+            'name' => 'My combination list of other user lists #' . uniqid(),
             'logical_user_list' => new LogicalUserListInfo([
                 'rules' => [$userListLogicalRuleInfo]
             ])

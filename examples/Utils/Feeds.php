@@ -18,13 +18,13 @@
 
 namespace Google\Ads\GoogleAds\Examples\Utils;
 
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\V5\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
-use Google\Ads\GoogleAds\V5\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
-use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V5\Resources\FeedItem;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\V6\Enums\FlightPlaceholderFieldEnum\FlightPlaceholderField;
+use Google\Ads\GoogleAds\V6\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
+use Google\Ads\GoogleAds\V6\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V6\Resources\FeedItem;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
 
 /**
  * Utilities that are shared between code examples related to feeds.
@@ -82,8 +82,8 @@ final class Feeds
             $attributeIndex++;
             // Checks if the current feedItemAttributeValue is the one we are updating
             if (
-                $feedItemAttributeValue->getFeedAttributeIdUnwrapped()
-                === $targetFeedItemAttributeValue->getFeedAttributeIdUnwrapped()
+                $feedItemAttributeValue->getFeedAttributeId()
+                === $targetFeedItemAttributeValue->getFeedAttributeId()
             ) {
                 break;
             }
@@ -92,7 +92,7 @@ final class Feeds
         if ($attributeIndex === -1) {
             throw new \InvalidArgumentException(
                 'No matching feed attribute for feed item attribute ID: '
-                . $targetFeedItemAttributeValue->getFeedAttributeIdUnwrapped()
+                . $targetFeedItemAttributeValue->getFeedAttributeId()
             );
         }
 
@@ -198,10 +198,10 @@ final class Feeds
             iterator_to_array($googleAdsRow->getFeed()->getAttributes()->getIterator());
         $placeholderFields = array_map(
             function (FeedAttribute $feedAttribute) use ($feedAttributeNamesMap) {
-                if (!array_key_exists($feedAttribute->getNameUnwrapped(), $feedAttributeNamesMap)) {
+                if (!array_key_exists($feedAttribute->getName(), $feedAttributeNamesMap)) {
                     throw new \RuntimeException('Invalid feed attribute name.');
                 }
-                return $feedAttributeNamesMap[$feedAttribute->getNameUnwrapped()];
+                return $feedAttributeNamesMap[$feedAttribute->getName()];
             },
             $feedAttributes
         );

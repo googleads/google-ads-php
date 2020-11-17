@@ -24,31 +24,28 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V5\GoogleAdsFailures;
-use Google\Ads\GoogleAds\V5\Common\CrmBasedUserListInfo;
-use Google\Ads\GoogleAds\V5\Common\CustomerMatchUserListMetadata;
-use Google\Ads\GoogleAds\V5\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V5\Common\UserData;
-use Google\Ads\GoogleAds\V5\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V5\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
-use Google\Ads\GoogleAds\V5\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V5\Resources\UserList;
-use Google\Ads\GoogleAds\V5\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V5\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V5\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V5\Services\UserListOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V6\GoogleAdsFailures;
+use Google\Ads\GoogleAds\V6\Common\CrmBasedUserListInfo;
+use Google\Ads\GoogleAds\V6\Common\CustomerMatchUserListMetadata;
+use Google\Ads\GoogleAds\V6\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V6\Common\UserData;
+use Google\Ads\GoogleAds\V6\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V6\Enums\CustomerMatchUploadKeyTypeEnum\CustomerMatchUploadKeyType;
+use Google\Ads\GoogleAds\V6\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V6\Resources\UserList;
+use Google\Ads\GoogleAds\V6\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V6\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V6\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V6\Services\UserListOperation;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\OperationResponse;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example uses Customer Match to create a new user list (a.k.a. audience) and adds users to
@@ -143,16 +140,13 @@ class AddCustomerMatchUserList
     ): string {
         // Creates the user list.
         $userList = new UserList([
-            'name' => new StringValue([
-                'value' => 'Customer Match list #' . uniqid()
-            ]),
-            'description' => new StringValue([
-                'value' => 'A list of customers that originated from email and physical addresses'
-            ]),
+            'name' => 'Customer Match list #' . uniqid(),
+            'description' => 'A list of customers that originated from email '
+                . 'and physical addresses',
             // Customer Match user lists can use a membership life span of 10000 to
             // indicate unlimited; otherwise normal values apply.
             // Sets the membership life span to 30 days.
-            'membership_life_span' => new Int64Value(['value' => 30]),
+            'membership_life_span' => 30,
             'crm_based_user_list' => new CrmBasedUserListInfo([
                 'upload_key_type' => CustomerMatchUploadKeyType::CONTACT_INFO
             ])
@@ -190,7 +184,7 @@ class AddCustomerMatchUserList
         $offlineUserDataJob = new OfflineUserDataJob([
             'type' => OfflineUserDataJobType::CUSTOMER_MATCH_USER_LIST,
             'customer_match_user_list_metadata' => new CustomerMatchUserListMetadata([
-                'user_list' => new StringValue(['value' => $userListResourceName])
+                'user_list' => $userListResourceName
             ])
         ]);
 
@@ -213,7 +207,7 @@ class AddCustomerMatchUserList
         $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
             $offlineUserDataJobResourceName,
             self::buildOfflineUserDataJobOperations(),
-            ['enablePartialFailure' => new BoolValue(['value' => true])]
+            ['enablePartialFailure' => true]
         );
 
         // Prints the status message if any partial failure error is returned.
@@ -280,9 +274,7 @@ class AddCustomerMatchUserList
             'user_identifiers' => [
                 new UserIdentifier([
                     // Hash normalized email addresses based on SHA-256 hashing algorithm.
-                    'hashed_email' => new StringValue([
-                        'value' => self::normalizeAndHash('customer@example.com')
-                    ])
+                    'hashed_email' => self::normalizeAndHash('customer@example.com')
                 ])
             ]
         ]);
@@ -293,15 +285,11 @@ class AddCustomerMatchUserList
                 new UserIdentifier([
                     'address_info' => new OfflineUserAddressInfo([
                         // First and last name must be normalized and hashed.
-                        'hashed_first_name' => new StringValue([
-                            self::normalizeAndHash('John')
-                        ]),
-                        'hashed_last_name' => new StringValue([
-                            self::normalizeAndHash('Doe')
-                        ]),
+                        'hashed_first_name' => self::normalizeAndHash('John'),
+                        'hashed_last_name' => self::normalizeAndHash('Doe'),
                         // Country code and zip code are sent in plain text.
-                        'country_code' => new StringValue(['US']),
-                        'postal_code' => new StringValue(['10011'])
+                        'country_code' => 'US',
+                        'postal_code' => '10011'
                     ])
                 ])
             ]
@@ -309,12 +297,8 @@ class AddCustomerMatchUserList
 
         // Creates the operations to add the two users.
         $operations = [
-            new OfflineUserDataJobOperation([
-                'create' => $userDataWithEmailAddress
-            ]),
-            new OfflineUserDataJobOperation([
-                'create' => $userDataWithPhysicalAddress
-            ])
+            new OfflineUserDataJobOperation(['create' => $userDataWithEmailAddress]),
+            new OfflineUserDataJobOperation(['create' => $userDataWithPhysicalAddress])
         ];
 
         return $operations;
@@ -352,8 +336,8 @@ class AddCustomerMatchUserList
             "The estimated number of users that the user list '%s' has is %d for Display " .
              "and %d for Search.%s",
             $googleAdsRow->getUserList()->getResourceName(),
-            $googleAdsRow->getUserList()->getSizeForDisplayUnwrapped(),
-            $googleAdsRow->getUserList()->getSizeForSearchUnwrapped(),
+            $googleAdsRow->getUserList()->getSizeForDisplay(),
+            $googleAdsRow->getUserList()->getSizeForSearch(),
             PHP_EOL
         );
         print 'Reminder: It may take several hours for the user list to be populated with the ' .

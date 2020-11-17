@@ -24,32 +24,31 @@ use DateTime;
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V5\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V5\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\Ad;
-use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V5\Resources\Feed;
-use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V5\Resources\FeedItem;
-use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V5\Services\FeedOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V5\Enums\AdCustomizerPlaceholderFieldEnum\AdCustomizerPlaceholderField;
-use Google\Ads\GoogleAds\V5\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V5\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemTarget;
-use Google\Ads\GoogleAds\V5\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedItemTargetOperation;
-use Google\Protobuf\StringValue;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V6\Enums\AdCustomizerPlaceholderFieldEnum\AdCustomizerPlaceholderField;
+use Google\Ads\GoogleAds\V6\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V6\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V6\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\Ad;
+use Google\Ads\GoogleAds\V6\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V6\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V6\Resources\Feed;
+use Google\Ads\GoogleAds\V6\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V6\Resources\FeedItem;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemTarget;
+use Google\Ads\GoogleAds\V6\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V6\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedItemTargetOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedOperation;
 use Google\ApiCore\ApiException;
 
 /**
@@ -202,24 +201,15 @@ class AddAdCustomizer
     ) {
         // Creates three feed attributes: a name, a price and a date. The attribute names are
         // arbitrary choices and will be used as placeholders in the ad text fields.
-        $nameAttribute = new FeedAttribute([
-            'type' => FeedAttributeType::STRING,
-            'name' => new StringValue(['value' => 'Name'])
-        ]);
-        
-        $priceAttribute = new FeedAttribute([
-            'type' => FeedAttributeType::STRING,
-            'name' => new StringValue(['value' => 'Price'])
-        ]);
-
-        $dateAttribute = new FeedAttribute([
-            'type' => FeedAttributeType::DATE_TIME,
-            'name' => new StringValue(['value' => 'Date'])
-        ]);
+        $nameAttribute = new FeedAttribute(['type' => FeedAttributeType::STRING, 'name' => 'Name']);
+        $priceAttribute =
+            new FeedAttribute(['type' => FeedAttributeType::STRING, 'name' => 'Price']);
+        $dateAttribute =
+            new FeedAttribute(['type' => FeedAttributeType::DATE_TIME, 'name' => 'Date']);
 
         // Creates the feed.
         $feed = new Feed([
-            'name' => new StringValue(['value' => $feedName]),
+            'name' => $feedName,
             'attributes' => [$nameAttribute, $priceAttribute, $dateAttribute],
             'origin' => FeedOrigin::USER
         ]);
@@ -263,16 +253,16 @@ class AddAdCustomizer
         $feedDetails = [];
         printf(
             "Found the following attributes for feed with name %s:%s",
-            $feed->getNameUnwrapped(),
+            $feed->getName(),
             PHP_EOL
         );
         foreach ($feed->getAttributes() as $feedAttribute) {
             /** @var FeedAttribute $feedAttribute */
-            $feedDetails[$feedAttribute->getNameUnwrapped()] = $feedAttribute->getIdUnwrapped();
+            $feedDetails[$feedAttribute->getName()] = $feedAttribute->getId();
             printf(
                 "\t'%s' with id %d and type '%s'%s",
-                $feedAttribute->getNameUnwrapped(),
-                $feedAttribute->getIdUnwrapped(),
+                $feedAttribute->getName(),
+                $feedAttribute->getId(),
                 FeedAttributeType::name($feedAttribute->getType()),
                 PHP_EOL
             );
@@ -313,7 +303,7 @@ class AddAdCustomizer
         // Creates the feed mapping.
         $feedMapping = new FeedMapping([
             'placeholder_type' => PlaceholderType::AD_CUSTOMIZER,
-            'feed' => new StringValue(['value' => $adCustomizerFeedResourceName]),
+            'feed' => $adCustomizerFeedResourceName,
             'attribute_field_mappings' => [$nameFieldMapping, $priceFieldMapping, $dateFieldMapping]
         ]);
 
@@ -409,26 +399,22 @@ class AddAdCustomizer
     ) {
         $nameAttributeValue = new FeedItemAttributeValue([
             'feed_attribute_id' => $adCustomizerFeedAttributes['Name'],
-            'string_value' => new StringValue(['value' => $name])
+            'string_value' => $name
         ]);
 
         $priceAttributeValue = new FeedItemAttributeValue([
             'feed_attribute_id' => $adCustomizerFeedAttributes['Price'],
-            'string_value' => new StringValue(['value' => $price])
+            'string_value' => $price
         ]);
 
         $dateAttributeValue = new FeedItemAttributeValue([
             'feed_attribute_id' => $adCustomizerFeedAttributes['Date'],
-            'string_value' => new StringValue(['value' => $date])
+            'string_value' => $date
         ]);
 
         $feedItem = new FeedItem([
-            'feed' => new StringValue(['value' => $adCustomizerFeedResourceName]),
-            'attribute_values' => [
-                $nameAttributeValue,
-                $priceAttributeValue,
-                $dateAttributeValue
-            ]
+            'feed' => $adCustomizerFeedResourceName,
+            'attribute_values' => [$nameAttributeValue, $priceAttributeValue, $dateAttributeValue]
         ]);
 
         $feedItemOperation = new FeedItemOperation();
@@ -460,10 +446,8 @@ class AddAdCustomizer
             $adGroupId = $adGroupIds[$i];
 
             $feedItemTarget = new FeedItemTarget([
-                'feed_item' => new StringValue(['value' => $feedItemResourceName]),
-                'ad_group' => new StringValue([
-                    'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
-                ])
+                'feed_item' => $feedItemResourceName,
+                'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
             ]);
 
             // Creates the operation.

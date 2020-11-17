@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds\Lib\V5;
 
 use Google\Ads\GoogleAds\Lib\Configuration;
 use Google\Ads\GoogleAds\Lib\ConfigurationLoader;
+use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
@@ -133,6 +134,38 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
 
         $this->assertSame(self::$DEVELOPER_TOKEN, $googleAdsClient->getDeveloperToken());
+    }
+
+    public function testBuildFromEnvironmentVariables()
+    {
+        $editedDeveloperToken = self::$DEVELOPER_TOKEN . 'edited';
+
+        $environmentalVariablesMock = $this
+            ->getMockBuilder(EnvironmentalVariables::class)
+            ->getMock();
+        $environmentalVariablesMock
+            ->method('getHome')
+            ->willReturn(ConfigurationLoaderTestProvider::getFilePathToFakeHome());
+        $environmentalVariablesMock
+            ->method('getStartingWith')
+            ->with(GoogleAdsBuilder::CONFIGURATION_ENVIRONMENT_VARIABLES_PREFIX)
+            ->willReturn(['DEVELOPER_TOKEN' => $editedDeveloperToken]);
+        $configurationLoader = new ConfigurationLoader($environmentalVariablesMock);
+
+        $googleAdsClientBuilder = new GoogleAdsClientBuilder(
+            $configurationLoader,
+            $environmentalVariablesMock
+        );
+        $googleAdsClient = $googleAdsClientBuilder
+            ->fromFile('home_google_ads_php.ini')
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withLoginCustomerId(self::$LOGIN_CUSTOMER_ID)
+            ->fromEnvironmentVariables()
+            ->build();
+
+        $this->assertSame(self::$LOGIN_CUSTOMER_ID, $googleAdsClient->getLoginCustomerId());
+        $this->assertSame($editedDeveloperToken, $googleAdsClient->getDeveloperToken());
     }
 
     /**

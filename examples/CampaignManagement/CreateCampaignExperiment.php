@@ -24,17 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Enums\CampaignExperimentTrafficSplitTypeEnum\CampaignExperimentTrafficSplitType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\CampaignExperiment;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Enums\CampaignExperimentTrafficSplitTypeEnum\CampaignExperimentTrafficSplitType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\CampaignExperiment;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * This example illustrates how to begin creation of a campaign experiment from a draft and wait
@@ -116,11 +114,10 @@ class CreateCampaignExperiment
     ) {
         // Creates a campaign experiment.
         $campaignExperiment = new CampaignExperiment([
-            'campaign_draft' => new StringValue([
-                'value' => ResourceNames::forCampaignDraft($customerId, $baseCampaignId, $draftId)
-            ]),
-            'name' => new StringValue(['value' => 'Campaign Experiment #' . uniqid()]),
-            'traffic_split_percent' => new Int64Value(['value' => 50]),
+            'campaign_draft'
+                => ResourceNames::forCampaignDraft($customerId, $baseCampaignId, $draftId),
+            'name' => 'Campaign Experiment #' . uniqid(),
+            'traffic_split_percent' => 50,
             'traffic_split_type' => CampaignExperimentTrafficSplitType::RANDOM_QUERY
         ]);
 
@@ -158,7 +155,7 @@ class CreateCampaignExperiment
         $googleAdsRow = $response->getIterator()->current();
         printf(
             "Experiment campaign with resource name '%s' finished creating.%s",
-            $googleAdsRow->getCampaignExperiment()->getExperimentCampaignUnwrapped(),
+            $googleAdsRow->getCampaignExperiment()->getExperimentCampaign(),
             PHP_EOL
         );
     }

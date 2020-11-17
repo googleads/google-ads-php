@@ -24,14 +24,14 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\V5\Enums\MerchantCenterLinkStatusEnum\MerchantCenterLinkStatus;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\MerchantCenterLink;
-use Google\Ads\GoogleAds\V5\Services\MerchantCenterLinkOperation;
-use Google\Ads\GoogleAds\V5\Services\MerchantCenterLinkServiceClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\V6\Enums\MerchantCenterLinkStatusEnum\MerchantCenterLinkStatus;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\MerchantCenterLink;
+use Google\Ads\GoogleAds\V6\Services\MerchantCenterLinkOperation;
+use Google\Ads\GoogleAds\V6\Services\MerchantCenterLinkServiceClient;
 use Google\ApiCore\ApiException;
 
 /**
@@ -134,7 +134,7 @@ class RejectMerchantCenterLink
             );
 
             // Checks if there is a link for the Merchant Center account we are looking for.
-            if ($merchantCenterAccountId === $merchantCenterLink->getIdUnwrapped()) {
+            if ($merchantCenterAccountId === $merchantCenterLink->getId()) {
                 // If the Merchant Center link is pending, reject it by removing the link.
                 // If the Merchant Center link is enabled, unlink Merchant Center from Google Ads by
                 // removing the link.

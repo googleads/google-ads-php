@@ -24,35 +24,33 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Common\MatchingFunction;
-use Google\Ads\GoogleAds\V5\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V5\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V5\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V5\Enums\SitelinkPlaceholderFieldEnum\SitelinkPlaceholderField;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V5\Resources\CampaignFeed;
-use Google\Ads\GoogleAds\V5\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V5\Resources\Feed;
-use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V5\Resources\FeedItem;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemTarget;
-use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V5\Services\CampaignFeedOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedItemTargetOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedOperation;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Common\MatchingFunction;
+use Google\Ads\GoogleAds\V6\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V6\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V6\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V6\Enums\SitelinkPlaceholderFieldEnum\SitelinkPlaceholderField;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V6\Resources\CampaignFeed;
+use Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V6\Resources\Feed;
+use Google\Ads\GoogleAds\V6\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V6\Resources\FeedItem;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemTarget;
+use Google\Ads\GoogleAds\V6\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V6\Services\CampaignFeedOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedItemTargetOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedOperation;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /**
  * Adds sitelinks to a campaign using feed services. If an ad group ID is provided, also creates
@@ -161,28 +159,19 @@ class AddSitelinksUsingFeeds
     {
         // Creates a feed.
         $feed = new Feed([
-            'name' => new StringValue(['value' => 'Sitelinks Feed #' . uniqid()]),
+            'name' => 'Sitelinks Feed #' . uniqid(),
             'origin' => FeedOrigin::USER,
             // Specifies the column name and data type. This is just raw data at this point,
             // and not yet linked to any particular purpose. The names are used to help us
             // remember what they are intended for later.
             'attributes' => [
+                new FeedAttribute(['name' => 'Link Text', 'type' => FeedAttributeType::STRING]),
                 new FeedAttribute([
-                    'name' => new StringValue(['value' => 'Link Text']),
-                    'type' => FeedAttributeType::STRING
-                ]),
-                new FeedAttribute([
-                    'name' => new StringValue(['value' => 'Link Final URL']),
+                    'name' => 'Link Final URL',
                     'type' => FeedAttributeType::URL_LIST
                 ]),
-                new FeedAttribute([
-                    'name' => new StringValue(['value' => 'Line 1']),
-                    'type' => FeedAttributeType::STRING
-                ]),
-                new FeedAttribute([
-                    'name' => new StringValue(['value' => 'Line 2']),
-                    'type' => FeedAttributeType::STRING
-                ])
+                new FeedAttribute(['name' => 'Line 1', 'type' => FeedAttributeType::STRING]),
+                new FeedAttribute(['name' => 'Line 2', 'type' => FeedAttributeType::STRING])
             ]
         ]);
 
@@ -215,7 +204,7 @@ class AddSitelinksUsingFeeds
         $feedAttributeIds = [];
         foreach ($googleAdsRow->getFeed()->getAttributes() as $attribute) {
             /** @var FeedAttribute $attribute  */
-            $feedAttributeIds[] = $attribute->getIdUnwrapped();
+            $feedAttributeIds[] = $attribute->getId();
         }
 
         return [
@@ -340,27 +329,23 @@ class AddSitelinksUsingFeeds
     ) {
         // Creates a feed item used for creating a new feed item operation.
         $feedItem = new FeedItem([
-            'feed' => new StringValue(['value' => $feedData['feed']]),
+            'feed' => $feedData['feed'],
             'attribute_values' => [
                 new FeedItemAttributeValue([
-                    'feed_attribute_id' => new Int64Value([
-                        'value' => $feedData['textAttributeId']]),
-                    'string_value' => new StringValue(['value' => $sitelinkText])
+                    'feed_attribute_id' => $feedData['textAttributeId'],
+                    'string_value' => $sitelinkText
                 ]),
                 new FeedItemAttributeValue([
-                    'feed_attribute_id' => new Int64Value([
-                        'value' => $feedData['finalUrlAttributeId']]),
-                    'string_values' => [new StringValue(['value' => $sitelinkFinalUrl])]
+                    'feed_attribute_id' => $feedData['finalUrlAttributeId'],
+                    'string_values' => [$sitelinkFinalUrl]
                 ]),
                 new FeedItemAttributeValue([
-                    'feed_attribute_id' => new Int64Value([
-                        'value' => $feedData['line1AttributeId']]),
-                    'string_value' => new StringValue(['value' => $sitelinkLine1])
+                    'feed_attribute_id' => $feedData['line1AttributeId'],
+                    'string_value' => $sitelinkLine1
                 ]),
                 new FeedItemAttributeValue([
-                    'feed_attribute_id' => new Int64Value([
-                        'value' => $feedData['line2AttributeId']]),
-                    'string_value' => new StringValue(['value' => $sitelinkLine2])
+                    'feed_attribute_id' => $feedData['line2AttributeId'],
+                    'string_value' => $sitelinkLine2
                 ])
             ]
         ]);
@@ -383,26 +368,22 @@ class AddSitelinksUsingFeeds
         // Creates a feed mapping.
         $feedMapping = new FeedMapping([
             'placeholder_type' => PlaceholderType::SITELINK,
-            'feed' => new StringValue(['value' => $feedData['feed']]),
+            'feed' => $feedData['feed'],
             'attribute_field_mappings' => [
                 new AttributeFieldMapping([
-                    'feed_attribute_id' => new Int64Value([
-                        'value' => $feedData['textAttributeId']]),
+                    'feed_attribute_id' => $feedData['textAttributeId'],
                     'sitelink_field' => SitelinkPlaceholderField::TEXT
                 ]),
                 new AttributeFieldMapping([
-                    'feed_attribute_id' => new Int64Value([
-                        'value' => $feedData['finalUrlAttributeId']]),
+                    'feed_attribute_id' => $feedData['finalUrlAttributeId'],
                     'sitelink_field' => SitelinkPlaceholderField::FINAL_URLS
                 ]),
                 new AttributeFieldMapping([
-                    'feed_attribute_id' => new Int64Value([
-                        'value' => $feedData['line1AttributeId']]),
+                    'feed_attribute_id' => $feedData['line1AttributeId'],
                     'sitelink_field' => SitelinkPlaceholderField::LINE_1
                 ]),
                 new AttributeFieldMapping([
-                    'feed_attribute_id' => new Int64Value([
-                        'value' => $feedData['line2AttributeId']]),
+                    'feed_attribute_id' => $feedData['line2AttributeId'],
                     'sitelink_field' => SitelinkPlaceholderField::LINE_2
                 ])
             ]
@@ -445,18 +426,14 @@ class AddSitelinksUsingFeeds
     ) {
         // Creates a campaign feed with the specified matching function.
         $campaignFeed = new CampaignFeed([
-            'feed' => new StringValue(['value' => $feedData['feed']]),
+            'feed' => $feedData['feed'],
             'placeholder_types' => [PlaceholderType::SITELINK],
-            'campaign' => new StringValue([
-                'value' => ResourceNames::forCampaign($customerId, $campaignId)
-            ]),
+            'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
             'matching_function' => new MatchingFunction([
-                'function_string' => new StringValue([
-                    'value' => sprintf(
-                        "AND(IN(FEED_ITEM_ID,{ %s }),EQUALS(CONTEXT.DEVICE,'Mobile'))",
-                        implode(',', $feedData['feedItemIds'])
-                    )
-                ])
+                'function_string' => sprintf(
+                    "AND(IN(FEED_ITEM_ID,{ %s }),EQUALS(CONTEXT.DEVICE,'Mobile'))",
+                    implode(',', $feedData['feedItemIds'])
+                )
             ])
         ]);
 
@@ -501,9 +478,7 @@ class AddSitelinksUsingFeeds
             // You must set targeting on a per-feed-item basis. This will restrict the
             // first feed item we added to only serve for the given ad group.
             'feed_item' => $feedItem,
-            'ad_group' => new StringValue([
-                'value' => ResourceNames::forAdGroup($customerId, $adGroupId)
-            ])
+            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId)
         ]);
 
         // Creates a feed item target operation.

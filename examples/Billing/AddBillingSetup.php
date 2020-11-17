@@ -20,23 +20,22 @@ namespace Google\Ads\GoogleAds\Examples\Billing;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
+use Exception;
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V5\ResourceNames;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\BillingSetup;
-use Google\Ads\GoogleAds\V5\Resources\BillingSetup\PaymentsAccountInfo;
-use Google\Ads\GoogleAds\V5\Services\BillingSetupOperation;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V6\ResourceNames;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\BillingSetup;
+use Google\Ads\GoogleAds\V6\Resources\BillingSetup\PaymentsAccountInfo;
+use Google\Ads\GoogleAds\V6\Services\BillingSetupOperation;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
-use Exception;
 
 /**
  * This example creates a billing setup for a customer. A billing setup is a link between
@@ -183,19 +182,15 @@ class AddBillingSetup
             // You can list available payments accounts via the PaymentsAccountService's
             // ListPaymentsAccounts method.
             $billingSetup->setPaymentsAccount(
-                new StringValue([
-                    'value' => ResourceNames::forPaymentsAccount($customerId, $paymentsAccountId)
-                ])
+                ResourceNames::forPaymentsAccount($customerId, $paymentsAccountId)
             );
-        } else if (!is_null($paymentsProfileId)) {
+        } elseif (!is_null($paymentsProfileId)) {
             // Otherwise, create a new payments account by setting the payments account info.
             // See https://support.google.com/google-ads/answer/7268503 for more information about
             // payments profiles.
             $billingSetup->setPaymentsAccountInfo(new PaymentsAccountInfo([
-                'payments_account_name' => new StringValue([
-                    'value' => 'Payments Account #' . uniqid()
-                ]),
-                'payments_profile_id' => new StringValue(['value' => $paymentsProfileId])
+                'payments_account_name' => 'Payments Account #' . uniqid(),
+                'payments_profile_id' => $paymentsProfileId
             ]));
         } else {
             throw new \UnexpectedValueException(
@@ -238,7 +233,7 @@ class AddBillingSetup
 
         if (!is_null($googleAdsRow)) {
             // Retrieves the ending date time of the last billing setup
-            $lastEndingDateTimeString = $googleAdsRow->getBillingSetup()->getEndDateTimeUnwrapped();
+            $lastEndingDateTimeString = $googleAdsRow->getBillingSetup()->getEndDateTime();
 
             if (is_null($lastEndingDateTimeString)) {
                 // A null ending date time indicates that the current billing setup is set to run
@@ -255,13 +250,9 @@ class AddBillingSetup
             // Otherwise, the only acceptable start date time is today.
             $startDate = time();
         }
-        $billingSetup->setStartDateTime(new StringValue([
-            'value' => date('Y-m-d', $startDate)
-        ]));
+        $billingSetup->setStartDateTime(date('Y-m-d', $startDate));
         // Sets the new billing setup to end one day after the starting date time.
-        $billingSetup->setEndDateTime(new StringValue([
-            'value' => date('Y-m-d', strtotime('+1 day', $startDate))
-        ]));
+        $billingSetup->setEndDateTime(date('Y-m-d', strtotime('+1 day', $startDate)));
     }
 }
 

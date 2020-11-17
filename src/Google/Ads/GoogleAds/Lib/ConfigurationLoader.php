@@ -23,9 +23,7 @@ use InvalidArgumentException;
 use UnexpectedValueException;
 
 /**
- * Loads settings from *.ini files into configuration objects.
- *
- * @see Configuration
+ * Loads settings into configuration objects.
  */
 final class ConfigurationLoader
 {
@@ -38,8 +36,7 @@ final class ConfigurationLoader
     public function __construct(
         EnvironmentalVariables $environmentalVariables = null
     ) {
-        $this->environmentalVariables = is_null($environmentalVariables)
-            ? new EnvironmentalVariables() : $environmentalVariables;
+        $this->environmentalVariables = $environmentalVariables ?? new EnvironmentalVariables();
     }
 
     /**
@@ -95,5 +92,16 @@ final class ConfigurationLoader
     public function fromString($iniString)
     {
         return new Configuration(parse_ini_string($iniString, true));
+    }
+
+    /**
+     * Creates a configuration from environment variables with a given prefix.
+     *
+     * @param string|null $prefix the prefix
+     * @return Configuration the created configuration
+     */
+    public function fromEnvironmentVariables(?string $prefix)
+    {
+        return new Configuration($this->environmentalVariables->getStartingWith($prefix));
     }
 }

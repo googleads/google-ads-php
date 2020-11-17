@@ -23,6 +23,7 @@ namespace Google\Ads\GoogleAds\Examples\Utils;
  */
 final class ArgumentNames
 {
+    public const ACCESS_ROLE = 'accessRole';
     public const ADJUSTMENT_DATE_TIME = 'adjustmentDateTime';
     public const ADJUSTMENT_TYPE = 'adjustmentType';
     public const ADVERTISER_UPLOAD_DATE_TIME = 'advertiserUploadDateTime';
@@ -56,10 +57,12 @@ final class ArgumentNames
     public const CRITERION_ID = 'criterionId';
     public const CUSTOMER_ID = 'customerId';
     public const DRAFT_ID = 'draftId';
+    public const EMAIL_ADDRESS = 'emailAddress';
     public const EXTERNAL_ID = 'externalId';
     public const FEED_ID = 'feedId';
     public const FEED_ITEM_ID = 'feedItemId';
     public const FEED_ITEM_IDS = 'feedItemIds';
+    public const FEED_ITEM_SET_ID = 'feedItemSetId';
     public const FLIGHT_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
     public const GCLID = 'gclid';
     public const GEO_TARGET_CONSTANT_ID = 'geoTargetConstantId';
@@ -98,6 +101,7 @@ final class ArgumentNames
     public const USER_LIST_IDS = 'userListIds';
 
     public static $ARGUMENTS_TO_DESCRIPTIONS = [
+        self::ACCESS_ROLE => 'The user access role',
         self::ADJUSTMENT_DATE_TIME => 'The adjustment date time',
         self::ADJUSTMENT_TYPE => 'The adjustment type',
         self::ADVERTISER_UPLOAD_DATE_TIME => 'The advertiser upload date time',
@@ -132,10 +136,12 @@ final class ArgumentNames
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::DRAFT_ID => 'The draft ID',
+        self::EMAIL_ADDRESS => 'The email address',
         self::EXTERNAL_ID => 'The external ID',
         self::FEED_ID => 'The feed ID',
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
+        self::FEED_ITEM_SET_ID => 'The feed item set ID',
         self::FLIGHT_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
         self::GCLID => 'The Google Click ID',
         self::GEO_TARGET_CONSTANT_ID => 'The geo target constant ID',

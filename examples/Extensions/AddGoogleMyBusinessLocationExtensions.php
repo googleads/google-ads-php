@@ -24,25 +24,23 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\V5\Common\MatchingFunction;
-use Google\Ads\GoogleAds\V5\Common\Operand;
-use Google\Ads\GoogleAds\V5\Common\Operand\ConstantOperand;
-use Google\Ads\GoogleAds\V5\Enums\FeedOriginEnum\FeedOrigin;
-use Google\Ads\GoogleAds\V5\Enums\MatchingFunctionOperatorEnum\MatchingFunctionOperator;
-use Google\Ads\GoogleAds\V5\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\CustomerFeed;
-use Google\Ads\GoogleAds\V5\Resources\Feed;
-use Google\Ads\GoogleAds\V5\Resources\Feed\PlacesLocationFeedData;
-use Google\Ads\GoogleAds\V5\Resources\Feed\PlacesLocationFeedData\OAuthInfo;
-use Google\Ads\GoogleAds\V5\Services\CustomerFeedOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\V6\Common\MatchingFunction;
+use Google\Ads\GoogleAds\V6\Common\Operand;
+use Google\Ads\GoogleAds\V6\Common\Operand\ConstantOperand;
+use Google\Ads\GoogleAds\V6\Enums\FeedOriginEnum\FeedOrigin;
+use Google\Ads\GoogleAds\V6\Enums\MatchingFunctionOperatorEnum\MatchingFunctionOperator;
+use Google\Ads\GoogleAds\V6\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\CustomerFeed;
+use Google\Ads\GoogleAds\V6\Resources\Feed;
+use Google\Ads\GoogleAds\V6\Resources\Feed\PlacesLocationFeedData;
+use Google\Ads\GoogleAds\V6\Resources\Feed\PlacesLocationFeedData\OAuthInfo;
+use Google\Ads\GoogleAds\V6\Services\CustomerFeedOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\BoolValue;
-use Google\Protobuf\StringValue;
 
 /**
  * This example adds a feed that syncs feed items from a Google My Business (GMB) account
@@ -173,23 +171,22 @@ class AddGoogleMyBusinessLocationExtensions
     ) {
 
         $gmbFeed = new Feed([
-            'name' => new StringValue(['value' => 'Google My Business feed #' . uniqid()]),
+            'name' => 'Google My Business feed #' . uniqid(),
             'origin' => FeedOrigin::GOOGLE,
             'places_location_feed_data' => new PlacesLocationFeedData([
-                'email_address' => new StringValue(['value' => $gmbEmailAddress]),
-                'business_account_id' => new StringValue(['value' => $businessAccountIdentifier]),
+                'email_address' => $gmbEmailAddress,
+                'business_account_id' => $businessAccountIdentifier,
                 // Used to filter Google My Business listings by labels. If entries exist in
                 // label_filters, only listings that have at least one of the labels set are
                 // candidates to be synchronized into FeedItems. If no entries exist in
                 // label_filters, then all listings are candidates for syncing.
-                'label_filters' => [new StringValue(['value' => 'Stores in New York'])],
+                'label_filters' => ['Stores in New York'],
                 // Sets the authentication info to be able to connect Google Ads to the GMB
                 // account.
                 'oauth_info' => new OAuthInfo([
-                    'http_method' => new StringValue(['value' => 'GET']),
-                    'http_request_url' => new StringValue(['value' => self::GOOGLE_ADS_SCOPE]),
-                    'http_authorization_header' =>
-                        new StringValue(['value' => 'Bearer ' . $gmbAccessToken])
+                    'http_method' => 'GET',
+                    'http_request_url' => self::GOOGLE_ADS_SCOPE,
+                    'http_authorization_header' => 'Bearer ' . $gmbAccessToken
                 ])
 
             ])
@@ -231,16 +228,14 @@ class AddGoogleMyBusinessLocationExtensions
         // Creates a customer feed that associates the feed with this customer for the LOCATION
         // placeholder type.
         $customerFeed = new CustomerFeed([
-            'feed' => new StringValue(['value' => $gmbFeedResourceName]),
+            'feed' => $gmbFeedResourceName,
             'placeholder_types' => [PlaceholderType::LOCATION],
             // Creates a matching function that will always evaluate to true.
             'matching_function' => new MatchingFunction([
                 'left_operands' => [new Operand([
-                    'constant_operand' => new ConstantOperand([
-                        'boolean_value' => new BoolValue(['value' => true])
-                    ])
+                    'constant_operand' => new ConstantOperand(['boolean_value' => true])
                 ])],
-                'function_string' => new StringValue(['value' => 'IDENTITY(true)']),
+                'function_string' => 'IDENTITY(true)',
                 'operator' => MatchingFunctionOperator::IDENTITY
             ])
         ]);

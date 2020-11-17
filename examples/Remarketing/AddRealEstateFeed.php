@@ -25,25 +25,23 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Feeds;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
-use Google\Ads\GoogleAds\V5\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
-use Google\Ads\GoogleAds\V5\Enums\FeedAttributeTypeEnum\FeedAttributeType;
-use Google\Ads\GoogleAds\V5\Enums\PlaceholderTypeEnum\PlaceholderType;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\AttributeFieldMapping;
-use Google\Ads\GoogleAds\V5\Resources\Feed;
-use Google\Ads\GoogleAds\V5\Resources\FeedAttribute;
-use Google\Ads\GoogleAds\V5\Resources\FeedItem;
-use Google\Ads\GoogleAds\V5\Resources\FeedItemAttributeValue;
-use Google\Ads\GoogleAds\V5\Resources\FeedMapping;
-use Google\Ads\GoogleAds\V5\Services\FeedItemOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedMappingOperation;
-use Google\Ads\GoogleAds\V5\Services\FeedOperation;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\V6\Enums\FeedAttributeTypeEnum\FeedAttributeType;
+use Google\Ads\GoogleAds\V6\Enums\PlaceholderTypeEnum\PlaceholderType;
+use Google\Ads\GoogleAds\V6\Enums\RealEstatePlaceholderFieldEnum\RealEstatePlaceholderField;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\AttributeFieldMapping;
+use Google\Ads\GoogleAds\V6\Resources\Feed;
+use Google\Ads\GoogleAds\V6\Resources\FeedAttribute;
+use Google\Ads\GoogleAds\V6\Resources\FeedItem;
+use Google\Ads\GoogleAds\V6\Resources\FeedItemAttributeValue;
+use Google\Ads\GoogleAds\V6\Resources\FeedMapping;
+use Google\Ads\GoogleAds\V6\Services\FeedItemOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedMappingOperation;
+use Google\Ads\GoogleAds\V6\Services\FeedOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\Int64Value;
-use Google\Protobuf\StringValue;
 
 /** Adds a real estate feed, creates the feed mapping, and adds items to the feed. */
 class AddRealEstateFeed
@@ -146,32 +144,32 @@ class AddRealEstateFeed
         // Creates a listing ID attribute.
         $listingIdAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::STRING,
-            'name' => new StringValue(['value' => 'Listing ID'])
+            'name' => 'Listing ID'
         ]);
         // Creates a listing name attribute.
         $listingNameAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::STRING,
-            'name' => new StringValue(['value' => 'Listing Name'])
+            'name' => 'Listing Name'
         ]);
         // Creates a final URLs attribute.
         $finalUrlsAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::URL_LIST,
-            'name' => new StringValue(['value' => 'Final URLs'])
+            'name' => 'Final URLs'
         ]);
         // Creates an image URL attribute.
         $imageUrlAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::URL,
-            'name' => new StringValue(['value' => 'Image URL'])
+            'name' => 'Image URL'
         ]);
         // Creates a contextual keywords attribute.
         $contextualKeywordsAttribute = new FeedAttribute([
             'type' =>  FeedAttributeType::STRING_LIST,
-            'name' => new StringValue(['value' => 'Contextual Keywords'])
+            'name' => 'Contextual Keywords'
         ]);
 
         // Creates the feed with the newly created feed attributes.
         $feed = new Feed([
-            'name' => new StringValue(['value' => 'Real Estate Feed #' . uniqid()]),
+            'name' => 'Real Estate Feed #' . uniqid(),
             'attributes' => [
                 $listingIdAttribute,
                 $listingNameAttribute,
@@ -217,51 +215,35 @@ class AddRealEstateFeed
         // controls how the feed attributes are presented in dynamic content.
         // See RealEstatePlaceholderField.php for the full list of placeholder values.
         $listingIdMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::LISTING_ID]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::LISTING_ID]->getId(),
             'real_estate_field' => RealEstatePlaceholderField::LISTING_ID
         ]);
         $listingNameMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::LISTING_NAME]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::LISTING_NAME]->getId(),
             'real_estate_field' => RealEstatePlaceholderField::LISTING_NAME
         ]);
         $finalUrlsMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::FINAL_URLS]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::FINAL_URLS]->getId(),
             'real_estate_field' => RealEstatePlaceholderField::FINAL_URLS
         ]);
         $imageUrlMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::IMAGE_URL]
-                        ->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::IMAGE_URL]->getId(),
             'real_estate_field' => RealEstatePlaceholderField::IMAGE_URL
         ]);
         $contextualKeywordsMapping = new AttributeFieldMapping([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[
-                        RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS
-                    ]->getIdUnwrapped()
-            ]),
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS]->getId(),
             'real_estate_field' => RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS
         ]);
 
         // Creates the feed mapping.
         $feedMapping = new FeedMapping([
             'placeholder_type' => PlaceholderType::DYNAMIC_REAL_ESTATE,
-            'feed' => new StringValue(['value' => $feedResourceName]),
+            'feed' => $feedResourceName,
             'attribute_field_mappings' => [
                 $listingIdMapping,
                 $listingNameMapping,
@@ -302,60 +284,38 @@ class AddRealEstateFeed
     ) {
         // Creates the listing ID feed attribute value.
         $listingIdAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::LISTING_ID]
-                        ->getIdUnwrapped()
-            ]),
-            'string_value' => new StringValue(['value' => 'ABC123DEF'])
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::LISTING_ID]->getId(),
+            'string_value' => 'ABC123DEF'
         ]);
         // Creates the listing name feed attribute value.
         $listingNameAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::LISTING_NAME]
-                        ->getIdUnwrapped()
-            ]),
-            'string_value' => new StringValue(['value' => 'Two bedroom with magnificent views'])
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::LISTING_NAME]->getId(),
+            'string_value' => 'Two bedroom with magnificent views'
         ]);
         // Creates the final URLs feed attribute value.
         $finalUrlsAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::FINAL_URLS]
-                        ->getIdUnwrapped()
-            ]),
-            'string_values' => [new StringValue(['value' => 'http://www.example.com/listings/'])]
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::FINAL_URLS]->getId(),
+            'string_values' => ['http://www.example.com/listings/']
         ]);
         // Creates the image URL feed attribute value.
         $imageUrlAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::IMAGE_URL]
-                        ->getIdUnwrapped()
-            ]),
-            'string_value' => new StringValue([
-                'value' => 'http://www.example.com/listings/images?listing_id=ABC123DEF'
-            ])
+            'feed_attribute_id'
+                => $placeHoldersToFeedAttributesMap[RealEstatePlaceholderField::IMAGE_URL]->getId(),
+            'string_value' => 'http://www.example.com/listings/images?listing_id=ABC123DEF'
         ]);
         // Creates the contextual keywords feed attribute value.
         $contextualKeywordsAttributeValue = new FeedItemAttributeValue([
-            'feed_attribute_id' => new Int64Value([
-                'value' =>
-                    $placeHoldersToFeedAttributesMap[
-                        RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS
-                    ]->getIdUnwrapped()
-            ]),
-            'string_values' => [
-                new StringValue(['value' => 'beach community']),
-                new StringValue(['value' => 'ocean view']),
-                new StringValue(['value' => 'two bedroom'])
-            ]
+            'feed_attribute_id' => $placeHoldersToFeedAttributesMap[
+                RealEstatePlaceholderField::CONTEXTUAL_KEYWORDS]->getId(),
+            'string_values' => ['beach community', 'ocean view', 'two bedroom']
         ]);
 
         // Creates the feed item, specifying the feed ID and the attributes created above.
         $feedItem = new FeedItem([
-            'feed' => new StringValue(['value' => $feedResourceName]),
+            'feed' => $feedResourceName,
             'attribute_values' => [
                 $listingIdAttributeValue,
                 $listingNameAttributeValue,

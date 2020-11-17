@@ -85,6 +85,31 @@ class OAuth2TokenBuilderTest extends TestCase
         $this->assertEquals('test-refresh-token', $oAuth2TokenBuilder->getRefreshToken());
     }
 
+    public function testBuildWithWebOrInstalledAppFlowFromCustomDefaultFile()
+    {
+        $environmentalVariablesMock = $this
+            ->getMockBuilder(EnvironmentalVariables::class)
+            ->getMock();
+        $environmentalVariablesMock
+            ->method('get')
+            ->with(GoogleAdsBuilder::DEFAULT_CONFIGURATION_FILENAME_ENVIRONMENT_VARIABLE_NAME)
+            ->willReturn(ConfigurationLoaderTestProvider::getFakeHomeFilePathForTestIniFile());
+        $configurationLoader = new ConfigurationLoader($environmentalVariablesMock);
+
+        $oAuth2TokenBuilder = new OAuth2TokenBuilder(
+            $configurationLoader,
+            $environmentalVariablesMock
+        );
+        $tokenFetcher = $oAuth2TokenBuilder
+            ->fromFile()
+            ->build();
+
+        $this->assertInstanceOf(UserRefreshCredentials::class, $tokenFetcher);
+        $this->assertEquals('test-id', $oAuth2TokenBuilder->getClientId());
+        $this->assertEquals('test-secret', $oAuth2TokenBuilder->getClientSecret());
+        $this->assertEquals('test-refresh-token', $oAuth2TokenBuilder->getRefreshToken());
+    }
+
     /**
      * @expectedException \UnexpectedValueException
      * @expectedExceptionMessageRegExp /clientId.+clientSecret.+refreshToken.+must be set/

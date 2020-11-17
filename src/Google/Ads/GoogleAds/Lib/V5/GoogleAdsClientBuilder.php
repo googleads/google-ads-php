@@ -21,6 +21,8 @@ namespace Google\Ads\GoogleAds\Lib\V5;
 use Google\Ads\GoogleAds\Lib\Configuration;
 use Google\Ads\GoogleAds\Lib\ConfigurationLoader;
 use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
+use Google\Ads\GoogleAds\Lib\AbstractGoogleAdsBuilder;
+use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
@@ -31,7 +33,7 @@ use Psr\Log\LogLevel;
  *
  * @see GoogleAdsClient
  */
-final class GoogleAdsClientBuilder implements GoogleAdsBuilder
+final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
 {
     private static $DEFAULT_LOGGER_CHANNEL = 'google-ads';
 
@@ -47,30 +49,12 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
     private $proxy;
     private $transport;
 
-    private $configurationLoader;
-
-    public function __construct(ConfigurationLoader $configurationLoader = null)
-    {
-        $this->configurationLoader = $configurationLoader ?? new ConfigurationLoader();
+    public function __construct(
+        ConfigurationLoader $configurationLoader = null,
+        EnvironmentalVariables $environmentalVariables = null
+    ) {
+        parent::__construct($configurationLoader, $environmentalVariables);
         $this->loggerFactory = new LoggerFactory();
-    }
-
-    /**
-     * Reads configuration settings from the specified file path. The file path
-     * is optional, and if omitted, it will look for the default configuration
-     * filename in the home directory of the user running PHP.
-     *
-     * @param string $path the file path
-     * @return self this builder populated from the configuration
-     * @throws InvalidArgumentException if the configuration file could not be
-     *     found
-     */
-    public function fromFile(string $path = null)
-    {
-        if ($path === null) {
-            $path = self::DEFAULT_CONFIGURATION_FILENAME;
-        }
-        return $this->from($this->configurationLoader->fromFile($path));
     }
 
     /**
@@ -96,6 +80,25 @@ final class GoogleAdsClientBuilder implements GoogleAdsBuilder
         );
         $this->proxy = $configuration->getConfiguration('proxy', 'CONNECTION');
         $this->transport = $configuration->getConfiguration('transport', 'CONNECTION');
+
+        return $this;
+    }
+
+    /**
+     * Populates this builder from the specified configuration object.
+     *
+     * @param Configuration $configuration the configuration
+     * @return self this builder populated from the configuration
+     */
+    public function fromEnvironmentVariablesConfiguration(Configuration $configuration)
+    {
+        $this->developerToken = $configuration->getConfiguration('DEVELOPER_TOKEN') ??
+            $this->developerToken;
+        $this->loginCustomerId = $configuration->getConfiguration('LOGIN_CUSTOMER_ID') ??
+            $this->loginCustomerId;
+        $this->linkedCustomerId = $configuration->getConfiguration('LINKED_CUSTOMER_ID') ??
+            $this->linkedCustomerId;
+        $this->endpoint = $configuration->getConfiguration('ENDPOINT') ?? $this->endpoint;
 
         return $this;
     }

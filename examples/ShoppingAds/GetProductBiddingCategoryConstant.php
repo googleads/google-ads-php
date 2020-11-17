@@ -23,13 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V5\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V5\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V5\Resources\ProductBiddingCategoryConstant;
-use Google\Ads\GoogleAds\V5\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V6\Resources\ProductBiddingCategoryConstant;
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 
 /** Fetches the set of valid ProductBiddingCategories. */
@@ -134,13 +134,13 @@ class GetProductBiddingCategoryConstant
             // Sets the localized name attribute if not already set.
             if (!array_key_exists('localizedName', $biddingCategories[$resourceName])) {
                 $biddingCategories[$resourceName]['localizedName'] =
-                    $productBiddingCategory->getLocalizedNameUnwrapped();
+                    $productBiddingCategory->getLocalizedName();
             }
 
             if ($productBiddingCategory->getProductBiddingCategoryConstantParent() !== null) {
                 // Links the category to the parent category if any.
                 $parentResourceName =
-                    $productBiddingCategory->getProductBiddingCategoryConstantParentUnwrapped();
+                    $productBiddingCategory->getProductBiddingCategoryConstantParent();
                 // Adds the parent category in the map if new.
                 if (!array_key_exists($parentResourceName, $biddingCategories)) {
                     $biddingCategories[$parentResourceName] = [];
