@@ -290,7 +290,7 @@ class GetAccountHierarchy
         print 'No manager customer ID is specified. The example will print the hierarchies of'
             . ' all accessible customer IDs:' . PHP_EOL;
         foreach ($accessibleCustomers->getResourceNames() as $customerResourceName) {
-            $customer = CustomerServiceClient::parseName($customerResourceName)['customer'];
+            $customer = CustomerServiceClient::parseName($customerResourceName)['customer_id'];
             print $customer . PHP_EOL;
             $accessibleCustomerIds[] = intval($customer);
         }
