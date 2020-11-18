@@ -131,6 +131,10 @@ API](https://developers.google.com/google-ads/api/docs/start).
     the examples require parameters. You can see what are required by running
     code examples with `--help` as a command-line parameter.
 
+    **Note:** You will find comments with the formats `[START...]` and `[END...]`
+    in the source code of these examples. These are only used for technical purposes,
+    you can completely disregard them.
+
 ## Basic usage
 
 ### Instantiate a client
