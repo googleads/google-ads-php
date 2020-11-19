@@ -36,7 +36,7 @@ use Google\Ads\GoogleAds\V6\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
 
 /**
- * Updates the sitelink extension feed item with the specified link text and URL.
+ * Updates the sitelink extension feed item with the specified link text.
  */
 class UpdateSitelink
 {
