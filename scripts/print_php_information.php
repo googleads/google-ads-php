@@ -23,7 +23,8 @@
 function printExtensionInformation(string $extensionName)
 {
     $isInstalled =  extension_loaded($extensionName);
-    printf('The PHP Extension %s is %sinstalled%s%s',
+    printf(
+        'The PHP Extension %s is %sinstalled%s%s',
         $extensionName,
         $isInstalled ? '' : 'not ',
         $isInstalled ? ': ' . phpversion($extensionName) : '',
