@@ -23,7 +23,9 @@ use Google\Ads\GoogleAds\Lib\Testing\OAuth2TokenBuilderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use UnexpectedValueException;
 
 /**
  * Unit tests for `OAuth2TokenBuilder`.
@@ -42,7 +44,7 @@ class OAuth2TokenBuilderTest extends TestCase
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->oAuth2TokenBuilder = new OAuth2TokenBuilder();
         $this->jsonKeyFilePath = OAuth2TokenBuilderTestProvider::getFakeJsonKeyFilePath();
@@ -110,12 +112,11 @@ class OAuth2TokenBuilderTest extends TestCase
         $this->assertEquals('test-refresh-token', $oAuth2TokenBuilder->getRefreshToken());
     }
 
-    /**
-     * @expectedException \UnexpectedValueException
-     * @expectedExceptionMessageRegExp /clientId.+clientSecret.+refreshToken.+must be set/
-     */
     public function testBuildFailsWhenMissingRequiredValuesForInstAppOrWebFlow()
     {
+        $this->expectException(UnexpectedValueException::class);
+        $this->expectExceptionMessage("All of 'clientId', 'clientSecret', and 'refreshToken' " .
+            "must be set when using installed/web application flow.");
         $this->oAuth2TokenBuilder
             ->withClientId('abcxyz-123.apps.googleusercontent.com')
             ->withClientSecret('ABcXyZ-123abc')
@@ -188,12 +189,11 @@ class OAuth2TokenBuilderTest extends TestCase
         );
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessageRegExp /both service account.+installed.+web.+flow.+set/
-     */
     public function testBuildFailsWhenSettingValuesForMultipleFlows()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Cannot have both service account flow and installed/web ' .
+            'application flow credential values set.');
         $this->oAuth2TokenBuilder
             ->withJsonKeyFilePath($this->jsonKeyFilePath)
             ->withScopes('https://www.googleapis.com/auth/adwords')
@@ -222,12 +222,11 @@ class OAuth2TokenBuilderTest extends TestCase
         $this->assertInstanceOf(ServiceAccountCredentials::class, $tokenFetcher);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessageRegExp /jsonKeyFilePath.+scopes.+must be set/
-     */
     public function testBuildFailsWhenMissingRequiredValuesForServiceAccountFlow()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("Both 'jsonKeyFilePath' and 'scopes' must be set when" .
+            " using service account flow.");
         $this->oAuth2TokenBuilder
             ->withJsonKeyFilePath($this->jsonKeyFilePath)
             ->build();

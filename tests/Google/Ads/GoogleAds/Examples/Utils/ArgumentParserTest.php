@@ -18,7 +18,9 @@
 
 namespace Google\Ads\GoogleAds\Examples\Utils;
 
+use GetOpt\ArgumentException;
 use GetOpt\GetOpt;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -33,7 +35,7 @@ class ArgumentParserTest extends TestCase
     /** @var ArgumentParser $argumentParser */
     private $argumentParser;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->argumentParser = new ArgumentParser();
     }
@@ -92,11 +94,11 @@ class ArgumentParserTest extends TestCase
 
     /**
      * @covers \Google\Ads\GoogleAds\Examples\Utils\ArgumentParser::parseCommandArguments()
-     * @expectedException \GetOpt\ArgumentException
-     * @expectedExceptionMessage 'customerId' must have a value
      */
     public function testPassingRequiredArgumentButMissingValue()
     {
+        $this->expectException(ArgumentException::class);
+        $this->expectExceptionMessage("'customerId' must have a value");
         $this->expectOutputRegex('/Usage/');
         $_SERVER['argv'] = [null, '--campaignId', 11111, '--customerId'];
         $this->argumentParser->parseCommandArguments(
@@ -106,11 +108,11 @@ class ArgumentParserTest extends TestCase
 
     /**
      * @covers \Google\Ads\GoogleAds\Examples\Utils\ArgumentParser::parseCommandArguments()
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage All required arguments must be specified
      */
     public function testPassingOptionalWithoutRequiredArguments()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('All required arguments must be specified');
         $this->expectOutputRegex('/Usage/');
         $_SERVER['argv'] = [null, '--campaignId', 11111];
         $this->argumentParser->parseCommandArguments(
@@ -120,11 +122,11 @@ class ArgumentParserTest extends TestCase
 
     /**
      * @covers \Google\Ads\GoogleAds\Examples\Utils\ArgumentParser::parseCommandArguments()
-     * @expectedException \GetOpt\ArgumentException
-     * @expectedExceptionMessage Option 'adGroupId' is unknown
      */
     public function testPassingInvalidArguments()
     {
+        $this->expectException(ArgumentException::class);
+        $this->expectExceptionMessage("Option 'adGroupId' is unknown");
         $this->expectOutputRegex('/Usage/');
         $_SERVER['argv'] = [null, '--adGroupId', 11111];
         $this->argumentParser->parseCommandArguments(

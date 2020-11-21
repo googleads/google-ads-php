@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds\Lib;
 
 use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use UnexpectedValueException;
 
@@ -38,7 +39,7 @@ class ConfigurationLoaderTest extends TestCase
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $environmentalVariablesMock = $this
             ->getMockBuilder(EnvironmentalVariables::class)
@@ -73,19 +74,15 @@ class ConfigurationLoaderTest extends TestCase
         $this->assertInstanceOf(Configuration::class, $config);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testFromFileFileDoesNotExistAnywhere()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->configurationLoader->fromFile('asdf.ini');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testFromFileFileHomeDirDoesNotExist()
     {
+        $this->expectException(InvalidArgumentException::class);
         $environmentalVariablesMock = $this
             ->getMockBuilder(EnvironmentalVariables::class)
             ->getMock();

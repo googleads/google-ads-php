@@ -37,7 +37,7 @@ class GoogleAdsResponseMetadataTest extends TestCase
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->metadata = ['request-id' => ['AbCdEf'], 'dummy-key' => ['value1', 'value2']];
         $this->googleAdsResponseMetadata = new GoogleAdsResponseMetadata($this->metadata);

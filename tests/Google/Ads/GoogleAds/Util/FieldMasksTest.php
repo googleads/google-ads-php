@@ -139,11 +139,11 @@ class FieldMasksTest extends TestCase
     }
 
     /**
-     * @expectedException UnexpectedValueException
      * @dataProvider getFieldValueFailureProvider
      */
     public function testGetFieldValueObjectStructureNotMatch($fieldMaskPath, $object)
     {
+        $this->expectException(UnexpectedValueException::class);
         FieldMasks::getFieldValue($fieldMaskPath, $object);
     }
 

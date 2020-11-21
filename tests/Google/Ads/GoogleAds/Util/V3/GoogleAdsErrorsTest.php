@@ -36,7 +36,7 @@ class GoogleAdsErrorsTest extends TestCase
 {
     private $failure;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->failure = $this->createGoogleAdsFailure();
         $any = new Any();
