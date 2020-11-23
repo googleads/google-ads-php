@@ -51,7 +51,7 @@ class RunExamples
     // is the customer ID of the authorized customer to use in the request, without
     // hyphens (-). If your access to the customer account is through a manager account,
     // this parameter is required and must be set to the customer ID of the manager account.
-    // See https://developers.google.com/google-ads/api/docs/concepts/call-structure#login-customer-id
+    // See https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid
     // to learn more about this setting.
     private const LOGIN_CUSTOMER_ID = 'INSERT_LOGIN_CUSTOMER_ID_HERE';
 
