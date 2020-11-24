@@ -76,11 +76,11 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('RequestId: "AbCdEfGh"', $actualOutput);
-        $this->assertContains('Method: "GoogleAdsService/Search"', $actualOutput);
-        $this->assertContains('CustomerId: 1234567890', $actualOutput);
-        $this->assertContains('Host: "googleads.api.com"', $actualOutput);
-        $this->assertContains('IsFault: 0', $actualOutput);
+        $this->assertStringContainsString('RequestId: "AbCdEfGh"', $actualOutput);
+        $this->assertStringContainsString('Method: "GoogleAdsService/Search"', $actualOutput);
+        $this->assertStringContainsString('CustomerId: 1234567890', $actualOutput);
+        $this->assertStringContainsString('Host: "googleads.api.com"', $actualOutput);
+        $this->assertStringContainsString('IsFault: 0', $actualOutput);
     }
 
     public function testFormatSummaryWithFailureRequest()
@@ -102,11 +102,11 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('RequestId: "AbCdEfGhIJk"', $actualOutput);
-        $this->assertContains('Method: "GoogleAdsService/Search"', $actualOutput);
-        $this->assertContains('CustomerId: 1234567890', $actualOutput);
-        $this->assertContains('Host: "googleads.api.com"', $actualOutput);
-        $this->assertContains('IsFault: 1', $actualOutput);
+        $this->assertStringContainsString('RequestId: "AbCdEfGhIJk"', $actualOutput);
+        $this->assertStringContainsString('Method: "GoogleAdsService/Search"', $actualOutput);
+        $this->assertStringContainsString('CustomerId: 1234567890', $actualOutput);
+        $this->assertStringContainsString('Host: "googleads.api.com"', $actualOutput);
+        $this->assertStringContainsString('IsFault: 1', $actualOutput);
     }
 
     public function testFormatSummaryWithNoCustomerIdInRequest()
@@ -120,17 +120,17 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('RequestId: "AbCdEfGh"', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('RequestId: "AbCdEfGh"', $actualOutput);
+        $this->assertStringContainsString(
             'Method: "GeoTargetConstantService/SuggestGeoTargetConstants"',
             $actualOutput
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'CustomerId: "No customer ID could be extracted from the request"',
             $actualOutput
         );
-        $this->assertContains('Host: "googleads.api.com"', $actualOutput);
-        $this->assertContains('IsFault: 0', $actualOutput);
+        $this->assertStringContainsString('Host: "googleads.api.com"', $actualOutput);
+        $this->assertStringContainsString('IsFault: 0', $actualOutput);
     }
 
     public function testFormatSummaryWithResourceNameInRequest()
@@ -144,14 +144,14 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('RequestId: "AbCdEfGh"', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('RequestId: "AbCdEfGh"', $actualOutput);
+        $this->assertStringContainsString(
             'Method: "CustomerService/GetCustomer"',
             $actualOutput
         );
-        $this->assertContains('CustomerId: 1234567890', $actualOutput);
-        $this->assertContains('Host: "googleads.api.com"', $actualOutput);
-        $this->assertContains('IsFault: 0', $actualOutput);
+        $this->assertStringContainsString('CustomerId: 1234567890', $actualOutput);
+        $this->assertStringContainsString('Host: "googleads.api.com"', $actualOutput);
+        $this->assertStringContainsString('IsFault: 0', $actualOutput);
     }
 
     public function testFormatDetail()
@@ -165,16 +165,16 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertContains('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertContains('Method Name: GoogleAdsService/Search', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
+        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
+        $this->assertStringContainsString('Method Name: GoogleAdsService/Search', $actualOutput);
+        $this->assertStringContainsString(
             'Request: ' . "\n"
             . '{"customerId":"1234567890","query":"SELECT campaign.id FROM campaign"}',
             $actualOutput
         );
-        $this->assertContains('Host: googleads.api.com', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
+        $this->assertStringContainsString(
             'Response: ' . "\n"
             . '{"results":[{"campaign":{"id":"1"}},{"campaign":{"id":"2"}},'
             . '{"campaign":{"id":"3"}}]}',
@@ -212,21 +212,24 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertContains('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertContains('Method Name: GoogleAdsService/Search', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
+        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
+        $this->assertStringContainsString('Method Name: GoogleAdsService/Search', $actualOutput);
+        $this->assertStringContainsString(
             'Request: ' . "\n"
             . '{"customerId":"1234567890","query":"SELECT campaign.id FROM campaign"}',
             $actualOutput
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'Details: Request is missing required authentication credential. Expected OAuth '
             . '2 access token, login cookie or other valid authentication credential.',
             $actualOutput
         );
-        $this->assertContains('"authenticationError":"AUTHENTICATION_ERROR"', $actualOutput);
-        $this->assertContains('Host: googleads.api.com', $actualOutput);
+        $this->assertStringContainsString(
+            '"authenticationError":"AUTHENTICATION_ERROR"',
+            $actualOutput
+        );
+        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
     }
 
     public function testFormatDetailWithResponseContainingCustomerUserAccess()
@@ -240,18 +243,18 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertContains('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertContains('Method Name: GoogleAdsService/Search', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
+        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
+        $this->assertStringContainsString('Method Name: GoogleAdsService/Search', $actualOutput);
+        $this->assertStringContainsString(
             'Request: ' . "\n"
             . '{"customerId":"1234567890",'
             . '"query":"SELECT customer_user_access.email_address,'
             . 'customer_user_access.inviter_user_email_address FROM customer_user_access"}',
             $actualOutput
         );
-        $this->assertContains('Host: googleads.api.com', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
+        $this->assertStringContainsString(
             'Response: ' . "\n"
             . '{"results":[{"customerUserAccess":{"emailAddress":"REDACTED",'
             . '"inviterUserEmailAddress":"REDACTED"}}],"fieldMask":'
@@ -271,17 +274,17 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertContains('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertContains('Method Name: GoogleAdsService/Search', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
+        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
+        $this->assertStringContainsString('Method Name: GoogleAdsService/Search', $actualOutput);
+        $this->assertStringContainsString(
             'Request: ' . "\n"
             . '{"customerId":"1234567890",'
             . '"query":"SELECT change_event.user_email FROM change_event"}',
             $actualOutput
         );
-        $this->assertContains('Host: googleads.api.com', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
+        $this->assertStringContainsString(
             'Response: ' . "\n"
             . '{"results":[{"changeEvent":{"userEmail":"REDACTED"}}],"fieldMask":'
             . '"changeEvent.userEmail"}',
@@ -300,17 +303,17 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertContains('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertContains('Method Name: GoogleAdsService/SearchStream', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
+        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
+        $this->assertStringContainsString('Method Name: GoogleAdsService/SearchStream', $actualOutput);
+        $this->assertStringContainsString(
             'Request: ' . "\n"
             . '{"customerId":"1234567890",'
             . '"query":"SELECT feed.places_location_feed_data.email_address FROM feed"}',
             $actualOutput
         );
-        $this->assertContains('Host: googleads.api.com', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
+        $this->assertStringContainsString(
             'Response: ' . "\n"
             . '{"results":[{"feed":{"placesLocationFeedData":{"emailAddress":"REDACTED"}}}],'
             . '"fieldMask":"feed.placesLocationFeedData.emailAddress"}',
@@ -329,15 +332,15 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertContains('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertContains('Method Name: CustomerService/CreateCustomer', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
+        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
+        $this->assertStringContainsString('Method Name: CustomerService/CreateCustomer', $actualOutput);
+        $this->assertStringContainsString(
             'Request: ' . "\n" . '{"customerId":"1234567890","emailAddress":"REDACTED"}',
             $actualOutput
         );
-        $this->assertContains('Host: googleads.api.com', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
+        $this->assertStringContainsString(
             'Response: ' . "\n" . '{"invitationLink":"http://example.com"}',
             $actualOutput
         );
@@ -362,15 +365,15 @@ class LogMessageFormatterTest extends TestCase
             'googleads.api.com'
         );
 
-        $this->assertContains('"request-id": "AbCdEfGhIJk"', $actualOutput);
-        $this->assertContains('"developer-token": "REDACTED"', $actualOutput);
-        $this->assertContains('Method Name: GoogleAdsService/Search', $actualOutput);
-        $this->assertContains(
+        $this->assertStringContainsString('"request-id": "AbCdEfGhIJk"', $actualOutput);
+        $this->assertStringContainsString('"developer-token": "REDACTED"', $actualOutput);
+        $this->assertStringContainsString('Method Name: GoogleAdsService/Search', $actualOutput);
+        $this->assertStringContainsString(
             'Request: ' . "\n" . '{"customerId":"1234567890",' . $loggedQuery . '}',
             $actualOutput
         );
-        $this->assertContains('Host: googleads.api.com', $actualOutput);
-        $this->assertContains('Response: ' . "\n" . $loggedResult, $actualOutput);
+        $this->assertStringContainsString('Host: googleads.api.com', $actualOutput);
+        $this->assertStringContainsString('Response: ' . "\n" . $loggedResult, $actualOutput);
     }
 
     public function queryWithGoogleAdsRowProvider()

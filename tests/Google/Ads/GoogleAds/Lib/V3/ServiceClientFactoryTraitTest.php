@@ -148,7 +148,7 @@ class ServiceClientFactoryTraitTest extends TestCase
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $googleAdsClientBuilder = new GoogleAdsClientBuilder();
         $fetchAuthTokenInterfaceMock = $this

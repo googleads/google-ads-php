@@ -40,7 +40,7 @@ class GoogleAdsExceptionTraitTest extends TestCase
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->statusMetadataExtractor = $this
             ->getMockBuilder(StatusMetadataExtractor::class)
@@ -52,11 +52,9 @@ class GoogleAdsExceptionTraitTest extends TestCase
         $this->googleAdsExceptionTraitInserted = new GoogleAdsExceptionTraitInserted();
     }
 
-    /**
-     * @expectedException \Google\Ads\GoogleAds\Lib\V3\GoogleAdsException
-     */
     public function testThrowGoogleAdsExceptionUsingBinaryKey()
     {
+        $this->expectException(GoogleAdsException::class);
         $metadata = ['google.ads.googleads.v3.errors.googleadsfailure-bin' => ['test']];
         $apiException = new ApiException('dummy', 404, 'error', ['metadata' => $metadata]);
         $this->googleAdsExceptionTraitInserted->throwGoogleAdsException(
@@ -65,11 +63,9 @@ class GoogleAdsExceptionTraitTest extends TestCase
         );
     }
 
-    /**
-     * @expectedException \Google\Ads\GoogleAds\Lib\V3\GoogleAdsException
-     */
     public function testThrowGoogleAdsExceptionUsingJsonKey()
     {
+        $this->expectException(GoogleAdsException::class);
         $metadata = ['google.ads.googleads.v3.errors.googleadsfailure' => ['test']];
         $apiException = new ApiException('dummy', 404, 'error', ['metadata' => $metadata]);
         $this->googleAdsExceptionTraitInserted->throwGoogleAdsException(

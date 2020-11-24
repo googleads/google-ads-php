@@ -42,7 +42,7 @@ class GoogleAdsExceptionTest extends TestCase
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->apiExceptionMock = $this
             ->getMockBuilder(ApiException::class)

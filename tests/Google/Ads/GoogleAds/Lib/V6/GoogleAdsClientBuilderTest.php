@@ -24,6 +24,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -52,7 +53,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->googleAdsClientBuilder = new GoogleAdsClientBuilder();
         $this->fetchAuthTokenInterfaceMock = $this
@@ -168,21 +169,17 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame($editedDeveloperToken, $googleAdsClient->getDeveloperToken());
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testBuildFailsWithoutDeveloperToken()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testBuildFailsWithInvalidEndpointUrl()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withEndpoint('http://:999')
@@ -190,11 +187,9 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testBuildFailsWithoutOAuth2Credential()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->build();
@@ -202,10 +197,10 @@ class GoogleAdsClientBuilderTest extends TestCase
 
     /**
      * @dataProvider provideInvalidProxyURIs
-     * @expectedException \InvalidArgumentException
      */
     public function testBuildFailsWithInvalidProxyUri($invalidProxyUri)
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withProxy($invalidProxyUri)
@@ -223,11 +218,9 @@ class GoogleAdsClientBuilderTest extends TestCase
         ];
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testBuildFailsWithInvalidTransport()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withTransport(self::$INVALID_TRANSPORT)
@@ -309,11 +302,9 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertNull($googleAdsClient->getLinkedCustomerId());
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testBuildWithNegativeLoginCustomerId()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withLoginCustomerId(-1)
@@ -321,11 +312,9 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testBuildWithNegativeLinkedCustomerId()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withLinkedCustomerId(-1)
@@ -389,11 +378,9 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame(LogLevel::INFO, $googleAdsClient->getLogLevel());
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testBuildWithInvalidLogLevelThrowsException()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)

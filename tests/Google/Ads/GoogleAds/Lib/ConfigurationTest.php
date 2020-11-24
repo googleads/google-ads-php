@@ -35,7 +35,7 @@ class ConfigurationTest extends TestCase
     /**
      * @see \PHPUnit\Framework\TestCase::setUp()
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->configuration = new Configuration(['DEFAULT' => ['a' => 'value'], 'b' => 'value2']);
     }
