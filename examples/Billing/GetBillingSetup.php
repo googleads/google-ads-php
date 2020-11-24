@@ -94,6 +94,7 @@ class GetBillingSetup
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START GetBillingSetup]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -147,6 +148,7 @@ class GetBillingSetup
             );
         }
     }
+    // [END GetBillingSetup]
 }
 
 GetBillingSetup::main();

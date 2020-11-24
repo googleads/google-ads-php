@@ -106,6 +106,7 @@ class AddExpressionRuleUserList
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START AddExpressionRuleUserList]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId
@@ -179,6 +180,7 @@ class AddExpressionRuleUserList
             PHP_EOL
         );
     }
+    // [END AddExpressionRuleUserList]
 }
 
 AddExpressionRuleUserList::main();

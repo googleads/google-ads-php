@@ -101,6 +101,7 @@ class GetChangeDetails
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START GetChangeDetails]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -240,6 +241,7 @@ class GetChangeDetails
             return strval($value);
         }
     }
+    // [END GetChangeDetails]
 }
 
 GetChangeDetails::main();

@@ -161,6 +161,7 @@ class AddCompleteCampaignsUsingBatchJob
      * @param int $customerId the customer ID
      * @return string the resource name of the created batch job
      */
+    // [START AddCompleteCampaignsUsingBatchJob]
     private static function createBatchJob(
         BatchJobServiceClient $batchJobServiceClient,
         int $customerId
@@ -181,6 +182,7 @@ class AddCompleteCampaignsUsingBatchJob
         );
         return $batchJobResourceName;
     }
+    // [END AddCompleteCampaignsUsingBatchJob]
 
     /**
      * Adds all batch job operations to the batch job. As this is the first time for this
@@ -192,6 +194,7 @@ class AddCompleteCampaignsUsingBatchJob
      * @param string $batchJobResourceName the resource name of batch job to which the batch job
      *     operations will be added
      */
+    // [START AddCompleteCampaignsUsingBatchJob_1]
     private static function addAllBatchJobOperations(
         BatchJobServiceClient $batchJobServiceClient,
         int $customerId,
@@ -213,6 +216,7 @@ class AddCompleteCampaignsUsingBatchJob
             PHP_EOL
         );
     }
+    // [END AddCompleteCampaignsUsingBatchJob_1]
 
     /**
      * Requests the API to run the batch job for executing all uploaded batch job operations.
@@ -221,6 +225,7 @@ class AddCompleteCampaignsUsingBatchJob
      * @param string $batchJobResourceName the resource name of batch job to be run
      * @return OperationResponse the operation response from running batch job
      */
+    // [START AddCompleteCampaignsUsingBatchJob_2]
     private static function runBatchJob(
         BatchJobServiceClient $batchJobServiceClient,
         string $batchJobResourceName
@@ -233,6 +238,7 @@ class AddCompleteCampaignsUsingBatchJob
         );
         return $operationResponse;
     }
+    // [END AddCompleteCampaignsUsingBatchJob_2]
 
     /**
      * Polls the server until the batch job execution finishes by setting the initial poll
@@ -240,6 +246,7 @@ class AddCompleteCampaignsUsingBatchJob
      *
      * @param OperationResponse $operationResponse the operation response used to poll the server
      */
+    // [START AddCompleteCampaignsUsingBatchJob_3]
     private static function pollBatchJob(OperationResponse $operationResponse)
     {
         $operationResponse->pollUntilComplete([
@@ -247,6 +254,7 @@ class AddCompleteCampaignsUsingBatchJob
             'totalPollTimeoutMillis' => self::MAX_TOTAL_POLL_INTERVAL_SECONDS * 1000
         ]);
     }
+    // [END AddCompleteCampaignsUsingBatchJob_3]
 
     /**
      * Prints all the results from running the batch job.
@@ -254,6 +262,7 @@ class AddCompleteCampaignsUsingBatchJob
      * @param BatchJobServiceClient $batchJobServiceClient the batch job service client
      * @param string $batchJobResourceName the resource name of batch job to get its results
      */
+    // [START AddCompleteCampaignsUsingBatchJob_4]
     private static function fetchAndPrintResults(
         BatchJobServiceClient $batchJobServiceClient,
         string $batchJobResourceName
@@ -282,6 +291,7 @@ class AddCompleteCampaignsUsingBatchJob
             );
         }
     }
+    // [END AddCompleteCampaignsUsingBatchJob_4]
 
     /**
      * Builds all operations for creating a complete campaign and return an array of their

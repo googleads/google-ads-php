@@ -107,6 +107,7 @@ class AddAdGroupBidModifier
      * @param int $adGroupId the ad group ID to add an ad group bid modifier to
      * @param float $bidModifierValue the bid modifier value to set
      */
+    // [START AddAdGroupBidModifier]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -139,6 +140,7 @@ class AddAdGroupBidModifier
             print $addedAdGroupBidModifier->getResourceName() . PHP_EOL;
         }
     }
+    // [END AddAdGroupBidModifier]
 }
 
 AddAdGroupBidModifier::main();
