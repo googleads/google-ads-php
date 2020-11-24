@@ -33,10 +33,10 @@ function printExtensionInformation(string $extensionName)
 }
 
 // Prints the general information about PHP.
-print '================= PHP GENERAL INFORMATION =====' . PHP_EOL;
+print '================= PHP GENERAL INFORMATION' . PHP_EOL;
 phpinfo(INFO_GENERAL) . PHP_EOL;
 
 // Prints information about the two optional PHP Extensions.
-print '================= PHP EXTENSION INFORMATION ===' . PHP_EOL;
+print '================= PHP EXTENSION INFORMATION' . PHP_EOL;
 printExtensionInformation('grpc');
 printExtensionInformation('protobuf');
