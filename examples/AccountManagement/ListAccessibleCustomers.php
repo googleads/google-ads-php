@@ -34,7 +34,7 @@ use Google\ApiCore\ApiException;
  * The customer IDs retrieved from the resource names can be used to set
  * the login-customer-id configuration. For more information see this
  * documentation:
- * https://developers.google.com/google-ads/api/docs/concepts/call-structure#login-customer-id
+ * https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid
  */
 class ListAccessibleCustomers
 {
