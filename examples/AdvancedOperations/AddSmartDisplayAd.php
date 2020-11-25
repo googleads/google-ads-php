@@ -173,6 +173,7 @@ class AddSmartDisplayAd
      * @param int $customerId the customer ID
      * @return string the resource name of newly created campaign budget
      */
+    // [START AddSmartDisplayAd]
     private static function createCampaignBudget(
         GoogleAdsClient $googleAdsClient,
         int $customerId
@@ -202,6 +203,7 @@ class AddSmartDisplayAd
 
         return $campaignBudgetResourceName;
     }
+    // [END AddSmartDisplayAd]
 
     /**
      * Creates a Smart Display campaign.
@@ -211,6 +213,7 @@ class AddSmartDisplayAd
      * @param string $campaignBudgetResourceName the resource name of the campaign budget
      * @return string the resource name of the newly created campaign
      */
+    // [START AddSmartDisplayAd_1]
     private static function createSmartDisplayCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -249,6 +252,7 @@ class AddSmartDisplayAd
 
         return $campaignResourceName;
     }
+    // [END AddSmartDisplayAd_1]
 
     /**
      * Creates an ad group.
@@ -258,6 +262,7 @@ class AddSmartDisplayAd
      * @param string $campaignResourceName the resource name of the campaign
      * @return string the resource name of the newly created ad group
      */
+    // [START AddSmartDisplayAd_4]
     private static function createAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -285,6 +290,7 @@ class AddSmartDisplayAd
 
         return $adGroupResourceName;
     }
+    // [END AddSmartDisplayAd_4]
 
     /**
      * Creates a responsive display ad, which is a recommended ad type for Smart Display campaigns.
@@ -295,6 +301,7 @@ class AddSmartDisplayAd
      * @param int|null $marketingImageAssetId optional, the ID of marketing image asset
      * @param int|null $squareMarketingImageAssetId optional, the ID of square marketing image asset
      */
+    // [START AddSmartDisplayAd_2]
     private static function createResponsiveDisplayAd(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -368,6 +375,7 @@ class AddSmartDisplayAd
         $adGroupAdResourceName = $adGroupAdResponse->getResults()[0]->getResourceName();
         printf("Added ad group ad named '%s'.%s", $adGroupAdResourceName, PHP_EOL);
     }
+    // [END AddSmartDisplayAd_2]
 
     /**
      * Creates an image asset to be used for creating ads.
@@ -378,6 +386,7 @@ class AddSmartDisplayAd
      * @param string $imageName the image name
      * @return string the created image asset's resource name
      */
+    // [START AddSmartDisplayAd_3]
     private static function createImageAsset(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -409,6 +418,7 @@ class AddSmartDisplayAd
 
         return $assetResourceName;
     }
+    // [END AddSmartDisplayAd_3]
 }
 
 AddSmartDisplayAd::main();

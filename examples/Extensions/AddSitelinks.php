@@ -109,6 +109,7 @@ class AddSitelinks
      * @param int $customerId the client customer ID
      * @param int $campaignId the campaign ID
      */
+    // [START AddSitelinks_1]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -148,6 +149,7 @@ class AddSitelinks
             PHP_EOL
         );
     }
+    // [END AddSitelinks_1]
 
     /**
      * Creates a list of extension feed items.
@@ -157,6 +159,7 @@ class AddSitelinks
      * @param string $campaignResourceName the resource name of the campaign to target
      * @return string[] the list of extension feed items' resource names
      */
+    // [START AddSitelinks]
     private static function createExtensionFeedItems(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -295,6 +298,7 @@ class AddSitelinks
         }
         return $createdExtensionFeedItemsResourceNames;
     }
+    // [END AddSitelinks]
 
     /**
      * Creates a new sitelink feed item with the specified attributes.

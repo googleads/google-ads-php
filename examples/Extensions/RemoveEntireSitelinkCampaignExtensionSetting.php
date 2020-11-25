@@ -110,6 +110,7 @@ class RemoveEntireSitelinkCampaignExtensionSetting
      * @param int $customerId the client customer ID
      * @param int $campaignId the campaign ID
      */
+    // [START RemoveEntireSitelinkCampaignExtensionSetting]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -159,6 +160,7 @@ class RemoveEntireSitelinkCampaignExtensionSetting
             );
         }
     }
+    // [END RemoveEntireSitelinkCampaignExtensionSetting]
 
     /**
      * Creates a mutate operation for the sitelink campaign extension setting that will be removed.
@@ -197,6 +199,7 @@ class RemoveEntireSitelinkCampaignExtensionSetting
      * @param int $campaignId the campaign ID to get the sitelink extension feed items from
      * @return string[] the array of resource names of extension feed items
      */
+    // [START RemoveEntireSitelinkCampaignExtensionSetting_1]
     private static function getAllSitelinkExtensionFeedItems(
         GoogleAdsServiceClient $googleAdsServiceClient,
         int $customerId,
@@ -242,6 +245,7 @@ class RemoveEntireSitelinkCampaignExtensionSetting
         }
         return $extensionFeedItemResourceNames;
     }
+    // [END RemoveEntireSitelinkCampaignExtensionSetting_1]
 
     /**
      * Creates mutate operations for the sitelink extension feed items that will be removed.

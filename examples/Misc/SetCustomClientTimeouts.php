@@ -114,6 +114,7 @@ class SetCustomClientTimeouts
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START SetCustomClientTimeouts]
     private static function makeServerStreamingCall(
         GoogleAdsClient $googleAdsClient,
         int $customerId
@@ -156,6 +157,7 @@ class SetCustomClientTimeouts
             print 'All campaign IDs retrieved:' . ($output ?: ' None') . PHP_EOL;
         }
     }
+    // [END SetCustomClientTimeouts]
 
     /**
      * Makes an unary call using a custom client timeout.
@@ -163,6 +165,7 @@ class SetCustomClientTimeouts
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START SetCustomClientTimeouts_1]
     private static function makeUnaryCall(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -215,6 +218,7 @@ class SetCustomClientTimeouts
             print 'All campaign IDs retrieved:' . ($output ?: ' None') . PHP_EOL;
         }
     }
+    // [END SetCustomClientTimeouts_1]
 }
 
 SetCustomClientTimeouts::main();

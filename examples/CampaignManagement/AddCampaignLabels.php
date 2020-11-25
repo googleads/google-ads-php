@@ -104,6 +104,7 @@ class AddCampaignLabels
      * @param array $campaignIds the IDs of the campaigns to which the label will be added
      * @param int $labelId the ID of the label to attach to campaigns
      */
+    // [START AddCampaignLabels]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -144,6 +145,7 @@ class AddCampaignLabels
             );
         }
     }
+    // [END AddCampaignLabels]
 }
 
 AddCampaignLabels::main();

@@ -102,6 +102,7 @@ class AddAccountBudgetProposal
      * @param int $customerId the customer ID
      * @param int $billingSetupId the billing setup ID used to add the account budget proposal
      */
+    // [START AddAccountBudgetProposal]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -153,6 +154,7 @@ class AddAccountBudgetProposal
             PHP_EOL
         );
     }
+    // [END AddAccountBudgetProposal]
 }
 
 AddAccountBudgetProposal::main();
