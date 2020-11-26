@@ -45,7 +45,7 @@ class GoogleAdsLoggingServerStreamingCallTest extends TestCase
             ->getMock();
         $forwardingCallMock->method('getStatus')->willReturn($expectedStatus);
 
-        // Instantiate an GoogleAdsLoggingUnaryCall.
+        // Instantiate an GoogleAdsLoggingServerStreamingCall.
         $loggerMock =
             $this->getMockBuilder(LoggerInterface::class)->disableOriginalConstructor()->getMock();
         $googleAdsCallLogger = new GoogleAdsCallLogger($loggerMock, LogLevel::INFO, 'example.com');
@@ -61,5 +61,34 @@ class GoogleAdsLoggingServerStreamingCallTest extends TestCase
         $serverStreamingCallResponse = $googleAdsLoggingServerStreamingCall->getStatus();
 
         $this->assertSame($expectedStatus, $serverStreamingCallResponse);
+    }
+
+    public function testResponses()
+    {
+        // Prepares the inner call.
+        $forwardingCallMock = $this->getMockBuilder(ForwardingServerStreamingCall::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $forwardingCallMock->method('responses')->willReturn(['response 1', 'response 2']);
+
+        // Instantiate an GoogleAdsLoggingServerStreamingCall.
+        $loggerMock =
+            $this->getMockBuilder(LoggerInterface::class)->disableOriginalConstructor()->getMock();
+        $googleAdsCallLogger = new GoogleAdsCallLogger($loggerMock, LogLevel::INFO, 'example.com');
+        $googleAdsLoggingServerStreamingCall = new GoogleAdsLoggingServerStreamingCall(
+            $forwardingCallMock,
+            [
+                'method' => 'GoogleAdsService/SearchStream',
+                'argument' => new SearchGoogleAdsStreamRequest()
+            ],
+            $googleAdsCallLogger
+        );
+
+        // Checks if the returned results are the same as those in the inner call;
+        $actualResponses = [];
+        foreach ($googleAdsLoggingServerStreamingCall->responses() as $response) {
+            $actualResponses[] = $response;
+        }
+        $this->assertEquals(['response 1', 'response 2'], $actualResponses);
     }
 }

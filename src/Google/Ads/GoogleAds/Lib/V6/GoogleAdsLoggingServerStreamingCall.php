@@ -28,6 +28,7 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
 {
     private $googleAdsCallLogger;
     private $lastRequestData;
+    private $savedResponses;
 
     /**
      * Constructs the LoggingSeverStreamingCall using the inner call and logging intercepter.
@@ -44,6 +45,7 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
         parent::__construct($innerCall);
         $this->lastRequestData = $lastRequestData;
         $this->googleAdsCallLogger = $googleAdsCallLogger;
+        $this->savedResponses = [];
     }
 
     /**
@@ -51,16 +53,28 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
      */
     public function getStatus()
     {
-        $response = null;
         $status = parent::getStatus();
-        $this->googleAdsCallLogger->logSummary(
-            $this->lastRequestData,
-            compact('response', 'status') + ['call' => $this]
-        );
-        $this->googleAdsCallLogger->logDetails(
-            $this->lastRequestData,
-            compact('response', 'status') + ['call' => $this]
-        );
+        foreach ($this->savedResponses as $response) {
+            $this->googleAdsCallLogger->logSummary(
+                $this->lastRequestData,
+                compact('response', 'status') + ['call' => $this]
+            );
+            $this->googleAdsCallLogger->logDetails(
+                $this->lastRequestData,
+                compact('response', 'status') + ['call' => $this]
+            );
+        }
         return $status;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function responses()
+    {
+        foreach ($this->innerCall->responses() as $response) {
+            $this->savedResponses[] = $response;
+            yield $response;
+        }
     }
 }
