@@ -19,6 +19,9 @@
 namespace Google\Ads\GoogleAds\Lib\V6;
 
 use Google\Ads\GoogleAds\V6\Services\SearchGoogleAdsStreamRequest;
+use Google\Ads\GoogleAds\V6\Services\UploadCallConversionsResponse;
+use Google\Ads\GoogleAds\V6\Services\UploadClickConversionsResponse;
+use Google\ApiCore\Transport\Grpc\ForwardingCall;
 use Google\ApiCore\Transport\Grpc\ForwardingServerStreamingCall;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -27,41 +30,15 @@ use Psr\Log\LogLevel;
 /**
  * Unit tests for `GoogleAdsLoggingServerStreamingCall`.
  *
+ * Note: With the limitation of PHPUnit, we cannot combine `@depends` and `@dataProvider` in a way
+ * that makes it work properly, so we need to implement two methods: `testGetStatus` and
+ * `testGetStatusWithEmptyResponses`, although both share the same code.
+ *
  * @covers \Google\Ads\GoogleAds\Lib\V6\GoogleAdsLoggingServerStreamingCall
  * @small
  */
 class GoogleAdsLoggingServerStreamingCallTest extends TestCase
 {
-
-    public function testGetStatus()
-    {
-        // Prepares the inner call.
-        $expectedStatus = new \stdClass();
-        $expectedStatus->code = 0;
-        $expectedStatus->message = 'success';
-        $expectedStatus->metadata = ['request-id' => ['AbCDeF']];
-        $forwardingCallMock = $this->getMockBuilder(ForwardingServerStreamingCall::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-        $forwardingCallMock->method('getStatus')->willReturn($expectedStatus);
-
-        // Instantiate an GoogleAdsLoggingServerStreamingCall.
-        $loggerMock =
-            $this->getMockBuilder(LoggerInterface::class)->disableOriginalConstructor()->getMock();
-        $googleAdsCallLogger = new GoogleAdsCallLogger($loggerMock, LogLevel::INFO, 'example.com');
-        $googleAdsLoggingServerStreamingCall = new GoogleAdsLoggingServerStreamingCall(
-            $forwardingCallMock,
-            [
-                'method' => 'GoogleAdsService/SearchStream',
-                'argument' => new SearchGoogleAdsStreamRequest()
-            ],
-            $googleAdsCallLogger
-        );
-
-        $serverStreamingCallResponse = $googleAdsLoggingServerStreamingCall->getStatus();
-
-        $this->assertSame($expectedStatus, $serverStreamingCallResponse);
-    }
 
     public function testResponses()
     {
@@ -69,13 +46,69 @@ class GoogleAdsLoggingServerStreamingCallTest extends TestCase
         $forwardingCallMock = $this->getMockBuilder(ForwardingServerStreamingCall::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $forwardingCallMock->method('responses')->willReturn(['response 1', 'response 2']);
+        $response1 = new UploadCallConversionsResponse();
+        $response2 = new UploadClickConversionsResponse();
+        $forwardingCallMock->method('responses')->willReturn([$response1, $response2]);
 
-        // Instantiate an GoogleAdsLoggingServerStreamingCall.
+        // Instantiates an GoogleAdsLoggingServerStreamingCall.
+        $googleAdsLoggingServerStreamingCall =
+            $this->createGoogleAdsLoggingServerStreamingCall($forwardingCallMock);
+
+        // Checks if the returned results are the same as those in the inner call;
+        $actualResponses = iterator_to_array($googleAdsLoggingServerStreamingCall->responses());
+        $this->assertEquals([$response1, $response2], $actualResponses);
+
+        return [
+            'forwardingCallMock' => $forwardingCallMock,
+            'streamingCall' => $googleAdsLoggingServerStreamingCall
+        ];
+    }
+
+    /**
+     * @depends testResponses
+     */
+    public function testGetStatus($dependingData)
+    {
+        $this->performStatusAssertion($dependingData);
+    }
+
+    public function testResponsesWithEmptyResponses()
+    {
+        // Prepares the inner call.
+        $forwardingCallMock = $this->getMockBuilder(ForwardingServerStreamingCall::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $forwardingCallMock->method('responses')->willReturn([]);
+
+        // Instantiates an GoogleAdsLoggingServerStreamingCall.
+        $googleAdsLoggingServerStreamingCall =
+            $this->createGoogleAdsLoggingServerStreamingCall($forwardingCallMock);
+
+        // Checks if the returned results are the same as those in the inner call;
+        $actualResponses = iterator_to_array($googleAdsLoggingServerStreamingCall->responses());
+        $this->assertEmpty($actualResponses);
+
+        return [
+            'forwardingCallMock' => $forwardingCallMock,
+            'streamingCall' => $googleAdsLoggingServerStreamingCall
+        ];
+    }
+
+    /**
+     * @depends testResponsesWithEmptyResponses
+     */
+    public function testGetStatusWithEmptyResponses($dependingData)
+    {
+        $this->performStatusAssertion($dependingData);
+    }
+
+    private function createGoogleAdsLoggingServerStreamingCall(
+        ForwardingCall $forwardingCallMock
+    ): GoogleAdsLoggingServerStreamingCall {
         $loggerMock =
             $this->getMockBuilder(LoggerInterface::class)->disableOriginalConstructor()->getMock();
         $googleAdsCallLogger = new GoogleAdsCallLogger($loggerMock, LogLevel::INFO, 'example.com');
-        $googleAdsLoggingServerStreamingCall = new GoogleAdsLoggingServerStreamingCall(
+        return new GoogleAdsLoggingServerStreamingCall(
             $forwardingCallMock,
             [
                 'method' => 'GoogleAdsService/SearchStream',
@@ -83,12 +116,26 @@ class GoogleAdsLoggingServerStreamingCallTest extends TestCase
             ],
             $googleAdsCallLogger
         );
+    }
 
-        // Checks if the returned results are the same as those in the inner call;
-        $actualResponses = [];
-        foreach ($googleAdsLoggingServerStreamingCall->responses() as $response) {
-            $actualResponses[] = $response;
-        }
-        $this->assertEquals(['response 1', 'response 2'], $actualResponses);
+    private function performStatusAssertion(array $dependingData)
+    {
+        $forwardingCallMock = $dependingData['forwardingCallMock'];
+        $streamingCall = $dependingData['streamingCall'];
+
+        // Sets up the status of the inner call.
+        $expectedStatus = self::createExpectedStatus();
+        $forwardingCallMock->method('getStatus')->willReturn($expectedStatus);
+
+        $this->assertSame($expectedStatus, $streamingCall->getStatus());
+    }
+
+    private function createExpectedStatus(): object
+    {
+        $expectedStatus = new \stdClass();
+        $expectedStatus->code = 0;
+        $expectedStatus->message = 'success';
+        $expectedStatus->metadata = ['request-id' => ['AbCDeF']];
+        return $expectedStatus;
     }
 }
