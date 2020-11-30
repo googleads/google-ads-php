@@ -52,14 +52,7 @@ class GoogleAdsLoggingUnaryCall extends ForwardingUnaryCall
     public function wait()
     {
         list($response, $status) = parent::wait();
-        $this->googleAdsCallLogger->logSummary(
-            $this->lastRequestData,
-            compact('response', 'status') + ['call' => $this]
-        );
-        $this->googleAdsCallLogger->logDetails(
-            $this->lastRequestData,
-            compact('response', 'status')  + ['call' => $this]
-        );
+        $this->googleAdsCallLogger->log($status, $this->lastRequestData, $response);
         return [$response, $status];
     }
 }

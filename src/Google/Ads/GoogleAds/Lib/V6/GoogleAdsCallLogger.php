@@ -66,6 +66,25 @@ final class GoogleAdsCallLogger
     }
 
     /**
+     * Logs summary and the details of the given status, request data and response.
+     *
+     * @param object $status the status to be logged
+     * @param array $requestData the request data
+     * @param object|null $response the response to be logged
+     */
+    public function log(object $status, array $requestData, ?object $response = null)
+    {
+        $this->logSummary(
+            $requestData,
+            compact('response', 'status') + ['call' => $this]
+        );
+        $this->logDetails(
+            $requestData,
+            compact('response', 'status') + ['call' => $this]
+        );
+    }
+
+    /**
      * Logs the summary of the request and response.
      *
      * @param array $requestData the request data to log

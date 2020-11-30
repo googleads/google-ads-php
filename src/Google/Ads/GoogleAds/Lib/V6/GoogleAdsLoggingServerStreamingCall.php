@@ -55,10 +55,10 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
     {
         $status = parent::getStatus();
         if (empty($this->savedResponses)) {
-            $this->logSummaryAndDetails($status);
+            $this->googleAdsCallLogger->log($status, $this->lastRequestData);
         } else {
             foreach ($this->savedResponses as $response) {
-                $this->logSummaryAndDetails($status, $response);
+                $this->googleAdsCallLogger->log($status, $this->lastRequestData, $response);
             }
         }
         return $status;
@@ -73,23 +73,5 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
             $this->savedResponses[] = $response;
             yield $response;
         }
-    }
-
-    /**
-     * Logs summary and the details of the given status and response.
-     *
-     * @param object|null $status the status to be logged
-     * @param object|null $response the response to be logged
-     */
-    private function logSummaryAndDetails(object $status, ?object $response = null)
-    {
-        $this->googleAdsCallLogger->logSummary(
-            $this->lastRequestData,
-            compact('response', 'status') + ['call' => $this]
-        );
-        $this->googleAdsCallLogger->logDetails(
-            $this->lastRequestData,
-            compact('response', 'status') + ['call' => $this]
-        );
     }
 }
