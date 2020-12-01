@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib\V6;
 
 use Google\ApiCore\ArrayTrait;
+use Google\ApiCore\Transport\Grpc\ForwardingCall;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -68,19 +69,24 @@ final class GoogleAdsCallLogger
     /**
      * Logs summary and the details of the given status, request data and response.
      *
+     * @param ForwardingCall $call the forwarding call whose details will be logged
      * @param object $status the status to be logged
      * @param array $requestData the request data
      * @param object|null $response the response to be logged
      */
-    public function log(object $status, array $requestData, ?object $response = null)
-    {
+    public function log(
+        ForwardingCall $forwardingCall,
+        object $status,
+        array $requestData,
+        ?object $response = null
+    ) {
         $this->logSummary(
             $requestData,
-            compact('response', 'status') + ['call' => $this]
+            compact('response', 'status') + ['call' => $forwardingCall]
         );
         $this->logDetails(
             $requestData,
-            compact('response', 'status') + ['call' => $this]
+            compact('response', 'status') + ['call' => $forwardingCall]
         );
     }
 
