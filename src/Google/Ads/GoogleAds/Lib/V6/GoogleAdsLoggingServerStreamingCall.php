@@ -22,13 +22,13 @@ use Google\ApiCore\Transport\Grpc\ForwardingServerStreamingCall;
 use Grpc\ServerStreamingCall;
 
 /**
- * Extends ForwardingServerStreamingCall with logging functionality.
+ * Extends ForwardingServerStreamingCall with the logging functionality.
  */
 class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
 {
     private $googleAdsCallLogger;
     private $lastRequestData;
-    private $savedResponses;
+    private $storedResponses;
 
     /**
      * Constructs the LoggingSeverStreamingCall using the inner call and logging intercepter.
@@ -45,7 +45,9 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
         parent::__construct($innerCall);
         $this->lastRequestData = $lastRequestData;
         $this->googleAdsCallLogger = $googleAdsCallLogger;
-        $this->savedResponses = [];
+        if ($this->googleAdsCallLogger->isLoggingResponsesEnabled()) {
+            $this->storedResponses = [];
+        }
     }
 
     /**
@@ -54,10 +56,10 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
     public function getStatus()
     {
         $status = parent::getStatus();
-        if (empty($this->savedResponses)) {
+        if (empty($this->storedResponses)) {
             $this->googleAdsCallLogger->log($this, $status, $this->lastRequestData);
         } else {
-            foreach ($this->savedResponses as $response) {
+            foreach ($this->storedResponses as $response) {
                 $this->googleAdsCallLogger->log($this, $status, $this->lastRequestData, $response);
             }
         }
@@ -70,7 +72,10 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
     public function responses()
     {
         foreach ($this->innerCall->responses() as $response) {
-            $this->savedResponses[] = $response;
+            // To save memory, stores responses only when it's necessary.
+            if ($this->googleAdsCallLogger->isLoggingResponsesEnabled()) {
+                $this->storedResponses[] = $response;
+            }
             yield $response;
         }
     }

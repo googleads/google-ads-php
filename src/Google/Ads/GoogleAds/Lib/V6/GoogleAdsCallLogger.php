@@ -145,6 +145,17 @@ final class GoogleAdsCallLogger
     }
 
     /**
+     * Returns true if logging responses in detail is enabled for this logger. Responses are logged
+     * at the DEBUG level.
+     *
+     * @return bool true if logging responses in detail is enabled for this logger
+     */
+    public function isLoggingResponsesEnabled(): bool
+    {
+        return $this->isEnabled(self::getNextFinerLogLevel($this->getAppropriateLogLevel(0)));
+    }
+
+    /**
      * Returns the appropriate log level depending on the response code.
      * For successful requests, use INFO. For failed requests, use WARNING.
      * @return string the log level to use
