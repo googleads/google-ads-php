@@ -61,6 +61,16 @@
     },
     "expectedMask": "foo.num"
   }, {
+    "description": "Create submessage with boolean field",
+    "originalResource": {
+    },
+    "modifiedResource": {
+      "foo": {
+        "bool": false
+      }
+    },
+    "expectedMask": "foo.bool"
+  }, {
     "description": "Modify submessage",
     "originalResource": {
       "foo": {
