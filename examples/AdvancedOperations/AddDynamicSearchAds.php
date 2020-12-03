@@ -183,6 +183,7 @@ class AddDynamicSearchAds
      * @param string $campaignBudgetResourceName the resource name of the campaign budget
      * @return string the resource name of the newly created campaign
      */
+    // [START AddDynamicSearchAds]
     private static function createCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -222,6 +223,7 @@ class AddDynamicSearchAds
 
         return $campaignResourceName;
     }
+    // [END AddDynamicSearchAds]
 
     /**
      * Creates an ad group.
@@ -231,6 +233,7 @@ class AddDynamicSearchAds
      * @param string $campaignResourceName the resource name of the campaign
      * @return string the resource name of the newly created ad group
      */
+    // [START AddDynamicSearchAds_1]
     private static function createAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -260,6 +263,7 @@ class AddDynamicSearchAds
 
         return $adGroupResourceName;
     }
+    // [END AddDynamicSearchAds_1]
 
     /**
      * Creates an expanded dynamic search ad.
@@ -268,6 +272,7 @@ class AddDynamicSearchAds
      * @param int $customerId the customer ID
      * @param string $adGroupResourceName the ad group resource name
      */
+    // [START AddDynamicSearchAds_2]
     private static function createExpandedDSA(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -299,6 +304,7 @@ class AddDynamicSearchAds
 
         return $adGroupAdResourceName;
     }
+    // [END AddDynamicSearchAds_2]
 
     /**
      * Creates a webpage targeting criterion for the DSA.
