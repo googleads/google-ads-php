@@ -101,6 +101,7 @@ class UpdateExpandedTextAd
      * @param int $customerId the customer ID
      * @param int $adId the ad ID to update
      */
+    // [START UpdateExpandedTextAd]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -138,6 +139,7 @@ class UpdateExpandedTextAd
             PHP_EOL
         );
     }
+    // [END UpdateExpandedTextAd]
 }
 
 UpdateExpandedTextAd::main();

@@ -173,6 +173,7 @@ class AddCustomerMatchUserList
      * @param string $userListResourceName the resource name of the Customer Match user list to add
      *     users to
      */
+    // [START AddCustomerMatchUserList]
     private static function addUsersToCustomerMatchUserList(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -260,6 +261,7 @@ class AddCustomerMatchUserList
             );
         }
     }
+    // [END AddCustomerMatchUserList]
 
     /**
      * Builds and returns offline user data job operations to add one user identified by an
