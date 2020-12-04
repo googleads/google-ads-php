@@ -69,7 +69,7 @@ class AddShoppingSmartAd
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const MERCHANT_CENTER_ACCOUNT_ID = 'INSERT_MERCHANT_CENTER_ACCOUNT_ID_HERE';
-    private const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
+    private const CREATE_DEFAULT_LISTING_GROUP = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
 
     public static function main()
     {
@@ -78,7 +78,7 @@ class AddShoppingSmartAd
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::SHOULD_CREATE_DEFAULT_LISTING_GROUP => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CREATE_DEFAULT_LISTING_GROUP => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -98,8 +98,8 @@ class AddShoppingSmartAd
                 $options[ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID]
                     ?: self::MERCHANT_CENTER_ACCOUNT_ID,
                 filter_var(
-                    $options[ArgumentNames::SHOULD_CREATE_DEFAULT_LISTING_GROUP]
-                    ?: self::SHOULD_CREATE_DEFAULT_LISTING_GROUP,
+                    $options[ArgumentNames::CREATE_DEFAULT_LISTING_GROUP]
+                        ?: self::CREATE_DEFAULT_LISTING_GROUP,
                     FILTER_VALIDATE_BOOLEAN
                 )
             );
@@ -136,7 +136,7 @@ class AddShoppingSmartAd
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $merchantCenterAccountId the Merchant Center account ID
-     * @param bool $shouldCreateDefaultListingGroup indicates if a default listing
+     * @param bool $createDefaultListingGroup indicates if a default listing
      *     group should be created for the ad group. Set to false if the listing group will be
      *     constructed elsewhere.
      */
@@ -144,7 +144,7 @@ class AddShoppingSmartAd
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $merchantCenterAccountId,
-        bool $shouldCreateDefaultListingGroup
+        bool $createDefaultListingGroup
     ) {
         // Creates a budget to be used by the campaign that will be created below.
         $budgetResourceName = self::addCampaignBudget($googleAdsClient, $customerId);
@@ -164,7 +164,7 @@ class AddShoppingSmartAd
         // Creates a Smart Shopping ad group ad.
         self::addSmartShoppingAdGroupAd($googleAdsClient, $customerId, $adGroupResourceName);
 
-        if ($shouldCreateDefaultListingGroup) {
+        if ($createDefaultListingGroup) {
             // A product group is a subset of inventory. Listing groups are the equivalent
             // of product groups in the API and allow you to bid on the chosen group or
             // exclude a group from bidding.
