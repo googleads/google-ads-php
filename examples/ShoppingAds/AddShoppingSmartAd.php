@@ -136,7 +136,7 @@ class AddShoppingSmartAd
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $merchantCenterAccountId the Merchant Center account ID
-     * @param bool $createDefaultListingGroup indicates if a default listingg
+     * @param bool $createDefaultListingGroup indicates if a default listing
      *     group should be created for the ad group. Set to false if the listing group will be
      *     constructed elsewhere.
      */
