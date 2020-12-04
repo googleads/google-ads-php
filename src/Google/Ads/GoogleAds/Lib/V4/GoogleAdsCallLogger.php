@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib\V4;
 
 use Google\ApiCore\ArrayTrait;
+use Google\ApiCore\Transport\Grpc\ForwardingCall;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -66,6 +67,30 @@ final class GoogleAdsCallLogger
     }
 
     /**
+     * Logs summary and the details of the given status, request data and response.
+     *
+     * @param ForwardingCall $call the forwarding call whose details will be logged
+     * @param object $status the status to be logged
+     * @param array $requestData the request data
+     * @param object|null $response the response to be logged
+     */
+    public function log(
+        ForwardingCall $forwardingCall,
+        object $status,
+        array $requestData,
+        ?object $response = null
+    ) {
+        $this->logSummary(
+            $requestData,
+            compact('response', 'status') + ['call' => $forwardingCall]
+        );
+        $this->logDetails(
+            $requestData,
+            compact('response', 'status') + ['call' => $forwardingCall]
+        );
+    }
+
+    /**
      * Logs the summary of the request and response.
      *
      * @param array $requestData the request data to log
@@ -107,16 +132,27 @@ final class GoogleAdsCallLogger
             $this->getAppropriateLogLevel($responseData['status']->code)
         );
 
-        // Logs only if the appropriate log level is enabled: this is to avoid unnecessary message
-        // formatting as it could take a significant time depending on the request and response
-        // payloads.
         if ($this->isEnabled($level)) {
+            // Logs only if the appropriate log level is enabled: this is to avoid unnecessary message
+            // formatting as it could take a significant time depending on the request and response
+            // payloads.
             $this->logger->log(
                 $level,
                 $this->logMessageFormatter->formatDetail($requestData, $responseData, $this->endpoint),
                 $this->context
             );
         }
+    }
+
+    /**
+     * Returns true if logging responses in detail is enabled for this logger. Responses are logged
+     * at the DEBUG level.
+     *
+     * @return bool true if logging responses in detail is enabled for this logger
+     */
+    public function isLoggingResponsesEnabled(): bool
+    {
+        return $this->isEnabled(self::getNextFinerLogLevel($this->getAppropriateLogLevel(0)));
     }
 
     /**
