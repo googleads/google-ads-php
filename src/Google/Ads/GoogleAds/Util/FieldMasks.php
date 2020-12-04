@@ -163,7 +163,7 @@ class FieldMasks
                     // beginning.
                     (!is_null($original) && method_exists($original, $hasser)
                         && $original->$hasser() != $modified->$hasser())
-                    || (is_null($original) && !$modified)
+                    || (is_null($original) && !$modifiedValue)
                     || $originalValue != $modifiedValue;
                 switch ($fieldDescriptor->getType()) {
                     case GPBType::MESSAGE:
