@@ -92,9 +92,9 @@ final class ArgumentNames
     public const PERCENT_CPC_BID_MICRO_AMOUNT = 'percentCpcBidMicroAmount';
     public const RECOMMENDATION_ID = 'recommendationId';
     public const RESTATEMENT_VALUE = 'restatementValue';
-    public const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'shouldCreateDefaultListingGroup';
+    public const CREATE_DEFAULT_LISTING_GROUP = 'createDefaultListingGroup';
     public const SHOULD_DELETE_EXISTING_FEEDS = 'shouldDeleteExistingFeeds';
-    public const SHOULD_REPLACE_EXISTING_TREE = 'shouldReplaceExistingTree';
+    public const REPLACE_EXISTING_TREE = 'replaceExistingTree';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
     public const USER_LIST_ID = 'userListId';
@@ -172,11 +172,11 @@ final class ArgumentNames
             'The CPC bid micro amount for the Percent CPC bidding strategy',
         self::RECOMMENDATION_ID => 'The recommendation ID',
         self::RESTATEMENT_VALUE => 'The restatement value',
-        self::SHOULD_CREATE_DEFAULT_LISTING_GROUP =>
+        self::CREATE_DEFAULT_LISTING_GROUP =>
             'Whether it should create a default listing group',
         self::SHOULD_DELETE_EXISTING_FEEDS =>
             'Whether it should delete the existing feeds',
-        self::SHOULD_REPLACE_EXISTING_TREE =>
+        self::REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',

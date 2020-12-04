@@ -59,7 +59,7 @@ class AddShoppingProductListingGroupTree
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
-    private const SHOULD_REPLACE_EXISTING_TREE = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
+    private const REPLACE_EXISTING_TREE = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
 
     private const PAGE_SIZE = 1000;
 
@@ -70,7 +70,7 @@ class AddShoppingProductListingGroupTree
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::SHOULD_REPLACE_EXISTING_TREE => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::REPLACE_EXISTING_TREE => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -88,8 +88,8 @@ class AddShoppingProductListingGroupTree
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::AD_GROUP_ID]
                     ?: self::AD_GROUP_ID,
-                $options[ArgumentNames::SHOULD_REPLACE_EXISTING_TREE]
-                    ?: self::SHOULD_REPLACE_EXISTING_TREE
+                $options[ArgumentNames::REPLACE_EXISTING_TREE]
+                    ?: self::REPLACE_EXISTING_TREE
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -124,7 +124,7 @@ class AddShoppingProductListingGroupTree
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
-     * @param bool $shouldReplaceExistingTree true if it should replace the existing listing group
+     * @param bool $replaceExistingTree true if it should replace the existing listing group
      *     tree on the ad group, if it already exists. The example will throw a
      *     'LISTING_GROUP_ALREADY_EXISTS' error if listing group tree already exists and this option
      *     is not set to true
@@ -133,11 +133,11 @@ class AddShoppingProductListingGroupTree
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $adGroupId,
-        bool $shouldReplaceExistingTree
+        bool $replaceExistingTree
     ) {
         // 1) Optional: Remove the existing listing group tree, if it already exists on the ad
         // group.
-        if ($shouldReplaceExistingTree === "true") {
+        if ($replaceExistingTree === 'true') {
             self::removeListingGroupTree($googleAdsClient, $customerId, $adGroupId);
         }
         // Create a list of ad group criteria to add.
