@@ -93,7 +93,7 @@ final class ArgumentNames
     public const RECOMMENDATION_ID = 'recommendationId';
     public const RESTATEMENT_VALUE = 'restatementValue';
     public const CREATE_DEFAULT_LISTING_GROUP = 'createDefaultListingGroup';
-    public const SHOULD_DELETE_EXISTING_FEEDS = 'shouldDeleteExistingFeeds';
+    public const DELETE_EXISTING_FEEDS = 'deleteExistingFeeds';
     public const REPLACE_EXISTING_TREE = 'replaceExistingTree';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
@@ -174,7 +174,7 @@ final class ArgumentNames
         self::RESTATEMENT_VALUE => 'The restatement value',
         self::CREATE_DEFAULT_LISTING_GROUP =>
             'Whether it should create a default listing group',
-        self::SHOULD_DELETE_EXISTING_FEEDS =>
+        self::DELETE_EXISTING_FEEDS =>
             'Whether it should delete the existing feeds',
         self::REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group',
