@@ -66,7 +66,7 @@ class AddAffiliateLocationExtensions
     // 1. Google Ads only allows one location extension feed per email address.
     // 2. A Google Ads account cannot have a location extension feed and an affiliate location
     // extension feed at the same time.
-    private const SHOULD_DELETE_EXISTING_FEEDS = false;
+    private const DELETE_EXISTING_FEEDS = false;
 
     // The maximum number of attempts to make to retrieve the feed mapping before throwing an
     // exception.
@@ -80,7 +80,7 @@ class AddAffiliateLocationExtensions
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CHAIN_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::SHOULD_DELETE_EXISTING_FEEDS => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::DELETE_EXISTING_FEEDS => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -100,8 +100,8 @@ class AddAffiliateLocationExtensions
                 $options[ArgumentNames::CHAIN_ID] ?: self::CHAIN_ID,
                 $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID,
                 filter_var(
-                    $options[ArgumentNames::SHOULD_DELETE_EXISTING_FEEDS]
-                        ?: self::SHOULD_DELETE_EXISTING_FEEDS,
+                    $options[ArgumentNames::DELETE_EXISTING_FEEDS]
+                        ?: self::DELETE_EXISTING_FEEDS,
                     FILTER_VALIDATE_BOOLEAN
                 )
             );
