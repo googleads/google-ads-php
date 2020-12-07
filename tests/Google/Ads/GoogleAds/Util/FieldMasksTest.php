@@ -18,9 +18,9 @@
 
 namespace Google\Ads\GoogleAds\Util;
 
-use Google\Ads\GoogleAds\Util\Testing\FieldMasksTestDataProvider;
-use Google\Ads\GoogleAds\Util\Testing\Resource;
-use Google\Ads\GoogleAds\Util\Testing\TestSuite;
+use Google\Ads\GoogleAds\Util\FieldMasks\FieldMasksTestDataProvider;
+use Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource;
+use Google\Ads\GoogleAds\Util\FieldMasks\Proto\TestSuite;
 use Google\Ads\GoogleAds\V6\Common\ExpandedTextAdInfo;
 use Google\Ads\GoogleAds\V6\Common\PercentCpc;
 use Google\Ads\GoogleAds\V6\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;

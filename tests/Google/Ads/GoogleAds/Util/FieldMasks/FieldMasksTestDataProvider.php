@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Util\Testing;
+namespace Google\Ads\GoogleAds\Util\FieldMasks;
 
 /**
  * Provides test data for `FieldMasks` tests.
@@ -32,12 +32,7 @@ class FieldMasksTestDataProvider
     public static function getJsonTestCases()
     {
         return file_get_contents(
-            sprintf(
-                '%s%stestdata%stest_cases.json',
-                dirname(__FILE__),
-                DIRECTORY_SEPARATOR,
-                DIRECTORY_SEPARATOR
-            )
+            sprintf('%s%stest_cases.json', dirname(__FILE__), DIRECTORY_SEPARATOR)
         );
     }
 }
