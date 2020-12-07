@@ -162,6 +162,7 @@ class AddGoogleMyBusinessLocationExtensions
      * @param string $businessAccountIdentifier the account number of the GMB account
      * @return string the feed's resource name
      */
+    // [START AddGoogleMyBusinessLocationExtensions]
     private static function createFeed(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -195,6 +196,7 @@ class AddGoogleMyBusinessLocationExtensions
         $feedOperation = new FeedOperation();
         $feedOperation->setCreate($gmbFeed);
 
+        // [START AddGoogleMyBusinessLocationExtensions_1]
         // Issues a mutate request to add the feed and print its information.
         // Since it is a system generated feed, Google Ads will automatically:
         // 1. Set up the feed attributes on the feed.
@@ -209,7 +211,9 @@ class AddGoogleMyBusinessLocationExtensions
         printf("GMB feed created with resource name: '%s'.%s", $gmbFeedResourceName, PHP_EOL);
 
         return $gmbFeedResourceName;
+        // [END AddGoogleMyBusinessLocationExtensions_1]
     }
+    // [END AddGoogleMyBusinessLocationExtensions]
 
     /**
      * Creates a customer feed to attach the previously created GMB feed to the specified customer
@@ -220,6 +224,7 @@ class AddGoogleMyBusinessLocationExtensions
      * @param string $gmbFeedResourceName the feed's resource name to be used to create a customer
      *     feed
      */
+    // [START AddGoogleMyBusinessLocationExtensions_2]
     private static function createCustomerFeed(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -243,6 +248,7 @@ class AddGoogleMyBusinessLocationExtensions
         $customerFeedOperation = new CustomerFeedOperation();
         $customerFeedOperation->setCreate($customerFeed);
 
+        // [START AddGoogleMyBusinessLocationExtensions_3]
         // After the completion of the feed ADD operation above the added feed will not be available
         // for usage in a customer feed until the sync between the Google Ads and GMB accounts
         // completes. The loop below will retry adding the customer feed up to ten times with an
@@ -288,6 +294,7 @@ class AddGoogleMyBusinessLocationExtensions
             $numberOfAttempts < self::MAX_CUSTOMER_FEED_ADD_ATTEMPTS
             && is_null($addedCustomerFeed)
         );
+        // [END AddGoogleMyBusinessLocationExtensions_3]
 
         if (is_null($addedCustomerFeed)) {
             throw new \RuntimeException(
@@ -296,6 +303,7 @@ class AddGoogleMyBusinessLocationExtensions
             );
         }
     }
+    // [END AddGoogleMyBusinessLocationExtensions_2]
 }
 
 AddGoogleMyBusinessLocationExtensions::main();

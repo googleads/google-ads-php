@@ -110,6 +110,7 @@ class AddKeywordPlan
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
+    // [START AddKeywordPlan]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $keywordPlanResource = self::createKeywordPlan(
@@ -375,6 +376,7 @@ class AddKeywordPlan
             );
         }
     }
+    // [END AddKeywordPlan]
 }
 
 AddKeywordPlan::main();
