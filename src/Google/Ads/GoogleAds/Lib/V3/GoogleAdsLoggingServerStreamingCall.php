@@ -22,12 +22,13 @@ use Google\ApiCore\Transport\Grpc\ForwardingServerStreamingCall;
 use Grpc\ServerStreamingCall;
 
 /**
- * Extends ForwardingServerStreamingCall with logging functionality.
+ * Extends ForwardingServerStreamingCall with the logging functionality.
  */
 class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
 {
     private $googleAdsCallLogger;
     private $lastRequestData;
+    private $storedResponses;
 
     /**
      * Constructs the LoggingSeverStreamingCall using the inner call and logging intercepter.
@@ -44,6 +45,9 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
         parent::__construct($innerCall);
         $this->lastRequestData = $lastRequestData;
         $this->googleAdsCallLogger = $googleAdsCallLogger;
+        if ($this->googleAdsCallLogger->isLoggingResponsesEnabled()) {
+            $this->storedResponses = [];
+        }
     }
 
     /**
@@ -51,16 +55,28 @@ class GoogleAdsLoggingServerStreamingCall extends ForwardingServerStreamingCall
      */
     public function getStatus()
     {
-        $response = null;
         $status = parent::getStatus();
-        $this->googleAdsCallLogger->logSummary(
-            $this->lastRequestData,
-            compact('response', 'status') + ['call' => $this]
-        );
-        $this->googleAdsCallLogger->logDetails(
-            $this->lastRequestData,
-            compact('response', 'status')  + ['call' => $this]
-        );
+        if (empty($this->storedResponses)) {
+            $this->googleAdsCallLogger->log($this, $status, $this->lastRequestData);
+        } else {
+            foreach ($this->storedResponses as $response) {
+                $this->googleAdsCallLogger->log($this, $status, $this->lastRequestData, $response);
+            }
+        }
         return $status;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function responses()
+    {
+        foreach ($this->innerCall->responses() as $response) {
+            // To save memory, stores responses only when it's necessary.
+            if ($this->googleAdsCallLogger->isLoggingResponsesEnabled()) {
+                $this->storedResponses[] = $response;
+            }
+            yield $response;
+        }
     }
 }
