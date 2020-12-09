@@ -18,8 +18,6 @@
 
 namespace Google\Ads\GoogleAds\Lib;
 
-use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
-use Google\Ads\GoogleAds\Lib\Testing\OAuth2TokenBuilderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google\Auth\Credentials\UserRefreshCredentials;

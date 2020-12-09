@@ -32,8 +32,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Google\\Ads\\GoogleAds\\Util\\FieldMasks\\": "tests/Google/Ads/GoogleAds/Util/FieldMasks",
-      "GPBMetadata\\": "tests/metadata"
+      "Google\\Ads\\GoogleAds\\": "tests/Google/Ads/GoogleAds",
+      "GPBMetadata\\Google\\Ads\\GoogleAds\\": "tests/metadata/Google/Ads/GoogleAds"
     }
   },
   "authors": [

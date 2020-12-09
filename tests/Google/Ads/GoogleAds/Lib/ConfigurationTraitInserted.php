@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Lib\Testing;
+namespace Google\Ads\GoogleAds\Lib;
 
-use Google\Ads\GoogleAds\Lib\ConfigurationTrait;
 use Google\Auth\FetchAuthTokenInterface;
 use Psr\Log\LoggerInterface;
 

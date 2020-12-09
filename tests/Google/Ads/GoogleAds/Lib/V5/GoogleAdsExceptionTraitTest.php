@@ -18,7 +18,6 @@
 
 namespace Google\Ads\GoogleAds\Lib\V5;
 
-use Google\Ads\GoogleAds\Lib\Testing\V5\GoogleAdsExceptionTraitInserted;
 use Google\Ads\GoogleAds\V5\Errors\GoogleAdsFailure;
 use Google\ApiCore\ApiException;
 use PHPUnit\Framework\TestCase;

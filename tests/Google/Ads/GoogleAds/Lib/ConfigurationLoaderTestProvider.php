@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Lib\Testing;
+namespace Google\Ads\GoogleAds\Lib;
 
 /**
  * Provides testing data for the `ConfigurationLoaderTest`.

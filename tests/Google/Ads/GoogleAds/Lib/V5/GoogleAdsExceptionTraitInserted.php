@@ -16,14 +16,12 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Lib\Testing\V3;
-
-use Google\Ads\GoogleAds\Lib\V3\GoogleAdsExceptionTrait;
+namespace Google\Ads\GoogleAds\Lib\V5;
 
 /**
  * A testing class that is inserted with `GoogleAdsExceptionTrait`.
  *
- * @see \Google\Ads\GoogleAds\Lib\V3\GoogleAdsExceptionTrait
+ * @see \Google\Ads\GoogleAds\Lib\V5\GoogleAdsExceptionTrait
  */
 class GoogleAdsExceptionTraitInserted
 {
