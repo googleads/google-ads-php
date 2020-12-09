@@ -18,7 +18,6 @@
 
 namespace Google\Ads\GoogleAds\Lib;
 
-use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;

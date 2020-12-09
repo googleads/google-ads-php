@@ -3,8 +3,8 @@
     <rule ref="PSR12"/>
     <exclude-pattern>metadata</exclude-pattern>
     <exclude-pattern>src/Google/Ads/GoogleAds/V[0-9]+</exclude-pattern>
-    <exclude-pattern>src/Google/Ads/GoogleAds/Util/Testing/Google</exclude-pattern>
-    <exclude-pattern>src/Google/Ads/GoogleAds/Util/Testing/metadata</exclude-pattern>
+    <exclude-pattern>tests/metadata</exclude-pattern>
+    <exclude-pattern>tests/Google/Ads/GoogleAds/Util/FieldMasks/Proto</exclude-pattern>
     <exclude-pattern>tests/Google/Ads/GoogleAds/V[0-9]+</exclude-pattern>
     <file>src</file>
     <file>tests</file>
