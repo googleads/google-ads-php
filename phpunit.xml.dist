@@ -2,7 +2,7 @@
 <phpunit bootstrap="vendor/autoload.php" colors="true">
     <testsuites>
         <testsuite name="all-tests">
-            <directory>tests/Google/Ads/GoogleAds</directory>
+            <directory suffix="Test.php">tests/Google/Ads/GoogleAds</directory>
         </testsuite>
     </testsuites>
     <logging>
@@ -14,8 +14,6 @@
             <directory>src</directory>
             <exclude>
                 <directory>src/Google/Ads/GoogleAds/V*</directory>
-                <directory>src/Google/Ads/GoogleAds/Lib/Testing</directory>
-                <directory>src/Google/Ads/GoogleAds/Util/Testing</directory>
             </exclude>
         </whitelist>
     </filter>

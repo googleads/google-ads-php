@@ -20,8 +20,8 @@ namespace Google\Ads\GoogleAds\Lib\V5;
 
 use Google\Ads\GoogleAds\Lib\Configuration;
 use Google\Ads\GoogleAds\Lib\ConfigurationLoader;
+use Google\Ads\GoogleAds\Lib\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
-use Google\Ads\GoogleAds\Lib\Testing\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
 use InvalidArgumentException;

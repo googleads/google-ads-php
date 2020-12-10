@@ -126,6 +126,7 @@ class GenerateKeywordIdeas
      * @param string[] $keywords the list of keywords to use as a seed for ideas
      * @param string|null $pageUrl optional URL related to your business to use as a seed for ideas
      */
+    // [START GenerateKeywordIdeas]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -196,6 +197,7 @@ class GenerateKeywordIdeas
             );
         }
     }
+    // [END GenerateKeywordIdeas]
 }
 
 GenerateKeywordIdeas::main();

@@ -64,7 +64,7 @@ class AddShoppingProductAd
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const MERCHANT_CENTER_ACCOUNT_ID = 'INSERT_MERCHANT_CENTER_ACCOUNT_ID_HERE';
-    private const SHOULD_CREATE_DEFAULT_LISTING_GROUP = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
+    private const CREATE_DEFAULT_LISTING_GROUP = 'INSERT_BOOLEAN_TRUE_OR_FALSE_HERE';
 
     public static function main()
     {
@@ -73,7 +73,7 @@ class AddShoppingProductAd
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::SHOULD_CREATE_DEFAULT_LISTING_GROUP => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CREATE_DEFAULT_LISTING_GROUP => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -91,8 +91,8 @@ class AddShoppingProductAd
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID]
                     ?: self::MERCHANT_CENTER_ACCOUNT_ID,
-                $options[ArgumentNames::SHOULD_CREATE_DEFAULT_LISTING_GROUP]
-                    ?: self::SHOULD_CREATE_DEFAULT_LISTING_GROUP
+                $options[ArgumentNames::CREATE_DEFAULT_LISTING_GROUP]
+                    ?: self::CREATE_DEFAULT_LISTING_GROUP
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -127,7 +127,7 @@ class AddShoppingProductAd
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      * @param int $merchantCenterAccountId the Merchant Center account ID
-     * @param bool $shouldCreateDefaultListingGroup true if a default listing group should be
+     * @param bool $createDefaultListingGroup true if a default listing group should be
      *     created for the ad group. Set to false if the listing group will be constructed
      *     elsewhere. See AddShoppingProductListingGroupTree for a more comprehensive example
      */
@@ -135,7 +135,7 @@ class AddShoppingProductAd
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $merchantCenterAccountId,
-        bool $shouldCreateDefaultListingGroup
+        bool $createDefaultListingGroup
     ) {
         // Creates a budget to be used by the campaign that will be created below.
         $budgetResourceName = self::addCampaignBudget($googleAdsClient, $customerId);
@@ -152,7 +152,7 @@ class AddShoppingProductAd
         // Creates a shopping product ad group ad.
         self::addShoppingProductAdGroupAd($googleAdsClient, $customerId, $adGroupResourceName);
 
-        if ($shouldCreateDefaultListingGroup === "true") {
+        if ($createDefaultListingGroup === 'true') {
             // Creates an ad group criterion containing a listing group.
             // This will be the listing group tree for 'All products' and will contain a single
             // biddable unit node.

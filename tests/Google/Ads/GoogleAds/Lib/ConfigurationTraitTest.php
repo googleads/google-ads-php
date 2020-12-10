@@ -18,7 +18,6 @@
 
 namespace Google\Ads\GoogleAds\Lib;
 
-use Google\Ads\GoogleAds\Lib\Testing\ConfigurationTraitInserted;
 use Google\Auth\FetchAuthTokenInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;

@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package google.ads.googleads.util.fieldmasks.proto;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/field_mask.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "TestSuiteProto";
+option java_package = "com.google.ads.googleads.util.fieldmasks.proto";
+option php_namespace = "Google\\Ads\\GoogleAds\\Util\\FieldMasks\\Proto";
+
+message TestSuite {
+  repeated TestCase test_cases = 1;
+}
+
+message TestCase {
+  string description = 1;
+  Resource original_resource = 2;
+  Resource modified_resource = 3;
+  google.protobuf.FieldMask expected_mask = 4;
+}
+
+message Resource {
+  google.protobuf.StringValue wrapper = 1;
+  Foo foo = 2;
+  repeated Foo foos = 3;
+  optional int32 presence = 4;
+}
+
+message Foo {
+  int64 num = 1;
+  Bar bar = 2;
+  repeated Bar bars = 3;
+  bool bool = 4;
+}
+
+message Bar {
+  int64 num = 1;
+  google.protobuf.BoolValue nested_wrapper = 2;
+  optional int32 nested_presence = 3;
+}

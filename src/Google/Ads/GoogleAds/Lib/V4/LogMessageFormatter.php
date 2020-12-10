@@ -18,7 +18,7 @@
 
 namespace Google\Ads\GoogleAds\Lib\V4;
 
-use Google\Ads\GoogleAds\V4\Errors\GoogleAdsFailure;
+use Google\Ads\GoogleAds\Util\V4\GoogleAdsFailures;
 use Google\ApiCore\ArrayTrait;
 use Google\Protobuf\Internal\Message;
 
@@ -32,7 +32,6 @@ final class LogMessageFormatter
 
     /** @var array the map of header keys to redacted values. */
     private static $HEADER_KEYS_TO_REDACTED_VALUES;
-    private static $unusedGoogleAdsFailure;
 
     private $statusMetadataExtractor;
 
@@ -132,13 +131,10 @@ final class LogMessageFormatter
             JSON_PRETTY_PRINT
         );
         // ListMutateJobResults can return objects that contain GoogleAdsFailure. We need to
-        // initialize an unused GoogleAdsFailure object, as the pool needs to be aware of this
-        // class, in order to serialize the response correctly.
-        if (
-            !isset(self::$unusedGoogleAdsFailure)
-            && strpos($method, 'ListMutateJobResults')
-        ) {
-            self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
+        // make sure that the pool is aware of this class, in order to serialize the response
+        // correctly.
+        if (strpos($method, 'ListMutateJobResults')) {
+            GoogleAdsFailures::init();
         }
         $logMessageTokens[] = "Request: " . $argument->serializeToJsonString();
 
@@ -150,15 +146,14 @@ final class LogMessageFormatter
         );
 
         if ($status->code === 0) {
-            // Initialize unused GoogleAdsFailure object when there are partial failures returned.
-            // This is necessary, as the pool needs to be aware of this class, in order to serialize
-            // the response correctly.
+            // Partial failures can return objects that contain GoogleAdsFailure. We need to make
+            // sure that the pool is aware of this class, in order to serialize the response
+            // correctly.
             if (
-                !isset(self::$unusedGoogleAdsFailure)
-                && method_exists($response, 'getPartialFailureError')
+                method_exists($response, 'getPartialFailureError')
                 && !is_null($response->getPartialFailureError())
             ) {
-                self::$unusedGoogleAdsFailure = new GoogleAdsFailure();
+                GoogleAdsFailures::init();
             }
             $logMessageTokens[] = "Response: " . (is_null($response) ? "None" :
                 $response->serializeToJsonString()
