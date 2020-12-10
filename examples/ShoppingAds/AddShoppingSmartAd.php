@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -188,7 +189,7 @@ class AddShoppingSmartAd
     {
         // Creates a campaign budget.
         $budget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+            'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // The budget is specified in the local currency of the account.
             // The amount should be specified in micros, where one million is equivalent to one
@@ -248,7 +249,7 @@ class AddShoppingSmartAd
         // [START AddShoppingSmartAd]
         // Creates the campaign.
         $campaign = new Campaign([
-            'name' => 'Interplanetary Cruise Campaign #' . uniqid(),
+            'name' => 'Interplanetary Cruise Campaign #' . Helper::getPrintableDatetime(),
             // Configures settings related to shopping campaigns including
             // advertising channel type, advertising sub-type and shopping setting.
             'advertising_channel_type' => AdvertisingChannelType::SHOPPING,
@@ -312,7 +313,7 @@ class AddShoppingSmartAd
     ) {
         // Creates an ad group.
         $adGroup = new AdGroup([
-            'name' => 'Earth to Mars Cruise #' . uniqid(),
+            'name' => 'Earth to Mars Cruise #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName,
             // Sets the ad group type to SHOPPING_SMART_ADS. This cannot be set to other types.
             'type' => AdGroupType::SHOPPING_SMART_ADS,

@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -110,7 +111,7 @@ class AddAdGroups
 
         // Constructs an ad group and sets an optional CPC value.
         $adGroup1 = new AdGroup([
-            'name' => 'Earth to Mars Cruises #' . uniqid(),
+            'name' => 'Earth to Mars Cruises #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::ENABLED,
             'type' => AdGroupType::SEARCH_STANDARD,
@@ -123,7 +124,7 @@ class AddAdGroups
 
         // Constructs another ad group.
         $adGroup2 = new AdGroup([
-            'name' => 'Earth to Venus Cruises #' . uniqid(),
+            'name' => 'Earth to Venus Cruises #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::ENABLED,
             'type' => AdGroupType::SEARCH_STANDARD,

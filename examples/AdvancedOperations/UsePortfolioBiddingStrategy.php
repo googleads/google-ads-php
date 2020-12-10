@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -145,7 +146,7 @@ class UsePortfolioBiddingStrategy
     {
         // Creates a portfolio bidding strategy.
         $portfolioBiddingStrategy = new BiddingStrategy([
-            'name' => 'Maximize Clicks #' . uniqid(),
+            'name' => 'Maximize Clicks #' . Helper::getPrintableDatetime(),
             'target_spend' => new TargetSpend([
                 'cpc_bid_ceiling_micros' => 2000000
             ])
@@ -189,7 +190,7 @@ class UsePortfolioBiddingStrategy
     ) {
         // Creates a shared budget.
         $budget = new CampaignBudget([
-            'name' => 'Shared Interplanetary Budget #' . uniqid(),
+            'name' => 'Shared Interplanetary Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // Sets the amount of budget.
             'amount_micros' => 50000000,
@@ -237,7 +238,7 @@ class UsePortfolioBiddingStrategy
         // [START UsePortfolioBiddingStrategy_2]
         // Creates a Search campaign.
         $campaign = new Campaign([
-            'name' => 'Interplanetary Cruise #' . uniqid(),
+            'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added

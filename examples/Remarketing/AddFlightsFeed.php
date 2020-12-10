@@ -24,6 +24,7 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Feeds;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -165,7 +166,7 @@ class AddFlightsFeed
 
         // Creates the feed with the newly created feed attributes.
         $feed = new Feed([
-            'name' => 'Flights Feed #' . uniqid(),
+            'name' => 'Flights Feed #' . Helper::getPrintableDatetime(),
             'attributes' => [
                 $flightDescriptionAttribute,
                 $destinationIdAttribute,

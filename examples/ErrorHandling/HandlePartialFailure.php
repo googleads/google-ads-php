@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -140,13 +141,13 @@ class HandlePartialFailure
         // This ad group should be created successfully - assuming the campaign in the params
         // exists.
         $adGroup1 = new AdGroup([
-            'name' => 'Valid AdGroup #' . uniqid(),
+            'name' => 'Valid AdGroup #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName
         ]);
 
         // This ad group will always fail - campaign ID 0 in the resource name is never valid.
         $adGroup2 = new AdGroup([
-            'name' => 'Broken AdGroup #' . uniqid(),
+            'name' => 'Broken AdGroup #' . Helper::getPrintableDatetime(),
             'campaign' => ResourceNames::forCampaign($customerId, 0)
         ]);
 

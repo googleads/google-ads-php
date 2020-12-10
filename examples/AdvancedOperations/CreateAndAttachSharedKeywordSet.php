@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -114,7 +115,7 @@ class CreateAndAttachSharedKeywordSet
     ) {
         // Create shared negative keyword set.
         $sharedSet = new SharedSet([
-            'name' => 'API Negative keyword list - ' . uniqid(),
+            'name' => 'API Negative keyword list - ' . Helper::getPrintableDatetime(),
             'type' => SharedSetType::NEGATIVE_KEYWORDS,
         ]);
 

@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -156,7 +157,7 @@ class AddKeywordPlan
     ) {
         // Creates a keyword plan.
         $keywordPlan = new KeywordPlan([
-            'name' => 'Keyword plan for traffic estimate #' . uniqid(),
+            'name' => 'Keyword plan for traffic estimate #' . Helper::getPrintableDatetime(),
             'forecast_period' => new KeywordPlanForecastPeriod([
                 'date_interval' => KeywordPlanForecastInterval::NEXT_QUARTER
             ])
@@ -194,7 +195,7 @@ class AddKeywordPlan
     ) {
         // Creates a keyword plan campaign.
         $keywordPlanCampaign = new KeywordPlanCampaign([
-            'name' => 'Keyword plan campaign #' . uniqid(),
+            'name' => 'Keyword plan campaign #' . Helper::getPrintableDatetime(),
             'cpc_bid_micros' => 1000000,
             'keyword_plan_network' => KeywordPlanNetwork::GOOGLE_SEARCH,
             'keyword_plan' => $keywordPlanResource,
@@ -247,7 +248,7 @@ class AddKeywordPlan
     ) {
         // Creates a keyword plan ad group.
         $keywordPlanAdGroup = new KeywordPlanAdGroup([
-            'name' => 'Keyword plan ad group #' . uniqid(),
+            'name' => 'Keyword plan ad group #' . Helper::getPrintableDatetime(),
             'cpc_bid_micros' => 2500000,
             'keyword_plan_campaign' => $planCampaignResource
         ]);

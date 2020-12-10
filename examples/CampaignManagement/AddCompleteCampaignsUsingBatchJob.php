@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -379,7 +380,7 @@ class AddCompleteCampaignsUsingBatchJob
                     $customerId,
                     self::getNextTemporaryId()
                 ),
-                'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+                'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
                 'delivery_method' => BudgetDeliveryMethod::STANDARD,
                 'amount_micros' => 5000000
             ])
@@ -405,7 +406,11 @@ class AddCompleteCampaignsUsingBatchJob
             $campaign = new Campaign([
                 // Creates a resource name using the temporary ID.
                 'resource_name' => ResourceNames::forCampaign($customerId, $campaignId),
-                'name' => sprintf('Mutate job campaign #%s.%d', uniqid(), $campaignId),
+                'name' => sprintf(
+                    'Mutate job campaign #%s.%d',
+                    Helper::getPrintableDatetime(),
+                    $campaignId
+                ),
                 'advertising_channel_type' => AdvertisingChannelType::SEARCH,
                 // Recommendation: Set the campaign to PAUSED when creating it to prevent
                 // the ads from immediately serving. Set to ENABLED once you've added
@@ -470,7 +475,11 @@ class AddCompleteCampaignsUsingBatchJob
                 $adGroup = new AdGroup([
                     // Creates a resource name using the temporary ID.
                     'resource_name' => ResourceNames::forAdGroup($customerId, $adGroupId),
-                    'name' => sprintf('Mutate job ad group #%s.%d', uniqid(), $adGroupId),
+                    'name' => sprintf(
+                        'Mutate job ad group #%s.%d',
+                        Helper::getPrintableDatetime(),
+                        $adGroupId
+                    ),
                     'campaign' => $campaignOperation->getCreate()->getResourceName(),
                     'type' => AdGroupType::SEARCH_STANDARD,
                     'cpc_bid_micros' => 10000000
@@ -537,7 +546,7 @@ class AddCompleteCampaignsUsingBatchJob
                 'ad' => new Ad([
                     // Sets the expanded text ad info on an ad.
                     'expanded_text_ad' => new ExpandedTextAdInfo([
-                        'headline_part1' => 'Cruise to Mars #' . uniqid(),
+                        'headline_part1' => 'Cruise to Mars #' . Helper::getPrintableDatetime(),
                         'headline_part2' => 'Best Space Cruise Line',
                         'description' => 'Buy your tickets now!'
                     ]),

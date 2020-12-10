@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -206,7 +207,7 @@ class SetupRemarketing
 
         // Creates the user list.
         $userList = new UserList([
-            'name' => "All visitors to example.com #" . uniqid(),
+            'name' => "All visitors to example.com #" . Helper::getPrintableDatetime(),
             'description' => "Any visitor to any page of example.com",
             'membership_status' => UserListMembershipStatus::OPEN,
             'membership_life_span' => 365,

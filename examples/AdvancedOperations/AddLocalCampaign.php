@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -164,7 +165,7 @@ class AddLocalCampaign
         int $customerId
     ) {
         $campaignBudget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+            'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             'amount_micros' => 50000000,
             // A Local campaign cannot use a shared campaign budget.
@@ -207,7 +208,7 @@ class AddLocalCampaign
         string $campaignBudgetResourceName
     ) {
         $campaign = new Campaign([
-            'name' => 'Interplanetary Cruise Local #' . uniqid(),
+            'name' => 'Interplanetary Cruise Local #' . Helper::getPrintableDatetime(),
             'campaign_budget' => $campaignBudgetResourceName,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent the ads
             // from immediately serving. Set to ENABLED once you've added targeting and the ads
@@ -283,7 +284,7 @@ class AddLocalCampaign
         //   1. you cannot override bid settings at the ad group level.
         //   2. you cannot add ad group criteria.
         $adGroup = new AdGroup([
-            'name' => 'Earth to Mars Cruises #' . uniqid(),
+            'name' => 'Earth to Mars Cruises #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::ENABLED
         ]);

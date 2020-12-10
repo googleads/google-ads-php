@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -152,7 +153,7 @@ class AddDynamicSearchAds
         int $customerId
     ) {
         $campaignBudget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+            'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             'amount_micros' => 500000
         ]);
@@ -190,7 +191,7 @@ class AddDynamicSearchAds
         string $campaignBudgetResourceName
     ) {
         $campaign = new Campaign([
-            'name' => 'Interplanetary Cruise #' . uniqid(),
+            'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             'status' => CampaignStatus::PAUSED,
             'manual_cpc' => new ManualCpc(),
@@ -241,7 +242,7 @@ class AddDynamicSearchAds
     ) {
         // Constructs an ad group and sets an optional CPC value.
         $adGroup = new AdGroup([
-            'name' => 'Earth to Mars Cruises #' . uniqid(),
+            'name' => 'Earth to Mars Cruises #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::PAUSED,
             'type' => AdGroupType::SEARCH_DYNAMIC_ADS,
