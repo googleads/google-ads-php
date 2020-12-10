@@ -44,9 +44,17 @@ class GoogleAdsFailuresUnaryCall extends ForwardingUnaryCall
                 && !is_null($response->getPartialFailureError())
             )
         ) {
-            GoogleAdsFailures::init();
+            $this->initGoogleAdsFailures();
         }
 
         return [$response, $status];
+    }
+
+    /**
+     * Initializes the GoogleAdsFailures.
+     */
+    public function initGoogleAdsFailures()
+    {
+        GoogleAdsFailures::init();
     }
 }
