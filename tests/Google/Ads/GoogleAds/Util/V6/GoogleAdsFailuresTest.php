@@ -24,7 +24,7 @@ use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V6\Errors\GoogleAdsFailure;
 use PHPUnit\Framework\TestCase;
 
-class GoogleAdsFailureTest extends TestCase
+class GoogleAdsFailuresTest extends TestCase
 {
     public function testFromAny()
     {
