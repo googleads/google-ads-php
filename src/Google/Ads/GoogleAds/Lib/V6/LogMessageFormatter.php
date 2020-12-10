@@ -134,7 +134,7 @@ final class LogMessageFormatter
         // ListMutateJobResults can return objects that contain GoogleAdsFailure. We need to
         // make sure that the pool is aware of this class, in order to serialize the response
         // correctly.
-        if (strpos($method, 'ListMutateJobResults')) {
+        if (strpos($method, 'ListBatchJobResults')) {
             GoogleAdsFailures::init();
         }
         $logMessageTokens[] = "Request: ";
