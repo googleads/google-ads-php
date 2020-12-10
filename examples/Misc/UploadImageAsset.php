@@ -109,7 +109,7 @@ class UploadImageAsset
             // If you specify the name field, then both the asset name and the image being
             // uploaded should be unique, and should not match another ACTIVE asset in this
             // customer account.
-            // 'name' => 'Jupiter Trip #' . uniqid(),
+            // 'name' => 'Jupiter Trip #' . Helper::getPrintableDatetime(),
             'type' => AssetType::IMAGE,
             'image_asset' => new ImageAsset(['data' => $imageContent])
         ]);

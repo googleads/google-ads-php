@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -118,7 +119,7 @@ class AddResponsiveSearchAd
                     // optional; if no pinning is set, then headlines and descriptions will be
                     // rotated and the ones that perform best will be used more often.
                     self::createAdTextAsset(
-                        'Cruise to Mars #' . uniqid(),
+                        'Cruise to Mars #' . Helper::getPrintableDatetime(),
                         ServedAssetFieldType::HEADLINE_1
                     ),
                     self::createAdTextAsset('Best Space Cruise Line'),

@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -106,7 +107,9 @@ class AddRemarketingAction
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a remarketing action with the specified name.
-        $remarketingAction = new RemarketingAction(['name' => 'Remarketing action #' . uniqid()]);
+        $remarketingAction = new RemarketingAction([
+            'name' => 'Remarketing action #' . Helper::getPrintableDatetime()
+        ]);
 
         // Creates a remarketing action operation.
         $remarketingActionOperation =

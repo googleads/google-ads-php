@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -193,7 +194,7 @@ class SetupAdvancedRemarketing
 
         // Creates the user list.
         $userList = new UserList([
-            'name' => 'My expression rule user list #' . uniqid(),
+            'name' => 'My expression rule user list #' . Helper::getPrintableDatetime(),
             'description' => 'Users who checked out in November or December OR ' .
                 'visited the checkout page with more than one item in their cart',
             'membership_status' => UserListMembershipStatus::OPEN,

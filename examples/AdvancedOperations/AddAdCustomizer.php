@@ -24,6 +24,7 @@ use DateTime;
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -137,7 +138,7 @@ class AddAdCustomizer
             );
         }
 
-        $feedName = 'Ad Customizer example feed ' . uniqid();
+        $feedName = 'Ad Customizer example feed ' . Helper::getPrintableDatetime();
 
         // Create a feed to be used for ad customization.
         $adCustomizerFeedResourceName = self::createAdCustomizerFeed(

@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -159,7 +160,7 @@ class AddSitelinksUsingFeeds
     {
         // Creates a feed.
         $feed = new Feed([
-            'name' => 'Sitelinks Feed #' . uniqid(),
+            'name' => 'Sitelinks Feed #' . Helper::getPrintableDatetime(),
             'origin' => FeedOrigin::USER,
             // Specifies the column name and data type. This is just raw data at this point,
             // and not yet linked to any particular purpose. The names are used to help us

@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -172,7 +173,7 @@ class AddCombinedRuleUserList
         // Creates a user list.
         $userList = new UserList([
             'name' => 'All visitors to http://example.com/example1 AND ' .
-                'http://example.com/example2 #' . uniqid(),
+                'http://example.com/example2 #' . Helper::getPrintableDatetime(),
             'description' => 'Visitors of both http://example.com/example1 AND ' .
                 'http://example.com/example2',
             'membership_status' => UserListMembershipStatus::OPEN,

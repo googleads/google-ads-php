@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -335,7 +336,7 @@ class AddAffiliateLocationExtensions
         // Do not add feed attributes, Google Ads will add them automatically because this will
         // be a system generated feed.
         $feed = new Feed([
-            'name' => 'Affiliate Location Extension feed #' . uniqid(),
+            'name' => 'Affiliate Location Extension feed #' . Helper::getPrintableDatetime(),
             'affiliate_location_feed_data' => new AffiliateLocationFeedData([
                 'chain_ids' => [$chainId],
                 'relationship_type' => AffiliateLocationFeedRelationshipType::GENERAL_RETAILER

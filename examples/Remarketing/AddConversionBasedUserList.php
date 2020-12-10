@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -129,7 +130,7 @@ class AddConversionBasedUserList
 
         // Creates the basic user list.
         $basicUserList = new UserList([
-            'name' => 'Example BasicUserList #' . uniqid(),
+            'name' => 'Example BasicUserList #' . Helper::getPrintableDatetime(),
             'description' => 'A list of people who have triggered one or more conversion actions',
             'membership_status' => UserListMembershipStatus::OPEN,
             'membership_life_span' => 365,

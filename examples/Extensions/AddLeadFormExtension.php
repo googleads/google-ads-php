@@ -23,38 +23,27 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\V6\ResourceNames;
-use Google\Ads\GoogleAds\V6\Common\HotelCalloutFeedItem;
 use Google\Ads\GoogleAds\V6\Common\LeadFormAsset;
 use Google\Ads\GoogleAds\V6\Common\LeadFormDeliveryMethod;
 use Google\Ads\GoogleAds\V6\Common\LeadFormField;
 use Google\Ads\GoogleAds\V6\Common\LeadFormSingleChoiceAnswers;
 use Google\Ads\GoogleAds\V6\Common\WebhookDelivery;
 use Google\Ads\GoogleAds\V6\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V6\Enums\AssetLinkStatusEnum\AssetLinkStatus;
-use Google\Ads\GoogleAds\V6\Enums\ExtensionTypeEnum\ExtensionType;
 use Google\Ads\GoogleAds\V6\Enums\LeadFormCallToActionTypeEnum\LeadFormCallToActionType;
 use Google\Ads\GoogleAds\V6\Enums\LeadFormFieldUserInputTypeEnum\LeadFormFieldUserInputType;
 use Google\Ads\GoogleAds\V6\Enums\LeadFormPostSubmitCallToActionTypeEnum\LeadFormPostSubmitCallToActionType;
 use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting;
 use Google\Ads\GoogleAds\V6\Resources\Asset;
 use Google\Ads\GoogleAds\V6\Resources\CampaignAsset;
-use Google\Ads\GoogleAds\V6\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting;
-use Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V6\Services\AdGroupExtensionSettingOperation;
 use Google\Ads\GoogleAds\V6\Services\AssetOperation;
 use Google\Ads\GoogleAds\V6\Services\CampaignAssetOperation;
-use Google\Ads\GoogleAds\V6\Services\CampaignExtensionSettingOperation;
-use Google\Ads\GoogleAds\V6\Services\CustomerExtensionSettingOperation;
-use Google\Ads\GoogleAds\V6\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
-use Google\Protobuf\StringValue;
 
 /**
  * Creates a lead form and a lead form extension for a campaign. Run AddCampaigns.php to create a
@@ -153,7 +142,7 @@ class AddLeadFormExtension
     ): string {
         // Creates the lead form asset.
         $leadFormAsset = new Asset([
-            'name' => 'Interplanetary Cruise #' . uniqid() . ' Lead Form',
+            'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime() . ' Lead Form',
             'lead_form_asset' => new LeadFormAsset([
                 // Specifies the details of the extension that the users will see.
                 'call_to_action_type' => LeadFormCallToActionType::BOOK_NOW,

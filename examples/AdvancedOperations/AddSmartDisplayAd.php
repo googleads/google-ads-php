@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -180,7 +181,7 @@ class AddSmartDisplayAd
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+            'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             'amount_micros' => 5000000
         ]);
@@ -220,7 +221,7 @@ class AddSmartDisplayAd
         string $campaignBudgetResourceName
     ) {
         $campaign = new Campaign([
-            'name' => 'Smart Display Campaign #' . uniqid(),
+            'name' => 'Smart Display Campaign #' . Helper::getPrintableDatetime(),
             // Smart Display campaign requires the advertising_channel_type as 'DISPLAY'.
             'advertising_channel_type' => AdvertisingChannelType::DISPLAY,
             // Smart Display campaign requires the advertising_channel_sub_type as
@@ -270,7 +271,7 @@ class AddSmartDisplayAd
     ) {
         // Constructs an ad group and set its type.
         $adGroup = new AdGroup([
-            'name' => 'Earth to Mars Cruises #' . uniqid(),
+            'name' => 'Earth to Mars Cruises #' . Helper::getPrintableDatetime(),
             'campaign' => $campaignResourceName,
             'status' => AdGroupStatus::PAUSED,
         ]);

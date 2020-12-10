@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds\Examples\Migration\CampaignManagement;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\V6\Common\ManualCpc;
 use Google\Ads\GoogleAds\V6\Common\ExpandedTextAdInfo;
@@ -115,7 +116,7 @@ class CreateCompleteCampaignBothApisPhase4
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+            'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             'amount_micros' => 500000
         ]);
@@ -180,7 +181,7 @@ class CreateCompleteCampaignBothApisPhase4
         CampaignBudget $campaignBudget
     ) {
         $campaign = new Campaign([
-            'name' => 'Interplanetary Cruise #' . uniqid(),
+            'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added
@@ -258,7 +259,7 @@ class CreateCompleteCampaignBothApisPhase4
     ) {
         // Constructs an ad group and sets an optional CPC value.
         $adGroup = new AdGroup([
-            'name' => 'Earth to Mars Cruises #' . uniqid(),
+            'name' => 'Earth to Mars Cruises #' . Helper::getPrintableDatetime(),
             'campaign' => $campaign->getResourceName(),
             'status' => AdGroupStatus::ENABLED,
             'type' => AdGroupType::SEARCH_STANDARD,
@@ -320,7 +321,7 @@ class CreateCompleteCampaignBothApisPhase4
         for ($i = 0; $i < self::NUMBER_OF_ADS; $i++) {
             // Creates the expanded text ad info.
             $expandedTextAdInfo = new ExpandedTextAdInfo([
-                'headline_part1' => 'Cruise to Mars #' . uniqid(),
+                'headline_part1' => 'Cruise to Mars #' . Helper::getPrintableDatetime(),
                 'headline_part2' => 'Best Space Cruise Line',
                 'description' => 'Buy your tickets now!'
             ]);
