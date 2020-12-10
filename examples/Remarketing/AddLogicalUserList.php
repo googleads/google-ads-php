@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -135,7 +136,7 @@ class AddLogicalUserList
 
         // Creates the new combination user list.
         $userList = new UserList([
-            'name' => 'My combination list of other user lists #' . uniqid(),
+            'name' => 'My combination list of other user lists #' . Helper::getPrintableDatetime(),
             'logical_user_list' => new LogicalUserListInfo([
                 'rules' => [$userListLogicalRuleInfo]
             ])

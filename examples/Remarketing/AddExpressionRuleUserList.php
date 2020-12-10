@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -160,7 +161,8 @@ class AddExpressionRuleUserList
 
         // Creates a user list.
         $userList = new UserList([
-            'name' => 'All visitors to example.com/section1 AND example.com/section2 #' . uniqid(),
+            'name' => 'All visitors to example.com/section1 AND example.com/section2 #' .
+                Helper::getPrintableDatetime(),
             'description' => 'Visitors of both example.com/section1 AND example.com/section2',
             'membership_status' => UserListMembershipStatus::OPEN,
             'membership_life_span' => 365,

@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds\Examples\Migration\CampaignManagement;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\V6\Common\ManualCpc;
 use Google\Ads\GoogleAds\V6\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
@@ -122,7 +123,7 @@ class CreateCompleteCampaignBothApisPhase2
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+            'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             'amount_micros' => 500000
         ]);
@@ -187,7 +188,7 @@ class CreateCompleteCampaignBothApisPhase2
         CampaignBudget $campaignBudget
     ) {
         $campaign = new Campaign([
-            'name' => 'Interplanetary Cruise #' . uniqid(),
+            'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added
@@ -270,7 +271,7 @@ class CreateCompleteCampaignBothApisPhase2
         // Create an ad group.
         $adGroup = new AdGroup();
         $adGroup->setCampaignId($campaignId);
-        $adGroup->setName('Earth to Mars Cruise #' . uniqid());
+        $adGroup->setName('Earth to Mars Cruise #' . Helper::getPrintableDatetime());
 
         // Set ad group bids.
         $bid = new CpcBid();
@@ -325,7 +326,9 @@ class CreateCompleteCampaignBothApisPhase2
         for ($i = 0; $i < self::NUMBER_OF_ADS; $i++) {
             // Create an expanded text ad.
             $expandedTextAd = new ExpandedTextAd();
-            $expandedTextAd->setHeadlinePart1('Cruise #' . uniqid() . ' to Mars');
+            $expandedTextAd->setHeadlinePart1(
+                'Cruise #' . Helper::getPrintableDatetime() . ' to Mars'
+            );
             $expandedTextAd->setHeadlinePart2('Best Space Cruise Line');
             $expandedTextAd->setHeadlinePart3('For Your Loved Ones');
             $expandedTextAd->setDescription('Buy your tickets now!');

@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -102,7 +103,7 @@ class AddConversionAction
     {
         // Creates a conversion action.
         $conversionAction = new ConversionAction([
-            'name' => 'Earth to Mars Cruises Conversion #' . uniqid(),
+            'name' => 'Earth to Mars Cruises Conversion #' . Helper::getPrintableDatetime(),
             'category' => ConversionActionCategory::PBDEFAULT,
             'type' => ConversionActionType::WEBPAGE,
             'status' => ConversionActionStatus::ENABLED,

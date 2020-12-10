@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -116,7 +117,7 @@ class CreateCampaignExperiment
         $campaignExperiment = new CampaignExperiment([
             'campaign_draft'
                 => ResourceNames::forCampaignDraft($customerId, $baseCampaignId, $draftId),
-            'name' => 'Campaign Experiment #' . uniqid(),
+            'name' => 'Campaign Experiment #' . Helper::getPrintableDatetime(),
             'traffic_split_percent' => 50,
             'traffic_split_type' => CampaignExperimentTrafficSplitType::RANDOM_QUERY
         ]);

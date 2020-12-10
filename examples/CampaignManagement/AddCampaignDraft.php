@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -109,7 +110,7 @@ class AddCampaignDraft
         // Creates a campaign draft.
         $campaignDraft = new CampaignDraft([
             'base_campaign' => ResourceNames::forCampaign($customerId, $baseCampaignId),
-            'name' => 'Campaign Draft #' . uniqid()
+            'name' => 'Campaign Draft #' . Helper::getPrintableDatetime()
         ]);
 
         // Creates a campaign draft operation.

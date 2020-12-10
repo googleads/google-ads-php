@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -140,7 +141,7 @@ class AddCustomerMatchUserList
     ): string {
         // Creates the user list.
         $userList = new UserList([
-            'name' => 'Customer Match list #' . uniqid(),
+            'name' => 'Customer Match list #' . Helper::getPrintableDatetime(),
             'description' => 'A list of customers that originated from email '
                 . 'and physical addresses',
             // Customer Match user lists can use a membership life span of 10000 to

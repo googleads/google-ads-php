@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -190,7 +191,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         // Creates the campaign.
         $campaign = new Campaign([
-            'name' => 'Shopping campaign #' . uniqid(),
+            'name' => 'Shopping campaign #' . Helper::getPrintableDatetime(),
             // Dynamic remarketing campaigns are only available on the Google Display Network.
             'advertising_channel_type' => AdvertisingChannelType::DISPLAY,
             'status' => CampaignStatus::PAUSED,

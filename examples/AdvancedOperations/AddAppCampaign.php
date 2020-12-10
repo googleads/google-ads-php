@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -167,7 +168,7 @@ class AddAppCampaign
     ) {
         // Creates a campaign budget.
         $campaignBudget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise #' . uniqid(),
+            'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
             'amount_micros' => 50000000,
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // An App campaign cannot use a shared campaign budget.
@@ -212,7 +213,7 @@ class AddAppCampaign
     ) {
         // Creates a campaign.
         $campaign = new Campaign([
-            'name' => 'Interplanetary Cruise App #' . uniqid(),
+            'name' => 'Interplanetary Cruise App #' . Helper::getPrintableDatetime(),
             'campaign_budget' => $budgetResourceName,
             // Recommendation: Set the campaign to PAUSED when creating it to prevent
             // the ads from immediately serving. Set to ENABLED once you've added
@@ -372,7 +373,7 @@ class AddAppCampaign
         //   1. you cannot override bid settings at the ad group level.
         //   2. you cannot add ad group criteria.
         $adGroup = new AdGroup([
-            'name' => 'Earth to Mars cruises ' . uniqid(),
+            'name' => 'Earth to Mars cruises ' . Helper::getPrintableDatetime(),
             'status' => AdGroupStatus::ENABLED,
             'campaign' => $campaignResourceName
         ]);

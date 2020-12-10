@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -112,7 +113,7 @@ class AddExpandedTextAds
         for ($i = 0; $i < self::NUMBER_OF_ADS_TO_ADD; $i++) {
             // Creates the expanded text ad info.
             $expandedTextAdInfo = new ExpandedTextAdInfo([
-                'headline_part1' => 'Cruise to Mars #' . uniqid(),
+                'headline_part1' => 'Cruise to Mars #' . Helper::getPrintableDatetime(),
                 'headline_part2' => 'Best Space Cruise Line',
                 'description' => 'Buy your tickets now!'
             ]);

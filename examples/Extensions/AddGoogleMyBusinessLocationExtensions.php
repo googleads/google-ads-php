@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -172,7 +173,7 @@ class AddGoogleMyBusinessLocationExtensions
     ) {
 
         $gmbFeed = new Feed([
-            'name' => 'Google My Business feed #' . uniqid(),
+            'name' => 'Google My Business feed #' . Helper::getPrintableDatetime(),
             'origin' => FeedOrigin::GOOGLE,
             'places_location_feed_data' => new PlacesLocationFeedData([
                 'email_address' => $gmbEmailAddress,
