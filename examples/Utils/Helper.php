@@ -26,7 +26,7 @@ use DateTime;
 final class Helper
 {
     /**
-     * Generates a printable string for the current date and time in UTC time zone.
+     * Generates a printable string for the current date and time in local time zone.
      * @return string the result string
      */
     public static function getPrintableDatetime(): string
