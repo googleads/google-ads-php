@@ -18,7 +18,6 @@
 
 namespace Google\Ads\GoogleAds\Lib\V6;
 
-use Google\Ads\GoogleAds\Util\V6\GoogleAdsFailures;
 use Google\ApiCore\ArrayTrait;
 use Google\Protobuf\Internal\Message;
 
@@ -131,12 +130,6 @@ final class LogMessageFormatter
             $this->infoRedactor->redactHeaders(self::joinPluckedArrays($metadata)),
             JSON_PRETTY_PRINT
         );
-        // ListMutateJobResults can return objects that contain GoogleAdsFailure. We need to
-        // make sure that the pool is aware of this class, in order to serialize the response
-        // correctly.
-        if (strpos($method, 'ListMutateJobResults')) {
-            GoogleAdsFailures::init();
-        }
         $logMessageTokens[] = "Request: ";
         $logMessageTokens[] = $this->infoRedactor->redactBody($argument)->serializeToJsonString();
         $logMessageTokens[] = "\nResponse";
@@ -147,15 +140,6 @@ final class LogMessageFormatter
         );
 
         if ($status->code === 0) {
-            // Partial failures can return objects that contain GoogleAdsFailure. We need to make
-            // sure that the pool is aware of this class, in order to serialize the response
-            // correctly.
-            if (
-                method_exists($response, 'getPartialFailureError')
-                && !is_null($response->getPartialFailureError())
-            ) {
-                GoogleAdsFailures::init();
-            }
             $logMessageTokens[] = "Response: ";
             $logMessageTokens[] = is_null($response)
                 ? "None" : $this->infoRedactor->redactBody($response)->serializeToJsonString();
