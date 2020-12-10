@@ -175,7 +175,8 @@ trait ServiceClientFactoryTrait
                     // Sets max response size to 64MB, since large responses will often exceed the
                     // default (4MB).
                     'grpc.max_receive_message_length' => 64 * 1024 * 1024
-                ]
+                ],
+                'interceptors' => [new GoogleAdsFailuresInterceptor()]
             ]
         ];
         if (!empty($this->getLogger())) {
@@ -186,9 +187,10 @@ trait ServiceClientFactoryTrait
                     $this->getEndpoint() ?: self::$DEFAULT_SERVICE_ADDRESS
                 )
             );
-            $clientOptions['transportConfig']['grpc'] += [
-                'interceptors' => [$googleAdsLoggingInterceptor]
-            ];
+            array_unshift(
+                $clientOptions['transportConfig']['grpc']['interceptors'],
+                $googleAdsLoggingInterceptor
+            );
         }
         if (!empty($this->getProxy())) {
             putenv('http_proxy=' . $this->getProxy());
