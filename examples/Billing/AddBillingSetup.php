@@ -24,6 +24,7 @@ use Exception;
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -189,7 +190,7 @@ class AddBillingSetup
             // See https://support.google.com/google-ads/answer/7268503 for more information about
             // payments profiles.
             $billingSetup->setPaymentsAccountInfo(new PaymentsAccountInfo([
-                'payments_account_name' => 'Payments Account #' . uniqid(),
+                'payments_account_name' => 'Payments Account #' . Helper::getPrintableDatetime(),
                 'payments_profile_id' => $paymentsProfileId
             ]));
         } else {

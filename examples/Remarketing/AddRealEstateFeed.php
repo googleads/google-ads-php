@@ -24,6 +24,7 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Feeds;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -169,7 +170,7 @@ class AddRealEstateFeed
 
         // Creates the feed with the newly created feed attributes.
         $feed = new Feed([
-            'name' => 'Real Estate Feed #' . uniqid(),
+            'name' => 'Real Estate Feed #' . Helper::getPrintableDatetime(),
             'attributes' => [
                 $listingIdAttribute,
                 $listingNameAttribute,

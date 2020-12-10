@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -215,7 +216,7 @@ class AddGmailAd
 
         // Sets the Gmail ad info on an Ad.
         $ad = new Ad([
-            'name' => 'Gmail Ad #' . uniqid(),
+            'name' => 'Gmail Ad #' . Helper::getPrintableDatetime(),
             'final_urls' => ['http://www.example.com'],
             'gmail_ad' => $gmailAdInfo
         ]);

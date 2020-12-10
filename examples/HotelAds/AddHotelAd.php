@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -164,7 +165,7 @@ class AddHotelAd
     {
         // Creates a campaign budget.
         $budget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+            'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             // Sets the amount of budget.
             'amount_micros' => 50000000,
@@ -215,7 +216,7 @@ class AddHotelAd
         // [START AddHotelAd]
         // Creates a campaign.
         $campaign = new Campaign([
-            'name' => 'Interplanetary Cruise Campaign #' . uniqid(),
+            'name' => 'Interplanetary Cruise Campaign #' . Helper::getPrintableDatetime(),
             // Configures settings related to hotel campaigns including advertising channel type
             // and hotel setting info.
             'advertising_channel_type' => AdvertisingChannelType::HOTEL,
@@ -276,7 +277,7 @@ class AddHotelAd
     ) {
         // Creates an ad group.
         $adGroup = new AdGroup([
-            'name' => 'Earth to Mars Cruise #' . uniqid(),
+            'name' => 'Earth to Mars Cruise #' . Helper::getPrintableDatetime(),
             // Sets the campaign.
             'campaign' => $campaignResourceName,
             // Sets the ad group type to HOTEL_ADS.

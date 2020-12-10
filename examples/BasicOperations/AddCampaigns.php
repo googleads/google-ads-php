@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -119,7 +120,7 @@ class AddCampaigns
             // Creates a campaign.
             // [START AddCampaigns]
             $campaign = new Campaign([
-                'name' => 'Interplanetary Cruise #' . uniqid(),
+                'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
                 'advertising_channel_type' => AdvertisingChannelType::SEARCH,
                 // Recommendation: Set the campaign to PAUSED when creating it to prevent
                 // the ads from immediately serving. Set to ENABLED once you've added
@@ -166,7 +167,7 @@ class AddCampaigns
     {
         // Creates a campaign budget.
         $budget = new CampaignBudget([
-            'name' => 'Interplanetary Cruise Budget #' . uniqid(),
+            'name' => 'Interplanetary Cruise Budget #' . Helper::getPrintableDatetime(),
             'delivery_method' => BudgetDeliveryMethod::STANDARD,
             'amount_micros' => 500000
         ]);

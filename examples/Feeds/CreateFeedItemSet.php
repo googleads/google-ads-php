@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -109,7 +110,7 @@ class CreateFeedItemSet
         // Creates a new feed item set.
         $feedItemSet = new FeedItemSet([
             'feed' => ResourceNames::forFeed($customerId, $feedId),
-            'display_name' => 'Feed Item Set #' . uniqid()
+            'display_name' => 'Feed Item Set #' . Helper::getPrintableDatetime()
         ]);
 
         // A feed item set can be created as a dynamic set by setting an optional filter field
