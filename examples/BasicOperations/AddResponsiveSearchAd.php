@@ -119,7 +119,7 @@ class AddResponsiveSearchAd
                     // optional; if no pinning is set, then headlines and descriptions will be
                     // rotated and the ones that perform best will be used more often.
                     self::createAdTextAsset(
-                        'Cruise to Mars #' . Helper::getPrintableDatetime(),
+                        'Cruise to Mars #' . Helper::getShortPrintableDatetime(),
                         ServedAssetFieldType::HEADLINE_1
                     ),
                     self::createAdTextAsset('Best Space Cruise Line'),

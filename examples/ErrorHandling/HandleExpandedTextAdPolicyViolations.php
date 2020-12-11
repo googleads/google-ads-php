@@ -116,7 +116,7 @@ class HandleExpandedTextAdPolicyViolations
     ) {
         // Creates an expanded text ad info object.
         $expandedTextAdInfo = new ExpandedTextAdInfo([
-            'headline_part1' => 'Cruise to Mars #' . Helper::getPrintableDatetime(),
+            'headline_part1' => 'Cruise to Mars #' . Helper::getShortPrintableDatetime(),
             'headline_part2' => 'Best Space Cruise Line',
             // Intentionally use an ad text that violates policy -- having too many exclamation
             // marks.
