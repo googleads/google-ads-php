@@ -1,3 +1,16 @@
+## 6.1.0
+*   Added support for logging responses of stream calls.
+*   Updated the required protobuf version to v3.14.0 for better performance and bug
+    fixes.
+*   Moved testing files to `tests/` and updated the PSR-4 rules in
+    `composer.json` accordingly.
+*   Added support for PHPUnit 9.3.
+*   Added print_php_information for printing information about installed extensions.
+*   Added code examples:
+    * GetInvoices
+    * SetupRemarketing
+    * SetupAdvancedRemarketing
+
 ## 6.0.0
 *   Added support for v6 of Google Ads API.
 *   Updated all code examples to v6.
