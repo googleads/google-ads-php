@@ -28,7 +28,7 @@ class Foo extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bool bool = 4;</code>
      */
-    protected $bool = false;
+    protected $bool = null;
 
     /**
      * Constructor.
@@ -129,7 +129,17 @@ class Foo extends \Google\Protobuf\Internal\Message
      */
     public function getBool()
     {
-        return $this->bool;
+        return isset($this->bool) ? $this->bool : false;
+    }
+
+    public function hasBool()
+    {
+        return isset($this->bool);
+    }
+
+    public function clearBool()
+    {
+        unset($this->bool);
     }
 
     /**

@@ -159,10 +159,15 @@ class FieldMasks
                 $hasser = self::getHasser($fieldDescriptor->getName());
                 $hasValueChanged =
                     // In the first condition, when $original is null, $modified will not be null.
+                    // In the second condition, when $origin is null, we just need to check if
+                    // $modified has a value set. This ensures a better performance than the deep
+                    // comparison done in the third condition and it covers the false boolean value.
                     // If both $original and $modified are null, this function will return at the
                     // beginning.
                     (!is_null($original) && method_exists($original, $hasser)
                         && $original->$hasser() != $modified->$hasser())
+                    || (is_null($original) && method_exists($modified, $hasser)
+                        && $modified->$hasser())
                     || $originalValue != $modifiedValue;
                 switch ($fieldDescriptor->getType()) {
                     case GPBType::MESSAGE:
