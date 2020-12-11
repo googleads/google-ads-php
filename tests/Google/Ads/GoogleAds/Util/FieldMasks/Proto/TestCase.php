@@ -29,6 +29,10 @@ class TestCase extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask = 4;</code>
      */
     protected $expected_mask = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask_all_set_fields_of = 5;</code>
+     */
+    protected $expected_mask_all_set_fields_of = null;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource $original_resource
      *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource $modified_resource
      *     @type \Google\Protobuf\FieldMask $expected_mask
+     *     @type \Google\Protobuf\FieldMask $expected_mask_all_set_fields_of
      * }
      */
     public function __construct($data = NULL) {
@@ -161,6 +166,38 @@ class TestCase extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->expected_mask = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask_all_set_fields_of = 5;</code>
+     * @return \Google\Protobuf\FieldMask
+     */
+    public function getExpectedMaskAllSetFieldsOf()
+    {
+        return isset($this->expected_mask_all_set_fields_of) ? $this->expected_mask_all_set_fields_of : null;
+    }
+
+    public function hasExpectedMaskAllSetFieldsOf()
+    {
+        return isset($this->expected_mask_all_set_fields_of);
+    }
+
+    public function clearExpectedMaskAllSetFieldsOf()
+    {
+        unset($this->expected_mask_all_set_fields_of);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask_all_set_fields_of = 5;</code>
+     * @param \Google\Protobuf\FieldMask $var
+     * @return $this
+     */
+    public function setExpectedMaskAllSetFieldsOf($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
+        $this->expected_mask_all_set_fields_of = $var;
 
         return $this;
     }

@@ -83,16 +83,17 @@ class FieldMasksTest extends TestCase
     public function testFieldMaskAllSetFieldsOf($resource, $expectedFieldMask)
     {
         $actualFieldMask = FieldMasks::allSetFieldsOf($resource);
-        $this->assertEquals($expectedFieldMask, $actualFieldMask);
+        $this->assertTrue($expectedFieldMask == $actualFieldMask);
     }
 
     public function fieldMaskAllSetFieldsOfData()
     {
         $testData = [];
-        $emptyResource = new Resource();
         foreach (self::loadTestCases() as $testCase) {
-            $resource = $testCase->getModifiedResource();
-            $testData[] = [$resource, FieldMasks::compare($emptyResource, $resource)];
+            $testData[] = [
+                $testCase->getModifiedResource(),
+                $testCase->getExpectedMaskAllSetFieldsOf()
+            ];
         }
         return $testData;
     }

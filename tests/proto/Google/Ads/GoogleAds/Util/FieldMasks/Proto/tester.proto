@@ -19,6 +19,7 @@ message TestCase {
   Resource original_resource = 2;
   Resource modified_resource = 3;
   google.protobuf.FieldMask expected_mask = 4;
+  google.protobuf.FieldMask expected_mask_all_set_fields_of = 5;
 }
 
 message Resource {

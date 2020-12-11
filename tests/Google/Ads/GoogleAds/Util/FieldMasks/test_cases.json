@@ -7,7 +7,8 @@
     "modifiedResource": {
       "wrapper": "b"
     },
-    "expectedMask": "wrapper"
+    "expectedMask": "wrapper",
+    "expectedMaskAllSetFieldsOf": "wrapper"
   }, {
     "description": "Create wrapper proto",
     "originalResource": {
@@ -15,7 +16,8 @@
     "modifiedResource": {
       "wrapper": "a"
     },
-    "expectedMask": "wrapper"
+    "expectedMask": "wrapper",
+    "expectedMaskAllSetFieldsOf": "wrapper"
   }, {
     "description": "Modify element in a repeated field",
     "originalResource": {
@@ -32,7 +34,8 @@
         "num": 3
       }]
     },
-    "expectedMask": "foos"
+    "expectedMask": "foos",
+    "expectedMaskAllSetFieldsOf": "foos"
   }, {
     "description": "Modify element in a nested repeated field",
     "originalResource": {
@@ -49,7 +52,8 @@
         }]
       }]
     },
-    "expectedMask": "foos"
+    "expectedMask": "foos",
+    "expectedMaskAllSetFieldsOf": "foos"
   }, {
     "description": "Create submessage",
     "originalResource": {
@@ -59,7 +63,8 @@
         "num": 1
       }
     },
-    "expectedMask": "foo.num"
+    "expectedMask": "foo.num",
+    "expectedMaskAllSetFieldsOf": "foo.num"
   }, {
     "description": "Create submessage with boolean field",
     "originalResource": {
@@ -69,7 +74,8 @@
         "bool": false
       }
     },
-    "expectedMask": "foo.bool"
+    "expectedMask": "foo.bool",
+    "expectedMaskAllSetFieldsOf": "foo.bool"
   }, {
     "description": "Modify submessage",
     "originalResource": {
@@ -81,7 +87,8 @@
         "num": 1
       }
     },
-    "expectedMask": "foo.num"
+    "expectedMask": "foo.num",
+    "expectedMaskAllSetFieldsOf": "foo.num"
   }, {
     "description": "Clear submessage",
     "originalResource": {
@@ -90,7 +97,8 @@
     },
     "modifiedResource": {
     },
-    "expectedMask": "foo"
+    "expectedMask": "foo",
+    "expectedMaskAllSetFieldsOf": ""
   }, {
     "description": "No change",
     "originalResource": {
@@ -105,14 +113,16 @@
         "num": 1
       }]
     },
-    "expectedMask": ""
+    "expectedMask": "",
+    "expectedMaskAllSetFieldsOf": "wrapper,foos"
   }, {
     "description": "Both empty",
     "originalResource": {
     },
     "modifiedResource": {
     },
-    "expectedMask": ""
+    "expectedMask": "",
+    "expectedMaskAllSetFieldsOf": ""
   }, {
     "description": "Create message with nested wrapper",
     "originalResource": {
@@ -124,7 +134,8 @@
         }
       }
     },
-    "expectedMask": "foo.bar.nestedWrapper"
+    "expectedMask": "foo.bar.nestedWrapper",
+    "expectedMaskAllSetFieldsOf": "foo.bar.nestedWrapper"
   }, {
     "description": "[Presence] Create optional field.",
     "originalResource": {
@@ -132,7 +143,8 @@
     "modifiedResource": {
       "presence": 123
     },
-    "expectedMask": "presence"
+    "expectedMask": "presence",
+    "expectedMaskAllSetFieldsOf": "presence"
   }, {
     "description": "[Presence] Both same values",
     "originalResource": {
@@ -141,7 +153,8 @@
     "modifiedResource": {
       "presence": 123
     },
-    "expectedMask": ""
+    "expectedMask": "",
+    "expectedMaskAllSetFieldsOf": "presence"
   }, {
     "description": "[Presence] Modify optional field.",
     "originalResource": {
@@ -150,7 +163,8 @@
     "modifiedResource": {
       "presence": 456
     },
-    "expectedMask": "presence"
+    "expectedMask": "presence",
+    "expectedMaskAllSetFieldsOf": "presence"
   }, {
     "description": "[Presence] Add repeated optional field.",
     "originalResource": {
@@ -162,7 +176,8 @@
         }
       }]
     },
-    "expectedMask": "foos"
+    "expectedMask": "foos",
+    "expectedMaskAllSetFieldsOf": "foos"
   }, {
     "description": "[Presence] Add nested optional field.",
     "originalResource": {
@@ -174,6 +189,7 @@
         }
       }
     },
-    "expectedMask": "foo.bar.nestedPresence"
+    "expectedMask": "foo.bar.nestedPresence",
+    "expectedMaskAllSetFieldsOf": "foo.bar.nestedPresence"
   }
 ]}
