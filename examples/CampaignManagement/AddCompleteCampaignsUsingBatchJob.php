@@ -139,9 +139,6 @@ class AddCompleteCampaignsUsingBatchJob
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
-        // Batch job results can contain GoogleAdsFailure, so GoogleAdsFailures::init() needs to be
-        // called here.
-        GoogleAdsFailures::init();
         $batchJobServiceClient = $googleAdsClient->getBatchJobServiceClient();
 
         $batchJobResourceName = self::createBatchJob($batchJobServiceClient, $customerId);
