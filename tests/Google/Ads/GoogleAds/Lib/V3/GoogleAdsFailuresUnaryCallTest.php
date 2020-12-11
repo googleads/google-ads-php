@@ -40,7 +40,8 @@ class GoogleAdsFailuresUnaryCallTest extends TestCase
      *     is expected to be triggered or not
      * @dataProvider provideTestCases
      */
-    public function test($expectedResponse, bool $isInitializationExpected) {
+    public function test($expectedResponse, bool $isInitializationExpected)
+    {
         // Prepares the inner call.
         $expectedStatus = new \stdClass();
         $expectedStatus->code = 0;
