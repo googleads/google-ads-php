@@ -138,7 +138,7 @@ class AddAdCustomizer
             );
         }
 
-        $feedName = 'Ad Customizer example feed ' . Helper::getPrintableDatetime();
+        $feedName = 'Ad Customizer example feed ' . Helper::getShortPrintableDatetime();
 
         // Create a feed to be used for ad customization.
         $adCustomizerFeedResourceName = self::createAdCustomizerFeed(

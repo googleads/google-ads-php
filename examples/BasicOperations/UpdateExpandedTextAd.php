@@ -112,7 +112,7 @@ class UpdateExpandedTextAd
         $ad = new Ad([
             'resource_name' => ResourceNames::forAd($customerId, $adId),
             'expanded_text_ad' => new ExpandedTextAdInfo([
-                'headline_part1' => 'Cruise to Pluto #' . Helper::getPrintableDatetime(),
+                'headline_part1' => 'Cruise to Pluto #' . Helper::getShortPrintableDatetime(),
                 'headline_part2' => 'Tickets on sale now',
                 'description' => 'Best space cruise ever'
             ]),

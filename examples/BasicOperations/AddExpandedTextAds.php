@@ -113,7 +113,7 @@ class AddExpandedTextAds
         for ($i = 0; $i < self::NUMBER_OF_ADS_TO_ADD; $i++) {
             // Creates the expanded text ad info.
             $expandedTextAdInfo = new ExpandedTextAdInfo([
-                'headline_part1' => 'Cruise to Mars #' . Helper::getPrintableDatetime(),
+                'headline_part1' => 'Cruise to Mars #' . Helper::getShortPrintableDatetime(),
                 'headline_part2' => 'Best Space Cruise Line',
                 'description' => 'Buy your tickets now!'
             ]);

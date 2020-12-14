@@ -33,4 +33,13 @@ final class Helper
     {
         return (new DateTime())->format("Y-m-d\TH:i:s.vP");
     }
+
+    /**
+     * Generates a short printable string for the current date and time in local time zone.
+     * @return string the result string
+     */
+    public static function getShortPrintableDatetime(): string
+    {
+        return (new DateTime())->format("mdHisv");
+    }
 }
