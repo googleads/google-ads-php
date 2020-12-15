@@ -156,14 +156,28 @@ class FieldMasks
                     $paths[] = $fieldName;
                 }
             } else {
+                // Evaluates if the field value changed.
+                // If both $original and $modified are null, this function will return at the
+                // beginning.
                 $hasser = self::getHasser($fieldDescriptor->getName());
                 $hasValueChanged =
-                    // In the first condition, when $original is null, $modified will not be null.
-                    // If both $original and $modified are null, this function will return at the
-                    // beginning.
-                    (!is_null($original) && method_exists($original, $hasser)
-                        && $original->$hasser() != $modified->$hasser())
+                    // In most cases, both hassers are available so we can compare them.
+                    (
+                        !is_null($original) && method_exists($original, $hasser)
+                        && !is_null($modified) && method_exists($modified, $hasser)
+                        && $original->$hasser() != $modified->$hasser()
+                    )
+                    // In the special case where $original is not set, we can check if $modified
+                    // has a value set. This ensures a better performance than a deep comparison
+                    // but also covers the special case of having a `false` boolean value in
+                    // $modifiedValue.
+                    || (is_null($original) && method_exists($modified, $hasser)
+                        && $modified->$hasser())
+                    // If hassers are not enough to determine if the value changed, a deep
+                    // comparison is used at last resort (lower performance).
                     || $originalValue != $modifiedValue;
+
+                // Handles based on the field type.
                 switch ($fieldDescriptor->getType()) {
                     case GPBType::MESSAGE:
                         if ($hasValueChanged) {

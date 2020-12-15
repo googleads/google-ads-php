@@ -25,6 +25,10 @@ class Foo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.Bar bars = 3;</code>
      */
     private $bars;
+    /**
+     * Generated from protobuf field <code>bool bool = 4;</code>
+     */
+    protected $bool = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Foo extends \Google\Protobuf\Internal\Message
      *     @type int|string $num
      *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Bar $bar
      *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Bar[]|\Google\Protobuf\Internal\RepeatedField $bars
+     *     @type bool $bool
      * }
      */
     public function __construct($data = NULL) {
@@ -114,6 +119,38 @@ class Foo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Bar::class);
         $this->bars = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool bool = 4;</code>
+     * @return bool
+     */
+    public function getBool()
+    {
+        return isset($this->bool) ? $this->bool : false;
+    }
+
+    public function hasBool()
+    {
+        return isset($this->bool);
+    }
+
+    public function clearBool()
+    {
+        unset($this->bool);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool bool = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBool($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->bool = $var;
 
         return $this;
     }

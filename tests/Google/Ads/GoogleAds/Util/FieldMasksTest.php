@@ -28,6 +28,7 @@ use Google\Ads\GoogleAds\V6\Resources\Ad;
 use Google\Ads\GoogleAds\V6\Resources\AdGroupAd;
 use Google\Ads\GoogleAds\V6\Resources\Campaign;
 use Google\Ads\GoogleAds\V6\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Protobuf\FieldMask;
 use PHPUnit\Framework\TestCase;
 use UnexpectedValueException;
 
@@ -58,8 +59,11 @@ class FieldMasksTest extends TestCase
     /**
      * @dataProvider fieldMaskCompareData
      */
-    public function testFieldMaskCompare($originalResource, $modifiedResource, $expectedFieldMask)
-    {
+    public function testFieldMaskCompare(
+        Resource $originalResource,
+        Resource $modifiedResource,
+        FieldMask $expectedFieldMask
+    ) {
         $actualFieldMask = FieldMasks::compare($originalResource, $modifiedResource);
         $this->assertEquals($expectedFieldMask, $actualFieldMask);
     }
@@ -80,19 +84,23 @@ class FieldMasksTest extends TestCase
     /**
      * @dataProvider fieldMaskAllSetFieldsOfData
      */
-    public function testFieldMaskAllSetFieldsOf($resource, $expectedFieldMask)
+    public function testFieldMaskAllSetFieldsOf($resource, FieldMask $expectedFieldMask)
     {
         $actualFieldMask = FieldMasks::allSetFieldsOf($resource);
-        $this->assertEquals($expectedFieldMask, $actualFieldMask);
+        $this->assertEquals(
+            $expectedFieldMask->serializeToJsonString(),
+            $actualFieldMask->serializeToJsonString()
+        );
     }
 
     public function fieldMaskAllSetFieldsOfData()
     {
         $testData = [];
-        $emptyResource = new Resource();
         foreach (self::loadTestCases() as $testCase) {
-            $resource = $testCase->getModifiedResource();
-            $testData[] = [$resource, FieldMasks::compare($emptyResource, $resource)];
+            $testData[] = [
+                $testCase->getModifiedResource(),
+                $testCase->getExpectedMaskAllSetFieldsOf()
+            ];
         }
         return $testData;
     }
