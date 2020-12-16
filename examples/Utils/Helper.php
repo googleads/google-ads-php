@@ -42,4 +42,12 @@ final class Helper
     {
         return (new DateTime())->format("mdHisv");
     }
+    
+        public static function toMicro($number) {//min 10000 //1000000
+        return (int) str_replace('.', '', number_format($number, 2, '.', '') . '0000');
+    }
+
+    public static function fromMicro($number) {//min 0.01 //1
+        return (float) number_format($number / 1000000, 2, '.', '');
+    }
 }
