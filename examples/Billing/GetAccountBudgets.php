@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -135,27 +136,23 @@ class GetAccountBudgets
                 AccountBudgetStatus::name($accountBudget->getStatus()),
                 $accountBudget->getBillingSetup()
                     ? $accountBudget->getBillingSetup() : 'none',
-                $accountBudget->getAmountServedMicros()
-                    ? $accountBudget->getAmountServedMicros() / 1000000.0
-                    : 0.0,
-                $accountBudget->getTotalAdjustmentsMicros()
-                    ? $accountBudget->getTotalAdjustmentsMicros() / 1000000.0
-                    : 0.0,
+                Helper::microToBase($accountBudget->getAmountServedMicros()),
+                Helper::microToBase($accountBudget->getTotalAdjustmentsMicros()),
                 PHP_EOL,
                 $accountBudget->getApprovedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getApprovedSpendingLimitMicros() / 1000000.0
+                        Helper::microToBase($accountBudget->getApprovedSpendingLimitMicros())
                     ) : SpendingLimitType::name($accountBudget->getApprovedSpendingLimitType()),
                 $accountBudget->getProposedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getProposedSpendingLimitMicros() / 1000000.0
+                        Helper::microToBase($accountBudget->getProposedSpendingLimitMicros())
                     ) : SpendingLimitType::name($accountBudget->getProposedSpendingLimitType()),
                 $accountBudget->getAdjustedSpendingLimitMicros()
                     ? sprintf(
                         '%.2f',
-                        $accountBudget->getAdjustedSpendingLimitMicros() / 1000000.0
+                        Helper::microToBase($accountBudget->getAdjustedSpendingLimitMicros())
                     ) : SpendingLimitType::name($accountBudget->getAdjustedSpendingLimitType()),
                 PHP_EOL,
                 $accountBudget->getApprovedStartDateTime()
