@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
@@ -395,7 +396,7 @@ class UploadStoreSalesTransactions
                     => ResourceNames::forConversionAction($customerId, $conversionActionId),
                 'currency_code' => 'USD',
                 // Converts the transaction amount from $200 USD to micros.
-                'transaction_amount_micros' => 200 * 1000000,
+                'transaction_amount_micros' => Helper::baseToMicro(200),
                 // Specifies the date and time of the transaction. The format is
                 // "YYYY-MM-DD HH:MM:SS[+HH:MM]", where [+HH:MM] is an optional
                 // timezone offset from UTC. If the offset is absent, the API will
@@ -424,7 +425,7 @@ class UploadStoreSalesTransactions
                     => ResourceNames::forConversionAction($customerId, $conversionActionId),
                 'currency_code' => 'EUR',
                 // Converts the transaction amount from 450 EUR to micros.
-                'transaction_amount_micros' => 450 * 1000000,
+                'transaction_amount_micros' => Helper::baseToMicro(450),
                 // Specifies the date and time of the transaction. This date and time will be
                 // interpreted by the API using the Google Ads customer's time zone.
                 // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".

@@ -23,6 +23,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
+use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
@@ -154,20 +155,20 @@ class GetInvoices
                 $invoice->getCurrencyCode(),
                 $invoice->getServiceDateRange()->getStartDate(),
                 $invoice->getServiceDateRange()->getEndDate(),
-                self::microToBase($invoice->getAdjustmentsSubtotalAmountMicros()),
-                self::microToBase($invoice->getAdjustmentsTaxAmountMicros()),
-                self::microToBase($invoice->getAdjustmentsTotalAmountMicros()),
-                self::microToBase($invoice->getRegulatoryCostsSubtotalAmountMicros()),
-                self::microToBase($invoice->getRegulatoryCostsTaxAmountMicros()),
-                self::microToBase($invoice->getRegulatoryCostsTotalAmountMicros()),
+                Helper::microToBase($invoice->getAdjustmentsSubtotalAmountMicros()),
+                Helper::microToBase($invoice->getAdjustmentsTaxAmountMicros()),
+                Helper::microToBase($invoice->getAdjustmentsTotalAmountMicros()),
+                Helper::microToBase($invoice->getRegulatoryCostsSubtotalAmountMicros()),
+                Helper::microToBase($invoice->getRegulatoryCostsTaxAmountMicros()),
+                Helper::microToBase($invoice->getRegulatoryCostsTotalAmountMicros()),
                 $invoice->getReplacedInvoices()
                     ? implode(
                         "', '",
                         iterator_to_array($invoice->getReplacedInvoices()->getIterator())
                     ) : 'none',
-                self::microToBase($invoice->getSubtotalAmountMicros()),
-                self::microToBase($invoice->getTaxAmountMicros()),
-                self::microToBase($invoice->getTotalAmountMicros()),
+                Helper::microToBase($invoice->getSubtotalAmountMicros()),
+                Helper::microToBase($invoice->getTaxAmountMicros()),
+                Helper::microToBase($invoice->getTotalAmountMicros()),
                 $invoice->getCorrectedInvoice() ?: 'none',
                 $invoice->getPdfUrl()
             );
@@ -188,24 +189,13 @@ class GetInvoices
                     $accountBudgetSummary->getPurchaseOrderNumber() ?: 'none',
                     $accountBudgetSummary->getBillableActivityDateRange()->getStartDate(),
                     $accountBudgetSummary->getBillableActivityDateRange()->getEndDate(),
-                    self::microToBase($accountBudgetSummary->getSubtotalAmountMicros()),
-                    self::microToBase($accountBudgetSummary->getTaxAmountMicros()),
-                    self::microToBase($accountBudgetSummary->getTotalAmountMicros())
+                    Helper::microToBase($accountBudgetSummary->getSubtotalAmountMicros()),
+                    Helper::microToBase($accountBudgetSummary->getTaxAmountMicros()),
+                    Helper::microToBase($accountBudgetSummary->getTotalAmountMicros())
                 );
             }
         }
         // [END GetInvoices_1]
-    }
-
-    /**
-     * Converts an amount from the micro unit to the base unit.
-     *
-     * @param int $amount the amount
-     * @return int the amount converted to the base unit if not null otherwise 0
-     */
-    private static function microToBase(int $amount): int
-    {
-        return $amount ? $amount / 1000000.0 : 0.0;
     }
 }
 
