@@ -109,7 +109,7 @@ API](https://developers.google.com/google-ads/api/docs/start).
         OAuth2 flow.
 
     *   Run the
-        [AuthenticateInStandaloneApplication](https://github.com/googleads/google-ads-php/blob/master/examples/Authentication/AuthenticateInStandaloneApplication.php)
+        [AuthenticateInDesktopApplication](https://github.com/googleads/google-ads-php/blob/master/examples/Authentication/AuthenticateInDesktopApplication.php)
         example, which will prompt you for your OAuth2 client ID and secret.
 
     *   Copy the output from the last step of the example into the
