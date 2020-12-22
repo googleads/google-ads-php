@@ -46,7 +46,7 @@ final class Helper
     /**
      * Converts an amount from the micro unit to the base unit.
      *
-     * @param int|float $amount the amount in micro unit
+     * @param int|float|null $amount the amount in micro unit
      * @return float the amount converted to the base unit if not null otherwise 0
      */
     public static function microToBase($amount): float
@@ -57,7 +57,7 @@ final class Helper
     /**
      * Converts an amount from the base unit to the micro unit.
      *
-     * @param float|int $amount the amount in base unit
+     * @param float|int|null $amount the amount in base unit
      * @return int the amount converted to the micro unit if not null otherwise 0
      */
     public static function baseToMicro($amount): int
