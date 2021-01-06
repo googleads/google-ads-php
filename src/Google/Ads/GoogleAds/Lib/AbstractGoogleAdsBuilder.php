@@ -60,7 +60,7 @@ abstract class AbstractGoogleAdsBuilder implements GoogleAdsBuilder
     /**
      * Reads configuration settings from the environment variables that are prefixed as required.
      *
-     * @see GoogleAdsBuilder::CONFIGURATION_ENVIRsONMENT_VARIABLES_PREFIX
+     * @see GoogleAdsBuilder::CONFIGURATION_ENVIRONMENT_VARIABLES_PREFIX
      *
      * @return self this builder populated from the configuration
      */
