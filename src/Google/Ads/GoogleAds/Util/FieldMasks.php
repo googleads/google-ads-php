@@ -227,9 +227,11 @@ class FieldMasks
         }
     }
 
-
     /**
-     * Gets the value of the specified field of the specified object.
+     * Gets the value of the specified field of the specified object by using descriptors to
+     * traverse along the nested structure of the protobuf message.
+     * When a field being traversed upon is a nested message or a repeated field of nested messages,
+     * but is set to null, this method will just return null in this case.
      *
      * @param string $fieldMaskPath the field mask path
      * @param Message $object the object whose field value to be get
@@ -252,13 +254,17 @@ class FieldMasks
                 if ($fieldDescriptor->getType() === GPBType::MESSAGE) {
                     $object = $fieldValue;
                     if (is_null($object)) {
-                        throw new UnexpectedValueException(
-                            'The object to get its field value is null. '
-                            . 'This could happen when the passed field mask path points to the '
-                            . ' wrong place, where the nested message is not set.'
-                        );
+                        return null;
                     }
-                    $descriptor = self::getDescriptorForMessage($fieldValue);
+                    if ($fieldDescriptor->getLabel() === GPBLabel::REPEATED) {
+                        if (count($object) > 0) {
+                            $descriptor = self::getDescriptorForMessage($fieldValue[0]);
+                        } else {
+                            return null;
+                        }
+                    } else {
+                        $descriptor = self::getDescriptorForMessage($fieldValue);
+                    }
                 }
                 // There is only one field that matches the field mask part, so no need to loop
                 // when the field is found.
