@@ -145,6 +145,12 @@ class FieldMasksTest extends TestCase
                     ->getIterator()
             )
         );
+        // A value of a repeated field type of a message can be obtained.
+        $this->assertEquals(
+            'test',
+            FieldMasks::getFieldValue('url_custom_parameters.key', $campaign)
+        );
+
         $adGroupAd = new AdGroupAd([
             'ad' => new Ad([
                 'expanded_text_ad' => new ExpandedTextAdInfo(['headline_part1' => 'test']),

@@ -259,6 +259,7 @@ class FieldMasks
                     if ($fieldDescriptor->getLabel() === GPBLabel::REPEATED) {
                         if (count($object) > 0) {
                             $descriptor = self::getDescriptorForMessage($fieldValue[0]);
+                            $object = $fieldValue[0];
                         } else {
                             return null;
                         }
