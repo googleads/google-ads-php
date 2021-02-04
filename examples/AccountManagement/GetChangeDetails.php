@@ -233,6 +233,9 @@ class GetChangeDetails
      */
     private static function convertToString($value)
     {
+        if (is_null($value)) {
+            return 'no value';
+        }
         if (gettype($value) === 'boolean') {
             return $value ? 'true' : 'false';
         } elseif (gettype($value) === 'object' && get_class($value) === RepeatedField::class) {

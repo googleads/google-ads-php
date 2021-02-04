@@ -135,6 +135,7 @@ class FieldMasksTest extends TestCase
                     ->getIterator()
             )
         );
+
         $adGroupAd = new AdGroupAd([
             'ad' => new Ad([
                 'expanded_text_ad' => new ExpandedTextAdInfo(['headline_part1' => 'test'])
@@ -143,6 +144,10 @@ class FieldMasksTest extends TestCase
         $this->assertEquals(
             'test',
             FieldMasks::getFieldValue('ad.expanded_text_ad.headline_part1', $adGroupAd)
+        );
+        $this->assertEquals(
+            null,
+            FieldMasks::getFieldValue('ad.text_ad.headline', $adGroupAd)
         );
     }
 
@@ -164,8 +169,7 @@ class FieldMasksTest extends TestCase
         ]);
         return [
             ['ad.test_field1.headline_part1', $adGroupAd],
-            ['ad_1.expanded_text_ad.headline_part1', $adGroupAd],
-            ['ad.text_ad.headline', $adGroupAd]
+            ['ad_1.expanded_text_ad.headline_part1', $adGroupAd]
         ];
     }
 }
