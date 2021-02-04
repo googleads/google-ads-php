@@ -21,7 +21,6 @@ namespace Google\Ads\GoogleAds\Util;
 use Google\Ads\GoogleAds\Util\FieldMasks\FieldMasksTestDataProvider;
 use Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource;
 use Google\Ads\GoogleAds\Util\FieldMasks\Proto\TestSuite;
-use Google\Ads\GoogleAds\V6\Common\CustomParameter;
 use Google\Ads\GoogleAds\V6\Common\ExpandedTextAdInfo;
 use Google\Ads\GoogleAds\V6\Common\PercentCpc;
 use Google\Ads\GoogleAds\V6\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
@@ -114,8 +113,7 @@ class FieldMasksTest extends TestCase
             'advertising_channel_type' => AdvertisingChannelType::SEARCH,
             'dynamic_search_ads_setting' => new DynamicSearchAdsSetting([
                 'feeds' => ['feed 1', 'feed 2']
-            ]),
-            'url_custom_parameters' => [new CustomParameter(['key' => 'test', 'value' => 0])]
+            ])
         ]);
         // A value of a field of simple type can be obtained.
         $this->assertEquals('test', FieldMasks::getFieldValue('name', $campaign));
@@ -137,24 +135,10 @@ class FieldMasksTest extends TestCase
                     ->getIterator()
             )
         );
-        // A value of a repeated field type of a message can be obtained.
-        $this->assertEquals(
-            [new CustomParameter(['key' => 'test', 'value' => 0])],
-            iterator_to_array(
-                FieldMasks::getFieldValue('url_custom_parameters', $campaign)
-                    ->getIterator()
-            )
-        );
-        // A value of a repeated field type of a message can be obtained.
-        $this->assertEquals(
-            'test',
-            FieldMasks::getFieldValue('url_custom_parameters.key', $campaign)
-        );
 
         $adGroupAd = new AdGroupAd([
             'ad' => new Ad([
-                'expanded_text_ad' => new ExpandedTextAdInfo(['headline_part1' => 'test']),
-                'url_custom_parameters' => []
+                'expanded_text_ad' => new ExpandedTextAdInfo(['headline_part1' => 'test'])
             ])
         ]);
         $this->assertEquals(
@@ -164,10 +148,6 @@ class FieldMasksTest extends TestCase
         $this->assertEquals(
             null,
             FieldMasks::getFieldValue('ad.text_ad.headline', $adGroupAd)
-        );
-        $this->assertEquals(
-            null,
-            FieldMasks::getFieldValue('ad.url_custom_parameters', $adGroupAd)
         );
     }
 
