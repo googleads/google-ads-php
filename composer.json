@@ -1,4 +1,5 @@
 {
+  "minimum-stability": "rc",
   "name": "googleads/google-ads-php",
   "author": "Google LLC",
   "url": "https://github.com/googleads/google-ads-php",
