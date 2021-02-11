@@ -65,8 +65,6 @@ class GoogleAdsLoggingInterceptorTest extends TestCase
                 'CampaignService/GetCampaigns',
                 new GetCampaignRequest(),
                 ['Campaign', 'decode'],
-                [], // Not needed for testing.
-                [], // Not needed for testing.
                 function ($method, $argument, $deserialize, $metadata, $options) {
                     // The function body is not needed for testing.
                 }
@@ -82,8 +80,6 @@ class GoogleAdsLoggingInterceptorTest extends TestCase
                 'GoogleAdsService/SearchStream',
                 new SearchGoogleAdsStreamRequest(),
                 ['SearchGoogleAdsStreamResponse', 'decode'],
-                [], // Not needed for testing.
-                [], // Not needed for testing.
                 function ($method, $argument, $deserialize, $metadata, $options) {
                     // The function body is not needed for testing.
                 }
