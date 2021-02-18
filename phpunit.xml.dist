@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<php>
+    <ini name="error_reporting" value="1"/>
+</php>
 <phpunit bootstrap="vendor/autoload.php" colors="true">
     <testsuites>
         <testsuite name="all-tests">
