@@ -26,6 +26,7 @@
 
 namespace Google\Ads\GoogleAds\V6\Services\Gapic;
 
+use Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType;
 use Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet;
 use Google\Ads\GoogleAds\V6\Services\CampaignSharedSetOperation;
 use Google\Ads\GoogleAds\V6\Services\GetCampaignSharedSetRequest;
@@ -92,6 +93,7 @@ class CampaignSharedSetServiceGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
+        'https://www.googleapis.com/auth/adwords',
     ];
     private static $campaignSharedSetNameTemplate;
     private static $pathTemplateMap;
@@ -105,7 +107,7 @@ class CampaignSharedSetServiceGapicClient
             'descriptorsConfigPath' => __DIR__.'/../resources/campaign_shared_set_service_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__.'/../resources/campaign_shared_set_service_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
@@ -332,6 +334,10 @@ class CampaignSharedSetServiceGapicClient
      *     @type bool $validateOnly
      *          If true, the request is validated but not executed. Only errors are
      *          returned, not results.
+     *     @type int $responseContentType
+     *          The response content type setting. Determines whether the mutable resource
+     *          or just the resource name should be returned post mutation.
+     *          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType}
      *     @type RetrySettings|array $retrySettings
      *          Retry settings to use for this call. Can be a
      *          {@see Google\ApiCore\RetrySettings} object, or an associative array
@@ -354,6 +360,9 @@ class CampaignSharedSetServiceGapicClient
         }
         if (isset($optionalArgs['validateOnly'])) {
             $request->setValidateOnly($optionalArgs['validateOnly']);
+        }
+        if (isset($optionalArgs['responseContentType'])) {
+            $request->setResponseContentType($optionalArgs['responseContentType']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([

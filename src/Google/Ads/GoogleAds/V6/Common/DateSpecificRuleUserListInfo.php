@@ -31,7 +31,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      */
     protected $start_date = null;
     /**
-     * End date of users visit. If set to 2037-12-30, then the list includes all
+     * Last date of users visit. If set to 2037-12-30, then the list includes all
      * users after start_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *
@@ -53,7 +53,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      *           users before end_date. The date's format should be YYYY-MM-DD.
      *           Required for creating a data specific rule user list.
      *     @type string $end_date
-     *           End date of users visit. If set to 2037-12-30, then the list includes all
+     *           Last date of users visit. If set to 2037-12-30, then the list includes all
      *           users after start_date. The date's format should be YYYY-MM-DD.
      *           Required for creating a data specific rule user list.
      * }
@@ -142,7 +142,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * End date of users visit. If set to 2037-12-30, then the list includes all
+     * Last date of users visit. If set to 2037-12-30, then the list includes all
      * users after start_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *
@@ -165,7 +165,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * End date of users visit. If set to 2037-12-30, then the list includes all
+     * Last date of users visit. If set to 2037-12-30, then the list includes all
      * users after start_date. The date's format should be YYYY-MM-DD.
      * Required for creating a data specific rule user list.
      *

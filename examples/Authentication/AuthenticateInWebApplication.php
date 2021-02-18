@@ -24,7 +24,7 @@ use Google\Auth\CredentialsLoader;
 use Google\Auth\OAuth2;
 use Psr\Http\Message\ServerRequestInterface;
 use React\EventLoop\Factory;
-use React\Http\Response;
+use React\Http\Message\Response;
 use React\Http\Server;
 use UnexpectedValueException;
 
@@ -94,6 +94,7 @@ class AuthenticateInWebApplication
         $authToken = null;
 
         $server = new Server(
+            $loop,
             function (ServerRequestInterface $request) use ($oauth2, $loop, &$authToken) {
                 // Stops the server after tokens are retrieved.
                 if (!is_null($authToken)) {

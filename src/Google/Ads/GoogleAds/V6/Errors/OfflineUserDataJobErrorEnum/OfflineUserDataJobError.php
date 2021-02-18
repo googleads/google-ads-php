@@ -63,7 +63,7 @@ class OfflineUserDataJobError
      */
     const INVALID_MOBILE_ID_FORMAT = 8;
     /**
-     * Request is exceeding the maximum number of user identifiers allowed.
+     * Maximum number of user identifiers allowed per request is 100,000.
      *
      * Generated from protobuf enum <code>TOO_MANY_USER_IDENTIFIERS = 9;</code>
      */

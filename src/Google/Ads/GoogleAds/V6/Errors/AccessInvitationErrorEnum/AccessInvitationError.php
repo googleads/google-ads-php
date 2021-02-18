@@ -37,12 +37,47 @@ class AccessInvitationError
      * Generated from protobuf enum <code>EMAIL_ADDRESS_ALREADY_HAS_ACCESS = 3;</code>
      */
     const EMAIL_ADDRESS_ALREADY_HAS_ACCESS = 3;
+    /**
+     * Invalid invitation status for the operation.
+     *
+     * Generated from protobuf enum <code>INVALID_INVITATION_STATUS = 4;</code>
+     */
+    const INVALID_INVITATION_STATUS = 4;
+    /**
+     * Email address cannot be like abc+foo&#64;google.com.
+     *
+     * Generated from protobuf enum <code>GOOGLE_CONSUMER_ACCOUNT_NOT_ALLOWED = 5;</code>
+     */
+    const GOOGLE_CONSUMER_ACCOUNT_NOT_ALLOWED = 5;
+    /**
+     * Invalid invitation id.
+     *
+     * Generated from protobuf enum <code>INVALID_INVITATION_ID = 6;</code>
+     */
+    const INVALID_INVITATION_ID = 6;
+    /**
+     * Email address already has a pending invitation.
+     *
+     * Generated from protobuf enum <code>EMAIL_ADDRESS_ALREADY_HAS_PENDING_INVITATION = 7;</code>
+     */
+    const EMAIL_ADDRESS_ALREADY_HAS_PENDING_INVITATION = 7;
+    /**
+     * Pending invitation limit exceeded for the customer.
+     *
+     * Generated from protobuf enum <code>PENDING_INVITATIONS_LIMIT_EXCEEDED = 8;</code>
+     */
+    const PENDING_INVITATIONS_LIMIT_EXCEEDED = 8;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::INVALID_EMAIL_ADDRESS => 'INVALID_EMAIL_ADDRESS',
         self::EMAIL_ADDRESS_ALREADY_HAS_ACCESS => 'EMAIL_ADDRESS_ALREADY_HAS_ACCESS',
+        self::INVALID_INVITATION_STATUS => 'INVALID_INVITATION_STATUS',
+        self::GOOGLE_CONSUMER_ACCOUNT_NOT_ALLOWED => 'GOOGLE_CONSUMER_ACCOUNT_NOT_ALLOWED',
+        self::INVALID_INVITATION_ID => 'INVALID_INVITATION_ID',
+        self::EMAIL_ADDRESS_ALREADY_HAS_PENDING_INVITATION => 'EMAIL_ADDRESS_ALREADY_HAS_PENDING_INVITATION',
+        self::PENDING_INVITATIONS_LIMIT_EXCEEDED => 'PENDING_INVITATIONS_LIMIT_EXCEEDED',
     ];
 
     public static function name($value)

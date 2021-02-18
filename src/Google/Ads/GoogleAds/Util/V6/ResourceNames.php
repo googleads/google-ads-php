@@ -70,6 +70,7 @@ use Google\Ads\GoogleAds\V6\Services\CustomerLabelServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessInvitationServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DetailPlacementViewServiceClient;
@@ -951,6 +952,21 @@ final class ResourceNames
     public static function forCustomerUserAccess($customerId, $userId)
     {
         return CustomerUserAccessServiceClient::customerUserAccessName($customerId, $userId);
+    }
+
+    /**
+     * Generates resource name for a customer user access invitation.
+     *
+     * @param int $customerId the customer ID
+     * @param int $invitationId the invitation ID
+     * @return string the customer user access invitation resource name
+     */
+    public static function forCustomerUserAccessInvitation($customerId, $invitationId)
+    {
+        return CustomerUserAccessInvitationServiceClient::customerUserAccessInvitationName(
+            $customerId,
+            $invitationId
+        );
     }
 
     /**

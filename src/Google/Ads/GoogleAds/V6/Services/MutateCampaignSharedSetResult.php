@@ -21,6 +21,14 @@ class MutateCampaignSharedSetResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
     protected $resource_name = '';
+    /**
+     * The mutated campaign shared set with only mutable fields after mutate. The
+     * field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignSharedSet campaign_shared_set = 2;</code>
+     */
+    protected $campaign_shared_set = null;
 
     /**
      * Constructor.
@@ -30,6 +38,10 @@ class MutateCampaignSharedSetResult extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource_name
      *           Returned for successful operations.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet $campaign_shared_set
+     *           The mutated campaign shared set with only mutable fields after mutate. The
+     *           field will only be returned when response_content_type is set to
+     *           "MUTABLE_RESOURCE".
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +71,46 @@ class MutateCampaignSharedSetResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The mutated campaign shared set with only mutable fields after mutate. The
+     * field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignSharedSet campaign_shared_set = 2;</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet
+     */
+    public function getCampaignSharedSet()
+    {
+        return isset($this->campaign_shared_set) ? $this->campaign_shared_set : null;
+    }
+
+    public function hasCampaignSharedSet()
+    {
+        return isset($this->campaign_shared_set);
+    }
+
+    public function clearCampaignSharedSet()
+    {
+        unset($this->campaign_shared_set);
+    }
+
+    /**
+     * The mutated campaign shared set with only mutable fields after mutate. The
+     * field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignSharedSet campaign_shared_set = 2;</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet $var
+     * @return $this
+     */
+    public function setCampaignSharedSet($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet::class);
+        $this->campaign_shared_set = $var;
 
         return $this;
     }

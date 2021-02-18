@@ -8,7 +8,6 @@ use UnexpectedValueException;
 
 /**
  * Enum listing the resource types support by the ChangeEvent resource.
- * Next Id: 9
  *
  * Protobuf type <code>google.ads.googleads.v6.enums.ChangeEventResourceTypeEnum.ChangeEventResourceType</code>
  */
@@ -64,11 +63,41 @@ class ChangeEventResourceType
      */
     const AD_GROUP_BID_MODIFIER = 7;
     /**
-     * An CampaignCriterion resource change.
+     * A CampaignCriterion resource change.
      *
      * Generated from protobuf enum <code>CAMPAIGN_CRITERION = 8;</code>
      */
     const CAMPAIGN_CRITERION = 8;
+    /**
+     * A Feed resource change.
+     *
+     * Generated from protobuf enum <code>FEED = 9;</code>
+     */
+    const FEED = 9;
+    /**
+     * A FeedItem resource change.
+     *
+     * Generated from protobuf enum <code>FEED_ITEM = 10;</code>
+     */
+    const FEED_ITEM = 10;
+    /**
+     * A CampaignFeed resource change.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_FEED = 11;</code>
+     */
+    const CAMPAIGN_FEED = 11;
+    /**
+     * An AdGroupFeed resource change.
+     *
+     * Generated from protobuf enum <code>AD_GROUP_FEED = 12;</code>
+     */
+    const AD_GROUP_FEED = 12;
+    /**
+     * An AdGroupAd resource change.
+     *
+     * Generated from protobuf enum <code>AD_GROUP_AD = 13;</code>
+     */
+    const AD_GROUP_AD = 13;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -80,6 +109,11 @@ class ChangeEventResourceType
         self::CAMPAIGN_BUDGET => 'CAMPAIGN_BUDGET',
         self::AD_GROUP_BID_MODIFIER => 'AD_GROUP_BID_MODIFIER',
         self::CAMPAIGN_CRITERION => 'CAMPAIGN_CRITERION',
+        self::FEED => 'FEED',
+        self::FEED_ITEM => 'FEED_ITEM',
+        self::CAMPAIGN_FEED => 'CAMPAIGN_FEED',
+        self::AD_GROUP_FEED => 'AD_GROUP_FEED',
+        self::AD_GROUP_AD => 'AD_GROUP_AD',
     ];
 
     public static function name($value)

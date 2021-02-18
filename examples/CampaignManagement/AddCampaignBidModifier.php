@@ -30,6 +30,7 @@ use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Util\V6\ResourceNames;
 use Google\Ads\GoogleAds\V6\Common\InteractionTypeInfo;
 use Google\Ads\GoogleAds\V6\Enums\InteractionTypeEnum;
+use Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType;
 use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier;
 use Google\Ads\GoogleAds\V6\Services\CampaignBidModifierOperation;
@@ -126,19 +127,32 @@ class AddCampaignBidModifier
         $campaignBidModifierOperation = new CampaignBidModifierOperation();
         $campaignBidModifierOperation->setCreate($campaignBidModifier);
 
+        // [START mutable_resource]
         // Issues a mutate request to add the campaign bid modifier.
+        // Here we pass the optional parameter ResponseContentType::MUTABLE_RESOURCE so that the
+        // response contains the mutated object and not just its resource name.
         $campaignBidModifierServiceClient = $googleAdsClient->getCampaignBidModifierServiceClient();
         $response = $campaignBidModifierServiceClient->mutateCampaignBidModifiers(
             $customerId,
-            [$campaignBidModifierOperation]
+            [$campaignBidModifierOperation],
+            ['responseContentType' => ResponseContentType::MUTABLE_RESOURCE]
         );
 
-        printf("Added %d campaign bid modifier:%s", $response->getResults()->count(), PHP_EOL);
-
-        foreach ($response->getResults() as $addedCampaignBidModifier) {
-            /** @var CampaignBidModifier $addedCampaignBidModifier */
-            print $addedCampaignBidModifier->getResourceName() . PHP_EOL;
-        }
+        // The resource returned in the response can be accessed directly in the results list.
+        // Its fields can be read directly, and it can also be mutated further and used in
+        // subsequent requests, without needing to make additional Get or Search requests.
+        /** @var CampaignBidModifier $addedCampaignBidModifier */
+        $addedCampaignBidModifier = $response->getResults()[0]->getCampaignBidModifier();
+        printf(
+            "Added campaign bid modifier with resource_name '%s', criterion ID %d, and "
+            . "bid modifier value %f, under the campaign with resource name '%s'.%s",
+            $addedCampaignBidModifier->getResourceName(),
+            $addedCampaignBidModifier->getCriterionId(),
+            $addedCampaignBidModifier->getBidModifier(),
+            $addedCampaignBidModifier->getCampaign(),
+            PHP_EOL
+        );
+        // [END mutable_resource]
     }
 }
 

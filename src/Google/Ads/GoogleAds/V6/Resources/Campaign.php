@@ -189,7 +189,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $start_date = null;
     /**
-     * The date when campaign ended.
+     * The last day of the campaign.
      *
      * Generated from protobuf field <code>string end_date = 64;</code>
      */
@@ -340,7 +340,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type string $start_date
      *           The date when campaign started.
      *     @type string $end_date
-     *           The date when campaign ended.
+     *           The last day of the campaign.
      *     @type string $final_url_suffix
      *           Suffix used to append query parameters to landing pages that are served
      *           with parallel tracking.
@@ -1262,7 +1262,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The date when campaign ended.
+     * The last day of the campaign.
      *
      * Generated from protobuf field <code>string end_date = 64;</code>
      * @return string
@@ -1283,7 +1283,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The date when campaign ended.
+     * The last day of the campaign.
      *
      * Generated from protobuf field <code>string end_date = 64;</code>
      * @param string $var

@@ -43,6 +43,13 @@ class MutateAdParametersRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool validate_only = 4;</code>
      */
     protected $validate_only = false;
+    /**
+     * The response content type setting. Determines whether the mutable resource
+     * or just the resource name should be returned post mutation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
+     */
+    protected $response_content_type = 0;
 
     /**
      * Constructor.
@@ -62,6 +69,9 @@ class MutateAdParametersRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $validate_only
      *           If true, the request is validated but not executed. Only errors are
      *           returned, not results.
+     *     @type int $response_content_type
+     *           The response content type setting. Determines whether the mutable resource
+     *           or just the resource name should be returned post mutation.
      * }
      */
     public function __construct($data = NULL) {
@@ -177,6 +187,34 @@ class MutateAdParametersRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->validate_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * The response content type setting. Determines whether the mutable resource
+     * or just the resource name should be returned post mutation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
+     * @return int
+     */
+    public function getResponseContentType()
+    {
+        return $this->response_content_type;
+    }
+
+    /**
+     * The response content type setting. Determines whether the mutable resource
+     * or just the resource name should be returned post mutation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setResponseContentType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType::class);
+        $this->response_content_type = $var;
 
         return $this;
     }

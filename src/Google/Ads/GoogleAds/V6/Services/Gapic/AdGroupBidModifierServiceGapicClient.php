@@ -93,6 +93,7 @@ class AdGroupBidModifierServiceGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
+        'https://www.googleapis.com/auth/adwords',
     ];
     private static $adGroupBidModifierNameTemplate;
     private static $pathTemplateMap;
@@ -106,7 +107,7 @@ class AdGroupBidModifierServiceGapicClient
             'descriptorsConfigPath' => __DIR__.'/../resources/ad_group_bid_modifier_service_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__.'/../resources/ad_group_bid_modifier_service_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [

@@ -98,11 +98,11 @@ class GetProductBiddingCategoryConstant
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates the query.
-        $query = 'SELECT product_bidding_category_constant.localized_name,
-            product_bidding_category_constant.product_bidding_category_constant_parent
-            FROM product_bidding_category_constant
-            WHERE product_bidding_category_constant.country_code IN (\'US\')
-            ORDER BY product_bidding_category_constant.localized_name ASC';
+        $query = "SELECT product_bidding_category_constant.localized_name, "
+            . "product_bidding_category_constant.product_bidding_category_constant_parent "
+            . "FROM product_bidding_category_constant "
+            . "WHERE product_bidding_category_constant.country_code IN ('US') "
+            . "ORDER BY product_bidding_category_constant.localized_name ASC";
 
         // Performs the search request.
         $response = $googleAdsServiceClient->search(
@@ -136,8 +136,10 @@ class GetProductBiddingCategoryConstant
                 $biddingCategories[$resourceName]['localizedName'] =
                     $productBiddingCategory->getLocalizedName();
             }
-
-            if ($productBiddingCategory->getProductBiddingCategoryConstantParent() !== null) {
+            if ($productBiddingCategory->getProductBiddingCategoryConstantParent() === '') {
+                // Adds the category as a root category if having no parent.
+                $rootCategories[$resourceName] = &$biddingCategories[$resourceName];
+            } else {
                 // Links the category to the parent category if any.
                 $parentResourceName =
                     $productBiddingCategory->getProductBiddingCategoryConstantParent();
@@ -148,12 +150,8 @@ class GetProductBiddingCategoryConstant
                 // Adds the category as a child category of the parent category.
                 $biddingCategories[$parentResourceName]['children'][$resourceName] =
                     &$biddingCategories[$resourceName];
-            } else {
-                // Otherwise adds the category as a root category.
-                $rootCategories[$resourceName] = &$biddingCategories[$resourceName];
             }
         }
-
         // Prints the result.
         self::displayCategories($rootCategories, '');
     }

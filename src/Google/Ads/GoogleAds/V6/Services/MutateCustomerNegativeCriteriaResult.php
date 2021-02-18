@@ -21,6 +21,13 @@ class MutateCustomerNegativeCriteriaResult extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
     protected $resource_name = '';
+    /**
+     * The mutated criterion with only mutable fields after mutate. The field will
+     * only be returned when response_content_type is set to "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerNegativeCriterion customer_negative_criterion = 2;</code>
+     */
+    protected $customer_negative_criterion = null;
 
     /**
      * Constructor.
@@ -30,6 +37,9 @@ class MutateCustomerNegativeCriteriaResult extends \Google\Protobuf\Internal\Mes
      *
      *     @type string $resource_name
      *           Returned for successful operations.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\CustomerNegativeCriterion $customer_negative_criterion
+     *           The mutated criterion with only mutable fields after mutate. The field will
+     *           only be returned when response_content_type is set to "MUTABLE_RESOURCE".
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +69,44 @@ class MutateCustomerNegativeCriteriaResult extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkString($var, True);
         $this->resource_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The mutated criterion with only mutable fields after mutate. The field will
+     * only be returned when response_content_type is set to "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerNegativeCriterion customer_negative_criterion = 2;</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerNegativeCriterion
+     */
+    public function getCustomerNegativeCriterion()
+    {
+        return isset($this->customer_negative_criterion) ? $this->customer_negative_criterion : null;
+    }
+
+    public function hasCustomerNegativeCriterion()
+    {
+        return isset($this->customer_negative_criterion);
+    }
+
+    public function clearCustomerNegativeCriterion()
+    {
+        unset($this->customer_negative_criterion);
+    }
+
+    /**
+     * The mutated criterion with only mutable fields after mutate. The field will
+     * only be returned when response_content_type is set to "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerNegativeCriterion customer_negative_criterion = 2;</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\CustomerNegativeCriterion $var
+     * @return $this
+     */
+    public function setCustomerNegativeCriterion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\CustomerNegativeCriterion::class);
+        $this->customer_negative_criterion = $var;
 
         return $this;
     }

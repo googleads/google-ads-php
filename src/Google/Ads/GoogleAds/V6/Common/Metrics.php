@@ -84,12 +84,31 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $all_conversions_value = null;
     /**
+     * The value of all conversions. When this column is selected with date, the
+     * values in date column means the conversion date. Details for the
+     * by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double all_conversions_value_by_conversion_date = 240;</code>
+     */
+    protected $all_conversions_value_by_conversion_date = 0.0;
+    /**
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric.
      *
      * Generated from protobuf field <code>double all_conversions = 193;</code>
      */
     protected $all_conversions = null;
+    /**
+     * The total number of conversions. This includes all conversions regardless
+     * of the value of include_in_conversions_metric. When this column is selected
+     * with date, the values in date column means the conversion date. Details for
+     * the by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double all_conversions_by_conversion_date = 241;</code>
+     */
+    protected $all_conversions_by_conversion_date = 0.0;
     /**
      * The value of all conversions divided by the total cost of ad interactions
      * (such as clicks for text ads or views for video ads).
@@ -323,6 +342,18 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $conversions_value = null;
     /**
+     * The value of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true. If you use
+     * conversion-based bidding, your bid strategies will optimize for these
+     * conversions. When this column is selected with date, the values in date
+     * column means the conversion date. Details for the by_conversion_date
+     * columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double conversions_value_by_conversion_date = 242;</code>
+     */
+    protected $conversions_value_by_conversion_date = 0.0;
+    /**
      * The value of conversions divided by the cost of ad interactions. This only
      * includes conversion actions which include_in_conversions_metric attribute
      * is set to true. If you use conversion-based bidding, your bid strategies
@@ -350,6 +381,18 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>double conversions = 168;</code>
      */
     protected $conversions = null;
+    /**
+     * The number of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true. If you use
+     * conversion-based bidding, your bid strategies will optimize for these
+     * conversions. When this column is selected with date, the values in date
+     * column means the conversion date. Details for the by_conversion_date
+     * columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double conversions_by_conversion_date = 243;</code>
+     */
+    protected $conversions_by_conversion_date = 0.0;
     /**
      * The sum of your cost-per-click (CPC) and cost-per-thousand impressions
      * (CPM) costs during this period.
@@ -810,6 +853,15 @@ class Metrics extends \Google\Protobuf\Internal\Message
      */
     protected $value_per_all_conversions = null;
     /**
+     * The value of all conversions divided by the number of all conversions. When
+     * this column is selected with date, the values in date column means the
+     * conversion date. Details for the by_conversion_date columns are available
+     * at https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double value_per_all_conversions_by_conversion_date = 244;</code>
+     */
+    protected $value_per_all_conversions_by_conversion_date = null;
+    /**
      * The value of conversions divided by the number of conversions. This only
      * includes conversion actions which include_in_conversions_metric attribute
      * is set to true. If you use conversion-based bidding, your bid strategies
@@ -818,6 +870,18 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>double value_per_conversion = 151;</code>
      */
     protected $value_per_conversion = null;
+    /**
+     * The value of conversions divided by the number of conversions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true. If you use conversion-based bidding, your bid strategies
+     * will optimize for these conversions. When this column is selected with
+     * date, the values in date column means the conversion date. Details for the
+     * by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double value_per_conversions_by_conversion_date = 245;</code>
+     */
+    protected $value_per_conversions_by_conversion_date = null;
     /**
      * The value of current model attributed conversions divided by the number of
      * the conversions. This only includes conversion actions which
@@ -910,9 +974,20 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           divided by the number of ad interactions.
      *     @type float $all_conversions_value
      *           The value of all conversions.
+     *     @type float $all_conversions_value_by_conversion_date
+     *           The value of all conversions. When this column is selected with date, the
+     *           values in date column means the conversion date. Details for the
+     *           by_conversion_date columns are available at
+     *           https://support.google.com/google-ads/answer/9549009.
      *     @type float $all_conversions
      *           The total number of conversions. This includes all conversions regardless
      *           of the value of include_in_conversions_metric.
+     *     @type float $all_conversions_by_conversion_date
+     *           The total number of conversions. This includes all conversions regardless
+     *           of the value of include_in_conversions_metric. When this column is selected
+     *           with date, the values in date column means the conversion date. Details for
+     *           the by_conversion_date columns are available at
+     *           https://support.google.com/google-ads/answer/9549009.
      *     @type float $all_conversions_value_per_cost
      *           The value of all conversions divided by the total cost of ad interactions
      *           (such as clicks for text ads or views for video ads).
@@ -1025,6 +1100,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           include_in_conversions_metric attribute is set to true. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions.
+     *     @type float $conversions_value_by_conversion_date
+     *           The value of conversions. This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true. If you use
+     *           conversion-based bidding, your bid strategies will optimize for these
+     *           conversions. When this column is selected with date, the values in date
+     *           column means the conversion date. Details for the by_conversion_date
+     *           columns are available at
+     *           https://support.google.com/google-ads/answer/9549009.
      *     @type float $conversions_value_per_cost
      *           The value of conversions divided by the cost of ad interactions. This only
      *           includes conversion actions which include_in_conversions_metric attribute
@@ -1041,6 +1124,14 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           include_in_conversions_metric attribute is set to true. If you use
      *           conversion-based bidding, your bid strategies will optimize for these
      *           conversions.
+     *     @type float $conversions_by_conversion_date
+     *           The number of conversions. This only includes conversion actions which
+     *           include_in_conversions_metric attribute is set to true. If you use
+     *           conversion-based bidding, your bid strategies will optimize for these
+     *           conversions. When this column is selected with date, the values in date
+     *           column means the conversion date. Details for the by_conversion_date
+     *           columns are available at
+     *           https://support.google.com/google-ads/answer/9549009.
      *     @type int|string $cost_micros
      *           The sum of your cost-per-click (CPC) and cost-per-thousand impressions
      *           (CPM) costs during this period.
@@ -1264,11 +1355,24 @@ class Metrics extends \Google\Protobuf\Internal\Message
      *           that reach a valid AMP page.
      *     @type float $value_per_all_conversions
      *           The value of all conversions divided by the number of all conversions.
+     *     @type float $value_per_all_conversions_by_conversion_date
+     *           The value of all conversions divided by the number of all conversions. When
+     *           this column is selected with date, the values in date column means the
+     *           conversion date. Details for the by_conversion_date columns are available
+     *           at https://support.google.com/google-ads/answer/9549009.
      *     @type float $value_per_conversion
      *           The value of conversions divided by the number of conversions. This only
      *           includes conversion actions which include_in_conversions_metric attribute
      *           is set to true. If you use conversion-based bidding, your bid strategies
      *           will optimize for these conversions.
+     *     @type float $value_per_conversions_by_conversion_date
+     *           The value of conversions divided by the number of conversions. This only
+     *           includes conversion actions which include_in_conversions_metric attribute
+     *           is set to true. If you use conversion-based bidding, your bid strategies
+     *           will optimize for these conversions. When this column is selected with
+     *           date, the values in date column means the conversion date. Details for the
+     *           by_conversion_date columns are available at
+     *           https://support.google.com/google-ads/answer/9549009.
      *     @type float $value_per_current_model_attributed_conversion
      *           The value of current model attributed conversions divided by the number of
      *           the conversions. This only includes conversion actions which
@@ -1678,6 +1782,38 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The value of all conversions. When this column is selected with date, the
+     * values in date column means the conversion date. Details for the
+     * by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double all_conversions_value_by_conversion_date = 240;</code>
+     * @return float
+     */
+    public function getAllConversionsValueByConversionDate()
+    {
+        return $this->all_conversions_value_by_conversion_date;
+    }
+
+    /**
+     * The value of all conversions. When this column is selected with date, the
+     * values in date column means the conversion date. Details for the
+     * by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double all_conversions_value_by_conversion_date = 240;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setAllConversionsValueByConversionDate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->all_conversions_value_by_conversion_date = $var;
+
+        return $this;
+    }
+
+    /**
      * The total number of conversions. This includes all conversions regardless
      * of the value of include_in_conversions_metric.
      *
@@ -1711,6 +1847,40 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->all_conversions = $var;
+
+        return $this;
+    }
+
+    /**
+     * The total number of conversions. This includes all conversions regardless
+     * of the value of include_in_conversions_metric. When this column is selected
+     * with date, the values in date column means the conversion date. Details for
+     * the by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double all_conversions_by_conversion_date = 241;</code>
+     * @return float
+     */
+    public function getAllConversionsByConversionDate()
+    {
+        return $this->all_conversions_by_conversion_date;
+    }
+
+    /**
+     * The total number of conversions. This includes all conversions regardless
+     * of the value of include_in_conversions_metric. When this column is selected
+     * with date, the values in date column means the conversion date. Details for
+     * the by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double all_conversions_by_conversion_date = 241;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setAllConversionsByConversionDate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->all_conversions_by_conversion_date = $var;
 
         return $this;
     }
@@ -2900,6 +3070,44 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The value of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true. If you use
+     * conversion-based bidding, your bid strategies will optimize for these
+     * conversions. When this column is selected with date, the values in date
+     * column means the conversion date. Details for the by_conversion_date
+     * columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double conversions_value_by_conversion_date = 242;</code>
+     * @return float
+     */
+    public function getConversionsValueByConversionDate()
+    {
+        return $this->conversions_value_by_conversion_date;
+    }
+
+    /**
+     * The value of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true. If you use
+     * conversion-based bidding, your bid strategies will optimize for these
+     * conversions. When this column is selected with date, the values in date
+     * column means the conversion date. Details for the by_conversion_date
+     * columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double conversions_value_by_conversion_date = 242;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionsValueByConversionDate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversions_value_by_conversion_date = $var;
+
+        return $this;
+    }
+
+    /**
      * The value of conversions divided by the cost of ad interactions. This only
      * includes conversion actions which include_in_conversions_metric attribute
      * is set to true. If you use conversion-based bidding, your bid strategies
@@ -3023,6 +3231,44 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->conversions = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true. If you use
+     * conversion-based bidding, your bid strategies will optimize for these
+     * conversions. When this column is selected with date, the values in date
+     * column means the conversion date. Details for the by_conversion_date
+     * columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double conversions_by_conversion_date = 243;</code>
+     * @return float
+     */
+    public function getConversionsByConversionDate()
+    {
+        return $this->conversions_by_conversion_date;
+    }
+
+    /**
+     * The number of conversions. This only includes conversion actions which
+     * include_in_conversions_metric attribute is set to true. If you use
+     * conversion-based bidding, your bid strategies will optimize for these
+     * conversions. When this column is selected with date, the values in date
+     * column means the conversion date. Details for the by_conversion_date
+     * columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double conversions_by_conversion_date = 243;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setConversionsByConversionDate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->conversions_by_conversion_date = $var;
 
         return $this;
     }
@@ -5322,6 +5568,48 @@ class Metrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The value of all conversions divided by the number of all conversions. When
+     * this column is selected with date, the values in date column means the
+     * conversion date. Details for the by_conversion_date columns are available
+     * at https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double value_per_all_conversions_by_conversion_date = 244;</code>
+     * @return float
+     */
+    public function getValuePerAllConversionsByConversionDate()
+    {
+        return isset($this->value_per_all_conversions_by_conversion_date) ? $this->value_per_all_conversions_by_conversion_date : 0.0;
+    }
+
+    public function hasValuePerAllConversionsByConversionDate()
+    {
+        return isset($this->value_per_all_conversions_by_conversion_date);
+    }
+
+    public function clearValuePerAllConversionsByConversionDate()
+    {
+        unset($this->value_per_all_conversions_by_conversion_date);
+    }
+
+    /**
+     * The value of all conversions divided by the number of all conversions. When
+     * this column is selected with date, the values in date column means the
+     * conversion date. Details for the by_conversion_date columns are available
+     * at https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double value_per_all_conversions_by_conversion_date = 244;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setValuePerAllConversionsByConversionDate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->value_per_all_conversions_by_conversion_date = $var;
+
+        return $this;
+    }
+
+    /**
      * The value of conversions divided by the number of conversions. This only
      * includes conversion actions which include_in_conversions_metric attribute
      * is set to true. If you use conversion-based bidding, your bid strategies
@@ -5359,6 +5647,54 @@ class Metrics extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->value_per_conversion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The value of conversions divided by the number of conversions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true. If you use conversion-based bidding, your bid strategies
+     * will optimize for these conversions. When this column is selected with
+     * date, the values in date column means the conversion date. Details for the
+     * by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double value_per_conversions_by_conversion_date = 245;</code>
+     * @return float
+     */
+    public function getValuePerConversionsByConversionDate()
+    {
+        return isset($this->value_per_conversions_by_conversion_date) ? $this->value_per_conversions_by_conversion_date : 0.0;
+    }
+
+    public function hasValuePerConversionsByConversionDate()
+    {
+        return isset($this->value_per_conversions_by_conversion_date);
+    }
+
+    public function clearValuePerConversionsByConversionDate()
+    {
+        unset($this->value_per_conversions_by_conversion_date);
+    }
+
+    /**
+     * The value of conversions divided by the number of conversions. This only
+     * includes conversion actions which include_in_conversions_metric attribute
+     * is set to true. If you use conversion-based bidding, your bid strategies
+     * will optimize for these conversions. When this column is selected with
+     * date, the values in date column means the conversion date. Details for the
+     * by_conversion_date columns are available at
+     * https://support.google.com/google-ads/answer/9549009.
+     *
+     * Generated from protobuf field <code>double value_per_conversions_by_conversion_date = 245;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setValuePerConversionsByConversionDate($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->value_per_conversions_by_conversion_date = $var;
 
         return $this;
     }

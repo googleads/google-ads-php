@@ -26,6 +26,13 @@ class HotelPriceBucket
      */
     const UNKNOWN = 1;
     /**
+     * Uniquely lowest price. Partner has the lowest price, and no other
+     * partners are within a small variance of that price.
+     *
+     * Generated from protobuf enum <code>LOWEST_UNIQUE = 2;</code>
+     */
+    const LOWEST_UNIQUE = 2;
+    /**
      * Tied for lowest price. Partner is within a small variance of the lowest
      * price.
      *
@@ -39,12 +46,20 @@ class HotelPriceBucket
      * Generated from protobuf enum <code>NOT_LOWEST = 4;</code>
      */
     const NOT_LOWEST = 4;
+    /**
+     * Partner was the only one shown.
+     *
+     * Generated from protobuf enum <code>ONLY_PARTNER_SHOWN = 5;</code>
+     */
+    const ONLY_PARTNER_SHOWN = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
+        self::LOWEST_UNIQUE => 'LOWEST_UNIQUE',
         self::LOWEST_TIED => 'LOWEST_TIED',
         self::NOT_LOWEST => 'NOT_LOWEST',
+        self::ONLY_PARTNER_SHOWN => 'ONLY_PARTNER_SHOWN',
     ];
 
     public static function name($value)

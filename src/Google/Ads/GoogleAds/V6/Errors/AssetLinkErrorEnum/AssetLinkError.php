@@ -57,6 +57,71 @@ class AssetLinkError
      * Generated from protobuf enum <code>INCOMPATIBLE_ADVERTISING_CHANNEL_TYPE = 6;</code>
      */
     const INCOMPATIBLE_ADVERTISING_CHANNEL_TYPE = 6;
+    /**
+     * The image asset provided is not within the dimension constraints
+     * specified for the submitted asset field.
+     *
+     * Generated from protobuf enum <code>IMAGE_NOT_WITHIN_SPECIFIED_DIMENSION_RANGE = 7;</code>
+     */
+    const IMAGE_NOT_WITHIN_SPECIFIED_DIMENSION_RANGE = 7;
+    /**
+     * The pinned field is not valid for the submitted asset field.
+     *
+     * Generated from protobuf enum <code>INVALID_PINNED_FIELD = 8;</code>
+     */
+    const INVALID_PINNED_FIELD = 8;
+    /**
+     * The media bundle asset provided is too large for the submitted asset
+     * field.
+     *
+     * Generated from protobuf enum <code>MEDIA_BUNDLE_ASSET_FILE_SIZE_TOO_LARGE = 9;</code>
+     */
+    const MEDIA_BUNDLE_ASSET_FILE_SIZE_TOO_LARGE = 9;
+    /**
+     * Not enough assets are available for use with other fields since other
+     * assets are pinned to specific fields.
+     *
+     * Generated from protobuf enum <code>NOT_ENOUGH_AVAILABLE_ASSET_LINKS_FOR_VALID_COMBINATION = 10;</code>
+     */
+    const NOT_ENOUGH_AVAILABLE_ASSET_LINKS_FOR_VALID_COMBINATION = 10;
+    /**
+     * Not enough assets with fallback are available. When validating the
+     * minimum number of assets, assets without fallback (e.g. assets that
+     * contain location tag without default value "{LOCATION(City)}") will not
+     * be counted.
+     *
+     * Generated from protobuf enum <code>NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK = 11;</code>
+     */
+    const NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK = 11;
+    /**
+     * This is a combination of the
+     * NOT_ENOUGH_AVAILABLE_ASSET_LINKS_FOR_VALID_COMBINATION and
+     * NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK errors. Not enough assets
+     * with fallback are available since some assets are pinned.
+     *
+     * Generated from protobuf enum <code>NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK_FOR_VALID_COMBINATION = 12;</code>
+     */
+    const NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK_FOR_VALID_COMBINATION = 12;
+    /**
+     * The YouTube video referenced in the provided asset has been removed.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_VIDEO_REMOVED = 13;</code>
+     */
+    const YOUTUBE_VIDEO_REMOVED = 13;
+    /**
+     * The YouTube video referenced in the provided asset is too long for the
+     * field submitted.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_VIDEO_TOO_LONG = 14;</code>
+     */
+    const YOUTUBE_VIDEO_TOO_LONG = 14;
+    /**
+     * The YouTube video referenced in the provided asset is too short for the
+     * field submitted.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_VIDEO_TOO_SHORT = 15;</code>
+     */
+    const YOUTUBE_VIDEO_TOO_SHORT = 15;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -66,6 +131,15 @@ class AssetLinkError
         self::FIELD_TYPE_INCOMPATIBLE_WITH_ASSET_TYPE => 'FIELD_TYPE_INCOMPATIBLE_WITH_ASSET_TYPE',
         self::FIELD_TYPE_INCOMPATIBLE_WITH_CAMPAIGN_TYPE => 'FIELD_TYPE_INCOMPATIBLE_WITH_CAMPAIGN_TYPE',
         self::INCOMPATIBLE_ADVERTISING_CHANNEL_TYPE => 'INCOMPATIBLE_ADVERTISING_CHANNEL_TYPE',
+        self::IMAGE_NOT_WITHIN_SPECIFIED_DIMENSION_RANGE => 'IMAGE_NOT_WITHIN_SPECIFIED_DIMENSION_RANGE',
+        self::INVALID_PINNED_FIELD => 'INVALID_PINNED_FIELD',
+        self::MEDIA_BUNDLE_ASSET_FILE_SIZE_TOO_LARGE => 'MEDIA_BUNDLE_ASSET_FILE_SIZE_TOO_LARGE',
+        self::NOT_ENOUGH_AVAILABLE_ASSET_LINKS_FOR_VALID_COMBINATION => 'NOT_ENOUGH_AVAILABLE_ASSET_LINKS_FOR_VALID_COMBINATION',
+        self::NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK => 'NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK',
+        self::NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK_FOR_VALID_COMBINATION => 'NOT_ENOUGH_AVAILABLE_ASSET_LINKS_WITH_FALLBACK_FOR_VALID_COMBINATION',
+        self::YOUTUBE_VIDEO_REMOVED => 'YOUTUBE_VIDEO_REMOVED',
+        self::YOUTUBE_VIDEO_TOO_LONG => 'YOUTUBE_VIDEO_TOO_LONG',
+        self::YOUTUBE_VIDEO_TOO_SHORT => 'YOUTUBE_VIDEO_TOO_SHORT',
     ];
 
     public static function name($value)

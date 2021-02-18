@@ -53,6 +53,8 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      *           Parameters to use when applying sitelink extension recommendation.
      *     @type \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters $move_unused_budget
      *           Parameters to use when applying move unused budget recommendation.
+     *     @type \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\ResponsiveSearchAdParameters $responsive_search_ad
+     *           Parameters to use when applying a responsive search ad recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -367,6 +369,37 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters::class);
         $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Parameters to use when applying a responsive search ad recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters responsive_search_ad = 11;</code>
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\ResponsiveSearchAdParameters
+     */
+    public function getResponsiveSearchAd()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasResponsiveSearchAd()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Parameters to use when applying a responsive search ad recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters responsive_search_ad = 11;</code>
+     * @param \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\ResponsiveSearchAdParameters $var
+     * @return $this
+     */
+    public function setResponsiveSearchAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\ResponsiveSearchAdParameters::class);
+        $this->writeOneof(11, $var);
 
         return $this;
     }

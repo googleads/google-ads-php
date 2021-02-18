@@ -89,6 +89,7 @@ class OperatingSystemVersionConstantServiceGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
+        'https://www.googleapis.com/auth/adwords',
     ];
     private static $operatingSystemVersionConstantNameTemplate;
     private static $pathTemplateMap;
@@ -102,7 +103,7 @@ class OperatingSystemVersionConstantServiceGapicClient
             'descriptorsConfigPath' => __DIR__.'/../resources/operating_system_version_constant_service_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__.'/../resources/operating_system_version_constant_service_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [

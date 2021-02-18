@@ -37,12 +37,19 @@ class MatchingFunctionContextType
      * Generated from protobuf enum <code>DEVICE_NAME = 3;</code>
      */
     const DEVICE_NAME = 3;
+    /**
+     * Feed item set id in the request context.
+     *
+     * Generated from protobuf enum <code>FEED_ITEM_SET_ID = 4;</code>
+     */
+    const FEED_ITEM_SET_ID = 4;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::FEED_ITEM_ID => 'FEED_ITEM_ID',
         self::DEVICE_NAME => 'DEVICE_NAME',
+        self::FEED_ITEM_SET_ID => 'FEED_ITEM_SET_ID',
     ];
 
     public static function name($value)
