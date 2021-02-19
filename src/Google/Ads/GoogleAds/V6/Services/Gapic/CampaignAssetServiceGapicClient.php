@@ -92,6 +92,7 @@ class CampaignAssetServiceGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
+        'https://www.googleapis.com/auth/adwords',
     ];
     private static $campaignAssetNameTemplate;
     private static $pathTemplateMap;
@@ -105,7 +106,7 @@ class CampaignAssetServiceGapicClient
             'descriptorsConfigPath' => __DIR__.'/../resources/campaign_asset_service_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__.'/../resources/campaign_asset_service_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [

@@ -158,6 +158,10 @@ class GetChangeDetails
                     $oldResourceEntity = $oldResource->getAdGroup();
                     $newResourceEntity = $newResource->getAdGroup();
                     break;
+                case ChangeEventResourceType::AD_GROUP_AD:
+                    $oldResourceEntity = $oldResource->getAdGroupAd();
+                    $newResourceEntity = $newResource->getAdGroupAd();
+                    break;
                 case ChangeEventResourceType::AD_GROUP_CRITERION:
                     $oldResourceEntity = $oldResource->getAdGroupCriterion();
                     $newResourceEntity = $newResource->getAdGroupCriterion();
@@ -177,6 +181,22 @@ class GetChangeDetails
                 case ChangeEventResourceType::CAMPAIGN_CRITERION:
                     $oldResourceEntity = $oldResource->getCampaignCriterion();
                     $newResourceEntity = $newResource->getCampaignCriterion();
+                    break;
+                case ChangeEventResourceType::AD_GROUP_FEED:
+                    $oldResourceEntity = $oldResource->getAdGroupFeed();
+                    $newResourceEntity = $newResource->getAdGroupFeed();
+                    break;
+                case ChangeEventResourceType::CAMPAIGN_FEED:
+                    $oldResourceEntity = $oldResource->getCampaignFeed();
+                    $newResourceEntity = $newResource->getCampaignFeed();
+                    break;
+                case ChangeEventResourceType::FEED:
+                    $oldResourceEntity = $oldResource->getFeed();
+                    $newResourceEntity = $newResource->getFeed();
+                    break;
+                case ChangeEventResourceType::FEED_ITEM:
+                    $oldResourceEntity = $oldResource->getFeedItem();
+                    $newResourceEntity = $newResource->getFeedItem();
                     break;
                 default:
                     $isResourceTypeKnown = false;

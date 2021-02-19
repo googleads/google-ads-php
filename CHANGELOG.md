@@ -1,3 +1,18 @@
+## 7.0.0
+*   Added support for v6_1 of Google Ads API.
+*   Removed support for v3 of Google Ads API.
+*   Updated `composer.json` to require the minimum PHP version of 7.3.
+*   Fixed the FieldMasks utility to make it work with null nested messages.
+*   Redact email address in the newly available CustomerUserAccessInvitation.
+*   Added code examples:
+    * AddImageExtension
+    * GetPendingInvitations
+    * InviteUserWithAccessRole
+*   Fixed/improved code examples:
+    * AddCampaignBidModifier
+    * GetChangeDetails
+    * GetProductBiddingCategoryConstant
+
 ## 6.1.0
 *   Added support for logging responses of stream calls.
 *   Updated the required protobuf version to v3.14.0 for better performance and bug

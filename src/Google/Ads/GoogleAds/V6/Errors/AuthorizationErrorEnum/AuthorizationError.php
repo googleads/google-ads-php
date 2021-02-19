@@ -105,6 +105,13 @@ class AuthorizationError
      * Generated from protobuf enum <code>SERVICE_ACCESS_DENIED = 12;</code>
      */
     const SERVICE_ACCESS_DENIED = 12;
+    /**
+     * The customer (or login customer) isn't in Google Ads. It belongs to
+     * another ads system.
+     *
+     * Generated from protobuf enum <code>ACCESS_DENIED_FOR_ACCOUNT_TYPE = 25;</code>
+     */
+    const ACCESS_DENIED_FOR_ACCOUNT_TYPE = 25;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -121,6 +128,7 @@ class AuthorizationError
         self::DEVELOPER_TOKEN_NOT_APPROVED => 'DEVELOPER_TOKEN_NOT_APPROVED',
         self::INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION => 'INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION',
         self::SERVICE_ACCESS_DENIED => 'SERVICE_ACCESS_DENIED',
+        self::ACCESS_DENIED_FOR_ACCOUNT_TYPE => 'ACCESS_DENIED_FOR_ACCOUNT_TYPE',
     ];
 
     public static function name($value)

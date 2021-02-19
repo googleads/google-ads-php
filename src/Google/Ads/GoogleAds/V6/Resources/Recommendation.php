@@ -50,8 +50,8 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -60,7 +60,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      *
      * Generated from protobuf field <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -98,13 +98,13 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           This field will be set for the following recommendation types:
      *           CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      *           KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     *           OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     *           TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     *           OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     *           SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      *     @type string $ad_group
      *           Output only. The ad group targeted by this recommendation. This will be set only when
      *           the recommendation affects a single ad group.
      *           This field will be set for the following recommendation types:
-     *           KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     *           KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      *     @type bool $dismissed
      *           Output only. Whether the recommendation is dismissed or not.
      *     @type \Google\Ads\GoogleAds\V6\Resources\Recommendation\CampaignBudgetRecommendation $campaign_budget_recommendation
@@ -139,6 +139,8 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      *           Output only. The move unused budget recommendation.
      *     @type \Google\Ads\GoogleAds\V6\Resources\Recommendation\TargetRoasOptInRecommendation $target_roas_opt_in_recommendation
      *           Output only. The Target ROAS opt-in recommendation.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\Recommendation\ResponsiveSearchAdRecommendation $responsive_search_ad_recommendation
+     *           Output only. The add responsive search ad recommendation.
      * }
      */
     public function __construct($data = NULL) {
@@ -286,8 +288,8 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -313,8 +315,8 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * This field will be set for the following recommendation types:
      * CALL_EXTENSION, CALLOUT_EXTENSION, ENHANCED_CPC_OPT_IN, KEYWORD,
      * KEYWORD_MATCH_TYPE, MAXIMIZE_CLICKS_OPT_IN, MAXIMIZE_CONVERSIONS_OPT_IN,
-     * OPTIMIZE_AD_ROTATION, SEARCH_PARTNERS_OPT_IN, SITELINK_EXTENSION,
-     * TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
+     * OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, SEARCH_PARTNERS_OPT_IN,
+     * SITELINK_EXTENSION, TARGET_CPA_OPT_IN, TARGET_ROAS_OPT_IN, TEXT_AD
      *
      * Generated from protobuf field <code>string campaign = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -332,7 +334,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      *
      * Generated from protobuf field <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -356,7 +358,7 @@ class Recommendation extends \Google\Protobuf\Internal\Message
      * Output only. The ad group targeted by this recommendation. This will be set only when
      * the recommendation affects a single ad group.
      * This field will be set for the following recommendation types:
-     * KEYWORD, OPTIMIZE_AD_ROTATION, TEXT_AD
+     * KEYWORD, OPTIMIZE_AD_ROTATION, RESPONSIVE_SEARCH_AD, TEXT_AD
      *
      * Generated from protobuf field <code>string ad_group = 26 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -898,6 +900,37 @@ class Recommendation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\Recommendation\TargetRoasOptInRecommendation::class);
         $this->writeOneof(23, $var);
+
+        return $this;
+    }
+
+    /**
+     * Output only. The add responsive search ad recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\ResponsiveSearchAdRecommendation
+     */
+    public function getResponsiveSearchAdRecommendation()
+    {
+        return $this->readOneof(28);
+    }
+
+    public function hasResponsiveSearchAdRecommendation()
+    {
+        return $this->hasOneof(28);
+    }
+
+    /**
+     * Output only. The add responsive search ad recommendation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Recommendation.ResponsiveSearchAdRecommendation responsive_search_ad_recommendation = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\Recommendation\ResponsiveSearchAdRecommendation $var
+     * @return $this
+     */
+    public function setResponsiveSearchAdRecommendation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\Recommendation\ResponsiveSearchAdRecommendation::class);
+        $this->writeOneof(28, $var);
 
         return $this;
     }

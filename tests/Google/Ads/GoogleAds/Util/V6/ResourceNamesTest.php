@@ -70,6 +70,7 @@ use Google\Ads\GoogleAds\V6\Services\CustomerLabelServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessInvitationServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DetailPlacementViewServiceClient;
@@ -1321,6 +1322,27 @@ class ResourceNamesTest extends TestCase
         $names = CustomerUserAccessServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
         $this->assertEquals($userId, $names['user_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forCustomerUserAccessInvitation()
+     */
+    public function testGetNameForCustomerUserAccessInvitation()
+    {
+        $invitationId = 1111111;
+        $expectedResourceName = sprintf(
+            'customers/%s/customerUserAccessInvitations/%s',
+            self::CUSTOMER_ID,
+            $invitationId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCustomerUserAccessInvitation(self::CUSTOMER_ID, $invitationId)
+        );
+
+        $names = CustomerUserAccessInvitationServiceClient::parseName($expectedResourceName);
+        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($invitationId, $names['invitation_id']);
     }
 
     /**

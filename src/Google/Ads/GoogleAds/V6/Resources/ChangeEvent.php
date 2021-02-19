@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * shown externally) in the past 30 days will be shown. The change shows the old
  * values of the changed fields before the change and the new values right after
  * the change. ChangeEvent could have up to 3 minutes delay to reflect a new
- * change
+ * change.
  *
  * Generated from protobuf message <code>google.ads.googleads.v6.resources.ChangeEvent</code>
  */
@@ -96,6 +96,18 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ad_group = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group = '';
+    /**
+     * Output only. The Feed affected by this change.
+     *
+     * Generated from protobuf field <code>string feed = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $feed = '';
+    /**
+     * Output only. The FeedItem affected by this change.
+     *
+     * Generated from protobuf field <code>string feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $feed_item = '';
 
     /**
      * Constructor.
@@ -130,6 +142,10 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      *           Output only. The Campaign affected by this change.
      *     @type string $ad_group
      *           Output only. The AdGroup affected by this change.
+     *     @type string $feed
+     *           Output only. The Feed affected by this change.
+     *     @type string $feed_item
+     *           Output only. The FeedItem affected by this change.
      * }
      */
     public function __construct($data = NULL) {
@@ -481,6 +497,58 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ad_group = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The Feed affected by this change.
+     *
+     * Generated from protobuf field <code>string feed = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getFeed()
+    {
+        return $this->feed;
+    }
+
+    /**
+     * Output only. The Feed affected by this change.
+     *
+     * Generated from protobuf field <code>string feed = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFeed($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->feed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The FeedItem affected by this change.
+     *
+     * Generated from protobuf field <code>string feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getFeedItem()
+    {
+        return $this->feed_item;
+    }
+
+    /**
+     * Output only. The FeedItem affected by this change.
+     *
+     * Generated from protobuf field <code>string feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFeedItem($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->feed_item = $var;
 
         return $this;
     }

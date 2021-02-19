@@ -26,7 +26,8 @@ class FeedItemSet extends \Google\Protobuf\Internal\Message
      */
     protected $resource_name = '';
     /**
-     * Immutable. ID of the feed containing the feed items in the set. Immutable. Required.
+     * Immutable. The resource name of the feed containing the feed items in the set.
+     * Immutable. Required.
      *
      * Generated from protobuf field <code>string feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      */
@@ -63,7 +64,8 @@ class FeedItemSet extends \Google\Protobuf\Internal\Message
      *           Feed item set resource names have the form:
      *           `customers/{customer_id}/feedItemSets/{feed_id}~{feed_item_set_id}`
      *     @type string $feed
-     *           Immutable. ID of the feed containing the feed items in the set. Immutable. Required.
+     *           Immutable. The resource name of the feed containing the feed items in the set.
+     *           Immutable. Required.
      *     @type int|string $feed_item_set_id
      *           Output only. ID of the set.
      *     @type string $display_name
@@ -116,7 +118,8 @@ class FeedItemSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. ID of the feed containing the feed items in the set. Immutable. Required.
+     * Immutable. The resource name of the feed containing the feed items in the set.
+     * Immutable. Required.
      *
      * Generated from protobuf field <code>string feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @return string
@@ -127,7 +130,8 @@ class FeedItemSet extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. ID of the feed containing the feed items in the set. Immutable. Required.
+     * Immutable. The resource name of the feed containing the feed items in the set.
+     * Immutable. Required.
      *
      * Generated from protobuf field <code>string feed = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
      * @param string $var

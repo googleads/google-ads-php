@@ -89,6 +89,7 @@ class SearchTermViewServiceGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
+        'https://www.googleapis.com/auth/adwords',
     ];
     private static $searchTermViewNameTemplate;
     private static $pathTemplateMap;
@@ -102,7 +103,7 @@ class SearchTermViewServiceGapicClient
             'descriptorsConfigPath' => __DIR__.'/../resources/search_term_view_service_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__.'/../resources/search_term_view_service_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [

@@ -211,6 +211,12 @@ class CriterionType
      * Generated from protobuf enum <code>CUSTOM_AUDIENCE = 32;</code>
      */
     const CUSTOM_AUDIENCE = 32;
+    /**
+     * Combined audience
+     *
+     * Generated from protobuf enum <code>COMBINED_AUDIENCE = 33;</code>
+     */
+    const COMBINED_AUDIENCE = 33;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -246,6 +252,7 @@ class CriterionType
         self::CUSTOM_INTENT => 'CUSTOM_INTENT',
         self::LOCATION_GROUP => 'LOCATION_GROUP',
         self::CUSTOM_AUDIENCE => 'CUSTOM_AUDIENCE',
+        self::COMBINED_AUDIENCE => 'COMBINED_AUDIENCE',
     ];
 
     public static function name($value)

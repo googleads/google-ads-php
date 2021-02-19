@@ -29,7 +29,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
-     * Generated from protobuf field <code>string client_customer = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string client_customer = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $client_customer = null;
     /**
@@ -159,7 +159,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
-     * Generated from protobuf field <code>string client_customer = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string client_customer = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getClientCustomer()
@@ -181,7 +181,7 @@ class CustomerClient extends \Google\Protobuf\Internal\Message
      * Output only. The resource name of the client-customer which is linked to
      * the given customer. Read only.
      *
-     * Generated from protobuf field <code>string client_customer = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string client_customer = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

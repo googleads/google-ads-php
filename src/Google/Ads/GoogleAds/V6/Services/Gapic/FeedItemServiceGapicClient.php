@@ -93,6 +93,7 @@ class FeedItemServiceGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
+        'https://www.googleapis.com/auth/adwords',
     ];
     private static $feedItemNameTemplate;
     private static $pathTemplateMap;
@@ -106,7 +107,7 @@ class FeedItemServiceGapicClient
             'descriptorsConfigPath' => __DIR__.'/../resources/feed_item_service_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__.'/../resources/feed_item_service_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [

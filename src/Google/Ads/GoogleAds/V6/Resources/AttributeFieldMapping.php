@@ -87,6 +87,8 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
      *           Immutable. Local Placeholder Fields
      *     @type int $job_field
      *           Immutable. Job Placeholder Fields
+     *     @type int $image_field
+     *           Immutable. Image Placeholder Fields
      * }
      */
     public function __construct($data = NULL) {
@@ -819,6 +821,37 @@ class AttributeFieldMapping extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V6\Enums\JobPlaceholderFieldEnum\JobPlaceholderField::class);
         $this->writeOneof(23, $var);
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Image Placeholder Fields
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.enums.ImagePlaceholderFieldEnum.ImagePlaceholderField image_field = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return int
+     */
+    public function getImageField()
+    {
+        return $this->readOneof(26);
+    }
+
+    public function hasImageField()
+    {
+        return $this->hasOneof(26);
+    }
+
+    /**
+     * Immutable. Image Placeholder Fields
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.enums.ImagePlaceholderFieldEnum.ImagePlaceholderField image_field = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setImageField($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V6\Enums\ImagePlaceholderFieldEnum\ImagePlaceholderField::class);
+        $this->writeOneof(26, $var);
 
         return $this;
     }

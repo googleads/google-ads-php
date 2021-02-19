@@ -22,6 +22,12 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string youtube_video_id = 2;</code>
      */
     protected $youtube_video_id = null;
+    /**
+     * YouTube video title.
+     *
+     * Generated from protobuf field <code>string youtube_video_title = 3;</code>
+     */
+    protected $youtube_video_title = '';
 
     /**
      * Constructor.
@@ -32,6 +38,8 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
      *     @type string $youtube_video_id
      *           YouTube video id. This is the 11 character string value used in the
      *           YouTube video URL.
+     *     @type string $youtube_video_title
+     *           YouTube video title.
      * }
      */
     public function __construct($data = NULL) {
@@ -73,6 +81,32 @@ class YoutubeVideoAsset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->youtube_video_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * YouTube video title.
+     *
+     * Generated from protobuf field <code>string youtube_video_title = 3;</code>
+     * @return string
+     */
+    public function getYoutubeVideoTitle()
+    {
+        return $this->youtube_video_title;
+    }
+
+    /**
+     * YouTube video title.
+     *
+     * Generated from protobuf field <code>string youtube_video_title = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setYoutubeVideoTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->youtube_video_title = $var;
 
         return $this;
     }

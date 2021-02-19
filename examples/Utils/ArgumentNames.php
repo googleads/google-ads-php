@@ -69,6 +69,7 @@ final class ArgumentNames
     public const GMB_ACCESS_TOKEN = 'gmbAccessToken';
     public const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
     public const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
+    public const IMAGE_ASSET_ID = 'imageAssetId';
     public const KEYWORD_PLAN_ID = 'keywordPlanId';
     public const KEYWORD_TEXT = 'keywordText';
     public const KEYWORD_TEXTS = 'keywordTexts';
@@ -148,6 +149,7 @@ final class ArgumentNames
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
         self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
+        self::IMAGE_ASSET_ID => 'The image asset ID',
         self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
         self::KEYWORD_TEXTS => 'The list of keyword texts',

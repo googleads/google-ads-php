@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Describes the status of returned resource.
+ * Describes the status of returned resource. ChangeStatus could have up to 3
+ * minutes delay to reflect a new change.
  *
  * Generated from protobuf message <code>google.ads.googleads.v6.resources.ChangeStatus</code>
  */

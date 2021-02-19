@@ -280,6 +280,13 @@ class CampaignError
      * Generated from protobuf enum <code>SENSITIVE_CATEGORY_APP = 45;</code>
      */
     const SENSITIVE_CATEGORY_APP = 45;
+    /**
+     * Customers with Housing, Employment, or Credit ads must accept updated
+     * personalized ads policy to continue creating campaigns.
+     *
+     * Generated from protobuf enum <code>HEC_AGREEMENT_REQUIRED = 46;</code>
+     */
+    const HEC_AGREEMENT_REQUIRED = 46;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -324,6 +331,7 @@ class CampaignError
         self::MERCHANT_NOT_ALLOWED_FOR_COMPARISON_LISTING_ADS => 'MERCHANT_NOT_ALLOWED_FOR_COMPARISON_LISTING_ADS',
         self::INSUFFICIENT_APP_INSTALLS_COUNT => 'INSUFFICIENT_APP_INSTALLS_COUNT',
         self::SENSITIVE_CATEGORY_APP => 'SENSITIVE_CATEGORY_APP',
+        self::HEC_AGREEMENT_REQUIRED => 'HEC_AGREEMENT_REQUIRED',
     ];
 
     public static function name($value)

@@ -103,6 +103,7 @@ class BatchJobServiceGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
+        'https://www.googleapis.com/auth/adwords',
     ];
     private static $batchJobNameTemplate;
     private static $pathTemplateMap;
@@ -118,7 +119,7 @@ class BatchJobServiceGapicClient
             'descriptorsConfigPath' => __DIR__.'/../resources/batch_job_service_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__.'/../resources/batch_job_service_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
