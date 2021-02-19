@@ -17,7 +17,7 @@ before_script:
   - "sudo echo '{\"type\": \"authorized_user\",\"client_id\": \"\",\"client_secret\": \"\",\"refresh_token\": \"\"}' >> $GOOGLE_APPLICATION_CREDENTIALS"
 
 script:
-  - vendor/bin/phpunit -v --configuration phpunit.xml.dist --coverage-clover=coverage.xml
+  - vendor/bin/phpunit --verbose --debug --configuration phpunit.xml.dist --coverage-clover=coverage.xml
   - vendor/bin/phpcs --standard=phpcs_ruleset.xml -np
 
 after_success:
