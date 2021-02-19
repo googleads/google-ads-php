@@ -134,6 +134,12 @@ class RecommendationType
      * Generated from protobuf enum <code>TARGET_ROAS_OPT_IN = 17;</code>
      */
     const TARGET_ROAS_OPT_IN = 17;
+    /**
+     * Recommendation to add a new responsive search ad.
+     *
+     * Generated from protobuf enum <code>RESPONSIVE_SEARCH_AD = 18;</code>
+     */
+    const RESPONSIVE_SEARCH_AD = 18;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -154,6 +160,7 @@ class RecommendationType
         self::MOVE_UNUSED_BUDGET => 'MOVE_UNUSED_BUDGET',
         self::FORECASTING_CAMPAIGN_BUDGET => 'FORECASTING_CAMPAIGN_BUDGET',
         self::TARGET_ROAS_OPT_IN => 'TARGET_ROAS_OPT_IN',
+        self::RESPONSIVE_SEARCH_AD => 'RESPONSIVE_SEARCH_AD',
     ];
 
     public static function name($value)

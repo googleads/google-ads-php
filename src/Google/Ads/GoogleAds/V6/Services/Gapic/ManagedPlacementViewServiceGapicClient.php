@@ -89,6 +89,7 @@ class ManagedPlacementViewServiceGapicClient
      * The default scopes required by the service.
      */
     public static $serviceScopes = [
+        'https://www.googleapis.com/auth/adwords',
     ];
     private static $managedPlacementViewNameTemplate;
     private static $pathTemplateMap;
@@ -102,7 +103,7 @@ class ManagedPlacementViewServiceGapicClient
             'descriptorsConfigPath' => __DIR__.'/../resources/managed_placement_view_service_descriptor_config.php',
             'gcpApiConfigPath' => __DIR__.'/../resources/managed_placement_view_service_grpc_config.json',
             'credentialsConfig' => [
-                'scopes' => self::$serviceScopes,
+                'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [

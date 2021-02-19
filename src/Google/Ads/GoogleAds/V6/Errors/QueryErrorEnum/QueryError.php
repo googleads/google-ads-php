@@ -358,6 +358,13 @@ class QueryError
      * Generated from protobuf enum <code>REQUESTED_METRICS_FOR_MANAGER = 59;</code>
      */
     const REQUESTED_METRICS_FOR_MANAGER = 59;
+    /**
+     * The number of values (right-hand-side operands) in a filter exceeds the
+     * limit.
+     *
+     * Generated from protobuf enum <code>FILTER_HAS_TOO_MANY_VALUES = 63;</code>
+     */
+    const FILTER_HAS_TOO_MANY_VALUES = 63;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -415,6 +422,7 @@ class QueryError
         self::UNRECOGNIZED_FIELD => 'UNRECOGNIZED_FIELD',
         self::UNEXPECTED_INPUT => 'UNEXPECTED_INPUT',
         self::REQUESTED_METRICS_FOR_MANAGER => 'REQUESTED_METRICS_FOR_MANAGER',
+        self::FILTER_HAS_TOO_MANY_VALUES => 'FILTER_HAS_TOO_MANY_VALUES',
     ];
 
     public static function name($value)

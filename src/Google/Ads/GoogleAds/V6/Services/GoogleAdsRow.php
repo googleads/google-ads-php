@@ -160,6 +160,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $billing_setup = null;
     /**
+     * The call view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CallView call_view = 152;</code>
+     */
+    protected $call_view = null;
+    /**
      * The campaign budget referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBudget campaign_budget = 19;</code>
@@ -345,6 +351,12 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerUserAccess customer_user_access = 146;</code>
      */
     protected $customer_user_access = null;
+    /**
+     * The CustomerUserAccessInvitation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerUserAccessInvitation customer_user_access_invitation = 150;</code>
+     */
+    protected $customer_user_access_invitation = null;
     /**
      * The detail placement view referenced in the query.
      *
@@ -730,6 +742,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The bidding strategy referenced in the query.
      *     @type \Google\Ads\GoogleAds\V6\Resources\BillingSetup $billing_setup
      *           The billing setup referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\CallView $call_view
+     *           The call view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V6\Resources\CampaignBudget $campaign_budget
      *           The campaign budget referenced in the query.
      *     @type \Google\Ads\GoogleAds\V6\Resources\Campaign $campaign
@@ -792,6 +806,8 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The customer negative criterion referenced in the query.
      *     @type \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccess $customer_user_access
      *           The CustomerUserAccess referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation $customer_user_access_invitation
+     *           The CustomerUserAccessInvitation referenced in the query.
      *     @type \Google\Ads\GoogleAds\V6\Resources\DetailPlacementView $detail_placement_view
      *           The detail placement view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V6\Resources\DisplayKeywordView $display_keyword_view
@@ -1769,6 +1785,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\BillingSetup::class);
         $this->billing_setup = $var;
+
+        return $this;
+    }
+
+    /**
+     * The call view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CallView call_view = 152;</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\CallView
+     */
+    public function getCallView()
+    {
+        return isset($this->call_view) ? $this->call_view : null;
+    }
+
+    public function hasCallView()
+    {
+        return isset($this->call_view);
+    }
+
+    public function clearCallView()
+    {
+        unset($this->call_view);
+    }
+
+    /**
+     * The call view referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CallView call_view = 152;</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\CallView $var
+     * @return $this
+     */
+    public function setCallView($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\CallView::class);
+        $this->call_view = $var;
 
         return $this;
     }
@@ -2885,6 +2937,42 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccess::class);
         $this->customer_user_access = $var;
+
+        return $this;
+    }
+
+    /**
+     * The CustomerUserAccessInvitation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerUserAccessInvitation customer_user_access_invitation = 150;</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation
+     */
+    public function getCustomerUserAccessInvitation()
+    {
+        return isset($this->customer_user_access_invitation) ? $this->customer_user_access_invitation : null;
+    }
+
+    public function hasCustomerUserAccessInvitation()
+    {
+        return isset($this->customer_user_access_invitation);
+    }
+
+    public function clearCustomerUserAccessInvitation()
+    {
+        unset($this->customer_user_access_invitation);
+    }
+
+    /**
+     * The CustomerUserAccessInvitation referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerUserAccessInvitation customer_user_access_invitation = 150;</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation $var
+     * @return $this
+     */
+    public function setCustomerUserAccessInvitation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation::class);
+        $this->customer_user_access_invitation = $var;
 
         return $this;
     }

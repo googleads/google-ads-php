@@ -70,6 +70,7 @@ use Google\Ads\GoogleAds\V6\Services\CustomerLabelServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessInvitationServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DetailPlacementViewServiceClient;
@@ -594,6 +595,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             CustomInterestServiceClient::class,
             $this->googleAdsClient->getCustomInterestServiceClient()
+        );
+    }
+
+    public function testGetCustomerUserAccessInvitationServiceClient()
+    {
+        $this->assertInstanceOf(
+            CustomerUserAccessInvitationServiceClient::class,
+            $this->googleAdsClient->getCustomerUserAccessInvitationServiceClient()
         );
     }
 

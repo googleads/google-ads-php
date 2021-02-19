@@ -71,6 +71,7 @@ use Google\Ads\GoogleAds\V6\Services\CustomerLabelServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerManagerLinkServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerNegativeCriterionServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerServiceClient;
+use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessInvitationServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DetailPlacementViewServiceClient;
@@ -629,6 +630,14 @@ trait ServiceClientFactoryTrait
     public function getCustomInterestServiceClient()
     {
         return new CustomInterestServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CustomerUserAccessInvitationServiceClient
+     */
+    public function getCustomerUserAccessInvitationServiceClient()
+    {
+        return new CustomerUserAccessInvitationServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

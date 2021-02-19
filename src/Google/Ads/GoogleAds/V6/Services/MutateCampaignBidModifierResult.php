@@ -21,6 +21,14 @@ class MutateCampaignBidModifierResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
     protected $resource_name = '';
+    /**
+     * The mutated campaign bid modifier with only mutable fields after mutate.
+     * The field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBidModifier campaign_bid_modifier = 2;</code>
+     */
+    protected $campaign_bid_modifier = null;
 
     /**
      * Constructor.
@@ -30,6 +38,10 @@ class MutateCampaignBidModifierResult extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource_name
      *           Returned for successful operations.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier $campaign_bid_modifier
+     *           The mutated campaign bid modifier with only mutable fields after mutate.
+     *           The field will only be returned when response_content_type is set to
+     *           "MUTABLE_RESOURCE".
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +71,46 @@ class MutateCampaignBidModifierResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The mutated campaign bid modifier with only mutable fields after mutate.
+     * The field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBidModifier campaign_bid_modifier = 2;</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier
+     */
+    public function getCampaignBidModifier()
+    {
+        return isset($this->campaign_bid_modifier) ? $this->campaign_bid_modifier : null;
+    }
+
+    public function hasCampaignBidModifier()
+    {
+        return isset($this->campaign_bid_modifier);
+    }
+
+    public function clearCampaignBidModifier()
+    {
+        unset($this->campaign_bid_modifier);
+    }
+
+    /**
+     * The mutated campaign bid modifier with only mutable fields after mutate.
+     * The field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBidModifier campaign_bid_modifier = 2;</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier $var
+     * @return $this
+     */
+    public function setCampaignBidModifier($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier::class);
+        $this->campaign_bid_modifier = $var;
 
         return $this;
     }

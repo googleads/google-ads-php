@@ -58,6 +58,36 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignCriterion campaign_criterion = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $campaign_criterion = null;
+    /**
+     * Output only. Set if change_resource_type == FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Feed feed = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $feed = null;
+    /**
+     * Output only. Set if change_resource_type == FEED_ITEM.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItem feed_item = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $feed_item = null;
+    /**
+     * Output only. Set if change_resource_type == CAMPAIGN_FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignFeed campaign_feed = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $campaign_feed = null;
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupFeed ad_group_feed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $ad_group_feed = null;
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_AD.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAd ad_group_ad = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $ad_group_ad = null;
 
     /**
      * Constructor.
@@ -79,6 +109,16 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      *           Output only. Set if change_resource_type == AD_GROUP_BID_MODIFIER.
      *     @type \Google\Ads\GoogleAds\V6\Resources\CampaignCriterion $campaign_criterion
      *           Output only. Set if change_resource_type == CAMPAIGN_CRITERION.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\Feed $feed
+     *           Output only. Set if change_resource_type == FEED.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\FeedItem $feed_item
+     *           Output only. Set if change_resource_type == FEED_ITEM.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\CampaignFeed $campaign_feed
+     *           Output only. Set if change_resource_type == CAMPAIGN_FEED.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed $ad_group_feed
+     *           Output only. Set if change_resource_type == AD_GROUP_FEED.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\AdGroupAd $ad_group_ad
+     *           Output only. Set if change_resource_type == AD_GROUP_AD.
      * }
      */
     public function __construct($data = NULL) {
@@ -334,6 +374,186 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\CampaignCriterion::class);
         $this->campaign_criterion = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Feed feed = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\Feed
+     */
+    public function getFeed()
+    {
+        return isset($this->feed) ? $this->feed : null;
+    }
+
+    public function hasFeed()
+    {
+        return isset($this->feed);
+    }
+
+    public function clearFeed()
+    {
+        unset($this->feed);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Feed feed = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\Feed $var
+     * @return $this
+     */
+    public function setFeed($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\Feed::class);
+        $this->feed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == FEED_ITEM.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItem feed_item = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItem
+     */
+    public function getFeedItem()
+    {
+        return isset($this->feed_item) ? $this->feed_item : null;
+    }
+
+    public function hasFeedItem()
+    {
+        return isset($this->feed_item);
+    }
+
+    public function clearFeedItem()
+    {
+        unset($this->feed_item);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == FEED_ITEM.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItem feed_item = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\FeedItem $var
+     * @return $this
+     */
+    public function setFeedItem($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\FeedItem::class);
+        $this->feed_item = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == CAMPAIGN_FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignFeed campaign_feed = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignFeed
+     */
+    public function getCampaignFeed()
+    {
+        return isset($this->campaign_feed) ? $this->campaign_feed : null;
+    }
+
+    public function hasCampaignFeed()
+    {
+        return isset($this->campaign_feed);
+    }
+
+    public function clearCampaignFeed()
+    {
+        unset($this->campaign_feed);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == CAMPAIGN_FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignFeed campaign_feed = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\CampaignFeed $var
+     * @return $this
+     */
+    public function setCampaignFeed($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\CampaignFeed::class);
+        $this->campaign_feed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupFeed ad_group_feed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed
+     */
+    public function getAdGroupFeed()
+    {
+        return isset($this->ad_group_feed) ? $this->ad_group_feed : null;
+    }
+
+    public function hasAdGroupFeed()
+    {
+        return isset($this->ad_group_feed);
+    }
+
+    public function clearAdGroupFeed()
+    {
+        unset($this->ad_group_feed);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_FEED.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupFeed ad_group_feed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed $var
+     * @return $this
+     */
+    public function setAdGroupFeed($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed::class);
+        $this->ad_group_feed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_AD.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAd ad_group_ad = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd
+     */
+    public function getAdGroupAd()
+    {
+        return isset($this->ad_group_ad) ? $this->ad_group_ad : null;
+    }
+
+    public function hasAdGroupAd()
+    {
+        return isset($this->ad_group_ad);
+    }
+
+    public function clearAdGroupAd()
+    {
+        unset($this->ad_group_ad);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_AD.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAd ad_group_ad = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\AdGroupAd $var
+     * @return $this
+     */
+    public function setAdGroupAd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\AdGroupAd::class);
+        $this->ad_group_ad = $var;
 
         return $this;
     }

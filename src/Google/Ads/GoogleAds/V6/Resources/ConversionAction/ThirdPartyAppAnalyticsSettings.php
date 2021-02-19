@@ -21,6 +21,12 @@ class ThirdPartyAppAnalyticsSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string event_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $event_name = null;
+    /**
+     * Output only. Name of the third-party app analytics provider.
+     *
+     * Generated from protobuf field <code>string provider_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $provider_name = '';
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class ThirdPartyAppAnalyticsSettings extends \Google\Protobuf\Internal\Message
      *
      *     @type string $event_name
      *           Output only. The event name of a third-party app analytics conversion.
+     *     @type string $provider_name
+     *           Output only. Name of the third-party app analytics provider.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,6 +77,32 @@ class ThirdPartyAppAnalyticsSettings extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->event_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Name of the third-party app analytics provider.
+     *
+     * Generated from protobuf field <code>string provider_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getProviderName()
+    {
+        return $this->provider_name;
+    }
+
+    /**
+     * Output only. Name of the third-party app analytics provider.
+     *
+     * Generated from protobuf field <code>string provider_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProviderName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->provider_name = $var;
 
         return $this;
     }

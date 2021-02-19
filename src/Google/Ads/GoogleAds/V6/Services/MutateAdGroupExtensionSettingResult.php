@@ -21,6 +21,14 @@ class MutateAdGroupExtensionSettingResult extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
     protected $resource_name = '';
+    /**
+     * The mutated AdGroupExtensionSetting with only mutable fields after mutate.
+     * The field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupExtensionSetting ad_group_extension_setting = 2;</code>
+     */
+    protected $ad_group_extension_setting = null;
 
     /**
      * Constructor.
@@ -30,6 +38,10 @@ class MutateAdGroupExtensionSettingResult extends \Google\Protobuf\Internal\Mess
      *
      *     @type string $resource_name
      *           Returned for successful operations.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting $ad_group_extension_setting
+     *           The mutated AdGroupExtensionSetting with only mutable fields after mutate.
+     *           The field will only be returned when response_content_type is set to
+     *           "MUTABLE_RESOURCE".
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +71,46 @@ class MutateAdGroupExtensionSettingResult extends \Google\Protobuf\Internal\Mess
     {
         GPBUtil::checkString($var, True);
         $this->resource_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The mutated AdGroupExtensionSetting with only mutable fields after mutate.
+     * The field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupExtensionSetting ad_group_extension_setting = 2;</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting
+     */
+    public function getAdGroupExtensionSetting()
+    {
+        return isset($this->ad_group_extension_setting) ? $this->ad_group_extension_setting : null;
+    }
+
+    public function hasAdGroupExtensionSetting()
+    {
+        return isset($this->ad_group_extension_setting);
+    }
+
+    public function clearAdGroupExtensionSetting()
+    {
+        unset($this->ad_group_extension_setting);
+    }
+
+    /**
+     * The mutated AdGroupExtensionSetting with only mutable fields after mutate.
+     * The field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupExtensionSetting ad_group_extension_setting = 2;</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting $var
+     * @return $this
+     */
+    public function setAdGroupExtensionSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting::class);
+        $this->ad_group_extension_setting = $var;
 
         return $this;
     }

@@ -77,14 +77,12 @@ class ChangeClientType
     const GOOGLE_ADS_RECOMMENDATIONS = 9;
     /**
      * Changes made through Search Ads 360 Sync.
-     * .
      *
      * Generated from protobuf enum <code>SEARCH_ADS_360_SYNC = 10;</code>
      */
     const SEARCH_ADS_360_SYNC = 10;
     /**
      * Changes made through Search Ads 360 Post.
-     * .
      *
      * Generated from protobuf enum <code>SEARCH_ADS_360_POST = 11;</code>
      */

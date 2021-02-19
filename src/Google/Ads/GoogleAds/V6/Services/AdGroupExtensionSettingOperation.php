@@ -21,6 +21,13 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     protected $update_mask = null;
+    /**
+     * The response content type setting. Determines whether the mutable resource
+     * or just the resource name should be returned post mutation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
+     */
+    protected $response_content_type = 0;
     protected $operation;
 
     /**
@@ -31,6 +38,9 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           FieldMask that determines which resource fields are modified in an update.
+     *     @type int $response_content_type
+     *           The response content type setting. Determines whether the mutable resource
+     *           or just the resource name should be returned post mutation.
      *     @type \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting $create
      *           Create operation: No resource name is expected for the new ad group
      *           extension setting.
@@ -80,6 +90,34 @@ class AdGroupExtensionSettingOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
+
+        return $this;
+    }
+
+    /**
+     * The response content type setting. Determines whether the mutable resource
+     * or just the resource name should be returned post mutation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
+     * @return int
+     */
+    public function getResponseContentType()
+    {
+        return $this->response_content_type;
+    }
+
+    /**
+     * The response content type setting. Determines whether the mutable resource
+     * or just the resource name should be returned post mutation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.enums.ResponseContentTypeEnum.ResponseContentType response_content_type = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setResponseContentType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType::class);
+        $this->response_content_type = $var;
 
         return $this;
     }

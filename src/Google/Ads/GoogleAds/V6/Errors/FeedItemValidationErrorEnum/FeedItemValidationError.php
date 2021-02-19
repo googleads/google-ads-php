@@ -625,6 +625,54 @@ class FeedItemValidationError
      * Generated from protobuf enum <code>ADDRESS_NOT_TARGETABLE = 98;</code>
      */
     const ADDRESS_NOT_TARGETABLE = 98;
+    /**
+     * The specified asset ID does not exist.
+     *
+     * Generated from protobuf enum <code>INVALID_ASSET_ID = 100;</code>
+     */
+    const INVALID_ASSET_ID = 100;
+    /**
+     * The asset type cannot be set for the field.
+     *
+     * Generated from protobuf enum <code>INCOMPATIBLE_ASSET_TYPE = 101;</code>
+     */
+    const INCOMPATIBLE_ASSET_TYPE = 101;
+    /**
+     * The image has unexpected size.
+     *
+     * Generated from protobuf enum <code>IMAGE_ERROR_UNEXPECTED_SIZE = 102;</code>
+     */
+    const IMAGE_ERROR_UNEXPECTED_SIZE = 102;
+    /**
+     * The image aspect ratio is not allowed.
+     *
+     * Generated from protobuf enum <code>IMAGE_ERROR_ASPECT_RATIO_NOT_ALLOWED = 103;</code>
+     */
+    const IMAGE_ERROR_ASPECT_RATIO_NOT_ALLOWED = 103;
+    /**
+     * The image file is too large.
+     *
+     * Generated from protobuf enum <code>IMAGE_ERROR_FILE_TOO_LARGE = 104;</code>
+     */
+    const IMAGE_ERROR_FILE_TOO_LARGE = 104;
+    /**
+     * The image format is unsupported.
+     *
+     * Generated from protobuf enum <code>IMAGE_ERROR_FORMAT_NOT_ALLOWED = 105;</code>
+     */
+    const IMAGE_ERROR_FORMAT_NOT_ALLOWED = 105;
+    /**
+     * Image violates constraints without more details.
+     *
+     * Generated from protobuf enum <code>IMAGE_ERROR_CONSTRAINTS_VIOLATED = 106;</code>
+     */
+    const IMAGE_ERROR_CONSTRAINTS_VIOLATED = 106;
+    /**
+     * An error occurred when validating image.
+     *
+     * Generated from protobuf enum <code>IMAGE_ERROR_SERVER_ERROR = 107;</code>
+     */
+    const IMAGE_ERROR_SERVER_ERROR = 107;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -726,6 +774,14 @@ class FeedItemValidationError
         self::MISSING_LONGITUDE_VALUE => 'MISSING_LONGITUDE_VALUE',
         self::ADDRESS_NOT_FOUND => 'ADDRESS_NOT_FOUND',
         self::ADDRESS_NOT_TARGETABLE => 'ADDRESS_NOT_TARGETABLE',
+        self::INVALID_ASSET_ID => 'INVALID_ASSET_ID',
+        self::INCOMPATIBLE_ASSET_TYPE => 'INCOMPATIBLE_ASSET_TYPE',
+        self::IMAGE_ERROR_UNEXPECTED_SIZE => 'IMAGE_ERROR_UNEXPECTED_SIZE',
+        self::IMAGE_ERROR_ASPECT_RATIO_NOT_ALLOWED => 'IMAGE_ERROR_ASPECT_RATIO_NOT_ALLOWED',
+        self::IMAGE_ERROR_FILE_TOO_LARGE => 'IMAGE_ERROR_FILE_TOO_LARGE',
+        self::IMAGE_ERROR_FORMAT_NOT_ALLOWED => 'IMAGE_ERROR_FORMAT_NOT_ALLOWED',
+        self::IMAGE_ERROR_CONSTRAINTS_VIOLATED => 'IMAGE_ERROR_CONSTRAINTS_VIOLATED',
+        self::IMAGE_ERROR_SERVER_ERROR => 'IMAGE_ERROR_SERVER_ERROR',
     ];
 
     public static function name($value)

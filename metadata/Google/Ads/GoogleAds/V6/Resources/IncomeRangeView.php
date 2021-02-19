@@ -17,9 +17,16 @@ class IncomeRangeView
         \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0af6040a39676f6f676c652f6164732f676f6f676c656164732f76362f7265736f75726365732f696e636f6d655f72616e67655f766965772e70726f746f1221676f6f676c652e6164732e676f6f676c656164732e76362e7265736f75726365731a19676f6f676c652f6170692f7265736f757263652e70726f746f1a1c676f6f676c652f6170692f616e6e6f746174696f6e732e70726f746f22d0010a0f496e636f6d6552616e67655669657712470a0d7265736f757263655f6e616d651801200128094230e04103fa412a0a28676f6f676c656164732e676f6f676c65617069732e636f6d2f496e636f6d6552616e6765566965773a74ea41710a28676f6f676c656164732e676f6f676c65617069732e636f6d2f496e636f6d6552616e6765566965771245637573746f6d6572732f7b637573746f6d65725f69647d2f696e636f6d6552616e676556696577732f7b61645f67726f75705f69647d7e7b637269746572696f6e5f69647d4281020a25636f6d2e676f6f676c652e6164732e676f6f676c656164732e76362e7265736f75726365734214496e636f6d6552616e67655669657750726f746f50015a4a676f6f676c652e676f6c616e672e6f72672f67656e70726f746f2f676f6f676c65617069732f6164732f676f6f676c656164732f76362f7265736f75726365733b7265736f7572636573a20203474141aa0221476f6f676c652e4164732e476f6f676c654164732e56362e5265736f7572636573ca0221476f6f676c655c4164735c476f6f676c654164735c56365c5265736f7572636573ea0225476f6f676c653a3a4164733a3a476f6f676c654164733a3a56363a3a5265736f7572636573620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ˆ
+9google/ads/googleads/v6/resources/income_range_view.proto!google.ads.googleads.v6.resourcesgoogle/api/resource.protogoogle/api/annotations.proto"–
+IncomeRangeViewG
+resource_name (	B0‡A˙A*
+(googleads.googleapis.com/IncomeRangeView:tÍAq
+(googleads.googleapis.com/IncomeRangeViewEcustomers/{customer_id}/incomeRangeViews/{ad_group_id}~{criterion_id}BÅ
+%com.google.ads.googleads.v6.resourcesBIncomeRangeViewProtoPZJgoogle.golang.org/genproto/googleapis/ads/googleads/v6/resources;resources¢GAA™!Google.Ads.GoogleAds.V6.Resources !Google\\Ads\\GoogleAds\\V6\\ResourcesÍ%Google::Ads::GoogleAds::V6::Resourcesbproto3'
+        , true);
         static::$is_initialized = true;
     }
 }

@@ -314,7 +314,7 @@ class SetupRemarketing
 
         printf(
             "Updated bid for ad group criterion with resource name '%s'.%s",
-            $adGroupCriterionResponse->getResults()[0]->getResourceName(),
+            $adGroupCriteriaResponse->getResults()[0]->getResourceName(),
             PHP_EOL
         );
     }

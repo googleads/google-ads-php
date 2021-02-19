@@ -118,7 +118,7 @@ class AddDisplayUploadAd
         // There are several types of display upload ads. For this example, we will create
         // an HTML5 upload ad, which requires a media bundle.
         // The DisplayUploadProductType field lists the available display upload types:
-        // https://developers.google.com/google-ads/api/reference/rpc/v3/DisplayUploadAdInfo
+        // https://developers.google.com/google-ads/api/reference/rpc/latest/DisplayUploadAdInfo
         // Creates a new media bundle asset and returns the resource name.
         $adAssetResourceName = self::createMediaBundleAsset($googleAdsClient, $customerId);
 
@@ -194,7 +194,7 @@ class AddDisplayUploadAd
                 'name' => 'Ad for HTML5',
                 'final_urls' => ['http://example.com/html5'],
                 // Exactly one ad data field must be included to specify the ad type. See
-                // https://developers.google.com/google-ads/api/reference/rpc/v3/Ad for the full
+                // https://developers.google.com/google-ads/api/reference/rpc/latest/Ad for the full
                 // list of available types.
                 'display_upload_ad' => new DisplayUploadAdInfo([
                     'display_upload_product_type' => DisplayUploadProductType::HTML5_UPLOAD_AD,

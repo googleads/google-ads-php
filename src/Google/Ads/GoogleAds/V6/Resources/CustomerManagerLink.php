@@ -26,7 +26,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The manager customer linked to the customer.
      *
-     * Generated from protobuf field <code>string manager_customer = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string manager_customer = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $manager_customer = null;
     /**
@@ -98,7 +98,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The manager customer linked to the customer.
      *
-     * Generated from protobuf field <code>string manager_customer = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string manager_customer = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getManagerCustomer()
@@ -119,7 +119,7 @@ class CustomerManagerLink extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The manager customer linked to the customer.
      *
-     * Generated from protobuf field <code>string manager_customer = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string manager_customer = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

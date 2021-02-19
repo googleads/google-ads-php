@@ -20,10 +20,12 @@ namespace Google\Ads\GoogleAds\Lib\V6;
 
 use Google\Ads\GoogleAds\V6\Resources\ChangeEvent;
 use Google\Ads\GoogleAds\V6\Resources\CustomerUserAccess;
+use Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation;
 use Google\Ads\GoogleAds\V6\Resources\Feed;
 use Google\Ads\GoogleAds\V6\Services\CreateCustomerClientRequest;
 use Google\Ads\GoogleAds\V6\Services\FeedOperation;
 use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V6\Services\MutateCustomerUserAccessInvitationRequest;
 use Google\Ads\GoogleAds\V6\Services\MutateCustomerUserAccessRequest;
 use Google\Ads\GoogleAds\V6\Services\MutateFeedsRequest;
 use Google\Ads\GoogleAds\V6\Services\SearchGoogleAdsRequest;
@@ -47,6 +49,10 @@ class InfoRedactor
 
     /** @var array the list of customer user access' fields containing email addresses. */
     private static $CUSTOMER_USER_ACCESS_EMAIL_FIELDS;
+    /**
+     * @var array the list of customer user access invitation' fields containing email addresses.
+     */
+    private static $CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS;
     /** @var array the list of change event's fields containing email addresses. */
     private static $CHANGE_EVENT_EMAIL_FIELDS;
     /** @var array the list of feed placeholder's fields containing email addresses. */
@@ -61,6 +67,8 @@ class InfoRedactor
             'customer_user_access.inviter_user_email_address',
             'customer_user_access.email_address'
         ];
+        self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS =
+            ['customer_user_access_invitation.email_address'];
         self::$CHANGE_EVENT_EMAIL_FIELDS = ['change_event.user_email'];
         self::$FEED_EMAIL_FIELDS = ['feed.places_location_feed_data.email_address'];
     }
@@ -148,6 +156,20 @@ class InfoRedactor
                 self::redactCustomerUserAccess($clone->getOperation()->getUpdate());
                 return $clone;
             }
+        } elseif ($body instanceof CustomerUserAccessInvitation) {
+            // Handle masking for
+            // `CustomerUserAccessInvitationService::getCustomerUserAccessInvitation`.
+            $clone = self::cloneBody($body);
+            self::redactCustomerUserAccessInvitation($clone);
+            return $clone;
+        } elseif ($body instanceof MutateCustomerUserAccessInvitationRequest) {
+            // Handle masking for
+            // `CustomerUserAccessInvitationService::mutateCustomerUserAccessInvitation`.
+            $clone = self::cloneBody($body);
+            if (!is_null($clone->getOperation()) && !is_null($clone->getOperation()->getCreate())) {
+                self::redactCustomerUserAccessInvitation($clone->getOperation()->getCreate());
+                return $clone;
+            }
         } elseif ($body instanceof CreateCustomerClientRequest) {
             // Handle masking for `CreateCustomerClientRequest`.
             $clone = self::cloneBody($body);
@@ -202,6 +224,7 @@ class InfoRedactor
         foreach (
             array_merge(
                 self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS,
+                self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS,
                 self::$CHANGE_EVENT_EMAIL_FIELDS,
                 self::$FEED_EMAIL_FIELDS
             ) as $field
@@ -236,6 +259,10 @@ class InfoRedactor
                 /** @var GoogleAdsRow $result */
                 if (in_array($path, self::$CUSTOMER_USER_ACCESS_EMAIL_FIELDS)) {
                     self::redactCustomerUserAccess($result->getCustomerUserAccess());
+                } elseif (in_array($path, self::$CUSTOMER_USER_ACCESS_INVITATION_EMAIL_FIELDS)) {
+                    self::redactCustomerUserAccessInvitation(
+                        $result->getCustomerUserAccessInvitation()
+                    );
                 } elseif (in_array($path, self::$CHANGE_EVENT_EMAIL_FIELDS)) {
                     self::redactChangeEvent($result->getChangeEvent());
                 } elseif (in_array($path, self::$FEED_EMAIL_FIELDS)) {
@@ -260,6 +287,22 @@ class InfoRedactor
             $customerUserAccess->setEmailAddress(self::REDACTED_STRING);
         }
         return $customerUserAccess;
+    }
+
+    /**
+     * Redacts sensitive information of the provided customer user access invitation.
+     *
+     * @param CustomerUserAccessInvitation $customerUserAccessInvitation
+     * @return CustomerUserAccessInvitation the customer user access invitation with sensitive
+     *     information redacted
+     */
+    private static function redactCustomerUserAccessInvitation(
+        CustomerUserAccessInvitation $customerUserAccessInvitation
+    ) {
+        if (!empty($customerUserAccessInvitation->getEmailAddress())) {
+            $customerUserAccessInvitation->setEmailAddress(self::REDACTED_STRING);
+        }
+        return $customerUserAccessInvitation;
     }
 
     /**

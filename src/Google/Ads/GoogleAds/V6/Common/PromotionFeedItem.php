@@ -35,7 +35,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      */
     protected $promotion_start_date = null;
     /**
-     * End date of when the promotion is eligible to be redeemed.
+     * Last date when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>string promotion_end_date = 20;</code>
      */
@@ -105,7 +105,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      *     @type string $promotion_start_date
      *           Start date of when the promotion is eligible to be redeemed.
      *     @type string $promotion_end_date
-     *           End date of when the promotion is eligible to be redeemed.
+     *           Last date when the promotion is eligible to be redeemed.
      *     @type int $occasion
      *           The occasion the promotion was intended for.
      *           If an occasion is set, the redemption window will need to fall within
@@ -246,7 +246,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * End date of when the promotion is eligible to be redeemed.
+     * Last date when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>string promotion_end_date = 20;</code>
      * @return string
@@ -267,7 +267,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * End date of when the promotion is eligible to be redeemed.
+     * Last date when the promotion is eligible to be redeemed.
      *
      * Generated from protobuf field <code>string promotion_end_date = 20;</code>
      * @param string $var

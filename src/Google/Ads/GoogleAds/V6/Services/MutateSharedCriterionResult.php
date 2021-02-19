@@ -21,6 +21,14 @@ class MutateSharedCriterionResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string resource_name = 1;</code>
      */
     protected $resource_name = '';
+    /**
+     * The mutated shared criterion with only mutable fields after mutate. The
+     * field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SharedCriterion shared_criterion = 2;</code>
+     */
+    protected $shared_criterion = null;
 
     /**
      * Constructor.
@@ -30,6 +38,10 @@ class MutateSharedCriterionResult extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource_name
      *           Returned for successful operations.
+     *     @type \Google\Ads\GoogleAds\V6\Resources\SharedCriterion $shared_criterion
+     *           The mutated shared criterion with only mutable fields after mutate. The
+     *           field will only be returned when response_content_type is set to
+     *           "MUTABLE_RESOURCE".
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +71,46 @@ class MutateSharedCriterionResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * The mutated shared criterion with only mutable fields after mutate. The
+     * field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SharedCriterion shared_criterion = 2;</code>
+     * @return \Google\Ads\GoogleAds\V6\Resources\SharedCriterion
+     */
+    public function getSharedCriterion()
+    {
+        return isset($this->shared_criterion) ? $this->shared_criterion : null;
+    }
+
+    public function hasSharedCriterion()
+    {
+        return isset($this->shared_criterion);
+    }
+
+    public function clearSharedCriterion()
+    {
+        unset($this->shared_criterion);
+    }
+
+    /**
+     * The mutated shared criterion with only mutable fields after mutate. The
+     * field will only be returned when response_content_type is set to
+     * "MUTABLE_RESOURCE".
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SharedCriterion shared_criterion = 2;</code>
+     * @param \Google\Ads\GoogleAds\V6\Resources\SharedCriterion $var
+     * @return $this
+     */
+    public function setSharedCriterion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V6\Resources\SharedCriterion::class);
+        $this->shared_criterion = $var;
 
         return $this;
     }

@@ -17,8 +17,10 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
 {
     /**
      * Timestamp when transaction occurred. Required.
-     * The format is "YYYY-MM-DD HH:MM:SS".
-     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     * The format is "YYYY-MM-DD HH:MM:SS[+/-HH:MM]", where [+/-HH:MM] is an
+     * optional timezone offset from UTC. If the offset is absent, the API will
+     * use the account's timezone as default.
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30+03:00"
      *
      * Generated from protobuf field <code>string transaction_date_time = 8;</code>
      */
@@ -72,8 +74,10 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      *
      *     @type string $transaction_date_time
      *           Timestamp when transaction occurred. Required.
-     *           The format is "YYYY-MM-DD HH:MM:SS".
-     *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     *           The format is "YYYY-MM-DD HH:MM:SS[+/-HH:MM]", where [+/-HH:MM] is an
+     *           optional timezone offset from UTC. If the offset is absent, the API will
+     *           use the account's timezone as default.
+     *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30+03:00"
      *     @type float $transaction_amount_micros
      *           Transaction amount in micros. Required.
      *     @type string $currency_code
@@ -99,8 +103,10 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
 
     /**
      * Timestamp when transaction occurred. Required.
-     * The format is "YYYY-MM-DD HH:MM:SS".
-     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     * The format is "YYYY-MM-DD HH:MM:SS[+/-HH:MM]", where [+/-HH:MM] is an
+     * optional timezone offset from UTC. If the offset is absent, the API will
+     * use the account's timezone as default.
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30+03:00"
      *
      * Generated from protobuf field <code>string transaction_date_time = 8;</code>
      * @return string
@@ -122,8 +128,10 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
 
     /**
      * Timestamp when transaction occurred. Required.
-     * The format is "YYYY-MM-DD HH:MM:SS".
-     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"
+     * The format is "YYYY-MM-DD HH:MM:SS[+/-HH:MM]", where [+/-HH:MM] is an
+     * optional timezone offset from UTC. If the offset is absent, the API will
+     * use the account's timezone as default.
+     * Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30+03:00"
      *
      * Generated from protobuf field <code>string transaction_date_time = 8;</code>
      * @param string $var
