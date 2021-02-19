@@ -1,15 +1,7 @@
 language: php
 
 php:
-  - 7.3
-  - 7.4
   - 8.0
-  - nightly
-
-matrix:
-  allow_failures:
-    - php: 8.0
-    - php: nightly
 
 branches:
   only:
@@ -25,7 +17,7 @@ before_script:
   - "sudo echo '{\"type\": \"authorized_user\",\"client_id\": \"\",\"client_secret\": \"\",\"refresh_token\": \"\"}' >> $GOOGLE_APPLICATION_CREDENTIALS"
 
 script:
-  - vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover=coverage.xml
+  - vendor/bin/phpunit -v --configuration phpunit.xml.dist --coverage-clover=coverage.xml
   - vendor/bin/phpcs --standard=phpcs_ruleset.xml -np
 
 after_success:
