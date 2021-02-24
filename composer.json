@@ -7,16 +7,16 @@
   "require": {
     "php": ">=7.3",
     "google/gax": "^1.7.0",
-    "google/protobuf": "^3.15.0",
     "grpc/grpc": "^1.36.0",
+    "google/protobuf": "^3.15.0",
     "monolog/monolog": "^2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
     "squizlabs/php_codesniffer": "^3.5",
     "ext-bcmath": "*",
-    "react/http": "^1.2.0",
-    "ulrichsg/getopt-php": "^3.4"
+    "ulrichsg/getopt-php": "^3.4",
+    "react/http": "^1.2.0"
   },
   "suggest": {
     "react/http": "To run the AuthenticateInWebApplication.php example",
