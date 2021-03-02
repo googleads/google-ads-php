@@ -131,7 +131,9 @@ class GetAdGroupBidModifiers
                 . "type '%s' was found in an ad group ID %d of campaign ID %d.%s",
                 $googleAdsRow->getAdGroupBidModifier()->getCriterionId(),
                 $googleAdsRow->getAdGroupBidModifier()->getBidModifier(),
-                Device::name($googleAdsRow->getAdGroupBidModifier()->getDevice()->getType()),
+                $googleAdsRow->getAdGroupBidModifier()->getDevice() ?
+                    Device::name($googleAdsRow->getAdGroupBidModifier()->getDevice()->getType())
+                    : 'unspecified',
                 $googleAdsRow->getAdGroup()->getId(),
                 $googleAdsRow->getCampaign()->getId(),
                 PHP_EOL
