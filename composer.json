@@ -6,7 +6,8 @@
   "require": {
     "php": ">=7.3",
     "google/gax": "^1.7.0",
-    "google/protobuf": "^3.14.0",
+    "grpc/grpc": "^1.36.0",
+    "google/protobuf": "^3.15.0",
     "monolog/monolog": "^2.0"
   },
   "require-dev": {

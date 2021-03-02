@@ -8,7 +8,6 @@ php:
 
 matrix:
   allow_failures:
-    - php: 8.0
     - php: nightly
 
 branches:

@@ -37,29 +37,25 @@ class GoogleAdsLoggingInterceptor extends Interceptor
         $this->callLogger = $callLogger;
     }
 
-    // @codingStandardsIgnoreStart
-    // phpcs:disable
     /**
      * @see Interceptor::interceptUnaryUnary()
      *
      * @param mixed $method
      * @param mixed $argument
      * @param callable $deserialize
+     * @param callable $continuation
      * @param array $metadata
      * @param array $options
-     * @param callable $continuation
      * @return GoogleAdsLoggingUnaryCall
      */
     public function interceptUnaryUnary(
         $method,
         $argument,
         $deserialize,
+        $continuation,
         array $metadata = [],
-        array $options = [],
-        $continuation
+        array $options = []
     ) {
-        // @codingStandardsIgnoreEnd
-        // phpcs:enable
         return new GoogleAdsLoggingUnaryCall(
             $continuation($method, $argument, $deserialize, $metadata, $options),
             compact('method', 'argument', 'deserialize', 'metadata', 'options'),
@@ -67,29 +63,25 @@ class GoogleAdsLoggingInterceptor extends Interceptor
         );
     }
 
-    // @codingStandardsIgnoreStart
-    // phpcs:disable
     /**
      * @see Interceptor::interceptUnaryStream()
      *
      * @param mixed $method
      * @param mixed $argument
      * @param callable $deserialize
+     * @param callable $continuation
      * @param array $metadata
      * @param array $options
-     * @param callable $continuation
      * @return GoogleAdsLoggingServerStreamingCall
      */
     public function interceptUnaryStream(
         $method,
         $argument,
         $deserialize,
+        $continuation,
         array $metadata = [],
-        array $options = [],
-        $continuation
+        array $options = []
     ) {
-        // @codingStandardsIgnoreEnd
-        // phpcs:enable
         return new GoogleAdsLoggingServerStreamingCall(
             $continuation($method, $argument, $deserialize, $metadata, $options),
             compact('method', 'argument', 'deserialize', 'metadata', 'options'),
