@@ -40,7 +40,8 @@ class GoogleAdsFailuresUnaryCall extends ForwardingUnaryCall
         if (
             $response instanceof ListBatchJobResultsResponse
             || (
-                method_exists($response, 'getPartialFailureError')
+                !is_null($response)
+                && method_exists($response, 'getPartialFailureError')
                 && !is_null($response->getPartialFailureError())
             )
         ) {
