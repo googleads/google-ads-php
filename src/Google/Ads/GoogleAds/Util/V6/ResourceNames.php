@@ -133,6 +133,18 @@ final class ResourceNames
 {
 
     /**
+     * Generates resource name for an account budget.
+     *
+     * @param int $customerId the customer ID
+     * @param int $accountBudgetId the account budget ID
+     * @return string the account budget resource name
+     */
+    public static function forAccountBudget($customerId, $accountBudgetId)
+    {
+        return AccountBudgetServiceClient::accountBudgetName($customerId, $accountBudgetId);
+    }
+
+    /**
      * Generates resource name for an account budget proposal.
      *
      * @param int $customerId the customer ID
@@ -145,18 +157,6 @@ final class ResourceNames
             $customerId,
             $accountBudgetProposalId
         );
-    }
-
-    /**
-     * Generates resource name for an account budget.
-     *
-     * @param int $customerId the customer ID
-     * @param int $accountBudgetId the account budget ID
-     * @return string the account budget resource name
-     */
-    public static function forAccountBudget($customerId, $accountBudgetId)
-    {
-        return AccountBudgetServiceClient::accountBudgetName($customerId, $accountBudgetId);
     }
 
     /**
@@ -184,6 +184,31 @@ final class ResourceNames
     }
 
     /**
+     * Generates resource name for an ad group.
+     *
+     * @param int $customerId the customer ID
+     * @param int $adGroupId the ad group ID
+     * @return string the ad group resource name
+     */
+    public static function forAdGroup($customerId, $adGroupId)
+    {
+        return AdGroupServiceClient::adGroupName($customerId, $adGroupId);
+    }
+
+    /**
+     * Generates resource name for an ad group ad.
+     *
+     * @param int $customerId the customer ID
+     * @param int $adGroupId the ad group ID
+     * @param int $adId the ad ID
+     * @return string the ad group ad resource name
+     */
+    public static function forAdGroupAd($customerId, $adGroupId, $adId)
+    {
+        return AdGroupAdServiceClient::adGroupAdName($customerId, $adGroupId, $adId);
+    }
+
+    /**
      * Generates resource name for an ad group ad label.
      *
      * @param int $customerId the customer ID
@@ -200,19 +225,6 @@ final class ResourceNames
             $adId,
             $labelId
         );
-    }
-
-    /**
-     * Generates resource name for an ad group ad.
-     *
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
-     * @param int $adId the ad ID
-     * @return string the ad group ad resource name
-     */
-    public static function forAdGroupAd($customerId, $adGroupId, $adId)
-    {
-        return AdGroupAdServiceClient::adGroupAdName($customerId, $adGroupId, $adId);
     }
 
     /**
@@ -250,6 +262,23 @@ final class ResourceNames
     }
 
     /**
+     * Generates resource name for an ad group criterion.
+     *
+     * @param int $customerId the customer ID
+     * @param int $adGroupId the ad group ID
+     * @param int $criterionId the criterion ID
+     * @return string the ad group criterion resource name
+     */
+    public static function forAdGroupCriterion($customerId, $adGroupId, $criterionId)
+    {
+        return AdGroupCriterionServiceClient::adGroupCriterionName(
+            $customerId,
+            $adGroupId,
+            $criterionId
+        );
+    }
+
+    /**
      * Generates resource name for an ad group criterion label.
      *
      * @param int $customerId the customer ID
@@ -269,23 +298,6 @@ final class ResourceNames
             $adGroupId,
             $criterionId,
             $labelId
-        );
-    }
-
-    /**
-     * Generates resource name for an ad group criterion.
-     *
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
-     * @param int $criterionId the criterion ID
-     * @return string the ad group criterion resource name
-     */
-    public static function forAdGroupCriterion($customerId, $adGroupId, $criterionId)
-    {
-        return AdGroupCriterionServiceClient::adGroupCriterionName(
-            $customerId,
-            $adGroupId,
-            $criterionId
         );
     }
 
@@ -373,18 +385,6 @@ final class ResourceNames
             $adGroupId,
             $labelId
         );
-    }
-
-    /**
-     * Generates resource name for an ad group.
-     *
-     * @param int $customerId the customer ID
-     * @param int $adGroupId the ad group ID
-     * @return string the ad group resource name
-     */
-    public static function forAdGroup($customerId, $adGroupId)
-    {
-        return AdGroupServiceClient::adGroupName($customerId, $adGroupId);
     }
 
     /**
@@ -515,6 +515,18 @@ final class ResourceNames
     public static function forBillingSetup($customerId, $billingSetupId)
     {
         return BillingSetupServiceClient::billingSetupName($customerId, $billingSetupId);
+    }
+
+    /**
+     * Generates resource name for a campaign.
+     *
+     * @param int $customerId the customer ID
+     * @param int $campaignId the campaign ID
+     * @return string the campaign resource name
+     */
+    public static function forCampaign($customerId, $campaignId)
+    {
+        return CampaignServiceClient::campaignName($customerId, $campaignId);
     }
 
     /**
@@ -711,18 +723,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates resource name for a campaign.
-     *
-     * @param int $customerId the customer ID
-     * @param int $campaignId the campaign ID
-     * @return string the campaign resource name
-     */
-    public static function forCampaign($customerId, $campaignId)
-    {
-        return CampaignServiceClient::campaignName($customerId, $campaignId);
-    }
-
-    /**
      * Generates resource name for a campaign shared set.
      *
      * @param int $customerId the customer ID
@@ -817,15 +817,26 @@ final class ResourceNames
     }
 
     /**
-     * Generates resource name for a custom interest.
+     * Generates resource name for a customer.
      *
      * @param int $customerId the customer ID
-     * @param int $customInterestId the custom interest ID
-     * @return string the custom interest resource name
+     * @return string the customer resource name
      */
-    public static function forCustomInterest($customerId, $customInterestId)
+    public static function forCustomer($customerId)
     {
-        return CustomInterestServiceClient::customInterestName($customerId, $customInterestId);
+        return CustomerServiceClient::customerName($customerId);
+    }
+
+    /**
+     * Generates resource name for a customer client.
+     *
+     * @param int $customerId the customer ID
+     * @param int $customerClientId the customer client ID
+     * @return string the customer client resource name
+     */
+    public static function forCustomerClient($customerId, $customerClientId)
+    {
+        return CustomerClientServiceClient::customerClientName($customerId, $customerClientId);
     }
 
     /**
@@ -843,18 +854,6 @@ final class ResourceNames
             $clientCustomerId,
             $managerLinkId
         );
-    }
-
-    /**
-     * Generates resource name for a customer client.
-     *
-     * @param int $customerId the customer ID
-     * @param int $customerClientId the customer client ID
-     * @return string the customer client resource name
-     */
-    public static function forCustomerClient($customerId, $customerClientId)
-    {
-        return CustomerClientServiceClient::customerClientName($customerId, $customerClientId);
     }
 
     /**
@@ -932,17 +931,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates resource name for a customer.
-     *
-     * @param int $customerId the customer ID
-     * @return string the customer resource name
-     */
-    public static function forCustomer($customerId)
-    {
-        return CustomerServiceClient::customerName($customerId);
-    }
-
-    /**
      * Generates resource name for a customer user access.
      *
      * @param int $customerId the customer ID
@@ -967,6 +955,18 @@ final class ResourceNames
             $customerId,
             $invitationId
         );
+    }
+
+    /**
+     * Generates resource name for a custom interest.
+     *
+     * @param int $customerId the customer ID
+     * @param int $customInterestId the custom interest ID
+     * @return string the custom interest resource name
+     */
+    public static function forCustomInterest($customerId, $customInterestId)
+    {
+        return CustomInterestServiceClient::customInterestName($customerId, $customInterestId);
     }
 
     /**
@@ -1047,6 +1047,18 @@ final class ResourceNames
     public static function forExtensionFeedItem($customerId, $feedItemId)
     {
         return ExtensionFeedItemServiceClient::extensionFeedItemName($customerId, $feedItemId);
+    }
+
+    /**
+     * Generates resource name for a feed.
+     *
+     * @param int $customerId the customer ID
+     * @param int $feedId the feed ID
+     * @return string the feed resource name
+     */
+    public static function forFeed($customerId, $feedId)
+    {
+        return FeedServiceClient::feedName($customerId, $feedId);
     }
 
     /**
@@ -1161,18 +1173,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates resource name for a feed.
-     *
-     * @param int $customerId the customer ID
-     * @param int $feedId the feed ID
-     * @return string the feed resource name
-     */
-    public static function forFeed($customerId, $feedId)
-    {
-        return FeedServiceClient::feedName($customerId, $feedId);
-    }
-
-    /**
      * Generates resource name for a gender view.
      *
      * @param int $customerId the customer ID
@@ -1190,17 +1190,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates resource name for a geo target constant.
-     *
-     * @param int $geoTargetConstantId the geo target constant ID
-     * @return string the geo target constant resource name
-     */
-    public static function forGeoTargetConstant($geoTargetConstantId)
-    {
-        return GeoTargetConstantServiceClient::geoTargetConstantName($geoTargetConstantId);
-    }
-
-    /**
      * Generates resource name for a geographic view.
      *
      * @param int $customerId the customer ID
@@ -1215,6 +1204,17 @@ final class ResourceNames
             $countryCriterionId,
             $locationType
         );
+    }
+
+    /**
+     * Generates resource name for a geo target constant.
+     *
+     * @param int $geoTargetConstantId the geo target constant ID
+     * @return string the geo target constant resource name
+     */
+    public static function forGeoTargetConstant($geoTargetConstantId)
+    {
+        return GeoTargetConstantServiceClient::geoTargetConstantName($geoTargetConstantId);
     }
 
     /**
@@ -1291,6 +1291,18 @@ final class ResourceNames
     }
 
     /**
+     * Generates resource name for a keyword plan.
+     *
+     * @param int $customerId the customer ID
+     * @param int $keywordPlanId the keyword plan ID
+     * @return string the keyword plan resource name
+     */
+    public static function forKeywordPlan($customerId, $keywordPlanId)
+    {
+        return KeywordPlanServiceClient::keywordPlanName($customerId, $keywordPlanId);
+    }
+
+    /**
      * Generates resource name for a keyword plan ad group.
      *
      * @param int $customerId the customer ID
@@ -1348,18 +1360,6 @@ final class ResourceNames
             $customerId,
             $keywordPlanCampaignKeywordId
         );
-    }
-
-    /**
-     * Generates resource name for a keyword plan.
-     *
-     * @param int $customerId the customer ID
-     * @param int $keywordPlanId the keyword plan ID
-     * @return string the keyword plan resource name
-     */
-    public static function forKeywordPlan($customerId, $keywordPlanId)
-    {
-        return KeywordPlanServiceClient::keywordPlanName($customerId, $keywordPlanId);
     }
 
     /**
