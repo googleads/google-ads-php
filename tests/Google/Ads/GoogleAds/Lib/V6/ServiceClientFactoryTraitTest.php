@@ -590,14 +590,6 @@ class ServiceClientFactoryTraitTest extends TestCase
         );
     }
 
-    public function testGetCustomInterestServiceClient()
-    {
-        $this->assertInstanceOf(
-            CustomInterestServiceClient::class,
-            $this->googleAdsClient->getCustomInterestServiceClient()
-        );
-    }
-
     public function testGetCustomerUserAccessInvitationServiceClient()
     {
         $this->assertInstanceOf(
@@ -611,6 +603,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             CustomerUserAccessServiceClient::class,
             $this->googleAdsClient->getCustomerUserAccessServiceClient()
+        );
+    }
+
+    public function testGetCustomInterestServiceClient()
+    {
+        $this->assertInstanceOf(
+            CustomInterestServiceClient::class,
+            $this->googleAdsClient->getCustomInterestServiceClient()
         );
     }
 
