@@ -233,19 +233,19 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return AdGroupAdServiceClient
-     */
-    public function getAdGroupAdServiceClient()
-    {
-        return new AdGroupAdServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
      * @return AdGroupAdLabelServiceClient
      */
     public function getAdGroupAdLabelServiceClient()
     {
         return new AdGroupAdLabelServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return AdGroupAdServiceClient
+     */
+    public function getAdGroupAdServiceClient()
+    {
+        return new AdGroupAdServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -393,19 +393,19 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return CampaignAudienceViewServiceClient
-     */
-    public function getCampaignAudienceViewServiceClient()
-    {
-        return new CampaignAudienceViewServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
      * @return CampaignAssetServiceClient
      */
     public function getCampaignAssetServiceClient()
     {
         return new CampaignAssetServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CampaignAudienceViewServiceClient
+     */
+    public function getCampaignAudienceViewServiceClient()
+    {
+        return new CampaignAudienceViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -625,14 +625,6 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return CustomInterestServiceClient
-     */
-    public function getCustomInterestServiceClient()
-    {
-        return new CustomInterestServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
      * @return CustomerUserAccessInvitationServiceClient
      */
     public function getCustomerUserAccessInvitationServiceClient()
@@ -649,11 +641,11 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return DisplayKeywordViewServiceClient
+     * @return CustomInterestServiceClient
      */
-    public function getDisplayKeywordViewServiceClient()
+    public function getCustomInterestServiceClient()
     {
-        return new DisplayKeywordViewServiceClient($this->getGoogleAdsClientOptions());
+        return new CustomInterestServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -662,6 +654,14 @@ trait ServiceClientFactoryTrait
     public function getDetailPlacementViewServiceClient()
     {
         return new DetailPlacementViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return DisplayKeywordViewServiceClient
+     */
+    public function getDisplayKeywordViewServiceClient()
+    {
+        return new DisplayKeywordViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -681,19 +681,19 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return ExtensionFeedItemServiceClient
-     */
-    public function getExtensionFeedItemServiceClient()
-    {
-        return new ExtensionFeedItemServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
      * @return ExpandedLandingPageViewServiceClient
      */
     public function getExpandedLandingPageViewServiceClient()
     {
         return new ExpandedLandingPageViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ExtensionFeedItemServiceClient
+     */
+    public function getExtensionFeedItemServiceClient()
+    {
+        return new ExtensionFeedItemServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -793,6 +793,22 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return GroupPlacementViewServiceClient
+     */
+    public function getGroupPlacementViewServiceClient()
+    {
+        return new GroupPlacementViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return HotelGroupViewServiceClient
+     */
+    public function getHotelGroupViewServiceClient()
+    {
+        return new HotelGroupViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return HotelPerformanceViewServiceClient
      */
     public function getHotelPerformanceViewServiceClient()
@@ -817,19 +833,11 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return GroupPlacementViewServiceClient
+     * @return KeywordPlanAdGroupKeywordServiceClient
      */
-    public function getGroupPlacementViewServiceClient()
+    public function getKeywordPlanAdGroupKeywordServiceClient()
     {
-        return new GroupPlacementViewServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
-     * @return HotelGroupViewServiceClient
-     */
-    public function getHotelGroupViewServiceClient()
-    {
-        return new HotelGroupViewServiceClient($this->getGoogleAdsClientOptions());
+        return new KeywordPlanAdGroupKeywordServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -841,11 +849,11 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return KeywordPlanAdGroupKeywordServiceClient
+     * @return KeywordPlanCampaignKeywordServiceClient
      */
-    public function getKeywordPlanAdGroupKeywordServiceClient()
+    public function getKeywordPlanCampaignKeywordServiceClient()
     {
-        return new KeywordPlanAdGroupKeywordServiceClient($this->getGoogleAdsClientOptions());
+        return new KeywordPlanCampaignKeywordServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -854,14 +862,6 @@ trait ServiceClientFactoryTrait
     public function getKeywordPlanCampaignServiceClient()
     {
         return new KeywordPlanCampaignServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
-     * @return KeywordPlanCampaignKeywordServiceClient
-     */
-    public function getKeywordPlanCampaignKeywordServiceClient()
-    {
-        return new KeywordPlanCampaignKeywordServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -977,6 +977,14 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return PaidOrganicSearchTermViewServiceClient
+     */
+    public function getPaidOrganicSearchTermViewServiceClient()
+    {
+        return new PaidOrganicSearchTermViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return ParentalStatusViewServiceClient
      */
     public function getParentalStatusViewServiceClient()
@@ -998,14 +1006,6 @@ trait ServiceClientFactoryTrait
     public function getProductBiddingCategoryConstantServiceClient()
     {
         return new ProductBiddingCategoryConstantServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
-     * @return PaidOrganicSearchTermViewServiceClient
-     */
-    public function getPaidOrganicSearchTermViewServiceClient()
-    {
-        return new PaidOrganicSearchTermViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
@@ -1081,19 +1081,19 @@ trait ServiceClientFactoryTrait
     }
 
     /**
-     * @return TopicViewServiceClient
-     */
-    public function getTopicViewServiceClient()
-    {
-        return new TopicViewServiceClient($this->getGoogleAdsClientOptions());
-    }
-
-    /**
      * @return TopicConstantServiceClient
      */
     public function getTopicConstantServiceClient()
     {
         return new TopicConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return TopicViewServiceClient
+     */
+    public function getTopicViewServiceClient()
+    {
+        return new TopicViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
