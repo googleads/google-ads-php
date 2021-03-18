@@ -943,18 +943,6 @@ final class ResourceNames
     }
 
     /**
-     * Generates resource name for a custom interest.
-     *
-     * @param int $customerId the customer ID
-     * @param int $customInterestId the custom interest ID
-     * @return string the custom interest resource name
-     */
-    public static function forCustomInterest($customerId, $customInterestId)
-    {
-        return CustomInterestServiceClient::customInterestName($customerId, $customInterestId);
-    }
-
-    /**
      * Generates resource name for a customer user access invitation.
      *
      * @param int $customerId the customer ID
@@ -967,6 +955,18 @@ final class ResourceNames
             $customerId,
             $invitationId
         );
+    }
+
+    /**
+     * Generates resource name for a custom interest.
+     *
+     * @param int $customerId the customer ID
+     * @param int $customInterestId the custom interest ID
+     * @return string the custom interest resource name
+     */
+    public static function forCustomInterest($customerId, $customInterestId)
+    {
+        return CustomInterestServiceClient::customInterestName($customerId, $customInterestId);
     }
 
     /**

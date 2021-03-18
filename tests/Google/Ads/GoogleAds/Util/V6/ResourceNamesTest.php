@@ -1310,24 +1310,6 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forCustomInterest()
-     */
-    public function testGetNameForCustomInterest()
-    {
-        $customInterestId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/customInterests/%s', self::CUSTOMER_ID, $customInterestId);
-        $this->assertEquals(
-            $expectedResourceName,
-            ResourceNames::forCustomInterest(self::CUSTOMER_ID, $customInterestId)
-        );
-
-        $names = CustomInterestServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
-        $this->assertEquals($customInterestId, $names['custom_interest_id']);
-    }
-
-    /**
      * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forCustomerUserAccessInvitation()
      */
     public function testGetNameForCustomerUserAccessInvitation()
@@ -1346,6 +1328,24 @@ class ResourceNamesTest extends TestCase
         $names = CustomerUserAccessInvitationServiceClient::parseName($expectedResourceName);
         $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
         $this->assertEquals($invitationId, $names['invitation_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forCustomInterest()
+     */
+    public function testGetNameForCustomInterest()
+    {
+        $customInterestId = 66666666;
+        $expectedResourceName =
+            sprintf('customers/%s/customInterests/%s', self::CUSTOMER_ID, $customInterestId);
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCustomInterest(self::CUSTOMER_ID, $customInterestId)
+        );
+
+        $names = CustomInterestServiceClient::parseName($expectedResourceName);
+        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customInterestId, $names['custom_interest_id']);
     }
 
     /**
