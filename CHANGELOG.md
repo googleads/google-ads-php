@@ -1,3 +1,17 @@
+## 8.0.0
+*   Added support for PHP 8.0.
+*   Updated the minimum required versions of `google/gax`, `grpc/grpc` and
+    `google/protobuf`.
+    * Updated GoogleAdsLoggingInterceptor.php of all versions to accommodate a
+      breaking change in the new version of `grpc/grpc` (1.36.0).
+    * Updated GoogleAdsFailuresUnaryCall.php of all versions.
+*   Makes the `examples` directory and its dependency belong to `dev` in
+    `composer.json`. This makes the size of the downloaded source code lighter.
+*   Refactored ResourceNames.php and ServiceClientFactoryTrait.php.
+*   Fixed code examples:
+    * GetAdGroupBidModifier
+    * ValidateTextAd
+
 ## 7.0.0
 *   Added support for v6_1 of Google Ads API.
 *   Removed support for v3 of Google Ads API.
