@@ -93,7 +93,7 @@ class GetTextAdRecommendations
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
-    // [START GetTextAdRecommendations]
+    // [START get_text_ad_recommendations]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -151,7 +151,7 @@ class GetTextAdRecommendations
             }
         }
     }
-    // [END GetTextAdRecommendations]
+    // [END get_text_ad_recommendations]
 }
 
 GetTextAdRecommendations::main();

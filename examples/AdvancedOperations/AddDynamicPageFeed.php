@@ -343,7 +343,7 @@ class AddDynamicPageFeed
      * @param array $feedDetails the names and IDs of feed attributes
      * @param int $campaignId the campaign ID of the campaign to update
      */
-    // [START AddDynamicPageFeed_1]
+    // [START add_dynamic_page_feed_1]
     private static function updateCampaignDsaSetting(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -385,7 +385,7 @@ class AddDynamicPageFeed
             PHP_EOL
         );
     }
-    // [END AddDynamicPageFeed_1]
+    // [END add_dynamic_page_feed_1]
 
     /**
      * Returns the DSA settings for a campaign. Throws an error if the campaign does not exist or
@@ -396,7 +396,7 @@ class AddDynamicPageFeed
      * @param int $campaignId the campaign ID of the campaign to update
      * @return DynamicSearchAdsSetting the DSA settings for the campaign
      */
-    // [START AddDynamicPageFeed]
+    // [START add_dynamic_page_feed]
     private static function getDsaSetting(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -436,7 +436,7 @@ class AddDynamicPageFeed
 
         return $dynamicSearchAdsSetting;
     }
-    // [END AddDynamicPageFeed]
+    // [END add_dynamic_page_feed]
 
     /**
      * Creates an ad group criterion targeting the DSA label.
@@ -446,7 +446,7 @@ class AddDynamicPageFeed
      * @param int $adGroupId the ad group ID
      * @param string $dsaPageUrlLabel the label for the DSA page URLs
      */
-    // [START AddDynamicPageFeed_2]
+    // [START add_dynamic_page_feed_2]
     public static function addDsaTarget(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -489,7 +489,7 @@ class AddDynamicPageFeed
             PHP_EOL
         );
     }
-    // [END AddDynamicPageFeed_2]
+    // [END add_dynamic_page_feed_2]
 }
 
 AddDynamicPageFeed::main();

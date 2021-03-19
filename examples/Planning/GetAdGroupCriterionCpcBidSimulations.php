@@ -101,7 +101,7 @@ class GetAdGroupCriterionCpcBidSimulations
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID to get the ad group criterion CPC bid simulations for
      */
-    // [START GetAdGroupCriterionCpcBidSimulations]
+    // [START get_ad_group_criterion_cpc_bid_simulations]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -158,7 +158,7 @@ class GetAdGroupCriterionCpcBidSimulations
             print PHP_EOL;
         }
     }
-    // [END GetAdGroupCriterionCpcBidSimulations]
+    // [END get_ad_group_criterion_cpc_bid_simulations]
 }
 
 GetAdGroupCriterionCpcBidSimulations::main();

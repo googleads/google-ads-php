@@ -130,7 +130,7 @@ class UploadConversionAdjustment
      *      The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
      * @param float|null $restatementValue the adjusted value for adjustment type RESTATEMENT
      */
-    // [START UploadConversionAdjustment]
+    // [START upload_conversion_adjustment]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -196,7 +196,7 @@ class UploadConversionAdjustment
             );
         }
     }
-    // [END UploadConversionAdjustment]
+    // [END upload_conversion_adjustment]
 }
 
 UploadConversionAdjustment::main();

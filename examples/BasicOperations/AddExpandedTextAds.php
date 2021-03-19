@@ -103,7 +103,7 @@ class AddExpandedTextAds
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID to add expanded text ads to
      */
-    // [START AddExpandedTextAds]
+    // [START add_expanded_text_ads]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -150,7 +150,7 @@ class AddExpandedTextAds
             );
         }
     }
-    // [END AddExpandedTextAds]
+    // [END add_expanded_text_ads]
 }
 
 AddExpandedTextAds::main();

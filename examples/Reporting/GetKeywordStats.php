@@ -96,7 +96,7 @@ class GetKeywordStats
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
-    // [START GetKeywordStats]
+    // [START get_keyword_stats]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -160,7 +160,7 @@ class GetKeywordStats
             );
         }
     }
-    // [END GetKeywordStats]
+    // [END get_keyword_stats]
 }
 
 GetKeywordStats::main();

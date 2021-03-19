@@ -110,7 +110,7 @@ class UpdateSitelinkCampaignExtensionSetting
      * @param int $campaignId the campaign ID
      * @param int[] $feedItemIds the IDs of the feed items to replace
      */
-    // [START UpdateSitelinkCampaignExtensionSetting]
+    // [START update_sitelink_campaign_extension_setting]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -159,7 +159,7 @@ class UpdateSitelinkCampaignExtensionSetting
             PHP_EOL
         );
     }
-    // [END UpdateSitelinkCampaignExtensionSetting]
+    // [END update_sitelink_campaign_extension_setting]
 }
 
 UpdateSitelinkCampaignExtensionSetting::main();

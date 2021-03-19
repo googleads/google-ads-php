@@ -98,7 +98,7 @@ class GetPendingInvitations
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
-        // [START GetPendingInvitations]
+        // [START get_pending_invitations]
         // Creates a query to find pending customer user access invitations.
         $query = 'SELECT customer_user_access_invitation.invitation_id, '
             . 'customer_user_access_invitation.email_address, '
@@ -124,7 +124,7 @@ class GetPendingInvitations
                 PHP_EOL
             );
         }
-        // [END GetPendingInvitations]
+        // [END get_pending_invitations]
     }
 }
 

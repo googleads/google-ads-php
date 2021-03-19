@@ -107,7 +107,7 @@ class AddGeoTarget
      * @param int $feedItemId the feed item ID
      * @param int $geoTargetConstantId the geo target constant ID to add to the extension feed item
      */
-    // [START AddGeoTarget]
+    // [START add_geo_target]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -145,7 +145,7 @@ class AddGeoTarget
             PHP_EOL
         );
     }
-    // [END AddGeoTarget]
+    // [END add_geo_target]
 }
 
 AddGeoTarget::main();

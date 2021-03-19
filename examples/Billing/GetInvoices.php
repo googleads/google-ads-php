@@ -111,7 +111,7 @@ class GetInvoices
         // Gets the date one month before now.
         $lastMonth = strtotime('-1 month');
 
-        // [START GetInvoices]
+        // [START get_invoices]
         // Issues the request.
         $response = $googleAdsClient->getInvoiceServiceClient()->listInvoices(
             $customerId,
@@ -120,9 +120,9 @@ class GetInvoices
             date('Y', $lastMonth),
             MonthOfYear::value(strtoupper(date('F', $lastMonth)))
         );
-        // [END GetInvoices]
+        // [END get_invoices]
 
-        // [START GetInvoices_1]
+        // [START get_invoices_1]
         // Iterates over all invoices retrieved and prints their information.
         foreach ($response->getInvoices() as $invoice) {
             /** @var Invoice $invoice */
@@ -195,7 +195,7 @@ class GetInvoices
                 );
             }
         }
-        // [END GetInvoices_1]
+        // [END get_invoices_1]
     }
 }
 

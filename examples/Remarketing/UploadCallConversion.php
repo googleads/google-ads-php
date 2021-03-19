@@ -121,7 +121,7 @@ class UploadCallConversion
      *     “2019-01-01 12:32:45-08:00”
      * @param float $conversionValue the value of the conversion
      */
-    // [START UploadCallConversion]
+    // [START upload_call_conversion]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -173,7 +173,7 @@ class UploadCallConversion
             );
         }
     }
-    // [END UploadCallConversion]
+    // [END upload_call_conversion]
 }
 
 UploadCallConversion::main();

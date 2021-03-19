@@ -134,7 +134,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
      * @param int $campaignBudgetId the campaign budget ID
      * @param int $userListId the user list ID
      */
-    // [START AddMerchantCenterDynamicRemarketingCampaign]
+    // [START add_merchant_center_dynamic_remarketing_campaign]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -160,7 +160,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
         // Targets a specific user list for remarketing.
         self::attachUserList($googleAdsClient, $customerId, $adGroupResourceName, $userListId);
     }
-    // [END AddMerchantCenterDynamicRemarketingCampaign]
+    // [END add_merchant_center_dynamic_remarketing_campaign]
 
     /**
      * Creates a campaign linked to a Merchant Center product feed.
