@@ -213,7 +213,7 @@ class AddShoppingProductAd
      * @param int $merchantCenterAccountId the Merchant Center account ID
      * @return string the resource name of the newly created campaign
      */
-    // [START addShoppingProductCampaign]
+    // [START add_shopping_product_campaign]
     private static function addStandardShoppingCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -269,7 +269,7 @@ class AddShoppingProductAd
 
         return $addedCampaign->getResourceName();
     }
-    // [END addShoppingProductCampaign]
+    // [END add_shopping_product_campaign]
 
     /**
      * Creates a new shopping product ad group in the specified campaign.
@@ -280,7 +280,7 @@ class AddShoppingProductAd
      *     belong to
      * @return string the resource name of the newly created ad group
      */
-    // [START addShoppingProductAdGroup]
+    // [START add_shopping_product_ad_group]
     private static function addShoppingProductAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -316,7 +316,7 @@ class AddShoppingProductAd
 
         return $addedAdGroup->getResourceName();
     }
-    // [END addShoppingProductAdGroup]
+    // [END add_shopping_product_ad_group]
 
     /**
      * Creates a new shopping product ad group ad in the specified ad group.
@@ -326,7 +326,7 @@ class AddShoppingProductAd
      * @param string $adGroupResourceName the resource name of ad group that a new ad group ad will
      *     belong to
      */
-    // [START addShoppingProductAdGroupAd]
+    // [START add_shopping_product_ad_group_ad]
     private static function addShoppingProductAdGroupAd(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -359,7 +359,7 @@ class AddShoppingProductAd
             PHP_EOL
         );
     }
-    // [END addShoppingProductAdGroupAd]
+    // [END add_shopping_product_ad_group_ad]
 
     /**
      * Creates a new default shopping listing group for the specified ad group. A listing group is
@@ -372,7 +372,7 @@ class AddShoppingProductAd
      * @param string $adGroupResourceName the resource name of ad group that the new listing group
      *     will belong to
      */
-    // [START addDefaultShoppingListingGroup]
+    // [START add_default_shopping_listing_group]
     private static function addDefaultShoppingListingGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -409,7 +409,7 @@ class AddShoppingProductAd
             PHP_EOL
         );
     }
-    // [END addDefaultShoppingListingGroup]
+    // [END add_default_shopping_listing_group]
 }
 
 AddShoppingProductAd::main();

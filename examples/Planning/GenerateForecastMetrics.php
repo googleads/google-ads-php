@@ -100,7 +100,7 @@ class GenerateForecastMetrics
      * @param int $customerId the customer ID
      * @param int $keywordPlanId the keyword plan ID
      */
-    // [START GenerateForecastMetrics]
+    // [START generate_forecast_metrics]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -143,7 +143,7 @@ class GenerateForecastMetrics
             );
         }
     }
-    // [END GenerateForecastMetrics]
+    // [END generate_forecast_metrics]
 }
 
 GenerateForecastMetrics::main();

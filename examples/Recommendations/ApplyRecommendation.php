@@ -104,7 +104,7 @@ class ApplyRecommendation
      * @param int $customerId the customer ID
      * @param string $recommendationId the recommendation ID to apply
      */
-    // [START ApplyRecommendation]
+    // [START apply_recommendation]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -141,7 +141,7 @@ class ApplyRecommendation
             PHP_EOL
         );
     }
-    // [END ApplyRecommendation]
+    // [END apply_recommendation]
 }
 
 ApplyRecommendation::main();

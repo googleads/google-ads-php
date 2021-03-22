@@ -97,7 +97,7 @@ class GetChangeSummary
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
-    // [START GetChangeSummary]
+    // [START get_change_summary]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
@@ -193,7 +193,7 @@ class GetChangeSummary
 
         return $resourceName;
     }
-    // [END GetChangeSummary]
+    // [END get_change_summary]
 }
 
 GetChangeSummary::main();

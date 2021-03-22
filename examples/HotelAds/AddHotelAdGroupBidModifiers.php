@@ -104,7 +104,7 @@ class AddHotelAdGroupBidModifiers
      * @param int $customerId the customer ID
      * @param int $adGroupId the ad group ID
      */
-    // [START addHotelAdGroupBidModifiers]
+    // [START add_hotel_ad_group_bid_modifiers]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -166,7 +166,7 @@ class AddHotelAdGroupBidModifiers
             print $addedAdGroupBidModifier->getResourceName() . PHP_EOL;
         }
     }
-    // [END addHotelAdGroupBidModifiers]
+    // [END add_hotel_ad_group_bid_modifiers]
 }
 
 AddHotelAdGroupBidModifiers::main();

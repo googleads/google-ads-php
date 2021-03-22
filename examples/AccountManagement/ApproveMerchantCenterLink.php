@@ -114,7 +114,7 @@ class ApproveMerchantCenterLink
         int $customerId,
         int $merchantCenterAccountId
     ) {
-        // [START ApproveMerchantCenterLink]
+        // [START approve_merchant_center_link]
         // Lists all merchant links of the specified customer ID.
         $merchantCenterLinkServiceClient = $googleAdsClient->getMerchantCenterLinkServiceClient();
         $response = $merchantCenterLinkServiceClient->listMerchantCenterLinks($customerId);
@@ -123,17 +123,17 @@ class ApproveMerchantCenterLink
             $response->getMerchantCenterLinks()->count(),
             PHP_EOL
         );
-        // [END ApproveMerchantCenterLink]
+        // [END approve_merchant_center_link]
         foreach ($response->getMerchantCenterLinks() as $merchantCenterLink) {
             /** @var MerchantCenterLink $merchantCenterLink */
-            // [START ApproveMerchantCenterLink_1]
+            // [START approve_merchant_center_link_1]
             printf(
                 "Link '%s' has status '%s'.%s",
                 $merchantCenterLink->getResourceName(),
                 MerchantCenterLinkStatus::name($merchantCenterLink->getStatus()),
                 PHP_EOL
             );
-            // [END ApproveMerchantCenterLink_1]
+            // [END approve_merchant_center_link_1]
             // Approves a pending link request for a Google Ads account with the specified customer
             // ID from a Merchant Center account with the specified Merchant Center account ID.
             if (
@@ -163,7 +163,7 @@ class ApproveMerchantCenterLink
      * @param MerchantCenterLink $merchantCenterLink the Merchant Center link to update
      * @param int $newMerchantCenterLinkStatus the status to be updated to
      */
-    // [START ApproveMerchantCenterLink_2]
+    // [START approve_merchant_center_link_2]
     private static function updateMerchantCenterLinkStatus(
         MerchantCenterLinkServiceClient $merchantCenterLinkServiceClient,
         int $customerId,
@@ -200,7 +200,7 @@ class ApproveMerchantCenterLink
             PHP_EOL
         );
     }
-    // [END ApproveMerchantCenterLink_2]
+    // [END approve_merchant_center_link_2]
 }
 
 ApproveMerchantCenterLink::main();

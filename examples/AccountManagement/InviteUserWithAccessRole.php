@@ -114,7 +114,7 @@ class InviteUserWithAccessRole
         string $emailAddress,
         string $accessRole
     ) {
-        // [START InviteUserWithAccessRole]
+        // [START invite_user_with_access_role]
         // Creates a customer user access invitation.
         $customerUserAccessInvitation = new CustomerUserAccessInvitation([
             'email_address' =>  $emailAddress,
@@ -142,7 +142,7 @@ class InviteUserWithAccessRole
             $accessRole,
             PHP_EOL
         );
-        // [END InviteUserWithAccessRole]
+        // [END invite_user_with_access_role]
     }
 }
 

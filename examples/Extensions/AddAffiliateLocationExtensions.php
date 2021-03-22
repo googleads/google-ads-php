@@ -326,7 +326,7 @@ class AddAffiliateLocationExtensions
      * @param int $chainId the retail chain ID
      * @return string the resource name of the newly created affiliate location extension feed
      */
-    // [START AddAffiliateLocationExtensions]
+    // [START add_affiliate_location_extensions]
     private static function createAffiliateLocationExtensionFeed(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -362,7 +362,7 @@ class AddAffiliateLocationExtensions
 
         return $feedResourceName;
     }
-    // [END AddAffiliateLocationExtensions]
+    // [END add_affiliate_location_extensions]
 
     /**
      * Waits for the affiliate location extension feed to be ready. An exponential back-off
@@ -375,7 +375,7 @@ class AddAffiliateLocationExtensions
      *     attempts has been reached
      * @return FeedMapping the newly created feed mapping
      */
-    // [START AddAffiliateLocationExtensions_2]
+    // [START add_affiliate_location_extensions_2]
     private static function waitForFeedToBeReady(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -418,7 +418,7 @@ class AddAffiliateLocationExtensions
             PHP_EOL
         ));
     }
-    // [END AddAffiliateLocationExtensions_2]
+    // [END add_affiliate_location_extensions_2]
 
     /**
      * Gets the affiliate location extension feed mapping.
@@ -428,7 +428,7 @@ class AddAffiliateLocationExtensions
      * @param string $feedResourceName the feed resource name
      * @return FeedMapping|null the feed mapping if it exists otherwise null
      */
-    // [START AddAffiliateLocationExtensions_1]
+    // [START add_affiliate_location_extensions_1]
     private static function getAffiliateLocationExtensionFeedMapping(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -459,7 +459,7 @@ class AddAffiliateLocationExtensions
             ? $response->getIterator()->current()->getFeedMapping()
             : null;
     }
-    // [END AddAffiliateLocationExtensions_1]
+    // [END add_affiliate_location_extensions_1]
 
     /**
      * Creates the campaign feed.
@@ -471,7 +471,7 @@ class AddAffiliateLocationExtensions
      * @param string $feedResourceName the feed resource name
      * @param int $chainId the retail chain ID
      */
-    // [START AddAffiliateLocationExtensions_3]
+    // [START add_affiliate_location_extensions_3]
     private static function createCampaignFeed(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -509,7 +509,7 @@ class AddAffiliateLocationExtensions
             PHP_EOL
         );
     }
-    // [END AddAffiliateLocationExtensions_3]
+    // [END add_affiliate_location_extensions_3]
 
     /**
      * Gets the feed attribute ID for the retail chain ID.
@@ -517,7 +517,7 @@ class AddAffiliateLocationExtensions
      * @param FeedMapping $feedMapping the feed mapping
      * @@return int the feed attribute ID
      */
-    // [START AddAffiliateLocationExtensions_4]
+    // [START add_affiliate_location_extensions_4]
     private static function getAttributeIdForChainId(FeedMapping $feedMapping): int
     {
         foreach ($feedMapping->getAttributeFieldMappings() as $fieldMapping) {
@@ -534,7 +534,7 @@ class AddAffiliateLocationExtensions
             "Affiliate location feed mapping isn't setup correctly." . PHP_EOL
         );
     }
-    // [END AddAffiliateLocationExtensions_4]
+    // [END add_affiliate_location_extensions_4]
 }
 
 AddAffiliateLocationExtensions::main();

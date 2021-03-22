@@ -172,7 +172,7 @@ class HandleKeywordPolicyViolations
      * @param GoogleAdsException $googleAdsException the Google Ads exception
      * @return PolicyViolationKey[] the exemptible policy violation keys
      */
-    // [START HandleKeywordPolicyViolations]
+    // [START handle_keyword_policy_violations]
     private static function fetchExemptPolicyViolationKeys(GoogleAdsException $googleAdsException)
     {
         $exemptPolicyViolationKeys = [];
@@ -238,7 +238,7 @@ class HandleKeywordPolicyViolations
         }
         return $exemptPolicyViolationKeys;
     }
-    // [END HandleKeywordPolicyViolations]
+    // [END handle_keyword_policy_violations]
 
     /**
      * Sends exemption requests for creating a keyword.
@@ -250,7 +250,7 @@ class HandleKeywordPolicyViolations
      *      to request exemption for
      * @param PolicyViolationKey[] $exemptPolicyViolationKeys the exemptible policy violation keys
      */
-    // [START HandleKeywordPolicyViolations_1]
+    // [START handle_keyword_policy_violations_1]
     private static function requestExemption(
         int $customerId,
         AdGroupCriterionServiceClient $adGroupCriterionServiceClient,
@@ -271,7 +271,7 @@ class HandleKeywordPolicyViolations
             PHP_EOL
         );
     }
-    // [END HandleKeywordPolicyViolations_1]
+    // [END handle_keyword_policy_violations_1]
 }
 
 HandleKeywordPolicyViolations::main();

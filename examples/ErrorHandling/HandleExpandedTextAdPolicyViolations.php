@@ -166,7 +166,7 @@ class HandleExpandedTextAdPolicyViolations
      * @param GoogleAdsException $googleAdsException the Google Ads exception
      * @return string[] the ignorable policy topics
      */
-    // [START HandleExpandedTextAdPolicyViolations]
+    // [START handle_expanded_text_ad_policy_violations]
     private static function fetchIgnorablePolicyTopics(GoogleAdsException $googleAdsException)
     {
         $ignorablePolicyTopics = [];
@@ -215,7 +215,7 @@ class HandleExpandedTextAdPolicyViolations
         }
         return $ignorablePolicyTopics;
     }
-    // [END HandleExpandedTextAdPolicyViolations]
+    // [END handle_expanded_text_ad_policy_violations]
 
     /**
      * Sends exemption requests for creating an expanded text ad.
@@ -225,7 +225,7 @@ class HandleExpandedTextAdPolicyViolations
      * @param AdGroupAdOperation $adGroupAdOperation
      * @param string[] $ignorablePolicyTopics
      */
-    // [START HandleExpandedTextAdPolicyViolations_1]
+    // [START handle_expanded_text_ad_policy_violations_1]
     private static function requestExemption(
         int $customerId,
         AdGroupAdServiceClient $adGroupAdServiceClient,
@@ -248,7 +248,7 @@ class HandleExpandedTextAdPolicyViolations
             PHP_EOL
         );
     }
-    // [END HandleExpandedTextAdPolicyViolations_1]
+    // [END handle_expanded_text_ad_policy_violations_1]
 }
 
 HandleExpandedTextAdPolicyViolations::main();

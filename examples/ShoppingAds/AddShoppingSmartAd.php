@@ -230,7 +230,7 @@ class AddShoppingSmartAd
      * @param int $merchantCenterAccountId the Merchant Center account ID
      * @return string the resource name of the newly created campaign
      */
-    // [START AddShoppingSmartAd_1]
+    // [START add_shopping_smart_ad_1]
     private static function addSmartShoppingCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -246,7 +246,7 @@ class AddShoppingSmartAd
             'merchant_id' => $merchantCenterAccountId
         ]);
 
-        // [START AddShoppingSmartAd]
+        // [START add_shopping_smart_ad]
         // Creates the campaign.
         $campaign = new Campaign([
             'name' => 'Interplanetary Cruise Campaign #' . Helper::getPrintableDatetime(),
@@ -273,7 +273,7 @@ class AddShoppingSmartAd
             // Sets the budget.
             'campaign_budget' => $budgetResourceName
         ]);
-        // [END AddShoppingSmartAd]
+        // [END add_shopping_smart_ad]
 
         // Creates a campaign operation.
         $campaignOperation = new CampaignOperation();
@@ -294,7 +294,7 @@ class AddShoppingSmartAd
 
         return $addedCampaignResourceName;
     }
-    // [END AddShoppingSmartAd_1]
+    // [END add_shopping_smart_ad_1]
 
     /**
      * Creates a new ad group in the specified Smart Shopping campaign.
@@ -305,7 +305,7 @@ class AddShoppingSmartAd
      *     the new ad group will belong to
      * @return string the resource name of the newly created ad group
      */
-    // [START AddShoppingSmartAd_3]
+    // [START add_shopping_smart_ad_3]
     private static function addSmartShoppingAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -339,7 +339,7 @@ class AddShoppingSmartAd
 
         return $addedAdGroupResourceName;
     }
-    // [END AddShoppingSmartAd_3]
+    // [END add_shopping_smart_ad_3]
 
     /**
      * Creates a new ad group ad in the specified Smart Shopping ad group.
@@ -349,7 +349,7 @@ class AddShoppingSmartAd
      * @param string $adGroupResourceName the resource name of the ad group that
      *     the new ad group ad will belong to
      */
-    // [START AddShoppingSmartAd_2]
+    // [START add_shopping_smart_ad_2]
     private static function addSmartShoppingAdGroupAd(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -379,7 +379,7 @@ class AddShoppingSmartAd
             PHP_EOL
         );
     }
-    // [END AddShoppingSmartAd_2]
+    // [END add_shopping_smart_ad_2]
 
     /**
      * Creates a new Shopping listing group for the specified ad group. This is known as a "product

@@ -97,7 +97,7 @@ class UploadImageAsset
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
-    // [START UploadImageAsset]
+    // [START upload_image_asset]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates an image content.
@@ -138,7 +138,7 @@ class UploadImageAsset
             print 'No image asset was created.' . PHP_EOL;
         }
     }
-    // [END UploadImageAsset]
+    // [END upload_image_asset]
 }
 
 UploadImageAsset::main();

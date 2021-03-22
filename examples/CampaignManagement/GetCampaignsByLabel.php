@@ -97,7 +97,7 @@ class GetCampaignsByLabel
      * @param int $customerId the customer ID
      * @param int $labelId the label ID
      */
-    // [START GetCampaignsByLabel]
+    // [START get_campaigns_by_label]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -126,7 +126,7 @@ class GetCampaignsByLabel
             );
         }
     }
-    // [END GetCampaignsByLabel]
+    // [END get_campaigns_by_label]
 }
 
 GetCampaignsByLabel::main();

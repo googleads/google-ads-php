@@ -98,7 +98,7 @@ class AddConversionAction
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
      */
-    // [START AddConversionAction]
+    // [START add_conversion_action]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a conversion action.
@@ -136,7 +136,7 @@ class AddConversionAction
             );
         }
     }
-    // [END AddConversionAction]
+    // [END add_conversion_action]
 }
 
 AddConversionAction::main();

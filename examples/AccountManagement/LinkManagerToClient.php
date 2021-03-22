@@ -100,7 +100,7 @@ class LinkManagerToClient
      * @param int $managerCustomerId the manager customer ID
      * @param int $clientCustomerId the customer ID
      */
-    // [START LinkManagerToClient]
+    // [START link_manager_to_client]
     public static function runExample(int $managerCustomerId, int $clientCustomerId)
     {
         // Extends an invitation to the client while authenticating as the manager.
@@ -259,7 +259,7 @@ class LinkManagerToClient
             PHP_EOL
         );
     }
-    // [END LinkManagerToClient]
+    // [END link_manager_to_client]
 
     /**
      * Creates a Google Ads client based on the default configuration file
