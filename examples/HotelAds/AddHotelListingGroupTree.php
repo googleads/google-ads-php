@@ -219,7 +219,7 @@ class AddHotelListingGroupTree
      * @return string the "other hotel classes" node's resource name, which serves as a parent node
      *     for the next level
      */
-    // [START add_level1_nodes]
+    // [START add_hotel_listing_group_tree]
     private static function addLevel1Nodes(
         int $customerId,
         int $adGroupId,
@@ -279,7 +279,7 @@ class AddHotelListingGroupTree
         self::$nextTempId--;
         return $otherHotelsAdGroupCriterion->getResourceName();
     }
-    // [END add_level1_nodes]
+    // [END add_hotel_listing_group_tree]
 
     /**
      * Creates child nodes of level 2, partitioned by the country region.

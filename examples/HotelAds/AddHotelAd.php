@@ -205,7 +205,7 @@ class AddHotelAd
      * @param int $cpcBidCeilingMicroAmount the CPC bid ceiling micro amount
      * @return string the resource name of the newly created campaign
      */
-    // [START add_hotel_campaign]
+    // [START add_hotel_ad]
     private static function addHotelCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -213,7 +213,7 @@ class AddHotelAd
         int $hotelCenterAccountId,
         int $cpcBidCeilingMicroAmount
     ) {
-        // [START add_hotel_ad]
+        // [START add_hotel_ad_1]
         // Creates a campaign.
         $campaign = new Campaign([
             'name' => 'Interplanetary Cruise Campaign #' . Helper::getPrintableDatetime(),
@@ -238,7 +238,7 @@ class AddHotelAd
                 'target_google_search' => true,
             ]),
         ]);
-        // [END add_hotel_ad]
+        // [END add_hotel_ad_1]
 
         // Creates a campaign operation.
         $campaignOperation = new CampaignOperation();
@@ -258,7 +258,7 @@ class AddHotelAd
 
         return $addedCampaign->getResourceName();
     }
-    // [END add_hotel_campaign]
+    // [END add_hotel_ad]
 
     /**
      * Creates a new hotel ad group in the specified campaign.
@@ -269,7 +269,7 @@ class AddHotelAd
      *     belong to
      * @return string the resource name of the newly created ad group
      */
-    // [START add_hotel_ad_group]
+    // [START add_hotel_ad_2]
     private static function addHotelAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -305,7 +305,7 @@ class AddHotelAd
 
         return $addedAdGroup->getResourceName();
     }
-    // [END add_hotel_ad_group]
+    // [END add_hotel_ad_2]
 
     /**
      * Creates a new hotel ad group ad in the specified ad group.
@@ -315,7 +315,7 @@ class AddHotelAd
      * @param string $adGroupResourceName the resource name of ad group that a new ad group ad will
      *     belong to
      */
-    // [START add_hotel_ad_group_ad]
+    // [START add_hotel_ad_3]
     private static function addHotelAdGroupAd(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -353,7 +353,7 @@ class AddHotelAd
             PHP_EOL
         );
     }
-    // [END add_hotel_ad_group_ad]
+    // [END add_hotel_ad_3]
 }
 
 AddHotelAd::main();

@@ -118,7 +118,7 @@ class AddCampaigns
         $campaignOperations = [];
         for ($i = 0; $i < self::NUMBER_OF_CAMPAIGNS_TO_ADD; $i++) {
             // Creates a campaign.
-            // [START add_campaigns]
+            // [START add_campaigns_1]
             $campaign = new Campaign([
                 'name' => 'Interplanetary Cruise #' . Helper::getPrintableDatetime(),
                 'advertising_channel_type' => AdvertisingChannelType::SEARCH,
@@ -135,7 +135,7 @@ class AddCampaigns
                 'start_date' => date('Ymd', strtotime('+1 day')),
                 'end_date' => date('Ymd', strtotime('+1 month'))
             ]);
-            // [END add_campaigns]
+            // [END add_campaigns_1]
 
             // Creates a campaign operation.
             $campaignOperation = new CampaignOperation();
@@ -162,7 +162,7 @@ class AddCampaigns
      * @param int $customerId the customer ID
      * @return string the resource name of the newly created budget
      */
-    // [START add_campaigns_1]
+    // [START add_campaigns]
     private static function addCampaignBudget(GoogleAdsClient $googleAdsClient, int $customerId)
     {
         // Creates a campaign budget.
@@ -189,7 +189,7 @@ class AddCampaigns
 
         return $addedBudget->getResourceName();
     }
-    // [END add_campaigns_1]
+    // [END add_campaigns]
 }
 
 AddCampaigns::main();
