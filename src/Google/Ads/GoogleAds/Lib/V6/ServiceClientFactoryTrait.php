@@ -63,6 +63,7 @@ use Google\Ads\GoogleAds\V6\Services\ConversionActionServiceClient;
 use Google\Ads\GoogleAds\V6\Services\ConversionAdjustmentUploadServiceClient;
 use Google\Ads\GoogleAds\V6\Services\ConversionUploadServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CurrencyConstantServiceClient;
+use Google\Ads\GoogleAds\V6\Services\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerClientServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerExtensionSettingServiceClient;
@@ -558,6 +559,14 @@ trait ServiceClientFactoryTrait
     public function getCurrencyConstantServiceClient()
     {
         return new CurrencyConstantServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return CustomAudienceServiceClient
+     */
+    public function getCustomAudienceServiceClient()
+    {
+        return new CustomAudienceServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
