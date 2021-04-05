@@ -43,7 +43,7 @@ class PolicyTopicConstraint extends \Google\Protobuf\Internal\Message
      * Countries where the resource cannot serve.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PolicyTopicConstraint.CountryConstraintList country_constraint_list = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PolicyTopicConstraint\CountryConstraintList
+     * @return \Google\Ads\GoogleAds\V6\Common\PolicyTopicConstraint\CountryConstraintList|null
      */
     public function getCountryConstraintList()
     {
@@ -74,7 +74,7 @@ class PolicyTopicConstraint extends \Google\Protobuf\Internal\Message
      * Reseller constraint.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PolicyTopicConstraint.ResellerConstraint reseller_constraint = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PolicyTopicConstraint\ResellerConstraint
+     * @return \Google\Ads\GoogleAds\V6\Common\PolicyTopicConstraint\ResellerConstraint|null
      */
     public function getResellerConstraint()
     {
@@ -105,7 +105,7 @@ class PolicyTopicConstraint extends \Google\Protobuf\Internal\Message
      * Countries where a certificate is required for serving.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PolicyTopicConstraint.CountryConstraintList certificate_missing_in_country_list = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PolicyTopicConstraint\CountryConstraintList
+     * @return \Google\Ads\GoogleAds\V6\Common\PolicyTopicConstraint\CountryConstraintList|null
      */
     public function getCertificateMissingInCountryList()
     {
@@ -137,7 +137,7 @@ class PolicyTopicConstraint extends \Google\Protobuf\Internal\Message
      * certificates associated with it.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PolicyTopicConstraint.CountryConstraintList certificate_domain_mismatch_in_country_list = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PolicyTopicConstraint\CountryConstraintList
+     * @return \Google\Ads\GoogleAds\V6\Common\PolicyTopicConstraint\CountryConstraintList|null
      */
     public function getCertificateDomainMismatchInCountryList()
     {

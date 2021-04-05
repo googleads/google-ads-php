@@ -3,9 +3,9 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v6.services.ConversionUploadService' => [
-            'UploadClickConversions' => [
+            'UploadCallConversions' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/customers/{customer_id=*}:uploadClickConversions',
+                'uriTemplate' => '/v6/customers/{customer_id=*}:uploadCallConversions',
                 'body' => '*',
                 'placeholders' => [
                     'customer_id' => [
@@ -15,9 +15,9 @@ return [
                     ],
                 ],
             ],
-            'UploadCallConversions' => [
+            'UploadClickConversions' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/customers/{customer_id=*}:uploadCallConversions',
+                'uriTemplate' => '/v6/customers/{customer_id=*}:uploadClickConversions',
                 'body' => '*',
                 'placeholders' => [
                     'customer_id' => [

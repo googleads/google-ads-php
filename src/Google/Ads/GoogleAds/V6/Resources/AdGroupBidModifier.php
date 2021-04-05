@@ -326,7 +326,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for hotel date selection (default dates vs. user selected).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelDateSelectionTypeInfo hotel_date_selection_type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelDateSelectionTypeInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelDateSelectionTypeInfo|null
      */
     public function getHotelDateSelectionType()
     {
@@ -357,7 +357,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for number of days prior to the stay the booking is being made.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelAdvanceBookingWindowInfo hotel_advance_booking_window = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelAdvanceBookingWindowInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelAdvanceBookingWindowInfo|null
      */
     public function getHotelAdvanceBookingWindow()
     {
@@ -388,7 +388,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for length of hotel stay in nights.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelLengthOfStayInfo hotel_length_of_stay = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelLengthOfStayInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelLengthOfStayInfo|null
      */
     public function getHotelLengthOfStay()
     {
@@ -419,7 +419,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for day of the week the booking is for.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelCheckInDayInfo hotel_check_in_day = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelCheckInDayInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelCheckInDayInfo|null
      */
     public function getHotelCheckInDay()
     {
@@ -450,7 +450,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. A device criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DeviceInfo device = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DeviceInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\DeviceInfo|null
      */
     public function getDevice()
     {
@@ -481,7 +481,7 @@ class AdGroupBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. A preferred content criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PreferredContentInfo preferred_content = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PreferredContentInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\PreferredContentInfo|null
      */
     public function getPreferredContent()
     {

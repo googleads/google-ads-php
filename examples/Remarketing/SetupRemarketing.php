@@ -176,6 +176,7 @@ class SetupRemarketing
      * @param int $customerId the customer ID
      * @return string the user list resource name
      */
+    // [START setup_remarketing]
     private static function createUserList(
         GoogleAdsClient $googleAdsClient,
         int $customerId
@@ -228,6 +229,7 @@ class SetupRemarketing
 
         return $userListResourceName;
     }
+    // [END setup_remarketing]
 
     /**
      * Creates an ad group criterion that targets a user list with an ad group.
@@ -238,6 +240,7 @@ class SetupRemarketing
      * @param string $userListResourceName the user list resource name
      * @return string the ad group criterion resource name
      */
+    // [START setup_remarketing_1]
     private static function targetAdsInAdGroupToUserList(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -275,6 +278,7 @@ class SetupRemarketing
 
         return $adGroupCriterionResourceName;
     }
+    // [END setup_remarketing_1]
 
     /**
      * Updates the bid modifier on an ad group criterion.
@@ -327,6 +331,7 @@ class SetupRemarketing
      * @param int $customerId the customer ID
      * @param int $campaignId the campaign ID
      */
+    // [START setup_remarketing_3]
     private static function removeExistingListCriteriaFromAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -363,6 +368,7 @@ class SetupRemarketing
             );
         }
     }
+    // [END setup_remarketing_3]
 
     /**
      * Finds all of user list ad group criteria under a campaign.
@@ -372,6 +378,7 @@ class SetupRemarketing
      * @param int $campaignId the campaign ID under which to search the ad group criteria
      * @return string[] the list of the ad group criteria resource names
      */
+    // [START setup_remarketing_2]
     private static function getUserListAdGroupCriteria(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -414,6 +421,7 @@ class SetupRemarketing
 
         return $userListCriteria;
     }
+    // [END setup_remarketing_2]
 
     /**
      * Creates a campaign criterion that targets a user list with a campaign.
@@ -424,6 +432,7 @@ class SetupRemarketing
      * @param string $userListResourceName the resource name of the user list to be targeted
      * @return string the campaign criterion resource name
      */
+    // [START setup_remarketing_4]
     private static function targetAdsInCampaignToUserList(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -461,6 +470,7 @@ class SetupRemarketing
 
         return $campaignCriterionResourceName;
     }
+    // [END setup_remarketing_4]
 
     /**
      * Updates the bid modifier on a campaign criterion.

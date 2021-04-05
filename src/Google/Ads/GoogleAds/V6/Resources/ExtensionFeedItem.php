@@ -440,7 +440,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * The targeted keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordInfo targeted_keyword = 22;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo|null
      */
     public function getTargetedKeyword()
     {
@@ -504,7 +504,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Sitelink extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.SitelinkFeedItem sitelink_feed_item = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\SitelinkFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\SitelinkFeedItem|null
      */
     public function getSitelinkFeedItem()
     {
@@ -535,7 +535,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Structured snippet extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.StructuredSnippetFeedItem structured_snippet_feed_item = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\StructuredSnippetFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\StructuredSnippetFeedItem|null
      */
     public function getStructuredSnippetFeedItem()
     {
@@ -566,7 +566,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * App extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.AppFeedItem app_feed_item = 7;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\AppFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\AppFeedItem|null
      */
     public function getAppFeedItem()
     {
@@ -597,7 +597,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Call extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CallFeedItem call_feed_item = 8;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CallFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\CallFeedItem|null
      */
     public function getCallFeedItem()
     {
@@ -628,7 +628,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Callout extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CalloutFeedItem callout_feed_item = 9;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CalloutFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\CalloutFeedItem|null
      */
     public function getCalloutFeedItem()
     {
@@ -659,7 +659,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Text message extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TextMessageFeedItem text_message_feed_item = 10;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TextMessageFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\TextMessageFeedItem|null
      */
     public function getTextMessageFeedItem()
     {
@@ -690,7 +690,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Price extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PriceFeedItem price_feed_item = 11;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PriceFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\PriceFeedItem|null
      */
     public function getPriceFeedItem()
     {
@@ -721,7 +721,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Promotion extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PromotionFeedItem promotion_feed_item = 12;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PromotionFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\PromotionFeedItem|null
      */
     public function getPromotionFeedItem()
     {
@@ -753,7 +753,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\LocationFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\LocationFeedItem|null
      */
     public function getLocationFeedItem()
     {
@@ -787,7 +787,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.AffiliateLocationFeedItem affiliate_location_feed_item = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\AffiliateLocationFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\AffiliateLocationFeedItem|null
      */
     public function getAffiliateLocationFeedItem()
     {
@@ -820,7 +820,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Hotel Callout extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelCalloutFeedItem hotel_callout_feed_item = 23;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelCalloutFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelCalloutFeedItem|null
      */
     public function getHotelCalloutFeedItem()
     {
@@ -851,7 +851,7 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      * Immutable. Advertiser provided image extension.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ImageFeedItem image_feed_item = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ImageFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Common\ImageFeedItem|null
      */
     public function getImageFeedItem()
     {

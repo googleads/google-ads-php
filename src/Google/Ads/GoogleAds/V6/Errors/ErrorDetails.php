@@ -97,7 +97,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      * Describes an ad policy violation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.errors.PolicyViolationDetails policy_violation_details = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Errors\PolicyViolationDetails
+     * @return \Google\Ads\GoogleAds\V6\Errors\PolicyViolationDetails|null
      */
     public function getPolicyViolationDetails()
     {
@@ -133,7 +133,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      * Describes policy violation findings.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.errors.PolicyFindingDetails policy_finding_details = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Errors\PolicyFindingDetails
+     * @return \Google\Ads\GoogleAds\V6\Errors\PolicyFindingDetails|null
      */
     public function getPolicyFindingDetails()
     {
@@ -170,7 +170,7 @@ class ErrorDetails extends \Google\Protobuf\Internal\Message
      * rate bucket name and the retry delay.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.errors.QuotaErrorDetails quota_error_details = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Errors\QuotaErrorDetails
+     * @return \Google\Ads\GoogleAds\V6\Errors\QuotaErrorDetails|null
      */
     public function getQuotaErrorDetails()
     {

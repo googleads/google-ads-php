@@ -88,7 +88,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video TrueView in-stream ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.VideoTrueViewInStreamAdInfo in_stream = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\VideoTrueViewInStreamAdInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\VideoTrueViewInStreamAdInfo|null
      */
     public function getInStream()
     {
@@ -119,7 +119,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video bumper in-stream ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.VideoBumperInStreamAdInfo bumper = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\VideoBumperInStreamAdInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\VideoBumperInStreamAdInfo|null
      */
     public function getBumper()
     {
@@ -150,7 +150,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video out-stream ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.VideoOutstreamAdInfo out_stream = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\VideoOutstreamAdInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\VideoOutstreamAdInfo|null
      */
     public function getOutStream()
     {
@@ -181,7 +181,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video non-skippable in-stream ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.VideoNonSkippableInStreamAdInfo non_skippable = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\VideoNonSkippableInStreamAdInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\VideoNonSkippableInStreamAdInfo|null
      */
     public function getNonSkippable()
     {
@@ -212,7 +212,7 @@ class VideoAdInfo extends \Google\Protobuf\Internal\Message
      * Video TrueView discovery ad format.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.VideoTrueViewDiscoveryAdInfo discovery = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\VideoTrueViewDiscoveryAdInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\VideoTrueViewDiscoveryAdInfo|null
      */
     public function getDiscovery()
     {

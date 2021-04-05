@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,12 +26,13 @@
 
 namespace Google\Ads\GoogleAds\V6\Services\Gapic;
 
-use Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType;
 use Google\Ads\GoogleAds\V6\Resources\CampaignExperiment;
 use Google\Ads\GoogleAds\V6\Services\CampaignExperimentOperation;
 use Google\Ads\GoogleAds\V6\Services\CreateCampaignExperimentRequest;
+
 use Google\Ads\GoogleAds\V6\Services\EndCampaignExperimentRequest;
 use Google\Ads\GoogleAds\V6\Services\GetCampaignExperimentRequest;
+
 use Google\Ads\GoogleAds\V6\Services\GraduateCampaignExperimentRequest;
 use Google\Ads\GoogleAds\V6\Services\GraduateCampaignExperimentResponse;
 use Google\Ads\GoogleAds\V6\Services\ListCampaignExperimentAsyncErrorsRequest;
@@ -53,6 +54,8 @@ use Google\Auth\FetchAuthTokenInterface;
 use Google\LongRunning\Operation;
 use Google\Protobuf\GPBEmpty;
 
+
+
 /**
  * Service Description: CampaignExperimentService manages the life cycle of campaign experiments.
  * It is used to create new experiments from drafts, modify experiment
@@ -71,53 +74,69 @@ use Google\Protobuf\GPBEmpty;
  * ```
  * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
  * try {
- *     $formattedResourceName = $campaignExperimentServiceClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
- *     $response = $campaignExperimentServiceClient->getCampaignExperiment($formattedResourceName);
+ *     $customerId = 'customer_id';
+ *     $campaignExperiment = new CampaignExperiment();
+ *     $operationResponse = $campaignExperimentServiceClient->createCampaignExperiment($customerId, $campaignExperiment);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // operation succeeded and returns no value
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $campaignExperimentServiceClient->createCampaignExperiment($customerId, $campaignExperiment);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $campaignExperimentServiceClient->resumeOperation($operationName, 'createCampaignExperiment');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // operation succeeded and returns no value
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $campaignExperimentServiceClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class CampaignExperimentServiceGapicClient
 {
     use GapicClientTrait;
 
-    /**
-     * The name of the service.
-     */
+    /** The name of the service. */
     const SERVICE_NAME = 'google.ads.googleads.v6.services.CampaignExperimentService';
 
-    /**
-     * The default address of the service.
-     */
+    /** The default address of the service. */
     const SERVICE_ADDRESS = 'googleads.googleapis.com';
 
-    /**
-     * The default port of the service.
-     */
+    /** The default port of the service. */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /**
-     * The name of the code generator, to be included in the agent header.
-     */
+    /** The name of the code generator, to be included in the agent header. */
     const CODEGEN_NAME = 'gapic';
 
-    /**
-     * The default scopes required by the service.
-     */
+    /** The default scopes required by the service. */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
+
     private static $campaignNameTemplate;
+
     private static $campaignDraftNameTemplate;
+
     private static $campaignExperimentNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -126,16 +145,16 @@ class CampaignExperimentServiceGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/campaign_experiment_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/campaign_experiment_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/campaign_experiment_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/campaign_experiment_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/campaign_experiment_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/campaign_experiment_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/campaign_experiment_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/campaign_experiment_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -143,7 +162,7 @@ class CampaignExperimentServiceGapicClient
 
     private static function getCampaignNameTemplate()
     {
-        if (null == self::$campaignNameTemplate) {
+        if (self::$campaignNameTemplate == null) {
             self::$campaignNameTemplate = new PathTemplate('customers/{customer_id}/campaigns/{campaign_id}');
         }
 
@@ -152,7 +171,7 @@ class CampaignExperimentServiceGapicClient
 
     private static function getCampaignDraftNameTemplate()
     {
-        if (null == self::$campaignDraftNameTemplate) {
+        if (self::$campaignDraftNameTemplate == null) {
             self::$campaignDraftNameTemplate = new PathTemplate('customers/{customer_id}/campaignDrafts/{base_campaign_id}~{draft_id}');
         }
 
@@ -161,7 +180,7 @@ class CampaignExperimentServiceGapicClient
 
     private static function getCampaignExperimentNameTemplate()
     {
-        if (null == self::$campaignExperimentNameTemplate) {
+        if (self::$campaignExperimentNameTemplate == null) {
             self::$campaignExperimentNameTemplate = new PathTemplate('customers/{customer_id}/campaignExperiments/{campaign_experiment_id}');
         }
 
@@ -170,7 +189,7 @@ class CampaignExperimentServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'campaign' => self::getCampaignNameTemplate(),
                 'campaignDraft' => self::getCampaignDraftNameTemplate(),
@@ -182,14 +201,13 @@ class CampaignExperimentServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a campaign resource.
+     * Formats a string containing the fully-qualified path to represent a campaign
+     * resource.
      *
      * @param string $customerId
      * @param string $campaignId
      *
      * @return string The formatted campaign resource.
-     * @experimental
      */
     public static function campaignName($customerId, $campaignId)
     {
@@ -200,15 +218,14 @@ class CampaignExperimentServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a campaign_draft resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * campaign_draft resource.
      *
      * @param string $customerId
      * @param string $baseCampaignId
      * @param string $draftId
      *
      * @return string The formatted campaign_draft resource.
-     * @experimental
      */
     public static function campaignDraftName($customerId, $baseCampaignId, $draftId)
     {
@@ -220,14 +237,13 @@ class CampaignExperimentServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a campaign_experiment resource.
+     * Formats a string containing the fully-qualified path to represent a
+     * campaign_experiment resource.
      *
      * @param string $customerId
      * @param string $campaignExperimentId
      *
      * @return string The formatted campaign_experiment resource.
-     * @experimental
      */
     public static function campaignExperimentName($customerId, $campaignExperimentId)
     {
@@ -243,12 +259,13 @@ class CampaignExperimentServiceGapicClient
      * Template: Pattern
      * - campaign: customers/{customer_id}/campaigns/{campaign_id}
      * - campaignDraft: customers/{customer_id}/campaignDrafts/{base_campaign_id}~{draft_id}
-     * - campaignExperiment: customers/{customer_id}/campaignExperiments/{campaign_experiment_id}.
+     * - campaignExperiment: customers/{customer_id}/campaignExperiments/{campaign_experiment_id}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -256,12 +273,10 @@ class CampaignExperimentServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -277,6 +292,7 @@ class CampaignExperimentServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -284,7 +300,6 @@ class CampaignExperimentServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
-     * @experimental
      */
     public function getOperationsClient()
     {
@@ -292,26 +307,21 @@ class CampaignExperimentServiceGapicClient
     }
 
     /**
-     * Resume an existing long running operation that was previously started
-     * by a long running API method. If $methodName is not provided, or does
-     * not match a long running API method, then the operation can still be
-     * resumed, but the OperationResponse object will not deserialize the
-     * final response.
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
      *
      * @param string $operationName The name of the long running operation
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
-     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = isset($this->descriptors[$methodName]['longRunning'])
-            ? $this->descriptors[$methodName]['longRunning']
-            : [];
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
-
         return $operation;
     }
 
@@ -319,7 +329,7 @@ class CampaignExperimentServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -333,31 +343,31 @@ class CampaignExperimentServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -365,63 +375,12 @@ class CampaignExperimentServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
         $this->operationsClient = $this->createOperationsClient($clientOptions);
-    }
-
-    /**
-     * Returns the requested campaign experiment in full detail.
-     *
-     * Sample code:
-     * ```
-     * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
-     * try {
-     *     $formattedResourceName = $campaignExperimentServiceClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
-     *     $response = $campaignExperimentServiceClient->getCampaignExperiment($formattedResourceName);
-     * } finally {
-     *     $campaignExperimentServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $resourceName Required. The resource name of the campaign experiment to fetch.
-     * @param array  $optionalArgs {
-     *                             Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignExperiment
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function getCampaignExperiment($resourceName, array $optionalArgs = [])
-    {
-        $request = new GetCampaignExperimentRequest();
-        $request->setResourceName($resourceName);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource_name' => $request->getResourceName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetCampaignExperiment',
-            CampaignExperiment::class,
-            $optionalArgs,
-            $request
-        )->wait();
     }
 
     /**
@@ -440,7 +399,7 @@ class CampaignExperimentServiceGapicClient
      * ```
      * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
      * try {
-     *     $customerId = '';
+     *     $customerId = 'customer_id';
      *     $campaignExperiment = new CampaignExperiment();
      *     $operationResponse = $campaignExperimentServiceClient->createCampaignExperiment($customerId, $campaignExperiment);
      *     $operationResponse->pollUntilComplete();
@@ -450,10 +409,7 @@ class CampaignExperimentServiceGapicClient
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $campaignExperimentServiceClient->createCampaignExperiment($customerId, $campaignExperiment);
      *     $operationName = $operationResponse->getName();
@@ -464,10 +420,10 @@ class CampaignExperimentServiceGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
+     *         // operation succeeded and returns no value
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $campaignExperimentServiceClient->close();
@@ -477,22 +433,21 @@ class CampaignExperimentServiceGapicClient
      * @param string             $customerId         Required. The ID of the customer whose campaign experiment is being created.
      * @param CampaignExperiment $campaignExperiment Required. The campaign experiment to be created.
      * @param array              $optionalArgs       {
-     *                                               Optional.
+     *     Optional.
      *
      *     @type bool $validateOnly
-     *          If true, the request is validated but not executed. Only errors are
-     *          returned, not results.
+     *           If true, the request is validated but not executed. Only errors are
+     *           returned, not results.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function createCampaignExperiment($customerId, $campaignExperiment, array $optionalArgs = [])
     {
@@ -504,228 +459,10 @@ class CampaignExperimentServiceGapicClient
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
-          'customer_id' => $request->getCustomerId(),
+            'customer_id' => $request->getCustomerId(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'CreateCampaignExperiment',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
-    }
-
-    /**
-     * Updates campaign experiments. Operation statuses are returned.
-     *
-     * Sample code:
-     * ```
-     * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
-     * try {
-     *     $customerId = '';
-     *     $operations = [];
-     *     $response = $campaignExperimentServiceClient->mutateCampaignExperiments($customerId, $operations);
-     * } finally {
-     *     $campaignExperimentServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string                        $customerId   Required. The ID of the customer whose campaign experiments are being modified.
-     * @param CampaignExperimentOperation[] $operations   Required. The list of operations to perform on individual campaign experiments.
-     * @param array                         $optionalArgs {
-     *                                                    Optional.
-     *
-     *     @type bool $partialFailure
-     *          If true, successful operations will be carried out and invalid
-     *          operations will return errors. If false, all operations will be carried
-     *          out in one transaction if and only if they are all valid.
-     *          Default is false.
-     *     @type bool $validateOnly
-     *          If true, the request is validated but not executed. Only errors are
-     *          returned, not results.
-     *     @type int $responseContentType
-     *          The response content type setting. Determines whether the mutable resource
-     *          or just the resource name should be returned post mutation.
-     *          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType}
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignExperimentsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function mutateCampaignExperiments($customerId, $operations, array $optionalArgs = [])
-    {
-        $request = new MutateCampaignExperimentsRequest();
-        $request->setCustomerId($customerId);
-        $request->setOperations($operations);
-        if (isset($optionalArgs['partialFailure'])) {
-            $request->setPartialFailure($optionalArgs['partialFailure']);
-        }
-        if (isset($optionalArgs['validateOnly'])) {
-            $request->setValidateOnly($optionalArgs['validateOnly']);
-        }
-        if (isset($optionalArgs['responseContentType'])) {
-            $request->setResponseContentType($optionalArgs['responseContentType']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'customer_id' => $request->getCustomerId(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'MutateCampaignExperiments',
-            MutateCampaignExperimentsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Graduates a campaign experiment to a full campaign. The base and experiment
-     * campaigns will start running independently with their own budgets.
-     *
-     * Sample code:
-     * ```
-     * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
-     * try {
-     *     $campaignExperiment = '';
-     *     $campaignBudget = '';
-     *     $response = $campaignExperimentServiceClient->graduateCampaignExperiment($campaignExperiment, $campaignBudget);
-     * } finally {
-     *     $campaignExperimentServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $campaignExperiment Required. The resource name of the campaign experiment to graduate.
-     * @param string $campaignBudget     Required. Resource name of the budget to attach to the campaign graduated from the
-     *                                   experiment.
-     * @param array  $optionalArgs       {
-     *                                   Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Ads\GoogleAds\V6\Services\GraduateCampaignExperimentResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function graduateCampaignExperiment($campaignExperiment, $campaignBudget, array $optionalArgs = [])
-    {
-        $request = new GraduateCampaignExperimentRequest();
-        $request->setCampaignExperiment($campaignExperiment);
-        $request->setCampaignBudget($campaignBudget);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'campaign_experiment' => $request->getCampaignExperiment(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GraduateCampaignExperiment',
-            GraduateCampaignExperimentResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Promotes the changes in a experiment campaign back to the base campaign.
-     *
-     * The campaign experiment is updated immediately with status PROMOTING.
-     * This method return a long running operation that tracks the promoting of
-     * the experiment campaign. If the promoting fails, a list of errors can be
-     * retrieved using the ListCampaignExperimentAsyncErrors method.
-     *
-     * Sample code:
-     * ```
-     * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
-     * try {
-     *     $campaignExperiment = '';
-     *     $operationResponse = $campaignExperimentServiceClient->promoteCampaignExperiment($campaignExperiment);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         // operation succeeded and returns no value
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *
-     *
-     *     // Alternatively:
-     *
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $campaignExperimentServiceClient->promoteCampaignExperiment($campaignExperiment);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $campaignExperimentServiceClient->resumeOperation($operationName, 'promoteCampaignExperiment');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
-     *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
-     *     }
-     * } finally {
-     *     $campaignExperimentServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $campaignExperiment Required. The resource name of the campaign experiment to promote.
-     * @param array  $optionalArgs       {
-     *                                   Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function promoteCampaignExperiment($campaignExperiment, array $optionalArgs = [])
-    {
-        $request = new PromoteCampaignExperimentRequest();
-        $request->setCampaignExperiment($campaignExperiment);
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'campaign_experiment' => $request->getCampaignExperiment(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'PromoteCampaignExperiment',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('CreateCampaignExperiment', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -737,7 +474,7 @@ class CampaignExperimentServiceGapicClient
      * ```
      * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
      * try {
-     *     $campaignExperiment = '';
+     *     $campaignExperiment = 'campaign_experiment';
      *     $campaignExperimentServiceClient->endCampaignExperiment($campaignExperiment);
      * } finally {
      *     $campaignExperimentServiceClient->close();
@@ -746,36 +483,111 @@ class CampaignExperimentServiceGapicClient
      *
      * @param string $campaignExperiment Required. The resource name of the campaign experiment to end.
      * @param array  $optionalArgs       {
-     *                                   Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function endCampaignExperiment($campaignExperiment, array $optionalArgs = [])
     {
         $request = new EndCampaignExperimentRequest();
         $request->setCampaignExperiment($campaignExperiment);
-
         $requestParams = new RequestParamsHeaderDescriptor([
-          'campaign_experiment' => $request->getCampaignExperiment(),
+            'campaign_experiment' => $request->getCampaignExperiment(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('EndCampaignExperiment', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
 
-        return $this->startCall(
-            'EndCampaignExperiment',
-            GPBEmpty::class,
-            $optionalArgs,
-            $request
-        )->wait();
+    /**
+     * Returns the requested campaign experiment in full detail.
+     *
+     * Sample code:
+     * ```
+     * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
+     * try {
+     *     $formattedResourceName = $campaignExperimentServiceClient->campaignExperimentName('[CUSTOMER_ID]', '[CAMPAIGN_EXPERIMENT_ID]');
+     *     $response = $campaignExperimentServiceClient->getCampaignExperiment($formattedResourceName);
+     * } finally {
+     *     $campaignExperimentServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $resourceName Required. The resource name of the campaign experiment to fetch.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignExperiment
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getCampaignExperiment($resourceName, array $optionalArgs = [])
+    {
+        $request = new GetCampaignExperimentRequest();
+        $request->setResourceName($resourceName);
+        $requestParams = new RequestParamsHeaderDescriptor([
+            'resource_name' => $request->getResourceName(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetCampaignExperiment', CampaignExperiment::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Graduates a campaign experiment to a full campaign. The base and experiment
+     * campaigns will start running independently with their own budgets.
+     *
+     * Sample code:
+     * ```
+     * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
+     * try {
+     *     $campaignExperiment = 'campaign_experiment';
+     *     $campaignBudget = 'campaign_budget';
+     *     $response = $campaignExperimentServiceClient->graduateCampaignExperiment($campaignExperiment, $campaignBudget);
+     * } finally {
+     *     $campaignExperimentServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $campaignExperiment Required. The resource name of the campaign experiment to graduate.
+     * @param string $campaignBudget     Required. Resource name of the budget to attach to the campaign graduated from the
+     *                                   experiment.
+     * @param array  $optionalArgs       {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V6\Services\GraduateCampaignExperimentResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function graduateCampaignExperiment($campaignExperiment, $campaignBudget, array $optionalArgs = [])
+    {
+        $request = new GraduateCampaignExperimentRequest();
+        $request->setCampaignExperiment($campaignExperiment);
+        $request->setCampaignBudget($campaignBudget);
+        $requestParams = new RequestParamsHeaderDescriptor([
+            'campaign_experiment' => $request->getCampaignExperiment(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GraduateCampaignExperiment', GraduateCampaignExperimentResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -795,10 +607,7 @@ class CampaignExperimentServiceGapicClient
      *             // doSomethingWith($element);
      *         }
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // Iterate through all elements
      *     $pagedResponse = $campaignExperimentServiceClient->listCampaignExperimentAsyncErrors($formattedResourceName);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
@@ -812,28 +621,27 @@ class CampaignExperimentServiceGapicClient
      * @param string $resourceName Required. The name of the campaign experiment from which to retrieve the async
      *                             errors.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
      *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function listCampaignExperimentAsyncErrors($resourceName, array $optionalArgs = [])
     {
@@ -842,22 +650,150 @@ class CampaignExperimentServiceGapicClient
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
+
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
-          'resource_name' => $request->getResourceName(),
+            'resource_name' => $request->getResourceName(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListCampaignExperimentAsyncErrors', $optionalArgs, ListCampaignExperimentAsyncErrorsResponse::class, $request);
+    }
 
-        return $this->getPagedListResponse(
-            'ListCampaignExperimentAsyncErrors',
-            $optionalArgs,
-            ListCampaignExperimentAsyncErrorsResponse::class,
-            $request
-        );
+    /**
+     * Updates campaign experiments. Operation statuses are returned.
+     *
+     * Sample code:
+     * ```
+     * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
+     * try {
+     *     $customerId = 'customer_id';
+     *     $operations = [];
+     *     $response = $campaignExperimentServiceClient->mutateCampaignExperiments($customerId, $operations);
+     * } finally {
+     *     $campaignExperimentServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                        $customerId   Required. The ID of the customer whose campaign experiments are being modified.
+     * @param CampaignExperimentOperation[] $operations   Required. The list of operations to perform on individual campaign experiments.
+     * @param array                         $optionalArgs {
+     *     Optional.
+     *
+     *     @type bool $partialFailure
+     *           If true, successful operations will be carried out and invalid
+     *           operations will return errors. If false, all operations will be carried
+     *           out in one transaction if and only if they are all valid.
+     *           Default is false.
+     *     @type bool $validateOnly
+     *           If true, the request is validated but not executed. Only errors are
+     *           returned, not results.
+     *     @type int $responseContentType
+     *           The response content type setting. Determines whether the mutable resource
+     *           or just the resource name should be returned post mutation.
+     *           For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType}
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignExperimentsResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function mutateCampaignExperiments($customerId, $operations, array $optionalArgs = [])
+    {
+        $request = new MutateCampaignExperimentsRequest();
+        $request->setCustomerId($customerId);
+        $request->setOperations($operations);
+        if (isset($optionalArgs['partialFailure'])) {
+            $request->setPartialFailure($optionalArgs['partialFailure']);
+        }
+
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
+        }
+
+        if (isset($optionalArgs['responseContentType'])) {
+            $request->setResponseContentType($optionalArgs['responseContentType']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+            'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('MutateCampaignExperiments', MutateCampaignExperimentsResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Promotes the changes in a experiment campaign back to the base campaign.
+     *
+     * The campaign experiment is updated immediately with status PROMOTING.
+     * This method return a long running operation that tracks the promoting of
+     * the experiment campaign. If the promoting fails, a list of errors can be
+     * retrieved using the ListCampaignExperimentAsyncErrors method.
+     *
+     * Sample code:
+     * ```
+     * $campaignExperimentServiceClient = new CampaignExperimentServiceClient();
+     * try {
+     *     $campaignExperiment = 'campaign_experiment';
+     *     $operationResponse = $campaignExperimentServiceClient->promoteCampaignExperiment($campaignExperiment);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $campaignExperimentServiceClient->promoteCampaignExperiment($campaignExperiment);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $campaignExperimentServiceClient->resumeOperation($operationName, 'promoteCampaignExperiment');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $campaignExperimentServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $campaignExperiment Required. The resource name of the campaign experiment to promote.
+     * @param array  $optionalArgs       {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function promoteCampaignExperiment($campaignExperiment, array $optionalArgs = [])
+    {
+        $request = new PromoteCampaignExperimentRequest();
+        $request->setCampaignExperiment($campaignExperiment);
+        $requestParams = new RequestParamsHeaderDescriptor([
+            'campaign_experiment' => $request->getCampaignExperiment(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('PromoteCampaignExperiment', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 }

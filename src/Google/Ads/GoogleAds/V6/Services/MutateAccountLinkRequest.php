@@ -99,7 +99,7 @@ class MutateAccountLinkRequest extends \Google\Protobuf\Internal\Message
      * Required. The operation to perform on the link.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.AccountLinkOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\AccountLinkOperation
+     * @return \Google\Ads\GoogleAds\V6\Services\AccountLinkOperation|null
      */
     public function getOperation()
     {

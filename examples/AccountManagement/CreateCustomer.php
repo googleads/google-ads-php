@@ -97,12 +97,13 @@ class CreateCustomer
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $managerCustomerId the manager customer ID
      */
+    // [START create_customer]
     public static function runExample(GoogleAdsClient $googleAdsClient, int $managerCustomerId)
     {
         $customer = new Customer([
             'descriptive_name' => 'Account created with CustomerService on ' . date('Ymd h:i:s'),
             // For a list of valid currency codes and time zones see this documentation:
-            // https://developers.google.com/adwords/api/docs/appendix/codes-formats.
+            // https://developers.google.com/google-ads/api/reference/data/codes-formats.
             'currency_code' => 'USD',
             'time_zone' => 'America/New_York',
             // The below values are optional. For more information about URL
@@ -123,6 +124,7 @@ class CreateCustomer
             PHP_EOL
         );
     }
+    // [END create_customer]
 }
 
 CreateCustomer::main();

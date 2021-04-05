@@ -153,7 +153,7 @@ class PriceOffer extends \Google\Protobuf\Internal\Message
      * Price value of this offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Money price = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Money
+     * @return \Google\Ads\GoogleAds\V6\Common\Money|null
      */
     public function getPrice()
     {

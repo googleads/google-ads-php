@@ -52,7 +52,7 @@ class ExtensionFeedItemOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -89,7 +89,7 @@ class ExtensionFeedItemOperation extends \Google\Protobuf\Internal\Message
      * feed item.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ExtensionFeedItem create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem|null
      */
     public function getCreate()
     {
@@ -122,7 +122,7 @@ class ExtensionFeedItemOperation extends \Google\Protobuf\Internal\Message
      * valid resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ExtensionFeedItem update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem|null
      */
     public function getUpdate()
     {

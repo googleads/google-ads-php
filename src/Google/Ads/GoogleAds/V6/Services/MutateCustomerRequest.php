@@ -95,7 +95,7 @@ class MutateCustomerRequest extends \Google\Protobuf\Internal\Message
      * Required. The operation to perform on the customer
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.CustomerOperation operation = 4 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\CustomerOperation
+     * @return \Google\Ads\GoogleAds\V6\Services\CustomerOperation|null
      */
     public function getOperation()
     {

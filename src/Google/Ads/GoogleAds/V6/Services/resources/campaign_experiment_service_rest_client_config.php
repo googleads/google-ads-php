@@ -3,17 +3,6 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v6.services.CampaignExperimentService' => [
-            'GetCampaignExperiment' => [
-                'method' => 'get',
-                'uriTemplate' => '/v6/{resource_name=customers/*/campaignExperiments/*}',
-                'placeholders' => [
-                    'resource_name' => [
-                        'getters' => [
-                            'getResourceName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateCampaignExperiment' => [
                 'method' => 'post',
                 'uriTemplate' => '/v6/customers/{customer_id=*}/campaignExperiments:create',
@@ -22,42 +11,6 @@ return [
                     'customer_id' => [
                         'getters' => [
                             'getCustomerId',
-                        ],
-                    ],
-                ],
-            ],
-            'MutateCampaignExperiments' => [
-                'method' => 'post',
-                'uriTemplate' => '/v6/customers/{customer_id=*}/campaignExperiments:mutate',
-                'body' => '*',
-                'placeholders' => [
-                    'customer_id' => [
-                        'getters' => [
-                            'getCustomerId',
-                        ],
-                    ],
-                ],
-            ],
-            'GraduateCampaignExperiment' => [
-                'method' => 'post',
-                'uriTemplate' => '/v6/{campaign_experiment=customers/*/campaignExperiments/*}:graduate',
-                'body' => '*',
-                'placeholders' => [
-                    'campaign_experiment' => [
-                        'getters' => [
-                            'getCampaignExperiment',
-                        ],
-                    ],
-                ],
-            ],
-            'PromoteCampaignExperiment' => [
-                'method' => 'post',
-                'uriTemplate' => '/v6/{campaign_experiment=customers/*/campaignExperiments/*}:promote',
-                'body' => '*',
-                'placeholders' => [
-                    'campaign_experiment' => [
-                        'getters' => [
-                            'getCampaignExperiment',
                         ],
                     ],
                 ],
@@ -74,6 +27,29 @@ return [
                     ],
                 ],
             ],
+            'GetCampaignExperiment' => [
+                'method' => 'get',
+                'uriTemplate' => '/v6/{resource_name=customers/*/campaignExperiments/*}',
+                'placeholders' => [
+                    'resource_name' => [
+                        'getters' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
+            'GraduateCampaignExperiment' => [
+                'method' => 'post',
+                'uriTemplate' => '/v6/{campaign_experiment=customers/*/campaignExperiments/*}:graduate',
+                'body' => '*',
+                'placeholders' => [
+                    'campaign_experiment' => [
+                        'getters' => [
+                            'getCampaignExperiment',
+                        ],
+                    ],
+                ],
+            ],
             'ListCampaignExperimentAsyncErrors' => [
                 'method' => 'get',
                 'uriTemplate' => '/v6/{resource_name=customers/*/campaignExperiments/*}:listAsyncErrors',
@@ -81,6 +57,30 @@ return [
                     'resource_name' => [
                         'getters' => [
                             'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
+            'MutateCampaignExperiments' => [
+                'method' => 'post',
+                'uriTemplate' => '/v6/customers/{customer_id=*}/campaignExperiments:mutate',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
+            'PromoteCampaignExperiment' => [
+                'method' => 'post',
+                'uriTemplate' => '/v6/{campaign_experiment=customers/*/campaignExperiments/*}:promote',
+                'body' => '*',
+                'placeholders' => [
+                    'campaign_experiment' => [
+                        'getters' => [
+                            'getCampaignExperiment',
                         ],
                     ],
                 ],

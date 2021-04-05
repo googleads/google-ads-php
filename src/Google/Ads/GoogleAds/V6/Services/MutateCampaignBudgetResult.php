@@ -81,7 +81,7 @@ class MutateCampaignBudgetResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBudget campaign_budget = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBudget
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBudget|null
      */
     public function getCampaignBudget()
     {

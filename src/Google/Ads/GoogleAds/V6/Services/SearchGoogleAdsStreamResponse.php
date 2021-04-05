@@ -87,7 +87,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * FieldMask that represents what fields were requested by the user.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask field_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getFieldMask()
     {
@@ -125,7 +125,7 @@ class SearchGoogleAdsStreamResponse extends \Google\Protobuf\Internal\Message
      * here aggregation could be sum, average, rate, etc.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.GoogleAdsRow summary_row = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\GoogleAdsRow
+     * @return \Google\Ads\GoogleAds\V6\Services\GoogleAdsRow|null
      */
     public function getSummaryRow()
     {

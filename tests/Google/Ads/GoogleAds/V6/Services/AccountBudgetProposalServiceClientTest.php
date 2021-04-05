@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,61 +25,51 @@ namespace Google\Ads\GoogleAds\V6\Services;
 use Google\Ads\GoogleAds\V6\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\AccountBudgetProposal;
 use Google\Ads\GoogleAds\V6\Services\AccountBudgetProposalOperation;
+
 use Google\Ads\GoogleAds\V6\Services\MutateAccountBudgetProposalResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group services
+ *
  * @group gapic
  */
 class AccountBudgetProposalServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return AccountBudgetProposalServiceClient
-     */
+    /** @return AccountBudgetProposalServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new AccountBudgetProposalServiceClient($options);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getAccountBudgetProposalTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $resourceName2 = 'resourceName2625949903';
         $id = 3355;
@@ -113,10 +103,8 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
         $expectedResponse->setProposedSpendingLimitMicros($proposedSpendingLimitMicros);
         $expectedResponse->setApprovedSpendingLimitMicros($approvedSpendingLimitMicros);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedResourceName = $client->accountBudgetProposalName('[CUSTOMER_ID]', '[ACCOUNT_BUDGET_PROPOSAL_ID]');
-
         $response = $client->getAccountBudgetProposal($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -124,39 +112,31 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.AccountBudgetProposalService/GetAccountBudgetProposal', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getResourceName();
-
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getAccountBudgetProposalExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedResourceName = $client->accountBudgetProposalName('[CUSTOMER_ID]', '[ACCOUNT_BUDGET_PROPOSAL_ID]');
-
         try {
             $client->getAccountBudgetProposal($formattedResourceName);
             // If the $client method call did not throw, fail the test
@@ -165,30 +145,25 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function mutateAccountBudgetProposalTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $expectedResponse = new MutateAccountBudgetProposalResponse();
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $customerId = 'customerId-1772061412';
         $operation = new AccountBudgetProposalOperation();
-
         $response = $client->mutateAccountBudgetProposal($customerId, $operation);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -196,43 +171,34 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.AccountBudgetProposalService/MutateAccountBudgetProposal', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getCustomerId();
-
         $this->assertProtobufEquals($customerId, $actualValue);
         $actualValue = $actualRequestObject->getOperation();
-
         $this->assertProtobufEquals($operation, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function mutateAccountBudgetProposalExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $customerId = 'customerId-1772061412';
         $operation = new AccountBudgetProposalOperation();
-
         try {
             $client->mutateAccountBudgetProposal($customerId, $operation);
             // If the $client method call did not throw, fail the test
@@ -241,7 +207,6 @@ class AccountBudgetProposalServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

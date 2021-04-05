@@ -48,7 +48,7 @@ class CustomerManagerLinkOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -84,7 +84,7 @@ class CustomerManagerLinkOperation extends \Google\Protobuf\Internal\Message
      * Update operation: The link is expected to have a valid resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerManagerLink update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerManagerLink
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerManagerLink|null
      */
     public function getUpdate()
     {

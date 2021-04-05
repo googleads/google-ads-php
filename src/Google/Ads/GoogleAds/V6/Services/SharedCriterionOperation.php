@@ -42,7 +42,7 @@ class SharedCriterionOperation extends \Google\Protobuf\Internal\Message
      * criterion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SharedCriterion create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\SharedCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\SharedCriterion|null
      */
     public function getCreate()
     {

@@ -214,7 +214,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo|null
      */
     public function getKeyword()
     {
@@ -245,7 +245,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.YouTubeVideoInfo youtube_video = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeVideoInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeVideoInfo|null
      */
     public function getYoutubeVideo()
     {
@@ -276,7 +276,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Channel.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.YouTubeChannelInfo youtube_channel = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeChannelInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeChannelInfo|null
      */
     public function getYoutubeChannel()
     {
@@ -307,7 +307,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Placement.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PlacementInfo placement = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PlacementInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\PlacementInfo|null
      */
     public function getPlacement()
     {
@@ -338,7 +338,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile App Category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MobileAppCategoryInfo mobile_app_category = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MobileAppCategoryInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\MobileAppCategoryInfo|null
      */
     public function getMobileAppCategory()
     {
@@ -369,7 +369,7 @@ class SharedCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile application.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MobileApplicationInfo mobile_application = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MobileApplicationInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\MobileApplicationInfo|null
      */
     public function getMobileApplication()
     {

@@ -332,7 +332,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is CPC_BID.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CpcBidSimulationPointList cpc_bid_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CpcBidSimulationPointList
+     * @return \Google\Ads\GoogleAds\V6\Common\CpcBidSimulationPointList|null
      */
     public function getCpcBidPointList()
     {
@@ -363,7 +363,7 @@ class AdGroupCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is PERCENT_CPC_BID.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PercentCpcBidSimulationPointList percent_cpc_bid_point_list = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PercentCpcBidSimulationPointList
+     * @return \Google\Ads\GoogleAds\V6\Common\PercentCpcBidSimulationPointList|null
      */
     public function getPercentCpcBidPointList()
     {

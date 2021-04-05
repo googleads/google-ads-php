@@ -112,7 +112,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      * are not selectable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Feed.PlacesLocationFeedData.OAuthInfo oauth_info = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Feed\PlacesLocationFeedData\OAuthInfo
+     * @return \Google\Ads\GoogleAds\V6\Resources\Feed\PlacesLocationFeedData\OAuthInfo|null
      */
     public function getOauthInfo()
     {

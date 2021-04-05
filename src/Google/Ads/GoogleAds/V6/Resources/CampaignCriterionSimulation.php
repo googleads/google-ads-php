@@ -327,7 +327,7 @@ class CampaignCriterionSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is BID_MODIFIER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.BidModifierSimulationPointList bid_modifier_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\BidModifierSimulationPointList
+     * @return \Google\Ads\GoogleAds\V6\Common\BidModifierSimulationPointList|null
      */
     public function getBidModifierPointList()
     {

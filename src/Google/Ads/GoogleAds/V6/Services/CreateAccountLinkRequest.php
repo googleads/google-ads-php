@@ -76,7 +76,7 @@ class CreateAccountLinkRequest extends \Google\Protobuf\Internal\Message
      * Required. The account link to be created.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AccountLink account_link = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AccountLink
+     * @return \Google\Ads\GoogleAds\V6\Resources\AccountLink|null
      */
     public function getAccountLink()
     {

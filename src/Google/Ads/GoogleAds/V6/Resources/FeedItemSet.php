@@ -230,7 +230,7 @@ class FeedItemSet extends \Google\Protobuf\Internal\Message
      * It is only used for sets of locations.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DynamicLocationSetFilter dynamic_location_set_filter = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DynamicLocationSetFilter
+     * @return \Google\Ads\GoogleAds\V6\Common\DynamicLocationSetFilter|null
      */
     public function getDynamicLocationSetFilter()
     {
@@ -264,7 +264,7 @@ class FeedItemSet extends \Google\Protobuf\Internal\Message
      * sets of affiliate locations.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DynamicAffiliateLocationSetFilter dynamic_affiliate_location_set_filter = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DynamicAffiliateLocationSetFilter
+     * @return \Google\Ads\GoogleAds\V6\Common\DynamicAffiliateLocationSetFilter|null
      */
     public function getDynamicAffiliateLocationSetFilter()
     {

@@ -78,7 +78,7 @@ class MutateAdResult extends \Google\Protobuf\Internal\Message
      * be returned when response_content_type is set to "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Ad ad = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V6\Resources\Ad|null
      */
     public function getAd()
     {

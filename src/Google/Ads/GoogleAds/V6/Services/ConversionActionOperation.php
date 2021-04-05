@@ -52,7 +52,7 @@ class ConversionActionOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -89,7 +89,7 @@ class ConversionActionOperation extends \Google\Protobuf\Internal\Message
      * action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ConversionAction create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction
+     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction|null
      */
     public function getCreate()
     {
@@ -122,7 +122,7 @@ class ConversionActionOperation extends \Google\Protobuf\Internal\Message
      * resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ConversionAction update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction
+     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction|null
      */
     public function getUpdate()
     {

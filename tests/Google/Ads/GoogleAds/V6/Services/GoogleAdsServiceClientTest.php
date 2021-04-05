@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,253 +22,63 @@
 
 namespace Google\Ads\GoogleAds\V6\Services;
 
-use Google\Ads\GoogleAds\V6\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V6\Services\GoogleAdsRow;
+
+use Google\Ads\GoogleAds\V6\Services\GoogleAdsServiceClient;
 use Google\Ads\GoogleAds\V6\Services\MutateGoogleAdsResponse;
 use Google\Ads\GoogleAds\V6\Services\SearchGoogleAdsResponse;
+
 use Google\Ads\GoogleAds\V6\Services\SearchGoogleAdsStreamResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\ServerStream;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group services
+ *
  * @group gapic
  */
 class GoogleAdsServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return GoogleAdsServiceClient
-     */
+    /** @return GoogleAdsServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new GoogleAdsServiceClient($options);
     }
 
-    /**
-     * @test
-     */
-    public function searchTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $nextPageToken = '';
-        $totalResultsCount = 43694645;
-        $resultsElement = new GoogleAdsRow();
-        $results = [$resultsElement];
-        $expectedResponse = new SearchGoogleAdsResponse();
-        $expectedResponse->setNextPageToken($nextPageToken);
-        $expectedResponse->setTotalResultsCount($totalResultsCount);
-        $expectedResponse->setResults($results);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $customerId = 'customerId-1772061412';
-        $query = 'query107944136';
-
-        $response = $client->search($customerId, $query);
-        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
-        $resources = iterator_to_array($response->iterateAllElements());
-        $this->assertSame(1, count($resources));
-        $this->assertEquals($expectedResponse->getResults()[0], $resources[0]);
-
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.GoogleAdsService/Search', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getCustomerId();
-
-        $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getQuery();
-
-        $this->assertProtobufEquals($query, $actualValue);
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function searchExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $customerId = 'customerId-1772061412';
-        $query = 'query107944136';
-
-        try {
-            $client->search($customerId, $query);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function searchStreamTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new SearchGoogleAdsStreamResponse();
-        $transport->addResponse($expectedResponse);
-        $expectedResponse2 = new SearchGoogleAdsStreamResponse();
-        $transport->addResponse($expectedResponse2);
-        $expectedResponse3 = new SearchGoogleAdsStreamResponse();
-        $transport->addResponse($expectedResponse3);
-
-        // Mock request
-        $customerId = 'customerId-1772061412';
-        $query = 'query107944136';
-
-        $serverStream = $client->searchStream($customerId, $query);
-        $this->assertInstanceOf(ServerStream::class, $serverStream);
-
-        $responses = iterator_to_array($serverStream->readAll());
-
-        $expectedResponses = [];
-        $expectedResponses[] = $expectedResponse;
-        $expectedResponses[] = $expectedResponse2;
-        $expectedResponses[] = $expectedResponse3;
-        $this->assertEquals($expectedResponses, $responses);
-
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.GoogleAdsService/SearchStream', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getCustomerId();
-
-        $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getQuery();
-
-        $this->assertProtobufEquals($query, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function searchStreamExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-
-        $transport->setStreamingStatus($status);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock request
-        $customerId = 'customerId-1772061412';
-        $query = 'query107944136';
-
-        $serverStream = $client->searchStream($customerId, $query);
-        $results = $serverStream->readAll();
-
-        try {
-            iterator_to_array($results);
-            // If the close stream method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
+    /** @test */
     public function mutateTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $expectedResponse = new MutateGoogleAdsResponse();
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $customerId = 'customerId-1772061412';
         $mutateOperations = [];
-
         $response = $client->mutate($customerId, $mutateOperations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -276,43 +86,34 @@ class GoogleAdsServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.GoogleAdsService/Mutate', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getCustomerId();
-
         $this->assertProtobufEquals($customerId, $actualValue);
         $actualValue = $actualRequestObject->getMutateOperations();
-
         $this->assertProtobufEquals($mutateOperations, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function mutateExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $customerId = 'customerId-1772061412';
         $mutateOperations = [];
-
         try {
             $client->mutate($customerId, $mutateOperations);
             // If the $client method call did not throw, fail the test
@@ -321,7 +122,154 @@ class GoogleAdsServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
 
+    /** @test */
+    public function searchTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $nextPageToken = '';
+        $totalResultsCount = 43694645;
+        $resultsElement = new GoogleAdsRow();
+        $results = [
+            $resultsElement,
+        ];
+        $expectedResponse = new SearchGoogleAdsResponse();
+        $expectedResponse->setNextPageToken($nextPageToken);
+        $expectedResponse->setTotalResultsCount($totalResultsCount);
+        $expectedResponse->setResults($results);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $query = 'query107944136';
+        $response = $client->search($customerId, $query);
+        $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
+        $resources = iterator_to_array($response->iterateAllElements());
+        $this->assertSame(1, count($resources));
+        $this->assertEquals($expectedResponse->getResults()[0], $resources[0]);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.GoogleAdsService/Search', $actualFuncCall);
+        $actualValue = $actualRequestObject->getCustomerId();
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getQuery();
+        $this->assertProtobufEquals($query, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function searchExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $query = 'query107944136';
+        try {
+            $client->search($customerId, $query);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function searchStreamTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new SearchGoogleAdsStreamResponse();
+        $transport->addResponse($expectedResponse);
+        $expectedResponse2 = new SearchGoogleAdsStreamResponse();
+        $transport->addResponse($expectedResponse2);
+        $expectedResponse3 = new SearchGoogleAdsStreamResponse();
+        $transport->addResponse($expectedResponse3);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $query = 'query107944136';
+        $serverStream = $client->searchStream($customerId, $query);
+        $this->assertInstanceOf(ServerStream::class, $serverStream);
+        $responses = iterator_to_array($serverStream->readAll());
+        $expectedResponses = [];
+        $expectedResponses[] = $expectedResponse;
+        $expectedResponses[] = $expectedResponse2;
+        $expectedResponses[] = $expectedResponse3;
+        $this->assertEquals($expectedResponses, $responses);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.GoogleAdsService/SearchStream', $actualFuncCall);
+        $actualValue = $actualRequestObject->getCustomerId();
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getQuery();
+        $this->assertProtobufEquals($query, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function searchStreamExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->setStreamingStatus($status);
+        $this->assertTrue($transport->isExhausted());
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $query = 'query107944136';
+        $serverStream = $client->searchStream($customerId, $query);
+        $results = $serverStream->readAll();
+        try {
+            iterator_to_array($results);
+            // If the close stream method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

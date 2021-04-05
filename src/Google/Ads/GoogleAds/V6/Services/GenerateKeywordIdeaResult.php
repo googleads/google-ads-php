@@ -25,7 +25,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      */
     protected $text = null;
     /**
-     * The historical metrics for the keyword
+     * The historical metrics for the keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordPlanHistoricalMetrics keyword_idea_metrics = 3;</code>
      */
@@ -43,7 +43,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
      *           keyword, but the canonical form of multiple keywords.
      *           See KeywordPlanKeywordHistoricalMetrics message in KeywordPlanService.
      *     @type \Google\Ads\GoogleAds\V6\Common\KeywordPlanHistoricalMetrics $keyword_idea_metrics
-     *           The historical metrics for the keyword
+     *           The historical metrics for the keyword.
      * }
      */
     public function __construct($data = NULL) {
@@ -94,10 +94,10 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The historical metrics for the keyword
+     * The historical metrics for the keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordPlanHistoricalMetrics keyword_idea_metrics = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\KeywordPlanHistoricalMetrics
+     * @return \Google\Ads\GoogleAds\V6\Common\KeywordPlanHistoricalMetrics|null
      */
     public function getKeywordIdeaMetrics()
     {
@@ -115,7 +115,7 @@ class GenerateKeywordIdeaResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The historical metrics for the keyword
+     * The historical metrics for the keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordPlanHistoricalMetrics keyword_idea_metrics = 3;</code>
      * @param \Google\Ads\GoogleAds\V6\Common\KeywordPlanHistoricalMetrics $var

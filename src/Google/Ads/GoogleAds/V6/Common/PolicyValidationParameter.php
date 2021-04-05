@@ -9,9 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Parameter for controlling how policy exemption is done. Ignorable policy
- * topics are only usable with expanded text ads and responsive search ads. All
- * other ad types must use policy violation keys.
+ * Parameter for controlling how policy exemption is done.
  *
  * Generated from protobuf message <code>google.ads.googleads.v6.common.PolicyValidationParameter</code>
  */

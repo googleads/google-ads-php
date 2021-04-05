@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,11 +26,10 @@
 
 namespace Google\Ads\GoogleAds\V6\Services\Gapic;
 
-use Google\Ads\GoogleAds\V6\Enums\AccessRoleEnum\AccessRole;
-use Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType;
 use Google\Ads\GoogleAds\V6\Resources\Customer;
 use Google\Ads\GoogleAds\V6\Services\CreateCustomerClientRequest;
 use Google\Ads\GoogleAds\V6\Services\CreateCustomerClientResponse;
+
 use Google\Ads\GoogleAds\V6\Services\CustomerOperation;
 use Google\Ads\GoogleAds\V6\Services\GetCustomerRequest;
 use Google\Ads\GoogleAds\V6\Services\ListAccessibleCustomersRequest;
@@ -42,10 +41,13 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
+
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+
+
 
 /**
  * Service Description: Service to manage customers.
@@ -56,67 +58,58 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $customerServiceClient = new CustomerServiceClient();
  * try {
- *     $formattedResourceName = $customerServiceClient->customerName('[CUSTOMER_ID]');
- *     $response = $customerServiceClient->getCustomer($formattedResourceName);
+ *     $customerId = 'customer_id';
+ *     $customerClient = new Customer();
+ *     $response = $customerServiceClient->createCustomerClient($customerId, $customerClient);
  * } finally {
  *     $customerServiceClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class CustomerServiceGapicClient
 {
     use GapicClientTrait;
 
-    /**
-     * The name of the service.
-     */
+    /** The name of the service. */
     const SERVICE_NAME = 'google.ads.googleads.v6.services.CustomerService';
 
-    /**
-     * The default address of the service.
-     */
+    /** The default address of the service. */
     const SERVICE_ADDRESS = 'googleads.googleapis.com';
 
-    /**
-     * The default port of the service.
-     */
+    /** The default port of the service. */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /**
-     * The name of the code generator, to be included in the agent header.
-     */
+    /** The name of the code generator, to be included in the agent header. */
     const CODEGEN_NAME = 'gapic';
 
-    /**
-     * The default scopes required by the service.
-     */
+    /** The default scopes required by the service. */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
+
     private static $customerNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/customer_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/customer_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/customer_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/customer_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/customer_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/customer_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/customer_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/customer_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -124,7 +117,7 @@ class CustomerServiceGapicClient
 
     private static function getCustomerNameTemplate()
     {
-        if (null == self::$customerNameTemplate) {
+        if (self::$customerNameTemplate == null) {
             self::$customerNameTemplate = new PathTemplate('customers/{customer_id}');
         }
 
@@ -133,7 +126,7 @@ class CustomerServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'customer' => self::getCustomerNameTemplate(),
             ];
@@ -143,13 +136,12 @@ class CustomerServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a customer resource.
+     * Formats a string containing the fully-qualified path to represent a customer
+     * resource.
      *
      * @param string $customerId
      *
      * @return string The formatted customer resource.
-     * @experimental
      */
     public static function customerName($customerId)
     {
@@ -162,12 +154,13 @@ class CustomerServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - customer: customers/{customer_id}.
+     * - customer: customers/{customer_id}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -175,12 +168,10 @@ class CustomerServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -196,6 +187,7 @@ class CustomerServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -203,7 +195,7 @@ class CustomerServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -217,31 +209,31 @@ class CustomerServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -249,12 +241,70 @@ class CustomerServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+    }
+
+    /**
+     * Creates a new client under manager. The new client customer is returned.
+     *
+     * Sample code:
+     * ```
+     * $customerServiceClient = new CustomerServiceClient();
+     * try {
+     *     $customerId = 'customer_id';
+     *     $customerClient = new Customer();
+     *     $response = $customerServiceClient->createCustomerClient($customerId, $customerClient);
+     * } finally {
+     *     $customerServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string   $customerId     Required. The ID of the Manager under whom client customer is being created.
+     * @param Customer $customerClient Required. The new client customer to create. The resource name on this customer
+     *                                 will be ignored.
+     * @param array    $optionalArgs   {
+     *     Optional.
+     *
+     *     @type string $emailAddress
+     *           Email address of the user who should be invited on the created client
+     *           customer. Accessible only to customers on the allow-list.
+     *     @type int $accessRole
+     *           The proposed role of user on the created client customer.
+     *           Accessible only to customers on the allow-list.
+     *           For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V6\Enums\AccessRoleEnum\AccessRole}
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V6\Services\CreateCustomerClientResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function createCustomerClient($customerId, $customerClient, array $optionalArgs = [])
+    {
+        $request = new CreateCustomerClientRequest();
+        $request->setCustomerId($customerId);
+        $request->setCustomerClient($customerClient);
+        if (isset($optionalArgs['emailAddress'])) {
+            $request->setEmailAddress($optionalArgs['emailAddress']);
+        }
+
+        if (isset($optionalArgs['accessRole'])) {
+            $request->setAccessRole($optionalArgs['accessRole']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor([
+            'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateCustomerClient', CreateCustomerClientResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -273,104 +323,28 @@ class CustomerServiceGapicClient
      *
      * @param string $resourceName Required. The resource name of the customer to fetch.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V6\Resources\Customer
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function getCustomer($resourceName, array $optionalArgs = [])
     {
         $request = new GetCustomerRequest();
         $request->setResourceName($resourceName);
-
         $requestParams = new RequestParamsHeaderDescriptor([
-          'resource_name' => $request->getResourceName(),
+            'resource_name' => $request->getResourceName(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetCustomer',
-            Customer::class,
-            $optionalArgs,
-            $request
-        )->wait();
-    }
-
-    /**
-     * Updates a customer. Operation statuses are returned.
-     *
-     * Sample code:
-     * ```
-     * $customerServiceClient = new CustomerServiceClient();
-     * try {
-     *     $customerId = '';
-     *     $operation = new CustomerOperation();
-     *     $response = $customerServiceClient->mutateCustomer($customerId, $operation);
-     * } finally {
-     *     $customerServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string            $customerId   Required. The ID of the customer being modified.
-     * @param CustomerOperation $operation    Required. The operation to perform on the customer
-     * @param array             $optionalArgs {
-     *                                        Optional.
-     *
-     *     @type bool $validateOnly
-     *          If true, the request is validated but not executed. Only errors are
-     *          returned, not results.
-     *     @type int $responseContentType
-     *          The response content type setting. Determines whether the mutable resource
-     *          or just the resource name should be returned post mutation.
-     *          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType}
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function mutateCustomer($customerId, $operation, array $optionalArgs = [])
-    {
-        $request = new MutateCustomerRequest();
-        $request->setCustomerId($customerId);
-        $request->setOperation($operation);
-        if (isset($optionalArgs['validateOnly'])) {
-            $request->setValidateOnly($optionalArgs['validateOnly']);
-        }
-        if (isset($optionalArgs['responseContentType'])) {
-            $request->setResponseContentType($optionalArgs['responseContentType']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'customer_id' => $request->getCustomerId(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'MutateCustomer',
-            MutateCustomerResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetCustomer', Customer::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -388,96 +362,80 @@ class CustomerServiceGapicClient
      * ```
      *
      * @param array $optionalArgs {
-     *                            Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V6\Services\ListAccessibleCustomersResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function listAccessibleCustomers(array $optionalArgs = [])
     {
         $request = new ListAccessibleCustomersRequest();
-
-        return $this->startCall(
-            'ListAccessibleCustomers',
-            ListAccessibleCustomersResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        return $this->startCall('ListAccessibleCustomers', ListAccessibleCustomersResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
-     * Creates a new client under manager. The new client customer is returned.
+     * Updates a customer. Operation statuses are returned.
      *
      * Sample code:
      * ```
      * $customerServiceClient = new CustomerServiceClient();
      * try {
-     *     $customerId = '';
-     *     $customerClient = new Customer();
-     *     $response = $customerServiceClient->createCustomerClient($customerId, $customerClient);
+     *     $customerId = 'customer_id';
+     *     $operation = new CustomerOperation();
+     *     $response = $customerServiceClient->mutateCustomer($customerId, $operation);
      * } finally {
      *     $customerServiceClient->close();
      * }
      * ```
      *
-     * @param string   $customerId     Required. The ID of the Manager under whom client customer is being created.
-     * @param Customer $customerClient Required. The new client customer to create. The resource name on this customer
-     *                                 will be ignored.
-     * @param array    $optionalArgs   {
-     *                                 Optional.
+     * @param string            $customerId   Required. The ID of the customer being modified.
+     * @param CustomerOperation $operation    Required. The operation to perform on the customer
+     * @param array             $optionalArgs {
+     *     Optional.
      *
-     *     @type string $emailAddress
-     *          Email address of the user who should be invited on the created client
-     *          customer. Accessible only to customers on the allow-list.
-     *     @type int $accessRole
-     *          The proposed role of user on the created client customer.
-     *          Accessible only to customers on the allow-list.
-     *          For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V6\Enums\AccessRoleEnum\AccessRole}
+     *     @type bool $validateOnly
+     *           If true, the request is validated but not executed. Only errors are
+     *           returned, not results.
+     *     @type int $responseContentType
+     *           The response content type setting. Determines whether the mutable resource
+     *           or just the resource name should be returned post mutation.
+     *           For allowed values, use constants defined on {@see \Google\Ads\GoogleAds\V6\Enums\ResponseContentTypeEnum\ResponseContentType}
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Ads\GoogleAds\V6\Services\CreateCustomerClientResponse
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function createCustomerClient($customerId, $customerClient, array $optionalArgs = [])
+    public function mutateCustomer($customerId, $operation, array $optionalArgs = [])
     {
-        $request = new CreateCustomerClientRequest();
+        $request = new MutateCustomerRequest();
         $request->setCustomerId($customerId);
-        $request->setCustomerClient($customerClient);
-        if (isset($optionalArgs['emailAddress'])) {
-            $request->setEmailAddress($optionalArgs['emailAddress']);
+        $request->setOperation($operation);
+        if (isset($optionalArgs['validateOnly'])) {
+            $request->setValidateOnly($optionalArgs['validateOnly']);
         }
-        if (isset($optionalArgs['accessRole'])) {
-            $request->setAccessRole($optionalArgs['accessRole']);
+
+        if (isset($optionalArgs['responseContentType'])) {
+            $request->setResponseContentType($optionalArgs['responseContentType']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
-          'customer_id' => $request->getCustomerId(),
+            'customer_id' => $request->getCustomerId(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'CreateCustomerClient',
-            CreateCustomerClientResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('MutateCustomer', MutateCustomerResponse::class, $optionalArgs, $request)->wait();
     }
 }

@@ -81,7 +81,7 @@ class MutateMediaFileResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.MediaFile media_file = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\MediaFile
+     * @return \Google\Ads\GoogleAds\V6\Resources\MediaFile|null
      */
     public function getMediaFile()
     {

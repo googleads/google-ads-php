@@ -177,7 +177,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      * impression.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ClickLocation area_of_interest = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ClickLocation
+     * @return \Google\Ads\GoogleAds\V6\Common\ClickLocation|null
      */
     public function getAreaOfInterest()
     {
@@ -215,7 +215,7 @@ class ClickView extends \Google\Protobuf\Internal\Message
      * impression.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ClickLocation location_of_presence = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ClickLocation
+     * @return \Google\Ads\GoogleAds\V6\Common\ClickLocation|null
      */
     public function getLocationOfPresence()
     {

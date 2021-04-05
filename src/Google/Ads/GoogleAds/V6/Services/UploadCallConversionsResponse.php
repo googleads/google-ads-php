@@ -68,7 +68,7 @@ class UploadCallConversionsResponse extends \Google\Protobuf\Internal\Message
      * for more information about partial failure.
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 1;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getPartialFailureError()
     {

@@ -130,6 +130,7 @@ class UpdateFlightsFeedItemStringAttributeValue
      *     to be updated
      * @param string $attributeValue the new value to set the feed attribute to
      */
+    // [START update_flights_feed_item_string_attribute_value]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -183,6 +184,7 @@ class UpdateFlightsFeedItemStringAttributeValue
             PHP_EOL
         );
     }
+    // [END update_flights_feed_item_string_attribute_value]
 }
 
 UpdateFlightsFeedItemStringAttributeValue::main();

@@ -571,7 +571,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      * Output only. The service period date range of this invoice. The end date is inclusive.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DateRange service_date_range = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DateRange
+     * @return \Google\Ads\GoogleAds\V6\Common\DateRange|null
      */
     public function getServiceDateRange()
     {

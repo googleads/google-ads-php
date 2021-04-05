@@ -195,7 +195,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      * unless explicitly specified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.Preferences preferences = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\Preferences
+     * @return \Google\Ads\GoogleAds\V6\Services\Preferences|null
      */
     public function getPreferences()
     {

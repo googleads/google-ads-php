@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,13 +22,16 @@
 
 namespace Google\Ads\GoogleAds\V6\Services;
 
-use Google\Ads\GoogleAds\V6\Services\BatchJobServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\BatchJob;
+
 use Google\Ads\GoogleAds\V6\Services\AddBatchJobOperationsResponse;
 use Google\Ads\GoogleAds\V6\Services\BatchJobOperation;
 use Google\Ads\GoogleAds\V6\Services\BatchJobResult;
+
+use Google\Ads\GoogleAds\V6\Services\BatchJobServiceClient;
 use Google\Ads\GoogleAds\V6\Services\ListBatchJobResultsResponse;
 use Google\Ads\GoogleAds\V6\Services\MutateBatchJobResponse;
+
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\LongRunning\OperationsClient;
@@ -43,126 +46,106 @@ use stdClass;
 
 /**
  * @group services
+ *
  * @group gapic
  */
 class BatchJobServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return BatchJobServiceClient
-     */
+    /** @return BatchJobServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new BatchJobServiceClient($options);
     }
 
-    /**
-     * @test
-     */
-    public function mutateBatchJobTest()
+    /** @test */
+    public function addBatchJobOperationsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
-        $expectedResponse = new MutateBatchJobResponse();
+        $totalOperations = 1685086151;
+        $nextSequenceToken = 'nextSequenceToken388644551';
+        $expectedResponse = new AddBatchJobOperationsResponse();
+        $expectedResponse->setTotalOperations($totalOperations);
+        $expectedResponse->setNextSequenceToken($nextSequenceToken);
         $transport->addResponse($expectedResponse);
-
         // Mock request
-        $customerId = 'customerId-1772061412';
-        $operation = new BatchJobOperation();
-
-        $response = $client->mutateBatchJob($customerId, $operation);
+        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+        $mutateOperations = [];
+        $response = $client->addBatchJobOperations($formattedResourceName, $mutateOperations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.BatchJobService/MutateBatchJob', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getCustomerId();
-
-        $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getOperation();
-
-        $this->assertProtobufEquals($operation, $actualValue);
-
+        $this->assertSame('/google.ads.googleads.v6.services.BatchJobService/AddBatchJobOperations', $actualFuncCall);
+        $actualValue = $actualRequestObject->getResourceName();
+        $this->assertProtobufEquals($formattedResourceName, $actualValue);
+        $actualValue = $actualRequestObject->getMutateOperations();
+        $this->assertProtobufEquals($mutateOperations, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
-    public function mutateBatchJobExceptionTest()
+    /** @test */
+    public function addBatchJobOperationsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
-        $customerId = 'customerId-1772061412';
-        $operation = new BatchJobOperation();
-
+        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+        $mutateOperations = [];
         try {
-            $client->mutateBatchJob($customerId, $operation);
+            $client->addBatchJobOperations($formattedResourceName, $mutateOperations);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getBatchJobTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $resourceName2 = 'resourceName2625949903';
         $id = 3355;
@@ -174,10 +157,8 @@ class BatchJobServiceClientTest extends GeneratedTest
         $expectedResponse->setNextAddSequenceToken($nextAddSequenceToken);
         $expectedResponse->setLongRunningOperation($longRunningOperation);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-
         $response = $client->getBatchJob($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -185,39 +166,31 @@ class BatchJobServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.BatchJobService/GetBatchJob', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getResourceName();
-
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getBatchJobExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-
         try {
             $client->getBatchJob($formattedResourceName);
             // If the $client method call did not throw, fail the test
@@ -226,77 +199,66 @@ class BatchJobServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function listBatchJobResultsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $nextPageToken = '';
         $resultsElement = new BatchJobResult();
-        $results = [$resultsElement];
+        $results = [
+            $resultsElement,
+        ];
         $expectedResponse = new ListBatchJobResultsResponse();
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setResults($results);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-
         $response = $client->listBatchJobResults($formattedResourceName);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
         $this->assertEquals($expectedResponse->getResults()[0], $resources[0]);
-
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.BatchJobService/ListBatchJobResults', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getResourceName();
-
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function listBatchJobResultsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-
         try {
             $client->listBatchJobResults($formattedResourceName);
             // If the $client method call did not throw, fail the test
@@ -305,15 +267,74 @@ class BatchJobServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
+    public function mutateBatchJobTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new MutateBatchJobResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $operation = new BatchJobOperation();
+        $response = $client->mutateBatchJob($customerId, $operation);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.BatchJobService/MutateBatchJob', $actualFuncCall);
+        $actualValue = $actualRequestObject->getCustomerId();
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getOperation();
+        $this->assertProtobufEquals($operation, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function mutateBatchJobExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $operation = new BatchJobOperation();
+        try {
+            $client->mutateBatchJob($customerId, $operation);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
     public function runBatchJobTest()
     {
         $operationsTransport = $this->createTransport();
@@ -327,10 +348,8 @@ class BatchJobServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/runBatchJobTest');
@@ -344,10 +363,8 @@ class BatchJobServiceClientTest extends GeneratedTest
         $completeOperation->setDone(true);
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
-
         // Mock request
         $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-
         $response = $client->runBatchJob($formattedResourceName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -355,17 +372,13 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertSame(1, count($apiRequests));
         $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
         $this->assertSame(0, count($operationsRequestsEmpty));
-
         $actualApiFuncCall = $apiRequests[0]->getFuncCall();
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.BatchJobService/RunBatchJob', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getResourceName();
-
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/runBatchJobTest');
-
         $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
         ]);
@@ -375,19 +388,15 @@ class BatchJobServiceClientTest extends GeneratedTest
         $this->assertSame(0, count($apiRequestsEmpty));
         $operationsRequests = $operationsTransport->popReceivedCalls();
         $this->assertSame(1, count($operationsRequests));
-
         $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
         $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
         $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
         $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function runBatchJobExceptionTest()
     {
         $operationsTransport = $this->createTransport();
@@ -401,38 +410,30 @@ class BatchJobServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/runBatchJobTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
-
         // Mock request
         $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-
         $response = $client->runBatchJob($formattedResourceName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/runBatchJobTest');
-
         try {
             $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
@@ -443,91 +444,10 @@ class BatchJobServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stubs are exhausted
         $transport->popReceivedCalls();
         $operationsTransport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function addBatchJobOperationsTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $totalOperations = 1685086151;
-        $nextSequenceToken = 'nextSequenceToken388644551';
-        $expectedResponse = new AddBatchJobOperationsResponse();
-        $expectedResponse->setTotalOperations($totalOperations);
-        $expectedResponse->setNextSequenceToken($nextSequenceToken);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-        $mutateOperations = [];
-
-        $response = $client->addBatchJobOperations($formattedResourceName, $mutateOperations);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.BatchJobService/AddBatchJobOperations', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getResourceName();
-
-        $this->assertProtobufEquals($formattedResourceName, $actualValue);
-        $actualValue = $actualRequestObject->getMutateOperations();
-
-        $this->assertProtobufEquals($mutateOperations, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function addBatchJobOperationsExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedResourceName = $client->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-        $mutateOperations = [];
-
-        try {
-            $client->addBatchJobOperations($formattedResourceName, $mutateOperations);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
     }
 }

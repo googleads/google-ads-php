@@ -253,7 +253,7 @@ class BillingSetup extends \Google\Protobuf\Internal\Message
      * populated.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.BillingSetup.PaymentsAccountInfo payments_account_info = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\BillingSetup\PaymentsAccountInfo
+     * @return \Google\Ads\GoogleAds\V6\Resources\BillingSetup\PaymentsAccountInfo|null
      */
     public function getPaymentsAccountInfo()
     {

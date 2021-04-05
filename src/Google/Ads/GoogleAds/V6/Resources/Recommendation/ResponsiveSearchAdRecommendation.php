@@ -41,7 +41,7 @@ class ResponsiveSearchAdRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. Recommended ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V6\Resources\Ad|null
      */
     public function getAd()
     {

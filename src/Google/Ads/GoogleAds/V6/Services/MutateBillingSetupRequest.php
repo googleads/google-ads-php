@@ -75,7 +75,7 @@ class MutateBillingSetupRequest extends \Google\Protobuf\Internal\Message
      * Required. The operation to perform.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.BillingSetupOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\BillingSetupOperation
+     * @return \Google\Ads\GoogleAds\V6\Services\BillingSetupOperation|null
      */
     public function getOperation()
     {

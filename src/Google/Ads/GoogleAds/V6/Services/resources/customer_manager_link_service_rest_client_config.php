@@ -14,9 +14,9 @@ return [
                     ],
                 ],
             ],
-            'MutateCustomerManagerLink' => [
+            'MoveManagerLink' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/customers/{customer_id=*}/customerManagerLinks:mutate',
+                'uriTemplate' => '/v6/customers/{customer_id=*}/customerManagerLinks:moveManagerLink',
                 'body' => '*',
                 'placeholders' => [
                     'customer_id' => [
@@ -26,9 +26,9 @@ return [
                     ],
                 ],
             ],
-            'MoveManagerLink' => [
+            'MutateCustomerManagerLink' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/customers/{customer_id=*}/customerManagerLinks:moveManagerLink',
+                'uriTemplate' => '/v6/customers/{customer_id=*}/customerManagerLinks:mutate',
                 'body' => '*',
                 'placeholders' => [
                     'customer_id' => [

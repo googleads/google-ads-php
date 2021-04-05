@@ -71,7 +71,7 @@ class CombinedRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * rule based user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserListRuleInfo left_operand = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserListRuleInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UserListRuleInfo|null
      */
     public function getLeftOperand()
     {
@@ -111,7 +111,7 @@ class CombinedRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * rule based user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserListRuleInfo right_operand = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserListRuleInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UserListRuleInfo|null
      */
     public function getRightOperand()
     {

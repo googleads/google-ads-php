@@ -273,7 +273,7 @@ class OfflineUserDataJob extends \Google\Protobuf\Internal\Message
      * Immutable. Metadata for data updates to a CRM-based user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CustomerMatchUserListMetadata customer_match_user_list_metadata = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CustomerMatchUserListMetadata
+     * @return \Google\Ads\GoogleAds\V6\Common\CustomerMatchUserListMetadata|null
      */
     public function getCustomerMatchUserListMetadata()
     {
@@ -304,7 +304,7 @@ class OfflineUserDataJob extends \Google\Protobuf\Internal\Message
      * Immutable. Metadata for store sales data update.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.StoreSalesMetadata store_sales_metadata = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\StoreSalesMetadata
+     * @return \Google\Ads\GoogleAds\V6\Common\StoreSalesMetadata|null
      */
     public function getStoreSalesMetadata()
     {

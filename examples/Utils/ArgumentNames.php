@@ -56,6 +56,7 @@ final class ArgumentNames
     public const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
     public const CRITERION_ID = 'criterionId';
     public const CUSTOMER_ID = 'customerId';
+    public const CUSTOM_KEY = 'customKey';
     public const DRAFT_ID = 'draftId';
     public const EMAIL_ADDRESS = 'emailAddress';
     public const EXTERNAL_ID = 'externalId';
@@ -136,6 +137,7 @@ final class ArgumentNames
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',
         self::CUSTOMER_ID => 'The customer ID without dashes',
+        self::CUSTOM_KEY => 'The custom key',
         self::DRAFT_ID => 'The draft ID',
         self::EMAIL_ADDRESS => 'The email address',
         self::EXTERNAL_ID => 'The external ID',

@@ -52,7 +52,7 @@ class CustomerExtensionSettingOperation extends \Google\Protobuf\Internal\Messag
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -89,7 +89,7 @@ class CustomerExtensionSettingOperation extends \Google\Protobuf\Internal\Messag
      * extension setting.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerExtensionSetting create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting|null
      */
     public function getCreate()
     {
@@ -122,7 +122,7 @@ class CustomerExtensionSettingOperation extends \Google\Protobuf\Internal\Messag
      * valid resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerExtensionSetting update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting|null
      */
     public function getUpdate()
     {

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,67 +22,289 @@
 
 namespace Google\Ads\GoogleAds\V6\Services;
 
-use Google\Ads\GoogleAds\V6\Services\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\KeywordPlan;
 use Google\Ads\GoogleAds\V6\Services\GenerateForecastCurveResponse;
 use Google\Ads\GoogleAds\V6\Services\GenerateForecastMetricsResponse;
+
 use Google\Ads\GoogleAds\V6\Services\GenerateForecastTimeSeriesResponse;
 use Google\Ads\GoogleAds\V6\Services\GenerateHistoricalMetricsResponse;
+use Google\Ads\GoogleAds\V6\Services\KeywordPlanServiceClient;
 use Google\Ads\GoogleAds\V6\Services\MutateKeywordPlansResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group services
+ *
  * @group gapic
  */
 class KeywordPlanServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return KeywordPlanServiceClient
-     */
+    /** @return KeywordPlanServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new KeywordPlanServiceClient($options);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
+    public function generateForecastCurveTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GenerateForecastCurveResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $response = $client->generateForecastCurve($formattedKeywordPlan);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GenerateForecastCurve', $actualFuncCall);
+        $actualValue = $actualRequestObject->getKeywordPlan();
+        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateForecastCurveExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        try {
+            $client->generateForecastCurve($formattedKeywordPlan);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateForecastMetricsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GenerateForecastMetricsResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $response = $client->generateForecastMetrics($formattedKeywordPlan);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GenerateForecastMetrics', $actualFuncCall);
+        $actualValue = $actualRequestObject->getKeywordPlan();
+        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateForecastMetricsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        try {
+            $client->generateForecastMetrics($formattedKeywordPlan);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateForecastTimeSeriesTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GenerateForecastTimeSeriesResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $response = $client->generateForecastTimeSeries($formattedKeywordPlan);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GenerateForecastTimeSeries', $actualFuncCall);
+        $actualValue = $actualRequestObject->getKeywordPlan();
+        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateForecastTimeSeriesExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        try {
+            $client->generateForecastTimeSeries($formattedKeywordPlan);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateHistoricalMetricsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new GenerateHistoricalMetricsResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        $response = $client->generateHistoricalMetrics($formattedKeywordPlan);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GenerateHistoricalMetrics', $actualFuncCall);
+        $actualValue = $actualRequestObject->getKeywordPlan();
+        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function generateHistoricalMetricsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
+        try {
+            $client->generateHistoricalMetrics($formattedKeywordPlan);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
     public function getKeywordPlanTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $resourceName2 = 'resourceName2625949903';
         $id = 3355;
@@ -92,10 +314,8 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $expectedResponse->setId($id);
         $expectedResponse->setName($name);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedResourceName = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
         $response = $client->getKeywordPlan($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -103,39 +323,31 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GetKeywordPlan', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getResourceName();
-
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getKeywordPlanExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedResourceName = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
         try {
             $client->getKeywordPlan($formattedResourceName);
             // If the $client method call did not throw, fail the test
@@ -144,30 +356,25 @@ class KeywordPlanServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function mutateKeywordPlansTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $expectedResponse = new MutateKeywordPlansResponse();
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-
         $response = $client->mutateKeywordPlans($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -175,43 +382,34 @@ class KeywordPlanServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/MutateKeywordPlans', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getCustomerId();
-
         $this->assertProtobufEquals($customerId, $actualValue);
         $actualValue = $actualRequestObject->getOperations();
-
         $this->assertProtobufEquals($operations, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function mutateKeywordPlansExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-
         try {
             $client->mutateKeywordPlans($customerId, $operations);
             // If the $client method call did not throw, fail the test
@@ -220,291 +418,6 @@ class KeywordPlanServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function generateForecastCurveTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new GenerateForecastCurveResponse();
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
-        $response = $client->generateForecastCurve($formattedKeywordPlan);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GenerateForecastCurve', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getKeywordPlan();
-
-        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function generateForecastCurveExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
-        try {
-            $client->generateForecastCurve($formattedKeywordPlan);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function generateForecastTimeSeriesTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new GenerateForecastTimeSeriesResponse();
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
-        $response = $client->generateForecastTimeSeries($formattedKeywordPlan);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GenerateForecastTimeSeries', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getKeywordPlan();
-
-        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function generateForecastTimeSeriesExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
-        try {
-            $client->generateForecastTimeSeries($formattedKeywordPlan);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function generateForecastMetricsTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new GenerateForecastMetricsResponse();
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
-        $response = $client->generateForecastMetrics($formattedKeywordPlan);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GenerateForecastMetrics', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getKeywordPlan();
-
-        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function generateForecastMetricsExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
-        try {
-            $client->generateForecastMetrics($formattedKeywordPlan);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function generateHistoricalMetricsTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new GenerateHistoricalMetricsResponse();
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
-        $response = $client->generateHistoricalMetrics($formattedKeywordPlan);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.KeywordPlanService/GenerateHistoricalMetrics', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getKeywordPlan();
-
-        $this->assertProtobufEquals($formattedKeywordPlan, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function generateHistoricalMetricsExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedKeywordPlan = $client->keywordPlanName('[CUSTOMER_ID]', '[KEYWORD_PLAN_ID]');
-
-        try {
-            $client->generateHistoricalMetrics($formattedKeywordPlan);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

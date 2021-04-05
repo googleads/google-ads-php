@@ -52,7 +52,7 @@ class BiddingStrategyOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -89,7 +89,7 @@ class BiddingStrategyOperation extends \Google\Protobuf\Internal\Message
      * strategy.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.BiddingStrategy create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\BiddingStrategy
+     * @return \Google\Ads\GoogleAds\V6\Resources\BiddingStrategy|null
      */
     public function getCreate()
     {
@@ -122,7 +122,7 @@ class BiddingStrategyOperation extends \Google\Protobuf\Internal\Message
      * resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.BiddingStrategy update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\BiddingStrategy
+     * @return \Google\Ads\GoogleAds\V6\Resources\BiddingStrategy|null
      */
     public function getUpdate()
     {

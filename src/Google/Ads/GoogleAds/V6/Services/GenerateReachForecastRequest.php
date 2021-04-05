@@ -203,7 +203,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * Required. Campaign duration.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.CampaignDuration campaign_duration = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\CampaignDuration
+     * @return \Google\Ads\GoogleAds\V6\Services\CampaignDuration|null
      */
     public function getCampaignDuration()
     {
@@ -292,7 +292,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This field replaces the deprecated cookie_frequency_cap field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.FrequencyCap cookie_frequency_cap_setting = 8;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\FrequencyCap
+     * @return \Google\Ads\GoogleAds\V6\Services\FrequencyCap|null
      */
     public function getCookieFrequencyCapSetting()
     {
@@ -380,7 +380,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * PlannedProduct.advanced_product_targeting field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.Targeting targeting = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\Targeting
+     * @return \Google\Ads\GoogleAds\V6\Services\Targeting|null
      */
     public function getTargeting()
     {

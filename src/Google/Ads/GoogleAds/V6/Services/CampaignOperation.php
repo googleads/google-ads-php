@@ -51,7 +51,7 @@ class CampaignOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -87,7 +87,7 @@ class CampaignOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new campaign.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Campaign create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign
+     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign|null
      */
     public function getCreate()
     {
@@ -119,7 +119,7 @@ class CampaignOperation extends \Google\Protobuf\Internal\Message
      * resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Campaign update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign
+     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign|null
      */
     public function getUpdate()
     {

@@ -84,6 +84,7 @@ class ListAccessibleCustomers
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      */
+    // [START list_accessible_customers]
     public static function runExample(GoogleAdsClient $googleAdsClient)
     {
         $customerServiceClient = $googleAdsClient->getCustomerServiceClient();
@@ -98,6 +99,7 @@ class ListAccessibleCustomers
             printf("Customer resource name: '%s'%s", $resourceName, PHP_EOL);
         }
     }
+    // [END list_accessible_customers]
 }
 
 ListAccessibleCustomers::main();

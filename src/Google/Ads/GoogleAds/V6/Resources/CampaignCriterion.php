@@ -390,7 +390,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo|null
      */
     public function getKeyword()
     {
@@ -421,7 +421,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Placement.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PlacementInfo placement = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PlacementInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\PlacementInfo|null
      */
     public function getPlacement()
     {
@@ -452,7 +452,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile app category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MobileAppCategoryInfo mobile_app_category = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MobileAppCategoryInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\MobileAppCategoryInfo|null
      */
     public function getMobileAppCategory()
     {
@@ -483,7 +483,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile application.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MobileApplicationInfo mobile_application = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MobileApplicationInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\MobileApplicationInfo|null
      */
     public function getMobileApplication()
     {
@@ -514,7 +514,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Location.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.LocationInfo location = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\LocationInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\LocationInfo|null
      */
     public function getLocation()
     {
@@ -545,7 +545,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Device.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DeviceInfo device = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DeviceInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\DeviceInfo|null
      */
     public function getDevice()
     {
@@ -576,7 +576,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Ad Schedule.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.AdScheduleInfo ad_schedule = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\AdScheduleInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\AdScheduleInfo|null
      */
     public function getAdSchedule()
     {
@@ -607,7 +607,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Age range.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.AgeRangeInfo age_range = 16 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\AgeRangeInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\AgeRangeInfo|null
      */
     public function getAgeRange()
     {
@@ -638,7 +638,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Gender.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.GenderInfo gender = 17 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\GenderInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\GenderInfo|null
      */
     public function getGender()
     {
@@ -669,7 +669,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Income range.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.IncomeRangeInfo income_range = 18 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\IncomeRangeInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\IncomeRangeInfo|null
      */
     public function getIncomeRange()
     {
@@ -700,7 +700,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Parental status.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ParentalStatusInfo parental_status = 19 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ParentalStatusInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ParentalStatusInfo|null
      */
     public function getParentalStatus()
     {
@@ -731,7 +731,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. User List.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserListInfo user_list = 22 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserListInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UserListInfo|null
      */
     public function getUserList()
     {
@@ -762,7 +762,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.YouTubeVideoInfo youtube_video = 20 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeVideoInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeVideoInfo|null
      */
     public function getYoutubeVideo()
     {
@@ -793,7 +793,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Channel.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.YouTubeChannelInfo youtube_channel = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeChannelInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeChannelInfo|null
      */
     public function getYoutubeChannel()
     {
@@ -824,7 +824,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Proximity.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProximityInfo proximity = 23 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProximityInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProximityInfo|null
      */
     public function getProximity()
     {
@@ -855,7 +855,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Topic.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TopicInfo topic = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TopicInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\TopicInfo|null
      */
     public function getTopic()
     {
@@ -886,7 +886,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Listing scope.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ListingScopeInfo listing_scope = 25 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ListingScopeInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ListingScopeInfo|null
      */
     public function getListingScope()
     {
@@ -917,7 +917,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Language.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.LanguageInfo language = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\LanguageInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\LanguageInfo|null
      */
     public function getLanguage()
     {
@@ -948,7 +948,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. IpBlock.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.IpBlockInfo ip_block = 27 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\IpBlockInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\IpBlockInfo|null
      */
     public function getIpBlock()
     {
@@ -979,7 +979,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. ContentLabel.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ContentLabelInfo content_label = 28 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ContentLabelInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ContentLabelInfo|null
      */
     public function getContentLabel()
     {
@@ -1010,7 +1010,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Carrier.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CarrierInfo carrier = 29 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CarrierInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\CarrierInfo|null
      */
     public function getCarrier()
     {
@@ -1041,7 +1041,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. User Interest.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserInterestInfo user_interest = 30 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserInterestInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UserInterestInfo|null
      */
     public function getUserInterest()
     {
@@ -1072,7 +1072,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Webpage.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.WebpageInfo webpage = 31 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\WebpageInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\WebpageInfo|null
      */
     public function getWebpage()
     {
@@ -1103,7 +1103,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Operating system version.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.OperatingSystemVersionInfo operating_system_version = 32 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\OperatingSystemVersionInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\OperatingSystemVersionInfo|null
      */
     public function getOperatingSystemVersion()
     {
@@ -1134,7 +1134,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Mobile Device.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MobileDeviceInfo mobile_device = 33 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MobileDeviceInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\MobileDeviceInfo|null
      */
     public function getMobileDevice()
     {
@@ -1165,7 +1165,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Location Group
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.LocationGroupInfo location_group = 34 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\LocationGroupInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\LocationGroupInfo|null
      */
     public function getLocationGroup()
     {
@@ -1196,7 +1196,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Custom Affinity.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CustomAffinityInfo custom_affinity = 36 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CustomAffinityInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\CustomAffinityInfo|null
      */
     public function getCustomAffinity()
     {
@@ -1227,7 +1227,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Custom Audience
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CustomAudienceInfo custom_audience = 41 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CustomAudienceInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\CustomAudienceInfo|null
      */
     public function getCustomAudience()
     {
@@ -1258,7 +1258,7 @@ class CampaignCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Combined Audience.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CombinedAudienceInfo combined_audience = 42 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CombinedAudienceInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\CombinedAudienceInfo|null
      */
     public function getCombinedAudience()
     {

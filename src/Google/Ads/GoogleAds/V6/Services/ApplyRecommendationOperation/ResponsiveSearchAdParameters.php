@@ -41,7 +41,7 @@ class ResponsiveSearchAdParameters extends \Google\Protobuf\Internal\Message
      * Required. New ad to add to recommended ad group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V6\Resources\Ad|null
      */
     public function getAd()
     {

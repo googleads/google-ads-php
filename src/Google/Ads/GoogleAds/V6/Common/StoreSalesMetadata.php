@@ -213,7 +213,7 @@ class StoreSalesMetadata extends \Google\Protobuf\Internal\Message
      * Metadata for a third party Store Sales upload.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.StoreSalesThirdPartyMetadata third_party_metadata = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\StoreSalesThirdPartyMetadata
+     * @return \Google\Ads\GoogleAds\V6\Common\StoreSalesThirdPartyMetadata|null
      */
     public function getThirdPartyMetadata()
     {

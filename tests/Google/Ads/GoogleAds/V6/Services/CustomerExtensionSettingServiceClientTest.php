@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,69 +25,57 @@ namespace Google\Ads\GoogleAds\V6\Services;
 use Google\Ads\GoogleAds\V6\Services\CustomerExtensionSettingServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting;
 use Google\Ads\GoogleAds\V6\Services\MutateCustomerExtensionSettingsResponse;
+
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group services
+ *
  * @group gapic
  */
 class CustomerExtensionSettingServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return CustomerExtensionSettingServiceClient
-     */
+    /** @return CustomerExtensionSettingServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new CustomerExtensionSettingServiceClient($options);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getCustomerExtensionSettingTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $resourceName2 = 'resourceName2625949903';
         $expectedResponse = new CustomerExtensionSetting();
         $expectedResponse->setResourceName($resourceName2);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedResourceName = $client->customerExtensionSettingName('[CUSTOMER_ID]', '[EXTENSION_TYPE]');
-
         $response = $client->getCustomerExtensionSetting($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -95,39 +83,31 @@ class CustomerExtensionSettingServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.CustomerExtensionSettingService/GetCustomerExtensionSetting', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getResourceName();
-
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getCustomerExtensionSettingExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedResourceName = $client->customerExtensionSettingName('[CUSTOMER_ID]', '[EXTENSION_TYPE]');
-
         try {
             $client->getCustomerExtensionSetting($formattedResourceName);
             // If the $client method call did not throw, fail the test
@@ -136,30 +116,25 @@ class CustomerExtensionSettingServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function mutateCustomerExtensionSettingsTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $expectedResponse = new MutateCustomerExtensionSettingsResponse();
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-
         $response = $client->mutateCustomerExtensionSettings($customerId, $operations);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -167,43 +142,34 @@ class CustomerExtensionSettingServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.CustomerExtensionSettingService/MutateCustomerExtensionSettings', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getCustomerId();
-
         $this->assertProtobufEquals($customerId, $actualValue);
         $actualValue = $actualRequestObject->getOperations();
-
         $this->assertProtobufEquals($operations, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function mutateCustomerExtensionSettingsExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $customerId = 'customerId-1772061412';
         $operations = [];
-
         try {
             $client->mutateCustomerExtensionSettings($customerId, $operations);
             // If the $client method call did not throw, fail the test
@@ -212,7 +178,6 @@ class CustomerExtensionSettingServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

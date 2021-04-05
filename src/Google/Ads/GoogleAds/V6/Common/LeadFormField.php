@@ -78,7 +78,7 @@ class LeadFormField extends \Google\Protobuf\Internal\Message
      * 12 allowed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.LeadFormSingleChoiceAnswers single_choice_answers = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\LeadFormSingleChoiceAnswers
+     * @return \Google\Ads\GoogleAds\V6\Common\LeadFormSingleChoiceAnswers|null
      */
     public function getSingleChoiceAnswers()
     {

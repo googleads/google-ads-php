@@ -62,7 +62,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Advertiser-specific hotel ID.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelIdInfo hotel_id = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelIdInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelIdInfo|null
      */
     public function getHotelId()
     {
@@ -93,7 +93,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Class of the hotel as a number of stars 1 to 5.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelClassInfo hotel_class = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelClassInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelClassInfo|null
      */
     public function getHotelClass()
     {
@@ -124,7 +124,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Country or Region the hotel is located in.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelCountryRegionInfo hotel_country_region = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelCountryRegionInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelCountryRegionInfo|null
      */
     public function getHotelCountryRegion()
     {
@@ -155,7 +155,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * State the hotel is located in.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelStateInfo hotel_state = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelStateInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelStateInfo|null
      */
     public function getHotelState()
     {
@@ -186,7 +186,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * City the hotel is located in.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.HotelCityInfo hotel_city = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\HotelCityInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\HotelCityInfo|null
      */
     public function getHotelCity()
     {
@@ -217,7 +217,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Bidding category of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProductBiddingCategoryInfo product_bidding_category = 13;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProductBiddingCategoryInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProductBiddingCategoryInfo|null
      */
     public function getProductBiddingCategory()
     {
@@ -248,7 +248,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Brand of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProductBrandInfo product_brand = 15;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProductBrandInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProductBrandInfo|null
      */
     public function getProductBrand()
     {
@@ -279,7 +279,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Locality of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProductChannelInfo product_channel = 8;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProductChannelInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProductChannelInfo|null
      */
     public function getProductChannel()
     {
@@ -310,7 +310,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Availability of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProductChannelExclusivityInfo product_channel_exclusivity = 9;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProductChannelExclusivityInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProductChannelExclusivityInfo|null
      */
     public function getProductChannelExclusivity()
     {
@@ -341,7 +341,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Condition of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProductConditionInfo product_condition = 10;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProductConditionInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProductConditionInfo|null
      */
     public function getProductCondition()
     {
@@ -372,7 +372,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Custom attribute of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProductCustomAttributeInfo product_custom_attribute = 16;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProductCustomAttributeInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProductCustomAttributeInfo|null
      */
     public function getProductCustomAttribute()
     {
@@ -403,7 +403,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Item id of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProductItemIdInfo product_item_id = 11;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProductItemIdInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProductItemIdInfo|null
      */
     public function getProductItemId()
     {
@@ -434,7 +434,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Type of a product offer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ProductTypeInfo product_type = 12;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ProductTypeInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ProductTypeInfo|null
      */
     public function getProductType()
     {
@@ -465,7 +465,7 @@ class ListingDimensionInfo extends \Google\Protobuf\Internal\Message
      * Unknown dimension. Set when no other listing dimension is set.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UnknownListingDimensionInfo unknown_listing_dimension = 14;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UnknownListingDimensionInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UnknownListingDimensionInfo|null
      */
     public function getUnknownListingDimension()
     {

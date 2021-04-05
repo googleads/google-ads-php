@@ -56,7 +56,7 @@ class KeywordPlanAdGroupKeywordOperation extends \Google\Protobuf\Internal\Messa
      * update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -94,7 +94,7 @@ class KeywordPlanAdGroupKeywordOperation extends \Google\Protobuf\Internal\Messa
      * ad group keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlanAdGroupKeyword create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroupKeyword
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroupKeyword|null
      */
     public function getCreate()
     {
@@ -127,7 +127,7 @@ class KeywordPlanAdGroupKeywordOperation extends \Google\Protobuf\Internal\Messa
      * valid resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlanAdGroupKeyword update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroupKeyword
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroupKeyword|null
      */
     public function getUpdate()
     {

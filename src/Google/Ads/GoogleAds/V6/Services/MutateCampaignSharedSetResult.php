@@ -81,7 +81,7 @@ class MutateCampaignSharedSetResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignSharedSet campaign_shared_set = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet|null
      */
     public function getCampaignSharedSet()
     {

@@ -336,7 +336,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. Encapsulates an Image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.MediaImage image = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\MediaImage
+     * @return \Google\Ads\GoogleAds\V6\Resources\MediaImage|null
      */
     public function getImage()
     {
@@ -367,7 +367,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. A ZIP archive media the content of which contains HTML5 assets.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.MediaBundle media_bundle = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\MediaBundle
+     * @return \Google\Ads\GoogleAds\V6\Resources\MediaBundle|null
      */
     public function getMediaBundle()
     {
@@ -398,7 +398,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Output only. Encapsulates an Audio.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.MediaAudio audio = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\MediaAudio
+     * @return \Google\Ads\GoogleAds\V6\Resources\MediaAudio|null
      */
     public function getAudio()
     {
@@ -429,7 +429,7 @@ class MediaFile extends \Google\Protobuf\Internal\Message
      * Immutable. Encapsulates a Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.MediaVideo video = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\MediaVideo
+     * @return \Google\Ads\GoogleAds\V6\Resources\MediaVideo|null
      */
     public function getVideo()
     {

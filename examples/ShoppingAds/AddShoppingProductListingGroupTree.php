@@ -129,6 +129,7 @@ class AddShoppingProductListingGroupTree
      *     'LISTING_GROUP_ALREADY_EXISTS' error if listing group tree already exists and this option
      *     is not set to true
      */
+    // [START add_shopping_product_listing_group_tree]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -271,6 +272,7 @@ class AddShoppingProductListingGroupTree
             print $addedAdGroupCriterion->getResourceName() . PHP_EOL;
         }
     }
+    // [END add_shopping_product_listing_group_tree]
 
     /**
      * Removes all the ad group criteria that define the existing listing group tree for an ad

@@ -298,7 +298,7 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      * Accessible only to customers on the allow-list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.StoreAttribute store_attribute = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\StoreAttribute
+     * @return \Google\Ads\GoogleAds\V6\Common\StoreAttribute|null
      */
     public function getStoreAttribute()
     {

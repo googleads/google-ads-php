@@ -88,7 +88,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      * Required when updating store sales data.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TransactionAttribute transaction_attribute = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TransactionAttribute
+     * @return \Google\Ads\GoogleAds\V6\Common\TransactionAttribute|null
      */
     public function getTransactionAttribute()
     {
@@ -126,7 +126,7 @@ class UserData extends \Google\Protobuf\Internal\Message
      * customer match attributes. These have an expiration of 540 days.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserAttribute user_attribute = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserAttribute
+     * @return \Google\Ads\GoogleAds\V6\Common\UserAttribute|null
      */
     public function getUserAttribute()
     {

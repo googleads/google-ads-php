@@ -440,7 +440,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * likely.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.EnhancedCpc enhanced_cpc = 7;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\EnhancedCpc
+     * @return \Google\Ads\GoogleAds\V6\Common\EnhancedCpc|null
      */
     public function getEnhancedCpc()
     {
@@ -474,7 +474,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * your campaigns while spending your budget.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MaximizeConversionValue maximize_conversion_value = 21;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MaximizeConversionValue
+     * @return \Google\Ads\GoogleAds\V6\Common\MaximizeConversionValue|null
      */
     public function getMaximizeConversionValue()
     {
@@ -507,7 +507,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * campaigns while spending your budget.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MaximizeConversions maximize_conversions = 22;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MaximizeConversions
+     * @return \Google\Ads\GoogleAds\V6\Common\MaximizeConversions|null
      */
     public function getMaximizeConversions()
     {
@@ -540,7 +540,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * possible at the target cost-per-acquisition (CPA) you set.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TargetCpa target_cpa = 9;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TargetCpa
+     * @return \Google\Ads\GoogleAds\V6\Common\TargetCpa|null
      */
     public function getTargetCpa()
     {
@@ -573,7 +573,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * percentage of impressions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TargetImpressionShare target_impression_share = 48;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TargetImpressionShare
+     * @return \Google\Ads\GoogleAds\V6\Common\TargetImpressionShare|null
      */
     public function getTargetImpressionShare()
     {
@@ -606,7 +606,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * specific target Return On Ad Spend (ROAS).
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TargetRoas target_roas = 11;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TargetRoas
+     * @return \Google\Ads\GoogleAds\V6\Common\TargetRoas|null
      */
     public function getTargetRoas()
     {
@@ -639,7 +639,7 @@ class BiddingStrategy extends \Google\Protobuf\Internal\Message
      * possible within your budget.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TargetSpend target_spend = 12;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TargetSpend
+     * @return \Google\Ads\GoogleAds\V6\Common\TargetSpend|null
      */
     public function getTargetSpend()
     {

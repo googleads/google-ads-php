@@ -81,7 +81,7 @@ class MutateCampaignFeedResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignFeed campaign_feed = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignFeed|null
      */
     public function getCampaignFeed()
     {

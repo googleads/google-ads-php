@@ -44,7 +44,7 @@ class OfflineUserDataJobOperation extends \Google\Protobuf\Internal\Message
      * being uploaded.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserData create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserData
+     * @return \Google\Ads\GoogleAds\V6\Common\UserData|null
      */
     public function getCreate()
     {
@@ -77,7 +77,7 @@ class OfflineUserDataJobOperation extends \Google\Protobuf\Internal\Message
      * after being uploaded.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserData remove = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserData
+     * @return \Google\Ads\GoogleAds\V6\Common\UserData|null
      */
     public function getRemove()
     {

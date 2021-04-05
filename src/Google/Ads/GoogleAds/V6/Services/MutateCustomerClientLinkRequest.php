@@ -75,7 +75,7 @@ class MutateCustomerClientLinkRequest extends \Google\Protobuf\Internal\Message
      * Required. The operation to perform on the individual CustomerClientLink.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.CustomerClientLinkOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\CustomerClientLinkOperation
+     * @return \Google\Ads\GoogleAds\V6\Services\CustomerClientLinkOperation|null
      */
     public function getOperation()
     {

@@ -40,7 +40,7 @@ class FeedMappingOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new feed mapping.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedMapping create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedMapping
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedMapping|null
      */
     public function getCreate()
     {

@@ -201,7 +201,7 @@ class GeoTargetConstantSuggestion extends \Google\Protobuf\Internal\Message
      * The GeoTargetConstant result.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.GeoTargetConstant geo_target_constant = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\GeoTargetConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\GeoTargetConstant|null
      */
     public function getGeoTargetConstant()
     {

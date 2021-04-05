@@ -134,7 +134,6 @@ class AddMerchantCenterDynamicRemarketingCampaign
      * @param int $campaignBudgetId the campaign budget ID
      * @param int $userListId the user list ID
      */
-    // [START add_merchant_center_dynamic_remarketing_campaign]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -160,7 +159,6 @@ class AddMerchantCenterDynamicRemarketingCampaign
         // Targets a specific user list for remarketing.
         self::attachUserList($googleAdsClient, $customerId, $adGroupResourceName, $userListId);
     }
-    // [END add_merchant_center_dynamic_remarketing_campaign]
 
     /**
      * Creates a campaign linked to a Merchant Center product feed.
@@ -171,6 +169,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
      * @param int $campaignBudgetId the campaign budget ID
      * @return string the resource name of the newly created campaign
      */
+    // [START add_merchant_center_dynamic_remarketing_campaign_2]
     private static function createCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -216,6 +215,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         return $addedCampaignResourceName;
     }
+    // [END add_merchant_center_dynamic_remarketing_campaign_2]
 
     /**
      * Creates an ad group for the remarketing campaign.
@@ -226,6 +226,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
      *     the new ad group will belong to
      * @return string the resource name of the newly created ad group
      */
+    // [START add_merchant_center_dynamic_remarketing_campaign_1]
     private static function createAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -253,6 +254,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
 
         return $addedAdGroupResourceName;
     }
+    // [END add_merchant_center_dynamic_remarketing_campaign_1]
 
     /**
      * Creates the responsive display ad.
@@ -262,6 +264,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
      * @param string $adGroupResourceName the resource name of the ad group that
      *     the new ad group ad will belong to
      */
+    // [START add_merchant_center_dynamic_remarketing_campaign]
     private static function createAd(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -335,6 +338,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
             PHP_EOL
         );
     }
+    // [END add_merchant_center_dynamic_remarketing_campaign]
 
     /**
      * Adds an image asset to the Google Ads account.
@@ -388,6 +392,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
      *     the user list will be attached to
      * @param int $userListId the user list ID
      */
+    // [START add_merchant_center_dynamic_remarketing_campaign_3]
     private static function attachUserList(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -421,6 +426,7 @@ class AddMerchantCenterDynamicRemarketingCampaign
             PHP_EOL
         );
     }
+    // [END add_merchant_center_dynamic_remarketing_campaign_3]
 }
 
 AddMerchantCenterDynamicRemarketingCampaign::main();

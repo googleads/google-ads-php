@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ namespace Google\Ads\GoogleAds\V6\Services\Gapic;
 use Google\Ads\GoogleAds\V6\Resources\BatchJob;
 use Google\Ads\GoogleAds\V6\Resources\BatchJob\BatchJobMetadata;
 use Google\Ads\GoogleAds\V6\Services\AddBatchJobOperationsRequest;
+
 use Google\Ads\GoogleAds\V6\Services\AddBatchJobOperationsResponse;
+
 use Google\Ads\GoogleAds\V6\Services\BatchJobOperation;
 use Google\Ads\GoogleAds\V6\Services\GetBatchJobRequest;
 use Google\Ads\GoogleAds\V6\Services\ListBatchJobResultsRequest;
@@ -60,52 +62,42 @@ use Google\LongRunning\Operation;
  * ```
  * $batchJobServiceClient = new BatchJobServiceClient();
  * try {
- *     $customerId = '';
- *     $operation = new BatchJobOperation();
- *     $response = $batchJobServiceClient->mutateBatchJob($customerId, $operation);
+ *     $formattedResourceName = $batchJobServiceClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+ *     $mutateOperations = [];
+ *     $response = $batchJobServiceClient->addBatchJobOperations($formattedResourceName, $mutateOperations);
  * } finally {
  *     $batchJobServiceClient->close();
  * }
  * ```
  *
- * Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parseName method to extract the individual identifiers contained within formatted names
- * that are returned by the API.
- *
- * @experimental
+ * Many parameters require resource names to be formatted in a particular way. To
+ * assistwith these names, this class includes a format method for each type of
+ * name, and additionallya parseName method to extract the individual identifiers
+ * contained within formatted namesthat are returned by the API.
  */
 class BatchJobServiceGapicClient
 {
     use GapicClientTrait;
 
-    /**
-     * The name of the service.
-     */
+    /** The name of the service. */
     const SERVICE_NAME = 'google.ads.googleads.v6.services.BatchJobService';
 
-    /**
-     * The default address of the service.
-     */
+    /** The default address of the service. */
     const SERVICE_ADDRESS = 'googleads.googleapis.com';
 
-    /**
-     * The default port of the service.
-     */
+    /** The default port of the service. */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /**
-     * The name of the code generator, to be included in the agent header.
-     */
+    /** The name of the code generator, to be included in the agent header. */
     const CODEGEN_NAME = 'gapic';
 
-    /**
-     * The default scopes required by the service.
-     */
+    /** The default scopes required by the service. */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
+
     private static $batchJobNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -114,16 +106,16 @@ class BatchJobServiceGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/batch_job_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/batch_job_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/batch_job_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/batch_job_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/batch_job_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/batch_job_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/batch_job_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/batch_job_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -131,7 +123,7 @@ class BatchJobServiceGapicClient
 
     private static function getBatchJobNameTemplate()
     {
-        if (null == self::$batchJobNameTemplate) {
+        if (self::$batchJobNameTemplate == null) {
             self::$batchJobNameTemplate = new PathTemplate('customers/{customer_id}/batchJobs/{batch_job_id}');
         }
 
@@ -140,7 +132,7 @@ class BatchJobServiceGapicClient
 
     private static function getPathTemplateMap()
     {
-        if (null == self::$pathTemplateMap) {
+        if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'batchJob' => self::getBatchJobNameTemplate(),
             ];
@@ -150,14 +142,13 @@ class BatchJobServiceGapicClient
     }
 
     /**
-     * Formats a string containing the fully-qualified path to represent
-     * a batch_job resource.
+     * Formats a string containing the fully-qualified path to represent a batch_job
+     * resource.
      *
      * @param string $customerId
      * @param string $batchJobId
      *
      * @return string The formatted batch_job resource.
-     * @experimental
      */
     public static function batchJobName($customerId, $batchJobId)
     {
@@ -171,12 +162,13 @@ class BatchJobServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - batchJob: customers/{customer_id}/batchJobs/{batch_job_id}.
+     * - batchJob: customers/{customer_id}/batchJobs/{batch_job_id}
      *
-     * The optional $template argument can be supplied to specify a particular pattern, and must
-     * match one of the templates listed above. If no $template argument is provided, or if the
-     * $template argument does not match one of the templates listed, then parseName will check
-     * each of the supported templates, and return the first match.
+     * The optional $template argument can be supplied to specify a particular pattern,
+     * and must match one of the templates listed above. If no $template argument is
+     * provided, or if the $template argument does not match one of the templates
+     * listed, then parseName will check each of the supported templates, and return
+     * the first match.
      *
      * @param string $formattedName The formatted name string
      * @param string $template      Optional name of template to match
@@ -184,12 +176,10 @@ class BatchJobServiceGapicClient
      * @return array An associative array from name component IDs to component values.
      *
      * @throws ValidationException If $formattedName could not be matched.
-     * @experimental
      */
     public static function parseName($formattedName, $template = null)
     {
         $templateMap = self::getPathTemplateMap();
-
         if ($template) {
             if (!isset($templateMap[$template])) {
                 throw new ValidationException("Template name $template does not exist");
@@ -205,6 +195,7 @@ class BatchJobServiceGapicClient
                 // Swallow the exception to continue trying other path templates
             }
         }
+
         throw new ValidationException("Input did not match any known format. Input: $formattedName");
     }
 
@@ -212,7 +203,6 @@ class BatchJobServiceGapicClient
      * Return an OperationsClient object with the same endpoint as $this.
      *
      * @return OperationsClient
-     * @experimental
      */
     public function getOperationsClient()
     {
@@ -220,26 +210,21 @@ class BatchJobServiceGapicClient
     }
 
     /**
-     * Resume an existing long running operation that was previously started
-     * by a long running API method. If $methodName is not provided, or does
-     * not match a long running API method, then the operation can still be
-     * resumed, but the OperationResponse object will not deserialize the
-     * final response.
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
      *
      * @param string $operationName The name of the long running operation
      * @param string $methodName    The name of the method used to start the operation
      *
      * @return OperationResponse
-     * @experimental
      */
     public function resumeOperation($operationName, $methodName = null)
     {
-        $options = isset($this->descriptors[$methodName]['longRunning'])
-            ? $this->descriptors[$methodName]['longRunning']
-            : [];
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : [];
         $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
         $operation->reload();
-
         return $operation;
     }
 
@@ -247,7 +232,7 @@ class BatchJobServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -261,31 +246,31 @@ class BatchJobServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -293,7 +278,6 @@ class BatchJobServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -303,56 +287,65 @@ class BatchJobServiceGapicClient
     }
 
     /**
-     * Mutates a batch job.
+     * Add operations to the batch job.
      *
      * Sample code:
      * ```
      * $batchJobServiceClient = new BatchJobServiceClient();
      * try {
-     *     $customerId = '';
-     *     $operation = new BatchJobOperation();
-     *     $response = $batchJobServiceClient->mutateBatchJob($customerId, $operation);
+     *     $formattedResourceName = $batchJobServiceClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
+     *     $mutateOperations = [];
+     *     $response = $batchJobServiceClient->addBatchJobOperations($formattedResourceName, $mutateOperations);
      * } finally {
      *     $batchJobServiceClient->close();
      * }
      * ```
      *
-     * @param string            $customerId   Required. The ID of the customer for which to create a batch job.
-     * @param BatchJobOperation $operation    Required. The operation to perform on an individual batch job.
-     * @param array             $optionalArgs {
-     *                                        Optional.
+     * @param string            $resourceName     Required. The resource name of the batch job.
+     * @param MutateOperation[] $mutateOperations Required. The list of mutates being added.
      *
+     *                                            Operations can use negative integers as temp ids to signify dependencies
+     *                                            between entities created in this batch job. For example, a customer with
+     *                                            id = 1234 can create a campaign and an ad group in that same campaign by
+     *                                            creating a campaign in the first operation with the resource name
+     *                                            explicitly set to "customers/1234/campaigns/-1", and creating an ad group
+     *                                            in the second operation with the campaign field also set to
+     *                                            "customers/1234/campaigns/-1".
+     * @param array             $optionalArgs     {
+     *     Optional.
+     *
+     *     @type string $sequenceToken
+     *           A token used to enforce sequencing.
+     *
+     *           The first AddBatchJobOperations request for a batch job should not set
+     *           sequence_token. Subsequent requests must set sequence_token to the value of
+     *           next_sequence_token received in the previous AddBatchJobOperations
+     *           response.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateBatchJobResponse
+     * @return \Google\Ads\GoogleAds\V6\Services\AddBatchJobOperationsResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
-    public function mutateBatchJob($customerId, $operation, array $optionalArgs = [])
+    public function addBatchJobOperations($resourceName, $mutateOperations, array $optionalArgs = [])
     {
-        $request = new MutateBatchJobRequest();
-        $request->setCustomerId($customerId);
-        $request->setOperation($operation);
+        $request = new AddBatchJobOperationsRequest();
+        $request->setResourceName($resourceName);
+        $request->setMutateOperations($mutateOperations);
+        if (isset($optionalArgs['sequenceToken'])) {
+            $request->setSequenceToken($optionalArgs['sequenceToken']);
+        }
 
         $requestParams = new RequestParamsHeaderDescriptor([
-          'customer_id' => $request->getCustomerId(),
+            'resource_name' => $request->getResourceName(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'MutateBatchJob',
-            MutateBatchJobResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('AddBatchJobOperations', AddBatchJobOperationsResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -371,38 +364,28 @@ class BatchJobServiceGapicClient
      *
      * @param string $resourceName Required. The resource name of the batch job to get.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V6\Resources\BatchJob
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function getBatchJob($resourceName, array $optionalArgs = [])
     {
         $request = new GetBatchJobRequest();
         $request->setResourceName($resourceName);
-
         $requestParams = new RequestParamsHeaderDescriptor([
-          'resource_name' => $request->getResourceName(),
+            'resource_name' => $request->getResourceName(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'GetBatchJob',
-            BatchJob::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetBatchJob', BatchJob::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -421,10 +404,7 @@ class BatchJobServiceGapicClient
      *             // doSomethingWith($element);
      *         }
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // Iterate through all elements
      *     $pagedResponse = $batchJobServiceClient->listBatchJobResults($formattedResourceName);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
@@ -437,28 +417,27 @@ class BatchJobServiceGapicClient
      *
      * @param string $resourceName Required. The resource name of the batch job whose results are being listed.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type string $pageToken
-     *          A page token is used to specify a page of values to be returned.
-     *          If no page token is specified (the default), the first page
-     *          of values will be returned. Any page token used here must have
-     *          been generated by a previous call to the API.
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
      *     @type int $pageSize
-     *          The maximum number of resources contained in the underlying API
-     *          response. The API may return fewer values in a page, even if
-     *          there are additional values to be retrieved.
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\PagedListResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function listBatchJobResults($resourceName, array $optionalArgs = [])
     {
@@ -467,23 +446,59 @@ class BatchJobServiceGapicClient
         if (isset($optionalArgs['pageToken'])) {
             $request->setPageToken($optionalArgs['pageToken']);
         }
+
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor([
-          'resource_name' => $request->getResourceName(),
+            'resource_name' => $request->getResourceName(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListBatchJobResults', $optionalArgs, ListBatchJobResultsResponse::class, $request);
+    }
 
-        return $this->getPagedListResponse(
-            'ListBatchJobResults',
-            $optionalArgs,
-            ListBatchJobResultsResponse::class,
-            $request
-        );
+    /**
+     * Mutates a batch job.
+     *
+     * Sample code:
+     * ```
+     * $batchJobServiceClient = new BatchJobServiceClient();
+     * try {
+     *     $customerId = 'customer_id';
+     *     $operation = new BatchJobOperation();
+     *     $response = $batchJobServiceClient->mutateBatchJob($customerId, $operation);
+     * } finally {
+     *     $batchJobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string            $customerId   Required. The ID of the customer for which to create a batch job.
+     * @param BatchJobOperation $operation    Required. The operation to perform on an individual batch job.
+     * @param array             $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateBatchJobResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function mutateBatchJob($customerId, $operation, array $optionalArgs = [])
+    {
+        $request = new MutateBatchJobRequest();
+        $request->setCustomerId($customerId);
+        $request->setOperation($operation);
+        $requestParams = new RequestParamsHeaderDescriptor([
+            'customer_id' => $request->getCustomerId(),
+        ]);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('MutateBatchJob', MutateBatchJobResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -506,10 +521,7 @@ class BatchJobServiceGapicClient
      *         $error = $operationResponse->getError();
      *         // handleError($error)
      *     }
-     *
-     *
      *     // Alternatively:
-     *
      *     // start the operation, keep the operation name, and resume later
      *     $operationResponse = $batchJobServiceClient->runBatchJob($formattedResourceName);
      *     $operationName = $operationResponse->getName();
@@ -520,10 +532,10 @@ class BatchJobServiceGapicClient
      *         $newOperationResponse->reload();
      *     }
      *     if ($newOperationResponse->operationSucceeded()) {
-     *       // operation succeeded and returns no value
+     *         // operation succeeded and returns no value
      *     } else {
-     *       $error = $newOperationResponse->getError();
-     *       // handleError($error)
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
      *     }
      * } finally {
      *     $batchJobServiceClient->close();
@@ -532,108 +544,27 @@ class BatchJobServiceGapicClient
      *
      * @param string $resourceName Required. The resource name of the BatchJob to run.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function runBatchJob($resourceName, array $optionalArgs = [])
     {
         $request = new RunBatchJobRequest();
         $request->setResourceName($resourceName);
-
         $requestParams = new RequestParamsHeaderDescriptor([
-          'resource_name' => $request->getResourceName(),
+            'resource_name' => $request->getResourceName(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startOperationsCall(
-            'RunBatchJob',
-            $optionalArgs,
-            $request,
-            $this->getOperationsClient()
-        )->wait();
-    }
-
-    /**
-     * Add operations to the batch job.
-     *
-     * Sample code:
-     * ```
-     * $batchJobServiceClient = new BatchJobServiceClient();
-     * try {
-     *     $formattedResourceName = $batchJobServiceClient->batchJobName('[CUSTOMER_ID]', '[BATCH_JOB_ID]');
-     *     $mutateOperations = [];
-     *     $response = $batchJobServiceClient->addBatchJobOperations($formattedResourceName, $mutateOperations);
-     * } finally {
-     *     $batchJobServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string            $resourceName     Required. The resource name of the batch job.
-     * @param MutateOperation[] $mutateOperations Required. The list of mutates being added.
-     *
-     * Operations can use negative integers as temp ids to signify dependencies
-     * between entities created in this batch job. For example, a customer with
-     * id = 1234 can create a campaign and an ad group in that same campaign by
-     * creating a campaign in the first operation with the resource name
-     * explicitly set to "customers/1234/campaigns/-1", and creating an ad group
-     * in the second operation with the campaign field also set to
-     * "customers/1234/campaigns/-1".
-     * @param array $optionalArgs {
-     *                            Optional.
-     *
-     *     @type string $sequenceToken
-     *          A token used to enforce sequencing.
-     *
-     *          The first AddBatchJobOperations request for a batch job should not set
-     *          sequence_token. Subsequent requests must set sequence_token to the value of
-     *          next_sequence_token received in the previous AddBatchJobOperations
-     *          response.
-     *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Ads\GoogleAds\V6\Services\AddBatchJobOperationsResponse
-     *
-     * @throws ApiException if the remote call fails
-     * @experimental
-     */
-    public function addBatchJobOperations($resourceName, $mutateOperations, array $optionalArgs = [])
-    {
-        $request = new AddBatchJobOperationsRequest();
-        $request->setResourceName($resourceName);
-        $request->setMutateOperations($mutateOperations);
-        if (isset($optionalArgs['sequenceToken'])) {
-            $request->setSequenceToken($optionalArgs['sequenceToken']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor([
-          'resource_name' => $request->getResourceName(),
-        ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'AddBatchJobOperations',
-            AddBatchJobOperationsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('RunBatchJob', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 }

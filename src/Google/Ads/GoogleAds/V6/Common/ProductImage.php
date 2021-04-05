@@ -137,7 +137,7 @@ class ProductImage extends \Google\Protobuf\Internal\Message
      * Display-call-to-action of the product image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DisplayCallToAction display_call_to_action = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DisplayCallToAction
+     * @return \Google\Ads\GoogleAds\V6\Common\DisplayCallToAction|null
      */
     public function getDisplayCallToAction()
     {

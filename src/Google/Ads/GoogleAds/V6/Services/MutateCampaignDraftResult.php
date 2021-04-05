@@ -81,7 +81,7 @@ class MutateCampaignDraftResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignDraft campaign_draft = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignDraft
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignDraft|null
      */
     public function getCampaignDraft()
     {

@@ -65,7 +65,7 @@ class AccountBudgetProposalOperation extends \Google\Protobuf\Internal\Message
      * a mask for any other proposal type is considered an error.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -108,7 +108,7 @@ class AccountBudgetProposalOperation extends \Google\Protobuf\Internal\Message
      * No resource name is expected for the new proposal.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AccountBudgetProposal create = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AccountBudgetProposal
+     * @return \Google\Ads\GoogleAds\V6\Resources\AccountBudgetProposal|null
      */
     public function getCreate()
     {

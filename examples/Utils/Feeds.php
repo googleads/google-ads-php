@@ -140,6 +140,7 @@ final class Feeds
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @return array the map from placeholder fields to feed attributes
      */
+    // [START add_real_estate_feed]
     public static function realEstatePlaceholderFieldsMapFor(
         string $feedResourceName,
         int $customerId,
@@ -158,6 +159,7 @@ final class Feeds
             ]
         );
     }
+    // [END add_real_estate_feed]
 
     /**
      * Retrieves the placeholder fields to feed attributes map for a feed. The initial

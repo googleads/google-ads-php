@@ -130,7 +130,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group ad label mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupAdLabelResult ad_group_ad_label_result = 17;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupAdLabelResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupAdLabelResult|null
      */
     public function getAdGroupAdLabelResult()
     {
@@ -161,7 +161,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group ad mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupAdResult ad_group_ad_result = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupAdResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupAdResult|null
      */
     public function getAdGroupAdResult()
     {
@@ -192,7 +192,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group bid modifier mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupBidModifierResult ad_group_bid_modifier_result = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupBidModifierResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupBidModifierResult|null
      */
     public function getAdGroupBidModifierResult()
     {
@@ -223,7 +223,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group criterion label mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupCriterionLabelResult ad_group_criterion_label_result = 18;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupCriterionLabelResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupCriterionLabelResult|null
      */
     public function getAdGroupCriterionLabelResult()
     {
@@ -254,7 +254,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group criterion mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupCriterionResult ad_group_criterion_result = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupCriterionResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupCriterionResult|null
      */
     public function getAdGroupCriterionResult()
     {
@@ -285,7 +285,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group extension setting mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupExtensionSettingResult ad_group_extension_setting_result = 19;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupExtensionSettingResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupExtensionSettingResult|null
      */
     public function getAdGroupExtensionSettingResult()
     {
@@ -316,7 +316,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group feed mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupFeedResult ad_group_feed_result = 20;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupFeedResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupFeedResult|null
      */
     public function getAdGroupFeedResult()
     {
@@ -347,7 +347,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group label mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupLabelResult ad_group_label_result = 21;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupLabelResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupLabelResult|null
      */
     public function getAdGroupLabelResult()
     {
@@ -378,7 +378,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad group mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdGroupResult ad_group_result = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdGroupResult|null
      */
     public function getAdGroupResult()
     {
@@ -409,7 +409,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad parameter mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdParameterResult ad_parameter_result = 22;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdParameterResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdParameterResult|null
      */
     public function getAdParameterResult()
     {
@@ -440,7 +440,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the ad mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAdResult ad_result = 49;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAdResult|null
      */
     public function getAdResult()
     {
@@ -471,7 +471,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the asset mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAssetResult asset_result = 23;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAssetResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAssetResult|null
      */
     public function getAssetResult()
     {
@@ -502,7 +502,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the bidding strategy mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateBiddingStrategyResult bidding_strategy_result = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateBiddingStrategyResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateBiddingStrategyResult|null
      */
     public function getBiddingStrategyResult()
     {
@@ -533,7 +533,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign asset mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignAssetResult campaign_asset_result = 52;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignAssetResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignAssetResult|null
      */
     public function getCampaignAssetResult()
     {
@@ -564,7 +564,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign bid modifier mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignBidModifierResult campaign_bid_modifier_result = 7;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignBidModifierResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignBidModifierResult|null
      */
     public function getCampaignBidModifierResult()
     {
@@ -595,7 +595,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign budget mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignBudgetResult campaign_budget_result = 8;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignBudgetResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignBudgetResult|null
      */
     public function getCampaignBudgetResult()
     {
@@ -626,7 +626,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign criterion mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignCriterionResult campaign_criterion_result = 13;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignCriterionResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignCriterionResult|null
      */
     public function getCampaignCriterionResult()
     {
@@ -657,7 +657,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign draft mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignDraftResult campaign_draft_result = 24;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignDraftResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignDraftResult|null
      */
     public function getCampaignDraftResult()
     {
@@ -688,7 +688,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign experiment mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignExperimentResult campaign_experiment_result = 25;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignExperimentResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignExperimentResult|null
      */
     public function getCampaignExperimentResult()
     {
@@ -719,7 +719,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign extension setting mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignExtensionSettingResult campaign_extension_setting_result = 26;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignExtensionSettingResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignExtensionSettingResult|null
      */
     public function getCampaignExtensionSettingResult()
     {
@@ -750,7 +750,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign feed mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignFeedResult campaign_feed_result = 27;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignFeedResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignFeedResult|null
      */
     public function getCampaignFeedResult()
     {
@@ -781,7 +781,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign label mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignLabelResult campaign_label_result = 28;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignLabelResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignLabelResult|null
      */
     public function getCampaignLabelResult()
     {
@@ -812,7 +812,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignResult campaign_result = 10;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignResult|null
      */
     public function getCampaignResult()
     {
@@ -843,7 +843,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the campaign shared set mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCampaignSharedSetResult campaign_shared_set_result = 11;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignSharedSetResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCampaignSharedSetResult|null
      */
     public function getCampaignSharedSetResult()
     {
@@ -874,7 +874,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the conversion action mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateConversionActionResult conversion_action_result = 12;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateConversionActionResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateConversionActionResult|null
      */
     public function getConversionActionResult()
     {
@@ -905,7 +905,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the customer extension setting mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCustomerExtensionSettingResult customer_extension_setting_result = 30;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerExtensionSettingResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerExtensionSettingResult|null
      */
     public function getCustomerExtensionSettingResult()
     {
@@ -936,7 +936,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the customer feed mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCustomerFeedResult customer_feed_result = 31;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerFeedResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerFeedResult|null
      */
     public function getCustomerFeedResult()
     {
@@ -967,7 +967,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the customer label mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCustomerLabelResult customer_label_result = 32;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerLabelResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerLabelResult|null
      */
     public function getCustomerLabelResult()
     {
@@ -998,7 +998,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the customer negative criterion mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCustomerNegativeCriteriaResult customer_negative_criterion_result = 34;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerNegativeCriteriaResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerNegativeCriteriaResult|null
      */
     public function getCustomerNegativeCriterionResult()
     {
@@ -1029,7 +1029,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the customer mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCustomerResult customer_result = 35;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerResult|null
      */
     public function getCustomerResult()
     {
@@ -1060,7 +1060,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the extension feed item mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateExtensionFeedItemResult extension_feed_item_result = 36;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateExtensionFeedItemResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateExtensionFeedItemResult|null
      */
     public function getExtensionFeedItemResult()
     {
@@ -1091,7 +1091,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the feed item mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateFeedItemResult feed_item_result = 37;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedItemResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedItemResult|null
      */
     public function getFeedItemResult()
     {
@@ -1122,7 +1122,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the feed item set mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateFeedItemSetResult feed_item_set_result = 53;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedItemSetResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedItemSetResult|null
      */
     public function getFeedItemSetResult()
     {
@@ -1153,7 +1153,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the feed item set link mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateFeedItemSetLinkResult feed_item_set_link_result = 54;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedItemSetLinkResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedItemSetLinkResult|null
      */
     public function getFeedItemSetLinkResult()
     {
@@ -1184,7 +1184,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the feed item target mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateFeedItemTargetResult feed_item_target_result = 38;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedItemTargetResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedItemTargetResult|null
      */
     public function getFeedItemTargetResult()
     {
@@ -1215,7 +1215,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the feed mapping mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateFeedMappingResult feed_mapping_result = 39;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedMappingResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedMappingResult|null
      */
     public function getFeedMappingResult()
     {
@@ -1246,7 +1246,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the feed mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateFeedResult feed_result = 40;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateFeedResult|null
      */
     public function getFeedResult()
     {
@@ -1277,7 +1277,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the keyword plan ad group mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateKeywordPlanAdGroupResult keyword_plan_ad_group_result = 44;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanAdGroupResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanAdGroupResult|null
      */
     public function getKeywordPlanAdGroupResult()
     {
@@ -1308,7 +1308,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the keyword plan campaign mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateKeywordPlanCampaignResult keyword_plan_campaign_result = 45;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanCampaignResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanCampaignResult|null
      */
     public function getKeywordPlanCampaignResult()
     {
@@ -1339,7 +1339,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the keyword plan ad group keyword mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateKeywordPlanAdGroupKeywordResult keyword_plan_ad_group_keyword_result = 50;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanAdGroupKeywordResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanAdGroupKeywordResult|null
      */
     public function getKeywordPlanAdGroupKeywordResult()
     {
@@ -1370,7 +1370,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the keyword plan campaign keyword mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateKeywordPlanCampaignKeywordResult keyword_plan_campaign_keyword_result = 51;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanCampaignKeywordResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlanCampaignKeywordResult|null
      */
     public function getKeywordPlanCampaignKeywordResult()
     {
@@ -1401,7 +1401,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the keyword plan mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateKeywordPlansResult keyword_plan_result = 48;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlansResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateKeywordPlansResult|null
      */
     public function getKeywordPlanResult()
     {
@@ -1432,7 +1432,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the label mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateLabelResult label_result = 41;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateLabelResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateLabelResult|null
      */
     public function getLabelResult()
     {
@@ -1463,7 +1463,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the media file mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateMediaFileResult media_file_result = 42;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateMediaFileResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateMediaFileResult|null
      */
     public function getMediaFileResult()
     {
@@ -1494,7 +1494,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the remarketing action mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateRemarketingActionResult remarketing_action_result = 43;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateRemarketingActionResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateRemarketingActionResult|null
      */
     public function getRemarketingActionResult()
     {
@@ -1525,7 +1525,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the shared criterion mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateSharedCriterionResult shared_criterion_result = 14;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateSharedCriterionResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateSharedCriterionResult|null
      */
     public function getSharedCriterionResult()
     {
@@ -1556,7 +1556,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the shared set mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateSharedSetResult shared_set_result = 15;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateSharedSetResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateSharedSetResult|null
      */
     public function getSharedSetResult()
     {
@@ -1587,7 +1587,7 @@ class MutateOperationResponse extends \Google\Protobuf\Internal\Message
      * The result for the user list mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateUserListResult user_list_result = 16;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateUserListResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateUserListResult|null
      */
     public function getUserListResult()
     {

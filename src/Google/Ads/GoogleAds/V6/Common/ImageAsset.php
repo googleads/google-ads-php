@@ -163,7 +163,7 @@ class ImageAsset extends \Google\Protobuf\Internal\Message
      * Metadata for this image at its original size.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ImageDimension full_size = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ImageDimension
+     * @return \Google\Ads\GoogleAds\V6\Common\ImageDimension|null
      */
     public function getFullSize()
     {

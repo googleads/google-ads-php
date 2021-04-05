@@ -49,7 +49,7 @@ class CustomerOperation extends \Google\Protobuf\Internal\Message
      * Mutate operation. Only updates are supported for customer.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Customer update = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Customer
+     * @return \Google\Ads\GoogleAds\V6\Resources\Customer|null
      */
     public function getUpdate()
     {
@@ -85,7 +85,7 @@ class CustomerOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {

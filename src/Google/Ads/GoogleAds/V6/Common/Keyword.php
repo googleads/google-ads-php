@@ -85,7 +85,7 @@ class Keyword extends \Google\Protobuf\Internal\Message
      * Keyword info.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordInfo info = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo|null
      */
     public function getInfo()
     {

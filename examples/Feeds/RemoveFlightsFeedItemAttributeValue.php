@@ -130,6 +130,7 @@ class RemoveFlightsFeedItemAttributeValue
         int $feedItemId,
         string $flightPlaceholderFieldName
     ) {
+        // [START remove_flights_feed_item_attribute_value]
         // Gets a map of the placeholder values to feed attributes.
         $placeHoldersToFeedAttributesMap = Feeds::flightPlaceholderFieldsMapFor(
             ResourceNames::forFeed($customerId, $feedId),
@@ -163,7 +164,9 @@ class RemoveFlightsFeedItemAttributeValue
             ARRAY_FILTER_USE_KEY
         );
         $feedItem->setAttributeValues($feedItemAttributeValues);
+        // [END remove_flights_feed_item_attribute_value]
 
+        // [START remove_flights_feed_item_attribute_value_1]
         // Creates the feed item operation.
         $operation = new FeedItemOperation();
         $operation->setUpdate($feedItem);
@@ -179,6 +182,7 @@ class RemoveFlightsFeedItemAttributeValue
             $flightPlaceholderFieldName,
             PHP_EOL
         );
+        // [END remove_flights_feed_item_attribute_value_1]
     }
 }
 

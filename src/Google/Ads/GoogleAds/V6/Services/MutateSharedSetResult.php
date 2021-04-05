@@ -81,7 +81,7 @@ class MutateSharedSetResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SharedSet shared_set = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\SharedSet
+     * @return \Google\Ads\GoogleAds\V6\Resources\SharedSet|null
      */
     public function getSharedSet()
     {

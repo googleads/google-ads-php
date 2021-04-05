@@ -113,7 +113,7 @@ class QuotaErrorDetails extends \Google\Protobuf\Internal\Message
      * Backoff period that customers should wait before sending next request.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration retry_delay = 3;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getRetryDelay()
     {

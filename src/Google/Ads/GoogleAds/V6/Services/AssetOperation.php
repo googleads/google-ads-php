@@ -50,7 +50,7 @@ class AssetOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 3;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -86,7 +86,7 @@ class AssetOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Asset create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Asset
+     * @return \Google\Ads\GoogleAds\V6\Resources\Asset|null
      */
     public function getCreate()
     {
@@ -119,7 +119,7 @@ class AssetOperation extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/assets/{asset_id}`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Asset update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Asset
+     * @return \Google\Ads\GoogleAds\V6\Resources\Asset|null
      */
     public function getUpdate()
     {

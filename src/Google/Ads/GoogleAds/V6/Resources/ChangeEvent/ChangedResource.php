@@ -130,7 +130,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == AD.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Ad ad = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V6\Resources\Ad|null
      */
     public function getAd()
     {
@@ -166,7 +166,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == AD_GROUP.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroup ad_group = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroup
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroup|null
      */
     public function getAdGroup()
     {
@@ -202,7 +202,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == AD_GROUP_CRITERION.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupCriterion ad_group_criterion = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterion|null
      */
     public function getAdGroupCriterion()
     {
@@ -238,7 +238,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == CAMPAIGN.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Campaign campaign = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign
+     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign|null
      */
     public function getCampaign()
     {
@@ -274,7 +274,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == CAMPAIGN_BUDGET.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBudget campaign_budget = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBudget
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBudget|null
      */
     public function getCampaignBudget()
     {
@@ -310,7 +310,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == AD_GROUP_BID_MODIFIER.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupBidModifier ad_group_bid_modifier = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupBidModifier
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupBidModifier|null
      */
     public function getAdGroupBidModifier()
     {
@@ -346,7 +346,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == CAMPAIGN_CRITERION.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignCriterion campaign_criterion = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignCriterion|null
      */
     public function getCampaignCriterion()
     {
@@ -382,7 +382,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == FEED.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Feed feed = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Feed
+     * @return \Google\Ads\GoogleAds\V6\Resources\Feed|null
      */
     public function getFeed()
     {
@@ -418,7 +418,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == FEED_ITEM.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItem feed_item = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItem
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItem|null
      */
     public function getFeedItem()
     {
@@ -454,7 +454,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == CAMPAIGN_FEED.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignFeed campaign_feed = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignFeed|null
      */
     public function getCampaignFeed()
     {
@@ -490,7 +490,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == AD_GROUP_FEED.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupFeed ad_group_feed = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed|null
      */
     public function getAdGroupFeed()
     {
@@ -526,7 +526,7 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Output only. Set if change_resource_type == AD_GROUP_AD.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAd ad_group_ad = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd|null
      */
     public function getAdGroupAd()
     {

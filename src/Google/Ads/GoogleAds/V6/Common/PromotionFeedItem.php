@@ -545,7 +545,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * Either this or percent_off is required.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Money money_amount_off = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Money
+     * @return \Google\Ads\GoogleAds\V6\Common\Money|null
      */
     public function getMoneyAmountOff()
     {
@@ -609,7 +609,7 @@ class PromotionFeedItem extends \Google\Protobuf\Internal\Message
      * the promotion.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Money orders_over_amount = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Money
+     * @return \Google\Ads\GoogleAds\V6\Common\Money|null
      */
     public function getOrdersOverAmount()
     {

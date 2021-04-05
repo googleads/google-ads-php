@@ -109,7 +109,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * The Gmail teaser.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.GmailTeaser teaser = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\GmailTeaser
+     * @return \Google\Ads\GoogleAds\V6\Common\GmailTeaser|null
      */
     public function getTeaser()
     {
@@ -299,7 +299,7 @@ class GmailAdInfo extends \Google\Protobuf\Internal\Message
      * Display-call-to-action of the marketing image.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DisplayCallToAction marketing_image_display_call_to_action = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DisplayCallToAction
+     * @return \Google\Ads\GoogleAds\V6\Common\DisplayCallToAction|null
      */
     public function getMarketingImageDisplayCallToAction()
     {

@@ -76,7 +76,7 @@ class CampaignError
      */
     const CAMPAIGN_DURATION_MUST_CONTAIN_ALL_RUNNABLE_TRIALS = 10;
     /**
-     * Cannot modify dates, budget or campaign name of a trial campaign.
+     * Cannot modify dates, budget or status of a trial campaign.
      *
      * Generated from protobuf enum <code>CANNOT_MODIFY_FOR_TRIAL_CAMPAIGN = 11;</code>
      */

@@ -166,7 +166,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. ContentLabel.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ContentLabelInfo content_label = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ContentLabelInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ContentLabelInfo|null
      */
     public function getContentLabel()
     {
@@ -197,7 +197,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. MobileApplication.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MobileApplicationInfo mobile_application = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MobileApplicationInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\MobileApplicationInfo|null
      */
     public function getMobileApplication()
     {
@@ -228,7 +228,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. MobileAppCategory.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MobileAppCategoryInfo mobile_app_category = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MobileAppCategoryInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\MobileAppCategoryInfo|null
      */
     public function getMobileAppCategory()
     {
@@ -259,7 +259,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. Placement.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PlacementInfo placement = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PlacementInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\PlacementInfo|null
      */
     public function getPlacement()
     {
@@ -290,7 +290,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Video.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.YouTubeVideoInfo youtube_video = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeVideoInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeVideoInfo|null
      */
     public function getYoutubeVideo()
     {
@@ -321,7 +321,7 @@ class CustomerNegativeCriterion extends \Google\Protobuf\Internal\Message
      * Immutable. YouTube Channel.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.YouTubeChannelInfo youtube_channel = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeChannelInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\YouTubeChannelInfo|null
      */
     public function getYoutubeChannel()
     {
