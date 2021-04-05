@@ -62,7 +62,7 @@ use Google\ApiCore\ApiException;
  * - You need to have access to a Merchant Center account. You can find instructions
  * to create a Merchant Center account here: https://support.google.com/merchants/answer/188924.
  * This account must be linked to your Google Ads account. The integration instructions can be
- * found at: https://developers.google.com/adwords/shopping/full-automation/articles/t15.
+ * found at: https://developers.google.com/google-ads/api/docs/shopping-ads/merchant-center.
  * - You need your Google Ads account to track conversions. The different ways to track conversions
  * can be found here: https://support.google.com/google-ads/answer/1722054.
  */
