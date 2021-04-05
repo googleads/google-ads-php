@@ -310,7 +310,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Immutable. The targeted keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordInfo keyword = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\KeywordInfo|null
      */
     public function getKeyword()
     {
@@ -403,7 +403,7 @@ class FeedItemTarget extends \Google\Protobuf\Internal\Message
      * Immutable. The targeted schedule.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.AdScheduleInfo ad_schedule = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\AdScheduleInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\AdScheduleInfo|null
      */
     public function getAdSchedule()
     {

@@ -544,7 +544,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * conversion action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ConversionAction.ValueSettings value_settings = 11;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction\ValueSettings
+     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction\ValueSettings|null
      */
     public function getValueSettings()
     {
@@ -607,7 +607,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Settings related to this conversion action's attribution model.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ConversionAction.AttributionModelSettings attribution_model_settings = 13;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction\AttributionModelSettings
+     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction\AttributionModelSettings|null
      */
     public function getAttributionModelSettings()
     {
@@ -771,7 +771,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. Firebase settings for Firebase conversion types.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ConversionAction.FirebaseSettings firebase_settings = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction\FirebaseSettings
+     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction\FirebaseSettings|null
      */
     public function getFirebaseSettings()
     {
@@ -807,7 +807,7 @@ class ConversionAction extends \Google\Protobuf\Internal\Message
      * Output only. Third Party App Analytics settings for third party conversion types.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ConversionAction.ThirdPartyAppAnalyticsSettings third_party_app_analytics_settings = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction\ThirdPartyAppAnalyticsSettings
+     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction\ThirdPartyAppAnalyticsSettings|null
      */
     public function getThirdPartyAppAnalyticsSettings()
     {

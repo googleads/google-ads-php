@@ -38,7 +38,7 @@ class UserDataOperation extends \Google\Protobuf\Internal\Message
      * The list of user data to be appended to the user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserData create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserData
+     * @return \Google\Ads\GoogleAds\V6\Common\UserData|null
      */
     public function getCreate()
     {
@@ -69,7 +69,7 @@ class UserDataOperation extends \Google\Protobuf\Internal\Message
      * The list of user data to be removed from the user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserData remove = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserData
+     * @return \Google\Ads\GoogleAds\V6\Common\UserData|null
      */
     public function getRemove()
     {

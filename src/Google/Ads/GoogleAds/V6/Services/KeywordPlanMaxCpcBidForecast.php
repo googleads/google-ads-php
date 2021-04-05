@@ -85,7 +85,7 @@ class KeywordPlanMaxCpcBidForecast extends \Google\Protobuf\Internal\Message
      * The forecast for the Keyword Plan campaign at the specific bid.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ForecastMetrics max_cpc_bid_forecast = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ForecastMetrics
+     * @return \Google\Ads\GoogleAds\V6\Services\ForecastMetrics|null
      */
     public function getMaxCpcBidForecast()
     {

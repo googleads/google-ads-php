@@ -123,7 +123,7 @@ class ProductMetadata extends \Google\Protobuf\Internal\Message
      * The allowed plannable targeting for this product.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.PlannableTargeting plannable_targeting = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\PlannableTargeting
+     * @return \Google\Ads\GoogleAds\V6\Services\PlannableTargeting|null
      */
     public function getPlannableTargeting()
     {

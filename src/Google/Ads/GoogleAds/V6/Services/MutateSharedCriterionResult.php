@@ -81,7 +81,7 @@ class MutateSharedCriterionResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SharedCriterion shared_criterion = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\SharedCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\SharedCriterion|null
      */
     public function getSharedCriterion()
     {

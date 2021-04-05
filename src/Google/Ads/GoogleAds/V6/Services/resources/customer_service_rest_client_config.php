@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v6.services.CustomerService' => [
+            'CreateCustomerClient' => [
+                'method' => 'post',
+                'uriTemplate' => '/v6/customers/{customer_id=*}:createCustomerClient',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
             'GetCustomer' => [
                 'method' => 'get',
                 'uriTemplate' => '/v6/{resource_name=customers/*}',
@@ -14,25 +26,13 @@ return [
                     ],
                 ],
             ],
-            'MutateCustomer' => [
-                'method' => 'post',
-                'uriTemplate' => '/v6/customers/{customer_id=*}:mutate',
-                'body' => '*',
-                'placeholders' => [
-                    'customer_id' => [
-                        'getters' => [
-                            'getCustomerId',
-                        ],
-                    ],
-                ],
-            ],
             'ListAccessibleCustomers' => [
                 'method' => 'get',
                 'uriTemplate' => '/v6/customers:listAccessibleCustomers',
             ],
-            'CreateCustomerClient' => [
+            'MutateCustomer' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/customers/{customer_id=*}:createCustomerClient',
+                'uriTemplate' => '/v6/customers/{customer_id=*}:mutate',
                 'body' => '*',
                 'placeholders' => [
                     'customer_id' => [

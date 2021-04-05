@@ -76,7 +76,7 @@ class MutateCustomerUserAccessInvitationRequest extends \Google\Protobuf\Interna
      * Required. The operation to perform on the access invitation
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.CustomerUserAccessInvitationOperation operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\CustomerUserAccessInvitationOperation
+     * @return \Google\Ads\GoogleAds\V6\Services\CustomerUserAccessInvitationOperation|null
      */
     public function getOperation()
     {

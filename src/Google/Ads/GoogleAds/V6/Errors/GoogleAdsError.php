@@ -75,7 +75,7 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      * An enum value that indicates which error occurred.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.errors.ErrorCode error_code = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Errors\ErrorCode
+     * @return \Google\Ads\GoogleAds\V6\Errors\ErrorCode|null
      */
     public function getErrorCode()
     {
@@ -137,7 +137,7 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      * The value that triggered the error.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Value trigger = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Value
+     * @return \Google\Ads\GoogleAds\V6\Common\Value|null
      */
     public function getTrigger()
     {
@@ -173,7 +173,7 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      * Describes the part of the request proto that caused the error.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.errors.ErrorLocation location = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Errors\ErrorLocation
+     * @return \Google\Ads\GoogleAds\V6\Errors\ErrorLocation|null
      */
     public function getLocation()
     {
@@ -210,7 +210,7 @@ class GoogleAdsError extends \Google\Protobuf\Internal\Message
      * error codes do not include details.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.errors.ErrorDetails details = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Errors\ErrorDetails
+     * @return \Google\Ads\GoogleAds\V6\Errors\ErrorDetails|null
      */
     public function getDetails()
     {

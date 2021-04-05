@@ -81,7 +81,7 @@ class MutateAdGroupExtensionSettingResult extends \Google\Protobuf\Internal\Mess
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupExtensionSetting ad_group_extension_setting = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting|null
      */
     public function getAdGroupExtensionSetting()
     {

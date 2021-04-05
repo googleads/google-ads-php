@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.ads.googleads.v6.services.CombinedAudienceService' => [
-        ],
+        'google.ads.googleads.v6.services.CombinedAudienceService' => [],
     ],
 ];

@@ -89,7 +89,7 @@ class KeywordPlanAdGroupForecast extends \Google\Protobuf\Internal\Message
      * The forecast for the Keyword Plan ad group.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ForecastMetrics ad_group_forecast = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ForecastMetrics
+     * @return \Google\Ads\GoogleAds\V6\Services\ForecastMetrics|null
      */
     public function getAdGroupForecast()
     {

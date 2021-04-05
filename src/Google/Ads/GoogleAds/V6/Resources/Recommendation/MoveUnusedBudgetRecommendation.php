@@ -85,7 +85,7 @@ class MoveUnusedBudgetRecommendation extends \Google\Protobuf\Internal\Message
      * Output only. The recommendation for the constrained budget to increase.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Recommendation.CampaignBudgetRecommendation budget_recommendation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\CampaignBudgetRecommendation
+     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\CampaignBudgetRecommendation|null
      */
     public function getBudgetRecommendation()
     {

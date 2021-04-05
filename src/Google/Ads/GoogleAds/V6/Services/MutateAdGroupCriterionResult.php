@@ -81,7 +81,7 @@ class MutateAdGroupCriterionResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupCriterion ad_group_criterion = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterion|null
      */
     public function getAdGroupCriterion()
     {

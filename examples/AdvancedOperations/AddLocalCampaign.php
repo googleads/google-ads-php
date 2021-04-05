@@ -160,6 +160,7 @@ class AddLocalCampaign
      * @param int $customerId the customer ID
      * @return string the campaign budget resource name
      */
+    // [START add_local_campaign]
     private static function createCampaignBudget(
         GoogleAdsClient $googleAdsClient,
         int $customerId
@@ -193,6 +194,7 @@ class AddLocalCampaign
 
         return $campaignBudgetResourceName;
     }
+    // [END add_local_campaign]
 
     /**
      * Creates a Local campaign.
@@ -202,6 +204,7 @@ class AddLocalCampaign
      * @param string $campaignBudgetResourceName the resource name of the campaign budget
      * @return string the resource name of the newly created campaign
      */
+    // [START add_local_campaign_1]
     private static function createCampaign(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -264,6 +267,7 @@ class AddLocalCampaign
 
         return $campaignResourceName;
     }
+    // [END add_local_campaign_1]
 
     /**
      * Creates an ad group.
@@ -273,6 +277,7 @@ class AddLocalCampaign
      * @param string $campaignResourceName the resource name of the campaign
      * @return string the resource name of the newly created ad group
      */
+    // [START add_local_campaign_2]
     private static function createAdGroup(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -303,6 +308,7 @@ class AddLocalCampaign
 
         return $adGroupResourceName;
     }
+    // [END add_local_campaign_2]
 
     /**
      * Creates a Local ad.
@@ -311,6 +317,7 @@ class AddLocalCampaign
      * @param int $customerId the customer ID
      * @param string $adGroupResourceName the ad group resource name
      */
+    // [START add_local_campaign_3]
     private static function createLocalAd(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -373,6 +380,7 @@ class AddLocalCampaign
             PHP_EOL
         );
     }
+    // [END add_local_campaign_3]
 
     /**
      * Creates an image asset.
@@ -383,6 +391,7 @@ class AddLocalCampaign
      * @param string $imageName the image name
      * @return string the created image asset's resource name
      */
+    // [START add_local_campaign_4]
     private static function createImageAsset(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -414,6 +423,7 @@ class AddLocalCampaign
 
         return $assetResourceName;
     }
+    // [END add_local_campaign_4]
 
     /**
      * Creates a YouTube video asset.
@@ -424,6 +434,7 @@ class AddLocalCampaign
      * @param string $youtubeVideoName the Youtube video name
      * @return string the created video asset's resource name
      */
+    // [START add_local_campaign_5]
     private static function createYoutubeVideoAsset(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -455,6 +466,7 @@ class AddLocalCampaign
 
         return $assetResourceName;
     }
+    // [END add_local_campaign_5]
 }
 
 AddLocalCampaign::main();

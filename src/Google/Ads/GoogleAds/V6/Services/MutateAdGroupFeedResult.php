@@ -81,7 +81,7 @@ class MutateAdGroupFeedResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupFeed ad_group_feed = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed|null
      */
     public function getAdGroupFeed()
     {

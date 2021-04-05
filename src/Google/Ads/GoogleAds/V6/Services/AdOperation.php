@@ -54,7 +54,7 @@ class AdOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -90,7 +90,7 @@ class AdOperation extends \Google\Protobuf\Internal\Message
      * Configuration for how policies are validated.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PolicyValidationParameter policy_validation_parameter = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PolicyValidationParameter
+     * @return \Google\Ads\GoogleAds\V6\Common\PolicyValidationParameter|null
      */
     public function getPolicyValidationParameter()
     {
@@ -128,7 +128,7 @@ class AdOperation extends \Google\Protobuf\Internal\Message
      * `customers/{customer_id}/ads/{ad_id}`
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Ad update = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Ad
+     * @return \Google\Ads\GoogleAds\V6\Resources\Ad|null
      */
     public function getUpdate()
     {

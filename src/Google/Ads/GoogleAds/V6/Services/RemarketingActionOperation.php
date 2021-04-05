@@ -48,7 +48,7 @@ class RemarketingActionOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -85,7 +85,7 @@ class RemarketingActionOperation extends \Google\Protobuf\Internal\Message
      * action.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.RemarketingAction create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\RemarketingAction
+     * @return \Google\Ads\GoogleAds\V6\Resources\RemarketingAction|null
      */
     public function getCreate()
     {
@@ -118,7 +118,7 @@ class RemarketingActionOperation extends \Google\Protobuf\Internal\Message
      * resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.RemarketingAction update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\RemarketingAction
+     * @return \Google\Ads\GoogleAds\V6\Resources\RemarketingAction|null
      */
     public function getUpdate()
     {

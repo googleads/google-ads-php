@@ -339,7 +339,7 @@ class ClickConversion extends \Google\Protobuf\Internal\Message
      * action, but should not be set otherwise.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ExternalAttributionData external_attribution_data = 7;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ExternalAttributionData
+     * @return \Google\Ads\GoogleAds\V6\Services\ExternalAttributionData|null
      */
     public function getExternalAttributionData()
     {

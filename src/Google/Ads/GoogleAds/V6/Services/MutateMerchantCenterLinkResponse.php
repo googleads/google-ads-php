@@ -41,7 +41,7 @@ class MutateMerchantCenterLinkResponse extends \Google\Protobuf\Internal\Message
      * Result for the mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateMerchantCenterLinkResult result = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateMerchantCenterLinkResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateMerchantCenterLinkResult|null
      */
     public function getResult()
     {

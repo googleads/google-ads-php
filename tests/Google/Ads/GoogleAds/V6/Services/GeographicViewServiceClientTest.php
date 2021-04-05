@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,59 +25,49 @@ namespace Google\Ads\GoogleAds\V6\Services;
 use Google\Ads\GoogleAds\V6\Services\GeographicViewServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\GeographicView;
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Protobuf\Any;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group services
+ *
  * @group gapic
  */
 class GeographicViewServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return GeographicViewServiceClient
-     */
+    /** @return GeographicViewServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new GeographicViewServiceClient($options);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getGeographicViewTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $resourceName2 = 'resourceName2625949903';
         $countryCriterionId = 1427674750;
@@ -85,10 +75,8 @@ class GeographicViewServiceClientTest extends GeneratedTest
         $expectedResponse->setResourceName($resourceName2);
         $expectedResponse->setCountryCriterionId($countryCriterionId);
         $transport->addResponse($expectedResponse);
-
         // Mock request
         $formattedResourceName = $client->geographicViewName('[CUSTOMER_ID]', '[COUNTRY_CRITERION_ID]', '[LOCATION_TYPE]');
-
         $response = $client->getGeographicView($formattedResourceName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -96,39 +84,31 @@ class GeographicViewServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.GeographicViewService/GetGeographicView', $actualFuncCall);
-
         $actualValue = $actualRequestObject->getResourceName();
-
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
         $this->assertTrue($transport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function getGeographicViewExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
-
         // Mock request
         $formattedResourceName = $client->geographicViewName('[CUSTOMER_ID]', '[COUNTRY_CRITERION_ID]', '[LOCATION_TYPE]');
-
         try {
             $client->getGeographicView($formattedResourceName);
             // If the $client method call did not throw, fail the test
@@ -137,7 +117,6 @@ class GeographicViewServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

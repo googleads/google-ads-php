@@ -41,7 +41,7 @@ class MutateCustomerUserAccessResponse extends \Google\Protobuf\Internal\Message
      * Result for the mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCustomerUserAccessResult result = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerUserAccessResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerUserAccessResult|null
      */
     public function getResult()
     {

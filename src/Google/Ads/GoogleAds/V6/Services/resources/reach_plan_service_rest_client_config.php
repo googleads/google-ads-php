@@ -3,16 +3,6 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v6.services.ReachPlanService' => [
-            'ListPlannableLocations' => [
-                'method' => 'post',
-                'uriTemplate' => '/v6:listPlannableLocations',
-                'body' => '*',
-            ],
-            'ListPlannableProducts' => [
-                'method' => 'post',
-                'uriTemplate' => '/v6:listPlannableProducts',
-                'body' => '*',
-            ],
             'GenerateProductMixIdeas' => [
                 'method' => 'post',
                 'uriTemplate' => '/v6/customers/{customer_id=*}:generateProductMixIdeas',
@@ -36,6 +26,16 @@ return [
                         ],
                     ],
                 ],
+            ],
+            'ListPlannableLocations' => [
+                'method' => 'post',
+                'uriTemplate' => '/v6:listPlannableLocations',
+                'body' => '*',
+            ],
+            'ListPlannableProducts' => [
+                'method' => 'post',
+                'uriTemplate' => '/v6:listPlannableProducts',
+                'body' => '*',
             ],
         ],
         'google.longrunning.Operations' => [

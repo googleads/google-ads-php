@@ -111,7 +111,7 @@ class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
      * be true; AND_NOT where left operand is true but right operand is false.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CombinedRuleUserListInfo combined_rule_user_list = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CombinedRuleUserListInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\CombinedRuleUserListInfo|null
      */
     public function getCombinedRuleUserList()
     {
@@ -148,7 +148,7 @@ class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
      * After start_date (exclusive) with end_date = 2037-12-30.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DateSpecificRuleUserListInfo date_specific_rule_user_list = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DateSpecificRuleUserListInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\DateSpecificRuleUserListInfo|null
      */
     public function getDateSpecificRuleUserList()
     {
@@ -184,7 +184,7 @@ class RuleBasedUserListInfo extends \Google\Protobuf\Internal\Message
      * expression.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.ExpressionRuleUserListInfo expression_rule_user_list = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\ExpressionRuleUserListInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\ExpressionRuleUserListInfo|null
      */
     public function getExpressionRuleUserList()
     {

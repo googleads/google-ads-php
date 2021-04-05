@@ -41,7 +41,7 @@ class MutateCustomerClientLinkResponse extends \Google\Protobuf\Internal\Message
      * A result that identifies the resource affected by the mutate request.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateCustomerClientLinkResult result = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerClientLinkResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateCustomerClientLinkResult|null
      */
     public function getResult()
     {

@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.ads.googleads.v6.services.ReachPlanService' => [
-        ],
+        'google.ads.googleads.v6.services.ReachPlanService' => [],
     ],
 ];

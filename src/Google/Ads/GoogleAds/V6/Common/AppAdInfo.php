@@ -85,7 +85,7 @@ class AppAdInfo extends \Google\Protobuf\Internal\Message
      * Mandatory ad text.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.AdTextAsset mandatory_ad_text = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\AdTextAsset
+     * @return \Google\Ads\GoogleAds\V6\Common\AdTextAsset|null
      */
     public function getMandatoryAdText()
     {

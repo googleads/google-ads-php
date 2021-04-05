@@ -165,7 +165,7 @@ class AdTextAsset extends \Google\Protobuf\Internal\Message
      * The policy summary of this text asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.AdAssetPolicySummary policy_summary_info = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\AdAssetPolicySummary
+     * @return \Google\Ads\GoogleAds\V6\Common\AdAssetPolicySummary|null
      */
     public function getPolicySummaryInfo()
     {

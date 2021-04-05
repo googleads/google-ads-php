@@ -98,7 +98,7 @@ class CreateCustomerClientRequest extends \Google\Protobuf\Internal\Message
      * will be ignored.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Customer customer_client = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Customer
+     * @return \Google\Ads\GoogleAds\V6\Resources\Customer|null
      */
     public function getCustomerClient()
     {

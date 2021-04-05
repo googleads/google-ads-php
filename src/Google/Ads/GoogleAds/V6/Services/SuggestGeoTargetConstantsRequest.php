@@ -135,7 +135,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * The location names to search by. At most 25 names can be set.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.SuggestGeoTargetConstantsRequest.LocationNames location_names = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\SuggestGeoTargetConstantsRequest\LocationNames
+     * @return \Google\Ads\GoogleAds\V6\Services\SuggestGeoTargetConstantsRequest\LocationNames|null
      */
     public function getLocationNames()
     {
@@ -166,7 +166,7 @@ class SuggestGeoTargetConstantsRequest extends \Google\Protobuf\Internal\Message
      * The geo target constant resource names to filter by.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.SuggestGeoTargetConstantsRequest.GeoTargets geo_targets = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\SuggestGeoTargetConstantsRequest\GeoTargets
+     * @return \Google\Ads\GoogleAds\V6\Services\SuggestGeoTargetConstantsRequest\GeoTargets|null
      */
     public function getGeoTargets()
     {

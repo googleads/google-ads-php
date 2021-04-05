@@ -22,7 +22,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      */
     protected $ad_duration_millis = null;
     /**
-     * Immutable. The YouTube video ID (as seen in YouTube URLs).
+     * Immutable. The YouTube video ID (as seen in YouTube URLs). Adding prefix
+     * "https://www.youtube.com/watch?v=" to this ID will get the YouTube
+     * streaming URL for this video.
      *
      * Generated from protobuf field <code>string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -52,7 +54,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
      *     @type int|string $ad_duration_millis
      *           Output only. The duration of the Video in milliseconds.
      *     @type string $youtube_video_id
-     *           Immutable. The YouTube video ID (as seen in YouTube URLs).
+     *           Immutable. The YouTube video ID (as seen in YouTube URLs). Adding prefix
+     *           "https://www.youtube.com/watch?v=" to this ID will get the YouTube
+     *           streaming URL for this video.
      *     @type string $advertising_id_code
      *           Output only. The Advertising Digital Identification code for this video, as defined by
      *           the American Association of Advertising Agencies, used mainly for
@@ -104,7 +108,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The YouTube video ID (as seen in YouTube URLs).
+     * Immutable. The YouTube video ID (as seen in YouTube URLs). Adding prefix
+     * "https://www.youtube.com/watch?v=" to this ID will get the YouTube
+     * streaming URL for this video.
      *
      * Generated from protobuf field <code>string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -125,7 +131,9 @@ class MediaVideo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The YouTube video ID (as seen in YouTube URLs).
+     * Immutable. The YouTube video ID (as seen in YouTube URLs). Adding prefix
+     * "https://www.youtube.com/watch?v=" to this ID will get the YouTube
+     * streaming URL for this video.
      *
      * Generated from protobuf field <code>string youtube_video_id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var

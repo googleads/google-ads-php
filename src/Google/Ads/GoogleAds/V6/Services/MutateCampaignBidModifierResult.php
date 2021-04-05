@@ -81,7 +81,7 @@ class MutateCampaignBidModifierResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBidModifier campaign_bid_modifier = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier|null
      */
     public function getCampaignBidModifier()
     {

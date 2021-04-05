@@ -929,7 +929,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The account budget in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AccountBudget account_budget = 42;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AccountBudget
+     * @return \Google\Ads\GoogleAds\V6\Resources\AccountBudget|null
      */
     public function getAccountBudget()
     {
@@ -965,7 +965,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The account budget proposal referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AccountBudgetProposal account_budget_proposal = 43;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AccountBudgetProposal
+     * @return \Google\Ads\GoogleAds\V6\Resources\AccountBudgetProposal|null
      */
     public function getAccountBudgetProposal()
     {
@@ -1001,7 +1001,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The AccountLink referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AccountLink account_link = 143;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AccountLink
+     * @return \Google\Ads\GoogleAds\V6\Resources\AccountLink|null
      */
     public function getAccountLink()
     {
@@ -1037,7 +1037,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroup ad_group = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroup
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroup|null
      */
     public function getAdGroup()
     {
@@ -1073,7 +1073,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAd ad_group_ad = 16;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd|null
      */
     public function getAdGroupAd()
     {
@@ -1109,7 +1109,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group ad asset view in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAdAssetView ad_group_ad_asset_view = 131;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAdAssetView
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAdAssetView|null
      */
     public function getAdGroupAdAssetView()
     {
@@ -1145,7 +1145,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group ad label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAdLabel ad_group_ad_label = 120;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAdLabel
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAdLabel|null
      */
     public function getAdGroupAdLabel()
     {
@@ -1181,7 +1181,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group audience view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAudienceView ad_group_audience_view = 57;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAudienceView
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAudienceView|null
      */
     public function getAdGroupAudienceView()
     {
@@ -1217,7 +1217,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The bid modifier referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupBidModifier ad_group_bid_modifier = 24;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupBidModifier
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupBidModifier|null
      */
     public function getAdGroupBidModifier()
     {
@@ -1253,7 +1253,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The criterion referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupCriterion ad_group_criterion = 17;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterion|null
      */
     public function getAdGroupCriterion()
     {
@@ -1289,7 +1289,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group criterion label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupCriterionLabel ad_group_criterion_label = 121;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterionLabel
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterionLabel|null
      */
     public function getAdGroupCriterionLabel()
     {
@@ -1325,7 +1325,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group criterion simulation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupCriterionSimulation ad_group_criterion_simulation = 110;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterionSimulation
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupCriterionSimulation|null
      */
     public function getAdGroupCriterionSimulation()
     {
@@ -1361,7 +1361,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupExtensionSetting ad_group_extension_setting = 112;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupExtensionSetting|null
      */
     public function getAdGroupExtensionSetting()
     {
@@ -1397,7 +1397,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group feed referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupFeed ad_group_feed = 67;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupFeed|null
      */
     public function getAdGroupFeed()
     {
@@ -1433,7 +1433,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupLabel ad_group_label = 115;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupLabel
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupLabel|null
      */
     public function getAdGroupLabel()
     {
@@ -1469,7 +1469,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad group simulation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupSimulation ad_group_simulation = 107;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupSimulation
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupSimulation|null
      */
     public function getAdGroupSimulation()
     {
@@ -1505,7 +1505,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad parameter referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdParameter ad_parameter = 130;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdParameter
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdParameter|null
      */
     public function getAdParameter()
     {
@@ -1541,7 +1541,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The age range view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AgeRangeView age_range_view = 48;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AgeRangeView
+     * @return \Google\Ads\GoogleAds\V6\Resources\AgeRangeView|null
      */
     public function getAgeRangeView()
     {
@@ -1577,7 +1577,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ad schedule view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdScheduleView ad_schedule_view = 89;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdScheduleView
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdScheduleView|null
      */
     public function getAdScheduleView()
     {
@@ -1613,7 +1613,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The domain category referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.DomainCategory domain_category = 91;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\DomainCategory
+     * @return \Google\Ads\GoogleAds\V6\Resources\DomainCategory|null
      */
     public function getDomainCategory()
     {
@@ -1649,7 +1649,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The asset referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Asset asset = 105;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Asset
+     * @return \Google\Ads\GoogleAds\V6\Resources\Asset|null
      */
     public function getAsset()
     {
@@ -1685,7 +1685,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The batch job referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.BatchJob batch_job = 139;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\BatchJob
+     * @return \Google\Ads\GoogleAds\V6\Resources\BatchJob|null
      */
     public function getBatchJob()
     {
@@ -1721,7 +1721,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.BiddingStrategy bidding_strategy = 18;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\BiddingStrategy
+     * @return \Google\Ads\GoogleAds\V6\Resources\BiddingStrategy|null
      */
     public function getBiddingStrategy()
     {
@@ -1757,7 +1757,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The billing setup referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.BillingSetup billing_setup = 41;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\BillingSetup
+     * @return \Google\Ads\GoogleAds\V6\Resources\BillingSetup|null
      */
     public function getBillingSetup()
     {
@@ -1793,7 +1793,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The call view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CallView call_view = 152;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CallView
+     * @return \Google\Ads\GoogleAds\V6\Resources\CallView|null
      */
     public function getCallView()
     {
@@ -1829,7 +1829,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign budget referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBudget campaign_budget = 19;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBudget
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBudget|null
      */
     public function getCampaignBudget()
     {
@@ -1865,7 +1865,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Campaign campaign = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign
+     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign|null
      */
     public function getCampaign()
     {
@@ -1901,7 +1901,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign asset referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignAsset campaign_asset = 142;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignAsset
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignAsset|null
      */
     public function getCampaignAsset()
     {
@@ -1937,7 +1937,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign audience view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignAudienceView campaign_audience_view = 69;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignAudienceView
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignAudienceView|null
      */
     public function getCampaignAudienceView()
     {
@@ -1973,7 +1973,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign bid modifier referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignBidModifier campaign_bid_modifier = 26;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignBidModifier|null
      */
     public function getCampaignBidModifier()
     {
@@ -2009,7 +2009,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign criterion referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignCriterion campaign_criterion = 20;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignCriterion|null
      */
     public function getCampaignCriterion()
     {
@@ -2045,7 +2045,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign criterion simulation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignCriterionSimulation campaign_criterion_simulation = 111;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignCriterionSimulation
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignCriterionSimulation|null
      */
     public function getCampaignCriterionSimulation()
     {
@@ -2081,7 +2081,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign draft referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignDraft campaign_draft = 49;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignDraft
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignDraft|null
      */
     public function getCampaignDraft()
     {
@@ -2117,7 +2117,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign experiment referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignExperiment campaign_experiment = 84;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignExperiment
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignExperiment|null
      */
     public function getCampaignExperiment()
     {
@@ -2153,7 +2153,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignExtensionSetting campaign_extension_setting = 113;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignExtensionSetting
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignExtensionSetting|null
      */
     public function getCampaignExtensionSetting()
     {
@@ -2189,7 +2189,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign feed referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignFeed campaign_feed = 63;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignFeed|null
      */
     public function getCampaignFeed()
     {
@@ -2225,7 +2225,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The campaign label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignLabel campaign_label = 108;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignLabel
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignLabel|null
      */
     public function getCampaignLabel()
     {
@@ -2261,7 +2261,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Campaign Shared Set referenced in AWQL query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignSharedSet campaign_shared_set = 30;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignSharedSet|null
      */
     public function getCampaignSharedSet()
     {
@@ -2297,7 +2297,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The carrier constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CarrierConstant carrier_constant = 66;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CarrierConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\CarrierConstant|null
      */
     public function getCarrierConstant()
     {
@@ -2333,7 +2333,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ChangeEvent referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ChangeEvent change_event = 145;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ChangeEvent
+     * @return \Google\Ads\GoogleAds\V6\Resources\ChangeEvent|null
      */
     public function getChangeEvent()
     {
@@ -2369,7 +2369,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ChangeStatus referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ChangeStatus change_status = 37;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ChangeStatus
+     * @return \Google\Ads\GoogleAds\V6\Resources\ChangeStatus|null
      */
     public function getChangeStatus()
     {
@@ -2405,7 +2405,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The CombinedAudience referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CombinedAudience combined_audience = 148;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CombinedAudience
+     * @return \Google\Ads\GoogleAds\V6\Resources\CombinedAudience|null
      */
     public function getCombinedAudience()
     {
@@ -2441,7 +2441,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The conversion action referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ConversionAction conversion_action = 103;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction
+     * @return \Google\Ads\GoogleAds\V6\Resources\ConversionAction|null
      */
     public function getConversionAction()
     {
@@ -2477,7 +2477,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The ClickView referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ClickView click_view = 122;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ClickView
+     * @return \Google\Ads\GoogleAds\V6\Resources\ClickView|null
      */
     public function getClickView()
     {
@@ -2513,7 +2513,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The currency constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CurrencyConstant currency_constant = 134;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CurrencyConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\CurrencyConstant|null
      */
     public function getCurrencyConstant()
     {
@@ -2549,7 +2549,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The CustomAudience referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomAudience custom_audience = 147;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomAudience
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomAudience|null
      */
     public function getCustomAudience()
     {
@@ -2585,7 +2585,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The CustomInterest referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomInterest custom_interest = 104;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomInterest
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomInterest|null
      */
     public function getCustomInterest()
     {
@@ -2621,7 +2621,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The customer referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Customer customer = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Customer
+     * @return \Google\Ads\GoogleAds\V6\Resources\Customer|null
      */
     public function getCustomer()
     {
@@ -2657,7 +2657,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The CustomerManagerLink referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerManagerLink customer_manager_link = 61;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerManagerLink
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerManagerLink|null
      */
     public function getCustomerManagerLink()
     {
@@ -2693,7 +2693,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The CustomerClientLink referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerClientLink customer_client_link = 62;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerClientLink
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerClientLink|null
      */
     public function getCustomerClientLink()
     {
@@ -2729,7 +2729,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The CustomerClient referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerClient customer_client = 70;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerClient
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerClient|null
      */
     public function getCustomerClient()
     {
@@ -2765,7 +2765,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The customer extension setting referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerExtensionSetting customer_extension_setting = 114;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerExtensionSetting|null
      */
     public function getCustomerExtensionSetting()
     {
@@ -2801,7 +2801,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The customer feed referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerFeed customer_feed = 64;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerFeed|null
      */
     public function getCustomerFeed()
     {
@@ -2837,7 +2837,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The customer label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerLabel customer_label = 124;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerLabel
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerLabel|null
      */
     public function getCustomerLabel()
     {
@@ -2873,7 +2873,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The customer negative criterion referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerNegativeCriterion customer_negative_criterion = 88;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerNegativeCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerNegativeCriterion|null
      */
     public function getCustomerNegativeCriterion()
     {
@@ -2909,7 +2909,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The CustomerUserAccess referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerUserAccess customer_user_access = 146;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccess
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccess|null
      */
     public function getCustomerUserAccess()
     {
@@ -2945,7 +2945,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The CustomerUserAccessInvitation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerUserAccessInvitation customer_user_access_invitation = 150;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation|null
      */
     public function getCustomerUserAccessInvitation()
     {
@@ -2981,7 +2981,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The detail placement view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.DetailPlacementView detail_placement_view = 118;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\DetailPlacementView
+     * @return \Google\Ads\GoogleAds\V6\Resources\DetailPlacementView|null
      */
     public function getDetailPlacementView()
     {
@@ -3017,7 +3017,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The display keyword view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.DisplayKeywordView display_keyword_view = 47;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\DisplayKeywordView
+     * @return \Google\Ads\GoogleAds\V6\Resources\DisplayKeywordView|null
      */
     public function getDisplayKeywordView()
     {
@@ -3053,7 +3053,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The distance view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.DistanceView distance_view = 132;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\DistanceView
+     * @return \Google\Ads\GoogleAds\V6\Resources\DistanceView|null
      */
     public function getDistanceView()
     {
@@ -3089,7 +3089,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The dynamic search ads search term view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.DynamicSearchAdsSearchTermView dynamic_search_ads_search_term_view = 106;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\DynamicSearchAdsSearchTermView
+     * @return \Google\Ads\GoogleAds\V6\Resources\DynamicSearchAdsSearchTermView|null
      */
     public function getDynamicSearchAdsSearchTermView()
     {
@@ -3125,7 +3125,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The expanded landing page view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ExpandedLandingPageView expanded_landing_page_view = 128;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ExpandedLandingPageView
+     * @return \Google\Ads\GoogleAds\V6\Resources\ExpandedLandingPageView|null
      */
     public function getExpandedLandingPageView()
     {
@@ -3161,7 +3161,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The extension feed item referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ExtensionFeedItem extension_feed_item = 85;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem
+     * @return \Google\Ads\GoogleAds\V6\Resources\ExtensionFeedItem|null
      */
     public function getExtensionFeedItem()
     {
@@ -3197,7 +3197,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The feed referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Feed feed = 46;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Feed
+     * @return \Google\Ads\GoogleAds\V6\Resources\Feed|null
      */
     public function getFeed()
     {
@@ -3233,7 +3233,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The feed item referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItem feed_item = 50;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItem
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItem|null
      */
     public function getFeedItem()
     {
@@ -3269,7 +3269,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The feed item set referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItemSet feed_item_set = 149;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemSet
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemSet|null
      */
     public function getFeedItemSet()
     {
@@ -3305,7 +3305,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The feed item set link referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItemSetLink feed_item_set_link = 151;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemSetLink
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemSetLink|null
      */
     public function getFeedItemSetLink()
     {
@@ -3341,7 +3341,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The feed item target referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItemTarget feed_item_target = 116;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemTarget
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemTarget|null
      */
     public function getFeedItemTarget()
     {
@@ -3377,7 +3377,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The feed mapping referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedMapping feed_mapping = 58;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedMapping
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedMapping|null
      */
     public function getFeedMapping()
     {
@@ -3413,7 +3413,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The feed placeholder view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedPlaceholderView feed_placeholder_view = 97;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedPlaceholderView
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedPlaceholderView|null
      */
     public function getFeedPlaceholderView()
     {
@@ -3449,7 +3449,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The gender view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.GenderView gender_view = 40;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\GenderView
+     * @return \Google\Ads\GoogleAds\V6\Resources\GenderView|null
      */
     public function getGenderView()
     {
@@ -3485,7 +3485,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The geo target constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.GeoTargetConstant geo_target_constant = 23;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\GeoTargetConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\GeoTargetConstant|null
      */
     public function getGeoTargetConstant()
     {
@@ -3521,7 +3521,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The geographic view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.GeographicView geographic_view = 125;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\GeographicView
+     * @return \Google\Ads\GoogleAds\V6\Resources\GeographicView|null
      */
     public function getGeographicView()
     {
@@ -3557,7 +3557,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The group placement view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.GroupPlacementView group_placement_view = 119;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\GroupPlacementView
+     * @return \Google\Ads\GoogleAds\V6\Resources\GroupPlacementView|null
      */
     public function getGroupPlacementView()
     {
@@ -3593,7 +3593,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The hotel group view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.HotelGroupView hotel_group_view = 51;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\HotelGroupView
+     * @return \Google\Ads\GoogleAds\V6\Resources\HotelGroupView|null
      */
     public function getHotelGroupView()
     {
@@ -3629,7 +3629,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The hotel performance view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.HotelPerformanceView hotel_performance_view = 71;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\HotelPerformanceView
+     * @return \Google\Ads\GoogleAds\V6\Resources\HotelPerformanceView|null
      */
     public function getHotelPerformanceView()
     {
@@ -3665,7 +3665,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The income range view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.IncomeRangeView income_range_view = 138;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\IncomeRangeView
+     * @return \Google\Ads\GoogleAds\V6\Resources\IncomeRangeView|null
      */
     public function getIncomeRangeView()
     {
@@ -3701,7 +3701,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The keyword view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordView keyword_view = 21;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordView
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordView|null
      */
     public function getKeywordView()
     {
@@ -3737,7 +3737,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The keyword plan referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlan keyword_plan = 32;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlan
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlan|null
      */
     public function getKeywordPlan()
     {
@@ -3773,7 +3773,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The keyword plan campaign referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlanCampaign keyword_plan_campaign = 33;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaign
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaign|null
      */
     public function getKeywordPlanCampaign()
     {
@@ -3809,7 +3809,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The keyword plan campaign keyword referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword keyword_plan_campaign_keyword = 140;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaignKeyword
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaignKeyword|null
      */
     public function getKeywordPlanCampaignKeyword()
     {
@@ -3845,7 +3845,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The keyword plan ad group referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlanAdGroup keyword_plan_ad_group = 35;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroup
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroup|null
      */
     public function getKeywordPlanAdGroup()
     {
@@ -3881,7 +3881,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The keyword plan ad group referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlanAdGroupKeyword keyword_plan_ad_group_keyword = 141;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroupKeyword
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanAdGroupKeyword|null
      */
     public function getKeywordPlanAdGroupKeyword()
     {
@@ -3917,7 +3917,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The label referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Label label = 52;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Label
+     * @return \Google\Ads\GoogleAds\V6\Resources\Label|null
      */
     public function getLabel()
     {
@@ -3953,7 +3953,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The landing page view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.LandingPageView landing_page_view = 126;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\LandingPageView
+     * @return \Google\Ads\GoogleAds\V6\Resources\LandingPageView|null
      */
     public function getLandingPageView()
     {
@@ -3989,7 +3989,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The language constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.LanguageConstant language_constant = 55;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\LanguageConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\LanguageConstant|null
      */
     public function getLanguageConstant()
     {
@@ -4025,7 +4025,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The location view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.LocationView location_view = 123;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\LocationView
+     * @return \Google\Ads\GoogleAds\V6\Resources\LocationView|null
      */
     public function getLocationView()
     {
@@ -4061,7 +4061,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The managed placement view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ManagedPlacementView managed_placement_view = 53;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ManagedPlacementView
+     * @return \Google\Ads\GoogleAds\V6\Resources\ManagedPlacementView|null
      */
     public function getManagedPlacementView()
     {
@@ -4097,7 +4097,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The media file referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.MediaFile media_file = 90;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\MediaFile
+     * @return \Google\Ads\GoogleAds\V6\Resources\MediaFile|null
      */
     public function getMediaFile()
     {
@@ -4133,7 +4133,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The mobile app category constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.MobileAppCategoryConstant mobile_app_category_constant = 87;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\MobileAppCategoryConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\MobileAppCategoryConstant|null
      */
     public function getMobileAppCategoryConstant()
     {
@@ -4169,7 +4169,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The mobile device constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.MobileDeviceConstant mobile_device_constant = 98;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\MobileDeviceConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\MobileDeviceConstant|null
      */
     public function getMobileDeviceConstant()
     {
@@ -4205,7 +4205,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The offline user data job referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.OfflineUserDataJob offline_user_data_job = 137;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\OfflineUserDataJob
+     * @return \Google\Ads\GoogleAds\V6\Resources\OfflineUserDataJob|null
      */
     public function getOfflineUserDataJob()
     {
@@ -4241,7 +4241,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The operating system version constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.OperatingSystemVersionConstant operating_system_version_constant = 86;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\OperatingSystemVersionConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\OperatingSystemVersionConstant|null
      */
     public function getOperatingSystemVersionConstant()
     {
@@ -4277,7 +4277,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The paid organic search term view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.PaidOrganicSearchTermView paid_organic_search_term_view = 129;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\PaidOrganicSearchTermView
+     * @return \Google\Ads\GoogleAds\V6\Resources\PaidOrganicSearchTermView|null
      */
     public function getPaidOrganicSearchTermView()
     {
@@ -4313,7 +4313,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The parental status view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ParentalStatusView parental_status_view = 45;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ParentalStatusView
+     * @return \Google\Ads\GoogleAds\V6\Resources\ParentalStatusView|null
      */
     public function getParentalStatusView()
     {
@@ -4349,7 +4349,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The Product Bidding Category referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ProductBiddingCategoryConstant product_bidding_category_constant = 109;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ProductBiddingCategoryConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\ProductBiddingCategoryConstant|null
      */
     public function getProductBiddingCategoryConstant()
     {
@@ -4385,7 +4385,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The product group view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ProductGroupView product_group_view = 54;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ProductGroupView
+     * @return \Google\Ads\GoogleAds\V6\Resources\ProductGroupView|null
      */
     public function getProductGroupView()
     {
@@ -4421,7 +4421,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The recommendation referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Recommendation recommendation = 22;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation
+     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation|null
      */
     public function getRecommendation()
     {
@@ -4457,7 +4457,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The search term view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SearchTermView search_term_view = 68;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\SearchTermView
+     * @return \Google\Ads\GoogleAds\V6\Resources\SearchTermView|null
      */
     public function getSearchTermView()
     {
@@ -4493,7 +4493,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The shared set referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SharedCriterion shared_criterion = 29;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\SharedCriterion
+     * @return \Google\Ads\GoogleAds\V6\Resources\SharedCriterion|null
      */
     public function getSharedCriterion()
     {
@@ -4529,7 +4529,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The shared set referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.SharedSet shared_set = 27;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\SharedSet
+     * @return \Google\Ads\GoogleAds\V6\Resources\SharedSet|null
      */
     public function getSharedSet()
     {
@@ -4565,7 +4565,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The shopping performance view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ShoppingPerformanceView shopping_performance_view = 117;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ShoppingPerformanceView
+     * @return \Google\Ads\GoogleAds\V6\Resources\ShoppingPerformanceView|null
      */
     public function getShoppingPerformanceView()
     {
@@ -4601,7 +4601,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The AccountLink referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ThirdPartyAppAnalyticsLink third_party_app_analytics_link = 144;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ThirdPartyAppAnalyticsLink
+     * @return \Google\Ads\GoogleAds\V6\Resources\ThirdPartyAppAnalyticsLink|null
      */
     public function getThirdPartyAppAnalyticsLink()
     {
@@ -4637,7 +4637,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The topic view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.TopicView topic_view = 44;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\TopicView
+     * @return \Google\Ads\GoogleAds\V6\Resources\TopicView|null
      */
     public function getTopicView()
     {
@@ -4673,7 +4673,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The user interest referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.UserInterest user_interest = 59;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\UserInterest
+     * @return \Google\Ads\GoogleAds\V6\Resources\UserInterest|null
      */
     public function getUserInterest()
     {
@@ -4709,7 +4709,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The user list referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.UserList user_list = 38;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\UserList
+     * @return \Google\Ads\GoogleAds\V6\Resources\UserList|null
      */
     public function getUserList()
     {
@@ -4745,7 +4745,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The user location view referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.UserLocationView user_location_view = 135;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\UserLocationView
+     * @return \Google\Ads\GoogleAds\V6\Resources\UserLocationView|null
      */
     public function getUserLocationView()
     {
@@ -4781,7 +4781,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The remarketing action referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.RemarketingAction remarketing_action = 60;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\RemarketingAction
+     * @return \Google\Ads\GoogleAds\V6\Resources\RemarketingAction|null
      */
     public function getRemarketingAction()
     {
@@ -4817,7 +4817,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The topic constant referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.TopicConstant topic_constant = 31;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\TopicConstant
+     * @return \Google\Ads\GoogleAds\V6\Resources\TopicConstant|null
      */
     public function getTopicConstant()
     {
@@ -4853,7 +4853,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The video referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Video video = 39;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Video
+     * @return \Google\Ads\GoogleAds\V6\Resources\Video|null
      */
     public function getVideo()
     {
@@ -4889,7 +4889,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The metrics.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Metrics metrics = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Metrics
+     * @return \Google\Ads\GoogleAds\V6\Common\Metrics|null
      */
     public function getMetrics()
     {
@@ -4925,7 +4925,7 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * The segments.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Segments segments = 102;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Segments
+     * @return \Google\Ads\GoogleAds\V6\Common\Segments|null
      */
     public function getSegments()
     {

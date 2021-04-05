@@ -41,7 +41,7 @@ class MutateBillingSetupResponse extends \Google\Protobuf\Internal\Message
      * A result that identifies the resource affected by the mutate request.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateBillingSetupResult result = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateBillingSetupResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateBillingSetupResult|null
      */
     public function getResult()
     {

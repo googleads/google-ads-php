@@ -53,7 +53,7 @@ class FrequencyCapEntry extends \Google\Protobuf\Internal\Message
      * than one frequency cap with the same key.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.FrequencyCapKey key = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\FrequencyCapKey
+     * @return \Google\Ads\GoogleAds\V6\Common\FrequencyCapKey|null
      */
     public function getKey()
     {

@@ -42,7 +42,7 @@ class CustomerUserAccessInvitationOperation extends \Google\Protobuf\Internal\Me
      * invitation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerUserAccessInvitation create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerUserAccessInvitation|null
      */
     public function getCreate()
     {

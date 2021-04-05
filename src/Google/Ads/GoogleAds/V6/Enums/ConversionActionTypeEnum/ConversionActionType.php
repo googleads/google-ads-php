@@ -91,6 +91,7 @@ class ConversionActionType
      * data uploads and/or from in-store purchases using cards from payment
      * networks.
      * Only customers on the allowlist can use store sales types.
+     * Read only.
      *
      * Generated from protobuf enum <code>STORE_SALES = 11;</code>
      */

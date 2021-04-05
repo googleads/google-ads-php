@@ -43,7 +43,7 @@ class Operand extends \Google\Protobuf\Internal\Message
      * A constant operand in a matching function.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Operand.ConstantOperand constant_operand = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Operand\ConstantOperand
+     * @return \Google\Ads\GoogleAds\V6\Common\Operand\ConstantOperand|null
      */
     public function getConstantOperand()
     {
@@ -74,7 +74,7 @@ class Operand extends \Google\Protobuf\Internal\Message
      * This operand specifies a feed attribute in feed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Operand.FeedAttributeOperand feed_attribute_operand = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Operand\FeedAttributeOperand
+     * @return \Google\Ads\GoogleAds\V6\Common\Operand\FeedAttributeOperand|null
      */
     public function getFeedAttributeOperand()
     {
@@ -106,7 +106,7 @@ class Operand extends \Google\Protobuf\Internal\Message
      * Used to represent nested functions.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Operand.FunctionOperand function_operand = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Operand\FunctionOperand
+     * @return \Google\Ads\GoogleAds\V6\Common\Operand\FunctionOperand|null
      */
     public function getFunctionOperand()
     {
@@ -138,7 +138,7 @@ class Operand extends \Google\Protobuf\Internal\Message
      * An operand in a function referring to a value in the request context.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Operand.RequestContextOperand request_context_operand = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Operand\RequestContextOperand
+     * @return \Google\Ads\GoogleAds\V6\Common\Operand\RequestContextOperand|null
      */
     public function getRequestContextOperand()
     {

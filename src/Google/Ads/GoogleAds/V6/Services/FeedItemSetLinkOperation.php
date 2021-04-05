@@ -42,7 +42,7 @@ class FeedItemSetLinkOperation extends \Google\Protobuf\Internal\Message
      * new feed item set link.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItemSetLink create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemSetLink
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemSetLink|null
      */
     public function getCreate()
     {

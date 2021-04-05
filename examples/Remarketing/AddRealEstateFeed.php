@@ -277,6 +277,7 @@ class AddRealEstateFeed
      * @param array $placeHoldersToFeedAttributesMap the map from placeholder fields to feed
      *      attributes
      */
+    // [START add_real_estate_feed_1]
     private static function createFeedItem(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -339,6 +340,7 @@ class AddRealEstateFeed
             PHP_EOL
         );
     }
+    // [END add_real_estate_feed_1]
 }
 
 AddRealEstateFeed::main();

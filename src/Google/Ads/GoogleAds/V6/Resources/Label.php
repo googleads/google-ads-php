@@ -213,7 +213,7 @@ class Label extends \Google\Protobuf\Internal\Message
      * A type of label displaying text on a colored background.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TextLabel text_label = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TextLabel
+     * @return \Google\Ads\GoogleAds\V6\Common\TextLabel|null
      */
     public function getTextLabel()
     {

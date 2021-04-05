@@ -1,3 +1,13 @@
+## 8.1.0
+*   Added missing 'null' type hints in the package `src/Google/Ads/GoogleAds/v6/`.
+*   Updated code examples:
+    * AddCampaignTargetingCriteria
+    * AddDynamicPageFeed
+    * AddSitelinks
+    * CreateCustomer
+    * GetGeoTargetConstantsByNames
+    * UploadStoreSalesTransactions
+
 ## 8.0.0
 *   Added support for PHP 8.0.
 *   Updated the minimum required versions of `google/gax`, `grpc/grpc` and

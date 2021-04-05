@@ -331,7 +331,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * Locations.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Feed\PlacesLocationFeedData
+     * @return \Google\Ads\GoogleAds\V6\Resources\Feed\PlacesLocationFeedData|null
      */
     public function getPlacesLocationFeedData()
     {
@@ -364,7 +364,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * the specified chains.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Feed.AffiliateLocationFeedData affiliate_location_feed_data = 7;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Feed\AffiliateLocationFeedData
+     * @return \Google\Ads\GoogleAds\V6\Resources\Feed\AffiliateLocationFeedData|null
      */
     public function getAffiliateLocationFeedData()
     {

@@ -42,7 +42,7 @@ class CampaignLabelOperation extends \Google\Protobuf\Internal\Message
      * relationship.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignLabel create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignLabel
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignLabel|null
      */
     public function getCreate()
     {

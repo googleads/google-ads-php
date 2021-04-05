@@ -50,7 +50,7 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
      * Output only. Base metrics at the time the recommendation was generated.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Recommendation.RecommendationMetrics base_metrics = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\RecommendationMetrics
+     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\RecommendationMetrics|null
      */
     public function getBaseMetrics()
     {
@@ -86,7 +86,7 @@ class RecommendationImpact extends \Google\Protobuf\Internal\Message
      * Output only. Estimated metrics if the recommendation is applied.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Recommendation.RecommendationMetrics potential_metrics = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\RecommendationMetrics
+     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\RecommendationMetrics|null
      */
     public function getPotentialMetrics()
     {

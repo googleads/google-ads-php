@@ -26,6 +26,7 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * for details.
      *
      * Generated from protobuf field <code>int64 target_spend_micros = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $target_spend_micros = null;
     /**
@@ -71,19 +72,23 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 target_spend_micros = 3 [deprecated = true];</code>
      * @return int|string
+     * @deprecated
      */
     public function getTargetSpendMicros()
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         return isset($this->target_spend_micros) ? $this->target_spend_micros : 0;
     }
 
     public function hasTargetSpendMicros()
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         return isset($this->target_spend_micros);
     }
 
     public function clearTargetSpendMicros()
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         unset($this->target_spend_micros);
     }
 
@@ -99,9 +104,11 @@ class TargetSpend extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 target_spend_micros = 3 [deprecated = true];</code>
      * @param int|string $var
      * @return $this
+     * @deprecated
      */
     public function setTargetSpendMicros($var)
     {
+        @trigger_error('target_spend_micros is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt64($var);
         $this->target_spend_micros = $var;
 

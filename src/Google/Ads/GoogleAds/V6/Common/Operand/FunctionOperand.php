@@ -42,7 +42,7 @@ class FunctionOperand extends \Google\Protobuf\Internal\Message
      * The matching function held in this operand.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.MatchingFunction matching_function = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\MatchingFunction
+     * @return \Google\Ads\GoogleAds\V6\Common\MatchingFunction|null
      */
     public function getMatchingFunction()
     {

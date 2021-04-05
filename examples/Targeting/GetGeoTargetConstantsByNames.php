@@ -42,7 +42,7 @@ class GetGeoTargetConstantsByNames
     // default.
     private const LOCALE = 'en';
     // A list of country codes can be referenced here:
-    // https://developers.google.com/adwords/api/docs/appendix/geotargeting.
+    // https://developers.google.com/google-ads/api/reference/data/geotargets.
     private const COUNTRY_CODE = 'FR';
     // The location names to get suggested geo target constants.
     private static $LOCATION_NAMES = ['Paris', 'Quebec', 'Spain', 'Deutschland'];

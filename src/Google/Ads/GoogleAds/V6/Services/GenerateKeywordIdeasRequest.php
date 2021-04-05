@@ -340,7 +340,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * e.g. cars, www.example.com/cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.KeywordAndUrlSeed keyword_and_url_seed = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\KeywordAndUrlSeed
+     * @return \Google\Ads\GoogleAds\V6\Services\KeywordAndUrlSeed|null
      */
     public function getKeywordAndUrlSeed()
     {
@@ -372,7 +372,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * A Keyword or phrase to generate ideas from, e.g. cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.KeywordSeed keyword_seed = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\KeywordSeed
+     * @return \Google\Ads\GoogleAds\V6\Services\KeywordSeed|null
      */
     public function getKeywordSeed()
     {
@@ -403,7 +403,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * A specific url to generate ideas from, e.g. www.example.com/cars.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.UrlSeed url_seed = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\UrlSeed
+     * @return \Google\Ads\GoogleAds\V6\Services\UrlSeed|null
      */
     public function getUrlSeed()
     {
@@ -434,7 +434,7 @@ class GenerateKeywordIdeasRequest extends \Google\Protobuf\Internal\Message
      * The site to generate ideas from, e.g. www.example.com.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.SiteSeed site_seed = 11;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\SiteSeed
+     * @return \Google\Ads\GoogleAds\V6\Services\SiteSeed|null
      */
     public function getSiteSeed()
     {

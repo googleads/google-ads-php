@@ -591,7 +591,7 @@ class AccountBudget extends \Google\Protobuf\Internal\Message
      * Output only. The pending proposal to modify this budget, if applicable.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AccountBudget.PendingAccountBudgetProposal pending_proposal = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AccountBudget\PendingAccountBudgetProposal
+     * @return \Google\Ads\GoogleAds\V6\Resources\AccountBudget\PendingAccountBudgetProposal|null
      */
     public function getPendingProposal()
     {

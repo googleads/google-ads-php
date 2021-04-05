@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,7 @@ namespace Google\Ads\GoogleAds\V6\Services;
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsGapicClientTrait;
 use Google\Ads\GoogleAds\V6\Services\Gapic\RemarketingActionServiceGapicClient;
 
-/**
- * {@inheritdoc}
- */
+/** {@inheritdoc} */
 class RemarketingActionServiceClient extends RemarketingActionServiceGapicClient
 {
     use GoogleAdsGapicClientTrait;

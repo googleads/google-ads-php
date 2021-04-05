@@ -3,14 +3,14 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v6.services.BatchJobService' => [
-            'MutateBatchJob' => [
+            'AddBatchJobOperations' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/customers/{customer_id=*}/batchJobs:mutate',
+                'uriTemplate' => '/v6/{resource_name=customers/*/batchJobs/*}:addOperations',
                 'body' => '*',
                 'placeholders' => [
-                    'customer_id' => [
+                    'resource_name' => [
                         'getters' => [
-                            'getCustomerId',
+                            'getResourceName',
                         ],
                     ],
                 ],
@@ -37,21 +37,21 @@ return [
                     ],
                 ],
             ],
-            'RunBatchJob' => [
+            'MutateBatchJob' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/{resource_name=customers/*/batchJobs/*}:run',
+                'uriTemplate' => '/v6/customers/{customer_id=*}/batchJobs:mutate',
                 'body' => '*',
                 'placeholders' => [
-                    'resource_name' => [
+                    'customer_id' => [
                         'getters' => [
-                            'getResourceName',
+                            'getCustomerId',
                         ],
                     ],
                 ],
             ],
-            'AddBatchJobOperations' => [
+            'RunBatchJob' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/{resource_name=customers/*/batchJobs/*}:addOperations',
+                'uriTemplate' => '/v6/{resource_name=customers/*/batchJobs/*}:run',
                 'body' => '*',
                 'placeholders' => [
                     'resource_name' => [

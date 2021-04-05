@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.ads.googleads.v6.services.CampaignBidModifierService' => [
-        ],
+        'google.ads.googleads.v6.services.CampaignBidModifierService' => [],
     ],
 ];

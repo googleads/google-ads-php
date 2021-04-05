@@ -41,7 +41,7 @@ class MutateAccountLinkResponse extends \Google\Protobuf\Internal\Message
      * Result for the mutate.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateAccountLinkResult result = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateAccountLinkResult
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateAccountLinkResult|null
      */
     public function getResult()
     {

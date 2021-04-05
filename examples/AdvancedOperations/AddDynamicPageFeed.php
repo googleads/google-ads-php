@@ -403,11 +403,7 @@ class AddDynamicPageFeed
         int $campaignId
     ) {
         // Creates the query.
-        // You must request all DSA fields in order to update the DSA settings in the following
-        // step.
         $query = "SELECT campaign.id, campaign.name, " .
-        "campaign.dynamic_search_ads_setting.domain_name, " .
-        "campaign.dynamic_search_ads_setting.language_code, " .
         "campaign.dynamic_search_ads_setting.use_supplied_urls_only " .
         "FROM campaign where campaign.id = $campaignId";
 

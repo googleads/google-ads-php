@@ -42,7 +42,7 @@ class CustomerLabelOperation extends \Google\Protobuf\Internal\Message
      * relationship.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerLabel create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerLabel
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerLabel|null
      */
     public function getCreate()
     {

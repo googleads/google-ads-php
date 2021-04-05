@@ -126,7 +126,7 @@ class PlannedProductReachForecast extends \Google\Protobuf\Internal\Message
      * Forecasted traffic metrics for this product.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.PlannedProductForecast planned_product_forecast = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\PlannedProductForecast
+     * @return \Google\Ads\GoogleAds\V6\Services\PlannedProductForecast|null
      */
     public function getPlannedProductForecast()
     {

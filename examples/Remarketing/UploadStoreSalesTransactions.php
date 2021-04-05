@@ -69,6 +69,10 @@ class UploadStoreSalesTransactions
     // Optional (but recommended) external ID to identify the offline user data job.
     /** The external ID for the offline user data job. */
     private const EXTERNAL_ID = null;
+    // Only required after creating a custom key and custom values in the account.
+    // Custom key and values are used to segment store sales conversions.
+    // This measurement can be used to provide more advanced insights.
+    private const CUSTOM_KEY = null;
 
     // Optional: If uploading third party data, also specify the following values:
     /**
@@ -90,6 +94,7 @@ class UploadStoreSalesTransactions
             ArgumentNames::OFFLINE_USER_DATA_JOB_TYPE => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::EXTERNAL_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::CUSTOM_KEY => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::ADVERTISER_UPLOAD_DATE_TIME => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BRIDGE_MAP_VERSION_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::PARTNER_ID => GetOpt::OPTIONAL_ARGUMENT,
@@ -113,6 +118,7 @@ class UploadStoreSalesTransactions
                     ?: self::OFFLINE_USER_DATA_JOB_TYPE,
                 $options[ArgumentNames::CONVERSION_ACTION_ID] ?: self::CONVERSION_ACTION_ID,
                 $options[ArgumentNames::EXTERNAL_ID] ?: self::EXTERNAL_ID,
+                $options[ArgumentNames::CUSTOM_KEY] ?: self::CUSTOM_KEY,
                 $options[ArgumentNames::ADVERTISER_UPLOAD_DATE_TIME]
                     ?: self::ADVERTISER_UPLOAD_DATE_TIME,
                 $options[ArgumentNames::BRIDGE_MAP_VERSION_ID] ?: self::BRIDGE_MAP_VERSION_ID,
@@ -156,6 +162,8 @@ class UploadStoreSalesTransactions
      * @param int $conversionActionId the ID of a store sales conversion action
      * @param int|null $externalId optional (but recommended) external ID for the offline user data
      *     job
+     * @param string|null $customKey the custom key to segment store sales conversions. Only
+     *     required after creating a custom key and custom values in the account.
      * @param string|null $advertiserUploadDateTime date and time the advertiser uploaded data to
      *     the partner. Only required for third party uploads
      * @param string|null $bridgeMapVersionId version of partner IDs to be used for uploads. Only
@@ -169,6 +177,7 @@ class UploadStoreSalesTransactions
         ?string $offlineUserDataJobType,
         int $conversionActionId,
         ?int $externalId,
+        ?string $customKey,
         ?string $advertiserUploadDateTime,
         ?string $bridgeMapVersionId,
         ?int $partnerId
@@ -181,6 +190,7 @@ class UploadStoreSalesTransactions
             $customerId,
             $offlineUserDataJobType,
             $externalId,
+            $customKey,
             $advertiserUploadDateTime,
             $bridgeMapVersionId,
             $partnerId
@@ -220,6 +230,8 @@ class UploadStoreSalesTransactions
      *     `STORE_SALES_UPLOAD_THIRD_PARTY`. Otherwise, use `STORE_SALES_UPLOAD_FIRST_PARTY`
      * @param int|null $externalId optional (but recommended) external ID for the offline user data
      *     job
+     * @param string|null $customKey the custom key to segment store sales conversions. Only
+     *     required after creating a custom key and custom values in the account.
      * @param string|null $advertiserUploadDateTime date and time the advertiser uploaded data to
      *     the partner. Only required for third party uploads
      * @param string|null $bridgeMapVersionId version of partner IDs to be used for uploads. Only
@@ -233,6 +245,7 @@ class UploadStoreSalesTransactions
         int $customerId,
         ?string $offlineUserDataJobType,
         ?int $externalId,
+        ?string $customKey,
         ?string $advertiserUploadDateTime,
         ?string $bridgeMapVersionId,
         ?int $partnerId
@@ -257,6 +270,9 @@ class UploadStoreSalesTransactions
             // address or phone number.
             'transaction_upload_fraction' => 1.0,
         ]);
+        if (!is_null($customKey)) {
+            $storeSalesMetadata->setCustomKey($customKey);
+        }
         if (
             OfflineUserDataJobType::value($offlineUserDataJobType)
                 === OfflineUserDataJobType::STORE_SALES_UPLOAD_THIRD_PARTY
@@ -403,6 +419,9 @@ class UploadStoreSalesTransactions
                 // use the account's timezone as default. Examples: "2018-03-05 09:15:00"
                 // or "2018-02-01 14:34:30+03:00".
                 'transaction_date_time' => '2020-05-01 23:52:12'
+                // OPTIONAL: If uploading data with custom key and values, also specify the
+                // following value:
+                // 'custom_value' => 'INSERT_CUSTOM_VALUE_HERE'
             ])
         ]);
 
@@ -430,6 +449,9 @@ class UploadStoreSalesTransactions
                 // interpreted by the API using the Google Ads customer's time zone.
                 // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
                 'transaction_date_time' => '2020-05-14 19:07:02'
+                // OPTIONAL: If uploading data with custom key and values, also specify the
+                // following value:
+                // 'custom_value' => 'INSERT_CUSTOM_VALUE_HERE'
             ])
         ]);
 

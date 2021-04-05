@@ -49,7 +49,7 @@ class GenerateReachForecastResponse extends \Google\Protobuf\Internal\Message
      * Reference on target audiences for this curve.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.OnTargetAudienceMetrics on_target_audience_metrics = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\OnTargetAudienceMetrics
+     * @return \Google\Ads\GoogleAds\V6\Services\OnTargetAudienceMetrics|null
      */
     public function getOnTargetAudienceMetrics()
     {
@@ -85,7 +85,7 @@ class GenerateReachForecastResponse extends \Google\Protobuf\Internal\Message
      * The generated reach curve for the planned product mix.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ReachCurve reach_curve = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ReachCurve
+     * @return \Google\Ads\GoogleAds\V6\Services\ReachCurve|null
      */
     public function getReachCurve()
     {

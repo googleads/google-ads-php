@@ -295,7 +295,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is CPC_BID.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CpcBidSimulationPointList cpc_bid_point_list = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CpcBidSimulationPointList
+     * @return \Google\Ads\GoogleAds\V6\Common\CpcBidSimulationPointList|null
      */
     public function getCpcBidPointList()
     {
@@ -326,7 +326,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is CPV_BID.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CpvBidSimulationPointList cpv_bid_point_list = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CpvBidSimulationPointList
+     * @return \Google\Ads\GoogleAds\V6\Common\CpvBidSimulationPointList|null
      */
     public function getCpvBidPointList()
     {
@@ -357,7 +357,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is TARGET_CPA.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TargetCpaSimulationPointList target_cpa_point_list = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TargetCpaSimulationPointList
+     * @return \Google\Ads\GoogleAds\V6\Common\TargetCpaSimulationPointList|null
      */
     public function getTargetCpaPointList()
     {
@@ -388,7 +388,7 @@ class AdGroupSimulation extends \Google\Protobuf\Internal\Message
      * Output only. Simulation points if the simulation type is TARGET_ROAS.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TargetRoasSimulationPointList target_roas_point_list = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TargetRoasSimulationPointList
+     * @return \Google\Ads\GoogleAds\V6\Common\TargetRoasSimulationPointList|null
      */
     public function getTargetRoasPointList()
     {

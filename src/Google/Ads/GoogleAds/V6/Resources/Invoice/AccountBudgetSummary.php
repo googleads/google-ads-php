@@ -455,7 +455,7 @@ class AccountBudgetSummary extends \Google\Protobuf\Internal\Message
      * be different from the account budget's start and end time.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.DateRange billable_activity_date_range = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\DateRange
+     * @return \Google\Ads\GoogleAds\V6\Common\DateRange|null
      */
     public function getBillableActivityDateRange()
     {

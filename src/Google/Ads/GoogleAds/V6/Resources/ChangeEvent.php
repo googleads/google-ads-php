@@ -319,7 +319,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      * Output only. The old resource before the change. Only changed fields will be populated.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ChangeEvent.ChangedResource old_resource = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ChangeEvent\ChangedResource
+     * @return \Google\Ads\GoogleAds\V6\Resources\ChangeEvent\ChangedResource|null
      */
     public function getOldResource()
     {
@@ -355,7 +355,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      * Output only. The new resource after the change. Only changed fields will be populated.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.ChangeEvent.ChangedResource new_resource = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\ChangeEvent\ChangedResource
+     * @return \Google\Ads\GoogleAds\V6\Resources\ChangeEvent\ChangedResource|null
      */
     public function getNewResource()
     {
@@ -417,7 +417,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      * Output only. A list of fields that are changed in the returned resource.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask changed_fields = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getChangedFields()
     {

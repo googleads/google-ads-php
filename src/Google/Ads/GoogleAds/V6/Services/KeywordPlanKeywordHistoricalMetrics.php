@@ -154,7 +154,7 @@ class KeywordPlanKeywordHistoricalMetrics extends \Google\Protobuf\Internal\Mess
      * ad_group_keywords in the plan.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.KeywordPlanHistoricalMetrics keyword_metrics = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\KeywordPlanHistoricalMetrics
+     * @return \Google\Ads\GoogleAds\V6\Common\KeywordPlanHistoricalMetrics|null
      */
     public function getKeywordMetrics()
     {

@@ -112,7 +112,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      * An atomic rule item composed of a number operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserListNumberRuleItemInfo number_rule_item = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserListNumberRuleItemInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UserListNumberRuleItemInfo|null
      */
     public function getNumberRuleItem()
     {
@@ -143,7 +143,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      * An atomic rule item composed of a string operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserListStringRuleItemInfo string_rule_item = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserListStringRuleItemInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UserListStringRuleItemInfo|null
      */
     public function getStringRuleItem()
     {
@@ -174,7 +174,7 @@ class UserListRuleItemInfo extends \Google\Protobuf\Internal\Message
      * An atomic rule item composed of a date operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserListDateRuleItemInfo date_rule_item = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserListDateRuleItemInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UserListDateRuleItemInfo|null
      */
     public function getDateRuleItem()
     {

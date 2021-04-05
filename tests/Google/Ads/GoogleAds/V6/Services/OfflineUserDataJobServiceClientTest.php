@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,13 +22,16 @@
 
 namespace Google\Ads\GoogleAds\V6\Services;
 
-use Google\Ads\GoogleAds\V6\Services\OfflineUserDataJobServiceClient;
 use Google\Ads\GoogleAds\V6\Resources\OfflineUserDataJob;
+
 use Google\Ads\GoogleAds\V6\Services\AddOfflineUserDataJobOperationsResponse;
 use Google\Ads\GoogleAds\V6\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V6\Services\OfflineUserDataJobServiceClient;
+
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\LongRunning\OperationsClient;
+
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\LongRunning\GetOperationRequest;
@@ -40,43 +43,223 @@ use stdClass;
 
 /**
  * @group services
+ *
  * @group gapic
  */
 class OfflineUserDataJobServiceClientTest extends GeneratedTest
 {
-    /**
-     * @return TransportInterface
-     */
+    /** @return TransportInterface */
     private function createTransport($deserialize = null)
     {
         return new MockTransport($deserialize);
     }
 
-    /**
-     * @return CredentialsWrapper
-     */
+    /** @return CredentialsWrapper */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
-    /**
-     * @return OfflineUserDataJobServiceClient
-     */
+    /** @return OfflineUserDataJobServiceClient */
     private function createClient(array $options = [])
     {
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new OfflineUserDataJobServiceClient($options);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
+    public function addOfflineUserDataJobOperationsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new AddOfflineUserDataJobOperationsResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
+        $operations = [];
+        $response = $client->addOfflineUserDataJobOperations($formattedResourceName, $operations);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations', $actualFuncCall);
+        $actualValue = $actualRequestObject->getResourceName();
+        $this->assertProtobufEquals($formattedResourceName, $actualValue);
+        $actualValue = $actualRequestObject->getOperations();
+        $this->assertProtobufEquals($operations, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function addOfflineUserDataJobOperationsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
+        $operations = [];
+        try {
+            $client->addOfflineUserDataJobOperations($formattedResourceName, $operations);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function createOfflineUserDataJobTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $resourceName = 'resourceName979421212';
+        $expectedResponse = new CreateOfflineUserDataJobResponse();
+        $expectedResponse->setResourceName($resourceName);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $job = new OfflineUserDataJob();
+        $response = $client->createOfflineUserDataJob($customerId, $job);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.OfflineUserDataJobService/CreateOfflineUserDataJob', $actualFuncCall);
+        $actualValue = $actualRequestObject->getCustomerId();
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getJob();
+        $this->assertProtobufEquals($job, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function createOfflineUserDataJobExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $job = new OfflineUserDataJob();
+        try {
+            $client->createOfflineUserDataJob($customerId, $job);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function getOfflineUserDataJobTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $resourceName2 = 'resourceName2625949903';
+        $id = 3355;
+        $externalId = 1153075697;
+        $expectedResponse = new OfflineUserDataJob();
+        $expectedResponse->setResourceName($resourceName2);
+        $expectedResponse->setId($id);
+        $expectedResponse->setExternalId($externalId);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
+        $response = $client->getOfflineUserDataJob($formattedResourceName);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v6.services.OfflineUserDataJobService/GetOfflineUserDataJob', $actualFuncCall);
+        $actualValue = $actualRequestObject->getResourceName();
+        $this->assertProtobufEquals($formattedResourceName, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
+    public function getOfflineUserDataJobExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
+        try {
+            $client->getOfflineUserDataJob($formattedResourceName);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /** @test */
     public function runOfflineUserDataJobTest()
     {
         $operationsTransport = $this->createTransport();
@@ -90,10 +273,8 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/runOfflineUserDataJobTest');
@@ -107,10 +288,8 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $completeOperation->setDone(true);
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
-
         // Mock request
         $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
-
         $response = $client->runOfflineUserDataJob($formattedResourceName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -118,17 +297,13 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertSame(1, count($apiRequests));
         $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
         $this->assertSame(0, count($operationsRequestsEmpty));
-
         $actualApiFuncCall = $apiRequests[0]->getFuncCall();
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.ads.googleads.v6.services.OfflineUserDataJobService/RunOfflineUserDataJob', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getResourceName();
-
         $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/runOfflineUserDataJobTest');
-
         $response->pollUntilComplete([
             'initialPollDelayMillis' => 1,
         ]);
@@ -138,19 +313,15 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
         $this->assertSame(0, count($apiRequestsEmpty));
         $operationsRequests = $operationsTransport->popReceivedCalls();
         $this->assertSame(1, count($operationsRequests));
-
         $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
         $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
         $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
         $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function runOfflineUserDataJobExceptionTest()
     {
         $operationsTransport = $this->createTransport();
@@ -164,38 +335,30 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
             'transport' => $transport,
             'operationsClient' => $operationsClient,
         ]);
-
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-
         // Mock response
         $incompleteOperation = new Operation();
         $incompleteOperation->setName('operations/runOfflineUserDataJobTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
-
         // Mock request
         $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
-
         $response = $client->runOfflineUserDataJob($formattedResourceName);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
-
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/runOfflineUserDataJobTest');
-
         try {
             $response->pollUntilComplete([
                 'initialPollDelayMillis' => 1,
@@ -206,242 +369,10 @@ class OfflineUserDataJobServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stubs are exhausted
         $transport->popReceivedCalls();
         $operationsTransport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
         $this->assertTrue($operationsTransport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function createOfflineUserDataJobTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $resourceName = 'resourceName979421212';
-        $expectedResponse = new CreateOfflineUserDataJobResponse();
-        $expectedResponse->setResourceName($resourceName);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $customerId = 'customerId-1772061412';
-        $job = new OfflineUserDataJob();
-
-        $response = $client->createOfflineUserDataJob($customerId, $job);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.OfflineUserDataJobService/CreateOfflineUserDataJob', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getCustomerId();
-
-        $this->assertProtobufEquals($customerId, $actualValue);
-        $actualValue = $actualRequestObject->getJob();
-
-        $this->assertProtobufEquals($job, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function createOfflineUserDataJobExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $customerId = 'customerId-1772061412';
-        $job = new OfflineUserDataJob();
-
-        try {
-            $client->createOfflineUserDataJob($customerId, $job);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getOfflineUserDataJobTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $resourceName2 = 'resourceName2625949903';
-        $id = 3355;
-        $externalId = 1153075697;
-        $expectedResponse = new OfflineUserDataJob();
-        $expectedResponse->setResourceName($resourceName2);
-        $expectedResponse->setId($id);
-        $expectedResponse->setExternalId($externalId);
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
-
-        $response = $client->getOfflineUserDataJob($formattedResourceName);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.OfflineUserDataJobService/GetOfflineUserDataJob', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getResourceName();
-
-        $this->assertProtobufEquals($formattedResourceName, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function getOfflineUserDataJobExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
-
-        try {
-            $client->getOfflineUserDataJob($formattedResourceName);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function addOfflineUserDataJobOperationsTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        // Mock response
-        $expectedResponse = new AddOfflineUserDataJobOperationsResponse();
-        $transport->addResponse($expectedResponse);
-
-        // Mock request
-        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
-        $operations = [];
-
-        $response = $client->addOfflineUserDataJobOperations($formattedResourceName, $operations);
-        $this->assertEquals($expectedResponse, $response);
-        $actualRequests = $transport->popReceivedCalls();
-        $this->assertSame(1, count($actualRequests));
-        $actualFuncCall = $actualRequests[0]->getFuncCall();
-        $actualRequestObject = $actualRequests[0]->getRequestObject();
-        $this->assertSame('/google.ads.googleads.v6.services.OfflineUserDataJobService/AddOfflineUserDataJobOperations', $actualFuncCall);
-
-        $actualValue = $actualRequestObject->getResourceName();
-
-        $this->assertProtobufEquals($formattedResourceName, $actualValue);
-        $actualValue = $actualRequestObject->getOperations();
-
-        $this->assertProtobufEquals($operations, $actualValue);
-
-        $this->assertTrue($transport->isExhausted());
-    }
-
-    /**
-     * @test
-     */
-    public function addOfflineUserDataJobOperationsExceptionTest()
-    {
-        $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
-        $this->assertTrue($transport->isExhausted());
-
-        $status = new stdClass();
-        $status->code = Code::DATA_LOSS;
-        $status->details = 'internal error';
-
-        $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
-        ], JSON_PRETTY_PRINT);
-        $transport->addResponse(null, $status);
-
-        // Mock request
-        $formattedResourceName = $client->offlineUserDataJobName('[CUSTOMER_ID]', '[OFFLINE_USER_DATA_UPDATE_ID]');
-        $operations = [];
-
-        try {
-            $client->addOfflineUserDataJobOperations($formattedResourceName, $operations);
-            // If the $client method call did not throw, fail the test
-            $this->fail('Expected an ApiException, but no exception was thrown.');
-        } catch (ApiException $ex) {
-            $this->assertEquals($status->code, $ex->getCode());
-            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
-        }
-
-        // Call popReceivedCalls to ensure the stub is exhausted
-        $transport->popReceivedCalls();
-        $this->assertTrue($transport->isExhausted());
     }
 }

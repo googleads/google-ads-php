@@ -114,10 +114,12 @@ class UpdateAudienceTargetRestriction
     ) {
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         // Creates a query that retrieves the targeting settings from a given ad group.
+        // [START update_audience_target_restriction]
         $query = "SELECT ad_group.id, ad_group.name, " .
             "ad_group.targeting_setting.target_restrictions " .
             "FROM ad_group " .
             "WHERE ad_group.id = $adGroupId";
+        // [END update_audience_target_restriction]
 
         // Issues a search request.
         $response =
@@ -145,6 +147,7 @@ class UpdateAudienceTargetRestriction
             // Builds the updated audience target restriction based on the current because Google
             // will overwrite the entire targeting_setting field of the ad group when the field
             // mask includes targeting_setting in an update operation.
+            // [START update_audience_target_restriction_1]
             foreach (
                 $adGroup->getTargetingSetting()->getTargetRestrictions() as $targetRestriction
             ) {
@@ -177,6 +180,7 @@ class UpdateAudienceTargetRestriction
                     ]);
                 }
             }
+            // [END update_audience_target_restriction_1]
         }
 
         // Only updates the TargetingSetting on the ad group if there is an AUDIENCE
@@ -203,6 +207,7 @@ class UpdateAudienceTargetRestriction
      * @param int $adGroupId the ID of the ad group to update
      * @param TargetingSetting $targetingSetting the updated targeting setting
      */
+    // [START update_audience_target_restriction_2]
     private static function updateTargetingSetting(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -237,6 +242,7 @@ class UpdateAudienceTargetRestriction
             PHP_EOL
         );
     }
+    // [END update_audience_target_restriction_2]
 }
 
 UpdateAudienceTargetRestriction::main();

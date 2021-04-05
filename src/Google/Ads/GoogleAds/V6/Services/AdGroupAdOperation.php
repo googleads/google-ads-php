@@ -58,7 +58,7 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -94,7 +94,7 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
      * Configuration for how policies are validated.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.PolicyValidationParameter policy_validation_parameter = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\PolicyValidationParameter
+     * @return \Google\Ads\GoogleAds\V6\Common\PolicyValidationParameter|null
      */
     public function getPolicyValidationParameter()
     {
@@ -130,7 +130,7 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new ad.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAd create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd|null
      */
     public function getCreate()
     {
@@ -161,7 +161,7 @@ class AdGroupAdOperation extends \Google\Protobuf\Internal\Message
      * Update operation: The ad is expected to have a valid resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAd update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAd|null
      */
     public function getUpdate()
     {

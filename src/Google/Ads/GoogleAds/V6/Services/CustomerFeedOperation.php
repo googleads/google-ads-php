@@ -51,7 +51,7 @@ class CustomerFeedOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -87,7 +87,7 @@ class CustomerFeedOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new customer feed.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerFeed create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerFeed|null
      */
     public function getCreate()
     {
@@ -119,7 +119,7 @@ class CustomerFeedOperation extends \Google\Protobuf\Internal\Message
      * name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomerFeed update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerFeed
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomerFeed|null
      */
     public function getUpdate()
     {

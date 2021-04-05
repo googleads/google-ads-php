@@ -3,9 +3,9 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v6.services.OfflineUserDataJobService' => [
-            'RunOfflineUserDataJob' => [
+            'AddOfflineUserDataJobOperations' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/{resource_name=customers/*/offlineUserDataJobs/*}:run',
+                'uriTemplate' => '/v6/{resource_name=customers/*/offlineUserDataJobs/*}:addOperations',
                 'body' => '*',
                 'placeholders' => [
                     'resource_name' => [
@@ -38,9 +38,9 @@ return [
                     ],
                 ],
             ],
-            'AddOfflineUserDataJobOperations' => [
+            'RunOfflineUserDataJob' => [
                 'method' => 'post',
-                'uriTemplate' => '/v6/{resource_name=customers/*/offlineUserDataJobs/*}:addOperations',
+                'uriTemplate' => '/v6/{resource_name=customers/*/offlineUserDataJobs/*}:run',
                 'body' => '*',
                 'placeholders' => [
                     'resource_name' => [

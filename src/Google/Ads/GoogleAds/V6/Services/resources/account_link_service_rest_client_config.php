@@ -3,17 +3,6 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v6.services.AccountLinkService' => [
-            'GetAccountLink' => [
-                'method' => 'get',
-                'uriTemplate' => '/v6/{resource_name=customers/*/accountLinks/*}',
-                'placeholders' => [
-                    'resource_name' => [
-                        'getters' => [
-                            'getResourceName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateAccountLink' => [
                 'method' => 'post',
                 'uriTemplate' => '/v6/customers/{customer_id=*}/accountLinks:create',
@@ -22,6 +11,17 @@ return [
                     'customer_id' => [
                         'getters' => [
                             'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
+            'GetAccountLink' => [
+                'method' => 'get',
+                'uriTemplate' => '/v6/{resource_name=customers/*/accountLinks/*}',
+                'placeholders' => [
+                    'resource_name' => [
+                        'getters' => [
+                            'getResourceName',
                         ],
                     ],
                 ],

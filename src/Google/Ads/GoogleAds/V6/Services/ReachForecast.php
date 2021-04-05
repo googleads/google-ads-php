@@ -85,7 +85,7 @@ class ReachForecast extends \Google\Protobuf\Internal\Message
      * Forecasted traffic metrics for this point.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.Forecast forecast = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\Forecast
+     * @return \Google\Ads\GoogleAds\V6\Services\Forecast|null
      */
     public function getForecast()
     {

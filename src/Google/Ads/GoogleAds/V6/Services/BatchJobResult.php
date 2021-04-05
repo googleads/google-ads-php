@@ -86,7 +86,7 @@ class BatchJobResult extends \Google\Protobuf\Internal\Message
      * May be empty if errors occurred.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.MutateOperationResponse mutate_operation_response = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\MutateOperationResponse
+     * @return \Google\Ads\GoogleAds\V6\Services\MutateOperationResponse|null
      */
     public function getMutateOperationResponse()
     {
@@ -123,7 +123,7 @@ class BatchJobResult extends \Google\Protobuf\Internal\Message
      * Details of the errors when processing the operation.
      *
      * Generated from protobuf field <code>.google.rpc.Status status = 3;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getStatus()
     {

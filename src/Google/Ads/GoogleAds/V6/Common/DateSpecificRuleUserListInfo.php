@@ -68,7 +68,7 @@ class DateSpecificRuleUserListInfo extends \Google\Protobuf\Internal\Message
      * Required for creating a date specific rule user list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.UserListRuleInfo rule = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\UserListRuleInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\UserListRuleInfo|null
      */
     public function getRule()
     {

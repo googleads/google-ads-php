@@ -212,7 +212,7 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
      * Address information.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.OfflineUserAddressInfo address_info = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\OfflineUserAddressInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\OfflineUserAddressInfo|null
      */
     public function getAddressInfo()
     {

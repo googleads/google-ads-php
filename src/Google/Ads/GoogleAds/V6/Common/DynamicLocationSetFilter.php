@@ -80,7 +80,7 @@ class DynamicLocationSetFilter extends \Google\Protobuf\Internal\Message
      * Business name filter.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.BusinessNameFilter business_name_filter = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\BusinessNameFilter
+     * @return \Google\Ads\GoogleAds\V6\Common\BusinessNameFilter|null
      */
     public function getBusinessNameFilter()
     {

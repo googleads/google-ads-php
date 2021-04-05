@@ -344,7 +344,7 @@ class FeedItemAttributeValue extends \Google\Protobuf\Internal\Message
      * of type PRICE.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.Money price_value = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\Money
+     * @return \Google\Ads\GoogleAds\V6\Common\Money|null
      */
     public function getPriceValue()
     {

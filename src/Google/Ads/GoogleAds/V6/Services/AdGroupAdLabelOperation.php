@@ -43,7 +43,7 @@ class AdGroupAdLabelOperation extends \Google\Protobuf\Internal\Message
      * label.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdGroupAdLabel create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAdLabel
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdGroupAdLabel|null
      */
     public function getCreate()
     {

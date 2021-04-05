@@ -48,7 +48,7 @@ class CustomInterestOperation extends \Google\Protobuf\Internal\Message
      * FieldMask that determines which resource fields are modified in an update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -85,7 +85,7 @@ class CustomInterestOperation extends \Google\Protobuf\Internal\Message
      * interest.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomInterest create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomInterest
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomInterest|null
      */
     public function getCreate()
     {
@@ -118,7 +118,7 @@ class CustomInterestOperation extends \Google\Protobuf\Internal\Message
      * resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CustomInterest update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CustomInterest
+     * @return \Google\Ads\GoogleAds\V6\Resources\CustomInterest|null
      */
     public function getUpdate()
     {

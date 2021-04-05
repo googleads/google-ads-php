@@ -51,7 +51,7 @@ class AddCampaignTargetingCriteria
     private const KEYWORD_TEXT = 'INSERT_KEYWORD_TEXT_HERE';
     // Specify the location ID below.
     // For more information on determining LOCATION_ID value, see:
-    // https://developers.google.com/adwords/api/docs/appendix/geotargeting.
+    // https://developers.google.com/google-ads/api/reference/data/geotargets.
     private const LOCATION_ID = 21167; // New York
 
     public static function main()

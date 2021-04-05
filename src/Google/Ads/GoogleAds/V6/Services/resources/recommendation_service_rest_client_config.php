@@ -3,17 +3,6 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v6.services.RecommendationService' => [
-            'GetRecommendation' => [
-                'method' => 'get',
-                'uriTemplate' => '/v6/{resource_name=customers/*/recommendations/*}',
-                'placeholders' => [
-                    'resource_name' => [
-                        'getters' => [
-                            'getResourceName',
-                        ],
-                    ],
-                ],
-            ],
             'ApplyRecommendation' => [
                 'method' => 'post',
                 'uriTemplate' => '/v6/customers/{customer_id=*}/recommendations:apply',
@@ -34,6 +23,17 @@ return [
                     'customer_id' => [
                         'getters' => [
                             'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
+            'GetRecommendation' => [
+                'method' => 'get',
+                'uriTemplate' => '/v6/{resource_name=customers/*/recommendations/*}',
+                'placeholders' => [
+                    'resource_name' => [
+                        'getters' => [
+                            'getResourceName',
                         ],
                     ],
                 ],

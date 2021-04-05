@@ -88,7 +88,7 @@ class CampaignBudgetRecommendationOption extends \Google\Protobuf\Internal\Messa
      * option.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Recommendation.RecommendationImpact impact = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\RecommendationImpact
+     * @return \Google\Ads\GoogleAds\V6\Resources\Recommendation\RecommendationImpact|null
      */
     public function getImpact()
     {

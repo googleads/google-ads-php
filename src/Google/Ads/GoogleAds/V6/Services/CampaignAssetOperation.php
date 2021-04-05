@@ -42,7 +42,7 @@ class CampaignAssetOperation extends \Google\Protobuf\Internal\Message
      * asset.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.CampaignAsset create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignAsset
+     * @return \Google\Ads\GoogleAds\V6\Resources\CampaignAsset|null
      */
     public function getCreate()
     {

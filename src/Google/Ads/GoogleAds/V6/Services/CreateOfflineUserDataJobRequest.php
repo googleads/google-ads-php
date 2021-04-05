@@ -76,7 +76,7 @@ class CreateOfflineUserDataJobRequest extends \Google\Protobuf\Internal\Message
      * Required. The offline user data job to be created.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.OfflineUserDataJob job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\OfflineUserDataJob
+     * @return \Google\Ads\GoogleAds\V6\Resources\OfflineUserDataJob|null
      */
     public function getJob()
     {

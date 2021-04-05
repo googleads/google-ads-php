@@ -49,7 +49,7 @@ class CriterionCategoryAvailability extends \Google\Protobuf\Internal\Message
      * Channel types and subtypes that are available to the category.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.CriterionCategoryChannelAvailability channel = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\CriterionCategoryChannelAvailability
+     * @return \Google\Ads\GoogleAds\V6\Common\CriterionCategoryChannelAvailability|null
      */
     public function getChannel()
     {

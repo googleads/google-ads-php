@@ -36,7 +36,7 @@ class BatchJobOperation extends \Google\Protobuf\Internal\Message
      * Create operation: No resource name is expected for the new batch job.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.BatchJob create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\BatchJob
+     * @return \Google\Ads\GoogleAds\V6\Resources\BatchJob|null
      */
     public function getCreate()
     {

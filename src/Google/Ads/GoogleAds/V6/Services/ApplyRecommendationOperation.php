@@ -93,7 +93,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.CampaignBudgetParameters campaign_budget = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\CampaignBudgetParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\CampaignBudgetParameters|null
      */
     public function getCampaignBudget()
     {
@@ -125,7 +125,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Optional parameters to use when applying a text ad recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.TextAdParameters text_ad = 3;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\TextAdParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\TextAdParameters|null
      */
     public function getTextAd()
     {
@@ -156,7 +156,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Optional parameters to use when applying keyword recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.KeywordParameters keyword = 4;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\KeywordParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\KeywordParameters|null
      */
     public function getKeyword()
     {
@@ -188,7 +188,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.TargetCpaOptInParameters target_cpa_opt_in = 5;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\TargetCpaOptInParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\TargetCpaOptInParameters|null
      */
     public function getTargetCpaOptIn()
     {
@@ -221,7 +221,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.TargetRoasOptInParameters target_roas_opt_in = 10;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\TargetRoasOptInParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\TargetRoasOptInParameters|null
      */
     public function getTargetRoasOptIn()
     {
@@ -253,7 +253,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Parameters to use when applying callout extension recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.CalloutExtensionParameters callout_extension = 6;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\CalloutExtensionParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\CalloutExtensionParameters|null
      */
     public function getCalloutExtension()
     {
@@ -284,7 +284,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Parameters to use when applying call extension recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.CallExtensionParameters call_extension = 7;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\CallExtensionParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\CallExtensionParameters|null
      */
     public function getCallExtension()
     {
@@ -315,7 +315,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Parameters to use when applying sitelink extension recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.SitelinkExtensionParameters sitelink_extension = 8;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\SitelinkExtensionParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\SitelinkExtensionParameters|null
      */
     public function getSitelinkExtension()
     {
@@ -346,7 +346,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Parameters to use when applying move unused budget recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.MoveUnusedBudgetParameters move_unused_budget = 9;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\MoveUnusedBudgetParameters|null
      */
     public function getMoveUnusedBudget()
     {
@@ -377,7 +377,7 @@ class ApplyRecommendationOperation extends \Google\Protobuf\Internal\Message
      * Parameters to use when applying a responsive search ad recommendation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.services.ApplyRecommendationOperation.ResponsiveSearchAdParameters responsive_search_ad = 11;</code>
-     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\ResponsiveSearchAdParameters
+     * @return \Google\Ads\GoogleAds\V6\Services\ApplyRecommendationOperation\ResponsiveSearchAdParameters|null
      */
     public function getResponsiveSearchAd()
     {

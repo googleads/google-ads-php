@@ -195,7 +195,7 @@ class BatchJob extends \Google\Protobuf\Internal\Message
      * Output only. Contains additional information about this batch job.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.BatchJob.BatchJobMetadata metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\BatchJob\BatchJobMetadata
+     * @return \Google\Ads\GoogleAds\V6\Resources\BatchJob\BatchJobMetadata|null
      */
     public function getMetadata()
     {

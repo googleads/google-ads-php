@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.ads.googleads.v6.services.CustomerManagerLinkService' => [
-        ],
+        'google.ads.googleads.v6.services.CustomerManagerLinkService' => [],
     ],
 ];

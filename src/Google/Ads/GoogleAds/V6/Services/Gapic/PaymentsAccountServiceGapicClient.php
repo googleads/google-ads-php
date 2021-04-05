@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ namespace Google\Ads\GoogleAds\V6\Services\Gapic;
 
 use Google\Ads\GoogleAds\V6\Services\ListPaymentsAccountsRequest;
 use Google\Ads\GoogleAds\V6\Services\ListPaymentsAccountsResponse;
+
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
@@ -47,42 +48,30 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $paymentsAccountServiceClient = new PaymentsAccountServiceClient();
  * try {
- *     $customerId = '';
+ *     $customerId = 'customer_id';
  *     $response = $paymentsAccountServiceClient->listPaymentsAccounts($customerId);
  * } finally {
  *     $paymentsAccountServiceClient->close();
  * }
  * ```
- *
- * @experimental
  */
 class PaymentsAccountServiceGapicClient
 {
     use GapicClientTrait;
 
-    /**
-     * The name of the service.
-     */
+    /** The name of the service. */
     const SERVICE_NAME = 'google.ads.googleads.v6.services.PaymentsAccountService';
 
-    /**
-     * The default address of the service.
-     */
+    /** The default address of the service. */
     const SERVICE_ADDRESS = 'googleads.googleapis.com';
 
-    /**
-     * The default port of the service.
-     */
+    /** The default port of the service. */
     const DEFAULT_SERVICE_PORT = 443;
 
-    /**
-     * The name of the code generator, to be included in the agent header.
-     */
+    /** The name of the code generator, to be included in the agent header. */
     const CODEGEN_NAME = 'gapic';
 
-    /**
-     * The default scopes required by the service.
-     */
+    /** The default scopes required by the service. */
     public static $serviceScopes = [
         'https://www.googleapis.com/auth/adwords',
     ];
@@ -91,16 +80,16 @@ class PaymentsAccountServiceGapicClient
     {
         return [
             'serviceName' => self::SERVICE_NAME,
-            'serviceAddress' => self::SERVICE_ADDRESS.':'.self::DEFAULT_SERVICE_PORT,
-            'clientConfig' => __DIR__.'/../resources/payments_account_service_client_config.json',
-            'descriptorsConfigPath' => __DIR__.'/../resources/payments_account_service_descriptor_config.php',
-            'gcpApiConfigPath' => __DIR__.'/../resources/payments_account_service_grpc_config.json',
+            'serviceAddress' => self::SERVICE_ADDRESS . ':' . self::DEFAULT_SERVICE_PORT,
+            'clientConfig' => __DIR__ . '/../resources/payments_account_service_client_config.json',
+            'descriptorsConfigPath' => __DIR__ . '/../resources/payments_account_service_descriptor_config.php',
+            'gcpApiConfigPath' => __DIR__ . '/../resources/payments_account_service_grpc_config.json',
             'credentialsConfig' => [
                 'defaultScopes' => self::$serviceScopes,
             ],
             'transportConfig' => [
                 'rest' => [
-                    'restClientConfigPath' => __DIR__.'/../resources/payments_account_service_rest_client_config.php',
+                    'restClientConfigPath' => __DIR__ . '/../resources/payments_account_service_rest_client_config.php',
                 ],
             ],
         ];
@@ -110,7 +99,7 @@ class PaymentsAccountServiceGapicClient
      * Constructor.
      *
      * @param array $options {
-     *                       Optional. Options for configuring the service API wrapper.
+     *     Optional. Options for configuring the service API wrapper.
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
@@ -124,31 +113,31 @@ class PaymentsAccountServiceGapicClient
      *           {@see \Google\ApiCore\CredentialsWrapper} object. Note that when one of these
      *           objects are provided, any settings in $credentialsConfig will be ignored.
      *     @type array $credentialsConfig
-     *           Options used to configure credentials, including auth token caching, for the client.
-     *           For a full list of supporting configuration options, see
-     *           {@see \Google\ApiCore\CredentialsWrapper::build()}.
+     *           Options used to configure credentials, including auth token caching, for the
+     *           client. For a full list of supporting configuration options, see
+     *           {@see \Google\ApiCore\CredentialsWrapper::build()} .
      *     @type bool $disableRetries
      *           Determines whether or not retries defined by the client configuration should be
      *           disabled. Defaults to `false`.
      *     @type string|array $clientConfig
-     *           Client method configuration, including retry settings. This option can be either a
-     *           path to a JSON file, or a PHP array containing the decoded JSON data.
-     *           By default this settings points to the default client config file, which is provided
-     *           in the resources folder.
+     *           Client method configuration, including retry settings. This option can be either
+     *           a path to a JSON file, or a PHP array containing the decoded JSON data. By
+     *           default this settings points to the default client config file, which is
+     *           provided in the resources folder.
      *     @type string|TransportInterface $transport
-     *           The transport used for executing network requests. May be either the string `rest`
-     *           or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
-     *           *Advanced usage*: Additionally, it is possible to pass in an already instantiated
-     *           {@see \Google\ApiCore\Transport\TransportInterface} object. Note that when this
-     *           object is provided, any settings in $transportConfig, and any $serviceAddress
-     *           setting, will be ignored.
+     *           The transport used for executing network requests. May be either the string
+     *           `rest` or `grpc`. Defaults to `grpc` if gRPC support is detected on the system.
+     *           *Advanced usage*: Additionally, it is possible to pass in an already
+     *           instantiated {@see \Google\ApiCore\Transport\TransportInterface} object. Note
+     *           that when this object is provided, any settings in $transportConfig, and any
+     *           $serviceAddress setting, will be ignored.
      *     @type array $transportConfig
      *           Configuration options that will be used to construct the transport. Options for
      *           each supported transport type should be passed in a key for that transport. For
      *           example:
      *           $transportConfig = [
      *               'grpc' => [...],
-     *               'rest' => [...]
+     *               'rest' => [...],
      *           ];
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
@@ -156,7 +145,6 @@ class PaymentsAccountServiceGapicClient
      * }
      *
      * @throws ValidationException
-     * @experimental
      */
     public function __construct(array $options = [])
     {
@@ -173,7 +161,7 @@ class PaymentsAccountServiceGapicClient
      * ```
      * $paymentsAccountServiceClient = new PaymentsAccountServiceClient();
      * try {
-     *     $customerId = '';
+     *     $customerId = 'customer_id';
      *     $response = $paymentsAccountServiceClient->listPaymentsAccounts($customerId);
      * } finally {
      *     $paymentsAccountServiceClient->close();
@@ -182,37 +170,27 @@ class PaymentsAccountServiceGapicClient
      *
      * @param string $customerId   Required. The ID of the customer to apply the PaymentsAccount list operation to.
      * @param array  $optionalArgs {
-     *                             Optional.
+     *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
-     *          Retry settings to use for this call. Can be a
-     *          {@see Google\ApiCore\RetrySettings} object, or an associative array
-     *          of retry settings parameters. See the documentation on
-     *          {@see Google\ApiCore\RetrySettings} for example usage.
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
      * @return \Google\Ads\GoogleAds\V6\Services\ListPaymentsAccountsResponse
      *
      * @throws ApiException if the remote call fails
-     * @experimental
      */
     public function listPaymentsAccounts($customerId, array $optionalArgs = [])
     {
         $request = new ListPaymentsAccountsRequest();
         $request->setCustomerId($customerId);
-
         $requestParams = new RequestParamsHeaderDescriptor([
-          'customer_id' => $request->getCustomerId(),
+            'customer_id' => $request->getCustomerId(),
         ]);
-        $optionalArgs['headers'] = isset($optionalArgs['headers'])
-            ? array_merge($requestParams->getHeader(), $optionalArgs['headers'])
-            : $requestParams->getHeader();
-
-        return $this->startCall(
-            'ListPaymentsAccounts',
-            ListPaymentsAccountsResponse::class,
-            $optionalArgs,
-            $request
-        )->wait();
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ListPaymentsAccounts', ListPaymentsAccountsResponse::class, $optionalArgs, $request)->wait();
     }
 }

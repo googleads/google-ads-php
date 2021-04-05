@@ -78,7 +78,7 @@ class MutateCampaignResult extends \Google\Protobuf\Internal\Message
      * only be returned when response_content_type is set to "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.Campaign campaign = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign
+     * @return \Google\Ads\GoogleAds\V6\Resources\Campaign|null
      */
     public function getCampaign()
     {

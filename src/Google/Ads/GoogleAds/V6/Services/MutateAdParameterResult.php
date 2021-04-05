@@ -81,7 +81,7 @@ class MutateAdParameterResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.AdParameter ad_parameter = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\AdParameter
+     * @return \Google\Ads\GoogleAds\V6\Resources\AdParameter|null
      */
     public function getAdParameter()
     {

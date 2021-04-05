@@ -81,7 +81,7 @@ class MutateFeedItemTargetResult extends \Google\Protobuf\Internal\Message
      * "MUTABLE_RESOURCE".
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.FeedItemTarget feed_item_target = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemTarget
+     * @return \Google\Ads\GoogleAds\V6\Resources\FeedItemTarget|null
      */
     public function getFeedItemTarget()
     {

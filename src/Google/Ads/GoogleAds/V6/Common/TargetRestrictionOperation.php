@@ -75,7 +75,7 @@ class TargetRestrictionOperation extends \Google\Protobuf\Internal\Message
      * The target restriction being added to or removed from the list.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.TargetRestriction value = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\TargetRestriction
+     * @return \Google\Ads\GoogleAds\V6\Common\TargetRestriction|null
      */
     public function getValue()
     {

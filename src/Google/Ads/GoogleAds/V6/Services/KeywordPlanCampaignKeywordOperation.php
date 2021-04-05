@@ -56,7 +56,7 @@ class KeywordPlanCampaignKeywordOperation extends \Google\Protobuf\Internal\Mess
      * update.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
-     * @return \Google\Protobuf\FieldMask
+     * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
     {
@@ -94,7 +94,7 @@ class KeywordPlanCampaignKeywordOperation extends \Google\Protobuf\Internal\Mess
      * campaign keyword.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword create = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaignKeyword
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaignKeyword|null
      */
     public function getCreate()
     {
@@ -127,7 +127,7 @@ class KeywordPlanCampaignKeywordOperation extends \Google\Protobuf\Internal\Mess
      * valid resource name.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.resources.KeywordPlanCampaignKeyword update = 2;</code>
-     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaignKeyword
+     * @return \Google\Ads\GoogleAds\V6\Resources\KeywordPlanCampaignKeyword|null
      */
     public function getUpdate()
     {

@@ -14,6 +14,17 @@ return [
                     ],
                 ],
             ],
+            'ListCampaignDraftAsyncErrors' => [
+                'method' => 'get',
+                'uriTemplate' => '/v6/{resource_name=customers/*/campaignDrafts/*}:listAsyncErrors',
+                'placeholders' => [
+                    'resource_name' => [
+                        'getters' => [
+                            'getResourceName',
+                        ],
+                    ],
+                ],
+            ],
             'MutateCampaignDrafts' => [
                 'method' => 'post',
                 'uriTemplate' => '/v6/customers/{customer_id=*}/campaignDrafts:mutate',
@@ -34,17 +45,6 @@ return [
                     'campaign_draft' => [
                         'getters' => [
                             'getCampaignDraft',
-                        ],
-                    ],
-                ],
-            ],
-            'ListCampaignDraftAsyncErrors' => [
-                'method' => 'get',
-                'uriTemplate' => '/v6/{resource_name=customers/*/campaignDrafts/*}:listAsyncErrors',
-                'placeholders' => [
-                    'resource_name' => [
-                        'getters' => [
-                            'getResourceName',
                         ],
                     ],
                 ],

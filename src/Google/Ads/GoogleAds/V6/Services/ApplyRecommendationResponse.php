@@ -84,7 +84,7 @@ class ApplyRecommendationResponse extends \Google\Protobuf\Internal\Message
      * we return the RPC level error.
      *
      * Generated from protobuf field <code>.google.rpc.Status partial_failure_error = 2;</code>
-     * @return \Google\Rpc\Status
+     * @return \Google\Rpc\Status|null
      */
     public function getPartialFailureError()
     {

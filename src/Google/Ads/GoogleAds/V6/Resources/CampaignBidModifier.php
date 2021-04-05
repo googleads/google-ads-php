@@ -214,7 +214,7 @@ class CampaignBidModifier extends \Google\Protobuf\Internal\Message
      * Immutable. Criterion for interaction type. Only supported for search campaigns.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.InteractionTypeInfo interaction_type = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\InteractionTypeInfo
+     * @return \Google\Ads\GoogleAds\V6\Common\InteractionTypeInfo|null
      */
     public function getInteractionType()
     {

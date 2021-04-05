@@ -36,7 +36,7 @@ class LeadFormDeliveryMethod extends \Google\Protobuf\Internal\Message
      * Webhook method of delivery.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v6.common.WebhookDelivery webhook = 1;</code>
-     * @return \Google\Ads\GoogleAds\V6\Common\WebhookDelivery
+     * @return \Google\Ads\GoogleAds\V6\Common\WebhookDelivery|null
      */
     public function getWebhook()
     {
