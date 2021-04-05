@@ -87,6 +87,7 @@ final class ArgumentNames
     public const MARKETING_IMAGE_ASSET_ID = 'marketingImageAssetId';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
     public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
+    public const OUTPUT_FILE_PATH = 'outputFilePath';
     public const PAGE_URL = 'pageUrl';
     public const PARTNER_ID = 'partnerId';
     public const PAYMENTS_ACCOUNT_ID = 'paymentsAccountId';
@@ -168,6 +169,7 @@ final class ArgumentNames
         self::MARKETING_IMAGE_ASSET_ID => 'The ID of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
         self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
+        self::OUTPUT_FILE_PATH => 'The output file path',
         self::PAGE_URL => 'The page URL',
         self::PARTNER_ID => 'The partner ID',
         self::PAYMENTS_ACCOUNT_ID => 'The payments account ID',
