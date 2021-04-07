@@ -140,7 +140,7 @@ class CampaignReportToCsv
         }
 
         if (empty($csvRows)) {
-            print("No results found.");
+            print "No results found.";
             return;
         }
 
