@@ -44,6 +44,9 @@
   "scripts": {
     "test": [
       "phpunit tests"
+    ],
+    "remove-api-version-support": [
+      "Google\\Ads\\GoogleAds\\RemoveApiVersionSupport::mainCallback"
     ]
   }
 }
