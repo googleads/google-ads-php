@@ -19,7 +19,6 @@
 namespace App\Http\Controllers;
 
 use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V6\GoogleAdsServerStreamDecorator;
 use Google\Ads\GoogleAds\Util\FieldMasks;
 use Google\Ads\GoogleAds\Util\V6\ResourceNames;
 use Google\Ads\GoogleAds\V6\Enums\CampaignStatusEnum\CampaignStatus;
@@ -83,16 +82,15 @@ class GoogleAdsApiController extends Controller
                 $reportRange
             );
 
-            // Searches the results using streaming.
-            /** @var GoogleAdsServerStreamDecorator $stream */
-            $stream = $googleAdsClient->getGoogleAdsServiceClient()->searchStream(
+            // Searches the results.
+            $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
                 $customerId,
                 $query
             );
 
             // Fetches all the results.
             $results = [];
-            foreach ($stream->iterateAllElements() as $googleAdsRow) {
+            foreach ($response->iterateAllElements() as $googleAdsRow) {
                 /** @var GoogleAdsRow $googleAdsRow */
                 // Converts each result as a Plain Old PHP Object (POPO) using JSON.
                 $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
@@ -174,16 +172,15 @@ class GoogleAdsApiController extends Controller
             $campaignResourceName
         );
 
-        // Searches the result using streaming.
-        /** @var GoogleAdsServerStreamDecorator $stream */
-        $stream = $googleAdsClient->getGoogleAdsServiceClient()->searchStream(
+        // Searches the result.
+        $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
             $customerId,
             $query
         );
 
         // Fetches and converts the result as a POPO using JSON.
         $campaign = json_decode(
-            $stream->iterateAllElements()->current()->getCampaign()->serializeToJsonString(),
+            $response->iterateAllElements()->current()->getCampaign()->serializeToJsonString(),
             true
         );
 
