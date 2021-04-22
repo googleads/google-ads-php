@@ -6,6 +6,9 @@
     <exclude-pattern>tests/metadata</exclude-pattern>
     <exclude-pattern>tests/Google/Ads/GoogleAds/Util/FieldMasks/Proto</exclude-pattern>
     <exclude-pattern>tests/Google/Ads/GoogleAds/V[0-9]+</exclude-pattern>
+    <exclude-pattern>examples/LaravelSampleApp/vendor</exclude-pattern>
+    <exclude-pattern>examples/LaravelSampleApp/storage</exclude-pattern>
+    <exclude-pattern>examples/LaravelSampleApp/bootstrap/cache</exclude-pattern>
     <file>src</file>
     <file>tests</file>
     <file>examples</file>
