@@ -57,11 +57,7 @@ class ApiVersionSupportTest extends TestCase
         // Removes all the created directories including a missing one.
         $apiVersionSupport = new ApiVersionSupport($this->mockPath);
         $missingDir = $this->mockPath . DIRECTORY_SEPARATOR . 'missingDir';
-        $apiVersionSupport->removeDirectories([
-            $empty_dir,
-            $full_dir,
-            $missingDir
-        ]);
+        $apiVersionSupport->removeDirectories([$empty_dir, $full_dir, $missingDir]);
 
         // Asserts that there is no content left.
         $this->assertEquals(
@@ -94,7 +90,7 @@ class ApiVersionSupportTest extends TestCase
         $this->assertNotEquals(
             $defaultPaths,
             $givenPaths,
-            'The library root path used should be the provided one'
+            'The library root path used should not be the default'
         );
     }
 }
