@@ -35,6 +35,17 @@ class ApiVersionSupport
     private $rootPath;
 
     /**
+     * Constructor.
+     *
+     * @param string|null $rootPath the root path of the library, the one that contains this class
+     *     file is used by default
+     */
+    public function __construct(string $rootPath = null)
+    {
+        $this->rootPath = $rootPath ?: dirname(__DIR__, 5);
+    }
+
+    /**
      * This PHP callback method can be used to define a Composer script.
      *
      * @param Event $event the event context provided by Composer which contains the arguments
@@ -52,17 +63,6 @@ class ApiVersionSupport
                 );
             }
         }
-    }
-
-    /**
-     * Constructor.
-     *
-     * @param string|null $rootPath the root path of the library, the one that contains this class
-     *     file is used by default
-     */
-    public function __construct(string $rootPath=null)
-    {
-        $this->rootPath = $rootPath ?: dirname(__DIR__, 5);
     }
 
     /**
