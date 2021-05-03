@@ -19,7 +19,6 @@
 namespace Google\Ads\GoogleAds\Util;
 
 use Composer\Script\Event;
-use DirectoryIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
