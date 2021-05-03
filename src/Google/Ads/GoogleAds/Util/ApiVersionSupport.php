@@ -25,14 +25,14 @@ use RecursiveIteratorIterator;
 
 /**
  * Utilities to remove the support for Google Ads API versions. It is typically used to reduce the
- * weight of the library and it can be used either in dev mode or not.
+ * size of the library.
  */
 class ApiVersionSupport
 {
     /**
      * @var string the root path of the library
      */
-    private $rootPath;
+    private $rootPath = null;
 
     /**
      * Constructor.
@@ -46,18 +46,17 @@ class ApiVersionSupport
     }
 
     /**
-     * This PHP callback method can be used to define a Composer script.
+     * This callback method can be used to define a Composer script.
      *
      * @param Event $event the event context provided by Composer which contains the arguments
      *     passed to the Composer script
      */
-    public static function composerScriptCallback(Event $event)
+    public static function remove(Event $event)
     {
         // Removes all API versions specified in the arguments.
         $apiVersionSupport = new ApiVersionSupport();
         foreach ($event->getArguments() as $apiVersionToRemove) {
             if (is_numeric($apiVersionToRemove)) {
-                print 'Removing support for API version ' . $apiVersionToRemove . PHP_EOL;
                 $apiVersionSupport->removeDirectories(
                     $apiVersionSupport->getDirectoryPathsForApiVersion(intval($apiVersionToRemove))
                 );
@@ -71,7 +70,7 @@ class ApiVersionSupport
      * @param int $version the Google Ads API version to get the directory paths of
      * @return string[] the paths
      */
-    private function getDirectoryPathsForApiVersion(int $version): array
+    public function getDirectoryPathsForApiVersion(int $version): array
     {
         $paths = [];
         $versionName = 'V' . $version;
@@ -106,23 +105,20 @@ class ApiVersionSupport
      *
      * @param string[] $paths the paths of the directories to remove
      */
-    private function removeDirectories(array $paths)
+    public function removeDirectories(array $paths)
     {
         foreach ($paths as $path) {
             if (file_exists($path)) {
+                // Removes all contents.
                 $files = new RecursiveIteratorIterator(
                     new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS),
                     RecursiveIteratorIterator::CHILD_FIRST
                 );
-                // Removes all contents.
                 foreach ($files as $file) {
                     $file->isDir() ? rmdir($file->getRealPath()) : unlink($file->getRealPath());
                 }
                 // Removes self.
                 rmdir($path);
-                print 'Removed: ' . $path . PHP_EOL;
-            } else {
-                print 'Not found: ' . $path . PHP_EOL;
             }
         }
     }
