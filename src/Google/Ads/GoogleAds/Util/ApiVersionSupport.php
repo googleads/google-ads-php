@@ -60,7 +60,7 @@ class ApiVersionSupport
      * @param string|null $rootPath the root path of the library, the one that contains this class
      *     file is used by default
      */
-    public function __construct(?string $rootPath)
+    public function __construct(string $rootPath=null)
     {
         $this->rootPath = $rootPath ?: dirname(__DIR__, 5);
     }
