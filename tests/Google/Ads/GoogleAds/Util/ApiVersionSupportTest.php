@@ -82,8 +82,10 @@ class ApiVersionSupportTest extends TestCase
             'The number of returned paths should be ' . $numberOfPaths
         );
         foreach ($defaultPaths as $path) {
+            $versionFolder = DIRECTORY_SEPARATOR . 'V' . $version;
+            // The path should ends with the version folder.
             $this->assertTrue(
-                str_ends_with($path, DIRECTORY_SEPARATOR . 'V' . $version),
+                strlen($path) - strlen($versionFolder) === strrpos($path, $versionFolder, 0),
                 'All returned paths should be specific to the provided version'
             );
         }
