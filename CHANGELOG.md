@@ -1,3 +1,16 @@
+## 9.0.0
+*   Added support for v7 of Google Ads API.
+*   Removed support for v4 of Google Ads API.
+*   Added code examples:
+    * AddCustomAudience
+    * CampaignReportToCsv
+    * MigratePromotionFeedToAsset
+*   Fixed/improved code examples:
+    * GetAdGroupBidModifiers
+    * LaravelSampleApp
+    * UploadCallConversion
+    * UploadOfflineConversion
+
 ## 8.1.0
 *   Added missing 'null' type hints in the package `src/Google/Ads/GoogleAds/v6/`.
 *   Updated code examples:
