@@ -23,14 +23,14 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V7\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\V6\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
-use Google\Ads\GoogleAds\V6\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
-use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V6\Resources\GoogleAdsField;
+use Google\Ads\GoogleAds\V7\Enums\GoogleAdsFieldCategoryEnum\GoogleAdsFieldCategory;
+use Google\Ads\GoogleAds\V7\Enums\GoogleAdsFieldDataTypeEnum\GoogleAdsFieldDataType;
+use Google\Ads\GoogleAds\V7\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V7\Resources\GoogleAdsField;
 use Google\ApiCore\ApiException;
 
 /**

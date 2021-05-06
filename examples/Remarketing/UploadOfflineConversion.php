@@ -24,14 +24,15 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V6\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V6\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V6\ResourceNames;
-use Google\Ads\GoogleAds\V6\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V6\Services\ClickConversion;
-use Google\Ads\GoogleAds\V6\Services\ClickConversionResult;
-use Google\Ads\GoogleAds\V6\Services\UploadClickConversionsResponse;
+use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V7\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V7\ResourceNames;
+use Google\Ads\GoogleAds\V7\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V7\Services\ClickConversion;
+use Google\Ads\GoogleAds\V7\Services\ClickConversionResult;
+use Google\Ads\GoogleAds\V7\Services\CustomVariable;
+use Google\Ads\GoogleAds\V7\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 
 /**
@@ -49,6 +50,10 @@ class UploadOfflineConversion
     // The conversion date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
     private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
     private const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
+    // Optional: Specify the conversion custom variable ID and value you want to
+    // associate with the click conversion upload.
+    private const CONVERSION_CUSTOM_VARIABLE_ID = null;
+    private const CONVERSION_CUSTOM_VARIABLE_VALUE = null;
 
     public static function main()
     {
@@ -59,7 +64,9 @@ class UploadOfflineConversion
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::GCLID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -79,7 +86,11 @@ class UploadOfflineConversion
                 $options[ArgumentNames::CONVERSION_ACTION_ID] ?: self::CONVERSION_ACTION_ID,
                 $options[ArgumentNames::GCLID] ?: self::GCLID,
                 $options[ArgumentNames::CONVERSION_DATE_TIME] ?: self::CONVERSION_DATE_TIME,
-                $options[ArgumentNames::CONVERSION_VALUE] ?: self::CONVERSION_VALUE
+                $options[ArgumentNames::CONVERSION_VALUE] ?: self::CONVERSION_VALUE,
+                $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID]
+                    ?: self::CONVERSION_CUSTOM_VARIABLE_ID,
+                $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE]
+                    ?: self::CONVERSION_CUSTOM_VARIABLE_VALUE
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -120,6 +131,10 @@ class UploadOfflineConversion
      *      click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
      *      “2019-01-01 12:32:45-08:00”
      * @param float $conversionValue the value of the conversion
+     * @param string|null $conversionCustomVariableId the ID of the conversion custom variable to
+     *     associate with the upload
+     * @param string|null $conversionCustomVariableValue the value of the conversion custom
+     *     variable to associate with the upload
      */
     // [START upload_offline_conversion]
     public static function runExample(
@@ -128,7 +143,9 @@ class UploadOfflineConversion
         int $conversionActionId,
         string $gclid,
         string $conversionDateTime,
-        float $conversionValue
+        float $conversionValue,
+        ?string $conversionCustomVariableId,
+        ?string $conversionCustomVariableValue
     ) {
         // Creates a click conversion by specifying currency as USD.
         $clickConversion = new ClickConversion([
@@ -137,8 +154,18 @@ class UploadOfflineConversion
             'gclid' => $gclid,
             'conversion_value' => $conversionValue,
             'conversion_date_time' => $conversionDateTime,
-            'currency_code' => 'USD',
+            'currency_code' => 'USD'
         ]);
+
+        if (!is_null($conversionCustomVariableId) && !is_null($conversionCustomVariableValue)) {
+            $clickConversion->setCustomVariables([new CustomVariable([
+                'conversion_custom_variable' => ResourceNames::forConversionCustomVariable(
+                    $customerId,
+                    $conversionCustomVariableId
+                ),
+                'value' => $conversionCustomVariableValue
+            ])]);
+        }
 
         // Issues a request to upload the click conversion.
         $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
