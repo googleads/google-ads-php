@@ -23,8 +23,7 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
 /**
- * Utilities to remove the support for Google Ads API versions. It is typically used to reduce the
- * size of the library.
+ * Utilities to manage the support for Google Ads API versions in the library.
  */
 class ApiVersionSupport
 {
@@ -45,7 +44,9 @@ class ApiVersionSupport
     }
 
     /**
-     * This callback method can be used to define a Composer script.
+     * This callback method can be used to define Composer scripts that remove the support for
+     * Google Ads API versions. This is typically useful to reduce the size of the library and
+     * speed up execution.
      *
      * @param Event $event the event context provided by Composer which contains the arguments
      *     passed to the Composer script
