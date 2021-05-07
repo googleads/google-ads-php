@@ -56,9 +56,15 @@ class ApiVersionSupport
         $apiVersionSupport = new ApiVersionSupport();
         foreach ($event->getArguments() as $apiVersionToRemove) {
             if (is_numeric($apiVersionToRemove)) {
+                $apiVersion = intval($apiVersionToRemove);
+                $event->getIO()->write(sprintf(
+                    'Removing support for the version %d of Google Ads API...',
+                    $apiVersion
+                ));
                 $apiVersionSupport->removeDirectories(
-                    $apiVersionSupport->getDirectoryPathsForApiVersion(intval($apiVersionToRemove))
+                    $apiVersionSupport->getDirectoryPathsForApiVersion($apiVersion)
                 );
+                $event->getIO()->write('Done');
             }
         }
     }
