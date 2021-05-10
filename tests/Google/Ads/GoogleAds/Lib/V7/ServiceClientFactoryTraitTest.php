@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
+// Generated code ; DO NOT EDIT.
+
 namespace Google\Ads\GoogleAds\Lib\V7;
 
 use Google\Ads\GoogleAds\V7\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V7\Services\AccountBudgetServiceClient;
 use Google\Ads\GoogleAds\V7\Services\AccountLinkServiceClient;
+use Google\Ads\GoogleAds\V7\Services\AdGroupAdAssetViewServiceClient;
 use Google\Ads\GoogleAds\V7\Services\AdGroupAdLabelServiceClient;
 use Google\Ads\GoogleAds\V7\Services\AdGroupAdServiceClient;
 use Google\Ads\GoogleAds\V7\Services\AdGroupAssetServiceClient;
@@ -81,6 +84,7 @@ use Google\Ads\GoogleAds\V7\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V7\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V7\Services\DetailPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V7\Services\DisplayKeywordViewServiceClient;
+use Google\Ads\GoogleAds\V7\Services\DistanceViewServiceClient;
 use Google\Ads\GoogleAds\V7\Services\DomainCategoryServiceClient;
 use Google\Ads\GoogleAds\V7\Services\DynamicSearchAdsSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V7\Services\ExpandedLandingPageViewServiceClient;
@@ -139,6 +143,7 @@ use Google\Ads\GoogleAds\V7\Services\TopicViewServiceClient;
 use Google\Ads\GoogleAds\V7\Services\UserDataServiceClient;
 use Google\Ads\GoogleAds\V7\Services\UserInterestServiceClient;
 use Google\Ads\GoogleAds\V7\Services\UserListServiceClient;
+use Google\Ads\GoogleAds\V7\Services\UserLocationViewServiceClient;
 use Google\Ads\GoogleAds\V7\Services\VideoServiceClient;
 use Google\Ads\GoogleAds\V7\Services\WebpageViewServiceClient;
 use Google\Auth\FetchAuthTokenInterface;
@@ -203,6 +208,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             AccountLinkServiceClient::class,
             $this->googleAdsClient->getAccountLinkServiceClient()
+        );
+    }
+
+    public function testGetAdGroupAdAssetViewServiceClient()
+    {
+        $this->assertInstanceOf(
+            AdGroupAdAssetViewServiceClient::class,
+            $this->googleAdsClient->getAdGroupAdAssetViewServiceClient()
         );
     }
 
@@ -686,6 +699,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         );
     }
 
+    public function testGetDistanceViewServiceClient()
+    {
+        $this->assertInstanceOf(
+            DistanceViewServiceClient::class,
+            $this->googleAdsClient->getDistanceViewServiceClient()
+        );
+    }
+
     public function testGetDomainCategoryServiceClient()
     {
         $this->assertInstanceOf(
@@ -1147,6 +1168,14 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             UserListServiceClient::class,
             $this->googleAdsClient->getUserListServiceClient()
+        );
+    }
+
+    public function testGetUserLocationViewServiceClient()
+    {
+        $this->assertInstanceOf(
+            UserLocationViewServiceClient::class,
+            $this->googleAdsClient->getUserLocationViewServiceClient()
         );
     }
 

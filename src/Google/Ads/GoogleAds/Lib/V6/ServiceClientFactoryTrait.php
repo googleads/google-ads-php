@@ -1,7 +1,7 @@
 <?php
 
-/*
- * Copyright 2020 Google LLC
+/**
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
+// Generated code ; DO NOT EDIT.
+
 namespace Google\Ads\GoogleAds\Lib\V6;
 
 use Google\Ads\GoogleAds\Lib\ConfigurationTrait;
 use Google\Ads\GoogleAds\V6\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AccountBudgetServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AccountLinkServiceClient;
+use Google\Ads\GoogleAds\V6\Services\AdGroupAdAssetViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AdGroupAdLabelServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AdGroupAdServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AdGroupAudienceViewServiceClient;
@@ -77,6 +80,7 @@ use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DetailPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DisplayKeywordViewServiceClient;
+use Google\Ads\GoogleAds\V6\Services\DistanceViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DomainCategoryServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DynamicSearchAdsSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\ExpandedLandingPageViewServiceClient;
@@ -134,6 +138,7 @@ use Google\Ads\GoogleAds\V6\Services\TopicViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\UserDataServiceClient;
 use Google\Ads\GoogleAds\V6\Services\UserInterestServiceClient;
 use Google\Ads\GoogleAds\V6\Services\UserListServiceClient;
+use Google\Ads\GoogleAds\V6\Services\UserLocationViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\VideoServiceClient;
 
 /**
@@ -156,7 +161,7 @@ trait ServiceClientFactoryTrait
      *
      * @return array the client options
      */
-    public function getGoogleAdsClientOptions()
+    public function getGoogleAdsClientOptions(): array
     {
         $clientOptions = [
             self::$CREDENTIALS_LOADER_KEY => $this->getOAuth2Credential(),
@@ -212,7 +217,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AccountBudgetProposalServiceClient
      */
-    public function getAccountBudgetProposalServiceClient()
+    public function getAccountBudgetProposalServiceClient(): AccountBudgetProposalServiceClient
     {
         return new AccountBudgetProposalServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -220,7 +225,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AccountBudgetServiceClient
      */
-    public function getAccountBudgetServiceClient()
+    public function getAccountBudgetServiceClient(): AccountBudgetServiceClient
     {
         return new AccountBudgetServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -228,15 +233,23 @@ trait ServiceClientFactoryTrait
     /**
      * @return AccountLinkServiceClient
      */
-    public function getAccountLinkServiceClient()
+    public function getAccountLinkServiceClient(): AccountLinkServiceClient
     {
         return new AccountLinkServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
+     * @return AdGroupAdAssetViewServiceClient
+     */
+    public function getAdGroupAdAssetViewServiceClient(): AdGroupAdAssetViewServiceClient
+    {
+        return new AdGroupAdAssetViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return AdGroupAdLabelServiceClient
      */
-    public function getAdGroupAdLabelServiceClient()
+    public function getAdGroupAdLabelServiceClient(): AdGroupAdLabelServiceClient
     {
         return new AdGroupAdLabelServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -244,7 +257,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupAdServiceClient
      */
-    public function getAdGroupAdServiceClient()
+    public function getAdGroupAdServiceClient(): AdGroupAdServiceClient
     {
         return new AdGroupAdServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -252,7 +265,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupAudienceViewServiceClient
      */
-    public function getAdGroupAudienceViewServiceClient()
+    public function getAdGroupAudienceViewServiceClient(): AdGroupAudienceViewServiceClient
     {
         return new AdGroupAudienceViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -260,7 +273,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupBidModifierServiceClient
      */
-    public function getAdGroupBidModifierServiceClient()
+    public function getAdGroupBidModifierServiceClient(): AdGroupBidModifierServiceClient
     {
         return new AdGroupBidModifierServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -268,7 +281,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupCriterionLabelServiceClient
      */
-    public function getAdGroupCriterionLabelServiceClient()
+    public function getAdGroupCriterionLabelServiceClient(): AdGroupCriterionLabelServiceClient
     {
         return new AdGroupCriterionLabelServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -276,7 +289,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupCriterionServiceClient
      */
-    public function getAdGroupCriterionServiceClient()
+    public function getAdGroupCriterionServiceClient(): AdGroupCriterionServiceClient
     {
         return new AdGroupCriterionServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -284,7 +297,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupCriterionSimulationServiceClient
      */
-    public function getAdGroupCriterionSimulationServiceClient()
+    public function getAdGroupCriterionSimulationServiceClient(): AdGroupCriterionSimulationServiceClient
     {
         return new AdGroupCriterionSimulationServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -292,7 +305,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupExtensionSettingServiceClient
      */
-    public function getAdGroupExtensionSettingServiceClient()
+    public function getAdGroupExtensionSettingServiceClient(): AdGroupExtensionSettingServiceClient
     {
         return new AdGroupExtensionSettingServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -300,7 +313,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupFeedServiceClient
      */
-    public function getAdGroupFeedServiceClient()
+    public function getAdGroupFeedServiceClient(): AdGroupFeedServiceClient
     {
         return new AdGroupFeedServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -308,7 +321,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupLabelServiceClient
      */
-    public function getAdGroupLabelServiceClient()
+    public function getAdGroupLabelServiceClient(): AdGroupLabelServiceClient
     {
         return new AdGroupLabelServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -316,7 +329,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupServiceClient
      */
-    public function getAdGroupServiceClient()
+    public function getAdGroupServiceClient(): AdGroupServiceClient
     {
         return new AdGroupServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -324,7 +337,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdGroupSimulationServiceClient
      */
-    public function getAdGroupSimulationServiceClient()
+    public function getAdGroupSimulationServiceClient(): AdGroupSimulationServiceClient
     {
         return new AdGroupSimulationServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -332,7 +345,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdParameterServiceClient
      */
-    public function getAdParameterServiceClient()
+    public function getAdParameterServiceClient(): AdParameterServiceClient
     {
         return new AdParameterServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -340,7 +353,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdScheduleViewServiceClient
      */
-    public function getAdScheduleViewServiceClient()
+    public function getAdScheduleViewServiceClient(): AdScheduleViewServiceClient
     {
         return new AdScheduleViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -348,7 +361,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AdServiceClient
      */
-    public function getAdServiceClient()
+    public function getAdServiceClient(): AdServiceClient
     {
         return new AdServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -356,7 +369,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AgeRangeViewServiceClient
      */
-    public function getAgeRangeViewServiceClient()
+    public function getAgeRangeViewServiceClient(): AgeRangeViewServiceClient
     {
         return new AgeRangeViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -364,7 +377,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return AssetServiceClient
      */
-    public function getAssetServiceClient()
+    public function getAssetServiceClient(): AssetServiceClient
     {
         return new AssetServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -372,7 +385,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return BatchJobServiceClient
      */
-    public function getBatchJobServiceClient()
+    public function getBatchJobServiceClient(): BatchJobServiceClient
     {
         return new BatchJobServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -380,7 +393,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return BiddingStrategyServiceClient
      */
-    public function getBiddingStrategyServiceClient()
+    public function getBiddingStrategyServiceClient(): BiddingStrategyServiceClient
     {
         return new BiddingStrategyServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -388,7 +401,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return BillingSetupServiceClient
      */
-    public function getBillingSetupServiceClient()
+    public function getBillingSetupServiceClient(): BillingSetupServiceClient
     {
         return new BillingSetupServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -396,7 +409,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignAssetServiceClient
      */
-    public function getCampaignAssetServiceClient()
+    public function getCampaignAssetServiceClient(): CampaignAssetServiceClient
     {
         return new CampaignAssetServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -404,7 +417,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignAudienceViewServiceClient
      */
-    public function getCampaignAudienceViewServiceClient()
+    public function getCampaignAudienceViewServiceClient(): CampaignAudienceViewServiceClient
     {
         return new CampaignAudienceViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -412,7 +425,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignBidModifierServiceClient
      */
-    public function getCampaignBidModifierServiceClient()
+    public function getCampaignBidModifierServiceClient(): CampaignBidModifierServiceClient
     {
         return new CampaignBidModifierServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -420,7 +433,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignBudgetServiceClient
      */
-    public function getCampaignBudgetServiceClient()
+    public function getCampaignBudgetServiceClient(): CampaignBudgetServiceClient
     {
         return new CampaignBudgetServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -428,7 +441,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignCriterionServiceClient
      */
-    public function getCampaignCriterionServiceClient()
+    public function getCampaignCriterionServiceClient(): CampaignCriterionServiceClient
     {
         return new CampaignCriterionServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -436,7 +449,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignCriterionSimulationServiceClient
      */
-    public function getCampaignCriterionSimulationServiceClient()
+    public function getCampaignCriterionSimulationServiceClient(): CampaignCriterionSimulationServiceClient
     {
         return new CampaignCriterionSimulationServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -444,7 +457,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignDraftServiceClient
      */
-    public function getCampaignDraftServiceClient()
+    public function getCampaignDraftServiceClient(): CampaignDraftServiceClient
     {
         return new CampaignDraftServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -452,7 +465,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignExperimentServiceClient
      */
-    public function getCampaignExperimentServiceClient()
+    public function getCampaignExperimentServiceClient(): CampaignExperimentServiceClient
     {
         return new CampaignExperimentServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -460,7 +473,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignExtensionSettingServiceClient
      */
-    public function getCampaignExtensionSettingServiceClient()
+    public function getCampaignExtensionSettingServiceClient(): CampaignExtensionSettingServiceClient
     {
         return new CampaignExtensionSettingServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -468,7 +481,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignFeedServiceClient
      */
-    public function getCampaignFeedServiceClient()
+    public function getCampaignFeedServiceClient(): CampaignFeedServiceClient
     {
         return new CampaignFeedServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -476,7 +489,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignLabelServiceClient
      */
-    public function getCampaignLabelServiceClient()
+    public function getCampaignLabelServiceClient(): CampaignLabelServiceClient
     {
         return new CampaignLabelServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -484,7 +497,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignServiceClient
      */
-    public function getCampaignServiceClient()
+    public function getCampaignServiceClient(): CampaignServiceClient
     {
         return new CampaignServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -492,7 +505,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CampaignSharedSetServiceClient
      */
-    public function getCampaignSharedSetServiceClient()
+    public function getCampaignSharedSetServiceClient(): CampaignSharedSetServiceClient
     {
         return new CampaignSharedSetServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -500,7 +513,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CarrierConstantServiceClient
      */
-    public function getCarrierConstantServiceClient()
+    public function getCarrierConstantServiceClient(): CarrierConstantServiceClient
     {
         return new CarrierConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -508,7 +521,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ChangeStatusServiceClient
      */
-    public function getChangeStatusServiceClient()
+    public function getChangeStatusServiceClient(): ChangeStatusServiceClient
     {
         return new ChangeStatusServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -516,7 +529,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ClickViewServiceClient
      */
-    public function getClickViewServiceClient()
+    public function getClickViewServiceClient(): ClickViewServiceClient
     {
         return new ClickViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -524,7 +537,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CombinedAudienceServiceClient
      */
-    public function getCombinedAudienceServiceClient()
+    public function getCombinedAudienceServiceClient(): CombinedAudienceServiceClient
     {
         return new CombinedAudienceServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -532,7 +545,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ConversionActionServiceClient
      */
-    public function getConversionActionServiceClient()
+    public function getConversionActionServiceClient(): ConversionActionServiceClient
     {
         return new ConversionActionServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -540,7 +553,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ConversionAdjustmentUploadServiceClient
      */
-    public function getConversionAdjustmentUploadServiceClient()
+    public function getConversionAdjustmentUploadServiceClient(): ConversionAdjustmentUploadServiceClient
     {
         return new ConversionAdjustmentUploadServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -548,7 +561,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ConversionUploadServiceClient
      */
-    public function getConversionUploadServiceClient()
+    public function getConversionUploadServiceClient(): ConversionUploadServiceClient
     {
         return new ConversionUploadServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -556,7 +569,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CurrencyConstantServiceClient
      */
-    public function getCurrencyConstantServiceClient()
+    public function getCurrencyConstantServiceClient(): CurrencyConstantServiceClient
     {
         return new CurrencyConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -564,7 +577,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomAudienceServiceClient
      */
-    public function getCustomAudienceServiceClient()
+    public function getCustomAudienceServiceClient(): CustomAudienceServiceClient
     {
         return new CustomAudienceServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -572,7 +585,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerClientLinkServiceClient
      */
-    public function getCustomerClientLinkServiceClient()
+    public function getCustomerClientLinkServiceClient(): CustomerClientLinkServiceClient
     {
         return new CustomerClientLinkServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -580,7 +593,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerClientServiceClient
      */
-    public function getCustomerClientServiceClient()
+    public function getCustomerClientServiceClient(): CustomerClientServiceClient
     {
         return new CustomerClientServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -588,7 +601,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerExtensionSettingServiceClient
      */
-    public function getCustomerExtensionSettingServiceClient()
+    public function getCustomerExtensionSettingServiceClient(): CustomerExtensionSettingServiceClient
     {
         return new CustomerExtensionSettingServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -596,7 +609,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerFeedServiceClient
      */
-    public function getCustomerFeedServiceClient()
+    public function getCustomerFeedServiceClient(): CustomerFeedServiceClient
     {
         return new CustomerFeedServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -604,7 +617,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerLabelServiceClient
      */
-    public function getCustomerLabelServiceClient()
+    public function getCustomerLabelServiceClient(): CustomerLabelServiceClient
     {
         return new CustomerLabelServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -612,7 +625,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerManagerLinkServiceClient
      */
-    public function getCustomerManagerLinkServiceClient()
+    public function getCustomerManagerLinkServiceClient(): CustomerManagerLinkServiceClient
     {
         return new CustomerManagerLinkServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -620,7 +633,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerNegativeCriterionServiceClient
      */
-    public function getCustomerNegativeCriterionServiceClient()
+    public function getCustomerNegativeCriterionServiceClient(): CustomerNegativeCriterionServiceClient
     {
         return new CustomerNegativeCriterionServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -628,7 +641,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerServiceClient
      */
-    public function getCustomerServiceClient()
+    public function getCustomerServiceClient(): CustomerServiceClient
     {
         return new CustomerServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -636,7 +649,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerUserAccessInvitationServiceClient
      */
-    public function getCustomerUserAccessInvitationServiceClient()
+    public function getCustomerUserAccessInvitationServiceClient(): CustomerUserAccessInvitationServiceClient
     {
         return new CustomerUserAccessInvitationServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -644,7 +657,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomerUserAccessServiceClient
      */
-    public function getCustomerUserAccessServiceClient()
+    public function getCustomerUserAccessServiceClient(): CustomerUserAccessServiceClient
     {
         return new CustomerUserAccessServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -652,7 +665,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return CustomInterestServiceClient
      */
-    public function getCustomInterestServiceClient()
+    public function getCustomInterestServiceClient(): CustomInterestServiceClient
     {
         return new CustomInterestServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -660,7 +673,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return DetailPlacementViewServiceClient
      */
-    public function getDetailPlacementViewServiceClient()
+    public function getDetailPlacementViewServiceClient(): DetailPlacementViewServiceClient
     {
         return new DetailPlacementViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -668,15 +681,23 @@ trait ServiceClientFactoryTrait
     /**
      * @return DisplayKeywordViewServiceClient
      */
-    public function getDisplayKeywordViewServiceClient()
+    public function getDisplayKeywordViewServiceClient(): DisplayKeywordViewServiceClient
     {
         return new DisplayKeywordViewServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
+     * @return DistanceViewServiceClient
+     */
+    public function getDistanceViewServiceClient(): DistanceViewServiceClient
+    {
+        return new DistanceViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return DomainCategoryServiceClient
      */
-    public function getDomainCategoryServiceClient()
+    public function getDomainCategoryServiceClient(): DomainCategoryServiceClient
     {
         return new DomainCategoryServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -684,7 +705,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return DynamicSearchAdsSearchTermViewServiceClient
      */
-    public function getDynamicSearchAdsSearchTermViewServiceClient()
+    public function getDynamicSearchAdsSearchTermViewServiceClient(): DynamicSearchAdsSearchTermViewServiceClient
     {
         return new DynamicSearchAdsSearchTermViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -692,7 +713,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ExpandedLandingPageViewServiceClient
      */
-    public function getExpandedLandingPageViewServiceClient()
+    public function getExpandedLandingPageViewServiceClient(): ExpandedLandingPageViewServiceClient
     {
         return new ExpandedLandingPageViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -700,7 +721,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ExtensionFeedItemServiceClient
      */
-    public function getExtensionFeedItemServiceClient()
+    public function getExtensionFeedItemServiceClient(): ExtensionFeedItemServiceClient
     {
         return new ExtensionFeedItemServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -708,7 +729,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return FeedItemServiceClient
      */
-    public function getFeedItemServiceClient()
+    public function getFeedItemServiceClient(): FeedItemServiceClient
     {
         return new FeedItemServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -716,7 +737,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return FeedItemSetLinkServiceClient
      */
-    public function getFeedItemSetLinkServiceClient()
+    public function getFeedItemSetLinkServiceClient(): FeedItemSetLinkServiceClient
     {
         return new FeedItemSetLinkServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -724,7 +745,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return FeedItemSetServiceClient
      */
-    public function getFeedItemSetServiceClient()
+    public function getFeedItemSetServiceClient(): FeedItemSetServiceClient
     {
         return new FeedItemSetServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -732,7 +753,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return FeedItemTargetServiceClient
      */
-    public function getFeedItemTargetServiceClient()
+    public function getFeedItemTargetServiceClient(): FeedItemTargetServiceClient
     {
         return new FeedItemTargetServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -740,7 +761,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return FeedMappingServiceClient
      */
-    public function getFeedMappingServiceClient()
+    public function getFeedMappingServiceClient(): FeedMappingServiceClient
     {
         return new FeedMappingServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -748,7 +769,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return FeedPlaceholderViewServiceClient
      */
-    public function getFeedPlaceholderViewServiceClient()
+    public function getFeedPlaceholderViewServiceClient(): FeedPlaceholderViewServiceClient
     {
         return new FeedPlaceholderViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -756,7 +777,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return FeedServiceClient
      */
-    public function getFeedServiceClient()
+    public function getFeedServiceClient(): FeedServiceClient
     {
         return new FeedServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -764,7 +785,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return GenderViewServiceClient
      */
-    public function getGenderViewServiceClient()
+    public function getGenderViewServiceClient(): GenderViewServiceClient
     {
         return new GenderViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -772,7 +793,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return GeographicViewServiceClient
      */
-    public function getGeographicViewServiceClient()
+    public function getGeographicViewServiceClient(): GeographicViewServiceClient
     {
         return new GeographicViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -780,7 +801,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return GeoTargetConstantServiceClient
      */
-    public function getGeoTargetConstantServiceClient()
+    public function getGeoTargetConstantServiceClient(): GeoTargetConstantServiceClient
     {
         return new GeoTargetConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -788,7 +809,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return GoogleAdsFieldServiceClient
      */
-    public function getGoogleAdsFieldServiceClient()
+    public function getGoogleAdsFieldServiceClient(): GoogleAdsFieldServiceClient
     {
         return new GoogleAdsFieldServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -796,7 +817,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return GoogleAdsServiceClient
      */
-    public function getGoogleAdsServiceClient()
+    public function getGoogleAdsServiceClient(): GoogleAdsServiceClient
     {
         return new GoogleAdsServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -804,7 +825,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return GroupPlacementViewServiceClient
      */
-    public function getGroupPlacementViewServiceClient()
+    public function getGroupPlacementViewServiceClient(): GroupPlacementViewServiceClient
     {
         return new GroupPlacementViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -812,7 +833,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return HotelGroupViewServiceClient
      */
-    public function getHotelGroupViewServiceClient()
+    public function getHotelGroupViewServiceClient(): HotelGroupViewServiceClient
     {
         return new HotelGroupViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -820,7 +841,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return HotelPerformanceViewServiceClient
      */
-    public function getHotelPerformanceViewServiceClient()
+    public function getHotelPerformanceViewServiceClient(): HotelPerformanceViewServiceClient
     {
         return new HotelPerformanceViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -828,7 +849,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return IncomeRangeViewServiceClient
      */
-    public function getIncomeRangeViewServiceClient()
+    public function getIncomeRangeViewServiceClient(): IncomeRangeViewServiceClient
     {
         return new IncomeRangeViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -836,7 +857,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return InvoiceServiceClient
      */
-    public function getInvoiceServiceClient()
+    public function getInvoiceServiceClient(): InvoiceServiceClient
     {
         return new InvoiceServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -844,7 +865,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return KeywordPlanAdGroupKeywordServiceClient
      */
-    public function getKeywordPlanAdGroupKeywordServiceClient()
+    public function getKeywordPlanAdGroupKeywordServiceClient(): KeywordPlanAdGroupKeywordServiceClient
     {
         return new KeywordPlanAdGroupKeywordServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -852,7 +873,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return KeywordPlanAdGroupServiceClient
      */
-    public function getKeywordPlanAdGroupServiceClient()
+    public function getKeywordPlanAdGroupServiceClient(): KeywordPlanAdGroupServiceClient
     {
         return new KeywordPlanAdGroupServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -860,7 +881,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return KeywordPlanCampaignKeywordServiceClient
      */
-    public function getKeywordPlanCampaignKeywordServiceClient()
+    public function getKeywordPlanCampaignKeywordServiceClient(): KeywordPlanCampaignKeywordServiceClient
     {
         return new KeywordPlanCampaignKeywordServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -868,7 +889,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return KeywordPlanCampaignServiceClient
      */
-    public function getKeywordPlanCampaignServiceClient()
+    public function getKeywordPlanCampaignServiceClient(): KeywordPlanCampaignServiceClient
     {
         return new KeywordPlanCampaignServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -876,7 +897,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return KeywordPlanIdeaServiceClient
      */
-    public function getKeywordPlanIdeaServiceClient()
+    public function getKeywordPlanIdeaServiceClient(): KeywordPlanIdeaServiceClient
     {
         return new KeywordPlanIdeaServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -884,7 +905,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return KeywordPlanServiceClient
      */
-    public function getKeywordPlanServiceClient()
+    public function getKeywordPlanServiceClient(): KeywordPlanServiceClient
     {
         return new KeywordPlanServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -892,7 +913,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return KeywordViewServiceClient
      */
-    public function getKeywordViewServiceClient()
+    public function getKeywordViewServiceClient(): KeywordViewServiceClient
     {
         return new KeywordViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -900,7 +921,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return LabelServiceClient
      */
-    public function getLabelServiceClient()
+    public function getLabelServiceClient(): LabelServiceClient
     {
         return new LabelServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -908,7 +929,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return LandingPageViewServiceClient
      */
-    public function getLandingPageViewServiceClient()
+    public function getLandingPageViewServiceClient(): LandingPageViewServiceClient
     {
         return new LandingPageViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -916,7 +937,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return LanguageConstantServiceClient
      */
-    public function getLanguageConstantServiceClient()
+    public function getLanguageConstantServiceClient(): LanguageConstantServiceClient
     {
         return new LanguageConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -924,7 +945,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return LocationViewServiceClient
      */
-    public function getLocationViewServiceClient()
+    public function getLocationViewServiceClient(): LocationViewServiceClient
     {
         return new LocationViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -932,7 +953,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ManagedPlacementViewServiceClient
      */
-    public function getManagedPlacementViewServiceClient()
+    public function getManagedPlacementViewServiceClient(): ManagedPlacementViewServiceClient
     {
         return new ManagedPlacementViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -940,7 +961,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return MediaFileServiceClient
      */
-    public function getMediaFileServiceClient()
+    public function getMediaFileServiceClient(): MediaFileServiceClient
     {
         return new MediaFileServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -948,7 +969,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return MerchantCenterLinkServiceClient
      */
-    public function getMerchantCenterLinkServiceClient()
+    public function getMerchantCenterLinkServiceClient(): MerchantCenterLinkServiceClient
     {
         return new MerchantCenterLinkServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -956,7 +977,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return MobileAppCategoryConstantServiceClient
      */
-    public function getMobileAppCategoryConstantServiceClient()
+    public function getMobileAppCategoryConstantServiceClient(): MobileAppCategoryConstantServiceClient
     {
         return new MobileAppCategoryConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -964,7 +985,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return MobileDeviceConstantServiceClient
      */
-    public function getMobileDeviceConstantServiceClient()
+    public function getMobileDeviceConstantServiceClient(): MobileDeviceConstantServiceClient
     {
         return new MobileDeviceConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -972,7 +993,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return OfflineUserDataJobServiceClient
      */
-    public function getOfflineUserDataJobServiceClient()
+    public function getOfflineUserDataJobServiceClient(): OfflineUserDataJobServiceClient
     {
         return new OfflineUserDataJobServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -980,7 +1001,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return OperatingSystemVersionConstantServiceClient
      */
-    public function getOperatingSystemVersionConstantServiceClient()
+    public function getOperatingSystemVersionConstantServiceClient(): OperatingSystemVersionConstantServiceClient
     {
         return new OperatingSystemVersionConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -988,7 +1009,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return PaidOrganicSearchTermViewServiceClient
      */
-    public function getPaidOrganicSearchTermViewServiceClient()
+    public function getPaidOrganicSearchTermViewServiceClient(): PaidOrganicSearchTermViewServiceClient
     {
         return new PaidOrganicSearchTermViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -996,7 +1017,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ParentalStatusViewServiceClient
      */
-    public function getParentalStatusViewServiceClient()
+    public function getParentalStatusViewServiceClient(): ParentalStatusViewServiceClient
     {
         return new ParentalStatusViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1004,7 +1025,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return PaymentsAccountServiceClient
      */
-    public function getPaymentsAccountServiceClient()
+    public function getPaymentsAccountServiceClient(): PaymentsAccountServiceClient
     {
         return new PaymentsAccountServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1012,7 +1033,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ProductBiddingCategoryConstantServiceClient
      */
-    public function getProductBiddingCategoryConstantServiceClient()
+    public function getProductBiddingCategoryConstantServiceClient(): ProductBiddingCategoryConstantServiceClient
     {
         return new ProductBiddingCategoryConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1020,7 +1041,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ProductGroupViewServiceClient
      */
-    public function getProductGroupViewServiceClient()
+    public function getProductGroupViewServiceClient(): ProductGroupViewServiceClient
     {
         return new ProductGroupViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1028,7 +1049,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ReachPlanServiceClient
      */
-    public function getReachPlanServiceClient()
+    public function getReachPlanServiceClient(): ReachPlanServiceClient
     {
         return new ReachPlanServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1036,7 +1057,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return RecommendationServiceClient
      */
-    public function getRecommendationServiceClient()
+    public function getRecommendationServiceClient(): RecommendationServiceClient
     {
         return new RecommendationServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1044,7 +1065,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return RemarketingActionServiceClient
      */
-    public function getRemarketingActionServiceClient()
+    public function getRemarketingActionServiceClient(): RemarketingActionServiceClient
     {
         return new RemarketingActionServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1052,7 +1073,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return SearchTermViewServiceClient
      */
-    public function getSearchTermViewServiceClient()
+    public function getSearchTermViewServiceClient(): SearchTermViewServiceClient
     {
         return new SearchTermViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1060,7 +1081,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return SharedCriterionServiceClient
      */
-    public function getSharedCriterionServiceClient()
+    public function getSharedCriterionServiceClient(): SharedCriterionServiceClient
     {
         return new SharedCriterionServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1068,7 +1089,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return SharedSetServiceClient
      */
-    public function getSharedSetServiceClient()
+    public function getSharedSetServiceClient(): SharedSetServiceClient
     {
         return new SharedSetServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1076,7 +1097,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ShoppingPerformanceViewServiceClient
      */
-    public function getShoppingPerformanceViewServiceClient()
+    public function getShoppingPerformanceViewServiceClient(): ShoppingPerformanceViewServiceClient
     {
         return new ShoppingPerformanceViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1084,7 +1105,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return ThirdPartyAppAnalyticsLinkServiceClient
      */
-    public function getThirdPartyAppAnalyticsLinkServiceClient()
+    public function getThirdPartyAppAnalyticsLinkServiceClient(): ThirdPartyAppAnalyticsLinkServiceClient
     {
         return new ThirdPartyAppAnalyticsLinkServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1092,7 +1113,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return TopicConstantServiceClient
      */
-    public function getTopicConstantServiceClient()
+    public function getTopicConstantServiceClient(): TopicConstantServiceClient
     {
         return new TopicConstantServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1100,7 +1121,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return TopicViewServiceClient
      */
-    public function getTopicViewServiceClient()
+    public function getTopicViewServiceClient(): TopicViewServiceClient
     {
         return new TopicViewServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1108,7 +1129,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return UserDataServiceClient
      */
-    public function getUserDataServiceClient()
+    public function getUserDataServiceClient(): UserDataServiceClient
     {
         return new UserDataServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1116,7 +1137,7 @@ trait ServiceClientFactoryTrait
     /**
      * @return UserInterestServiceClient
      */
-    public function getUserInterestServiceClient()
+    public function getUserInterestServiceClient(): UserInterestServiceClient
     {
         return new UserInterestServiceClient($this->getGoogleAdsClientOptions());
     }
@@ -1124,15 +1145,23 @@ trait ServiceClientFactoryTrait
     /**
      * @return UserListServiceClient
      */
-    public function getUserListServiceClient()
+    public function getUserListServiceClient(): UserListServiceClient
     {
         return new UserListServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**
+     * @return UserLocationViewServiceClient
+     */
+    public function getUserLocationViewServiceClient(): UserLocationViewServiceClient
+    {
+        return new UserLocationViewServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return VideoServiceClient
      */
-    public function getVideoServiceClient()
+    public function getVideoServiceClient(): VideoServiceClient
     {
         return new VideoServiceClient($this->getGoogleAdsClientOptions());
     }
