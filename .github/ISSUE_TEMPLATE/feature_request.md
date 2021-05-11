@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Request a new feature or improvement
+about: Request a new feature or improvement in this library
 title: ''
 labels: enhancement
 assignees: ''
