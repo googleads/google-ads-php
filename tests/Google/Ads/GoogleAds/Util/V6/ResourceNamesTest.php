@@ -1,7 +1,7 @@
 <?php
 
-/*
- * Copyright 2020 Google LLC
+/**
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
+// Generated code ; DO NOT EDIT.
+
 namespace Google\Ads\GoogleAds\Util\V6;
 
-use Google\Ads\GoogleAds\V6\Enums\AssetFieldTypeEnum\AssetFieldType;
-use Google\Ads\GoogleAds\V6\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V6\Enums\PlaceholderTypeEnum\PlaceholderType;
 use Google\Ads\GoogleAds\V6\Services\AccountBudgetProposalServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AccountBudgetServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AccountLinkServiceClient;
+use Google\Ads\GoogleAds\V6\Services\AdGroupAdAssetViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AdGroupAdLabelServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AdGroupAdServiceClient;
 use Google\Ads\GoogleAds\V6\Services\AdGroupAudienceViewServiceClient;
@@ -63,6 +63,7 @@ use Google\Ads\GoogleAds\V6\Services\ClickViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CombinedAudienceServiceClient;
 use Google\Ads\GoogleAds\V6\Services\ConversionActionServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CurrencyConstantServiceClient;
+use Google\Ads\GoogleAds\V6\Services\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerClientLinkServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerClientServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomerExtensionSettingServiceClient;
@@ -76,7 +77,9 @@ use Google\Ads\GoogleAds\V6\Services\CustomerUserAccessServiceClient;
 use Google\Ads\GoogleAds\V6\Services\CustomInterestServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DetailPlacementViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DisplayKeywordViewServiceClient;
+use Google\Ads\GoogleAds\V6\Services\DistanceViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\DomainCategoryServiceClient;
+use Google\Ads\GoogleAds\V6\Services\DynamicSearchAdsSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\ExpandedLandingPageViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\ExtensionFeedItemServiceClient;
 use Google\Ads\GoogleAds\V6\Services\FeedItemServiceClient;
@@ -99,6 +102,7 @@ use Google\Ads\GoogleAds\V6\Services\KeywordPlanAdGroupServiceClient;
 use Google\Ads\GoogleAds\V6\Services\KeywordPlanCampaignKeywordServiceClient;
 use Google\Ads\GoogleAds\V6\Services\KeywordPlanCampaignServiceClient;
 use Google\Ads\GoogleAds\V6\Services\KeywordPlanServiceClient;
+use Google\Ads\GoogleAds\V6\Services\KeywordViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\LabelServiceClient;
 use Google\Ads\GoogleAds\V6\Services\LandingPageViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\LanguageConstantServiceClient;
@@ -108,6 +112,7 @@ use Google\Ads\GoogleAds\V6\Services\MediaFileServiceClient;
 use Google\Ads\GoogleAds\V6\Services\MerchantCenterLinkServiceClient;
 use Google\Ads\GoogleAds\V6\Services\MobileAppCategoryConstantServiceClient;
 use Google\Ads\GoogleAds\V6\Services\MobileDeviceConstantServiceClient;
+use Google\Ads\GoogleAds\V6\Services\OfflineUserDataJobServiceClient;
 use Google\Ads\GoogleAds\V6\Services\OperatingSystemVersionConstantServiceClient;
 use Google\Ads\GoogleAds\V6\Services\PaidOrganicSearchTermViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\ParentalStatusViewServiceClient;
@@ -124,6 +129,7 @@ use Google\Ads\GoogleAds\V6\Services\TopicConstantServiceClient;
 use Google\Ads\GoogleAds\V6\Services\TopicViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\UserInterestServiceClient;
 use Google\Ads\GoogleAds\V6\Services\UserListServiceClient;
+use Google\Ads\GoogleAds\V6\Services\UserLocationViewServiceClient;
 use Google\Ads\GoogleAds\V6\Services\VideoServiceClient;
 use PHPUnit\Framework\TestCase;
 
@@ -136,23 +142,49 @@ use PHPUnit\Framework\TestCase;
 class ResourceNamesTest extends TestCase
 {
 
-    private const CUSTOMER_ID = 1234567890;
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forPaymentsAccount()
+     */
+    public function testGetNameForPaymentsAccount()
+    {
+        $customerId = '111111';
+        $paymentsAccountId = '1111-2222-3333-4444';
+        $expectedResourceName = sprintf(
+            'customers/%s/paymentsAccounts/%s',
+            $customerId,
+            $paymentsAccountId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forPaymentsAccount(
+                $customerId,
+                $paymentsAccountId
+            )
+        );
+    }
 
     /**
      * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forAccountBudget()
      */
     public function testGetNameForAccountBudget()
     {
-        $accountBudgetId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/accountBudgets/%s', self::CUSTOMER_ID, $accountBudgetId);
+        $customerId = '111111';
+        $accountBudgetId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/accountBudgets/%s",
+            $customerId,
+            $accountBudgetId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAccountBudget(self::CUSTOMER_ID, $accountBudgetId)
+            ResourceNames::forAccountBudget(
+                $customerId,
+                $accountBudgetId
+            )
         );
 
         $names = AccountBudgetServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($accountBudgetId, $names['account_budget_id']);
     }
 
@@ -161,37 +193,48 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAccountBudgetProposal()
     {
-        $accountBudgetProposalId = 111111;
+        $customerId = '111111';
+        $accountBudgetProposalId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/accountBudgetProposals/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/accountBudgetProposals/%s",
+            $customerId,
             $accountBudgetProposalId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAccountBudgetProposal(self::CUSTOMER_ID, $accountBudgetProposalId)
+            ResourceNames::forAccountBudgetProposal(
+                $customerId,
+                $accountBudgetProposalId
+            )
         );
 
         $names = AccountBudgetProposalServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($accountBudgetProposalId, $names['account_budget_proposal_id']);
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forAccountLinkName()
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forAccountLink()
      */
-    public function testGetNameForAccountLinkName()
+    public function testGetNameForAccountLink()
     {
-        $accountLinkId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/accountLinks/%s', self::CUSTOMER_ID, $accountLinkId);
+        $customerId = '111111';
+        $accountLinkId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/accountLinks/%s",
+            $customerId,
+            $accountLinkId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAccountLinkName(self::CUSTOMER_ID, $accountLinkId)
+            ResourceNames::forAccountLink(
+                $customerId,
+                $accountLinkId
+            )
         );
 
         $names = AccountLinkServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($accountLinkId, $names['account_link_id']);
     }
 
@@ -200,16 +243,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAd()
     {
-        $adId = 22222;
-        $expectedResourceName =
-            sprintf('customers/%s/ads/%s', self::CUSTOMER_ID, $adId);
+        $customerId = '111111';
+        $adId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/ads/%s",
+            $customerId,
+            $adId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAd(self::CUSTOMER_ID, $adId)
+            ResourceNames::forAd(
+                $customerId,
+                $adId
+            )
         );
 
         $names = AdServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adId, $names['ad_id']);
     }
 
@@ -218,15 +268,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroup()
     {
-        $adGroupId = 111111;
-        $expectedResourceName = sprintf('customers/%s/adGroups/%s', self::CUSTOMER_ID, $adGroupId);
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/adGroups/%s",
+            $customerId,
+            $adGroupId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAdGroup(self::CUSTOMER_ID, $adGroupId)
+            ResourceNames::forAdGroup(
+                $customerId,
+                $adGroupId
+            )
         );
 
         $names = AdGroupServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
     }
 
@@ -235,19 +293,65 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupAd()
     {
-        $adGroupId = 111111;
-        $adId = 22222;
-        $expectedResourceName =
-            sprintf('customers/%s/adGroupAds/%s~%s', self::CUSTOMER_ID, $adGroupId, $adId);
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $adId = '333333';
+        $expectedResourceName = sprintf(
+            "customers/%s/adGroupAds/%s~%s",
+            $customerId,
+            $adGroupId,
+            $adId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAdGroupAd(self::CUSTOMER_ID, $adGroupId, $adId)
+            ResourceNames::forAdGroupAd(
+                $customerId,
+                $adGroupId,
+                $adId
+            )
         );
 
         $names = AdGroupAdServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($adId, $names['ad_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forAdGroupAdAssetView()
+     */
+    public function testGetNameForAdGroupAdAssetView()
+    {
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $adId = '333333';
+        $assetId = '444444';
+        $fieldType = '555555';
+        $expectedResourceName = sprintf(
+            "customers/%s/adGroupAdAssetViews/%s~%s~%s~%s",
+            $customerId,
+            $adGroupId,
+            $adId,
+            $assetId,
+            $fieldType
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forAdGroupAdAssetView(
+                $customerId,
+                $adGroupId,
+                $adId,
+                $assetId,
+                $fieldType
+            )
+        );
+
+        $names = AdGroupAdAssetViewServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($adGroupId, $names['ad_group_id']);
+        $this->assertEquals($adId, $names['ad_id']);
+        $this->assertEquals($assetId, $names['asset_id']);
+        $this->assertEquals($fieldType, $names['field_type']);
     }
 
     /**
@@ -255,23 +359,29 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupAdLabel()
     {
-        $adGroupId = 111111;
-        $adId = 222222;
-        $labelId = 333333;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $adId = '333333';
+        $labelId = '444444';
         $expectedResourceName = sprintf(
-            'customers/%s/adGroupAdLabels/%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adGroupAdLabels/%s~%s~%s",
+            $customerId,
             $adGroupId,
             $adId,
             $labelId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAdGroupAdLabel(self::CUSTOMER_ID, $adGroupId, $adId, $labelId)
+            ResourceNames::forAdGroupAdLabel(
+                $customerId,
+                $adGroupId,
+                $adId,
+                $labelId
+            )
         );
 
         $names = AdGroupAdLabelServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($adId, $names['ad_id']);
         $this->assertEquals($labelId, $names['label_id']);
@@ -282,25 +392,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupAudienceView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/adGroupAudienceViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adGroupAudienceViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forAdGroupAudienceView(
-                self::CUSTOMER_ID,
+                $customerId,
                 $adGroupId,
                 $criterionId
             )
         );
 
         $names = AdGroupAudienceViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -310,21 +421,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupBidModifier()
     {
-        $adGroupId = 111111;
-        $criterionId = 3333333;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/adGroupBidModifiers/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adGroupBidModifiers/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAdGroupBidModifier(self::CUSTOMER_ID, $adGroupId, $criterionId)
+            ResourceNames::forAdGroupBidModifier(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
         );
 
         $names = AdGroupBidModifierServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -334,21 +450,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupCriterion()
     {
-        $adGroupId = 111111;
-        $criterionId = 3333333;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/adGroupCriteria/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adGroupCriteria/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAdGroupCriterion(self::CUSTOMER_ID, $adGroupId, $criterionId)
+            ResourceNames::forAdGroupCriterion(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
         );
 
         $names = AdGroupCriterionServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -358,12 +479,13 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupCriterionLabel()
     {
-        $adGroupId = 111111;
-        $criterionId = 3333333;
-        $labelId = 4444444;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
+        $labelId = '444444';
         $expectedResourceName = sprintf(
-            'customers/%s/adGroupCriterionLabels/%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adGroupCriterionLabels/%s~%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId,
             $labelId
@@ -371,7 +493,7 @@ class ResourceNamesTest extends TestCase
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forAdGroupCriterionLabel(
-                self::CUSTOMER_ID,
+                $customerId,
                 $adGroupId,
                 $criterionId,
                 $labelId
@@ -379,7 +501,7 @@ class ResourceNamesTest extends TestCase
         );
 
         $names = AdGroupCriterionLabelServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
         $this->assertEquals($labelId, $names['label_id']);
@@ -390,15 +512,16 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupCriterionSimulation()
     {
-        $adGroupId = 111111;
-        $criterionId = 3333333;
-        $type = 4444444;
-        $modificationMethod = 5555555;
-        $startDate = 66666666;
-        $endDate = 7777777;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
+        $type = '444444';
+        $modificationMethod = '555555';
+        $startDate = '666666';
+        $endDate = '777777';
         $expectedResourceName = sprintf(
-            'customers/%s/adGroupCriterionSimulations/%s~%s~%s~%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adGroupCriterionSimulations/%s~%s~%s~%s~%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId,
             $type,
@@ -409,7 +532,7 @@ class ResourceNamesTest extends TestCase
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forAdGroupCriterionSimulation(
-                self::CUSTOMER_ID,
+                $customerId,
                 $adGroupId,
                 $criterionId,
                 $type,
@@ -420,7 +543,7 @@ class ResourceNamesTest extends TestCase
         );
 
         $names = AdGroupCriterionSimulationServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
         $this->assertEquals($type, $names['type']);
@@ -434,27 +557,28 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupExtensionSetting()
     {
-        $adGroupId = 111111;
-        $extensionType = ExtensionType::SITELINK;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $extensionType = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/adGroupExtensionSettings/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adGroupExtensionSettings/%s~%s",
+            $customerId,
             $adGroupId,
-            'SITELINK'
+            $extensionType
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forAdGroupExtensionSetting(
-                self::CUSTOMER_ID,
+                $customerId,
                 $adGroupId,
                 $extensionType
             )
         );
 
         $names = AdGroupExtensionSettingServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
-        $this->assertEquals(ExtensionType::name($extensionType), $names['extension_type']);
+        $this->assertEquals($extensionType, $names['extension_type']);
     }
 
     /**
@@ -462,17 +586,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupFeed()
     {
-        $adGroupId = 111111;
-        $feedId = 3333333;
-        $expectedResourceName =
-            sprintf('customers/%s/adGroupFeeds/%s~%s', self::CUSTOMER_ID, $adGroupId, $feedId);
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $feedId = '333333';
+        $expectedResourceName = sprintf(
+            "customers/%s/adGroupFeeds/%s~%s",
+            $customerId,
+            $adGroupId,
+            $feedId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAdGroupFeed(self::CUSTOMER_ID, $adGroupId, $feedId)
+            ResourceNames::forAdGroupFeed(
+                $customerId,
+                $adGroupId,
+                $feedId
+            )
         );
 
         $names = AdGroupFeedServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($feedId, $names['feed_id']);
     }
@@ -482,17 +615,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupLabel()
     {
-        $adGroupId = 111111;
-        $labelId = 3333333;
-        $expectedResourceName =
-            sprintf('customers/%s/adGroupLabels/%s~%s', self::CUSTOMER_ID, $adGroupId, $labelId);
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $labelId = '333333';
+        $expectedResourceName = sprintf(
+            "customers/%s/adGroupLabels/%s~%s",
+            $customerId,
+            $adGroupId,
+            $labelId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAdGroupLabel(self::CUSTOMER_ID, $adGroupId, $labelId)
+            ResourceNames::forAdGroupLabel(
+                $customerId,
+                $adGroupId,
+                $labelId
+            )
         );
 
         $names = AdGroupLabelServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($labelId, $names['label_id']);
     }
@@ -502,14 +644,15 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdGroupSimulation()
     {
-        $adGroupId = 111111;
-        $type = 4444444;
-        $modificationMethod = 5555555;
-        $startDate = 66666666;
-        $endDate = 7777777;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $type = '333333';
+        $modificationMethod = '444444';
+        $startDate = '555555';
+        $endDate = '666666';
         $expectedResourceName = sprintf(
-            'customers/%s/adGroupSimulations/%s~%s~%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adGroupSimulations/%s~%s~%s~%s~%s",
+            $customerId,
             $adGroupId,
             $type,
             $modificationMethod,
@@ -519,7 +662,7 @@ class ResourceNamesTest extends TestCase
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forAdGroupSimulation(
-                self::CUSTOMER_ID,
+                $customerId,
                 $adGroupId,
                 $type,
                 $modificationMethod,
@@ -529,7 +672,7 @@ class ResourceNamesTest extends TestCase
         );
 
         $names = AdGroupSimulationServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($type, $names['type']);
         $this->assertEquals($modificationMethod, $names['modification_method']);
@@ -542,12 +685,13 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdParameter()
     {
-        $adGroupId = 111111;
-        $criterionId = 3333333;
-        $parameterIndex = 4444444;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
+        $parameterIndex = '444444';
         $expectedResourceName = sprintf(
-            'customers/%s/adParameters/%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adParameters/%s~%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId,
             $parameterIndex
@@ -555,7 +699,7 @@ class ResourceNamesTest extends TestCase
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forAdParameter(
-                self::CUSTOMER_ID,
+                $customerId,
                 $adGroupId,
                 $criterionId,
                 $parameterIndex
@@ -563,7 +707,7 @@ class ResourceNamesTest extends TestCase
         );
 
         $names = AdParameterServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
         $this->assertEquals($parameterIndex, $names['parameter_index']);
@@ -574,21 +718,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAdScheduleView()
     {
-        $campaignId = 111111;
-        $criterionId = 3333333;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/adScheduleViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/adScheduleViews/%s~%s",
+            $customerId,
             $campaignId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAdScheduleView(self::CUSTOMER_ID, $campaignId, $criterionId)
+            ResourceNames::forAdScheduleView(
+                $customerId,
+                $campaignId,
+                $criterionId
+            )
         );
 
         $names = AdScheduleViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -598,21 +747,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAgeRangeView()
     {
-        $adGroupId = 111111;
-        $criterionId = 3333333;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/ageRangeViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/ageRangeViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAgeRangeView(self::CUSTOMER_ID, $adGroupId, $criterionId)
+            ResourceNames::forAgeRangeView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
         );
 
         $names = AgeRangeViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -622,15 +776,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForAsset()
     {
-        $assetId = 111111;
-        $expectedResourceName = sprintf('customers/%s/assets/%s', self::CUSTOMER_ID, $assetId);
+        $customerId = '111111';
+        $assetId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/assets/%s",
+            $customerId,
+            $assetId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forAsset(self::CUSTOMER_ID, $assetId)
+            ResourceNames::forAsset(
+                $customerId,
+                $assetId
+            )
         );
 
         $names = AssetServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($assetId, $names['asset_id']);
     }
 
@@ -639,16 +801,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForBatchJob()
     {
-        $batchJobId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/batchJobs/%s', self::CUSTOMER_ID, $batchJobId);
+        $customerId = '111111';
+        $batchJobId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/batchJobs/%s",
+            $customerId,
+            $batchJobId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forBatchJob(self::CUSTOMER_ID, $batchJobId)
+            ResourceNames::forBatchJob(
+                $customerId,
+                $batchJobId
+            )
         );
 
         $names = BatchJobServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($batchJobId, $names['batch_job_id']);
     }
 
@@ -657,16 +826,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForBiddingStrategy()
     {
-        $biddingStrategyId = 4444444;
-        $expectedResourceName =
-            sprintf('customers/%s/biddingStrategies/%s', self::CUSTOMER_ID, $biddingStrategyId);
+        $customerId = '111111';
+        $biddingStrategyId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/biddingStrategies/%s",
+            $customerId,
+            $biddingStrategyId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forBiddingStrategy(self::CUSTOMER_ID, $biddingStrategyId)
+            ResourceNames::forBiddingStrategy(
+                $customerId,
+                $biddingStrategyId
+            )
         );
 
         $names = BiddingStrategyServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($biddingStrategyId, $names['bidding_strategy_id']);
     }
 
@@ -675,16 +851,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForBillingSetup()
     {
-        $billingSetupId = 4444444;
-        $expectedResourceName =
-            sprintf('customers/%s/billingSetups/%s', self::CUSTOMER_ID, $billingSetupId);
+        $customerId = '111111';
+        $billingSetupId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/billingSetups/%s",
+            $customerId,
+            $billingSetupId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forBillingSetup(self::CUSTOMER_ID, $billingSetupId)
+            ResourceNames::forBillingSetup(
+                $customerId,
+                $billingSetupId
+            )
         );
 
         $names = BillingSetupServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($billingSetupId, $names['billing_setup_id']);
     }
 
@@ -693,16 +876,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaign()
     {
-        $campaignId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/campaigns/%s', self::CUSTOMER_ID, $campaignId);
+        $customerId = '111111';
+        $campaignId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/campaigns/%s",
+            $customerId,
+            $campaignId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCampaign(self::CUSTOMER_ID, $campaignId)
+            ResourceNames::forCampaign(
+                $customerId,
+                $campaignId
+            )
         );
 
         $names = CampaignServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
     }
 
@@ -711,26 +901,32 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignAsset()
     {
-        $campaignId = 111111;
-        $assetId = 3333333;
-        $fieldType = 3;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $assetId = '333333';
+        $fieldType = '444444';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignAssets/%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignAssets/%s~%s~%s",
+            $customerId,
             $campaignId,
             $assetId,
-            AssetFieldType::name($fieldType)
+            $fieldType
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCampaignAsset(self::CUSTOMER_ID, $campaignId, $assetId, $fieldType)
+            ResourceNames::forCampaignAsset(
+                $customerId,
+                $campaignId,
+                $assetId,
+                $fieldType
+            )
         );
 
         $names = CampaignAssetServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($assetId, $names['asset_id']);
-        $this->assertEquals(AssetFieldType::name($fieldType), $names['field_type']);
+        $this->assertEquals($fieldType, $names['field_type']);
     }
 
     /**
@@ -738,21 +934,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignAudienceView()
     {
-        $campaignId = 111111;
-        $criterionId = 3333333;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignAudienceViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignAudienceViews/%s~%s",
+            $customerId,
             $campaignId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCampaignAudienceView(self::CUSTOMER_ID, $campaignId, $criterionId)
+            ResourceNames::forCampaignAudienceView(
+                $customerId,
+                $campaignId,
+                $criterionId
+            )
         );
 
         $names = CampaignAudienceViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -762,21 +963,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignBidModifier()
     {
-        $campaignId = 111111;
-        $criterionId = 3333333;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignBidModifiers/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignBidModifiers/%s~%s",
+            $customerId,
             $campaignId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCampaignBidModifier(self::CUSTOMER_ID, $campaignId, $criterionId)
+            ResourceNames::forCampaignBidModifier(
+                $customerId,
+                $campaignId,
+                $criterionId
+            )
         );
 
         $names = CampaignBidModifierServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -786,17 +992,24 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignBudget()
     {
-        $budgetId = 555555;
-        $expectedResourceName =
-            sprintf('customers/%s/campaignBudgets/%s', self::CUSTOMER_ID, $budgetId);
+        $customerId = '111111';
+        $campaignBudgetId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/campaignBudgets/%s",
+            $customerId,
+            $campaignBudgetId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCampaignBudget(self::CUSTOMER_ID, $budgetId)
+            ResourceNames::forCampaignBudget(
+                $customerId,
+                $campaignBudgetId
+            )
         );
 
         $names = CampaignBudgetServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
-        $this->assertEquals($budgetId, $names['campaign_budget_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($campaignBudgetId, $names['campaign_budget_id']);
     }
 
     /**
@@ -804,21 +1017,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignCriterion()
     {
-        $campaignId = 66666666;
-        $criterionId = 3333333;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignCriteria/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignCriteria/%s~%s",
+            $customerId,
             $campaignId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCampaignCriterion(self::CUSTOMER_ID, $campaignId, $criterionId)
+            ResourceNames::forCampaignCriterion(
+                $customerId,
+                $campaignId,
+                $criterionId
+            )
         );
 
         $names = CampaignCriterionServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -828,15 +1046,16 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignCriterionSimulation()
     {
-        $campaignId = 111111;
-        $criterionId = 3333333;
-        $type = 4444444;
-        $modificationMethod = 5555555;
-        $startDate = 66666666;
-        $endDate = 7777777;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $criterionId = '333333';
+        $type = '444444';
+        $modificationMethod = '555555';
+        $startDate = '666666';
+        $endDate = '777777';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignCriterionSimulations/%s~%s~%s~%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignCriterionSimulations/%s~%s~%s~%s~%s~%s",
+            $customerId,
             $campaignId,
             $criterionId,
             $type,
@@ -847,7 +1066,7 @@ class ResourceNamesTest extends TestCase
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forCampaignCriterionSimulation(
-                self::CUSTOMER_ID,
+                $customerId,
                 $campaignId,
                 $criterionId,
                 $type,
@@ -858,7 +1077,7 @@ class ResourceNamesTest extends TestCase
         );
 
         $names = CampaignCriterionSimulationServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
         $this->assertEquals($type, $names['type']);
@@ -872,21 +1091,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignDraft()
     {
-        $baseCampaignId = 111111;
-        $draftId = 3333333;
+        $customerId = '111111';
+        $baseCampaignId = '222222';
+        $draftId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignDrafts/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignDrafts/%s~%s",
+            $customerId,
             $baseCampaignId,
             $draftId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCampaignDraft(self::CUSTOMER_ID, $baseCampaignId, $draftId)
+            ResourceNames::forCampaignDraft(
+                $customerId,
+                $baseCampaignId,
+                $draftId
+            )
         );
 
         $names = CampaignDraftServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($baseCampaignId, $names['base_campaign_id']);
         $this->assertEquals($draftId, $names['draft_id']);
     }
@@ -896,19 +1120,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignExperiment()
     {
-        $campaignExperimentId = 66666666;
+        $customerId = '111111';
+        $campaignExperimentId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignExperiments/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignExperiments/%s",
+            $customerId,
             $campaignExperimentId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCampaignExperiment(self::CUSTOMER_ID, $campaignExperimentId)
+            ResourceNames::forCampaignExperiment(
+                $customerId,
+                $campaignExperimentId
+            )
         );
 
         $names = CampaignExperimentServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignExperimentId, $names['campaign_experiment_id']);
     }
 
@@ -917,27 +1145,28 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignExtensionSetting()
     {
-        $campaignId = 111111;
-        $extensionType = ExtensionType::SITELINK;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $extensionType = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignExtensionSettings/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignExtensionSettings/%s~%s",
+            $customerId,
             $campaignId,
-            'SITELINK'
+            $extensionType
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forCampaignExtensionSetting(
-                self::CUSTOMER_ID,
+                $customerId,
                 $campaignId,
                 $extensionType
             )
         );
 
         $names = CampaignExtensionSettingServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
-        $this->assertEquals(ExtensionType::name($extensionType), $names['extension_type']);
+        $this->assertEquals($extensionType, $names['extension_type']);
     }
 
     /**
@@ -945,25 +1174,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignFeed()
     {
-        $campaignId = 111111;
-        $feedId = 3333333;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $feedId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignFeeds/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignFeeds/%s~%s",
+            $customerId,
             $campaignId,
             $feedId
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forCampaignFeed(
-                self::CUSTOMER_ID,
+                $customerId,
                 $campaignId,
                 $feedId
             )
         );
 
         $names = CampaignFeedServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($feedId, $names['feed_id']);
     }
@@ -973,25 +1203,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignLabel()
     {
-        $campaignId = 111111;
-        $labelId = 3333333;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $labelId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignLabels/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignLabels/%s~%s",
+            $customerId,
             $campaignId,
             $labelId
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forCampaignLabel(
-                self::CUSTOMER_ID,
+                $customerId,
                 $campaignId,
                 $labelId
             )
         );
 
         $names = CampaignLabelServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($labelId, $names['label_id']);
     }
@@ -1001,25 +1232,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCampaignSharedSet()
     {
-        $campaignId = 111111;
-        $sharedSetId = 3333333;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $sharedSetId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/campaignSharedSets/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/campaignSharedSets/%s~%s",
+            $customerId,
             $campaignId,
             $sharedSetId
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forCampaignSharedSet(
-                self::CUSTOMER_ID,
+                $customerId,
                 $campaignId,
                 $sharedSetId
             )
         );
 
         $names = CampaignSharedSetServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($sharedSetId, $names['shared_set_id']);
     }
@@ -1029,11 +1261,16 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCarrierConstant()
     {
-        $criterionId = 3333333;
-        $expectedResourceName = sprintf('carrierConstants/%s', $criterionId);
+        $criterionId = '111111';
+        $expectedResourceName = sprintf(
+            "carrierConstants/%s",
+            $criterionId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCarrierConstant($criterionId)
+            ResourceNames::forCarrierConstant(
+                $criterionId
+            )
         );
 
         $names = CarrierConstantServiceClient::parseName($expectedResourceName);
@@ -1045,16 +1282,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForChangeStatus()
     {
-        $changeStatusId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/changeStatus/%s', self::CUSTOMER_ID, $changeStatusId);
+        $customerId = '111111';
+        $changeStatusId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/changeStatus/%s",
+            $customerId,
+            $changeStatusId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forChangeStatus(self::CUSTOMER_ID, $changeStatusId)
+            ResourceNames::forChangeStatus(
+                $customerId,
+                $changeStatusId
+            )
         );
 
         $names = ChangeStatusServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($changeStatusId, $names['change_status_id']);
     }
 
@@ -1063,19 +1307,28 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForClickView()
     {
-        $date = '2019-05-29';
-        $gclId = 3333333;
-        $expectedResourceName =
-            sprintf('customers/%s/clickViews/%s~%s', self::CUSTOMER_ID, $date, $gclId);
+        $customerId = '111111';
+        $date = '222222';
+        $gclid = '333333';
+        $expectedResourceName = sprintf(
+            "customers/%s/clickViews/%s~%s",
+            $customerId,
+            $date,
+            $gclid
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forClickView(self::CUSTOMER_ID, $date, $gclId)
+            ResourceNames::forClickView(
+                $customerId,
+                $date,
+                $gclid
+            )
         );
 
         $names = ClickViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($date, $names['date']);
-        $this->assertEquals($gclId, $names['gclid']);
+        $this->assertEquals($gclid, $names['gclid']);
     }
 
     /**
@@ -1083,16 +1336,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCombinedAudience()
     {
-        $combinedAudienceId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/combinedAudiences/%s', self::CUSTOMER_ID, $combinedAudienceId);
+        $customerId = '111111';
+        $combinedAudienceId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/combinedAudiences/%s",
+            $customerId,
+            $combinedAudienceId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCombinedAudience(self::CUSTOMER_ID, $combinedAudienceId)
+            ResourceNames::forCombinedAudience(
+                $customerId,
+                $combinedAudienceId
+            )
         );
 
         $names = CombinedAudienceServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($combinedAudienceId, $names['combined_audience_id']);
     }
 
@@ -1101,16 +1361,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForConversionAction()
     {
-        $conversionActionId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/conversionActions/%s', self::CUSTOMER_ID, $conversionActionId);
+        $customerId = '111111';
+        $conversionActionId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/conversionActions/%s",
+            $customerId,
+            $conversionActionId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forConversionAction(self::CUSTOMER_ID, $conversionActionId)
+            ResourceNames::forConversionAction(
+                $customerId,
+                $conversionActionId
+            )
         );
 
         $names = ConversionActionServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($conversionActionId, $names['conversion_action_id']);
     }
 
@@ -1119,15 +1386,45 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCurrencyConstant()
     {
-        $usdCurrencyConstantId = 'USD';
-        $expectedResourceName = sprintf('currencyConstants/%s', $usdCurrencyConstantId);
+        $code = '111111';
+        $expectedResourceName = sprintf(
+            "currencyConstants/%s",
+            $code
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCurrencyConstant($usdCurrencyConstantId)
+            ResourceNames::forCurrencyConstant(
+                $code
+            )
         );
 
         $names = CurrencyConstantServiceClient::parseName($expectedResourceName);
-        $this->assertEquals($usdCurrencyConstantId, $names['code']);
+        $this->assertEquals($code, $names['code']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forCustomAudience()
+     */
+    public function testGetNameForCustomAudience()
+    {
+        $customerId = '111111';
+        $customAudienceId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/customAudiences/%s",
+            $customerId,
+            $customAudienceId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCustomAudience(
+                $customerId,
+                $customAudienceId
+            )
+        );
+
+        $names = CustomAudienceServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($customAudienceId, $names['custom_audience_id']);
     }
 
     /**
@@ -1135,14 +1432,20 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomer()
     {
-        $expectedResourceName = sprintf('customers/%s', self::CUSTOMER_ID);
+        $customerId = '111111';
+        $expectedResourceName = sprintf(
+            "customers/%s",
+            $customerId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomer(self::CUSTOMER_ID)
+            ResourceNames::forCustomer(
+                $customerId
+            )
         );
 
         $names = CustomerServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
     }
 
     /**
@@ -1150,16 +1453,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerClient()
     {
-        $clientCustomerId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/customerClients/%s', self::CUSTOMER_ID, $clientCustomerId);
+        $customerId = '111111';
+        $clientCustomerId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/customerClients/%s",
+            $customerId,
+            $clientCustomerId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomerClient(self::CUSTOMER_ID, $clientCustomerId)
+            ResourceNames::forCustomerClient(
+                $customerId,
+                $clientCustomerId
+            )
         );
 
         $names = CustomerClientServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($clientCustomerId, $names['client_customer_id']);
     }
 
@@ -1168,25 +1478,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerClientLink()
     {
-        $clientCustomerId = 111111;
-        $managerLinkId = 3333333;
+        $customerId = '111111';
+        $clientCustomerId = '222222';
+        $managerLinkId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/customerClientLinks/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/customerClientLinks/%s~%s",
+            $customerId,
             $clientCustomerId,
             $managerLinkId
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forCustomerClientLink(
-                self::CUSTOMER_ID,
+                $customerId,
                 $clientCustomerId,
                 $managerLinkId
             )
         );
 
         $names = CustomerClientLinkServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($clientCustomerId, $names['client_customer_id']);
         $this->assertEquals($managerLinkId, $names['manager_link_id']);
     }
@@ -1196,20 +1507,24 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerExtensionSetting()
     {
-        $extensionType = ExtensionType::SITELINK;
+        $customerId = '111111';
+        $extensionType = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/customerExtensionSettings/%s',
-            self::CUSTOMER_ID,
-            'SITELINK'
+            "customers/%s/customerExtensionSettings/%s",
+            $customerId,
+            $extensionType
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomerExtensionSetting(self::CUSTOMER_ID, $extensionType)
+            ResourceNames::forCustomerExtensionSetting(
+                $customerId,
+                $extensionType
+            )
         );
 
         $names = CustomerExtensionSettingServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
-        $this->assertEquals(ExtensionType::name($extensionType), $names['extension_type']);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($extensionType, $names['extension_type']);
     }
 
     /**
@@ -1217,16 +1532,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerFeed()
     {
-        $feedId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/customerFeeds/%s', self::CUSTOMER_ID, $feedId);
+        $customerId = '111111';
+        $feedId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/customerFeeds/%s",
+            $customerId,
+            $feedId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomerFeed(self::CUSTOMER_ID, $feedId)
+            ResourceNames::forCustomerFeed(
+                $customerId,
+                $feedId
+            )
         );
 
         $names = CustomerFeedServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($feedId, $names['feed_id']);
     }
 
@@ -1235,16 +1557,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerLabel()
     {
-        $labelId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/customerLabels/%s', self::CUSTOMER_ID, $labelId);
+        $customerId = '111111';
+        $labelId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/customerLabels/%s",
+            $customerId,
+            $labelId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomerLabel(self::CUSTOMER_ID, $labelId)
+            ResourceNames::forCustomerLabel(
+                $customerId,
+                $labelId
+            )
         );
 
         $names = CustomerLabelServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($labelId, $names['label_id']);
     }
 
@@ -1253,22 +1582,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerManagerLink()
     {
-        $managerCustomerId = 111111;
-        $managerLinkId = 222222;
+        $customerId = '111111';
+        $managerCustomerId = '222222';
+        $managerLinkId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/customerManagerLinks/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/customerManagerLinks/%s~%s",
+            $customerId,
             $managerCustomerId,
             $managerLinkId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forCustomerManagerLink(
-            self::CUSTOMER_ID,
-            $managerCustomerId,
-            $managerLinkId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCustomerManagerLink(
+                $customerId,
+                $managerCustomerId,
+                $managerLinkId
+            )
+        );
 
         $names = CustomerManagerLinkServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($managerCustomerId, $names['manager_customer_id']);
         $this->assertEquals($managerLinkId, $names['manager_link_id']);
     }
@@ -1278,16 +1611,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerNegativeCriterion()
     {
-        $criterionId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/customerNegativeCriteria/%s', self::CUSTOMER_ID, $criterionId);
+        $customerId = '111111';
+        $criterionId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/customerNegativeCriteria/%s",
+            $customerId,
+            $criterionId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomerNegativeCriterion(self::CUSTOMER_ID, $criterionId)
+            ResourceNames::forCustomerNegativeCriterion(
+                $customerId,
+                $criterionId
+            )
         );
 
         $names = CustomerNegativeCriterionServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -1296,16 +1636,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerUserAccess()
     {
-        $userId = 1111111;
-        $expectedResourceName =
-            sprintf('customers/%s/customerUserAccesses/%s', self::CUSTOMER_ID, $userId);
+        $customerId = '111111';
+        $userId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/customerUserAccesses/%s",
+            $customerId,
+            $userId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomerUserAccess(self::CUSTOMER_ID, $userId)
+            ResourceNames::forCustomerUserAccess(
+                $customerId,
+                $userId
+            )
         );
 
         $names = CustomerUserAccessServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($userId, $names['user_id']);
     }
 
@@ -1314,19 +1661,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomerUserAccessInvitation()
     {
-        $invitationId = 1111111;
+        $customerId = '111111';
+        $invitationId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/customerUserAccessInvitations/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/customerUserAccessInvitations/%s",
+            $customerId,
             $invitationId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomerUserAccessInvitation(self::CUSTOMER_ID, $invitationId)
+            ResourceNames::forCustomerUserAccessInvitation(
+                $customerId,
+                $invitationId
+            )
         );
 
         $names = CustomerUserAccessInvitationServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($invitationId, $names['invitation_id']);
     }
 
@@ -1335,16 +1686,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForCustomInterest()
     {
-        $customInterestId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/customInterests/%s', self::CUSTOMER_ID, $customInterestId);
+        $customerId = '111111';
+        $customInterestId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/customInterests/%s",
+            $customerId,
+            $customInterestId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forCustomInterest(self::CUSTOMER_ID, $customInterestId)
+            ResourceNames::forCustomInterest(
+                $customerId,
+                $customInterestId
+            )
         );
 
         $names = CustomInterestServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($customInterestId, $names['custom_interest_id']);
     }
 
@@ -1353,24 +1711,28 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForDetailPlacementView()
     {
-        $adGroupId = 111111;
-        $placement = 'base64';
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $base64Placement = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/detailPlacementViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/detailPlacementViews/%s~%s",
+            $customerId,
             $adGroupId,
-            $placement
+            $base64Placement
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forDetailPlacementView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $placement
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forDetailPlacementView(
+                $customerId,
+                $adGroupId,
+                $base64Placement
+            )
+        );
 
         $names = DetailPlacementViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
-        $this->assertEquals($placement, $names['base64_placement']);
+        $this->assertEquals($base64Placement, $names['base64_placement']);
     }
 
     /**
@@ -1378,24 +1740,57 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForDisplayKeywordView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/displayKeywordViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/displayKeywordViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forDisplayKeywordView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $criterionId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forDisplayKeywordView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
+        );
 
         $names = DisplayKeywordViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forDistanceView()
+     */
+    public function testGetNameForDistanceView()
+    {
+        $customerId = '111111';
+        $placeholderChainId = '222222';
+        $distanceBucket = '333333';
+        $expectedResourceName = sprintf(
+            "customers/%s/distanceViews/%s~%s",
+            $customerId,
+            $placeholderChainId,
+            $distanceBucket
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forDistanceView(
+                $customerId,
+                $placeholderChainId,
+                $distanceBucket
+            )
+        );
+
+        $names = DistanceViewServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($placeholderChainId, $names['placeholder_chain_id']);
+        $this->assertEquals($distanceBucket, $names['distance_bucket']);
     }
 
     /**
@@ -1403,31 +1798,73 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForDomainCategory()
     {
-        $campaignId = 111111;
-        $category = 'category';
-        $languageCode = 'en';
+        $customerId = '111111';
+        $campaignId = '222222';
+        $base64Category = '333333';
+        $languageCode = '444444';
         $expectedResourceName = sprintf(
-            'customers/%s/domainCategories/%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/domainCategories/%s~%s~%s",
+            $customerId,
             $campaignId,
-            $category,
+            $base64Category,
             $languageCode
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forDomainCategory(
-                self::CUSTOMER_ID,
+                $customerId,
                 $campaignId,
-                $category,
+                $base64Category,
                 $languageCode
             )
         );
 
         $names = DomainCategoryServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
-        $this->assertEquals($category, $names['base64_category']);
+        $this->assertEquals($base64Category, $names['base64_category']);
         $this->assertEquals($languageCode, $names['language_code']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forDynamicSearchAdsSearchTermView()
+     */
+    public function testGetNameForDynamicSearchAdsSearchTermView()
+    {
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $searchTermFingerprint = '333333';
+        $headlineFingerprint = '444444';
+        $landingPageFingerprint = '555555';
+        $pageUrlFingerprint = '666666';
+        $expectedResourceName = sprintf(
+            "customers/%s/dynamicSearchAdsSearchTermViews/%s~%s~%s~%s~%s",
+            $customerId,
+            $adGroupId,
+            $searchTermFingerprint,
+            $headlineFingerprint,
+            $landingPageFingerprint,
+            $pageUrlFingerprint
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forDynamicSearchAdsSearchTermView(
+                $customerId,
+                $adGroupId,
+                $searchTermFingerprint,
+                $headlineFingerprint,
+                $landingPageFingerprint,
+                $pageUrlFingerprint
+            )
+        );
+
+        $names = DynamicSearchAdsSearchTermViewServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($adGroupId, $names['ad_group_id']);
+        $this->assertEquals($searchTermFingerprint, $names['search_term_fingerprint']);
+        $this->assertEquals($headlineFingerprint, $names['headline_fingerprint']);
+        $this->assertEquals($landingPageFingerprint, $names['landing_page_fingerprint']);
+        $this->assertEquals($pageUrlFingerprint, $names['page_url_fingerprint']);
     }
 
     /**
@@ -1435,22 +1872,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForExpandedLandingPageView()
     {
-        $expandedFinalUrlFingerprint = 'url';
+        $customerId = '111111';
+        $expandedFinalUrlFingerprint = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/expandedLandingPageViews/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/expandedLandingPageViews/%s",
+            $customerId,
             $expandedFinalUrlFingerprint
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forExpandedLandingPageView(
-                self::CUSTOMER_ID,
+                $customerId,
                 $expandedFinalUrlFingerprint
             )
         );
 
         $names = ExpandedLandingPageViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($expandedFinalUrlFingerprint, $names['expanded_final_url_fingerprint']);
     }
 
@@ -1459,16 +1897,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForExtensionFeedItem()
     {
-        $feedItemId = 66666666;
-        $expectedResourceName =
-            sprintf('customers/%s/extensionFeedItems/%s', self::CUSTOMER_ID, $feedItemId);
+        $customerId = '111111';
+        $feedItemId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/extensionFeedItems/%s",
+            $customerId,
+            $feedItemId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forExtensionFeedItem(self::CUSTOMER_ID, $feedItemId)
+            ResourceNames::forExtensionFeedItem(
+                $customerId,
+                $feedItemId
+            )
         );
 
         $names = ExtensionFeedItemServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($feedItemId, $names['feed_item_id']);
     }
 
@@ -1477,15 +1922,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForFeed()
     {
-        $feedId = 66666666;
-        $expectedResourceName = sprintf('customers/%s/feeds/%s', self::CUSTOMER_ID, $feedId);
+        $customerId = '111111';
+        $feedId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/feeds/%s",
+            $customerId,
+            $feedId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forFeed(self::CUSTOMER_ID, $feedId)
+            ResourceNames::forFeed(
+                $customerId,
+                $feedId
+            )
         );
 
         $names = FeedServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($feedId, $names['feed_id']);
     }
 
@@ -1494,22 +1947,27 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForFeedItem()
     {
-        $feedId = 111111;
-        $feedItemId = 222222;
+        $customerId = '111111';
+        $feedId = '222222';
+        $feedItemId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/feedItems/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/feedItems/%s~%s",
+            $customerId,
             $feedId,
             $feedItemId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forFeedItem(
-            self::CUSTOMER_ID,
-            $feedId,
-            $feedItemId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forFeedItem(
+                $customerId,
+                $feedId,
+                $feedItemId
+            )
+        );
 
         $names = FeedItemServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($feedId, $names['feed_id']);
         $this->assertEquals($feedItemId, $names['feed_item_id']);
     }
 
@@ -1518,22 +1976,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForFeedItemSet()
     {
-        $feedId = 111111;
-        $feedItemSetId = 222222;
+        $customerId = '111111';
+        $feedId = '222222';
+        $feedItemSetId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/feedItemSets/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/feedItemSets/%s~%s",
+            $customerId,
             $feedId,
             $feedItemSetId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forFeedItemSet(
-            self::CUSTOMER_ID,
-            $feedId,
-            $feedItemSetId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forFeedItemSet(
+                $customerId,
+                $feedId,
+                $feedItemSetId
+            )
+        );
 
         $names = FeedItemSetServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($feedId, $names['feed_id']);
         $this->assertEquals($feedItemSetId, $names['feed_item_set_id']);
     }
@@ -1543,25 +2005,29 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForFeedItemSetLink()
     {
-        $feedId = 111111;
-        $feedItemId = 222222;
-        $feedItemSetId = 333333;
+        $customerId = '111111';
+        $feedId = '222222';
+        $feedItemSetId = '333333';
+        $feedItemId = '444444';
         $expectedResourceName = sprintf(
-            'customers/%s/feedItemSetLinks/%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/feedItemSetLinks/%s~%s~%s",
+            $customerId,
             $feedId,
             $feedItemSetId,
             $feedItemId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forFeedItemSetLink(
-            self::CUSTOMER_ID,
-            $feedId,
-            $feedItemSetId,
-            $feedItemId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forFeedItemSetLink(
+                $customerId,
+                $feedId,
+                $feedItemSetId,
+                $feedItemId
+            )
+        );
 
         $names = FeedItemSetLinkServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($feedId, $names['feed_id']);
         $this->assertEquals($feedItemSetId, $names['feed_item_set_id']);
         $this->assertEquals($feedItemId, $names['feed_item_id']);
@@ -1572,13 +2038,14 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForFeedItemTarget()
     {
-        $feedId = 3333333;
-        $feedItemId = 4444444;
-        $feedItemTargetType = 5555555;
-        $feedItemTargetId = 66666666;
+        $customerId = '111111';
+        $feedId = '222222';
+        $feedItemId = '333333';
+        $feedItemTargetType = '444444';
+        $feedItemTargetId = '555555';
         $expectedResourceName = sprintf(
-            'customers/%s/feedItemTargets/%s~%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/feedItemTargets/%s~%s~%s~%s",
+            $customerId,
             $feedId,
             $feedItemId,
             $feedItemTargetType,
@@ -1587,7 +2054,7 @@ class ResourceNamesTest extends TestCase
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forFeedItemTarget(
-                self::CUSTOMER_ID,
+                $customerId,
                 $feedId,
                 $feedItemId,
                 $feedItemTargetType,
@@ -1596,7 +2063,8 @@ class ResourceNamesTest extends TestCase
         );
 
         $names = FeedItemTargetServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($feedId, $names['feed_id']);
         $this->assertEquals($feedItemId, $names['feed_item_id']);
         $this->assertEquals($feedItemTargetType, $names['feed_item_target_type']);
         $this->assertEquals($feedItemTargetId, $names['feed_item_target_id']);
@@ -1607,22 +2075,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForFeedMapping()
     {
-        $feedId = 111111;
-        $feedMappingId = 222222;
+        $customerId = '111111';
+        $feedId = '222222';
+        $feedMappingId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/feedMappings/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/feedMappings/%s~%s",
+            $customerId,
             $feedId,
             $feedMappingId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forFeedMapping(
-            self::CUSTOMER_ID,
-            $feedId,
-            $feedMappingId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forFeedMapping(
+                $customerId,
+                $feedId,
+                $feedMappingId
+            )
+        );
 
         $names = FeedMappingServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($feedId, $names['feed_id']);
         $this->assertEquals($feedMappingId, $names['feed_mapping_id']);
     }
@@ -1632,19 +2104,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForFeedPlaceholderView()
     {
-        $placeholderType = PlaceholderType::AD_CUSTOMIZER;
+        $customerId = '111111';
+        $placeholderType = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/feedPlaceholderViews/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/feedPlaceholderViews/%s",
+            $customerId,
             $placeholderType
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forFeedPlaceholderView(
-            self::CUSTOMER_ID,
-            $placeholderType
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forFeedPlaceholderView(
+                $customerId,
+                $placeholderType
+            )
+        );
 
         $names = FeedPlaceholderViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($placeholderType, $names['placeholder_type']);
     }
 
@@ -1653,22 +2129,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForGenderView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/genderViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/genderViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forGenderView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $criterionId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forGenderView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
+        );
 
         $names = GenderViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -1678,22 +2158,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForGeographicView()
     {
-        $countryCriterionId = 111111;
-        $locationType = 222222;
+        $customerId = '111111';
+        $countryCriterionId = '222222';
+        $locationType = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/geographicViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/geographicViews/%s~%s",
+            $customerId,
             $countryCriterionId,
             $locationType
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forGeographicView(
-            self::CUSTOMER_ID,
-            $countryCriterionId,
-            $locationType
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forGeographicView(
+                $customerId,
+                $countryCriterionId,
+                $locationType
+            )
+        );
 
         $names = GeographicViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($countryCriterionId, $names['country_criterion_id']);
         $this->assertEquals($locationType, $names['location_type']);
     }
@@ -1703,15 +2187,20 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForGeoTargetConstant()
     {
-        $japanTargetConstantId = 2392;
-        $expectedResourceName = sprintf('geoTargetConstants/%s', $japanTargetConstantId);
+        $criterionId = '111111';
+        $expectedResourceName = sprintf(
+            "geoTargetConstants/%s",
+            $criterionId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forGeoTargetConstant($japanTargetConstantId)
+            ResourceNames::forGeoTargetConstant(
+                $criterionId
+            )
         );
 
         $names = GeoTargetConstantServiceClient::parseName($expectedResourceName);
-        $this->assertEquals($japanTargetConstantId, $names['criterion_id']);
+        $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
     /**
@@ -1719,15 +2208,20 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForGoogleAdsField()
     {
-        $field = 'field';
-        $expectedResourceName = sprintf('googleAdsFields/%s', $field);
+        $googleAdsField = '111111';
+        $expectedResourceName = sprintf(
+            "googleAdsFields/%s",
+            $googleAdsField
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forGoogleAdsField($field)
+            ResourceNames::forGoogleAdsField(
+                $googleAdsField
+            )
         );
 
         $names = GoogleAdsFieldServiceClient::parseName($expectedResourceName);
-        $this->assertEquals($field, $names['google_ads_field']);
+        $this->assertEquals($googleAdsField, $names['google_ads_field']);
     }
 
     /**
@@ -1735,24 +2229,28 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForGroupPlacementView()
     {
-        $adGroupId = 111111;
-        $placement = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $base64Placement = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/groupPlacementViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/groupPlacementViews/%s~%s",
+            $customerId,
             $adGroupId,
-            $placement
+            $base64Placement
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forGroupPlacementView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $placement
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forGroupPlacementView(
+                $customerId,
+                $adGroupId,
+                $base64Placement
+            )
+        );
 
         $names = GroupPlacementViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
-        $this->assertEquals($placement, $names['base64_placement']);
+        $this->assertEquals($base64Placement, $names['base64_placement']);
     }
 
     /**
@@ -1760,22 +2258,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForHotelGroupView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/hotelGroupViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/hotelGroupViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forHotelGroupView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $criterionId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forHotelGroupView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
+        );
 
         $names = HotelGroupViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -1785,16 +2287,20 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForHotelPerformanceView()
     {
+        $customerId = '111111';
         $expectedResourceName = sprintf(
-            'customers/%s/hotelPerformanceView',
-            self::CUSTOMER_ID
+            "customers/%s/hotelPerformanceView",
+            $customerId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forHotelPerformanceView(
-            self::CUSTOMER_ID
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forHotelPerformanceView(
+                $customerId
+            )
+        );
 
         $names = HotelPerformanceViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
     }
 
     /**
@@ -1802,21 +2308,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForIncomeRangeView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/incomeRangeViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/incomeRangeViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forIncomeRangeView(self::CUSTOMER_ID, $adGroupId, $criterionId)
+            ResourceNames::forIncomeRangeView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
         );
 
         $names = IncomeRangeViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -1826,20 +2337,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForKeywordPlan()
     {
-        $keywordPlanId = 222222;
+        $customerId = '111111';
+        $keywordPlanId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/keywordPlans/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/keywordPlans/%s",
+            $customerId,
             $keywordPlanId
         );
-
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forKeywordPlan(self::CUSTOMER_ID, $keywordPlanId)
+            ResourceNames::forKeywordPlan(
+                $customerId,
+                $keywordPlanId
+            )
         );
 
         $names = KeywordPlanServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($keywordPlanId, $names['keyword_plan_id']);
     }
 
@@ -1848,20 +2362,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForKeywordPlanAdGroup()
     {
-        $keywordPlanAdGroupId = 222222;
+        $customerId = '111111';
+        $keywordPlanAdGroupId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/keywordPlanAdGroups/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/keywordPlanAdGroups/%s",
+            $customerId,
             $keywordPlanAdGroupId
         );
-
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forKeywordPlanAdGroup(self::CUSTOMER_ID, $keywordPlanAdGroupId)
+            ResourceNames::forKeywordPlanAdGroup(
+                $customerId,
+                $keywordPlanAdGroupId
+            )
         );
 
         $names = KeywordPlanAdGroupServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($keywordPlanAdGroupId, $names['keyword_plan_ad_group_id']);
     }
 
@@ -1870,23 +2387,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForKeywordPlanAdGroupKeyword()
     {
-        $keywordPlanAdGroupKeywordId = 222222;
+        $customerId = '111111';
+        $keywordPlanAdGroupKeywordId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/keywordPlanAdGroupKeywords/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/keywordPlanAdGroupKeywords/%s",
+            $customerId,
             $keywordPlanAdGroupKeywordId
         );
-
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forKeywordPlanAdGroupKeyword(
-                self::CUSTOMER_ID,
+                $customerId,
                 $keywordPlanAdGroupKeywordId
             )
         );
 
         $names = KeywordPlanAdGroupKeywordServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($keywordPlanAdGroupKeywordId, $names['keyword_plan_ad_group_keyword_id']);
     }
 
@@ -1895,20 +2412,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForKeywordPlanCampaign()
     {
-        $keywordPlanCampaignId = 222222;
+        $customerId = '111111';
+        $keywordPlanCampaignId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/keywordPlanCampaigns/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/keywordPlanCampaigns/%s",
+            $customerId,
             $keywordPlanCampaignId
         );
-
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forKeywordPlanCampaign(self::CUSTOMER_ID, $keywordPlanCampaignId)
+            ResourceNames::forKeywordPlanCampaign(
+                $customerId,
+                $keywordPlanCampaignId
+            )
         );
 
         $names = KeywordPlanCampaignServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($keywordPlanCampaignId, $names['keyword_plan_campaign_id']);
     }
 
@@ -1917,24 +2437,53 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForKeywordPlanCampaignKeyword()
     {
-        $keywordPlanCampaignKeywordId = 222222;
+        $customerId = '111111';
+        $keywordPlanCampaignKeywordId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/keywordPlanCampaignKeywords/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/keywordPlanCampaignKeywords/%s",
+            $customerId,
             $keywordPlanCampaignKeywordId
         );
-
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forKeywordPlanCampaignKeyword(
-                self::CUSTOMER_ID,
+                $customerId,
                 $keywordPlanCampaignKeywordId
             )
         );
 
         $names = KeywordPlanCampaignKeywordServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($keywordPlanCampaignKeywordId, $names['keyword_plan_campaign_keyword_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forKeywordView()
+     */
+    public function testGetNameForKeywordView()
+    {
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
+        $expectedResourceName = sprintf(
+            "customers/%s/keywordViews/%s~%s",
+            $customerId,
+            $adGroupId,
+            $criterionId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forKeywordView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
+        );
+
+        $names = KeywordViewServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($adGroupId, $names['ad_group_id']);
+        $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
     /**
@@ -1942,15 +2491,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForLabel()
     {
-        $labelId = 938;
-        $expectedResourceName = sprintf('customers/%s/labels/%s', self::CUSTOMER_ID, $labelId);
+        $customerId = '111111';
+        $labelId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/labels/%s",
+            $customerId,
+            $labelId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forLabel(self::CUSTOMER_ID, $labelId)
+            ResourceNames::forLabel(
+                $customerId,
+                $labelId
+            )
         );
 
         $names = LabelServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($labelId, $names['label_id']);
     }
 
@@ -1959,24 +2516,24 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForLandingPageView()
     {
-        $unexpandedFinalUrlFingerprint = 'url';
+        $customerId = '111111';
+        $unexpandedFinalUrlFingerprint = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/landingPageViews/%s',
-            self::CUSTOMER_ID,
+            "customers/%s/landingPageViews/%s",
+            $customerId,
             $unexpandedFinalUrlFingerprint
         );
-
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forLandingPageView(self::CUSTOMER_ID, $unexpandedFinalUrlFingerprint)
+            ResourceNames::forLandingPageView(
+                $customerId,
+                $unexpandedFinalUrlFingerprint
+            )
         );
 
         $names = LandingPageViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
-        $this->assertEquals(
-            $unexpandedFinalUrlFingerprint,
-            $names['unexpanded_final_url_fingerprint']
-        );
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($unexpandedFinalUrlFingerprint, $names['unexpanded_final_url_fingerprint']);
     }
 
     /**
@@ -1984,15 +2541,20 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForLanguageConstant()
     {
-        $englishLanguageId = 1000;
-        $expectedResourceName = sprintf('languageConstants/%s', $englishLanguageId);
+        $criterionId = '111111';
+        $expectedResourceName = sprintf(
+            "languageConstants/%s",
+            $criterionId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forLanguageConstant($englishLanguageId)
+            ResourceNames::forLanguageConstant(
+                $criterionId
+            )
         );
 
         $names = LanguageConstantServiceClient::parseName($expectedResourceName);
-        $this->assertEquals($englishLanguageId, $names['criterion_id']);
+        $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
     /**
@@ -2000,21 +2562,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForLocationView()
     {
-        $campaignId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $campaignId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/locationViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/locationViews/%s~%s",
+            $customerId,
             $campaignId,
             $criterionId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forLocationView(self::CUSTOMER_ID, $campaignId, $criterionId)
+            ResourceNames::forLocationView(
+                $customerId,
+                $campaignId,
+                $criterionId
+            )
         );
 
         $names = LocationViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -2024,22 +2591,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForManagedPlacementView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/managedPlacementViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/managedPlacementViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forManagedPlacementView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $criterionId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forManagedPlacementView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
+        );
 
         $names = ManagedPlacementViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -2049,16 +2620,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForMediaFile()
     {
-        $mediaFileId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/mediaFiles/%s', self::CUSTOMER_ID, $mediaFileId);
+        $customerId = '111111';
+        $mediaFileId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/mediaFiles/%s",
+            $customerId,
+            $mediaFileId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forMediaFile(self::CUSTOMER_ID, $mediaFileId)
+            ResourceNames::forMediaFile(
+                $customerId,
+                $mediaFileId
+            )
         );
 
         $names = MediaFileServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($mediaFileId, $names['media_file_id']);
     }
 
@@ -2067,16 +2645,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForMerchantCenterLink()
     {
-        $merchantCenterId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/merchantCenterLinks/%s', self::CUSTOMER_ID, $merchantCenterId);
+        $customerId = '111111';
+        $merchantCenterId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/merchantCenterLinks/%s",
+            $customerId,
+            $merchantCenterId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forMerchantCenterLink(self::CUSTOMER_ID, $merchantCenterId)
+            ResourceNames::forMerchantCenterLink(
+                $customerId,
+                $merchantCenterId
+            )
         );
 
         $names = MerchantCenterLinkServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($merchantCenterId, $names['merchant_center_id']);
     }
 
@@ -2085,11 +2670,16 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForMobileAppCategoryConstant()
     {
-        $mobileAppCategoryId = 1000;
-        $expectedResourceName = sprintf('mobileAppCategoryConstants/%s', $mobileAppCategoryId);
+        $mobileAppCategoryId = '111111';
+        $expectedResourceName = sprintf(
+            "mobileAppCategoryConstants/%s",
+            $mobileAppCategoryId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forMobileAppCategoryConstant($mobileAppCategoryId)
+            ResourceNames::forMobileAppCategoryConstant(
+                $mobileAppCategoryId
+            )
         );
 
         $names = MobileAppCategoryConstantServiceClient::parseName($expectedResourceName);
@@ -2101,11 +2691,16 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForMobileDeviceConstant()
     {
-        $criterionId = 1000;
-        $expectedResourceName = sprintf('mobileDeviceConstants/%s', $criterionId);
+        $criterionId = '111111';
+        $expectedResourceName = sprintf(
+            "mobileDeviceConstants/%s",
+            $criterionId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forMobileDeviceConstant($criterionId)
+            ResourceNames::forMobileDeviceConstant(
+                $criterionId
+            )
         );
 
         $names = MobileDeviceConstantServiceClient::parseName($expectedResourceName);
@@ -2113,15 +2708,45 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forOfflineUserDataJob()
+     */
+    public function testGetNameForOfflineUserDataJob()
+    {
+        $customerId = '111111';
+        $offlineUserDataUpdateId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/offlineUserDataJobs/%s",
+            $customerId,
+            $offlineUserDataUpdateId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forOfflineUserDataJob(
+                $customerId,
+                $offlineUserDataUpdateId
+            )
+        );
+
+        $names = OfflineUserDataJobServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($offlineUserDataUpdateId, $names['offline_user_data_update_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forOperatingSystemVersionConstant()
      */
     public function testGetNameForOperatingSystemVersionConstant()
     {
-        $criterionId = 1000;
-        $expectedResourceName = sprintf('operatingSystemVersionConstants/%s', $criterionId);
+        $criterionId = '111111';
+        $expectedResourceName = sprintf(
+            "operatingSystemVersionConstants/%s",
+            $criterionId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forOperatingSystemVersionConstant($criterionId)
+            ResourceNames::forOperatingSystemVersionConstant(
+                $criterionId
+            )
         );
 
         $names = OperatingSystemVersionConstantServiceClient::parseName($expectedResourceName);
@@ -2133,31 +2758,32 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForPaidOrganicSearchTermView()
     {
-        $campaignId = 111111;
-        $adGroupId = 222222;
-        $searchTerm = 'base64';
+        $customerId = '111111';
+        $campaignId = '222222';
+        $adGroupId = '333333';
+        $base64SearchTerm = '444444';
         $expectedResourceName = sprintf(
-            'customers/%s/paidOrganicSearchTermViews/%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/paidOrganicSearchTermViews/%s~%s~%s",
+            $customerId,
             $campaignId,
             $adGroupId,
-            $searchTerm
+            $base64SearchTerm
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forPaidOrganicSearchTermView(
-                self::CUSTOMER_ID,
+                $customerId,
                 $campaignId,
                 $adGroupId,
-                $searchTerm
+                $base64SearchTerm
             )
         );
 
         $names = PaidOrganicSearchTermViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
-        $this->assertEquals($searchTerm, $names['base64_search_term']);
+        $this->assertEquals($base64SearchTerm, $names['base64_search_term']);
     }
 
     /**
@@ -2165,41 +2791,28 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForParentalStatusView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/parentalStatusViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/parentalStatusViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forParentalStatusView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $criterionId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forParentalStatusView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
+        );
 
         $names = ParentalStatusViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
-    }
-
-    /**
-     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forPaymentsAccount()
-     */
-    public function testGetNameForPaymentsAccount()
-    {
-        $paymentsAccountId = '1111-2222-3333-4444';
-        $expectedResourceName = sprintf(
-            'customers/%s/paymentsAccounts/%s',
-            self::CUSTOMER_ID,
-            $paymentsAccountId
-        );
-        $this->assertEquals($expectedResourceName, ResourceNames::forPaymentsAccount(
-            self::CUSTOMER_ID,
-            $paymentsAccountId
-        ));
     }
 
     /**
@@ -2207,11 +2820,11 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForProductBiddingCategoryConstant()
     {
-        $countryCode = 'US';
-        $level = 222222;
-        $id = 3333333;
+        $countryCode = '111111';
+        $level = '222222';
+        $id = '333333';
         $expectedResourceName = sprintf(
-            'productBiddingCategoryConstants/%s~%s~%s',
+            "productBiddingCategoryConstants/%s~%s~%s",
             $countryCode,
             $level,
             $id
@@ -2236,23 +2849,27 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForProductGroupView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adgroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/productGroupViews/%s~%s',
-            self::CUSTOMER_ID,
-            $adGroupId,
+            "customers/%s/productGroupViews/%s~%s",
+            $customerId,
+            $adgroupId,
             $criterionId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forProductGroupView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $criterionId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forProductGroupView(
+                $customerId,
+                $adgroupId,
+                $criterionId
+            )
+        );
 
         $names = ProductGroupViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
-        $this->assertEquals($adGroupId, $names['adgroup_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($adgroupId, $names['adgroup_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
 
@@ -2261,16 +2878,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForRecommendation()
     {
-        $recommendationId = 'a1b2c3d4';
-        $expectedResourceName =
-            sprintf('customers/%s/recommendations/%s', self::CUSTOMER_ID, $recommendationId);
+        $customerId = '111111';
+        $recommendationId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/recommendations/%s",
+            $customerId,
+            $recommendationId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forRecommendation(self::CUSTOMER_ID, $recommendationId)
+            ResourceNames::forRecommendation(
+                $customerId,
+                $recommendationId
+            )
         );
 
         $names = RecommendationServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($recommendationId, $names['recommendation_id']);
     }
 
@@ -2279,16 +2903,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForRemarketingAction()
     {
-        $remarketingActionId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/remarketingActions/%s', self::CUSTOMER_ID, $remarketingActionId);
+        $customerId = '111111';
+        $remarketingActionId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/remarketingActions/%s",
+            $customerId,
+            $remarketingActionId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forRemarketingAction(self::CUSTOMER_ID, $remarketingActionId)
+            ResourceNames::forRemarketingAction(
+                $customerId,
+                $remarketingActionId
+            )
         );
 
         $names = RemarketingActionServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($remarketingActionId, $names['remarketing_action_id']);
     }
 
@@ -2297,31 +2928,32 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForSearchTermView()
     {
-        $campaignId = 111111;
-        $adGroupId = 222222;
-        $searchTerm = 'base64';
+        $customerId = '111111';
+        $campaignId = '222222';
+        $adGroupId = '333333';
+        $query = '444444';
         $expectedResourceName = sprintf(
-            'customers/%s/searchTermViews/%s~%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/searchTermViews/%s~%s~%s",
+            $customerId,
             $campaignId,
             $adGroupId,
-            $searchTerm
+            $query
         );
         $this->assertEquals(
             $expectedResourceName,
             ResourceNames::forSearchTermView(
-                self::CUSTOMER_ID,
+                $customerId,
                 $campaignId,
                 $adGroupId,
-                $searchTerm
+                $query
             )
         );
 
         $names = SearchTermViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($campaignId, $names['campaign_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
-        $this->assertEquals($searchTerm, $names['query']);
+        $this->assertEquals($query, $names['query']);
     }
 
     /**
@@ -2329,22 +2961,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForSharedCriterion()
     {
-        $sharedSetId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $sharedSetId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/sharedCriteria/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/sharedCriteria/%s~%s",
+            $customerId,
             $sharedSetId,
             $criterionId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forSharedCriterion(
-            self::CUSTOMER_ID,
-            $sharedSetId,
-            $criterionId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forSharedCriterion(
+                $customerId,
+                $sharedSetId,
+                $criterionId
+            )
+        );
 
         $names = SharedCriterionServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($sharedSetId, $names['shared_set_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -2354,16 +2990,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForSharedSet()
     {
-        $sharedSetId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/sharedSets/%s', self::CUSTOMER_ID, $sharedSetId);
+        $customerId = '111111';
+        $sharedSetId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/sharedSets/%s",
+            $customerId,
+            $sharedSetId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forSharedSet(self::CUSTOMER_ID, $sharedSetId)
+            ResourceNames::forSharedSet(
+                $customerId,
+                $sharedSetId
+            )
         );
 
         $names = SharedSetServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($sharedSetId, $names['shared_set_id']);
     }
 
@@ -2372,42 +3015,45 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForShoppingPerformanceView()
     {
-        $expectedResourceName =
-            sprintf('customers/%s/shoppingPerformanceView', self::CUSTOMER_ID);
+        $customerId = '111111';
+        $expectedResourceName = sprintf(
+            "customers/%s/shoppingPerformanceView",
+            $customerId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forShoppingPerformanceView(self::CUSTOMER_ID)
+            ResourceNames::forShoppingPerformanceView(
+                $customerId
+            )
         );
 
         $names = ShoppingPerformanceViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
     }
 
     /**
-     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forThirdPartyAppAnalyticsLinkName()
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forThirdPartyAppAnalyticsLink()
      */
     public function testGetNameForThirdPartyAppAnalyticsLink()
     {
-        $thirdPartyAppAnalyticsLinkId = 222222;
+        $customerId = '111111';
+        $customerLinkId = '222222';
         $expectedResourceName = sprintf(
-            'customers/%s/thirdPartyAppAnalyticsLinks/%s',
-            self::CUSTOMER_ID,
-            $thirdPartyAppAnalyticsLinkId
+            "customers/%s/thirdPartyAppAnalyticsLinks/%s",
+            $customerId,
+            $customerLinkId
         );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forThirdPartyAppAnalyticsLinkName(
-                self::CUSTOMER_ID,
-                $thirdPartyAppAnalyticsLinkId
+            ResourceNames::forThirdPartyAppAnalyticsLink(
+                $customerId,
+                $customerLinkId
             )
         );
 
         $names = ThirdPartyAppAnalyticsLinkServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
-        $this->assertEquals(
-            $thirdPartyAppAnalyticsLinkId,
-            $names['customer_link_id']
-        );
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($customerLinkId, $names['customer_link_id']);
     }
 
     /**
@@ -2415,12 +3061,16 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForTopicConstant()
     {
-        $topicId = 222222;
-        $expectedResourceName =
-            sprintf('topicConstants/%s', $topicId);
+        $topicId = '111111';
+        $expectedResourceName = sprintf(
+            "topicConstants/%s",
+            $topicId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forTopicConstant($topicId)
+            ResourceNames::forTopicConstant(
+                $topicId
+            )
         );
 
         $names = TopicConstantServiceClient::parseName($expectedResourceName);
@@ -2432,22 +3082,26 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForTopicView()
     {
-        $adGroupId = 111111;
-        $criterionId = 222222;
+        $customerId = '111111';
+        $adGroupId = '222222';
+        $criterionId = '333333';
         $expectedResourceName = sprintf(
-            'customers/%s/topicViews/%s~%s',
-            self::CUSTOMER_ID,
+            "customers/%s/topicViews/%s~%s",
+            $customerId,
             $adGroupId,
             $criterionId
         );
-        $this->assertEquals($expectedResourceName, ResourceNames::forTopicView(
-            self::CUSTOMER_ID,
-            $adGroupId,
-            $criterionId
-        ));
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forTopicView(
+                $customerId,
+                $adGroupId,
+                $criterionId
+            )
+        );
 
         $names = TopicViewServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($adGroupId, $names['ad_group_id']);
         $this->assertEquals($criterionId, $names['criterion_id']);
     }
@@ -2457,16 +3111,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForUserInterest()
     {
-        $userInterestId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/userInterests/%s', self::CUSTOMER_ID, $userInterestId);
+        $customerId = '111111';
+        $userInterestId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/userInterests/%s",
+            $customerId,
+            $userInterestId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forUserInterest(self::CUSTOMER_ID, $userInterestId)
+            ResourceNames::forUserInterest(
+                $customerId,
+                $userInterestId
+            )
         );
 
         $names = UserInterestServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($userInterestId, $names['user_interest_id']);
     }
 
@@ -2475,17 +3136,53 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForUserList()
     {
-        $userListId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/userLists/%s', self::CUSTOMER_ID, $userListId);
+        $customerId = '111111';
+        $userListId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/userLists/%s",
+            $customerId,
+            $userListId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forUserList(self::CUSTOMER_ID, $userListId)
+            ResourceNames::forUserList(
+                $customerId,
+                $userListId
+            )
         );
 
         $names = UserListServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($userListId, $names['user_list_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V6\ResourceNames::forUserLocationView()
+     */
+    public function testGetNameForUserLocationView()
+    {
+        $customerId = '111111';
+        $countryCriterionId = '222222';
+        $isTargetingLocation = '333333';
+        $expectedResourceName = sprintf(
+            "customers/%s/userLocationViews/%s~%s",
+            $customerId,
+            $countryCriterionId,
+            $isTargetingLocation
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forUserLocationView(
+                $customerId,
+                $countryCriterionId,
+                $isTargetingLocation
+            )
+        );
+
+        $names = UserLocationViewServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($countryCriterionId, $names['country_criterion_id']);
+        $this->assertEquals($isTargetingLocation, $names['is_targeting_location']);
     }
 
     /**
@@ -2493,16 +3190,23 @@ class ResourceNamesTest extends TestCase
      */
     public function testGetNameForVideo()
     {
-        $videoId = 111111;
-        $expectedResourceName =
-            sprintf('customers/%s/videos/%s', self::CUSTOMER_ID, $videoId);
+        $customerId = '111111';
+        $videoId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/videos/%s",
+            $customerId,
+            $videoId
+        );
         $this->assertEquals(
             $expectedResourceName,
-            ResourceNames::forVideo(self::CUSTOMER_ID, $videoId)
+            ResourceNames::forVideo(
+                $customerId,
+                $videoId
+            )
         );
 
         $names = VideoServiceClient::parseName($expectedResourceName);
-        $this->assertEquals(self::CUSTOMER_ID, $names['customer_id']);
+        $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($videoId, $names['video_id']);
     }
 }
