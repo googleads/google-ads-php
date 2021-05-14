@@ -136,6 +136,7 @@ class AddLeadFormExtension
      * @param int $customerId the customer ID
      * @return string the resource name of the newly created lead form asset
      */
+    // [START add_lead_form_extension]
     private static function createLeadFormAsset(
         GoogleAdsClient $googleAdsClient,
         int $customerId
@@ -203,6 +204,7 @@ class AddLeadFormExtension
 
         return $assetResourceName;
     }
+    // [END add_lead_form_extension]
 
     /**
      * Creates the lead form extension.
@@ -212,6 +214,7 @@ class AddLeadFormExtension
      * @param int $campaignId the campaign ID to add the lead form extension
      * @param string $leadFormAssetResourceName the resource name of the lead form asset to be added
      */
+    // [START add_lead_form_extension_1]
     private static function createLeadFormExtension(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
@@ -242,6 +245,7 @@ class AddLeadFormExtension
             PHP_EOL
         );
     }
+    // [END add_lead_form_extension_1]
 }
 
 AddLeadFormExtension::main();
