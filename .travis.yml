@@ -14,14 +14,10 @@ branches:
   only:
   - /.*/
 
-env:
-  - GOOGLE_APPLICATION_CREDENTIALS=~/emptycredentials.json
-
 before_script:
   - composer install -o -vvv --no-interaction
   - pecl install grpc
   - pecl install protobuf
-  - "sudo echo '{\"type\": \"authorized_user\",\"client_id\": \"\",\"client_secret\": \"\",\"refresh_token\": \"\"}' >> $GOOGLE_APPLICATION_CREDENTIALS"
 
 script:
   - vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-clover=coverage.xml
