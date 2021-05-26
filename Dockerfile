@@ -18,8 +18,4 @@ RUN echo 'extension=grpc.so' >> $PHP_INI_DIR/conf.d/grpc.ini
 # Install and configure the C implementation of Protobuf extension if needed.
 RUN if [ "$USE_C_PROTOBUF" = "false" ]; then echo 'Using PHP implementation of Protobuf'; else echo 'Using C implementation of Protobuf'; pecl install protobuf; echo 'extension=protobuf.so' >> $PHP_INI_DIR/conf.d/protobuf.ini; fi
 
-# Create empty credentials to make sure the unit tests run successfully.
-RUN echo '{"type": "authorized_user","client_id": "","client_secret": "","refresh_token": ""}' >> /root/emptycredentials.json
-ENV GOOGLE_APPLICATION_CREDENTIALS /root/emptycredentials.json
-
 WORKDIR "/google-ads-php"
