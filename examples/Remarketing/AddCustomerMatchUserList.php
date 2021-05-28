@@ -272,6 +272,7 @@ class AddCustomerMatchUserList
      */
     private static function buildOfflineUserDataJobOperations(): array
     {
+        // [START add_customer_match_user_list_2]
         // Creates a first user data based on an email address.
         $userDataWithEmailAddress = new UserData([
             'user_identifiers' => [
@@ -297,6 +298,7 @@ class AddCustomerMatchUserList
                 ])
             ]
         ]);
+        // [END add_customer_match_user_list_2]
 
         // Creates the operations to add the two users.
         $operations = [
