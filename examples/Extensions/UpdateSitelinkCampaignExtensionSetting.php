@@ -128,7 +128,7 @@ class UpdateSitelinkCampaignExtensionSetting
             'resource_name' => ResourceNames::forCampaignExtensionSetting(
                 $customerId,
                 $campaignId,
-                ExtensionType::SITELINK
+                ExtensionType::name(ExtensionType::SITELINK)
             ),
             'extension_feed_items' => $extensionFeedItems
         ]);

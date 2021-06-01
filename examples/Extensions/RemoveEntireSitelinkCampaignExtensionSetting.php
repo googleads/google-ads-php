@@ -178,7 +178,7 @@ class RemoveEntireSitelinkCampaignExtensionSetting
         $campaignExtensionSettingResourceName = ResourceNames::forCampaignExtensionSetting(
             $customerId,
             $campaignId,
-            ExtensionType::SITELINK
+            ExtensionType::name(ExtensionType::SITELINK)
         );
 
         // Creates a campaign extension setting operation.
