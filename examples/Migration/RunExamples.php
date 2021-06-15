@@ -26,7 +26,7 @@ use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCam
 use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignBothApisPhase3;
 use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignBothApisPhase4;
 use Google\Ads\GoogleAds\Examples\Migration\CampaignManagement\CreateCompleteCampaignGoogleAdsApiOnly;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\AdsApi\AdWords\AdWordsServices;
 use Google\AdsApi\AdWords\AdWordsSessionBuilder;

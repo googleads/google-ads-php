@@ -23,13 +23,13 @@ require __DIR__ . '/../../vendor/autoload.php';
 use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\V7\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V7\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\ApiStatus;
 
@@ -131,9 +131,9 @@ class SetCustomClientTimeouts
                 $customerId,
                 $query,
                 [
-                    // As of V5, any server streaming call has a default timeout setting. For this
+                    // Any server streaming call has a default timeout setting. For this
                     // particular call, the default setting can be found in the following file:
-                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V7/Services/resources/google_ads_service_client_config.json.
+                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V8/Services/resources/google_ads_service_client_config.json.
                     //
                     // When making a server streaming call, an optional argument is provided and can
                     // be used to override the default timeout setting with a given value.
@@ -179,12 +179,12 @@ class SetCustomClientTimeouts
                 $customerId,
                 $query,
                 [
-                    // As of V5, any unary call is retryable and has default retry settings.
+                    // Any unary call is retryable and has default retry settings.
                     // Complete information about these settings can be found here:
                     // https://googleapis.github.io/gax-php/master/Google/ApiCore/RetrySettings.html.
                     // For this particular call, the default retry settings can be found in the
                     // following file:
-                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V7/Services/resources/google_ads_service_client_config.json.
+                    // https://github.com/googleads/google-ads-php/blob/master/src/Google/Ads/GoogleAds/V8/Services/resources/google_ads_service_client_config.json.
                     //
                     // When making an unary call, an optional argument is provided and can be
                     // used to override the default retry settings with given values.

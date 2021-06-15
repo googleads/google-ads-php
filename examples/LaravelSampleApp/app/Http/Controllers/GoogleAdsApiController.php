@@ -18,13 +18,13 @@
 
 namespace App\Http\Controllers;
 
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V7\ResourceNames;
-use Google\Ads\GoogleAds\V7\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V7\Resources\Campaign;
-use Google\Ads\GoogleAds\V7\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V7\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Util\V8\ResourceNames;
+use Google\Ads\GoogleAds\V8\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V8\Resources\Campaign;
+use Google\Ads\GoogleAds\V8\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\View\View;
