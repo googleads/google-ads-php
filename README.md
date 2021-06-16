@@ -52,6 +52,7 @@ API](https://developers.google.com/google-ads/api/docs/start).
 *   You need a [developer
     token](https://developers.google.com/google-ads/api/docs/first-call/dev-token)
     to connect to the Google Ads API.
+*   One version of the library typically supports multiple versions of the Google Ads API. You can check the [CHANGELOG.md](https://github.com/googleads/google-ads-php/blob/master/CHANGELOG.md) file to identify what versions of the library added or removed the support for a specific version of the Google Ads API. For example, the version `V7` of the Google Ads API was added in the version `v9.0.0` of the library as described [here](https://github.com/googleads/google-ads-php/blob/master/CHANGELOG.md#900).
 
 ## Getting started
 
