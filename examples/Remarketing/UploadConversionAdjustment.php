@@ -24,16 +24,16 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V7\ResourceNames;
-use Google\Ads\GoogleAds\V7\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
-use Google\Ads\GoogleAds\V7\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V7\Services\ConversionAdjustment;
-use Google\Ads\GoogleAds\V7\Services\ConversionAdjustmentResult;
-use Google\Ads\GoogleAds\V7\Services\GclidDateTimePair;
-use Google\Ads\GoogleAds\V7\Services\RestatementValue;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V8\ResourceNames;
+use Google\Ads\GoogleAds\V8\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
+use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V8\Services\ConversionAdjustment;
+use Google\Ads\GoogleAds\V8\Services\ConversionAdjustmentResult;
+use Google\Ads\GoogleAds\V8\Services\GclidDateTimePair;
+use Google\Ads\GoogleAds\V8\Services\RestatementValue;
 use Google\ApiCore\ApiException;
 
 /**

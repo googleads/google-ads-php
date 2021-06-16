@@ -1,3 +1,28 @@
+## 10.0.0
+*   Added support for v8 of Google Ads API.
+*   Removed support for v5 of Google Ads API.
+*   Fixed the ResourceNames utility:
+    * Some method names are changed to be consistent with others:
+        * forAccountLinkName becomes forAccountLink
+        * forThirdPartyAppAnalyticsLinkName becomes forThirdPartyAppAnalyticsLink
+    * Enumerable names are now expected instead of indexes. The affected methods are:
+        * forAdGroupExtensionSetting (ExtensionType)
+        * forCampaignAsset (AssetFieldType)
+        * forCampaignExtensionSetting (ExtensionType)
+        * forCustomerExtensionSetting (ExtensionType)
+    * All parameters typed as integers are now typed as strings
+*   Added support for removing unused Google Ads API versions. See [this guide](
+    https://developers.google.com/google-ads/api/docs/client-libs/php/performance#unused_versions)
+    for details.
+*   Updated the minimum required versions of `google/protobuf` to 3.17.1.
+*   Added code examples:
+    * AddSmartCampaign
+    * UseCrossAccountBiddingStrategy
+*   Fixed/improved code examples:
+    * RemoveEntireSitelinkCampaignExtensionSetting
+    * UpdateSitelinkCampaignExtensionSetting
+    * UploadStoreSalesTransactions
+
 ## 9.0.0
 *   Added support for v7 of Google Ads API.
 *   Removed support for v4 of Google Ads API.

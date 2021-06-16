@@ -1,0 +1,2356 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.ads.googleads.v8.services",
+    "libraryPackage": "Google\\Ads\\GoogleAds\\V8\\Services",
+    "services": {
+        "AccessibleBiddingStrategyService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AccessibleBiddingStrategyServiceGapicClient",
+                    "rpcs": {
+                        "GetAccessibleBiddingStrategy": {
+                            "methods": [
+                                "getAccessibleBiddingStrategy"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AccountBudgetProposalService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AccountBudgetProposalServiceGapicClient",
+                    "rpcs": {
+                        "GetAccountBudgetProposal": {
+                            "methods": [
+                                "getAccountBudgetProposal"
+                            ]
+                        },
+                        "MutateAccountBudgetProposal": {
+                            "methods": [
+                                "mutateAccountBudgetProposal"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AccountBudgetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AccountBudgetServiceGapicClient",
+                    "rpcs": {
+                        "GetAccountBudget": {
+                            "methods": [
+                                "getAccountBudget"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AccountLinkService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AccountLinkServiceGapicClient",
+                    "rpcs": {
+                        "CreateAccountLink": {
+                            "methods": [
+                                "createAccountLink"
+                            ]
+                        },
+                        "GetAccountLink": {
+                            "methods": [
+                                "getAccountLink"
+                            ]
+                        },
+                        "MutateAccountLink": {
+                            "methods": [
+                                "mutateAccountLink"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupAdAssetViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupAdAssetViewServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupAdAssetView": {
+                            "methods": [
+                                "getAdGroupAdAssetView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupAdLabelService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupAdLabelServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupAdLabel": {
+                            "methods": [
+                                "getAdGroupAdLabel"
+                            ]
+                        },
+                        "MutateAdGroupAdLabels": {
+                            "methods": [
+                                "mutateAdGroupAdLabels"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupAdService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupAdServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupAd": {
+                            "methods": [
+                                "getAdGroupAd"
+                            ]
+                        },
+                        "MutateAdGroupAds": {
+                            "methods": [
+                                "mutateAdGroupAds"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupAssetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupAssetServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupAsset": {
+                            "methods": [
+                                "getAdGroupAsset"
+                            ]
+                        },
+                        "MutateAdGroupAssets": {
+                            "methods": [
+                                "mutateAdGroupAssets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupAudienceViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupAudienceViewServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupAudienceView": {
+                            "methods": [
+                                "getAdGroupAudienceView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupBidModifierService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupBidModifierServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupBidModifier": {
+                            "methods": [
+                                "getAdGroupBidModifier"
+                            ]
+                        },
+                        "MutateAdGroupBidModifiers": {
+                            "methods": [
+                                "mutateAdGroupBidModifiers"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupCriterionLabelService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupCriterionLabelServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupCriterionLabel": {
+                            "methods": [
+                                "getAdGroupCriterionLabel"
+                            ]
+                        },
+                        "MutateAdGroupCriterionLabels": {
+                            "methods": [
+                                "mutateAdGroupCriterionLabels"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupCriterionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupCriterionServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupCriterion": {
+                            "methods": [
+                                "getAdGroupCriterion"
+                            ]
+                        },
+                        "MutateAdGroupCriteria": {
+                            "methods": [
+                                "mutateAdGroupCriteria"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupCriterionSimulationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupCriterionSimulationServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupCriterionSimulation": {
+                            "methods": [
+                                "getAdGroupCriterionSimulation"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupExtensionSettingService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupExtensionSettingServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupExtensionSetting": {
+                            "methods": [
+                                "getAdGroupExtensionSetting"
+                            ]
+                        },
+                        "MutateAdGroupExtensionSettings": {
+                            "methods": [
+                                "mutateAdGroupExtensionSettings"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupFeedService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupFeedServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupFeed": {
+                            "methods": [
+                                "getAdGroupFeed"
+                            ]
+                        },
+                        "MutateAdGroupFeeds": {
+                            "methods": [
+                                "mutateAdGroupFeeds"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupLabelService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupLabelServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupLabel": {
+                            "methods": [
+                                "getAdGroupLabel"
+                            ]
+                        },
+                        "MutateAdGroupLabels": {
+                            "methods": [
+                                "mutateAdGroupLabels"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroup": {
+                            "methods": [
+                                "getAdGroup"
+                            ]
+                        },
+                        "MutateAdGroups": {
+                            "methods": [
+                                "mutateAdGroups"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdGroupSimulationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdGroupSimulationServiceGapicClient",
+                    "rpcs": {
+                        "GetAdGroupSimulation": {
+                            "methods": [
+                                "getAdGroupSimulation"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdParameterService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdParameterServiceGapicClient",
+                    "rpcs": {
+                        "GetAdParameter": {
+                            "methods": [
+                                "getAdParameter"
+                            ]
+                        },
+                        "MutateAdParameters": {
+                            "methods": [
+                                "mutateAdParameters"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdScheduleViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdScheduleViewServiceGapicClient",
+                    "rpcs": {
+                        "GetAdScheduleView": {
+                            "methods": [
+                                "getAdScheduleView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AdService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AdServiceGapicClient",
+                    "rpcs": {
+                        "GetAd": {
+                            "methods": [
+                                "getAd"
+                            ]
+                        },
+                        "MutateAds": {
+                            "methods": [
+                                "mutateAds"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AgeRangeViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AgeRangeViewServiceGapicClient",
+                    "rpcs": {
+                        "GetAgeRangeView": {
+                            "methods": [
+                                "getAgeRangeView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AssetFieldTypeViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AssetFieldTypeViewServiceGapicClient",
+                    "rpcs": {
+                        "GetAssetFieldTypeView": {
+                            "methods": [
+                                "getAssetFieldTypeView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AssetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AssetServiceGapicClient",
+                    "rpcs": {
+                        "GetAsset": {
+                            "methods": [
+                                "getAsset"
+                            ]
+                        },
+                        "MutateAssets": {
+                            "methods": [
+                                "mutateAssets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "BiddingStrategyService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "BiddingStrategyServiceGapicClient",
+                    "rpcs": {
+                        "GetBiddingStrategy": {
+                            "methods": [
+                                "getBiddingStrategy"
+                            ]
+                        },
+                        "MutateBiddingStrategies": {
+                            "methods": [
+                                "mutateBiddingStrategies"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignAssetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignAssetServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignAsset": {
+                            "methods": [
+                                "getCampaignAsset"
+                            ]
+                        },
+                        "MutateCampaignAssets": {
+                            "methods": [
+                                "mutateCampaignAssets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignBidModifierService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignBidModifierServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignBidModifier": {
+                            "methods": [
+                                "getCampaignBidModifier"
+                            ]
+                        },
+                        "MutateCampaignBidModifiers": {
+                            "methods": [
+                                "mutateCampaignBidModifiers"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignBudgetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignBudgetServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignBudget": {
+                            "methods": [
+                                "getCampaignBudget"
+                            ]
+                        },
+                        "MutateCampaignBudgets": {
+                            "methods": [
+                                "mutateCampaignBudgets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignCriterionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignCriterionServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignCriterion": {
+                            "methods": [
+                                "getCampaignCriterion"
+                            ]
+                        },
+                        "MutateCampaignCriteria": {
+                            "methods": [
+                                "mutateCampaignCriteria"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignDraftService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignDraftServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignDraft": {
+                            "methods": [
+                                "getCampaignDraft"
+                            ]
+                        },
+                        "ListCampaignDraftAsyncErrors": {
+                            "methods": [
+                                "listCampaignDraftAsyncErrors"
+                            ]
+                        },
+                        "MutateCampaignDrafts": {
+                            "methods": [
+                                "mutateCampaignDrafts"
+                            ]
+                        },
+                        "PromoteCampaignDraft": {
+                            "methods": [
+                                "promoteCampaignDraft"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignExperimentService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignExperimentServiceGapicClient",
+                    "rpcs": {
+                        "CreateCampaignExperiment": {
+                            "methods": [
+                                "createCampaignExperiment"
+                            ]
+                        },
+                        "EndCampaignExperiment": {
+                            "methods": [
+                                "endCampaignExperiment"
+                            ]
+                        },
+                        "GetCampaignExperiment": {
+                            "methods": [
+                                "getCampaignExperiment"
+                            ]
+                        },
+                        "GraduateCampaignExperiment": {
+                            "methods": [
+                                "graduateCampaignExperiment"
+                            ]
+                        },
+                        "ListCampaignExperimentAsyncErrors": {
+                            "methods": [
+                                "listCampaignExperimentAsyncErrors"
+                            ]
+                        },
+                        "MutateCampaignExperiments": {
+                            "methods": [
+                                "mutateCampaignExperiments"
+                            ]
+                        },
+                        "PromoteCampaignExperiment": {
+                            "methods": [
+                                "promoteCampaignExperiment"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignExtensionSettingService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignExtensionSettingServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignExtensionSetting": {
+                            "methods": [
+                                "getCampaignExtensionSetting"
+                            ]
+                        },
+                        "MutateCampaignExtensionSettings": {
+                            "methods": [
+                                "mutateCampaignExtensionSettings"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignFeedService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignFeedServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignFeed": {
+                            "methods": [
+                                "getCampaignFeed"
+                            ]
+                        },
+                        "MutateCampaignFeeds": {
+                            "methods": [
+                                "mutateCampaignFeeds"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignLabelService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignLabelServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignLabel": {
+                            "methods": [
+                                "getCampaignLabel"
+                            ]
+                        },
+                        "MutateCampaignLabels": {
+                            "methods": [
+                                "mutateCampaignLabels"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaign": {
+                            "methods": [
+                                "getCampaign"
+                            ]
+                        },
+                        "MutateCampaigns": {
+                            "methods": [
+                                "mutateCampaigns"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignSharedSetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignSharedSetServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignSharedSet": {
+                            "methods": [
+                                "getCampaignSharedSet"
+                            ]
+                        },
+                        "MutateCampaignSharedSets": {
+                            "methods": [
+                                "mutateCampaignSharedSets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ConversionActionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ConversionActionServiceGapicClient",
+                    "rpcs": {
+                        "GetConversionAction": {
+                            "methods": [
+                                "getConversionAction"
+                            ]
+                        },
+                        "MutateConversionActions": {
+                            "methods": [
+                                "mutateConversionActions"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ConversionCustomVariableService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ConversionCustomVariableServiceGapicClient",
+                    "rpcs": {
+                        "GetConversionCustomVariable": {
+                            "methods": [
+                                "getConversionCustomVariable"
+                            ]
+                        },
+                        "MutateConversionCustomVariables": {
+                            "methods": [
+                                "mutateConversionCustomVariables"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerAssetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerAssetServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerAsset": {
+                            "methods": [
+                                "getCustomerAsset"
+                            ]
+                        },
+                        "MutateCustomerAssets": {
+                            "methods": [
+                                "mutateCustomerAssets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerExtensionSettingService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerExtensionSettingServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerExtensionSetting": {
+                            "methods": [
+                                "getCustomerExtensionSetting"
+                            ]
+                        },
+                        "MutateCustomerExtensionSettings": {
+                            "methods": [
+                                "mutateCustomerExtensionSettings"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerFeedService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerFeedServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerFeed": {
+                            "methods": [
+                                "getCustomerFeed"
+                            ]
+                        },
+                        "MutateCustomerFeeds": {
+                            "methods": [
+                                "mutateCustomerFeeds"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerLabelService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerLabelServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerLabel": {
+                            "methods": [
+                                "getCustomerLabel"
+                            ]
+                        },
+                        "MutateCustomerLabels": {
+                            "methods": [
+                                "mutateCustomerLabels"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerNegativeCriterionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerNegativeCriterionServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerNegativeCriterion": {
+                            "methods": [
+                                "getCustomerNegativeCriterion"
+                            ]
+                        },
+                        "MutateCustomerNegativeCriteria": {
+                            "methods": [
+                                "mutateCustomerNegativeCriteria"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerServiceGapicClient",
+                    "rpcs": {
+                        "CreateCustomerClient": {
+                            "methods": [
+                                "createCustomerClient"
+                            ]
+                        },
+                        "GetCustomer": {
+                            "methods": [
+                                "getCustomer"
+                            ]
+                        },
+                        "ListAccessibleCustomers": {
+                            "methods": [
+                                "listAccessibleCustomers"
+                            ]
+                        },
+                        "MutateCustomer": {
+                            "methods": [
+                                "mutateCustomer"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ExtensionFeedItemService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ExtensionFeedItemServiceGapicClient",
+                    "rpcs": {
+                        "GetExtensionFeedItem": {
+                            "methods": [
+                                "getExtensionFeedItem"
+                            ]
+                        },
+                        "MutateExtensionFeedItems": {
+                            "methods": [
+                                "mutateExtensionFeedItems"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeedItemService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeedItemServiceGapicClient",
+                    "rpcs": {
+                        "GetFeedItem": {
+                            "methods": [
+                                "getFeedItem"
+                            ]
+                        },
+                        "MutateFeedItems": {
+                            "methods": [
+                                "mutateFeedItems"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeedItemSetLinkService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeedItemSetLinkServiceGapicClient",
+                    "rpcs": {
+                        "GetFeedItemSetLink": {
+                            "methods": [
+                                "getFeedItemSetLink"
+                            ]
+                        },
+                        "MutateFeedItemSetLinks": {
+                            "methods": [
+                                "mutateFeedItemSetLinks"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeedItemSetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeedItemSetServiceGapicClient",
+                    "rpcs": {
+                        "GetFeedItemSet": {
+                            "methods": [
+                                "getFeedItemSet"
+                            ]
+                        },
+                        "MutateFeedItemSets": {
+                            "methods": [
+                                "mutateFeedItemSets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeedItemTargetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeedItemTargetServiceGapicClient",
+                    "rpcs": {
+                        "GetFeedItemTarget": {
+                            "methods": [
+                                "getFeedItemTarget"
+                            ]
+                        },
+                        "MutateFeedItemTargets": {
+                            "methods": [
+                                "mutateFeedItemTargets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeedMappingService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeedMappingServiceGapicClient",
+                    "rpcs": {
+                        "GetFeedMapping": {
+                            "methods": [
+                                "getFeedMapping"
+                            ]
+                        },
+                        "MutateFeedMappings": {
+                            "methods": [
+                                "mutateFeedMappings"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeedService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeedServiceGapicClient",
+                    "rpcs": {
+                        "GetFeed": {
+                            "methods": [
+                                "getFeed"
+                            ]
+                        },
+                        "MutateFeeds": {
+                            "methods": [
+                                "mutateFeeds"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "KeywordPlanAdGroupKeywordService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "KeywordPlanAdGroupKeywordServiceGapicClient",
+                    "rpcs": {
+                        "GetKeywordPlanAdGroupKeyword": {
+                            "methods": [
+                                "getKeywordPlanAdGroupKeyword"
+                            ]
+                        },
+                        "MutateKeywordPlanAdGroupKeywords": {
+                            "methods": [
+                                "mutateKeywordPlanAdGroupKeywords"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "KeywordPlanAdGroupService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "KeywordPlanAdGroupServiceGapicClient",
+                    "rpcs": {
+                        "GetKeywordPlanAdGroup": {
+                            "methods": [
+                                "getKeywordPlanAdGroup"
+                            ]
+                        },
+                        "MutateKeywordPlanAdGroups": {
+                            "methods": [
+                                "mutateKeywordPlanAdGroups"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "KeywordPlanCampaignKeywordService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "KeywordPlanCampaignKeywordServiceGapicClient",
+                    "rpcs": {
+                        "GetKeywordPlanCampaignKeyword": {
+                            "methods": [
+                                "getKeywordPlanCampaignKeyword"
+                            ]
+                        },
+                        "MutateKeywordPlanCampaignKeywords": {
+                            "methods": [
+                                "mutateKeywordPlanCampaignKeywords"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "KeywordPlanCampaignService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "KeywordPlanCampaignServiceGapicClient",
+                    "rpcs": {
+                        "GetKeywordPlanCampaign": {
+                            "methods": [
+                                "getKeywordPlanCampaign"
+                            ]
+                        },
+                        "MutateKeywordPlanCampaigns": {
+                            "methods": [
+                                "mutateKeywordPlanCampaigns"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "KeywordPlanService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "KeywordPlanServiceGapicClient",
+                    "rpcs": {
+                        "GenerateForecastCurve": {
+                            "methods": [
+                                "generateForecastCurve"
+                            ]
+                        },
+                        "GenerateForecastMetrics": {
+                            "methods": [
+                                "generateForecastMetrics"
+                            ]
+                        },
+                        "GenerateForecastTimeSeries": {
+                            "methods": [
+                                "generateForecastTimeSeries"
+                            ]
+                        },
+                        "GenerateHistoricalMetrics": {
+                            "methods": [
+                                "generateHistoricalMetrics"
+                            ]
+                        },
+                        "GetKeywordPlan": {
+                            "methods": [
+                                "getKeywordPlan"
+                            ]
+                        },
+                        "MutateKeywordPlans": {
+                            "methods": [
+                                "mutateKeywordPlans"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "LabelService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "LabelServiceGapicClient",
+                    "rpcs": {
+                        "GetLabel": {
+                            "methods": [
+                                "getLabel"
+                            ]
+                        },
+                        "MutateLabels": {
+                            "methods": [
+                                "mutateLabels"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "MediaFileService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "MediaFileServiceGapicClient",
+                    "rpcs": {
+                        "GetMediaFile": {
+                            "methods": [
+                                "getMediaFile"
+                            ]
+                        },
+                        "MutateMediaFiles": {
+                            "methods": [
+                                "mutateMediaFiles"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "RemarketingActionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "RemarketingActionServiceGapicClient",
+                    "rpcs": {
+                        "GetRemarketingAction": {
+                            "methods": [
+                                "getRemarketingAction"
+                            ]
+                        },
+                        "MutateRemarketingActions": {
+                            "methods": [
+                                "mutateRemarketingActions"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "SharedCriterionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SharedCriterionServiceGapicClient",
+                    "rpcs": {
+                        "GetSharedCriterion": {
+                            "methods": [
+                                "getSharedCriterion"
+                            ]
+                        },
+                        "MutateSharedCriteria": {
+                            "methods": [
+                                "mutateSharedCriteria"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "SharedSetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SharedSetServiceGapicClient",
+                    "rpcs": {
+                        "GetSharedSet": {
+                            "methods": [
+                                "getSharedSet"
+                            ]
+                        },
+                        "MutateSharedSets": {
+                            "methods": [
+                                "mutateSharedSets"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "SmartCampaignSettingService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SmartCampaignSettingServiceGapicClient",
+                    "rpcs": {
+                        "GetSmartCampaignSetting": {
+                            "methods": [
+                                "getSmartCampaignSetting"
+                            ]
+                        },
+                        "MutateSmartCampaignSettings": {
+                            "methods": [
+                                "mutateSmartCampaignSettings"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "UserListService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "UserListServiceGapicClient",
+                    "rpcs": {
+                        "GetUserList": {
+                            "methods": [
+                                "getUserList"
+                            ]
+                        },
+                        "MutateUserLists": {
+                            "methods": [
+                                "mutateUserLists"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "GoogleAdsService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "GoogleAdsServiceGapicClient",
+                    "rpcs": {
+                        "Mutate": {
+                            "methods": [
+                                "mutate"
+                            ]
+                        },
+                        "Search": {
+                            "methods": [
+                                "search"
+                            ]
+                        },
+                        "SearchStream": {
+                            "methods": [
+                                "searchStream"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "BatchJobService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "BatchJobServiceGapicClient",
+                    "rpcs": {
+                        "AddBatchJobOperations": {
+                            "methods": [
+                                "addBatchJobOperations"
+                            ]
+                        },
+                        "GetBatchJob": {
+                            "methods": [
+                                "getBatchJob"
+                            ]
+                        },
+                        "ListBatchJobResults": {
+                            "methods": [
+                                "listBatchJobResults"
+                            ]
+                        },
+                        "MutateBatchJob": {
+                            "methods": [
+                                "mutateBatchJob"
+                            ]
+                        },
+                        "RunBatchJob": {
+                            "methods": [
+                                "runBatchJob"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "BiddingStrategySimulationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "BiddingStrategySimulationServiceGapicClient",
+                    "rpcs": {
+                        "GetBiddingStrategySimulation": {
+                            "methods": [
+                                "getBiddingStrategySimulation"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "BillingSetupService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "BillingSetupServiceGapicClient",
+                    "rpcs": {
+                        "GetBillingSetup": {
+                            "methods": [
+                                "getBillingSetup"
+                            ]
+                        },
+                        "MutateBillingSetup": {
+                            "methods": [
+                                "mutateBillingSetup"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignAudienceViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignAudienceViewServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignAudienceView": {
+                            "methods": [
+                                "getCampaignAudienceView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignCriterionSimulationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignCriterionSimulationServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignCriterionSimulation": {
+                            "methods": [
+                                "getCampaignCriterionSimulation"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CampaignSimulationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CampaignSimulationServiceGapicClient",
+                    "rpcs": {
+                        "GetCampaignSimulation": {
+                            "methods": [
+                                "getCampaignSimulation"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CarrierConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CarrierConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetCarrierConstant": {
+                            "methods": [
+                                "getCarrierConstant"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ChangeStatusService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ChangeStatusServiceGapicClient",
+                    "rpcs": {
+                        "GetChangeStatus": {
+                            "methods": [
+                                "getChangeStatus"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ClickViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ClickViewServiceGapicClient",
+                    "rpcs": {
+                        "GetClickView": {
+                            "methods": [
+                                "getClickView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CombinedAudienceService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CombinedAudienceServiceGapicClient",
+                    "rpcs": {
+                        "GetCombinedAudience": {
+                            "methods": [
+                                "getCombinedAudience"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ConversionAdjustmentUploadService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ConversionAdjustmentUploadServiceGapicClient",
+                    "rpcs": {
+                        "UploadConversionAdjustments": {
+                            "methods": [
+                                "uploadConversionAdjustments"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ConversionUploadService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ConversionUploadServiceGapicClient",
+                    "rpcs": {
+                        "UploadCallConversions": {
+                            "methods": [
+                                "uploadCallConversions"
+                            ]
+                        },
+                        "UploadClickConversions": {
+                            "methods": [
+                                "uploadClickConversions"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CurrencyConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CurrencyConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetCurrencyConstant": {
+                            "methods": [
+                                "getCurrencyConstant"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomAudienceService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomAudienceServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomAudience": {
+                            "methods": [
+                                "getCustomAudience"
+                            ]
+                        },
+                        "MutateCustomAudiences": {
+                            "methods": [
+                                "mutateCustomAudiences"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomInterestService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomInterestServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomInterest": {
+                            "methods": [
+                                "getCustomInterest"
+                            ]
+                        },
+                        "MutateCustomInterests": {
+                            "methods": [
+                                "mutateCustomInterests"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerClientLinkService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerClientLinkServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerClientLink": {
+                            "methods": [
+                                "getCustomerClientLink"
+                            ]
+                        },
+                        "MutateCustomerClientLink": {
+                            "methods": [
+                                "mutateCustomerClientLink"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerClientService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerClientServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerClient": {
+                            "methods": [
+                                "getCustomerClient"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerManagerLinkService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerManagerLinkServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerManagerLink": {
+                            "methods": [
+                                "getCustomerManagerLink"
+                            ]
+                        },
+                        "MoveManagerLink": {
+                            "methods": [
+                                "moveManagerLink"
+                            ]
+                        },
+                        "MutateCustomerManagerLink": {
+                            "methods": [
+                                "mutateCustomerManagerLink"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerUserAccessInvitationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerUserAccessInvitationServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerUserAccessInvitation": {
+                            "methods": [
+                                "getCustomerUserAccessInvitation"
+                            ]
+                        },
+                        "MutateCustomerUserAccessInvitation": {
+                            "methods": [
+                                "mutateCustomerUserAccessInvitation"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "CustomerUserAccessService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "CustomerUserAccessServiceGapicClient",
+                    "rpcs": {
+                        "GetCustomerUserAccess": {
+                            "methods": [
+                                "getCustomerUserAccess"
+                            ]
+                        },
+                        "MutateCustomerUserAccess": {
+                            "methods": [
+                                "mutateCustomerUserAccess"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "DetailPlacementViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DetailPlacementViewServiceGapicClient",
+                    "rpcs": {
+                        "GetDetailPlacementView": {
+                            "methods": [
+                                "getDetailPlacementView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "DetailedDemographicService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DetailedDemographicServiceGapicClient",
+                    "rpcs": {
+                        "GetDetailedDemographic": {
+                            "methods": [
+                                "getDetailedDemographic"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "DisplayKeywordViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DisplayKeywordViewServiceGapicClient",
+                    "rpcs": {
+                        "GetDisplayKeywordView": {
+                            "methods": [
+                                "getDisplayKeywordView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "DistanceViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DistanceViewServiceGapicClient",
+                    "rpcs": {
+                        "GetDistanceView": {
+                            "methods": [
+                                "getDistanceView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "DomainCategoryService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DomainCategoryServiceGapicClient",
+                    "rpcs": {
+                        "GetDomainCategory": {
+                            "methods": [
+                                "getDomainCategory"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "DynamicSearchAdsSearchTermViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DynamicSearchAdsSearchTermViewServiceGapicClient",
+                    "rpcs": {
+                        "GetDynamicSearchAdsSearchTermView": {
+                            "methods": [
+                                "getDynamicSearchAdsSearchTermView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ExpandedLandingPageViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ExpandedLandingPageViewServiceGapicClient",
+                    "rpcs": {
+                        "GetExpandedLandingPageView": {
+                            "methods": [
+                                "getExpandedLandingPageView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeedPlaceholderViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeedPlaceholderViewServiceGapicClient",
+                    "rpcs": {
+                        "GetFeedPlaceholderView": {
+                            "methods": [
+                                "getFeedPlaceholderView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "GenderViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "GenderViewServiceGapicClient",
+                    "rpcs": {
+                        "GetGenderView": {
+                            "methods": [
+                                "getGenderView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "GeoTargetConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "GeoTargetConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetGeoTargetConstant": {
+                            "methods": [
+                                "getGeoTargetConstant"
+                            ]
+                        },
+                        "SuggestGeoTargetConstants": {
+                            "methods": [
+                                "suggestGeoTargetConstants"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "GeographicViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "GeographicViewServiceGapicClient",
+                    "rpcs": {
+                        "GetGeographicView": {
+                            "methods": [
+                                "getGeographicView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "GoogleAdsFieldService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "GoogleAdsFieldServiceGapicClient",
+                    "rpcs": {
+                        "GetGoogleAdsField": {
+                            "methods": [
+                                "getGoogleAdsField"
+                            ]
+                        },
+                        "SearchGoogleAdsFields": {
+                            "methods": [
+                                "searchGoogleAdsFields"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "GroupPlacementViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "GroupPlacementViewServiceGapicClient",
+                    "rpcs": {
+                        "GetGroupPlacementView": {
+                            "methods": [
+                                "getGroupPlacementView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "HotelGroupViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "HotelGroupViewServiceGapicClient",
+                    "rpcs": {
+                        "GetHotelGroupView": {
+                            "methods": [
+                                "getHotelGroupView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "HotelPerformanceViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "HotelPerformanceViewServiceGapicClient",
+                    "rpcs": {
+                        "GetHotelPerformanceView": {
+                            "methods": [
+                                "getHotelPerformanceView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "IncomeRangeViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "IncomeRangeViewServiceGapicClient",
+                    "rpcs": {
+                        "GetIncomeRangeView": {
+                            "methods": [
+                                "getIncomeRangeView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "InvoiceService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "InvoiceServiceGapicClient",
+                    "rpcs": {
+                        "ListInvoices": {
+                            "methods": [
+                                "listInvoices"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "KeywordPlanIdeaService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "KeywordPlanIdeaServiceGapicClient",
+                    "rpcs": {
+                        "GenerateKeywordIdeas": {
+                            "methods": [
+                                "generateKeywordIdeas"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "KeywordThemeConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "KeywordThemeConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetKeywordThemeConstant": {
+                            "methods": [
+                                "getKeywordThemeConstant"
+                            ]
+                        },
+                        "SuggestKeywordThemeConstants": {
+                            "methods": [
+                                "suggestKeywordThemeConstants"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "KeywordViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "KeywordViewServiceGapicClient",
+                    "rpcs": {
+                        "GetKeywordView": {
+                            "methods": [
+                                "getKeywordView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "LandingPageViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "LandingPageViewServiceGapicClient",
+                    "rpcs": {
+                        "GetLandingPageView": {
+                            "methods": [
+                                "getLandingPageView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "LanguageConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "LanguageConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetLanguageConstant": {
+                            "methods": [
+                                "getLanguageConstant"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "LifeEventService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "LifeEventServiceGapicClient",
+                    "rpcs": {
+                        "GetLifeEvent": {
+                            "methods": [
+                                "getLifeEvent"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "LocationViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "LocationViewServiceGapicClient",
+                    "rpcs": {
+                        "GetLocationView": {
+                            "methods": [
+                                "getLocationView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ManagedPlacementViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ManagedPlacementViewServiceGapicClient",
+                    "rpcs": {
+                        "GetManagedPlacementView": {
+                            "methods": [
+                                "getManagedPlacementView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "MerchantCenterLinkService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "MerchantCenterLinkServiceGapicClient",
+                    "rpcs": {
+                        "GetMerchantCenterLink": {
+                            "methods": [
+                                "getMerchantCenterLink"
+                            ]
+                        },
+                        "ListMerchantCenterLinks": {
+                            "methods": [
+                                "listMerchantCenterLinks"
+                            ]
+                        },
+                        "MutateMerchantCenterLink": {
+                            "methods": [
+                                "mutateMerchantCenterLink"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "MobileAppCategoryConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "MobileAppCategoryConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetMobileAppCategoryConstant": {
+                            "methods": [
+                                "getMobileAppCategoryConstant"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "MobileDeviceConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "MobileDeviceConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetMobileDeviceConstant": {
+                            "methods": [
+                                "getMobileDeviceConstant"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "OfflineUserDataJobService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "OfflineUserDataJobServiceGapicClient",
+                    "rpcs": {
+                        "AddOfflineUserDataJobOperations": {
+                            "methods": [
+                                "addOfflineUserDataJobOperations"
+                            ]
+                        },
+                        "CreateOfflineUserDataJob": {
+                            "methods": [
+                                "createOfflineUserDataJob"
+                            ]
+                        },
+                        "GetOfflineUserDataJob": {
+                            "methods": [
+                                "getOfflineUserDataJob"
+                            ]
+                        },
+                        "RunOfflineUserDataJob": {
+                            "methods": [
+                                "runOfflineUserDataJob"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "OperatingSystemVersionConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "OperatingSystemVersionConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetOperatingSystemVersionConstant": {
+                            "methods": [
+                                "getOperatingSystemVersionConstant"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "PaidOrganicSearchTermViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "PaidOrganicSearchTermViewServiceGapicClient",
+                    "rpcs": {
+                        "GetPaidOrganicSearchTermView": {
+                            "methods": [
+                                "getPaidOrganicSearchTermView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ParentalStatusViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ParentalStatusViewServiceGapicClient",
+                    "rpcs": {
+                        "GetParentalStatusView": {
+                            "methods": [
+                                "getParentalStatusView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "PaymentsAccountService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "PaymentsAccountServiceGapicClient",
+                    "rpcs": {
+                        "ListPaymentsAccounts": {
+                            "methods": [
+                                "listPaymentsAccounts"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ProductBiddingCategoryConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ProductBiddingCategoryConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetProductBiddingCategoryConstant": {
+                            "methods": [
+                                "getProductBiddingCategoryConstant"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ProductGroupViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ProductGroupViewServiceGapicClient",
+                    "rpcs": {
+                        "GetProductGroupView": {
+                            "methods": [
+                                "getProductGroupView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ReachPlanService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ReachPlanServiceGapicClient",
+                    "rpcs": {
+                        "GenerateProductMixIdeas": {
+                            "methods": [
+                                "generateProductMixIdeas"
+                            ]
+                        },
+                        "GenerateReachForecast": {
+                            "methods": [
+                                "generateReachForecast"
+                            ]
+                        },
+                        "ListPlannableLocations": {
+                            "methods": [
+                                "listPlannableLocations"
+                            ]
+                        },
+                        "ListPlannableProducts": {
+                            "methods": [
+                                "listPlannableProducts"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "RecommendationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "RecommendationServiceGapicClient",
+                    "rpcs": {
+                        "ApplyRecommendation": {
+                            "methods": [
+                                "applyRecommendation"
+                            ]
+                        },
+                        "DismissRecommendation": {
+                            "methods": [
+                                "dismissRecommendation"
+                            ]
+                        },
+                        "GetRecommendation": {
+                            "methods": [
+                                "getRecommendation"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "SearchTermViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SearchTermViewServiceGapicClient",
+                    "rpcs": {
+                        "GetSearchTermView": {
+                            "methods": [
+                                "getSearchTermView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ShoppingPerformanceViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ShoppingPerformanceViewServiceGapicClient",
+                    "rpcs": {
+                        "GetShoppingPerformanceView": {
+                            "methods": [
+                                "getShoppingPerformanceView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "SmartCampaignSearchTermViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SmartCampaignSearchTermViewServiceGapicClient",
+                    "rpcs": {
+                        "GetSmartCampaignSearchTermView": {
+                            "methods": [
+                                "getSmartCampaignSearchTermView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "SmartCampaignSuggestService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SmartCampaignSuggestServiceGapicClient",
+                    "rpcs": {
+                        "SuggestSmartCampaignBudgetOptions": {
+                            "methods": [
+                                "suggestSmartCampaignBudgetOptions"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ThirdPartyAppAnalyticsLinkService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ThirdPartyAppAnalyticsLinkServiceGapicClient",
+                    "rpcs": {
+                        "GetThirdPartyAppAnalyticsLink": {
+                            "methods": [
+                                "getThirdPartyAppAnalyticsLink"
+                            ]
+                        },
+                        "RegenerateShareableLinkId": {
+                            "methods": [
+                                "regenerateShareableLinkId"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "TopicConstantService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "TopicConstantServiceGapicClient",
+                    "rpcs": {
+                        "GetTopicConstant": {
+                            "methods": [
+                                "getTopicConstant"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "TopicViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "TopicViewServiceGapicClient",
+                    "rpcs": {
+                        "GetTopicView": {
+                            "methods": [
+                                "getTopicView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "UserDataService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "UserDataServiceGapicClient",
+                    "rpcs": {
+                        "UploadUserData": {
+                            "methods": [
+                                "uploadUserData"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "UserInterestService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "UserInterestServiceGapicClient",
+                    "rpcs": {
+                        "GetUserInterest": {
+                            "methods": [
+                                "getUserInterest"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "UserLocationViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "UserLocationViewServiceGapicClient",
+                    "rpcs": {
+                        "GetUserLocationView": {
+                            "methods": [
+                                "getUserLocationView"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "VideoService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "VideoServiceGapicClient",
+                    "rpcs": {
+                        "GetVideo": {
+                            "methods": [
+                                "getVideo"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "WebpageViewService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "WebpageViewServiceGapicClient",
+                    "rpcs": {
+                        "GetWebpageView": {
+                            "methods": [
+                                "getWebpageView"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

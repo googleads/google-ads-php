@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V7\ResourceNames;
-use Google\Ads\GoogleAds\V7\Common\AgeRangeInfo;
-use Google\Ads\GoogleAds\V7\Common\GenderInfo;
-use Google\Ads\GoogleAds\V7\Enums\AgeRangeTypeEnum\AgeRangeType;
-use Google\Ads\GoogleAds\V7\Enums\GenderTypeEnum\GenderType;
-use Google\Ads\GoogleAds\V7\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V7\Resources\AdGroupCriterion;
-use Google\Ads\GoogleAds\V7\Services\AdGroupCriterionOperation;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V8\ResourceNames;
+use Google\Ads\GoogleAds\V8\Common\AgeRangeInfo;
+use Google\Ads\GoogleAds\V8\Common\GenderInfo;
+use Google\Ads\GoogleAds\V8\Enums\AgeRangeTypeEnum\AgeRangeType;
+use Google\Ads\GoogleAds\V8\Enums\GenderTypeEnum\GenderType;
+use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V8\Resources\AdGroupCriterion;
+use Google\Ads\GoogleAds\V8\Services\AdGroupCriterionOperation;
 use Google\ApiCore\ApiException;
 
 /**

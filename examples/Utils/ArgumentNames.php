@@ -37,6 +37,8 @@ final class ArgumentNames
     public const BILLING_SETUP_ID = 'billingSetupId';
     public const BRIDGE_MAP_VERSION_ID = 'bridgeMapVersionId';
     public const BUSINESS_ACCOUNT_IDENTIFIER = 'businessAccountIdentifier';
+    public const BUSINESS_LOCATION_ID = 'businessLocationId';
+    public const BUSINESS_NAME = 'businessName';
     public const CALL_START_DATE_TIME = 'callStartDateTime';
     public const CALLER_ID = 'callerId';
     public const CALLOUT_TEXT = 'calloutText';
@@ -73,6 +75,7 @@ final class ArgumentNames
     public const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
     public const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     public const IMAGE_ASSET_ID = 'imageAssetId';
+    public const ITEM_ID = 'itemId';
     public const KEYWORD_PLAN_ID = 'keywordPlanId';
     public const KEYWORD_TEXT = 'keywordText';
     public const KEYWORD_TEXTS = 'keywordTexts';
@@ -100,6 +103,7 @@ final class ArgumentNames
     public const CREATE_DEFAULT_LISTING_GROUP = 'createDefaultListingGroup';
     public const DELETE_EXISTING_FEEDS = 'deleteExistingFeeds';
     public const REPLACE_EXISTING_TREE = 'replaceExistingTree';
+    public const QUANTITY = 'quantity';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
     public const USER_LIST_ID = 'userListId';
@@ -121,6 +125,8 @@ final class ArgumentNames
         self::BRIDGE_MAP_VERSION_ID
             => 'The version of partner IDs to be used for store-sale uploads',
         self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the GMB account',
+        self::BUSINESS_LOCATION_ID => 'The GMB location ID',
+        self::BUSINESS_NAME => 'The GMB business name',
         self::CALL_START_DATE_TIME => 'The call start date time',
         self::CALLER_ID => 'The caller ID',
         self::CALLOUT_TEXT => 'The callout text',
@@ -157,6 +163,7 @@ final class ArgumentNames
         self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::IMAGE_ASSET_ID => 'The image asset ID',
+        self::ITEM_ID => 'The item ID',
         self::KEYWORD_PLAN_ID => 'The keyword plan ID',
         self::KEYWORD_TEXT => 'The keyword text',
         self::KEYWORD_TEXTS => 'The list of keyword texts',
@@ -188,6 +195,7 @@ final class ArgumentNames
             'Whether it should delete the existing feeds',
         self::REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group',
+        self::QUANTITY => 'The quantity',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
         self::USER_LIST_ID => 'The user list ID',

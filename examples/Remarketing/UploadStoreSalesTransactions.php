@@ -25,27 +25,28 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V7\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V7\ResourceNames;
-use Google\Ads\GoogleAds\V7\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V7\Common\StoreSalesMetadata;
-use Google\Ads\GoogleAds\V7\Common\StoreSalesThirdPartyMetadata;
-use Google\Ads\GoogleAds\V7\Common\TransactionAttribute;
-use Google\Ads\GoogleAds\V7\Common\UserData;
-use Google\Ads\GoogleAds\V7\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V7\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
-use Google\Ads\GoogleAds\V7\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
-use Google\Ads\GoogleAds\V7\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V7\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V7\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V7\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V7\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V7\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V7\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V7\Services\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V8\ResourceNames;
+use Google\Ads\GoogleAds\V8\Common\ItemAttribute;
+use Google\Ads\GoogleAds\V8\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V8\Common\StoreSalesMetadata;
+use Google\Ads\GoogleAds\V8\Common\StoreSalesThirdPartyMetadata;
+use Google\Ads\GoogleAds\V8\Common\TransactionAttribute;
+use Google\Ads\GoogleAds\V8\Common\UserData;
+use Google\Ads\GoogleAds\V8\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V8\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
+use Google\Ads\GoogleAds\V8\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
+use Google\Ads\GoogleAds\V8\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V8\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V8\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V8\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V8\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V8\Services\OfflineUserDataJobServiceClient;
 use Google\ApiCore\ApiException;
 
 /**
@@ -66,12 +67,16 @@ class UploadStoreSalesTransactions
     private const OFFLINE_USER_DATA_JOB_TYPE = 'STORE_SALES_UPLOAD_FIRST_PARTY';
     /** The ID of a store sales conversion action. */
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
-    // Optional (but recommended) external ID to identify the offline user data job.
-    /** The external ID for the offline user data job. */
+    /**
+     * Optional (but recommended) external ID to identify the offline user data job.
+     * The external ID for the offline user data job.
+     */
     private const EXTERNAL_ID = null;
-    // Only required after creating a custom key and custom values in the account.
-    // Custom key and values are used to segment store sales conversions.
-    // This measurement can be used to provide more advanced insights.
+    /**
+     * Only required after creating a custom key and custom values in the account.
+     * Custom key and values are used to segment store sales conversions.
+     * This measurement can be used to provide more advanced insights.
+     */
     private const CUSTOM_KEY = null;
 
     // Optional: If uploading third party data, also specify the following values:
@@ -84,6 +89,35 @@ class UploadStoreSalesTransactions
     private const BRIDGE_MAP_VERSION_ID = null;
     /** The ID of the third party partner. */
     private const PARTNER_ID = null;
+
+    // Optional: Below constants are only required if uploading with item attributes.
+    /**
+     * Specify a unique identifier of a product, either the Merchant Center
+     * Item ID or Global Trade Item Number (GTIN).
+     */
+    private const ITEM_ID = null;
+    /**
+     * Specify a Merchant Center Account ID.
+     */
+    private const MERCHANT_CENTER_ACCOUNT_ID = null;
+    /**
+     * Specify a two-letter country code of the location associated with the
+     * feed where your items are uploaded.
+     * For a list of country codes see:
+     * https://developers.google.com/google-ads/api/reference/data/codes-formats#expandable-16
+     */
+    private const COUNTRY_CODE = null;
+    /**
+     * Specify a two-letter language code of the language associated with
+     * the feed where your items are uploaded.
+     * For a list of language codes see:
+     * https://developers.google.com/google-ads/api/reference/data/codes-formats#expandable-7
+     */
+    private const LANGUAGE_CODE = null;
+    /**
+     * Specify a number of items sold.
+     */
+    private const QUANTITY = 1;
 
     public static function main()
     {
@@ -98,6 +132,11 @@ class UploadStoreSalesTransactions
             ArgumentNames::ADVERTISER_UPLOAD_DATE_TIME => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BRIDGE_MAP_VERSION_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::PARTNER_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::ITEM_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::COUNTRY_CODE => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::LANGUAGE_CODE => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::QUANTITY => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -122,7 +161,13 @@ class UploadStoreSalesTransactions
                 $options[ArgumentNames::ADVERTISER_UPLOAD_DATE_TIME]
                     ?: self::ADVERTISER_UPLOAD_DATE_TIME,
                 $options[ArgumentNames::BRIDGE_MAP_VERSION_ID] ?: self::BRIDGE_MAP_VERSION_ID,
-                $options[ArgumentNames::PARTNER_ID] ?: self::PARTNER_ID
+                $options[ArgumentNames::PARTNER_ID] ?: self::PARTNER_ID,
+                $options[ArgumentNames::ITEM_ID] ?: self::ITEM_ID,
+                $options[ArgumentNames::MERCHANT_CENTER_ACCOUNT_ID]
+                    ?: self::MERCHANT_CENTER_ACCOUNT_ID,
+                $options[ArgumentNames::COUNTRY_CODE] ?: self::COUNTRY_CODE,
+                $options[ArgumentNames::LANGUAGE_CODE] ?: self::LANGUAGE_CODE,
+                $options[ArgumentNames::QUANTITY] ?: self::QUANTITY
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -170,6 +215,15 @@ class UploadStoreSalesTransactions
      *     required for third party uploads
      * @param int|null $partnerId ID of the third party partner. Only required for third party
      *     uploads
+     * @param string|null $itemId a unique identifier of a product, either the Merchant Center Item
+     *     ID or Global Trade Item Number (GTIN)
+     * @param int|null $merchantCenterAccountId a Merchant Center Account ID
+     * @param string|null $countryCode a two-letter country code of the location associated with the
+     *     feed where your items are uploaded
+     * @param string|null $languageCode a two-letter language code of the language associated with
+     *     the feed where your items are uploaded
+     * @param int|null $quantity the number of items sold. Can only be set when at least one other
+     *     item attribute has been provided
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -180,7 +234,12 @@ class UploadStoreSalesTransactions
         ?string $customKey,
         ?string $advertiserUploadDateTime,
         ?string $bridgeMapVersionId,
-        ?int $partnerId
+        ?int $partnerId,
+        ?string $itemId,
+        ?int $merchantCenterAccountId,
+        ?string $countryCode,
+        ?string $languageCode,
+        ?int $quantity
     ) {
         $offlineUserDataJobServiceClient = $googleAdsClient->getOfflineUserDataJobServiceClient();
 
@@ -201,7 +260,12 @@ class UploadStoreSalesTransactions
             $offlineUserDataJobServiceClient,
             $customerId,
             $offlineUserDataJobResourceName,
-            $conversionActionId
+            $conversionActionId,
+            $itemId,
+            $merchantCenterAccountId,
+            $countryCode,
+            $languageCode,
+            $quantity
         );
 
         // Issues an asynchronous request to run the offline user data job.
@@ -345,16 +409,37 @@ class UploadStoreSalesTransactions
      * @param string $offlineUserDataJobResourceName the resource name of the created offline user
      *     data job
      * @param int $conversionActionId the ID of a store sales conversion action
+     * @param string|null $itemId a unique identifier of a product, either the Merchant Center Item
+     *     ID or Global Trade Item Number (GTIN)
+     * @param int|null $merchantCenterAccountId a Merchant Center Account ID
+     * @param string|null $countryCode a two-letter country code of the location associated with the
+     *     feed where your items are uploaded
+     * @param string|null $languageCode a two-letter language code of the language associated with
+     *     the feed where your items are uploaded
+     * @param int|null $quantity the number of items sold. Can only be set when at least one other
+     *     item attribute has been provided
      */
     private static function addTransactionsToOfflineUserDataJob(
         OfflineUserDataJobServiceClient $offlineUserDataJobServiceClient,
         int $customerId,
         string $offlineUserDataJobResourceName,
-        int $conversionActionId
+        int $conversionActionId,
+        ?string $itemId,
+        ?int $merchantCenterAccountId,
+        ?string $countryCode,
+        ?string $languageCode,
+        ?int $quantity
     ) {
         // Constructs the operation for each transaction.
-        $userDataJobOperations =
-            self::buildOfflineUserDataJobOperations($customerId, $conversionActionId);
+        $userDataJobOperations = self::buildOfflineUserDataJobOperations(
+            $customerId,
+            $conversionActionId,
+            $itemId,
+            $merchantCenterAccountId,
+            $countryCode,
+            $languageCode,
+            $quantity
+        );
         // Issues a request to add the operations to the offline user data job.
         /** @var AddOfflineUserDataJobOperationsResponse $operationResponse */
         $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
@@ -391,10 +476,24 @@ class UploadStoreSalesTransactions
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of a store sales conversion action
      * @return OfflineUserDataJobOperation[] an array with the operations
+     * @param string|null $itemId a unique identifier of a product, either the Merchant Center Item
+     *     ID or Global Trade Item Number (GTIN)
+     * @param int|null $merchantCenterAccountId a Merchant Center Account ID
+     * @param string|null $countryCode a two-letter country code of the location associated with the
+     *     feed where your items are uploaded
+     * @param string|null $languageCode a two-letter language code of the language associated with
+     *     the feed where your items are uploaded
+     * @param int|null $quantity the number of items sold. Can only be set when at least one other
+     *     item attribute has been provided
      */
     private static function buildOfflineUserDataJobOperations(
         $customerId,
-        $conversionActionId
+        $conversionActionId,
+        ?string $itemId,
+        ?int $merchantCenterAccountId,
+        ?string $countryCode,
+        ?string $languageCode,
+        ?int $quantity
     ): array {
         // Creates the first transaction for upload based on an email address and state.
         $userDataWithEmailAddress = new UserData([
@@ -449,11 +548,24 @@ class UploadStoreSalesTransactions
                 // interpreted by the API using the Google Ads customer's time zone.
                 // The date/time must be in the format "yyyy-MM-dd hh:mm:ss".
                 'transaction_date_time' => '2020-05-14 19:07:02'
-                // OPTIONAL: If uploading data with custom key and values, also specify the
-                // following value:
-                // 'custom_value' => 'INSERT_CUSTOM_VALUE_HERE'
             ])
         ]);
+
+        // Optional: If uploading data with item attributes, also assign these values
+        // in the transaction attribute.
+        if (!empty($itemId)) {
+            $userDataWithPhysicalAddress->getTransactionAttribute()->setItemAttribute(
+                new ItemAttribute([
+                    'item_id' => $itemId,
+                    'merchant_id' => $merchantCenterAccountId,
+                    'country_code' => $countryCode,
+                    'language_code' => $languageCode,
+                    // Quantity field should only be set when at least one of the other item
+                    // attribute fields is present.
+                    'quantity' => $quantity
+                ])
+            );
+        }
 
         // Creates the operations to add the two transactions.
         $operations = [];
