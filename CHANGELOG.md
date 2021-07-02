@@ -1,6 +1,6 @@
 ## 10.1.0
-*  Moved the CampaignReportToCsv example to the Migration/ directory.
-*  Added the LIMIT clause to the query of the GetAdGroupBidModifiers example.
+*   Moved the CampaignReportToCsv example to the Migration/ directory.
+*   Added the LIMIT clause to the query of the GetAdGroupBidModifiers example.
 
 ## 10.0.0
 *   Added support for v8 of Google Ads API.
