@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace Google\Ads\GoogleAds\Examples\Reporting;
+namespace Google\Ads\GoogleAds\Examples\Migration;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
