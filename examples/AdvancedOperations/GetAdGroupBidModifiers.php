@@ -123,10 +123,11 @@ class GetAdGroupBidModifiers
               . 'ad_group_bid_modifier.hotel_check_in_date_range.start_date, '
               . 'ad_group_bid_modifier.hotel_check_in_date_range.end_date, '
               . 'ad_group_bid_modifier.preferred_content.type '
-          . 'FROM ad_group_bid_modifier LIMIT 10000';
+          . 'FROM ad_group_bid_modifier';
         if ($adGroupId !== null) {
             $query .= " WHERE ad_group.id = $adGroupId";
         }
+        $query .= " LIMIT 10000";
 
         // Issues a search request by specifying page size.
         $response =
