@@ -808,6 +808,13 @@ class CriterionError
      * Generated from protobuf enum <code>HOTEL_CHECK_IN_DATE_RANGE_REVERSED = 134;</code>
      */
     const HOTEL_CHECK_IN_DATE_RANGE_REVERSED = 134;
+    /**
+     * Broad match modifier (BMM) keywords can no longer be created. Please see
+     * https://ads-developers.googleblog.com/2021/06/broad-match-modifier-upcoming-changes.html.
+     *
+     * Generated from protobuf enum <code>BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED = 135;</code>
+     */
+    const BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED = 135;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -937,6 +944,7 @@ class CriterionError
         self::HOTEL_CHECK_IN_DATE_RANGE_START_DATE_TOO_EARLY => 'HOTEL_CHECK_IN_DATE_RANGE_START_DATE_TOO_EARLY',
         self::HOTEL_CHECK_IN_DATE_RANGE_END_DATE_TOO_LATE => 'HOTEL_CHECK_IN_DATE_RANGE_END_DATE_TOO_LATE',
         self::HOTEL_CHECK_IN_DATE_RANGE_REVERSED => 'HOTEL_CHECK_IN_DATE_RANGE_REVERSED',
+        self::BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED => 'BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED',
     ];
 
     public static function name($value)

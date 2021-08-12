@@ -9,26 +9,53 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * The resource message used to test the FieldMasks utility.
+ *
  * Generated from protobuf message <code>google.ads.googleads.util.fieldmasks.proto.Resource</code>
  */
 class Resource extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.protobuf.StringValue wrapper = 1;</code>
+     * Generated from protobuf field <code>int64 id = 1;</code>
      */
-    protected $wrapper = null;
+    protected $id = 0;
     /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Foo foo = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      */
-    protected $foo = null;
+    protected $name = '';
     /**
-     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.Foo foos = 3;</code>
+     * Generated from protobuf field <code>string description = 3;</code>
      */
-    private $foos;
+    protected $description = null;
     /**
-     * Generated from protobuf field <code>int32 presence = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.ResourceStatusEnum.ResourceStatus status = 4;</code>
      */
-    protected $presence = null;
+    protected $status = 0;
+    /**
+     * Generated from protobuf field <code>double optimization_score = 5;</code>
+     */
+    protected $optimization_score = null;
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.DynamicSetting dynamic_setting = 6;</code>
+     */
+    protected $dynamic_setting = null;
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.SelectiveOptimization selective_optimization = 7;</code>
+     */
+    protected $selective_optimization = null;
+    /**
+     * Generated from protobuf field <code>repeated string labels = 8;</code>
+     */
+    private $labels;
+    /**
+     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.CustomParameter custom_parameters = 9;</code>
+     */
+    private $custom_parameters;
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.OptimizationSetting optimization_setting = 10;</code>
+     */
+    protected $optimization_setting = null;
+    protected $resource_bidding_strategy;
 
     /**
      * Constructor.
@@ -36,10 +63,19 @@ class Resource extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Protobuf\StringValue $wrapper
-     *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Foo $foo
-     *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Foo[]|\Google\Protobuf\Internal\RepeatedField $foos
-     *     @type int $presence
+     *     @type int|string $id
+     *     @type string $name
+     *     @type string $description
+     *     @type int $status
+     *     @type float $optimization_score
+     *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\DynamicSetting $dynamic_setting
+     *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\SelectiveOptimization $selective_optimization
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $custom_parameters
+     *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\OptimizationSetting $optimization_setting
+     *     @type string $bidding_strategy
+     *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ManualCpc $manual_cpc
+     *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ManualCpm $manual_cpm
      * }
      */
     public function __construct($data = NULL) {
@@ -48,144 +84,362 @@ class Resource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.StringValue wrapper = 1;</code>
-     * @return \Google\Protobuf\StringValue
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     * @return int|string
      */
-    public function getWrapper()
+    public function getId()
     {
-        return isset($this->wrapper) ? $this->wrapper : null;
-    }
-
-    public function hasWrapper()
-    {
-        return isset($this->wrapper);
-    }
-
-    public function clearWrapper()
-    {
-        unset($this->wrapper);
+        return $this->id;
     }
 
     /**
-     * Returns the unboxed value from <code>getWrapper()</code>
-
-     * Generated from protobuf field <code>.google.protobuf.StringValue wrapper = 1;</code>
-     * @return string|null
-     */
-    public function getWrapperUnwrapped()
-    {
-        return $this->readWrapperValue("wrapper");
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.StringValue wrapper = 1;</code>
-     * @param \Google\Protobuf\StringValue $var
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setWrapper($var)
+    public function setId($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\StringValue::class);
-        $this->wrapper = $var;
+        GPBUtil::checkInt64($var);
+        $this->id = $var;
 
         return $this;
     }
 
     /**
-     * Sets the field by wrapping a primitive type in a Google\Protobuf\StringValue object.
-
-     * Generated from protobuf field <code>.google.protobuf.StringValue wrapper = 1;</code>
-     * @param string|null $var
-     * @return $this
+     * Generated from protobuf field <code>string name = 2;</code>
+     * @return string
      */
-    public function setWrapperUnwrapped($var)
+    public function getName()
     {
-        $this->writeWrapperValue("wrapper", $var);
-        return $this;}
-
-    /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Foo foo = 2;</code>
-     * @return \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Foo
-     */
-    public function getFoo()
-    {
-        return isset($this->foo) ? $this->foo : null;
-    }
-
-    public function hasFoo()
-    {
-        return isset($this->foo);
-    }
-
-    public function clearFoo()
-    {
-        unset($this->foo);
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Foo foo = 2;</code>
-     * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Foo $var
+     * Generated from protobuf field <code>string name = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setFoo($var)
+    public function setName($var)
     {
-        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Foo::class);
-        $this->foo = $var;
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.Foo foos = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string description = 3;</code>
+     * @return string
      */
-    public function getFoos()
+    public function getDescription()
     {
-        return $this->foos;
+        return isset($this->description) ? $this->description : '';
+    }
+
+    public function hasDescription()
+    {
+        return isset($this->description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->description);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.Foo foos = 3;</code>
-     * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Foo[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string description = 3;</code>
+     * @param string $var
      * @return $this
      */
-    public function setFoos($var)
+    public function setDescription($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Foo::class);
-        $this->foos = $arr;
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 presence = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.ResourceStatusEnum.ResourceStatus status = 4;</code>
      * @return int
      */
-    public function getPresence()
+    public function getStatus()
     {
-        return isset($this->presence) ? $this->presence : 0;
-    }
-
-    public function hasPresence()
-    {
-        return isset($this->presence);
-    }
-
-    public function clearPresence()
-    {
-        unset($this->presence);
+        return $this->status;
     }
 
     /**
-     * Generated from protobuf field <code>int32 presence = 4;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.ResourceStatusEnum.ResourceStatus status = 4;</code>
      * @param int $var
      * @return $this
      */
-    public function setPresence($var)
+    public function setStatus($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->presence = $var;
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ResourceStatusEnum\ResourceStatus::class);
+        $this->status = $var;
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>double optimization_score = 5;</code>
+     * @return float
+     */
+    public function getOptimizationScore()
+    {
+        return isset($this->optimization_score) ? $this->optimization_score : 0.0;
+    }
+
+    public function hasOptimizationScore()
+    {
+        return isset($this->optimization_score);
+    }
+
+    public function clearOptimizationScore()
+    {
+        unset($this->optimization_score);
+    }
+
+    /**
+     * Generated from protobuf field <code>double optimization_score = 5;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setOptimizationScore($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->optimization_score = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.DynamicSetting dynamic_setting = 6;</code>
+     * @return \Google\Ads\GoogleAds\Util\FieldMasks\Proto\DynamicSetting
+     */
+    public function getDynamicSetting()
+    {
+        return isset($this->dynamic_setting) ? $this->dynamic_setting : null;
+    }
+
+    public function hasDynamicSetting()
+    {
+        return isset($this->dynamic_setting);
+    }
+
+    public function clearDynamicSetting()
+    {
+        unset($this->dynamic_setting);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.DynamicSetting dynamic_setting = 6;</code>
+     * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\DynamicSetting $var
+     * @return $this
+     */
+    public function setDynamicSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\DynamicSetting::class);
+        $this->dynamic_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.SelectiveOptimization selective_optimization = 7;</code>
+     * @return \Google\Ads\GoogleAds\Util\FieldMasks\Proto\SelectiveOptimization
+     */
+    public function getSelectiveOptimization()
+    {
+        return isset($this->selective_optimization) ? $this->selective_optimization : null;
+    }
+
+    public function hasSelectiveOptimization()
+    {
+        return isset($this->selective_optimization);
+    }
+
+    public function clearSelectiveOptimization()
+    {
+        unset($this->selective_optimization);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.SelectiveOptimization selective_optimization = 7;</code>
+     * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\SelectiveOptimization $var
+     * @return $this
+     */
+    public function setSelectiveOptimization($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\SelectiveOptimization::class);
+        $this->selective_optimization = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string labels = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string labels = 8;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLabels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.CustomParameter custom_parameters = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCustomParameters()
+    {
+        return $this->custom_parameters;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.CustomParameter custom_parameters = 9;</code>
+     * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\CustomParameter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCustomParameters($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\CustomParameter::class);
+        $this->custom_parameters = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.OptimizationSetting optimization_setting = 10;</code>
+     * @return \Google\Ads\GoogleAds\Util\FieldMasks\Proto\OptimizationSetting
+     */
+    public function getOptimizationSetting()
+    {
+        return isset($this->optimization_setting) ? $this->optimization_setting : null;
+    }
+
+    public function hasOptimizationSetting()
+    {
+        return isset($this->optimization_setting);
+    }
+
+    public function clearOptimizationSetting()
+    {
+        unset($this->optimization_setting);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.OptimizationSetting optimization_setting = 10;</code>
+     * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\OptimizationSetting $var
+     * @return $this
+     */
+    public function setOptimizationSetting($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\OptimizationSetting::class);
+        $this->optimization_setting = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string bidding_strategy = 11;</code>
+     * @return string
+     */
+    public function getBiddingStrategy()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasBiddingStrategy()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Generated from protobuf field <code>string bidding_strategy = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBiddingStrategy($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.ManualCpc manual_cpc = 12;</code>
+     * @return \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ManualCpc
+     */
+    public function getManualCpc()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasManualCpc()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.ManualCpc manual_cpc = 12;</code>
+     * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ManualCpc $var
+     * @return $this
+     */
+    public function setManualCpc($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ManualCpc::class);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.ManualCpm manual_cpm = 13;</code>
+     * @return \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ManualCpm
+     */
+    public function getManualCpm()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasManualCpm()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.ManualCpm manual_cpm = 13;</code>
+     * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ManualCpm $var
+     * @return $this
+     */
+    public function setManualCpm($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\ManualCpm::class);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResourceBiddingStrategy()
+    {
+        return $this->whichOneof("resource_bidding_strategy");
     }
 
 }

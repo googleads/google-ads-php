@@ -14,25 +14,37 @@ use Google\Protobuf\Internal\GPBUtil;
 class TestCase extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string description = 1;</code>
+     * Generated from protobuf field <code>string epic = 2;</code>
+     */
+    protected $epic = '';
+    /**
+     * Generated from protobuf field <code>string scenario = 3;</code>
+     */
+    protected $scenario = '';
+    /**
+     * Generated from protobuf field <code>string description = 4;</code>
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource original_resource = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource original_resource = 5;</code>
      */
     protected $original_resource = null;
     /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource modified_resource = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource modified_resource = 6;</code>
      */
     protected $modified_resource = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask = 7;</code>
      */
     protected $expected_mask = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask_all_set_fields_of = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask all_set_fields_mask = 8;</code>
      */
-    protected $expected_mask_all_set_fields_of = null;
+    protected $all_set_fields_mask = null;
+    /**
+     * Generated from protobuf field <code>map<string, .google.ads.googleads.util.fieldmasks.proto.FieldValue> expected_field_values = 9;</code>
+     */
+    private $expected_field_values;
 
     /**
      * Constructor.
@@ -40,11 +52,14 @@ class TestCase extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $epic
+     *     @type string $scenario
      *     @type string $description
      *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource $original_resource
      *     @type \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource $modified_resource
      *     @type \Google\Protobuf\FieldMask $expected_mask
-     *     @type \Google\Protobuf\FieldMask $expected_mask_all_set_fields_of
+     *     @type \Google\Protobuf\FieldMask $all_set_fields_mask
+     *     @type array|\Google\Protobuf\Internal\MapField $expected_field_values
      * }
      */
     public function __construct($data = NULL) {
@@ -53,7 +68,51 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string description = 1;</code>
+     * Generated from protobuf field <code>string epic = 2;</code>
+     * @return string
+     */
+    public function getEpic()
+    {
+        return $this->epic;
+    }
+
+    /**
+     * Generated from protobuf field <code>string epic = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEpic($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->epic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scenario = 3;</code>
+     * @return string
+     */
+    public function getScenario()
+    {
+        return $this->scenario;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scenario = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setScenario($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->scenario = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 4;</code>
      * @return string
      */
     public function getDescription()
@@ -62,7 +121,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string description = 1;</code>
+     * Generated from protobuf field <code>string description = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -75,7 +134,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource original_resource = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource original_resource = 5;</code>
      * @return \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource
      */
     public function getOriginalResource()
@@ -94,7 +153,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource original_resource = 2;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource original_resource = 5;</code>
      * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource $var
      * @return $this
      */
@@ -107,7 +166,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource modified_resource = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource modified_resource = 6;</code>
      * @return \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource
      */
     public function getModifiedResource()
@@ -126,7 +185,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource modified_resource = 3;</code>
+     * Generated from protobuf field <code>.google.ads.googleads.util.fieldmasks.proto.Resource modified_resource = 6;</code>
      * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource $var
      * @return $this
      */
@@ -139,7 +198,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask = 7;</code>
      * @return \Google\Protobuf\FieldMask
      */
     public function getExpectedMask()
@@ -158,7 +217,7 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask = 7;</code>
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
@@ -171,33 +230,55 @@ class TestCase extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask_all_set_fields_of = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask all_set_fields_mask = 8;</code>
      * @return \Google\Protobuf\FieldMask
      */
-    public function getExpectedMaskAllSetFieldsOf()
+    public function getAllSetFieldsMask()
     {
-        return isset($this->expected_mask_all_set_fields_of) ? $this->expected_mask_all_set_fields_of : null;
+        return isset($this->all_set_fields_mask) ? $this->all_set_fields_mask : null;
     }
 
-    public function hasExpectedMaskAllSetFieldsOf()
+    public function hasAllSetFieldsMask()
     {
-        return isset($this->expected_mask_all_set_fields_of);
+        return isset($this->all_set_fields_mask);
     }
 
-    public function clearExpectedMaskAllSetFieldsOf()
+    public function clearAllSetFieldsMask()
     {
-        unset($this->expected_mask_all_set_fields_of);
+        unset($this->all_set_fields_mask);
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask expected_mask_all_set_fields_of = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask all_set_fields_mask = 8;</code>
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
-    public function setExpectedMaskAllSetFieldsOf($var)
+    public function setAllSetFieldsMask($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
-        $this->expected_mask_all_set_fields_of = $var;
+        $this->all_set_fields_mask = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, .google.ads.googleads.util.fieldmasks.proto.FieldValue> expected_field_values = 9;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getExpectedFieldValues()
+    {
+        return $this->expected_field_values;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, .google.ads.googleads.util.fieldmasks.proto.FieldValue> expected_field_values = 9;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setExpectedFieldValues($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\Util\FieldMasks\Proto\FieldValue::class);
+        $this->expected_field_values = $arr;
 
         return $this;
     }

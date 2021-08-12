@@ -26,6 +26,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
+     * This should only be set for portfolio bid strategies.
      *
      * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
      */
@@ -33,6 +34,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Minimum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
+     * This should only be set for portfolio bid strategies.
      *
      * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
      */
@@ -50,9 +52,11 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
      *     @type int|string $cpc_bid_ceiling_micros
      *           Maximum bid limit that can be set by the bid strategy.
      *           The limit applies to all keywords managed by the strategy.
+     *           This should only be set for portfolio bid strategies.
      *     @type int|string $cpc_bid_floor_micros
      *           Minimum bid limit that can be set by the bid strategy.
      *           The limit applies to all keywords managed by the strategy.
+     *           This should only be set for portfolio bid strategies.
      * }
      */
     public function __construct($data = NULL) {
@@ -101,6 +105,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
+     * This should only be set for portfolio bid strategies.
      *
      * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
      * @return int|string
@@ -123,6 +128,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Maximum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
+     * This should only be set for portfolio bid strategies.
      *
      * Generated from protobuf field <code>int64 cpc_bid_ceiling_micros = 5;</code>
      * @param int|string $var
@@ -139,6 +145,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Minimum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
+     * This should only be set for portfolio bid strategies.
      *
      * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
      * @return int|string
@@ -161,6 +168,7 @@ class TargetRoas extends \Google\Protobuf\Internal\Message
     /**
      * Minimum bid limit that can be set by the bid strategy.
      * The limit applies to all keywords managed by the strategy.
+     * This should only be set for portfolio bid strategies.
      *
      * Generated from protobuf field <code>int64 cpc_bid_floor_micros = 6;</code>
      * @param int|string $var

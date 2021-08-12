@@ -39,12 +39,20 @@ class ConversionAdjustmentType
      * Generated from protobuf enum <code>RESTATEMENT = 3;</code>
      */
     const RESTATEMENT = 3;
+    /**
+     * Supplements an existing conversion with provided user identifiers and
+     * user agent, which can be used by Google to enhance the conversion count.
+     *
+     * Generated from protobuf enum <code>ENHANCEMENT = 4;</code>
+     */
+    const ENHANCEMENT = 4;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::UNKNOWN => 'UNKNOWN',
         self::RETRACTION => 'RETRACTION',
         self::RESTATEMENT => 'RESTATEMENT',
+        self::ENHANCEMENT => 'ENHANCEMENT',
     ];
 
     public static function name($value)

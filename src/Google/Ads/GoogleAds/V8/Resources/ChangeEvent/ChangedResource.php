@@ -88,6 +88,30 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v8.resources.AdGroupAd ad_group_ad = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $ad_group_ad = null;
+    /**
+     * Output only. Set if change_resource_type == ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.Asset asset = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $asset = null;
+    /**
+     * Output only. Set if change_resource_type == CUSTOMER_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.CustomerAsset customer_asset = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $customer_asset = null;
+    /**
+     * Output only. Set if change_resource_type == CAMPAIGN_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.CampaignAsset campaign_asset = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $campaign_asset = null;
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.AdGroupAsset ad_group_asset = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $ad_group_asset = null;
 
     /**
      * Constructor.
@@ -119,6 +143,14 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
      *           Output only. Set if change_resource_type == AD_GROUP_FEED.
      *     @type \Google\Ads\GoogleAds\V8\Resources\AdGroupAd $ad_group_ad
      *           Output only. Set if change_resource_type == AD_GROUP_AD.
+     *     @type \Google\Ads\GoogleAds\V8\Resources\Asset $asset
+     *           Output only. Set if change_resource_type == ASSET.
+     *     @type \Google\Ads\GoogleAds\V8\Resources\CustomerAsset $customer_asset
+     *           Output only. Set if change_resource_type == CUSTOMER_ASSET.
+     *     @type \Google\Ads\GoogleAds\V8\Resources\CampaignAsset $campaign_asset
+     *           Output only. Set if change_resource_type == CAMPAIGN_ASSET.
+     *     @type \Google\Ads\GoogleAds\V8\Resources\AdGroupAsset $ad_group_asset
+     *           Output only. Set if change_resource_type == AD_GROUP_ASSET.
      * }
      */
     public function __construct($data = NULL) {
@@ -554,6 +586,150 @@ class ChangedResource extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\AdGroupAd::class);
         $this->ad_group_ad = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.Asset asset = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V8\Resources\Asset|null
+     */
+    public function getAsset()
+    {
+        return isset($this->asset) ? $this->asset : null;
+    }
+
+    public function hasAsset()
+    {
+        return isset($this->asset);
+    }
+
+    public function clearAsset()
+    {
+        unset($this->asset);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.Asset asset = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V8\Resources\Asset $var
+     * @return $this
+     */
+    public function setAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\Asset::class);
+        $this->asset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == CUSTOMER_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.CustomerAsset customer_asset = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V8\Resources\CustomerAsset|null
+     */
+    public function getCustomerAsset()
+    {
+        return isset($this->customer_asset) ? $this->customer_asset : null;
+    }
+
+    public function hasCustomerAsset()
+    {
+        return isset($this->customer_asset);
+    }
+
+    public function clearCustomerAsset()
+    {
+        unset($this->customer_asset);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == CUSTOMER_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.CustomerAsset customer_asset = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V8\Resources\CustomerAsset $var
+     * @return $this
+     */
+    public function setCustomerAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\CustomerAsset::class);
+        $this->customer_asset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == CAMPAIGN_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.CampaignAsset campaign_asset = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V8\Resources\CampaignAsset|null
+     */
+    public function getCampaignAsset()
+    {
+        return isset($this->campaign_asset) ? $this->campaign_asset : null;
+    }
+
+    public function hasCampaignAsset()
+    {
+        return isset($this->campaign_asset);
+    }
+
+    public function clearCampaignAsset()
+    {
+        unset($this->campaign_asset);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == CAMPAIGN_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.CampaignAsset campaign_asset = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V8\Resources\CampaignAsset $var
+     * @return $this
+     */
+    public function setCampaignAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\CampaignAsset::class);
+        $this->campaign_asset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.AdGroupAsset ad_group_asset = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Ads\GoogleAds\V8\Resources\AdGroupAsset|null
+     */
+    public function getAdGroupAsset()
+    {
+        return isset($this->ad_group_asset) ? $this->ad_group_asset : null;
+    }
+
+    public function hasAdGroupAsset()
+    {
+        return isset($this->ad_group_asset);
+    }
+
+    public function clearAdGroupAsset()
+    {
+        unset($this->ad_group_asset);
+    }
+
+    /**
+     * Output only. Set if change_resource_type == AD_GROUP_ASSET.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.AdGroupAsset ad_group_asset = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Ads\GoogleAds\V8\Resources\AdGroupAsset $var
+     * @return $this
+     */
+    public function setAdGroupAsset($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\AdGroupAsset::class);
+        $this->ad_group_asset = $var;
 
         return $this;
     }

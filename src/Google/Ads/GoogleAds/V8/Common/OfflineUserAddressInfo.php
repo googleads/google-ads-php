@@ -31,13 +31,15 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      */
     protected $hashed_last_name = null;
     /**
-     * City of the address. Only accepted for Store Sales Direct data.
+     * City of the address. Only accepted for Store Sales and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string city = 9;</code>
      */
     protected $city = null;
     /**
-     * State code of the address. Only accepted for Store Sales Direct data.
+     * State code of the address. Only accepted for Store Sales and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string state = 10;</code>
      */
@@ -54,6 +56,14 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string postal_code = 12;</code>
      */
     protected $postal_code = null;
+    /**
+     * The street address of the user hashed using SHA-256 hash function after
+     * normalization (lower case only). Only accepted for
+     * ConversionAdjustmentUploadService.
+     *
+     * Generated from protobuf field <code>string hashed_street_address = 13;</code>
+     */
+    protected $hashed_street_address = null;
 
     /**
      * Constructor.
@@ -69,13 +79,19 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
      *           Last name of the user, which is hashed as SHA-256 after normalized (lower
      *           case only and no punctuation).
      *     @type string $city
-     *           City of the address. Only accepted for Store Sales Direct data.
+     *           City of the address. Only accepted for Store Sales and
+     *           ConversionAdjustmentUploadService.
      *     @type string $state
-     *           State code of the address. Only accepted for Store Sales Direct data.
+     *           State code of the address. Only accepted for Store Sales and
+     *           ConversionAdjustmentUploadService.
      *     @type string $country_code
      *           2-letter country code in ISO-3166-1 alpha-2 of the user's address.
      *     @type string $postal_code
      *           Postal code of the user's address.
+     *     @type string $hashed_street_address
+     *           The street address of the user hashed using SHA-256 hash function after
+     *           normalization (lower case only). Only accepted for
+     *           ConversionAdjustmentUploadService.
      * }
      */
     public function __construct($data = NULL) {
@@ -162,7 +178,8 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * City of the address. Only accepted for Store Sales Direct data.
+     * City of the address. Only accepted for Store Sales and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string city = 9;</code>
      * @return string
@@ -183,7 +200,8 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * City of the address. Only accepted for Store Sales Direct data.
+     * City of the address. Only accepted for Store Sales and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string city = 9;</code>
      * @param string $var
@@ -198,7 +216,8 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * State code of the address. Only accepted for Store Sales Direct data.
+     * State code of the address. Only accepted for Store Sales and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string state = 10;</code>
      * @return string
@@ -219,7 +238,8 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * State code of the address. Only accepted for Store Sales Direct data.
+     * State code of the address. Only accepted for Store Sales and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string state = 10;</code>
      * @param string $var
@@ -301,6 +321,46 @@ class OfflineUserAddressInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->postal_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * The street address of the user hashed using SHA-256 hash function after
+     * normalization (lower case only). Only accepted for
+     * ConversionAdjustmentUploadService.
+     *
+     * Generated from protobuf field <code>string hashed_street_address = 13;</code>
+     * @return string
+     */
+    public function getHashedStreetAddress()
+    {
+        return isset($this->hashed_street_address) ? $this->hashed_street_address : '';
+    }
+
+    public function hasHashedStreetAddress()
+    {
+        return isset($this->hashed_street_address);
+    }
+
+    public function clearHashedStreetAddress()
+    {
+        unset($this->hashed_street_address);
+    }
+
+    /**
+     * The street address of the user hashed using SHA-256 hash function after
+     * normalization (lower case only). Only accepted for
+     * ConversionAdjustmentUploadService.
+     *
+     * Generated from protobuf field <code>string hashed_street_address = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHashedStreetAddress($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->hashed_street_address = $var;
 
         return $this;
     }

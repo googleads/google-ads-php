@@ -22,7 +22,6 @@ namespace Google\Ads\GoogleAds\V8\Services;
  * Proto file describing the UserDataService.
  *
  * Service to manage user data uploads.
- * Accessible only to customers on the allow-list.
  */
 class UserDataServiceGrpcClient extends \Grpc\BaseStub {
 

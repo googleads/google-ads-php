@@ -162,6 +162,10 @@ class GetChangeDetails
                     $oldResourceEntity = $oldResource->getAdGroupAd();
                     $newResourceEntity = $newResource->getAdGroupAd();
                     break;
+                case ChangeEventResourceType::AD_GROUP_ASSET:
+                    $oldResourceEntity = $oldResource->getAdGroupAsset();
+                    $newResourceEntity = $newResource->getAdGroupAsset();
+                    break;
                 case ChangeEventResourceType::AD_GROUP_CRITERION:
                     $oldResourceEntity = $oldResource->getAdGroupCriterion();
                     $newResourceEntity = $newResource->getAdGroupCriterion();
@@ -170,9 +174,17 @@ class GetChangeDetails
                     $oldResourceEntity = $oldResource->getAdGroupBidModifier();
                     $newResourceEntity = $newResource->getAdGroupBidModifier();
                     break;
+                case ChangeEventResourceType::ASSET:
+                    $oldResourceEntity = $oldResource->getAsset();
+                    $newResourceEntity = $newResource->getAsset();
+                    break;
                 case ChangeEventResourceType::CAMPAIGN:
                     $oldResourceEntity = $oldResource->getCampaign();
                     $newResourceEntity = $newResource->getCampaign();
+                    break;
+                case ChangeEventResourceType::CAMPAIGN_ASSET:
+                    $oldResourceEntity = $oldResource->getCampaignAsset();
+                    $newResourceEntity = $newResource->getCampaignAsset();
                     break;
                 case ChangeEventResourceType::CAMPAIGN_BUDGET:
                     $oldResourceEntity = $oldResource->getCampaignBudget();
@@ -189,6 +201,10 @@ class GetChangeDetails
                 case ChangeEventResourceType::CAMPAIGN_FEED:
                     $oldResourceEntity = $oldResource->getCampaignFeed();
                     $newResourceEntity = $newResource->getCampaignFeed();
+                    break;
+                case ChangeEventResourceType::CUSTOMER_ASSET:
+                    $oldResourceEntity = $oldResource->getCustomerAsset();
+                    $newResourceEntity = $newResource->getCustomerAsset();
                     break;
                 case ChangeEventResourceType::FEED:
                     $oldResourceEntity = $oldResource->getFeed();
@@ -229,14 +245,17 @@ class GetChangeDetails
                 continue;
             }
             foreach ($changeEvent->getChangedFields()->getPaths() as $path) {
-                $newValueStr =
-                    self::convertToString(FieldMasks::getFieldValue($path, $newResourceEntity));
+                $newValueStr = self::convertToString(
+                    FieldMasks::getFieldValue($path, $newResourceEntity, true)
+                );
                 if ($resourceChangeOperation === ResourceChangeOperation::CREATE) {
                     printf("'$path' set to '%s'.%s", $newValueStr, PHP_EOL);
                 } elseif ($resourceChangeOperation === ResourceChangeOperation::UPDATE) {
                     printf(
                         "'$path' changed from '%s' to '%s'.%s",
-                        self::convertToString(FieldMasks::getFieldValue($path, $oldResourceEntity)),
+                        self::convertToString(
+                            FieldMasks::getFieldValue($path, $oldResourceEntity, true)
+                        ),
                         $newValueStr,
                         PHP_EOL
                     );

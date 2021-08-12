@@ -13,6 +13,11 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'billing_setup',
+                    'issue_year',
+                    'issue_month',
+                ],
             ],
         ],
         'google.longrunning.Operations' => [

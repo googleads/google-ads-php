@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Container for enum describing the source of the user identifier for offline
- * Store Sales third party uploads.
+ * Store Sales, click conversion, and conversion adjustment uploads.
  *
  * Generated from protobuf message <code>google.ads.googleads.v8.enums.UserIdentifierSourceEnum</code>
  */

@@ -38,14 +38,14 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      */
     private $descriptions;
     /**
-     * First part of text that may appear appended to the url displayed in the ad.
+     * First part of text that can be appended to the URL in the ad.
      *
      * Generated from protobuf field <code>string path1 = 5;</code>
      */
     protected $path1 = null;
     /**
-     * Second part of text that may appear appended to the url displayed in the
-     * ad. This field can only be set when path1 is also set.
+     * Second part of text that can be appended to the URL in the ad. This field
+     * can only be set when `path1` is also set.
      *
      * Generated from protobuf field <code>string path2 = 6;</code>
      */
@@ -64,10 +64,10 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
      *           List of text assets for descriptions. When the ad serves the descriptions
      *           will be selected from this list.
      *     @type string $path1
-     *           First part of text that may appear appended to the url displayed in the ad.
+     *           First part of text that can be appended to the URL in the ad.
      *     @type string $path2
-     *           Second part of text that may appear appended to the url displayed in the
-     *           ad. This field can only be set when path1 is also set.
+     *           Second part of text that can be appended to the URL in the ad. This field
+     *           can only be set when `path1` is also set.
      * }
      */
     public function __construct($data = NULL) {
@@ -132,7 +132,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First part of text that may appear appended to the url displayed in the ad.
+     * First part of text that can be appended to the URL in the ad.
      *
      * Generated from protobuf field <code>string path1 = 5;</code>
      * @return string
@@ -153,7 +153,7 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First part of text that may appear appended to the url displayed in the ad.
+     * First part of text that can be appended to the URL in the ad.
      *
      * Generated from protobuf field <code>string path1 = 5;</code>
      * @param string $var
@@ -168,8 +168,8 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Second part of text that may appear appended to the url displayed in the
-     * ad. This field can only be set when path1 is also set.
+     * Second part of text that can be appended to the URL in the ad. This field
+     * can only be set when `path1` is also set.
      *
      * Generated from protobuf field <code>string path2 = 6;</code>
      * @return string
@@ -190,8 +190,8 @@ class ResponsiveSearchAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Second part of text that may appear appended to the url displayed in the
-     * ad. This field can only be set when path1 is also set.
+     * Second part of text that can be appended to the URL in the ad. This field
+     * can only be set when `path1` is also set.
      *
      * Generated from protobuf field <code>string path2 = 6;</code>
      * @param string $var

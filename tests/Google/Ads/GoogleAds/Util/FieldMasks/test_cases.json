@@ -1,195 +1,789 @@
 {
-  "testCases": [{
-    "description": "Modify scalar in a wrapper proto",
-    "originalResource": {
-      "wrapper": "a"
+  "testCases": [
+    {
+      "epic": "Epic 1. Singular Scalar & Enum Fields",
+      "scenario": "Scenario 1.1: The field values are not present in the original object.",
+      "description": "Test 1.1.1: The field values are not present in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+
+      },
+      "expectedMask": "",
+      "allSetFieldsMask": ""
     },
-    "modifiedResource": {
-      "wrapper": "b"
-    },
-    "expectedMask": "wrapper",
-    "expectedMaskAllSetFieldsOf": "wrapper"
-  }, {
-    "description": "Create wrapper proto",
-    "originalResource": {
-    },
-    "modifiedResource": {
-      "wrapper": "a"
-    },
-    "expectedMask": "wrapper",
-    "expectedMaskAllSetFieldsOf": "wrapper"
-  }, {
-    "description": "Modify element in a repeated field",
-    "originalResource": {
-      "foos": [{
-        "num": 1
-      }, {
-        "num": 2
-      }]
-    },
-    "modifiedResource": {
-      "foos": [{
-        "num": 1
-      }, {
-        "num": 3
-      }]
-    },
-    "expectedMask": "foos",
-    "expectedMaskAllSetFieldsOf": "foos"
-  }, {
-    "description": "Modify element in a nested repeated field",
-    "originalResource": {
-      "foos": [{
-        "bars": [{
-          "num": 1
-        }]
-      }]
-    },
-    "modifiedResource": {
-      "foos": [{
-        "bars": [{
-          "num": 2
-        }]
-      }]
-    },
-    "expectedMask": "foos",
-    "expectedMaskAllSetFieldsOf": "foos"
-  }, {
-    "description": "Create submessage",
-    "originalResource": {
-    },
-    "modifiedResource": {
-      "foo": {
-        "num": 1
-      }
-    },
-    "expectedMask": "foo.num",
-    "expectedMaskAllSetFieldsOf": "foo.num"
-  }, {
-    "description": "Create submessage with boolean field",
-    "originalResource": {
-    },
-    "modifiedResource": {
-      "foo": {
-        "bool": false
-      }
-    },
-    "expectedMask": "foo.bool",
-    "expectedMaskAllSetFieldsOf": "foo.bool"
-  }, {
-    "description": "Modify submessage",
-    "originalResource": {
-      "foo": {
-      }
-    },
-    "modifiedResource": {
-      "foo": {
-        "num": 1
-      }
-    },
-    "expectedMask": "foo.num",
-    "expectedMaskAllSetFieldsOf": "foo.num"
-  }, {
-    "description": "Clear submessage",
-    "originalResource": {
-      "foo": {
-      }
-    },
-    "modifiedResource": {
-    },
-    "expectedMask": "foo",
-    "expectedMaskAllSetFieldsOf": ""
-  }, {
-    "description": "No change",
-    "originalResource": {
-      "wrapper": "a",
-      "foos": [{
-        "num": 1
-      }]
-    },
-    "modifiedResource": {
-      "wrapper": "a",
-      "foos": [{
-        "num": 1
-      }]
-    },
-    "expectedMask": "",
-    "expectedMaskAllSetFieldsOf": "wrapper,foos"
-  }, {
-    "description": "Both empty",
-    "originalResource": {
-    },
-    "modifiedResource": {
-    },
-    "expectedMask": "",
-    "expectedMaskAllSetFieldsOf": ""
-  }, {
-    "description": "Create message with nested wrapper",
-    "originalResource": {
-    },
-    "modifiedResource": {
-      "foo": {
-        "bar": {
-          "nestedWrapper": true
+    {
+      "epic": "Epic 1. Singular Scalar & Enum Fields",
+      "scenario": "Scenario 1.1: The field values are not present in the original object.",
+      "description": "Test 1.1.2: The field values (optional, non-optional) are present in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "id": "123",
+        "name": "resource name",
+        "description": "resource desc",
+        "status": "PAUSED",
+        "optimizationScore": 99.9
+      },
+      "expectedMask": "id,name,description,status,optimizationScore",
+      "allSetFieldsMask": "id,name,description,status,optimizationScore",
+      "expectedFieldValues": {
+        "id": {
+          "int64Value": "123"
+        },
+        "name": {
+          "stringValue": "resource name"
+        },
+        "status": {
+          "resourceStatusValue": "PAUSED"
+        },
+        "optimization_score": {
+          "doubleValue": 99.9
         }
       }
     },
-    "expectedMask": "foo.bar.nestedWrapper",
-    "expectedMaskAllSetFieldsOf": "foo.bar.nestedWrapper"
-  }, {
-    "description": "[Presence] Create optional field.",
-    "originalResource": {
-    },
-    "modifiedResource": {
-      "presence": 123
-    },
-    "expectedMask": "presence",
-    "expectedMaskAllSetFieldsOf": "presence"
-  }, {
-    "description": "[Presence] Both same values",
-    "originalResource": {
-      "presence": 123
-    },
-    "modifiedResource": {
-      "presence": 123
-    },
-    "expectedMask": "",
-    "expectedMaskAllSetFieldsOf": "presence"
-  }, {
-    "description": "[Presence] Modify optional field.",
-    "originalResource": {
-      "presence": 123
-    },
-    "modifiedResource": {
-      "presence": 456
-    },
-    "expectedMask": "presence",
-    "expectedMaskAllSetFieldsOf": "presence"
-  }, {
-    "description": "[Presence] Add repeated optional field.",
-    "originalResource": {
-    },
-    "modifiedResource": {
-      "foos": [{
-        "bar": {
-          "nestedPresence": 123
-        }
-      }]
-    },
-    "expectedMask": "foos",
-    "expectedMaskAllSetFieldsOf": "foos"
-  }, {
-    "description": "[Presence] Add nested optional field.",
-    "originalResource": {
-    },
-    "modifiedResource": {
-      "foo": {
-        "bar": {
-          "nestedPresence": 123
+    {
+      "epic": "Epic 1. Singular Scalar & Enum Fields",
+      "scenario": "Scenario 1.1: The field values are not present in the original object.",
+      "description": "Test 1.1.3: The field values (optional) are set to default in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "description": "",
+        "optimizationScore": 0.0
+      },
+      "expectedMask": "description,optimizationScore",
+      "allSetFieldsMask": "description,optimizationScore",
+      "expectedFieldValues": {
+        "description": {
+          "stringValue": ""
+        },
+        "optimization_score": {
+          "doubleValue": 0.0
         }
       }
     },
-    "expectedMask": "foo.bar.nestedPresence",
-    "expectedMaskAllSetFieldsOf": "foo.bar.nestedPresence"
-  }
-]}
+    {
+      "epic": "Epic 1. Singular Scalar & Enum Fields",
+      "scenario": "Scenario 1.1: The field values are not present in the original object.",
+      "description": "Test 1.1.4: The field values (non-optional) are set to default in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+
+      },
+      "expectedMask": "",
+      "allSetFieldsMask": "",
+      "expectedFieldValues": {
+        "id": {
+          "int64Value": "0"
+        },
+        "status": {
+          "resourceStatusValue": "UNSPECIFIED"
+        }
+      }
+    },
+    {
+      "epic": "Epic 1. Singular Scalar & Enum Fields",
+      "scenario": "Scenario 1.2: The field values (optional, non-optional) are present in the original object.",
+      "description": "Test 1.2.1: The field values are not present in the modified object.",
+      "originalResource": {
+        "id": "123",
+        "name": "resource name",
+        "description": "resource desc",
+        "status": "PAUSED",
+        "optimizationScore": 99.9
+      },
+      "modifiedResource": {
+
+      },
+      "expectedMask": "id,name,description,status,optimizationScore",
+      "allSetFieldsMask": ""
+    },
+    {
+      "epic": "Epic 1. Singular Scalar & Enum Fields",
+      "scenario": "Scenario 1.2: The field values (optional, non-optional) are present in the original object.",
+      "description": "Test 1.2.2: The field values (optional, non-optional) are unchanged in the modified object.",
+      "originalResource": {
+        "id": "123",
+        "name": "resource name",
+        "description": "resource desc",
+        "status": "PAUSED",
+        "optimizationScore": 99.9
+      },
+      "modifiedResource": {
+        "id": "123",
+        "name": "resource name",
+        "description": "resource desc",
+        "status": "PAUSED",
+        "optimizationScore": 99.9
+      },
+      "expectedMask": "",
+      "allSetFieldsMask": "id,name,description,status,optimizationScore"
+    },
+    {
+      "epic": "Epic 1. Singular Scalar & Enum Fields",
+      "scenario": "Scenario 1.2: The field values (optional, non-optional) are present in the original object.",
+      "description": "Test 1.2.3: The field values (optional, non-optional) are changed in the modified object.",
+      "originalResource": {
+        "id": "123",
+        "name": "resource name",
+        "description": "resource desc",
+        "status": "PAUSED",
+        "optimizationScore": 99.9
+      },
+      "modifiedResource": {
+        "name": "new name",
+        "status": "ENABLED",
+        "optimizationScore": 49.9
+      },
+      "expectedMask": "id,name,description,status,optimizationScore",
+      "allSetFieldsMask": "name,status,optimizationScore"
+    },
+    {
+      "epic": "Epic 1. Singular Scalar & Enum Fields",
+      "scenario": "Scenario 1.2: The field values (optional, non-optional) are present in the original object.",
+      "description": "Test 1.2.4: The field values (optional, non-optional) are set to default in the original object, not present in the modified object.",
+      "originalResource": {
+        "description": "",
+        "optimizationScore": 0.0
+      },
+      "modifiedResource": {
+
+      },
+      "expectedMask": "description,optimizationScore",
+      "allSetFieldsMask": ""
+    },
+    {
+      "epic": "Epic 2: Singular Message Fields",
+      "scenario": "Scenario 2.1: The message field values are not present in the original object.",
+      "description": "Test 2.1.1: The message field values (optional, non-optional) are present in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "dynamicSetting": {
+          "domainName": "google.com",
+          "useSuppliedUrlsOnly": false,
+          "trackingSetting": {
+            "trackingUrl": "tracking.com"
+          }
+        },
+        "selectiveOptimization": {
+          "conversionAction": "ca"
+        }
+      },
+      "expectedMask": "dynamicSetting.domainName,dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization.conversionAction",
+      "allSetFieldsMask": "dynamicSetting.domainName,dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization.conversionAction",
+      "expectedFieldValues": {
+        "dynamic_setting.domain_name": {
+          "stringValue": "google.com"
+        },
+        "dynamic_setting.use_supplied_urls_only": {
+          "boolValue": false
+        },
+        "dynamic_setting.tracking_setting.tracking_url": {
+          "stringValue": "tracking.com"
+        }
+      }
+    },
+    {
+      "epic": "Epic 2: Singular Message Fields",
+      "scenario": "Scenario 2.1: The message field values are not present in the original object.",
+      "description": "Test 2.1.2: The message field values (optional, non-optional) are partially present in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "dynamicSetting": {
+          "domainName": "google.com",
+          "trackingSetting": {
+
+          }
+        },
+        "selectiveOptimization": {
+          "conversionAction": "ca"
+        }
+      },
+      "expectedMask": "dynamicSetting.domainName,selectiveOptimization.conversionAction",
+      "allSetFieldsMask": "dynamicSetting.domainName,selectiveOptimization.conversionAction"
+    },
+    {
+      "epic": "Epic 2: Singular Message Fields",
+      "scenario": "Scenario 2.1: The message field values are not present in the original object.",
+      "description": "Test 2.1.3: The message field values (optional, non-optional) are set to default in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "dynamicSetting": {
+          "useSuppliedUrlsOnly": false,
+          "trackingSetting": {
+            "trackingUrl": ""
+          }
+        },
+        "selectiveOptimization": {
+
+        }
+      },
+      "expectedMask": "dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl",
+      "allSetFieldsMask": "dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl"
+    },
+    {
+      "epic": "Epic 2: Singular Message Fields",
+      "scenario": "Scenario 2.2: The message field values (optional, non-optional) are present in the original object.",
+      "description": "Test 2.2.1: The message field values are not present in the modified object.",
+      "originalResource": {
+        "dynamicSetting": {
+          "domainName": "google.com",
+          "trackingSetting": {
+            "trackingUrl": "tracking.com"
+          }
+        },
+        "selectiveOptimization": {
+          "conversionAction": "ca"
+        }
+      },
+      "modifiedResource": {
+
+      },
+      "expectedMask": "dynamicSetting.domainName,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization.conversionAction",
+      "allSetFieldsMask": ""
+    },
+    {
+      "epic": "Epic 2: Singular Message Fields",
+      "scenario": "Scenario 2.2: The message field values (optional, non-optional) are present in the original object.",
+      "description": "Test 2.2.2: The message field values (optional, non-optional) are changed and added in the modified object.",
+      "originalResource": {
+        "dynamicSetting": {
+          "domainName": "google.com",
+          "trackingSetting": {
+            "trackingUrl": "tracking.com"
+          }
+        },
+        "selectiveOptimization": {
+          "conversionAction": "ca"
+        }
+      },
+      "modifiedResource": {
+        "dynamicSetting": {
+          "domainName": "google.com",
+          "useSuppliedUrlsOnly": false,
+          "trackingSetting": {
+            "trackingUrl": ""
+          }
+        },
+        "selectiveOptimization": {
+          "conversionAction": "new_ca"
+        }
+      },
+      "expectedMask": "dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization.conversionAction",
+      "allSetFieldsMask": "dynamicSetting.domainName,dynamicSetting.useSuppliedUrlsOnly,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization.conversionAction",
+      "expectedFieldValues": {
+        "dynamic_setting": {
+          "dynamicSettingValue": {
+            "domainName": "google.com",
+            "useSuppliedUrlsOnly": false,
+            "trackingSetting": {
+              "trackingUrl": ""
+            }
+          }
+        },
+        "selective_optimization": {
+          "selectiveOptimizationValue": {
+            "conversionAction": "new_ca"
+          }
+        }
+      }
+    },
+    {
+      "epic": "Epic 2: Singular Message Fields",
+      "scenario": "Scenario 2.2: The message field values (optional, non-optional) are present in the original object.",
+      "description": "Test 2.2.3: The message field values (optional, non-optional) are unchanged in the modified object.",
+      "originalResource": {
+        "dynamicSetting": {
+          "domainName": "google.com",
+          "trackingSetting": {
+            "trackingUrl": "tracking.com"
+          }
+        },
+        "selectiveOptimization": {
+          "conversionAction": "ca"
+        }
+      },
+      "modifiedResource": {
+        "dynamicSetting": {
+          "domainName": "google.com",
+          "trackingSetting": {
+            "trackingUrl": "tracking.com"
+          }
+        },
+        "selectiveOptimization": {
+          "conversionAction": "ca"
+        }
+      },
+      "expectedMask": "",
+      "allSetFieldsMask": "dynamicSetting.domainName,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization.conversionAction"
+    },
+    {
+      "epic": "Epic 2: Singular Message Fields",
+      "scenario": "Scenario 2.2: The message field values (optional, non-optional) are present in the original object.",
+      "description": "Test 2.2.4: The message field values (optional, non-optional) are set to empty in the modified object.",
+      "originalResource": {
+        "dynamicSetting": {
+          "domainName": "google.com",
+          "trackingSetting": {
+            "trackingUrl": "tracking.com"
+          }
+        },
+        "selectiveOptimization": {
+          "conversionAction": "ca"
+        }
+      },
+      "modifiedResource": {
+        "dynamicSetting": {
+
+        },
+        "selectiveOptimization": {
+
+        }
+      },
+      "expectedMask": "dynamicSetting.domainName,dynamicSetting.trackingSetting.trackingUrl,selectiveOptimization.conversionAction",
+      "allSetFieldsMask": "",
+      "expectedFieldValues": {
+        "selective_optimization": {
+          "selectiveOptimizationValue": {
+
+          }
+        },
+        "dynamic_setting": {
+          "dynamicSettingValue": {
+
+          }
+        }
+      }
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.1: The repeated field values (string, message) are not present in the original object.",
+      "description": "Test 3.1.1: The repeated field values (string, message) are present in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "labels": [
+          "a",
+          "b"
+        ],
+        "customParameters": [
+          {
+            "key": "key1",
+            "value": "value1"
+          }
+        ]
+      },
+      "expectedMask": "labels,customParameters",
+      "allSetFieldsMask": "labels,customParameters",
+      "expectedFieldValues": {
+        "labels": {
+          "stringValues": [
+            "a",
+            "b"
+          ]
+        },
+        "custom_parameters": {
+          "customParameterValues": [
+            {
+              "key": "key1",
+              "value": "value1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.1: The repeated field values (string, message) are not present in the original object.",
+      "description": "Test 3.1.2: The repeated field values (string, message) are set to an empty array in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+
+      },
+      "expectedMask": "",
+      "allSetFieldsMask": "",
+      "expectedFieldValues": {
+        "labels": {
+
+        },
+        "custom_parameters": {
+
+        }
+      }
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.2: The repeated field values (string, message) are present in the original object.",
+      "description": "Test 3.2.1: The repeated field values (string, message) are not present in the modified object.",
+      "originalResource": {
+        "labels": [
+          "a",
+          "b"
+        ],
+        "customParameters": [
+          {
+            "key": "key1",
+            "value": "value1"
+          },
+          {
+            "key": "key2",
+            "value": "value2"
+          }
+        ]
+      },
+      "modifiedResource": {
+
+      },
+      "expectedMask": "labels,customParameters",
+      "allSetFieldsMask": ""
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.2: The repeated field values (string, message) are present in the original object.",
+      "description": "Test 3.2.2: The repeated field values (string, message) are changed and added in the modified object.",
+      "originalResource": {
+        "labels": [
+          "a",
+          "b"
+        ],
+        "customParameters": [
+          {
+            "key": "key1",
+            "value": "value1"
+          },
+          {
+            "key": "key2",
+            "value": "value2"
+          }
+        ]
+      },
+      "modifiedResource": {
+        "labels": [
+          "a",
+          "c"
+        ],
+        "customParameters": [
+          {
+            "key": "key1",
+            "value": "value1"
+          },
+          {
+            "key": "key3",
+            "value": "value3"
+          }
+        ]
+      },
+      "expectedMask": "labels,customParameters",
+      "allSetFieldsMask": "labels,customParameters"
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.2: The repeated field values (string, message) are present in the original object.",
+      "description": "Test 3.2.3:The repeated field values (string, message) are unchanged in the modified object.",
+      "originalResource": {
+        "labels": [
+          "a",
+          "b"
+        ],
+        "customParameters": [
+          {
+            "key": "key1",
+            "value": "value1"
+          },
+          {
+            "key": "key2",
+            "value": "value2"
+          }
+        ]
+      },
+      "modifiedResource": {
+        "labels": [
+          "a",
+          "b"
+        ],
+        "customParameters": [
+          {
+            "key": "key1",
+            "value": "value1"
+          },
+          {
+            "key": "key2",
+            "value": "value2"
+          }
+        ]
+      },
+      "expectedMask": "",
+      "allSetFieldsMask": "labels,customParameters"
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.2: The repeated field values (string, message) are present in the original object.",
+      "description": "Test 3.2.4:The repeated field values (string, message) are reordered in the modified object.",
+      "originalResource": {
+        "labels": [
+          "a",
+          "b"
+        ],
+        "customParameters": [
+          {
+            "key": "key1",
+            "value": "value1"
+          },
+          {
+            "key": "key2",
+            "value": "value2"
+          }
+        ]
+      },
+      "modifiedResource": {
+        "labels": [
+          "b",
+          "a"
+        ],
+        "customParameters": [
+          {
+            "key": "key2",
+            "value": "value2"
+          },
+          {
+            "key": "key1",
+            "value": "value1"
+          }
+        ]
+      },
+      "expectedMask": "labels,customParameters",
+      "allSetFieldsMask": "labels,customParameters"
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.2: The repeated field values (string, message) are present in the original object.",
+      "description": "Test 3.2.5:The repeated field values (string, message) are set to empty to clean the fields in the modified object.",
+      "originalResource": {
+        "labels": [
+          "a",
+          "b"
+        ],
+        "customParameters": [
+          {
+            "key": "key1",
+            "value": "value1"
+          },
+          {
+            "key": "key2",
+            "value": "value2"
+          }
+        ]
+      },
+      "modifiedResource": {
+
+      },
+      "expectedMask": "labels,customParameters",
+      "allSetFieldsMask": ""
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.3: The repeated field values (enum) are under a sub-message field.",
+      "description": "Test 3.3.1: The repeated field values (enum) are changed and added in the modified object.",
+      "originalResource": {
+        "optimizationSetting": {
+          "optimizationTypes": [
+            "UNKNOWN",
+            "CALL_CLICKS"
+          ]
+        }
+      },
+      "modifiedResource": {
+        "optimizationSetting": {
+          "optimizationTypes": [
+            "DRIVING_DIRECTIONS"
+          ]
+        }
+      },
+      "expectedMask": "optimizationSetting.optimizationTypes",
+      "allSetFieldsMask": "optimizationSetting.optimizationTypes",
+      "expectedFieldValues": {
+        "optimization_setting": {
+          "optimizationSettingValue": {
+            "optimizationTypes": [
+              "DRIVING_DIRECTIONS"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.3: The repeated field values (enum) are under a sub-message field.",
+      "description": "Test 3.3.2: The repeated field values (enum) are reordered in the modified object.",
+      "originalResource": {
+        "optimizationSetting": {
+          "optimizationTypes": [
+            "UNKNOWN",
+            "CALL_CLICKS"
+          ]
+        }
+      },
+      "modifiedResource": {
+        "optimizationSetting": {
+          "optimizationTypes": [
+            "CALL_CLICKS",
+            "UNKNOWN"
+          ]
+        }
+      },
+      "expectedMask": "optimizationSetting.optimizationTypes",
+      "allSetFieldsMask": "optimizationSetting.optimizationTypes",
+      "expectedFieldValues": {
+        "optimization_setting.optimization_types": {
+          "optimizationTypeValues": [
+            "CALL_CLICKS",
+            "UNKNOWN"
+          ]
+        }
+      }
+    },
+    {
+      "epic": "Epic 3. Repeated Fields",
+      "scenario": "Scenario 3.3: The repeated field values (enum) are under a sub-message field.",
+      "description": "Test 3.3.3: The repeated field values (enum) are set to empty to clean the fields in the modified object.",
+      "originalResource": {
+        "optimizationSetting": {
+          "optimizationTypes": [
+            "UNKNOWN",
+            "CALL_CLICKS"
+          ]
+        }
+      },
+      "modifiedResource": {
+        "optimizationSetting": {
+          "optimization_types": []
+        }
+      },
+      "expectedMask": "optimizationSetting.optimizationTypes",
+      "allSetFieldsMask": ""
+    },
+    {
+      "epic": "Epic 4: Oneof Fields",
+      "scenario": "Scenario 4.1: The oneof field value is not present in the original object.",
+      "description": "Test 4.1.1: The oneof field value (string) is present in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "biddingStrategy": "bidding strategy"
+      },
+      "expectedMask": "biddingStrategy",
+      "allSetFieldsMask": "biddingStrategy",
+      "expectedFieldValues": {
+        "bidding_strategy": {
+          "stringValue": "bidding strategy"
+        }
+      }
+    },
+    {
+      "epic": "Epic 4: Oneof Fields",
+      "scenario": "Scenario 4.1: The oneof field value is not present in the original object.",
+      "description": "Test 4.1.2: The oneof field value (string) is set to default in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "biddingStrategy": ""
+      },
+      "expectedMask": "biddingStrategy",
+      "allSetFieldsMask": "biddingStrategy"
+    },
+    {
+      "epic": "Epic 4: Oneof Fields",
+      "scenario": "Scenario 4.1: The oneof field value is not present in the original object.",
+      "description": "Test 4.1.3: The oneof field value (message with sub-field) is present in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "manualCpc": {
+          "enhancedCpcEnabled": false
+        }
+      },
+      "expectedMask": "manualCpc.enhancedCpcEnabled",
+      "allSetFieldsMask": "manualCpc.enhancedCpcEnabled",
+      "expectedFieldValues": {
+        "manual_cpc.enhanced_cpc_enabled": {
+          "boolValue": false
+        },
+        "manual_cpc": {
+          "manualCpcValue": {
+            "enhancedCpcEnabled": false
+          }
+        }
+      }
+    },
+    {
+      "epic": "Epic 4: Oneof Fields",
+      "scenario": "Scenario 4.1: The oneof field value is not present in the original object.",
+      "description": "Test 4.1.4: The oneof field value (empty message) is present in the modified object.",
+      "originalResource": {
+
+      },
+      "modifiedResource": {
+        "manualCpm": {
+
+        }
+      },
+      "expectedMask": "manualCpm",
+      "allSetFieldsMask": "manualCpm",
+      "expectedFieldValues": {
+        "manual_cpm": {
+          "manualCpmValue": {
+
+          }
+        }
+      }
+    },
+    {
+      "epic": "Epic 4: Oneof Fields",
+      "scenario": "Scenario 4.2: The oneof field value (string) is present in the original object.",
+      "description": "Test 4.2.1: The oneof field value is changed (message with sub-field) in the modified object.",
+      "originalResource": {
+        "biddingStrategy": "bidding strategy"
+      },
+      "modifiedResource": {
+        "manualCpc": {
+          "enhancedCpcEnabled": false
+        }
+      },
+      "expectedMask": "biddingStrategy,manualCpc.enhancedCpcEnabled",
+      "allSetFieldsMask": "manualCpc.enhancedCpcEnabled"
+    },
+    {
+      "epic": "Epic 4: Oneof Fields",
+      "scenario": "Scenario 4.2: The oneof field value (string) is present in the original object.",
+      "description": "Test 4.2.2: The oneof field value is changed (empty-message) in the modified object.",
+      "originalResource": {
+        "biddingStrategy": "bidding strategy"
+      },
+      "modifiedResource": {
+        "manualCpm": {
+
+        }
+      },
+      "expectedMask": "biddingStrategy,manualCpm",
+      "allSetFieldsMask": "manualCpm"
+    }
+  ]
+}

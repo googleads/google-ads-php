@@ -151,6 +151,10 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
      *           The reasons for the conversion custom variable error
      *     @type int $conversion_upload_error
      *           The reasons for the conversion upload error
+     *     @type int $conversion_value_rule_error
+     *           The reasons for the conversion value rule error
+     *     @type int $conversion_value_rule_set_error
+     *           The reasons for the conversion value rule set error
      *     @type int $header_error
      *           The reasons for the header error.
      *     @type int $database_error
@@ -2248,6 +2252,68 @@ class ErrorCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V8\Errors\ConversionUploadErrorEnum\ConversionUploadError::class);
         $this->writeOneof(111, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the conversion value rule error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.errors.ConversionValueRuleErrorEnum.ConversionValueRuleError conversion_value_rule_error = 145;</code>
+     * @return int
+     */
+    public function getConversionValueRuleError()
+    {
+        return $this->readOneof(145);
+    }
+
+    public function hasConversionValueRuleError()
+    {
+        return $this->hasOneof(145);
+    }
+
+    /**
+     * The reasons for the conversion value rule error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.errors.ConversionValueRuleErrorEnum.ConversionValueRuleError conversion_value_rule_error = 145;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionValueRuleError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V8\Errors\ConversionValueRuleErrorEnum\ConversionValueRuleError::class);
+        $this->writeOneof(145, $var);
+
+        return $this;
+    }
+
+    /**
+     * The reasons for the conversion value rule set error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.errors.ConversionValueRuleSetErrorEnum.ConversionValueRuleSetError conversion_value_rule_set_error = 146;</code>
+     * @return int
+     */
+    public function getConversionValueRuleSetError()
+    {
+        return $this->readOneof(146);
+    }
+
+    public function hasConversionValueRuleSetError()
+    {
+        return $this->hasOneof(146);
+    }
+
+    /**
+     * The reasons for the conversion value rule set error
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.errors.ConversionValueRuleSetErrorEnum.ConversionValueRuleSetError conversion_value_rule_set_error = 146;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionValueRuleSetError($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V8\Errors\ConversionValueRuleSetErrorEnum\ConversionValueRuleSetError::class);
+        $this->writeOneof(146, $var);
 
         return $this;
     }

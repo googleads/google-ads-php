@@ -23,17 +23,6 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      */
     protected $final_url = '';
     /**
-     * Optional. The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
-     * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
-     * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
-     *
-     * Generated from protobuf field <code>int64 business_location_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    protected $business_location_id = 0;
-    /**
      * Optional. The two letter advertising language for the Smart campaign to be
      * constructed, default to 'en' if not set.
      *
@@ -53,6 +42,7 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.KeywordThemeInfo keyword_themes = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private $keyword_themes;
+    protected $business_setting;
     protected $geo_target;
 
     /**
@@ -63,13 +53,6 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type string $final_url
      *           Optional. Landing page URL of the campaign.
-     *     @type int|string $business_location_id
-     *           Optional. The ID of the Google My Business (GMB) Location.
-     *           The location ID can be fetched by GMB API with its form:
-     *           accounts/{accountId}/locations/{locationId}. The last {locationId}
-     *           component from the GMB API represents the business_location_id.
-     *           See the [Google My Business API]
-     *           (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      *     @type string $language_code
      *           Optional. The two letter advertising language for the Smart campaign to be
      *           constructed, default to 'en' if not set.
@@ -78,6 +61,15 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V8\Common\KeywordThemeInfo[]|\Google\Protobuf\Internal\RepeatedField $keyword_themes
      *           Optional. Smart campaign keyword themes. This field may greatly improve suggestion
      *           accuracy and we recommend always setting it if possible.
+     *     @type \Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\BusinessContext $business_context
+     *           Optional. Context describing the business to advertise.
+     *     @type int|string $business_location_id
+     *           Optional. The ID of the Google My Business (GMB) Location.
+     *           The location ID can be fetched by GMB API with its form:
+     *           accounts/{accountId}/locations/{locationId}. The last {locationId}
+     *           component from the GMB API represents the business_location_id.
+     *           See the [Google My Business API]
+     *           (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      *     @type \Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\LocationList $location_list
      *           Optional. The targeting geo location by locations.
      *     @type \Google\Ads\GoogleAds\V8\Common\ProximityInfo $proximity
@@ -111,42 +103,6 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->final_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Optional. The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
-     * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
-     * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
-     *
-     * Generated from protobuf field <code>int64 business_location_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return int|string
-     */
-    public function getBusinessLocationId()
-    {
-        return $this->business_location_id;
-    }
-
-    /**
-     * Optional. The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
-     * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
-     * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
-     *
-     * Generated from protobuf field <code>int64 business_location_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setBusinessLocationId($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->business_location_id = $var;
 
         return $this;
     }
@@ -234,6 +190,78 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Optional. Context describing the business to advertise.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SmartCampaignSuggestionInfo.BusinessContext business_context = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\BusinessContext|null
+     */
+    public function getBusinessContext()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasBusinessContext()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * Optional. Context describing the business to advertise.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.SmartCampaignSuggestionInfo.BusinessContext business_context = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\BusinessContext $var
+     * @return $this
+     */
+    public function setBusinessContext($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\BusinessContext::class);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Optional. The ID of the Google My Business (GMB) Location.
+     * The location ID can be fetched by GMB API with its form:
+     * accounts/{accountId}/locations/{locationId}. The last {locationId}
+     * component from the GMB API represents the business_location_id.
+     * See the [Google My Business API]
+     * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
+     *
+     * Generated from protobuf field <code>int64 business_location_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return int|string
+     */
+    public function getBusinessLocationId()
+    {
+        return $this->readOneof(2);
+    }
+
+    public function hasBusinessLocationId()
+    {
+        return $this->hasOneof(2);
+    }
+
+    /**
+     * Optional. The ID of the Google My Business (GMB) Location.
+     * The location ID can be fetched by GMB API with its form:
+     * accounts/{accountId}/locations/{locationId}. The last {locationId}
+     * component from the GMB API represents the business_location_id.
+     * See the [Google My Business API]
+     * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
+     *
+     * Generated from protobuf field <code>int64 business_location_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setBusinessLocationId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
      * Optional. The targeting geo location by locations.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.services.SmartCampaignSuggestionInfo.LocationList location_list = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -293,6 +321,14 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
         $this->writeOneof(5, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBusinessSetting()
+    {
+        return $this->whichOneof("business_setting");
     }
 
     /**

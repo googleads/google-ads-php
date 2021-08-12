@@ -54,6 +54,14 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      */
     protected $ad_strength = 0;
     /**
+     * Output only. A list of recommendations to improve the ad strength. For example, a
+     * recommendation could be "Your headlines are a little too similar.
+     * Try adding more distinct headlines.".
+     *
+     * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $action_items;
+    /**
      * Output only. The resource names of labels attached to this ad group ad.
      *
      * Generated from protobuf field <code>repeated string labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
@@ -80,6 +88,10 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
      *           Output only. Policy information for the ad.
      *     @type int $ad_strength
      *           Output only. Overall ad strength for this ad group ad.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $action_items
+     *           Output only. A list of recommendations to improve the ad strength. For example, a
+     *           recommendation could be "Your headlines are a little too similar.
+     *           Try adding more distinct headlines.".
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      *           Output only. The resource names of labels attached to this ad group ad.
      * }
@@ -275,6 +287,36 @@ class AdGroupAd extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V8\Enums\AdStrengthEnum\AdStrength::class);
         $this->ad_strength = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. A list of recommendations to improve the ad strength. For example, a
+     * recommendation could be "Your headlines are a little too similar.
+     * Try adding more distinct headlines.".
+     *
+     * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getActionItems()
+    {
+        return $this->action_items;
+    }
+
+    /**
+     * Output only. A list of recommendations to improve the ad strength. For example, a
+     * recommendation could be "Your headlines are a little too similar.
+     * Try adding more distinct headlines.".
+     *
+     * Generated from protobuf field <code>repeated string action_items = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setActionItems($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->action_items = $arr;
 
         return $this;
     }

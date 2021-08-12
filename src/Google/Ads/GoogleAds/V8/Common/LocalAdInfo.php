@@ -63,15 +63,14 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      */
     private $videos;
     /**
-     * First part of optional text that may appear appended to the url displayed
-     * in the ad.
+     * First part of optional text that can be appended to the URL in the ad.
      *
      * Generated from protobuf field <code>string path1 = 9;</code>
      */
     protected $path1 = null;
     /**
-     * Second part of optional text that may appear appended to the url displayed
-     * in the ad. This field can only be set when path1 is also set.
+     * Second part of optional text that can be appended to the URL in the ad.
+     * This field can only be set when `path1` is also set.
      *
      * Generated from protobuf field <code>string path2 = 10;</code>
      */
@@ -107,11 +106,10 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
      *           List of YouTube video assets that may be displayed with the ad. Videos
      *           are optional and at most 20 can be specified.
      *     @type string $path1
-     *           First part of optional text that may appear appended to the url displayed
-     *           in the ad.
+     *           First part of optional text that can be appended to the URL in the ad.
      *     @type string $path2
-     *           Second part of optional text that may appear appended to the url displayed
-     *           in the ad. This field can only be set when path1 is also set.
+     *           Second part of optional text that can be appended to the URL in the ad.
+     *           This field can only be set when `path1` is also set.
      * }
      */
     public function __construct($data = NULL) {
@@ -298,8 +296,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First part of optional text that may appear appended to the url displayed
-     * in the ad.
+     * First part of optional text that can be appended to the URL in the ad.
      *
      * Generated from protobuf field <code>string path1 = 9;</code>
      * @return string
@@ -320,8 +317,7 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First part of optional text that may appear appended to the url displayed
-     * in the ad.
+     * First part of optional text that can be appended to the URL in the ad.
      *
      * Generated from protobuf field <code>string path1 = 9;</code>
      * @param string $var
@@ -336,8 +332,8 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Second part of optional text that may appear appended to the url displayed
-     * in the ad. This field can only be set when path1 is also set.
+     * Second part of optional text that can be appended to the URL in the ad.
+     * This field can only be set when `path1` is also set.
      *
      * Generated from protobuf field <code>string path2 = 10;</code>
      * @return string
@@ -358,8 +354,8 @@ class LocalAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Second part of optional text that may appear appended to the url displayed
-     * in the ad. This field can only be set when path1 is also set.
+     * Second part of optional text that can be appended to the URL in the ad.
+     * This field can only be set when `path1` is also set.
      *
      * Generated from protobuf field <code>string path2 = 10;</code>
      * @param string $var

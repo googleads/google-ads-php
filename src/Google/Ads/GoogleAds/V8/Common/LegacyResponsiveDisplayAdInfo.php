@@ -44,15 +44,15 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Advertiser's consent to allow flexible color. When true, the ad may be
      * served with different color if necessary. When false, the ad will be served
      * with the specified colors or a neutral color.
-     * The default value is true.
-     * Must be true if main_color and accent_color are not set.
+     * The default value is `true`.
+     * Must be true if `main_color` and `accent_color` are not set.
      *
      * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
      */
     protected $allow_flexible_color = null;
     /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string accent_color = 21;</code>
@@ -60,7 +60,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     protected $accent_color = null;
     /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string main_color = 22;</code>
@@ -134,15 +134,15 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *           Advertiser's consent to allow flexible color. When true, the ad may be
      *           served with different color if necessary. When false, the ad will be served
      *           with the specified colors or a neutral color.
-     *           The default value is true.
-     *           Must be true if main_color and accent_color are not set.
+     *           The default value is `true`.
+     *           Must be true if `main_color` and `accent_color` are not set.
      *     @type string $accent_color
      *           The accent color of the ad in hexadecimal, e.g. #ffffff for white.
-     *           If one of main_color and accent_color is set, the other is required as
+     *           If one of `main_color` and `accent_color` is set, the other is required as
      *           well.
      *     @type string $main_color
      *           The main color of the ad in hexadecimal, e.g. #ffffff for white.
-     *           If one of main_color and accent_color is set, the other is required as
+     *           If one of `main_color` and `accent_color` is set, the other is required as
      *           well.
      *     @type string $call_to_action_text
      *           The call-to-action text for the ad.
@@ -316,8 +316,8 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Advertiser's consent to allow flexible color. When true, the ad may be
      * served with different color if necessary. When false, the ad will be served
      * with the specified colors or a neutral color.
-     * The default value is true.
-     * Must be true if main_color and accent_color are not set.
+     * The default value is `true`.
+     * Must be true if `main_color` and `accent_color` are not set.
      *
      * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
      * @return bool
@@ -341,8 +341,8 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Advertiser's consent to allow flexible color. When true, the ad may be
      * served with different color if necessary. When false, the ad will be served
      * with the specified colors or a neutral color.
-     * The default value is true.
-     * Must be true if main_color and accent_color are not set.
+     * The default value is `true`.
+     * Must be true if `main_color` and `accent_color` are not set.
      *
      * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
      * @param bool $var
@@ -358,7 +358,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string accent_color = 21;</code>
@@ -381,7 +381,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string accent_color = 21;</code>
@@ -398,7 +398,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string main_color = 22;</code>
@@ -421,7 +421,7 @@ class LegacyResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string main_color = 22;</code>

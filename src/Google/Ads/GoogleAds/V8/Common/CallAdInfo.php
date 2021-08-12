@@ -82,7 +82,7 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The conversion action to attribute a call conversion to. If not set a
      * default conversion action is used. This field only has effect if
-     * call_tracked is set to true. Otherwise this field is ignored.
+     * `call_tracked` is set to `true`. Otherwise this field is ignored.
      *
      * Generated from protobuf field <code>string conversion_action = 9;</code>
      */
@@ -95,15 +95,14 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
      */
     protected $conversion_reporting_state = 0;
     /**
-     * First part of text that may appear appended to the url displayed to in
-     * the ad. Optional.
+     * First part of text that can be appended to the URL in the ad. Optional.
      *
      * Generated from protobuf field <code>string path1 = 13;</code>
      */
     protected $path1 = '';
     /**
-     * Second part of text that may appear appended to the url displayed to in
-     * the ad. This field can only be set when path1 is set. Optional.
+     * Second part of text that can be appended to the URL in the ad. This field
+     * can only be set when `path1` is also set. Optional.
      *
      * Generated from protobuf field <code>string path2 = 14;</code>
      */
@@ -142,16 +141,15 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
      *     @type string $conversion_action
      *           The conversion action to attribute a call conversion to. If not set a
      *           default conversion action is used. This field only has effect if
-     *           call_tracked is set to true. Otherwise this field is ignored.
+     *           `call_tracked` is set to `true`. Otherwise this field is ignored.
      *     @type int $conversion_reporting_state
      *           The call conversion behavior of this call ad. It can use its own call
      *           conversion setting, inherit the account level setting, or be disabled.
      *     @type string $path1
-     *           First part of text that may appear appended to the url displayed to in
-     *           the ad. Optional.
+     *           First part of text that can be appended to the URL in the ad. Optional.
      *     @type string $path2
-     *           Second part of text that may appear appended to the url displayed to in
-     *           the ad. This field can only be set when path1 is set. Optional.
+     *           Second part of text that can be appended to the URL in the ad. This field
+     *           can only be set when `path1` is also set. Optional.
      * }
      */
     public function __construct($data = NULL) {
@@ -430,7 +428,7 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The conversion action to attribute a call conversion to. If not set a
      * default conversion action is used. This field only has effect if
-     * call_tracked is set to true. Otherwise this field is ignored.
+     * `call_tracked` is set to `true`. Otherwise this field is ignored.
      *
      * Generated from protobuf field <code>string conversion_action = 9;</code>
      * @return string
@@ -443,7 +441,7 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The conversion action to attribute a call conversion to. If not set a
      * default conversion action is used. This field only has effect if
-     * call_tracked is set to true. Otherwise this field is ignored.
+     * `call_tracked` is set to `true`. Otherwise this field is ignored.
      *
      * Generated from protobuf field <code>string conversion_action = 9;</code>
      * @param string $var
@@ -486,8 +484,7 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First part of text that may appear appended to the url displayed to in
-     * the ad. Optional.
+     * First part of text that can be appended to the URL in the ad. Optional.
      *
      * Generated from protobuf field <code>string path1 = 13;</code>
      * @return string
@@ -498,8 +495,7 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * First part of text that may appear appended to the url displayed to in
-     * the ad. Optional.
+     * First part of text that can be appended to the URL in the ad. Optional.
      *
      * Generated from protobuf field <code>string path1 = 13;</code>
      * @param string $var
@@ -514,8 +510,8 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Second part of text that may appear appended to the url displayed to in
-     * the ad. This field can only be set when path1 is set. Optional.
+     * Second part of text that can be appended to the URL in the ad. This field
+     * can only be set when `path1` is also set. Optional.
      *
      * Generated from protobuf field <code>string path2 = 14;</code>
      * @return string
@@ -526,8 +522,8 @@ class CallAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Second part of text that may appear appended to the url displayed to in
-     * the ad. This field can only be set when path1 is set. Optional.
+     * Second part of text that can be appended to the URL in the ad. This field
+     * can only be set when `path1` is also set. Optional.
      *
      * Generated from protobuf field <code>string path2 = 14;</code>
      * @param string $var

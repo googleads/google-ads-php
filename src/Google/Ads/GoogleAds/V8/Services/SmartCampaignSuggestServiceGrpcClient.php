@@ -47,4 +47,20 @@ class SmartCampaignSuggestServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Suggests a Smart campaign ad compatible with the Ad family of resources,
+     * based on data points such as targeting and the business to advertise.
+     * @param \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function SuggestSmartCampaignAd(\Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.ads.googleads.v8.services.SmartCampaignSuggestService/SuggestSmartCampaignAd',
+        $argument,
+        ['\Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

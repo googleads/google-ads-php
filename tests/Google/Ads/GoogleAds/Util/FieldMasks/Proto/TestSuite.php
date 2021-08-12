@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class TestSuite extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.TestCase test_cases = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.TestCase test_cases = 3;</code>
      */
     private $test_cases;
 
@@ -33,7 +33,7 @@ class TestSuite extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.TestCase test_cases = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.TestCase test_cases = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTestCases()
@@ -42,7 +42,7 @@ class TestSuite extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.TestCase test_cases = 1;</code>
+     * Generated from protobuf field <code>repeated .google.ads.googleads.util.fieldmasks.proto.TestCase test_cases = 3;</code>
      * @param \Google\Ads\GoogleAds\Util\FieldMasks\Proto\TestCase[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

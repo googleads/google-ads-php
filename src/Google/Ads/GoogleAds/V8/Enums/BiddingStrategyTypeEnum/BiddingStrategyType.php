@@ -41,6 +41,18 @@ class BiddingStrategyType
      */
     const ENHANCED_CPC = 2;
     /**
+     * Used for return value only. Indicates that a campaign does not have a
+     * bidding strategy. This prevents the campaign from serving. For example,
+     * a campaign may be attached to a manager bidding strategy and the serving
+     * account is subsequently unlinked from the manager account. In this case
+     * the campaign will automatically be detached from the now inaccessible
+     * manager bidding strategy and transition to the INVALID bidding strategy
+     * type.
+     *
+     * Generated from protobuf enum <code>INVALID = 17;</code>
+     */
+    const INVALID = 17;
+    /**
      * Manual click based bidding where user pays per click.
      *
      * Generated from protobuf enum <code>MANUAL_CPC = 3;</code>
@@ -142,6 +154,7 @@ class BiddingStrategyType
         self::UNKNOWN => 'UNKNOWN',
         self::COMMISSION => 'COMMISSION',
         self::ENHANCED_CPC => 'ENHANCED_CPC',
+        self::INVALID => 'INVALID',
         self::MANUAL_CPC => 'MANUAL_CPC',
         self::MANUAL_CPM => 'MANUAL_CPM',
         self::MANUAL_CPV => 'MANUAL_CPV',

@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The id of the mobile app.
+     * The ID of the mobile app.
      *
      * Generated from protobuf field <code>string app_id = 6;</code>
      */
@@ -53,7 +53,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $app_id
-     *           The id of the mobile app.
+     *           The ID of the mobile app.
      *     @type int $app_store
      *           The app store the mobile app is available in.
      *     @type string $headline
@@ -70,7 +70,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The id of the mobile app.
+     * The ID of the mobile app.
      *
      * Generated from protobuf field <code>string app_id = 6;</code>
      * @return string
@@ -91,7 +91,7 @@ class LegacyAppInstallAdInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The id of the mobile app.
+     * The ID of the mobile app.
      *
      * Generated from protobuf field <code>string app_id = 6;</code>
      * @param string $var

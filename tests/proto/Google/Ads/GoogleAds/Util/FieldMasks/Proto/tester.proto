@@ -1,43 +1,115 @@
 syntax = "proto3";
-
 package google.ads.googleads.util.fieldmasks.proto;
-
-import "google/protobuf/wrappers.proto";
+option php_namespace = "Google\\Ads\\GoogleAds\\Util\\FieldMasks\\Proto";
 import "google/protobuf/field_mask.proto";
 
-option java_multiple_files = true;
-option java_outer_classname = "TestSuiteProto";
-option java_package = "com.google.ads.googleads.util.fieldmasks.proto";
-option php_namespace = "Google\\Ads\\GoogleAds\\Util\\FieldMasks\\Proto";
-
 message TestSuite {
-  repeated TestCase test_cases = 1;
+    repeated TestCase test_cases = 3;
 }
 
 message TestCase {
-  string description = 1;
-  Resource original_resource = 2;
-  Resource modified_resource = 3;
-  google.protobuf.FieldMask expected_mask = 4;
-  google.protobuf.FieldMask expected_mask_all_set_fields_of = 5;
+    string epic = 2;
+    string scenario = 3;
+    string description = 4;
+    Resource original_resource = 5;
+    optional Resource modified_resource = 6;
+    optional google.protobuf.FieldMask expected_mask = 7;
+    optional google.protobuf.FieldMask all_set_fields_mask = 8;
+    map<string, FieldValue> expected_field_values = 9;
 }
 
+// The resource message used to test the FieldMasks utility.
 message Resource {
-  google.protobuf.StringValue wrapper = 1;
-  Foo foo = 2;
-  repeated Foo foos = 3;
-  optional int32 presence = 4;
+    int64 id = 1;
+    string name = 2;
+    optional string description = 3;
+    ResourceStatusEnum.ResourceStatus status = 4;
+    optional double optimization_score = 5;
+    DynamicSetting dynamic_setting = 6;
+    optional SelectiveOptimization selective_optimization = 7;
+    repeated string labels = 8;
+    repeated CustomParameter custom_parameters = 9;
+    OptimizationSetting optimization_setting = 10;
+    oneof resource_bidding_strategy {
+        string bidding_strategy = 11;
+        ManualCpc manual_cpc = 12;
+        ManualCpm manual_cpm = 13;
+    }
 }
 
-message Foo {
-  int64 num = 1;
-  Bar bar = 2;
-  repeated Bar bars = 3;
-  optional bool bool = 4;
+// Possible statuses of a resource.
+message ResourceStatusEnum {
+    enum ResourceStatus {
+        UNSPECIFIED = 0;
+        UNKNOWN = 1;
+        ENABLED = 2;
+        PAUSED = 3;
+        REMOVED = 4;
+    }
 }
 
-message Bar {
-  int64 num = 1;
-  google.protobuf.BoolValue nested_wrapper = 2;
-  optional int32 nested_presence = 3;
+// The non-optional sub-message field for Resource.
+message DynamicSetting {
+    string domain_name = 1;
+    optional bool use_supplied_urls_only = 2;
+    TrackingSetting tracking_setting = 3;
+}
+
+// The sub-message field for ResourceSetting.
+message TrackingSetting {
+    optional string tracking_url = 1;
+}
+
+// The optional sub-message field for Resource.
+message SelectiveOptimization {
+    string conversion_action = 1;
+}
+
+// The repeated sub-message field for Resource.
+message CustomParameter {
+    optional string key = 1;
+    optional string value = 2;
+}
+
+// The sub-message with repeated enum field for Resource.
+message OptimizationSetting {
+    repeated OptimizationTypeEnum.OptimizationType optimization_types = 1;
+}
+
+// Possible types for OptimizationSetting.
+message OptimizationTypeEnum {
+    enum OptimizationType {
+        UNSPECIFIED = 0;
+        UNKNOWN = 1;
+        CALL_CLICKS = 2;
+        DRIVING_DIRECTIONS = 3;
+    }
+}
+
+// The oneof messages for 'resource_bidding_strategy' field of Resource.
+message ManualCpc {
+    optional bool enhanced_cpc_enabled = 1;
+}
+
+message ManualCpm {
+}
+
+// The wrapper message of any field value to test 'getFieldValue()' method.
+message FieldValue {
+    optional int32 int32_value = 1;
+    optional int64 int64_value = 2;
+    optional float float_value = 3;
+    optional double double_value = 4;
+    optional string string_value = 5;
+    optional bool bool_value = 6;
+    repeated string string_values = 7;
+    optional ResourceStatusEnum.ResourceStatus resource_status_value = 21;
+    optional DynamicSetting dynamic_setting_value = 22;
+    optional TrackingSetting tracking_setting_value = 23;
+    optional SelectiveOptimization selective_optimization_value = 24;
+    repeated CustomParameter custom_parameter_values = 25;
+    optional OptimizationSetting optimization_setting_value = 26;
+    repeated OptimizationTypeEnum.OptimizationType optimization_type_values = 27;
+    optional ManualCpc manual_cpc_value = 28;
+    optional ManualCpm manual_cpm_value = 29;
 }

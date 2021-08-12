@@ -45,6 +45,8 @@ use Google\Ads\GoogleAds\V8\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AssetFieldTypeViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AssetServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BatchJobServiceClient;
+use Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionServiceClient;
+use Google\Ads\GoogleAds\V8\Services\BiddingSeasonalityAdjustmentServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BiddingStrategySimulationServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BillingSetupServiceClient;
@@ -68,6 +70,8 @@ use Google\Ads\GoogleAds\V8\Services\ClickViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CombinedAudienceServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionActionServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionCustomVariableServiceClient;
+use Google\Ads\GoogleAds\V8\Services\ConversionValueRuleServiceClient;
+use Google\Ads\GoogleAds\V8\Services\ConversionValueRuleSetServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CurrencyConstantServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CustomerAssetServiceClient;
@@ -918,6 +922,56 @@ class ResourceNamesTest extends TestCase
     }
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V8\ResourceNames::forBiddingDataExclusion()
+     */
+    public function testGetNameForBiddingDataExclusion()
+    {
+        $customerId = '111111';
+        $seasonalityEventId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/biddingDataExclusions/%s",
+            $customerId,
+            $seasonalityEventId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forBiddingDataExclusion(
+                $customerId,
+                $seasonalityEventId
+            )
+        );
+
+        $names = BiddingDataExclusionServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($seasonalityEventId, $names['seasonality_event_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V8\ResourceNames::forBiddingSeasonalityAdjustment()
+     */
+    public function testGetNameForBiddingSeasonalityAdjustment()
+    {
+        $customerId = '111111';
+        $seasonalityEventId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/biddingSeasonalityAdjustments/%s",
+            $customerId,
+            $seasonalityEventId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forBiddingSeasonalityAdjustment(
+                $customerId,
+                $seasonalityEventId
+            )
+        );
+
+        $names = BiddingSeasonalityAdjustmentServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($seasonalityEventId, $names['seasonality_event_id']);
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V8\ResourceNames::forBiddingStrategy()
      */
     public function testGetNameForBiddingStrategy()
@@ -1582,6 +1636,56 @@ class ResourceNamesTest extends TestCase
         $names = ConversionCustomVariableServiceClient::parseName($expectedResourceName);
         $this->assertEquals($customerId, $names['customer_id']);
         $this->assertEquals($conversionCustomVariableId, $names['conversion_custom_variable_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V8\ResourceNames::forConversionValueRule()
+     */
+    public function testGetNameForConversionValueRule()
+    {
+        $customerId = '111111';
+        $conversionValueRuleId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/conversionValueRules/%s",
+            $customerId,
+            $conversionValueRuleId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forConversionValueRule(
+                $customerId,
+                $conversionValueRuleId
+            )
+        );
+
+        $names = ConversionValueRuleServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($conversionValueRuleId, $names['conversion_value_rule_id']);
+    }
+
+    /**
+     * @covers \Google\Ads\GoogleAds\Util\V8\ResourceNames::forConversionValueRuleSet()
+     */
+    public function testGetNameForConversionValueRuleSet()
+    {
+        $customerId = '111111';
+        $conversionValueRuleSetId = '222222';
+        $expectedResourceName = sprintf(
+            "customers/%s/conversionValueRuleSets/%s",
+            $customerId,
+            $conversionValueRuleSetId
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forConversionValueRuleSet(
+                $customerId,
+                $conversionValueRuleSetId
+            )
+        );
+
+        $names = ConversionValueRuleSetServiceClient::parseName($expectedResourceName);
+        $this->assertEquals($customerId, $names['customer_id']);
+        $this->assertEquals($conversionValueRuleSetId, $names['conversion_value_rule_set_id']);
     }
 
     /**

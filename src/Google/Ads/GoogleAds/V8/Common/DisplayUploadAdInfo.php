@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * A generic type of display ad. The exact ad format is controlled by the
- * display_upload_product_type field, which determines what kinds of data
+ * `display_upload_product_type` field, which determines what kinds of data
  * need to be included with the ad.
  *
  * Generated from protobuf message <code>google.ads.googleads.v8.common.DisplayUploadAdInfo</code>
@@ -35,7 +35,7 @@ class DisplayUploadAdInfo extends \Google\Protobuf\Internal\Message
      *           The product type of this ad. See comments on the enum for details.
      *     @type \Google\Ads\GoogleAds\V8\Common\AdMediaBundleAsset $media_bundle
      *           A media bundle asset to be used in the ad. For information about the
-     *           media bundle for HTML5_UPLOAD_AD see
+     *           media bundle for HTML5_UPLOAD_AD, see
      *           https://support.google.com/google-ads/answer/1722096
      *           Media bundles that are part of dynamic product types use a special format
      *           that needs to be created through the Google Web Designer. See
@@ -76,7 +76,7 @@ class DisplayUploadAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * A media bundle asset to be used in the ad. For information about the
-     * media bundle for HTML5_UPLOAD_AD see
+     * media bundle for HTML5_UPLOAD_AD, see
      * https://support.google.com/google-ads/answer/1722096
      * Media bundles that are part of dynamic product types use a special format
      * that needs to be created through the Google Web Designer. See
@@ -98,7 +98,7 @@ class DisplayUploadAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * A media bundle asset to be used in the ad. For information about the
-     * media bundle for HTML5_UPLOAD_AD see
+     * media bundle for HTML5_UPLOAD_AD, see
      * https://support.google.com/google-ads/answer/1722096
      * Media bundles that are part of dynamic product types use a special format
      * that needs to be created through the Google Web Designer. See

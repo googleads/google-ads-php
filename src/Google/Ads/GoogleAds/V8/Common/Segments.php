@@ -498,6 +498,18 @@ class Segments extends \Google\Protobuf\Internal\Message
      */
     protected $slot = 0;
     /**
+     * Primary dimension of applied conversion value rules.
+     * NO_RULE_APPLIED shows the total recorded value of conversions that
+     * do not have a value rule applied.
+     * ORIGINAL shows the original value of conversions to which a value rule
+     * has been applied.
+     * GEO_LOCATION, DEVICE, AUDIENCE show the net adjustment after value
+     * rules were applied.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ConversionValueRulePrimaryDimensionEnum.ConversionValueRulePrimaryDimension conversion_value_rule_primary_dimension = 138;</code>
+     */
+    protected $conversion_value_rule_primary_dimension = 0;
+    /**
      * Resource name of the ad group criterion that represents webpage criterion.
      *
      * Generated from protobuf field <code>string webpage = 129;</code>
@@ -714,6 +726,14 @@ class Segments extends \Google\Protobuf\Internal\Message
      *           Match type of the keyword that triggered the ad, including variants.
      *     @type int $slot
      *           Position of the ad.
+     *     @type int $conversion_value_rule_primary_dimension
+     *           Primary dimension of applied conversion value rules.
+     *           NO_RULE_APPLIED shows the total recorded value of conversions that
+     *           do not have a value rule applied.
+     *           ORIGINAL shows the original value of conversions to which a value rule
+     *           has been applied.
+     *           GEO_LOCATION, DEVICE, AUDIENCE show the net adjustment after value
+     *           rules were applied.
      *     @type string $webpage
      *           Resource name of the ad group criterion that represents webpage criterion.
      *     @type string $week
@@ -3343,6 +3363,44 @@ class Segments extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V8\Enums\SlotEnum\Slot::class);
         $this->slot = $var;
+
+        return $this;
+    }
+
+    /**
+     * Primary dimension of applied conversion value rules.
+     * NO_RULE_APPLIED shows the total recorded value of conversions that
+     * do not have a value rule applied.
+     * ORIGINAL shows the original value of conversions to which a value rule
+     * has been applied.
+     * GEO_LOCATION, DEVICE, AUDIENCE show the net adjustment after value
+     * rules were applied.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ConversionValueRulePrimaryDimensionEnum.ConversionValueRulePrimaryDimension conversion_value_rule_primary_dimension = 138;</code>
+     * @return int
+     */
+    public function getConversionValueRulePrimaryDimension()
+    {
+        return $this->conversion_value_rule_primary_dimension;
+    }
+
+    /**
+     * Primary dimension of applied conversion value rules.
+     * NO_RULE_APPLIED shows the total recorded value of conversions that
+     * do not have a value rule applied.
+     * ORIGINAL shows the original value of conversions to which a value rule
+     * has been applied.
+     * GEO_LOCATION, DEVICE, AUDIENCE show the net adjustment after value
+     * rules were applied.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ConversionValueRulePrimaryDimensionEnum.ConversionValueRulePrimaryDimension conversion_value_rule_primary_dimension = 138;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConversionValueRulePrimaryDimension($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Ads\GoogleAds\V8\Enums\ConversionValueRulePrimaryDimensionEnum\ConversionValueRulePrimaryDimension::class);
+        $this->conversion_value_rule_primary_dimension = $var;
 
         return $this;
     }

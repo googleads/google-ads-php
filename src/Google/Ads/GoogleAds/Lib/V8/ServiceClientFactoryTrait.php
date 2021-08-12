@@ -46,6 +46,8 @@ use Google\Ads\GoogleAds\V8\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AssetFieldTypeViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AssetServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BatchJobServiceClient;
+use Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionServiceClient;
+use Google\Ads\GoogleAds\V8\Services\BiddingSeasonalityAdjustmentServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BiddingStrategySimulationServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BillingSetupServiceClient;
@@ -71,6 +73,8 @@ use Google\Ads\GoogleAds\V8\Services\ConversionActionServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionAdjustmentUploadServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionCustomVariableServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionUploadServiceClient;
+use Google\Ads\GoogleAds\V8\Services\ConversionValueRuleServiceClient;
+use Google\Ads\GoogleAds\V8\Services\ConversionValueRuleSetServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CurrencyConstantServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CustomerAssetServiceClient;
@@ -429,6 +433,22 @@ trait ServiceClientFactoryTrait
     }
 
     /**
+     * @return BiddingDataExclusionServiceClient
+     */
+    public function getBiddingDataExclusionServiceClient(): BiddingDataExclusionServiceClient
+    {
+        return new BiddingDataExclusionServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return BiddingSeasonalityAdjustmentServiceClient
+     */
+    public function getBiddingSeasonalityAdjustmentServiceClient(): BiddingSeasonalityAdjustmentServiceClient
+    {
+        return new BiddingSeasonalityAdjustmentServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
      * @return BiddingStrategyServiceClient
      */
     public function getBiddingStrategyServiceClient(): BiddingStrategyServiceClient
@@ -626,6 +646,22 @@ trait ServiceClientFactoryTrait
     public function getConversionUploadServiceClient(): ConversionUploadServiceClient
     {
         return new ConversionUploadServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ConversionValueRuleServiceClient
+     */
+    public function getConversionValueRuleServiceClient(): ConversionValueRuleServiceClient
+    {
+        return new ConversionValueRuleServiceClient($this->getGoogleAdsClientOptions());
+    }
+
+    /**
+     * @return ConversionValueRuleSetServiceClient
+     */
+    public function getConversionValueRuleSetServiceClient(): ConversionValueRuleSetServiceClient
+    {
+        return new ConversionValueRuleSetServiceClient($this->getGoogleAdsClientOptions());
     }
 
     /**

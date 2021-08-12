@@ -99,6 +99,41 @@ class ConversionAdjustmentUploadError
      * Generated from protobuf enum <code>TOO_MANY_ADJUSTMENTS = 12;</code>
      */
     const TOO_MANY_ADJUSTMENTS = 12;
+    /**
+     * The customer has not accepted the customer data terms in the conversion
+     * settings page.
+     *
+     * Generated from protobuf enum <code>CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS = 15;</code>
+     */
+    const CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS = 15;
+    /**
+     * The enhanced conversion settings of the conversion action supplied is
+     * not eligible for enhancements.
+     *
+     * Generated from protobuf enum <code>CONVERSION_ACTION_NOT_ELIGIBLE_FOR_ENHANCEMENT = 16;</code>
+     */
+    const CONVERSION_ACTION_NOT_ELIGIBLE_FOR_ENHANCEMENT = 16;
+    /**
+     * The provided user identifier is not a SHA-256 hash. It is either unhashed
+     * or hashed using a different hash function.
+     *
+     * Generated from protobuf enum <code>INVALID_USER_IDENTIFIER = 17;</code>
+     */
+    const INVALID_USER_IDENTIFIER = 17;
+    /**
+     * The provided user identifier is not supported.
+     * ConversionAdjustmentUploadService only supports hashed_email,
+     * hashed_phone_number, and address_info.
+     *
+     * Generated from protobuf enum <code>UNSUPPORTED_USER_IDENTIFIER = 18;</code>
+     */
+    const UNSUPPORTED_USER_IDENTIFIER = 18;
+    /**
+     * The user_identifier_source must be FIRST_PARTY for enhancements.
+     *
+     * Generated from protobuf enum <code>INVALID_USER_IDENTIFIER_SOURCE = 19;</code>
+     */
+    const INVALID_USER_IDENTIFIER_SOURCE = 19;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -114,6 +149,11 @@ class ConversionAdjustmentUploadError
         self::CANNOT_RESTATE_CONVERSION_ACTION_THAT_ALWAYS_USES_DEFAULT_CONVERSION_VALUE => 'CANNOT_RESTATE_CONVERSION_ACTION_THAT_ALWAYS_USES_DEFAULT_CONVERSION_VALUE',
         self::TOO_MANY_ADJUSTMENTS_IN_REQUEST => 'TOO_MANY_ADJUSTMENTS_IN_REQUEST',
         self::TOO_MANY_ADJUSTMENTS => 'TOO_MANY_ADJUSTMENTS',
+        self::CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS => 'CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS',
+        self::CONVERSION_ACTION_NOT_ELIGIBLE_FOR_ENHANCEMENT => 'CONVERSION_ACTION_NOT_ELIGIBLE_FOR_ENHANCEMENT',
+        self::INVALID_USER_IDENTIFIER => 'INVALID_USER_IDENTIFIER',
+        self::UNSUPPORTED_USER_IDENTIFIER => 'UNSUPPORTED_USER_IDENTIFIER',
+        self::INVALID_USER_IDENTIFIER_SOURCE => 'INVALID_USER_IDENTIFIER_SOURCE',
     ];
 
     public static function name($value)

@@ -23,7 +23,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
      */
     private $errors;
     /**
-     * The unique id of the request that is used for debugging purposes.
+     * The unique ID of the request that is used for debugging purposes.
      *
      * Generated from protobuf field <code>string request_id = 2;</code>
      */
@@ -38,7 +38,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V8\Errors\GoogleAdsError[]|\Google\Protobuf\Internal\RepeatedField $errors
      *           The list of errors that occurred.
      *     @type string $request_id
-     *           The unique id of the request that is used for debugging purposes.
+     *           The unique ID of the request that is used for debugging purposes.
      * }
      */
     public function __construct($data = NULL) {
@@ -73,7 +73,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique id of the request that is used for debugging purposes.
+     * The unique ID of the request that is used for debugging purposes.
      *
      * Generated from protobuf field <code>string request_id = 2;</code>
      * @return string
@@ -84,7 +84,7 @@ class GoogleAdsFailure extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique id of the request that is used for debugging purposes.
+     * The unique ID of the request that is used for debugging purposes.
      *
      * Generated from protobuf field <code>string request_id = 2;</code>
      * @param string $var

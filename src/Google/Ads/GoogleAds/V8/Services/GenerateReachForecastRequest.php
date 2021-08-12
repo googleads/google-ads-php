@@ -62,10 +62,24 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      *
      * Generated from protobuf field <code>int32 min_effective_frequency = 11;</code>
      */
     protected $min_effective_frequency = null;
+    /**
+     * The highest minimum effective frequency (the number of times a person was
+     * exposed to the ad) value [1-10] to include in
+     * Forecast.effective_frequency_breakdowns.
+     * If not specified, Forecast.effective_frequency_breakdowns will not be
+     * provided.
+     * The effective frequency value provided here will also be used as the
+     * minimum effective frequency for the reported reach metrics.
+     * This field cannot be combined with the min_effective_frequency field.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
+     */
+    protected $effective_frequency_limit = null;
     /**
      * The targeting to be applied to all products selected in the product mix.
      * This is planned targeting: execution details might vary based on the
@@ -116,6 +130,16 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *           exposed to the ad) for the reported reach metrics [1-10].
      *           This won't affect the targeting, but just the reporting.
      *           If not specified, a default of 1 is applied.
+     *           This field cannot be combined with the effective_frequency_limit field.
+     *     @type \Google\Ads\GoogleAds\V8\Services\EffectiveFrequencyLimit $effective_frequency_limit
+     *           The highest minimum effective frequency (the number of times a person was
+     *           exposed to the ad) value [1-10] to include in
+     *           Forecast.effective_frequency_breakdowns.
+     *           If not specified, Forecast.effective_frequency_breakdowns will not be
+     *           provided.
+     *           The effective frequency value provided here will also be used as the
+     *           minimum effective frequency for the reported reach metrics.
+     *           This field cannot be combined with the min_effective_frequency field.
      *     @type \Google\Ads\GoogleAds\V8\Services\Targeting $targeting
      *           The targeting to be applied to all products selected in the product mix.
      *           This is planned targeting: execution details might vary based on the
@@ -330,6 +354,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      *
      * Generated from protobuf field <code>int32 min_effective_frequency = 11;</code>
      * @return int
@@ -354,6 +379,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      *
      * Generated from protobuf field <code>int32 min_effective_frequency = 11;</code>
      * @param int $var
@@ -363,6 +389,56 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->min_effective_frequency = $var;
+
+        return $this;
+    }
+
+    /**
+     * The highest minimum effective frequency (the number of times a person was
+     * exposed to the ad) value [1-10] to include in
+     * Forecast.effective_frequency_breakdowns.
+     * If not specified, Forecast.effective_frequency_breakdowns will not be
+     * provided.
+     * The effective frequency value provided here will also be used as the
+     * minimum effective frequency for the reported reach metrics.
+     * This field cannot be combined with the min_effective_frequency field.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
+     * @return \Google\Ads\GoogleAds\V8\Services\EffectiveFrequencyLimit|null
+     */
+    public function getEffectiveFrequencyLimit()
+    {
+        return isset($this->effective_frequency_limit) ? $this->effective_frequency_limit : null;
+    }
+
+    public function hasEffectiveFrequencyLimit()
+    {
+        return isset($this->effective_frequency_limit);
+    }
+
+    public function clearEffectiveFrequencyLimit()
+    {
+        unset($this->effective_frequency_limit);
+    }
+
+    /**
+     * The highest minimum effective frequency (the number of times a person was
+     * exposed to the ad) value [1-10] to include in
+     * Forecast.effective_frequency_breakdowns.
+     * If not specified, Forecast.effective_frequency_breakdowns will not be
+     * provided.
+     * The effective frequency value provided here will also be used as the
+     * minimum effective frequency for the reported reach metrics.
+     * This field cannot be combined with the min_effective_frequency field.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.EffectiveFrequencyLimit effective_frequency_limit = 12;</code>
+     * @param \Google\Ads\GoogleAds\V8\Services\EffectiveFrequencyLimit $var
+     * @return $this
+     */
+    public function setEffectiveFrequencyLimit($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Services\EffectiveFrequencyLimit::class);
+        $this->effective_frequency_limit = $var;
 
         return $this;
     }

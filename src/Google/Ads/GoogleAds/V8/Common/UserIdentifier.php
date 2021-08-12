@@ -9,15 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Hashed user identifying information.
+ * User identifying information.
  *
  * Generated from protobuf message <code>google.ads.googleads.v8.common.UserIdentifier</code>
  */
 class UserIdentifier extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Source of the user identifier when the upload is from Store Sales third
-     * party partners.
+     * Source of the user identifier when the upload is from Store Sales,
+     * ConversionUploadService, or ConversionAdjustmentUploadService. For
+     * ConversionUploadService and ConversionAdjustmentUploadService, the source
+     * of the user identifier must be specified as FIRST_PARTY, otherwise an error
+     * will be returned.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.UserIdentifierSourceEnum.UserIdentifierSource user_identifier_source = 6;</code>
      */
@@ -31,20 +34,28 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $user_identifier_source
-     *           Source of the user identifier when the upload is from Store Sales third
-     *           party partners.
+     *           Source of the user identifier when the upload is from Store Sales,
+     *           ConversionUploadService, or ConversionAdjustmentUploadService. For
+     *           ConversionUploadService and ConversionAdjustmentUploadService, the source
+     *           of the user identifier must be specified as FIRST_PARTY, otherwise an error
+     *           will be returned.
      *     @type string $hashed_email
      *           Hashed email address using SHA-256 hash function after normalization.
+     *           Accepted for Customer Match, Store Sales, ConversionUploadService, and
+     *           ConversionAdjustmentUploadService.
      *     @type string $hashed_phone_number
      *           Hashed phone number using SHA-256 hash function after normalization
-     *           (E164 standard).
+     *           (E164 standard). Accepted for Customer Match, Store Sales,
+     *           ConversionUploadService, and ConversionAdjustmentUploadService.
      *     @type string $mobile_id
-     *           Mobile device ID (advertising ID/IDFA).
+     *           Mobile device ID (advertising ID/IDFA). Accepted only for Customer Match.
      *     @type string $third_party_user_id
      *           Advertiser-assigned user ID for Customer Match upload, or
-     *           third-party-assigned user ID for SSD.
+     *           third-party-assigned user ID for Store Sales. Accepted only for Customer
+     *           Match and Store Sales.
      *     @type \Google\Ads\GoogleAds\V8\Common\OfflineUserAddressInfo $address_info
-     *           Address information.
+     *           Address information. Accepted only for Customer Match, Store Sales, and
+     *           ConversionAdjustmentUploadService.
      * }
      */
     public function __construct($data = NULL) {
@@ -53,8 +64,11 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the user identifier when the upload is from Store Sales third
-     * party partners.
+     * Source of the user identifier when the upload is from Store Sales,
+     * ConversionUploadService, or ConversionAdjustmentUploadService. For
+     * ConversionUploadService and ConversionAdjustmentUploadService, the source
+     * of the user identifier must be specified as FIRST_PARTY, otherwise an error
+     * will be returned.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.UserIdentifierSourceEnum.UserIdentifierSource user_identifier_source = 6;</code>
      * @return int
@@ -65,8 +79,11 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source of the user identifier when the upload is from Store Sales third
-     * party partners.
+     * Source of the user identifier when the upload is from Store Sales,
+     * ConversionUploadService, or ConversionAdjustmentUploadService. For
+     * ConversionUploadService and ConversionAdjustmentUploadService, the source
+     * of the user identifier must be specified as FIRST_PARTY, otherwise an error
+     * will be returned.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.UserIdentifierSourceEnum.UserIdentifierSource user_identifier_source = 6;</code>
      * @param int $var
@@ -82,6 +99,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Hashed email address using SHA-256 hash function after normalization.
+     * Accepted for Customer Match, Store Sales, ConversionUploadService, and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string hashed_email = 7;</code>
      * @return string
@@ -98,6 +117,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Hashed email address using SHA-256 hash function after normalization.
+     * Accepted for Customer Match, Store Sales, ConversionUploadService, and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string hashed_email = 7;</code>
      * @param string $var
@@ -113,7 +134,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Hashed phone number using SHA-256 hash function after normalization
-     * (E164 standard).
+     * (E164 standard). Accepted for Customer Match, Store Sales,
+     * ConversionUploadService, and ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string hashed_phone_number = 8;</code>
      * @return string
@@ -130,7 +152,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Hashed phone number using SHA-256 hash function after normalization
-     * (E164 standard).
+     * (E164 standard). Accepted for Customer Match, Store Sales,
+     * ConversionUploadService, and ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>string hashed_phone_number = 8;</code>
      * @param string $var
@@ -145,7 +168,7 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile device ID (advertising ID/IDFA).
+     * Mobile device ID (advertising ID/IDFA). Accepted only for Customer Match.
      *
      * Generated from protobuf field <code>string mobile_id = 9;</code>
      * @return string
@@ -161,7 +184,7 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mobile device ID (advertising ID/IDFA).
+     * Mobile device ID (advertising ID/IDFA). Accepted only for Customer Match.
      *
      * Generated from protobuf field <code>string mobile_id = 9;</code>
      * @param string $var
@@ -177,7 +200,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Advertiser-assigned user ID for Customer Match upload, or
-     * third-party-assigned user ID for SSD.
+     * third-party-assigned user ID for Store Sales. Accepted only for Customer
+     * Match and Store Sales.
      *
      * Generated from protobuf field <code>string third_party_user_id = 10;</code>
      * @return string
@@ -194,7 +218,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
 
     /**
      * Advertiser-assigned user ID for Customer Match upload, or
-     * third-party-assigned user ID for SSD.
+     * third-party-assigned user ID for Store Sales. Accepted only for Customer
+     * Match and Store Sales.
      *
      * Generated from protobuf field <code>string third_party_user_id = 10;</code>
      * @param string $var
@@ -209,7 +234,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Address information.
+     * Address information. Accepted only for Customer Match, Store Sales, and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.common.OfflineUserAddressInfo address_info = 5;</code>
      * @return \Google\Ads\GoogleAds\V8\Common\OfflineUserAddressInfo|null
@@ -225,7 +251,8 @@ class UserIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Address information.
+     * Address information. Accepted only for Customer Match, Store Sales, and
+     * ConversionAdjustmentUploadService.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.common.OfflineUserAddressInfo address_info = 5;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\OfflineUserAddressInfo $var
