@@ -49,6 +49,10 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *           An ad parameter mutate operation.
      *     @type \Google\Ads\GoogleAds\V8\Services\AssetOperation $asset_operation
      *           An asset mutate operation.
+     *     @type \Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionOperation $bidding_data_exclusion_operation
+     *           A bidding data exclusion mutate operation.
+     *     @type \Google\Ads\GoogleAds\V8\Services\BiddingSeasonalityAdjustmentOperation $bidding_seasonality_adjustment_operation
+     *           A bidding seasonality adjustment mutate operation.
      *     @type \Google\Ads\GoogleAds\V8\Services\BiddingStrategyOperation $bidding_strategy_operation
      *           A bidding strategy mutate operation.
      *     @type \Google\Ads\GoogleAds\V8\Services\CampaignAssetOperation $campaign_asset_operation
@@ -77,6 +81,10 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
      *           A conversion action mutate operation.
      *     @type \Google\Ads\GoogleAds\V8\Services\ConversionCustomVariableOperation $conversion_custom_variable_operation
      *           A conversion custom variable mutate operation.
+     *     @type \Google\Ads\GoogleAds\V8\Services\ConversionValueRuleOperation $conversion_value_rule_operation
+     *           A conversion value rule mutate operation.
+     *     @type \Google\Ads\GoogleAds\V8\Services\ConversionValueRuleSetOperation $conversion_value_rule_set_operation
+     *           A conversion value rule set mutate operation.
      *     @type \Google\Ads\GoogleAds\V8\Services\CustomerAssetOperation $customer_asset_operation
      *           A customer asset mutate operation.
      *     @type \Google\Ads\GoogleAds\V8\Services\CustomerExtensionSettingOperation $customer_extension_setting_operation
@@ -538,6 +546,68 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A bidding data exclusion mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.BiddingDataExclusionOperation bidding_data_exclusion_operation = 58;</code>
+     * @return \Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionOperation|null
+     */
+    public function getBiddingDataExclusionOperation()
+    {
+        return $this->readOneof(58);
+    }
+
+    public function hasBiddingDataExclusionOperation()
+    {
+        return $this->hasOneof(58);
+    }
+
+    /**
+     * A bidding data exclusion mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.BiddingDataExclusionOperation bidding_data_exclusion_operation = 58;</code>
+     * @param \Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionOperation $var
+     * @return $this
+     */
+    public function setBiddingDataExclusionOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionOperation::class);
+        $this->writeOneof(58, $var);
+
+        return $this;
+    }
+
+    /**
+     * A bidding seasonality adjustment mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.BiddingSeasonalityAdjustmentOperation bidding_seasonality_adjustment_operation = 59;</code>
+     * @return \Google\Ads\GoogleAds\V8\Services\BiddingSeasonalityAdjustmentOperation|null
+     */
+    public function getBiddingSeasonalityAdjustmentOperation()
+    {
+        return $this->readOneof(59);
+    }
+
+    public function hasBiddingSeasonalityAdjustmentOperation()
+    {
+        return $this->hasOneof(59);
+    }
+
+    /**
+     * A bidding seasonality adjustment mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.BiddingSeasonalityAdjustmentOperation bidding_seasonality_adjustment_operation = 59;</code>
+     * @param \Google\Ads\GoogleAds\V8\Services\BiddingSeasonalityAdjustmentOperation $var
+     * @return $this
+     */
+    public function setBiddingSeasonalityAdjustmentOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Services\BiddingSeasonalityAdjustmentOperation::class);
+        $this->writeOneof(59, $var);
+
+        return $this;
+    }
+
+    /**
      * A bidding strategy mutate operation.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.services.BiddingStrategyOperation bidding_strategy_operation = 6;</code>
@@ -967,6 +1037,68 @@ class MutateOperation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Services\ConversionCustomVariableOperation::class);
         $this->writeOneof(55, $var);
+
+        return $this;
+    }
+
+    /**
+     * A conversion value rule mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.ConversionValueRuleOperation conversion_value_rule_operation = 63;</code>
+     * @return \Google\Ads\GoogleAds\V8\Services\ConversionValueRuleOperation|null
+     */
+    public function getConversionValueRuleOperation()
+    {
+        return $this->readOneof(63);
+    }
+
+    public function hasConversionValueRuleOperation()
+    {
+        return $this->hasOneof(63);
+    }
+
+    /**
+     * A conversion value rule mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.ConversionValueRuleOperation conversion_value_rule_operation = 63;</code>
+     * @param \Google\Ads\GoogleAds\V8\Services\ConversionValueRuleOperation $var
+     * @return $this
+     */
+    public function setConversionValueRuleOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Services\ConversionValueRuleOperation::class);
+        $this->writeOneof(63, $var);
+
+        return $this;
+    }
+
+    /**
+     * A conversion value rule set mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.ConversionValueRuleSetOperation conversion_value_rule_set_operation = 64;</code>
+     * @return \Google\Ads\GoogleAds\V8\Services\ConversionValueRuleSetOperation|null
+     */
+    public function getConversionValueRuleSetOperation()
+    {
+        return $this->readOneof(64);
+    }
+
+    public function hasConversionValueRuleSetOperation()
+    {
+        return $this->hasOneof(64);
+    }
+
+    /**
+     * A conversion value rule set mutate operation.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.services.ConversionValueRuleSetOperation conversion_value_rule_set_operation = 64;</code>
+     * @param \Google\Ads\GoogleAds\V8\Services\ConversionValueRuleSetOperation $var
+     * @return $this
+     */
+    public function setConversionValueRuleSetOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Services\ConversionValueRuleSetOperation::class);
+        $this->writeOneof(64, $var);
 
         return $this;
     }

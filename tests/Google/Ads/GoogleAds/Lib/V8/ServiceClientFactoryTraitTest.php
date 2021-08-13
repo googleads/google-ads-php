@@ -45,6 +45,8 @@ use Google\Ads\GoogleAds\V8\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AssetFieldTypeViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AssetServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BatchJobServiceClient;
+use Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionServiceClient;
+use Google\Ads\GoogleAds\V8\Services\BiddingSeasonalityAdjustmentServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BiddingStrategySimulationServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BillingSetupServiceClient;
@@ -70,6 +72,8 @@ use Google\Ads\GoogleAds\V8\Services\ConversionActionServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionAdjustmentUploadServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionCustomVariableServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionUploadServiceClient;
+use Google\Ads\GoogleAds\V8\Services\ConversionValueRuleServiceClient;
+use Google\Ads\GoogleAds\V8\Services\ConversionValueRuleSetServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CurrencyConstantServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CustomerAssetServiceClient;
@@ -394,6 +398,22 @@ class ServiceClientFactoryTraitTest extends TestCase
         );
     }
 
+    public function testGetBiddingDataExclusionServiceClient()
+    {
+        $this->assertInstanceOf(
+            BiddingDataExclusionServiceClient::class,
+            $this->googleAdsClient->getBiddingDataExclusionServiceClient()
+        );
+    }
+
+    public function testGetBiddingSeasonalityAdjustmentServiceClient()
+    {
+        $this->assertInstanceOf(
+            BiddingSeasonalityAdjustmentServiceClient::class,
+            $this->googleAdsClient->getBiddingSeasonalityAdjustmentServiceClient()
+        );
+    }
+
     public function testGetBiddingStrategyServiceClient()
     {
         $this->assertInstanceOf(
@@ -591,6 +611,22 @@ class ServiceClientFactoryTraitTest extends TestCase
         $this->assertInstanceOf(
             ConversionUploadServiceClient::class,
             $this->googleAdsClient->getConversionUploadServiceClient()
+        );
+    }
+
+    public function testGetConversionValueRuleServiceClient()
+    {
+        $this->assertInstanceOf(
+            ConversionValueRuleServiceClient::class,
+            $this->googleAdsClient->getConversionValueRuleServiceClient()
+        );
+    }
+
+    public function testGetConversionValueRuleSetServiceClient()
+    {
+        $this->assertInstanceOf(
+            ConversionValueRuleSetServiceClient::class,
+            $this->googleAdsClient->getConversionValueRuleSetServiceClient()
         );
     }
 

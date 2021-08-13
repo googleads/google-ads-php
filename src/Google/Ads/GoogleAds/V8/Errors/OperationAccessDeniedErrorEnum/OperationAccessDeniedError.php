@@ -50,7 +50,7 @@ class OperationAccessDeniedError
      */
     const UPDATE_OPERATION_NOT_PERMITTED = 5;
     /**
-     * A mutate action is not allowed on this campaign, from this client.
+     * A mutate action is not allowed on this resource, from this client.
      *
      * Generated from protobuf enum <code>MUTATE_ACTION_NOT_PERMITTED_FOR_CLIENT = 6;</code>
      */
@@ -68,7 +68,7 @@ class OperationAccessDeniedError
      */
     const CREATE_AS_REMOVED_NOT_PERMITTED = 8;
     /**
-     * This operation is not allowed because the campaign or adgroup is removed.
+     * This operation is not allowed because the resource is removed.
      *
      * Generated from protobuf enum <code>OPERATION_NOT_PERMITTED_FOR_REMOVED_RESOURCE = 9;</code>
      */

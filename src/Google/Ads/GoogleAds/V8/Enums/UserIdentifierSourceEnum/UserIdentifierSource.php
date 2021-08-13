@@ -7,8 +7,8 @@ namespace Google\Ads\GoogleAds\V8\Enums\UserIdentifierSourceEnum;
 use UnexpectedValueException;
 
 /**
- * The type of user identifier source for offline Store Sales third party
- * uploads.
+ * The type of user identifier source for offline Store Sales, click
+ * conversion, and conversion adjustment uploads.
  *
  * Protobuf type <code>google.ads.googleads.v8.enums.UserIdentifierSourceEnum.UserIdentifierSource</code>
  */

@@ -45,6 +45,8 @@ use Google\Ads\GoogleAds\V8\Services\AgeRangeViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AssetFieldTypeViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AssetServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BatchJobServiceClient;
+use Google\Ads\GoogleAds\V8\Services\BiddingDataExclusionServiceClient;
+use Google\Ads\GoogleAds\V8\Services\BiddingSeasonalityAdjustmentServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BiddingStrategySimulationServiceClient;
 use Google\Ads\GoogleAds\V8\Services\BillingSetupServiceClient;
@@ -68,6 +70,8 @@ use Google\Ads\GoogleAds\V8\Services\ClickViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CombinedAudienceServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionActionServiceClient;
 use Google\Ads\GoogleAds\V8\Services\ConversionCustomVariableServiceClient;
+use Google\Ads\GoogleAds\V8\Services\ConversionValueRuleServiceClient;
+use Google\Ads\GoogleAds\V8\Services\ConversionValueRuleSetServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CurrencyConstantServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CustomAudienceServiceClient;
 use Google\Ads\GoogleAds\V8\Services\CustomerAssetServiceClient;
@@ -685,6 +689,40 @@ final class ResourceNames
     }
 
     /**
+     * Generates a resource name of bidding data exclusion type.
+     *
+     * @param string $customerId
+     * @param string $seasonalityEventId
+     * @return string the bidding data exclusion resource name
+     */
+    public static function forBiddingDataExclusion(
+        $customerId,
+        $seasonalityEventId
+    ): string {
+        return BiddingDataExclusionServiceClient::biddingDataExclusionName(
+            $customerId,
+            $seasonalityEventId
+        );
+    }
+
+    /**
+     * Generates a resource name of bidding seasonality adjustment type.
+     *
+     * @param string $customerId
+     * @param string $seasonalityEventId
+     * @return string the bidding seasonality adjustment resource name
+     */
+    public static function forBiddingSeasonalityAdjustment(
+        $customerId,
+        $seasonalityEventId
+    ): string {
+        return BiddingSeasonalityAdjustmentServiceClient::biddingSeasonalityAdjustmentName(
+            $customerId,
+            $seasonalityEventId
+        );
+    }
+
+    /**
      * Generates a resource name of bidding strategy type.
      *
      * @param string $customerId
@@ -1141,6 +1179,40 @@ final class ResourceNames
         return ConversionCustomVariableServiceClient::conversionCustomVariableName(
             $customerId,
             $conversionCustomVariableId
+        );
+    }
+
+    /**
+     * Generates a resource name of conversion value rule type.
+     *
+     * @param string $customerId
+     * @param string $conversionValueRuleId
+     * @return string the conversion value rule resource name
+     */
+    public static function forConversionValueRule(
+        $customerId,
+        $conversionValueRuleId
+    ): string {
+        return ConversionValueRuleServiceClient::conversionValueRuleName(
+            $customerId,
+            $conversionValueRuleId
+        );
+    }
+
+    /**
+     * Generates a resource name of conversion value rule set type.
+     *
+     * @param string $customerId
+     * @param string $conversionValueRuleSetId
+     * @return string the conversion value rule set resource name
+     */
+    public static function forConversionValueRuleSet(
+        $customerId,
+        $conversionValueRuleSetId
+    ): string {
+        return ConversionValueRuleSetServiceClient::conversionValueRuleSetName(
+            $customerId,
+            $conversionValueRuleSetId
         );
     }
 

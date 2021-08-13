@@ -18,8 +18,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Marketing images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 600x314 and the aspect ratio must
-     * be 1.91:1 (+-1%). At least one marketing_image is required. Combined with
-     * square_marketing_images the maximum is 15.
+     * be 1.91:1 (+-1%). At least one `marketing_image` is required. Combined
+     * with `square_marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset marketing_images = 1;</code>
      */
@@ -27,8 +27,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square marketing images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 300x300 and the aspect ratio must
-     * be 1:1 (+-1%). At least one square marketing_image is required. Combined
-     * with marketing_images the maximum is 15.
+     * be 1:1 (+-1%). At least one square `marketing_image` is required. Combined
+     * with `marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset square_marketing_images = 2;</code>
      */
@@ -36,7 +36,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 512x128 and the aspect ratio must
-     * be 4:1 (+-1%). Combined with square_logo_images the maximum is 5.
+     * be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset logo_images = 3;</code>
      */
@@ -44,7 +44,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
-     * be 1:1 (+-1%). Combined with square_logo_images the maximum is 5.
+     * be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset square_logo_images = 4;</code>
      */
@@ -83,7 +83,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     protected $business_name = null;
     /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string main_color = 18;</code>
@@ -91,7 +91,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     protected $main_color = null;
     /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string accent_color = 19;</code>
@@ -101,8 +101,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Advertiser's consent to allow flexible color. When true, the ad may be
      * served with different color if necessary. When false, the ad will be served
      * with the specified colors or a neutral color.
-     * The default value is true.
-     * Must be true if main_color and accent_color are not set.
+     * The default value is `true`.
+     * Must be true if `main_color` and `accent_color` are not set.
      *
      * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
      */
@@ -148,21 +148,21 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V8\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $marketing_images
      *           Marketing images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 600x314 and the aspect ratio must
-     *           be 1.91:1 (+-1%). At least one marketing_image is required. Combined with
-     *           square_marketing_images the maximum is 15.
+     *           be 1.91:1 (+-1%). At least one `marketing_image` is required. Combined
+     *           with `square_marketing_images`, the maximum is 15.
      *     @type \Google\Ads\GoogleAds\V8\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $square_marketing_images
      *           Square marketing images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 300x300 and the aspect ratio must
-     *           be 1:1 (+-1%). At least one square marketing_image is required. Combined
-     *           with marketing_images the maximum is 15.
+     *           be 1:1 (+-1%). At least one square `marketing_image` is required. Combined
+     *           with `marketing_images`, the maximum is 15.
      *     @type \Google\Ads\GoogleAds\V8\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $logo_images
      *           Logo images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 512x128 and the aspect ratio must
-     *           be 4:1 (+-1%). Combined with square_logo_images the maximum is 5.
+     *           be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *     @type \Google\Ads\GoogleAds\V8\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $square_logo_images
      *           Square logo images to be used in the ad. Valid image types are GIF,
      *           JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
-     *           be 1:1 (+-1%). Combined with square_logo_images the maximum is 5.
+     *           be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *     @type \Google\Ads\GoogleAds\V8\Common\AdTextAsset[]|\Google\Protobuf\Internal\RepeatedField $headlines
      *           Short format headlines for the ad. The maximum length is 30 characters.
      *           At least 1 and max 5 headlines can be specified.
@@ -177,18 +177,18 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      *           The advertiser/brand name. Maximum display width is 25.
      *     @type string $main_color
      *           The main color of the ad in hexadecimal, e.g. #ffffff for white.
-     *           If one of main_color and accent_color is set, the other is required as
+     *           If one of `main_color` and `accent_color` is set, the other is required as
      *           well.
      *     @type string $accent_color
      *           The accent color of the ad in hexadecimal, e.g. #ffffff for white.
-     *           If one of main_color and accent_color is set, the other is required as
+     *           If one of `main_color` and `accent_color` is set, the other is required as
      *           well.
      *     @type bool $allow_flexible_color
      *           Advertiser's consent to allow flexible color. When true, the ad may be
      *           served with different color if necessary. When false, the ad will be served
      *           with the specified colors or a neutral color.
-     *           The default value is true.
-     *           Must be true if main_color and accent_color are not set.
+     *           The default value is `true`.
+     *           Must be true if `main_color` and `accent_color` are not set.
      *     @type string $call_to_action_text
      *           The call-to-action text for the ad. Maximum display width is 30.
      *     @type string $price_prefix
@@ -210,8 +210,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Marketing images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 600x314 and the aspect ratio must
-     * be 1.91:1 (+-1%). At least one marketing_image is required. Combined with
-     * square_marketing_images the maximum is 15.
+     * be 1.91:1 (+-1%). At least one `marketing_image` is required. Combined
+     * with `square_marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset marketing_images = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -224,8 +224,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Marketing images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 600x314 and the aspect ratio must
-     * be 1.91:1 (+-1%). At least one marketing_image is required. Combined with
-     * square_marketing_images the maximum is 15.
+     * be 1.91:1 (+-1%). At least one `marketing_image` is required. Combined
+     * with `square_marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset marketing_images = 1;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -242,8 +242,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square marketing images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 300x300 and the aspect ratio must
-     * be 1:1 (+-1%). At least one square marketing_image is required. Combined
-     * with marketing_images the maximum is 15.
+     * be 1:1 (+-1%). At least one square `marketing_image` is required. Combined
+     * with `marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset square_marketing_images = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -256,8 +256,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square marketing images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 300x300 and the aspect ratio must
-     * be 1:1 (+-1%). At least one square marketing_image is required. Combined
-     * with marketing_images the maximum is 15.
+     * be 1:1 (+-1%). At least one square `marketing_image` is required. Combined
+     * with `marketing_images`, the maximum is 15.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset square_marketing_images = 2;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -274,7 +274,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 512x128 and the aspect ratio must
-     * be 4:1 (+-1%). Combined with square_logo_images the maximum is 5.
+     * be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset logo_images = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -287,7 +287,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 512x128 and the aspect ratio must
-     * be 4:1 (+-1%). Combined with square_logo_images the maximum is 5.
+     * be 4:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset logo_images = 3;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -304,7 +304,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
-     * be 1:1 (+-1%). Combined with square_logo_images the maximum is 5.
+     * be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset square_logo_images = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -317,7 +317,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * Square logo images to be used in the ad. Valid image types are GIF,
      * JPEG, and PNG. The minimum size is 128x128 and the aspect ratio must
-     * be 1:1 (+-1%). Combined with square_logo_images the maximum is 5.
+     * be 1:1 (+-1%). Combined with `square_logo_images`, the maximum is 5.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.AdImageAsset square_logo_images = 4;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\AdImageAsset[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -487,7 +487,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string main_color = 18;</code>
@@ -510,7 +510,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The main color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string main_color = 18;</code>
@@ -527,7 +527,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string accent_color = 19;</code>
@@ -550,7 +550,7 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The accent color of the ad in hexadecimal, e.g. #ffffff for white.
-     * If one of main_color and accent_color is set, the other is required as
+     * If one of `main_color` and `accent_color` is set, the other is required as
      * well.
      *
      * Generated from protobuf field <code>string accent_color = 19;</code>
@@ -569,8 +569,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Advertiser's consent to allow flexible color. When true, the ad may be
      * served with different color if necessary. When false, the ad will be served
      * with the specified colors or a neutral color.
-     * The default value is true.
-     * Must be true if main_color and accent_color are not set.
+     * The default value is `true`.
+     * Must be true if `main_color` and `accent_color` are not set.
      *
      * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
      * @return bool
@@ -594,8 +594,8 @@ class ResponsiveDisplayAdInfo extends \Google\Protobuf\Internal\Message
      * Advertiser's consent to allow flexible color. When true, the ad may be
      * served with different color if necessary. When false, the ad will be served
      * with the specified colors or a neutral color.
-     * The default value is true.
-     * Must be true if main_color and accent_color are not set.
+     * The default value is `true`.
+     * Must be true if `main_color` and `accent_color` are not set.
      *
      * Generated from protobuf field <code>bool allow_flexible_color = 20;</code>
      * @param bool $var

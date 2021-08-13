@@ -1,3 +1,18 @@
+## 11.0.0
+*   Added support for v8_1 of Google Ads API.
+*   Added 1.26 to the minimum required version constraints of the `monolog/monolog` dependency.
+*   Removed support for v6 of Google Ads API.
+*   Improved the FieldMasks utility:
+    * Support getting enum value names from fields in the getFieldValue method.
+    * Support the case when a modified field is an empty Message with no fields declared in the
+      compare method.
+*   Fixed/improved code examples:
+    * GetAdGroupBidModifiers
+    * AddSmartCampaign
+    * GetChangeDetails
+    * AddLocalCampaign
+*   Removed the code example AddGmailAd.
+
 ## 10.1.0
 *   Moved the CampaignReportToCsv example to the Migration/ directory.
 *   Added the LIMIT clause to the query of the GetAdGroupBidModifiers example.

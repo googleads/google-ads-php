@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.ads.googleads.v8.services.SmartCampaignSuggestService' => [
+            'SuggestSmartCampaignAd' => [
+                'method' => 'post',
+                'uriTemplate' => '/v8/customers/{customer_id=*}:suggestSmartCampaignAd',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
             'SuggestSmartCampaignBudgetOptions' => [
                 'method' => 'post',
                 'uriTemplate' => '/v8/customers/{customer_id=*}:suggestSmartCampaignBudgetOptions',

@@ -100,7 +100,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      */
     protected $cpm_bid_micros = null;
     /**
-     * The target CPA (cost-per-acquisition).
+     * The target CPA (cost-per-acquisition). If the ad group's campaign
+     * bidding strategy is TargetCpa or MaximizeConversions (with its target_cpa
+     * field set), then this field overrides the target CPA specified in the
+     * campaign's bidding strategy.
+     * Otherwise, this value is ignored.
      *
      * Generated from protobuf field <code>int64 target_cpa_micros = 41;</code>
      */
@@ -120,8 +124,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     protected $target_cpm_micros = null;
     /**
      * The target ROAS (return-on-ad-spend) override. If the ad group's campaign
-     * bidding strategy is a standard Target ROAS strategy, then this field
-     * overrides the target ROAS specified in the campaign's bidding strategy.
+     * bidding strategy is TargetRoas or MaximizeConversionValue (with its
+     * target_roas field set), then this field overrides the target ROAS specified
+     * in the campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
      * Generated from protobuf field <code>double target_roas = 44;</code>
@@ -247,7 +252,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *     @type int|string $cpm_bid_micros
      *           The maximum CPM (cost-per-thousand viewable impressions) bid.
      *     @type int|string $target_cpa_micros
-     *           The target CPA (cost-per-acquisition).
+     *           The target CPA (cost-per-acquisition). If the ad group's campaign
+     *           bidding strategy is TargetCpa or MaximizeConversions (with its target_cpa
+     *           field set), then this field overrides the target CPA specified in the
+     *           campaign's bidding strategy.
+     *           Otherwise, this value is ignored.
      *     @type int|string $cpv_bid_micros
      *           Output only. The CPV (cost-per-view) bid.
      *     @type int|string $target_cpm_micros
@@ -255,8 +264,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
      *           thousand times the ad is shown.
      *     @type float $target_roas
      *           The target ROAS (return-on-ad-spend) override. If the ad group's campaign
-     *           bidding strategy is a standard Target ROAS strategy, then this field
-     *           overrides the target ROAS specified in the campaign's bidding strategy.
+     *           bidding strategy is TargetRoas or MaximizeConversionValue (with its
+     *           target_roas field set), then this field overrides the target ROAS specified
+     *           in the campaign's bidding strategy.
      *           Otherwise, this value is ignored.
      *     @type int|string $percent_cpc_bid_micros
      *           The percent cpc bid amount, expressed as a fraction of the advertised price
@@ -704,7 +714,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The target CPA (cost-per-acquisition).
+     * The target CPA (cost-per-acquisition). If the ad group's campaign
+     * bidding strategy is TargetCpa or MaximizeConversions (with its target_cpa
+     * field set), then this field overrides the target CPA specified in the
+     * campaign's bidding strategy.
+     * Otherwise, this value is ignored.
      *
      * Generated from protobuf field <code>int64 target_cpa_micros = 41;</code>
      * @return int|string
@@ -725,7 +739,11 @@ class AdGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The target CPA (cost-per-acquisition).
+     * The target CPA (cost-per-acquisition). If the ad group's campaign
+     * bidding strategy is TargetCpa or MaximizeConversions (with its target_cpa
+     * field set), then this field overrides the target CPA specified in the
+     * campaign's bidding strategy.
+     * Otherwise, this value is ignored.
      *
      * Generated from protobuf field <code>int64 target_cpa_micros = 41;</code>
      * @param int|string $var
@@ -815,8 +833,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * The target ROAS (return-on-ad-spend) override. If the ad group's campaign
-     * bidding strategy is a standard Target ROAS strategy, then this field
-     * overrides the target ROAS specified in the campaign's bidding strategy.
+     * bidding strategy is TargetRoas or MaximizeConversionValue (with its
+     * target_roas field set), then this field overrides the target ROAS specified
+     * in the campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
      * Generated from protobuf field <code>double target_roas = 44;</code>
@@ -839,8 +858,9 @@ class AdGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * The target ROAS (return-on-ad-spend) override. If the ad group's campaign
-     * bidding strategy is a standard Target ROAS strategy, then this field
-     * overrides the target ROAS specified in the campaign's bidding strategy.
+     * bidding strategy is TargetRoas or MaximizeConversionValue (with its
+     * target_roas field set), then this field overrides the target ROAS specified
+     * in the campaign's bidding strategy.
      * Otherwise, this value is ignored.
      *
      * Generated from protobuf field <code>double target_roas = 44;</code>

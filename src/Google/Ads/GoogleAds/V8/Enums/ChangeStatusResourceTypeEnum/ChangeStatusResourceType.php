@@ -86,6 +86,42 @@ class ChangeStatusResourceType
      * Generated from protobuf enum <code>AD_GROUP_BID_MODIFIER = 13;</code>
      */
     const AD_GROUP_BID_MODIFIER = 13;
+    /**
+     * A SharedSet resource change.
+     *
+     * Generated from protobuf enum <code>SHARED_SET = 14;</code>
+     */
+    const SHARED_SET = 14;
+    /**
+     * A CampaignSharedSet resource change.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_SHARED_SET = 15;</code>
+     */
+    const CAMPAIGN_SHARED_SET = 15;
+    /**
+     * An Asset resource change.
+     *
+     * Generated from protobuf enum <code>ASSET = 16;</code>
+     */
+    const ASSET = 16;
+    /**
+     * A CustomerAsset resource change.
+     *
+     * Generated from protobuf enum <code>CUSTOMER_ASSET = 17;</code>
+     */
+    const CUSTOMER_ASSET = 17;
+    /**
+     * A CampaignAsset resource change.
+     *
+     * Generated from protobuf enum <code>CAMPAIGN_ASSET = 18;</code>
+     */
+    const CAMPAIGN_ASSET = 18;
+    /**
+     * An AdGroupAsset resource change.
+     *
+     * Generated from protobuf enum <code>AD_GROUP_ASSET = 19;</code>
+     */
+    const AD_GROUP_ASSET = 19;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -100,6 +136,12 @@ class ChangeStatusResourceType
         self::AD_GROUP_FEED => 'AD_GROUP_FEED',
         self::CAMPAIGN_FEED => 'CAMPAIGN_FEED',
         self::AD_GROUP_BID_MODIFIER => 'AD_GROUP_BID_MODIFIER',
+        self::SHARED_SET => 'SHARED_SET',
+        self::CAMPAIGN_SHARED_SET => 'CAMPAIGN_SHARED_SET',
+        self::ASSET => 'ASSET',
+        self::CUSTOMER_ASSET => 'CUSTOMER_ASSET',
+        self::CAMPAIGN_ASSET => 'CAMPAIGN_ASSET',
+        self::AD_GROUP_ASSET => 'AD_GROUP_ASSET',
     ];
 
     public static function name($value)

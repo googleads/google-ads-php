@@ -104,6 +104,42 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ad_group_bid_modifier = 32 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $ad_group_bid_modifier = null;
+    /**
+     * Output only. The SharedSet affected by this change.
+     *
+     * Generated from protobuf field <code>string shared_set = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $shared_set = '';
+    /**
+     * Output only. The CampaignSharedSet affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_shared_set = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $campaign_shared_set = '';
+    /**
+     * Output only. The Asset affected by this change.
+     *
+     * Generated from protobuf field <code>string asset = 35 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $asset = '';
+    /**
+     * Output only. The CustomerAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string customer_asset = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $customer_asset = '';
+    /**
+     * Output only. The CampaignAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_asset = 37 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $campaign_asset = '';
+    /**
+     * Output only. The AdGroupAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string ad_group_asset = 38 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $ad_group_asset = '';
 
     /**
      * Constructor.
@@ -143,6 +179,18 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
      *           Output only. The CampaignFeed affected by this change.
      *     @type string $ad_group_bid_modifier
      *           Output only. The AdGroupBidModifier affected by this change.
+     *     @type string $shared_set
+     *           Output only. The SharedSet affected by this change.
+     *     @type string $campaign_shared_set
+     *           Output only. The CampaignSharedSet affected by this change.
+     *     @type string $asset
+     *           Output only. The Asset affected by this change.
+     *     @type string $customer_asset
+     *           Output only. The CustomerAsset affected by this change.
+     *     @type string $campaign_asset
+     *           Output only. The CampaignAsset affected by this change.
+     *     @type string $ad_group_asset
+     *           Output only. The AdGroupAsset affected by this change.
      * }
      */
     public function __construct($data = NULL) {
@@ -628,6 +676,162 @@ class ChangeStatus extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ad_group_bid_modifier = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The SharedSet affected by this change.
+     *
+     * Generated from protobuf field <code>string shared_set = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getSharedSet()
+    {
+        return $this->shared_set;
+    }
+
+    /**
+     * Output only. The SharedSet affected by this change.
+     *
+     * Generated from protobuf field <code>string shared_set = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSharedSet($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->shared_set = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The CampaignSharedSet affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_shared_set = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getCampaignSharedSet()
+    {
+        return $this->campaign_shared_set;
+    }
+
+    /**
+     * Output only. The CampaignSharedSet affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_shared_set = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCampaignSharedSet($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->campaign_shared_set = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The Asset affected by this change.
+     *
+     * Generated from protobuf field <code>string asset = 35 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getAsset()
+    {
+        return $this->asset;
+    }
+
+    /**
+     * Output only. The Asset affected by this change.
+     *
+     * Generated from protobuf field <code>string asset = 35 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAsset($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->asset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The CustomerAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string customer_asset = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getCustomerAsset()
+    {
+        return $this->customer_asset;
+    }
+
+    /**
+     * Output only. The CustomerAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string customer_asset = 36 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCustomerAsset($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->customer_asset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The CampaignAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_asset = 37 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getCampaignAsset()
+    {
+        return $this->campaign_asset;
+    }
+
+    /**
+     * Output only. The CampaignAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string campaign_asset = 37 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCampaignAsset($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->campaign_asset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The AdGroupAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string ad_group_asset = 38 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getAdGroupAsset()
+    {
+        return $this->ad_group_asset;
+    }
+
+    /**
+     * Output only. The AdGroupAsset affected by this change.
+     *
+     * Generated from protobuf field <code>string ad_group_asset = 38 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAdGroupAsset($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ad_group_asset = $var;
 
         return $this;
     }

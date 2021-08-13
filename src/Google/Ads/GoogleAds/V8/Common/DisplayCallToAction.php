@@ -31,8 +31,8 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      */
     protected $text_color = null;
     /**
-     * Identifies the url collection in the ad.url_collections field. If not set
-     * the url defaults to final_url.
+     * Identifies the URL collection in the `ad.url_collections` field. If not
+     * set, the URL defaults to `final_url`.
      *
      * Generated from protobuf field <code>string url_collection_id = 7;</code>
      */
@@ -50,8 +50,8 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
      *           Text color for the display-call-to-action in hexadecimal, e.g. #ffffff for
      *           white.
      *     @type string $url_collection_id
-     *           Identifies the url collection in the ad.url_collections field. If not set
-     *           the url defaults to final_url.
+     *           Identifies the URL collection in the `ad.url_collections` field. If not
+     *           set, the URL defaults to `final_url`.
      * }
      */
     public function __construct($data = NULL) {
@@ -134,8 +134,8 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Identifies the url collection in the ad.url_collections field. If not set
-     * the url defaults to final_url.
+     * Identifies the URL collection in the `ad.url_collections` field. If not
+     * set, the URL defaults to `final_url`.
      *
      * Generated from protobuf field <code>string url_collection_id = 7;</code>
      * @return string
@@ -156,8 +156,8 @@ class DisplayCallToAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Identifies the url collection in the ad.url_collections field. If not set
-     * the url defaults to final_url.
+     * Identifies the URL collection in the `ad.url_collections` field. If not
+     * set, the URL defaults to `final_url`.
      *
      * Generated from protobuf field <code>string url_collection_id = 7;</code>
      * @param string $var

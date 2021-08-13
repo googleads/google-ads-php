@@ -25,9 +25,12 @@
 namespace Google\Ads\GoogleAds\V8\Services\Gapic;
 
 use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo;
-use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest;
-use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdRequest;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdResponse;
 
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
@@ -48,18 +51,17 @@ use Google\Auth\FetchAuthTokenInterface;
  * $smartCampaignSuggestServiceClient = new SmartCampaignSuggestServiceClient();
  * try {
  *     $customerId = 'customer_id';
- *     $formattedCampaign = $smartCampaignSuggestServiceClient->campaignName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
  *     $suggestionInfo = new SmartCampaignSuggestionInfo();
- *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignBudgetOptions($customerId, $formattedCampaign, $suggestionInfo);
+ *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignAd($customerId, $suggestionInfo);
  * } finally {
  *     $smartCampaignSuggestServiceClient->close();
  * }
  * ```
  *
  * Many parameters require resource names to be formatted in a particular way. To
- * assistwith these names, this class includes a format method for each type of
- * name, and additionallya parseName method to extract the individual identifiers
- * contained within formatted namesthat are returned by the API.
+ * assist with these names, this class includes a format method for each type of
+ * name, and additionally a parseName method to extract the individual identifiers
+ * contained within formatted names that are returned by the API.
  */
 class SmartCampaignSuggestServiceGapicClient
 {
@@ -240,6 +242,9 @@ class SmartCampaignSuggestServiceGapicClient
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
+     *     @type callable $clientCertSource
+     *           A callable which returns the client cert as a string. This can be used to
+     *           provide a certificate and private key to the transport layer for mTLS.
      * }
      *
      * @throws ValidationException
@@ -251,6 +256,53 @@ class SmartCampaignSuggestServiceGapicClient
     }
 
     /**
+     * Suggests a Smart campaign ad compatible with the Ad family of resources,
+     * based on data points such as targeting and the business to advertise.
+     *
+     * Sample code:
+     * ```
+     * $smartCampaignSuggestServiceClient = new SmartCampaignSuggestServiceClient();
+     * try {
+     *     $customerId = 'customer_id';
+     *     $suggestionInfo = new SmartCampaignSuggestionInfo();
+     *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignAd($customerId, $suggestionInfo);
+     * } finally {
+     *     $smartCampaignSuggestServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                      $customerId     Required. The ID of the customer.
+     * @param SmartCampaignSuggestionInfo $suggestionInfo Required. Inputs used to suggest a Smart campaign ad.
+     *                                                    Required fields: final_url, language_code, keyword_themes.
+     *                                                    Optional but recommended fields to improve the quality of the suggestion:
+     *                                                    business_setting and geo_target.
+     * @param array                       $optionalArgs   {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function suggestSmartCampaignAd($customerId, $suggestionInfo, array $optionalArgs = [])
+    {
+        $request = new SuggestSmartCampaignAdRequest();
+        $requestParamHeaders = [];
+        $request->setCustomerId($customerId);
+        $request->setSuggestionInfo($suggestionInfo);
+        $requestParamHeaders['customer_id'] = $customerId;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SuggestSmartCampaignAd', SuggestSmartCampaignAdResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Returns BudgetOption suggestions.
      *
      * Sample code:
@@ -258,18 +310,17 @@ class SmartCampaignSuggestServiceGapicClient
      * $smartCampaignSuggestServiceClient = new SmartCampaignSuggestServiceClient();
      * try {
      *     $customerId = 'customer_id';
-     *     $formattedCampaign = $smartCampaignSuggestServiceClient->campaignName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
-     *     $suggestionInfo = new SmartCampaignSuggestionInfo();
-     *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignBudgetOptions($customerId, $formattedCampaign, $suggestionInfo);
+     *     $suggestionData = new SuggestionDataOneof();
+     *     $suggestionData->setCampaign('formattedCampaign-1139828244');
+     *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
      * } finally {
      *     $smartCampaignSuggestServiceClient->close();
      * }
      * ```
      *
-     * @param string                      $customerId     Required. The ID of the customer whose budget options are to be suggested.
-     * @param string                      $campaign       Required. The resource name of the campaign to get suggestion for.
-     * @param SmartCampaignSuggestionInfo $suggestionInfo Required. Information needed to get budget options
-     * @param array                       $optionalArgs   {
+     * @param string              $customerId     Required. The ID of the customer whose budget options are to be suggested.
+     * @param SuggestionDataOneof $suggestionData An instance of the wrapper class for the required proto oneof suggestion_data.
+     * @param array               $optionalArgs   {
      *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
@@ -288,13 +339,15 @@ class SmartCampaignSuggestServiceGapicClient
         $request = new SuggestSmartCampaignBudgetOptionsRequest();
         $requestParamHeaders = [];
         $request->setCustomerId($customerId);
-        if (isset($suggestionData['campaign'])) {
-            $request->setCampaign($suggestionData['campaign']);
-        } elseif (isset($suggestionData['suggestion_info'])) {
-            $request->setSuggestionInfo($suggestionData['suggestion_info']);
+        if ($suggestionData->isCampaign()) {
+            $request->setCampaign($suggestionData->getCampaign());
+        } elseif ($suggestionData->isSuggestionInfo()) {
+            $request->setSuggestionInfo($suggestionData->getSuggestionInfo());
         } else {
-            throw new ValidationException("Oneof field must be present in suggestionData");
+            throw new ValidationException("A field for the oneof suggestion_data must be set in param $suggestionData");
         }
+
+        
         $requestParamHeaders['customer_id'] = $customerId;
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();

@@ -132,9 +132,6 @@ class FieldMasks
         ?Message $original,
         ?Message $modified
     ) {
-        if (is_null($original) && is_null($modified)) {
-            return;
-        }
         $descriptor = is_null($original)
             ? self::getDescriptorForMessage($modified) : self::getDescriptorForMessage($original);
         for ($i = 0; $i < $descriptor->getFieldCount(); $i++) {
@@ -176,7 +173,6 @@ class FieldMasks
                     // If hassers are not enough to determine if the value changed, a deep
                     // comparison is used at last resort (lower performance).
                     || $originalValue != $modifiedValue;
-
                 // Handles based on the field type.
                 switch ($fieldDescriptor->getType()) {
                     case GPBType::MESSAGE:
@@ -184,17 +180,32 @@ class FieldMasks
                             if (self::isWrapperType($fieldDescriptor->getMessageType())) {
                                 // For wrapper types, just emit the field name.
                                 $paths[] = $fieldName;
-                            } elseif (is_null($modifiedValue)) {
-                                // Just emit the deleted field name.
-                                $paths[] = $fieldName;
                             } else {
                                 // Recursively compare to find different values.
+                                $originalPaths = $paths;
                                 self::buildPaths(
                                     $paths,
                                     $fieldName,
                                     $originalValue,
                                     $modifiedValue
                                 );
+                                // If one of the resource is an empty "non-optional" message (which
+                                // has no $hasser) and its fields are not added to $paths yet
+                                // ($originalPaths == $paths), adds its field name here as a special
+                                // case.
+                                if (
+                                    $originalPaths == $paths
+                                    && (
+                                        is_null($originalValue)
+                                            && !is_null($modifiedValue)
+                                            && !method_exists($modified, $hasser)
+                                        || !is_null($originalValue)
+                                            && is_null($modifiedValue)
+                                            && !method_exists($original, $hasser)
+                                    )
+                                ) {
+                                    $paths[] = $fieldName;
+                                }
                             }
                         }
                         break;
@@ -225,6 +236,14 @@ class FieldMasks
                 }
             }
         }
+        // If this is not the first call of this method (whose $currentField is empty) and not both
+        // $original and $modified are empty,
+        if (!empty($currentField) && !(is_null($original) && is_null($modified))) {
+            // If the message is an empty one (no fields declared at all).
+            if ($descriptor->getFieldCount() === 0) {
+                $paths[] = $currentField;
+            }
+        }
     }
 
     /**
@@ -235,10 +254,15 @@ class FieldMasks
      *
      * @param string $fieldMaskPath the field mask path
      * @param Message $object the object whose field value to be get
+     * @param bool $returnEnumValueName whether to return the enum value name instead of the
+     *     index value returned by default when the field value is an enum value
      * @return mixed the value of the specified field of the specified object
      */
-    public static function getFieldValue(string $fieldMaskPath, Message $object)
-    {
+    public static function getFieldValue(
+        string $fieldMaskPath,
+        Message $object,
+        $returnEnumValueName = false
+    ) {
         $fieldMaskParts = explode('.', $fieldMaskPath);
         $descriptor = self::getDescriptorForMessage($object);
         foreach ($fieldMaskParts as $part) {
@@ -257,6 +281,11 @@ class FieldMasks
                         return null;
                     }
                     $descriptor = self::getDescriptorForMessage($fieldValue);
+                } elseif (
+                    $fieldDescriptor->getType() === GPBType::ENUM && $returnEnumValueName
+                ) {
+                    // Returns the enum value name of the field instead of the enum index value.
+                    $fieldValue = $fieldDescriptor->getEnumType()->getValue($fieldValue)->getName();
                 }
                 // There is only one field that matches the field mask part, so no need to loop
                 // when the field is found.

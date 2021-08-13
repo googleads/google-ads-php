@@ -199,7 +199,7 @@ class QueryError
      */
     const INVALID_VALUE_WITH_DURING_OPERATOR = 22;
     /**
-     * A non-string value was passed to the LIKE operator.
+     * An invalid value was passed to the LIKE operator.
      *
      * Generated from protobuf enum <code>INVALID_VALUE_WITH_LIKE_OPERATOR = 56;</code>
      */
