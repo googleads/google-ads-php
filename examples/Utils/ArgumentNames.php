@@ -63,6 +63,7 @@ final class ArgumentNames
     public const CUSTOM_KEY = 'customKey';
     public const DRAFT_ID = 'draftId';
     public const EMAIL_ADDRESS = 'emailAddress';
+    public const END_DATE_TIME = "endDateTime";
     public const EXTERNAL_ID = 'externalId';
     public const FEED_ID = 'feedId';
     public const FEED_ITEM_ID = 'feedItemId';
@@ -106,6 +107,7 @@ final class ArgumentNames
     public const QUANTITY = 'quantity';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
+    public const START_DATE_TIME = "startDateTime";
     public const USER_LIST_ID = 'userListId';
     public const USER_LIST_IDS = 'userListIds';
 
@@ -151,6 +153,7 @@ final class ArgumentNames
         self::CUSTOM_KEY => 'The custom key',
         self::DRAFT_ID => 'The draft ID',
         self::EMAIL_ADDRESS => 'The email address',
+        self::END_DATE_TIME => 'The end date time',
         self::EXTERNAL_ID => 'The external ID',
         self::FEED_ID => 'The feed ID',
         self::FEED_ITEM_ID => 'The feed item ID',
@@ -198,6 +201,7 @@ final class ArgumentNames
         self::QUANTITY => 'The quantity',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
+        self::START_DATE_TIME => 'The start date time',
         self::USER_LIST_ID => 'The user list ID',
         self::USER_LIST_IDS => 'The user list IDs'
     ];
