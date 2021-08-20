@@ -155,11 +155,10 @@ class AddBiddingSeasonalityAdjustment
         // adjustment.
         $biddingSeasonalityAdjustmentServiceClient =
             $googleAdsClient->getBiddingSeasonalityAdjustmentServiceClient();
-        $response =
-            $biddingSeasonalityAdjustmentServiceClient->mutateBiddingSeasonalityAdjustments(
-                $customerId,
-                [$biddingSeasonalityAdjustmentOperation]
-            );
+        $response = $biddingSeasonalityAdjustmentServiceClient->mutateBiddingSeasonalityAdjustments(
+            $customerId,
+            [$biddingSeasonalityAdjustmentOperation]
+        );
 
         printf(
             "Added seasonality adjustment with resource name: '%s'.%s",
