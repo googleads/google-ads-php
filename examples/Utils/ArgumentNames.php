@@ -54,6 +54,7 @@ final class ArgumentNames
     public const CONVERSION_CUSTOM_VARIABLE_ID = 'conversionCustomVariableId';
     public const CONVERSION_CUSTOM_VARIABLE_VALUE = 'conversionCustomVariableValue';
     public const CONVERSION_DATE_TIME = 'conversionDateTime';
+    public const CONVERSION_RATE_MODIFIER = "conversionRateModifier";
     public const CONVERSION_VALUE = 'conversionValue';
     public const COUNTRY_CODE = 'countryCode';
     public const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
@@ -144,6 +145,7 @@ final class ArgumentNames
         self::CONVERSION_CUSTOM_VARIABLE_ID => 'The conversion custom variable ID',
         self::CONVERSION_CUSTOM_VARIABLE_VALUE => 'The conversion custom variable value',
         self::CONVERSION_DATE_TIME => 'The conversion date time',
+        self::CONVERSION_RATE_MODIFIER => 'The conversion rate modifier',
         self::CONVERSION_VALUE => 'The conversion value',
         self::COUNTRY_CODE => 'The country code',
         self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
