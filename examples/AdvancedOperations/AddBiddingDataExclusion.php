@@ -150,7 +150,7 @@ class AddBiddingDataExclusion
         );
 
         printf(
-            "Added data exclusion with resource name: '%s'.%s",
+            "Added bidding data exclusion with resource name: '%s'.%s",
             $response->getResults()[0]->getResourceName(),
             PHP_EOL
         );
