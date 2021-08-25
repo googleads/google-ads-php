@@ -23,7 +23,7 @@ namespace Google\Ads\GoogleAds;
  */
 class ClientLibrary {
     // The code name of the client library. This is used in the request user agent.
-    public const NAME = 'gacl';
+    public const NAME = 'gccl';
 
     // The version of the client library.
     public const VERSION = '10.1.0';
