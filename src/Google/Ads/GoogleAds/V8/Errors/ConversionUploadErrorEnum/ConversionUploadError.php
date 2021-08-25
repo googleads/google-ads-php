@@ -209,6 +209,40 @@ class ConversionUploadError
      * Generated from protobuf enum <code>CONVERSION_NOT_COMPLIANT_WITH_ATT_POLICY = 32;</code>
      */
     const CONVERSION_NOT_COMPLIANT_WITH_ATT_POLICY = 32;
+    /**
+     * No click was found for the provided user identifiers that could be
+     * applied to the specified conversion action.
+     *
+     * Generated from protobuf enum <code>CLICK_NOT_FOUND = 33;</code>
+     */
+    const CLICK_NOT_FOUND = 33;
+    /**
+     * The provided user identifier is not a SHA-256 hash. It is either unhashed
+     * or hashed using a different hash function.
+     *
+     * Generated from protobuf enum <code>INVALID_USER_IDENTIFIER = 34;</code>
+     */
+    const INVALID_USER_IDENTIFIER = 34;
+    /**
+     * Conversion actions which use an external attribution model cannot be used
+     * with UserIdentifier.
+     *
+     * Generated from protobuf enum <code>EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION_NOT_PERMITTED_WITH_USER_IDENTIFIER = 35;</code>
+     */
+    const EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION_NOT_PERMITTED_WITH_USER_IDENTIFIER = 35;
+    /**
+     * The provided user identifier is not supported. ConversionUploadService
+     * only supports hashed_email and hashed_phone_number.
+     *
+     * Generated from protobuf enum <code>UNSUPPORTED_USER_IDENTIFIER = 36;</code>
+     */
+    const UNSUPPORTED_USER_IDENTIFIER = 36;
+    /**
+     * The user_identifier_source must be FIRST_PARTY for conversion uploads.
+     *
+     * Generated from protobuf enum <code>INVALID_USER_IDENTIFIER_SOURCE = 37;</code>
+     */
+    const INVALID_USER_IDENTIFIER_SOURCE = 37;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -239,6 +273,11 @@ class ConversionUploadError
         self::INVALID_CUSTOMER_FOR_CLICK => 'INVALID_CUSTOMER_FOR_CLICK',
         self::INVALID_CUSTOMER_FOR_CALL => 'INVALID_CUSTOMER_FOR_CALL',
         self::CONVERSION_NOT_COMPLIANT_WITH_ATT_POLICY => 'CONVERSION_NOT_COMPLIANT_WITH_ATT_POLICY',
+        self::CLICK_NOT_FOUND => 'CLICK_NOT_FOUND',
+        self::INVALID_USER_IDENTIFIER => 'INVALID_USER_IDENTIFIER',
+        self::EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION_NOT_PERMITTED_WITH_USER_IDENTIFIER => 'EXTERNALLY_ATTRIBUTED_CONVERSION_ACTION_NOT_PERMITTED_WITH_USER_IDENTIFIER',
+        self::UNSUPPORTED_USER_IDENTIFIER => 'UNSUPPORTED_USER_IDENTIFIER',
+        self::INVALID_USER_IDENTIFIER_SOURCE => 'INVALID_USER_IDENTIFIER_SOURCE',
     ];
 
     public static function name($value)

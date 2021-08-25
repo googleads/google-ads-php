@@ -17,6 +17,9 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
 {
     /**
      * Number of unique people reached that exactly matches the Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the on_target_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>int64 on_target_reach = 1;</code>
      */
@@ -24,6 +27,9 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
     /**
      * Number of unique people reached. This includes people that may fall
      * outside the specified Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the total_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>int64 total_reach = 2;</code>
      */
@@ -60,9 +66,15 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $on_target_reach
      *           Number of unique people reached that exactly matches the Targeting.
+     *           Note that a minimum number of unique people must be reached in order for
+     *           data to be reported. If the minimum number is not met, the on_target_reach
+     *           value will be rounded to 0.
      *     @type int|string $total_reach
      *           Number of unique people reached. This includes people that may fall
      *           outside the specified Targeting.
+     *           Note that a minimum number of unique people must be reached in order for
+     *           data to be reported. If the minimum number is not met, the total_reach
+     *           value will be rounded to 0.
      *     @type int|string $on_target_impressions
      *           Number of ad impressions that exactly matches the Targeting.
      *     @type int|string $total_impressions
@@ -83,6 +95,9 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of unique people reached that exactly matches the Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the on_target_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>int64 on_target_reach = 1;</code>
      * @return int|string
@@ -94,6 +109,9 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of unique people reached that exactly matches the Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the on_target_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>int64 on_target_reach = 1;</code>
      * @param int|string $var
@@ -110,6 +128,9 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
     /**
      * Number of unique people reached. This includes people that may fall
      * outside the specified Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the total_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>int64 total_reach = 2;</code>
      * @return int|string
@@ -122,6 +143,9 @@ class PlannedProductForecast extends \Google\Protobuf\Internal\Message
     /**
      * Number of unique people reached. This includes people that may fall
      * outside the specified Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the total_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>int64 total_reach = 2;</code>
      * @param int|string $var

@@ -25,8 +25,9 @@
 namespace Google\Ads\GoogleAds\V8\Services\Gapic;
 
 use Google\Ads\GoogleAds\V8\Services\CampaignDuration;
-use Google\Ads\GoogleAds\V8\Services\FrequencyCap;
+use Google\Ads\GoogleAds\V8\Services\EffectiveFrequencyLimit;
 
+use Google\Ads\GoogleAds\V8\Services\FrequencyCap;
 use Google\Ads\GoogleAds\V8\Services\GenerateProductMixIdeasRequest;
 use Google\Ads\GoogleAds\V8\Services\GenerateProductMixIdeasResponse;
 use Google\Ads\GoogleAds\V8\Services\GenerateReachForecastRequest;
@@ -167,6 +168,9 @@ class ReachPlanServiceGapicClient
      *           See the {@see \Google\ApiCore\Transport\GrpcTransport::build()} and
      *           {@see \Google\ApiCore\Transport\RestTransport::build()} methods for the
      *           supported options.
+     *     @type callable $clientCertSource
+     *           A callable which returns the client cert as a string. This can be used to
+     *           provide a certificate and private key to the transport layer for mTLS.
      * }
      *
      * @throws ValidationException
@@ -307,6 +311,19 @@ class ReachPlanServiceGapicClient
      *           exposed to the ad) for the reported reach metrics [1-10].
      *           This won't affect the targeting, but just the reporting.
      *           If not specified, a default of 1 is applied.
+     *
+     *           This field cannot be combined with the effective_frequency_limit field.
+     *     @type EffectiveFrequencyLimit $effectiveFrequencyLimit
+     *           The highest minimum effective frequency (the number of times a person was
+     *           exposed to the ad) value [1-10] to include in
+     *           Forecast.effective_frequency_breakdowns.
+     *           If not specified, Forecast.effective_frequency_breakdowns will not be
+     *           provided.
+     *
+     *           The effective frequency value provided here will also be used as the
+     *           minimum effective frequency for the reported reach metrics.
+     *
+     *           This field cannot be combined with the min_effective_frequency field.
      *     @type Targeting $targeting
      *           The targeting to be applied to all products selected in the product mix.
      *
@@ -347,6 +364,10 @@ class ReachPlanServiceGapicClient
 
         if (isset($optionalArgs['minEffectiveFrequency'])) {
             $request->setMinEffectiveFrequency($optionalArgs['minEffectiveFrequency']);
+        }
+
+        if (isset($optionalArgs['effectiveFrequencyLimit'])) {
+            $request->setEffectiveFrequencyLimit($optionalArgs['effectiveFrequencyLimit']);
         }
 
         if (isset($optionalArgs['targeting'])) {

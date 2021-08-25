@@ -10,8 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Response message for
- * [SmartCampaignBudgetSuggestService.SuggestSmartCampaignBudgets][]. Depending
- * on whether the system could suggest the options, either all of the options or
+ * [SmartCampaignSuggestService.SuggestSmartCampaignBudgets][]. Depending on
+ * whether the system could suggest the options, either all of the options or
  * none of them might be returned.
  *
  * Generated from protobuf message <code>google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse</code>

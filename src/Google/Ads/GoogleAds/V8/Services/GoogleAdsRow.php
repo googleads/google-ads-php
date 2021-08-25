@@ -160,6 +160,18 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      */
     protected $batch_job = null;
     /**
+     * The bidding data exclusion referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.BiddingDataExclusion bidding_data_exclusion = 159;</code>
+     */
+    protected $bidding_data_exclusion = null;
+    /**
+     * The bidding seasonality adjustment referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment bidding_seasonality_adjustment = 160;</code>
+     */
+    protected $bidding_seasonality_adjustment = null;
+    /**
      * The bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.resources.BiddingStrategy bidding_strategy = 18;</code>
@@ -303,6 +315,18 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v8.resources.ConversionCustomVariable conversion_custom_variable = 153;</code>
      */
     protected $conversion_custom_variable = null;
+    /**
+     * The conversion value rule referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.ConversionValueRule conversion_value_rule = 164;</code>
+     */
+    protected $conversion_value_rule = null;
+    /**
+     * The conversion value rule set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.ConversionValueRuleSet conversion_value_rule_set = 165;</code>
+     */
+    protected $conversion_value_rule_set = null;
     /**
      * The ClickView referenced in the query.
      *
@@ -820,6 +844,10 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The asset field type view referenced in the query.
      *     @type \Google\Ads\GoogleAds\V8\Resources\BatchJob $batch_job
      *           The batch job referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V8\Resources\BiddingDataExclusion $bidding_data_exclusion
+     *           The bidding data exclusion referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V8\Resources\BiddingSeasonalityAdjustment $bidding_seasonality_adjustment
+     *           The bidding seasonality adjustment referenced in the query.
      *     @type \Google\Ads\GoogleAds\V8\Resources\BiddingStrategy $bidding_strategy
      *           The bidding strategy referenced in the query.
      *     @type \Google\Ads\GoogleAds\V8\Resources\BiddingStrategySimulation $bidding_strategy_simulation
@@ -868,6 +896,10 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
      *           The conversion action referenced in the query.
      *     @type \Google\Ads\GoogleAds\V8\Resources\ConversionCustomVariable $conversion_custom_variable
      *           The conversion custom variable referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V8\Resources\ConversionValueRule $conversion_value_rule
+     *           The conversion value rule referenced in the query.
+     *     @type \Google\Ads\GoogleAds\V8\Resources\ConversionValueRuleSet $conversion_value_rule_set
+     *           The conversion value rule set referenced in the query.
      *     @type \Google\Ads\GoogleAds\V8\Resources\ClickView $click_view
      *           The ClickView referenced in the query.
      *     @type \Google\Ads\GoogleAds\V8\Resources\CurrencyConstant $currency_constant
@@ -1894,6 +1926,78 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The bidding data exclusion referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.BiddingDataExclusion bidding_data_exclusion = 159;</code>
+     * @return \Google\Ads\GoogleAds\V8\Resources\BiddingDataExclusion|null
+     */
+    public function getBiddingDataExclusion()
+    {
+        return isset($this->bidding_data_exclusion) ? $this->bidding_data_exclusion : null;
+    }
+
+    public function hasBiddingDataExclusion()
+    {
+        return isset($this->bidding_data_exclusion);
+    }
+
+    public function clearBiddingDataExclusion()
+    {
+        unset($this->bidding_data_exclusion);
+    }
+
+    /**
+     * The bidding data exclusion referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.BiddingDataExclusion bidding_data_exclusion = 159;</code>
+     * @param \Google\Ads\GoogleAds\V8\Resources\BiddingDataExclusion $var
+     * @return $this
+     */
+    public function setBiddingDataExclusion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\BiddingDataExclusion::class);
+        $this->bidding_data_exclusion = $var;
+
+        return $this;
+    }
+
+    /**
+     * The bidding seasonality adjustment referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment bidding_seasonality_adjustment = 160;</code>
+     * @return \Google\Ads\GoogleAds\V8\Resources\BiddingSeasonalityAdjustment|null
+     */
+    public function getBiddingSeasonalityAdjustment()
+    {
+        return isset($this->bidding_seasonality_adjustment) ? $this->bidding_seasonality_adjustment : null;
+    }
+
+    public function hasBiddingSeasonalityAdjustment()
+    {
+        return isset($this->bidding_seasonality_adjustment);
+    }
+
+    public function clearBiddingSeasonalityAdjustment()
+    {
+        unset($this->bidding_seasonality_adjustment);
+    }
+
+    /**
+     * The bidding seasonality adjustment referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment bidding_seasonality_adjustment = 160;</code>
+     * @param \Google\Ads\GoogleAds\V8\Resources\BiddingSeasonalityAdjustment $var
+     * @return $this
+     */
+    public function setBiddingSeasonalityAdjustment($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\BiddingSeasonalityAdjustment::class);
+        $this->bidding_seasonality_adjustment = $var;
+
+        return $this;
+    }
+
+    /**
      * The bidding strategy referenced in the query.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.resources.BiddingStrategy bidding_strategy = 18;</code>
@@ -2753,6 +2857,78 @@ class GoogleAdsRow extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\ConversionCustomVariable::class);
         $this->conversion_custom_variable = $var;
+
+        return $this;
+    }
+
+    /**
+     * The conversion value rule referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.ConversionValueRule conversion_value_rule = 164;</code>
+     * @return \Google\Ads\GoogleAds\V8\Resources\ConversionValueRule|null
+     */
+    public function getConversionValueRule()
+    {
+        return isset($this->conversion_value_rule) ? $this->conversion_value_rule : null;
+    }
+
+    public function hasConversionValueRule()
+    {
+        return isset($this->conversion_value_rule);
+    }
+
+    public function clearConversionValueRule()
+    {
+        unset($this->conversion_value_rule);
+    }
+
+    /**
+     * The conversion value rule referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.ConversionValueRule conversion_value_rule = 164;</code>
+     * @param \Google\Ads\GoogleAds\V8\Resources\ConversionValueRule $var
+     * @return $this
+     */
+    public function setConversionValueRule($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\ConversionValueRule::class);
+        $this->conversion_value_rule = $var;
+
+        return $this;
+    }
+
+    /**
+     * The conversion value rule set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.ConversionValueRuleSet conversion_value_rule_set = 165;</code>
+     * @return \Google\Ads\GoogleAds\V8\Resources\ConversionValueRuleSet|null
+     */
+    public function getConversionValueRuleSet()
+    {
+        return isset($this->conversion_value_rule_set) ? $this->conversion_value_rule_set : null;
+    }
+
+    public function hasConversionValueRuleSet()
+    {
+        return isset($this->conversion_value_rule_set);
+    }
+
+    public function clearConversionValueRuleSet()
+    {
+        unset($this->conversion_value_rule_set);
+    }
+
+    /**
+     * The conversion value rule set referenced in the query.
+     *
+     * Generated from protobuf field <code>.google.ads.googleads.v8.resources.ConversionValueRuleSet conversion_value_rule_set = 165;</code>
+     * @param \Google\Ads\GoogleAds\V8\Resources\ConversionValueRuleSet $var
+     * @return $this
+     */
+    public function setConversionValueRuleSet($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Ads\GoogleAds\V8\Resources\ConversionValueRuleSet::class);
+        $this->conversion_value_rule_set = $var;
 
         return $this;
     }

@@ -108,6 +108,12 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $feed_item = '';
+    /**
+     * Output only. The Asset affected by this change.
+     *
+     * Generated from protobuf field <code>string asset = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $asset = '';
 
     /**
      * Constructor.
@@ -146,6 +152,8 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      *           Output only. The Feed affected by this change.
      *     @type string $feed_item
      *           Output only. The FeedItem affected by this change.
+     *     @type string $asset
+     *           Output only. The Asset affected by this change.
      * }
      */
     public function __construct($data = NULL) {
@@ -549,6 +557,32 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->feed_item = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The Asset affected by this change.
+     *
+     * Generated from protobuf field <code>string asset = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getAsset()
+    {
+        return $this->asset;
+    }
+
+    /**
+     * Output only. The Asset affected by this change.
+     *
+     * Generated from protobuf field <code>string asset = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAsset($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->asset = $var;
 
         return $this;
     }

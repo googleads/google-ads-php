@@ -26,13 +26,13 @@ class HeaderError
      */
     const UNKNOWN = 1;
     /**
-     * The login customer id could not be validated.
+     * The login customer ID could not be validated.
      *
      * Generated from protobuf enum <code>INVALID_LOGIN_CUSTOMER_ID = 3;</code>
      */
     const INVALID_LOGIN_CUSTOMER_ID = 3;
     /**
-     * The linked customer id could not be validated.
+     * The linked customer ID could not be validated.
      *
      * Generated from protobuf enum <code>INVALID_LINKED_CUSTOMER_ID = 7;</code>
      */

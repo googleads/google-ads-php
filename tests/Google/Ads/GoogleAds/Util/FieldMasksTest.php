@@ -21,15 +21,17 @@ namespace Google\Ads\GoogleAds\Util;
 use Google\Ads\GoogleAds\Util\FieldMasks\FieldMasksTestDataProvider;
 use Google\Ads\GoogleAds\Util\FieldMasks\Proto\Resource;
 use Google\Ads\GoogleAds\Util\FieldMasks\Proto\TestSuite;
-use Google\Ads\GoogleAds\V6\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V6\Common\PercentCpc;
-use Google\Ads\GoogleAds\V6\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V6\Resources\Ad;
-use Google\Ads\GoogleAds\V6\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V6\Resources\Campaign;
-use Google\Ads\GoogleAds\V6\Resources\Campaign\DynamicSearchAdsSetting;
+use Google\Ads\GoogleAds\V8\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V8\Common\PercentCpc;
+use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V8\Resources\Ad;
+use Google\Ads\GoogleAds\V8\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V8\Resources\Campaign;
+use Google\Ads\GoogleAds\V8\Resources\Campaign\DynamicSearchAdsSetting;
 use Google\Protobuf\FieldMask;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use TypeError;
 use UnexpectedValueException;
 
 /**
@@ -57,18 +59,33 @@ class FieldMasksTest extends TestCase
     }
 
     /**
-     * @dataProvider fieldMaskCompareData
+     * @dataProvider compareData
      */
-    public function testFieldMaskCompare(
+    public function testCompare(
         Resource $originalResource,
         Resource $modifiedResource,
-        FieldMask $expectedFieldMask
+        FieldMask $expectedMask
     ) {
-        $actualFieldMask = FieldMasks::compare($originalResource, $modifiedResource);
-        $this->assertEquals($expectedFieldMask, $actualFieldMask);
+        $expectedPaths = $this->getSortedPaths($expectedMask);
+        $actualMask = FieldMasks::compare($originalResource, $modifiedResource);
+        $actualPaths = $this->getSortedPaths($actualMask);
+        $this->assertEquals($expectedPaths, $actualPaths);
     }
 
-    public function fieldMaskCompareData()
+    /**
+     * @dataProvider allSetFieldsOfData
+     */
+    public function testAllSetFieldsOf(
+        Resource $modifiedResource,
+        FieldMask $allSetFieldsMask
+    ) {
+        $allSetFieldsPaths = $this->getSortedPaths($allSetFieldsMask);
+        $actualMask = FieldMasks::allSetFieldsOf($modifiedResource);
+        $actualPaths = $this->getSortedPaths($actualMask);
+        $this->assertEquals($allSetFieldsPaths, $actualPaths);
+    }
+
+    public function compareData()
     {
         $testData = [];
         foreach (self::loadTestCases() as $testCase) {
@@ -81,28 +98,52 @@ class FieldMasksTest extends TestCase
         return $testData;
     }
 
-    /**
-     * @dataProvider fieldMaskAllSetFieldsOfData
-     */
-    public function testFieldMaskAllSetFieldsOf($resource, FieldMask $expectedFieldMask)
-    {
-        $actualFieldMask = FieldMasks::allSetFieldsOf($resource);
-        $this->assertEquals(
-            $expectedFieldMask->serializeToJsonString(),
-            $actualFieldMask->serializeToJsonString()
-        );
-    }
-
-    public function fieldMaskAllSetFieldsOfData()
+    public function allSetFieldsOfData()
     {
         $testData = [];
         foreach (self::loadTestCases() as $testCase) {
             $testData[] = [
                 $testCase->getModifiedResource(),
-                $testCase->getExpectedMaskAllSetFieldsOf()
+                $testCase->getAllSetFieldsMask()
             ];
         }
         return $testData;
+    }
+
+    protected function getSortedPaths(FieldMask $fieldMask)
+    {
+        $paths = [];
+        foreach ($fieldMask->getPaths() as $path) {
+            $paths[] = $path;
+        }
+        sort($paths);
+        return $paths;
+    }
+
+    public function testCompareBothNull()
+    {
+        $this->expectException(TypeError::class);
+        FieldMasks::compare(null, null);
+    }
+
+    public function testCompareEitherIsNull()
+    {
+        $this->expectException(TypeError::class);
+        FieldMasks::compare(new Campaign(), null);
+        $this->expectException(TypeError::class);
+        FieldMasks::compare(null, new Campaign());
+    }
+
+    public function testCompareDifferentTypes()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        FieldMasks::compare(new Campaign(), new AdGroupAd());
+    }
+
+    public function testAllSetFieldsOfNull()
+    {
+        $this->expectException(TypeError::class);
+        FieldMasks::allSetFieldsOf(null);
     }
 
     public function testGetFieldValue()
@@ -171,5 +212,11 @@ class FieldMasksTest extends TestCase
             ['ad.test_field1.headline_part1', $adGroupAd],
             ['ad_1.expanded_text_ad.headline_part1', $adGroupAd]
         ];
+    }
+
+    public function testGetFieldValueNull()
+    {
+        $this->expectException(TypeError::class);
+        FieldMasks::getFieldValue('campaign', null);
     }
 }

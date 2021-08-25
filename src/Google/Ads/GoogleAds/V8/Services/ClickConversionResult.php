@@ -34,6 +34,14 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string conversion_date_time = 6;</code>
      */
     protected $conversion_date_time = null;
+    /**
+     * The user identifiers associated with this conversion. Only hashed_email and
+     * hashed_phone_number are supported for conversion uploads. The maximum
+     * number of user identifiers for each conversion is 5.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.UserIdentifier user_identifiers = 7;</code>
+     */
+    private $user_identifiers;
 
     /**
      * Constructor.
@@ -48,6 +56,10 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
      *     @type string $conversion_date_time
      *           The date time at which the conversion occurred. The format is
      *           "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
+     *     @type \Google\Ads\GoogleAds\V8\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *           The user identifiers associated with this conversion. Only hashed_email and
+     *           hashed_phone_number are supported for conversion uploads. The maximum
+     *           number of user identifiers for each conversion is 5.
      * }
      */
     public function __construct($data = NULL) {
@@ -161,6 +173,36 @@ class ClickConversionResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->conversion_date_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The user identifiers associated with this conversion. Only hashed_email and
+     * hashed_phone_number are supported for conversion uploads. The maximum
+     * number of user identifiers for each conversion is 5.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.UserIdentifier user_identifiers = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUserIdentifiers()
+    {
+        return $this->user_identifiers;
+    }
+
+    /**
+     * The user identifiers associated with this conversion. Only hashed_email and
+     * hashed_phone_number are supported for conversion uploads. The maximum
+     * number of user identifiers for each conversion is 5.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.UserIdentifier user_identifiers = 7;</code>
+     * @param \Google\Ads\GoogleAds\V8\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUserIdentifiers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V8\Common\UserIdentifier::class);
+        $this->user_identifiers = $arr;
 
         return $this;
     }

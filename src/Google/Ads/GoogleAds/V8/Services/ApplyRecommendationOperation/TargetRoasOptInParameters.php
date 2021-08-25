@@ -18,7 +18,7 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
     /**
      * Average ROAS (revenue per unit of spend) to use for Target ROAS bidding
      * strategy. The value is between 0.01 and 1000.0, inclusive. This is a
-     * required field.
+     * required field, unless new_campaign_budget_amount_micros is set.
      *
      * Generated from protobuf field <code>double target_roas = 1;</code>
      */
@@ -39,7 +39,7 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
      *     @type float $target_roas
      *           Average ROAS (revenue per unit of spend) to use for Target ROAS bidding
      *           strategy. The value is between 0.01 and 1000.0, inclusive. This is a
-     *           required field.
+     *           required field, unless new_campaign_budget_amount_micros is set.
      *     @type int|string $new_campaign_budget_amount_micros
      *           Optional, budget amount to set for the campaign.
      * }
@@ -52,7 +52,7 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
     /**
      * Average ROAS (revenue per unit of spend) to use for Target ROAS bidding
      * strategy. The value is between 0.01 and 1000.0, inclusive. This is a
-     * required field.
+     * required field, unless new_campaign_budget_amount_micros is set.
      *
      * Generated from protobuf field <code>double target_roas = 1;</code>
      * @return float
@@ -75,7 +75,7 @@ class TargetRoasOptInParameters extends \Google\Protobuf\Internal\Message
     /**
      * Average ROAS (revenue per unit of spend) to use for Target ROAS bidding
      * strategy. The value is between 0.01 and 1000.0, inclusive. This is a
-     * required field.
+     * required field, unless new_campaign_budget_amount_micros is set.
      *
      * Generated from protobuf field <code>double target_roas = 1;</code>
      * @param float $var

@@ -50,6 +50,24 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.ads.googleads.v8.services.RestatementValue restatement_value = 6;</code>
      */
     protected $restatement_value = null;
+    /**
+     * The user identifiers to enhance the original conversion.
+     * ConversionAdjustmentUploadService only accepts user identifiers in
+     * enhancements. The maximum number of user identifiers for each
+     * enhancement is 5.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.UserIdentifier user_identifiers = 10;</code>
+     */
+    private $user_identifiers;
+    /**
+     * The user agent to enhance the original conversion. This can be found in
+     * your user's HTTP request header when they convert on your web page.
+     * Example, "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X)". User
+     * agent can only be specified in enhancements with user identifiers.
+     *
+     * Generated from protobuf field <code>string user_agent = 11;</code>
+     */
+    protected $user_agent = null;
     protected $conversion_identifier;
 
     /**
@@ -77,13 +95,23 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
      *           value, it must have a new, more recent, adjustment occurrence time.
      *           Otherwise, it will be treated as a duplicate of the previous restatement
      *           and ignored.
+     *     @type \Google\Ads\GoogleAds\V8\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $user_identifiers
+     *           The user identifiers to enhance the original conversion.
+     *           ConversionAdjustmentUploadService only accepts user identifiers in
+     *           enhancements. The maximum number of user identifiers for each
+     *           enhancement is 5.
+     *     @type string $user_agent
+     *           The user agent to enhance the original conversion. This can be found in
+     *           your user's HTTP request header when they convert on your web page.
+     *           Example, "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X)". User
+     *           agent can only be specified in enhancements with user identifiers.
      *     @type \Google\Ads\GoogleAds\V8\Services\GclidDateTimePair $gclid_date_time_pair
      *           Uniquely identifies a conversion that was reported without an order ID
      *           specified.
      *     @type string $order_id
      *           The order ID of the conversion to be adjusted. If the conversion was
      *           reported with an order ID specified, that order ID must be used as the
-     *           identifier here.
+     *           identifier here. The order ID is required for enhancements.
      * }
      */
     public function __construct($data = NULL) {
@@ -248,6 +276,80 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The user identifiers to enhance the original conversion.
+     * ConversionAdjustmentUploadService only accepts user identifiers in
+     * enhancements. The maximum number of user identifiers for each
+     * enhancement is 5.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.UserIdentifier user_identifiers = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUserIdentifiers()
+    {
+        return $this->user_identifiers;
+    }
+
+    /**
+     * The user identifiers to enhance the original conversion.
+     * ConversionAdjustmentUploadService only accepts user identifiers in
+     * enhancements. The maximum number of user identifiers for each
+     * enhancement is 5.
+     *
+     * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.UserIdentifier user_identifiers = 10;</code>
+     * @param \Google\Ads\GoogleAds\V8\Common\UserIdentifier[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUserIdentifiers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Ads\GoogleAds\V8\Common\UserIdentifier::class);
+        $this->user_identifiers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The user agent to enhance the original conversion. This can be found in
+     * your user's HTTP request header when they convert on your web page.
+     * Example, "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X)". User
+     * agent can only be specified in enhancements with user identifiers.
+     *
+     * Generated from protobuf field <code>string user_agent = 11;</code>
+     * @return string
+     */
+    public function getUserAgent()
+    {
+        return isset($this->user_agent) ? $this->user_agent : '';
+    }
+
+    public function hasUserAgent()
+    {
+        return isset($this->user_agent);
+    }
+
+    public function clearUserAgent()
+    {
+        unset($this->user_agent);
+    }
+
+    /**
+     * The user agent to enhance the original conversion. This can be found in
+     * your user's HTTP request header when they convert on your web page.
+     * Example, "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X)". User
+     * agent can only be specified in enhancements with user identifiers.
+     *
+     * Generated from protobuf field <code>string user_agent = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserAgent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_agent = $var;
+
+        return $this;
+    }
+
+    /**
      * Uniquely identifies a conversion that was reported without an order ID
      * specified.
      *
@@ -283,7 +385,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
     /**
      * The order ID of the conversion to be adjusted. If the conversion was
      * reported with an order ID specified, that order ID must be used as the
-     * identifier here.
+     * identifier here. The order ID is required for enhancements.
      *
      * Generated from protobuf field <code>string order_id = 7;</code>
      * @return string
@@ -301,7 +403,7 @@ class ConversionAdjustment extends \Google\Protobuf\Internal\Message
     /**
      * The order ID of the conversion to be adjusted. If the conversion was
      * reported with an order ID specified, that order ID must be used as the
-     * identifier here.
+     * identifier here. The order ID is required for enhancements.
      *
      * Generated from protobuf field <code>string order_id = 7;</code>
      * @param string $var

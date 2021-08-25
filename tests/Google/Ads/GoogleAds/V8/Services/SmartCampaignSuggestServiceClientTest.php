@@ -23,9 +23,12 @@
 namespace Google\Ads\GoogleAds\V8\Services;
 
 use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestServiceClient;
+use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdResponse;
+
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
 use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse;
 use Google\ApiCore\ApiException;
-
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
@@ -69,6 +72,72 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
     /**
      * @test
      */
+    public function suggestSmartCampaignAdTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new SuggestSmartCampaignAdResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $suggestionInfo = new SmartCampaignSuggestionInfo();
+        $response = $client->suggestSmartCampaignAd($customerId, $suggestionInfo);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.ads.googleads.v8.services.SmartCampaignSuggestService/SuggestSmartCampaignAd', $actualFuncCall);
+        $actualValue = $actualRequestObject->getCustomerId();
+        $this->assertProtobufEquals($customerId, $actualValue);
+        $actualValue = $actualRequestObject->getSuggestionInfo();
+        $this->assertProtobufEquals($suggestionInfo, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function suggestSmartCampaignAdExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $customerId = 'customerId-1772061412';
+        $suggestionInfo = new SmartCampaignSuggestionInfo();
+        try {
+            $client->suggestSmartCampaignAd($customerId, $suggestionInfo);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
     public function suggestSmartCampaignBudgetOptionsTest()
     {
         $transport = $this->createTransport();
@@ -81,8 +150,9 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $customerId = 'customerId-1772061412';
-        $formattedCampaign = $client->campaignName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
-        $response = $client->suggestSmartCampaignBudgetOptions($customerId, ['campaign' => $formattedCampaign]);
+        $suggestionData = new SuggestionDataOneof();
+        $suggestionData->setCampaign('formattedCampaign1309185331');
+        $response = $client->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -92,7 +162,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getCustomerId();
         $this->assertProtobufEquals($customerId, $actualValue);
         $actualValue = $actualRequestObject->getCampaign();
-        $this->assertProtobufEquals($formattedCampaign, $actualValue);
+        $this->assertTrue($suggestionData->isCampaign());
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -118,9 +188,10 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
-        $formattedCampaign = $client->campaignName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
+        $suggestionData = new SuggestionDataOneof();
+        $suggestionData->setCampaign('formattedCampaign1309185331');
         try {
-            $client->suggestSmartCampaignBudgetOptions($customerId, ['campaign' => $formattedCampaign]);
+            $client->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

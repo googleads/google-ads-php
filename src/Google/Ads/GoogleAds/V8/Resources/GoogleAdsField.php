@@ -73,25 +73,18 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      */
     private $attribute_resources;
     /**
-     * Output only. At and beyond version V1 this field lists the names of all metrics that are
-     * selectable with the described artifact when it is used in the FROM clause.
+     * Output only. This field lists the names of all metrics that are selectable with the
+     * described artifact when it is used in the FROM clause.
      * It is only set for artifacts whose category is RESOURCE.
-     * Before version V1 this field lists the names of all metrics that are
-     * selectable with the described artifact. It is only set for artifacts whose
-     * category is either RESOURCE or SEGMENT
      *
      * Generated from protobuf field <code>repeated string metrics = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $metrics;
     /**
-     * Output only. At and beyond version V1 this field lists the names of all artifacts,
-     * whether a segment or another resource, that segment metrics when included
-     * in search queries and when the described artifact is used in the FROM
-     * clause. It is only set for artifacts whose category is RESOURCE.
-     * Before version V1 this field lists the names of all artifacts, whether a
-     * segment or another resource, that segment metrics when included in search
-     * queries. It is only set for artifacts of category RESOURCE, SEGMENT or
-     * METRIC.
+     * Output only. This field lists the names of all artifacts, whether a segment or another
+     * resource, that segment metrics when included in search queries and when the
+     * described artifact is used in the FROM clause. It is only set for artifacts
+     * whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string segments = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -155,21 +148,14 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
      *           in search queries.
      *           This field is only set for artifacts whose category is RESOURCE.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $metrics
-     *           Output only. At and beyond version V1 this field lists the names of all metrics that are
-     *           selectable with the described artifact when it is used in the FROM clause.
+     *           Output only. This field lists the names of all metrics that are selectable with the
+     *           described artifact when it is used in the FROM clause.
      *           It is only set for artifacts whose category is RESOURCE.
-     *           Before version V1 this field lists the names of all metrics that are
-     *           selectable with the described artifact. It is only set for artifacts whose
-     *           category is either RESOURCE or SEGMENT
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $segments
-     *           Output only. At and beyond version V1 this field lists the names of all artifacts,
-     *           whether a segment or another resource, that segment metrics when included
-     *           in search queries and when the described artifact is used in the FROM
-     *           clause. It is only set for artifacts whose category is RESOURCE.
-     *           Before version V1 this field lists the names of all artifacts, whether a
-     *           segment or another resource, that segment metrics when included in search
-     *           queries. It is only set for artifacts of category RESOURCE, SEGMENT or
-     *           METRIC.
+     *           Output only. This field lists the names of all artifacts, whether a segment or another
+     *           resource, that segment metrics when included in search queries and when the
+     *           described artifact is used in the FROM clause. It is only set for artifacts
+     *           whose category is RESOURCE.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $enum_values
      *           Output only. Values the artifact can assume if it is a field of type ENUM.
      *           This field is only set for artifacts of category SEGMENT or ATTRIBUTE.
@@ -454,12 +440,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. At and beyond version V1 this field lists the names of all metrics that are
-     * selectable with the described artifact when it is used in the FROM clause.
+     * Output only. This field lists the names of all metrics that are selectable with the
+     * described artifact when it is used in the FROM clause.
      * It is only set for artifacts whose category is RESOURCE.
-     * Before version V1 this field lists the names of all metrics that are
-     * selectable with the described artifact. It is only set for artifacts whose
-     * category is either RESOURCE or SEGMENT
      *
      * Generated from protobuf field <code>repeated string metrics = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -470,12 +453,9 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. At and beyond version V1 this field lists the names of all metrics that are
-     * selectable with the described artifact when it is used in the FROM clause.
+     * Output only. This field lists the names of all metrics that are selectable with the
+     * described artifact when it is used in the FROM clause.
      * It is only set for artifacts whose category is RESOURCE.
-     * Before version V1 this field lists the names of all metrics that are
-     * selectable with the described artifact. It is only set for artifacts whose
-     * category is either RESOURCE or SEGMENT
      *
      * Generated from protobuf field <code>repeated string metrics = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -490,14 +470,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. At and beyond version V1 this field lists the names of all artifacts,
-     * whether a segment or another resource, that segment metrics when included
-     * in search queries and when the described artifact is used in the FROM
-     * clause. It is only set for artifacts whose category is RESOURCE.
-     * Before version V1 this field lists the names of all artifacts, whether a
-     * segment or another resource, that segment metrics when included in search
-     * queries. It is only set for artifacts of category RESOURCE, SEGMENT or
-     * METRIC.
+     * Output only. This field lists the names of all artifacts, whether a segment or another
+     * resource, that segment metrics when included in search queries and when the
+     * described artifact is used in the FROM clause. It is only set for artifacts
+     * whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string segments = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -508,14 +484,10 @@ class GoogleAdsField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. At and beyond version V1 this field lists the names of all artifacts,
-     * whether a segment or another resource, that segment metrics when included
-     * in search queries and when the described artifact is used in the FROM
-     * clause. It is only set for artifacts whose category is RESOURCE.
-     * Before version V1 this field lists the names of all artifacts, whether a
-     * segment or another resource, that segment metrics when included in search
-     * queries. It is only set for artifacts of category RESOURCE, SEGMENT or
-     * METRIC.
+     * Output only. This field lists the names of all artifacts, whether a segment or another
+     * resource, that segment metrics when included in search queries and when the
+     * described artifact is used in the FROM clause. It is only set for artifacts
+     * whose category is RESOURCE.
      *
      * Generated from protobuf field <code>repeated string segments = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

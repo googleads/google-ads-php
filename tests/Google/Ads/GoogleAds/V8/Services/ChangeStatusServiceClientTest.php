@@ -89,6 +89,12 @@ class ChangeStatusServiceClientTest extends GeneratedTest
         $adGroupFeed = 'adGroupFeed-296532742';
         $campaignFeed = 'campaignFeed1065863021';
         $adGroupBidModifier = 'adGroupBidModifier438322997';
+        $sharedSet = 'sharedSet-1783964280';
+        $campaignSharedSet = 'campaignSharedSet-671094761';
+        $asset = 'asset93121264';
+        $customerAsset = 'customerAsset-2045317297';
+        $campaignAsset = 'campaignAsset-1322171647';
+        $adGroupAsset = 'adGroupAsset-606767340';
         $expectedResponse = new ChangeStatus();
         $expectedResponse->setResourceName($resourceName2);
         $expectedResponse->setLastChangeDateTime($lastChangeDateTime);
@@ -102,6 +108,12 @@ class ChangeStatusServiceClientTest extends GeneratedTest
         $expectedResponse->setAdGroupFeed($adGroupFeed);
         $expectedResponse->setCampaignFeed($campaignFeed);
         $expectedResponse->setAdGroupBidModifier($adGroupBidModifier);
+        $expectedResponse->setSharedSet($sharedSet);
+        $expectedResponse->setCampaignSharedSet($campaignSharedSet);
+        $expectedResponse->setAsset($asset);
+        $expectedResponse->setCustomerAsset($customerAsset);
+        $expectedResponse->setCampaignAsset($campaignAsset);
+        $expectedResponse->setAdGroupAsset($adGroupAsset);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedResourceName = $client->changeStatusName('[CUSTOMER_ID]', '[CHANGE_STATUS_ID]');
