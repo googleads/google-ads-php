@@ -19,12 +19,13 @@
 namespace Google\Ads\GoogleAds;
 
 /**
- * Contains information about the client library.
+ * Class to store constants and default values of the library.
  */
-class ClientLibrary {
-    // The code name of the client library. This is used in the request user agent.
+class Constants
+{
+    // The library name to use in Google's request headers.
     public const NAME = 'gccl';
 
-    // The version of the client library.
-    public const VERSION = '10.1.0';
+    // The library version.
+    public const VERSION = '11.0.0';
 }
