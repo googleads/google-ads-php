@@ -20,6 +20,7 @@
 
 namespace Google\Ads\GoogleAds\Lib\V8;
 
+use Google\Ads\GoogleAds\Constants;
 use Google\Ads\GoogleAds\Lib\ConfigurationTrait;
 use Google\Ads\GoogleAds\V8\Services\AccessibleBiddingStrategyServiceClient;
 use Google\Ads\GoogleAds\V8\Services\AccountBudgetProposalServiceClient;
@@ -196,6 +197,8 @@ trait ServiceClientFactoryTrait
         if (!empty($this->getEndpoint())) {
             $clientOptions += [self::$SERVICE_ADDRESS_KEY => $this->getEndpoint()];
         }
+        $clientOptions['libName'] = Constants::LIBRARY_NAME;
+        $clientOptions['libVersion'] = Constants::LIBRARY_VERSION;
         $clientOptions['transportConfig'] = [
             'grpc' => [
                 'stubOpts' => [
