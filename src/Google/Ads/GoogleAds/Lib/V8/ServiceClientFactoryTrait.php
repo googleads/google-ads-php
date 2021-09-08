@@ -197,8 +197,8 @@ trait ServiceClientFactoryTrait
         if (!empty($this->getEndpoint())) {
             $clientOptions += [self::$SERVICE_ADDRESS_KEY => $this->getEndpoint()];
         }
-        $clientOptions['libName'] = Constants::NAME;
-        $clientOptions['libVersion'] = Constants::VERSION;
+        $clientOptions['libName'] = Constants::LIBRARY_NAME;
+        $clientOptions['libVersion'] = Constants::LIBRARY_VERSION;
         $clientOptions['transportConfig'] = [
             'grpc' => [
                 'stubOpts' => [

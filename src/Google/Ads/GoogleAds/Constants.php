@@ -24,8 +24,8 @@ namespace Google\Ads\GoogleAds;
 class Constants
 {
     // The library name to use in Google's request headers.
-    public const NAME = 'gccl';
+    public const LIBRARY_NAME = 'gccl';
 
     // The library version.
-    public const VERSION = '11.0.0';
+    public const LIBRARY_VERSION = '11.0.0';
 }
