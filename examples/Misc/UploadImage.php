@@ -38,7 +38,7 @@ use Google\ApiCore\ApiException;
 class UploadImage
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const IMAGE_URL = 'https://goo.gl/3b9Wfh';
+    private const IMAGE_URL = 'https://gaagl.page.link/Eit5';
 
     public static function main()
     {

@@ -273,13 +273,13 @@ class AddMerchantCenterDynamicRemarketingCampaign
         $marketingImageResourceName = self::uploadAsset(
             $googleAdsClient,
             $customerId,
-            'https://goo.gl/3b9Wfh',
+            'https://gaagl.page.link/Eit5',
             'Marketing Image'
         );
         $squareMarketingImageResourceName = self::uploadAsset(
             $googleAdsClient,
             $customerId,
-            'https://goo.gl/mtt54n',
+            'https://gaagl.page.link/bjYi',
             'Square Marketing Image'
         );
 

@@ -38,7 +38,7 @@ use Google\ApiCore\ApiException;
 class UploadMediaBundle
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const BUNDLE_URL = 'https://goo.gl/9Y7qI2';
+    private const BUNDLE_URL = 'https://gaagl.page.link/ib87';
 
     public static function main()
     {

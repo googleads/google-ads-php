@@ -76,8 +76,8 @@ class AddLocalCampaign
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
-    private const MARKETING_IMAGE_URL = 'https://goo.gl/3b9Wfh';
-    private const LOGO_IMAGE_URL = 'https://goo.gl/mtt54n';
+    private const MARKETING_IMAGE_URL = 'https://gaagl.page.link/Eit5';
+    private const LOGO_IMAGE_URL = 'https://gaagl.page.link/bjYi';
     private const YOUTUBE_VIDEO_ID = 'ECpDzH9gXh8';
 
     public static function main()

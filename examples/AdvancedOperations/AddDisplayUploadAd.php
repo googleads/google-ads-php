@@ -146,7 +146,7 @@ class AddDisplayUploadAd
         // The HTML5 zip file contains all the HTML, CSS, and images needed for the
         // HTML5 ad. For help on creating an HTML5 zip file, check out Google Web
         // Designer (https://www.google.com/webdesigner/).
-        $html5Zip = file_get_contents('https://goo.gl/9Y7qI2');
+        $html5Zip = file_get_contents('https://gaagl.page.link/ib87');
 
         // Creates the media bundle asset.
         $asset = new Asset([
