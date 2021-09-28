@@ -77,8 +77,8 @@ class AddSmartDisplayAd
     // See the descriptions of the 'marketing_images' and 'square_marketing_images' fields in
     // ResponsiveDisplayAdInfo.php for specifications of marketing and square marketing images.
     // They can be used to create an image asset for your customer account only once.
-    private const MARKETING_IMAGE_URL = 'https://goo.gl/3b9Wfh';
-    private const SQUARE_MARKETING_IMAGE_URL = 'https://goo.gl/mtt54n';
+    private const MARKETING_IMAGE_URL = 'https://gaagl.page.link/Eit5';
+    private const SQUARE_MARKETING_IMAGE_URL = 'https://gaagl.page.link/bjYi';
 
     public static function main()
     {

@@ -1,3 +1,19 @@
+## 12.0.0
+*   Added support for sending the library name and version with each request.
+*   Updated the minimum required version of `google/protobuf` to 3.18.0.
+*   Updated `composer.json` and `composer.lock` of LaravelSampleApp.
+*   Added code examples:
+    * AddBiddingDataExclusion
+    * AddBiddingSeasonalityAdjustment
+*   Fixed code examples:
+    * AddDisplayUploadAd
+    * AddLocalCampaign
+    * AddMerchantCenterDynamicRemarketingCampaign
+    * AddSmartDisplayAd
+    * UploadImage
+    * UploadImageAsset
+    * UploadMediaBundle
+
 ## 11.0.0
 *   Added support for v8_1 of Google Ads API.
 *   Added 1.26 to the minimum required version constraints of the `monolog/monolog` dependency.
