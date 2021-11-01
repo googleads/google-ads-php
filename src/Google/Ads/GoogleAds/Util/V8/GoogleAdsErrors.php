@@ -111,7 +111,7 @@ final class GoogleAdsErrors
                 $index = $element->getIndex();
                 if (
                     ($fieldName === "operations" || $fieldName === "mutate_operations"
-                    || $fieldName === "conversions") && $index == $operationIndex
+                    || $fieldName === "conversions" || $fieldName === "conversion_adjustments") && $index == $operationIndex
                 ) {
                     $result[] = $error;
                 }

@@ -110,6 +110,17 @@ class GoogleAdsErrorsTest extends TestCase
         $this->assertEquals($expectedMessage, $errors[0]->getMessage());
     }
 
+    public function testFromFailureWithConversionAdjustments()
+    {
+        $failureWithConversions = $this->createGoogleAdsFailure("conversion_adjustments");
+        $errors = GoogleAdsErrors::fromFailure(0, $failureWithConversions);
+        $this->assertCount(1, $errors);
+
+        $expectedMessage = "A test message.";
+        $this->assertEquals($expectedMessage, $errors[0]->getMessage());
+        
+    }
+
     private function createGoogleAdsFailure($fieldName = "operations")
     {
         return new GoogleAdsFailure([
