@@ -130,7 +130,7 @@ trait ConfigurationTrait
     }
 
     /**
-     * Returns true if the gRPC transport channel is insecure.
+     * Returns true if the gRPC channel is insecure.
      *
      * @return bool
      */
