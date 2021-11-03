@@ -53,7 +53,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $proxy;
     private $transport;
     private $grpcChannelIsInsecure;
-    private $grpcTransportCredential;
+    private $grpcChannelCredential;
 
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
@@ -248,14 +248,14 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
-     * Sets the gRPC transport credential for Google Ads API requests.
+     * Sets the gRPC channel credential for Google Ads API requests.
      *
-     * @param ChannelCredentials $grpcTransportCredential
+     * @param ChannelCredentials $grpcChannelCredential
      * @return self this builder
      */
-    public function withGrpcTransportCredential(ChannelCredentials $grpcTransportCredential)
+    public function withGrpcChannelCredential(ChannelCredentials $grpcChannelCredential)
     {
-        $this->grpcTransportCredential = $grpcTransportCredential;
+        $this->grpcChannelCredential = $grpcChannelCredential;
         return $this;
     }
 
@@ -336,10 +336,10 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             throw new InvalidArgumentException("The log level must be a valid PSR log level");
         }
 
-        if ($this->grpcChannelIsInsecure && $this->grpcTransportCredential !== null) {
+        if ($this->grpcChannelIsInsecure && $this->grpcChannelCredential !== null) {
             throw new InvalidArgumentException(
-                'The gRPC transport credential must not be set when the gRPC channel is set as ' .
-                'insecure.'
+                'The gRPC channel credential can only be set when the gRPC channel is set as ' .
+                'not insecure.'
             );
         }
 
@@ -353,10 +353,10 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         }
         if (
             !empty($this->transport) && $this->transport !== 'grpc'
-            && $this->grpcTransportCredential !== null
+            && $this->grpcChannelCredential !== null
         ) {
             throw new InvalidArgumentException(
-                'The gRPC transport credential can only be set when the transport is "grpc".'
+                'The gRPC channel credential can only be set when the transport is "grpc".'
             );
         }
     }
@@ -462,12 +462,12 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
-     * Gets the gRPC transport credential.
+     * Gets the gRPC channel credential.
      *
      * @return ChannelCredentials|null
      */
-    public function getGrpcTransportCredential()
+    public function getGrpcChannelCredential()
     {
-        return $this->grpcTransportCredential;
+        return $this->grpcChannelCredential;
     }
 }

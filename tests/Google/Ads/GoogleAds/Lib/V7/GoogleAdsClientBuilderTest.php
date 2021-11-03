@@ -256,13 +256,13 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    public function testBuildFailsWhenGrpcChannelIsInsecureAndGrpcTransportCredentialIsSet()
+    public function testBuildFailsWhenGrpcChannelIsInsecureAndGrpcChannelCredentialIsSet()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withGrpcChannelIsInsecure(true)
-            ->withGrpcTransportCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
     }
@@ -278,13 +278,13 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    public function testBuildFailsWhenTransportIsNotGrpcAndGrpcTransportCredentialIsSet()
+    public function testBuildFailsWhenTransportIsNotGrpcAndGrpcChannelCredentialIsSet()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withTransport('rest')
-            ->withGrpcTransportCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
     }
@@ -394,17 +394,17 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertTrue($googleAdsClient->getGrpcChannelIsInsecure());
     }
 
-    public function testBuildWithGrpcTransportCredential()
+    public function testBuildWithGrpcChannelCredential()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-            ->withGrpcTransportCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
         $this->assertSame(
             self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL,
-            $googleAdsClient->getGrpcTransportCredential()
+            $googleAdsClient->getGrpcChannelCredential()
         );
     }
 

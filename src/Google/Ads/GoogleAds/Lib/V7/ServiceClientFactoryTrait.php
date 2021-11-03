@@ -225,11 +225,11 @@ trait ServiceClientFactoryTrait
         }
         if (
             self::getGrpcDependencyStatus()
-            && ($this->getGrpcChannelIsInsecure() || !empty($this->getGrpcTransportCredential()))
+            && ($this->getGrpcChannelIsInsecure() || !empty($this->getGrpcChannelCredential()))
         ) {
             $channelCredentials = $this->getGrpcChannelIsInsecure()
                 ? ChannelCredentials::createInsecure()
-                : $this->getGrpcTransportCredential();
+                : $this->getGrpcChannelCredential();
             $clientOptions['transportConfig']['grpc']['stubOpts'] += [
                 self::$CREDENTIALS_LOADER_KEY => $channelCredentials
             ];

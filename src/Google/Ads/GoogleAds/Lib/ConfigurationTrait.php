@@ -37,7 +37,7 @@ trait ConfigurationTrait
     private $proxy;
     private $transport;
     private $grpcChannelIsInsecure;
-    private $grpcTransportCredential;
+    private $grpcChannelCredential;
 
     /**
      * Gets the developer token.
@@ -140,12 +140,12 @@ trait ConfigurationTrait
     }
 
     /**
-     * Gets the gRPC transport credential.
+     * Gets the gRPC channel credential.
      *
      * @return ChannelCredentials|null
      */
-    public function getGrpcTransportCredential()
+    public function getGrpcChannelCredential()
     {
-        return $this->grpcTransportCredential;
+        return $this->grpcChannelCredential;
     }
 }
