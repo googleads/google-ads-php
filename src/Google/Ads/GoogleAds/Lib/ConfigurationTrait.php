@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib;
 
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\ChannelCredentials;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -35,6 +36,8 @@ trait ConfigurationTrait
     private $logLevel;
     private $proxy;
     private $transport;
+    private $grpcChannelIsInsecure;
+    private $grpcTransportCredential;
 
     /**
      * Gets the developer token.
@@ -124,5 +127,25 @@ trait ConfigurationTrait
     public function getTransport()
     {
         return $this->transport;
+    }
+
+    /**
+     * Returns true if the gRPC transport channel is insecure.
+     *
+     * @return bool
+     */
+    public function getGrpcChannelIsInsecure()
+    {
+        return $this->grpcChannelIsInsecure;
+    }
+
+    /**
+     * Gets the gRPC transport credential.
+     *
+     * @return ChannelCredentials|null
+     */
+    public function getGrpcTransportCredential()
+    {
+        return $this->grpcTransportCredential;
     }
 }
