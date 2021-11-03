@@ -44,7 +44,7 @@ class GoogleAdsClientBuilderTest extends TestCase
     private static $LINKED_CUSTOMER_ID = 123456789;
     private static $INVALID_TRANSPORT = '1234567890';
     private static $INVALID_BOOLEAN_STRING = 'invalid_boolean_string';
-    private static $DEFAULT_GRPC_TRANSPORT_CREDENTIAL;
+    private static $DEFAULT_GRPC_CHANNEL_CREDENTIAL;
 
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
     private $googleAdsClientBuilder;
@@ -65,7 +65,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->getMock();
         $this->loggerMock =
             $this->getMockBuilder(LoggerInterface::class)->disableOriginalConstructor()->getMock();
-        self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL = ChannelCredentials::createDefault();
+        self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL = ChannelCredentials::createDefault();
     }
 
     public function testBuildClientFromConfiguration()
@@ -262,7 +262,7 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withGrpcChannelIsInsecure(true)
-            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
     }
@@ -284,7 +284,7 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withTransport('rest')
-            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
     }
@@ -398,12 +398,12 @@ class GoogleAdsClientBuilderTest extends TestCase
     {
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
         $this->assertSame(
-            self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL,
+            self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL,
             $googleAdsClient->getGrpcChannelCredential()
         );
     }

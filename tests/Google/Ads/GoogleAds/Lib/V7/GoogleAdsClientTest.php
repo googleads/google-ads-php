@@ -46,7 +46,7 @@ class GoogleAdsClientTest extends TestCase
     private static $PROXY = 'http://localhost:8080';
 
     private static $TRANSPORT = 'grpc';
-    private static $DEFAULT_GRPC_TRANSPORT_CREDENTIAL;
+    private static $DEFAULT_GRPC_CHANNEL_CREDENTIAL;
 
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
     private $googleAdsClientBuilder;
@@ -62,7 +62,7 @@ class GoogleAdsClientTest extends TestCase
             ->getMockBuilder(FetchAuthTokenInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
-        self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL = ChannelCredentials::createDefault();
+        self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL = ChannelCredentials::createDefault();
     }
 
     public function testGetClientOptions()
@@ -76,7 +76,7 @@ class GoogleAdsClientTest extends TestCase
             ->withProxy(self::$PROXY)
             ->withTransport(self::$TRANSPORT)
             ->withGrpcChannelIsInsecure(false)
-            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_TRANSPORT_CREDENTIAL)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
