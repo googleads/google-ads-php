@@ -35,6 +35,8 @@ trait ConfigurationTrait
     private $logLevel;
     private $proxy;
     private $transport;
+    private $unaryMiddlewares;
+    private $streamingMiddlewares;
 
     /**
      * Gets the developer token.
@@ -124,5 +126,25 @@ trait ConfigurationTrait
     public function getTransport()
     {
         return $this->transport;
+    }
+
+    /**
+     * Gets the Google Ads unary middlewares.
+     *
+     * @return GoogleAdsMiddlewareAbstract[] the Google Ads unary middlewares
+     */
+    public function getUnaryMiddlewares()
+    {
+        return $this->unaryMiddlewares;
+    }
+
+    /**
+     * Gets the Google Ads streaming middlewares.
+     *
+     * @return GoogleAdsMiddlewareAbstract[] the Google Ads streaming middlewares
+     */
+    public function getStreamingMiddlewares()
+    {
+        return $this->streamingMiddlewares;
     }
 }
