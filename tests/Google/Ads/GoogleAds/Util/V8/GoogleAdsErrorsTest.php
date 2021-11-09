@@ -118,7 +118,6 @@ class GoogleAdsErrorsTest extends TestCase
 
         $expectedMessage = "A test message.";
         $this->assertEquals($expectedMessage, $errors[0]->getMessage());
-        
     }
 
     private function createGoogleAdsFailure($fieldName = "operations")

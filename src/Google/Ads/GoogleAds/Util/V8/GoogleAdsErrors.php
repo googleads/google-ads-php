@@ -116,7 +116,7 @@ final class GoogleAdsErrors
                 $element = $pathElements[0];
                 $fieldName = $element->getFieldName();
                 $index = $element->getIndex();
-                if ( in_array($fieldName, self::SUPPORTED_FIELDS) && $index == $operationIndex) {
+                if (in_array($fieldName, self::SUPPORTED_FIELDS) && $index == $operationIndex) {
                     $result[] = $error;
                 }
             }
