@@ -25,6 +25,13 @@ use Google\Ads\GoogleAds\V8\Errors\ErrorLocation\FieldPathElement;
 
 final class GoogleAdsErrors
 {
+    private const SUPPORTED_FIELDS = [
+        'operations',
+        'mutate_operations',
+        'conversion_adjustments',
+        'conversions'
+    ];
+
     /**
      * Gets a list of all partial failure error messages for a given response. Operations are
      * indexed from 0.
@@ -109,10 +116,7 @@ final class GoogleAdsErrors
                 $element = $pathElements[0];
                 $fieldName = $element->getFieldName();
                 $index = $element->getIndex();
-                if (
-                    ($fieldName === "operations" || $fieldName === "mutate_operations"
-                    || $fieldName === "conversions" || $fieldName === "conversion_adjustments") && $index == $operationIndex
-                ) {
+                if ( in_array($fieldName, self::SUPPORTED_FIELDS) && $index == $operationIndex) {
                     $result[] = $error;
                 }
             }
