@@ -24,17 +24,17 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Enums\ManagerLinkStatusEnum\ManagerLinkStatus;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CustomerClientLink;
-use Google\Ads\GoogleAds\V8\Resources\CustomerManagerLink;
-use Google\Ads\GoogleAds\V8\Services\CustomerClientLinkOperation;
-use Google\Ads\GoogleAds\V8\Services\CustomerManagerLinkOperation;
+use Google\Ads\GoogleAds\Util\V9\ResourceNames;
+use Google\Ads\GoogleAds\V9\Enums\ManagerLinkStatusEnum\ManagerLinkStatus;
+use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V9\Resources\CustomerClientLink;
+use Google\Ads\GoogleAds\V9\Resources\CustomerManagerLink;
+use Google\Ads\GoogleAds\V9\Services\CustomerClientLinkOperation;
+use Google\Ads\GoogleAds\V9\Services\CustomerManagerLinkOperation;
 use Google\ApiCore\ApiException;
 
 /**
