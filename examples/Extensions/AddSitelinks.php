@@ -24,26 +24,30 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V8\Common\KeywordInfo;
-use Google\Ads\GoogleAds\V8\Common\SitelinkFeedItem;
-use Google\Ads\GoogleAds\V8\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V8\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V8\Enums\FeedItemTargetDeviceEnum\FeedItemTargetDevice;
-use Google\Ads\GoogleAds\V8\Enums\KeywordMatchTypeEnum\KeywordMatchType;
-use Google\Ads\GoogleAds\V8\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V8\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V8\Services\CampaignExtensionSettingOperation;
-use Google\Ads\GoogleAds\V8\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
+use Google\Ads\GoogleAds\Util\V9\ResourceNames;
+use Google\Ads\GoogleAds\V9\Common\AdScheduleInfo;
+use Google\Ads\GoogleAds\V9\Common\KeywordInfo;
+use Google\Ads\GoogleAds\V9\Common\SitelinkFeedItem;
+use Google\Ads\GoogleAds\V9\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V9\Enums\ExtensionTypeEnum\ExtensionType;
+use Google\Ads\GoogleAds\V9\Enums\FeedItemTargetDeviceEnum\FeedItemTargetDevice;
+use Google\Ads\GoogleAds\V9\Enums\KeywordMatchTypeEnum\KeywordMatchType;
+use Google\Ads\GoogleAds\V9\Enums\MinuteOfHourEnum\MinuteOfHour;
+use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V9\Resources\CampaignExtensionSetting;
+use Google\Ads\GoogleAds\V9\Resources\ExtensionFeedItem;
+use Google\Ads\GoogleAds\V9\Services\CampaignExtensionSettingOperation;
+use Google\Ads\GoogleAds\V9\Services\ExtensionFeedItemOperation;
 use Google\ApiCore\ApiException;
 
 /**
+ * DEPRECATION WARNING!
+ * THIS USAGE IS DEPRECATED AND WILL BE REMOVED IN AN UPCOMING API VERSION
+ * All extensions should migrate to Assets. See AddSitelinksUsingAssets.php.
+ *
  * Adds sitelinks to a campaign. To create a campaign, run AddCampaigns.php.
  */
 class AddSitelinks

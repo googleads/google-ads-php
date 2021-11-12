@@ -25,49 +25,47 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V8\Common\AdTextAsset;
-use Google\Ads\GoogleAds\V8\Common\KeywordThemeInfo;
-use Google\Ads\GoogleAds\V8\Common\LocationInfo;
-use Google\Ads\GoogleAds\V8\Common\SmartCampaignAdInfo;
-use Google\Ads\GoogleAds\V8\Enums\AdGroupTypeEnum\AdGroupType;
-use Google\Ads\GoogleAds\V8\Enums\AdTypeEnum\AdType;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
-use Google\Ads\GoogleAds\V8\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
-use Google\Ads\GoogleAds\V8\Enums\BudgetDeliveryMethodEnum\BudgetDeliveryMethod;
-use Google\Ads\GoogleAds\V8\Enums\BudgetTypeEnum\BudgetType;
-use Google\Ads\GoogleAds\V8\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V8\Enums\CriterionTypeEnum\CriterionType;
-use Google\Ads\GoogleAds\V8\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V8\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Ad;
-use Google\Ads\GoogleAds\V8\Resources\AdGroup;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupAd;
-use Google\Ads\GoogleAds\V8\Resources\Campaign;
-use Google\Ads\GoogleAds\V8\Resources\CampaignBudget;
-use Google\Ads\GoogleAds\V8\Resources\CampaignCriterion;
-use Google\Ads\GoogleAds\V8\Resources\KeywordThemeConstant;
-use Google\Ads\GoogleAds\V8\Resources\SmartCampaignSetting;
-use Google\Ads\GoogleAds\V8\Resources\SmartCampaignSetting\PhoneNumber;
-use Google\Ads\GoogleAds\V8\Services\AdGroupAdOperation;
-use Google\Ads\GoogleAds\V8\Services\AdGroupOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignBudgetOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignCriterionOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V8\Services\MutateGoogleAdsResponse;
-use Google\Ads\GoogleAds\V8\Services\MutateOperation;
-use Google\Ads\GoogleAds\V8\Services\MutateOperationResponse;
-use Google\Ads\GoogleAds\V8\Services\SmartCampaignSettingOperation;
-use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo;
-use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\BusinessContext;
-use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\LocationList;
-use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
+use Google\Ads\GoogleAds\Util\V9\ResourceNames;
+use Google\Ads\GoogleAds\V9\Common\AdScheduleInfo;
+use Google\Ads\GoogleAds\V9\Common\AdTextAsset;
+use Google\Ads\GoogleAds\V9\Common\KeywordThemeInfo;
+use Google\Ads\GoogleAds\V9\Common\LocationInfo;
+use Google\Ads\GoogleAds\V9\Common\SmartCampaignAdInfo;
+use Google\Ads\GoogleAds\V9\Enums\AdGroupTypeEnum\AdGroupType;
+use Google\Ads\GoogleAds\V9\Enums\AdTypeEnum\AdType;
+use Google\Ads\GoogleAds\V9\Enums\AdvertisingChannelSubTypeEnum\AdvertisingChannelSubType;
+use Google\Ads\GoogleAds\V9\Enums\AdvertisingChannelTypeEnum\AdvertisingChannelType;
+use Google\Ads\GoogleAds\V9\Enums\BudgetTypeEnum\BudgetType;
+use Google\Ads\GoogleAds\V9\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V9\Enums\DayOfWeekEnum\DayOfWeek;
+use Google\Ads\GoogleAds\V9\Enums\MinuteOfHourEnum\MinuteOfHour;
+use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V9\Resources\Ad;
+use Google\Ads\GoogleAds\V9\Resources\AdGroup;
+use Google\Ads\GoogleAds\V9\Resources\AdGroupAd;
+use Google\Ads\GoogleAds\V9\Resources\Campaign;
+use Google\Ads\GoogleAds\V9\Resources\CampaignBudget;
+use Google\Ads\GoogleAds\V9\Resources\CampaignCriterion;
+use Google\Ads\GoogleAds\V9\Resources\KeywordThemeConstant;
+use Google\Ads\GoogleAds\V9\Resources\SmartCampaignSetting;
+use Google\Ads\GoogleAds\V9\Resources\SmartCampaignSetting\PhoneNumber;
+use Google\Ads\GoogleAds\V9\Services\AdGroupAdOperation;
+use Google\Ads\GoogleAds\V9\Services\AdGroupOperation;
+use Google\Ads\GoogleAds\V9\Services\CampaignBudgetOperation;
+use Google\Ads\GoogleAds\V9\Services\CampaignCriterionOperation;
+use Google\Ads\GoogleAds\V9\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V9\Services\MutateGoogleAdsResponse;
+use Google\Ads\GoogleAds\V9\Services\MutateOperation;
+use Google\Ads\GoogleAds\V9\Services\MutateOperationResponse;
+use Google\Ads\GoogleAds\V9\Services\SmartCampaignSettingOperation;
+use Google\Ads\GoogleAds\V9\Services\SmartCampaignSuggestionInfo;
+use Google\Ads\GoogleAds\V9\Services\SmartCampaignSuggestionInfo\BusinessContext;
+use Google\Ads\GoogleAds\V9\Services\SmartCampaignSuggestionInfo\LocationList;
+use Google\Ads\GoogleAds\V9\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
 use Google\ApiCore\ApiException;
 use InvalidArgumentException;
 
@@ -80,9 +78,16 @@ use InvalidArgumentException;
 class AddSmartCampaign
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    // Optional: Specify the keyword text used to generate a set of keyword themes, which are used
-    // to improve the budget suggestion and performance of the Smart campaign.
-    private const KEYWORD_TEXT = 'travel';
+    // Optional: Specify a keyword text used to retrieve keyword theme constant suggestions from the
+    // KeywordThemeConstantService. These keyword theme suggestions are generated using
+    // auto-completion data for the given text and may help improve the performance of the Smart
+    // campaign.
+    private const KEYWORD_TEXT = null;
+    // Optional: A keyword text used to create a freeform keyword theme, which is entirely
+    // user-specified and not derived from any suggestion service. Using free-form keyword themes is
+    // typically not recommended because they are less effective than suggested keyword themes,
+    // however they are useful in situations where a very specific term needs to be targeted.
+    private const FREEFORM_KEYWORD_TEXT = null;
     // Optional: Specify the ID of a Google My Business (GMB) location. This is required if a
     // business name is not provided. It can be retrieved using the GMB API, see:
     // https://developers.google.com/my-business/reference/rest/v4/accounts.locations.
@@ -104,6 +109,12 @@ class AddSmartCampaign
     private const BUDGET_TEMPORARY_ID = '-1';
     private const SMART_CAMPAIGN_TEMPORARY_ID = '-2';
     private const AD_GROUP_TEMPORARY_ID = '-3';
+    // These define the minimum number of headlines and descriptions that are
+    // required to create an ad group ad in a Smart campaign.
+    private const NUM_REQUIRED_HEADLINES = 3;
+    private const NUM_REQUIRED_DESCRIPTIONS = 2;
+
+    private const UNSIGNED_64_BIT_RANGE_CEILING = 2 ** 64;
 
     public static function main()
     {
@@ -112,11 +123,12 @@ class AddSmartCampaign
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
+            ArgumentNames::FREEFORM_KEYWORD_TEXT => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BUSINESS_LOCATION_ID => GetOpt::OPTIONAL_ARGUMENT,
             ArgumentNames::BUSINESS_NAME => GetOpt::OPTIONAL_ARGUMENT
         ]);
-        $businessLocationId = $options[ArgumentNames::BUSINESS_LOCATION_ID] ?:
-            self::BUSINESS_LOCATION_ID;
+        $businessLocationId =
+            $options[ArgumentNames::BUSINESS_LOCATION_ID] ?: self::BUSINESS_LOCATION_ID;
         $businessName = $options[ArgumentNames::BUSINESS_NAME] ?: self::BUSINESS_NAME;
         if ($businessLocationId && $businessName) {
             throw new InvalidArgumentException(
@@ -146,6 +158,7 @@ class AddSmartCampaign
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::KEYWORD_TEXT] ?: self::KEYWORD_TEXT,
+                $options[ArgumentNames::FREEFORM_KEYWORD_TEXT] ?: self::FREEFORM_KEYWORD_TEXT,
                 $businessLocationId,
                 $businessName
             );
@@ -181,30 +194,58 @@ class AddSmartCampaign
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param string $keywordText a keyword text used for generating keyword themes
+     * @param string|null $keywordText a keyword text used for generating keyword themes
+     * @param string|null $freeformKeywordText a keyword used to create a free-form keyword theme
      * @param string|null $businessLocationId the ID of a Google My Business location
      * @param string|null $businessName the name of a Google My Business
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $keywordText,
+        ?string $keywordText,
+        ?string $freeformKeywordText,
         ?string $businessLocationId,
         ?string $businessName
     ) {
-        $keywordThemeConstants = self::getKeywordThemeConstants($googleAdsClient, $keywordText);
+        // [START add_smart_campaign_12]
+        // Gets the SmartCampaignSuggestionInfo object which acts as the basis for many of the
+        // entities necessary to create a Smart campaign. It will be reused a number of times to
+        // retrieve suggestions for keyword themes, budget amount, ads, and campaign criteria.
+        $suggestionInfo = self::getSmartCampaignSuggestionInfo($businessLocationId, $businessName);
+
+        // Generates a list of keyword themes using the SuggestKeywordThemes method on the
+        // SmartCampaignSuggestService. It is strongly recommended that you use this strategy for
+        // generating keyword themes.
+        $keywordThemeConstants =
+            self::getKeywordThemeSuggestions($googleAdsClient, $customerId, $suggestionInfo);
+
+        // Optionally retrieves auto-complete suggestions for the given keyword text and adds them
+        // to the list of keyword themes.
+        if (!empty($keywordText)) {
+            $keywordThemeConstants = array_merge(
+                $keywordThemeConstants,
+                self::getKeywordTextAutoCompletions($googleAdsClient, $keywordText)
+            );
+        }
+
         // Maps the list of KeywordThemeConstants to KeywordThemeInfos.
         $keywordThemeInfos = array_map(function (KeywordThemeConstant $constant) {
             return new KeywordThemeInfo([
                 'keyword_theme_constant' => $constant->getResourceName()
             ]);
         }, $keywordThemeConstants);
-        $suggestionInfo = self::getSmartCampaignSuggestionInfo(
-            $googleAdsClient,
-            $businessLocationId,
-            $businessName,
-            $keywordThemeInfos
-        );
+
+        // [START add_smart_campaign_13]
+        // Optionally includes any freeform keywords in verbatim.
+        if (!empty($freeformKeywordText)) {
+            $keywordThemeInfos[] =
+                new KeywordThemeInfo(['free_form_keyword_theme' => $freeformKeywordText]);
+        }
+        // [END add_smart_campaign_13]
+        // Includes the keyword suggestions in the overall SuggestionInfo object.
+        $suggestionInfo = $suggestionInfo->setKeywordThemes($keywordThemeInfos);
+        // [END add_smart_campaign_12]
+
         $suggestedBudgetAmount = self::getBudgetSuggestion(
             $googleAdsClient,
             $customerId,
@@ -223,7 +264,7 @@ class AddSmartCampaign
             $customerId,
             $suggestedBudgetAmount
         );
-        $smartCmpaignOperation = self::createSmartCampaignOperation($customerId);
+        $smartCampaignOperation = self::createSmartCampaignOperation($customerId);
         $smartCampaignSettingOperation = self::createSmartCampaignSettingOperation(
             $customerId,
             $businessLocationId,
@@ -231,7 +272,8 @@ class AddSmartCampaign
         );
         $campaignCriterionOperations = self::createCampaignCriterionOperations(
             $customerId,
-            $keywordThemeInfos
+            $keywordThemeInfos,
+            $suggestionInfo
         );
         $adGroupOperation = self::createAdGroupOperation($customerId);
         $adGroupAdOperation = self::createAdGroupAdOperation($customerId, $adSuggestions);
@@ -246,7 +288,7 @@ class AddSmartCampaign
             array_merge(
                 [
                     $campaignBudgetOperation,
-                    $smartCmpaignOperation,
+                    $smartCampaignOperation,
                     $smartCampaignSettingOperation,
                 ],
                 $campaignCriterionOperations,
@@ -262,14 +304,52 @@ class AddSmartCampaign
     // [END add_smart_campaign_7]
 
     /**
-     * Retrieves KeywordThemeConstants for the given criteria.
+     * Retrieves KeywordThemeConstants using the given suggestion info.
+     *
+     * Here we use the SuggestKeywordThemes method, which uses all of the business details included
+     * in the given SmartCampaignSuggestionInfo instance to generate keyword theme suggestions. This
+     * is the recommended way to generate keyword themes because it uses detailed information about
+     * your business, its location, and website content to generate keyword themes.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param int $customerId the customer ID
+     * @param SmartCampaignSuggestionInfo $suggestionInfo instance with details
+     *     about the business being advertised
+     * @return KeywordThemeConstant[] a list of KeywordThemeConstants
+     */
+    // [START add_smart_campaign_11]
+    private static function getKeywordThemeSuggestions(
+        GoogleAdsClient $googleAdsClient,
+        int $customerId,
+        SmartCampaignSuggestionInfo $suggestionInfo
+    ): array {
+        $smartCampaignSuggestServiceClient =
+            $googleAdsClient->getSmartCampaignSuggestServiceClient();
+
+        // Issues a request to retrieve the keyword theme constants.
+        $response =
+            $smartCampaignSuggestServiceClient->suggestKeywordThemes($customerId, $suggestionInfo);
+
+        printf(
+            "Retrieved %d keyword theme constant suggestions from the SuggestKeywordThemes "
+            . "method.%s",
+            $response->getKeywordThemes()->count(),
+            PHP_EOL
+        );
+        return iterator_to_array($response->getKeywordThemes()->getIterator());
+    }
+    // [END add_smart_campaign_11]
+
+    /**
+     * Retrieves KeywordThemeConstants that are derived from autocomplete data for the given keyword
+     * text.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string $keywordText a keyword text used for generating keyword themes
      * @return KeywordThemeConstant[] a list of KeywordThemeConstants
      */
     // [START add_smart_campaign]
-    private static function getKeywordThemeConstants(
+    private static function getKeywordTextAutoCompletions(
         GoogleAdsClient $googleAdsClient,
         string $keywordText
     ): array {
@@ -302,18 +382,14 @@ class AddSmartCampaign
      * "language_code" and "keyword_themes" fields are set on the SmartCampaignSuggestionInfo
      * instance.
      *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param string|null $businessLocationId the ID of a Google My Business location
      * @param string|null $businessName the name of a Google My Business
-     * @param KeywordThemeInfo[] $keywordThemeInfos a list of KeywordThemeInfos
      * @return SmartCampaignSuggestionInfo a SmartCampaignSuggestionInfo instance
      */
     // [START add_smart_campaign_9]
     private static function getSmartCampaignSuggestionInfo(
-        GoogleAdsClient $googleAdsClient,
         ?string $businessLocationId,
-        ?string $businessName,
-        array $keywordThemeInfos
+        ?string $businessName
     ): SmartCampaignSuggestionInfo {
         $suggestionInfo = new SmartCampaignSuggestionInfo([
             // Adds the URL of the campaign's landing page.
@@ -354,9 +430,6 @@ class AddSmartCampaign
                 ])]
             ]),
 
-            // Adds the KeywordThemeInfo objects.
-            'keyword_themes' => $keywordThemeInfos,
-
             // Adds a schedule detailing which days of the week the business is open.
             // This schedule describes a schedule in which the business is open on
             // Mondays from 9am to 5pm.
@@ -376,7 +449,9 @@ class AddSmartCampaign
         // Sets either of the business_location_id or business_name, depending on whichever is
         // provided.
         if ($businessLocationId) {
-            $suggestionInfo->setBusinessLocationId($businessLocationId);
+            $suggestionInfo->setBusinessLocationId(
+                self::convertBusinessLocationId($businessLocationId)
+            );
         } else {
             $suggestionInfo->setBusinessContext(new BusinessContext([
                 'business_name' => $businessName
@@ -449,7 +524,7 @@ class AddSmartCampaign
      * @param int $customerId the customer ID
      * @param SmartCampaignSuggestionInfo $suggestionInfo a SmartCampaignSuggestionInfo instance
      *      with details about the business being advertised
-     * @return SmartCampaignAdInfo a SmartCampaignAdInfo instance with suggested headlines and
+     * @return SmartCampaignAdInfo|null a SmartCampaignAdInfo instance with suggested headlines and
      *      descriptions
      */
     // [START add_smart_campaign_10]
@@ -457,7 +532,7 @@ class AddSmartCampaign
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         SmartCampaignSuggestionInfo $suggestionInfo
-    ): SmartCampaignAdInfo {
+    ) {
         // Unlike the SuggestSmartCampaignBudgetOptions method, it's only possible to use
         // suggestion_info to retrieve ad creative suggestions.
 
@@ -472,6 +547,9 @@ class AddSmartCampaign
         // and two descriptions. Note that some of the suggestions may have empty strings as text.
         // Before setting these on the ad you should review them and filter out any empty values.
         $adSuggestions = $response->getAdInfo();
+        if (is_null($adSuggestions)) {
+            return null;
+        }
         print 'The following headlines were suggested:' . PHP_EOL;
         foreach ($adSuggestions->getHeadlines() as $headline) {
             print "\t" . ($headline->getText() ?: 'None') . PHP_EOL;
@@ -599,7 +677,9 @@ class AddSmartCampaign
         // It's required that either a business location ID or a business name is added to the
         // SmartCampaignSetting.
         if ($businessLocationId) {
-            $smartCampaignSetting->setBusinessLocationId($businessLocationId);
+            $smartCampaignSetting->setBusinessLocationId(
+                self::convertBusinessLocationId($businessLocationId)
+            );
         } else {
             $smartCampaignSetting->setBusinessName($businessName);
         }
@@ -622,12 +702,15 @@ class AddSmartCampaign
      *
      * @param int $customerId the customer ID
      * @param KeywordThemeInfo[] $keywordThemeInfos a list of KeywordThemeInfos
+     * @param SmartCampaignSuggestionInfo $smartCampaignSuggestionInfo a SmartCampaignSuggestionInfo
+     *     instance
      * @return MutateOperation[] a list of MutateOperations that create new campaign criteria
      */
     // [START add_smart_campaign_8]
     private static function createCampaignCriterionOperations(
         int $customerId,
-        array $keywordThemeInfos
+        array $keywordThemeInfos,
+        SmartCampaignSuggestionInfo $smartCampaignSuggestionInfo
     ): array {
         $operations = [];
         foreach ($keywordThemeInfos as $info) {
@@ -636,10 +719,29 @@ class AddSmartCampaign
                 // Sets the campaign ID to a temporary ID.
                 'campaign' =>
                     ResourceNames::forCampaign($customerId, self::SMART_CAMPAIGN_TEMPORARY_ID),
-                // Sets the criterion type to KEYWORD_THEME.
-                'type' => CriterionType::KEYWORD_THEME,
                 // Sets the keyword theme to the given KeywordThemeInfo.
                 'keyword_theme' => $info
+            ]);
+
+            // Creates the MutateOperation that creates the campaign criterion and adds it to the
+            // list of operations.
+            $operations[] = new MutateOperation([
+                'campaign_criterion_operation' => new CampaignCriterionOperation([
+                    'create' => $campaignCriterion
+                ])
+            ]);
+        }
+
+        // Create a location criterion for each location in the suggestion info object to add
+        // corresponding location targeting to the Smart campaign.
+        foreach ($smartCampaignSuggestionInfo->getLocationList()->getLocations() as $location) {
+            // Creates the campaign criterion object.
+            $campaignCriterion = new CampaignCriterion([
+                // Sets the campaign ID to a temporary ID.
+                'campaign' =>
+                    ResourceNames::forCampaign($customerId, self::SMART_CAMPAIGN_TEMPORARY_ID),
+                // Set the location to the given location.
+                'location' => $location
             ]);
 
             // Creates the MutateOperation that creates the campaign criterion and adds it to the
@@ -696,15 +798,41 @@ class AddSmartCampaign
      * it with the ad group created in earlier steps.
      *
      * @param int $customerId the customer ID
-     * @param SmartCampaignAdInfo $adSuggestions a SmartCampaignAdInfo object with ad creative
+     * @param SmartCampaignAdInfo|null $adSuggestions a SmartCampaignAdInfo object with ad creative
      *      suggestions
      * @return MutateOperation a MutateOperation that creates a new ad group ad
      */
     // [START add_smart_campaign_6]
     private static function createAdGroupAdOperation(
         int $customerId,
-        $adSuggestions
+        ?SmartCampaignAdInfo $adSuggestions
     ): MutateOperation {
+        if (is_null($adSuggestions)) {
+            $smartCampaignAdInfo = new SmartCampaignAdInfo();
+        } else {
+            // The SmartCampaignAdInfo object includes headlines and descriptions retrieved
+            // from the SmartCampaignSuggestService::SuggestSmartCampaignAd method. It's
+            // recommended that users review and approve or update these creatives before
+            // they're set on the ad. It's possible that some or all of these assets may
+            // contain empty texts, which should not be set on the ad and instead should be
+            // replaced with meaningful texts from the user. Below we just accept the creatives
+            // that were suggested while filtering out empty assets, but individual workflows
+            // will vary here.
+            $smartCampaignAdInfo = new SmartCampaignAdInfo([
+                'headlines' => array_filter(
+                    iterator_to_array($adSuggestions->getHeadlines()->getIterator()),
+                    function ($value) {
+                        return $value->getText();
+                    }
+                ),
+                'descriptions' => array_filter(
+                    iterator_to_array($adSuggestions->getDescriptions()->getIterator()),
+                    function ($value) {
+                        return $value->getText();
+                    }
+                )
+            ]);
+        }
         // Creates the ad group ad object.
         $adGroupAd = new AdGroupAd([
             // Sets the ad group ID to a temporary ID.
@@ -712,30 +840,37 @@ class AddSmartCampaign
             'ad' => new Ad([
                 // Sets the type to SMART_CAMPAIGN_AD.
                 'type' => AdType::SMART_CAMPAIGN_AD,
-                // The SmartCampaignAdInfo object includes headlines and descriptions retrieved
-                // from the SmartCampaignSuggestService::SuggestSmartCampaignAd method. It's
-                // recommended that users review and approve or update these creatives before
-                // they're set on the ad. It's possible that some or all of these assets may
-                // contain empty texts, which should not be set on the ad and instead should be
-                // replaced with meaningful texts from the user. Below we just accept the creatives
-                // that were suggested while filtering out empty assets, but individual workflows
-                // will vary here.
-                'smart_campaign_ad' => new SmartCampaignAdInfo([
-                    'headlines' => array_filter(
-                        iterator_to_array($adSuggestions->getHeadlines()->getIterator()),
-                        function ($value) {
-                            return $value->getText();
-                        }
-                    ),
-                    'descriptions' => array_filter(
-                        iterator_to_array($adSuggestions->getDescriptions()->getIterator()),
-                        function ($value) {
-                            return $value->getText();
-                        }
-                    )
-                ])
+                'smart_campaign_ad' => $smartCampaignAdInfo
             ])
         ]);
+
+        // The SmartCampaignAdInfo object includes headlines and descriptions retrieved from the
+        // SmartCampaignSuggestService.SuggestSmartCampaignAd method. It's recommended that users
+        // review and approve or update these ads before they're set on the ad. It's possible that
+        // some or all of these assets may contain empty texts, which should not be set on the ad
+        // and instead should be replaced with meaningful texts from the user.
+        // Below we just accept the ads that were suggested while filtering out empty assets.
+        // If no headlines or descriptions were suggested, then we manually add some, otherwise
+        // this operation will generate an INVALID_ARGUMENT error. Individual workflows will likely
+        // vary here.
+        $currentHeadlinesCount = $smartCampaignAdInfo->getHeadlines()->count();
+        for ($i = 0; $i < self::NUM_REQUIRED_HEADLINES - $currentHeadlinesCount; $i++) {
+            $smartCampaignAdInfo->setHeadlines(
+                array_merge(
+                    iterator_to_array($smartCampaignAdInfo->getHeadlines()),
+                    [new AdTextAsset(['text' => 'Placeholder headline ' . $i])]
+                )
+            );
+        }
+        $currentDescriptionsCount = $smartCampaignAdInfo->getDescriptions()->count();
+        for ($i = 0; $i < self::NUM_REQUIRED_DESCRIPTIONS - $currentDescriptionsCount; $i++) {
+            $smartCampaignAdInfo->setDescriptions(
+                array_merge(
+                    iterator_to_array($smartCampaignAdInfo->getDescriptions()),
+                    [new AdTextAsset(['text' => 'Placeholder description ' . $i])]
+                )
+            );
+        }
 
         // Creates the MutateOperation that creates the ad group ad.
         return new MutateOperation([
@@ -762,19 +897,19 @@ class AddSmartCampaign
             if ($result->hasCampaignBudgetResult()) {
                 $resourceType = "CampaignBudget";
                 $resourceName = $result->getCampaignBudgetResult()->getResourceName();
-            } else if ($result->hasCampaignResult()) {
+            } elseif ($result->hasCampaignResult()) {
                 $resourceType = "Campaign";
                 $resourceName = $result->getCampaignResult()->getResourceName();
-            } else if ($result->hasSmartCampaignSettingResult()) {
+            } elseif ($result->hasSmartCampaignSettingResult()) {
                 $resourceType = "SmartCampaignSetting";
                 $resourceName = $result->getSmartCampaignSettingResult()->getResourceName();
-            } else if ($result->getAdGroupResult()) {
+            } elseif ($result->getAdGroupResult()) {
                 $resourceType = "AdGroup";
                 $resourceName = $result->getAdGroupResult()->getResourceName();
-            } else if ($result->getAdGroupAdResult()) {
+            } elseif ($result->getAdGroupAdResult()) {
                 $resourceType = "AdGroupAd";
                 $resourceName = $result->getAdGroupAdResult()->getResourceName();
-            } else if ($result->getCampaignCriterionResult()) {
+            } elseif ($result->getCampaignCriterionResult()) {
                 $resourceType = "CampaignCriterion";
                 $resourceName = $result->getCampaignCriterionResult()->getResourceName();
             }
@@ -785,6 +920,32 @@ class AddSmartCampaign
                 PHP_EOL
             );
         }
+    }
+
+    /**
+     * Converts a business location ID to a signed 64 bit integer.
+     *
+     * A Google My business location ID may be outside of the range for a signed 64 bit integer
+     * (>= 2^63), which will cause an error to be thrown when it's set to the 'business_location_id'
+     * field on a SmartCampaignSuggestionInfo or SmartCampaignSetting instance.
+     * As PHP supports only signed integers, this method passes the specified parameter to intval(),
+     * which will automatically convert the value into a signed integer.
+     *
+     * If the specified value is greater than 64 bits, an error will be thrown.
+     *
+     * @param float $businessLocationId the ID of a Google My Business location
+     * @return int the converted business location ID in signed 64 bit
+     */
+    private static function convertBusinessLocationId(float $businessLocationId)
+    {
+        if ($businessLocationId >= self::UNSIGNED_64_BIT_RANGE_CEILING) {
+            // If the business location ID is outside of 64 bit range it can't be converted to a
+            // signed 64 bit integer and is invalid.
+            throw new InvalidArgumentException(
+                'The given business_location_id is outside of the range for a 64 bit integer'
+            );
+        }
+        return intval($businessLocationId);
     }
 }
 
