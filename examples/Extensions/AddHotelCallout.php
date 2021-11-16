@@ -24,33 +24,26 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\HotelCalloutFeedItem;
-use Google\Ads\GoogleAds\V8\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\AdGroupExtensionSetting;
-use Google\Ads\GoogleAds\V8\Resources\CampaignExtensionSetting;
-use Google\Ads\GoogleAds\V8\Resources\CustomerExtensionSetting;
-use Google\Ads\GoogleAds\V8\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V8\Services\AdGroupExtensionSettingOperation;
-use Google\Ads\GoogleAds\V8\Services\CampaignExtensionSettingOperation;
-use Google\Ads\GoogleAds\V8\Services\CustomerExtensionSettingOperation;
-use Google\Ads\GoogleAds\V8\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
+use Google\Ads\GoogleAds\V9\Common\HotelCalloutAsset;
+use Google\Ads\GoogleAds\V9\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V9\Resources\Asset;
+use Google\Ads\GoogleAds\V9\Resources\CustomerAsset;
+use Google\Ads\GoogleAds\V9\Services\AssetOperation;
+use Google\Ads\GoogleAds\V9\Services\CustomerAssetOperation;
+use Google\Ads\GoogleAds\V9\Services\MutateAssetResult;
+use Google\Ads\GoogleAds\V9\Services\MutateCustomerAssetResult;
 use Google\ApiCore\ApiException;
 
 /**
- * This example adds a hotel callout extension to a specific account, campaign within the account,
- * and ad group within the campaign.
+ * This example adds a hotel callout extension to a specific account.
  */
 class AddHotelCallout
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
-    private const AD_GROUP_ID = 'INSERT_AD_GROUP_ID_HERE';
-    private const CALLOUT_TEXT = 'INSERT_CALLOUT_TEXT_HERE';
 
     // See supported languages at:
     // https://developers.google.com/hotels/hotel-ads/api-reference/language-codes.
@@ -62,9 +55,6 @@ class AddHotelCallout
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::AD_GROUP_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CALLOUT_TEXT => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::LANGUAGE_CODE => GetOpt::REQUIRED_ARGUMENT
         ]);
 
@@ -81,9 +71,6 @@ class AddHotelCallout
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID,
-                $options[ArgumentNames::AD_GROUP_ID] ?: self::AD_GROUP_ID,
-                $options[ArgumentNames::CALLOUT_TEXT] ?: self::CALLOUT_TEXT,
                 $options[ArgumentNames::LANGUAGE_CODE] ?: self::LANGUAGE_CODE
             );
         } catch (GoogleAdsException $googleAdsException) {
@@ -118,203 +105,100 @@ class AddHotelCallout
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
-     * @param int $adGroupId the ad group ID
-     * @param string $calloutText the callout text
      * @param string $languageCode the language code
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        int $campaignId,
-        int $adGroupId,
-        string $calloutText,
         string $languageCode
     ) {
-        // Creates an extension feed item as hotel callout.
-        $extensionFeedItemResourceName =
-            self::addExtensionFeedItem($googleAdsClient, $customerId, $calloutText, $languageCode);
+        // Creates assets for the hotel callout extensions.
+        $assetResourceNames =
+            self::addExtensionAssets($googleAdsClient, $customerId, $languageCode);
 
-        // Adds the extension feed item to the account.
-        self::addExtensionToAccount($googleAdsClient, $customerId, $extensionFeedItemResourceName);
-
-        // Adds the extension feed item to the campaign.
-        self::addExtensionToCampaign(
-            $googleAdsClient,
-            $customerId,
-            $campaignId,
-            $extensionFeedItemResourceName
-        );
-
-        // Adds the extension feed item to the ad group.
-        self::addExtensionToAdGroup(
-            $googleAdsClient,
-            $customerId,
-            $adGroupId,
-            $extensionFeedItemResourceName
-        );
+        // Adds the extensions at the account level, so these will serve in all eligible campaigns.
+        self::linkAssetsToAccount($googleAdsClient, $customerId, $assetResourceNames);
     }
 
     /**
-     * Creates a new extension feed item for the callout extension.
+     * Creates new assets for the callout.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param string $calloutText the callout text to be created
      * @param string $languageCode the language code for the callout text
-     * @return string the created extension feed item's resource name
+     * @return string[] the resource names of created hotel callout assets
      */
-    private static function addExtensionFeedItem(
+    private static function addExtensionAssets(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $calloutText,
         string $languageCode
-    ): string {
-        // Creates the callout extension with the specified text and language.
-        $hotelCalloutFeedItem = new HotelCalloutFeedItem([
-            'text' => $calloutText,
-            'language_code' => $languageCode
-        ]);
+    ): array {
+        // Creates the hotel callouts with text and specified language.
+        $hotelCalloutAssets = [
+            new HotelCalloutAsset(['text' => 'Activities', 'language_code' => $languageCode]),
+            new HotelCalloutAsset(['text' => 'Facilities', 'language_code' => $languageCode])
+        ];
 
-        // Creates a feed item from the hotel callout extension.
-        $extensionFeedItem =
-            new ExtensionFeedItem(['hotel_callout_feed_item' => $hotelCalloutFeedItem]);
+        // For each HotelCalloutAsset, wraps it in an Asset and creates an AssetOperation to add the
+        // Asset.
+        $assetOperations = array_map(function (HotelCalloutAsset $hotelCalloutAsset) {
+            return new AssetOperation([
+                'create' => new Asset(['hotel_callout_asset' => $hotelCalloutAsset])
+            ]);
+        }, $hotelCalloutAssets);
 
-        // Creates an extension feed item operation.
-        $extensionFeedItemOperation = new ExtensionFeedItemOperation();
-        $extensionFeedItemOperation->setCreate($extensionFeedItem);
+        // Issues a mutate request to add the assets and print its information.
+        $assetServiceClient = $googleAdsClient->getAssetServiceClient();
+        $response = $assetServiceClient->mutateAssets($customerId, $assetOperations);
+        $createdAssetResourceNames = [];
+        foreach ($response->getResults() as $result) {
+            /** @var MutateAssetResult $result */
+            printf(
+                "Created a hotel callout asset with resource name: '%s'.%s",
+                $result->getResourceName(),
+                PHP_EOL
+            );
+            $createdAssetResourceNames[] = $result->getResourceName();
+        }
 
-        // Issues a mutate request to add the extension feed item and print its information.
-        $extensionFeedItemServiceClient = $googleAdsClient->getExtensionFeedItemServiceClient();
-        $response = $extensionFeedItemServiceClient->mutateExtensionFeedItems(
-            $customerId,
-            [$extensionFeedItemOperation]
-        );
-        $extensionFeedItemResourceName = $response->getResults()[0]->getResourceName();
-        printf(
-            "Created an extension feed item with resource name: '%s'.%s",
-            $extensionFeedItemResourceName,
-            PHP_EOL
-        );
-
-        return $extensionFeedItemResourceName;
+        return $createdAssetResourceNames;
     }
 
     /**
-     * Adds the extension feed item to the customer account.
+     * Links the hotel callout assets at the account level to serve in all eligible campaigns.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param string $extensionFeedItemResourceName the extension feed item resource name
+     * @param string[] $assetResourceNames the resource names of the hotel callout assets
      */
-    private static function addExtensionToAccount(
+    private static function linkAssetsToAccount(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $extensionFeedItemResourceName
+        array $assetResourceNames
     ): void {
-        // Creates a customer extension setting, sets its type to HOTEL_CALLOUT, and attaches the
-        // feed item.
-        $customerExtensionSetting = new CustomerExtensionSetting([
-            'extension_type' => ExtensionType::HOTEL_CALLOUT,
-            'extension_feed_items' => [$extensionFeedItemResourceName]
-        ]);
+        // Creates a CustomerAssetOperation for each asset resource name by linking it to a newly
+        // created CustomerAsset.
+        $customerAssetOperations = array_map(function (string $assetResourceName) {
+            return new CustomerAssetOperation(['create' => new CustomerAsset([
+                'asset' => $assetResourceName,
+                'field_type' => AssetFieldType::HOTEL_CALLOUT
+            ])]);
+        }, $assetResourceNames);
 
-        // Creates a customer extension setting operation.
-        $customerExtensionSettingOperation = new CustomerExtensionSettingOperation();
-        $customerExtensionSettingOperation->setCreate($customerExtensionSetting);
-
-        // Issues a mutate request to add the customer extension setting and prints its information.
-        $customerExtensionSettingServiceClient =
-            $googleAdsClient->getCustomerExtensionSettingServiceClient();
-        $response = $customerExtensionSettingServiceClient->mutateCustomerExtensionSettings(
+        // Issues a mutate request to add the customer assets and prints its information.
+        $customerAssetServiceClient = $googleAdsClient->getCustomerAssetServiceClient();
+        $response = $customerAssetServiceClient->mutateCustomerAssets(
             $customerId,
-            [$customerExtensionSettingOperation]
+            $customerAssetOperations
         );
-        printf(
-            "Created a customer extension setting with resource name: '%s'.%s",
-            $response->getResults()[0]->getResourceName(),
-            PHP_EOL
-        );
-    }
-
-    /**
-     * Adds the extension feed item to the specified campaign.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
-     * @param string $extensionFeedItemResourceName the extension feed item resource name
-     */
-    private static function addExtensionToCampaign(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        int $campaignId,
-        string $extensionFeedItemResourceName
-    ): void {
-        // Creates a campaign extension setting, sets its type to HOTEL_CALLOUT, and attaches the
-        // feed item.
-        $campaignExtensionSetting = new CampaignExtensionSetting([
-            'campaign' => ResourceNames::forCampaign($customerId, $campaignId),
-            'extension_type' => ExtensionType::HOTEL_CALLOUT,
-            'extension_feed_items' => [$extensionFeedItemResourceName]
-        ]);
-
-        // Creates a campaign extension setting operation.
-        $campaignExtensionSettingOperation = new CampaignExtensionSettingOperation();
-        $campaignExtensionSettingOperation->setCreate($campaignExtensionSetting);
-
-        // Issues a mutate request to add the campaign extension setting and prints its information.
-        $campaignExtensionSettingServiceClient =
-            $googleAdsClient->getCampaignExtensionSettingServiceClient();
-        $response = $campaignExtensionSettingServiceClient->mutateCampaignExtensionSettings(
-            $customerId,
-            [$campaignExtensionSettingOperation]
-        );
-        printf(
-            "Created a campaign extension setting with resource name: '%s'.%s",
-            $response->getResults()[0]->getResourceName(),
-            PHP_EOL
-        );
-    }
-
-    /**
-     * Adds the extension feed item to the specified ad group.
-     *
-     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
-     * @param int $customerId the client customer ID
-     * @param int $adGroupId the ad group ID
-     * @param string $extensionFeedItemResourceName the extension feed item resource name
-     */
-    private static function addExtensionToAdGroup(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        int $adGroupId,
-        string $extensionFeedItemResourceName
-    ): void {
-        // Creates an ad group extension setting, sets its type to HOTEL_CALLOUT, and attaches the
-        // feed item.
-        $adGroupExtensionSetting = new AdGroupExtensionSetting([
-            'ad_group' => ResourceNames::forAdGroup($customerId, $adGroupId),
-            'extension_type' => ExtensionType::HOTEL_CALLOUT,
-            'extension_feed_items' => [$extensionFeedItemResourceName]
-        ]);
-
-        // Creates an ad group extension setting operation.
-        $adGroupExtensionSettingOperation = new AdGroupExtensionSettingOperation();
-        $adGroupExtensionSettingOperation->setCreate($adGroupExtensionSetting);
-
-        // Issues a mutate request to add the ad group extension setting and prints its information.
-        $adGroupExtensionSettingServiceClient =
-            $googleAdsClient->getAdGroupExtensionSettingServiceClient();
-        $response = $adGroupExtensionSettingServiceClient->mutateAdGroupExtensionSettings(
-            $customerId,
-            [$adGroupExtensionSettingOperation]
-        );
-        printf(
-            "Created an ad group extension setting with resource name: '%s'.%s",
-            $response->getResults()[0]->getResourceName(),
-            PHP_EOL
-        );
+        foreach ($response->getResults() as $result) {
+            /** @var MutateCustomerAssetResult $result */
+            printf(
+                "Created a customer asset with resource name: '%s'.%s",
+                $result->getResourceName(),
+                PHP_EOL
+            );
+        }
     }
 }
 

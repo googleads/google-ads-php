@@ -25,28 +25,29 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsServerStreamDecorator;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\ItemAttribute;
-use Google\Ads\GoogleAds\V8\Common\OfflineUserAddressInfo;
-use Google\Ads\GoogleAds\V8\Common\StoreSalesMetadata;
-use Google\Ads\GoogleAds\V8\Common\StoreSalesThirdPartyMetadata;
-use Google\Ads\GoogleAds\V8\Common\TransactionAttribute;
-use Google\Ads\GoogleAds\V8\Common\UserData;
-use Google\Ads\GoogleAds\V8\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V8\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
-use Google\Ads\GoogleAds\V8\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
-use Google\Ads\GoogleAds\V8\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\OfflineUserDataJob;
-use Google\Ads\GoogleAds\V8\Services\AddOfflineUserDataJobOperationsResponse;
-use Google\Ads\GoogleAds\V8\Services\CreateOfflineUserDataJobResponse;
-use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
-use Google\Ads\GoogleAds\V8\Services\OfflineUserDataJobOperation;
-use Google\Ads\GoogleAds\V8\Services\OfflineUserDataJobServiceClient;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsServerStreamDecorator;
+use Google\Ads\GoogleAds\Util\V9\GoogleAdsFailures;
+use Google\Ads\GoogleAds\Util\V9\ResourceNames;
+use Google\Ads\GoogleAds\V9\Common\ItemAttribute;
+use Google\Ads\GoogleAds\V9\Common\OfflineUserAddressInfo;
+use Google\Ads\GoogleAds\V9\Common\StoreSalesMetadata;
+use Google\Ads\GoogleAds\V9\Common\StoreSalesThirdPartyMetadata;
+use Google\Ads\GoogleAds\V9\Common\TransactionAttribute;
+use Google\Ads\GoogleAds\V9\Common\UserData;
+use Google\Ads\GoogleAds\V9\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V9\Enums\OfflineUserDataJobFailureReasonEnum\OfflineUserDataJobFailureReason;
+use Google\Ads\GoogleAds\V9\Enums\OfflineUserDataJobStatusEnum\OfflineUserDataJobStatus;
+use Google\Ads\GoogleAds\V9\Enums\OfflineUserDataJobTypeEnum\OfflineUserDataJobType;
+use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V9\Resources\OfflineUserDataJob;
+use Google\Ads\GoogleAds\V9\Services\AddOfflineUserDataJobOperationsResponse;
+use Google\Ads\GoogleAds\V9\Services\CreateOfflineUserDataJobResponse;
+use Google\Ads\GoogleAds\V9\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\V9\Services\OfflineUserDataJobOperation;
+use Google\Ads\GoogleAds\V9\Services\OfflineUserDataJobServiceClient;
 use Google\ApiCore\ApiException;
 
 /**
@@ -440,18 +441,22 @@ class UploadStoreSalesTransactions
             $languageCode,
             $quantity
         );
+
+        // [START enable_warnings_1]
         // Issues a request to add the operations to the offline user data job.
         /** @var AddOfflineUserDataJobOperationsResponse $operationResponse */
         $response = $offlineUserDataJobServiceClient->addOfflineUserDataJobOperations(
             $offlineUserDataJobResourceName,
             $userDataJobOperations,
-            ['enablePartialFailure' => true]
+            // (Optional) Enables partial failure and warnings.
+            ['enablePartialFailure' => true, 'enableWarnings' => true]
         );
+        // [END enable_warnings_1]
 
         // Prints the status message if any partial failure error is returned.
         // NOTE: The details of each partial failure error are not printed here, you can refer to
         // the example HandlePartialFailure.php to learn more.
-        if (!is_null($response->getPartialFailureError())) {
+        if ($response->hasPartialFailureError()) {
             printf(
                 "Encountered %d partial failure errors while adding %d operations to the "
                 . "offline user data job: '%s'. Only the successfully added operations will be "
@@ -468,6 +473,23 @@ class UploadStoreSalesTransactions
                 PHP_EOL
             );
         }
+
+        // [START enable_warnings_2]
+        // Prints the number of warnings if any warnings are returned. You can access
+        // details of each warning using the same approach you'd use for partial failure
+        // errors.
+        if ($response->hasWarning()) {
+            // Extracts all the warning errors from the response details into a single
+            // GoogleAdsFailure object.
+            $warningFailure = GoogleAdsFailures::fromAnys($response->getWarning()->getDetails());
+            // Prints some information about the warnings encountered.
+            printf(
+                "Encountered %d warning(s).%s",
+                count($warningFailure->getErrors()),
+                PHP_EOL
+            );
+        }
+        // [END enable_warnings_2]
     }
 
     /**

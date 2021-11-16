@@ -24,43 +24,36 @@ use GetOpt\GetOpt;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\AdScheduleInfo;
-use Google\Ads\GoogleAds\V8\Common\Money;
-use Google\Ads\GoogleAds\V8\Common\PriceFeedItem;
-use Google\Ads\GoogleAds\V8\Common\PriceOffer;
-use Google\Ads\GoogleAds\V8\Enums\DayOfWeekEnum\DayOfWeek;
-use Google\Ads\GoogleAds\V8\Enums\ExtensionTypeEnum\ExtensionType;
-use Google\Ads\GoogleAds\V8\Enums\MinuteOfHourEnum\MinuteOfHour;
-use Google\Ads\GoogleAds\V8\Enums\PriceExtensionPriceQualifierEnum\PriceExtensionPriceQualifier;
-use Google\Ads\GoogleAds\V8\Enums\PriceExtensionPriceUnitEnum\PriceExtensionPriceUnit;
-use Google\Ads\GoogleAds\V8\Enums\PriceExtensionTypeEnum\PriceExtensionType;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\CustomerExtensionSetting;
-use Google\Ads\GoogleAds\V8\Resources\ExtensionFeedItem;
-use Google\Ads\GoogleAds\V8\Services\CustomerExtensionSettingOperation;
-use Google\Ads\GoogleAds\V8\Services\ExtensionFeedItemOperation;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
+use Google\Ads\GoogleAds\V9\Common\Money;
+use Google\Ads\GoogleAds\V9\Common\PriceAsset;
+use Google\Ads\GoogleAds\V9\Common\PriceOffering;
+use Google\Ads\GoogleAds\V9\Enums\AssetFieldTypeEnum\AssetFieldType;
+use Google\Ads\GoogleAds\V9\Enums\PriceExtensionPriceQualifierEnum\PriceExtensionPriceQualifier;
+use Google\Ads\GoogleAds\V9\Enums\PriceExtensionPriceUnitEnum\PriceExtensionPriceUnit;
+use Google\Ads\GoogleAds\V9\Enums\PriceExtensionTypeEnum\PriceExtensionType;
+use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V9\Resources\Asset;
+use Google\Ads\GoogleAds\V9\Resources\CustomerAsset;
+use Google\Ads\GoogleAds\V9\Services\AssetOperation;
+use Google\Ads\GoogleAds\V9\Services\CustomerAssetOperation;
 use Google\ApiCore\ApiException;
 
 /**
- * This example adds a price extension and associates it with an account. Campaign
- * targeting is also set using the specified campaign ID. To get campaigns, run GetCampaigns.php
+ * This example adds a price extension and associates it with an account.
  */
 class AddPrices
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
 
     public static function main()
     {
         // Either pass the required parameters for this example on the command line, or insert them
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
-            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CAMPAIGN_ID => GetOpt::REQUIRED_ARGUMENT
+            ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -75,8 +68,7 @@ class AddPrices
         try {
             self::runExample(
                 $googleAdsClient,
-                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::CAMPAIGN_ID] ?: self::CAMPAIGN_ID
+                $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -110,66 +102,37 @@ class AddPrices
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
      */
-    public static function runExample(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        int $campaignId
-    ) {
-        // Creates an extension feed item as price.
-        $extensionFeedItemResourceName =
-            self::createExtensionFeedItem($googleAdsClient, $customerId, $campaignId);
-
-        // Creates a customer extension setting using the previously created extension
-        // feed item. This associates the price extension to your account.
-        $customerExtensionSetting = new CustomerExtensionSetting([
-            'extension_type' => ExtensionType::PRICE,
-            'extension_feed_items' => [$extensionFeedItemResourceName]
-        ]);
-        // Creates a customer extension setting operation.
-        $customerExtensionSettingOperation = new CustomerExtensionSettingOperation();
-        $customerExtensionSettingOperation->setCreate($customerExtensionSetting);
-
-        // Issues a mutate request to add the customer extension setting and print its information.
-        $customerExtensionSettingServiceClient =
-            $googleAdsClient->getCustomerExtensionSettingServiceClient();
-        $response = $customerExtensionSettingServiceClient->mutateCustomerExtensionSettings(
-            $customerId,
-            [$customerExtensionSettingOperation]
-        );
-        printf(
-            "Created customer extension setting with resource name: '%s'.%s",
-            $response->getResults()[0]->getResourceName(),
-            PHP_EOL
-        );
+    public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
+    {
+        // Creates a PriceAsset to use as an extension.
+        $priceAssetResourceName = self::createPriceAsset($googleAdsClient, $customerId);
+        // Links the extension at the Customer level, allowing the extension to serve in all
+        // eligible campaigns. For more detail about linking extensions at customer, campaign and
+        // ad group level see
+        // https://support.google.com/google-ads/answer/7106946?hl=en&ref_topic=3119125
+        self::linkPriceAssetToCustomer($googleAdsClient, $priceAssetResourceName, $customerId);
     }
 
     /**
-     * Creates an extension feed item for price extension.
+     * Creates a PriceAsset.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param int $campaignId the campaign ID
-     * @return string the created extension feed item's resource name
+     * @return string the created PriceAsset's resource name
      */
-    private static function createExtensionFeedItem(
-        GoogleAdsClient $googleAdsClient,
-        int $customerId,
-        int $campaignId
-    ) {
-        // Creates the price extension feed item.
-        $priceFeedItem = new PriceFeedItem([
+    private static function createPriceAsset(GoogleAdsClient $googleAdsClient, int $customerId)
+    {
+        $priceAsset = new PriceAsset([
             'type' => PriceExtensionType::SERVICES,
             // Optional: Sets price qualifier.
             'price_qualifier' => PriceExtensionPriceQualifier::FROM,
-            'tracking_url_template' => 'http://tracker.example.com/?u={lpurl}',
             'language_code' => 'en'
         ]);
 
-        // To create a price extension, at least three price offerings are needed.
-        $priceFeedItem->setPriceOfferings([
-            self::createPriceOffer(
+        // To create a price asset, at least three price offerings are needed.
+        $priceAsset->setPriceOfferings([
+            self::createPriceOffering(
                 'Scrubs',
                 'Body Scrub, Salt Scrub',
                 60000000, // 60 USD
@@ -178,7 +141,7 @@ class AddPrices
                 'http://www.example.com/scrubs',
                 'http://m.example.com/scrubs'
             ),
-            self::createPriceOffer(
+            self::createPriceOffering(
                 'Hair Cuts',
                 'Once a month',
                 75000000, // 75 USD
@@ -187,7 +150,7 @@ class AddPrices
                 'http://www.example.com/haircuts',
                 'http://m.example.com/haircuts'
             ),
-            self::createPriceOffer(
+            self::createPriceOffering(
                 'Skin Care Package',
                 'Four times a month',
                 250000000, // 250 USD
@@ -197,51 +160,69 @@ class AddPrices
             )
         ]);
 
-        // Creates an extension feed item from the price feed item.
-        $extensionFeedItem = new ExtensionFeedItem([
-            'extension_type' => ExtensionType::PRICE,
-            'price_feed_item' => $priceFeedItem,
-            'targeted_campaign' => ResourceNames::forCampaign($customerId, $campaignId),
-            'ad_schedules' => [
-                self::createAdScheduleInfo(
-                    DayOfWeek::SUNDAY,
-                    10,
-                    MinuteOfHour::ZERO,
-                    18,
-                    MinuteOfHour::ZERO
-                ),
-                self::createAdScheduleInfo(
-                    DayOfWeek::SATURDAY,
-                    10,
-                    MinuteOfHour::ZERO,
-                    22,
-                    MinuteOfHour::ZERO
-                )
-            ]
+        // Wraps the PriceAsset in an Asset.
+        $asset = new Asset([
+            'price_asset' => $priceAsset,
+            'tracking_url_template' => 'http://tracker.example.com/?u={lpurl}'
         ]);
 
-        // Creates an extension feed item operation.
-        $extensionFeedItemOperation = new ExtensionFeedItemOperation();
-        $extensionFeedItemOperation->setCreate($extensionFeedItem);
+        // Creates an asset operation.
+        $assetOperation = new AssetOperation();
+        $assetOperation->setCreate($asset);
 
-        // Issues a mutate request to add the extension feed item and print its information.
-        $extensionFeedItemServiceClient = $googleAdsClient->getExtensionFeedItemServiceClient();
-        $response = $extensionFeedItemServiceClient->mutateExtensionFeedItems(
+        // Issues a mutate request to add the asset and print its information.
+        $assetServiceClient = $googleAdsClient->getAssetServiceClient();
+        $response = $assetServiceClient->mutateAssets(
             $customerId,
-            [$extensionFeedItemOperation]
+            [$assetOperation]
         );
-        $extensionFeedItemResourceName = $response->getResults()[0]->getResourceName();
+        $assetResourceName = $response->getResults()[0]->getResourceName();
         printf(
-            "Created extension feed item with resource name: '%s'.%s",
-            $extensionFeedItemResourceName,
+            "Created price asset with resource name: '%s'.%s",
+            $assetResourceName,
             PHP_EOL
         );
 
-        return $extensionFeedItemResourceName;
+        return $assetResourceName;
     }
 
     /**
-     * Creates a new price offer with the specified parameters.
+     * Links an asset to customer, allowing it to serve in all campaigns under the customer.
+     *
+     * @param GoogleAdsClient $googleAdsClient the Google Ads API client
+     * @param string $priceAssetResourceName the price asset's resource name to link
+     * @param int $customerId the customer ID to link the price asset to
+     */
+    private static function linkPriceAssetToCustomer(
+        GoogleAdsClient $googleAdsClient,
+        string $priceAssetResourceName,
+        int $customerId
+    ) {
+        // Creates the CustomerAsset.
+        $customerAsset = new CustomerAsset([
+            'asset' => $priceAssetResourceName,
+            'field_type' => AssetFieldType::PRICE
+        ]);
+
+        // Creates a customer asset operation.
+        $customerAssetOperation = new CustomerAssetOperation();
+        $customerAssetOperation->setCreate($customerAsset);
+
+        // Issues a mutate request to add the customer asset and print its information.
+        $customerAssetServiceClient = $googleAdsClient->getCustomerAssetServiceClient();
+        $response = $customerAssetServiceClient->mutateCustomerAssets(
+            $customerId,
+            [$customerAssetOperation]
+        );
+        printf(
+            "Created customer asset with resource name: '%s'.%s",
+            $response->getResults()[0]->getResourceName(),
+            PHP_EOL
+        );
+    }
+
+    /**
+     * Creates a price offering with the specified parameters.
      *
      * @param string $header the header
      * @param string $description the description
@@ -250,9 +231,9 @@ class AddPrices
      * @param int $unit the enum value of unit
      * @param string $finalUrl the final URL
      * @param null|string $finalMobileUrl the final mobile URL
-     * @return PriceOffer the created price offer
+     * @return PriceOffering the created price offering
      */
-    private static function createPriceOffer(
+    private static function createPriceOffering(
         string $header,
         string $description,
         int $priceInMicros,
@@ -261,10 +242,10 @@ class AddPrices
         string $finalUrl,
         string $finalMobileUrl = null
     ) {
-        $priceOffer = new PriceOffer([
+        $priceOffering = new PriceOffering([
             'header' => $header,
             'description' => $description,
-            'final_urls' => [$finalUrl],
+            'final_url' => $finalUrl,
             'price' => new Money([
                 'amount_micros' => $priceInMicros,
                 'currency_code' => $currencyCode
@@ -272,38 +253,11 @@ class AddPrices
             'unit' => $unit
         ]);
 
-        // Optional: Sets the final mobile URLs.
         if (!is_null($finalMobileUrl)) {
-            $priceOffer->setFinalMobileUrls([$finalMobileUrl]);
+            $priceOffering->setFinalMobileUrl($finalMobileUrl);
         }
 
-        return $priceOffer;
-    }
-
-    /**
-     * Creates a new ad schedule info with the specified parameters.
-     *
-     * @param int $dayOfWeek the enum value of day of the schedule
-     * @param int $startHour the start hour of the schedule
-     * @param int $startMinute the enum value of start minute of the schedule
-     * @param int $endHour the end hour of the schedule
-     * @param int $endMinute the enum value of end minute of the schedule
-     * @return AdScheduleInfo the created schedule info
-     */
-    private static function createAdScheduleInfo(
-        int $dayOfWeek,
-        int $startHour,
-        int $startMinute,
-        int $endHour,
-        int $endMinute
-    ) {
-        return new AdScheduleInfo([
-            'day_of_week' => $dayOfWeek,
-            'start_hour' => $startHour,
-            'start_minute' => $startMinute,
-            'end_hour' => $endHour,
-            'end_minute' => $endMinute
-        ]);
+        return $priceOffering;
     }
 }
 
