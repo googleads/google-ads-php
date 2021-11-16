@@ -936,6 +936,7 @@ class AddSmartCampaign
      * @param float $businessLocationId the ID of a Google My Business location
      * @return int the converted business location ID in signed 64 bit
      */
+    // [START add_smart_campaign_14]
     private static function convertBusinessLocationId(float $businessLocationId)
     {
         if ($businessLocationId >= self::UNSIGNED_64_BIT_RANGE_CEILING) {
@@ -947,6 +948,7 @@ class AddSmartCampaign
         }
         return intval($businessLocationId);
     }
+    // [END add_smart_campaign_14]
 }
 
 AddSmartCampaign::main();
