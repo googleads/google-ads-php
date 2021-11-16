@@ -1,3 +1,19 @@
+## 12.1.0
+*   Added support for v9 of Google Ads API.
+*   Added `grpc` and `protobuf` extensions to `require-dev` of `composer.json`.
+*   Added support for conversion adjustments in `GoogleAdsError`.
+*   Updated `composer.json` of LaravelSampleApp.
+*   Migrated the following extension examples to use assets.
+    * AddSitelinksUsingFeed (renamed to AddSitelinksUsingAssets)
+    * AddHotelCallout
+    * AddPrices
+*   Updated the AddSmartCampaign example to use newly available methods and
+    specifications in v9.
+*   Updated UploadStoreSalesTransactions to support the `enableWarnings` mode of
+    `OfflineUserDataJobService`. See
+    the [Warnings](https://developers.google.com/google-ads/api/docs/best-practices/warnings)
+    guide for details.
+
 ## 12.0.0
 *   Added support for sending the library name and version with each request.
 *   Updated the minimum required version of `google/protobuf` to 3.18.0.
