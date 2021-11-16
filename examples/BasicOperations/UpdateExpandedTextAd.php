@@ -25,15 +25,15 @@ use Google\Ads\GoogleAds\Examples\Utils\ArgumentNames;
 use Google\Ads\GoogleAds\Examples\Utils\ArgumentParser;
 use Google\Ads\GoogleAds\Examples\Utils\Helper;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Lib\V8\GoogleAdsException;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
+use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V8\ResourceNames;
-use Google\Ads\GoogleAds\V8\Common\ExpandedTextAdInfo;
-use Google\Ads\GoogleAds\V8\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V8\Resources\Ad;
-use Google\Ads\GoogleAds\V8\Services\AdOperation;
+use Google\Ads\GoogleAds\Util\V9\ResourceNames;
+use Google\Ads\GoogleAds\V9\Common\ExpandedTextAdInfo;
+use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
+use Google\Ads\GoogleAds\V9\Resources\Ad;
+use Google\Ads\GoogleAds\V9\Services\AdOperation;
 use Google\ApiCore\ApiException;
 
 /**
