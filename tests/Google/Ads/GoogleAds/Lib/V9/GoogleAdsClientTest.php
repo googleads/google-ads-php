@@ -37,6 +37,8 @@ class GoogleAdsClientTest extends TestCase
     private static $LOGIN_CUSTOMER_ID_KEY = 'login-customer-id';
     private static $LINKED_CUSTOMER_ID_KEY = 'linked-customer-id';
     private static $TRANSPORT_KEY = 'transport';
+    private static $UNARY_MIDDLEWARES_KEY = 'unary-middlewares';
+    private static $STREAMING_MIDDLEWARES_KEY = 'streaming-middlewares';
 
     private static $DEVELOPER_TOKEN = 'ABcdeFGH93KL-NOPQ_STUv';
     private static $LOGIN_CUSTOMER_ID = 1234567890;
@@ -64,6 +66,15 @@ class GoogleAdsClientTest extends TestCase
 
     public function testGetClientOptions()
     {
+        $unaryMiddlewares = [
+            new UnaryGoogleAdsExceptionMiddleware(),
+            new UnaryGoogleAdsExceptionMiddleware()
+        ];
+        $streamingMiddlewares = [
+            new ServerStreamingGoogleAdsExceptionMiddleware(),
+            new ServerStreamingGoogleAdsExceptionMiddleware()
+        ];
+
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
@@ -72,6 +83,8 @@ class GoogleAdsClientTest extends TestCase
             ->withLogger(new Logger('', [new NullHandler()]))
             ->withProxy(self::$PROXY)
             ->withTransport(self::$TRANSPORT)
+            ->withUnaryMiddlewares(...$unaryMiddlewares)
+            ->withStreamingMiddlewares(...$streamingMiddlewares)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
@@ -102,6 +115,14 @@ class GoogleAdsClientTest extends TestCase
         $this->assertSame(
             self::$TRANSPORT,
             $clientOptions[self::$TRANSPORT_KEY]
+        );
+        $this->assertSame(
+            $unaryMiddlewares,
+            $clientOptions[self::$UNARY_MIDDLEWARES_KEY]
+        );
+        $this->assertSame(
+            $streamingMiddlewares,
+            $clientOptions[self::$STREAMING_MIDDLEWARES_KEY]
         );
     }
 

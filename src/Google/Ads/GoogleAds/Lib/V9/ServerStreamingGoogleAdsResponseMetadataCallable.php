@@ -18,27 +18,15 @@
 
 namespace Google\Ads\GoogleAds\Lib\V9;
 
+use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\ApiCore\Call;
 use Google\ApiCore\ServerStream;
 
 /**
  * Callable for exposing `GoogleAdsResponseMetadata` from server streaming calls to the API.
  */
-class ServerStreamingGoogleAdsResponseMetadataCallable
+class ServerStreamingGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
 {
-    /** @var callable $nextHandler */
-    private $nextHandler;
-
-    /**
-     * Creates the `GoogleAdsResponseMetadata` callable.
-     *
-     * @param callable $nextHandler
-     */
-    public function __construct(callable $nextHandler)
-    {
-        $this->nextHandler = $nextHandler;
-    }
-
     /**
      * @param Call $call the current request
      * @param array $options the optional parameters
@@ -46,7 +34,7 @@ class ServerStreamingGoogleAdsResponseMetadataCallable
      */
     public function __invoke(Call $call, array $options)
     {
-        $next = $this->nextHandler;
+        $next = $this->getNextHandler();
         /** @var ServerStream $stream */
         $stream = $next(
             $call,

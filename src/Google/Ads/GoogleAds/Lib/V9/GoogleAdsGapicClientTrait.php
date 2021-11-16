@@ -18,6 +18,7 @@
 
 namespace Google\Ads\GoogleAds\Lib\V9;
 
+use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\ApiCore\ArrayTrait;
 use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\LongRunning\OperationsClient;
@@ -33,9 +34,13 @@ trait GoogleAdsGapicClientTrait
 
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
     private static $LOGIN_CUSTOMER_ID = 'login-customer-id';
+    private static $UNARY_MIDDLEWARES = 'unary-middlewares';
+    private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
 
     private $developerToken = null;
     private $loginCustomerId = null;
+    private $unaryMiddlewares = [];
+    private $streamingMiddlewares = [];
 
     /**
      * @see GapicClientTrait::modifyClientOptions()
@@ -48,7 +53,12 @@ trait GoogleAdsGapicClientTrait
         if (isset($options[self::$LOGIN_CUSTOMER_ID])) {
             $this->loginCustomerId = $options[self::$LOGIN_CUSTOMER_ID];
         }
-
+        if (isset($options[self::$UNARY_MIDDLEWARES])) {
+            $this->unaryMiddlewares = $options[self::$UNARY_MIDDLEWARES];
+        }
+        if (isset($options[self::$STREAMING_MIDDLEWARES])) {
+            $this->streamingMiddlewares = $options[self::$STREAMING_MIDDLEWARES];
+        }
         // Ensure that this isn't already an OperationsClient nor GoogleAdsOperationClient to avoid
         // recursion.
         if (
@@ -96,6 +106,10 @@ trait GoogleAdsGapicClientTrait
         $callable = $this->addFixedHeaderMiddleware($callable);
         $callable = new UnaryGoogleAdsExceptionMiddleware($callable);
         $callable = new UnaryGoogleAdsResponseMetadataCallable($callable);
+        foreach ($this->unaryMiddlewares as $unaryMiddleware) {
+            /** @var GoogleAdsMiddlewareAbstract $unaryMiddleware */
+            $callable = $unaryMiddleware->withNextHandler($callable);
+        }
     }
 
     /**
@@ -106,5 +120,9 @@ trait GoogleAdsGapicClientTrait
         $callable = $this->addFixedHeaderMiddleware($callable);
         $callable = new ServerStreamingGoogleAdsExceptionMiddleware($callable);
         $callable = new ServerStreamingGoogleAdsResponseMetadataCallable($callable);
+        foreach ($this->streamingMiddlewares as $streamingMiddleware) {
+            /** @var GoogleAdsMiddlewareAbstract $streamingMiddleware */
+            $callable = $streamingMiddleware->withNextHandler($callable);
+        }
     }
 }
