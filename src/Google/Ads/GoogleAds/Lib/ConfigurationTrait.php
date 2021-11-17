@@ -36,6 +36,9 @@ trait ConfigurationTrait
     private $logLevel;
     private $proxy;
     private $transport;
+
+    // The following configuration settings are based on complex objects. They cannot be set in
+    // configuration files like the others but only dynamically.
     private $grpcInterceptors;
 
     /**
