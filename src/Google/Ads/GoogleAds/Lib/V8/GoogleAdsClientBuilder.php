@@ -39,8 +39,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
 {
     use GrpcSupportTrait;
 
-    private static $DEFAULT_LOGGER_CHANNEL = 'google-ads';
-    private static $DEFAULT_GRPC_CHANNEL_IS_SECURE = true;
+    private const DEFAULT_LOGGER_CHANNEL = 'google-ads';
+    private const DEFAULT_GRPC_CHANNEL_IS_SECURE = true;
 
     private $loggerFactory;
 
@@ -62,7 +62,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     ) {
         parent::__construct($configurationLoader, $environmentalVariables);
         $this->loggerFactory = new LoggerFactory();
-        $this->grpcChannelIsSecure = self::$DEFAULT_GRPC_CHANNEL_IS_SECURE;
+        $this->grpcChannelIsSecure = self::DEFAULT_GRPC_CHANNEL_IS_SECURE;
     }
 
     /**
@@ -82,7 +82,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             $configuration->getConfiguration('endpoint', 'GOOGLE_ADS');
         $this->logLevel = $configuration->getConfiguration('logLevel', 'LOGGING');
         $this->logger = $this->loggerFactory->createLogger(
-            self::$DEFAULT_LOGGER_CHANNEL,
+            self::DEFAULT_LOGGER_CHANNEL,
             $configuration->getConfiguration('logFilePath', 'LOGGING'),
             $this->logLevel
         );
@@ -92,13 +92,13 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             is_null($configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION'))
             || $configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION') === ""
                 // Defaults when value is an empty.
-                ? self::$DEFAULT_GRPC_CHANNEL_IS_SECURE
+                ? self::DEFAULT_GRPC_CHANNEL_IS_SECURE
                 : filter_var(
                     $configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION'),
                     FILTER_VALIDATE_BOOLEAN,
                     // Defaults when value is not a valid boolean.
                     [
-                        'options' => ['default' => self::$DEFAULT_GRPC_CHANNEL_IS_SECURE],
+                        'options' => ['default' => self::DEFAULT_GRPC_CHANNEL_IS_SECURE],
                         'flags' => FILTER_NULL_ON_FAILURE
                     ]
                 );
