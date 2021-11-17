@@ -91,7 +91,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         $this->grpcChannelIsSecure =
             is_null($configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION'))
             || $configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION') === ""
-                // Defaults when value is an empty.
+                // Defaults when value is not defined or an empty string.
                 ? self::DEFAULT_GRPC_CHANNEL_IS_SECURE
                 : filter_var(
                     $configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION'),
