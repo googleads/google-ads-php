@@ -49,7 +49,7 @@ final class GoogleAdsClient
         $this->logLevel = $builder->getLogLevel();
         $this->proxy = $builder->getProxy();
         $this->transport = $builder->getTransport();
-        $this->grpcChannelIsInsecure = $builder->getGrpcChannelIsInsecure();
+        $this->grpcChannelIsSecure = $builder->getGrpcChannelIsSecure();
         $this->grpcChannelCredential = $builder->getGrpcChannelCredential();
 
         // Initializes preemptively the GoogleAdsFailures type when

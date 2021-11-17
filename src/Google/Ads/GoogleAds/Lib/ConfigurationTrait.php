@@ -36,7 +36,7 @@ trait ConfigurationTrait
     private $logLevel;
     private $proxy;
     private $transport;
-    private $grpcChannelIsInsecure;
+    private $grpcChannelIsSecure;
     private $grpcChannelCredential;
 
     /**
@@ -130,13 +130,13 @@ trait ConfigurationTrait
     }
 
     /**
-     * Returns true if the gRPC channel is insecure.
+     * Returns whether the gRPC channel is secure or not.
      *
      * @return bool
      */
-    public function getGrpcChannelIsInsecure()
+    public function getGrpcChannelIsSecure()
     {
-        return $this->grpcChannelIsInsecure;
+        return $this->grpcChannelIsSecure;
     }
 
     /**

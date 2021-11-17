@@ -40,6 +40,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     use GrpcSupportTrait;
 
     private static $DEFAULT_LOGGER_CHANNEL = 'google-ads';
+    private static $DEFAULT_GRPC_CHANNEL_IS_SECURE = true;
 
     private $loggerFactory;
 
@@ -52,7 +53,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $logLevel;
     private $proxy;
     private $transport;
-    private $grpcChannelIsInsecure;
+    private $grpcChannelIsSecure;
     private $grpcChannelCredential;
 
     public function __construct(
@@ -61,6 +62,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     ) {
         parent::__construct($configurationLoader, $environmentalVariables);
         $this->loggerFactory = new LoggerFactory();
+        $this->grpcChannelIsSecure = self::$DEFAULT_GRPC_CHANNEL_IS_SECURE;
     }
 
     /**
@@ -86,10 +88,20 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
         );
         $this->proxy = $configuration->getConfiguration('proxy', 'CONNECTION');
         $this->transport = $configuration->getConfiguration('transport', 'CONNECTION');
-        $this->grpcChannelIsInsecure = filter_var(
-            $configuration->getConfiguration('grpcChannelIsInsecure', 'CONNECTION'),
-            FILTER_VALIDATE_BOOLEAN
-        );
+        $this->grpcChannelIsSecure =
+            is_null($configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION'))
+            || $configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION') === ""
+                // Defaults when value is an empty.
+                ? self::$DEFAULT_GRPC_CHANNEL_IS_SECURE
+                : filter_var(
+                    $configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION'),
+                    FILTER_VALIDATE_BOOLEAN,
+                    // Defaults when value is not a valid boolean.
+                    [
+                        'options' => ['default' => self::$DEFAULT_GRPC_CHANNEL_IS_SECURE],
+                        'flags' => FILTER_NULL_ON_FAILURE
+                    ]
+                );
 
         return $this;
     }
@@ -236,14 +248,14 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
-     * Sets whether the gRPC channel for Google Ads API requests is insecure or not.
+     * Sets whether the gRPC channel for Google Ads API requests is secure or not.
      *
-     * @param bool $grpcChannelIsInsecure
+     * @param bool $grpcChannelIsSecure
      * @return self this builder
      */
-    public function withGrpcChannelIsInsecure(bool $grpcChannelIsInsecure)
+    public function withGrpcChannelIsSecure(bool $grpcChannelIsSecure)
     {
-        $this->grpcChannelIsInsecure = $grpcChannelIsInsecure;
+        $this->grpcChannelIsSecure = $grpcChannelIsSecure;
         return $this;
     }
 
@@ -336,16 +348,16 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             throw new InvalidArgumentException("The log level must be a valid PSR log level");
         }
 
-        if ($this->grpcChannelIsInsecure && $this->grpcChannelCredential !== null) {
+        if (!$this->grpcChannelIsSecure && $this->grpcChannelCredential !== null) {
             throw new InvalidArgumentException(
                 'The gRPC channel credential can only be set when the gRPC channel is set as ' .
-                'not insecure.'
+                'secure.'
             );
         }
 
         if (
             !empty($this->transport) && $this->transport !== 'grpc'
-            && $this->grpcChannelIsInsecure
+            && !$this->grpcChannelIsSecure
         ) {
             throw new InvalidArgumentException(
                 'The gRPC channel can only be set as insecure when the transport is "grpc".'
@@ -452,13 +464,13 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
-     * Returns true if the gRPC channel is insecure.
+     * Returns whether the gRPC channel is secure or not.
      *
      * @return bool
      */
-    public function getGrpcChannelIsInsecure()
+    public function getGrpcChannelIsSecure()
     {
-        return $this->grpcChannelIsInsecure;
+        return $this->grpcChannelIsSecure;
     }
 
     /**

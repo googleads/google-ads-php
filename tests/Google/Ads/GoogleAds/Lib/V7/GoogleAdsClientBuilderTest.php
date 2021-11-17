@@ -78,7 +78,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443'],
             ['proxy', 'CONNECTION', 'https://localhost:8080'],
             ['transport', 'CONNECTION', 'grpc'],
-            ['grpcChannelIsInsecure', 'CONNECTION', 'false']
+            ['grpcChannelIsSecure', 'CONNECTION', 'true']
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
@@ -99,16 +99,21 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
         $this->assertSame('https://localhost:8080', $googleAdsClient->getProxy());
         $this->assertSame('grpc', $googleAdsClient->getTransport());
-        $this->assertSame(false, $googleAdsClient->getGrpcChannelIsInsecure());
+        $this->assertSame(true, $googleAdsClient->getGrpcChannelIsSecure());
         $this->assertSame($this->loggerMock, $googleAdsClient->getLogger());
     }
 
-    public function testBuildClientFromConfigurationWithInvalidGrpcChannelIsInsecure()
-    {
+    /**
+     * @dataProvider provideGrpcChannelIsSecureValues
+     */
+    public function testBuildClientFromConfigurationWithGrpcChannelIsSecure(
+        ?string $configValue,
+        bool $processedValue
+    ) {
         $valueMap = [
             /* Config name, section, value */
             ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN],
-            ['grpcChannelIsInsecure', 'CONNECTION', self::$INVALID_BOOLEAN_STRING]
+            ['grpcChannelIsSecure', 'CONNECTION', $configValue]
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
@@ -122,7 +127,18 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
-        $this->assertSame(false, $googleAdsClient->getGrpcChannelIsInsecure());
+        $this->assertSame($processedValue, $googleAdsClient->getGrpcChannelIsSecure());
+    }
+
+    public function provideGrpcChannelIsSecureValues()
+    {
+        return [
+            [null, true],
+            ["", true],
+            [self::$INVALID_BOOLEAN_STRING, true],
+            ["true", true],
+            ["false", false],
+        ];
     }
 
     public function testBuildFromDefaults()
@@ -256,24 +272,24 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    public function testBuildFailsWhenGrpcChannelIsInsecureAndGrpcChannelCredentialIsSet()
+    public function testBuildFailsWhenGrpcChannelIsSecureAndGrpcChannelCredentialIsSet()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-            ->withGrpcChannelIsInsecure(true)
+            ->withGrpcChannelIsSecure(false)
             ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
     }
 
-    public function testBuildFailsWhenTransportIsNotGrpcAndGrpcChannelIsInsecure()
+    public function testBuildFailsWhenTransportIsNotGrpcAndGrpcChannelIsSecure()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
             ->withTransport('rest')
-            ->withGrpcChannelIsInsecure(true)
+            ->withGrpcChannelIsSecure(false)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
     }
@@ -383,15 +399,15 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    public function testBuildWithGrpcChannelIsInsecure()
+    public function testBuildWithGrpcChannelIsSecure()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-            ->withGrpcChannelIsInsecure(true)
+            ->withGrpcChannelIsSecure(false)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
 
-        $this->assertTrue($googleAdsClient->getGrpcChannelIsInsecure());
+        $this->assertFalse($googleAdsClient->getGrpcChannelIsSecure());
     }
 
     public function testBuildWithGrpcChannelCredential()

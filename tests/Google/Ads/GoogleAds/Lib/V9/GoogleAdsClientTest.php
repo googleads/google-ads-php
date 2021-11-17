@@ -75,7 +75,7 @@ class GoogleAdsClientTest extends TestCase
             ->withLogger(new Logger('', [new NullHandler()]))
             ->withProxy(self::$PROXY)
             ->withTransport(self::$TRANSPORT)
-            ->withGrpcChannelIsInsecure(false)
+            ->withGrpcChannelIsSecure(true)
             ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
@@ -142,12 +142,12 @@ class GoogleAdsClientTest extends TestCase
         );
     }
 
-    public function testGrpcChannelCredentialWhenGrpcChannelIsInsecureInClientOptions()
+    public function testGrpcChannelCredentialWhenGrpcChannelIsSecureInClientOptions()
     {
         $googleAdsClient =
             $this->googleAdsClientBuilder->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
                 ->withDeveloperToken(self::$DEVELOPER_TOKEN)
-                ->withGrpcChannelIsInsecure(true)
+                ->withGrpcChannelIsSecure(false)
                 ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
