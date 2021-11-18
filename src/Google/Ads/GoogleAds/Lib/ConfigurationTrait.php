@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib;
 
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\Interceptor;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -40,6 +41,7 @@ trait ConfigurationTrait
     // configuration files like the others but only dynamically.
     private $unaryMiddlewares;
     private $streamingMiddlewares;
+    private $grpcInterceptors;
 
     /**
      * Gets the developer token.
@@ -149,5 +151,15 @@ trait ConfigurationTrait
     public function getStreamingMiddlewares()
     {
         return $this->streamingMiddlewares;
+    }
+
+    /*
+     * Gets the gRPC interceptors.
+     *
+     * @return Interceptor[] the gRPC interceptors
+     */
+    public function getGrpcInterceptors()
+    {
+        return $this->grpcInterceptors;
     }
 }

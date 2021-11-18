@@ -51,6 +51,7 @@ final class GoogleAdsClient
         $this->transport = $builder->getTransport();
         $this->unaryMiddlewares = $builder->getUnaryMiddlewares();
         $this->streamingMiddlewares = $builder->getStreamingMiddlewares();
+        $this->grpcInterceptors = $builder->getGrpcInterceptors();
 
         // Initializes preemptively the GoogleAdsFailures type when
         // gRPC is not available.

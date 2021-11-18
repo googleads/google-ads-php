@@ -216,6 +216,10 @@ trait ServiceClientFactoryTrait
                 $googleAdsLoggingInterceptor
             );
         }
+        array_push(
+            $clientOptions['transportConfig']['grpc']['interceptors'],
+            ...$this->getGrpcInterceptors()
+        );
         if (!empty($this->getProxy())) {
             putenv('http_proxy=' . $this->getProxy());
         }

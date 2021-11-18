@@ -24,6 +24,7 @@ use Google\Ads\GoogleAds\Lib\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\Interceptor;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -352,6 +353,19 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
 
         $this->assertSame($streamingMiddlewares, $googleAdsClient->getStreamingMiddlewares());
+    }
+
+    public function testBuildWithGrpcInterceptors()
+    {
+        $grpcInterceptors = [new Interceptor(), new Interceptor()];
+
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withGrpcInterceptors(...$grpcInterceptors)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($grpcInterceptors, $googleAdsClient->getGrpcInterceptors());
     }
 
     /**
