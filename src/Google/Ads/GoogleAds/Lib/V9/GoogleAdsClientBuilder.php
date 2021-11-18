@@ -450,7 +450,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     {
         return $this->streamingMiddlewares;
     }
-  
+
     /**
      * Gets the gRPC interceptors.
      *
