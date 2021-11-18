@@ -159,6 +159,8 @@ use Google\Ads\GoogleAds\V8\Services\UserListServiceClient;
 use Google\Ads\GoogleAds\V8\Services\UserLocationViewServiceClient;
 use Google\Ads\GoogleAds\V8\Services\VideoServiceClient;
 use Google\Ads\GoogleAds\V8\Services\WebpageViewServiceClient;
+use Google\ApiCore\GrpcSupportTrait;
+use Grpc\ChannelCredentials;
 
 /**
  * Contains service client factory methods.
@@ -166,6 +168,7 @@ use Google\Ads\GoogleAds\V8\Services\WebpageViewServiceClient;
 trait ServiceClientFactoryTrait
 {
     use ConfigurationTrait;
+    use GrpcSupportTrait;
 
     private static $CREDENTIALS_LOADER_KEY = 'credentials';
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
@@ -236,6 +239,17 @@ trait ServiceClientFactoryTrait
         }
         if (!empty($this->getTransport())) {
             $clientOptions += [self::$TRANSPORT_KEY => $this->getTransport()];
+        }
+        if (
+            self::getGrpcDependencyStatus()
+            && (!$this->getGrpcChannelIsSecure() || !empty($this->getGrpcChannelCredential()))
+        ) {
+            $channelCredentials = $this->getGrpcChannelIsSecure()
+                ? $this->getGrpcChannelCredential()
+                : ChannelCredentials::createInsecure();
+            $clientOptions['transportConfig']['grpc']['stubOpts'] += [
+                self::$CREDENTIALS_LOADER_KEY => $channelCredentials
+            ];
         }
         $clientOptions += [
             self::$UNARY_MIDDLEWARES => $this->getUnaryMiddlewares(),

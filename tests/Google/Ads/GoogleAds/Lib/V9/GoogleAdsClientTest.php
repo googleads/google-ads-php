@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib\V9;
 
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\ChannelCredentials;
 use Grpc\Interceptor;
 use Monolog\Handler\NullHandler;
 use Monolog\Logger;
@@ -48,6 +49,7 @@ class GoogleAdsClientTest extends TestCase
     private static $PROXY = 'http://localhost:8080';
 
     private static $TRANSPORT = 'grpc';
+    private static $DEFAULT_GRPC_CHANNEL_CREDENTIAL;
     private static $DEFAULT_INTERCEPTOR_TYPES = [
         GoogleAdsLoggingInterceptor::class,
         GoogleAdsFailuresInterceptor::class
@@ -67,6 +69,7 @@ class GoogleAdsClientTest extends TestCase
             ->getMockBuilder(FetchAuthTokenInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
+        self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL = ChannelCredentials::createDefault();
     }
 
     public function testGetClientOptions()
@@ -89,6 +92,8 @@ class GoogleAdsClientTest extends TestCase
             ->withLogger(new Logger('', [new NullHandler()]))
             ->withProxy(self::$PROXY)
             ->withTransport(self::$TRANSPORT)
+            ->withGrpcChannelIsSecure(true)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
             ->withUnaryMiddlewares(...$unaryMiddlewares)
             ->withStreamingMiddlewares(...$streamingMiddlewares)
             ->withGrpcInterceptors(...$grpcInterceptors)
@@ -124,6 +129,10 @@ class GoogleAdsClientTest extends TestCase
         $this->assertSame(
             self::$TRANSPORT,
             $clientOptions[self::$TRANSPORT_KEY]
+        );
+        $this->assertInstanceOf(
+            ChannelCredentials::class,
+            $clientOptions['transportConfig']['grpc']['stubOpts'][self::$CREDENTIALS_LOADER_KEY]
         );
         $this->assertSame(
             $unaryMiddlewares,
@@ -167,6 +176,21 @@ class GoogleAdsClientTest extends TestCase
         $this->assertArrayNotHasKey(
             self::$LINKED_CUSTOMER_ID_KEY,
             $googleAdsClient->getGoogleAdsClientOptions()
+        );
+    }
+
+    public function testGrpcChannelCredentialWhenGrpcChannelIsNotSecureInClientOptions()
+    {
+        $googleAdsClient =
+            $this->googleAdsClientBuilder->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+                ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+                ->withGrpcChannelIsSecure(false)
+                ->build();
+        $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
+
+        $this->assertSame(
+            ChannelCredentials::createInsecure(),
+            $clientOptions['transportConfig']['grpc']['stubOpts'][self::$CREDENTIALS_LOADER_KEY]
         );
     }
 }

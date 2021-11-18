@@ -24,7 +24,9 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\AbstractGoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
+use Google\ApiCore\GrpcSupportTrait;
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\ChannelCredentials;
 use Grpc\Interceptor;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
@@ -37,7 +39,10 @@ use Psr\Log\LogLevel;
  */
 final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
 {
-    private static $DEFAULT_LOGGER_CHANNEL = 'google-ads';
+    use GrpcSupportTrait;
+
+    private const DEFAULT_LOGGER_CHANNEL = 'google-ads';
+    private const DEFAULT_GRPC_CHANNEL_IS_SECURE = true;
 
     private $loggerFactory;
 
@@ -50,6 +55,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $logLevel;
     private $proxy;
     private $transport;
+    private $grpcChannelIsSecure;
+    private $grpcChannelCredential;
     private $unaryMiddlewares = [];
     private $streamingMiddlewares = [];
     private $grpcInterceptors = [];
@@ -60,6 +67,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     ) {
         parent::__construct($configurationLoader, $environmentalVariables);
         $this->loggerFactory = new LoggerFactory();
+        $this->grpcChannelIsSecure = self::DEFAULT_GRPC_CHANNEL_IS_SECURE;
     }
 
     /**
@@ -79,12 +87,26 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             $configuration->getConfiguration('endpoint', 'GOOGLE_ADS');
         $this->logLevel = $configuration->getConfiguration('logLevel', 'LOGGING');
         $this->logger = $this->loggerFactory->createLogger(
-            self::$DEFAULT_LOGGER_CHANNEL,
+            self::DEFAULT_LOGGER_CHANNEL,
             $configuration->getConfiguration('logFilePath', 'LOGGING'),
             $this->logLevel
         );
         $this->proxy = $configuration->getConfiguration('proxy', 'CONNECTION');
         $this->transport = $configuration->getConfiguration('transport', 'CONNECTION');
+        $this->grpcChannelIsSecure =
+            is_null($configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION'))
+            || $configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION') === ""
+                // Defaults when value is not defined or an empty string.
+                ? self::DEFAULT_GRPC_CHANNEL_IS_SECURE
+                : filter_var(
+                    $configuration->getConfiguration('grpcChannelIsSecure', 'CONNECTION'),
+                    FILTER_VALIDATE_BOOLEAN,
+                    // Defaults when value is not a valid boolean.
+                    [
+                        'options' => ['default' => self::DEFAULT_GRPC_CHANNEL_IS_SECURE],
+                        'flags' => FILTER_NULL_ON_FAILURE
+                    ]
+                );
 
         return $this;
     }
@@ -231,6 +253,30 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+     * Sets whether the gRPC channel for Google Ads API requests is secure or not.
+     *
+     * @param bool $grpcChannelIsSecure
+     * @return self this builder
+     */
+    public function withGrpcChannelIsSecure(bool $grpcChannelIsSecure)
+    {
+        $this->grpcChannelIsSecure = $grpcChannelIsSecure;
+        return $this;
+    }
+
+    /**
+     * Sets the gRPC channel credential for Google Ads API requests.
+     *
+     * @param ChannelCredentials $grpcChannelCredential
+     * @return self this builder
+     */
+    public function withGrpcChannelCredential(ChannelCredentials $grpcChannelCredential)
+    {
+        $this->grpcChannelCredential = $grpcChannelCredential;
+        return $this;
+    }
+
+    /**
      * Sets the unary middlewares for Google Ads API requests. They execute in order after the ones
      * defined by the library.
      *
@@ -334,10 +380,40 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
             );
         }
 
+        if (
+            !empty($this->transport) && $this->transport === 'grpc'
+        ) {
+            self::validateGrpcSupport();
+        }
+
         if (is_null($this->logLevel)) {
             $this->logLevel = LogLevel::INFO;
         } elseif (!defined('Psr\Log\LogLevel::' . strtoupper($this->logLevel))) {
             throw new InvalidArgumentException("The log level must be a valid PSR log level");
+        }
+
+        if (!$this->grpcChannelIsSecure && $this->grpcChannelCredential !== null) {
+            throw new InvalidArgumentException(
+                'The gRPC channel credential can only be set when the gRPC channel is set as ' .
+                'secure.'
+            );
+        }
+
+        if (
+            !empty($this->transport) && $this->transport !== 'grpc'
+            && !$this->grpcChannelIsSecure
+        ) {
+            throw new InvalidArgumentException(
+                'The gRPC channel can only be set as insecure when the transport is "grpc".'
+            );
+        }
+        if (
+            !empty($this->transport) && $this->transport !== 'grpc'
+            && $this->grpcChannelCredential !== null
+        ) {
+            throw new InvalidArgumentException(
+                'The gRPC channel credential can only be set when the transport is "grpc".'
+            );
         }
     }
 
@@ -429,6 +505,26 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function getTransport()
     {
         return $this->transport;
+    }
+
+    /**
+     * Returns whether the gRPC channel is secure or not.
+     *
+     * @return bool
+     */
+    public function getGrpcChannelIsSecure()
+    {
+        return $this->grpcChannelIsSecure;
+    }
+
+    /**
+     * Gets the gRPC channel credential.
+     *
+     * @return ChannelCredentials|null
+     */
+    public function getGrpcChannelCredential()
+    {
+        return $this->grpcChannelCredential;
     }
 
     /**

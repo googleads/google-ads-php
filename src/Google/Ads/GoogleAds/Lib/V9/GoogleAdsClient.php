@@ -49,6 +49,8 @@ final class GoogleAdsClient
         $this->logLevel = $builder->getLogLevel();
         $this->proxy = $builder->getProxy();
         $this->transport = $builder->getTransport();
+        $this->grpcChannelIsSecure = $builder->getGrpcChannelIsSecure();
+        $this->grpcChannelCredential = $builder->getGrpcChannelCredential();
         $this->unaryMiddlewares = $builder->getUnaryMiddlewares();
         $this->streamingMiddlewares = $builder->getStreamingMiddlewares();
         $this->grpcInterceptors = $builder->getGrpcInterceptors();

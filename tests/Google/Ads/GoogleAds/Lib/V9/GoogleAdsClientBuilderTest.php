@@ -24,6 +24,7 @@ use Google\Ads\GoogleAds\Lib\ConfigurationLoaderTestProvider;
 use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\ChannelCredentials;
 use Grpc\Interceptor;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -43,6 +44,8 @@ class GoogleAdsClientBuilderTest extends TestCase
     private static $LOGIN_CUSTOMER_ID = 123456789;
     private static $LINKED_CUSTOMER_ID = 123456789;
     private static $INVALID_TRANSPORT = '1234567890';
+    private static $INVALID_BOOLEAN_STRING = 'invalid_boolean_string';
+    private static $DEFAULT_GRPC_CHANNEL_CREDENTIAL;
 
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
     private $googleAdsClientBuilder;
@@ -63,6 +66,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->getMock();
         $this->loggerMock =
             $this->getMockBuilder(LoggerInterface::class)->disableOriginalConstructor()->getMock();
+        self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL = ChannelCredentials::createDefault();
     }
 
     public function testBuildClientFromConfiguration()
@@ -74,7 +78,8 @@ class GoogleAdsClientBuilderTest extends TestCase
             ['linkedCustomerId', 'GOOGLE_ADS', self::$LINKED_CUSTOMER_ID],
             ['endpoint', 'GOOGLE_ADS', 'https://abc.xyz:443'],
             ['proxy', 'CONNECTION', 'https://localhost:8080'],
-            ['transport', 'CONNECTION', 'grpc']
+            ['transport', 'CONNECTION', 'grpc'],
+            ['grpcChannelIsSecure', 'CONNECTION', 'true']
         ];
         $configurationMock = $this->getMockBuilder(Configuration::class)
             ->disableOriginalConstructor()
@@ -95,7 +100,46 @@ class GoogleAdsClientBuilderTest extends TestCase
         $this->assertSame('https://abc.xyz:443', $googleAdsClient->getEndpoint());
         $this->assertSame('https://localhost:8080', $googleAdsClient->getProxy());
         $this->assertSame('grpc', $googleAdsClient->getTransport());
+        $this->assertSame(true, $googleAdsClient->getGrpcChannelIsSecure());
         $this->assertSame($this->loggerMock, $googleAdsClient->getLogger());
+    }
+
+    /**
+     * @dataProvider provideGrpcChannelIsSecureValues
+     */
+    public function testBuildClientFromConfigurationWithGrpcChannelIsSecure(
+        ?string $configValue,
+        bool $processedValue
+    ) {
+        $valueMap = [
+            /* Config name, section, value */
+            ['developerToken', 'GOOGLE_ADS', self::$DEVELOPER_TOKEN],
+            ['grpcChannelIsSecure', 'CONNECTION', $configValue]
+        ];
+        $configurationMock = $this->getMockBuilder(Configuration::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $configurationMock->expects($this->any())
+            ->method('getConfiguration')
+            ->will($this->returnValueMap($valueMap));
+
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->from($configurationMock)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($processedValue, $googleAdsClient->getGrpcChannelIsSecure());
+    }
+
+    public function provideGrpcChannelIsSecureValues()
+    {
+        return [
+            [null, true],
+            ["", true],
+            [self::$INVALID_BOOLEAN_STRING, true],
+            ["true", true],
+            ["false", false],
+        ];
     }
 
     public function testBuildFromDefaults()
@@ -229,6 +273,39 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
+    public function testBuildFailsWhenGrpcChannelIsNotSecureAndGrpcChannelCredentialIsSet()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withGrpcChannelIsSecure(false)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+    }
+
+    public function testBuildFailsWhenTransportIsNotGrpcAndGrpcChannelIsNotSecure()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withTransport('rest')
+            ->withGrpcChannelIsSecure(false)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+    }
+
+    public function testBuildFailsWhenTransportIsNotGrpcAndGrpcChannelCredentialIsSet()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withTransport('rest')
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+    }
+
     public function testBuild()
     {
         $googleAdsClient = $this->googleAdsClientBuilder
@@ -321,6 +398,31 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->withLinkedCustomerId(-1)
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->build();
+    }
+
+    public function testBuildWithGrpcChannelIsSecure()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withGrpcChannelIsSecure(false)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertFalse($googleAdsClient->getGrpcChannelIsSecure());
+    }
+
+    public function testBuildWithGrpcChannelCredential()
+    {
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame(
+            self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL,
+            $googleAdsClient->getGrpcChannelCredential()
+        );
     }
 
     public function testBuildWithUnaryMiddlewares()
