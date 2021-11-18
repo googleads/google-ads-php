@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib\V8;
 
 use Exception;
+use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Call;
 use Google\ApiCore\ServerStream;
@@ -26,23 +27,21 @@ use Google\ApiCore\ServerStream;
 /**
  * Middleware for throwing `GoogleAdsException` when server streaming calls to the API server fail.
  */
-class ServerStreamingGoogleAdsExceptionMiddleware
+class ServerStreamingGoogleAdsExceptionMiddleware extends GoogleAdsMiddlewareAbstract
 {
-    /** @var callable $nextHandler */
-    private $nextHandler;
     private $statusMetadataExtractor;
 
     /**
      * Creates the `GoogleAdsException` middleware.
      *
-     * @param callable $nextHandler
+     * @param callable|null $nextHandler
      * @param StatusMetadataExtractor $statusMetadataExtractor
      */
     public function __construct(
-        callable $nextHandler,
+        callable $nextHandler = null,
         StatusMetadataExtractor $statusMetadataExtractor = null
     ) {
-        $this->nextHandler = $nextHandler;
+        parent::__construct($nextHandler);
         $this->statusMetadataExtractor = $statusMetadataExtractor ?: new StatusMetadataExtractor();
     }
 
@@ -56,7 +55,7 @@ class ServerStreamingGoogleAdsExceptionMiddleware
      */
     public function __invoke(Call $call, array $options)
     {
-        $next = $this->nextHandler;
+        $next = $this->getNextHandler();
         /** @var ServerStream $stream */
         $stream = $next(
             $call,

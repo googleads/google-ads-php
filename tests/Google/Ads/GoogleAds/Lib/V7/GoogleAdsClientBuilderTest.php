@@ -323,6 +323,38 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
+    public function testBuildWithUnaryMiddlewares()
+    {
+        $unaryMiddlewares = [
+            new UnaryGoogleAdsExceptionMiddleware(),
+            new UnaryGoogleAdsExceptionMiddleware()
+        ];
+
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withUnaryMiddlewares(...$unaryMiddlewares)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($unaryMiddlewares, $googleAdsClient->getUnaryMiddlewares());
+    }
+
+    public function testBuildWithStreamingMiddlewares()
+    {
+        $streamingMiddlewares = [
+            new ServerStreamingGoogleAdsExceptionMiddleware(),
+            new ServerStreamingGoogleAdsExceptionMiddleware()
+        ];
+
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withStreamingMiddlewares(...$streamingMiddlewares)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($streamingMiddlewares, $googleAdsClient->getStreamingMiddlewares());
+    }
+
     public function testBuildWithGrpcInterceptors()
     {
         $grpcInterceptors = [new Interceptor(), new Interceptor()];

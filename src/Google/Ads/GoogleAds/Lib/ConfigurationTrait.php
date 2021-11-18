@@ -39,6 +39,8 @@ trait ConfigurationTrait
 
     // The following configuration settings are based on complex objects. They cannot be set in
     // configuration files like the others but only dynamically.
+    private $unaryMiddlewares;
+    private $streamingMiddlewares;
     private $grpcInterceptors;
 
     /**
@@ -132,6 +134,26 @@ trait ConfigurationTrait
     }
 
     /**
+     * Gets the Google Ads unary middlewares.
+     *
+     * @return GoogleAdsMiddlewareAbstract[] the Google Ads unary middlewares
+     */
+    public function getUnaryMiddlewares()
+    {
+        return $this->unaryMiddlewares;
+    }
+
+    /**
+     * Gets the Google Ads streaming middlewares.
+     *
+     * @return GoogleAdsMiddlewareAbstract[] the Google Ads streaming middlewares
+     */
+    public function getStreamingMiddlewares()
+    {
+        return $this->streamingMiddlewares;
+    }
+
+    /*
      * Gets the gRPC interceptors.
      *
      * @return Interceptor[] the gRPC interceptors

@@ -22,6 +22,7 @@ use Google\Ads\GoogleAds\Lib\Configuration;
 use Google\Ads\GoogleAds\Lib\ConfigurationLoader;
 use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\AbstractGoogleAdsBuilder;
+use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
 use Grpc\Interceptor;
@@ -49,6 +50,8 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $logLevel;
     private $proxy;
     private $transport;
+    private $unaryMiddlewares = [];
+    private $streamingMiddlewares = [];
     private $grpcInterceptors = [];
 
     public function __construct(
@@ -228,6 +231,32 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+     * Sets the unary middlewares for Google Ads API requests. They execute in order after the ones
+     * defined by the library.
+     *
+     * @param GoogleAdsMiddlewareAbstract ...$unaryMiddlewares the Google Ads unary middlewares
+     * @return self this builder
+     */
+    public function withUnaryMiddlewares(GoogleAdsMiddlewareAbstract ...$unaryMiddlewares)
+    {
+        $this->unaryMiddlewares = $unaryMiddlewares;
+        return $this;
+    }
+
+    /**
+     * Sets the streaming middlewares for Google Ads API requests. They execute in order after the ones
+     * defined by the library.
+     *
+     * @param GoogleAdsMiddlewareAbstract ...$streamingMiddlewares the Google Ads streaming middlewares
+     * @return self this builder
+     */
+    public function withStreamingMiddlewares(GoogleAdsMiddlewareAbstract ...$streamingMiddlewares)
+    {
+        $this->streamingMiddlewares = $streamingMiddlewares;
+        return $this;
+    }
+
+    /**
      * Sets the gRPC interceptors for Google Ads API requests. They execute in order after the ones
      * defined by the library.
      *
@@ -400,6 +429,26 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function getTransport()
     {
         return $this->transport;
+    }
+
+    /**
+     * Gets the Google Ads unary middlewares.
+     *
+     * @return GoogleAdsMiddlewareAbstract[] the Google Ads unary middlewares
+     */
+    public function getUnaryMiddlewares()
+    {
+        return $this->unaryMiddlewares;
+    }
+
+    /**
+     * Gets the Google Ads streaming middlewares.
+     *
+     * @return GoogleAdsMiddlewareAbstract[] the Google Ads streaming middlewares
+     */
+    public function getStreamingMiddlewares()
+    {
+        return $this->streamingMiddlewares;
     }
 
     /**
