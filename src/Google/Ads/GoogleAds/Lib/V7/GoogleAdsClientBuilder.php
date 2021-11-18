@@ -286,6 +286,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function withUnaryMiddlewares(GoogleAdsMiddlewareAbstract ...$unaryMiddlewares)
     {
         $this->unaryMiddlewares = $unaryMiddlewares;
+        return $this;
     }
 
     /**
