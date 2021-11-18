@@ -142,7 +142,7 @@ class GoogleAdsClientTest extends TestCase
         );
     }
 
-    public function testGrpcChannelCredentialWhenGrpcChannelIsSecureInClientOptions()
+    public function testGrpcChannelCredentialWhenGrpcChannelIsNotSecureInClientOptions()
     {
         $googleAdsClient =
             $this->googleAdsClientBuilder->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
