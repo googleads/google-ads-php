@@ -24,6 +24,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\AbstractGoogleAdsBuilder;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\Interceptor;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -48,6 +49,7 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $logLevel;
     private $proxy;
     private $transport;
+    private $grpcInterceptors = [];
 
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
@@ -226,6 +228,19 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+     * Sets the gRPC interceptors for Google Ads API requests. They execute in order after the ones
+     * defined by the library.
+     *
+     * @param Interceptor ...$grpcInterceptors the gRPC interceptors
+     * @return self this builder
+     */
+    public function withGrpcInterceptors(Interceptor ...$grpcInterceptors)
+    {
+        $this->grpcInterceptors = $grpcInterceptors;
+        return $this;
+    }
+
+    /**
      * @see GoogleAdsBuilder::build()
      *
      * @return GoogleAdsClient the created Google Ads client
@@ -385,5 +400,15 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function getTransport()
     {
         return $this->transport;
+    }
+
+    /**
+     * Gets the gRPC interceptors.
+     *
+     * @return Interceptor[] the gRPC interceptors
+     */
+    public function getGrpcInterceptors()
+    {
+        return $this->grpcInterceptors;
     }
 }

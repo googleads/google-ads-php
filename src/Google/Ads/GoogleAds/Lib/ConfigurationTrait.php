@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib;
 
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\Interceptor;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -35,6 +36,10 @@ trait ConfigurationTrait
     private $logLevel;
     private $proxy;
     private $transport;
+
+    // The following configuration settings are based on complex objects. They cannot be set in
+    // configuration files like the others but only dynamically.
+    private $grpcInterceptors;
 
     /**
      * Gets the developer token.
@@ -124,5 +129,15 @@ trait ConfigurationTrait
     public function getTransport()
     {
         return $this->transport;
+    }
+
+    /**
+     * Gets the gRPC interceptors.
+     *
+     * @return Interceptor[] the gRPC interceptors
+     */
+    public function getGrpcInterceptors()
+    {
+        return $this->grpcInterceptors;
     }
 }

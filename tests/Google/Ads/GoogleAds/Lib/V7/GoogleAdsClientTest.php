@@ -19,6 +19,7 @@
 namespace Google\Ads\GoogleAds\Lib\V7;
 
 use Google\Auth\FetchAuthTokenInterface;
+use Grpc\Interceptor;
 use Monolog\Handler\NullHandler;
 use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
@@ -45,6 +46,10 @@ class GoogleAdsClientTest extends TestCase
     private static $PROXY = 'http://localhost:8080';
 
     private static $TRANSPORT = 'grpc';
+    private static $DEFAULT_INTERCEPTOR_TYPES = [
+        GoogleAdsLoggingInterceptor::class,
+        GoogleAdsFailuresInterceptor::class
+    ];
 
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
     private $googleAdsClientBuilder;
@@ -64,6 +69,8 @@ class GoogleAdsClientTest extends TestCase
 
     public function testGetClientOptions()
     {
+        $grpcInterceptors = [new Interceptor(), new Interceptor()];
+
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
@@ -72,6 +79,7 @@ class GoogleAdsClientTest extends TestCase
             ->withLogger(new Logger('', [new NullHandler()]))
             ->withProxy(self::$PROXY)
             ->withTransport(self::$TRANSPORT)
+            ->withGrpcInterceptors(...$grpcInterceptors)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
@@ -91,10 +99,12 @@ class GoogleAdsClientTest extends TestCase
             strval(self::$LINKED_CUSTOMER_ID),
             $clientOptions[self::$LINKED_CUSTOMER_ID_KEY]
         );
-        $this->assertInstanceOf(
-            GoogleAdsLoggingInterceptor::class,
-            $clientOptions['transportConfig']['grpc']['interceptors'][0]
-        );
+        foreach (self::$DEFAULT_INTERCEPTOR_TYPES as $index => $defaultInterceptorType) {
+            $this->assertInstanceOf(
+                $defaultInterceptorType,
+                $clientOptions['transportConfig']['grpc']['interceptors'][$index]
+            );
+        }
         $this->assertSame(
             getenv('http_proxy'),
             self::$PROXY
@@ -102,6 +112,13 @@ class GoogleAdsClientTest extends TestCase
         $this->assertSame(
             self::$TRANSPORT,
             $clientOptions[self::$TRANSPORT_KEY]
+        );
+        $this->assertSame(
+            $grpcInterceptors,
+            array_slice(
+                $clientOptions['transportConfig']['grpc']['interceptors'],
+                count(self::$DEFAULT_INTERCEPTOR_TYPES)
+            )
         );
     }
 
