@@ -38,10 +38,10 @@ trait ConfigurationTrait
     private $proxy;
     private $transport;
     private $grpcChannelIsSecure;
-    private $grpcChannelCredential;
 
     // The following configuration settings are based on complex objects. They cannot be set in
     // configuration files like the others but only dynamically.
+    private $grpcChannelCredential;
     private $unaryMiddlewares;
     private $streamingMiddlewares;
     private $grpcInterceptors;
