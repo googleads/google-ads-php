@@ -18,6 +18,7 @@
 
 namespace Google\Ads\GoogleAds\Lib\V7;
 
+use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Call;
 use GuzzleHttp\Promise\Promise;
@@ -25,25 +26,23 @@ use GuzzleHttp\Promise\Promise;
 /**
  * Middleware for throwing `GoogleAdsException` when unary calls to the API server fail.
  */
-class UnaryGoogleAdsExceptionMiddleware
+class UnaryGoogleAdsExceptionMiddleware extends GoogleAdsMiddlewareAbstract
 {
     use GoogleAdsExceptionTrait;
 
-    /** @var callable $nextHandler */
-    private $nextHandler;
     private $statusMetadataExtractor;
 
     /**
      * Creates the `GoogleAdsException` middleware.
      *
-     * @param callable $nextHandler
+     * @param callable|null $nextHandler
      * @param StatusMetadataExtractor $statusMetadataExtractor
      */
     public function __construct(
-        callable $nextHandler,
+        callable $nextHandler = null,
         StatusMetadataExtractor $statusMetadataExtractor = null
     ) {
-        $this->nextHandler = $nextHandler;
+        parent::__construct($nextHandler);
         $this->statusMetadataExtractor = $statusMetadataExtractor ?: new StatusMetadataExtractor();
     }
 
@@ -57,7 +56,7 @@ class UnaryGoogleAdsExceptionMiddleware
      */
     public function __invoke(Call $call, array $options)
     {
-        $next = $this->nextHandler;
+        $next = $this->getNextHandler();
         /** @var Promise $promise */
         $promise = $next(
             $call,

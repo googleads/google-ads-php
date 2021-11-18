@@ -18,28 +18,16 @@
 
 namespace Google\Ads\GoogleAds\Lib\V9;
 
+use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\ApiCore\Call;
 use Google\ApiCore\Middleware\ResponseMetadataMiddleware;
 
 /**
  * Callable for returning `GoogleAdsResponseMetadata` from unary calls to the API.
  */
-class UnaryGoogleAdsResponseMetadataCallable
+class UnaryGoogleAdsResponseMetadataCallable extends GoogleAdsMiddlewareAbstract
 {
     use GoogleAdsMetadataTrait;
-
-    /** @var callable $nextHandler */
-    private $nextHandler;
-
-    /**
-     * Creates the `GoogleAdsResponseMetadata` callable.
-     *
-     * @param callable $nextHandler
-     */
-    public function __construct(callable $nextHandler)
-    {
-        $this->nextHandler = $nextHandler;
-    }
 
     /**
      * @param Call $call the current request
@@ -54,13 +42,13 @@ class UnaryGoogleAdsResponseMetadataCallable
             isset($options['withResponseMetadata'])
             && !empty($options['withResponseMetadata'])
         ) {
-            $next = new ResponseMetadataMiddleware($this->nextHandler);
+            $next = new ResponseMetadataMiddleware($this->getNextHandler());
             return $next($call, $options)->then(function ($responseList) {
                 list($response, $metadata) = $responseList;
                 return [$response, new GoogleAdsResponseMetadata($metadata)];
             });
         } else {
-            $next = $this->nextHandler;
+            $next = $this->getNextHandler();
             return $next($call, $options);
         }
     }

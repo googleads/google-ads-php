@@ -192,6 +192,8 @@ trait ServiceClientFactoryTrait
     private static $SERVICE_ADDRESS_KEY = 'serviceAddress';
     private static $DEFAULT_SERVICE_ADDRESS = 'googleads.googleapis.com';
     private static $TRANSPORT_KEY = 'transport';
+    private static $UNARY_MIDDLEWARES = 'unary-middlewares';
+    private static $STREAMING_MIDDLEWARES = 'streaming-middlewares';
 
     /**
      * Gets the Google Ads client options for making API calls.
@@ -243,6 +245,10 @@ trait ServiceClientFactoryTrait
                 $googleAdsLoggingInterceptor
             );
         }
+        array_push(
+            $clientOptions['transportConfig']['grpc']['interceptors'],
+            ...$this->getGrpcInterceptors()
+        );
         if (!empty($this->getProxy())) {
             putenv('http_proxy=' . $this->getProxy());
         }
@@ -260,6 +266,10 @@ trait ServiceClientFactoryTrait
                 self::$CREDENTIALS_LOADER_KEY => $channelCredentials
             ];
         }
+        $clientOptions += [
+            self::$UNARY_MIDDLEWARES => $this->getUnaryMiddlewares(),
+            self::$STREAMING_MIDDLEWARES => $this->getStreamingMiddlewares()
+        ];
 
         return $clientOptions;
     }

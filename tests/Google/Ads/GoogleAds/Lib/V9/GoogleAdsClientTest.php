@@ -20,6 +20,7 @@ namespace Google\Ads\GoogleAds\Lib\V9;
 
 use Google\Auth\FetchAuthTokenInterface;
 use Grpc\ChannelCredentials;
+use Grpc\Interceptor;
 use Monolog\Handler\NullHandler;
 use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
@@ -38,6 +39,8 @@ class GoogleAdsClientTest extends TestCase
     private static $LOGIN_CUSTOMER_ID_KEY = 'login-customer-id';
     private static $LINKED_CUSTOMER_ID_KEY = 'linked-customer-id';
     private static $TRANSPORT_KEY = 'transport';
+    private static $UNARY_MIDDLEWARES_KEY = 'unary-middlewares';
+    private static $STREAMING_MIDDLEWARES_KEY = 'streaming-middlewares';
 
     private static $DEVELOPER_TOKEN = 'ABcdeFGH93KL-NOPQ_STUv';
     private static $LOGIN_CUSTOMER_ID = 1234567890;
@@ -47,6 +50,10 @@ class GoogleAdsClientTest extends TestCase
 
     private static $TRANSPORT = 'grpc';
     private static $DEFAULT_GRPC_CHANNEL_CREDENTIAL;
+    private static $DEFAULT_INTERCEPTOR_TYPES = [
+        GoogleAdsLoggingInterceptor::class,
+        GoogleAdsFailuresInterceptor::class
+    ];
 
     /** @var GoogleAdsClientBuilder $googleAdsClientBuilder */
     private $googleAdsClientBuilder;
@@ -67,6 +74,16 @@ class GoogleAdsClientTest extends TestCase
 
     public function testGetClientOptions()
     {
+        $unaryMiddlewares = [
+            new UnaryGoogleAdsExceptionMiddleware(),
+            new UnaryGoogleAdsExceptionMiddleware()
+        ];
+        $streamingMiddlewares = [
+            new ServerStreamingGoogleAdsExceptionMiddleware(),
+            new ServerStreamingGoogleAdsExceptionMiddleware()
+        ];
+        $grpcInterceptors = [new Interceptor(), new Interceptor()];
+
         $googleAdsClient = $this->googleAdsClientBuilder
             ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
             ->withDeveloperToken(self::$DEVELOPER_TOKEN)
@@ -77,6 +94,9 @@ class GoogleAdsClientTest extends TestCase
             ->withTransport(self::$TRANSPORT)
             ->withGrpcChannelIsSecure(true)
             ->withGrpcChannelCredential(self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL)
+            ->withUnaryMiddlewares(...$unaryMiddlewares)
+            ->withStreamingMiddlewares(...$streamingMiddlewares)
+            ->withGrpcInterceptors(...$grpcInterceptors)
             ->build();
         $clientOptions = $googleAdsClient->getGoogleAdsClientOptions();
 
@@ -96,10 +116,12 @@ class GoogleAdsClientTest extends TestCase
             strval(self::$LINKED_CUSTOMER_ID),
             $clientOptions[self::$LINKED_CUSTOMER_ID_KEY]
         );
-        $this->assertInstanceOf(
-            GoogleAdsLoggingInterceptor::class,
-            $clientOptions['transportConfig']['grpc']['interceptors'][0]
-        );
+        foreach (self::$DEFAULT_INTERCEPTOR_TYPES as $index => $defaultInterceptorType) {
+            $this->assertInstanceOf(
+                $defaultInterceptorType,
+                $clientOptions['transportConfig']['grpc']['interceptors'][$index]
+            );
+        }
         $this->assertSame(
             getenv('http_proxy'),
             self::$PROXY
@@ -111,6 +133,21 @@ class GoogleAdsClientTest extends TestCase
         $this->assertInstanceOf(
             ChannelCredentials::class,
             $clientOptions['transportConfig']['grpc']['stubOpts'][self::$CREDENTIALS_LOADER_KEY]
+        );
+        $this->assertSame(
+            $unaryMiddlewares,
+            $clientOptions[self::$UNARY_MIDDLEWARES_KEY]
+        );
+        $this->assertSame(
+            $streamingMiddlewares,
+            $clientOptions[self::$STREAMING_MIDDLEWARES_KEY]
+        );
+        $this->assertSame(
+            $grpcInterceptors,
+            array_slice(
+                $clientOptions['transportConfig']['grpc']['interceptors'],
+                count(self::$DEFAULT_INTERCEPTOR_TYPES)
+            )
         );
     }
 

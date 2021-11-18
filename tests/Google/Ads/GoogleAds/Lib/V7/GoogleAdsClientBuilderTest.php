@@ -25,6 +25,7 @@ use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\Auth\FetchAuthTokenInterface;
 use Grpc\ChannelCredentials;
+use Grpc\Interceptor;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -422,6 +423,51 @@ class GoogleAdsClientBuilderTest extends TestCase
             self::$DEFAULT_GRPC_CHANNEL_CREDENTIAL,
             $googleAdsClient->getGrpcChannelCredential()
         );
+    }
+
+    public function testBuildWithUnaryMiddlewares()
+    {
+        $unaryMiddlewares = [
+            new UnaryGoogleAdsExceptionMiddleware(),
+            new UnaryGoogleAdsExceptionMiddleware()
+        ];
+
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withUnaryMiddlewares(...$unaryMiddlewares)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($unaryMiddlewares, $googleAdsClient->getUnaryMiddlewares());
+    }
+
+    public function testBuildWithStreamingMiddlewares()
+    {
+        $streamingMiddlewares = [
+            new ServerStreamingGoogleAdsExceptionMiddleware(),
+            new ServerStreamingGoogleAdsExceptionMiddleware()
+        ];
+
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withStreamingMiddlewares(...$streamingMiddlewares)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($streamingMiddlewares, $googleAdsClient->getStreamingMiddlewares());
+    }
+
+    public function testBuildWithGrpcInterceptors()
+    {
+        $grpcInterceptors = [new Interceptor(), new Interceptor()];
+
+        $googleAdsClient = $this->googleAdsClientBuilder
+            ->withDeveloperToken(self::$DEVELOPER_TOKEN)
+            ->withGrpcInterceptors(...$grpcInterceptors)
+            ->withOAuth2Credential($this->fetchAuthTokenInterfaceMock)
+            ->build();
+
+        $this->assertSame($grpcInterceptors, $googleAdsClient->getGrpcInterceptors());
     }
 
     /**

@@ -22,10 +22,12 @@ use Google\Ads\GoogleAds\Lib\Configuration;
 use Google\Ads\GoogleAds\Lib\ConfigurationLoader;
 use Google\Ads\GoogleAds\Lib\GoogleAdsBuilder;
 use Google\Ads\GoogleAds\Lib\AbstractGoogleAdsBuilder;
+use Google\Ads\GoogleAds\Lib\GoogleAdsMiddlewareAbstract;
 use Google\Ads\GoogleAds\Util\EnvironmentalVariables;
 use Google\ApiCore\GrpcSupportTrait;
 use Google\Auth\FetchAuthTokenInterface;
 use Grpc\ChannelCredentials;
+use Grpc\Interceptor;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -55,6 +57,9 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     private $transport;
     private $grpcChannelIsSecure;
     private $grpcChannelCredential;
+    private $unaryMiddlewares = [];
+    private $streamingMiddlewares = [];
+    private $grpcInterceptors = [];
 
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
@@ -272,6 +277,44 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     }
 
     /**
+     * Sets the unary middlewares for Google Ads API requests. They execute in order after the ones
+     * defined by the library.
+     *
+     * @param GoogleAdsMiddlewareAbstract ...$unaryMiddlewares the Google Ads unary middlewares
+     * @return self this builder
+     */
+    public function withUnaryMiddlewares(GoogleAdsMiddlewareAbstract ...$unaryMiddlewares)
+    {
+        $this->unaryMiddlewares = $unaryMiddlewares;
+    }
+
+    /**
+     * Sets the streaming middlewares for Google Ads API requests. They execute in order after the ones
+     * defined by the library.
+     *
+     * @param GoogleAdsMiddlewareAbstract ...$streamingMiddlewares the Google Ads streaming middlewares
+     * @return self this builder
+     */
+    public function withStreamingMiddlewares(GoogleAdsMiddlewareAbstract ...$streamingMiddlewares)
+    {
+        $this->streamingMiddlewares = $streamingMiddlewares;
+        return $this;
+    }
+
+    /**
+     * Sets the gRPC interceptors for Google Ads API requests. They execute in order after the ones
+     * defined by the library.
+     *
+     * @param Interceptor ...$grpcInterceptors the gRPC interceptors
+     * @return self this builder
+     */
+    public function withGrpcInterceptors(Interceptor ...$grpcInterceptors)
+    {
+        $this->grpcInterceptors = $grpcInterceptors;
+        return $this;
+    }
+
+    /**
      * @see GoogleAdsBuilder::build()
      *
      * @return GoogleAdsClient the created Google Ads client
@@ -481,5 +524,35 @@ final class GoogleAdsClientBuilder extends AbstractGoogleAdsBuilder
     public function getGrpcChannelCredential()
     {
         return $this->grpcChannelCredential;
+    }
+
+    /**
+     * Gets the Google Ads unary middlewares.
+     *
+     * @return GoogleAdsMiddlewareAbstract[] the Google Ads unary middlewares
+     */
+    public function getUnaryMiddlewares()
+    {
+        return $this->unaryMiddlewares;
+    }
+
+    /**
+     * Gets the Google Ads streaming middlewares.
+     *
+     * @return GoogleAdsMiddlewareAbstract[] the Google Ads streaming middlewares
+     */
+    public function getStreamingMiddlewares()
+    {
+        return $this->streamingMiddlewares;
+    }
+
+    /**
+     * Gets the gRPC interceptors.
+     *
+     * @return Interceptor[] the gRPC interceptors
+     */
+    public function getGrpcInterceptors()
+    {
+        return $this->grpcInterceptors;
     }
 }
