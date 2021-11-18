@@ -273,7 +273,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    public function testBuildFailsWhenGrpcChannelIsSecureAndGrpcChannelCredentialIsSet()
+    public function testBuildFailsWhenGrpcChannelIsNotSecureAndGrpcChannelCredentialIsSet()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
@@ -284,7 +284,7 @@ class GoogleAdsClientBuilderTest extends TestCase
             ->build();
     }
 
-    public function testBuildFailsWhenTransportIsNotGrpcAndGrpcChannelIsSecure()
+    public function testBuildFailsWhenTransportIsNotGrpcAndGrpcChannelIsNotSecure()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->googleAdsClientBuilder
