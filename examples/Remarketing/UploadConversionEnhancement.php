@@ -184,12 +184,13 @@ class UploadConversionEnhancement
 
         // Creates a user identifier using the hashed email address.
         $emailIdentifier = new UserIdentifier([
-            'user_identifier_source' => UserIdentifierSource::FIRST_PARTY,
             // Uses the normalize and hash method specifically for email addresses.
             'hashed_email' => self::normalizeAndHashEmailAddress(
                 $hashAlgorithm,
                 'joannasmith@example.com'
-            )
+            ),
+            // Optional: Specifies the user identifier source.
+            'user_identifier_source' => UserIdentifierSource::FIRST_PARTY
         ]);
 
         // Adds the user identifiers to the enhancement adjustment.
