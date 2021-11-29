@@ -60,6 +60,7 @@ final class ArgumentNames
     public const CPC_BID_CEILING_MICRO_AMOUNT = 'cpcBidCeilingMicroAmount';
     public const CPC_BID_MICRO_AMOUNT = 'cpcBidMicroAmount';
     public const CRITERION_ID = 'criterionId';
+    public const CURRENCY_CODE = 'currencyCode';
     public const CUSTOMER_ID = 'customerId';
     public const CUSTOM_KEY = 'customKey';
     public const DRAFT_ID = 'draftId';
@@ -95,6 +96,7 @@ final class ArgumentNames
     public const MARKETING_IMAGE_ASSET_ID = 'marketingImageAssetId';
     public const MERCHANT_CENTER_ACCOUNT_ID = 'merchantCenterAccountId';
     public const OFFLINE_USER_DATA_JOB_TYPE = 'offlineUserDataJobType';
+    public const ORDER_ID = 'orderId';
     public const OUTPUT_FILE_PATH = 'outputFilePath';
     public const PAGE_URL = 'pageUrl';
     public const PARTNER_ID = 'partnerId';
@@ -110,6 +112,7 @@ final class ArgumentNames
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
     public const START_DATE_TIME = "startDateTime";
+    public const USER_AGENT = 'userAgent';
     public const USER_LIST_ID = 'userListId';
     public const USER_LIST_IDS = 'userListIds';
 
@@ -152,6 +155,7 @@ final class ArgumentNames
         self::CPC_BID_CEILING_MICRO_AMOUNT => 'The CPC bid ceiling micro amount',
         self::CPC_BID_MICRO_AMOUNT => 'The CPC bid micro amount',
         self::CRITERION_ID => 'The criterion ID',
+        self::CURRENCY_CODE => 'The currency code',
         self::CUSTOMER_ID => 'The customer ID without dashes',
         self::CUSTOM_KEY => 'The custom key',
         self::DRAFT_ID => 'The draft ID',
@@ -187,6 +191,7 @@ final class ArgumentNames
         self::MARKETING_IMAGE_ASSET_ID => 'The ID of marketing image asset',
         self::MERCHANT_CENTER_ACCOUNT_ID => 'The Merchant center account ID',
         self::OFFLINE_USER_DATA_JOB_TYPE => 'The offline user data job type',
+        self::ORDER_ID => 'The order ID',
         self::OUTPUT_FILE_PATH => 'The output file path',
         self::PAGE_URL => 'The page URL',
         self::PARTNER_ID => 'The partner ID',
@@ -206,6 +211,7 @@ final class ArgumentNames
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
         self::START_DATE_TIME => 'The start date time',
+        self::USER_AGENT => 'The user agent',
         self::USER_LIST_ID => 'The user list ID',
         self::USER_LIST_IDS => 'The user list IDs'
     ];
