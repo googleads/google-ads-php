@@ -49,7 +49,7 @@ use Google\ApiCore\ApiException;
  * Creates a rule-based user list defined by an expression rule for users who have either checked
  * out in November or December OR visited the checkout page with more than one item in their cart.
  */
-class SetupAdvancedRemarketing
+class SetUpAdvancedRemarketing
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
 
@@ -233,4 +233,4 @@ class SetupAdvancedRemarketing
     }
 }
 
-SetupAdvancedRemarketing::main();
+SetUpAdvancedRemarketing::main();

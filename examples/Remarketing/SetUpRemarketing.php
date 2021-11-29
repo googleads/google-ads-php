@@ -57,7 +57,7 @@ use Google\ApiCore\ApiException;
  * operations consecutively, and all of the operations contained herein are meant of for
  * illustrative purposes.
  */
-class SetupRemarketing
+class SetUpRemarketing
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CAMPAIGN_ID = 'INSERT_CAMPAIGN_ID_HERE';
@@ -515,4 +515,4 @@ class SetupRemarketing
     }
 }
 
-SetupRemarketing::main();
+SetUpRemarketing::main();
