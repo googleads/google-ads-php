@@ -42,7 +42,7 @@ class ConfigurationTest extends TestCase
 
     public function testGetConfigurationWithSection()
     {
-        $this->assertEquals('value', $this->configuration->getConfiguration('a', 'DEFAULT'));
+        $this->assertEquals('valuewerwerw', $this->configuration->getConfiguration('a', 'DEFAULT'));
     }
 
     public function testGetConfigurationWithNoSection()
