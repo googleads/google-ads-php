@@ -19,7 +19,6 @@
 namespace Google\Ads\GoogleAds\Lib\V8;
 
 use Google\Ads\GoogleAds\Util\V8\GoogleAdsFailures;
-use Google\ApiCore\GrpcSupportTrait;
 
 /**
  * A Google Ads API client for handling common configuration and OAuth2 settings.
@@ -27,7 +26,6 @@ use Google\ApiCore\GrpcSupportTrait;
 final class GoogleAdsClient
 {
     use ServiceClientFactoryTrait;
-    use GrpcSupportTrait;
 
     /**
      * Creates a Google Ads API client from the specified builder.
