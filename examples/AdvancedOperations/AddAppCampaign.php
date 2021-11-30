@@ -300,7 +300,6 @@ class AddAppCampaign
             // Creates a campaign criterion.
             $campaignCriterion = new CampaignCriterion([
                 'campaign' => $campaignResourceName,
-                'type' => CriterionType::LOCATION,
                 'location' => new LocationInfo([
                     'geo_target_constant' => ResourceNames::forGeoTargetConstant($locationId)
                 ])
@@ -322,7 +321,6 @@ class AddAppCampaign
             // Creates a campaign criterion.
             $campaignCriterion = new CampaignCriterion([
                 'campaign' => $campaignResourceName,
-                'type' => CriterionType::LANGUAGE,
                 'language' => new LanguageInfo([
                     'language_constant' => ResourceNames::forLanguageConstant($languageId)
                 ])
