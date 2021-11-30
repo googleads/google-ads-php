@@ -28,38 +28,30 @@ use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\V9\ResourceNames;
-use Google\Ads\GoogleAds\V9\Common\OfflineUserAddressInfo;
 use Google\Ads\GoogleAds\V9\Common\UserIdentifier;
-use Google\Ads\GoogleAds\V9\Enums\ConversionAdjustmentTypeEnum\ConversionAdjustmentType;
 use Google\Ads\GoogleAds\V9\Enums\UserIdentifierSourceEnum\UserIdentifierSource;
 use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
-use Google\Ads\GoogleAds\V9\Services\ConversionAdjustment;
-use Google\Ads\GoogleAds\V9\Services\ConversionAdjustmentResult;
-use Google\Ads\GoogleAds\V9\Services\GclidDateTimePair;
-use Google\Ads\GoogleAds\V9\Services\RestatementValue;
+use Google\Ads\GoogleAds\V9\Services\ClickConversion;
+use Google\Ads\GoogleAds\V9\Services\ClickConversionResult;
+use Google\Ads\GoogleAds\V9\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 
 /**
- * This example adjusts an existing conversion by supplying user identifiers so Google can enhance
- * the conversion value.
+ * Uploads a conversion using hashed email address instead of GCLID.
  */
-class UploadConversionEnhancement
+class UploadConversionWithIdentifiers
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
-    private const ORDER_ID = 'INSERT_ORDER_ID_HERE';
-
-    // Optional parameters.
-
-    // The date time at which the conversion with the specified order ID occurred.
+    private const EMAIL_ADDRESS = 'INSERT_EMAIL_ADDRESS_HERE';
+    // The date time at which the conversion occurred.
     // Must be after the click time, and must include the time zone offset.
     // The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. '2019-01-01 12:32:45-08:00'.
-    // Setting this field is optional, but recommended.
-    private const CONVERSION_DATE_TIME = null;
-    private const USER_AGENT = null;
-    private const RESTATEMENT_VALUE = null;
-    // The currency of the restatement value.
-    private const CURRENCY_CODE = null;
+    private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
+    private const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
+
+    // Optional: Specifies the order ID.
+    private const ORDER_ID = 'INSERT_ORDER_ID_HERE';
 
     public static function main()
     {
@@ -68,11 +60,10 @@ class UploadConversionEnhancement
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::ORDER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CONVERSION_DATE_TIME => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::USER_AGENT => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::RESTATEMENT_VALUE => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::CURRENCY_CODE => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::EMAIL_ADDRESS => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::ORDER_ID => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -90,11 +81,10 @@ class UploadConversionEnhancement
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CONVERSION_ACTION_ID] ?: self::CONVERSION_ACTION_ID,
-                $options[ArgumentNames::ORDER_ID] ?: self::ORDER_ID,
+                $options[ArgumentNames::EMAIL_ADDRESS] ?: self::EMAIL_ADDRESS,
                 $options[ArgumentNames::CONVERSION_DATE_TIME] ?: self::CONVERSION_DATE_TIME,
-                $options[ArgumentNames::USER_AGENT] ?: self::USER_AGENT,
-                $options[ArgumentNames::RESTATEMENT_VALUE] ?: self::RESTATEMENT_VALUE,
-                $options[ArgumentNames::CURRENCY_CODE] ?: self::CURRENCY_CODE
+                $options[ArgumentNames::CONVERSION_VALUE] ?: self::CONVERSION_VALUE,
+                $options[ArgumentNames::ORDER_ID] ?: self::ORDER_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -130,110 +120,61 @@ class UploadConversionEnhancement
      * @param int $customerId the customer ID
      * @param int $conversionActionId the ID of the conversion action associated with this
      *      conversion
-     * @param string $orderId the unique order ID (transaction ID) of the conversion
-     * @param string|null $conversionDateTime the date and time of the conversion.
+     * @param string $emailAddress the email address for the conversion
+     * @param string $conversionDateTime the date and time of the conversion
      *      The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
-     * @param string|null $userAgent the HTTP user agent of the conversion
-     * @param float|null $restatementValue the enhancement value
-     * @param string|null $restatementCurrencyCode the currency of the enhancement value
+     * @param float $conversionValue the value of the conversion
+     * @param string|null $orderId the unique order ID (transaction ID) of the conversion
      */
-    // [START upload_conversion_enhancement]
+    // [START upload_conversion_with_identifiers]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $conversionActionId,
-        string $orderId,
-        ?string $conversionDateTime,
-        ?string $userAgent,
-        ?float $restatementValue,
-        ?string $restatementCurrencyCode
+        string $emailAddress,
+        string $conversionDateTime,
+        float $conversionValue,
+        ?string $orderId
     ) {
-        // [START create_adjustment]
-        // Creates the conversion enhancement.
-        $conversionAdjustment = new ConversionAdjustment([
+        // [START create_conversion]
+        // Creates a click conversion with the specified attributes.
+        $clickConversion = new ClickConversion([
             'conversion_action' =>
                 ResourceNames::forConversionAction($customerId, $conversionActionId),
-            'adjustment_type' => ConversionAdjustmentType::ENHANCEMENT,
-            // Enhancements must use order ID instead of GCLID date/time pair.
-            'order_id' => $orderId
+            'conversion_date_time' => $conversionDateTime,
+            'conversion_value' => $conversionValue,
+            'currency_code' => 'USD'
         ]);
+
+        // Sets the order ID if provided.
+        if ($orderId !== null) {
+            $clickConversion->setOrderId($orderId);
+        }
 
         // Uses the SHA-256 hash algorithm for hashing user identifiers in a privacy-safe way, as
         // described at https://support.google.com/google-ads/answer/9888656.
         $hashAlgorithm = "sha256";
 
-        // Adds user identifiers, hashing where required.
-
-        // Creates a user identifier using sample values for the user address.
-        $addressIdentifier = new UserIdentifier([
-            'address_info' => new OfflineUserAddressInfo([
-                'hashed_first_name' => self::normalizeAndHash($hashAlgorithm, 'Joanna'),
-                'hashed_last_name' => self::normalizeAndHash($hashAlgorithm, 'Smith'),
-                'hashed_street_address' => self::normalizeAndHash(
-                    $hashAlgorithm,
-                    '1600 Amphitheatre Pkwy'
-                ),
-                'city' => 'Mountain View',
-                'state' => 'CA',
-                'postal_code' => '94043',
-                'country_code' => 'US'
-            ]),
+        // Creates a user identifier to store the hashed email address.
+        $userIdentifier = new UserIdentifier([
+            // Creates a user identifier using the hashed email address.
+            // Use the normalizeAndHash() method if a phone number is specified instead of the email
+            // address.
+            'hashed_email' => self::normalizeAndHashEmailAddress($hashAlgorithm, $emailAddress),
             // Optional: Specifies the user identifier source.
             'user_identifier_source' => UserIdentifierSource::FIRST_PARTY
         ]);
 
-        // Creates a user identifier using the hashed email address.
-        $emailIdentifier = new UserIdentifier([
-            // Uses the normalize and hash method specifically for email addresses.
-            'hashed_email' => self::normalizeAndHashEmailAddress(
-                $hashAlgorithm,
-                'joannasmith@example.com'
-            ),
-            // Optional: Specifies the user identifier source.
-            'user_identifier_source' => UserIdentifierSource::FIRST_PARTY
-        ]);
+        // Adds the user identifier to the conversion.
+        $clickConversion->setUserIdentifiers([$userIdentifier]);
+        // [END create_conversion]
 
-        // Adds the user identifiers to the enhancement adjustment.
-        $conversionAdjustment->setUserIdentifiers([$addressIdentifier, $emailIdentifier]);
-
-        // Sets optional fields where a value was provided.
-
-        if ($conversionDateTime !== null) {
-            // Sets the conversion date and time if provided. Providing this value is optional but
-            // recommended.
-            $conversionAdjustment->setGclidDateTimePair(new GclidDateTimePair([
-                'conversion_date_time' => $conversionDateTime
-            ]));
-        }
-
-        if ($userAgent !== null) {
-            // Sets the user agent. This should match the user agent of the request that sent the
-            // original conversion so the conversion and its enhancement are either both attributed
-            // as same-device or both attributed as cross-device.
-            $conversionAdjustment->setUserAgent($userAgent);
-        }
-
-        if ($restatementValue !== null) {
-            // Sets the new value of the conversion.
-            $restatementValue = new RestatementValue([
-                'adjusted_value' => $restatementValue
-            ]);
-            // Sets the currency of the new value, if provided. Otherwise, the default currency
-            // from the conversion action is used, and if that is not set then the account currency
-            // is used.
-            if ($restatementCurrencyCode !== null) {
-                $restatementValue->setCurrencyCode($restatementCurrencyCode);
-            }
-            $conversionAdjustment->setRestatementValue($restatementValue);
-        }
-        // [END create_adjustment]
-
-        // Issues a request to upload the conversion enhancement.
-        $conversionAdjustmentUploadServiceClient =
-            $googleAdsClient->getConversionAdjustmentUploadServiceClient();
-        $response = $conversionAdjustmentUploadServiceClient->uploadConversionAdjustments(
+        // Issues a request to upload the click conversion.
+        $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
+        /** @var UploadClickConversionsResponse $response */
+        $response = $conversionUploadServiceClient->uploadClickConversions(
             $customerId,
-            [$conversionAdjustment],
+            [$clickConversion],
             // Enables partial failure (must be true).
             true
         );
@@ -248,18 +189,22 @@ class UploadConversionEnhancement
                 PHP_EOL
             );
         } else {
-            // Prints the result if exists.
-            /** @var ConversionAdjustmentResult $uploadedConversionAdjustment */
-            $uploadedConversionAdjustment = $response->getResults()[0];
-            printf(
-                "Uploaded conversion adjustment of '%s' for order ID '%s'.%s",
-                $uploadedConversionAdjustment->getConversionAction(),
-                $uploadedConversionAdjustment->getOrderId(),
-                PHP_EOL
-            );
+            /** @var ClickConversionResult $clickConversionResult */
+            $clickConversionResult = $response->getResults()[0];
+            // Only prints valid results.
+            if ($clickConversionResult->hasGclid()) {
+                printf(
+                    "Uploaded conversion that occurred at '%s' from Google Click ID '%s' to "
+                    . "'%s'.%s",
+                    $clickConversionResult->getConversionDateTime(),
+                    $clickConversionResult->getGclid(),
+                    $clickConversionResult->getConversionAction(),
+                    PHP_EOL
+                );
+            }
         }
     }
-    // [END upload_conversion_enhancement]
+    // [END upload_conversion_with_identifiers]
 
     /**
      * Returns the result of normalizing and then hashing the string using the provided hash
@@ -304,4 +249,4 @@ class UploadConversionEnhancement
     // [END normalize_and_hash]
 }
 
-UploadConversionEnhancement::main();
+UploadConversionWithIdentifiers::main();
