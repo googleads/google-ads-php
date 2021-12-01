@@ -47,7 +47,7 @@ use Google\ApiCore\ApiException;
  * This example adds a feed that syncs feed items from a Business Profile account
  * and associates the feed with a customer.
  */
-class AddGoogleMyBusinessLocationExtensions
+class AddBusinessProfileLocationExtensions
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const BUSINESS_PROFILE_EMAIL_ADDRESS = 'INSERT_BUSINESS_PROFILE_EMAIL_ADDRESS_HERE';
@@ -317,4 +317,4 @@ class AddGoogleMyBusinessLocationExtensions
     // [END add_business_profile_location_extensions_2]
 }
 
-AddGoogleMyBusinessLocationExtensions::main();
+AddBusinessProfileLocationExtensions::main();
