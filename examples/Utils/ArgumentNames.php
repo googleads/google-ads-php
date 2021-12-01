@@ -75,8 +75,8 @@ final class ArgumentNames
     public const FREEFORM_KEYWORD_TEXT = 'freeformKeywordText';
     public const GCLID = 'gclid';
     public const GEO_TARGET_CONSTANT_ID = 'geoTargetConstantId';
-    public const GMB_ACCESS_TOKEN = 'gmbAccessToken';
-    public const GMB_EMAIL_ADDRESS = 'gmbEmailAddress';
+    public const BUSINESS_PROFILE_ACCESS_TOKEN = 'businessProfileAccessToken';
+    public const BUSINESS_PROFILE_EMAIL_ADDRESS = 'businessProfileEmailAddress';
     public const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     public const IMAGE_ASSET_ID = 'imageAssetId';
     public const ITEM_ID = 'itemId';
@@ -171,7 +171,7 @@ final class ArgumentNames
         self::GCLID => 'The Google Click ID',
         self::GEO_TARGET_CONSTANT_ID => 'The geo target constant ID',
         self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
-        self::GMB_EMAIL_ADDRESS => 'The email address associated with the GMB account',
+        self::BUSINESS_PROFILE_EMAIL_ADDRESS => 'The email address associated with the Business Profile account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::IMAGE_ASSET_ID => 'The image asset ID',
         self::ITEM_ID => 'The item ID',
