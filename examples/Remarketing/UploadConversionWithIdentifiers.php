@@ -157,7 +157,6 @@ class UploadConversionWithIdentifiers
 
         // Creates a user identifier to store the hashed email address.
         $userIdentifier = new UserIdentifier([
-            // Creates a user identifier using the hashed email address.
             // Use the normalizeAndHash() method if a phone number is specified instead of the email
             // address.
             'hashed_email' => self::normalizeAndHashEmailAddress($hashAlgorithm, $emailAddress),
