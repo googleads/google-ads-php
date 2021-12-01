@@ -51,7 +51,7 @@ class UploadConversionWithIdentifiers
     private const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
 
     // Optional: Specifies the order ID.
-    private const ORDER_ID = 'INSERT_ORDER_ID_HERE';
+    private const ORDER_ID = null;
 
     public static function main()
     {

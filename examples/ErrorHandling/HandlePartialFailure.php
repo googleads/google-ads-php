@@ -189,7 +189,7 @@ class HandlePartialFailure
     // [START handle_partial_failure_1]
     private static function checkIfPartialFailureErrorExists(MutateAdGroupsResponse $response)
     {
-        if (!is_null($response->getPartialFailureError())) {
+        if ($response->hasPartialFailureError()) {
             printf("Partial failures occurred. Details will be shown below.%s", PHP_EOL);
         } else {
             printf(
