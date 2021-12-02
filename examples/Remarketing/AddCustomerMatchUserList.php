@@ -215,7 +215,7 @@ class AddCustomerMatchUserList
         // Prints the status message if any partial failure error is returned.
         // Note: The details of each partial failure error are not printed here, you can refer to
         // the example HandlePartialFailure.php to learn more.
-        if (!is_null($response->getPartialFailureError())) {
+        if ($response->hasPartialFailureError()) {
             // Extracts the partial failure from the response status.
             $partialFailure = GoogleAdsFailures::fromAny(
                 $response->getPartialFailureError()->getDetails()->getIterator()->current()

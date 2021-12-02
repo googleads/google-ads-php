@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2019 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,32 +28,30 @@ use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\V9\ResourceNames;
+use Google\Ads\GoogleAds\V9\Common\UserIdentifier;
+use Google\Ads\GoogleAds\V9\Enums\UserIdentifierSourceEnum\UserIdentifierSource;
 use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V9\Services\ClickConversion;
 use Google\Ads\GoogleAds\V9\Services\ClickConversionResult;
-use Google\Ads\GoogleAds\V9\Services\CustomVariable;
 use Google\Ads\GoogleAds\V9\Services\UploadClickConversionsResponse;
 use Google\ApiCore\ApiException;
 
 /**
- * This code example imports offline conversion values for specific clicks to your account.
- * To get Google Click ID for a click, use the "click_view" resource:
- * https://developers.google.com/google-ads/api/fields/latest/click_view.
- * To set up a conversion action, run the AddConversionAction.php example.
+ * Uploads a conversion using hashed email address instead of GCLID.
  */
-class UploadOfflineConversion
+class UploadConversionWithIdentifiers
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     private const CONVERSION_ACTION_ID = 'INSERT_CONVERSION_ACTION_ID_HERE';
-    // The Google Click ID for which conversions are uploaded.
-    private const GCLID = 'INSERT_GCLID_HERE';
-    // The conversion date time in "yyyy-mm-dd hh:mm:ss+|-hh:mm" format.
+    private const EMAIL_ADDRESS = 'INSERT_EMAIL_ADDRESS_HERE';
+    // The date time at which the conversion occurred.
+    // Must be after the click time, and must include the time zone offset.
+    // The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. '2019-01-01 12:32:45-08:00'.
     private const CONVERSION_DATE_TIME = 'INSERT_CONVERSION_DATE_TIME_HERE';
     private const CONVERSION_VALUE = 'INSERT_CONVERSION_VALUE_HERE';
-    // Optional: Specify the conversion custom variable ID and value you want to
-    // associate with the click conversion upload.
-    private const CONVERSION_CUSTOM_VARIABLE_ID = null;
-    private const CONVERSION_CUSTOM_VARIABLE_VALUE = null;
+
+    // Optional: Specifies the order ID.
+    private const ORDER_ID = null;
 
     public static function main()
     {
@@ -62,11 +60,10 @@ class UploadOfflineConversion
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_ACTION_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::GCLID => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::EMAIL_ADDRESS => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_DATE_TIME => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::CONVERSION_VALUE => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID => GetOpt::OPTIONAL_ARGUMENT,
-            ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE => GetOpt::OPTIONAL_ARGUMENT
+            ArgumentNames::ORDER_ID => GetOpt::OPTIONAL_ARGUMENT
         ]);
 
         // Generate a refreshable OAuth2 credential for authentication.
@@ -84,13 +81,10 @@ class UploadOfflineConversion
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
                 $options[ArgumentNames::CONVERSION_ACTION_ID] ?: self::CONVERSION_ACTION_ID,
-                $options[ArgumentNames::GCLID] ?: self::GCLID,
+                $options[ArgumentNames::EMAIL_ADDRESS] ?: self::EMAIL_ADDRESS,
                 $options[ArgumentNames::CONVERSION_DATE_TIME] ?: self::CONVERSION_DATE_TIME,
                 $options[ArgumentNames::CONVERSION_VALUE] ?: self::CONVERSION_VALUE,
-                $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_ID]
-                    ?: self::CONVERSION_CUSTOM_VARIABLE_ID,
-                $options[ArgumentNames::CONVERSION_CUSTOM_VARIABLE_VALUE]
-                    ?: self::CONVERSION_CUSTOM_VARIABLE_VALUE
+                $options[ArgumentNames::ORDER_ID] ?: self::ORDER_ID
             );
         } catch (GoogleAdsException $googleAdsException) {
             printf(
@@ -124,48 +118,55 @@ class UploadOfflineConversion
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the customer ID
-     * @param int $conversionActionId the ID of the conversion action to upload to
-     * @param string $gclid the GCLID for the conversion (should be newer than the number of days
-     *      set on the conversion window of the conversion action)
-     * @param string $conversionDateTime the date and time of the conversion (should be after the
-     *      click time). The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
-     *      “2019-01-01 12:32:45-08:00”
+     * @param int $conversionActionId the ID of the conversion action associated with this
+     *      conversion
+     * @param string $emailAddress the email address for the conversion
+     * @param string $conversionDateTime the date and time of the conversion
+     *      The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”
      * @param float $conversionValue the value of the conversion
-     * @param string|null $conversionCustomVariableId the ID of the conversion custom variable to
-     *     associate with the upload
-     * @param string|null $conversionCustomVariableValue the value of the conversion custom
-     *     variable to associate with the upload
+     * @param string|null $orderId the unique order ID (transaction ID) of the conversion
      */
-    // [START upload_offline_conversion]
+    // [START upload_conversion_with_identifiers]
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
         int $conversionActionId,
-        string $gclid,
+        string $emailAddress,
         string $conversionDateTime,
         float $conversionValue,
-        ?string $conversionCustomVariableId,
-        ?string $conversionCustomVariableValue
+        ?string $orderId
     ) {
-        // Creates a click conversion by specifying currency as USD.
+        // [START create_conversion]
+        // Creates a click conversion with the specified attributes.
         $clickConversion = new ClickConversion([
             'conversion_action' =>
                 ResourceNames::forConversionAction($customerId, $conversionActionId),
-            'gclid' => $gclid,
-            'conversion_value' => $conversionValue,
             'conversion_date_time' => $conversionDateTime,
+            'conversion_value' => $conversionValue,
             'currency_code' => 'USD'
         ]);
 
-        if (!is_null($conversionCustomVariableId) && !is_null($conversionCustomVariableValue)) {
-            $clickConversion->setCustomVariables([new CustomVariable([
-                'conversion_custom_variable' => ResourceNames::forConversionCustomVariable(
-                    $customerId,
-                    $conversionCustomVariableId
-                ),
-                'value' => $conversionCustomVariableValue
-            ])]);
+        // Sets the order ID if provided.
+        if ($orderId !== null) {
+            $clickConversion->setOrderId($orderId);
         }
+
+        // Uses the SHA-256 hash algorithm for hashing user identifiers in a privacy-safe way, as
+        // described at https://support.google.com/google-ads/answer/9888656.
+        $hashAlgorithm = "sha256";
+
+        // Creates a user identifier to store the hashed email address.
+        $userIdentifier = new UserIdentifier([
+            // Use the normalizeAndHash() method if a phone number is specified instead of the email
+            // address.
+            'hashed_email' => self::normalizeAndHashEmailAddress($hashAlgorithm, $emailAddress),
+            // Optional: Specifies the user identifier source.
+            'user_identifier_source' => UserIdentifierSource::FIRST_PARTY
+        ]);
+
+        // Adds the user identifier to the conversion.
+        $clickConversion->setUserIdentifiers([$userIdentifier]);
+        // [END create_conversion]
 
         // Issues a request to upload the click conversion.
         $conversionUploadServiceClient = $googleAdsClient->getConversionUploadServiceClient();
@@ -173,6 +174,7 @@ class UploadOfflineConversion
         $response = $conversionUploadServiceClient->uploadClickConversions(
             $customerId,
             [$clickConversion],
+            // Enables partial failure (must be true).
             true
         );
 
@@ -186,20 +188,64 @@ class UploadOfflineConversion
                 PHP_EOL
             );
         } else {
-            // Prints the result if exists.
-            /** @var ClickConversionResult $uploadedClickConversion */
-            $uploadedClickConversion = $response->getResults()[0];
-            printf(
-                "Uploaded click conversion that occurred at '%s' from Google Click ID '%s' " .
-                "to '%s'.%s",
-                $uploadedClickConversion->getConversionDateTime(),
-                $uploadedClickConversion->getGclid(),
-                $uploadedClickConversion->getConversionAction(),
-                PHP_EOL
-            );
+            /** @var ClickConversionResult $clickConversionResult */
+            $clickConversionResult = $response->getResults()[0];
+            // Only prints valid results.
+            if ($clickConversionResult->hasGclid()) {
+                printf(
+                    "Uploaded conversion that occurred at '%s' from Google Click ID '%s' to "
+                    . "'%s'.%s",
+                    $clickConversionResult->getConversionDateTime(),
+                    $clickConversionResult->getGclid(),
+                    $clickConversionResult->getConversionAction(),
+                    PHP_EOL
+                );
+            }
         }
     }
-    // [END upload_offline_conversion]
+    // [END upload_conversion_with_identifiers]
+
+    /**
+     * Returns the result of normalizing and then hashing the string using the provided hash
+     * algorithm. Private customer data must be hashed during upload, as described at
+     * https://support.google.com/google-ads/answer/7474263.
+     *
+     * @param string $hashAlgorithm the hash algorithm to use
+     * @param string $value the value to normalize and hash
+     * @return string the normalized and hashed value
+     */
+    // [START normalize_and_hash]
+    private static function normalizeAndHash(string $hashAlgorithm, string $value): string
+    {
+        return hash($hashAlgorithm, strtolower(trim($value)));
+    }
+
+    /**
+     * Returns the result of normalizing and hashing an email address. For this use case, Google
+     * Ads requires removal of any '.' characters preceding "gmail.com" or "googlemail.com".
+     *
+     * @param string $hashAlgorithm the hash algorithm to use
+     * @param string $emailAddress the email address to normalize and hash
+     * @return string the normalized and hashed email address
+     */
+    private static function normalizeAndHashEmailAddress(
+        string $hashAlgorithm,
+        string $emailAddress
+    ): string {
+        $normalizedEmail = strtolower($emailAddress);
+        $emailParts = explode("@", $normalizedEmail);
+        if (
+            count($emailParts) > 1
+            && preg_match('/^(gmail|googlemail)\.com\s*/', $emailParts[1])
+        ) {
+            // Removes any '.' characters from the portion of the email address before the domain
+            // if the domain is gmail.com or googlemail.com.
+            $emailParts[0] = str_replace(".", "", $emailParts[0]);
+            $normalizedEmail = sprintf('%s@%s', $emailParts[0], $emailParts[1]);
+        }
+        return self::normalizeAndHash($hashAlgorithm, $normalizedEmail);
+    }
+    // [END normalize_and_hash]
 }
 
-UploadOfflineConversion::main();
+UploadConversionWithIdentifiers::main();
