@@ -88,11 +88,11 @@ class AddSmartCampaign
     // typically not recommended because they are less effective than suggested keyword themes,
     // however they are useful in situations where a very specific term needs to be targeted.
     private const FREEFORM_KEYWORD_TEXT = null;
-    // Optional: Specify the ID of a Google My Business (GMB) location. This is required if a
-    // business name is not provided. It can be retrieved using the GMB API, see:
+    // Optional: Specify the ID of a Business Profile location. This is required if a
+    // business name is not provided. It can be retrieved using the Business Profile API, see:
     // https://developers.google.com/my-business/reference/rest/v4/accounts.locations.
     private const BUSINESS_LOCATION_ID = null;
-    // Optional: Specify the name of a Google My Business (GMB) business. This is required if a
+    // Optional: Specify the name of a Business Profile business. This is required if a
     // business location ID is not provided.
     private const BUSINESS_NAME = null;
 
@@ -196,8 +196,8 @@ class AddSmartCampaign
      * @param int $customerId the customer ID
      * @param string|null $keywordText a keyword text used for generating keyword themes
      * @param string|null $freeformKeywordText a keyword used to create a free-form keyword theme
-     * @param string|null $businessLocationId the ID of a Google My Business location
-     * @param string|null $businessName the name of a Google My Business
+     * @param string|null $businessLocationId the ID of a Business Profile location
+     * @param string|null $businessName the name of a Business Profile
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
@@ -382,8 +382,8 @@ class AddSmartCampaign
      * "language_code" and "keyword_themes" fields are set on the SmartCampaignSuggestionInfo
      * instance.
      *
-     * @param string|null $businessLocationId the ID of a Google My Business location
-     * @param string|null $businessName the name of a Google My Business
+     * @param string|null $businessLocationId the ID of a Business Profile location
+     * @param string|null $businessName the name of a Business Profile
      * @return SmartCampaignSuggestionInfo a SmartCampaignSuggestionInfo instance
      */
     // [START add_smart_campaign_9]
@@ -646,8 +646,8 @@ class AddSmartCampaign
      * associate it with the campaign created in the previous step.
      *
      * @param int $customerId the customer ID
-     * @param string|null $businessLocationId the ID of a Google My Business location
-     * @param string|null $businessName the name of a Google My Business
+     * @param string|null $businessLocationId the ID of a Business Profile location
+     * @param string|null $businessName the name of a Business Profile
      * @return MutateOperation a MutateOperation that creates a SmartCampaignSetting
      */
     // [START add_smart_campaign_4]
@@ -925,7 +925,7 @@ class AddSmartCampaign
     /**
      * Converts a business location ID to a signed 64 bit integer.
      *
-     * A Google My business location ID may be outside of the range for a signed 64 bit integer
+     * A Business Profile location ID may be outside of the range for a signed 64 bit integer
      * (>= 2^63), which will cause an error to be thrown when it's set to the 'business_location_id'
      * field on a SmartCampaignSuggestionInfo or SmartCampaignSetting instance.
      * As PHP supports only signed integers, this method passes the specified parameter to intval(),
@@ -933,7 +933,7 @@ class AddSmartCampaign
      *
      * If the specified value is greater than 64 bits, an error will be thrown.
      *
-     * @param float $businessLocationId the ID of a Google My Business location
+     * @param float $businessLocationId the ID of a Business Profile location
      * @return int the converted business location ID in signed 64 bit
      */
     // [START add_smart_campaign_14]

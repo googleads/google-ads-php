@@ -44,14 +44,14 @@ use Google\Ads\GoogleAds\V9\Services\FeedOperation;
 use Google\ApiCore\ApiException;
 
 /**
- * This example adds a feed that syncs feed items from a Google My Business (GMB) account
+ * This example adds a feed that syncs feed items from a Business Profile account
  * and associates the feed with a customer.
  */
-class AddGoogleMyBusinessLocationExtensions
+class AddBusinessProfileLocationExtensions
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const GMB_EMAIL_ADDRESS = 'INSERT_GMB_EMAIL_ADDRESS_HERE';
-    private const GMB_ACCESS_TOKEN = 'INSERT_GMB_ACCESS_TOKEN_HERE';
+    private const BUSINESS_PROFILE_EMAIL = 'INSERT_BUSINESS_PROFILE_EMAIL_HERE';
+    private const BUSINESS_PROFILE_ACCESS_TOKEN = 'INSERT_BUSINESS_PROFILE_ACCESS_TOKEN_HERE';
     private const BUSINESS_ACCOUNT_IDENTIFIER = 'INSERT_BUSINESS_ACCOUNT_IDENTIFIER_HERE';
 
     // The required scope for setting the OAuth info.
@@ -67,8 +67,8 @@ class AddGoogleMyBusinessLocationExtensions
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::GMB_EMAIL_ADDRESS => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::GMB_ACCESS_TOKEN => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::BUSINESS_PROFILE_EMAIL => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::BUSINESS_PROFILE_ACCESS_TOKEN => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::BUSINESS_ACCOUNT_IDENTIFIER => GetOpt::REQUIRED_ARGUMENT
         ]);
 
@@ -85,8 +85,10 @@ class AddGoogleMyBusinessLocationExtensions
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::GMB_EMAIL_ADDRESS] ?: self::GMB_EMAIL_ADDRESS,
-                $options[ArgumentNames::GMB_ACCESS_TOKEN] ?: self::GMB_ACCESS_TOKEN,
+                $options[ArgumentNames::BUSINESS_PROFILE_EMAIL]
+                    ?: self::BUSINESS_PROFILE_EMAIL,
+                $options[ArgumentNames::BUSINESS_PROFILE_ACCESS_TOKEN]
+                    ?: self::BUSINESS_PROFILE_ACCESS_TOKEN,
                 $options[ArgumentNames::BUSINESS_ACCOUNT_IDENTIFIER]
                     ?: self::BUSINESS_ACCOUNT_IDENTIFIER
             );
@@ -122,26 +124,28 @@ class AddGoogleMyBusinessLocationExtensions
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param string $gmbEmailAddress the email address associated with the GMB account
-     * @param string $gmbAccessToken the access token created using the 'AdWords' scope and the
-     *     client ID and client secret of with the Cloud project associated with the GMB account
-     * @param string $businessAccountIdentifier the account number of the GMB account
+     * @param string $businessProfileEmail the email address associated with the Business
+     *     Profile account
+     * @param string $businessProfileAccessToken the access token created using the 'AdWords' scope
+     *     and the client ID and client secret of with the Cloud project associated with the
+     *     Business Profile account
+     * @param string $businessAccountIdentifier the account number of the Business Profile account
      */
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $gmbEmailAddress,
-        string $gmbAccessToken,
+        string $businessProfileEmail,
+        string $businessProfileAccessToken,
         string $businessAccountIdentifier
     ) {
-        $gmbFeedResourceName = self::createFeed(
+        $businessProfileFeedResourceName = self::createFeed(
             $googleAdsClient,
             $customerId,
-            $gmbEmailAddress,
-            $gmbAccessToken,
+            $businessProfileEmail,
+            $businessProfileAccessToken,
             $businessAccountIdentifier
         );
-        self::createCustomerFeed($googleAdsClient, $customerId, $gmbFeedResourceName);
+        self::createCustomerFeed($googleAdsClient, $customerId, $businessProfileFeedResourceName);
 
         // OPTIONAL: Create a campaign feed to specify which feed items to use at the campaign
         // level.
@@ -151,53 +155,55 @@ class AddGoogleMyBusinessLocationExtensions
     }
 
     /**
-     * Creates a location feed that will sync to the Google My Business account specified by
-     * `$gmbEmailAddress`. Do not add feed attributes to this object as Google Ads will add them
-     * automatically because this will be a system generated feed.
+     * Creates a location feed that will sync to the Business Profile account specified by
+     * `$businessProfileEmailAddress`. Do not add feed attributes to this object as Google Ads will
+     * add them automatically because this will be a system generated feed.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param string $gmbEmailAddress the email address associated with the GMB account
-     * @param string $gmbAccessToken the access token created using the 'AdWords' scope and the
-     *     client ID and client secret of with the Cloud project associated with the GMB account
-     * @param string $businessAccountIdentifier the account number of the GMB account
+     * @param string $businessProfileEmail the email address associated with the Business
+     *     Profile account
+     * @param string $businessProfileAccessToken the access token created using the 'AdWords' scope
+     *     and the client ID and client secret of with the Cloud project associated with the
+     *     Business Profile account
+     * @param string $businessAccountIdentifier the account number of the Business Profile account
      * @return string the feed's resource name
      */
-    // [START add_google_my_business_location_extensions]
+    // [START add_business_profile_location_extensions]
     private static function createFeed(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $gmbEmailAddress,
-        string $gmbAccessToken,
+        string $businessProfileEmail,
+        string $businessProfileAccessToken,
         string $businessAccountIdentifier
     ) {
 
-        $gmbFeed = new Feed([
-            'name' => 'Google My Business feed #' . Helper::getPrintableDatetime(),
+        $businessProfileFeed = new Feed([
+            'name' => 'Business Profile feed #' . Helper::getPrintableDatetime(),
             'origin' => FeedOrigin::GOOGLE,
             'places_location_feed_data' => new PlacesLocationFeedData([
-                'email_address' => $gmbEmailAddress,
+                'email_address' => $businessProfileEmail,
                 'business_account_id' => $businessAccountIdentifier,
-                // Used to filter Google My Business listings by labels. If entries exist in
+                // Used to filter Business Profile listings by labels. If entries exist in
                 // label_filters, only listings that have at least one of the labels set are
                 // candidates to be synchronized into FeedItems. If no entries exist in
                 // label_filters, then all listings are candidates for syncing.
                 'label_filters' => ['Stores in New York'],
-                // Sets the authentication info to be able to connect Google Ads to the GMB
-                // account.
+                // Sets the authentication info to be able to connect Google Ads to the Business
+                // Profile account.
                 'oauth_info' => new OAuthInfo([
                     'http_method' => 'GET',
                     'http_request_url' => self::GOOGLE_ADS_SCOPE,
-                    'http_authorization_header' => 'Bearer ' . $gmbAccessToken
+                    'http_authorization_header' => 'Bearer ' . $businessProfileAccessToken
                 ])
 
             ])
         ]);
         // Creates a feed operation.
         $feedOperation = new FeedOperation();
-        $feedOperation->setCreate($gmbFeed);
+        $feedOperation->setCreate($businessProfileFeed);
 
-        // [START add_google_my_business_location_extensions_1]
+        // [START add_business_profile_location_extensions_1]
         // Issues a mutate request to add the feed and print its information.
         // Since it is a system generated feed, Google Ads will automatically:
         // 1. Set up the feed attributes on the feed.
@@ -208,33 +214,37 @@ class AddGoogleMyBusinessLocationExtensions
             $customerId,
             [$feedOperation]
         );
-        $gmbFeedResourceName = $response->getResults()[0]->getResourceName();
-        printf("GMB feed created with resource name: '%s'.%s", $gmbFeedResourceName, PHP_EOL);
+        $businessProfileFeedResourceName = $response->getResults()[0]->getResourceName();
+        printf(
+            "Business Profile feed created with resource name: '%s'.%s",
+            $businessProfileFeedResourceName,
+            PHP_EOL
+        );
 
-        return $gmbFeedResourceName;
-        // [END add_google_my_business_location_extensions_1]
+        return $businessProfileFeedResourceName;
+        // [END add_business_profile_location_extensions_1]
     }
-    // [END add_google_my_business_location_extensions]
+    // [END add_business_profile_location_extensions]
 
     /**
-     * Creates a customer feed to attach the previously created GMB feed to the specified customer
-     * ID.
+     * Creates a customer feed to attach the previously created Business Profile feed to the
+     * specified customer ID.
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param string $gmbFeedResourceName the feed's resource name to be used to create a customer
-     *     feed
+     * @param string $businessProfileFeedResourceName the feed's resource name to be used to create
+     *     a customer feed
      */
-    // [START add_google_my_business_location_extensions_2]
+    // [START add_business_profile_location_extensions_2]
     private static function createCustomerFeed(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $gmbFeedResourceName
+        string $businessProfileFeedResourceName
     ) {
         // Creates a customer feed that associates the feed with this customer for the LOCATION
         // placeholder type.
         $customerFeed = new CustomerFeed([
-            'feed' => $gmbFeedResourceName,
+            'feed' => $businessProfileFeedResourceName,
             'placeholder_types' => [PlaceholderType::LOCATION],
             // Creates a matching function that will always evaluate to true.
             'matching_function' => new MatchingFunction([
@@ -249,11 +259,11 @@ class AddGoogleMyBusinessLocationExtensions
         $customerFeedOperation = new CustomerFeedOperation();
         $customerFeedOperation->setCreate($customerFeed);
 
-        // [START add_google_my_business_location_extensions_3]
+        // [START add_business_profile_location_extensions_3]
         // After the completion of the feed ADD operation above the added feed will not be available
-        // for usage in a customer feed until the sync between the Google Ads and GMB accounts
-        // completes. The loop below will retry adding the customer feed up to ten times with an
-        // exponential back-off policy.
+        // for usage in a customer feed until the sync between the Google Ads and Business Profile
+        // accounts completes. The loop below will retry adding the customer feed up to ten times
+        // with an exponential back-off policy.
         $numberOfAttempts = 0;
         $addedCustomerFeed = null;
         $customerFeedServiceClient = $googleAdsClient->getCustomerFeedServiceClient();
@@ -295,7 +305,7 @@ class AddGoogleMyBusinessLocationExtensions
             $numberOfAttempts < self::MAX_CUSTOMER_FEED_ADD_ATTEMPTS
             && is_null($addedCustomerFeed)
         );
-        // [END add_google_my_business_location_extensions_3]
+        // [END add_business_profile_location_extensions_3]
 
         if (is_null($addedCustomerFeed)) {
             throw new \RuntimeException(
@@ -304,7 +314,7 @@ class AddGoogleMyBusinessLocationExtensions
             );
         }
     }
-    // [END add_google_my_business_location_extensions_2]
+    // [END add_business_profile_location_extensions_2]
 }
 
-AddGoogleMyBusinessLocationExtensions::main();
+AddBusinessProfileLocationExtensions::main();

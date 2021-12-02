@@ -68,7 +68,7 @@ use Google\ApiCore\ApiException;
  * This example adds a Local campaign.
  *
  * Prerequisite: To create a Local campaign, you need to define the store locations you want to
- * promote by linking your Google My Business account or selecting affiliate locations. More
+ * promote by linking your Business Profile account or selecting affiliate locations. More
  * information about Local campaigns can be found at:
  * https://support.google.com/google-ads/answer/9118422.
  */
@@ -232,8 +232,7 @@ class AddLocalCampaign
             'maximize_conversion_value' => new MaximizeConversionValue(['target_roas' => 3.5]),
             // Configures the Local campaign setting.
             'local_campaign_setting' => new LocalCampaignSetting([
-                // Use the locations associated with the customer's linked Google My Business
-                // account.
+                // Use the locations associated with the customer's linked Business Profile account.
                 'location_source_type' => LocationSourceType::GOOGLE_MY_BUSINESS
             ]),
             // Optimization goal setting is mandatory for Local campaigns. This example selects
