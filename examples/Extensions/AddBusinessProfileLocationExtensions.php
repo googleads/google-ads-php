@@ -50,7 +50,7 @@ use Google\ApiCore\ApiException;
 class AddBusinessProfileLocationExtensions
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
-    private const BUSINESS_PROFILE_EMAIL_ADDRESS = 'INSERT_BUSINESS_PROFILE_EMAIL_ADDRESS_HERE';
+    private const BUSINESS_PROFILE_EMAIL = 'INSERT_BUSINESS_PROFILE_EMAIL_HERE';
     private const BUSINESS_PROFILE_ACCESS_TOKEN = 'INSERT_BUSINESS_PROFILE_ACCESS_TOKEN_HERE';
     private const BUSINESS_ACCOUNT_IDENTIFIER = 'INSERT_BUSINESS_ACCOUNT_IDENTIFIER_HERE';
 
@@ -67,7 +67,7 @@ class AddBusinessProfileLocationExtensions
         // into the constants above.
         $options = (new ArgumentParser())->parseCommandArguments([
             ArgumentNames::CUSTOMER_ID => GetOpt::REQUIRED_ARGUMENT,
-            ArgumentNames::BUSINESS_PROFILE_EMAIL_ADDRESS => GetOpt::REQUIRED_ARGUMENT,
+            ArgumentNames::BUSINESS_PROFILE_EMAIL => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::BUSINESS_PROFILE_ACCESS_TOKEN => GetOpt::REQUIRED_ARGUMENT,
             ArgumentNames::BUSINESS_ACCOUNT_IDENTIFIER => GetOpt::REQUIRED_ARGUMENT
         ]);
@@ -85,8 +85,8 @@ class AddBusinessProfileLocationExtensions
             self::runExample(
                 $googleAdsClient,
                 $options[ArgumentNames::CUSTOMER_ID] ?: self::CUSTOMER_ID,
-                $options[ArgumentNames::BUSINESS_PROFILE_EMAIL_ADDRESS]
-                    ?: self::BUSINESS_PROFILE_EMAIL_ADDRESS,
+                $options[ArgumentNames::BUSINESS_PROFILE_EMAIL]
+                    ?: self::BUSINESS_PROFILE_EMAIL,
                 $options[ArgumentNames::BUSINESS_PROFILE_ACCESS_TOKEN]
                     ?: self::BUSINESS_PROFILE_ACCESS_TOKEN,
                 $options[ArgumentNames::BUSINESS_ACCOUNT_IDENTIFIER]
@@ -124,7 +124,7 @@ class AddBusinessProfileLocationExtensions
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param string $businessProfileEmailAddress the email address associated with the Business
+     * @param string $businessProfileEmail the email address associated with the Business
      *     Profile account
      * @param string $businessProfileAccessToken the access token created using the 'AdWords' scope
      *     and the client ID and client secret of with the Cloud project associated with the
@@ -134,14 +134,14 @@ class AddBusinessProfileLocationExtensions
     public static function runExample(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $businessProfileEmailAddress,
+        string $businessProfileEmail,
         string $businessProfileAccessToken,
         string $businessAccountIdentifier
     ) {
         $businessProfileFeedResourceName = self::createFeed(
             $googleAdsClient,
             $customerId,
-            $businessProfileEmailAddress,
+            $businessProfileEmail,
             $businessProfileAccessToken,
             $businessAccountIdentifier
         );
@@ -161,7 +161,7 @@ class AddBusinessProfileLocationExtensions
      *
      * @param GoogleAdsClient $googleAdsClient the Google Ads API client
      * @param int $customerId the client customer ID
-     * @param string $businessProfileEmailAddress the email address associated with the Business
+     * @param string $businessProfileEmail the email address associated with the Business
      *     Profile account
      * @param string $businessProfileAccessToken the access token created using the 'AdWords' scope
      *     and the client ID and client secret of with the Cloud project associated with the
@@ -173,7 +173,7 @@ class AddBusinessProfileLocationExtensions
     private static function createFeed(
         GoogleAdsClient $googleAdsClient,
         int $customerId,
-        string $businessProfileEmailAddress,
+        string $businessProfileEmail,
         string $businessProfileAccessToken,
         string $businessAccountIdentifier
     ) {
@@ -182,7 +182,7 @@ class AddBusinessProfileLocationExtensions
             'name' => 'Business Profile feed #' . Helper::getPrintableDatetime(),
             'origin' => FeedOrigin::GOOGLE,
             'places_location_feed_data' => new PlacesLocationFeedData([
-                'email_address' => $businessProfileEmailAddress,
+                'email_address' => $businessProfileEmail,
                 'business_account_id' => $businessAccountIdentifier,
                 // Used to filter Business Profile listings by labels. If entries exist in
                 // label_filters, only listings that have at least one of the labels set are

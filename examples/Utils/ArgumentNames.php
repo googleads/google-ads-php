@@ -76,7 +76,7 @@ final class ArgumentNames
     public const GCLID = 'gclid';
     public const GEO_TARGET_CONSTANT_ID = 'geoTargetConstantId';
     public const BUSINESS_PROFILE_ACCESS_TOKEN = 'businessProfileAccessToken';
-    public const BUSINESS_PROFILE_EMAIL_ADDRESS = 'businessProfileEmailAddress';
+    public const BUSINESS_PROFILE_EMAIL = 'businessProfileEmail';
     public const HOTEL_CENTER_ACCOUNT_ID = 'hotelCenterAccountId';
     public const IMAGE_ASSET_ID = 'imageAssetId';
     public const ITEM_ID = 'itemId';
@@ -131,9 +131,9 @@ final class ArgumentNames
         self::BILLING_SETUP_ID => 'The billing setup ID',
         self::BRIDGE_MAP_VERSION_ID
             => 'The version of partner IDs to be used for store-sale uploads',
-        self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the GMB account',
-        self::BUSINESS_LOCATION_ID => 'The GMB location ID',
-        self::BUSINESS_NAME => 'The GMB business name',
+        self::BUSINESS_ACCOUNT_IDENTIFIER => 'The account number of the Business Profile account',
+        self::BUSINESS_LOCATION_ID => 'The Business Profile location ID',
+        self::BUSINESS_NAME => 'The Business Profile business name',
         self::CALL_START_DATE_TIME => 'The call start date time',
         self::CALLER_ID => 'The caller ID',
         self::CALLOUT_TEXT => 'The callout text',
@@ -170,8 +170,9 @@ final class ArgumentNames
         self::FREEFORM_KEYWORD_TEXT => 'The freeform keyword text',
         self::GCLID => 'The Google Click ID',
         self::GEO_TARGET_CONSTANT_ID => 'The geo target constant ID',
-        self::GMB_ACCESS_TOKEN => 'The access token used for uploading GMB location feed data',
-        self::BUSINESS_PROFILE_EMAIL_ADDRESS => 'The email address associated with the Business Profile account',
+        self::BUSINESS_PROFILE_ACCESS_TOKEN => 'The access token used for uploading Business Profile '
+            . 'location feed data',
+        self::BUSINESS_PROFILE_EMAIL => 'The email address associated with the Business Profile account',
         self::HOTEL_CENTER_ACCOUNT_ID => 'The hotel center account ID',
         self::IMAGE_ASSET_ID => 'The image asset ID',
         self::ITEM_ID => 'The item ID',

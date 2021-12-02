@@ -89,7 +89,7 @@ class AddSmartCampaign
     // however they are useful in situations where a very specific term needs to be targeted.
     private const FREEFORM_KEYWORD_TEXT = null;
     // Optional: Specify the ID of a Business Profile location. This is required if a
-    // business name is not provided. It can be retrieved using the GMB API, see:
+    // business name is not provided. It can be retrieved using the Business Profile API, see:
     // https://developers.google.com/my-business/reference/rest/v4/accounts.locations.
     private const BUSINESS_LOCATION_ID = null;
     // Optional: Specify the name of a Business Profile business. This is required if a
