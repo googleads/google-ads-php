@@ -18,13 +18,13 @@
 
 namespace App\Http\Controllers;
 
-use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
+use Google\Ads\GoogleAds\Lib\V8\GoogleAdsClient;
 use Google\Ads\GoogleAds\Util\FieldMasks;
-use Google\Ads\GoogleAds\Util\V9\ResourceNames;
-use Google\Ads\GoogleAds\V9\Enums\CampaignStatusEnum\CampaignStatus;
-use Google\Ads\GoogleAds\V9\Resources\Campaign;
-use Google\Ads\GoogleAds\V9\Services\CampaignOperation;
-use Google\Ads\GoogleAds\V9\Services\GoogleAdsRow;
+use Google\Ads\GoogleAds\Util\V8\ResourceNames;
+use Google\Ads\GoogleAds\V8\Enums\CampaignStatusEnum\CampaignStatus;
+use Google\Ads\GoogleAds\V8\Resources\Campaign;
+use Google\Ads\GoogleAds\V8\Services\CampaignOperation;
+use Google\Ads\GoogleAds\V8\Services\GoogleAdsRow;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\View\View;
@@ -35,6 +35,8 @@ class GoogleAdsApiController extends Controller
         'campaign' => ['campaign.id', 'campaign.name', 'campaign.status'],
         'customer' => ['customer.id']
     ];
+
+    private const RESULTS_LIMIT = 100;
 
     /**
      * Controls a POST or GET request submitted in the context of the "Show Report" form.
@@ -76,51 +78,108 @@ class GoogleAdsApiController extends Controller
             // Builds the GAQL query.
             $query = sprintf(
                 "SELECT %s FROM %s WHERE metrics.impressions > 0 AND segments.date " .
-                "DURING %s LIMIT 100",
+                "DURING %s LIMIT %d",
                 join(", ", $selectedFields),
                 $reportType,
-                $reportRange
+                $reportRange,
+                self::RESULTS_LIMIT
             );
 
-            // Searches the results.
-            $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
-                $customerId,
-                $query
-            );
-
-            // Fetches all the results.
-            $results = [];
-            foreach ($response->iterateAllElements() as $googleAdsRow) {
-                /** @var GoogleAdsRow $googleAdsRow */
-                // Converts each result as a Plain Old PHP Object (POPO) using JSON.
-                $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
-            }
-            $collection = collect($results);
+            // Initializes the list of page tokens. Page tokens are used to request specific pages
+            // of results from the API. They are especially useful to optimize navigation between
+            // pages as there is no need to cache all the results before displaying.
+            // More details can be found here:
+            // https://developers.google.com/google-ads/api/docs/reporting/paging.
+            //
+            // The first page's token is always an empty string.
+            $pageTokens = [''];
 
             // Updates the session with all the information that is necessary to process any
-            // following GET requests (report result pages).
+            // future requests (report result pages).
+            $request->session()->put('customerId', $customerId);
             $request->session()->put('selectedFields', $selectedFields);
             $request->session()->put('entriesPerPage', $entriesPerPage);
-            $request->session()->put('collection', $collection);
+            $request->session()->put('query', $query);
+            $request->session()->put('pageTokens', $pageTokens);
         } else {
-            // Loads from the session all the information that is necessary to process the GET
-            // request (report result page).
+            // Loads from the session all the information that is necessary to process any
+            // requests (report result page).
+            $customerId = $request->session()->get('customerId');
             $selectedFields = $request->session()->get('selectedFields');
             $entriesPerPage = $request->session()->get('entriesPerPage');
-            $collection = $request->session()->get('collection');
+            $query = $request->session()->get('query');
+            $pageTokens = $request->session()->get('pageTokens');
         }
 
+        // Determines the number of the page to load (the first one by default).
         $pageNo = $request->input('page') ?: 1;
 
-        // Creates a length aware paginator to supply a given page of results for the view, based on
-        // the collection of results, the page number and the specified number of entries per page.
+        // Fetches pages in sequence to find the page token of the requested page if unknown.
+        while (count($pageTokens) < $pageNo) {
+            // Fetches the page for the latest known page token.
+            $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
+                $customerId,
+                $query,
+                [
+                    'pageSize' => $entriesPerPage,
+                    'pageToken' => end($pageTokens)
+                ]
+            );
+            if ($response->getPage()->getNextPageToken()) {
+                // Adds the new page token found.
+                $pageTokens[] = $response->getPage()->getNextPageToken();
+            } else {
+                // Changes the requested page for the latest page that exists if the new page token
+                // found is empty (the requested page does not exist).
+                $pageNo = count($pageTokens);
+            }
+        }
+
+        // Fetches the actual page to display results of.
+        $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
+            $customerId,
+            $query,
+            [
+                'pageSize' => $entriesPerPage,
+                // Requests to return the total results count this time. This is necessary to
+                // determine how many pages of results exist.
+                'returnTotalResultsCount' => true,
+                'pageToken' => $pageTokens[$pageNo - 1]
+            ]
+        );
+        if ($response->getPage()->getNextPageToken()) {
+            // Adds the new page token if there is one (it is not the last page).
+            $pageTokens[] = $response->getPage()->getNextPageToken();
+        }
+
+        // Determines the total number of results to display.
+        // The total results count does not take into consideration the LIMIT clause of the query
+        // so we need to find the minimal value between the limit and the total results count.
+        $totalNumberOfResults = min(
+            self::RESULTS_LIMIT,
+            $response->getPage()->getResponseObject()->getTotalResultsCount()
+        );
+
+        // Extracts the results for the requested page.
+        $results = [];
+        foreach ($response->getPage()->getIterator() as $googleAdsRow) {
+            /** @var GoogleAdsRow $googleAdsRow */
+            // Converts each result as a Plain Old PHP Object (POPO) using JSON.
+            $results[] = json_decode($googleAdsRow->serializeToJsonString(), true);
+        }
+
+        // Creates a length aware paginator to supply a given page of results for the view.
         $paginatedResults = new LengthAwarePaginator(
-            $collection->forPage($pageNo, $entriesPerPage),
-            $collection->count(),
+            $results,
+            $totalNumberOfResults,
             $entriesPerPage,
             $pageNo,
             ['path' => url('show-report')]
         );
+
+        // Updates the session with the known page tokens to avoid unnecessary requests during
+        // future page navigation.
+        $request->session()->put('pageTokens', $pageTokens);
 
         // Redirects to the view that displays fields of paginated report results.
         return view(
