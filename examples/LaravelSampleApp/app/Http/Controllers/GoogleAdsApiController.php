@@ -122,6 +122,9 @@ class GoogleAdsApiController extends Controller
                 $query,
                 [
                     'pageSize' => $entriesPerPage,
+                    // Requests to return the total results count. This is necessary to
+                    // determine how many pages of results exist.
+                    'returnTotalResultsCount' => true,
                     'pageToken' => end($pageTokens)
                 ]
             );
@@ -141,7 +144,7 @@ class GoogleAdsApiController extends Controller
             $query,
             [
                 'pageSize' => $entriesPerPage,
-                // Requests to return the total results count this time. This is necessary to
+                // Requests to return the total results count. This is necessary to
                 // determine how many pages of results exist.
                 'returnTotalResultsCount' => true,
                 'pageToken' => $pageTokens[$pageNo - 1]
