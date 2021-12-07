@@ -158,7 +158,7 @@ class GoogleAdsApiController extends Controller
             ]
         );
         if ($response->getPage()->getNextPageToken()) {
-            // Stores the page token of page that comes after the one we just fetched if any so
+            // Stores the page token of the page that comes after the one we just fetched if any so
             // that it can be reused later if necessary.
             $pageTokens[] = $response->getPage()->getNextPageToken();
         }
