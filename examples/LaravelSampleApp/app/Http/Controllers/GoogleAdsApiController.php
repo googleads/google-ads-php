@@ -114,9 +114,10 @@ class GoogleAdsApiController extends Controller
         // Determines the number of the page to load (the first one by default).
         $pageNo = $request->input('page') ?: 1;
 
-        // Fetches pages in sequence to find the page token of the requested page if unknown.
+        // Fetches next pages in sequence and stores their page tokens until the page token of the
+        // requested page is retrieved.
         while (count($pageTokens) < $pageNo) {
-            // Fetches the page for the latest known page token.
+            // Fetches the next unknown page.
             $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
                 $customerId,
                 $query,
@@ -125,15 +126,19 @@ class GoogleAdsApiController extends Controller
                     // Requests to return the total results count. This is necessary to
                     // determine how many pages of results exist.
                     'returnTotalResultsCount' => true,
+                    // There is no need to go over the pages we already know the page tokens for.
+                    // Fetches the last page we know the page token for so that we can retrieve the
+                    // token of the page that comes after it.
                     'pageToken' => end($pageTokens)
                 ]
             );
             if ($response->getPage()->getNextPageToken()) {
-                // Adds the new page token found.
+                // Stores the page token of page that comes after the one we just fetched if any so
+                // that it can be reused later if necessary.
                 $pageTokens[] = $response->getPage()->getNextPageToken();
             } else {
-                // Changes the requested page for the latest page that exists if the new page token
-                // found is empty (the requested page does not exist).
+                // Otherwise changes the requested page number for the latest page that we have
+                // fetched until now, the requested page number was invalid.
                 $pageNo = count($pageTokens);
             }
         }
@@ -147,11 +152,14 @@ class GoogleAdsApiController extends Controller
                 // Requests to return the total results count. This is necessary to
                 // determine how many pages of results exist.
                 'returnTotalResultsCount' => true,
+                // The page token of the requested page is in the page token list because of the
+                // processing done in the previous loop.
                 'pageToken' => $pageTokens[$pageNo - 1]
             ]
         );
         if ($response->getPage()->getNextPageToken()) {
-            // Adds the new page token if there is one (it is not the last page).
+            // Stores the page token of page that comes after the one we just fetched if any so
+            // that it can be reused later if necessary.
             $pageTokens[] = $response->getPage()->getNextPageToken();
         }
 
