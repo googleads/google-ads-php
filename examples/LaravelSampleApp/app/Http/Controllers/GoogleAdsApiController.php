@@ -143,7 +143,7 @@ class GoogleAdsApiController extends Controller
             }
         }
 
-        // Fetches the actual page to display results of.
+        // Fetches the actual page that we want to display the results of.
         $response = $googleAdsClient->getGoogleAdsServiceClient()->search(
             $customerId,
             $query,
