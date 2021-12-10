@@ -1,3 +1,23 @@
+## 13.0.0
+*   Updated `composer.json` to require the minimum PHP version of 7.4.
+*   Added support for setting gRPC channel, gRPC interceptor and middleware.
+*   Updated the references of "Google My Business/GMB" in code examples to
+    "Business Profile".
+*   Updated LaravelSampleApp to use lazy loading for the paging mechanism for
+    lower memory footprint and page loading time.
+*   Added code examples:
+    * AddPerformanceMaxCampaign
+    * AddPerformanceMaxRetailCampaign
+    * AddResponsiveSearchAdWithAdCustomizer
+    * UploadConversionWithIdentifiers
+    * UploadConversionEnhancement
+*   Updated code example:
+    * AddAppCampaign
+*   Renamed code examples:
+    * AddGoogleMyBusinessLocationExtensions to AddBusinessProfileLocationExtensions
+    * SetupAdvancedRemarketing to SetUpAdvancedRemarketing
+    * SetupRemarketing to SetUpRemarketing
+
 ## 12.1.0
 *   Added support for v9 of Google Ads API.
 *   Added `grpc` and `protobuf` extensions to `require-dev` of `composer.json`.

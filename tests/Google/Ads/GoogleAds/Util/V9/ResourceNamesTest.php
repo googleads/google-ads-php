@@ -162,6 +162,33 @@ class ResourceNamesTest extends TestCase
 {
 
     /**
+     * @covers \Google\Ads\GoogleAds\Util\V9\ResourceNames::forCampaignConversionGoal()
+     */
+    public function testGetNameForCampaignConversionGoal()
+    {
+        $customerId = '111111';
+        $campaignId = '222222';
+        $category = '333333';
+        $origin = '444444';
+        $expectedResourceName = sprintf(
+            'customers/%s/campaignConversionGoals/%s~%s~%s',
+            $customerId,
+            $campaignId,
+            $category,
+            $origin
+        );
+        $this->assertEquals(
+            $expectedResourceName,
+            ResourceNames::forCampaignConversionGoal(
+                $customerId,
+                $campaignId,
+                $category,
+                $origin
+            )
+        );
+    }
+
+    /**
      * @covers \Google\Ads\GoogleAds\Util\V9\ResourceNames::forPaymentsAccount()
      */
     public function testGetNameForPaymentsAccount()

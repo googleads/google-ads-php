@@ -159,6 +159,33 @@ final class ResourceNames
 {
 
     /**
+     * Generates a resource name of campaign conversion goal type.
+     *
+     * @param string $customerId
+     * @param string $campaignId
+     * @param int $category
+     * @param int $origin
+     * @return string the campaign conversion goal resource name
+     */
+    public static function forCampaignConversionGoal(
+        $customerId,
+        $campaignId,
+        $category,
+        $origin
+    ): string {
+        $pathTemplate = new PathTemplate(
+            'customers/{customer_id}/campaignConversionGoals/' .
+            '{campaign_id}~{category}~{origin}'
+        );
+        return $pathTemplate->render([
+            'customer_id' => $customerId,
+            'campaign_id' => $campaignId,
+            'category' => $category,
+            'origin' => $origin,
+        ]);
+    }
+
+    /**
      * Generates a resource name of payments account type.
      *
      * @param string $customerId
