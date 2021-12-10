@@ -62,6 +62,7 @@ final class ArgumentNames
     public const CRITERION_ID = 'criterionId';
     public const CURRENCY_CODE = 'currencyCode';
     public const CUSTOMER_ID = 'customerId';
+    public const CUSTOMIZER_ATTRIBUTE_NAME = 'customizerAttributeName';
     public const CUSTOM_KEY = 'customKey';
     public const DRAFT_ID = 'draftId';
     public const EMAIL_ADDRESS = 'emailAddress';
@@ -71,6 +72,7 @@ final class ArgumentNames
     public const FEED_ITEM_ID = 'feedItemId';
     public const FEED_ITEM_IDS = 'feedItemIds';
     public const FEED_ITEM_SET_ID = 'feedItemSetId';
+    public const FINAL_URL = 'finalUrl';
     public const FLIGHT_PLACEHOLDER_FIELD_NAME = 'flightPlaceholderFieldName';
     public const FREEFORM_KEYWORD_TEXT = 'freeformKeywordText';
     public const GCLID = 'gclid';
@@ -109,6 +111,7 @@ final class ArgumentNames
     public const DELETE_EXISTING_FEEDS = 'deleteExistingFeeds';
     public const REPLACE_EXISTING_TREE = 'replaceExistingTree';
     public const QUANTITY = 'quantity';
+    public const SALES_COUNTRY = 'salesCountry';
     public const SITELINK_TEXT = 'sitelinkText';
     public const SQUARE_MARKETING_IMAGE_ASSET_ID = 'squareMarketingImageAssetId';
     public const START_DATE_TIME = "startDateTime";
@@ -157,6 +160,7 @@ final class ArgumentNames
         self::CRITERION_ID => 'The criterion ID',
         self::CURRENCY_CODE => 'The currency code',
         self::CUSTOMER_ID => 'The customer ID without dashes',
+        self::CUSTOMIZER_ATTRIBUTE_NAME => 'The customizer attribute name',
         self::CUSTOM_KEY => 'The custom key',
         self::DRAFT_ID => 'The draft ID',
         self::EMAIL_ADDRESS => 'The email address',
@@ -166,6 +170,7 @@ final class ArgumentNames
         self::FEED_ITEM_ID => 'The feed item ID',
         self::FEED_ITEM_IDS => 'The feed item IDs',
         self::FEED_ITEM_SET_ID => 'The feed item set ID',
+        self::FINAL_URL => 'The final URL',
         self::FLIGHT_PLACEHOLDER_FIELD_NAME => 'The flight placeholder field name',
         self::FREEFORM_KEYWORD_TEXT => 'The freeform keyword text',
         self::GCLID => 'The Google Click ID',
@@ -209,6 +214,7 @@ final class ArgumentNames
         self::REPLACE_EXISTING_TREE =>
             'Whether it should replace the existing listing group tree on an ad group',
         self::QUANTITY => 'The quantity',
+        self::SALES_COUNTRY => 'The sales country',
         self::SITELINK_TEXT => 'The sitelink text',
         self::SQUARE_MARKETING_IMAGE_ASSET_ID => 'The ID of square marketing image asset',
         self::START_DATE_TIME => 'The start date time',
