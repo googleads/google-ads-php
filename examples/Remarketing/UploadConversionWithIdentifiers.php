@@ -193,10 +193,9 @@ class UploadConversionWithIdentifiers
             // Only prints valid results.
             if ($clickConversionResult->hasGclid()) {
                 printf(
-                    "Uploaded conversion that occurred at '%s' from Google Click ID '%s' to "
+                    "Uploaded conversion that occurred at '%s' to "
                     . "'%s'.%s",
                     $clickConversionResult->getConversionDateTime(),
-                    $clickConversionResult->getGclid(),
                     $clickConversionResult->getConversionAction(),
                     PHP_EOL
                 );
