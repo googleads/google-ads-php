@@ -39,7 +39,6 @@ use Psr\Log\LogLevel;
  */
 class GoogleAdsLoggingServerStreamingCallTest extends TestCase
 {
-
     public function testResponses()
     {
         // Prepares the inner call.

@@ -28,7 +28,6 @@ use PHPUnit\Framework\TestCase;
  */
 class HelperTest extends TestCase
 {
-
     /**
      * @dataProvider microToBaseCases
      * @covers \Google\Ads\GoogleAds\Examples\Utils\Helper::microToBase()

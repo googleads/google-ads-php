@@ -29,7 +29,6 @@ use PHPUnit\Framework\TestCase;
  */
 class LoggerFactoryTest extends TestCase
 {
-
     public function testCreateLogger()
     {
         $loggerFactory = new LoggerFactory();

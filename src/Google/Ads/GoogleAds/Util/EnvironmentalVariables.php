@@ -26,7 +26,6 @@ use UnexpectedValueException;
  */
 class EnvironmentalVariables
 {
-
     /**
      * Attempts to find the home directory of the user running the PHP script.
      *

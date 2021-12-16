@@ -39,7 +39,6 @@ use Psr\Log\LogLevel;
  */
 class GoogleAdsClientBuilderTest extends TestCase
 {
-
     private static $DEVELOPER_TOKEN = 'ABcdeFGH93KL-NOPQ_STUv';
     private static $LOGIN_CUSTOMER_ID = 123456789;
     private static $LINKED_CUSTOMER_ID = 123456789;

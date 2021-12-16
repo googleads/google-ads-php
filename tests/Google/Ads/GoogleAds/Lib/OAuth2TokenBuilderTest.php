@@ -33,7 +33,6 @@ use UnexpectedValueException;
  */
 class OAuth2TokenBuilderTest extends TestCase
 {
-
     /** @var OAuth2TokenBuilder $oAuth2TokenBuilder */
     private $oAuth2TokenBuilder;
     /** @var string $jsonKeyFilePath */

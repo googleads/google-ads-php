@@ -33,7 +33,6 @@ use PHPUnit\Framework\TestCase;
  */
 class GoogleAdsClientTest extends TestCase
 {
-
     private static $CREDENTIALS_LOADER_KEY = 'credentials';
     private static $DEVELOPER_TOKEN_KEY = 'developer-token';
     private static $LOGIN_CUSTOMER_ID_KEY = 'login-customer-id';

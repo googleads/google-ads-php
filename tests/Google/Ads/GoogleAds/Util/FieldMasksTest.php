@@ -42,7 +42,6 @@ use UnexpectedValueException;
  */
 class FieldMasksTest extends TestCase
 {
-
     private static $testCases = null;
 
     private static function loadTestCases()

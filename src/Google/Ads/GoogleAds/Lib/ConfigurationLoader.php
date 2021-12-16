@@ -27,7 +27,6 @@ use UnexpectedValueException;
  */
 final class ConfigurationLoader
 {
-
     private $environmentalVariables;
 
     /**

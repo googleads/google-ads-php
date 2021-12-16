@@ -31,7 +31,6 @@ use Psr\Log\LogLevel;
  */
 class ConfigurationTraitTest extends TestCase
 {
-
     /** @var ConfigurationTraitInserted $configurationTraitInserted */
     private $configurationTraitInserted;
 

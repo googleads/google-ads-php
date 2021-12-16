@@ -53,7 +53,6 @@ use stdClass;
  */
 class LogMessageFormatterTest extends TestCase
 {
-
     private $successRequest;
     private $successResponse;
     private $failureRequest;

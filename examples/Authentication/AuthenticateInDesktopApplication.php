@@ -34,7 +34,6 @@ use Google\Auth\OAuth2;
  */
 class AuthenticateInDesktopApplication
 {
-
     /**
      * @var string the OAuth2 scope for the Google Ads API
      * @see https://developers.google.com/google-ads/api/docs/oauth/internals#scope

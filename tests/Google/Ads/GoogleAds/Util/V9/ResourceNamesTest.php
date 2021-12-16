@@ -160,7 +160,6 @@ use PHPUnit\Framework\TestCase;
  */
 class ResourceNamesTest extends TestCase
 {
-
     /**
      * @covers \Google\Ads\GoogleAds\Util\V9\ResourceNames::forCampaignConversionGoal()
      */

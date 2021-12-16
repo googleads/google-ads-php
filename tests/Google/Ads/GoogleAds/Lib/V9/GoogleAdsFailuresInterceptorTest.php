@@ -29,7 +29,6 @@ use PHPUnit\Framework\TestCase;
  */
 class GoogleAdsFailuresInterceptorTest extends TestCase
 {
-
     public function testInterceptUnaryUnary()
     {
         $this->assertInstanceOf(
