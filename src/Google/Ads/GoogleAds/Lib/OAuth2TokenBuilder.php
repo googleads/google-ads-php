@@ -31,7 +31,6 @@ use UnexpectedValueException;
  */
 final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
 {
-
     private $jsonKeyFilePath;
     private $scopes;
     private $impersonatedEmail;

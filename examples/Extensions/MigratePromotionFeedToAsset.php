@@ -54,7 +54,6 @@ use Google\ApiCore\ApiException;
  */
 class MigratePromotionFeedToAsset
 {
-
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
     // The ID of the extension feed item to migrate.
     private const FEED_ITEM_ID = 'INSERT_FEED_ITEM_ID_HERE';

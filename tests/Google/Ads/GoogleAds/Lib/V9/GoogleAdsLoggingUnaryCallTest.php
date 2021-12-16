@@ -33,7 +33,6 @@ use Psr\Log\LogLevel;
  */
 class GoogleAdsLoggingUnaryCallTest extends TestCase
 {
-
     public function testWait()
     {
         // Prepares the inner call.

@@ -23,7 +23,6 @@ namespace Google\Ads\GoogleAds\Lib;
  */
 class Configuration
 {
-
     private $config;
 
     /**

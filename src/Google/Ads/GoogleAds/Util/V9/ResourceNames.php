@@ -157,7 +157,6 @@ use Google\ApiCore\PathTemplate;
  */
 final class ResourceNames
 {
-
     /**
      * Generates a resource name of campaign conversion goal type.
      *

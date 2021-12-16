@@ -148,7 +148,6 @@ use PHPUnit\Framework\TestCase;
  */
 class ResourceNamesTest extends TestCase
 {
-
     /**
      * @covers \Google\Ads\GoogleAds\Util\V7\ResourceNames::forPaymentsAccount()
      */

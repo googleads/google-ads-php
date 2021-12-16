@@ -63,7 +63,6 @@ use Google\Ads\GoogleAds\V9\Services\MutateCampaignsResponse;
  */
 class CreateCompleteCampaignGoogleAdsApiOnly
 {
-
     // Number of ads being added/updated in this code example.
     private const NUMBER_OF_ADS = 5;
     // The list of keywords being added in this code example.

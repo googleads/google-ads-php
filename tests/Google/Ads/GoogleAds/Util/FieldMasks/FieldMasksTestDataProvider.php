@@ -23,7 +23,6 @@ namespace Google\Ads\GoogleAds\Util\FieldMasks;
  */
 class FieldMasksTestDataProvider
 {
-
     /**
      * Gets the file path to a JSON test cases file for testing.
      *

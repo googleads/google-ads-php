@@ -28,7 +28,6 @@ use PHPUnit\Framework\TestCase;
  */
 class ConfigurationTest extends TestCase
 {
-
     /** @var Configuration $configuration */
     private $configuration;
 

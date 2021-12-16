@@ -33,7 +33,6 @@ use PHPUnit\Framework\TestCase;
  */
 class GoogleAdsFailuresUnaryCallTest extends TestCase
 {
-
     /**
      * @param mixed $expectedResponse the expected response
      * @param bool $isInitializationExpected whether the lazy initialization of GoogleAdsFailures

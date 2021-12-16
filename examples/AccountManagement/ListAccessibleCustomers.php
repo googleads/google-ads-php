@@ -38,7 +38,6 @@ use Google\ApiCore\ApiException;
  */
 class ListAccessibleCustomers
 {
-
     public static function main()
     {
         // Generate a refreshable OAuth2 credential for authentication.
