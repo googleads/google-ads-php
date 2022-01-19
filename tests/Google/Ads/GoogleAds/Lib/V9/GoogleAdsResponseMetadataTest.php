@@ -51,9 +51,15 @@ class GoogleAdsResponseMetadataTest extends TestCase
         );
     }
 
-    public function testGetRequestId()
+    public function testGetRequestIdGrpc()
     {
         $this->assertEquals('AbCdEf', $this->googleAdsResponseMetadata->getRequestId());
+    }
+
+    public function testGetRequestIdRest()
+    {
+        $googleAdsResponseMetadata = new GoogleAdsResponseMetadata(['Request-Id' => ['AbCdEf']]);
+        $this->assertEquals('AbCdEf', $googleAdsResponseMetadata->getRequestId());
     }
 
     public function testGetRequestIdNoMetadata()

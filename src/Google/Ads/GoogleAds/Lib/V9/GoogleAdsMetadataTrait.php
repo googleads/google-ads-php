@@ -39,8 +39,10 @@ trait GoogleAdsMetadataTrait
      */
     private function getFirstHeaderValue($key, $metadata)
     {
-        if (isset($metadata[$key])) {
-            $valueArray = $metadata[$key];
+        // HTTP header field names are case-insensitive.
+        $lowerKey = strtolower($key);
+        if (isset($metadata[$lowerKey])) {
+            $valueArray = $metadata[$lowerKey];
             if (count($valueArray) > 0) {
                 return $valueArray[0];
             }

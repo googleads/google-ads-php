@@ -58,7 +58,8 @@ class GoogleAdsResponseMetadata
     {
         return $this->getFirstHeaderValue(
             self::$REQUEST_ID_HEADER_KEY,
-            $this->getMetadata() ?: []
+            // HTTP header field names are case-insensitive.
+            $this->getMetadata() ? array_change_key_case($this->getMetadata()) : []
         );
     }
 }
