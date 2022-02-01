@@ -182,6 +182,7 @@ class NavigateSearchResultPagesCachingTokens
         }
     }
 
+    // [START navigate_search_result_pages_caching_tokens]
     /**
      * Fetches and prints the results of a page of a search using a cache of page tokens.
      *
@@ -246,6 +247,7 @@ class NavigateSearchResultPagesCachingTokens
             );
         }
     }
+    // [END navigate_search_result_pages_caching_tokens]
 
     /**
      * Update the cache of page tokens based on a page that was retrieved.
