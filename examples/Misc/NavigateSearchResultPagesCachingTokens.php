@@ -32,7 +32,7 @@ use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V9\Services\GoogleAdsRow;
 use Google\Ads\GoogleAds\V9\Services\GoogleAdsServiceClient;
 use Google\ApiCore\ApiException;
-use PHP_CodeSniffer\Tokenizers\PHP;
+use Google\ApiCore\Page;
 
 /**
  * GoogleAdsService.Search results are paginated but they can only be downloaded in sequence
@@ -51,10 +51,11 @@ use PHP_CodeSniffer\Tokenizers\PHP;
 class NavigateSearchResultPagesCachingTokens
 {
     private const CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE';
+
     // The maximum number of results to retrieve.
-    private const RESULTS_LIMIT = 5;
+    private const RESULTS_LIMIT = 10;
     // The size of the paginated search result pages.
-    private const PAGE_SIZE = 2;
+    private const PAGE_SIZE = 3;
 
     public static function main()
     {
@@ -114,29 +115,34 @@ class NavigateSearchResultPagesCachingTokens
      */
     public static function runExample(GoogleAdsClient $googleAdsClient, int $customerId)
     {
-        // The page tokens cache. It is stored in-memory and in page number ascendant order.
+        // The page tokens cache. It is stored in-memory and in ascendant order of page number.
         // The first page's token is always an empty string.
         $pageTokens = [''];
 
-        // Creates a query that retrieves all campaigns.
+        // Creates a query that retrieves the campaigns.
         $query = sprintf(
-            'SELECT campaign.id, campaign.name FROM campaign ORDER BY campaign.id LIMIT %d',
+            'SELECT campaign.id, campaign.name FROM campaign ORDER BY campaign.name LIMIT %d',
             self::RESULTS_LIMIT
         );
 
         // Issues a paginated search request.
         $searchOptions = [
+            // Sets the number of results to return per page.
             'pageSize' => self::PAGE_SIZE,
             // Requests to return the total results count. This is necessary to determine how many
             // pages of results exist.
             'returnTotalResultsCount' => true
         ];
+
+        printf('%s--- 0. Fetch page #1 to get metadata:%1$s%1$s', PHP_EOL);
+
         $googleAdsServiceClient = $googleAdsClient->getGoogleAdsServiceClient();
         $response = $googleAdsServiceClient->search(
             $customerId,
             $query,
             $searchOptions
         );
+        self::cacheNextPageToken($pageTokens, $response->getPage(), 1);
 
         // Determines the total number of results and prints it.
         // The total results count does not take into consideration the LIMIT clause of the query
@@ -145,19 +151,10 @@ class NavigateSearchResultPagesCachingTokens
             self::RESULTS_LIMIT,
             $response->getPage()->getResponseObject()->getTotalResultsCount()
         );
-        printf(
-            "Total number of campaigns found: %d.%s",
-            $totalNumberOfResults,
-            PHP_EOL
-        );
+        printf('Total number of campaigns found: %d.%s', $totalNumberOfResults, PHP_EOL);
         // Determines the total number of pages and prints it.
         $totalNumberOfPages = ceil($totalNumberOfResults / self::PAGE_SIZE);
-        printf(
-            "Total number of pages: %d.%s%s",
-            $totalNumberOfPages,
-            PHP_EOL,
-            PHP_EOL
-        );
+        printf('Total number of pages: %d.%s', $totalNumberOfPages, PHP_EOL);
         if (!$totalNumberOfPages) {
             throw new Exception(
                 'Could not find any results.'
@@ -165,8 +162,8 @@ class NavigateSearchResultPagesCachingTokens
         }
 
         $middlePageNumber = ceil($totalNumberOfPages / 2);
-        print '--- 1. Print results of the page #' . $middlePageNumber . ' (in the middle):'. PHP_EOL . PHP_EOL;
-        $pageTokens = self::printPageResults(
+        printf('%s--- 1. Print results of the page #%d:%1$s%1$s', PHP_EOL, $middlePageNumber);
+        self::fetchAndPrintPageResults(
             $googleAdsServiceClient,
             $customerId,
             $query,
@@ -175,21 +172,10 @@ class NavigateSearchResultPagesCachingTokens
             $pageTokens
         );
 
-        print PHP_EOL . '--- 2. Print results iterating from the first page to the last:' . PHP_EOL . PHP_EOL;
-        foreach (range(1, $totalNumberOfPages) as $pageNumber) {
-            $pageTokens = self::printPageResults(
-                $googleAdsServiceClient,
-                $customerId,
-                $query,
-                $searchOptions,
-                $pageNumber,
-                $pageTokens
-            );
-        }
-
-        print PHP_EOL . '--- 3. Print results iterating from the last page to the first:' . PHP_EOL . PHP_EOL;
+        printf('%s--- 2. Print results from the last page to the first:%1$s', PHP_EOL);
         foreach (range($totalNumberOfPages, 1) as $pageNumber) {
-            $pageTokens = self::printPageResults(
+            printf('%s-- Printing results for page #%d:%1$s', PHP_EOL, $pageNumber);
+            self::fetchAndPrintPageResults(
                 $googleAdsServiceClient,
                 $customerId,
                 $query,
@@ -206,64 +192,52 @@ class NavigateSearchResultPagesCachingTokens
      * @param string $query
      * @param array $searchOptions
      * @param int $pageNumber
-     * @param int[] $pageTokens
-     * @return int[] The updated list of page tokens
+     * @param int[] &$pageTokens
      */
-    private static function printPageResults(
+    private static function fetchAndPrintPageResults(
         GoogleAdsServiceClient $googleAdsServiceClient,
         int $customerId,
         string $query,
         array $searchOptions,
         int $pageNumber,
-        array $pageTokens
-    ): array {
-        // Fetches next pages in sequence and stores their page tokens until the page token of the
-        // requested page is retrieved.
-        while (count($pageTokens) < $pageNumber) {
-            // Fetches the next unknown page.
-            print 'Fetching page #' . $pageNumber . ' because its token is not cached.' . PHP_EOL;
+        array &$pageTokens
+    ) {
+        // There is no need to go over the pages we already know the page tokens for.
+        if (!isset($pageTokens[$pageNumber - 1])) {
+            printf(
+                'The token of the requested page was never cached, we will use the closest page ' .
+                'we know the token for (page #%d) and sequentially get pages from there.%s',
+                count($pageTokens),
+                PHP_EOL
+            );
+            $currentPageNumber = count($pageTokens);
+        } else {
+            printf(
+                'The token of the requested page was cached, we will use it to get the results.%s',
+                PHP_EOL
+            );
+            $currentPageNumber = $pageNumber;
+        }
+
+        // Fetches next pages in sequence and caches their tokens until the requested page results
+        // are returned.
+        while ($currentPageNumber <= $pageNumber) {
+            // Fetches the next page.
+            printf('Fetching page #%d...%s', $currentPageNumber, PHP_EOL);
             $response = $googleAdsServiceClient->search(
                 $customerId,
                 $query,
                 $searchOptions + [
-                    // There is no need to go over the pages we already know the page tokens for.
-                    // Fetches the last page we know the page token for so that we can retrieve the
-                    // token of the page that comes after it.
-                    'pageToken' => end($pageTokens)
+                    // Uses the page token cached for the current page number.
+                    'pageToken' => $pageTokens[$currentPageNumber - 1]
                 ]
             );
-            if ($response->getPage()->getNextPageToken()) {
-                // Stores the page token of the page that comes after the one we just fetched if
-                // any so that it can be reused later if necessary.
-                $pageTokens[] = $response->getPage()->getNextPageToken();
-                print 'Cached token for page #' . $pageNumber . PHP_EOL;
-            } else {
-                // Otherwise changes the requested page number for the latest page that we have
-                // fetched until now, the requested page number was invalid.
-                $pageNumber = count($pageTokens);
-            }
-        }
-
-        // Fetches the actual page that we want to display the results of.
-        print 'Fetching page #' . $pageNumber . ' to retrieve the results.' . PHP_EOL;
-        $response = $googleAdsServiceClient->search(
-            $customerId,
-            $query,
-            $searchOptions + [
-                // The page token of the requested page is in the page token list because of the
-                // processing done in the previous loop.
-                'pageToken' => $pageTokens[$pageNumber - 1]
-            ]
-        );
-        if ($response->getPage()->getNextPageToken()) {
-            // Stores the page token of the page that comes after the one we just fetched if any so
-            // that it can be reused later if necessary.
-            $pageTokens[] = $response->getPage()->getNextPageToken();
-            print 'Cached token for page #' . $pageNumber . PHP_EOL;
+            self::cacheNextPageToken($pageTokens, $response->getPage(), $currentPageNumber);
+            $currentPageNumber++;
         }
 
         // Prints the results of the requested page.
-        print 'Printing results found for the page #' . $pageNumber . PHP_EOL;
+        printf('Printing results found for the page #%d:%s', $pageNumber, PHP_EOL);
         foreach ($response->getPage()->getIterator() as $googleAdsRow) {
             /** @var GoogleAdsRow $googleAdsRow */
             printf(
@@ -273,8 +247,20 @@ class NavigateSearchResultPagesCachingTokens
                 PHP_EOL
             );
         }
+    }
 
-        return $pageTokens;
+    /**
+     * @param array &$pageTokens the cache containing the page tokens
+     * @param Page $page the page of results
+     * @param int $pageNumber the number of the provided page
+     */
+    private static function cacheNextPageToken(array &$pageTokens, Page $page, int $pageNumber)
+    {
+        if ($page->getNextPageToken() && !isset($pageTokens[$pageNumber])) {
+            // Update the cache with the next page token if it is not set yet.
+            $pageTokens[$pageNumber] = $page->getNextPageToken();
+            printf("\e[0;32mCached token for page #%d.\e[0m%s", $pageNumber + 1, PHP_EOL);
+        }
     }
 }
 
