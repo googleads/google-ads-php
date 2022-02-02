@@ -250,7 +250,7 @@ class NavigateSearchResultPagesCachingTokens
     // [END navigate_search_result_pages_caching_tokens]
 
     /**
-     * Update the cache of page tokens based on a page that was retrieved.
+     * Updates the cache of page tokens based on a page that was retrieved.
      *
      * @param array &$pageTokens the cache of page tokens to update
      * @param Page $page the page that was retrieved
@@ -259,7 +259,7 @@ class NavigateSearchResultPagesCachingTokens
     private static function cacheNextPageToken(array &$pageTokens, Page $page, int $pageNumber)
     {
         if ($page->getNextPageToken() && !isset($pageTokens[$pageNumber])) {
-            // Update the cache with the next page token if it is not set yet.
+            // Updates the cache with the next page token if it is not set yet.
             $pageTokens[$pageNumber] = $page->getNextPageToken();
             // Prints in green color for better console readability.
             printf("\e[0;32mCached token for page #%d.\e[0m%s", $pageNumber + 1, PHP_EOL);
