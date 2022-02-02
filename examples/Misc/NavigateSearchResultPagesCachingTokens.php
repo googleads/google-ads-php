@@ -211,7 +211,6 @@ class NavigateSearchResultPagesCachingTokens
                 PHP_EOL
             );
             $currentPageNumber = $pageNumber;
-            $currentPageNumber = count($pageTokens);
         } else {
             printf(
                 'The token of the requested page was never cached, we will use the closest page ' .
@@ -219,6 +218,7 @@ class NavigateSearchResultPagesCachingTokens
                 count($pageTokens),
                 PHP_EOL
             );
+            $currentPageNumber = count($pageTokens);
         }
 
         // Fetches next pages in sequence and caches their tokens until the requested page results
